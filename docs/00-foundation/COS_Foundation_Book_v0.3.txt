@@ -1,5 +1,5 @@
 Competency Operating System
-Foundation Book Version: v0.1 Status: Foundation Complete
+Foundation BookVersion: v0.1Status: Foundation Complete
 Preface
 This document consolidates the outcomes of Iteration 01. It is intended to serve as the authoritative foundation for future architecture, product design, engineering decisions and AI-assisted development. The markdown documents in the repository remain the editable source of truth; this book is the official snapshot.
 Table of Contents
@@ -2012,7 +2012,7 @@ Define Requirements and Evidence relationships.
 Define bounded contexts and ubiquitous language.
 Design the Development Graph.
 Appendix A — Foundation Documents
-The following markdown files in the Git repository are the authoritative editable documents: 01-north-star.md 02-product-vision.md 03-product-manifesto.md 04-domain-glossary.md 05-product-boundaries.md 06-architecture-principles.md 07-design-principles.md 08-decision-framework.md
+The following markdown files in the Git repository are the authoritative editable documents:01-north-star.md02-product-vision.md03-product-manifesto.md04-domain-glossary.md05-product-boundaries.md06-architecture-principles.md07-design-principles.md08-decision-framework.md
 Appendix B — Recommended Next Deliverables
 Domain-Driven Design
 Enterprise Architecture

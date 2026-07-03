@@ -1,0 +1,2021 @@
+Competency Operating System
+Foundation Book Version: v0.1 Status: Foundation Complete
+Preface
+This document consolidates the outcomes of Iteration 01. It is intended to serve as the authoritative foundation for future architecture, product design, engineering decisions and AI-assisted development. The markdown documents in the repository remain the editable source of truth; this book is the official snapshot.
+Table of Contents
+1. COS-001 — North Star
+2. COS-002 — Product Vision
+3. COS-003 — Product Manifesto
+4. COS-004 — Domain Glossary
+5. COS-005 — Product Boundaries
+6. COS-006 — Architecture Principles
+7. COS-007 — Design Principles
+8. COS-008 — Decision Framework
+COS-001 North Star
+Purpose: Build an operating system for human and organizational development rather than another LMS.
+Core value: Adaptive development based on measurable progress.
+Audience: Individuals, teams, enterprises and public institutions.
+---
+title: North Star
+document: COS-001
+version: 1.0.0
+status: Approved
+owner: Product Team
+---
+
+# North Star
+## Purpose
+Competency Operating System (COS) exists to make human development measurable, adaptive and manageable.
+We believe that every person, team and organization should have a clear understanding of:
+- where they are today;
+- where they want to be;
+- what prevents them from getting there;
+- what is the optimal path to achieve their goal.
+COS exists to become the operating system that supports this journey.
+# The Future We Want to Build
+We envision a future where development is no longer based on intuition, static educational programs or generic learning paths.
+Instead, every development process is:
+- personalized;
+- evidence-based;
+- continuously adaptive;
+- connected to measurable outcomes.
+Organizations no longer manage training.
+They manage capabilities.
+Individuals no longer collect certificates.
+They continuously build verified experience and demonstrated abilities.
+# Our Belief
+Development is not education.
+Development is a managed transition from a current state to a desired state.
+Education is only one of many possible instruments that enables this transition.
+# Our Mission
+Create the world's most adaptive platform for designing, managing and improving development processes.
+
+Not only for companies.
+
+Not only for universities.
+
+But for any domain where people grow through structured progression.
+
+---
+
+# Who Benefits
+
+## Individuals
+
+Receive a clear development path.
+
+Understand their strengths and gaps.
+
+Build a portable professional profile.
+
+Develop continuously throughout their career.
+
+---
+
+## Teams
+
+Understand collective strengths.
+
+Identify competency gaps.
+
+Plan development proactively.
+
+Reduce dependency on individual experts.
+
+---
+
+## Organizations
+
+Align development with strategic objectives.
+
+Measure workforce readiness.
+
+Build internal talent pipelines.
+
+Make evidence-based decisions about people and capabilities.
+
+---
+
+# The Role of Artificial Intelligence
+
+Artificial Intelligence is not the decision maker.
+
+AI augments human expertise by:
+
+- analyzing development data;
+- identifying gaps;
+- recommending personalized pathways;
+- generating educational assets;
+- adapting learning experiences;
+- assisting methodology designers.
+
+All critical decisions must remain explainable and transparent.
+
+---
+
+# Long-term Vision
+
+We want COS to become the global infrastructure for development management.
+
+A platform capable of supporting any structured development process while remaining domain-independent.
+
+Regardless of industry, country or profession.
+
+---
+
+# Guiding Question
+
+Every decision made during product development should answer one question:
+
+> Does this help people and organizations move from their current state to their desired state more effectively?
+
+If the answer is "no", the feature does not belong in COS.
+
+COS-002 Product Vision
+COS is a Development Intelligence Platform.
+Adaptive Development Engine is the strategic differentiator.
+Competencies, learning objects and assessments support development instead of defining it.
+---
+id: COS-002
+title: Product Vision
+version: 1.0.0
+status: Draft
+owner: Product Team
+---
+
+# Product Vision
+
+---
+
+# 🇬🇧 English
+
+## Product Overview
+
+Competency Operating System (COS) is an AI-powered platform for designing, managing and continuously improving human development.
+
+Unlike traditional Learning Management Systems (LMS), Learning Experience Platforms (LXP) or Talent Management solutions, COS does not focus on courses or educational content.
+
+Its primary purpose is to help people and organizations achieve measurable development goals through adaptive development pathways.
+
+COS connects business objectives, competency models, knowledge structures, assessments and evidence into a single intelligent ecosystem.
+
+---
+
+## Vision Statement
+
+Every development process can be represented as a transition from a current state to a desired state.
+
+If this transition can be formally described, it can be measured, optimized and continuously improved.
+
+COS exists to make this possible.
+
+---
+
+## What We Build
+
+COS is a Development Intelligence Platform.
+
+It enables organizations to:
+
+- design development methodologies;
+- define competency frameworks;
+- model knowledge graphs;
+- create adaptive development pathways;
+- assess competencies;
+- measure development progress;
+- forecast workforce readiness;
+- support strategic business goals through people development.
+
+---
+
+## Core Product Principles
+
+### Development before Learning
+
+Learning is only one possible way to achieve development.
+
+The platform focuses on measurable outcomes rather than educational activities.
+
+---
+
+### Adaptive by Design
+
+Development pathways are continuously updated according to user performance, cognitive profile, goals and organizational needs.
+
+No learning path is static.
+
+---
+
+### Methodology First
+
+Organizations do not create courses.
+
+They create development methodologies.
+
+Educational content is generated, imported or connected afterwards.
+
+---
+
+### Content Agnostic
+
+COS does not depend on proprietary educational content.
+
+The platform can work with:
+
+- AI-generated materials;
+- internal knowledge bases;
+- external LMS;
+- public educational resources;
+- corporate documentation;
+- videos;
+- simulations;
+- practical assignments.
+
+---
+
+### Evidence-Based Development
+
+Every competency, skill or requirement should be supported by objective evidence.
+
+Certificates alone are not sufficient.
+
+---
+
+## Platform Levels
+
+COS consists of one intelligent core that serves multiple usage levels.
+
+### Personal
+
+Individual development, career growth and competency profile.
+
+### Team
+
+Team capability management, skill balance and development planning.
+
+### Enterprise
+
+Organization-wide competency management, workforce analytics and strategic development.
+
+All levels share the same development engine.
+
+---
+
+## Artificial Intelligence
+
+AI is a core capability of COS.
+
+Its responsibilities include:
+
+- methodology assistance;
+- adaptive routing;
+- competency gap analysis;
+- educational asset generation;
+- assessment support;
+- recommendation systems;
+- predictive analytics.
+
+AI assists experts rather than replacing them.
+
+---
+
+## Product Differentiation
+
+Traditional platforms manage learning.
+
+COS manages development.
+
+Traditional platforms deliver content.
+
+COS delivers adaptive progression.
+
+Traditional platforms measure completion.
+
+COS measures capability growth.
+
+Traditional platforms organize courses.
+
+COS organizes development systems.
+
+---
+
+## Success Criteria
+
+COS is successful if it enables organizations to:
+
+- reduce development time;
+- improve workforce readiness;
+- objectively assess competencies;
+- connect learning with business outcomes;
+- continuously improve development methodologies.
+
+---
+
+# 🇷🇺 Русский
+
+## Общее описание продукта
+
+Competency Operating System (COS) — интеллектуальная платформа управления развитием человека, команды и организации.
+
+В отличие от классических LMS, LXP и Talent Management систем, COS строится не вокруг курсов и образовательного контента.
+
+Основная задача платформы — помогать пользователям и организациям достигать измеримых целей развития посредством адаптивных маршрутов развития.
+
+COS объединяет бизнес-цели, модели компетенций, графы знаний, оценку результатов и объективные доказательства освоения в единую интеллектуальную систему.
+
+---
+
+## Видение продукта
+
+Любой процесс развития можно представить как переход от текущего состояния к целевому.
+
+Если этот переход можно формализовать, значит им можно управлять, измерять его эффективность и постоянно совершенствовать.
+
+Именно для этого создается COS.
+
+---
+
+## Что мы создаем
+
+COS — это платформа управления развитием нового поколения.
+
+Она позволяет организациям:
+
+- проектировать методологии развития;
+- создавать модели компетенций;
+- строить графы знаний;
+- формировать адаптивные маршруты развития;
+- оценивать уровень компетенций;
+- анализировать прогресс;
+- прогнозировать готовность сотрудников;
+- связывать развитие людей со стратегическими целями организации.
+
+---
+
+## Основные принципы продукта
+
+### Развитие важнее обучения
+
+Обучение является лишь одним из способов достижения развития.
+
+Платформа ориентирована на достижение результата, а не на прохождение учебной программы.
+
+---
+
+### Адаптивность по умолчанию
+
+Маршрут развития постоянно изменяется в зависимости от:
+
+- результатов пользователя;
+- когнитивных особенностей;
+- целей;
+- требований организации;
+- накопленных доказательств развития.
+
+---
+
+### Методология первична
+
+Организация проектирует не курсы.
+
+Она проектирует модель развития.
+
+Контент появляется позже — с помощью ИИ, внутренних материалов или внешних источников.
+
+---
+
+### Независимость от контента
+
+COS не требует собственного каталога курсов.
+
+Платформа может использовать:
+
+- материалы, созданные ИИ;
+- корпоративные базы знаний;
+- существующие LMS;
+- открытые образовательные ресурсы;
+- внутреннюю документацию;
+- видеоматериалы;
+- симуляции;
+- практические задания.
+
+---
+
+### Развитие должно подтверждаться
+
+Любая компетенция должна подтверждаться объективными доказательствами.
+
+Наличие сертификата само по себе не является подтверждением реального уровня подготовки.
+
+---
+
+## Уровни продукта
+
+Платформа имеет единое интеллектуальное ядро и поддерживает три уровня использования.
+
+### Personal
+
+Индивидуальное развитие, карьерная траектория и цифровой профиль.
+
+### Team
+
+Развитие команды, баланс компетенций и планирование роста.
+
+### Enterprise
+
+Управление человеческим капиталом, аналитика компетенций и стратегическое развитие организации.
+
+Все уровни используют единый движок развития.
+
+---
+
+## Искусственный интеллект
+
+ИИ является фундаментальной частью платформы.
+
+Он помогает:
+
+- проектировать методологии;
+- строить маршруты развития;
+- анализировать разрывы компетенций;
+- создавать образовательные материалы;
+- проводить оценку;
+- формировать рекомендации;
+- прогнозировать результаты развития.
+
+ИИ усиливает экспертов, а не заменяет их.
+
+---
+
+## Чем COS отличается от существующих решений
+
+Традиционные платформы управляют обучением.
+
+COS управляет развитием.
+
+Традиционные платформы предоставляют контент.
+
+COS проектирует адаптивные траектории.
+
+Традиционные платформы измеряют завершение курса.
+
+COS измеряет рост компетенций и готовность к достижению целей.
+
+Традиционные платформы организуют обучение.
+
+COS организует систему развития.
+
+---
+
+## Критерии успеха
+
+Платформа считается успешной, если позволяет:
+
+- сокращать время развития специалистов;
+- повышать готовность команд;
+- объективно оценивать компетенции;
+- связывать развитие сотрудников с целями организации;
+- постоянно совершенствовать методологии развития.
+
+COS-003 Product Manifesto
+Development is lifelong.
+Methodology is more valuable than content.
+Evidence is stronger than certificates.
+AI amplifies experts.
+Organizations grow through people.
+---
+id: COS-003
+title: Product Manifesto
+version: 1.0.0
+status: Draft
+owner: Product Team
+---
+
+# Product Manifesto
+
+---
+
+# 🇬🇧 English
+
+## We believe that development is lifelong.
+
+People do not stop developing after graduation, certification or promotion.
+
+Development is a continuous process that evolves together with a person throughout their entire life.
+
+---
+
+## We believe that education is not the goal.
+
+Education is only one of many possible instruments of development.
+
+The real goal is achieving measurable progress.
+
+---
+
+## We believe that every development journey should be personal.
+
+No two people learn, grow or achieve goals in exactly the same way.
+
+Every pathway should adapt to the individual.
+
+---
+
+## We believe that methodology is more valuable than content.
+
+Content becomes outdated.
+
+Methodologies evolve.
+
+A well-designed methodology can generate thousands of learning experiences.
+
+---
+
+## We believe that evidence is stronger than certificates.
+
+Certificates indicate participation.
+
+Evidence demonstrates capability.
+
+Development should always be supported by observable results.
+
+---
+
+## We believe that AI should amplify human expertise.
+
+Artificial Intelligence should support experts, not replace them.
+
+The best decisions emerge from collaboration between people and intelligent systems.
+
+---
+
+## We believe that organizations grow through people.
+
+Business transformation is impossible without human development.
+
+Investing in people is investing in organizational capability.
+
+---
+
+## We believe that every decision should be explainable.
+
+Users should understand why the platform recommends a particular development path.
+
+Transparency builds trust.
+
+---
+
+## We believe that great products simplify complexity.
+
+Development is inherently complex.
+
+The product should make it understandable, measurable and manageable.
+
+---
+
+## We believe that technology should disappear.
+
+Users should focus on growth.
+
+Not on the software itself.
+
+---
+
+# 🇷🇺 Русский
+
+## Мы верим, что развитие продолжается всю жизнь.
+
+Развитие человека не заканчивается после получения диплома, сертификата или новой должности.
+
+Это непрерывный процесс, сопровождающий человека на протяжении всей жизни.
+
+---
+
+## Мы верим, что обучение не является целью.
+
+Обучение — лишь один из инструментов развития.
+
+Настоящая цель — достижение измеримого результата.
+
+---
+
+## Мы верим, что путь развития всегда индивидуален.
+
+Не существует двух одинаковых людей.
+
+Каждый человек развивается по собственному маршруту, и система должна учитывать эти различия.
+
+---
+
+## Мы верим, что методология ценнее контента.
+
+Контент быстро устаревает.
+
+Хорошая методология способна многократно переиспользоваться и создавать новые образовательные сценарии.
+
+---
+
+## Мы верим, что доказательства важнее сертификатов.
+
+Сертификат говорит о прохождении.
+
+Доказательства говорят о способности применять знания на практике.
+
+---
+
+## Мы верим, что искусственный интеллект усиливает эксперта.
+
+ИИ помогает человеку принимать решения, анализировать данные и проектировать развитие.
+
+Ответственность и экспертность остаются за человеком.
+
+---
+
+## Мы верим, что развитие людей определяет развитие организаций.
+
+Любые изменения внутри компании начинаются с развития ее сотрудников.
+
+Инвестиции в развитие людей — это инвестиции в будущее организации.
+
+---
+
+## Мы верим, что каждое решение должно быть объяснимым.
+
+Пользователь должен понимать, почему система предлагает именно такой маршрут развития.
+
+Доверие невозможно без прозрачности.
+
+---
+
+## Мы верим, что хороший продукт делает сложное понятным.
+
+Развитие человека — сложный процесс.
+
+Задача COS — сделать его прозрачным, управляемым и измеримым.
+
+---
+
+## Мы верим, что лучшая технология остается незаметной.
+
+Пользователь приходит в COS не ради платформы.
+
+Он приходит ради собственного развития.
+
+Поэтому технологии должны работать в фоне, позволяя человеку сосредоточиться на достижении своих целей.
+
+COS-004 Domain Glossary
+Defines common language: Development, Methodology, Development Graph, Competency, Skill, Evidence, Assessment, Learning Object, Development Profile and Adaptive Development Engine.
+This glossary is expected to evolve with DDD.
+---
+id: COS-004
+title: Domain Glossary
+version: 1.0.0
+status: Draft
+owner: Product Team
+
+references:
+  - COS-001
+  - COS-002
+  - COS-003
+---
+
+# Domain Glossary
+
+This document defines the official terminology used throughout Competency Operating System.
+
+Every architectural document, API specification, UX flow and database model MUST use the definitions provided here.
+
+---
+
+# 🇬🇧 English
+
+## Development
+
+**Definition**
+
+A managed process of transitioning from a current state to a desired state through measurable progress.
+
+Development is the primary concept of COS.
+
+Learning is only one possible mechanism of development.
+
+---
+
+## Development Methodology
+
+A formal description of how a person or a group reaches a desired state.
+
+A methodology defines:
+
+- goals;
+- requirements;
+- dependencies;
+- assessment methods;
+- evidence;
+- progression rules.
+
+A methodology is independent from educational content.
+
+---
+
+## Current State
+
+The objectively measured state of a person, team or organization at a specific moment.
+
+---
+
+## Target State
+
+The desired state that should be achieved.
+
+Target States are defined by Development Methodologies.
+
+---
+
+## Development Path
+
+An ordered sequence of development activities generated for a specific user.
+
+Unlike traditional learning paths, Development Paths are adaptive.
+
+---
+
+## Development Graph
+
+A graph representing all possible development routes within a methodology.
+
+The graph consists of interconnected development nodes.
+
+The Adaptive Development Engine dynamically selects the optimal route.
+
+---
+
+## Competency
+
+A demonstrable ability to successfully perform activities within a specific domain.
+
+Competencies are measurable and supported by evidence.
+
+---
+
+## Skill
+
+A specific practical ability that contributes to one or more competencies.
+
+Skills are the smallest measurable capabilities within the competency model.
+
+---
+
+## Knowledge
+
+Information and theoretical understanding required to perform activities.
+
+Knowledge alone does not imply competency.
+
+---
+
+## Capability
+
+An organizational ability to achieve strategic outcomes.
+
+Capabilities are built through combinations of competencies.
+
+---
+
+## Assessment
+
+Any process that evaluates development progress.
+
+Examples:
+
+- tests;
+- interviews;
+- simulations;
+- practical tasks;
+- peer review;
+- AI evaluation.
+
+---
+
+## Evidence
+
+Objective proof confirming achievement of development requirements.
+
+Evidence may include:
+
+- completed projects;
+- certificates;
+- portfolio;
+- supervisor validation;
+- practical assessments;
+- examination results.
+
+---
+
+## Adaptive Development Engine
+
+The intelligent core of COS.
+
+Responsible for:
+
+- gap analysis;
+- adaptive routing;
+- recommendations;
+- progression management;
+- predictive analytics.
+
+---
+
+## Learning Object
+
+The smallest reusable educational resource.
+
+Examples:
+
+- article;
+- lesson;
+- video;
+- exercise;
+- simulation;
+- document.
+
+Learning Objects support development but do not define it.
+
+---
+
+## Development Profile
+
+The digital representation of an individual's development history.
+
+Includes:
+
+- competencies;
+- skills;
+- assessments;
+- evidence;
+- achievements;
+- recommendations;
+- development history.
+
+---
+
+# 🇷🇺 Русский
+
+## Развитие (Development)
+
+Управляемый процесс перехода от текущего состояния к целевому состоянию посредством измеримого прогресса.
+
+Развитие является центральным понятием COS.
+
+Обучение — лишь один из способов развития.
+
+---
+
+## Методология развития (Development Methodology)
+
+Формализованное описание процесса достижения целевого состояния.
+
+Методология определяет:
+
+- цели;
+- требования;
+- зависимости;
+- способы оценки;
+- доказательства достижения;
+- правила переходов.
+
+Методология существует независимо от образовательного контента.
+
+---
+
+## Текущее состояние (Current State)
+
+Объективно измеримое состояние человека, команды или организации в конкретный момент времени.
+
+---
+
+## Целевое состояние (Target State)
+
+Состояние, которого необходимо достичь.
+
+Определяется методологией развития.
+
+---
+
+## Маршрут развития (Development Path)
+
+Последовательность действий, сформированная системой для конкретного пользователя.
+
+Маршрут является адаптивным и может изменяться по мере прохождения.
+
+---
+
+## Граф развития (Development Graph)
+
+Графовая модель методологии развития.
+
+Содержит возможные маршруты, зависимости и альтернативные пути достижения цели.
+
+---
+
+## Компетенция (Competency)
+
+Подтверждаемая способность успешно выполнять деятельность в определенной предметной области.
+
+Компетенция всегда должна иметь измеримые критерии и подтверждаться доказательствами.
+
+---
+
+## Навык (Skill)
+
+Конкретное практическое умение, формирующее одну или несколько компетенций.
+
+Навык является минимальной измеримой единицей практической деятельности.
+
+---
+
+## Знание (Knowledge)
+
+Теоретическая информация, необходимая для выполнения деятельности.
+
+Наличие знаний само по себе не означает наличие компетенции.
+
+---
+
+## Возможность организации (Capability)
+
+Способность организации достигать стратегических целей.
+
+Формируется за счет развития компетенций сотрудников и команд.
+
+---
+
+## Оценка (Assessment)
+
+Любой процесс подтверждения уровня развития.
+
+Примеры:
+
+- тестирование;
+- интервью;
+- симуляция;
+- практическое задание;
+- экспертная оценка;
+- оценка ИИ.
+
+---
+
+## Доказательство (Evidence)
+
+Объективное подтверждение достижения требований развития.
+
+Примеры:
+
+- выполненный проект;
+- сертификат;
+- портфолио;
+- подтверждение руководителя;
+- экзамен;
+- результаты практики.
+
+---
+
+## Adaptive Development Engine
+
+Интеллектуальное ядро платформы.
+
+Отвечает за:
+
+- анализ разрывов;
+- построение маршрутов;
+- адаптацию развития;
+- рекомендации;
+- прогнозирование.
+
+---
+
+## Learning Object
+
+Минимальная переиспользуемая образовательная единица.
+
+Например:
+
+- статья;
+- урок;
+- видео;
+- упражнение;
+- симуляция;
+- документ.
+
+Learning Object поддерживает развитие, но не определяет его.
+
+---
+
+## Development Profile
+
+Цифровое представление истории развития пользователя.
+
+Включает:
+
+- компетенции;
+- навыки;
+- оценки;
+- доказательства;
+- достижения;
+- рекомендации;
+- историю развития.
+
+COS-005 Product Boundaries
+COS owns development intelligence, not commodity enterprise software.
+Integrate with mature products instead of rebuilding them.
+Content is replaceable; methodologies are strategic assets.
+---
+id: COS-005
+title: Product Boundaries
+version: 1.0.0
+status: Draft
+owner: Product Team
+
+references:
+  - COS-001
+  - COS-002
+  - COS-003
+  - COS-004
+---
+
+# Product Boundaries
+
+This document defines the scope of Competency Operating System.
+
+Its purpose is to protect the product from unnecessary complexity and ensure that every new feature strengthens the core platform.
+
+---
+
+# 🇬🇧 English
+
+# Core Principle
+
+COS is a Development Intelligence Platform.
+
+Everything inside the product must strengthen the development process.
+
+If a feature does not improve development, assessment, methodology, or decision-making, it probably belongs outside the platform.
+
+---
+
+# COS IS
+
+COS is responsible for:
+
+- development methodologies;
+- competency management;
+- adaptive development pathways;
+- assessment;
+- evidence collection;
+- development analytics;
+- AI-assisted recommendations;
+- workforce readiness;
+- development planning;
+- knowledge graph management.
+
+---
+
+# COS IS NOT
+
+COS is not:
+
+- a Learning Management System;
+- a video hosting platform;
+- a document management system;
+- a corporate messenger;
+- a CRM;
+- an ERP;
+- an HRIS;
+- a project management system;
+- an Applicant Tracking System (ATS);
+- a payroll system.
+
+These systems should integrate with COS instead of being rebuilt inside it.
+
+---
+
+# Integration Philosophy
+
+Whenever a mature external solution already exists, integration should be preferred over implementation.
+
+COS should remain focused on its core domain.
+
+---
+
+# Content Philosophy
+
+COS is not a content company.
+
+The platform provides mechanisms for:
+
+- creating methodologies;
+- organizing development;
+- generating educational assets with AI;
+- connecting external content providers.
+
+Content itself is replaceable.
+
+Methodologies are strategic assets.
+
+---
+
+# AI Philosophy
+
+Artificial Intelligence is a platform capability.
+
+It is not the product itself.
+
+AI should:
+
+- accelerate expert work;
+- improve recommendations;
+- automate repetitive tasks;
+- assist methodology creation.
+
+Every AI decision should remain explainable.
+
+---
+
+# Platform Expansion Rule
+
+Every new feature must answer three questions.
+
+1. Does it strengthen the Development Engine?
+
+2. Can an existing external product solve this better?
+
+3. Will this feature be useful across multiple domains?
+
+If the answer to at least one question is "No", the feature should be reconsidered.
+
+---
+
+# Future Extensions
+
+COS is designed as a platform.
+
+New domains, methodologies and AI services may be added without changing the platform core.
+
+The core must remain stable.
+
+---
+
+# 🇷🇺 Русский
+
+# Основной принцип
+
+COS — это платформа управления развитием.
+
+Любая новая функция должна усиливать процесс развития человека, команды или организации.
+
+Если функция не влияет на развитие, оценку, методологии или принятие решений, скорее всего, она не должна входить в состав платформы.
+
+---
+
+# COS ВКЛЮЧАЕТ
+
+Платформа отвечает за:
+
+- управление методологиями развития;
+- управление компетенциями;
+- адаптивные маршруты развития;
+- оценку результатов;
+- сбор доказательств развития;
+- аналитику;
+- рекомендации на основе ИИ;
+- оценку готовности сотрудников и команд;
+- планирование развития;
+- граф знаний.
+
+---
+
+# COS НЕ ЯВЛЯЕТСЯ
+
+COS не является:
+
+- LMS;
+- видеохостингом;
+- системой хранения документов;
+- корпоративным мессенджером;
+- CRM;
+- ERP;
+- HRIS;
+- системой управления проектами;
+- ATS;
+- системой расчета заработной платы.
+
+При наличии зрелого решения предпочтение всегда отдается интеграции.
+
+---
+
+# Принцип интеграции
+
+Если задача уже эффективно решается существующим продуктом, COS должен интегрироваться с ним, а не реализовывать аналогичный функционал.
+
+---
+
+# Подход к образовательному контенту
+
+COS не является производителем образовательного контента.
+
+Платформа предоставляет инструменты для:
+
+- проектирования методологий;
+- организации развития;
+- генерации образовательных материалов с помощью ИИ;
+- подключения внешних поставщиков контента.
+
+Контент можно заменить.
+
+Методология является стратегическим активом.
+
+---
+
+# Подход к использованию ИИ
+
+ИИ — встроенная возможность платформы, а не самостоятельный продукт.
+
+Он помогает:
+
+- ускорять работу экспертов;
+- строить рекомендации;
+- автоматизировать рутинные процессы;
+- помогать в создании методологий.
+
+Все решения ИИ должны оставаться объяснимыми.
+
+---
+
+# Правило развития платформы
+
+Каждая новая функция должна отвечать на три вопроса.
+
+1. Усиливает ли она Development Engine?
+
+2. Можно ли решить эту задачу интеграцией?
+
+3. Будет ли она полезна в различных предметных областях?
+
+Если хотя бы на один вопрос ответ отрицательный, решение должно быть пересмотрено.
+
+---
+
+# Масштабируемость
+
+COS проектируется как расширяемая платформа.
+
+Новые предметные области, методологии и интеллектуальные сервисы должны подключаться без изменения ядра системы.
+
+Ядро платформы должно оставаться стабильным.
+
+COS-006 Architecture Principles
+Domain First.
+Development Engine is the core.
+Domain independence.
+Configuration over customization.
+API First.
+Single Source of Truth.
+Evolution without rewriting.
+---
+id: COS-006
+title: Architecture Principles
+version: 1.0.0
+status: Draft
+owner: Product Team
+
+references:
+  - COS-001
+  - COS-002
+  - COS-003
+  - COS-004
+  - COS-005
+---
+
+# Architecture Principles
+
+This document defines the engineering principles that guide the architecture of Competency Operating System.
+
+Every architectural decision should comply with these principles.
+
+---
+
+# 🇬🇧 English
+
+## 1. Domain First
+
+The business domain defines the architecture.
+
+Technology never defines the domain.
+
+COS is built around development processes rather than software components.
+
+---
+
+## 2. Development Engine is the Core
+
+The Adaptive Development Engine is the heart of the platform.
+
+Everything else exists to support it.
+
+The platform must never evolve into a collection of unrelated modules.
+
+---
+
+## 3. Domain Independence
+
+The platform core must remain independent from any specific industry.
+
+Healthcare, education, manufacturing or government should configure the platform rather than require modifications to its core.
+
+---
+
+## 4. Methodology over Content
+
+Methodologies describe development.
+
+Content supports development.
+
+Business logic must never depend on educational content.
+
+---
+
+## 5. AI is Replaceable
+
+Artificial Intelligence is an architectural capability, not a dependency.
+
+Every AI service should be replaceable without changing the domain model.
+
+---
+
+## 6. Integration over Duplication
+
+Whenever an external system already solves a problem effectively, COS should integrate with it instead of rebuilding it.
+
+---
+
+## 7. Evidence over Assumptions
+
+Development should always be supported by measurable evidence.
+
+Architectural decisions should prioritize objective data over subjective assumptions.
+
+---
+
+## 8. Explainability by Default
+
+Every recommendation generated by the platform should be explainable.
+
+Users and organizations must understand why a recommendation was made.
+
+---
+
+## 9. Configuration over Custom Development
+
+Organizations should configure methodologies instead of modifying platform code.
+
+The platform should adapt through configuration.
+
+---
+
+## 10. Modular Architecture
+
+Every subsystem should have clear responsibilities.
+
+Modules communicate through contracts rather than implementation details.
+
+---
+
+## 11. API First
+
+Every capability available through the user interface should also be available through an API.
+
+The platform should remain integration-friendly.
+
+---
+
+## 12. Single Source of Truth
+
+Every concept has exactly one authoritative definition.
+
+Duplicated business logic is prohibited.
+
+---
+
+## 13. Scalability by Design
+
+Scalability should be considered from the beginning.
+
+The architecture must support increasing users, organizations, methodologies and AI workloads without redesigning the platform.
+
+---
+
+## 14. Security by Design
+
+Security is part of the architecture.
+
+It is not an additional feature.
+
+Every service must be designed with authentication, authorization and data protection in mind.
+
+---
+
+## 15. Evolution without Rewriting
+
+The architecture should evolve incrementally.
+
+New capabilities should extend the platform rather than require rebuilding existing components.
+
+---
+
+# 🇷🇺 Русский
+
+## 1. Предметная область важнее технологий
+
+Архитектура строится вокруг предметной области.
+
+Технологический стек не должен определять бизнес-модель системы.
+
+---
+
+## 2. Development Engine — ядро платформы
+
+Интеллектуальный движок развития является центральной частью COS.
+
+Все остальные компоненты существуют для его поддержки.
+
+---
+
+## 3. Независимость от предметной области
+
+Ядро платформы не зависит от отрасли.
+
+Медицина, образование, промышленность или государственные организации должны адаптировать методологии, а не изменять архитектуру платформы.
+
+---
+
+## 4. Методология важнее контента
+
+Методология определяет процесс развития.
+
+Контент лишь помогает его реализовать.
+
+Бизнес-логика никогда не должна зависеть от конкретного образовательного материала.
+
+---
+
+## 5. ИИ является заменяемым компонентом
+
+ИИ — архитектурная возможность платформы.
+
+Любой AI-сервис должен быть заменяемым без изменения доменной модели.
+
+---
+
+## 6. Интеграция предпочтительнее дублирования
+
+Если внешний продукт уже эффективно решает задачу, COS интегрируется с ним вместо создания собственного аналога.
+
+---
+
+## 7. Доказательства важнее предположений
+
+Развитие должно подтверждаться объективными данными.
+
+Архитектурные решения должны опираться на измеримые факты.
+
+---
+
+## 8. Объяснимость по умолчанию
+
+Любая рекомендация системы должна иметь понятное объяснение.
+
+Пользователь должен понимать логику работы платформы.
+
+---
+
+## 9. Конфигурация важнее программирования
+
+Организации должны настраивать платформу через конфигурацию и методологии, а не изменять исходный код.
+
+---
+
+## 10. Модульность
+
+Каждый компонент имеет одну зону ответственности.
+
+Компоненты взаимодействуют через четко определенные контракты.
+
+---
+
+## 11. API First
+
+Любая функция пользовательского интерфейса должна быть доступна через API.
+
+COS проектируется как открытая платформа.
+
+---
+
+## 12. Единый источник истины
+
+Каждая бизнес-сущность имеет единственное официальное определение.
+
+Дублирование бизнес-логики недопустимо.
+
+---
+
+## 13. Масштабируемость по умолчанию
+
+Архитектура должна поддерживать рост количества пользователей, организаций, методологий и интеллектуальных сервисов без изменения фундаментальной структуры.
+
+---
+
+## 14. Безопасность как часть архитектуры
+
+Безопасность закладывается при проектировании системы.
+
+Она не является отдельной функцией продукта.
+
+---
+
+## 15. Развитие без переписывания
+
+Платформа должна расширяться эволюционно.
+
+Новые возможности должны дополнять существующую архитектуру, а не требовать её полного пересмотра.
+
+COS-007 Design Principles
+Design for Opportunity.
+Development comes first.
+One Screen — One Decision.
+Invisible Complexity.
+Speak the User's Language.
+Growth before competition.
+---
+id: COS-007
+title: Design Principles
+version: 0.1.0
+status: Draft
+owner: Product Team
+
+references:
+  - COS-001
+  - COS-002
+  - COS-003
+  - COS-004
+  - COS-005
+  - COS-006
+---
+
+# Design Principles
+
+This document defines the design philosophy of Competency Operating System.
+
+Unlike a Design System, this document does not describe colors, typography or UI components.
+
+It defines how the product should feel, communicate and support people throughout their development journey.
+
+The principles described below guide every UX decision made within COS.
+
+---
+
+# 🇬🇧 English
+
+## 1. Design for Opportunity
+
+Every screen should communicate possibility, not limitation.
+
+Users should always understand what they can become, not only where they are today.
+
+COS motivates through future opportunities rather than past achievements.
+
+---
+
+## 2. Development Comes First
+
+Users do not enter COS to use software.
+
+They enter COS to become better professionals.
+
+The interface must always support development rather than compete for attention.
+
+---
+
+## 3. One Screen — One Decision
+
+Every screen answers one primary question.
+
+The interface should never compete for the user's attention.
+
+Complex workflows should be divided into simple and understandable steps.
+
+---
+
+## 4. Invisible Complexity
+
+Development methodologies, AI models, graphs and algorithms may be extremely complex.
+
+The user should never experience this complexity.
+
+Sophisticated systems should produce simple interactions.
+
+---
+
+## 5. Speak the User's Language
+
+The platform should communicate using terminology familiar to the current user.
+
+Professional language belongs to experts.
+
+Simple language belongs to everyone else.
+
+The product adapts to the user — not the opposite.
+
+---
+
+## 6. Calm, Clear and Confident
+
+COS should feel calm rather than entertaining.
+
+Professional rather than bureaucratic.
+
+Friendly rather than childish.
+
+Strict enough to motivate.
+
+Supportive enough to build confidence.
+
+---
+
+## 7. Motivation Through Progress
+
+Motivation should come from visible progress.
+
+Users should always understand:
+
+- what they have achieved;
+- what becomes available next;
+- why the next step matters.
+
+Progress is more valuable than completion.
+
+---
+
+## 8. Trust Through Transparency
+
+Users should understand why recommendations are made.
+
+Every AI recommendation should be explainable.
+
+Trust is built through transparency.
+
+---
+
+## 9. Growth Before Competition
+
+The primary competitor is yesterday's version of yourself.
+
+Competitive mechanics should support development rather than create anxiety.
+
+Social comparison should remain optional.
+
+---
+
+## 10. Design for Every Stage of Life
+
+COS should be accessible to people regardless of age, profession or digital literacy.
+
+The platform must minimize cognitive load and maximize clarity.
+
+Learning the interface should never become a prerequisite for personal development.
+
+---
+
+# 🇷🇺 Русский
+
+## 1. Дизайн должен показывать возможности
+
+Каждый экран должен демонстрировать пользователю не только его текущее состояние, но и перспективы развития.
+
+COS мотивирует будущими возможностями, а не прошлыми достижениями.
+
+---
+
+## 2. Развитие важнее интерфейса
+
+Пользователь приходит в COS не ради использования системы.
+
+Он приходит ради собственного развития.
+
+Интерфейс должен помогать человеку двигаться вперед, а не отвлекать его.
+
+---
+
+## 3. Один экран — один главный вопрос
+
+Каждый экран должен отвечать на один основной вопрос пользователя.
+
+Интерфейс не должен конкурировать за внимание.
+
+Сложные процессы разбиваются на последовательные понятные шаги.
+
+---
+
+## 4. Сложность должна оставаться внутри системы
+
+Методологии, графы развития, искусственный интеллект и внутренняя логика могут быть сложными.
+
+Пользователь не должен ощущать эту сложность.
+
+Сложная архитектура должна создавать простой пользовательский опыт.
+
+---
+
+## 5. Интерфейс говорит на языке пользователя
+
+COS использует терминологию, понятную конкретной роли.
+
+Профессиональные термины появляются только тогда, когда они действительно необходимы.
+
+Система адаптируется к человеку, а не человек к системе.
+
+---
+
+## 6. Спокойный, понятный и уверенный характер
+
+COS не стремится развлекать пользователя.
+
+Интерфейс должен вызывать ощущение спокойствия, надежности и профессионализма.
+
+Он остается дружелюбным, но не становится инфантильным.
+
+Он мотивирует, но не оказывает давления.
+
+---
+
+## 7. Мотивация через развитие
+
+Главный источник мотивации — ощущение собственного роста.
+
+Пользователь всегда должен понимать:
+
+- чего он уже достиг;
+- какие возможности открываются дальше;
+- почему следующий шаг важен.
+
+Прогресс важнее завершения.
+
+---
+
+## 8. Доверие через прозрачность
+
+Любая рекомендация системы должна иметь понятное объяснение.
+
+Пользователь должен понимать логику принятия решений.
+
+Доверие невозможно без прозрачности.
+
+---
+
+## 9. Развитие важнее соревнования
+
+Главным ориентиром пользователя является его собственный прогресс.
+
+Элементы соревнования должны вдохновлять, а не демотивировать.
+
+Любые рейтинги являются дополнительной возможностью, а не обязательной частью продукта.
+
+---
+
+## 10. Дизайн для любого человека
+
+COS проектируется для людей любого возраста, профессии и уровня цифровой грамотности.
+
+Интерфейс должен снижать когнитивную нагрузку, быть интуитивным и не требовать предварительного обучения.
+
+Развитие человека не должно начинаться с изучения интерфейса.
+
+COS-008 Decision Framework
+Every decision is validated against North Star, Development Engine, domain ownership, reusability, complexity, clarity, measurability and project principles.
+---
+id: COS-008
+title: Decision Framework
+version: 1.0.0
+status: Draft
+owner: Product Team
+
+references:
+  - COS-001
+  - COS-002
+  - COS-003
+  - COS-004
+  - COS-005
+  - COS-006
+  - COS-007
+---
+
+# Decision Framework
+
+This document defines how product, design and engineering decisions are made within Competency Operating System.
+
+The goal of this framework is to ensure that every decision strengthens the platform instead of increasing unnecessary complexity.
+
+---
+
+# 🇬🇧 English
+
+## Decision Process
+
+Every significant decision should be evaluated in the following order.
+
+### 1. Does it support the North Star?
+
+Will this decision help people or organizations develop more effectively?
+
+If not, stop.
+
+---
+
+### 2. Does it strengthen the Development Engine?
+
+Does it improve development, assessment, methodology or decision-making?
+
+If not, reconsider.
+
+---
+
+### 3. Is it part of our core domain?
+
+Should COS own this capability?
+
+Or is an existing external solution better?
+
+If integration is sufficient, integration should be preferred.
+
+---
+
+### 4. Is it reusable?
+
+Can this capability work across multiple industries, organizations and methodologies?
+
+If it only solves one specific scenario, it probably does not belong in the platform core.
+
+---
+
+### 5. Does it reduce or increase complexity?
+
+Every new feature introduces complexity.
+
+The value created must clearly exceed the complexity added.
+
+---
+
+### 6. Is it understandable?
+
+Can we explain this feature in one minute?
+
+Can a user understand why it exists?
+
+If not, simplify it.
+
+---
+
+### 7. Can it be measured?
+
+Every feature should have a measurable outcome.
+
+If success cannot be measured, the feature should be reconsidered.
+
+---
+
+### 8. Does it respect our principles?
+
+Every decision must comply with:
+
+- Product Vision
+- Product Manifesto
+- Architecture Principles
+- Design Principles
+
+If conflicts exist, they must be resolved before implementation.
+
+---
+
+## Final Rule
+
+When in doubt, choose the solution that keeps the platform simpler, more adaptable and more focused on human development.
+
+---
+
+# 🇷🇺 Русский
+
+# Процесс принятия решений
+
+Любое значимое продуктовое, дизайнерское или архитектурное решение проходит последовательную проверку.
+
+---
+
+### 1. Соответствует ли это North Star?
+
+Помогает ли это решение людям или организациям развиваться эффективнее?
+
+Если нет — решение отклоняется.
+
+---
+
+### 2. Усиливает ли это Development Engine?
+
+Улучшает ли решение процесс развития, оценки, проектирования методологий или принятия решений?
+
+Если нет — необходимо пересмотреть решение.
+
+---
+
+### 3. Относится ли это к нашей предметной области?
+
+Должен ли COS владеть этой возможностью?
+
+Или лучше использовать существующее решение через интеграцию?
+
+Если зрелая интеграция существует, предпочтение отдается интеграции.
+
+---
+
+### 4. Можно ли использовать это повторно?
+
+Будет ли решение полезно в различных организациях, отраслях и методологиях?
+
+Если оно решает только один частный случай, его не следует включать в ядро платформы.
+
+---
+
+### 5. Что это делает со сложностью системы?
+
+Каждая новая функция увеличивает сложность.
+
+Создаваемая ценность должна существенно превосходить эту сложность.
+
+---
+
+### 6. Понятно ли это пользователю?
+
+Можно ли объяснить новую возможность за одну минуту?
+
+Поймет ли пользователь, зачем она существует?
+
+Если нет — решение следует упростить.
+
+---
+
+### 7. Можно ли измерить результат?
+
+Для каждой новой функции должны существовать измеримые критерии успеха.
+
+Если невозможно оценить эффективность, решение необходимо пересмотреть.
+
+---
+
+### 8. Соответствует ли это фундаментальным принципам проекта?
+
+Любое решение должно соответствовать:
+
+- North Star
+- Product Vision
+- Product Manifesto
+- Architecture Principles
+- Design Principles
+
+Если возникает противоречие, оно должно быть устранено до начала реализации.
+
+---
+
+## Главное правило
+
+Если существует несколько возможных решений, предпочтение всегда отдается тому, которое:
+
+- делает платформу проще;
+- сохраняет универсальность;
+- усиливает Development Engine;
+- помогает людям развиваться эффективнее.
+
+Cross-cutting Architectural Conclusions
+During Foundation the project evolved from a competency platform into a Development Operating System. The patented Adaptive Development Engine is considered the technological core. Competencies are modeled as part of a broader Development Model rather than the center of the architecture. Development Profile is envisioned as the digital history of a person's growth.
+Open Questions for Iteration 02 (DDD)
+Define the Aggregate Roots.
+Model Development Profile.
+Model Development Objective and Target State.
+Define Requirements and Evidence relationships.
+Define bounded contexts and ubiquitous language.
+Design the Development Graph.
+Appendix A — Foundation Documents
+The following markdown files in the Git repository are the authoritative editable documents: 01-north-star.md 02-product-vision.md 03-product-manifesto.md 04-domain-glossary.md 05-product-boundaries.md 06-architecture-principles.md 07-design-principles.md 08-decision-framework.md
+Appendix B — Recommended Next Deliverables
+Domain-Driven Design
+Enterprise Architecture
+Adaptive Development Engine
+Development Model
+MVP Definition

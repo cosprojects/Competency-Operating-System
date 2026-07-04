@@ -260,15 +260,15 @@ This document intentionally excludes:
 
 Документ намеренно не рассматривает:
 
-- Domain Landscape;
-- Bounded Context;
-- Ubiquitous Language;
-- Domain Model;
-- Aggregates;
-- Domain Events;
-- Domain Services;
-- Business Processes;
-- Enterprise Architecture.
+- Ландшафт домена;
+- Ограниченный контекст;
+- Повсеместный язык;
+- Модель домена;
+- Агрегаты;
+- События домена;
+- Сервисы домена;
+- Бизнес-процессы;
+- Архитектура предприятия.
 
 ---
 

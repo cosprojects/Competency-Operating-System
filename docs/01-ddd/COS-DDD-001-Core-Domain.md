@@ -1,6 +1,6 @@
 # COS-DDD-001 — Core Domain
 
-**Status:** Draft  
+**Status:** Reviewed  
 **Version:** 0.1  
 **Iteration:** Domain-Driven Design  
 **Owner:** Competency Operating System (COS)  

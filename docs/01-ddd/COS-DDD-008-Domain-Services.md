@@ -1,6 +1,6 @@
 # COS-DDD-008 — Domain Services
 
-**Status:** In Review  
+**Status:** Reviewed  
 **Version:** 0.1  
 **Iteration:** Domain-Driven Design  
 **Owner:** Competency Operating System (COS)  

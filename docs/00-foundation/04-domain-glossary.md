@@ -13,7 +13,9 @@ references:
 
 # Domain Glossary
 
-This document defines the official terminology used throughout Competency Operating System.
+The Domain Glossary defines the common business vocabulary of the Competency Operating System. It provides high-level definitions shared across all project disciplines. Detailed domain semantics are defined in the DDD Ubiquitous Language.
+
+Domain Glossary определяет общий бизнес-словарь Competency Operating System. Документ содержит высокоуровневые определения терминов, используемых всеми участниками проекта. Детальная семантика предметной области определяется в документе DDD Ubiquitous Language.
 
 Every architectural document, API specification, UX flow and database model MUST use the definitions provided here.
 
@@ -356,3 +358,7 @@ Learning Object поддерживает развитие, но не опред�
 - достижения;
 - рекомендации;
 - историю развития.
+
+Related Documents
+
+COS-DDD-004 Ubiquitous Language

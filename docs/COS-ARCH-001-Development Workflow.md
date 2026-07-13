@@ -178,7 +178,7 @@ System architecture.
 
 Purpose:
 
-Design the decision-making intelligence of COS.
+Design the decision-making model that transforms trusted competency information into adaptive development decisions.
 
 Artifacts:
 
@@ -503,7 +503,7 @@ The platform should evolve without losing its conceptual integrity.
 
 ### Цель
 
-Спроектировать интеллектуальное ядро платформы.
+Разработать модель принятия решений, преобразующую достоверную информацию о компетенциях в адаптивные решения по развитию.
 
 ### Артефакты
 

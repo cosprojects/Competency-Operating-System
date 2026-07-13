@@ -4,13 +4,16 @@
 **Version:** 0.1  
 **Iteration:** Domain-Driven Design  
 **Owner:** Competency Operating System (COS)  
-**Last Updated:** 2026-07-04
+**Last Updated:** 2026-13-04
+
+Prerequisite
+Foundation Domain Glossary
 
 ---
 
 # Purpose (EN)
 
-This document establishes the official ubiquitous language of the Competency Operating System (COS).
+This document defines the Ubiquitous Language of the Competency Operating System domain model. It refines the business vocabulary introduced in the Foundation and provides precise domain semantics used by Domain-Driven Design.
 
 Its purpose is to ensure that business experts, architects, developers, designers and AI assistants use the same terminology when discussing the platform.
 
@@ -20,7 +23,7 @@ Each term has a single definition and should be interpreted consistently across 
 
 # Назначение (RU)
 
-Документ определяет единый язык предметной области (Ubiquitous Language) платформы Competency Operating System (COS).
+Документ определяет Ubiquitous Language предметной области Competency Operating System. Он уточняет бизнес-термины, введенные в Foundation, и определяет их точное значение в рамках доменной модели.
 
 Его цель — обеспечить единое понимание терминов всеми участниками проекта: экспертами предметной области, архитекторами, разработчиками, дизайнерами и ИИ-ассистентами.
 

@@ -1,5 +1,5 @@
 ---
-id: COS-004
+id: COS-005
 title: Domain Glossary
 version: 1.0.0
 status: Draft

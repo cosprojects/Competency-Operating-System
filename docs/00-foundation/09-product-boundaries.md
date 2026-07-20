@@ -1,5 +1,5 @@
 ---
-id: COS-005
+id: COS-009
 title: Product Boundaries
 version: 1.0.0
 status: Draft

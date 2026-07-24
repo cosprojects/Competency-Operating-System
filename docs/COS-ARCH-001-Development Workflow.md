@@ -174,7 +174,29 @@ System architecture.
 
 ---
 
-## Stage 06 — Adaptive Development Engine
+## Stage 06 — Business Architecture
+
+Purpose:
+
+Design the business architecture of the platform, including its value proposition, business model, ecosystem, market strategy and long-term development vision.
+
+Artifacts:
+
+- Business Architecture
+- Business Book
+- Value Proposition
+- Business Model
+- Revenue Architecture
+- Go-to-Market Strategy
+- Growth Strategy
+
+Result:
+
+A complete business architecture aligned with the product vision and enterprise architecture.
+
+---
+
+## Stage 07 — Adaptive Development Engine
 
 Purpose:
 
@@ -195,7 +217,7 @@ Core competitive advantage.
 
 ---
 
-## Stage 07 — Experience Architecture
+## Stage 08 — Experience Architecture
 
 Purpose:
 
@@ -218,7 +240,32 @@ No visual design is produced yet.
 
 ---
 
-## Stage 08 — UI Design
+## Stage 09 — Product Communication & Documentation
+
+Purpose:
+
+Design how the product is communicated before implementation through its website, documentation and product presentation.
+
+Artifacts:
+
+- Product Website Vision
+- Information Architecture
+- Content Strategy
+- Site Map
+- Navigation Architecture
+- Documentation Structure
+- Page Templates
+- UX Prototypes
+- Demo Strategy
+- Launch Roadmap
+
+Result:
+
+A complete communication architecture that explains the product clearly, supports product validation and prepares the foundation for UI design.
+
+---
+
+## Stage 10 — UI Design
 
 Purpose:
 
@@ -237,7 +284,7 @@ Complete interface design.
 
 ---
 
-## Stage 09 — MVP Definition
+## Stage 11 — MVP Definition
 
 Purpose:
 
@@ -255,7 +302,7 @@ Implementation-ready product scope.
 
 ---
 
-## Stage 10 — Implementation
+## Stage 12 — Implementation
 
 Purpose:
 
@@ -499,7 +546,29 @@ The platform should evolve without losing its conceptual integrity.
 
 ---
 
-## Этап 06 — Adaptive Development Engine
+## Этап 06 — Business Architecture
+
+### Цель
+
+Спроектировать бизнес-архитектуру платформы, включая ценностное предложение, бизнес-модель, экосистему, стратегию выхода на рынок и долгосрочное развитие.
+
+### Артефакты
+
+- Business Architecture
+- Business Book
+- Value Proposition
+- Business Model
+- Revenue Architecture
+- Go-to-Market Strategy
+- Growth Strategy
+
+### Результат
+
+Полностью сформирована бизнес-архитектура платформы, согласованная с продуктовым видением и корпоративной архитектурой.
+
+---
+
+## Этап 07 — Adaptive Development Engine
 
 ### Цель
 
@@ -520,7 +589,7 @@ The platform should evolve without losing its conceptual integrity.
 
 ---
 
-## Этап 07 — Experience Architecture
+## Этап 08 — Experience Architecture
 
 ### Цель
 
@@ -543,7 +612,32 @@ The platform should evolve without losing its conceptual integrity.
 
 ---
 
-## Этап 08 — UI Design
+## Этап 09 — Product Communication & Documentation
+
+### Цель
+
+Спроектировать архитектуру представления продукта через сайт, документацию и материалы для демонстрации до начала реализации.
+
+### Артефакты
+
+- Product Website Vision
+- Information Architecture
+- Content Strategy
+- Site Map
+- Navigation Architecture
+- Documentation Structure
+- Page Templates
+- UX Prototypes
+- Demo Strategy
+- Launch Roadmap
+
+### Результат
+
+Сформирована архитектура коммуникации продукта, позволяющая понятно представить его ценность, подготовить демонстрацию и создать основу для последующего UI-дизайна.
+
+---
+
+## Этап 10 — UI Design
 
 ### Цель
 
@@ -562,7 +656,7 @@ The platform should evolve without losing its conceptual integrity.
 
 ---
 
-## Этап 09 — MVP Definition
+## Этап 11 — MVP Definition
 
 ### Цель
 
@@ -580,7 +674,7 @@ The platform should evolve without losing its conceptual integrity.
 
 ---
 
-## Этап 10 — Implementation
+## Этап 12 — Implementation
 
 ### Цель
 
@@ -606,9 +700,10 @@ The platform should evolve without losing its conceptual integrity.
 
 Например:
 
-- UI Design не может начинаться до завершения Experience Architecture.
-- Experience Architecture не может начинаться до завершения Enterprise Architecture.
-- Enterprise Architecture не может проектироваться без завершённого Domain-Driven Design.
+- UI Design не может начинаться до завершения Product Communication & Documentation.  
+- Product Communication & Documentation не может начинаться до завершения Experience Architecture.  
+- Experience Architecture не может начинаться до завершения Enterprise Architecture.  
+- Enterprise Architecture не может проектироваться без завершённого Domain-Driven Design.  
 - Domain-Driven Design не может выполняться без утверждённых Foundation и Mental Model.
 
 ---

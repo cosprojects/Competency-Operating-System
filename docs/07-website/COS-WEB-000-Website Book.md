@@ -151,19 +151,19 @@ The website should communicate confidence through clarity rather than marketing 
 
 ## English
 
-The website serves multiple audiences with different goals and levels of technical knowledge.
+The website is targeted at several audiences, each with its own goals and level of understanding of the subject area.
 
-The primary audiences are:
+Primary audiences:
 
-- Individuals seeking better ways to learn and develop competencies.
-- Organizations building competency-driven workforce development.
-- Universities and educational institutions exploring modern educational models.
-- Business partners interested in strategic collaboration.
-- Investors evaluating the long-term opportunity, technology, and business potential of Competency Operating System.
-- Researchers interested in educational innovation and competency development.
-- Future employees who share the mission and want to contribute to the ecosystem.
+- Individuals interested in modern competency development;
+- Companies interested in employee development;
+- Universities and educational organizations exploring new learning models;
+- Potential partners considering strategic collaboration;
+- Investors evaluating the long-term potential of the Competency Operating System technology, product, and business;
+- Researchers interested in the development of education and the competency-based approach;
+- Future employees who share the project's mission and want to join the ecosystem's development.
 
-Every audience should be able to quickly identify a dedicated path through the website without needing to understand every aspect of the platform.
+Each audience should be able to quickly find their entry point to the website without having to explore the entire ecosystem.
 
 ---
 
@@ -174,7 +174,7 @@ Every audience should be able to quickly identify a dedicated path through the w
 Основные аудитории:
 
 - люди, заинтересованные в современном развитии компетенций;
-- компании, развивающие сотрудников на основе компетенций;
+- компании, заинтересованные в развитии сотрудников;
 - университеты и образовательные организации, изучающие новые модели обучения;
 - потенциальные партнеры, рассматривающие стратегическое сотрудничество;
 - инвесторы, оценивающие долгосрочный потенциал технологии, продукта и бизнеса Competency Operating System;
@@ -223,48 +223,7 @@ The website must present Competency Operating System as a long-term educational 
 
 Сайт должен представлять Competency Operating System как долгосрочную образовательную экосистему, а не как набор программных продуктов.
 
-
-# 7. Trust Strategy
-
-## English
-
-Trust is one of the primary objectives of the Competency Operating System website.
-
-The website should not rely on marketing language, promotional claims, or exaggerated promises. Instead, it builds credibility by consistently demonstrating the maturity of the project and the reasoning behind its vision.
-
-Trust is established through:
-
-- transparent public documentation;
-- architectural consistency across all publications;
-- research and evidence supporting the educational model;
-- clear explanation of the platform's purpose and expected impact;
-- public presentation of the patented technological foundation;
-- long-term product roadmap and ecosystem vision;
-- openness about the current stage of product development.
-
-Every public section of the website should reinforce the perception that Competency Operating System is a serious long-term initiative built on research, engineering, and practical application.
-
----
-
-## Русский
-
-Доверие является одной из ключевых целей сайта Competency Operating System.
-
-Сайт не должен опираться на маркетинговые заявления, рекламные обещания или эмоциональные призывы. Доверие формируется за счет последовательной демонстрации зрелости проекта и обоснованности его видения.
-
-Основой доверия являются:
-
-- открытая публичная документация;
-- согласованная архитектура всех публикуемых материалов;
-- исследования и доказательная база образовательной модели;
-- понятное объяснение назначения платформы и ожидаемого эффекта;
-- публичное представление патентной технологической основы;
-- долгосрочное видение и дорожная карта развития;
-- открытость относительно текущей стадии развития продукта.
-
-Каждый раздел сайта должен усиливать восприятие Competency Operating System как долгосрочной инициативы, основанной на исследованиях, инженерной культуре и практической пользе.
-
-# 8. Website Architecture
+# 7. Website Architecture
 
 ## English
 
@@ -312,7 +271,7 @@ Documentation Center содержит структурированную пуб�
 
 Раздел Careers знакомит посетителей с миссией компании, культурой, ценностями и будущими карьерными возможностями. Он предназначен для специалистов, которые разделяют идеи проекта и хотят принять участие в развитии экосистемы Competency Operating System.
 
-# 9. Documentation Strategy
+# 8. Documentation Strategy
 
 ## English
 
@@ -352,7 +311,7 @@ Documentation Center предназначен для посетителей, к�
 
 Он является основным публичным источником знаний об экосистеме.
 
-# 10. Public vs Internal Documentation
+# 9. Public vs Internal Documentation
 
 ## English
 
@@ -391,7 +350,7 @@ It should not reveal proprietary algorithms, implementation logic, internal deci
 - Какой вклад она вносит в экосистему Competency Operating System?
 
 
-# 11. Investor Communication Strategy
+# 10. Investor Communication Strategy
 
 ## English
 
@@ -441,7 +400,7 @@ Investor Center должен убеждать инвестора не марке
 
 Он должен представлять собой цифровую инвестиционную презентацию, которую можно изучить самостоятельно без предварительного знакомства с Competency Operating System.
 
-# 12. Website Evolution
+# 11. Website Evolution
 
 ## English
 
@@ -461,15 +420,13 @@ The information architecture defined in this document is intended to support lon
 
 Информационная архитектура, определенная настоящим документом, должна поддерживать долгосрочное развитие сайта без необходимости его фундаментальной переработки.
 
-# 13. Summary
+# 12. Summary
 
 ## English
 
 This document establishes the communication architecture of the Competency Operating System website. It defines the mission, objectives, audiences, communication principles, public information boundaries, and the major communication spaces that together form the public interface of the COS ecosystem.
 
 Subsequent Website documents extend this foundation by defining the public documentation structure, website content, investor materials, and user experience.
-
-The Website Book serves as the architectural foundation for every future public communication artifact of Competency Operating System, including the corporate website, investor materials, public documentation, presentations, and future digital communication channels.
 
 ---
 
@@ -478,5 +435,3 @@ The Website Book serves as the architectural foundation for every future public 
 Настоящий документ определяет архитектуру публичного представления Competency Operating System. Он устанавливает миссию сайта, цели коммуникации, целевые аудитории, принципы публичной коммуникации, границы публичной информации и основные коммуникационные пространства, формирующие публичный интерфейс экосистемы COS.
 
 Последующие документы раздела Website развивают эту основу, определяя структуру публичной документации, содержание сайта, материалы для инвесторов и пользовательский опыт.
-
-Website Book является архитектурной основой для всех будущих публичных коммуникационных материалов Competency Operating System, включая корпоративный сайт, материалы для инвесторов, публичную документацию, презентации и будущие цифровые каналы коммуникации.

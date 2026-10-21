@@ -6,7 +6,7 @@
       "id": "test",
       "order": 1,
       "title": "Тесты",
-      "description": "Проверяет парсер, методолога и расчёт прогресса до сетевых вызовов.",
+      "description": "Проверяет парсер, профиль, методолога и расчёт прогресса до сетевых вызовов.",
       "executor": "agent",
       "command": "npm",
       "args": ["test"]
@@ -31,8 +31,18 @@
       "produces": "data/competency-candidates/queue.json"
     },
     {
-      "id": "methodologist-patch",
+      "id": "profile-build",
       "order": 4,
+      "title": "Профиль профессии",
+      "description": "Собирает дерево компетенций из занятий ESCO по эталонной таксономии и курируемому маппингу. Показывает подтверждённые листья, пробелы и навыки вне области. В граф не пишет.",
+      "executor": "agent",
+      "command": "npm",
+      "args": ["run", "profile:build", "--", "--profession", "uxui"],
+      "produces": "data/profile/uxui.json"
+    },
+    {
+      "id": "methodologist-patch",
+      "order": 5,
       "title": "Патч методолога",
       "description": "Раскладывает очередь по узлам графа. Якоря не сочиняет. В граф не пишет.",
       "executor": "agent",
@@ -43,7 +53,7 @@
     },
     {
       "id": "accept-patch",
-      "order": 5,
+      "order": 6,
       "title": "Приёмка патча",
       "description": "Человек переносит принятые требования в граф и поднимает methodologyVersion. Агент этот шаг не выполняет.",
       "executor": "human",

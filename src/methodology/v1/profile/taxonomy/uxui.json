@@ -1,0 +1,89 @@
+{
+  "taxonomyVersion": "1.0.0",
+  "professionId": "uxui",
+  "title": "UI/UX Design",
+  "titleRu": "UI/UX-дизайн",
+  "note": "Целевая структура профиля. Листья задают, что должно быть подтверждено источником, а не готовый список компетенций. Дерево повторяет структуру из исследования LOGICVERSE (UI Design / UX Design).",
+  "branches": [
+    {
+      "id": "ui",
+      "title": "UI Design",
+      "titleRu": "UI-дизайн",
+      "groups": [
+        {
+          "id": "ui.tools",
+          "title": "Design Tools",
+          "titleRu": "Инструменты дизайна",
+          "kind": "tool",
+          "leaves": [
+            { "id": "ui.tools.figma", "title": "Figma", "titleRu": "Figma", "kind": "tool" },
+            { "id": "ui.tools.figjam", "title": "FigJam", "titleRu": "FigJam", "kind": "tool" },
+            { "id": "ui.tools.framer", "title": "Framer", "titleRu": "Framer", "kind": "tool" }
+          ]
+        },
+        {
+          "id": "ui.visual",
+          "title": "Visual Design",
+          "titleRu": "Визуальный дизайн",
+          "kind": "knowledge",
+          "leaves": [
+            { "id": "ui.visual.typography", "title": "Typography", "titleRu": "Типографика", "kind": "knowledge" },
+            { "id": "ui.visual.color", "title": "Color", "titleRu": "Цвет", "kind": "knowledge" },
+            { "id": "ui.visual.layout", "title": "Layout", "titleRu": "Композиция и макет", "kind": "knowledge" }
+          ]
+        },
+        {
+          "id": "ui.systems",
+          "title": "UI Systems",
+          "titleRu": "UI-системы",
+          "kind": "knowledge",
+          "leaves": [
+            { "id": "ui.systems.components", "title": "Components", "titleRu": "Компоненты", "kind": "knowledge" },
+            { "id": "ui.systems.grids", "title": "Grids", "titleRu": "Сетки", "kind": "knowledge" },
+            { "id": "ui.systems.accessibility", "title": "Accessibility", "titleRu": "Доступность", "kind": "knowledge" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ux",
+      "title": "UX Design",
+      "titleRu": "UX-дизайн",
+      "groups": [
+        {
+          "id": "ux.research",
+          "title": "User Research",
+          "titleRu": "Исследование пользователей",
+          "kind": "knowledge",
+          "leaves": [
+            { "id": "ux.research.personas", "title": "Personas", "titleRu": "Персоны", "kind": "knowledge" },
+            { "id": "ux.research.interviews", "title": "Interviews", "titleRu": "Интервью", "kind": "skill" },
+            { "id": "ux.research.user-testing", "title": "User Testing", "titleRu": "Юзабилити-тестирование", "kind": "skill" }
+          ]
+        },
+        {
+          "id": "ux.process",
+          "title": "UX Process",
+          "titleRu": "UX-процесс",
+          "kind": "skill",
+          "leaves": [
+            { "id": "ux.process.user-flows", "title": "User Flows", "titleRu": "Пользовательские сценарии", "kind": "skill" },
+            { "id": "ux.process.wireframes", "title": "Wireframes", "titleRu": "Вайрфреймы", "kind": "skill" },
+            { "id": "ux.process.ia", "title": "Information Architecture", "titleRu": "Информационная архитектура", "kind": "knowledge" }
+          ]
+        },
+        {
+          "id": "ux.prototyping",
+          "title": "Prototyping",
+          "titleRu": "Прототипирование",
+          "kind": "skill",
+          "leaves": [
+            { "id": "ux.prototyping.low-fi", "title": "Low-Fidelity", "titleRu": "Низкая детализация", "kind": "skill" },
+            { "id": "ux.prototyping.hi-fi", "title": "High-Fidelity", "titleRu": "Высокая детализация", "kind": "skill" },
+            { "id": "ux.prototyping.interactive", "title": "Interactive Prototype", "titleRu": "Интерактивный прототип", "kind": "skill" }
+          ]
+        }
+      ]
+    }
+  ]
+}

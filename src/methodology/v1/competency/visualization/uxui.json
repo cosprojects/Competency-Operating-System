@@ -1,0 +1,121 @@
+{
+  "visualizationVersion": "0.1.0",
+  "domain": "it",
+  "professionId": "it.uxui",
+  "status": "draft",
+  "note": "Черновая сеть для визуальной проверки структуры. Tier и связи не утверждены; финальная маркировка — в priority/uxui.json.",
+  "nodes": [
+    {
+      "competencyId": "comp_c8e03682adf7",
+      "tier": "foundation",
+      "order": 1,
+      "prerequisites": [],
+      "shortDescription": "Цвет как физика, восприятие, гармония и культурный контекст."
+    },
+    {
+      "competencyId": "comp_ab6396631b12",
+      "tier": "foundation",
+      "order": 2,
+      "prerequisites": ["comp_c8e03682adf7"],
+      "shortDescription": "Базовые визуальные элементы и анимация интерфейса."
+    },
+    {
+      "competencyId": "comp_c305bec788c2",
+      "tier": "core",
+      "order": 3,
+      "prerequisites": ["comp_ab6396631b12"],
+      "shortDescription": "Композиция, насмотренность и восприятие пользователя."
+    },
+    {
+      "competencyId": "comp_07a221882772",
+      "tier": "core",
+      "order": 4,
+      "prerequisites": ["comp_c305bec788c2"],
+      "shortDescription": "Композиция, типографика, визуальная иерархия и сетки."
+    },
+    {
+      "competencyId": "comp_2d2a9ebacafe",
+      "tier": "core",
+      "order": 5,
+      "prerequisites": ["comp_c305bec788c2", "comp_07a221882772"],
+      "shortDescription": "Визуальные коды, стилистика и анимация в интерфейсе."
+    },
+    {
+      "competencyId": "comp_047348e54050",
+      "tier": "core",
+      "order": 6,
+      "prerequisites": ["comp_ab6396631b12"],
+      "shortDescription": "Иконки, графики и диаграммы как визуальные элементы."
+    },
+    {
+      "competencyId": "comp_ce23f79a5220",
+      "tier": "core",
+      "order": 7,
+      "prerequisites": ["comp_047348e54050"],
+      "shortDescription": "Визуализация данных и аргументация проектных решений."
+    },
+    {
+      "competencyId": "comp_ec6bb5ba0dd5",
+      "tier": "optional",
+      "order": 8,
+      "prerequisites": [],
+      "shortDescription": "Анализ поведения пользователей и онлайн-данных."
+    },
+    {
+      "competencyId": "comp_bb0fe81fb74f",
+      "tier": "core",
+      "order": 9,
+      "prerequisites": [],
+      "shortDescription": "Анализ бизнес-требований и спецификаций ПО."
+    },
+    {
+      "competencyId": "comp_f394a15b1499",
+      "tier": "core",
+      "order": 10,
+      "prerequisites": ["comp_bb0fe81fb74f", "comp_ab6396631b12"],
+      "shortDescription": "Адаптивные интерфейсы под разные устройства."
+    },
+    {
+      "competencyId": "comp_5ef66a02628b",
+      "tier": "core",
+      "order": 11,
+      "prerequisites": ["comp_f394a15b1499", "comp_ab6396631b12"],
+      "shortDescription": "Стилевые языки и доступность интерфейсов."
+    },
+    {
+      "competencyId": "comp_058ffb486eb7",
+      "tier": "core",
+      "order": 12,
+      "prerequisites": ["comp_f394a15b1499"],
+      "shortDescription": "Ограничения и требования безопасности в дизайне."
+    },
+    {
+      "competencyId": "comp_a245c1b4ec0a",
+      "tier": "optional",
+      "order": 13,
+      "prerequisites": ["comp_f394a15b1499"],
+      "shortDescription": "Веб-стандарты, сервисы и парадигмы веб-разработки."
+    },
+    {
+      "competencyId": "comp_88be87bf8498",
+      "tier": "optional",
+      "order": 14,
+      "prerequisites": ["comp_a245c1b4ec0a"],
+      "shortDescription": "Принципы AJAX и фреймворки для асинхронных интерфейсов."
+    },
+    {
+      "competencyId": "comp_8984ce9da8c1",
+      "tier": "optional",
+      "order": 15,
+      "prerequisites": ["comp_bb0fe81fb74f"],
+      "shortDescription": "Взаимодействие с инженерами и правовые основы."
+    },
+    {
+      "competencyId": "comp_9d115869b128",
+      "tier": "optional",
+      "order": 16,
+      "prerequisites": [],
+      "shortDescription": "Естественнонаучная и гуманитарная база."
+    }
+  ]
+}

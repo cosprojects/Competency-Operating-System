@@ -127,7 +127,7 @@ LLM предлагает 2–8 компонентов, 1–12 тегов в ка
 ```
 sources:discover, professions:collect, tags:collect,
 competency:seed, competency:candidates, competency:reconcile, competency:build, competency:review, competency:evaluate,
-priority:template, priority:validate, competency:canvas,
+priority:template, priority:validate, competency:canvas, canvas:page,
 catalog:validate, competency:compose,
 materials:sources, materials:collect, materials:classify, materials:review,
 materials:validate, materials:refresh

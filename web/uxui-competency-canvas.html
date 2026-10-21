@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UX/UI — карта компетенций</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #132238;
+      --muted: #64748b;
+      --line: #cbd5e1;
+      --canvas: #f1f5f9;
+      --card: #ffffff;
+      --foundation: #b45309;
+      --foundation-bg: #fff7ed;
+      --foundation-border: #f59e0b;
+      --core: #1d4ed8;
+      --core-bg: #eff6ff;
+      --core-border: #93c5fd;
+      --optional: #64748b;
+      --optional-bg: #f8fafc;
+      --optional-border: #cbd5e1;
+      --accent: #0f766e;
+      font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: var(--ink); background: var(--canvas); }
+    .page { max-width: 1580px; margin: 0 auto; padding: 22px 22px 30px; }
+    .topbar { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; padding: 2px 2px 16px; }
+    .eyebrow { color: var(--accent); font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    h1 { margin: 5px 0 4px; font-size: clamp(28px, 4vw, 48px); letter-spacing: -.04em; line-height: 1; }
+    .subtitle { margin: 0; color: var(--muted); font-size: 14px; }
+    .summary { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+    .summary span { border: 1px solid var(--line); background: #fff; border-radius: 999px; padding: 7px 11px; font-size: 12px; font-weight: 700; white-space: nowrap; }
+    .summary .f { color: var(--foundation); } .summary .c { color: var(--core); } .summary .o { color: var(--optional); }
+    .banner { border: 1px solid #fde68a; background: #fffbeb; color: #92400e; border-radius: 12px; padding: 10px 13px; font-size: 12px; margin-bottom: 12px; }
+    .toolbar { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+    .toolbar-label { color: var(--muted); font-size: 12px; margin-right: 2px; }
+    .filter { border: 1px solid var(--line); background: #fff; color: var(--ink); border-radius: 999px; padding: 7px 11px; font: inherit; font-size: 12px; font-weight: 700; cursor: pointer; }
+    .filter:hover { border-color: #94a3b8; }
+    .filter.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+    .hint { margin-left: auto; color: var(--muted); font-size: 12px; }
+    .workspace { display: grid; grid-template-columns: minmax(0, 1fr) 310px; gap: 14px; align-items: start; }
+    .canvas-wrap { overflow: auto; border: 1px solid var(--line); border-radius: 18px; background-color: var(--canvas); background-image: radial-gradient(#cbd5e1 1px, transparent 1px); background-size: 22px 22px; box-shadow: inset 0 1px 0 #fff, 0 16px 40px rgba(15, 23, 42, .06); }
+    .canvas-stage { position: relative; }
+    .edges { position: absolute; inset: 0; overflow: visible; pointer-events: none; }
+    .edge { fill: none; stroke: #94a3b8; stroke-width: 1.4; opacity: .55; transition: opacity .15s, stroke .15s; }
+    .edge.is-active { stroke: var(--accent); stroke-width: 2.4; opacity: 1; }
+    .edge.is-muted { opacity: .12; }
+    .competency-card { position: absolute; display: flex; flex-direction: column; gap: 4px; overflow: hidden; border: 1px solid var(--line); border-radius: 14px; background: var(--card); padding: 9px 11px; cursor: pointer; box-shadow: 0 5px 14px rgba(15, 23, 42, .07); transition: transform .15s, box-shadow .15s, opacity .15s, border-color .15s; }
+    .competency-card:hover, .competency-card:focus-visible { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(15, 23, 42, .14); outline: none; border-color: #94a3b8; }
+    .competency-card.is-active { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(15, 118, 110, .18), 0 12px 24px rgba(15, 23, 42, .14); }
+    .competency-card.is-muted { opacity: .22 !important; }
+    .tier-foundation { border-color: var(--foundation-border); background: linear-gradient(180deg, #fffdf8, var(--foundation-bg)); }
+    .tier-core { border-color: var(--core-border); background: linear-gradient(180deg, #ffffff, var(--core-bg)); }
+    .tier-optional { border-color: var(--optional-border); background: var(--optional-bg); opacity: .78; }
+    .card-top { display: flex; justify-content: space-between; align-items: center; gap: 6px; min-height: 17px; }
+    .tier-badge { font-size: 9px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
+    .tier-foundation .tier-badge { color: var(--foundation); }
+    .tier-core .tier-badge { color: var(--core); }
+    .order { color: #94a3b8; font-size: 10px; font-variant-numeric: tabular-nums; }
+    .competency-card h2 { margin: 0; font-size: 12px; line-height: 1.18; letter-spacing: -.01em; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+    .competency-card p { margin: 0; color: var(--muted); font-size: 10px; line-height: 1.28; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+    .detail { position: sticky; top: 12px; border: 1px solid var(--line); border-radius: 18px; background: #fff; padding: 16px; box-shadow: 0 16px 40px rgba(15, 23, 42, .06); min-height: 240px; }
+    .detail[hidden] { display: none; }
+    .detail-close { float: right; border: 0; background: #f1f5f9; color: var(--muted); width: 26px; height: 26px; border-radius: 50%; cursor: pointer; font-size: 16px; }
+    .detail .tier-badge { display: inline-block; margin-bottom: 8px; }
+    .detail h2 { margin: 0 0 6px; font-size: 19px; line-height: 1.15; }
+    .detail .full { color: var(--muted); font-size: 12px; line-height: 1.45; margin: 0 0 12px; }
+    .detail h3 { margin: 12px 0 4px; font-size: 10px; text-transform: uppercase; letter-spacing: .09em; color: var(--muted); }
+    .detail ul { margin: 0; padding-left: 17px; color: var(--ink); font-size: 12px; line-height: 1.45; }
+    .detail li { margin: 2px 0; }
+    .detail .muted { color: var(--muted); font-size: 11px; line-height: 1.4; }
+    @media (max-width: 1050px) { .workspace { grid-template-columns: 1fr; } .detail { position: static; } .summary { justify-content: flex-start; } .topbar { align-items: flex-start; flex-direction: column; } }
+    @media (max-width: 620px) { .page { padding: 14px; } .hint { display: none; } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">AXIONA · Competency Canvas</div>
+        <h1>UX/UI дизайнер</h1>
+        <p class="subtitle">Сеть компетенций: от фундамента к углублённым и необязательным</p>
+      </div>
+      <div class="summary">
+        <span class="f">2 фундаментальных</span>
+        <span class="c">9 основных</span>
+        <span class="o">5 необязательных</span>
+      </div>
+    </header>
+    <div class="banner"><strong>Черновой слой.</strong> Черновая сеть для визуальной проверки структуры. Tier и связи не утверждены; финальная маркировка — в priority/uxui.json. Сгенерировано 2026-10-21.</div>
+    <div class="toolbar">
+      <span class="toolbar-label">Показать:</span>
+      <button class="filter active" data-filter="all">Все</button>
+      <button class="filter" data-filter="foundation">Фундамент</button>
+      <button class="filter" data-filter="core">Основные</button>
+      <button class="filter" data-filter="optional">Необязательные</button>
+      <span class="hint">Наведите на карточку, чтобы увидеть связи; нажмите — подробности</span>
+    </div>
+    <main class="workspace">
+      <div class="canvas-wrap">
+        <div class="canvas-stage" style="width:1524px;height:1367px">
+          <svg class="edges" width="1524" height="1367" viewBox="0 0 1524 1367" aria-hidden="true">
+            <defs>
+              <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8" />
+              </marker>
+            </defs>
+            <path class="edge" data-from="comp_c8e03682adf7" data-to="comp_ab6396631b12" d="M 631.9 742.0 Q 761.9 762.8 891.9 742.0" marker-end="url(#arrow)" />
+        <path class="edge" data-from="comp_ab6396631b12" data-to="comp_c305bec788c2" d="M 891.9 742.0 Q 861.7 513.6 761.9 306.0" marker-end="url(#arrow)" />
+        <path class="edge" data-from="comp_c305bec788c2" data-to="comp_07a221882772" d="M 761.9 306.0 Q 893.8 379.4 1042.1 408.0" marker-end="url(#arrow)" />
+        <path class="edge" data-from="comp_c305bec788c2" data-to="comp_2d2a9ebacafe" d="M 761.9 306.0 Q 947.7 520.5 1191.2 666.3" marker-end="url(#arrow)" />
+        <path class="edge" data-from="comp_07a221882772" data-to="comp_2d2a9ebacafe" d="M 1042.1 408.0 Q 1096.0 549.1 1191.2 666.3" marker-end="url(#arrow)" />
+        <path class="edge" data-from="comp_ab6396631b12" data-to="comp_047348e54050" d="M 891.9 742.0 Q 998.2 870.8 1139.4 960.0" marker-end="url(#arrow)" />
+        <path class="edge" data-from="comp_047348e54050" data-to="comp_ce23f79a5220" d="M 1139.4 960.0 Q 1009.9 1037.6 911.0 1151.7" marker-end="url(#arrow)" />
+        <path class="edge" data-from="comp_bb0fe81fb74f" data-to="comp_f394a15b1499" d="M 612.7 1151.7 Q 513.8 1037.6 384.3 960.0" marker-end="url(#arrow)" />
+        <path class="edge" data-from="comp_ab6396631b12" data-to="comp_f394a15b1499" d="M 891.9 742.0 Q 620.6 810.4 384.3 960.0" marker-end="url(#arrow)" />
+        <path class="edge" data-from="comp_f394a15b1499" data-to="comp_5ef66a02628b" d="M 384.3 960.0 Q 381.9 809.0 332.5 666.3" marker-end="url(#arrow)" />
+        <path class="edge" data-from="comp_ab6396631b12" data-to="comp_5ef66a02628b" d="M 891.9 742.0 Q 618.2 659.4 332.5 666.3" marker-end="url(#arrow)" />
+        <path class="edge" data-from="comp_f394a15b1499" data-to="comp_058ffb486eb7" d="M 384.3 960.0 Q 477.1 691.8 481.6 408.0" marker-end="url(#arrow)" />
+        <path class="edge" data-from="comp_f394a15b1499" data-to="comp_a245c1b4ec0a" d="M 384.3 960.0 Q 898.7 832.9 1347.7 551.6" marker-end="url(#arrow)" />
+        <path class="edge" data-from="comp_a245c1b4ec0a" data-to="comp_88be87bf8498" d="M 1347.7 551.6 Q 1180.7 878.1 1123.9 1240.4" marker-end="url(#arrow)" />
+        <path class="edge" data-from="comp_bb0fe81fb74f" data-to="comp_8984ce9da8c1" d="M 612.7 1151.7 Q 499.2 1179.0 399.8 1240.4" marker-end="url(#arrow)" />
+          </svg>
+          <article class="competency-card tier-foundation" data-id="comp_c8e03682adf7" data-tier="foundation" style="left:521.9px;top:696.0px;width:220px;height:92px;opacity:1" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Фундаментальная</span>
+            <span class="order">1</span>
+          </div>
+          <h2>Теория цвета и колористика</h2>
+          <p>Цвет как физика, восприятие, гармония и культурный контекст.</p>
+        </article>
+          <article class="competency-card tier-foundation" data-id="comp_ab6396631b12" data-tier="foundation" style="left:781.9px;top:696.0px;width:220px;height:92px;opacity:1" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Фундаментальная</span>
+            <span class="order">2</span>
+          </div>
+          <h2>Визуальные основы интерфейса</h2>
+          <p>Базовые визуальные элементы и анимация интерфейса.</p>
+        </article>
+          <article class="competency-card tier-core" data-id="comp_c305bec788c2" data-tier="core" style="left:665.9px;top:260.0px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">3</span>
+          </div>
+          <h2>Визуальная композиция и насмотренность</h2>
+          <p>Композиция, насмотренность и восприятие пользователя.</p>
+        </article>
+          <article class="competency-card tier-core" data-id="comp_07a221882772" data-tier="core" style="left:946.1px;top:362.0px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">4</span>
+          </div>
+          <h2>Визуальная композиция и типографика в интерфейсе</h2>
+          <p>Композиция, типографика, визуальная иерархия и сетки.</p>
+        </article>
+          <article class="competency-card tier-core" data-id="comp_2d2a9ebacafe" data-tier="core" style="left:1095.2px;top:620.3px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">5</span>
+          </div>
+          <h2>Визуальная коммуникация и анимация в интерфейсе</h2>
+          <p>Визуальные коды, стилистика и анимация в интерфейсе.</p>
+        </article>
+          <article class="competency-card tier-core" data-id="comp_047348e54050" data-tier="core" style="left:1043.4px;top:914.0px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">6</span>
+          </div>
+          <h2>Визуальные элементы и визуализация данных</h2>
+          <p>Иконки, графики и диаграммы как визуальные элементы.</p>
+        </article>
+          <article class="competency-card tier-core" data-id="comp_ce23f79a5220" data-tier="core" style="left:815.0px;top:1105.7px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">7</span>
+          </div>
+          <h2>Визуализация данных и бизнес-обоснование решений</h2>
+          <p>Визуализация данных и аргументация проектных решений.</p>
+        </article>
+          <article class="competency-card tier-core" data-id="comp_bb0fe81fb74f" data-tier="core" style="left:516.7px;top:1105.7px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">9</span>
+          </div>
+          <h2>Анализ требований и спецификаций ПО</h2>
+          <p>Анализ бизнес-требований и спецификаций ПО.</p>
+        </article>
+          <article class="competency-card tier-core" data-id="comp_f394a15b1499" data-tier="core" style="left:288.3px;top:914.0px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">10</span>
+          </div>
+          <h2>Адаптивный дизайн интерфейсов</h2>
+          <p>Адаптивные интерфейсы под разные устройства.</p>
+        </article>
+          <article class="competency-card tier-core" data-id="comp_5ef66a02628b" data-tier="core" style="left:236.5px;top:620.3px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">11</span>
+          </div>
+          <h2>Веб-стили и доступность интерфейсов</h2>
+          <p>Стилевые языки и доступность интерфейсов.</p>
+        </article>
+          <article class="competency-card tier-core" data-id="comp_058ffb486eb7" data-tier="core" style="left:385.6px;top:362.0px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">12</span>
+          </div>
+          <h2>Безопасность и ограничения в дизайне</h2>
+          <p>Ограничения и требования безопасности в дизайне.</p>
+        </article>
+          <article class="competency-card tier-optional" data-id="comp_ec6bb5ba0dd5" data-tier="optional" style="left:665.9px;top:80.0px;width:192px;height:92px;opacity:0.65" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Необязательная</span>
+            <span class="order">8</span>
+          </div>
+          <h2>Анализ онлайн-данных и взаимодействия с клиентами</h2>
+          <p>Анализ поведения пользователей и онлайн-данных.</p>
+        </article>
+          <article class="competency-card tier-optional" data-id="comp_a245c1b4ec0a" data-tier="optional" style="left:1251.7px;top:505.6px;width:192px;height:92px;opacity:0.65" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Необязательная</span>
+            <span class="order">13</span>
+          </div>
+          <h2>Веб-технологии и стандарты веб-разработки</h2>
+          <p>Веб-стандарты, сервисы и парадигмы веб-разработки.</p>
+        </article>
+          <article class="competency-card tier-optional" data-id="comp_88be87bf8498" data-tier="optional" style="left:1027.9px;top:1194.4px;width:192px;height:92px;opacity:0.65" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Необязательная</span>
+            <span class="order">14</span>
+          </div>
+          <h2>Веб-технологии AJAX</h2>
+          <p>Принципы AJAX и фреймворки для асинхронных интерфейсов.</p>
+        </article>
+          <article class="competency-card tier-optional" data-id="comp_8984ce9da8c1" data-tier="optional" style="left:303.8px;top:1194.4px;width:192px;height:92px;opacity:0.65" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Необязательная</span>
+            <span class="order">15</span>
+          </div>
+          <h2>Взаимодействие с инженерами и правовые основы</h2>
+          <p>Взаимодействие с инженерами и правовые основы.</p>
+        </article>
+          <article class="competency-card tier-optional" data-id="comp_9d115869b128" data-tier="optional" style="left:80.0px;top:505.6px;width:192px;height:92px;opacity:0.65" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Необязательная</span>
+            <span class="order">16</span>
+          </div>
+          <h2>Базовые естественнонаучные и гуманитарные знания</h2>
+          <p>Естественнонаучная и гуманитарная база.</p>
+        </article>
+        </div>
+      </div>
+      <aside class="detail" id="detail" hidden>
+        <button class="detail-close" id="detail-close" aria-label="Закрыть">×</button>
+        <span class="tier-badge" id="detail-tier"></span>
+        <h2 id="detail-title"></h2>
+        <p class="full" id="detail-full"></p>
+        <h3>Компоненты</h3>
+        <ul id="detail-components"></ul>
+        <h3>Теги и знания</h3>
+        <ul id="detail-tags"></ul>
+        <p class="muted" id="detail-meta"></p>
+      </aside>
+    </main>
+  </div>
+  <script>
+    const DATA = {"title":"UX/UI дизайнер","subtitle":"Сеть компетенций: от фундамента к углублённым и необязательным","note":"Черновая сеть для визуальной проверки структуры. Tier и связи не утверждены; финальная маркировка — в priority/uxui.json.","generatedOn":"2026-10-21","nodes":[{"id":"comp_c8e03682adf7","title":"Теория цвета и колористика","tier":"foundation","tierLabel":"Фундаментальная","order":1,"description":"Цвет как физика, восприятие, гармония и культурный контекст.","fullDescription":"Системное понимание цвета: физика света, физиология восприятия, геометрия гармонии и культурно-психологический контекст.","components":["Физика света и природа цвета","Физиология и психология восприятия цвета","Цветовая гармония и геометрия цвета","Цвет в композиции и визуальной коммуникации","Культурно-психологический контекст цвета"],"tags":["Спектральный состав света","Цветовые модели и пространства","Механизмы цветового зрения","Психологическое воздействие цвета","Цветовой круг и цветовые схемы","Контраст и нюанс в цвете","Цвет как средство композиции","Цвет в визуальной иерархии","Цвет в визуальной коммуникации","Культурные коды цвета","Цветовые предпочтения и ассоциации"],"evidenceState":"needs_review","x":470,"y":400,"width":220,"height":92,"ring":0,"emphasis":"primary","opacity":1},{"id":"comp_ab6396631b12","title":"Визуальные основы интерфейса","tier":"foundation","tierLabel":"Фундаментальная","order":2,"description":"Базовые визуальные элементы и анимация интерфейса.","fullDescription":"Теоретические основы цвета и анимации, применяемые при проектировании визуального слоя интерфейса.","components":["Теория цвета","Теория анимации"],"tags":["Цвет","Теория анимации"],"evidenceState":"supported","x":730,"y":400,"width":220,"height":92,"ring":0,"emphasis":"primary","opacity":1},{"id":"comp_c305bec788c2","title":"Визуальная композиция и насмотренность","tier":"core","tierLabel":"Основная","order":3,"description":"Композиция, насмотренность и восприятие пользователя.","fullDescription":"Понимание основ композиции, развитие насмотренности, учёт того, на что смотрит пользователь, и работа с мудбордами для формирования визуального решения интерфейса.","components":["Основы композиции","Насмотренность","Восприятие пользователя","Мудборды"],"tags":["Основы композиции","Насмотренность","На что смотрит пользователь","Мудборд"],"evidenceState":"supported","x":600,"y":-36,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"comp_07a221882772","title":"Визуальная композиция и типографика в интерфейсе","tier":"core","tierLabel":"Основная","order":4,"description":"Композиция, типографика, визуальная иерархия и сетки.","fullDescription":"Работа с композицией, типографикой, визуальной иерархией и сетками в дизайне интерфейсов.","components":["Композиция в интерфейсе","Типографика в интерфейсе","Визуальная иерархия","Сетки в дизайне"],"tags":["Работа с композицией, типографикой и визуальной иерархией","Типографическая иерархия и читаемость","Построение визуальной иерархии","Сетки в дизайне"],"evidenceState":"needs_review","x":880.2553978233311,"y":66.00462280012556,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"comp_2d2a9ebacafe","title":"Визуальная коммуникация и анимация в интерфейсе","tier":"core","tierLabel":"Основная","order":5,"description":"Визуальные коды, стилистика и анимация в интерфейсе.","fullDescription":"Проектирование визуального слоя интерфейса: композиция, стили, визуальная коммуникация и анимация как средство отстройки от конкурентов.","components":["Визуальная коммуникация в интерфейсе","Композиция и стилистика интерфейса","Анимация в интерфейсе"],"tags":["Визуальная коммуникация","Анимация и визуальная коммуникация","Визуальное единство: композиция и стили","Анимация в интерфейсе","Анимация в проекте как отстройка от конкурентов"],"evidenceState":"supported","x":1029.3761803133227,"y":324.28939453721836,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"comp_047348e54050","title":"Визуальные элементы и визуализация данных","tier":"core","tierLabel":"Основная","order":6,"description":"Иконки, графики и диаграммы как визуальные элементы.","fullDescription":"Разработка иконок и дизайн данных с использованием графиков и диаграмм для визуального представления информации в интерфейсах.","components":["Иконки как визуальные элементы","Дизайн данных: графики и диаграммы"],"tags":["Иконки","Дизайн данных. Графики и диаграммы"],"evidenceState":"supported","x":977.5870760500153,"y":617.9999999999999,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"comp_ce23f79a5220","title":"Визуализация данных и бизнес-обоснование решений","tier":"core","tierLabel":"Основная","order":7,"description":"Визуализация данных и аргументация проектных решений.","fullDescription":"Выбор видов визуализации данных, аргументация проектных решений и учёт бизнес-контекста при проектировании интерфейсов.","components":["Визуализация данных","Аргументация проектных решений","Бизнес-контекст проектирования"],"tags":["Виды визуализации данных","Аргументация решений","Бизнес-эмпатия"],"evidenceState":"supported","x":749.1207824899916,"y":809.705982662656,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"comp_bb0fe81fb74f","title":"Анализ требований и спецификаций ПО","tier":"core","tierLabel":"Основная","order":9,"description":"Анализ бизнес-требований и спецификаций ПО.","fullDescription":"Изучение потребностей и ожиданий заинтересованных сторон, а также оценка функциональных и нефункциональных требований, ограничений и сценариев использования программного продукта.","components":["Анализ бизнес-требований","Анализ спецификаций ПО"],"tags":["Анализ бизнес-требований","Анализ спецификаций ПО"],"evidenceState":"supported","x":450.8792175100084,"y":809.7059826626561,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"comp_f394a15b1499","title":"Адаптивный дизайн интерфейсов","tier":"core","tierLabel":"Основная","order":10,"description":"Адаптивные интерфейсы под разные устройства.","fullDescription":"Создание дизайна сайта с адаптивной версией главной страницы и адаптация интерфейсов под разные устройства.","components":["Основы адаптивного дизайна","Проектирование адаптивных страниц"],"tags":["Как адаптировать интерфейсы","Дизайн сайта с адаптивной версией главной страницы"],"evidenceState":"supported","x":222.41292394998482,"y":618.0000000000001,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"comp_5ef66a02628b","title":"Веб-стили и доступность интерфейсов","tier":"core","tierLabel":"Основная","order":11,"description":"Стилевые языки и доступность интерфейсов.","fullDescription":"Работа со стилевыми языками для описания представления документов и понимание вспомогательных технологий экранного доступа для пользователей с нарушениями зрения.","components":["Стилевые языки описания представления документов","Вспомогательные технологии экранного доступа"],"tags":["Sass","screen reader"],"evidenceState":"supported","x":170.62381968667728,"y":324.2893945372185,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"comp_058ffb486eb7","title":"Безопасность и ограничения в дизайне","tier":"core","tierLabel":"Основная","order":12,"description":"Ограничения и требования безопасности в дизайне.","fullDescription":"Соблюдение ограничений и требований безопасности при работе над дизайн-проектами, включая подготовку и обработку изображений в Adobe Photoshop.","components":["Ограничения и требования безопасности в дизайне","Работа с изображениями в Adobe Photoshop"],"tags":["Соблюдать ограничения и требования безопасности","Работа с изображениями в Adobe Photoshop"],"evidenceState":"supported","x":319.74460217666876,"y":66.00462280012562,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"comp_ec6bb5ba0dd5","title":"Анализ онлайн-данных и взаимодействия с клиентами","tier":"optional","tierLabel":"Необязательная","order":8,"description":"Анализ поведения пользователей и онлайн-данных.","fullDescription":"Анализ онлайн-опыта и поведения пользователей для оптимизации веб-продуктов, а также аргументированное представление клиентам альтернатив для принятия взаимовыгодных решений.","components":["Анализ онлайн-данных и поведения пользователей","Взаимодействие с клиентами и представление альтернатив"],"tags":["Анализ онлайн-опыта и данных","Убеждение клиентов через альтернативы"],"evidenceState":"supported","x":600,"y":-216,"width":192,"height":92,"ring":2,"emphasis":"tertiary","opacity":0.65},{"id":"comp_a245c1b4ec0a","title":"Веб-технологии и стандарты веб-разработки","tier":"optional","tierLabel":"Необязательная","order":13,"description":"Веб-стандарты, сервисы и парадигмы веб-разработки.","fullDescription":"Знание парадигм веб-программирования, веб-сервисов и стандартов W3C для проектирования и разработки веб-приложений.","components":["Парадигмы веб-программирования","Веб-сервисы и взаимодействие приложений","Стандарты и спецификации W3C"],"tags":["Веб-программирование","Веб-сервисы","Стандарты World Wide Web Consortium"],"evidenceState":"supported","x":1185.8508140378144,"y":209.6455314650324,"width":192,"height":92,"ring":2,"emphasis":"tertiary","opacity":0.65},{"id":"comp_88be87bf8498","title":"Веб-технологии AJAX","tier":"optional","tierLabel":"Необязательная","order":14,"description":"Принципы AJAX и фреймворки для асинхронных интерфейсов.","fullDescription":"Знание техник и принципов разработки асинхронных веб-приложений на AJAX, включая программные среды и компоненты фреймворков AJAX.","components":["Принципы и техники AJAX","Фреймворки и среды разработки AJAX"],"tags":["AJAX","Ajax Framework"],"evidenceState":"supported","x":962.0757154121634,"y":898.3544685349676,"width":192,"height":92,"ring":2,"emphasis":"tertiary","opacity":0.65},{"id":"comp_8984ce9da8c1","title":"Взаимодействие с инженерами и правовые основы","tier":"optional","tierLabel":"Необязательная","order":15,"description":"Взаимодействие с инженерами и правовые основы.","fullDescription":"Способность сотрудничать с инженерами для обеспечения взаимопонимания при разработке продукта, а также знание основ права и государственного регулирования в профессиональной деятельности.","components":["Взаимодействие с инженерами при разработке продукта","Правовые и государственные основы профессиональной деятельности"],"tags":["Согласование понимания с инженерами","Обсуждение дизайна и разработки продукта","Основы права и государственного регулирования"],"evidenceState":"supported","x":237.9242845878366,"y":898.3544685349676,"width":192,"height":92,"ring":2,"emphasis":"tertiary","opacity":0.65},{"id":"comp_9d115869b128","title":"Базовые естественнонаучные и гуманитарные знания","tier":"optional","tierLabel":"Необязательная","order":16,"description":"Естественнонаучная и гуманитарная база.","fullDescription":"Общие знания в области физики, философии и теологии, а также управления персоналом и человеческими ресурсами, обеспечивающие широкий профессиональный кругозор.","components":["Естественнонаучные основы","Гуманитарные и мировоззренческие знания","Управление человеческими ресурсами"],"tags":["Physics","Philosophy and Theology","Personnel and Human Resources"],"evidenceState":"supported","x":14.149185962185356,"y":209.64553146503246,"width":192,"height":92,"ring":2,"emphasis":"tertiary","opacity":0.65}],"edges":[{"from":"comp_c8e03682adf7","to":"comp_ab6396631b12"},{"from":"comp_ab6396631b12","to":"comp_c305bec788c2"},{"from":"comp_c305bec788c2","to":"comp_07a221882772"},{"from":"comp_c305bec788c2","to":"comp_2d2a9ebacafe"},{"from":"comp_07a221882772","to":"comp_2d2a9ebacafe"},{"from":"comp_ab6396631b12","to":"comp_047348e54050"},{"from":"comp_047348e54050","to":"comp_ce23f79a5220"},{"from":"comp_bb0fe81fb74f","to":"comp_f394a15b1499"},{"from":"comp_ab6396631b12","to":"comp_f394a15b1499"},{"from":"comp_f394a15b1499","to":"comp_5ef66a02628b"},{"from":"comp_ab6396631b12","to":"comp_5ef66a02628b"},{"from":"comp_f394a15b1499","to":"comp_058ffb486eb7"},{"from":"comp_f394a15b1499","to":"comp_a245c1b4ec0a"},{"from":"comp_a245c1b4ec0a","to":"comp_88be87bf8498"},{"from":"comp_bb0fe81fb74f","to":"comp_8984ce9da8c1"}],"stage":{"width":1524,"height":1367,"offsetX":161.85081403781464,"offsetY":342},"counts":{"foundation":2,"core":9,"optional":5}};
+    const byId = new Map(DATA.nodes.map((node) => [node.id, node]));
+    const cards = [...document.querySelectorAll('.competency-card')];
+    const edges = [...document.querySelectorAll('.edge')];
+    const detail = document.getElementById('detail');
+
+    function connected(id) {
+      const ids = new Set([id]);
+      for (const edge of edges) {
+        if (edge.dataset.from === id) ids.add(edge.dataset.to);
+        if (edge.dataset.to === id) ids.add(edge.dataset.from);
+      }
+      return ids;
+    }
+    function highlight(id) {
+      const ids = connected(id);
+      cards.forEach((card) => {
+        card.classList.toggle('is-active', card.dataset.id === id);
+        card.classList.toggle('is-muted', !ids.has(card.dataset.id));
+      });
+      edges.forEach((edge) => {
+        const active = edge.dataset.from === id || edge.dataset.to === id;
+        edge.classList.toggle('is-active', active);
+        edge.classList.toggle('is-muted', !active);
+      });
+    }
+    function clearHighlight() {
+      cards.forEach((card) => card.classList.remove('is-active', 'is-muted'));
+      edges.forEach((edge) => edge.classList.remove('is-active', 'is-muted'));
+    }
+    function openDetail(id) {
+      const node = byId.get(id);
+      if (!node) return;
+      document.getElementById('detail-tier').textContent = node.tierLabel;
+      document.getElementById('detail-title').textContent = node.title;
+      document.getElementById('detail-full').textContent = node.fullDescription;
+      document.getElementById('detail-components').replaceChildren(...node.components.map((item) => { const li = document.createElement('li'); li.textContent = item; return li; }));
+      document.getElementById('detail-tags').replaceChildren(...node.tags.slice(0, 12).map((item) => { const li = document.createElement('li'); li.textContent = item; return li; }));
+      document.getElementById('detail-meta').textContent = 'Порядок ' + node.order + ' · evidence: ' + node.evidenceState + ' · ring ' + node.ring;
+      detail.hidden = false;
+    }
+    cards.forEach((card) => {
+      card.addEventListener('mouseenter', () => highlight(card.dataset.id));
+      card.addEventListener('mouseleave', clearHighlight);
+      card.addEventListener('focus', () => highlight(card.dataset.id));
+      card.addEventListener('blur', clearHighlight);
+      card.addEventListener('click', () => { highlight(card.dataset.id); openDetail(card.dataset.id); });
+      card.addEventListener('keydown', (event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); card.click(); } });
+    });
+    document.getElementById('detail-close').addEventListener('click', () => { detail.hidden = true; clearHighlight(); });
+    document.addEventListener('keydown', (event) => { if (event.key === 'Escape') { detail.hidden = true; clearHighlight(); } });
+    document.querySelectorAll('.filter').forEach((button) => {
+      button.addEventListener('click', () => {
+        document.querySelectorAll('.filter').forEach((item) => item.classList.remove('active'));
+        button.classList.add('active');
+        const filter = button.dataset.filter;
+        cards.forEach((card) => { card.style.display = filter === 'all' || card.dataset.tier === filter ? '' : 'none'; });
+        edges.forEach((edge) => {
+          const from = byId.get(edge.dataset.from);
+          const to = byId.get(edge.dataset.to);
+          edge.style.display = filter === 'all' || (from && from.tier === filter) || (to && to.tier === filter) ? '' : 'none';
+        });
+        clearHighlight();
+      });
+    });
+  </script>
+</body>
+</html>

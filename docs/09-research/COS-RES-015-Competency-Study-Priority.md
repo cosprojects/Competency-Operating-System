@@ -153,7 +153,22 @@ npm run priority:template -- --domain it --profession uxui --source review --inc
 7. Координаты — логические единицы; `bounds` фактический, `viewport` минимальный. Рендерер масштабирует/панорамирует.
 8. Детерминизм: одинаковый вход → одинаковый JSON; сортировка по tier, `order`, `competencyId`.
 
-### 6.3. Визуальные правила
+### 6.3. Standalone-страница
+
+```bash
+npm run canvas:page -- --domain it --profession uxui --source review --include-seed
+```
+
+Генерирует `web/uxui-competency-canvas.html`: самодостаточную страницу без внешних зависимостей. На ней:
+- карточки компетенций с коротким описанием и tier-бейджем;
+- SVG-сеть по `prerequisites`;
+- кольца foundation/core/optional;
+- hover подсвечивает связи, клик открывает панель с компонентами и тегами;
+- фильтры по tier.
+
+Для страницы используется **отдельный черновой слой** `visualization/uxui.json`: он позволяет показать все собранные блоки до завершения human-маркировки. Баннер и `status: "draft"` явно говорят, что tier/связи не утверждены. После заполнения `priority/uxui.json` страница может быть пересобрана поверх официальных marks (команда поддерживает `--source catalog`; конфиг визуализации можно заменить).
+
+### 6.4. Визуальные правила
 
 - `foundation` — центр, крупнее, `emphasis: primary`, `nodeVariant: core_root`;
 - `core` — внутреннее кольцо, `secondary`;

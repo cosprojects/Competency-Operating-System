@@ -26,6 +26,7 @@ const EVIDENCE_LABEL: Record<string, string> = {
   onet: "O*NET",
   guidance: "guidance",
   model: "модель COS",
+  program: "программа",
 };
 
 const STATUS_MARK: Record<string, string> = {
@@ -124,6 +125,7 @@ export function renderProfileMarkdown(journal: ProfileJournal): string {
   lines.push(`| Из них универсальная база | ${journal.stats.universalSkills} |`);
   lines.push(`| O*NET Software Skills | ${journal.stats.onetSkills} |`);
   lines.push(`| Guidance-источники | ${journal.stats.guidanceSkills} |`);
+  lines.push(`| Программа (Яндекс Практикум) | ${journal.stats.programSkills} |`);
   lines.push(`| Модель COS (якоря графа) | ${journal.stats.modelSkills} |`);
   lines.push(`| Вне области профиля | ${journal.stats.outOfScope} |`);
   lines.push(`| Не сопоставлено | ${journal.stats.unmapped} |`);
@@ -370,6 +372,17 @@ export function renderProfileMarkdown(journal: ProfileJournal): string {
     lines.push("");
     for (const item of journal.onetMissing) {
       lines.push(`- ${item.socCode}: «${item.workplaceExample}»`);
+    }
+    lines.push("");
+  }
+
+  if (journal.programMissing.length > 0) {
+    lines.push("## Программа: навыки без подтверждения на странице");
+    lines.push("");
+    for (const item of journal.programMissing) {
+      lines.push(
+        `- ${item.professionSlug} → \`${item.targetId}\`: ${item.skill} — ${item.reason}`,
+      );
     }
     lines.push("");
   }

@@ -204,6 +204,39 @@ export function validateMapping(mapping: MappingFile, taxonomy: TaxonomyIndex): 
     if (!rule.reason) errors.push(`watchlist «${rule.leafId}»: нет reason`);
   }
 
+  if (mapping.program) {
+    const program = mapping.program;
+    if (!program.sourceId) errors.push("program: нет sourceId");
+    if (!program.catalogUrl || !/^https?:\/\//.test(program.catalogUrl)) {
+      errors.push("program: плохой catalogUrl");
+    }
+    if (!program.license) errors.push("program: нет license");
+    if (program.professions.length === 0) errors.push("program: нет professions");
+    const programSlugs = new Set<string>();
+    for (const profession of program.professions) {
+      if (!profession.slug) errors.push("program: профессия без slug");
+      if (programSlugs.has(profession.slug)) errors.push(`program: повтор slug «${profession.slug}»`);
+      programSlugs.add(profession.slug);
+      if (!profession.name) errors.push(`program «${profession.slug}»: нет name`);
+      if (!/^[a-z0-9-]+$/.test(profession.slug)) errors.push(`program «${profession.slug}»: slug должен быть латиницей`);
+    }
+    if (program.skills.length === 0) errors.push("program: нет skills");
+    const programKeys = new Set<string>();
+    for (const rule of program.skills) {
+      if (!programSlugs.has(rule.professionSlug)) {
+        errors.push(`program «${rule.skill}»: профессии «${rule.professionSlug}» нет в professions`);
+      }
+      if (!rule.skill) errors.push("program: правило без skill");
+      if (!taxonomy.targets.has(rule.targetId)) {
+        errors.push(`program «${rule.skill}»: цели «${rule.targetId}» нет в таксономии`);
+      }
+      if (!rule.basis) errors.push(`program «${rule.skill}»: нет basis`);
+      const key = `${rule.professionSlug}\u0000${normalizeTitle(rule.skill)}\u0000${rule.targetId}`;
+      if (programKeys.has(key)) errors.push(`program: повтор правила «${key}»`);
+      programKeys.add(key);
+    }
+  }
+
   let outOfScopeCount = 0;
   for (const rule of mapping.outOfScope) {
     outOfScopeCount += 1;

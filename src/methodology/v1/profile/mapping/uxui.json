@@ -555,5 +555,87 @@
       "reason": "Официальной записи в ESCO/O*NET нет. Framer отслеживается как рыночный сигнал; в требования не заносится.",
       "sourceHint": "Нужен рыночный контур (вакансии по официальному API) или партнёрская выгрузка."
     }
-  ]
+  ],
+  "program": {
+    "sourceId": "practicum-design",
+    "catalogUrl": "https://practicum.yandex.ru/catalog/design/",
+    "license": "© Яндекс Практикум. Извлекаются только названия навыков и короткие цитаты; полные тексты не копируются. robots.txt: запросы без query, страницы профессий разрешены.",
+    "professions": [
+      {
+        "slug": "interface-designer",
+        "name": "Дизайнер интерфейсов"
+      },
+      {
+        "slug": "web-designer",
+        "name": "Веб-дизайнер"
+      },
+      {
+        "slug": "graphic-designer",
+        "name": "Графический дизайнер"
+      }
+    ],
+    "skills": [
+      {
+        "professionSlug": "interface-designer",
+        "skill": "FigJam",
+        "targetId": "ui.tools.figjam",
+        "kind": "tool",
+        "basis": "Страница профессии «Дизайнер интерфейсов» перечисляет FigJam в инструментах."
+      },
+      {
+        "professionSlug": "interface-designer",
+        "skill": "Сетки в дизайне",
+        "targetId": "ui.systems.grids",
+        "basis": "Тема урока «Сетки в дизайне» на странице профессии."
+      },
+      {
+        "professionSlug": "interface-designer",
+        "skill": "Пользовательские сценарии и паттерны взаимодействия",
+        "targetId": "ux.process.user-flows",
+        "basis": "Тема урока прямо называет пользовательские сценарии."
+      },
+      {
+        "professionSlug": "interface-designer",
+        "skill": "Юзабилити-тестирование",
+        "targetId": "ux.research.user-testing",
+        "basis": "Инструмент/навык «Юзабилити-тестирование» на странице профессии."
+      },
+      {
+        "professionSlug": "interface-designer",
+        "skill": "UI-кит и дизайн-система: зачем нужны и как с ними работать",
+        "targetId": "ui.systems.components",
+        "basis": "Тема урока про UI-кит и дизайн-систему."
+      },
+      {
+        "professionSlug": "web-designer",
+        "skill": "Целевая аудитория: портрет и признаки",
+        "targetId": "ux.research.personas",
+        "basis": "Тема урока «портрет целевой аудитории» — ближайший артефакт персон; помечено на проверку."
+      },
+      {
+        "professionSlug": "web-designer",
+        "skill": "Прототип",
+        "targetId": "ux.prototyping.interactive",
+        "basis": "Тема урока «Прототип»."
+      },
+      {
+        "professionSlug": "graphic-designer",
+        "skill": "Основы типографики",
+        "targetId": "ui.visual.typography",
+        "basis": "Тема урока «Основы типографики»."
+      },
+      {
+        "professionSlug": "graphic-designer",
+        "skill": "Цвет",
+        "targetId": "ui.visual.color",
+        "basis": "Тема урока «Цвет»."
+      },
+      {
+        "professionSlug": "graphic-designer",
+        "skill": "Основы композиции",
+        "targetId": "ui.visual.layout",
+        "basis": "Тема урока «Основы композиции»."
+      }
+    ]
+  }
 }

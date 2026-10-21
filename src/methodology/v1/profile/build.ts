@@ -1,5 +1,3 @@
-import { mkdir, readFile, writeFile } from "node:fs/promises";
-import path from "node:path";
 import { candidateId } from "../candidate-parser/parse.ts";
 import type {
   CandidateQueue,
@@ -12,6 +10,7 @@ import {
   type MethodologistGraph,
   type MethodologistProfession,
 } from "../methodologist/decide.ts";
+import { cachedJson, cachedText, fetchText, type CacheOptions } from "./cache.ts";
 import { readOccupation, readSkill } from "./esco.ts";
 import { guidanceTextFromResponse, pageContainsQuote } from "./guidance.ts";
 import {
@@ -23,6 +22,7 @@ import {
   validateMapping,
 } from "./mapping.ts";
 import { parseCsv, type OnetSoftwareRow } from "./onet.ts";
+import { parsePracticumProfessionPage } from "./practicum.ts";
 import { indexTaxonomy, validateTaxonomy, type TaxonomyIndex, type TaxonomyTarget } from "./taxonomy.ts";
 import type {
   EscoSkillLink,
@@ -44,12 +44,6 @@ import type {
   TaxonomyFile,
   WatchlistRule,
 } from "./types.ts";
-
-export interface CacheOptions {
-  /** Каталог кеша ответов источников. Без него каждый прогон идёт в сеть. */
-  dir?: string;
-  refresh?: boolean;
-}
 
 export interface BuildProfileInput {
   professionId: string;
@@ -87,7 +81,7 @@ interface PlannedEntry {
   targets: TaxonomyTarget[];
   occupations: OccupationEvidence[];
   evidence: EvidenceLayer;
-  /** Для O*NET/guidance/model описание известно заранее; для ESCO — читается из API. */
+  /** Для O*NET/guidance/model/program описание известно заранее; для ESCO — читается из API. */
   description?: string;
   sourceUrl: string;
   sourceLicense?: string;
@@ -127,47 +121,6 @@ async function mapLimited<T, R>(
 function fileKey(uri: string): string {
   const tail = uri.split("/").filter(Boolean).pop() ?? uri;
   return tail.replace(/[^a-zA-Z0-9._-]/g, "_").slice(0, 120);
-}
-
-async function cachedJson<T>(
-  cache: CacheOptions | undefined,
-  key: string,
-  loader: () => Promise<T>,
-): Promise<T> {
-  if (!cache?.dir) return loader();
-  const file = path.join(cache.dir, `${key}.json`);
-  if (!cache.refresh) {
-    try {
-      return JSON.parse(await readFile(file, "utf8")) as T;
-    } catch {
-      // кеша нет или он повреждён — идём в сеть
-    }
-  }
-  const value = await loader();
-  await mkdir(cache.dir, { recursive: true });
-  await writeFile(file, `${JSON.stringify(value, null, 2)}\n`, "utf8");
-  return value;
-}
-
-async function cachedText(
-  cache: CacheOptions | undefined,
-  key: string,
-  extension: string,
-  loader: () => Promise<string>,
-): Promise<string> {
-  if (!cache?.dir) return loader();
-  const file = path.join(cache.dir, `${key}.${extension}`);
-  if (!cache.refresh) {
-    try {
-      return await readFile(file, "utf8");
-    } catch {
-      // кеша нет — идём в сеть
-    }
-  }
-  const value = await loader();
-  await mkdir(cache.dir, { recursive: true });
-  await writeFile(file, value, "utf8");
-  return value;
 }
 
 function kindFromSkillType(skillType: string): ProfileKind | undefined {
@@ -485,16 +438,7 @@ export async function buildProfile(input: BuildProfileInput): Promise<ProfileJou
       input.cache,
       `onet-software-skills-${onetConfig.databaseVersion}`,
       "csv",
-      async () => {
-        const response = await input.fetchImpl(onetConfig.csvUrl, {
-          headers: { Accept: "text/csv" },
-          signal: AbortSignal.timeout(60_000),
-        });
-        if (!response.ok) throw new Error(`O*NET ответил ${response.status}`);
-        const candidate = response as unknown as { text?: () => Promise<string> };
-        if (typeof candidate.text !== "function") throw new Error("O*NET не дал CSV текст");
-        return candidate.text();
-      },
+      () => fetchText(input.fetchImpl, onetConfig.csvUrl, "text/csv"),
     );
     const onetRows = csvRowsToOnet(csv);
     for (const occupation of onetConfig.occupations) {
@@ -544,16 +488,9 @@ export async function buildProfile(input: BuildProfileInput): Promise<ProfileJou
     const pages = new Map<string, string | undefined>();
     for (const source of sources) {
       try {
-        const html = await cachedText(input.cache, `guidance-${source.id}`, "html", async () => {
-          const response = await input.fetchImpl(source.fetchUrl ?? source.url, {
-            headers: { Accept: "text/html,application/json" },
-            signal: AbortSignal.timeout(30_000),
-          });
-          if (!response.ok) throw new Error(`ответ ${response.status}`);
-          const candidate = response as unknown as { text?: () => Promise<string> };
-          if (typeof candidate.text !== "function") throw new Error("нет текста страницы");
-          return candidate.text();
-        });
+        const html = await cachedText(input.cache, `guidance-${source.id}`, "html", () =>
+          fetchText(input.fetchImpl, source.fetchUrl ?? source.url, "text/html,application/json"),
+        );
         pages.set(source.id, html);
       } catch {
         pages.set(source.id, undefined);
@@ -642,6 +579,83 @@ export async function buildProfile(input: BuildProfileInput): Promise<ProfileJou
     });
   }
 
+  // Программа: страница профессии Яндекс Практикума. Навык обязан найтись в инструментах или темах.
+  const programMissing: ProfileJournal["programMissing"] = [];
+  const programUsed = new Map<string, number>();
+  if (input.mapping.program) {
+    const program = input.mapping.program;
+    const pages = new Map<string, { name: string; url: string; items: string[] }>();
+    for (const profession of program.professions) {
+      try {
+        const html = await cachedText(
+          input.cache,
+          `practicum-${profession.slug}`,
+          "html",
+          () =>
+            fetchText(
+              input.fetchImpl,
+              `https://practicum.yandex.ru/${profession.slug}/`,
+              "text/html",
+            ),
+        );
+        const page = parsePracticumProfessionPage(html, profession.slug);
+        pages.set(profession.slug, {
+          name: profession.name,
+          url: page.url,
+          items: page.skills,
+        });
+      } catch (error) {
+        const message = error instanceof Error ? error.message : "страница не получена";
+        programMissing.push({
+          professionSlug: profession.slug,
+          skill: "*",
+          targetId: "*",
+          reason: message,
+        });
+      }
+    }
+    for (const rule of program.skills) {
+      const page = pages.get(rule.professionSlug);
+      if (!page) {
+        programMissing.push({
+          professionSlug: rule.professionSlug,
+          skill: rule.skill,
+          targetId: rule.targetId,
+          reason: "страница профессии не получена",
+        });
+        continue;
+      }
+      const found = page.items.find((item) =>
+        normalizeQuote(item).includes(normalizeQuote(rule.skill)),
+      );
+      if (!found) {
+        programMissing.push({
+          professionSlug: rule.professionSlug,
+          skill: rule.skill,
+          targetId: rule.targetId,
+          reason: "навык не найден на странице профессии",
+        });
+        continue;
+      }
+      const { targetIds, targets } = resolveTargets(taxonomy, rule);
+      planned.push({
+        recordId: `program:${program.sourceId}:${rule.professionSlug}:${normalizeTitle(rule.skill)}`,
+        title: rule.skill,
+        skillType: "knowledge",
+        rule,
+        targetIds,
+        targets,
+        occupations: [],
+        evidence: "program",
+        description: found,
+        sourceUrl: page.url,
+        sourceLicense: "© Яндекс Практикум",
+        sourceNote: `Яндекс Практикум — ${page.name}`,
+      });
+      programUsed.set(rule.professionSlug, (programUsed.get(rule.professionSlug) ?? 0) + 1);
+    }
+  }
+
   const loaded = await mapLimited(planned, 4, async (item): Promise<LoadedPlanned> => {
     if (item.description !== undefined) return { ...item, description: item.description };
     try {
@@ -676,7 +690,7 @@ export async function buildProfile(input: BuildProfileInput): Promise<ProfileJou
       targetIds: item.targetIds,
       mappingBasis: item.rule.basis,
       needsReview:
-        (item.rule.needsReview ?? (item.evidence === "guidance" || item.evidence === "model"))
+        (item.rule.needsReview ?? (item.evidence === "guidance" || item.evidence === "model" || item.evidence === "program"))
         || item.description.length === 0,
       recordId: item.recordId,
       sourceUrl: item.sourceUrl,
@@ -735,6 +749,7 @@ export async function buildProfile(input: BuildProfileInput): Promise<ProfileJou
     "universal",
     "onet",
     "guidance",
+    "program",
   ]);
   const hasExternalEvidence = (entryIds: string[]): boolean =>
     entryIds.some((id) => {
@@ -843,6 +858,16 @@ export async function buildProfile(input: BuildProfileInput): Promise<ProfileJou
       usedCount: guidanceUsed.get(source.id) ?? 0,
     });
   }
+  if (input.mapping.program) {
+    externalSources.push({
+      id: input.mapping.program.sourceId,
+      kind: "program",
+      title: "Яндекс Практикум — профессии дизайна",
+      url: input.mapping.program.catalogUrl,
+      license: input.mapping.program.license,
+      usedCount: entries.filter((entry) => entry.evidence === "program").length,
+    });
+  }
 
   const leafStatuses = new Map<string, LeafStatus>();
   for (const branch of branches) {
@@ -896,6 +921,7 @@ export async function buildProfile(input: BuildProfileInput): Promise<ProfileJou
     modelMissing,
     guidanceMissing,
     onetMissing,
+    programMissing,
     externalSources,
     graphFit: {
       counts,
@@ -911,6 +937,7 @@ export async function buildProfile(input: BuildProfileInput): Promise<ProfileJou
       onetSkills: entries.filter((entry) => entry.evidence === "onet").length,
       guidanceSkills: entries.filter((entry) => entry.evidence === "guidance").length,
       modelSkills: entries.filter((entry) => entry.evidence === "model").length,
+      programSkills: entries.filter((entry) => entry.evidence === "program").length,
       outOfScope: outOfScope.length,
       unmapped: unmapped.length,
       leavesSupported,

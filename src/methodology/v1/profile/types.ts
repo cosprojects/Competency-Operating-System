@@ -11,7 +11,7 @@ export type ProfileScope = "profession" | "universal";
 export type LeafStatus = "supported" | "model_only" | "watchlist" | "no_evidence";
 export type OccupationRole = "core" | "supporting" | "universal";
 export type SkillRelation = "essential" | "optional";
-export type EvidenceLayer = "occupation" | "universal" | "onet" | "guidance" | "model";
+export type EvidenceLayer = "occupation" | "universal" | "onet" | "guidance" | "model" | "program";
 
 export interface TaxonomyLeaf {
   id: string;
@@ -137,6 +137,29 @@ export interface WatchlistRule {
   sourceHint?: string;
 }
 
+/** Образовательная программа с открытой страницей и списком тем/инструментов. */
+export interface ProgramProfessionRef {
+  slug: string;
+  name: string;
+}
+
+export interface ProgramSkillRule {
+  professionSlug: string;
+  /** Название навыка или темы на странице программы. */
+  skill: string;
+  targetId: string;
+  basis: string;
+  needsReview?: boolean;
+}
+
+export interface ProgramConfig {
+  sourceId: string;
+  catalogUrl: string;
+  license: string;
+  professions: ProgramProfessionRef[];
+  skills: ProgramSkillRule[];
+}
+
 export interface OutOfScopeRule {
   title?: string;
   regex?: string;
@@ -158,6 +181,7 @@ export interface MappingFile {
   modelSkills?: ModelSkillRule[];
   guidanceSources?: GuidanceSource[];
   guidanceSkills?: GuidanceSkillRule[];
+  program?: ProgramConfig;
   watchlist?: WatchlistRule[];
   outOfScope: OutOfScopeRule[];
 }
@@ -299,9 +323,10 @@ export interface ProfileJournal {
   modelMissing: Array<{ leafId: string; nodeId: string; reason: string }>;
   guidanceMissing: Array<{ sourceId: string; targetId: string; reason: string }>;
   onetMissing: Array<{ socCode: string; workplaceExample: string }>;
+  programMissing: Array<{ professionSlug: string; skill: string; targetId: string; reason: string }>;
   externalSources: Array<{
     id: string;
-    kind: "onet" | "guidance";
+    kind: "onet" | "guidance" | "program";
     title: string;
     url: string;
     license: string;
@@ -321,6 +346,7 @@ export interface ProfileJournal {
     onetSkills: number;
     guidanceSkills: number;
     modelSkills: number;
+    programSkills: number;
     outOfScope: number;
     unmapped: number;
     leavesSupported: number;
@@ -351,9 +377,10 @@ export interface ProfileReviewFile {
   modelMissing: Array<{ leafId: string; nodeId: string; reason: string }>;
   guidanceMissing: Array<{ sourceId: string; targetId: string; reason: string }>;
   onetMissing: Array<{ socCode: string; workplaceExample: string }>;
+  programMissing: Array<{ professionSlug: string; skill: string; targetId: string; reason: string }>;
   externalSources: Array<{
     id: string;
-    kind: "onet" | "guidance";
+    kind: "onet" | "guidance" | "program";
     title: string;
     url: string;
     license: string;

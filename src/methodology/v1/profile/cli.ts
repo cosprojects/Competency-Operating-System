@@ -93,6 +93,7 @@ async function main(): Promise<void> {
     modelMissing: journal.modelMissing,
     guidanceMissing: journal.guidanceMissing,
     onetMissing: journal.onetMissing,
+    programMissing: journal.programMissing,
     externalSources: journal.externalSources,
   };
 
@@ -122,7 +123,7 @@ async function main(): Promise<void> {
     `Универсальная база: ${journal.stats.universalSkills} записей из ${journal.stats.universalOccupations} доменных занятий`,
   );
   console.log(
-    `Внешние источники: O*NET ${journal.stats.onetSkills}, guidance ${journal.stats.guidanceSkills}, модель COS ${journal.stats.modelSkills}`,
+    `Внешние источники: O*NET ${journal.stats.onetSkills}, guidance ${journal.stats.guidanceSkills}, программа ${journal.stats.programSkills}, модель COS ${journal.stats.modelSkills}`,
   );
   console.log(
     `Статусы листьев: supported ${journal.stats.leavesSupported}, model_only ${journal.stats.modelOnlyLeaves}, watchlist ${journal.stats.watchlistLeaves}, gaps ${journal.gaps.length}`,

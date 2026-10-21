@@ -545,6 +545,87 @@ describe("профиль компетенций профессии", () => {
     assert.deepEqual(watchJournal.gaps, []);
   });
 
+  it("подтверждает лист программой Яндекс Практикума", async () => {
+    const pageHtml =
+      '<html><body><div class="tool-item">FigJam</div><li class="lesson">Сетки в дизайне</li></body></html>';
+    const programMapping: MappingFile = {
+      ...mapping,
+      program: {
+        sourceId: "practicum-design",
+        catalogUrl: "https://practicum.yandex.ru/catalog/design/",
+        license: "© Яндекс Практикум",
+        professions: [{ slug: "interface-designer", name: "Дизайнер интерфейсов" }],
+        skills: [
+          {
+            professionSlug: "interface-designer",
+            skill: "Сетки в дизайне",
+            targetId: "ui.visual.color",
+            basis: "тема урока",
+          },
+        ],
+      },
+    };
+    const journal = await buildProfile({
+      professionId: "uxui",
+      taxonomy,
+      mapping: programMapping,
+      graph,
+      professions,
+      fetchImpl: createSourceFetch({
+        "https://practicum.yandex.ru/interface-designer/": pageHtml,
+      }),
+      generatedOn: "2026-10-21",
+    });
+    const entry = journal.entries.find((item) => item.evidence === "program");
+    assert.equal(entry?.title, "Сетки в дизайне");
+    assert.equal(entry?.targetId, "ui.visual.color");
+    assert.equal(entry?.needsReview, true);
+    assert.equal(journal.stats.programSkills, 1);
+    assert.deepEqual(journal.programMissing, []);
+    assert.ok(journal.externalSources.some((source) => source.kind === "program"));
+    const color = journal.branches
+      .flatMap((branch) => branch.groups)
+      .flatMap((group) => group.leaves)
+      .find((leaf) => leaf.id === "ui.visual.color");
+    assert.equal(color?.status, "supported");
+  });
+
+  it("сообщает, если навыка программы нет на странице", async () => {
+    const programMapping: MappingFile = {
+      ...mapping,
+      program: {
+        sourceId: "practicum-design",
+        catalogUrl: "https://practicum.yandex.ru/catalog/design/",
+        license: "© Яндекс Практикум",
+        professions: [{ slug: "interface-designer", name: "Дизайнер интерфейсов" }],
+        skills: [
+          {
+            professionSlug: "interface-designer",
+            skill: "Несуществующий навык",
+            targetId: "ui.visual.color",
+            basis: "x",
+          },
+        ],
+      },
+    };
+    const journal = await buildProfile({
+      professionId: "uxui",
+      taxonomy,
+      mapping: programMapping,
+      graph,
+      professions,
+      fetchImpl: createSourceFetch({
+        "https://practicum.yandex.ru/interface-designer/": "<p>другая страница</p>",
+      }),
+      generatedOn: "2026-10-21",
+    });
+    assert.equal(journal.stats.programSkills, 0);
+    assert.deepEqual(
+      journal.programMissing.map((item) => item.reason),
+      ["навык не найден на странице профессии"],
+    );
+  });
+
   it("рендерит дерево, пробелы и ограничения без записи в граф", async () => {
     const journal = await buildFixture();
     const markdown = renderProfileMarkdown(journal);
@@ -601,6 +682,8 @@ describe("эталонная таксономия и маппинг UX/UI", () =
     assert.equal((realMapping.modelSkills ?? []).length, 2);
     assert.equal((realMapping.guidanceSkills ?? []).length, 1);
     assert.equal((realMapping.watchlist ?? []).length, 2);
+    assert.equal((realMapping.program?.skills ?? []).length, 10);
+    assert.equal((realMapping.program?.professions ?? []).length, 3);
     const graphFile = JSON.parse(
       readFileSync(`${root}/src/methodology/v1/design-competency-graph.json`, "utf8"),
     ) as { nodes: Array<{ id: string; title: string; shortTitle: string; description?: string; behavioralAnchors?: Record<string, string> }> };

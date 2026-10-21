@@ -9,7 +9,9 @@
       "description": "Проверяет парсер, профиль, методолога и расчёт прогресса до сетевых вызовов.",
       "executor": "agent",
       "command": "npm",
-      "args": ["test"]
+      "args": [
+        "test"
+      ]
     },
     {
       "id": "typecheck",
@@ -18,7 +20,10 @@
       "description": "Останавливает пайплайн, если TypeScript не сходится.",
       "executor": "agent",
       "command": "npm",
-      "args": ["run", "typecheck"]
+      "args": [
+        "run",
+        "typecheck"
+      ]
     },
     {
       "id": "parse-candidates",
@@ -27,39 +32,68 @@
       "description": "Собирает формулировки ESCO по открытым профессиям. O*NET добавляется при наличии ONET_API_KEY. Граф не меняется.",
       "executor": "agent",
       "command": "npm",
-      "args": ["run", "parse:candidates"],
+      "args": [
+        "run",
+        "parse:candidates"
+      ],
       "produces": "data/competency-candidates/queue.json"
     },
     {
-      "id": "profile-build",
+      "id": "program-extract",
       "order": 4,
+      "title": "Программы дизайнерских профессий",
+      "description": "Извлекает профессии дизайна и их навыки со страниц Яндекс Практикума (robots.txt: без query). Пишет журнал источников, граф не меняет.",
+      "executor": "agent",
+      "command": "npm",
+      "args": [
+        "run",
+        "program:extract"
+      ],
+      "produces": "data/profile/practicum-design.json"
+    },
+    {
+      "id": "profile-build",
+      "order": 5,
       "title": "Профиль профессии",
       "description": "Собирает дерево компетенций из занятий ESCO по эталонной таксономии и курируемому маппингу. Показывает подтверждённые листья, пробелы и навыки вне области. В граф не пишет.",
       "executor": "agent",
       "command": "npm",
-      "args": ["run", "profile:build", "--", "--profession", "uxui"],
+      "args": [
+        "run",
+        "profile:build",
+        "--",
+        "--profession",
+        "uxui"
+      ],
       "produces": "data/profile/uxui.json"
     },
     {
       "id": "methodologist-patch",
-      "order": 5,
+      "order": 6,
       "title": "Патч методолога",
       "description": "Раскладывает очередь по узлам графа. Якоря не сочиняет. В граф не пишет.",
       "executor": "agent",
       "command": "npm",
-      "args": ["run", "methodologist:patch"],
-      "requires": ["data/competency-candidates/queue.json"],
+      "args": [
+        "run",
+        "methodologist:patch"
+      ],
+      "requires": [
+        "data/competency-candidates/queue.json"
+      ],
       "produces": "data/competency-candidates/methodologist-patch.json"
     },
     {
       "id": "accept-patch",
-      "order": 6,
+      "order": 7,
       "title": "Приёмка патча",
       "description": "Человек переносит принятые требования в граф и поднимает methodologyVersion. Агент этот шаг не выполняет.",
       "executor": "human",
       "command": "",
       "args": [],
-      "requires": ["data/competency-candidates/methodologist-patch.json"]
+      "requires": [
+        "data/competency-candidates/methodologist-patch.json"
+      ]
     }
   ]
 }

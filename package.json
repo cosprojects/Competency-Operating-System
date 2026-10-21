@@ -9,6 +9,7 @@
     "test": "node --experimental-strip-types --test tests/*.test.ts",
     "parse:candidates": "node --experimental-strip-types src/methodology/v1/candidate-parser/cli.ts",
     "profile:build": "node --experimental-strip-types src/methodology/v1/profile/cli.ts",
+    "program:extract": "node --experimental-strip-types src/methodology/v1/profile/practicum-cli.ts",
     "collect:requirements": "node --experimental-strip-types src/methodology/v1/requirement-collection/cli.ts",
     "match:identities": "node --experimental-strip-types src/methodology/v1/requirement-collection/identity-cli.ts",
     "methodologist:patch": "node --experimental-strip-types src/methodology/v1/methodologist/cli.ts",

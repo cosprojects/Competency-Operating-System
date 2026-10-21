@@ -13,6 +13,7 @@ import { cleanText, normalizeTitle } from "../src/methodology/v1/competency/sour
 import { searchOnetOccupations, collectOnetTags } from "../src/methodology/v1/competency/sources/onet.ts";
 import { evaluateCandidateGold } from "../src/methodology/v1/competency/evaluate.ts";
 import { validateReconcileResponse } from "../src/methodology/v1/competency/reconcile.ts";
+import { materializeSeed } from "../src/methodology/v1/competency/seeds.ts";
 import type { ReconcileResponse } from "../src/methodology/v1/competency/llm/schemas.ts";
 
 const root = process.cwd();
@@ -200,6 +201,22 @@ describe("компетенции: теги, кандидаты и блоки", (
     assert.equal(result.metrics.precision, 1);
     assert.equal(result.metrics.recall, 1);
     assert.equal(result.metrics.exactRate, 1);
+  });
+
+  it("материализует top-down seed по подсказкам и не притворяется LLM", () => {
+    const seed = {
+      id: "color-theory",
+      title: "Теория цвета и колористика",
+      definition: "Системное понимание цвета и композиции в дизайне.",
+      professionIds: ["it.uxui"],
+      tagHints: ["цвет", "композиц", "визуальн"],
+      maxTags: 10,
+    };
+    const result = materializeSeed(seed, tagsFixture.tags, "2026-10-21");
+    assert.ok(result.candidate.tagIds.length >= 2);
+    assert.equal(result.missing, false);
+    assert.equal(result.candidate.llmMeta.model, "human-seed");
+    assert.ok(result.candidate.tagIds.some((id) => tagsFixture.tags.find((tag) => tag.id === id)?.title === "Цвет"));
   });
 
   it("объединяет кандидатов одного предмета и не теряет теги", () => {

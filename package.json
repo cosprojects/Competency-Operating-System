@@ -31,7 +31,8 @@
     "materials:validate": "node --experimental-strip-types src/methodology/v1/competency/cli/materials-validate.ts",
     "materials:refresh": "node --experimental-strip-types src/methodology/v1/competency/cli/materials-refresh.ts",
     "competency:evaluate": "node --experimental-strip-types src/methodology/v1/competency/cli/evaluate.ts",
-    "competency:reconcile": "node --experimental-strip-types src/methodology/v1/competency/cli/reconcile.ts"
+    "competency:reconcile": "node --experimental-strip-types src/methodology/v1/competency/cli/reconcile.ts",
+    "competency:seed": "node --experimental-strip-types src/methodology/v1/competency/cli/seed.ts"
   },
   "dependencies": {
     "@prisma/client": "^6.4.0",

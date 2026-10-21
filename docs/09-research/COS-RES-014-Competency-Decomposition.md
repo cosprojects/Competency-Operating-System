@@ -1,7 +1,7 @@
 ---
 id: COS-RES-014
 title: Сборка каталога компетенций, компонентов и тегов
-version: 1.2.0
+version: 1.3.0
 status: Draft
 owner: Research Team
 last_updated: 2026-10-21
@@ -72,6 +72,9 @@ references:
 - Практикум — инструменты и темы уроков.
 Теги дедуплицируются по `(normalized title, kind)`, sourceRefs агрегируются. Выход: `data/competency/tags-it.json`.
 
+### Stage 2b. Top-down seed (каноническая гранулярность)
+`npm run competency:seed -- --domain it --seed color-theory` материализует человеческий seed из `src/methodology/v1/competency/seeds/it.json`: название, определение, профессии и подсказки тегов. Seed — это зафиксированное намерение человека, а не вывод LLM; он задаёт уровень «Теория цвета», которого bottom-up Pass A из учебных тем не выводит. Материализованные кандидаты идут в тот же Pass B и проходят те же валидаторы, но всё равно требуют human-приёмки.
+
 ### Stage 3. Кандидаты (Pass A)
 `npm run competency:candidates -- --domain it [--fixture file] [--limit-batches N] [--budget-usd N]`.
 LLM предлагает группы тегов; батчи собираются внутри одной профессии (общий алфавитный порядок разрезал бы связанные темы). Валидатор проверяет: все `tagId` из батча, ≥2 тегов, без tool/transversal, без дублей названий, каждый тег назначен или в `unassignedTagIds`. Выход: `data/competency/candidates-it.json` + review.
@@ -119,7 +122,7 @@ LLM предлагает 2–8 компонентов, 1–12 тегов в ка
 
 ```
 sources:discover, professions:collect, tags:collect,
-competency:candidates, competency:reconcile, competency:build, competency:review, competency:evaluate,
+competency:seed, competency:candidates, competency:reconcile, competency:build, competency:review, competency:evaluate,
 catalog:validate, competency:compose,
 materials:sources, materials:collect, materials:classify, materials:review,
 materials:validate, materials:refresh
@@ -133,6 +136,7 @@ materials:validate, materials:refresh
 - 14 IT-профессий собраны; полный `tags:collect` дал **1512 тегов** (knowledge 376, skill 235, tool 901).
 - Pass A по всем IT-тегам: **114 кандидатов**, 322 неназначенных тега, 115 замечаний, 49 вызовов, ~$0.12; reconcile: **114 → 94** кандидата, 3 вызова, issues 0.
 - Pass B (первые 20 кандидатов): **20 блоков**, 26 новых тегов, issues 0, ~$0.015. Это черновики `needs_review`.
+- Seed-эталон: `color-theory` → 6 тегов → Pass B дал **5 компонентов, 11 тегов**, issues 0, $0.0019; материалы — 3 статьи Wikipedia, классификация 3 связи, `materials:validate` — 0 ошибок. Блок `needs_review`, не принят.
 - Материалы: 20 блоков → **53 статьи Wikipedia** (сбор ~4 мин); классификация: 24 связи, 14/20 компетенций с материалом, issues 29 (в основном корректные отказы от нерелевантных статей); `materials:validate` — 0 ошибок. Stepik 502, Internet Archive по этим запросам не дал видео; YouTube без ключа.
 - Gold-set протокол: `competency:evaluate`, фикстура `gold-candidates.json`; на ней precision/recall/exact = 1. На живом Pass A — **0/5**: кандидаты дробят «Теорию цвета» на визуальные подтемы; reconcile этого не исправляет. Батчинг по профессиям (UX/UI: 34 кандидата, 9 вызовов, ~$0.027) разрыв сохраняет.
 - Вывод: bottom-up группировка даёт гранулярность «учебных тем», а не каноническую компетенцию уровня «Теория цвета». Нужно продуктовое решение: (а) принять granularity как есть, (б) top-down seed/рубрика канонических компетенций, (в) отдельный Pass «свести подтемы в компетенцию» с human-приёмкой. Это открытый вопрос, не приёмка.
@@ -163,3 +167,4 @@ materials:validate, materials:refresh
 | 1.0.0 | 2026-10-21 | Метод: реестр источников, профессии, теги, Pass A/B, приёмка, профиль, материалы; реализован каркас команд и тестов |
 | 1.1.0 | 2026-10-21 | Полный сбор IT-тегов (1512), Pass A (114→94 после reconcile), Pass B (20 блоков), материалы (53 статьи, 24 связи), `competency:evaluate` и gold-set протокол; зафиксирован разрыв качества Pass A на живой разметке |
 | 1.2.0 | 2026-10-21 | Батчи Pass A сгруппированы по профессии; UX/UI: 34 кандидата, 95 unassigned, 18 issues. Gold по-прежнему 0/5; зафиксировано решение о granularity |
+| 1.3.0 | 2026-10-21 | Добавлен top-down seed канонических компетенций (`competency:seed`, `seeds/it.json`). Seed «Теория цвета» → 5 компонентов, 11 тегов, 3 материала; блок остаётся `needs_review` |

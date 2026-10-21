@@ -1,0 +1,108 @@
+{
+  "patchVersion": "1.0.0",
+  "writesToGraph": false,
+  "kind": "queue-review",
+  "basis": "Проверка текущей очереди после смены сопоставления. Перевод повторно не выполнялся. Выводы аудита не пересматривались заново: сверено, какие из них держатся на исходах этого прогона. Сопоставление, граф, якоря и пороги не менялись.",
+  "uses": "src/methodology/v1/experiments/anchor-audit-patch.json",
+  "currentRun": {
+    "queue": "data/competency-candidates/queue.json",
+    "automaticPatch": "data/competency-candidates/methodologist-patch.json",
+    "matchText": "absent",
+    "counts": {
+      "add_requirement": 0,
+      "already_required": 0,
+      "ambiguous": 24,
+      "needs_node": 327,
+      "reject_tool": 10
+    }
+  },
+  "whatCarriesOver": {
+    "doNotAdd": "Все 254 формулировки, которые аудит запретил делать требованиями, в этом прогоне требованием не стали. marketing management и create website wireframe лежат в needs_node.",
+    "sameActionNowWithoutNode": 18,
+    "sameActionStillInReview": 4,
+    "sourceTooGeneralNowWithoutNode": 39,
+    "wrongOccupationNowWithoutNode": 38,
+    "namedToolNowWithoutNode": 90,
+    "softwareProcessNowWithoutNode": 23,
+    "actionDiffersNowWithoutNode": 29,
+    "tasteNowWithoutNode": 1,
+    "note": "Числа — это исход needs_node, разложенный по уже данным причинам аудита. Новых причин для этих формулировок нет. needs_node здесь значит «фрагмент не повторяет действие узла», а не «компетенции нет»."
+  },
+  "review24": {
+    "readNodeIdAsAction": [
+      {
+        "phrase": "uxui: test system accessibility for users with special needs",
+        "nodeId": "node_ergonomics_human",
+        "why": "В тексте есть слово accessibility. Это то же действие, что L1 эргономики. Алиас оставляет ревью и не создаёт требование. Вывод аудита сохраняется."
+      },
+      {
+        "phrase": "uxui: ICT accessibility standards",
+        "nodeId": "node_ergonomics_human",
+        "why": "То же действие доступности. Требованием не становится."
+      },
+      {
+        "phrase": "graphic: 3D modelling",
+        "nodeId": "node_3d_spatial_vis",
+        "why": "Имя навыка совпадает с действием узла. Это ревью, не второе действие и не новый узел."
+      },
+      {
+        "phrase": "graphic: motion graphics",
+        "nodeId": "node_motion_kinetics",
+        "why": "Имя навыка совпадает с действием кинетики. Фрагмент добавляет названия программ, но решение остаётся ревью."
+      }
+    ],
+    "nodeIdIsNotTheAction": {
+      "compositionHomonym": {
+        "count": 15,
+        "nodeId": "node_form_comp",
+        "why": "Английский фрагмент содержит composition в смысле сборки изображения в редакторе. Алиас формы ловит это слово. Действие ритма, пропорций и визуального веса фрагмент не показывает. Подсказка узла не читается как соответствие. В аудите часть этих строк уже была инструментом; при переводе слово composition в доказательство не входило, поэтому тогда они были без узла.",
+        "phrases": [
+          "uxui: graphics editor software",
+          "uxui: SketchBook Pro",
+          "uxui: Synfig",
+          "uxui: Microsoft Visio",
+          "uxui: GIMP (graphics editor software)",
+          "graphic: Microsoft Visio",
+          "graphic: Capture One",
+          "graphic: Synfig",
+          "graphic: use word processing software",
+          "graphic: SketchBook Pro",
+          "graphic: GIMP (graphics editor software)",
+          "graphic: operate 3D computer graphics software",
+          "graphic: graphics editor software",
+          "motion: operate 3D computer graphics software",
+          "game: operate 3D computer graphics software"
+        ]
+      },
+      "realTimePair": {
+        "count": 5,
+        "nodeId": "node_3d_spatial_vis",
+        "why": "В якоре L3 есть слова real-time. Два английских слова одного поля дают ревью и не дают требование. Фрагменты описывают технологию, площадку или движок, не сборку 3D-сцены.",
+        "phrases": [
+          "uxui: web based collaborative platforms",
+          "uxui: augmented reality",
+          "motion: augmented reality",
+          "game: augmented reality",
+          "game: HeroEngine"
+        ]
+      }
+    }
+  },
+  "needsNode327": {
+    "alreadyJudgedInAudit": 239,
+    "stillUnresolvedFromPriorNeedsNode": 88,
+    "brand": "Все 82 кандидата brand сейчас без узла. Занятие очереди — art director. Вывод аудита о чужом занятии относится ко всей пачке, включая строки, которые аудит по одной не размечал.",
+    "unresolvedExamplesStillHold": [
+      "uxui: assess users' interaction with ICT applications — семейство исследований, не пробел графа.",
+      "3D lighting, 3D texturing, rig 3D characters, create 3D characters — срезы node_3d_spatial_vis. Отдельные узлы не предлагаются.",
+      "graphic: graphic design — определение поля, для привязки слишком общее.",
+      "game: formulate game rules, compose digital game story, create digital game characters, digital game genres — не доказательство пробела node_game_loops."
+    ],
+    "doNotTreatAsGapList": "327 — смешанный отказ: то же действие на другом языке, слишком общий источник, инструмент, процесс разработки, чужое занятие, другое действие. Счётчик нельзя читать как список недостающих компетенций."
+  },
+  "stageDecision": {
+    "automaticRequirementsAreSafe": true,
+    "queueIsACompletenessTest": false,
+    "conclusion": "Отказы объяснимы по фрагменту и не создают ложных требований. Этого достаточно, чтобы не подгонять граф под очередь. Этого недостаточно, чтобы по 327 строкам судить о полноте модели. Следующая проверка — качество уже записанных действий и уровней L0–L3. Основание перехода — корректность отказов, а не число требований."
+  }
+}

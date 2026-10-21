@@ -1,4 +1,15 @@
-
+---
+id: COS-004
+title: Company Narrative
+version: 1.0.0
+status: Draft
+owner: Product Team
+last_updated: 2026-10-15
+references:
+  - COS-001
+  - COS-002
+  - COS-003
+---
 
 # COS Foundation — Company Narrative
 

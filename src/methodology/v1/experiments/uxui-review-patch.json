@@ -1,0 +1,131 @@
+{
+  "patchVersion": "1.0.0",
+  "writesToGraph": false,
+  "professionId": "uxui",
+  "basis": "Ручной разбор 13 утверждений, которые автоматический методолог не сделал уверенными требованиями. Граф не менялся.",
+  "decisions": [
+    {
+      "statementId": "mosap-research",
+      "phrase": "Изучает аудиторию, конкурентов и боли пользователей",
+      "verdict": "covered_by_existing",
+      "nodeId": "node_ux_research",
+      "requirement": "already_in_track",
+      "gap": "assessment",
+      "rationale": "Действие — понять, для кого продукт и в чём боль. Это покрывают якоря исследований: референсы конкурентов, интервью, проверка на людях. Узел уже в треке UX/UI. Кейсы трека этот узел не проверяют."
+    },
+    {
+      "statementId": "mosap-test",
+      "phrase": "Проверяет решение юзабилити-тестами и метриками",
+      "verdict": "clarify",
+      "nodeId": null,
+      "requirement": "do_not_add",
+      "gap": null,
+      "rationale": "В одной фразе два действия. Юзабилити-тест покрывает node_ux_research, он уже в треке. «Метрики» тянут к node_prod_metrics, но фрагмент не показывает работу с воронкой или JTBD. Требование к метрикам не добавлять, пока нет отдельного фрагмента про измерение продукта."
+    },
+    {
+      "statementId": "esco-ucd",
+      "phrase": "Применяет методы проектирования от пользователя",
+      "verdict": "clarify",
+      "nodeId": null,
+      "requirement": "do_not_add",
+      "gap": null,
+      "rationale": "К сценариям не относится. Совпадение слов «проектирую» и «пользователь» смыслом не является. Фрагмент — только английское имя навыка, без описания действия. Не исследование и не новый узел, пока нет фрагмента, что именно человек делает."
+    },
+    {
+      "statementId": "mosap-prototype",
+      "phrase": "Собирает черновые модели, чтобы проверить функцию",
+      "verdict": "clarify",
+      "nodeId": null,
+      "requirement": "do_not_add",
+      "gap": null,
+      "rationale": "Источник называет артефакт (черновая модель) и цель (проверить функцию), но не отделяет это от сценария или проверки. Слово «прототип» не привязывает действие к node_ux_flows. Нового узла «прототипирование» по этой одной фразе не заводить."
+    },
+    {
+      "statementId": "mosap-ui-surface",
+      "phrase": "Собирает визуальный слой из цвета, шрифта и отступов",
+      "verdict": "covered_by_existing",
+      "nodeId": "node_form_comp",
+      "requirement": "already_in_track",
+      "gap": "assessment",
+      "rationale": "Цвет, шрифт и отступы — применение формы и композиции в интерфейсе, не отдельная компетенция. Узел уже в треке. Анимация в том же предложении к этому узлу не относится и отдельным требованием по одному слову не становится. Кейсы UX/UI форму не проверяют."
+    },
+    {
+      "statementId": "esco-ui",
+      "phrase": "Создаёт компоненты, через которые человек взаимодействует с системой",
+      "verdict": "clarify",
+      "nodeId": null,
+      "requirement": "do_not_add",
+      "gap": null,
+      "rationale": "Английский фрагмент смешивает компоненты, взаимодействие и инструменты. Компоненты близки к node_design_systems, ветвления взаимодействия — к node_ux_flows. Оба узла уже в треке. Выбирать один по слову «компоненты» или «interaction» нельзя."
+    },
+    {
+      "statementId": "esco-a11y",
+      "phrase": "Проверяет доступность системы для людей с особыми потребностями",
+      "verdict": "covered_by_existing",
+      "nodeId": "node_ergonomics_human",
+      "requirement": "already_in_track",
+      "gap": "assessment",
+      "rationale": "Доступность прямо входит в эргономику и восприятие. Узел уже в треке. ENTRY-кейс указан на этот узел, но ситуация в нём про потерю введённых данных, а не про доступность. Это пробел оценивания, не пробел графа."
+    },
+    {
+      "statementId": "mosap-research-depth",
+      "phrase": "Понимает, для кого продукт и какую проблему он решает",
+      "verdict": "covered_by_existing",
+      "nodeId": "node_ux_research",
+      "requirement": "already_in_track",
+      "gap": "assessment",
+      "rationale": "Вопрос «для кого и какую проблему решаем» — постановка исследования, не продуктовая метрика. Подсказка автоматики в сторону node_prod_metrics не принимается. Узел исследований уже в треке и кейсом не закрыт."
+    },
+    {
+      "statementId": "esco-patterns",
+      "phrase": "Использует паттерны пользовательского интерфейса",
+      "verdict": "clarify",
+      "nodeId": null,
+      "requirement": "do_not_add",
+      "gap": null,
+      "rationale": "Фрагмент — ярлык без действия. Паттерн может быть компонентом дизайн-системы или повторяемым сценарием. Оба узла уже в треке. Привязка к node_design_systems только из-за слова «паттерн» не принимается."
+    },
+    {
+      "statementId": "mosap-visual",
+      "phrase": "Работает с цветом, шрифтами и сетками",
+      "verdict": "covered_by_existing",
+      "nodeId": "node_form_comp",
+      "requirement": "already_in_track",
+      "gap": "assessment",
+      "rationale": "Цвет, шрифт и сетка — одно действие формы и композиции, уже требуемое треком. Автоматика не подтвердила это, потому что формы слов не совпали с якорем. Нового узла на каждое слово не создавать. Кейс UX/UI это действие не проверяет."
+    },
+    {
+      "statementId": "mosap-foundation",
+      "phrase": "Держит композицию и типографику",
+      "verdict": "covered_by_existing",
+      "nodeId": "node_form_comp",
+      "requirement": "already_in_track",
+      "gap": "assessment",
+      "rationale": "Композиция — имя узла. Типографика в этом графе не отдельная компетенция, а часть того же действия. Якорь узла слово «типографика» не содержит, поэтому автоматика не склеила фразу. Это пробел формулировки якоря, не пробел каталога. Требование уже есть."
+    },
+    {
+      "statementId": "esco-usability",
+      "phrase": "Определяет и измеряет удобство применения",
+      "verdict": "covered_by_existing",
+      "nodeId": "node_ux_research",
+      "requirement": "already_in_track",
+      "gap": "assessment",
+      "rationale": "Learnability, efficiency и ease of use — определение юзабилити. Узел исследований так и называется. Английский фрагмент не совпал с русским текстом узла, но действие то же. Новый узел не нужен. Кейс это действие не проверяет."
+    },
+    {
+      "statementId": "esco-wireframe",
+      "phrase": "Собирает каркас функциональных элементов страницы",
+      "verdict": "covered_by_existing",
+      "nodeId": "node_info_arch",
+      "requirement": "already_in_track",
+      "gap": "assessment",
+      "rationale": "Фрагмент ESCO описывает каркас как способ спланировать структуру и функцию страницы. Это информационная архитектура, узел уже в треке и проверяется PRACTICE-кейсом через иерархию экрана. Отдельная компетенция «вайрфрейм» из артефакта не следует."
+    }
+  ],
+  "summary": {
+    "covered_by_existing": 8,
+    "clarify": 5,
+    "graph_gap": 0,
+    "assessment_gaps": ["node_ux_research", "node_form_comp", "node_ergonomics_human"]
+  }
+}

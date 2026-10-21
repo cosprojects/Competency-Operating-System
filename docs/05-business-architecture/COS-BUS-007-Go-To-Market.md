@@ -27,20 +27,20 @@ The Go-To-Market Strategy describes how the Competency Operating System (COS) re
 - Рост экосистемы вместо простого привлечения клиентов.
 
 ## 3. Primary Acquisition Mechanism
-The first product experience is a free competency discovery process. Each participant receives:
-- An initial competency profile.
-- A skill tree or competency map.
-- Multiple development goals.
-- A personalized roadmap.
-The primary acquisition mechanism is providing the participant with their first insight into personal development.
+The first product experience is a free competency discovery process. In the first version the participant receives:
+- 1–2 direction hypotheses with a stated confidence level.
+- An explanation of which answers and catalogue rules produced them.
+- One concrete verification step to take within two weeks.
+- An explicit list of what is unknown (skipped items, constraints).
+A full competency profile, skill map and personalised roadmap are the target state of later stages, not the first release (`COS-RES-005`, `COS-BP-004`).
 
 ## Основной механизм привлечения
-Первый опыт взаимодействия с продуктом — это бесплатный процесс выявления компетенций. Каждый участник получает:
-- Начальный профиль компетенций.
-- Дерево навыков или карту компетенций.
-- Несколько целей развития.
-- Персонализированную дорожную карту.
-Основной механизм привлечения — предоставление участнику первого осознанного взгляда на собственное развитие.
+Первый опыт взаимодействия с продуктом — бесплатный процесс выявления компетенций. В первой версии участник получает:
+- 1–2 гипотезы направления с указанным уровнем уверенности;
+- объяснение, какие ответы и правила каталога к ним привели;
+- одну конкретную проверочную пробу на ближайшие две недели;
+- явный список того, чего мы не знаем (пропуски, ограничения).
+Полный профиль компетенций, дерево навыков и персональная дорожная карта — целевое состояние последующих этапов, а не первого релиза (`COS-RES-005`, `COS-BP-004`).
 
 ## 4. Market Entry Sequence
 Adoption proceeds in phases:

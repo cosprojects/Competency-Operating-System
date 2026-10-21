@@ -1,0 +1,27 @@
+{
+  "name": "axiona-cos-mvp",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "AXIONA / Competency Operating System — Evidence-First competency pipeline (DeepSeek Guarded Engine)",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "parse:candidates": "node --experimental-strip-types src/methodology/v1/candidate-parser/cli.ts",
+    "collect:requirements": "node --experimental-strip-types src/methodology/v1/requirement-collection/cli.ts",
+    "match:identities": "node --experimental-strip-types src/methodology/v1/requirement-collection/identity-cli.ts",
+    "methodologist:patch": "node --experimental-strip-types src/methodology/v1/methodologist/cli.ts",
+    "pipeline": "node --experimental-strip-types src/methodology/v1/pipeline-run.ts",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.4.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.0",
+    "prisma": "^6.4.0",
+    "typescript": "^5.7.3"
+  }
+}

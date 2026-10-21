@@ -1,0 +1,93 @@
+{
+  "catalogVersion": "1.0.0",
+  "updated": "2026-10-17",
+  "readingRule": "Агент-методолог начинает с этого файла. Карточка профессии говорит, открыта ли она для оценки и в каком файле графа лежит её контекст. Узлы, якоря, требования, рёбра и уже написанные кейсы читаются из graphRef по trackId. Каталог их не копирует.",
+  "statuses": {
+    "open_for_assessment": "Профессия доступна в проходе MVP. Для неё можно предлагать недостающие кейсы полос ENTRY и PRACTICE и правки узлов, если узел общий для домена.",
+    "described_not_open": "Профессия описана в графе заранее, чтобы не перекраивать мосты. Кейсы, экраны и требования сверх уже записанных не добавлять, пока статус не сменят.",
+    "planned": "В каталоге есть только имя домена. Графа нет, кейсы писать нельзя."
+  },
+  "domains": [
+    {
+      "id": "design",
+      "title": "Дизайн",
+      "status": "active",
+      "graphRef": "src/methodology/v1/design-competency-graph.json",
+      "notes": "Первая вертикаль с общим графом. Новая профессия внутри дизайна — новая карточка и новый набор требований к уже существующим узлам. Новая профессия вне дизайна — новый домен и новый файл графа, не копия этих узлов."
+    }
+  ],
+  "professions": [
+    {
+      "id": "uxui",
+      "title": "UX/UI-дизайн",
+      "domainId": "design",
+      "trackId": "uxui",
+      "status": "open_for_assessment",
+      "launchPhase": "WAVE_1_MVP",
+      "graphRef": "src/methodology/v1/design-competency-graph.json"
+    },
+    {
+      "id": "product",
+      "title": "Продуктовый дизайн",
+      "domainId": "design",
+      "trackId": "product",
+      "status": "open_for_assessment",
+      "launchPhase": "WAVE_1_MVP",
+      "graphRef": "src/methodology/v1/design-competency-graph.json"
+    },
+    {
+      "id": "graphic",
+      "title": "Графический и коммуникационный дизайн",
+      "domainId": "design",
+      "trackId": "graphic",
+      "status": "open_for_assessment",
+      "launchPhase": "WAVE_1_MVP",
+      "graphRef": "src/methodology/v1/design-competency-graph.json"
+    },
+    {
+      "id": "brand",
+      "title": "Бренд-дизайн и айдентика",
+      "domainId": "design",
+      "trackId": "brand",
+      "status": "open_for_assessment",
+      "launchPhase": "WAVE_1_MVP",
+      "graphRef": "src/methodology/v1/design-competency-graph.json"
+    },
+    {
+      "id": "motion",
+      "title": "Моушн-дизайн и 3D",
+      "domainId": "design",
+      "trackId": "motion",
+      "status": "open_for_assessment",
+      "launchPhase": "WAVE_1_MVP",
+      "graphRef": "src/methodology/v1/design-competency-graph.json"
+    },
+    {
+      "id": "game",
+      "title": "Гейм-дизайн и игровой UI/UX",
+      "domainId": "design",
+      "trackId": "game",
+      "status": "open_for_assessment",
+      "launchPhase": "WAVE_1_MVP",
+      "graphRef": "src/methodology/v1/design-competency-graph.json"
+    },
+    {
+      "id": "spatial_interior_arch",
+      "title": "Дизайн среды, архитектура, интерьер и ландшафт",
+      "domainId": "design",
+      "trackId": "spatial_interior_arch",
+      "status": "described_not_open",
+      "launchPhase": "WAVE_2_SPATIAL",
+      "graphRef": "src/methodology/v1/design-competency-graph.json"
+    },
+    {
+      "id": "industrial_fashion_footwear_food",
+      "title": "Промышленный дизайн, одежда, обувь и фуд-дизайн",
+      "domainId": "design",
+      "trackId": "industrial_fashion_footwear_food",
+      "status": "described_not_open",
+      "launchPhase": "WAVE_3_TANGIBLE",
+      "graphRef": "src/methodology/v1/design-competency-graph.json"
+    }
+  ]
+}

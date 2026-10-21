@@ -14,10 +14,15 @@
 > - Knowledge Center
 >
 > Used by:
-> - COS-WEB-010 Public Documentation
-> - COS-WEB-020 Website Content Book
-> - COS-WEB-030 Investor Center
-> - COS-WEB-040 UX Design
+> - `COS-WEB-001` Landing page
+> - `COS-WEB-002` For Investors
+> - `COS-WEB-003` Team
+> - `COS-WEB-004` Press Pitch Deck
+> - `COS-DOC-000` About Competency Operating System
+> - `COS-DOC-001` Product
+> - `COS-DOC-002` Technology
+> - `COS-DOC-003` Research
+> - `COS-DOC-004` White paper
 >
 > ---
 

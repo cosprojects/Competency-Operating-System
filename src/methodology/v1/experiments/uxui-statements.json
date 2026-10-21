@@ -1,0 +1,138 @@
+{
+  "professionId": "uxui",
+  "statements": [
+    {
+      "id": "mosap-research",
+      "phrase": "Изучает аудиторию, конкурентов и боли пользователей",
+      "fragment": "анализ аудитории, конкурентов и поиск «болей» пользователей",
+      "sourceUrl": "https://mosap.ru/news/ux-ui-dizayner-kto-eto-chto-delaet-kak-ustroena-rabota-i-kakie-navyki-nuzhny-chtoby-im-stat",
+      "relation": "essential"
+    },
+    {
+      "id": "mosap-flows",
+      "phrase": "Строит логические сценарии и пути пользователя",
+      "fragment": "создание логических сценариев (user flow) и путей пользователя",
+      "sourceUrl": "https://mosap.ru/news/ux-ui-dizayner-kto-eto-chto-delaet-kak-ustroena-rabota-i-kakie-navyki-nuzhny-chtoby-im-stat",
+      "relation": "essential"
+    },
+    {
+      "id": "mosap-prototype",
+      "phrase": "Собирает черновые модели, чтобы проверить функцию",
+      "fragment": "создание черновых моделей для проверки функциональности",
+      "sourceUrl": "https://mosap.ru/news/ux-ui-dizayner-kto-eto-chto-delaet-kak-ustroena-rabota-i-kakie-navyki-nuzhny-chtoby-im-stat",
+      "relation": "essential"
+    },
+    {
+      "id": "mosap-visual",
+      "phrase": "Работает с цветом, шрифтами и сетками",
+      "fragment": "работа с цветом, шрифтами, сетками и графическими элементами",
+      "sourceUrl": "https://mosap.ru/news/ux-ui-dizayner-kto-eto-chto-delaet-kak-ustroena-rabota-i-kakie-navyki-nuzhny-chtoby-im-stat",
+      "relation": "essential"
+    },
+    {
+      "id": "mosap-foundation",
+      "phrase": "Держит композицию и типографику",
+      "fragment": "композиция, типографика, знание гайдлайнов и основ верстки",
+      "sourceUrl": "https://mosap.ru/news/ux-ui-dizayner-kto-eto-chto-delaet-kak-ustroena-rabota-i-kakie-navyki-nuzhny-chtoby-im-stat",
+      "relation": "essential"
+    },
+    {
+      "id": "mosap-ui-surface",
+      "phrase": "Собирает визуальный слой из цвета, шрифта и отступов",
+      "fragment": "визуальное воплощение продукта: цвета, шрифты, иконки, отступы и анимация",
+      "sourceUrl": "https://mosap.ru/news/ux-ui-dizayner-kto-eto-chto-delaet-kak-ustroena-rabota-i-kakie-navyki-nuzhny-chtoby-im-stat",
+      "relation": "essential"
+    },
+    {
+      "id": "mosap-test",
+      "phrase": "Проверяет решение юзабилити-тестами и метриками",
+      "fragment": "проверка готового решения через юзабилити-тесты и метрики",
+      "sourceUrl": "https://mosap.ru/news/ux-ui-dizayner-kto-eto-chto-delaet-kak-ustroena-rabota-i-kakie-navyki-nuzhny-chtoby-im-stat",
+      "relation": "essential"
+    },
+    {
+      "id": "mosap-research-depth",
+      "phrase": "Понимает, для кого продукт и какую проблему он решает",
+      "fragment": "специалист должен понять, для кого создается продукт и какие проблемы он призван решить",
+      "sourceUrl": "https://mosap.ru/news/ux-ui-dizayner-kto-eto-chto-delaet-kak-ustroena-rabota-i-kakie-navyki-nuzhny-chtoby-im-stat",
+      "relation": "essential"
+    },
+    {
+      "id": "esco-usability",
+      "phrase": "Определяет и измеряет удобство применения",
+      "fragment": "The process through which the learnability, efficiency, usefulness and ease of use of a software application can be defined and measured.",
+      "sourceUrl": "http://data.europa.eu/esco/skill/c4b626c1-e71c-44ec-9f88-042766f37fcc",
+      "relation": "essential"
+    },
+    {
+      "id": "esco-wireframe",
+      "phrase": "Собирает каркас функциональных элементов страницы",
+      "fragment": "Develop an image or set of images that display the functional elements of a website or page, typically used for planning a website's functionality and structure.",
+      "sourceUrl": "http://data.europa.eu/esco/skill/f0f5bb34-71df-4715-9c9e-03567b76ec8f",
+      "relation": "essential"
+    },
+    {
+      "id": "esco-ui",
+      "phrase": "Создаёт компоненты, через которые человек взаимодействует с системой",
+      "fragment": "Create software or device components which enable interaction between humans and systems or machines, using appropriate techniques, languages and tools so as to streamline interaction while using the system or machine.",
+      "sourceUrl": "http://data.europa.eu/esco/skill/fd33c66c-70c4-40e6-b87c-5495bd3bf26e",
+      "relation": "essential"
+    },
+    {
+      "id": "esco-ucd",
+      "phrase": "Применяет методы проектирования от пользователя",
+      "fragment": "use methodologies for user-centered design",
+      "sourceUrl": "http://data.europa.eu/esco/skill/7364cc39-b9c0-449f-9416-57723e2fd9c4",
+      "relation": "essential"
+    },
+    {
+      "id": "esco-a11y",
+      "phrase": "Проверяет доступность системы для людей с особыми потребностями",
+      "fragment": "test system accessibility for users with special needs",
+      "sourceUrl": "http://data.europa.eu/esco/skill/be64bb4c-84ac-4c83-8cc7-fc8593e15136",
+      "relation": "essential"
+    },
+    {
+      "id": "esco-patterns",
+      "phrase": "Использует паттерны пользовательского интерфейса",
+      "fragment": "software UI design patterns",
+      "sourceUrl": "https://ec.europa.eu/esco/api/resource/occupation?uri=http://data.europa.eu/esco/occupation/96e20037-0a25-4bf6-a25e-808d1605d890",
+      "relation": "essential"
+    },
+    {
+      "id": "graph-interview",
+      "phrase": "Проводит интервью и меняет решение по фактам",
+      "fragment": "Самостоятельно выбираю метод проверки, нахожу инсайты и меняю дизайн по фактам. Проводил отдельные интервью или показы макетов.",
+      "sourceUrl": "src/methodology/v1/design-competency-graph.json#node_ux_research",
+      "relation": "essential"
+    },
+    {
+      "id": "graph-edge",
+      "phrase": "Проектирует ветвления сценария, пустые экраны и ошибки",
+      "fragment": "Сразу проектирую полную карту ветвлений сценария, валидации, пустые экраны, загрузку и восстановление после ошибок.",
+      "sourceUrl": "src/methodology/v1/design-competency-graph.json#node_ux_flows",
+      "relation": "essential"
+    },
+    {
+      "id": "graph-ia",
+      "phrase": "Раскладывает предметную область в иерархию экранов",
+      "fragment": "Декомпозирую сложные предметные области с десятками сущностей и ролей в прозрачную иерархию экранов и состояний.",
+      "sourceUrl": "src/methodology/v1/design-competency-graph.json#node_info_arch",
+      "relation": "essential"
+    },
+    {
+      "id": "graph-system",
+      "phrase": "Проектирует токены и составные компоненты",
+      "fragment": "Проектирую масштабируемую систему семантических токенов, сложные составные компоненты и контракты передачи в код.",
+      "sourceUrl": "src/methodology/v1/design-competency-graph.json#node_design_systems",
+      "relation": "essential"
+    },
+    {
+      "id": "graph-color",
+      "phrase": "Управляет сеткой, контрастом и сочетанием цветов",
+      "fragment": "Знаю базовые правила сетки, контраста и сочетания цветов по референсам.",
+      "sourceUrl": "src/methodology/v1/design-competency-graph.json#node_form_comp",
+      "relation": "essential"
+    }
+  ]
+}

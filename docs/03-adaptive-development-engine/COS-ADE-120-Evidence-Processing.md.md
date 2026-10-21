@@ -1,3 +1,15 @@
+---
+id: COS-ADE-120
+title: Evidence Processing
+version: 1.1.0
+status: Draft
+owner: Architecture Team
+last_updated: 2026-10-15
+references:
+  - COS-ADE-110
+  - COS-RES-008
+---
+
 # COS-ADE-120 — Evidence Processing
 
 **Status:** Draft  
@@ -403,6 +415,38 @@ It operates exclusively on evaluated Competency States produced after Evidence P
 Decision Model никогда не использует необработанные Evidence.
 
 Все решения принимаются исключительно на основе Competency State, сформированного после обработки Evidence.
+
+---
+
+# Revocation and Recalculation (EN)
+
+Evidence can be withdrawn: the user deletes an uploaded file, a link, or a confirmed fact, or revokes consent, or deletes the account.
+
+Withdrawal is not an edit of the stored result. The affected Competency State is recalculated from the remaining Evidence, with the same methodology version:
+
+1. The source is marked as withdrawn (soft delete) rather than physically erased at once — an audit trail and a recovery path are required.
+2. Every Competency State that references the source is identified.
+3. Each of those states is recalculated from the remaining Evidence.
+4. If no confirming signal remains, the node returns to `SELF_REPORTED`. Keeping the previous level would show the user a level that nothing supports.
+5. The recalculation is recorded: what was withdrawn, which nodes changed, and the level and confidence before and after.
+
+The same order applies to consent withdrawal and account deletion.
+
+---
+
+# Отзыв Evidence и пересчёт (RU)
+
+Evidence может быть отозвано: пользователь удаляет загруженный файл, ссылку или подтверждённый факт, отзывает согласие либо удаляет аккаунт.
+
+Отзыв — не правка сохранённого результата. Затронутый Competency State пересчитывается заново по оставшимся Evidence той же версией методики:
+
+1. Источник помечается отозванным (мягкое удаление), а не стирается сразу: нужен след для аудита и путь восстановления при ошибке.
+2. Находятся все Competency State, которые ссылаются на этот источник.
+3. Каждое из них пересчитывается по оставшимся Evidence.
+4. Если подтверждающих сигналов не осталось, узел возвращается в `SELF_REPORTED`. Сохранение прежнего уровня показало бы пользователю уровень, которого ничто не подтверждает.
+5. Пересчёт фиксируется: что отозвано, какие узлы изменились, какими были уровень и уверенность до и после.
+
+Тот же порядок применяется при отзыве согласия и при удалении аккаунта.
 
 ---
 

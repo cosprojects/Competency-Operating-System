@@ -1,0 +1,410 @@
+// ============================================================================
+// COS / AXIONA — Prisma Schema (v0.2.0 — Design Competency Graph & Dual-Loop AI)
+// Соответствует COS-ARCH-160, COS-ADE-110 (Competency State), COS-ADE-120 (Evidence)
+// ============================================================================
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ----------------------------------------------------------------------------
+// 1. Enums (Универсальные справочники для цифровых и физических сфер дизайна)
+// ----------------------------------------------------------------------------
+
+enum DesignMacroDomain {
+  DIGITAL_PRODUCT      // UX/UI, Product Design, Design Systems
+  VISUAL_BRAND_MEDIA   // Графический дизайн, Бренд-дизайн, Motion & 3D
+  INTERACTIVE_GAME     // Гейм-дизайн, Игровой UI/UX, Level/World Design
+  SPATIAL_ARCHITECTURE // Дизайн среды, Архитектура, Интерьер, Ландшафт
+  TANGIBLE_GOODS       // Промышленный дизайн, Мода/Одежда, Обувь, Фуд-дизайн
+}
+
+enum TrackLaunchPhase {
+  WAVE_1_MVP           // Запущено в первом 2-недельном спринте (Digital, Brand, Motion, Game)
+  WAVE_2_SPATIAL       // Вторая волна: Среда, Интерьер, Архитектура, Ландшафт
+  WAVE_3_TANGIBLE      // Третья волна: Промышленный, Одежда/Модельеры, Обувь, Фуд
+}
+
+enum CompetencyCluster {
+  UNIVERSAL_FOUNDATION // Форма, композиция, цвет, пропорции, эргономика (общие для ВСЕХ дизайнеров)
+  AI_BRAND_CRAFT       // Арт-дирекшн, бренд-системы, генеративные AI-пайплайны, семиотика
+  TIME_MOTION_3D       // Тайминг, кинетика, шейдинг, 3D-сцена, пространственный сторителлинг
+  UX_SYSTEMS_LOGIC     // Инфо-архитектура, User Flows, краевые состояния (edge cases), дизайн-системы
+  PRODUCT_BUSINESS     // JTBD, продуктовые метрики, воронки, валидация гипотез, юнит-экономика
+  GAME_INTERACTIVE     // Core Loop, баланс систем, кривая сложности, экономика прогрессии, тактильный отклик
+  SPATIAL_TECTONICS    // Пространственное зонирование, светотехника, сценарии движения в среде, антропометрия
+  MATERIAL_PRODUCTION  // Материаловедение, конструктив, технологичность производства (DFM), лекала/формовка, органолептика
+}
+
+enum EdgeRelationType {
+  PREREQUISITE         // Фундаментальная зависимость (нужно освоить А, чтобы освоить Б)
+  PIVOT_BRIDGE         // Узел-мост для смены специализации (например, Графический -> UX/UI или Бренд -> Фуд)
+  SYNERGY              // Взаимное усиление компетенций на стыке дисциплин
+}
+
+enum CompetencyLevelCode {
+  L0                   // Старт / Понимание базовых принципов по инструкциям
+  L1                   // Практика на учебных проектах или отдельных задачах по готовому ТЗ
+  L2                   // Самостоятельное решение боевых задач end-to-end и защита решений
+  L3                   // Системный уровень: проектирование архитектуры/систем, арт-дирекшн, бизнес-ответственность
+}
+
+// Полоса банка кейсов MVP. Четыре якоря самооценки сходятся в две задачи.
+// ENTRY обслуживает L0 и L1, PRACTICE обслуживает L2 и L3.
+enum CaseBand {
+  ENTRY
+  PRACTICE
+}
+
+enum CompetencyVerificationStatus {
+  VERIFIED             // Подтверждено и микро-кейсом, и артефактами (Confidence 80-90%)
+  CASE_TESTED          // Подтверждено в практическом микро-кейсе, ждёт загрузки артефакта (Confidence 65-75%)
+  ARTIFACT_BACKED      // Подтверждено только портфолио/артефактом, не проверялось в кейсе (Confidence 50-60%)
+  SELF_REPORTED        // Только стартовая самооценка пользователя (Confidence 20-35%)
+}
+
+enum EvidenceSourceType {
+  SELF_ANCHOR          // Базовая самооценка пользователя (L0-L3) на Экране 1
+  PORTFOLIO_ARTIFACT   // Загруженное резюме, ссылка на Figma/Behance/GitHub/CAD или описание кейса
+  STAR_INTERVIEW       // Ответ на структурированный поведенческий вопрос в чате
+  WORK_SAMPLE_CASE     // Решение адаптивного практического микро-кейса по рубрике
+  PROOF_TASK_RESULT    // Загруженный пользователем результат выполнения 2-недельного проверочного задания
+}
+
+enum UserPlan {
+  FREE                 // Зарегистрирован, разбор открыт, оплаты нет
+  PAID                 // Оплатил сопровождение (разово или подписка)
+}
+
+// ----------------------------------------------------------------------------
+// 2. Сеть компетенций (Граф нодов и межкластерных связей)
+// ----------------------------------------------------------------------------
+
+model CompetencyNode {
+  id                  String            @id // Например: "universal_form_comp", "ux_flows_edge_cases"
+  slug                String            @unique
+  title               String            // Полное название узла
+  shortTitle          String            // Короткое название для бейджа на графе (в Figma UI)
+  cluster             CompetencyCluster
+  description         String
+
+  // Рыночный пульс и устойчивость к ИИ (обновляется фоновым Market Pulse AI-агентом)
+  aiAutomationRisk    Int               @default(30) // 0..100 (% рутины, забираемой нейросетями)
+  marketDemandWeight  Float             @default(1.0) // 0.5..2.0 (актуальная востребованность на рынке)
+  aiEvolutionNote     String            // Что именно изменилось в навыке из-за ИИ и за что платят сейчас
+
+  // Поведенческие якоря для самооценки (L0, L1, L2, L3) — хранятся как типизированный JSON
+  behavioralAnchors   Json              // Record<CompetencyLevelCode, string>
+
+  // Визуальные токены для рендера нода в Figma / UI-графе
+  uiVisualMeta        Json?             // { groupOrder, iconKey, nodeVariant }
+
+  methodologyVersion  String            @default("2.0.0")
+  updatedAt           DateTime          @updatedAt
+  createdAt           DateTime          @default(now())
+
+  // Связи в графе
+  outgoingEdges       CompetencyEdge[]  @relation("EdgeSource")
+  incomingEdges       CompetencyEdge[]  @relation("EdgeTarget")
+  trackRequirements   TrackNodeRequirement[]
+  proofTasks          ProofTaskTemplate[]
+  userNodeStates      UserCompetencyState[]
+  marketPulseLogs     MarketPulseUpdateLog[]
+
+  @@index([cluster])
+}
+
+model CompetencyEdge {
+  id                  String           @id @default(cuid())
+  fromNodeId          String
+  toNodeId            String
+  relationType        EdgeRelationType @default(PREREQUISITE)
+  transferWeight      Float            @default(0.75) // 0.0..1.0 — насколько навык А ускоряет освоение навыка Б
+  rationale           String           // Объяснение для пользователя, почему эти ноды связаны
+
+  fromNode            CompetencyNode   @relation("EdgeSource", fields: [fromNodeId], references: [id], onDelete: Cascade)
+  toNode              CompetencyNode   @relation("EdgeTarget", fields: [toNodeId], references: [id], onDelete: Cascade)
+
+  @@unique([fromNodeId, toNodeId])
+  @@index([fromNodeId])
+  @@index([toNodeId])
+}
+
+// ----------------------------------------------------------------------------
+// 3. Обновляемая база направлений (Tracks), Микро-кейсов и Proof Tasks
+// ----------------------------------------------------------------------------
+
+model DesignTrack {
+  id                  String            @id // Например: "uxui", "product", "graphic", "brand", "motion", "game", "interior", "industrial"
+  slug                String            @unique
+  title               String
+  shortTitle          String
+  macroDomain         DesignMacroDomain
+  launchPhase         TrackLaunchPhase  @default(WAVE_1_MVP)
+
+  // Контекст актуальности трека
+  aiRiskSummary       String
+  marketReality2026   String
+  typicalArtifacts    Json              // Массив примеров артефактов (Figma, Behance, Reels, чертежи, техпакеты)
+
+  // Быстрые якоря самооценки на весь трек (Экран 1)
+  selfAnchorPrompts   Json              // Record<CompetencyLevelCode, string>
+
+  isActive            Boolean           @default(true)
+  methodologyVersion  String            @default("2.0.0")
+  updatedAt           DateTime          @updatedAt
+
+  nodeRequirements    TrackNodeRequirement[]
+  microCases          AdaptiveMicroCase[]
+  sourceSessions      AssessmentSession[] @relation("CurrentTrack")
+  targetSessions      AssessmentSession[] @relation("TargetTrack")
+
+  @@index([macroDomain, launchPhase])
+}
+
+model TrackNodeRequirement {
+  id                  String              @id @default(cuid())
+  trackId             String
+  nodeId              String
+  targetLevel         CompetencyLevelCode @default(L2)
+  importanceWeight    Float               @default(1.0) // 0.5 (желательно) .. 1.5 (ядро профессии)
+  isCoreNode          Boolean             @default(true)
+  roleSpecificContext String?             // Как универсальный нод преломляется в этой конкретной профессии
+
+  track               DesignTrack         @relation(fields: [trackId], references: [id], onDelete: Cascade)
+  node                CompetencyNode      @relation(fields: [nodeId], references: [id], onDelete: Cascade)
+
+  @@unique([trackId, nodeId])
+}
+
+model AdaptiveMicroCase {
+  id                  String              @id // Например: "case_uxui_l2_checkout_states"
+  trackId             String
+  band                CaseBand            // ENTRY (якоря L0–L1) или PRACTICE (якоря L2–L3)
+  difficultyLevel     CompetencyLevelCode // База скоринга: L1 для ENTRY, L2 для PRACTICE. Отдельных кейсов L0 и L3 в MVP нет.
+  title               String
+  scenarioPrompt      String              // Практическая ситуация (Work Sample)
+  questions           Json                // Ровно 2 вопроса (Диагностика + Действие)
+  rubricChecklist     Json                // Ровно 4 наблюдаемых критерия для AI SDK (Zod)
+  evaluatedNodeIds    String[]            // 2–4 ID узлов графа, которые проверяет этот микро-кейс
+  estimatedMinutes    Int                 @default(4)
+
+  track               DesignTrack         @relation(fields: [trackId], references: [id], onDelete: Cascade)
+  sessions            AssessmentSession[]
+
+  @@unique([trackId, band])
+}
+
+model ProofTaskTemplate {
+  id                  String              @id // Например: "proof_design_sys_tokens_l2"
+  nodeId              String
+  targetLevel         CompetencyLevelCode
+  title               String
+  taskBrief           String              // Что сделать за 1-2 недели
+  expectedArtifact    String              // Какой подтверждающий артефакт получится на выходе
+  acceptanceCriteria  Json                // Критерии, по которым AI-ревьюер примет загруженный артефакт
+
+  node                CompetencyNode      @relation(fields: [nodeId], references: [id], onDelete: Cascade)
+  submissions         ProofTaskSubmission[]
+
+  @@index([nodeId, targetLevel])
+}
+
+// ----------------------------------------------------------------------------
+// 6. Монетизация и повод вернуться (Lead → Payment → Proof Task result)
+// ----------------------------------------------------------------------------
+
+// Возврат с результатом проверочного задания — ключевое событие удержания:
+// именно оно показывает, что человек вернулся и довёл действие до конца.
+model ProofTaskSubmission {
+  id              String   @id @default(cuid())
+  sessionId       String
+  userId          String?
+  proofTaskId     String
+  artifactUrl     String?  // Ссылка на результат (Figma, репозиторий, PDF)
+  artifactText    String?  // Текстовое описание результата
+  evaluation      Json?    // Совпавшие критерии acceptanceCriteria и комментарий ревьюера
+  status          String   @default("submitted") // submitted | reviewed | accepted
+  submittedAt     DateTime @default(now())
+
+  session         AssessmentSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  user            User?             @relation(fields: [userId], references: [id], onDelete: SetNull)
+  proofTask       ProofTaskTemplate @relation(fields: [proofTaskId], references: [id], onDelete: Cascade)
+
+  @@index([proofTaskId, status])
+  @@index([userId, submittedAt])
+}
+
+// Платёж за продолжение. На MVP — разовый, поле productCode оставляет место подписке.
+model Payment {
+  id              String    @id @default(cuid())
+  userId          String
+  productCode     String    // Например: "continuation_2900"
+  amountRub       Int
+  status          String    @default("pending") // pending | paid | refunded | failed
+  provider        String?   // Платёжный провайдер
+  providerRef     String?   @unique
+  paidAt          DateTime?
+  createdAt       DateTime  @default(now())
+
+  user            User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, status])
+}
+
+// ----------------------------------------------------------------------------
+// 4. Пользовательские сессии, Evidence, Состояния на графе и Чат под капотом
+// ----------------------------------------------------------------------------
+
+model User {
+  id                  String                 @id @default(cuid())
+  email               String?                @unique
+  firstName           String?                // Имя в профиле (COS-EAR-009, §9)
+  lastName            String?                // Фамилия в профиле (COS-EAR-009, §9)
+  mascotId            String                 @default("default_mascot") // Выбранный аватар-маскот (COS-EAR-009, §9)
+  // Появляется при регистрации по magic link — это и есть сбор лида.
+  // createdAt одновременно фиксирует момент регистрации, отдельное поле не нужно.
+  plan                UserPlan               @default(FREE)
+  marketingConsent    Boolean                @default(false) // Согласие на касания помимо писем о разборе
+  leadSource          String?                // Канал, приведший пользователя: "organic", "partner:<id>", "community:<id>"
+  createdAt           DateTime               @default(now())
+  updatedAt           DateTime               @updatedAt
+
+  sessions            AssessmentSession[]
+  competencyStates    UserCompetencyState[]
+  evidenceItems       EvidenceRecord[]
+  payments            Payment[]
+  proofTaskSubmissions ProofTaskSubmission[]
+}
+
+// Состояние узла живёт на сессии. User появляется только после явного сохранения.
+// До magic link userId пустой, повторное открытие идёт по AssessmentSession.anonymousToken.
+
+model AssessmentSession {
+  id                  String              @id @default(cuid())
+  userId              String?
+  anonymousToken      String              @unique
+  currentTrackId      String              // Где пользователь сейчас (или с чего стартует)
+  targetTrackId       String?             // Куда хочет перейти (если сценарий смены/роста ниши)
+  selfAnchorLevel     CompetencyLevelCode // Базовая самооценка опытности (L0-L3), выбранная на Экране 1
+  selfSkillRatings    Json                @default("{}") // Пофакторная самооценка по нодам трека: Record<nodeId, CompetencyLevelCode>
+  hasUploadedArtifact Boolean             @default(false)
+  assignedCaseId      String?
+  aiTurnCount         Int                 @default(0)    // Жёсткий счётчик обращений к LLM в рамках одной сессии (лимит 5 вызовов)
+  aiStepCounts        Json                @default("{}") // Счётчик вызовов по шагам: Record<AllowedAiStepType, number> (EXTRACT: 1, EVALUATE: 1, SCOPED_NODE_QA: 3)
+  totalTokensUsed     Int                 @default(0)    // Суммарный расход токенов на сессию (бюджет сессии <= 12 000 токенов)
+  userFeedbackMatch   Boolean?            // Ответ «Похоже / Не похоже» на Экране 3
+  userFeedbackComment String?
+  methodologyVersion  String              @default("2.0.0")
+  createdAt           DateTime            @default(now())
+  completedAt         DateTime?
+  // Анонимная сессия живёт 30 дней от createdAt: до сохранения профиля это единственный
+  // идентификатор результата. По expiresAt фоновая задача удаляет брошенные анонимные сессии.
+  expiresAt           DateTime?
+
+  user                User?               @relation(fields: [userId], references: [id], onDelete: SetNull)
+  currentTrack        DesignTrack         @relation("CurrentTrack", fields: [currentTrackId], references: [id])
+  targetTrack         DesignTrack?        @relation("TargetTrack", fields: [targetTrackId], references: [id])
+  assignedCase        AdaptiveMicroCase?  @relation(fields: [assignedCaseId], references: [id])
+  evidenceRecords     EvidenceRecord[]
+  competencyStates    UserCompetencyState[]
+  chatMessages        ChatMessage[]
+  decisionSnapshots   DecisionSnapshot[]
+  proofTaskSubmissions ProofTaskSubmission[]
+
+  @@index([expiresAt])
+}
+
+model EvidenceRecord {
+  id                  String             @id @default(cuid())
+  sessionId           String
+  userId              String?
+  sourceType          EvidenceSourceType
+  artifactTitle       String?            // Имя файла или название ссылки для окна «Документы» (COS-EAR-009, §5)
+  artifactUrl         String?            // Внешний URL или ключ загруженного файла
+  rawInputText        String?            // Ссылка на портфолио, текст ответа или STAR-описание
+  extractedFacts      Json               // Структурированные факты с evidence_span (по COS-RES-007)
+  rubricMatches       Json?              // Выполненные пункты рубрики микро-кейса (если sourceType == WORK_SAMPLE_CASE)
+  userConfirmed       Boolean            @default(false) // Подтверждено ли пользователем на Экране 2
+  mappedNodeIds       String[]           // К каким нодам графа относится это доказательство
+  withdrawnAt         DateTime?          // Мягкое удаление (отзыв материала пользователем в окне «Документы», COS-ADE-120)
+  withdrawalAuditJson Json?              // Аудит пересчёта: какие узлы, уровни и Confidence изменились после отзыва
+  createdAt           DateTime           @default(now())
+
+  session             AssessmentSession  @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  user                User?              @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([sessionId, withdrawnAt])
+}
+
+model UserCompetencyState {
+  id                  String                       @id @default(cuid())
+  sessionId           String                       // Канонический ключ хранения до появления аккаунта
+  userId              String?                      // Заполняется при привязке сессии по magic link
+  nodeId              String
+  selfReportedLevel   CompetencyLevelCode          // Заявлено на Экране 1
+  verifiedLevel       CompetencyLevelCode          // Подтверждено после микро-кейса и артефактов
+  confidencePercent   Int                          // 20..90% (считается детерминированной функцией)
+  verificationStatus  CompetencyVerificationStatus
+  calibrationDelta    Int                          // Разница между verifiedLevel и selfReportedLevel (-2..+2)
+  targetGap           Int                          // Разрыв до целевого уровня выбранного трека
+  evidenceRefs        String[]                     // ID записей EvidenceRecord, обосновывающих оценку
+  updatedAt           DateTime                     @updatedAt
+
+  session             AssessmentSession            @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  user                User?                        @relation(fields: [userId], references: [id], onDelete: SetNull)
+  node                CompetencyNode               @relation(fields: [nodeId], references: [id], onDelete: Cascade)
+
+  @@unique([sessionId, nodeId])
+  @@index([userId])
+}
+
+model DecisionSnapshot {
+  id                  String            @id @default(cuid())
+  sessionId           String
+  methodologyVersion  String
+  disclosureLevel     String            @default("partial_pre_registration") // "partial_pre_registration" (Шаг 6: 1-2 сильные стороны + 1 зона роста) | "full_unlocked" (Шаг 7 после magic link)
+  stateSnapshotJson   Json              // Полный слепок нодов пользователя на момент расчёта (для отрисовки графа)
+  bridgeNodeIds       String[]          // ID узлов-мостов, которые нужно пройти пользователю
+  recommendedTaskId   String            // Выбранный ProofTaskTemplate
+  explanationText     String            // Человеко-читаемое объяснение решения
+  calculatedAt        DateTime          @default(now())
+
+  session             AssessmentSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+}
+
+// ----------------------------------------------------------------------------
+// 5. Чат с дешёвым ИИ API и Фоновый мониторинг сферы (Market Pulse)
+// ----------------------------------------------------------------------------
+
+model ChatMessage {
+  id                  String            @id @default(cuid())
+  sessionId           String
+  role                String            // "user" | "assistant" | "system"
+  content             String            // Видимый пользователю текст сообщения в чате
+  underTheHoodActions Json?             // Скрытый JSON-блок мутаций БД (извлечённые факты, обновлённые ноды, пересчёт трека)
+  modelUsed           String?           // Например: "gemini-2.5-flash" | "gpt-4o-mini"
+  costUsdMicros       Int?              // Учёт стоимости вызова в микро-долларах
+  createdAt           DateTime          @default(now())
+
+  session             AssessmentSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+}
+
+model MarketPulseUpdateLog {
+  id                  String         @id @default(cuid())
+  nodeId              String
+  previousAiRisk      Int
+  newAiRisk           Int
+  previousDemand      Float
+  newDemand           Float
+  trendSummary        String         // Какие изменения на рынке дизайна зафиксировал фоновый AI-агент
+  sourceReferences    Json           // Ссылки на проанализированные отчёты / вакансии / релизы инструментов
+  appliedAt           DateTime       @default(now())
+
+  node                CompetencyNode @relation(fields: [nodeId], references: [id], onDelete: Cascade)
+}

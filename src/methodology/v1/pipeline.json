@@ -1,0 +1,55 @@
+{
+  "version": "1.0.0",
+  "log": "data/competency-candidates/pipeline-run.json",
+  "steps": [
+    {
+      "id": "test",
+      "order": 1,
+      "title": "Тесты",
+      "description": "Проверяет парсер, методолога и расчёт прогресса до сетевых вызовов.",
+      "executor": "agent",
+      "command": "npm",
+      "args": ["test"]
+    },
+    {
+      "id": "typecheck",
+      "order": 2,
+      "title": "Проверка типов",
+      "description": "Останавливает пайплайн, если TypeScript не сходится.",
+      "executor": "agent",
+      "command": "npm",
+      "args": ["run", "typecheck"]
+    },
+    {
+      "id": "parse-candidates",
+      "order": 3,
+      "title": "Очередь кандидатов",
+      "description": "Собирает формулировки ESCO по открытым профессиям. O*NET добавляется при наличии ONET_API_KEY. Граф не меняется.",
+      "executor": "agent",
+      "command": "npm",
+      "args": ["run", "parse:candidates"],
+      "produces": "data/competency-candidates/queue.json"
+    },
+    {
+      "id": "methodologist-patch",
+      "order": 4,
+      "title": "Патч методолога",
+      "description": "Раскладывает очередь по узлам графа. Якоря не сочиняет. В граф не пишет.",
+      "executor": "agent",
+      "command": "npm",
+      "args": ["run", "methodologist:patch"],
+      "requires": ["data/competency-candidates/queue.json"],
+      "produces": "data/competency-candidates/methodologist-patch.json"
+    },
+    {
+      "id": "accept-patch",
+      "order": 5,
+      "title": "Приёмка патча",
+      "description": "Человек переносит принятые требования в граф и поднимает methodologyVersion. Агент этот шаг не выполняет.",
+      "executor": "human",
+      "command": "",
+      "args": [],
+      "requires": ["data/competency-candidates/methodologist-patch.json"]
+    }
+  ]
+}

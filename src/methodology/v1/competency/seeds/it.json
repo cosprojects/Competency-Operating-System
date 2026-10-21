@@ -4,6 +4,34 @@
   "description": "Top-down seed канонических компетенций. Это человеческое намерение, а не результат LLM. Seed задаёт уровень гранулярности, которого bottom-up Pass A не выводит из учебных тем.",
   "seeds": [
     {
+      "id": "ux-design-thinking",
+      "canonicalId": "ux-design-thinking",
+      "title": "Дизайн-мышление",
+      "titleEn": "Design thinking",
+      "aliases": [
+        "Design thinking"
+      ],
+      "definition": "Системный подход к решению задач: понимание пользователя, формулировка проблемы, генерация и проверка гипотез, итерации.",
+      "professionIds": [
+        "it.uxui"
+      ],
+      "tagHints": [
+        "гипотез",
+        "исследова",
+        "прототип",
+        "сценари",
+        "аудитор",
+        "проблем",
+        "идеац",
+        "воркшоп"
+      ],
+      "excludeHints": [
+        "цветотерап",
+        "цветение"
+      ],
+      "maxTags": 24
+    },
+    {
       "id": "color-theory",
       "title": "Теория цвета и колористика",
       "titleEn": "Color theory",
@@ -388,31 +416,6 @@
         "переход",
         "взаимодейств",
         "анимац"
-      ],
-      "excludeHints": [
-        "цветотерап",
-        "цветение"
-      ],
-      "maxTags": 24
-    },
-    {
-      "id": "ui-interactive-prototype",
-      "canonicalId": "ui-interactive-prototype",
-      "title": "Интерактивные прототипы интерфейса",
-      "titleEn": "Interactive UI prototypes",
-      "aliases": [
-        "Interactive prototypes"
-      ],
-      "definition": "Интерактивные прототипы интерфейсов с переходами и состояниями.",
-      "professionIds": [
-        "it.uxui"
-      ],
-      "tagHints": [
-        "интерактивн",
-        "прототип",
-        "переменн",
-        "анимац",
-        "переход"
       ],
       "excludeHints": [
         "цветотерап",

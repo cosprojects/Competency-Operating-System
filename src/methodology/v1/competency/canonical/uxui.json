@@ -18,8 +18,29 @@
       "definition": "Понимание людей, задач, контекста и сценариев; проектирование поведения продукта до визуального слоя.",
       "sections": [
         {
-          "id": "ux-research",
+          "id": "ux-foundations",
           "order": 1,
+          "title": "Дизайн-мышление и основы профессии",
+          "definition": "Подход к решению задач через empathy, framing, гипотезы, идеацию и проверку; база для любого дизайнера.",
+          "competencies": [
+            {
+              "id": "ux-design-thinking",
+              "order": 1,
+              "title": "Дизайн-мышление",
+              "titleEn": "Design thinking",
+              "definition": "Системный подход к решению задач: понимание пользователя, формулировка проблемы, генерация и проверка гипотез, итерации.",
+              "priorityHint": "foundation",
+              "status": "covered",
+              "coveredBy": [
+                "comp_32d156df6c59"
+              ],
+              "note": "Покрыто accepted-блоком"
+            }
+          ]
+        },
+        {
+          "id": "ux-research",
+          "order": 2,
           "title": "Исследования",
           "definition": "Сбор и интерпретация данных о пользователях, их задачах, поведении и барьерах.",
           "competencies": [
@@ -81,26 +102,8 @@
               "note": "Покрыто accepted-блоком"
             },
             {
-              "id": "ux-usability-testing",
-              "order": 4,
-              "title": "Юзабилити-тестирование",
-              "titleEn": "Usability testing",
-              "definition": "Проверка сценариев и прототипов на реальных пользователях, фиксация и приоритизация проблем.",
-              "priorityHint": "core",
-              "status": "covered",
-              "coveredBy": [
-                "comp_c2cd7e56553d"
-              ],
-              "sourceEvidence": {
-                "taxonomyLeaves": [
-                  "User Testing"
-                ]
-              },
-              "note": "Покрыто accepted-блоком"
-            },
-            {
               "id": "ux-analytics",
-              "order": 5,
+              "order": 4,
               "title": "Продуктовая аналитика",
               "titleEn": "Product analytics",
               "definition": "Работа с поведенческими данными, воронками и метриками для проверки гипотез.",
@@ -120,7 +123,7 @@
         },
         {
           "id": "ux-architecture",
-          "order": 2,
+          "order": 3,
           "title": "Сценарии и информационная архитектура",
           "definition": "Структура продукта, пути пользователя и логика переходов между состояниями.",
           "competencies": [
@@ -201,7 +204,7 @@
         },
         {
           "id": "ux-prototyping",
-          "order": 3,
+          "order": 4,
           "title": "Прототипирование и проверка",
           "definition": "Материализация гипотез в прототипах разной точности и их проверка.",
           "competencies": [
@@ -260,8 +263,26 @@
               "note": "Покрыто accepted-блоком"
             },
             {
-              "id": "ux-experiments",
+              "id": "ux-usability-testing",
               "order": 4,
+              "title": "Юзабилити-тестирование",
+              "titleEn": "Usability testing",
+              "definition": "Проверка сценариев и прототипов на реальных пользователях, фиксация и приоритизация проблем.",
+              "priorityHint": "core",
+              "status": "covered",
+              "coveredBy": [
+                "comp_c2cd7e56553d"
+              ],
+              "sourceEvidence": {
+                "taxonomyLeaves": [
+                  "User Testing"
+                ]
+              },
+              "note": "Покрыто accepted-блоком"
+            },
+            {
+              "id": "ux-experiments",
+              "order": 5,
               "title": "UX-метрики и эксперименты",
               "titleEn": "UX metrics and experiments",
               "definition": "Выбор метрик, дизайн экспериментов и интерпретация результатов.",
@@ -276,7 +297,7 @@
         },
         {
           "id": "ux-product",
-          "order": 4,
+          "order": 5,
           "title": "Продукт и стратегия",
           "definition": "Связь пользовательского опыта с ценностью продукта, метриками и ограничениями бизнеса.",
           "competencies": [
@@ -538,19 +559,6 @@
                 "comp_ab6396631b12"
               ],
               "note": "Покрыто accepted-блоком"
-            },
-            {
-              "id": "ui-interactive-prototype",
-              "order": 2,
-              "title": "Интерактивные прототипы интерфейса",
-              "titleEn": "Interactive UI prototypes",
-              "definition": "Интерактивные прототипы интерфейсов с переходами и состояниями.",
-              "priorityHint": "optional",
-              "status": "covered",
-              "coveredBy": [
-                "comp_158001e4c84f"
-              ],
-              "note": "Покрыто accepted-блоком"
             }
           ]
         },
@@ -664,6 +672,10 @@
     {
       "blockId": "comp_9d115869b128",
       "reason": "Базовые естественнонаучные и гуманитарные знания — общий O*NET-набор, не отдельная UX/UI-компетенция."
+    },
+    {
+      "blockId": "comp_158001e4c84f",
+      "reason": "Дубль UX-интерактивных прототипов; объединён с ux-interactive-prototype."
     }
   ]
 }

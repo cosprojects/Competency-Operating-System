@@ -48,9 +48,11 @@ async function main(): Promise<void> {
     .filter(Boolean);
   const map = await readJson<CanonicalMap>(mapPath);
   const mapped = new Set<string>();
+  const canonicalIds = new Set<string>();
   for (const branch of map.branches) {
     for (const section of branch.sections) {
       for (const competency of section.competencies) {
+        canonicalIds.add(competency.id);
         for (const blockId of competency.coveredBy) mapped.add(blockId);
       }
     }
@@ -60,8 +62,13 @@ async function main(): Promise<void> {
     const payload = await readJson<{ blocks: CompetencyBlock[] }>(path.resolve(root, file));
     for (const block of payload.blocks ?? []) {
       if (!block.professionIds.includes(professionId)) continue;
-      if (!mapped.has(block.id) && (block.canonicalIds ?? []).length === 0) continue;
-      byId.set(block.id, { ...block, status: "accepted" });
+      const hasCanonical = (block.canonicalIds ?? []).some((id) => canonicalIds.has(id));
+      if (!mapped.has(block.id) && !hasCanonical) continue;
+      byId.set(block.id, {
+        ...block,
+        status: "accepted",
+        issues: block.issues.filter((issue) => !issue.includes("уже есть")),
+      });
     }
   }
   const blocks = [...byId.values()].sort((a, b) => a.title.localeCompare(b.title));

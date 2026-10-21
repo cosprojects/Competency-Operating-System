@@ -159,7 +159,7 @@ npm run priority:template -- --domain it --profession uxui --source review --inc
 npm run canvas:page -- --domain it --profession uxui --source review --include-seed
 ```
 
-Генерирует `web/uxui-competency-canvas.html`: самодостаточную страницу без внешних зависимостей. По умолчанию страница собирается от **канонической карты** (`COS-RES-016`): 34 компетенции, 26 связей, tier-подсказки и coverage-подпись. На ней:
+Генерирует `web/uxui-competency-canvas.html`: самодостаточную страницу без внешних зависимостей. По умолчанию страница собирается от **канонической карты** (`COS-RES-016`): 34 компетенции, 25 связей, tier-подсказки и coverage-подпись. На ней:
 - карточки компетенций с коротким описанием и tier-бейджем;
 - SVG-сеть по `prerequisites`;
 - кольца foundation/core/optional;

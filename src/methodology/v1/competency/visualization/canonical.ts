@@ -84,7 +84,7 @@ export function buildCanonicalVisualization(map: CanonicalMap, sourceBlocks: Com
       domain: map.domain,
       professionId: map.professionId,
       status: "draft",
-      note: "Каноническая карта UX/UI: два блока, 8 разделов, 34 компетенции. Связи — учебная последовательность внутри разделов; статусы coverage видны в отчёте.",
+      note: "Каноническая карта UX/UI: два блока, 9 разделов, 34 компетенции. Связи — учебная последовательность внутри разделов; статусы coverage видны в отчёте.",
       nodes,
     },
   };

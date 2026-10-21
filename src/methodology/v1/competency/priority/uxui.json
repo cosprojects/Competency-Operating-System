@@ -214,9 +214,22 @@
       }
     },
     {
+      "competencyId": "comp_32d156df6c59",
+      "tier": "foundation",
+      "order": 17,
+      "prerequisites": [],
+      "rationale": "Системный подход к решению задач: понимание пользователя, формулировка проблемы, генерация и проверка гипотез, итерации.",
+      "confidence": "low",
+      "reviewer": "canonical-draft",
+      "reviewedAt": "2026-10-21",
+      "signals": {
+        "scope": "profession"
+      }
+    },
+    {
       "competencyId": "comp_9a71b8071561",
       "tier": "core",
-      "order": 17,
+      "order": 18,
       "prerequisites": [],
       "rationale": "Архитектура дизайн-системы, семантические токены и синхронизация с кодом.",
       "confidence": "low",
@@ -229,22 +242,9 @@
     {
       "competencyId": "comp_fa6b64a98d04",
       "tier": "core",
-      "order": 18,
-      "prerequisites": [],
-      "rationale": "Прототипы с переходами и состояниями для проверки поведения продукта.",
-      "confidence": "low",
-      "reviewer": "canonical-draft",
-      "reviewedAt": "2026-10-21",
-      "signals": {
-        "scope": "profession"
-      }
-    },
-    {
-      "competencyId": "comp_158001e4c84f",
-      "tier": "optional",
       "order": 19,
       "prerequisites": [],
-      "rationale": "Интерактивные прототипы интерфейсов с переходами и состояниями.",
+      "rationale": "Прототипы с переходами и состояниями для проверки поведения продукта.",
       "confidence": "low",
       "reviewer": "canonical-draft",
       "reviewedAt": "2026-10-21",

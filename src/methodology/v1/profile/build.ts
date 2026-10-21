@@ -13,37 +13,40 @@ import {
   type MethodologistProfession,
 } from "../methodologist/decide.ts";
 import { readOccupation, readSkill } from "./esco.ts";
+import { guidanceTextFromResponse, pageContainsQuote } from "./guidance.ts";
 import {
   indexMapping,
+  normalizeQuote,
   normalizeTitle,
   outOfScopeReasonFor,
   ruleFor,
   validateMapping,
 } from "./mapping.ts";
+import { parseCsv, type OnetSoftwareRow } from "./onet.ts";
 import { indexTaxonomy, validateTaxonomy, type TaxonomyIndex, type TaxonomyTarget } from "./taxonomy.ts";
 import type {
   EscoSkillLink,
   EvidenceLayer,
   LeafStatus,
   MappingFile,
-  MappingRule,
   OccupationEvidence,
   OccupationRef,
   ProfileEntry,
   ProfileGap,
   ProfileGroupState,
   ProfileJournal,
+  ProfileLeafState,
   ProfileKind,
   ProfileOutOfScope,
   ProfileUnmapped,
   SkillRelation,
   SourceOccupationReport,
   TaxonomyFile,
-  UniversalSkillRule,
+  WatchlistRule,
 } from "./types.ts";
 
 export interface CacheOptions {
-  /** Каталог кеша ответов ESCO. Без него каждый прогон идёт в сеть. */
+  /** Каталог кеша ответов источников. Без него каждый прогон идёт в сеть. */
   dir?: string;
   refresh?: boolean;
 }
@@ -66,20 +69,33 @@ interface SeenSkill {
   occupations: OccupationEvidence[];
 }
 
+/** Общая форма правила для сборки: цель, вид, необходимость проверки, основание. */
+interface PlannedRule {
+  targetId: string;
+  additionalTargetIds?: string[];
+  kind?: ProfileKind;
+  needsReview?: boolean;
+  basis: string;
+}
+
 interface PlannedEntry {
   recordId: string;
   title: string;
   skillType: string;
-  rule: MappingRule | UniversalSkillRule;
-  target: TaxonomyTarget;
+  rule: PlannedRule;
+  targetIds: string[];
+  targets: TaxonomyTarget[];
   occupations: OccupationEvidence[];
   evidence: EvidenceLayer;
+  /** Для O*NET/guidance/model описание известно заранее; для ESCO — читается из API. */
+  description?: string;
+  sourceUrl: string;
+  sourceLicense?: string;
+  sourceNote?: string;
 }
 
 interface LoadedPlanned extends PlannedEntry {
   description: string;
-  language: string;
-  error?: string;
 }
 
 interface UniversalLink {
@@ -133,6 +149,27 @@ async function cachedJson<T>(
   return value;
 }
 
+async function cachedText(
+  cache: CacheOptions | undefined,
+  key: string,
+  extension: string,
+  loader: () => Promise<string>,
+): Promise<string> {
+  if (!cache?.dir) return loader();
+  const file = path.join(cache.dir, `${key}.${extension}`);
+  if (!cache.refresh) {
+    try {
+      return await readFile(file, "utf8");
+    } catch {
+      // кеша нет — идём в сеть
+    }
+  }
+  const value = await loader();
+  await mkdir(cache.dir, { recursive: true });
+  await writeFile(file, value, "utf8");
+  return value;
+}
+
 function kindFromSkillType(skillType: string): ProfileKind | undefined {
   if (skillType === "skill") return "skill";
   if (skillType === "knowledge") return "knowledge";
@@ -143,6 +180,27 @@ function targetOrThrow(taxonomy: TaxonomyIndex, targetId: string): TaxonomyTarge
   const target = taxonomy.targets.get(targetId);
   if (!target) throw new Error(`Цели «${targetId}» нет в таксономии`);
   return target;
+}
+
+/** Все цели правила; области (scope) обязаны совпадать. */
+function resolveTargets(
+  taxonomy: TaxonomyIndex,
+  rule: PlannedRule,
+): { targetIds: string[]; targets: TaxonomyTarget[] } {
+  const targetIds = [rule.targetId, ...(rule.additionalTargetIds ?? [])];
+  const targets = targetIds.map((id) => targetOrThrow(taxonomy, id));
+  const scopes = new Set(targets.map((target) => target.scope));
+  if (scopes.size > 1) {
+    throw new Error(`Правило «${rule.targetId}»: цели разных областей (profession/universal)`);
+  }
+  return { targetIds, targets };
+}
+
+function titleForTarget(taxonomy: TaxonomyIndex, targetId: string): string {
+  const target = targetOrThrow(taxonomy, targetId);
+  if (target.leafId) return taxonomy.leaves.get(target.leafId)?.title ?? targetId;
+  if (target.groupId) return taxonomy.groups.get(target.groupId)?.title ?? targetId;
+  return taxonomy.branches.get(target.branchId)?.title ?? targetId;
 }
 
 function buildCandidates(
@@ -158,7 +216,7 @@ function buildCandidates(
       id: entry.id,
       professionId,
       phrase: entry.title,
-      source: "esco",
+      source: entry.evidence === "onet" ? "onet" : "esco",
       sourceRecordId: entry.recordId,
       sourceOccupationTitle: entry.occupations[0]?.title ?? "",
       relation,
@@ -167,6 +225,56 @@ function buildCandidates(
       sourceUrl: entry.sourceUrl,
       retrievedOn: generatedOn,
     };
+  });
+}
+
+function onetSummaryUrl(socCode: string): string {
+  return `https://www.onetonline.org/link/summary/${socCode}`;
+}
+
+function onetRowDescription(row: OnetSoftwareRow, databaseVersion: string): string {
+  const flags = [
+    row.hotTechnology ? "Hot Technology" : undefined,
+    row.inDemand ? "In Demand" : undefined,
+  ].filter((item): item is string => item !== undefined);
+  const suffix = flags.length > 0 ? ` · ${flags.join(" · ")}` : "";
+  return `O*NET ${databaseVersion} Software Skills, ${row.socCode} ${row.occupationTitle}: «${row.workplaceExample}»${suffix}`;
+}
+
+function nodeFields(node: MethodologistGraph["nodes"][number]): string[] {
+  return [
+    node.title,
+    node.shortTitle,
+    node.description ?? "",
+    node.aiEvolutionNote ?? "",
+    ...Object.values(node.behavioralAnchors ?? {}),
+  ];
+}
+
+function csvRowsToOnet(text: string): OnetSoftwareRow[] {
+  const rows = parseCsv(text);
+  const header = rows[0] ?? [];
+  const columns = new Map(header.map((name, index) => [name.trim(), index]));
+  const codeIndex = columns.get("O*NET-SOC Code");
+  const titleIndex = columns.get("Title");
+  const exampleIndex = columns.get("Workplace Example");
+  const hotIndex = columns.get("Hot Technology");
+  const demandIndex = columns.get("In Demand");
+  if (codeIndex === undefined || titleIndex === undefined || exampleIndex === undefined) {
+    throw new Error("O*NET CSV: нет обязательных колонок");
+  }
+  return rows.slice(1).flatMap((row) => {
+    const workplaceExample = (row[exampleIndex] ?? "").trim();
+    if (!workplaceExample) return [];
+    return [
+      {
+        socCode: (row[codeIndex] ?? "").trim(),
+        occupationTitle: (row[titleIndex] ?? "").trim(),
+        workplaceExample,
+        hotTechnology: hotIndex !== undefined && (row[hotIndex] ?? "").trim().toUpperCase() === "Y",
+        inDemand: demandIndex !== undefined && (row[demandIndex] ?? "").trim().toUpperCase() === "Y",
+      },
+    ];
   });
 }
 
@@ -210,24 +318,16 @@ export async function buildProfile(input: BuildProfileInput): Promise<ProfileJou
     },
   );
 
-  const sourceOccupations: SourceOccupationReport[] = [
-    ...occupations.map(({ ref, data }) => ({
+  const sourceOccupations: SourceOccupationReport[] = [...occupations, ...universalOccupations].map(
+    ({ ref, data }) => ({
       id: ref.id,
       title: data.title || ref.title,
       uri: ref.uri,
       role: ref.role,
       essentialCount: data.essential.length,
       optionalCount: data.optional.length,
-    })),
-    ...universalOccupations.map(({ ref, data }) => ({
-      id: ref.id,
-      title: data.title || ref.title,
-      uri: ref.uri,
-      role: ref.role,
-      essentialCount: data.essential.length,
-      optionalCount: data.optional.length,
-    })),
-  ];
+    }),
+  );
 
   const seen = new Map<string, SeenSkill>();
   const register = (link: EscoSkillLink, occupation: OccupationRef, relation: SkillRelation): void => {
@@ -277,14 +377,17 @@ export async function buildProfile(input: BuildProfileInput): Promise<ProfileJou
   for (const skill of skills) {
     const rule = ruleFor(mapping, skill.title);
     if (rule) {
+      const { targetIds, targets } = resolveTargets(taxonomy, rule);
       planned.push({
         recordId: skill.uri,
         title: skill.title,
         skillType: skill.skillType,
         rule,
-        target: targetOrThrow(taxonomy, rule.targetId),
+        targetIds,
+        targets,
         occupations: skill.occupations,
         evidence: "occupation",
+        sourceUrl: skill.uri,
       });
       continue;
     }
@@ -296,11 +399,7 @@ export async function buildProfile(input: BuildProfileInput): Promise<ProfileJou
       if (existing) {
         for (const name of occupationNames) existing.occupations.add(name);
       } else {
-        outOfScopeMap.set(key, {
-          title: skill.title,
-          reason,
-          occupations: new Set(occupationNames),
-        });
+        outOfScopeMap.set(key, { title: skill.title, reason, occupations: new Set(occupationNames) });
       }
       continue;
     }
@@ -317,33 +416,27 @@ export async function buildProfile(input: BuildProfileInput): Promise<ProfileJou
     const add = (link: EscoSkillLink, relation: SkillRelation): void => {
       const existing = universalLinks.get(normalizeTitle(link.title));
       if (existing) {
-        existing.occupations.push({
-          uri: ref.uri,
-          title: ref.title,
-          role: ref.role,
-          relation,
-        });
+        existing.occupations.push({ uri: ref.uri, title: ref.title, role: ref.role, relation });
         return;
       }
       universalLinks.set(normalizeTitle(link.title), {
         link,
-        occupations: [
-          { uri: ref.uri, title: ref.title, role: ref.role, relation },
-        ],
+        occupations: [{ uri: ref.uri, title: ref.title, role: ref.role, relation }],
       });
     };
     for (const link of data.essential) add(link, "essential");
     for (const link of data.optional) add(link, "optional");
   }
 
-  const universalMissing: Array<{ title: string; targetId: string }> = [];
+  const universalMissing: ProfileJournal["universalMissing"] = [];
   const plannedRecordIds = new Set(planned.map((item) => item.recordId));
   const universalSeen = new Set<string>();
-  let universalSkillsCount = 0;
 
   for (const rule of input.mapping.universalSkills ?? []) {
-    const target = targetOrThrow(taxonomy, rule.targetId);
-    let record: { recordId: string; title: string; skillType: string; occupations: OccupationEvidence[] } | undefined;
+    const { targetIds, targets } = resolveTargets(taxonomy, rule);
+    let record:
+      | { recordId: string; title: string; skillType: string; occupations: OccupationEvidence[] }
+      | undefined;
     if (rule.escoUri) {
       record = {
         recordId: rule.escoUri,
@@ -376,56 +469,224 @@ export async function buildProfile(input: BuildProfileInput): Promise<ProfileJou
       title: record.title,
       skillType: record.skillType,
       rule,
-      target,
+      targetIds,
+      targets,
       occupations: record.occupations,
       evidence: "universal",
+      sourceUrl: record.recordId,
     });
-    universalSkillsCount += 1;
+  }
+
+  // O*NET Software Skills: официальная база инструментов, CC BY 4.0.
+  const onetMissing: ProfileJournal["onetMissing"] = [];
+  const onetConfig = input.mapping.onet;
+  if (onetConfig) {
+    const csv = await cachedText(
+      input.cache,
+      `onet-software-skills-${onetConfig.databaseVersion}`,
+      "csv",
+      async () => {
+        const response = await input.fetchImpl(onetConfig.csvUrl, {
+          headers: { Accept: "text/csv" },
+          signal: AbortSignal.timeout(60_000),
+        });
+        if (!response.ok) throw new Error(`O*NET ответил ${response.status}`);
+        const candidate = response as unknown as { text?: () => Promise<string> };
+        if (typeof candidate.text !== "function") throw new Error("O*NET не дал CSV текст");
+        return candidate.text();
+      },
+    );
+    const onetRows = csvRowsToOnet(csv);
+    for (const occupation of onetConfig.occupations) {
+      const rows = onetRows.filter((row) => row.socCode === occupation.socCode);
+      for (const tool of onetConfig.tools) {
+        const row = rows.find(
+          (item) => normalizeTitle(item.workplaceExample) === normalizeTitle(tool.workplaceExample),
+        );
+        if (!row) {
+          onetMissing.push({
+            socCode: occupation.socCode,
+            workplaceExample: tool.workplaceExample,
+          });
+          continue;
+        }
+        const { targetIds, targets } = resolveTargets(taxonomy, tool);
+        planned.push({
+          recordId: `onet:${occupation.socCode}:${normalizeTitle(tool.workplaceExample)}`,
+          title: row.workplaceExample,
+          skillType: "tool",
+          rule: tool,
+          targetIds,
+          targets,
+          occupations: [
+            {
+              uri: onetSummaryUrl(occupation.socCode),
+              title: `${occupation.socCode} ${occupation.title}`,
+              role: occupation.role,
+              relation: "optional",
+            },
+          ],
+          evidence: "onet",
+          description: onetRowDescription(row, onetConfig.databaseVersion),
+          sourceUrl: onetSummaryUrl(occupation.socCode),
+          sourceLicense: onetConfig.license,
+          sourceNote: `O*NET-SOC ${occupation.socCode}; Workplace Example «${row.workplaceExample}»`,
+        });
+      }
+    }
+  }
+
+  // Guidance: публичные руководства с открытой лицензией. Цитата обязана найтись на странице.
+  const guidanceMissing: ProfileJournal["guidanceMissing"] = [];
+  const guidanceUsed = new Map<string, number>();
+  if (input.mapping.guidanceSources && input.mapping.guidanceSkills) {
+    const sources = input.mapping.guidanceSources;
+    const pages = new Map<string, string | undefined>();
+    for (const source of sources) {
+      try {
+        const html = await cachedText(input.cache, `guidance-${source.id}`, "html", async () => {
+          const response = await input.fetchImpl(source.fetchUrl ?? source.url, {
+            headers: { Accept: "text/html,application/json" },
+            signal: AbortSignal.timeout(30_000),
+          });
+          if (!response.ok) throw new Error(`ответ ${response.status}`);
+          const candidate = response as unknown as { text?: () => Promise<string> };
+          if (typeof candidate.text !== "function") throw new Error("нет текста страницы");
+          return candidate.text();
+        });
+        pages.set(source.id, html);
+      } catch {
+        pages.set(source.id, undefined);
+      }
+    }
+    for (const rule of input.mapping.guidanceSkills) {
+      const source = sources.find((item) => item.id === rule.sourceId);
+      if (!source) {
+        guidanceMissing.push({
+          sourceId: rule.sourceId,
+          targetId: rule.targetId,
+          reason: "источник не описан в guidanceSources",
+        });
+        continue;
+      }
+      const html = pages.get(source.id);
+      if (!html) {
+        guidanceMissing.push({
+          sourceId: source.id,
+          targetId: rule.targetId,
+          reason: "страница не получена",
+        });
+        continue;
+      }
+      if (!pageContainsQuote(guidanceTextFromResponse(html), rule.quote)) {
+        guidanceMissing.push({
+          sourceId: source.id,
+          targetId: rule.targetId,
+          reason: "цитата не найдена на странице",
+        });
+        continue;
+      }
+      const { targetIds, targets } = resolveTargets(taxonomy, rule);
+      planned.push({
+        recordId: `guidance:${source.id}:${normalizeTitle(rule.targetId)}`,
+        title: titleForTarget(taxonomy, rule.targetId),
+        skillType: "knowledge",
+        rule,
+        targetIds,
+        targets,
+        occupations: [],
+        evidence: "guidance",
+        description: rule.quote,
+        sourceUrl: source.url,
+        sourceLicense: source.license,
+        sourceNote: source.title,
+      });
+      guidanceUsed.set(source.id, (guidanceUsed.get(source.id) ?? 0) + 1);
+    }
+  }
+
+  // Модель COS: узел графа и дословная цитата якоря.
+  const modelMissing: ProfileJournal["modelMissing"] = [];
+  for (const rule of input.mapping.modelSkills ?? []) {
+    const node = input.graph.nodes.find((item) => item.id === rule.nodeId);
+    if (!node) {
+      modelMissing.push({ leafId: rule.leafId, nodeId: rule.nodeId, reason: "узла нет в графе" });
+      continue;
+    }
+    if (!normalizeQuote(nodeFields(node).join(" ")).includes(normalizeQuote(rule.quote))) {
+      modelMissing.push({
+        leafId: rule.leafId,
+        nodeId: rule.nodeId,
+        reason: "цитаты нет в полях узла",
+      });
+      continue;
+    }
+    const plannedRule: PlannedRule = {
+      targetId: rule.leafId,
+      basis: rule.basis,
+      ...(rule.needsReview !== undefined ? { needsReview: rule.needsReview } : {}),
+    };
+    const { targetIds, targets } = resolveTargets(taxonomy, plannedRule);
+    planned.push({
+      recordId: `cos-graph:${rule.nodeId}`,
+      title: titleForTarget(taxonomy, rule.leafId),
+      skillType: "knowledge",
+      rule: plannedRule,
+      targetIds,
+      targets,
+      occupations: [],
+      evidence: "model",
+      description: rule.quote,
+      sourceUrl: `src/methodology/v1/design-competency-graph.json#${rule.nodeId}`,
+      sourceNote: `узел ${rule.nodeId}`,
+    });
   }
 
   const loaded = await mapLimited(planned, 4, async (item): Promise<LoadedPlanned> => {
+    if (item.description !== undefined) return { ...item, description: item.description };
     try {
       const data = await cachedJson(input.cache, `skill-${fileKey(item.recordId)}`, () =>
         readSkill(input.fetchImpl, item.recordId),
       );
-      return {
-        ...item,
-        title: item.title || data.title,
-        description: data.description,
-        language: data.language,
-      };
+      return { ...item, title: item.title || data.title, description: data.description };
     } catch (error) {
       const message = error instanceof Error ? error.message : "неизвестная ошибка";
-      return { ...item, description: "", language: "unknown", error: message };
+      const note = `${item.sourceNote ?? ""}${item.sourceNote ? "; " : ""}ошибка: ${message}`;
+      return { ...item, description: "", sourceNote: note };
     }
   });
 
   const entries: ProfileEntry[] = loaded.map((item) => {
-    const { target, rule } = item;
-    const leaf = target.leafId ? taxonomy.leaves.get(target.leafId) : undefined;
-    const group = target.groupId ? taxonomy.groups.get(target.groupId) : undefined;
+    const primary = item.targets[0];
+    if (!primary) throw new Error(`Правило «${item.rule.targetId}» не дало цели`);
+    const leaf = primary.leafId ? taxonomy.leaves.get(primary.leafId) : undefined;
+    const group = primary.groupId ? taxonomy.groups.get(primary.groupId) : undefined;
     const fallbackKind = leaf?.kind ?? group?.kind ?? "knowledge";
-    const kind = rule.kind ?? kindFromSkillType(item.skillType) ?? fallbackKind;
+    const kind = item.rule.kind ?? kindFromSkillType(item.skillType) ?? fallbackKind;
     const entry: ProfileEntry = {
       id: candidateId(input.professionId, item.recordId, item.title),
       title: item.title,
       kind,
-      scope: target.scope,
+      scope: primary.scope,
       evidence: item.evidence,
       description: item.description,
-      branchId: target.branchId,
-      groupId: target.groupId ?? "",
-      targetId: rule.targetId,
-      mappingBasis: rule.basis,
-      needsReview: (rule.needsReview ?? false) || item.description.length === 0,
+      branchId: primary.branchId,
+      groupId: primary.groupId ?? "",
+      targetId: item.targetIds[0] ?? item.rule.targetId,
+      targetIds: item.targetIds,
+      mappingBasis: item.rule.basis,
+      needsReview:
+        (item.rule.needsReview ?? (item.evidence === "guidance" || item.evidence === "model"))
+        || item.description.length === 0,
       recordId: item.recordId,
-      sourceUrl: item.recordId,
+      sourceUrl: item.sourceUrl,
       occupations: item.occupations
         .slice()
         .sort((a, b) => a.title.localeCompare(b.title) || a.relation.localeCompare(b.relation)),
     };
-    if (target.leafId) entry.leafId = target.leafId;
-    if (item.error) entry.sourceError = item.error;
+    if (primary.leafId) entry.leafId = primary.leafId;
+    if (item.sourceLicense) entry.sourceLicense = item.sourceLicense;
+    if (item.sourceNote) entry.sourceNote = item.sourceNote;
     return entry;
   });
   entries.sort((a, b) => a.targetId.localeCompare(b.targetId) || a.title.localeCompare(b.title));
@@ -436,11 +697,7 @@ export async function buildProfile(input: BuildProfileInput): Promise<ProfileJou
     writesToGraph: false,
     professionIds: [input.professionId],
     sources: [
-      {
-        id: "esco",
-        status: "ok",
-        candidateCount: entries.length,
-      } satisfies SourceRunReport,
+      { id: "esco", status: "ok", candidateCount: entries.length } satisfies SourceRunReport,
     ],
     candidates: buildCandidates(entries, input.professionId, input.generatedOn),
   };
@@ -466,12 +723,33 @@ export async function buildProfile(input: BuildProfileInput): Promise<ProfileJou
   const entryById = new Map(entries.map((entry) => [entry.id, entry]));
   const byTarget = new Map<string, string[]>();
   for (const entry of entries) {
-    const list = byTarget.get(entry.targetId) ?? [];
-    list.push(entry.id);
-    byTarget.set(entry.targetId, list);
+    for (const targetId of entry.targetIds) {
+      const list = byTarget.get(targetId) ?? [];
+      list.push(entry.id);
+      byTarget.set(targetId, list);
+    }
   }
-  const hasEvidence = (entryIds: string[]): boolean =>
-    entryIds.some((id) => (entryById.get(id)?.description.length ?? 0) > 0);
+
+  const externalLayers: ReadonlySet<EvidenceLayer> = new Set([
+    "occupation",
+    "universal",
+    "onet",
+    "guidance",
+  ]);
+  const hasExternalEvidence = (entryIds: string[]): boolean =>
+    entryIds.some((id) => {
+      const entry = entryById.get(id);
+      return entry !== undefined && externalLayers.has(entry.evidence) && entry.description.length > 0;
+    });
+  const hasModelEvidence = (entryIds: string[]): boolean =>
+    entryIds.some((id) => {
+      const entry = entryById.get(id);
+      return entry !== undefined && entry.evidence === "model" && entry.description.length > 0;
+    });
+
+  const watchlist = new Map<string, WatchlistRule>(
+    (input.mapping.watchlist ?? []).map((rule) => [rule.leafId, rule]),
+  );
 
   const branches = input.taxonomy.branches.map((branch) => {
     const groups: ProfileGroupState[] = branch.groups.map((group) => ({
@@ -480,10 +758,17 @@ export async function buildProfile(input: BuildProfileInput): Promise<ProfileJou
       ...(group.titleRu ? { titleRu: group.titleRu } : {}),
       kind: group.kind,
       generalEntryIds: byTarget.get(group.id) ?? [],
-      leaves: group.leaves.map((leaf) => {
+      leaves: group.leaves.map((leaf): ProfileLeafState => {
         const entryIds = byTarget.get(leaf.id) ?? [];
-        const status: LeafStatus = hasEvidence(entryIds) ? "supported" : "no_evidence";
-        return {
+        const watch = watchlist.get(leaf.id);
+        const status: LeafStatus = hasExternalEvidence(entryIds)
+          ? "supported"
+          : hasModelEvidence(entryIds)
+            ? "model_only"
+            : watch
+              ? "watchlist"
+              : "no_evidence";
+        const state: ProfileLeafState = {
           id: leaf.id,
           title: leaf.title,
           ...(leaf.titleRu ? { titleRu: leaf.titleRu } : {}),
@@ -492,6 +777,8 @@ export async function buildProfile(input: BuildProfileInput): Promise<ProfileJou
           status,
           entryIds,
         };
+        if (status === "watchlist" && watch) state.note = watch.reason;
+        return state;
       }),
     }));
     return {
@@ -507,7 +794,9 @@ export async function buildProfile(input: BuildProfileInput): Promise<ProfileJou
   for (const group of taxonomy.groupsInOrder) {
     for (const leaf of group.leaves) {
       const entryIds = byTarget.get(leaf.id) ?? [];
-      if (hasEvidence(entryIds)) continue;
+      if (hasExternalEvidence(entryIds) || hasModelEvidence(entryIds) || watchlist.has(leaf.id)) {
+        continue;
+      }
       gaps.push({
         leafId: leaf.id,
         title: leaf.title,
@@ -533,15 +822,50 @@ export async function buildProfile(input: BuildProfileInput): Promise<ProfileJou
 
   unmapped.sort((a, b) => a.title.localeCompare(b.title));
 
+  const externalSources: ProfileJournal["externalSources"] = [];
+  if (onetConfig) {
+    externalSources.push({
+      id: "onet",
+      kind: "onet",
+      title: `O*NET ${onetConfig.databaseVersion} Software Skills`,
+      url: onetConfig.csvUrl,
+      license: onetConfig.license,
+      usedCount: entries.filter((entry) => entry.evidence === "onet").length,
+    });
+  }
+  for (const source of input.mapping.guidanceSources ?? []) {
+    externalSources.push({
+      id: source.id,
+      kind: "guidance",
+      title: source.title,
+      url: source.url,
+      license: source.license,
+      usedCount: guidanceUsed.get(source.id) ?? 0,
+    });
+  }
+
+  const leafStatuses = new Map<string, LeafStatus>();
+  for (const branch of branches) {
+    for (const group of branch.groups) {
+      for (const leaf of group.leaves) leafStatuses.set(leaf.id, leaf.status);
+    }
+  }
   const leavesTotal = taxonomy.leavesInOrder.length;
-  const leavesSupported = leavesTotal - gaps.length;
   const universalLeaves = taxonomy.leavesInOrder.filter((leaf) => (leaf.scope ?? "profession") === "universal");
   const professionLeaves = taxonomy.leavesInOrder.filter((leaf) => (leaf.scope ?? "profession") === "profession");
-  const universalGaps = gaps.filter((gap) => gap.scope === "universal").length;
-  const professionGaps = gaps.filter((gap) => gap.scope === "profession").length;
+  const countStatus = (status: LeafStatus, leaves: typeof taxonomy.leavesInOrder): number =>
+    leaves.filter((leaf) => leafStatuses.get(leaf.id) === status).length;
+  const leavesSupported = countStatus("supported", taxonomy.leavesInOrder);
+  const universalLeavesSupported = countStatus("supported", universalLeaves);
+  const professionLeavesSupported = countStatus("supported", professionLeaves);
+  const modelOnlyLeaves = countStatus("model_only", taxonomy.leavesInOrder);
+  const watchlistLeaves = countStatus("watchlist", taxonomy.leavesInOrder);
   const groupsSupported = taxonomy.groupsInOrder.filter((group) => {
     const general = (byTarget.get(group.id)?.length ?? 0) > 0;
-    const inLeaves = group.leaves.some((leaf) => hasEvidence(byTarget.get(leaf.id) ?? []));
+    const inLeaves = group.leaves.some((leaf) => {
+      const status = leafStatuses.get(leaf.id);
+      return status === "supported" || status === "model_only";
+    });
     return general || inLeaves;
   }).length;
 
@@ -569,6 +893,10 @@ export async function buildProfile(input: BuildProfileInput): Promise<ProfileJou
     gaps,
     mappingMissing,
     universalMissing,
+    modelMissing,
+    guidanceMissing,
+    onetMissing,
+    externalSources,
     graphFit: {
       counts,
       note: "Диагностика сопоставления с текущим графом COS. Исходы methodologist не являются записью требований. Инструменты из сопоставления исключены: они не требования.",
@@ -579,17 +907,22 @@ export async function buildProfile(input: BuildProfileInput): Promise<ProfileJou
       skillsSeen,
       uniqueSkills: skills.length,
       mapped: entries.length,
-      universalSkills: universalSkillsCount,
+      universalSkills: entries.filter((entry) => entry.evidence === "universal").length,
+      onetSkills: entries.filter((entry) => entry.evidence === "onet").length,
+      guidanceSkills: entries.filter((entry) => entry.evidence === "guidance").length,
+      modelSkills: entries.filter((entry) => entry.evidence === "model").length,
       outOfScope: outOfScope.length,
       unmapped: unmapped.length,
       leavesSupported,
       leavesTotal,
-      universalLeavesSupported: universalLeaves.length - universalGaps,
+      universalLeavesSupported,
       universalLeavesTotal: universalLeaves.length,
-      professionLeavesSupported: professionLeaves.length - professionGaps,
+      professionLeavesSupported,
       professionLeavesTotal: professionLeaves.length,
       groupsSupported,
       groupsTotal: taxonomy.groupsInOrder.length,
+      modelOnlyLeaves,
+      watchlistLeaves,
       entriesWithoutDescription: entries.filter((entry) => entry.description.length === 0).length,
     },
   };

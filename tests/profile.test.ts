@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { describe, it } from "node:test";
-import type { FetchLike } from "../src/methodology/v1/candidate-parser/types.ts";
+import type { FetchLike, FetchResponse } from "../src/methodology/v1/candidate-parser/types.ts";
 import { buildProfile } from "../src/methodology/v1/profile/build.ts";
 import { indexMapping, validateMapping } from "../src/methodology/v1/profile/mapping.ts";
 import { renderProfileMarkdown } from "../src/methodology/v1/profile/render.ts";
@@ -144,6 +144,25 @@ function createFetch(): FetchLike {
       };
     }
     return { ok: false, status: 404, json: async () => ({}) };
+  };
+}
+
+function textResponse(text: string): FetchResponse {
+  return {
+    ok: true,
+    status: 200,
+    json: async () => ({}),
+    text: async () => text,
+  } as unknown as FetchResponse;
+}
+
+/** Базовый ESCO-мок плюс текстовые ответы для O*NET/guidance по точному URL. */
+function createSourceFetch(extra: Record<string, string>): FetchLike {
+  const base = createFetch();
+  return async (input, init) => {
+    const text = extra[input];
+    if (text !== undefined) return textResponse(text);
+    return base(input, init);
   };
 }
 
@@ -333,6 +352,199 @@ describe("профиль компетенций профессии", () => {
     );
   });
 
+  it("одна запись ESCO может подтверждать несколько листьев", async () => {
+    const multiMapping: MappingFile = {
+      ...mapping,
+      rules: mapping.rules.map((rule) =>
+        rule.escoTitle === "typography skill"
+          ? { ...rule, additionalTargetIds: ["ui.visual.color"] }
+          : rule,
+      ),
+    };
+    const journal = await buildProfile({
+      professionId: "uxui",
+      taxonomy,
+      mapping: multiMapping,
+      graph,
+      professions,
+      fetchImpl: createFetch(),
+      generatedOn: "2026-10-21",
+    });
+    const leaves = journal.branches.flatMap((branch) => branch.groups).flatMap((group) => group.leaves);
+    const typography = leaves.find((leaf) => leaf.id === "ui.visual.typography");
+    const color = leaves.find((leaf) => leaf.id === "ui.visual.color");
+    assert.equal(typography?.status, "supported");
+    assert.equal(color?.status, "supported");
+    assert.deepEqual(journal.gaps, []);
+    const entry = journal.entries.find((item) => item.title === "typography skill");
+    assert.deepEqual(entry?.targetIds, ["ui.visual.typography", "ui.visual.color"]);
+    assert.equal(entry?.targetId, "ui.visual.typography");
+  });
+
+  it("берёт инструмент из O*NET Software Skills и помечает его инструментом", async () => {
+    const csv = [
+      "O*NET-SOC Code,Title,Workplace Example,Element ID,Element Name,Hot Technology,In Demand",
+      '15-1255.00,Web and Digital Interface Designers,Figma,2.E.5.b,Design software,Y,Y',
+    ].join("\n");
+    const onetMapping: MappingFile = {
+      ...mapping,
+      onet: {
+        databaseVersion: "31.0",
+        csvUrl: "https://example.test/software.csv",
+        license: "CC BY 4.0",
+        occupations: [
+          { socCode: "15-1255.00", title: "Web and Digital Interface Designers", role: "core" },
+        ],
+        tools: [
+          { workplaceExample: "Figma", targetId: "ui.tools.figma", kind: "tool", basis: "O*NET" },
+        ],
+      },
+    };
+    const journal = await buildProfile({
+      professionId: "uxui",
+      taxonomy,
+      mapping: onetMapping,
+      graph,
+      professions,
+      fetchImpl: createSourceFetch({ "https://example.test/software.csv": csv }),
+      generatedOn: "2026-10-21",
+    });
+    const figma = journal.entries.find((entry) => entry.evidence === "onet");
+    assert.equal(figma?.title, "Figma");
+    assert.equal(figma?.kind, "tool");
+    assert.match(figma?.description ?? "", /Hot Technology/);
+    assert.equal(journal.stats.onetSkills, 1);
+    const figmaLeaf = journal.branches
+      .flatMap((branch) => branch.groups)
+      .flatMap((group) => group.leaves)
+      .find((leaf) => leaf.id === "ui.tools.figma");
+    assert.equal(figmaLeaf?.status, "supported");
+    assert.equal(journal.externalSources[0]?.license, "CC BY 4.0");
+  });
+
+  it("подтверждает лист цитатой из публичного руководства", async () => {
+    const guidanceMapping: MappingFile = {
+      ...mapping,
+      guidanceSources: [
+        {
+          id: "manual",
+          title: "Manual",
+          url: "https://example.test/manual",
+          license: "OGL v3.0",
+        },
+      ],
+      guidanceSkills: [
+        {
+          sourceId: "manual",
+          targetId: "ui.visual.color",
+          quote: "descriptions of different types of users (for example, personas)",
+          basis: "руководство прямо называет персоны",
+        },
+      ],
+    };
+    const html =
+      "<html><body><p>descriptions of different types of users (for example, personas)</p></body></html>";
+    const journal = await buildProfile({
+      professionId: "uxui",
+      taxonomy,
+      mapping: guidanceMapping,
+      graph,
+      professions,
+      fetchImpl: createSourceFetch({ "https://example.test/manual": html }),
+      generatedOn: "2026-10-21",
+    });
+    const entry = journal.entries.find((item) => item.evidence === "guidance");
+    assert.equal(entry?.targetId, "ui.visual.color");
+    assert.equal(entry?.needsReview, true);
+    assert.equal(journal.stats.guidanceSkills, 1);
+    assert.deepEqual(journal.guidanceMissing, []);
+  });
+
+  it("не подтверждает guidance-лист, если цитаты нет на странице", async () => {
+    const guidanceMapping: MappingFile = {
+      ...mapping,
+      guidanceSources: [
+        { id: "manual", title: "Manual", url: "https://example.test/manual", license: "OGL v3.0" },
+      ],
+      guidanceSkills: [
+        { sourceId: "manual", targetId: "ui.visual.color", quote: "нет такой цитаты", basis: "x" },
+      ],
+    };
+    const journal = await buildProfile({
+      professionId: "uxui",
+      taxonomy,
+      mapping: guidanceMapping,
+      graph,
+      professions,
+      fetchImpl: createSourceFetch({ "https://example.test/manual": "<p>другой текст</p>" }),
+      generatedOn: "2026-10-21",
+    });
+    assert.equal(journal.stats.guidanceSkills, 0);
+    assert.deepEqual(journal.guidanceMissing.map((item) => item.reason), ["цитата не найдена на странице"]);
+  });
+
+  it("помечает лист model_only по якорю графа и watchlist без свидетельств", async () => {
+    const graphWithNode = {
+      nodes: [
+        {
+          id: "node_form_comp",
+          title: "Форма и композиция",
+          shortTitle: "Форма",
+          behavioralAnchors: { L0: "Знаю базовые правила сетки и сочетания цветов" },
+        },
+      ],
+      tracks: [],
+    };
+    const modelMapping: MappingFile = {
+      ...mapping,
+      modelSkills: [
+        {
+          leafId: "ui.visual.color",
+          nodeId: "node_form_comp",
+          quote: "Знаю базовые правила сетки",
+          basis: "якорь графа",
+        },
+      ],
+    };
+    const journal = await buildProfile({
+      professionId: "uxui",
+      taxonomy,
+      mapping: modelMapping,
+      graph: graphWithNode,
+      professions,
+      fetchImpl: createFetch(),
+      generatedOn: "2026-10-21",
+    });
+    const color = journal.branches
+      .flatMap((branch) => branch.groups)
+      .flatMap((group) => group.leaves)
+      .find((leaf) => leaf.id === "ui.visual.color");
+    assert.equal(color?.status, "model_only");
+    assert.equal(journal.stats.modelSkills, 1);
+    assert.equal(journal.entries.find((entry) => entry.evidence === "model")?.sourceUrl, "src/methodology/v1/design-competency-graph.json#node_form_comp");
+
+    const watchMapping: MappingFile = {
+      ...mapping,
+      watchlist: [{ leafId: "ui.visual.color", reason: "нет официальной записи" }],
+    };
+    const watchJournal = await buildProfile({
+      professionId: "uxui",
+      taxonomy,
+      mapping: watchMapping,
+      graph,
+      professions,
+      fetchImpl: createFetch(),
+      generatedOn: "2026-10-21",
+    });
+    const watchColor = watchJournal.branches
+      .flatMap((branch) => branch.groups)
+      .flatMap((group) => group.leaves)
+      .find((leaf) => leaf.id === "ui.visual.color");
+    assert.equal(watchColor?.status, "watchlist");
+    assert.equal(watchColor?.note, "нет официальной записи");
+    assert.deepEqual(watchJournal.gaps, []);
+  });
+
   it("рендерит дерево, пробелы и ограничения без записи в граф", async () => {
     const journal = await buildFixture();
     const markdown = renderProfileMarkdown(journal);
@@ -380,6 +592,32 @@ describe("эталонная таксономия и маппинг UX/UI", () =
     assert.deepEqual(validateMapping(realMapping, index), []);
     assert.ok(realMapping.rules.length >= 50);
     assert.ok(realMapping.sourceOccupations.filter((item) => item.role === "core").length >= 2);
+  });
+
+  it("дополнительные источники и статусы заданы и валидны", () => {
+    const index = indexTaxonomy(realTaxonomy);
+    assert.deepEqual(validateMapping(realMapping, index), []);
+    assert.equal(realMapping.onet?.tools.length, 4);
+    assert.equal((realMapping.modelSkills ?? []).length, 2);
+    assert.equal((realMapping.guidanceSkills ?? []).length, 1);
+    assert.equal((realMapping.watchlist ?? []).length, 2);
+    const graphFile = JSON.parse(
+      readFileSync(`${root}/src/methodology/v1/design-competency-graph.json`, "utf8"),
+    ) as { nodes: Array<{ id: string; title: string; shortTitle: string; description?: string; behavioralAnchors?: Record<string, string> }> };
+    for (const rule of realMapping.modelSkills ?? []) {
+      const node = graphFile.nodes.find((item) => item.id === rule.nodeId);
+      assert.ok(node, `узла ${rule.nodeId} нет`);
+      const haystack = [
+        node.title,
+        node.shortTitle,
+        node.description ?? "",
+        ...Object.values(node.behavioralAnchors ?? {}),
+      ].join(" ");
+      assert.ok(
+        haystack.toLowerCase().includes(rule.quote.toLowerCase()),
+        `цитаты нет в узле ${rule.nodeId}`,
+      );
+    }
   });
 
   it("регулярки отброса компилируются и применяются к известным названиям", () => {

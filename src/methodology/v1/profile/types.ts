@@ -8,10 +8,10 @@
 
 export type ProfileKind = "skill" | "knowledge" | "tool";
 export type ProfileScope = "profession" | "universal";
-export type LeafStatus = "supported" | "no_evidence";
+export type LeafStatus = "supported" | "model_only" | "watchlist" | "no_evidence";
 export type OccupationRole = "core" | "supporting" | "universal";
 export type SkillRelation = "essential" | "optional";
-export type EvidenceLayer = "occupation" | "universal";
+export type EvidenceLayer = "occupation" | "universal" | "onet" | "guidance" | "model";
 
 export interface TaxonomyLeaf {
   id: string;
@@ -57,6 +57,8 @@ export interface MappingRule {
   escoTitle: string;
   /** id ветки, группы или листа из таксономии. */
   targetId: string;
+  /** Дополнительные листья, которые покрывает то же описание записи. */
+  additionalTargetIds?: string[];
   kind?: ProfileKind;
   needsReview?: boolean;
   /** Почему это сопоставление допустимо. Доказательство — запись ESCO. */
@@ -71,9 +73,68 @@ export interface UniversalSkillRule {
   escoUri?: string;
   escoTitle?: string;
   targetId: string;
+  additionalTargetIds?: string[];
   kind?: ProfileKind;
   needsReview?: boolean;
   basis: string;
+}
+
+/** O*NET Software Skills: официальная база, CC BY 4.0. */
+export interface OnetOccupationRef {
+  socCode: string;
+  title: string;
+  role: "core" | "supporting";
+}
+
+export interface OnetToolRule {
+  workplaceExample: string;
+  targetId: string;
+  kind?: ProfileKind;
+  needsReview?: boolean;
+  basis: string;
+}
+
+export interface OnetConfig {
+  databaseVersion: string;
+  csvUrl: string;
+  license: string;
+  occupations: OnetOccupationRef[];
+  tools: OnetToolRule[];
+}
+
+/** Внутренняя модель COS: узел графа и дословная цитата его якоря. */
+export interface ModelSkillRule {
+  leafId: string;
+  nodeId: string;
+  quote: string;
+  basis: string;
+  needsReview?: boolean;
+}
+
+/** Публичное руководство с открытой лицензией (например, GOV.UK Service Manual, OGL). */
+export interface GuidanceSource {
+  id: string;
+  title: string;
+  /** Страница для человека. */
+  url: string;
+  /** Машиночитаемый адрес, если он отличается (например, GOV.UK Content API). */
+  fetchUrl?: string;
+  license: string;
+}
+
+export interface GuidanceSkillRule {
+  sourceId: string;
+  targetId: string;
+  quote: string;
+  basis: string;
+  needsReview?: boolean;
+}
+
+/** Лист, для которого официальной записи нет; инструмент отслеживается отдельно. */
+export interface WatchlistRule {
+  leafId: string;
+  reason: string;
+  sourceHint?: string;
 }
 
 export interface OutOfScopeRule {
@@ -93,6 +154,11 @@ export interface MappingFile {
   universalOccupations?: OccupationRef[];
   rules: MappingRule[];
   universalSkills?: UniversalSkillRule[];
+  onet?: OnetConfig;
+  modelSkills?: ModelSkillRule[];
+  guidanceSources?: GuidanceSource[];
+  guidanceSkills?: GuidanceSkillRule[];
+  watchlist?: WatchlistRule[];
   outOfScope: OutOfScopeRule[];
 }
 
@@ -146,12 +212,16 @@ export interface ProfileEntry {
   branchId: string;
   groupId: string;
   leafId?: string;
-  /** id цели в таксономии: ветка, группа или лист. */
+  /** Первая цель в таксономии. */
   targetId: string;
+  /** Все цели, которые покрывает свидетельство. */
+  targetIds: string[];
   mappingBasis: string;
   needsReview: boolean;
   recordId: string;
   sourceUrl: string;
+  sourceLicense?: string;
+  sourceNote?: string;
   sourceError?: string;
   occupations: OccupationEvidence[];
   /** Диагностика соответствия текущему графу COS, не запись в граф. */
@@ -169,6 +239,7 @@ export interface ProfileLeafState {
   scope: ProfileScope;
   status: LeafStatus;
   entryIds: string[];
+  note?: string;
 }
 
 export interface ProfileGroupState {
@@ -225,6 +296,17 @@ export interface ProfileJournal {
   gaps: ProfileGap[];
   mappingMissing: Array<{ escoTitle: string; targetId: string }>;
   universalMissing: Array<{ title: string; targetId: string }>;
+  modelMissing: Array<{ leafId: string; nodeId: string; reason: string }>;
+  guidanceMissing: Array<{ sourceId: string; targetId: string; reason: string }>;
+  onetMissing: Array<{ socCode: string; workplaceExample: string }>;
+  externalSources: Array<{
+    id: string;
+    kind: "onet" | "guidance";
+    title: string;
+    url: string;
+    license: string;
+    usedCount: number;
+  }>;
   graphFit: {
     counts: Record<string, number>;
     note: string;
@@ -236,6 +318,9 @@ export interface ProfileJournal {
     uniqueSkills: number;
     mapped: number;
     universalSkills: number;
+    onetSkills: number;
+    guidanceSkills: number;
+    modelSkills: number;
     outOfScope: number;
     unmapped: number;
     leavesSupported: number;
@@ -246,6 +331,8 @@ export interface ProfileJournal {
     professionLeavesTotal: number;
     groupsSupported: number;
     groupsTotal: number;
+    modelOnlyLeaves: number;
+    watchlistLeaves: number;
     entriesWithoutDescription: number;
   };
 }
@@ -261,4 +348,15 @@ export interface ProfileReviewFile {
   gaps: ProfileGap[];
   mappingMissing: Array<{ escoTitle: string; targetId: string }>;
   universalMissing: Array<{ title: string; targetId: string }>;
+  modelMissing: Array<{ leafId: string; nodeId: string; reason: string }>;
+  guidanceMissing: Array<{ sourceId: string; targetId: string; reason: string }>;
+  onetMissing: Array<{ socCode: string; workplaceExample: string }>;
+  externalSources: Array<{
+    id: string;
+    kind: "onet" | "guidance";
+    title: string;
+    url: string;
+    license: string;
+    usedCount: number;
+  }>;
 }

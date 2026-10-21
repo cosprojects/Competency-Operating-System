@@ -76,7 +76,7 @@ async function main(): Promise<void> {
     generatedOn,
     ...(noCache
       ? {}
-      : { cache: { dir: path.join(outDir, "esco-cache"), refresh } }),
+      : { cache: { dir: path.join(outDir, "source-cache"), refresh } }),
   });
 
   const review: ProfileReviewFile = {
@@ -90,6 +90,10 @@ async function main(): Promise<void> {
     gaps: journal.gaps,
     mappingMissing: journal.mappingMissing,
     universalMissing: journal.universalMissing,
+    modelMissing: journal.modelMissing,
+    guidanceMissing: journal.guidanceMissing,
+    onetMissing: journal.onetMissing,
+    externalSources: journal.externalSources,
   };
 
   await mkdir(outDir, { recursive: true });
@@ -116,6 +120,12 @@ async function main(): Promise<void> {
   );
   console.log(
     `Универсальная база: ${journal.stats.universalSkills} записей из ${journal.stats.universalOccupations} доменных занятий`,
+  );
+  console.log(
+    `Внешние источники: O*NET ${journal.stats.onetSkills}, guidance ${journal.stats.guidanceSkills}, модель COS ${journal.stats.modelSkills}`,
+  );
+  console.log(
+    `Статусы листьев: supported ${journal.stats.leavesSupported}, model_only ${journal.stats.modelOnlyLeaves}, watchlist ${journal.stats.watchlistLeaves}, gaps ${journal.gaps.length}`,
   );
   console.log(`Граф COS: ${outcomes}`);
   if (journal.gaps.length > 0) {

@@ -349,7 +349,12 @@
     {
       "escoTitle": "create prototype of user experience solutions",
       "targetId": "ux.prototyping.interactive",
-      "basis": "Прототип UX-решения."
+      "basis": "Описание ESCO прямо называет mock-ups, prototypes и flows. Тот же навык покрывает интерактивный прототип, пользовательские сценарии и high-fidelity; уровень детализации проверяет человек.",
+      "additionalTargetIds": [
+        "ux.process.user-flows",
+        "ux.prototyping.hi-fi"
+      ],
+      "needsReview": true
     },
     {
       "escoTitle": "design prototypes",
@@ -467,6 +472,88 @@
       "kind": "skill",
       "needsReview": true,
       "basis": "Композиция изображения: выбор и настройка объектов, оборудования и света. Ближе к фотографии — человек проверяет."
+    }
+  ],
+  "onet": {
+    "databaseVersion": "31.0",
+    "csvUrl": "https://www.onetcenter.org/dl_files/database/db_31_0_csv/software_skills.csv",
+    "license": "CC BY 4.0 (O*NET 31.0 Database)",
+    "occupations": [
+      {
+        "socCode": "15-1255.00",
+        "title": "Web and Digital Interface Designers",
+        "role": "core"
+      }
+    ],
+    "tools": [
+      {
+        "workplaceExample": "Figma",
+        "targetId": "ui.tools.figma",
+        "kind": "tool",
+        "basis": "O*NET Software Skills для Web and Digital Interface Designers: Figma помечен как Hot Technology и In Demand."
+      },
+      {
+        "workplaceExample": "Adobe XD",
+        "targetId": "ui.tools",
+        "kind": "tool",
+        "basis": "O*NET Software Skills для Web and Digital Interface Designers: Adobe XD, In Demand."
+      },
+      {
+        "workplaceExample": "Axure RP",
+        "targetId": "ui.tools",
+        "kind": "tool",
+        "basis": "O*NET Software Skills для Web and Digital Interface Designers."
+      },
+      {
+        "workplaceExample": "InVision software",
+        "targetId": "ui.tools",
+        "kind": "tool",
+        "basis": "O*NET Software Skills для Web and Digital Interface Designers."
+      }
+    ]
+  },
+  "modelSkills": [
+    {
+      "leafId": "ui.systems.grids",
+      "nodeId": "node_form_comp",
+      "quote": "Знаю базовые правила сетки, контраста и сочетания цветов по референсам",
+      "basis": "Якорь L0 узла node_form_comp прямо называет правила сетки. Это внутренняя модель COS, а не внешний источник; нужен внешний источник для подтверждения."
+    },
+    {
+      "leafId": "ux.process.ia",
+      "nodeId": "node_info_arch",
+      "quote": "Строю базовые карты сайта/приложения и меню навигации для типовых сервисов",
+      "basis": "Якорь L1 узла node_info_arch описывает карты сайта и навигацию — информационную архитектуру. Внутренняя модель COS, внешний источник нужен."
+    }
+  ],
+  "guidanceSources": [
+    {
+      "id": "govuk-user-research-discovery",
+      "title": "GOV.UK Service Manual — User research in discovery",
+      "url": "https://www.gov.uk/service-manual/user-research/user-research-in-discovery",
+      "fetchUrl": "https://www.gov.uk/api/content/service-manual/user-research/user-research-in-discovery",
+      "license": "Open Government Licence v3.0"
+    }
+  ],
+  "guidanceSkills": [
+    {
+      "sourceId": "govuk-user-research-discovery",
+      "targetId": "ux.research.personas",
+      "quote": "descriptions of different types of users (for example, personas)",
+      "basis": "Публичное руководство GOV.UK прямо называет описания типов пользователей (персоны) результатом исследования в discovery. Слой guidance, не отраслевой стандарт.",
+      "needsReview": true
+    }
+  ],
+  "watchlist": [
+    {
+      "leafId": "ui.tools.figjam",
+      "reason": "Официальной записи в ESCO/O*NET нет. FigJam отслеживается как рыночный сигнал; в требования не заносится.",
+      "sourceHint": "Нужен рыночный контур (вакансии по официальному API) или партнёрская выгрузка."
+    },
+    {
+      "leafId": "ui.tools.framer",
+      "reason": "Официальной записи в ESCO/O*NET нет. Framer отслеживается как рыночный сигнал; в требования не заносится.",
+      "sourceHint": "Нужен рыночный контур (вакансии по официальному API) или партнёрская выгрузка."
     }
   ]
 }

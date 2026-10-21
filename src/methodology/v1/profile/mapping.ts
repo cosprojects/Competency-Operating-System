@@ -6,6 +6,16 @@ export function normalizeTitle(title: string): string {
   return title.trim().toLowerCase().replace(/\s+/g, " ");
 }
 
+/** Сравнение цитат: без регистра, пунктуации и лишних пробелов. */
+export function normalizeQuote(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/[\u2018\u2019\u201c\u201d«»"']/g, "")
+    .replace(/[^a-zа-яё0-9]+/gi, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 interface CompiledOutOfScope {
   rule: OutOfScopeRule;
   regex?: RegExp;
@@ -75,6 +85,16 @@ export function validateMapping(mapping: MappingFile, taxonomy: TaxonomyIndex): 
     if (!taxonomy.targets.has(rule.targetId)) {
       errors.push(`«${rule.escoTitle}»: цели «${rule.targetId}» нет в таксономии`);
     }
+    const extraTargets = rule.additionalTargetIds ?? [];
+    if (new Set(extraTargets).size !== extraTargets.length) {
+      errors.push(`«${rule.escoTitle}»: повтор additionalTargetIds`);
+    }
+    for (const extra of extraTargets) {
+      if (extra === rule.targetId) errors.push(`«${rule.escoTitle}»: additionalTargetIds повторяет primary`);
+      if (!taxonomy.targets.has(extra)) {
+        errors.push(`«${rule.escoTitle}»: дополнительной цели «${extra}» нет в таксономии`);
+      }
+    }
     if (!rule.basis) errors.push(`«${rule.escoTitle}»: нет basis`);
   }
 
@@ -94,9 +114,94 @@ export function validateMapping(mapping: MappingFile, taxonomy: TaxonomyIndex): 
         `universalSkills «${key}»: цель «${rule.targetId}» должна быть листом универсальной базы (scope: universal)`,
       );
     }
+    for (const extra of rule.additionalTargetIds ?? []) {
+      const extraTarget = taxonomy.targets.get(extra);
+      if (!extraTarget) {
+        errors.push(`universalSkills «${key}»: дополнительной цели «${extra}» нет в таксономии`);
+      } else if (!extraTarget.leafId || extraTarget.scope !== "universal") {
+        errors.push(`universalSkills «${key}»: дополнительная цель «${extra}» должна быть универсальным листом`);
+      }
+    }
+    if ((rule.additionalTargetIds ?? []).includes(rule.targetId)) {
+      errors.push(`universalSkills «${key}»: additionalTargetIds повторяет primary`);
+    }
     if (universalKeys.has(key)) errors.push(`universalSkills: повтор записи «${key}»`);
     universalKeys.add(key);
     if (!rule.basis) errors.push(`universalSkills «${key}»: нет basis`);
+  }
+
+  if (mapping.onet) {
+    const onet = mapping.onet;
+    if (!onet.databaseVersion) errors.push("onet: нет databaseVersion");
+    if (!onet.csvUrl) errors.push("onet: нет csvUrl");
+    if (!onet.license) errors.push("onet: нет license");
+    if (onet.occupations.length === 0) errors.push("onet: нет occupations");
+    const socCodes = new Set<string>();
+    for (const occupation of onet.occupations) {
+      if (!/^\d{2}-\d{4}\.\d{2}$/.test(occupation.socCode)) {
+        errors.push(`onet «${occupation.socCode}»: код не похож на O*NET-SOC`);
+      }
+      if (socCodes.has(occupation.socCode)) errors.push(`onet: повтор O*NET-SOC «${occupation.socCode}»`);
+      socCodes.add(occupation.socCode);
+    }
+    if (onet.tools.length === 0) errors.push("onet: нет tools");
+    const toolNames = new Set<string>();
+    for (const tool of onet.tools) {
+      if (!tool.workplaceExample) errors.push("onet: инструмент без workplaceExample");
+      if (toolNames.has(normalizeTitle(tool.workplaceExample))) {
+        errors.push(`onet: повтор инструмента «${tool.workplaceExample}»`);
+      }
+      toolNames.add(normalizeTitle(tool.workplaceExample));
+      if (!taxonomy.targets.has(tool.targetId)) {
+        errors.push(`onet «${tool.workplaceExample}»: цели «${tool.targetId}» нет в таксономии`);
+      }
+      if (!tool.basis) errors.push(`onet «${tool.workplaceExample}»: нет basis`);
+    }
+  }
+
+  const modelLeafIds = new Set<string>();
+  for (const rule of mapping.modelSkills ?? []) {
+    const target = taxonomy.targets.get(rule.leafId);
+    if (!target?.leafId) errors.push(`modelSkills «${rule.leafId}»: цель должна быть листом`);
+    if (modelLeafIds.has(rule.leafId)) errors.push(`modelSkills: повтор листа «${rule.leafId}»`);
+    modelLeafIds.add(rule.leafId);
+    if (!rule.nodeId) errors.push(`modelSkills «${rule.leafId}»: нет nodeId`);
+    if (!rule.quote) errors.push(`modelSkills «${rule.leafId}»: нет quote`);
+    if (!rule.basis) errors.push(`modelSkills «${rule.leafId}»: нет basis`);
+  }
+
+  const guidanceIds = new Set<string>();
+  for (const source of mapping.guidanceSources ?? []) {
+    if (!source.id) errors.push("guidanceSources: пустой id");
+    if (guidanceIds.has(source.id)) errors.push(`guidanceSources: повтор id «${source.id}»`);
+    guidanceIds.add(source.id);
+    if (!source.url || !/^https?:\/\//.test(source.url)) errors.push(`guidanceSources «${source.id}»: плохой url`);
+    if (source.fetchUrl !== undefined && !/^https?:\/\//.test(source.fetchUrl)) {
+      errors.push(`guidanceSources «${source.id}»: плохой fetchUrl`);
+    }
+    if (!source.license) errors.push(`guidanceSources «${source.id}»: нет license`);
+  }
+  const guidanceKeys = new Set<string>();
+  for (const rule of mapping.guidanceSkills ?? []) {
+    if (!guidanceIds.has(rule.sourceId)) {
+      errors.push(`guidanceSkills «${rule.sourceId}»: источника нет в guidanceSources`);
+    }
+    const target = taxonomy.targets.get(rule.targetId);
+    if (!target?.leafId) errors.push(`guidanceSkills «${rule.targetId}»: цель должна быть листом`);
+    const key = `${rule.sourceId}\u0000${rule.targetId}\u0000${rule.quote}`;
+    if (guidanceKeys.has(key)) errors.push(`guidanceSkills: повтор правила «${key}»`);
+    guidanceKeys.add(key);
+    if (!rule.quote) errors.push(`guidanceSkills «${rule.targetId}»: нет quote`);
+    if (!rule.basis) errors.push(`guidanceSkills «${rule.targetId}»: нет basis`);
+  }
+
+  const watchlistLeafIds = new Set<string>();
+  for (const rule of mapping.watchlist ?? []) {
+    const target = taxonomy.targets.get(rule.leafId);
+    if (!target?.leafId) errors.push(`watchlist «${rule.leafId}»: цель должна быть листом`);
+    if (watchlistLeafIds.has(rule.leafId)) errors.push(`watchlist: повтор листа «${rule.leafId}»`);
+    watchlistLeafIds.add(rule.leafId);
+    if (!rule.reason) errors.push(`watchlist «${rule.leafId}»: нет reason`);
   }
 
   let outOfScopeCount = 0;

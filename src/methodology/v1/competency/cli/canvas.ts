@@ -37,7 +37,7 @@ async function main(): Promise<void> {
   await writeJson(output, {
     ...layout,
     generatedOn: new Date().toISOString().slice(0, 10),
-    source: { kind: resolved.source, files: resolved.files },
+    source: { kind: resolved.source, files: resolved.files.map((file) => path.relative(root, file)) },
     priorityFile: priorityPath,
   });
   console.log(

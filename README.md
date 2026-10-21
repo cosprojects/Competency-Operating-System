@@ -45,3 +45,6 @@ npm run canonical:validate -- --domain it --profession uxui --source review --in
 
 
 Единый массив компетенций: **43** (34 базовых + 9 профессио-специфичных); profession views: product 28, motion 19, graphic 18; каталог: 42 блока, 186 тегов.
+
+
+Сетевые канвасы профессий: `npm run canvas:profession-network -- --profession product` (также `motion`, `graphic`).

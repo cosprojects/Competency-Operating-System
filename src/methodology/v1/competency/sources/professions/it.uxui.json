@@ -1,0 +1,30 @@
+{
+  "professionId": "it.uxui",
+  "sphereId": "it",
+  "occupationSources": [
+    {
+      "sourceId": "esco",
+      "query": "user interface designer"
+    },
+    {
+      "sourceId": "onet",
+      "query": "15-1255.00, Web and Digital Interface Designers"
+    },
+    {
+      "sourceId": "practicum",
+      "query": "interface-designer"
+    }
+  ],
+  "materialSourceIds": [
+    "wikipedia",
+    "internet-archive",
+    "stepik",
+    "youtube",
+    "habr",
+    "medium",
+    "learn-anything"
+  ],
+  "blockedSourceIds": [
+    "hh-api"
+  ]
+}

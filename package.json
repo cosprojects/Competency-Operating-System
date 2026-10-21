@@ -42,7 +42,11 @@
     "canonical:apply": "node --experimental-strip-types src/methodology/v1/competency/cli/canonical-apply.ts",
     "catalog:accept": "node --experimental-strip-types src/methodology/v1/competency/cli/catalog-accept.ts",
     "priority:canonical": "node --experimental-strip-types src/methodology/v1/competency/cli/priority-canonical.ts",
-    "materials:agent": "node --experimental-strip-types src/methodology/v1/materials-agent/cli/run.ts"
+    "materials:agent": "node --experimental-strip-types src/methodology/v1/materials-agent/cli/run.ts",
+    "priority:confirm": "node --experimental-strip-types src/methodology/v1/competency/cli/priority-confirm.ts",
+    "materials:agent:queue": "node --experimental-strip-types src/methodology/v1/materials-agent/cli/queue.ts",
+    "model:sync": "node --experimental-strip-types src/methodology/v1/competency/model/cli/sync.ts",
+    "model:validate": "node --experimental-strip-types src/methodology/v1/competency/model/cli/validate.ts"
   },
   "dependencies": {
     "@prisma/client": "^6.4.0",

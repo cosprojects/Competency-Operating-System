@@ -1,6 +1,12 @@
 import type { CompetencyCandidate, TagRecord } from "./types.ts";
 import { hashId, normalizeTitle, slugify } from "./sources/common.ts";
 
+export interface SeedTagDefinition {
+  title: string;
+  definition: string;
+  kind: "knowledge" | "skill";
+}
+
 export interface CompetencySeed {
   id: string;
   canonicalId?: string;
@@ -12,6 +18,7 @@ export interface CompetencySeed {
   tagHints: string[];
   excludeHints?: string[];
   maxTags?: number;
+  extraTags?: SeedTagDefinition[];
 }
 
 export interface SeedFile {
@@ -31,6 +38,7 @@ export function materializeSeed(
   seed: CompetencySeed,
   tags: TagRecord[],
   generatedOn: string,
+  extraTags: TagRecord[] = [],
 ): SeedMaterialization {
   const hints = seed.tagHints.map((hint) => normalizeTitle(hint)).filter(Boolean);
   const excludes = (seed.excludeHints ?? []).map((hint) => normalizeTitle(hint)).filter(Boolean);
@@ -47,7 +55,7 @@ export function materializeSeed(
     })
     .slice(0, seed.maxTags ?? 30);
 
-  const tagIds = matched.map((tag) => tag.id);
+  const tagIds = [...new Set([...matched.map((tag) => tag.id), ...extraTags.map((tag) => tag.id)])].slice(0, seed.maxTags ?? 30);
   const candidate: CompetencyCandidate = {
     id: hashId("candidate", normalizeTitle(seed.title)),
     slug: slugify(seed.title, "seed"),

@@ -3,7 +3,7 @@
   "domain": "it",
   "professionId": "it.uxui",
   "updatedOn": "2026-10-21",
-  "status": "draft",
+  "status": "accepted",
   "marks": [
     {
       "competencyId": "comp_32d156df6c59",
@@ -11,8 +11,8 @@
       "order": 1,
       "prerequisites": [],
       "rationale": "Системный подход к решению задач: понимание пользователя, формулировка проблемы, генерация и проверка гипотез, итерации.",
-      "confidence": "low",
-      "reviewer": "canonical-draft",
+      "confidence": "medium",
+      "reviewer": "cos-methodologist",
       "reviewedAt": "2026-10-21",
       "signals": {
         "scope": "profession"
@@ -24,8 +24,8 @@
       "order": 2,
       "prerequisites": [],
       "rationale": "Планирование и проведение исследований, синтез наблюдений в проверяемые инсайты.",
-      "confidence": "low",
-      "reviewer": "canonical-draft",
+      "confidence": "medium",
+      "reviewer": "cos-methodologist",
       "reviewedAt": "2026-10-21",
       "signals": {
         "scope": "profession"
@@ -37,8 +37,8 @@
       "order": 3,
       "prerequisites": [],
       "rationale": "Модели целевых пользователей, их целей, контекста и критериев выбора.",
-      "confidence": "low",
-      "reviewer": "canonical-draft",
+      "confidence": "medium",
+      "reviewer": "cos-methodologist",
       "reviewedAt": "2026-10-21",
       "signals": {
         "scope": "profession"
@@ -50,8 +50,8 @@
       "order": 4,
       "prerequisites": [],
       "rationale": "Подготовка и проведение глубинных интервью, наблюдений и анализ качественных данных.",
-      "confidence": "low",
-      "reviewer": "canonical-draft",
+      "confidence": "medium",
+      "reviewer": "cos-methodologist",
       "reviewedAt": "2026-10-21",
       "signals": {
         "scope": "profession"
@@ -63,8 +63,8 @@
       "order": 5,
       "prerequisites": [],
       "rationale": "Структура контента и навигации, категоризация и находимость информации.",
-      "confidence": "low",
-      "reviewer": "canonical-draft",
+      "confidence": "medium",
+      "reviewer": "cos-methodologist",
       "reviewedAt": "2026-10-21",
       "signals": {
         "scope": "profession"
@@ -76,8 +76,8 @@
       "order": 6,
       "prerequisites": [],
       "rationale": "Моделирование пути пользователя, развилок, ошибок и восстановления.",
-      "confidence": "low",
-      "reviewer": "canonical-draft",
+      "confidence": "medium",
+      "reviewer": "cos-methodologist",
       "reviewedAt": "2026-10-21",
       "signals": {
         "scope": "profession"
@@ -89,8 +89,8 @@
       "order": 7,
       "prerequisites": [],
       "rationale": "Быстрая структура экранов и взаимодействий без визуальной детализации.",
-      "confidence": "low",
-      "reviewer": "canonical-draft",
+      "confidence": "medium",
+      "reviewer": "cos-methodologist",
       "reviewedAt": "2026-10-21",
       "signals": {
         "scope": "profession"
@@ -102,8 +102,8 @@
       "order": 8,
       "prerequisites": [],
       "rationale": "Перевод бизнес- и пользовательских потребностей в проверяемые требования и ограничения.",
-      "confidence": "low",
-      "reviewer": "canonical-draft",
+      "confidence": "medium",
+      "reviewer": "cos-methodologist",
       "reviewedAt": "2026-10-21",
       "signals": {
         "scope": "profession"
@@ -115,8 +115,8 @@
       "order": 9,
       "prerequisites": [],
       "rationale": "Быстрые бумажные и схематичные прототипы для проверки структуры.",
-      "confidence": "low",
-      "reviewer": "canonical-draft",
+      "confidence": "medium",
+      "reviewer": "cos-methodologist",
       "reviewedAt": "2026-10-21",
       "signals": {
         "scope": "profession"
@@ -128,8 +128,8 @@
       "order": 10,
       "prerequisites": [],
       "rationale": "Детализированные прототипы, приближенные к финальному интерфейсу.",
-      "confidence": "low",
-      "reviewer": "canonical-draft",
+      "confidence": "medium",
+      "reviewer": "cos-methodologist",
       "reviewedAt": "2026-10-21",
       "signals": {
         "scope": "profession"
@@ -141,8 +141,8 @@
       "order": 11,
       "prerequisites": [],
       "rationale": "Прототипы с переходами и состояниями для проверки поведения продукта.",
-      "confidence": "low",
-      "reviewer": "canonical-draft",
+      "confidence": "medium",
+      "reviewer": "cos-methodologist",
       "reviewedAt": "2026-10-21",
       "signals": {
         "scope": "profession"
@@ -154,8 +154,8 @@
       "order": 12,
       "prerequisites": [],
       "rationale": "Проверка сценариев и прототипов на реальных пользователях, фиксация и приоритизация проблем.",
-      "confidence": "low",
-      "reviewer": "canonical-draft",
+      "confidence": "medium",
+      "reviewer": "cos-methodologist",
       "reviewedAt": "2026-10-21",
       "signals": {
         "scope": "profession"
@@ -167,8 +167,8 @@
       "order": 13,
       "prerequisites": [],
       "rationale": "Выбор метрик, дизайн экспериментов и интерпретация результатов.",
-      "confidence": "low",
-      "reviewer": "canonical-draft",
+      "confidence": "medium",
+      "reviewer": "cos-methodologist",
       "reviewedAt": "2026-10-21",
       "signals": {
         "scope": "profession"
@@ -180,8 +180,8 @@
       "order": 14,
       "prerequisites": [],
       "rationale": "Понимание ценности, аудитории, ограничений и жизненного цикла продукта.",
-      "confidence": "low",
-      "reviewer": "canonical-draft",
+      "confidence": "medium",
+      "reviewer": "cos-methodologist",
       "reviewedAt": "2026-10-21",
       "signals": {
         "scope": "profession"
@@ -193,8 +193,8 @@
       "order": 15,
       "prerequisites": [],
       "rationale": "Связь дизайн-решений с метриками, юнит-экономикой и бизнес-результатом.",
-      "confidence": "low",
-      "reviewer": "canonical-draft",
+      "confidence": "medium",
+      "reviewer": "cos-methodologist",
       "reviewedAt": "2026-10-21",
       "signals": {
         "scope": "profession"
@@ -206,8 +206,8 @@
       "order": 16,
       "prerequisites": [],
       "rationale": "Этические, правовые и безопасностные ограничения дизайна.",
-      "confidence": "low",
-      "reviewer": "canonical-draft",
+      "confidence": "medium",
+      "reviewer": "cos-methodologist",
       "reviewedAt": "2026-10-21",
       "signals": {
         "scope": "profession"
@@ -219,8 +219,8 @@
       "order": 17,
       "prerequisites": [],
       "rationale": "Физика цвета, восприятие, гармония, контраст и культурный контекст.",
-      "confidence": "low",
-      "reviewer": "canonical-draft",
+      "confidence": "medium",
+      "reviewer": "cos-methodologist",
       "reviewedAt": "2026-10-21",
       "signals": {
         "scope": "profession"
@@ -232,8 +232,8 @@
       "order": 18,
       "prerequisites": [],
       "rationale": "Физика цвета, восприятие, гармония, контраст и культурный контекст.",
-      "confidence": "low",
-      "reviewer": "canonical-draft",
+      "confidence": "medium",
+      "reviewer": "cos-methodologist",
       "reviewedAt": "2026-10-21",
       "signals": {
         "scope": "profession"
@@ -245,8 +245,8 @@
       "order": 19,
       "prerequisites": [],
       "rationale": "Шрифтовая иерархия, читаемость, ритм и типографические системы.",
-      "confidence": "low",
-      "reviewer": "canonical-draft",
+      "confidence": "medium",
+      "reviewer": "cos-methodologist",
       "reviewedAt": "2026-10-21",
       "signals": {
         "scope": "profession"
@@ -258,8 +258,8 @@
       "order": 20,
       "prerequisites": [],
       "rationale": "Управление вниманием через композицию, сетки, пропорции и иерархию.",
-      "confidence": "low",
-      "reviewer": "canonical-draft",
+      "confidence": "medium",
+      "reviewer": "cos-methodologist",
       "reviewedAt": "2026-10-21",
       "signals": {
         "scope": "profession"
@@ -271,8 +271,8 @@
       "order": 21,
       "prerequisites": [],
       "rationale": "Иконки, графика и визуальные элементы как часть интерфейсной системы.",
-      "confidence": "low",
-      "reviewer": "canonical-draft",
+      "confidence": "medium",
+      "reviewer": "cos-methodologist",
       "reviewedAt": "2026-10-21",
       "signals": {
         "scope": "profession"
@@ -284,8 +284,8 @@
       "order": 22,
       "prerequisites": [],
       "rationale": "Стилистика, визуальные коды и целостность интерфейсной коммуникации.",
-      "confidence": "low",
-      "reviewer": "canonical-draft",
+      "confidence": "medium",
+      "reviewer": "cos-methodologist",
       "reviewedAt": "2026-10-21",
       "signals": {
         "scope": "profession"
@@ -297,8 +297,8 @@
       "order": 23,
       "prerequisites": [],
       "rationale": "Архитектура дизайн-системы, семантические токены и синхронизация с кодом.",
-      "confidence": "low",
-      "reviewer": "canonical-draft",
+      "confidence": "medium",
+      "reviewer": "cos-methodologist",
       "reviewedAt": "2026-10-21",
       "signals": {
         "scope": "profession"
@@ -310,8 +310,8 @@
       "order": 24,
       "prerequisites": [],
       "rationale": "Проектирование переиспользуемых компонентов, вариантов и поведенческих паттернов.",
-      "confidence": "low",
-      "reviewer": "canonical-draft",
+      "confidence": "medium",
+      "reviewer": "cos-methodologist",
       "reviewedAt": "2026-10-21",
       "signals": {
         "scope": "profession"
@@ -323,8 +323,8 @@
       "order": 25,
       "prerequisites": [],
       "rationale": "Адаптация интерфейса под устройства, размеры и контекст использования.",
-      "confidence": "low",
-      "reviewer": "canonical-draft",
+      "confidence": "medium",
+      "reviewer": "cos-methodologist",
       "reviewedAt": "2026-10-21",
       "signals": {
         "scope": "profession"
@@ -336,8 +336,8 @@
       "order": 26,
       "prerequisites": [],
       "rationale": "Доступность интерфейса для людей с разными возможностями и ограничениями.",
-      "confidence": "low",
-      "reviewer": "canonical-draft",
+      "confidence": "medium",
+      "reviewer": "cos-methodologist",
       "reviewedAt": "2026-10-21",
       "signals": {
         "scope": "profession"
@@ -349,8 +349,8 @@
       "order": 27,
       "prerequisites": [],
       "rationale": "Состояния компонентов, обратная связь и микровзаимодействия.",
-      "confidence": "low",
-      "reviewer": "canonical-draft",
+      "confidence": "medium",
+      "reviewer": "cos-methodologist",
       "reviewedAt": "2026-10-21",
       "signals": {
         "scope": "profession"
@@ -362,8 +362,8 @@
       "order": 28,
       "prerequisites": [],
       "rationale": "Работа с Figma: компоненты, варианты, автолейаут и библиотеки.",
-      "confidence": "low",
-      "reviewer": "canonical-draft",
+      "confidence": "medium",
+      "reviewer": "cos-methodologist",
       "reviewedAt": "2026-10-21",
       "signals": {
         "scope": "profession"
@@ -375,8 +375,8 @@
       "order": 29,
       "prerequisites": [],
       "rationale": "Совместные воркшопы, картирование и фасилитация в FigJam.",
-      "confidence": "low",
-      "reviewer": "canonical-draft",
+      "confidence": "medium",
+      "reviewer": "cos-methodologist",
       "reviewedAt": "2026-10-21",
       "signals": {
         "scope": "profession"
@@ -388,8 +388,8 @@
       "order": 30,
       "prerequisites": [],
       "rationale": "Создание интерактивных прототипов и микровзаимодействий в Framer.",
-      "confidence": "low",
-      "reviewer": "canonical-draft",
+      "confidence": "medium",
+      "reviewer": "cos-methodologist",
       "reviewedAt": "2026-10-21",
       "signals": {
         "scope": "profession"
@@ -401,8 +401,8 @@
       "order": 31,
       "prerequisites": [],
       "rationale": "Спецификации, компонентные контракты и коммуникация с инженерами.",
-      "confidence": "low",
-      "reviewer": "canonical-draft",
+      "confidence": "medium",
+      "reviewer": "cos-methodologist",
       "reviewedAt": "2026-10-21",
       "signals": {
         "scope": "profession"
@@ -414,8 +414,8 @@
       "order": 32,
       "prerequisites": [],
       "rationale": "Понимание HTML/CSS/JS, веб-стандартов и ограничений реализации.",
-      "confidence": "low",
-      "reviewer": "canonical-draft",
+      "confidence": "medium",
+      "reviewer": "cos-methodologist",
       "reviewedAt": "2026-10-21",
       "signals": {
         "scope": "profession"
@@ -427,8 +427,8 @@
       "order": 33,
       "prerequisites": [],
       "rationale": "Понимание HTML/CSS/JS, веб-стандартов и ограничений реализации.",
-      "confidence": "low",
-      "reviewer": "canonical-draft",
+      "confidence": "medium",
+      "reviewer": "cos-methodologist",
       "reviewedAt": "2026-10-21",
       "signals": {
         "scope": "profession"

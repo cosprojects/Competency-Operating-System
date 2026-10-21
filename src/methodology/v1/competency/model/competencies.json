@@ -1,0 +1,500 @@
+{
+  "modelVersion": "1.0.0",
+  "competencies": [
+    {
+      "id": "ux-design-thinking",
+      "branchId": "ux",
+      "branchTitle": "UX — пользовательский опыт",
+      "sectionId": "ux-foundations",
+      "sectionTitle": "Дизайн-мышление и основы профессии",
+      "title": "Дизайн-мышление",
+      "titleEn": "Design thinking",
+      "definition": "Системный подход к решению задач: понимание пользователя, формулировка проблемы, генерация и проверка гипотез, итерации.",
+      "priorityHint": "foundation"
+    },
+    {
+      "id": "ux-user-research",
+      "branchId": "ux",
+      "branchTitle": "UX — пользовательский опыт",
+      "sectionId": "ux-research",
+      "sectionTitle": "Исследования",
+      "title": "Пользовательские исследования",
+      "titleEn": "User research",
+      "definition": "Планирование и проведение исследований, синтез наблюдений в проверяемые инсайты.",
+      "priorityHint": "core",
+      "sourceEvidence": {
+        "taxonomyLeaves": [
+          "Interviews"
+        ],
+        "graphNodeIds": [
+          "node_ux_research"
+        ]
+      }
+    },
+    {
+      "id": "ux-personas",
+      "branchId": "ux",
+      "branchTitle": "UX — пользовательский опыт",
+      "sectionId": "ux-research",
+      "sectionTitle": "Исследования",
+      "title": "Персоны и сегментация",
+      "titleEn": "Personas",
+      "definition": "Модели целевых пользователей, их целей, контекста и критериев выбора.",
+      "priorityHint": "core",
+      "sourceEvidence": {
+        "taxonomyLeaves": [
+          "Personas"
+        ]
+      }
+    },
+    {
+      "id": "ux-interviews",
+      "branchId": "ux",
+      "branchTitle": "UX — пользовательский опыт",
+      "sectionId": "ux-research",
+      "sectionTitle": "Исследования",
+      "title": "Интервью и наблюдение",
+      "titleEn": "Interviews",
+      "definition": "Подготовка и проведение глубинных интервью, наблюдений и анализ качественных данных.",
+      "priorityHint": "core",
+      "sourceEvidence": {
+        "taxonomyLeaves": [
+          "Interviews"
+        ]
+      }
+    },
+    {
+      "id": "ux-analytics",
+      "branchId": "ux",
+      "branchTitle": "UX — пользовательский опыт",
+      "sectionId": "ux-research",
+      "sectionTitle": "Исследования",
+      "title": "Продуктовая аналитика",
+      "titleEn": "Product analytics",
+      "definition": "Работа с поведенческими данными, воронками и метриками для проверки гипотез.",
+      "priorityHint": "core",
+      "sourceEvidence": {
+        "graphNodeIds": [
+          "node_ux_research"
+        ]
+      }
+    },
+    {
+      "id": "ux-information-architecture",
+      "branchId": "ux",
+      "branchTitle": "UX — пользовательский опыт",
+      "sectionId": "ux-architecture",
+      "sectionTitle": "Сценарии и информационная архитектура",
+      "title": "Информационная архитектура",
+      "titleEn": "Information architecture",
+      "definition": "Структура контента и навигации, категоризация и находимость информации.",
+      "priorityHint": "foundation",
+      "sourceEvidence": {
+        "taxonomyLeaves": [
+          "Information Architecture"
+        ],
+        "graphNodeIds": [
+          "node_info_arch"
+        ]
+      }
+    },
+    {
+      "id": "ux-user-flows",
+      "branchId": "ux",
+      "branchTitle": "UX — пользовательский опыт",
+      "sectionId": "ux-architecture",
+      "sectionTitle": "Сценарии и информационная архитектура",
+      "title": "Пользовательские сценарии и флоу",
+      "titleEn": "User flows",
+      "definition": "Моделирование пути пользователя, развилок, ошибок и восстановления.",
+      "priorityHint": "core",
+      "sourceEvidence": {
+        "taxonomyLeaves": [
+          "User Flows"
+        ],
+        "graphNodeIds": [
+          "node_ux_flows"
+        ]
+      }
+    },
+    {
+      "id": "ux-wireframes",
+      "branchId": "ux",
+      "branchTitle": "UX — пользовательский опыт",
+      "sectionId": "ux-architecture",
+      "sectionTitle": "Сценарии и информационная архитектура",
+      "title": "Вайрфреймы и структура экранов",
+      "titleEn": "Wireframes",
+      "definition": "Быстрая структура экранов и взаимодействий без визуальной детализации.",
+      "priorityHint": "core",
+      "sourceEvidence": {
+        "taxonomyLeaves": [
+          "Wireframes"
+        ]
+      }
+    },
+    {
+      "id": "ux-requirements",
+      "branchId": "ux",
+      "branchTitle": "UX — пользовательский опыт",
+      "sectionId": "ux-architecture",
+      "sectionTitle": "Сценарии и информационная архитектура",
+      "title": "Анализ требований и постановка задач",
+      "titleEn": "Requirements analysis",
+      "definition": "Перевод бизнес- и пользовательских потребностей в проверяемые требования и ограничения.",
+      "priorityHint": "core"
+    },
+    {
+      "id": "ux-lowfi-prototype",
+      "branchId": "ux",
+      "branchTitle": "UX — пользовательский опыт",
+      "sectionId": "ux-prototyping",
+      "sectionTitle": "Прототипирование и проверка",
+      "title": "Низкодетализированные прототипы",
+      "titleEn": "Low-fidelity prototyping",
+      "definition": "Быстрые бумажные и схематичные прототипы для проверки структуры.",
+      "priorityHint": "core",
+      "sourceEvidence": {
+        "taxonomyLeaves": [
+          "Low-Fidelity"
+        ]
+      }
+    },
+    {
+      "id": "ux-hifi-prototype",
+      "branchId": "ux",
+      "branchTitle": "UX — пользовательский опыт",
+      "sectionId": "ux-prototyping",
+      "sectionTitle": "Прототипирование и проверка",
+      "title": "Высокодетализированные прототипы",
+      "titleEn": "High-fidelity prototyping",
+      "definition": "Детализированные прототипы, приближенные к финальному интерфейсу.",
+      "priorityHint": "core",
+      "sourceEvidence": {
+        "taxonomyLeaves": [
+          "High-Fidelity"
+        ]
+      }
+    },
+    {
+      "id": "ux-interactive-prototype",
+      "branchId": "ux",
+      "branchTitle": "UX — пользовательский опыт",
+      "sectionId": "ux-prototyping",
+      "sectionTitle": "Прототипирование и проверка",
+      "title": "Интерактивные прототипы",
+      "titleEn": "Interactive prototyping",
+      "definition": "Прототипы с переходами и состояниями для проверки поведения продукта.",
+      "priorityHint": "core",
+      "sourceEvidence": {
+        "taxonomyLeaves": [
+          "Interactive Prototype"
+        ]
+      }
+    },
+    {
+      "id": "ux-usability-testing",
+      "branchId": "ux",
+      "branchTitle": "UX — пользовательский опыт",
+      "sectionId": "ux-prototyping",
+      "sectionTitle": "Прототипирование и проверка",
+      "title": "Юзабилити-тестирование",
+      "titleEn": "Usability testing",
+      "definition": "Проверка сценариев и прототипов на реальных пользователях, фиксация и приоритизация проблем.",
+      "priorityHint": "core",
+      "sourceEvidence": {
+        "taxonomyLeaves": [
+          "User Testing"
+        ]
+      }
+    },
+    {
+      "id": "ux-experiments",
+      "branchId": "ux",
+      "branchTitle": "UX — пользовательский опыт",
+      "sectionId": "ux-prototyping",
+      "sectionTitle": "Прототипирование и проверка",
+      "title": "UX-метрики и эксперименты",
+      "titleEn": "UX metrics and experiments",
+      "definition": "Выбор метрик, дизайн экспериментов и интерпретация результатов.",
+      "priorityHint": "optional"
+    },
+    {
+      "id": "ux-product-thinking",
+      "branchId": "ux",
+      "branchTitle": "UX — пользовательский опыт",
+      "sectionId": "ux-product",
+      "sectionTitle": "Продукт и стратегия",
+      "title": "Продуктовое мышление",
+      "titleEn": "Product thinking",
+      "definition": "Понимание ценности, аудитории, ограничений и жизненного цикла продукта.",
+      "priorityHint": "core"
+    },
+    {
+      "id": "ux-metrics",
+      "branchId": "ux",
+      "branchTitle": "UX — пользовательский опыт",
+      "sectionId": "ux-product",
+      "sectionTitle": "Продукт и стратегия",
+      "title": "Продуктовые метрики и бизнес-обоснование",
+      "titleEn": "Product metrics",
+      "definition": "Связь дизайн-решений с метриками, юнит-экономикой и бизнес-результатом.",
+      "priorityHint": "core"
+    },
+    {
+      "id": "ux-ethics-privacy",
+      "branchId": "ux",
+      "branchTitle": "UX — пользовательский опыт",
+      "sectionId": "ux-product",
+      "sectionTitle": "Продукт и стратегия",
+      "title": "Этика, приватность и ограничения",
+      "titleEn": "Ethics and privacy",
+      "definition": "Этические, правовые и безопасностные ограничения дизайна.",
+      "priorityHint": "optional"
+    },
+    {
+      "id": "ui-color",
+      "branchId": "ui",
+      "branchTitle": "UI — интерфейс",
+      "sectionId": "ui-visual",
+      "sectionTitle": "Визуальные основы",
+      "title": "Теория цвета и колористика",
+      "titleEn": "Color theory",
+      "definition": "Физика цвета, восприятие, гармония, контраст и культурный контекст.",
+      "priorityHint": "foundation",
+      "sourceEvidence": {
+        "taxonomyLeaves": [
+          "Color theory"
+        ],
+        "graphNodeIds": [
+          "node_form_comp"
+        ]
+      }
+    },
+    {
+      "id": "ui-typography",
+      "branchId": "ui",
+      "branchTitle": "UI — интерфейс",
+      "sectionId": "ui-visual",
+      "sectionTitle": "Визуальные основы",
+      "title": "Типографика",
+      "titleEn": "Typography",
+      "definition": "Шрифтовая иерархия, читаемость, ритм и типографические системы.",
+      "priorityHint": "foundation",
+      "sourceEvidence": {
+        "taxonomyLeaves": [
+          "Typography"
+        ]
+      }
+    },
+    {
+      "id": "ui-layout",
+      "branchId": "ui",
+      "branchTitle": "UI — интерфейс",
+      "sectionId": "ui-visual",
+      "sectionTitle": "Визуальные основы",
+      "title": "Композиция, сетки и визуальная иерархия",
+      "titleEn": "Layout and composition",
+      "definition": "Управление вниманием через композицию, сетки, пропорции и иерархию.",
+      "priorityHint": "foundation",
+      "sourceEvidence": {
+        "taxonomyLeaves": [
+          "Layout & composition",
+          "Grids"
+        ]
+      }
+    },
+    {
+      "id": "ui-visual-elements",
+      "branchId": "ui",
+      "branchTitle": "UI — интерфейс",
+      "sectionId": "ui-visual",
+      "sectionTitle": "Визуальные основы",
+      "title": "Иконки и визуальные элементы",
+      "titleEn": "Visual elements",
+      "definition": "Иконки, графика и визуальные элементы как часть интерфейсной системы.",
+      "priorityHint": "core"
+    },
+    {
+      "id": "ui-visual-communication",
+      "branchId": "ui",
+      "branchTitle": "UI — интерфейс",
+      "sectionId": "ui-visual",
+      "sectionTitle": "Визуальные основы",
+      "title": "Визуальная коммуникация",
+      "titleEn": "Visual communication",
+      "definition": "Стилистика, визуальные коды и целостность интерфейсной коммуникации.",
+      "priorityHint": "core"
+    },
+    {
+      "id": "ui-design-systems",
+      "branchId": "ui",
+      "branchTitle": "UI — интерфейс",
+      "sectionId": "ui-systems",
+      "sectionTitle": "Дизайн-системы и компоненты",
+      "title": "Дизайн-системы и токены",
+      "titleEn": "Design systems",
+      "definition": "Архитектура дизайн-системы, семантические токены и синхронизация с кодом.",
+      "priorityHint": "core",
+      "sourceEvidence": {
+        "taxonomyLeaves": [
+          "Components"
+        ],
+        "graphNodeIds": [
+          "node_design_systems"
+        ]
+      }
+    },
+    {
+      "id": "ui-components",
+      "branchId": "ui",
+      "branchTitle": "UI — интерфейс",
+      "sectionId": "ui-systems",
+      "sectionTitle": "Дизайн-системы и компоненты",
+      "title": "Компоненты и паттерны",
+      "titleEn": "Components and patterns",
+      "definition": "Проектирование переиспользуемых компонентов, вариантов и поведенческих паттернов.",
+      "priorityHint": "core",
+      "sourceEvidence": {
+        "taxonomyLeaves": [
+          "Components"
+        ]
+      }
+    },
+    {
+      "id": "ui-responsive",
+      "branchId": "ui",
+      "branchTitle": "UI — интерфейс",
+      "sectionId": "ui-systems",
+      "sectionTitle": "Дизайн-системы и компоненты",
+      "title": "Адаптивность и responsive UI",
+      "titleEn": "Responsive UI",
+      "definition": "Адаптация интерфейса под устройства, размеры и контекст использования.",
+      "priorityHint": "core",
+      "sourceEvidence": {
+        "taxonomyLeaves": [
+          "Grids"
+        ]
+      }
+    },
+    {
+      "id": "ui-accessibility",
+      "branchId": "ui",
+      "branchTitle": "UI — интерфейс",
+      "sectionId": "ui-systems",
+      "sectionTitle": "Дизайн-системы и компоненты",
+      "title": "Доступность и инклюзивный дизайн",
+      "titleEn": "Accessibility",
+      "definition": "Доступность интерфейса для людей с разными возможностями и ограничениями.",
+      "priorityHint": "core",
+      "sourceEvidence": {
+        "taxonomyLeaves": [
+          "Accessibility"
+        ]
+      }
+    },
+    {
+      "id": "ui-interaction-states",
+      "branchId": "ui",
+      "branchTitle": "UI — интерфейс",
+      "sectionId": "ui-systems",
+      "sectionTitle": "Дизайн-системы и компоненты",
+      "title": "Состояния и микровзаимодействия",
+      "titleEn": "States and microinteractions",
+      "definition": "Состояния компонентов, обратная связь и микровзаимодействия.",
+      "priorityHint": "core"
+    },
+    {
+      "id": "ui-motion",
+      "branchId": "ui",
+      "branchTitle": "UI — интерфейс",
+      "sectionId": "ui-motion",
+      "sectionTitle": "Интерактивность и анимация",
+      "title": "Анимация и motion design",
+      "titleEn": "Motion design",
+      "definition": "Кинетика, тайминг и анимационные системы интерфейса.",
+      "priorityHint": "core"
+    },
+    {
+      "id": "ui-figma",
+      "branchId": "ui",
+      "branchTitle": "UI — интерфейс",
+      "sectionId": "ui-tools",
+      "sectionTitle": "Инструментарий и передача в разработку",
+      "title": "Figma: компоненты и автолейаут",
+      "titleEn": "Figma",
+      "definition": "Работа с Figma: компоненты, варианты, автолейаут и библиотеки.",
+      "priorityHint": "core",
+      "sourceEvidence": {
+        "taxonomyLeaves": [
+          "Figma"
+        ]
+      }
+    },
+    {
+      "id": "ui-figjam",
+      "branchId": "ui",
+      "branchTitle": "UI — интерфейс",
+      "sectionId": "ui-tools",
+      "sectionTitle": "Инструментарий и передача в разработку",
+      "title": "FigJam: воркшопы и картирование",
+      "titleEn": "FigJam",
+      "definition": "Совместные воркшопы, картирование и фасилитация в FigJam.",
+      "priorityHint": "optional",
+      "sourceEvidence": {
+        "taxonomyLeaves": [
+          "FigJam"
+        ]
+      }
+    },
+    {
+      "id": "ui-framer",
+      "branchId": "ui",
+      "branchTitle": "UI — интерфейс",
+      "sectionId": "ui-tools",
+      "sectionTitle": "Инструментарий и передача в разработку",
+      "title": "Framer: интерактивные прототипы",
+      "titleEn": "Framer",
+      "definition": "Создание интерактивных прототипов и микровзаимодействий в Framer.",
+      "priorityHint": "optional",
+      "sourceEvidence": {
+        "taxonomyLeaves": [
+          "Framer"
+        ]
+      }
+    },
+    {
+      "id": "ui-handoff",
+      "branchId": "ui",
+      "branchTitle": "UI — интерфейс",
+      "sectionId": "ui-tools",
+      "sectionTitle": "Инструментарий и передача в разработку",
+      "title": "Передача макетов в разработку",
+      "titleEn": "Design handoff",
+      "definition": "Спецификации, компонентные контракты и коммуникация с инженерами.",
+      "priorityHint": "core"
+    },
+    {
+      "id": "ui-web-technologies",
+      "branchId": "ui",
+      "branchTitle": "UI — интерфейс",
+      "sectionId": "ui-tools",
+      "sectionTitle": "Инструментарий и передача в разработку",
+      "title": "Веб-технологии и ограничения реализации",
+      "titleEn": "Web technologies",
+      "definition": "Понимание HTML/CSS/JS, веб-стандартов и ограничений реализации.",
+      "priorityHint": "optional"
+    },
+    {
+      "id": "ui-data-visualization",
+      "branchId": "ui",
+      "branchTitle": "UI — интерфейс",
+      "sectionId": "ui-tools",
+      "sectionTitle": "Инструментарий и передача в разработку",
+      "title": "Визуализация данных",
+      "titleEn": "Data visualization",
+      "definition": "Графики, диаграммы и визуализация данных в интерфейсе.",
+      "priorityHint": "optional"
+    }
+  ]
+}

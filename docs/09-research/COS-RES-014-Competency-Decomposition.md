@@ -1,7 +1,7 @@
 ---
 id: COS-RES-014
 title: Сборка каталога компетенций, компонентов и тегов
-version: 1.7.0
+version: 1.8.0
 status: Draft
 owner: Research Team
 last_updated: 2026-10-21
@@ -129,7 +129,7 @@ sources:discover, professions:collect, tags:collect,
 competency:seed, competency:candidates, competency:reconcile, competency:build, competency:review, competency:evaluate,
 priority:template, priority:validate, competency:canvas, canvas:page,
 canonical:validate, canonical:report, canonical:apply,
-materials:agent,
+materials:agent, model:sync, model:validate,
 catalog:validate, competency:compose,
 materials:sources, materials:collect, materials:classify, materials:review,
 materials:validate, materials:refresh
@@ -180,3 +180,4 @@ materials:validate, materials:refresh
 | 1.5.0 | 2026-10-21 | Добавлена ссылка на `COS-RES-015`: приоритеты foundation/core/optional и раскладка канваса |
 | 1.6.0 | 2026-10-21 | Добавлена ссылка на `COS-RES-016`: каноническая карта UX/UI из двух блоков и восьми разделов |
 | 1.7.0 | 2026-10-21 | Добавлен отдельный Material Agent (`COS-RES-017`) и команда `materials:agent`; материалы больше не часть синхронного потока сборки компетенций |
+| 1.8.0 | 2026-10-21 | Добавлена нормализованная модель `COS-RES-018`: сфера → профессия → единый массив компетенций, source-файлы сферы/профессии, `model:sync`/`model:validate` |

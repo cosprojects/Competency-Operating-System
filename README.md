@@ -14,7 +14,7 @@ AI-native platform for competency assessment, learning pathways and workforce de
 
 ## Каноническая карта UX/UI
 
-`src/methodology/v1/competency/canonical/uxui.json` — два блока (UX/UI), 9 разделов и 34 компетенции со статусами `covered` / `partial` / `gap`. Сейчас: 34 covered / 0 partial / 0 gap; в каталоге 33 блока, 131 тег. Проверка и coverage-отчёт:
+`src/methodology/v1/competency/canonical/uxui.json` — два блока (UX/UI), 9 разделов и 34 компетенции со статусами `covered` / `partial` / `gap`. Сейчас: 34 covered / 0 partial / 0 gap; в каталоге 33 блока, 150 тегов. Проверка и coverage-отчёт:
 
 ```bash
 npm run canonical:validate -- --domain it --profession uxui --source review --include-seed --report
@@ -24,3 +24,8 @@ npm run canonical:validate -- --domain it --profession uxui --source review --in
 ## Material Agent
 
 Материалы вынесены в отдельный контур: `npm run materials:agent -- --domain it --profession uxui --limit 2 --sources wikipedia,habr,medium`. Журнал — `data/materials-agent/`; агент не меняет каталог и не пишет в граф.
+
+
+## Модель сфера → профессия → компетенции
+
+`npm run model:sync -- --domain it --profession uxui --write` собирает `model/spheres.json`, `model/professions.json`, `model/competencies.json` и `model/profession-competencies/uxui.json`. Компетенции хранятся один раз в едином массиве; профессия ссылается на них с tier/order. Источники — `sources/spheres/it.json` и `sources/professions/it.uxui.json`.

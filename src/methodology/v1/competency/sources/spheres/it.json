@@ -1,0 +1,74 @@
+{
+  "sphereId": "it",
+  "languagePriority": [
+    "ru",
+    "en"
+  ],
+  "sources": [
+    {
+      "sourceId": "esco",
+      "role": "occupations",
+      "status": "active"
+    },
+    {
+      "sourceId": "onet",
+      "role": "occupations",
+      "status": "active"
+    },
+    {
+      "sourceId": "practicum",
+      "role": "skills",
+      "status": "active"
+    },
+    {
+      "sourceId": "wikipedia",
+      "role": "materials",
+      "status": "active"
+    },
+    {
+      "sourceId": "internet-archive",
+      "role": "materials",
+      "status": "active"
+    },
+    {
+      "sourceId": "stepik",
+      "role": "materials",
+      "status": "degraded"
+    },
+    {
+      "sourceId": "youtube",
+      "role": "materials",
+      "status": "planned"
+    },
+    {
+      "sourceId": "habr",
+      "role": "materials",
+      "status": "active"
+    },
+    {
+      "sourceId": "medium",
+      "role": "materials",
+      "status": "active"
+    },
+    {
+      "sourceId": "learn-anything",
+      "role": "materials",
+      "status": "degraded"
+    },
+    {
+      "sourceId": "rf-profstandards",
+      "role": "standards",
+      "status": "planned"
+    },
+    {
+      "sourceId": "fgo",
+      "role": "standards",
+      "status": "planned"
+    },
+    {
+      "sourceId": "hh-api",
+      "role": "skills",
+      "status": "blocked"
+    }
+  ]
+}

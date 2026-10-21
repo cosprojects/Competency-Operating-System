@@ -1,0 +1,15 @@
+{
+  "modelVersion": "1.0.0",
+  "professions": [
+    {
+      "id": "it.uxui",
+      "sphereId": "it",
+      "title": "UX/UI-дизайнер",
+      "titleEn": "UX/UI designer",
+      "canonicalMapFile": "canonical/uxui.json",
+      "catalogFile": "catalog/it.json",
+      "priorityFile": "priority/uxui.json",
+      "sourcesFile": "sources/professions/it.uxui.json"
+    }
+  ]
+}

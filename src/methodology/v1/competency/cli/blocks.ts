@@ -14,6 +14,7 @@ import { mkdir, writeFile } from "node:fs/promises";
 interface CandidatesFile {
   candidates: CompetencyCandidate[];
   unassignedTagIds: string[];
+  extraTags?: TagRecord[];
 }
 interface TagsFile {
   tags: TagRecord[];
@@ -55,7 +56,7 @@ async function main(): Promise<void> {
   const result = await buildBlocks({
     domain,
     candidates,
-    tags: tagRecordsOf(candidates, tagsFile.tags),
+    tags: tagRecordsOf(candidates, [...tagsFile.tags, ...(candidatesFile.extraTags ?? [])]),
     professionTitles: Object.fromEntries(professions.professions.map((item) => [item.id, item.title])),
     transport,
     policy,

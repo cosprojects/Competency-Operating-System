@@ -94,18 +94,31 @@ npm run materials:agent -- --domain it --profession uxui --limit 2 \
 
 Опции: `--dry-run`, `--limit`, `--per-competency`, `--sources`, `--classify`, `--budget-usd`, `--max-calls`.
 
-## 6. Следующая архитектура
+## 6. Worker-режим
 
-На следующем этапе Material Agent можно вынести в отдельный процесс/воркер:
+Очередь реализована в `materials-agent/queue.ts`:
 
-- очередь задач `professionId + competencyId`;
-- отдельный бюджет и retry;
-- независимый запуск по расписанию;
-- журнал и coverage как единственный контракт с агрегатором;
-- human-review материалов — отдельный шаг;
-- агрегатор не ждёт материалы и не падает без них.
+- задача = `professionId + competencyId` (`id = professionId:blockId`);
+- `concurrency` — параллельные элементы;
+- `maxAttempts` — retry на уровне элемента;
+- общий `LlmBudget` для классификации, вызовы/стоимость в итоговом журнале;
+- каждый элемент получает discovery coverage и linked count;
+- упавший элемент не валит очередь: журнал получает `status: partial`, остальные продолжаются.
+
+```bash
+npm run materials:agent:queue -- --domain it --profession uxui \
+  --limit 2 --per-competency 1 --sources wikipedia,habr,medium \
+  --concurrency 2 --retry 2
+```
+
+Журнал: `data/materials-agent/<domain>-<profession>-queue.json`.
+
+Агрегатор компетенций не ждёт материалы; очередь можно запускать отдельным процессом/по расписанию.
 
 ## 7. Текущий smoke-результат
+
+Worker-очередь: 2 элемента, 2 completed, 2 discovered, 0 failed.
+
 
 На 2 accepted-компетенциях, sources `wikipedia,habr,medium`:
 

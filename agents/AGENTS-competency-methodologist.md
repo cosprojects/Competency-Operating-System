@@ -31,6 +31,10 @@
 
 Вход: кандидат, его теги, существующие компетенции. Выход: 2–8 компонентов, в каждом 1–12 тегов. Компоненты — разделы предмета; теги — конкретные знания/навыки. Каждый тег: `title`, `kind`, `definition`, `evidenceTagIds`, `modelProposal`. Без источников тег остаётся `modelProposal=true` и идёт человеку. Не более 8 компонентов.
 
+## Каноническая карта
+
+`canonical/<profession>.json` задаёт два верхних блока UX/UI, разделы и статусы `covered`/`partial`/`gap`. Это human-owned структура: LLM не придумывает новые разделы и не выдаёт gap за покрытую компетенцию. Пробелы явно остаются `gap`, пока для них нет блока.
+
 ## Приоритет изучения
 
 `foundation` / `core` / `optional` — human-owned маркировка (`priority/<profession>.json`, `COS-RES-015`). LLM не выставляет финальный tier, не заполняет `reviewer`/`reviewedAt` и не принимает marks. `isCore`, `marketDemandWeight`, `aiAutomationRisk` — только сигналы для человека.

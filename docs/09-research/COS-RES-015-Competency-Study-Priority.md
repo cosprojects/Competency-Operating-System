@@ -176,6 +176,7 @@ npm run canvas:page -- --domain it --profession uxui --source review --include-s
 
 ## 7. Интеграция
 
+- Каноническая карта `COS-RES-016` задаёт блоки UX/UI и разделы; `priorityHint` из неё — только подсказка для human-маркировки.
 - `ProfessionProfile.competencies[]` получает `studyPriority` (tier/order/rationale/confidence); Markdown профиля показывает `[Фундаментальная]` и т.п.
 - `catalog:validate --require-priority` требует marks для accepted-блоков профессии.
 - Пайплайн: `priority-template` (agent) → `priority-review` (human) → `priority-validate` (agent) → `canvas-build` (agent) → остальные шаги материалов.

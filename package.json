@@ -36,7 +36,9 @@
     "priority:template": "node --experimental-strip-types src/methodology/v1/competency/cli/priority-template.ts",
     "priority:validate": "node --experimental-strip-types src/methodology/v1/competency/cli/priority-validate.ts",
     "competency:canvas": "node --experimental-strip-types src/methodology/v1/competency/cli/canvas.ts",
-    "canvas:page": "node --experimental-strip-types src/methodology/v1/competency/cli/canvas-page.ts"
+    "canvas:page": "node --experimental-strip-types src/methodology/v1/competency/cli/canvas-page.ts",
+    "canonical:validate": "node --experimental-strip-types src/methodology/v1/competency/cli/canonical-validate.ts",
+    "canonical:report": "node --experimental-strip-types src/methodology/v1/competency/cli/canonical-validate.ts -- --report"
   },
   "dependencies": {
     "@prisma/client": "^6.4.0",

@@ -19,3 +19,8 @@ AI-native platform for competency assessment, learning pathways and workforce de
 ```bash
 npm run canonical:validate -- --domain it --profession uxui --source review --include-seed --report
 ```
+
+
+## Material Agent
+
+Материалы вынесены в отдельный контур: `npm run materials:agent -- --domain it --profession uxui --limit 2 --sources wikipedia,habr,medium`. Журнал — `data/materials-agent/`; агент не меняет каталог и не пишет в граф.

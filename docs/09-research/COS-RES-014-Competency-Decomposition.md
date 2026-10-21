@@ -1,7 +1,7 @@
 ---
 id: COS-RES-014
 title: Сборка каталога компетенций, компонентов и тегов
-version: 1.6.0
+version: 1.7.0
 status: Draft
 owner: Research Team
 last_updated: 2026-10-21
@@ -129,6 +129,7 @@ sources:discover, professions:collect, tags:collect,
 competency:seed, competency:candidates, competency:reconcile, competency:build, competency:review, competency:evaluate,
 priority:template, priority:validate, competency:canvas, canvas:page,
 canonical:validate, canonical:report, canonical:apply,
+materials:agent,
 catalog:validate, competency:compose,
 materials:sources, materials:collect, materials:classify, materials:review,
 materials:validate, materials:refresh
@@ -178,3 +179,4 @@ materials:validate, materials:refresh
 | 1.4.0 | 2026-10-21 | Добавлены Хабр и Medium (robots-safe: без `/search/`), язык ru→en, `other` отбрасывается; Learn Anything зарегистрирован как degraded из-за client-only Jazz. Эталон: 9 материалов, 7 связей |
 | 1.5.0 | 2026-10-21 | Добавлена ссылка на `COS-RES-015`: приоритеты foundation/core/optional и раскладка канваса |
 | 1.6.0 | 2026-10-21 | Добавлена ссылка на `COS-RES-016`: каноническая карта UX/UI из двух блоков и восьми разделов |
+| 1.7.0 | 2026-10-21 | Добавлен отдельный Material Agent (`COS-RES-017`) и команда `materials:agent`; материалы больше не часть синхронного потока сборки компетенций |

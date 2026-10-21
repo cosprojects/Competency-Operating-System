@@ -33,44 +33,30 @@ async function main(): Promise<void> {
   const flattened = map.branches.flatMap((branch) =>
     branch.sections.flatMap((section) => section.competencies.map((competency) => ({ branch, section, competency }))),
   );
-  const canonicalForBlock = new Map<string, { tier: "foundation" | "core" | "optional"; rationale: string }>();
-  for (const item of flattened) {
-    for (const blockId of item.competency.coveredBy) {
-      if (!canonicalForBlock.has(blockId)) {
-        canonicalForBlock.set(blockId, {
-          tier: item.competency.priorityHint,
-          rationale: item.competency.definition,
-        });
-      }
-    }
-    for (const block of catalog.blocks) {
-      if ((block.canonicalIds ?? []).includes(item.competency.id) && !canonicalForBlock.has(block.id)) {
-        canonicalForBlock.set(block.id, {
-          tier: item.competency.priorityHint,
-          rationale: item.competency.definition,
-        });
-      }
-    }
-  }
-
   const marks: StudyPriorityMark[] = [];
+  const seenBlocks = new Set<string>();
   let order = 0;
-  const orderedBlocks = [...catalog.blocks].sort((a, b) => a.title.localeCompare(b.title));
-  for (const block of orderedBlocks) {
-    const canonical = canonicalForBlock.get(block.id);
-    if (!canonical) continue;
-    order += 1;
-    marks.push({
-      competencyId: block.id,
-      tier: canonical.tier,
-      order,
-      prerequisites: [],
-      rationale: canonical.rationale,
-      confidence: "low",
-      reviewer: "canonical-draft",
-      reviewedAt: new Date().toISOString().slice(0, 10),
-      signals: { scope: "profession" },
-    });
+
+  for (const item of flattened) {
+    const candidates = catalog.blocks.filter((block) =>
+      (block.canonicalIds ?? []).includes(item.competency.id) || item.competency.coveredBy.includes(block.id),
+    );
+    for (const block of candidates) {
+      if (seenBlocks.has(block.id)) continue;
+      seenBlocks.add(block.id);
+      order += 1;
+      marks.push({
+        competencyId: block.id,
+        tier: item.competency.priorityHint,
+        order,
+        prerequisites: [],
+        rationale: item.competency.definition,
+        confidence: "low",
+        reviewer: "canonical-draft",
+        reviewedAt: new Date().toISOString().slice(0, 10),
+        signals: { scope: "profession" },
+      });
+    }
   }
   const file: PriorityFile = {
     priorityVersion: "1.0.0",

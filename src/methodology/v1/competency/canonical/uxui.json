@@ -30,7 +30,7 @@
               "titleEn": "User research",
               "definition": "Планирование и проведение исследований, синтез наблюдений в проверяемые инсайты.",
               "priorityHint": "core",
-              "status": "partial",
+              "status": "covered",
               "coveredBy": [
                 "comp_ec6bb5ba0dd5"
               ],
@@ -41,7 +41,8 @@
                 "graphNodeIds": [
                   "node_ux_research"
                 ]
-              }
+              },
+              "note": "Покрыто accepted-блоком"
             },
             {
               "id": "ux-personas",
@@ -50,7 +51,7 @@
               "titleEn": "Personas",
               "definition": "Модели целевых пользователей, их целей, контекста и критериев выбора.",
               "priorityHint": "core",
-              "status": "partial",
+              "status": "covered",
               "coveredBy": [
                 "comp_212887d793e2"
               ],
@@ -59,7 +60,7 @@
                   "Personas"
                 ]
               },
-              "note": "Сгенерирован из seed; блок needs_review"
+              "note": "Покрыто accepted-блоком"
             },
             {
               "id": "ux-interviews",
@@ -68,7 +69,7 @@
               "titleEn": "Interviews",
               "definition": "Подготовка и проведение глубинных интервью, наблюдений и анализ качественных данных.",
               "priorityHint": "core",
-              "status": "partial",
+              "status": "covered",
               "coveredBy": [
                 "comp_209c850b7e37"
               ],
@@ -77,7 +78,7 @@
                   "Interviews"
                 ]
               },
-              "note": "Сгенерирован из seed; блок needs_review"
+              "note": "Покрыто accepted-блоком"
             },
             {
               "id": "ux-usability-testing",
@@ -86,7 +87,7 @@
               "titleEn": "Usability testing",
               "definition": "Проверка сценариев и прототипов на реальных пользователях, фиксация и приоритизация проблем.",
               "priorityHint": "core",
-              "status": "partial",
+              "status": "covered",
               "coveredBy": [
                 "comp_c2cd7e56553d"
               ],
@@ -95,7 +96,7 @@
                   "User Testing"
                 ]
               },
-              "note": "Сгенерирован из seed; блок needs_review"
+              "note": "Покрыто accepted-блоком"
             },
             {
               "id": "ux-analytics",
@@ -104,7 +105,7 @@
               "titleEn": "Product analytics",
               "definition": "Работа с поведенческими данными, воронками и метриками для проверки гипотез.",
               "priorityHint": "core",
-              "status": "partial",
+              "status": "covered",
               "coveredBy": [
                 "comp_ec6bb5ba0dd5"
               ],
@@ -112,7 +113,8 @@
                 "graphNodeIds": [
                   "node_ux_research"
                 ]
-              }
+              },
+              "note": "Покрыто accepted-блоком"
             }
           ]
         },
@@ -129,7 +131,7 @@
               "titleEn": "Information architecture",
               "definition": "Структура контента и навигации, категоризация и находимость информации.",
               "priorityHint": "foundation",
-              "status": "partial",
+              "status": "covered",
               "coveredBy": [
                 "comp_ba86d2248db0"
               ],
@@ -141,7 +143,7 @@
                   "node_info_arch"
                 ]
               },
-              "note": "Сгенерирован из seed; блок needs_review"
+              "note": "Покрыто accepted-блоком"
             },
             {
               "id": "ux-user-flows",
@@ -150,7 +152,7 @@
               "titleEn": "User flows",
               "definition": "Моделирование пути пользователя, развилок, ошибок и восстановления.",
               "priorityHint": "core",
-              "status": "partial",
+              "status": "covered",
               "coveredBy": [
                 "comp_e4f2ab2892c2"
               ],
@@ -162,7 +164,7 @@
                   "node_ux_flows"
                 ]
               },
-              "note": "Сгенерирован из seed; блок needs_review"
+              "note": "Покрыто accepted-блоком"
             },
             {
               "id": "ux-wireframes",
@@ -171,7 +173,7 @@
               "titleEn": "Wireframes",
               "definition": "Быстрая структура экранов и взаимодействий без визуальной детализации.",
               "priorityHint": "core",
-              "status": "partial",
+              "status": "covered",
               "coveredBy": [
                 "comp_281fdd473ddf"
               ],
@@ -180,7 +182,7 @@
                   "Wireframes"
                 ]
               },
-              "note": "Сгенерирован из seed; блок needs_review"
+              "note": "Покрыто accepted-блоком"
             },
             {
               "id": "ux-requirements",
@@ -192,7 +194,8 @@
               "status": "covered",
               "coveredBy": [
                 "comp_bb0fe81fb74f"
-              ]
+              ],
+              "note": "Покрыто accepted-блоком"
             }
           ]
         },
@@ -209,7 +212,7 @@
               "titleEn": "Low-fidelity prototyping",
               "definition": "Быстрые бумажные и схематичные прототипы для проверки структуры.",
               "priorityHint": "core",
-              "status": "partial",
+              "status": "covered",
               "coveredBy": [
                 "comp_c9042039c71b"
               ],
@@ -218,7 +221,7 @@
                   "Low-Fidelity"
                 ]
               },
-              "note": "Сгенерирован из seed; блок needs_review"
+              "note": "Покрыто accepted-блоком"
             },
             {
               "id": "ux-hifi-prototype",
@@ -227,7 +230,7 @@
               "titleEn": "High-fidelity prototyping",
               "definition": "Детализированные прототипы, приближенные к финальному интерфейсу.",
               "priorityHint": "core",
-              "status": "partial",
+              "status": "covered",
               "coveredBy": [
                 "comp_f30be83c07b9"
               ],
@@ -236,7 +239,7 @@
                   "High-Fidelity"
                 ]
               },
-              "note": "Сгенерирован из seed; блок needs_review"
+              "note": "Покрыто accepted-блоком"
             },
             {
               "id": "ux-interactive-prototype",
@@ -245,7 +248,7 @@
               "titleEn": "Interactive prototyping",
               "definition": "Прототипы с переходами и состояниями для проверки поведения продукта.",
               "priorityHint": "core",
-              "status": "partial",
+              "status": "covered",
               "coveredBy": [
                 "comp_fa6b64a98d04"
               ],
@@ -254,7 +257,7 @@
                   "Interactive Prototype"
                 ]
               },
-              "note": "Сгенерирован из seed; блок needs_review"
+              "note": "Покрыто accepted-блоком"
             },
             {
               "id": "ux-experiments",
@@ -263,11 +266,11 @@
               "titleEn": "UX metrics and experiments",
               "definition": "Выбор метрик, дизайн экспериментов и интерпретация результатов.",
               "priorityHint": "optional",
-              "status": "partial",
+              "status": "covered",
               "coveredBy": [
                 "comp_94c55eb76f7e"
               ],
-              "note": "Сгенерирован из seed; блок needs_review"
+              "note": "Покрыто accepted-блоком"
             }
           ]
         },
@@ -284,11 +287,11 @@
               "titleEn": "Product thinking",
               "definition": "Понимание ценности, аудитории, ограничений и жизненного цикла продукта.",
               "priorityHint": "core",
-              "status": "partial",
+              "status": "covered",
               "coveredBy": [
                 "comp_ebd843b35ccf"
               ],
-              "note": "Сгенерирован из seed; блок needs_review"
+              "note": "Покрыто accepted-блоком"
             },
             {
               "id": "ux-metrics",
@@ -297,10 +300,11 @@
               "titleEn": "Product metrics",
               "definition": "Связь дизайн-решений с метриками, юнит-экономикой и бизнес-результатом.",
               "priorityHint": "core",
-              "status": "partial",
+              "status": "covered",
               "coveredBy": [
                 "comp_ce23f79a5220"
-              ]
+              ],
+              "note": "Покрыто accepted-блоком"
             },
             {
               "id": "ux-ethics-privacy",
@@ -309,10 +313,11 @@
               "titleEn": "Ethics and privacy",
               "definition": "Этические, правовые и безопасностные ограничения дизайна.",
               "priorityHint": "optional",
-              "status": "partial",
+              "status": "covered",
               "coveredBy": [
                 "comp_058ffb486eb7"
-              ]
+              ],
+              "note": "Покрыто accepted-блоком"
             }
           ]
         }
@@ -349,7 +354,8 @@
                 "graphNodeIds": [
                   "node_form_comp"
                 ]
-              }
+              },
+              "note": "Покрыто accepted-блоком"
             },
             {
               "id": "ui-typography",
@@ -366,7 +372,8 @@
                 "taxonomyLeaves": [
                   "Typography"
                 ]
-              }
+              },
+              "note": "Покрыто accepted-блоком"
             },
             {
               "id": "ui-layout",
@@ -385,7 +392,8 @@
                   "Layout & composition",
                   "Grids"
                 ]
-              }
+              },
+              "note": "Покрыто accepted-блоком"
             },
             {
               "id": "ui-visual-elements",
@@ -397,7 +405,8 @@
               "status": "covered",
               "coveredBy": [
                 "comp_047348e54050"
-              ]
+              ],
+              "note": "Покрыто accepted-блоком"
             },
             {
               "id": "ui-visual-communication",
@@ -409,7 +418,8 @@
               "status": "covered",
               "coveredBy": [
                 "comp_2d2a9ebacafe"
-              ]
+              ],
+              "note": "Покрыто accepted-блоком"
             }
           ]
         },
@@ -426,7 +436,7 @@
               "titleEn": "Design systems",
               "definition": "Архитектура дизайн-системы, семантические токены и синхронизация с кодом.",
               "priorityHint": "core",
-              "status": "partial",
+              "status": "covered",
               "coveredBy": [
                 "comp_9a71b8071561"
               ],
@@ -438,7 +448,7 @@
                   "node_design_systems"
                 ]
               },
-              "note": "Сгенерирован из seed; блок needs_review"
+              "note": "Покрыто accepted-блоком"
             },
             {
               "id": "ui-components",
@@ -447,7 +457,7 @@
               "titleEn": "Components and patterns",
               "definition": "Проектирование переиспользуемых компонентов, вариантов и поведенческих паттернов.",
               "priorityHint": "core",
-              "status": "partial",
+              "status": "covered",
               "coveredBy": [
                 "comp_ee65cfba2fc2"
               ],
@@ -456,7 +466,7 @@
                   "Components"
                 ]
               },
-              "note": "Сгенерирован из seed; блок needs_review"
+              "note": "Покрыто accepted-блоком"
             },
             {
               "id": "ui-responsive",
@@ -473,7 +483,8 @@
                 "taxonomyLeaves": [
                   "Grids"
                 ]
-              }
+              },
+              "note": "Покрыто accepted-блоком"
             },
             {
               "id": "ui-accessibility",
@@ -482,7 +493,7 @@
               "titleEn": "Accessibility",
               "definition": "Доступность интерфейса для людей с разными возможностями и ограничениями.",
               "priorityHint": "core",
-              "status": "partial",
+              "status": "covered",
               "coveredBy": [
                 "comp_5ef66a02628b"
               ],
@@ -490,7 +501,8 @@
                 "taxonomyLeaves": [
                   "Accessibility"
                 ]
-              }
+              },
+              "note": "Покрыто accepted-блоком"
             },
             {
               "id": "ui-interaction-states",
@@ -499,11 +511,11 @@
               "titleEn": "States and microinteractions",
               "definition": "Состояния компонентов, обратная связь и микровзаимодействия.",
               "priorityHint": "core",
-              "status": "partial",
+              "status": "covered",
               "coveredBy": [
                 "comp_1426ad336c6f"
               ],
-              "note": "Сгенерирован из seed; блок needs_review"
+              "note": "Покрыто accepted-блоком"
             }
           ]
         },
@@ -524,7 +536,8 @@
               "coveredBy": [
                 "comp_2d2a9ebacafe",
                 "comp_ab6396631b12"
-              ]
+              ],
+              "note": "Покрыто accepted-блоком"
             },
             {
               "id": "ui-interactive-prototype",
@@ -533,11 +546,11 @@
               "titleEn": "Interactive UI prototypes",
               "definition": "Интерактивные прототипы интерфейсов с переходами и состояниями.",
               "priorityHint": "optional",
-              "status": "partial",
+              "status": "covered",
               "coveredBy": [
                 "comp_158001e4c84f"
               ],
-              "note": "Сгенерирован из seed; блок needs_review"
+              "note": "Покрыто accepted-блоком"
             }
           ]
         },
@@ -554,7 +567,7 @@
               "titleEn": "Figma",
               "definition": "Работа с Figma: компоненты, варианты, автолейаут и библиотеки.",
               "priorityHint": "core",
-              "status": "partial",
+              "status": "covered",
               "coveredBy": [
                 "comp_3baa5b3a9b1a"
               ],
@@ -563,7 +576,7 @@
                   "Figma"
                 ]
               },
-              "note": "Сгенерирован из seed; блок needs_review"
+              "note": "Покрыто accepted-блоком"
             },
             {
               "id": "ui-figjam",
@@ -572,7 +585,7 @@
               "titleEn": "FigJam",
               "definition": "Совместные воркшопы, картирование и фасилитация в FigJam.",
               "priorityHint": "optional",
-              "status": "partial",
+              "status": "covered",
               "coveredBy": [
                 "comp_e8fd6afc9563"
               ],
@@ -581,7 +594,7 @@
                   "FigJam"
                 ]
               },
-              "note": "Сгенерирован из seed; блок needs_review"
+              "note": "Покрыто accepted-блоком"
             },
             {
               "id": "ui-framer",
@@ -590,7 +603,7 @@
               "titleEn": "Framer",
               "definition": "Создание интерактивных прототипов и микровзаимодействий в Framer.",
               "priorityHint": "optional",
-              "status": "partial",
+              "status": "covered",
               "coveredBy": [
                 "comp_70dc27286adc"
               ],
@@ -599,7 +612,7 @@
                   "Framer"
                 ]
               },
-              "note": "Сгенерирован из seed; блок needs_review"
+              "note": "Покрыто accepted-блоком"
             },
             {
               "id": "ui-handoff",
@@ -608,10 +621,11 @@
               "titleEn": "Design handoff",
               "definition": "Спецификации, компонентные контракты и коммуникация с инженерами.",
               "priorityHint": "core",
-              "status": "partial",
+              "status": "covered",
               "coveredBy": [
                 "comp_8984ce9da8c1"
-              ]
+              ],
+              "note": "Покрыто accepted-блоком"
             },
             {
               "id": "ui-web-technologies",
@@ -620,11 +634,12 @@
               "titleEn": "Web technologies",
               "definition": "Понимание HTML/CSS/JS, веб-стандартов и ограничений реализации.",
               "priorityHint": "optional",
-              "status": "partial",
+              "status": "covered",
               "coveredBy": [
                 "comp_a245c1b4ec0a",
                 "comp_88be87bf8498"
-              ]
+              ],
+              "note": "Покрыто accepted-блоком"
             },
             {
               "id": "ui-data-visualization",
@@ -637,7 +652,8 @@
               "coveredBy": [
                 "comp_047348e54050",
                 "comp_ce23f79a5220"
-              ]
+              ],
+              "note": "Покрыто accepted-блоком"
             }
           ]
         }

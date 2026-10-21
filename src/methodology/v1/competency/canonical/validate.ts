@@ -125,7 +125,7 @@ export function validateCanonicalMap(
     if (excluded.has(item.blockId)) errors.push(`canonical: повтор excludedBlocks «${item.blockId}»`);
     excluded.add(item.blockId);
     if (!blocksById.has(item.blockId)) {
-      errors.push(`canonical: excludedBlocks: неизвестный блок «${item.blockId}»`);
+      warnings.push(`canonical: excludedBlocks ссылается на отсутствующий в источнике блок «${item.blockId}»`);
     }
     if (!item.reason || item.reason.length < 10) {
       errors.push(`canonical: excludedBlocks «${item.blockId}»: нет причины`);

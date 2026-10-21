@@ -21,7 +21,7 @@ async function main(): Promise<void> {
     root,
     domain,
     profession,
-    source: (flagValue(argv, "--source") as PriorityBlockSource | "auto" | undefined) ?? "review",
+    source: (flagValue(argv, "--source") as PriorityBlockSource | "auto" | undefined) ?? "auto",
     ...(flagValue(argv, "--blocks-file") ? { blocksFile: flagValue(argv, "--blocks-file")! } : {}),
     ...(argv.includes("--include-seed") ? { includeSeed: true } : {}),
   });

@@ -21,6 +21,7 @@ async function main(): Promise<void> {
   const map = await readJson<CanonicalMap>(mapPath);
   const blocks = (await readJson<{ blocks: CompetencyBlock[] }>(blocksPath)).blocks;
   const byCanonical = new Map<string, CompetencyBlock[]>();
+  const byBlockId = new Map(blocks.map((block) => [block.id, block]));
   for (const block of blocks) {
     for (const canonicalId of block.canonicalIds ?? []) {
       const list = byCanonical.get(canonicalId) ?? [];
@@ -32,7 +33,10 @@ async function main(): Promise<void> {
   for (const branch of map.branches) {
     for (const section of branch.sections) {
       for (const competency of section.competencies) {
-        const matches = byCanonical.get(competency.id) ?? [];
+        const matches = [
+          ...(byCanonical.get(competency.id) ?? []),
+          ...competency.coveredBy.filter((id) => byBlockId.has(id)).map((id) => byBlockId.get(id)!),
+        ].filter((block, index, list) => list.findIndex((item) => item.id === block.id) === index);
         if (matches.length === 0) continue;
         for (const block of matches) {
           if (!competency.coveredBy.includes(block.id)) competency.coveredBy.push(block.id);

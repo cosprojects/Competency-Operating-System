@@ -1,7 +1,7 @@
 ---
 id: COS-RES-016
 title: Каноническая карта компетенций UX/UI
-version: 1.1.0
+version: 1.2.0
 status: Draft
 owner: Research Team
 last_updated: 2026-10-21
@@ -93,27 +93,28 @@ references:
 | Показатель | Значение |
 |---|---|
 | Всего | 34 |
-| covered | 9 |
-| partial | 25 |
+| covered | 34 |
+| partial | 0 |
 | gap | **0** |
-| UX-покрытие | 1 covered / 15 partial / 0 gap |
-| UI-покрытие | 8 covered / 10 partial / 0 gap |
+| UX-покрытие | 16 covered / 0 partial / 0 gap |
+| UI-покрытие | 18 covered / 0 partial / 0 gap |
 
 Покрытые/частично покрытые ядра:
 - UI: цвет, типографика, композиция и сетки, визуальные элементы, визуальная коммуникация, адаптивность, анимация, визуализация данных;
 - UX: анализ требований, пользовательские исследования (partial), продуктовая аналитика (partial), бизнес-метрики (partial), этика/приватность (partial).
 
-Пробелы закрыты черновыми seed-блоками (19 блоков, 75 новых тегов, issues 0): персоны, интервью, юзабилити-тестирование, IA, user flows, вайрфреймы, low-fi/hi-fi/интерактивные прототипы, UX-метрики, продуктовое мышление, дизайн-системы, компоненты, состояния, Figma/FigJam/Framer. Все они имеют статус `needs_review`, поэтому карта показывает `partial`, а не `covered`: нужна human-приёмка.
+18 gap-компетенций закрыты seed-блоками и приняты в каталог v0.1: персоны, интервью, юзабилити-тестирование, IA, user flows, вайрфреймы, low-fi/hi-fi/интерактивные прототипы, UX-метрики, продуктовое мышление, дизайн-системы, компоненты, состояния, Figma/FigJam/Framer. В каталоге 33 блока (один блок покрывает две канонические компетенции), 137 тегов, 0 материалов; приоритеты — 33 mark. Все 34 компетенции карты имеют `coveredBy`, поэтому `covered = 34`.
 
-Оставшиеся пробелы качества, не количества:
-- частичное покрытие UX Research/analytics и accessibility;
-- Figma/FigJam/Framer построены на ограниченном наборе тегов и требуют проверки;
-- инструментарий и handoff пока частичные.
+Это закрытие **структурное**, а не финальная методическая приёмка. Оставшиеся проверки качества:
+- Figma/FigJam/Framer построены на ограниченном наборе тегов и требуют отдельного ревью;
+- FigJam-блок частично опирается на общие Figma-теги;
+- часть UX-блоков (product thinking, experiments) требует проверки на соответствие реальным задачам;
+- материалы к новым блокам ещё не собраны.
 
 ## 5. Валидация
 
 ```bash
-npm run canonical:validate -- --domain it --profession uxui --source review --include-seed --report
+npm run canonical:validate -- --domain it --profession uxui --source catalog --report
 ```
 
 Проверки:
@@ -126,7 +127,18 @@ npm run canonical:validate -- --domain it --profession uxui --source review --in
 
 Отчёт: `data/competency/canonical/it-uxui-coverage.md`.
 
-## 6. Как обновлять карту
+## 6. Приёмка и приоритеты
+
+```bash
+npm run catalog:accept -- --domain it --profession uxui --write
+npm run priority:canonical -- --domain it --profession uxui --write
+npm run catalog:validate -- --domain it --require-priority
+npm run priority:validate -- --domain it --profession uxui --require-complete
+```
+
+`catalog:accept` берёт блоки, классифицированные картой, и записывает accepted-каталог. `priority:canonical` создаёт **черновые** marks по `priorityHint` (reviewer `canonical-draft`) для всех блоков каталога; это не финальная human-маркировка.
+
+## 7. Как обновлять карту
 
 ```bash
 npm run competency:seed -- --domain it
@@ -141,14 +153,14 @@ npm run canonical:validate -- --domain it --profession uxui \
 
 `canonical:apply` не понижает уже `covered`-компетенции до `partial`; новые review-блоки получают `partial` до приёмки.
 
-## 7. Как использовать дальше
+## 8. Как использовать дальше
 
 1. **Закрыть gap-компетенции**: сгенерировать seed/блоки по каноническому списку, начиная с foundation/core (research, IA, flows, prototyping, design systems, tools).
 2. **Обновить приоритеты**: `priorityHint` из карты — черновая подсказка; финальный tier — human-owned.
 3. **Пересобрать канвас**: после появления блоков для gap-компетенций страница должна показывать всю карту, включая секции UX/UI, а не только текущие 16 review-блоков.
 4. **Принять каталог**: `covered`-блоки после human-review становятся accepted; `partial` остаются с пометкой о неполноте.
 
-## 8. Ограничения
+## 9. Ограничения
 
 - Карта v1 не является онтологией всех возможных UX/UI-ролей: она задаёт базу профессии и допускает расширение секций.
 - `priorityHint` не является утверждённым приоритетом; это вход для `COS-RES-015`.
@@ -156,9 +168,10 @@ npm run canonical:validate -- --domain it --profession uxui \
 - Инструменты (Figma/FigJam/Framer) — отдельная секция UI; они не выдаются за знания или навыки.
 - Карта не пишет в граф и не меняет каталог.
 
-## 9. История изменений
+## 10. История изменений
 
 | Версия | Дата | Что изменилось |
 |---|---|---|
 | 1.0.0 | 2026-10-21 | Введена каноническая карта UX/UI: два блока, 8 разделов, 34 компетенции, статусы covered/partial/gap, валидатор и coverage-отчёт |
 | 1.1.0 | 2026-10-21 | 18 gap-компетенций закрыты seed-блоками (19 блоков, 75 тегов); карта 9 covered / 25 partial / 0 gap, добавлен `canonical:apply` и пересобрана страница на 34 узла |
+| 1.2.0 | 2026-10-21 | Каталог v0.1 принят: 33 блока / 137 тегов; 33 priority marks; карта 34 covered / 0 partial / 0 gap; страница пересобрана от каталога |

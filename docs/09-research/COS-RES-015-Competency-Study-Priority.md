@@ -166,7 +166,7 @@ npm run canvas:page -- --domain it --profession uxui --source review --include-s
 - hover подсвечивает связи, клик открывает панель с компонентами и тегами;
 - фильтры по tier.
 
-Для страницы используется **каноническая карта** и её `priorityHint`: это черновой слой, пока `priority/uxui.json` не заполнен. Баннер и `status: "draft"` явно говорят, что tier/связи не утверждены. Для старого 16-узлового слоя можно передать `--visualization-file src/methodology/v1/competency/visualization/uxui.json`. После заполнения `priority/uxui.json` страница может быть пересобрана поверх официальных marks (`--source catalog`).
+Для страницы используется **каноническая карта** и её `priorityHint`; официальные marks каталога (33) лежат в `priority/uxui.json` и имеют статус `draft`. Баннер и `status: "draft"` явно говорят, что tier/связи не утверждены. Для старого 16-узлового слоя можно передать `--visualization-file src/methodology/v1/competency/visualization/uxui.json`. После заполнения `priority/uxui.json` страница может быть пересобрана поверх официальных marks (`--source catalog`).
 
 ### 6.4. Визуальные правила
 

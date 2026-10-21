@@ -1,7 +1,7 @@
 ---
 id: COS-RES-018
 title: Модель сфера → профессия → компетенции и систематизация источников
-version: 1.1.0
+version: 1.2.0
 status: Draft
 owner: Research Team
 last_updated: 2026-10-21
@@ -144,6 +144,9 @@ src/methodology/v1/competency/
 npm run model:sync -- --domain it --profession uxui --write
 npm run model:views -- --domain it --write
 npm run model:validate -- --domain it --profession uxui --all
+npm run canvas:profession -- --profession motion
+npm run canvas:profession -- --profession product
+npm run canvas:profession -- --profession graphic
 ```
 
 `model:sync` собирает нормализованные файлы из canonical map, priority, registry и targets. `model:validate` проверяет ссылочную целостность: сфера → профессия, профессия → компетенция, порядок, prerequisites, source-файлы.
@@ -155,7 +158,8 @@ npm run model:validate -- --domain it --profession uxui --all
 - компетенций в едином массиве: **34**;
 - profession-competencies: UX/UI — 34, product — 25, motion — 16, graphic — 15;
 - переиспользуемых компетенций: **34** (каждая входит хотя бы в одну другую профессию);
-- источники: `sources/spheres/it.json` + отдельный файл на каждую профессию (`sources/professions/it.*.json`);
+- источники: `sources/spheres/it.json` + отдельный файл на каждую профессию (`sources/professions/it.*.json`); Material Agent берёт `materialSourceIds` из source-файла профессии, по умолчанию только active;
+- страницы: `web/it-uxui-competency-canvas.html`, `web/it-product-competency-map.html`, `web/it-motion-competency-map.html`, `web/it-graphic-competency-map.html`;
 - `model:validate --all`: 0 ошибок.
 
 ## 7. Следующие профессии
@@ -180,3 +184,4 @@ npm run model:validate -- --domain it --profession uxui --all
 |---|---|---|
 | 1.0.0 | 2026-10-21 | Введены сфера/профессия/единый массив компетенций и source-файлы; `model:sync`, `model:validate`, нормализованный UX/UI |
 | 1.1.0 | 2026-10-21 | Добавлены profession views для product/motion/graphic, `model:views`, переиспользование 34 компетенций и разные tier/order |
+| 1.2.0 | 2026-10-21 | Добавлены profession map pages (`canvas:profession`), Material Agent читает source-файл профессии, active material sources по умолчанию |

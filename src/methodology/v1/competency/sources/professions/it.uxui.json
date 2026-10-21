@@ -18,11 +18,8 @@
   "materialSourceIds": [
     "wikipedia",
     "internet-archive",
-    "stepik",
-    "youtube",
     "habr",
-    "medium",
-    "learn-anything"
+    "medium"
   ],
   "blockedSourceIds": [
     "hh-api"

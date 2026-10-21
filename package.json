@@ -47,7 +47,8 @@
     "materials:agent:queue": "node --experimental-strip-types src/methodology/v1/materials-agent/cli/queue.ts",
     "model:sync": "node --experimental-strip-types src/methodology/v1/competency/model/cli/sync.ts",
     "model:validate": "node --experimental-strip-types src/methodology/v1/competency/model/cli/validate.ts",
-    "model:views": "node --experimental-strip-types src/methodology/v1/competency/model/cli/views.ts"
+    "model:views": "node --experimental-strip-types src/methodology/v1/competency/model/cli/views.ts",
+    "canvas:profession": "node --experimental-strip-types src/methodology/v1/competency/cli/profession-page.ts"
   },
   "dependencies": {
     "@prisma/client": "^6.4.0",

@@ -90,7 +90,7 @@ export function buildSourceFiles(input: {
   registry: SourceRegistry;
 }): { sphere: SphereSourceFile; profession: ProfessionSourceFile } {
   const materialSources = input.registry.sources
-    .filter((source) => source.kind === "materials")
+    .filter((source) => source.kind === "materials" && source.status === "active")
     .map((source) => source.id);
   const blocked = input.registry.sources.filter((source) => source.status === "blocked").map((source) => source.id);
   const occupationSources: ProfessionSourceFile["occupationSources"] = [];

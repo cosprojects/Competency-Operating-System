@@ -5,6 +5,7 @@ import { loadCatalog } from "../../competency/catalog.ts";
 import { LlmBudget } from "../../competency/llm/policy.ts";
 import { cacheDir, dataDir, flagValue, makeTransport, policyFromArgv, readJson, writeJson } from "../../competency/cli/common.ts";
 import { runMaterialAgent, describeAgentReadiness } from "../agent.ts";
+import { loadMaterialSourceIds } from "../source-config.ts";
 
 async function main(): Promise<void> {
   const argv = process.argv.slice(2);
@@ -26,13 +27,17 @@ async function main(): Promise<void> {
   const budget = policy ? new LlmBudget(policy) : undefined;
   const transport = classify ? (await makeTransport(argv, policy!)).transport : undefined;
   const fetchImpl: FetchLike = (input, init) => fetch(input, init);
+  const configuredSources = await loadMaterialSourceIds(root, professionId, readJson);
+  const sourceIds = flagValue(argv, "--sources")
+    ? flagValue(argv, "--sources")!.split(",")
+    : configuredSources;
   const journal = await runMaterialAgent({
     domain,
     professionId,
     catalog,
     fetchImpl,
     retrievedOn: new Date().toISOString().slice(0, 10),
-    ...(flagValue(argv, "--sources") ? { sourceIds: flagValue(argv, "--sources")!.split(",") } : {}),
+    ...(sourceIds ? { sourceIds } : {}),
     ...(limit ? { limitCompetencies: Number(limit) } : {}),
     ...(flagValue(argv, "--per-competency") ? { limitPerCompetency: Number(flagValue(argv, "--per-competency")) } : {}),
     ...(process.env.YOUTUBE_API_KEY ? { youtubeApiKey: process.env.YOUTUBE_API_KEY } : {}),

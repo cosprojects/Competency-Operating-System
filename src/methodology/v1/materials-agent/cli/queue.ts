@@ -6,6 +6,7 @@ import { LlmBudget } from "../../competency/llm/policy.ts";
 import { cacheDir, flagValue, makeTransport, policyFromArgv, readJson, writeJson } from "../../competency/cli/common.ts";
 import { createMaterialAgentDeps } from "../agent.ts";
 import { runMaterialQueue } from "../queue.ts";
+import { loadMaterialSourceIds } from "../source-config.ts";
 
 async function main(): Promise<void> {
   const argv = process.argv.slice(2);
@@ -20,6 +21,10 @@ async function main(): Promise<void> {
   const budget = policy ? new LlmBudget(policy) : undefined;
   const transport = classify ? (await makeTransport(argv, policy!)).transport : undefined;
   const fetchImpl: FetchLike = (input, init) => fetch(input, init);
+  const configuredSources = await loadMaterialSourceIds(root, professionId, readJson);
+  const sourceIds = flagValue(argv, "--sources")
+    ? flagValue(argv, "--sources")!.split(",")
+    : configuredSources;
   const journal = await runMaterialQueue(
     {
       domain,
@@ -27,7 +32,7 @@ async function main(): Promise<void> {
       catalog,
       fetchImpl,
       retrievedOn: new Date().toISOString().slice(0, 10),
-      ...(flagValue(argv, "--sources") ? { sourceIds: flagValue(argv, "--sources")!.split(",") } : {}),
+      ...(sourceIds ? { sourceIds } : {}),
       ...(flagValue(argv, "--limit") ? { limit: Number(flagValue(argv, "--limit")) } : {}),
       ...(flagValue(argv, "--per-competency") ? { limitPerCompetency: Number(flagValue(argv, "--per-competency")) } : {}),
       ...(flagValue(argv, "--concurrency") ? { concurrency: Number(flagValue(argv, "--concurrency")) } : {}),

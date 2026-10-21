@@ -34,3 +34,8 @@ npm run canonical:validate -- --domain it --profession uxui --source review --in
 ## Профессиональные view
 
 `model/professions/views/{product,motion,graphic}.json` задают разделы и приоритеты для разных профессий, переиспользуя единый массив компетенций. `model:views --write` генерирует `model/profession-competencies/*.json` и source-файлы профессий.
+
+
+## Карты профессий
+
+`npm run canvas:profession -- --profession motion` (также `product`, `graphic`) собирает HTML-карту профессии из profession view и единого массива компетенций.

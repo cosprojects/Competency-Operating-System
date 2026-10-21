@@ -23,6 +23,7 @@ export interface CandidateBuildInput {
   cache?: CacheOptions;
   existingCatalogTitles?: string[];
   batchSize?: number;
+  groupByProfession?: boolean;
   limitBatches?: number;
   allowRepair?: boolean;
 }
@@ -113,10 +114,28 @@ export function validateCandidateResponse(
 
 export async function buildCandidates(input: CandidateBuildInput): Promise<CandidateBuildResult> {
   const eligible = input.tags.filter((tag) => tag.kind === "knowledge" || tag.kind === "skill");
-  const batchSize = input.batchSize ?? 20;
+  const batchSize = input.batchSize ?? 40;
   const batches: TagRecord[][] = [];
-  for (let offset = 0; offset < eligible.length; offset += batchSize) {
-    batches.push(eligible.slice(offset, offset + batchSize));
+  if (input.groupByProfession === false) {
+    for (let offset = 0; offset < eligible.length; offset += batchSize) {
+      batches.push(eligible.slice(offset, offset + batchSize));
+    }
+  } else {
+    // Батчи внутри профессии: иначе общий алфавитный порядок разрезает
+    // связанные темы (например, цвет и композицию) на разные вызовы.
+    const groups = new Map<string, TagRecord[]>();
+    for (const tag of eligible) {
+      const key = tag.professionIds[0] ?? "shared";
+      const group = groups.get(key) ?? [];
+      group.push(tag);
+      groups.set(key, group);
+    }
+    for (const key of [...groups.keys()].sort()) {
+      const group = groups.get(key) ?? [];
+      for (let offset = 0; offset < group.length; offset += batchSize) {
+        batches.push(group.slice(offset, offset + batchSize));
+      }
+    }
   }
   const selectedBatches = input.limitBatches ? batches.slice(0, input.limitBatches) : batches;
   const existingTitles = [...(input.existingCatalogTitles ?? [])];

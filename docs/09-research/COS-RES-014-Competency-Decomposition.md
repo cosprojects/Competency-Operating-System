@@ -1,7 +1,7 @@
 ---
 id: COS-RES-014
 title: Сборка каталога компетенций, компонентов и тегов
-version: 1.1.0
+version: 1.2.0
 status: Draft
 owner: Research Team
 last_updated: 2026-10-21
@@ -74,7 +74,7 @@ references:
 
 ### Stage 3. Кандидаты (Pass A)
 `npm run competency:candidates -- --domain it [--fixture file] [--limit-batches N] [--budget-usd N]`.
-LLM предлагает группы тегов; валидатор проверяет: все `tagId` из батча, ≥2 тегов, без tool/transversal, без дублей названий, каждый тег назначен или в `unassignedTagIds`. Выход: `data/competency/candidates-it.json` + review.
+LLM предлагает группы тегов; батчи собираются внутри одной профессии (общий алфавитный порядок разрезал бы связанные темы). Валидатор проверяет: все `tagId` из батча, ≥2 тегов, без tool/transversal, без дублей названий, каждый тег назначен или в `unassignedTagIds`. Выход: `data/competency/candidates-it.json` + review.
 
 ### Stage 4. Блоки (Pass B)
 `npm run competency:build -- --domain it [--slug ...] [--fixture file] [--limit N]`.
@@ -134,7 +134,8 @@ materials:validate, materials:refresh
 - Pass A по всем IT-тегам: **114 кандидатов**, 322 неназначенных тега, 115 замечаний, 49 вызовов, ~$0.12; reconcile: **114 → 94** кандидата, 3 вызова, issues 0.
 - Pass B (первые 20 кандидатов): **20 блоков**, 26 новых тегов, issues 0, ~$0.015. Это черновики `needs_review`.
 - Материалы: 20 блоков → **53 статьи Wikipedia** (сбор ~4 мин); классификация: 24 связи, 14/20 компетенций с материалом, issues 29 (в основном корректные отказы от нерелевантных статей); `materials:validate` — 0 ошибок. Stepik 502, Internet Archive по этим запросам не дал видео; YouTube без ключа.
-- Gold-set протокол: `competency:evaluate`, фикстура `gold-candidates.json`; на ней precision/recall/exact = 1. На живом Pass A — **0/5**: кандидаты дробят «Теорию цвета» на визуальные подтемы, reconcile этого не исправляет. Это открытый вопрос качества, а не приёмка.
+- Gold-set протокол: `competency:evaluate`, фикстура `gold-candidates.json`; на ней precision/recall/exact = 1. На живом Pass A — **0/5**: кандидаты дробят «Теорию цвета» на визуальные подтемы; reconcile этого не исправляет. Батчинг по профессиям (UX/UI: 34 кандидата, 9 вызовов, ~$0.027) разрыв сохраняет.
+- Вывод: bottom-up группировка даёт гранулярность «учебных тем», а не каноническую компетенцию уровня «Теория цвета». Нужно продуктовое решение: (а) принять granularity как есть, (б) top-down seed/рубрика канонических компетенций, (в) отдельный Pass «свести подтемы в компетенцию» с human-приёмкой. Это открытый вопрос, не приёмка.
 - Тесты: **92/92**; typecheck чистый.
 - Каталог `catalog/it.json` пока пуст: приёмка блоков — следующий human-шаг.
 
@@ -161,3 +162,4 @@ materials:validate, materials:refresh
 |---|---|---|
 | 1.0.0 | 2026-10-21 | Метод: реестр источников, профессии, теги, Pass A/B, приёмка, профиль, материалы; реализован каркас команд и тестов |
 | 1.1.0 | 2026-10-21 | Полный сбор IT-тегов (1512), Pass A (114→94 после reconcile), Pass B (20 блоков), материалы (53 статьи, 24 связи), `competency:evaluate` и gold-set протокол; зафиксирован разрыв качества Pass A на живой разметке |
+| 1.2.0 | 2026-10-21 | Батчи Pass A сгруппированы по профессии; UX/UI: 34 кандидата, 95 unassigned, 18 issues. Gold по-прежнему 0/5; зафиксировано решение о granularity |

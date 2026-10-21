@@ -10,11 +10,31 @@
       "title": "Визуальные основы",
       "definition": "Цвет, типографика, композиция и визуальные элементы.",
       "competencies": [
-        { "competencyId": "ux-design-thinking", "tier": "foundation", "order": 1 },
-        { "competencyId": "ui-color", "tier": "foundation", "order": 2 },
-        { "competencyId": "ui-typography", "tier": "foundation", "order": 3 },
-        { "competencyId": "ui-layout", "tier": "foundation", "order": 4 },
-        { "competencyId": "ui-visual-elements", "tier": "foundation", "order": 5 }
+        {
+          "competencyId": "ux-design-thinking",
+          "tier": "foundation",
+          "order": 1
+        },
+        {
+          "competencyId": "ui-color",
+          "tier": "foundation",
+          "order": 2
+        },
+        {
+          "competencyId": "ui-typography",
+          "tier": "foundation",
+          "order": 3
+        },
+        {
+          "competencyId": "ui-layout",
+          "tier": "foundation",
+          "order": 4
+        },
+        {
+          "competencyId": "ui-visual-elements",
+          "tier": "foundation",
+          "order": 5
+        }
       ]
     },
     {
@@ -22,9 +42,21 @@
       "title": "Коммуникация и бренд",
       "definition": "Визуальная коммуникация, смыслы и данные.",
       "competencies": [
-        { "competencyId": "ui-visual-communication", "tier": "foundation", "order": 6 },
-        { "competencyId": "ux-product-thinking", "tier": "optional", "order": 7 },
-        { "competencyId": "ui-data-visualization", "tier": "optional", "order": 8 }
+        {
+          "competencyId": "ui-visual-communication",
+          "tier": "foundation",
+          "order": 6
+        },
+        {
+          "competencyId": "ux-product-thinking",
+          "tier": "optional",
+          "order": 7
+        },
+        {
+          "competencyId": "ui-data-visualization",
+          "tier": "optional",
+          "order": 8
+        }
       ]
     },
     {
@@ -32,10 +64,26 @@
       "title": "Инструменты и передача",
       "definition": "Figma, FigJam и передача макетов в производство/разработку.",
       "competencies": [
-        { "competencyId": "ui-figma", "tier": "core", "order": 9 },
-        { "competencyId": "ui-figjam", "tier": "optional", "order": 10 },
-        { "competencyId": "ui-handoff", "tier": "core", "order": 11 },
-        { "competencyId": "ui-web-technologies", "tier": "optional", "order": 12 }
+        {
+          "competencyId": "ui-figma",
+          "tier": "core",
+          "order": 9
+        },
+        {
+          "competencyId": "ui-figjam",
+          "tier": "optional",
+          "order": 10
+        },
+        {
+          "competencyId": "ui-handoff",
+          "tier": "core",
+          "order": 11
+        },
+        {
+          "competencyId": "ui-web-technologies",
+          "tier": "optional",
+          "order": 12
+        }
       ]
     },
     {
@@ -43,9 +91,43 @@
       "title": "Системы и доступность",
       "definition": "Масштабируемые визуальные системы и доступность.",
       "competencies": [
-        { "competencyId": "ui-design-systems", "tier": "optional", "order": 13 },
-        { "competencyId": "ui-components", "tier": "optional", "order": 14 },
-        { "competencyId": "ui-accessibility", "tier": "optional", "order": 15 }
+        {
+          "competencyId": "ui-design-systems",
+          "tier": "optional",
+          "order": 13
+        },
+        {
+          "competencyId": "ui-components",
+          "tier": "optional",
+          "order": 14
+        },
+        {
+          "competencyId": "ui-accessibility",
+          "tier": "optional",
+          "order": 15
+        }
+      ]
+    },
+    {
+      "id": "graphic-specialization",
+      "title": "Специализация graphic",
+      "definition": "Бренд, печать и редакционный дизайн.",
+      "competencies": [
+        {
+          "competencyId": "graphic-brand-identity",
+          "tier": "foundation",
+          "order": 16
+        },
+        {
+          "competencyId": "graphic-print-production",
+          "tier": "core",
+          "order": 17
+        },
+        {
+          "competencyId": "graphic-editorial-layout",
+          "tier": "core",
+          "order": 18
+        }
       ]
     }
   ]

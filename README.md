@@ -42,3 +42,6 @@ npm run canonical:validate -- --domain it --profession uxui --source review --in
 
 
 Сборка по профессии: `npm run professions:collect -- --domain it --profession motion`, затем `npm run tags:collect -- --domain it --profession motion`. Запросы берутся из `sources/professions/<profession>.json`.
+
+
+Единый массив компетенций: **43** (34 базовых + 9 профессио-специфичных); profession views: product 28, motion 19, graphic 18.

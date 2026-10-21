@@ -495,6 +495,105 @@
       "titleEn": "Data visualization",
       "definition": "Графики, диаграммы и визуализация данных в интерфейсе.",
       "priorityHint": "optional"
+    },
+    {
+      "id": "motion-timing-easing",
+      "branchId": "motion",
+      "branchTitle": "Motion",
+      "sectionId": "motion-specialization",
+      "sectionTitle": "Специализация motion",
+      "title": "Тайминг и кривые ускорения",
+      "titleEn": "Timing and easing",
+      "definition": "Проектирование движения во времени: тайминг, кривые ускорения, ритм и ощущение веса.",
+      "priorityHint": "foundation"
+    },
+    {
+      "id": "motion-storyboarding",
+      "branchId": "motion",
+      "branchTitle": "Motion",
+      "sectionId": "motion-specialization",
+      "sectionTitle": "Специализация motion",
+      "title": "Сторибординг и режиссура движения",
+      "titleEn": "Storyboarding and motion direction",
+      "definition": "Раскадровка, драматургия движения и режиссура динамической сцены.",
+      "priorityHint": "core"
+    },
+    {
+      "id": "motion-3d-rendering",
+      "branchId": "motion",
+      "branchTitle": "Motion",
+      "sectionId": "motion-specialization",
+      "sectionTitle": "Специализация motion",
+      "title": "3D, свет и рендер",
+      "titleEn": "3D, lighting and rendering",
+      "definition": "Трёхмерная форма, материалы, свет и рендер в моушн-продакшене.",
+      "priorityHint": "core"
+    },
+    {
+      "id": "product-strategy",
+      "branchId": "product",
+      "branchTitle": "Product",
+      "sectionId": "product-growth",
+      "sectionTitle": "Развитие продукта",
+      "title": "Продуктовая стратегия",
+      "titleEn": "Product strategy",
+      "definition": "Выбор целевой ценности, аудитории и стратегии развития продукта.",
+      "priorityHint": "foundation"
+    },
+    {
+      "id": "product-growth",
+      "branchId": "product",
+      "branchTitle": "Product",
+      "sectionId": "product-growth",
+      "sectionTitle": "Развитие продукта",
+      "title": "Рост, воронки и удержание",
+      "titleEn": "Growth and retention",
+      "definition": "Работа с воронкой, активацией, удержанием и продуктовыми циклами роста.",
+      "priorityHint": "core"
+    },
+    {
+      "id": "product-experimentation",
+      "branchId": "product",
+      "branchTitle": "Product",
+      "sectionId": "product-growth",
+      "sectionTitle": "Развитие продукта",
+      "title": "Эксперименты и проверка гипотез",
+      "titleEn": "Product experimentation",
+      "definition": "Дизайн продуктовых экспериментов, A/B-проверки и интерпретация результатов.",
+      "priorityHint": "core"
+    },
+    {
+      "id": "graphic-brand-identity",
+      "branchId": "graphic",
+      "branchTitle": "Graphic",
+      "sectionId": "graphic-specialization",
+      "sectionTitle": "Специализация graphic",
+      "title": "Бренд-айдентика",
+      "titleEn": "Brand identity",
+      "definition": "Создание визуальной идентичности: знак, палитра, типографика и правила бренда.",
+      "priorityHint": "foundation"
+    },
+    {
+      "id": "graphic-print-production",
+      "branchId": "graphic",
+      "branchTitle": "Graphic",
+      "sectionId": "graphic-specialization",
+      "sectionTitle": "Специализация graphic",
+      "title": "Печать и производство",
+      "titleEn": "Print and production",
+      "definition": "Допечатная подготовка, цветовые профили, материалы и производственные ограничения.",
+      "priorityHint": "core"
+    },
+    {
+      "id": "graphic-editorial-layout",
+      "branchId": "graphic",
+      "branchTitle": "Graphic",
+      "sectionId": "graphic-specialization",
+      "sectionTitle": "Специализация graphic",
+      "title": "Редакционный дизайн и вёрстка",
+      "titleEn": "Editorial design",
+      "definition": "Вёрстка многостраничных и цифровых изданий, сетки и типографическая иерархия.",
+      "priorityHint": "core"
     }
   ]
 }

@@ -31,6 +31,17 @@ async function main(): Promise<void> {
   const modelDir = path.join(root, "src/methodology/v1/competency/model");
   const sourcesDir = path.join(root, "src/methodology/v1/competency/sources");
   const competencies = buildCompetencies(map);
+  const extraPath = path.join(root, "src/methodology/v1/competency/model/competencies-extra.json");
+  try {
+    const extra = await readJson<{ competencies: typeof competencies.competencies }>(extraPath);
+    for (const competency of extra.competencies) {
+      if (!competencies.competencies.some((item) => item.id === competency.id)) {
+        competencies.competencies.push(competency);
+      }
+    }
+  } catch {
+    // extra competencies optional
+  }
   const spheres = buildSphere();
   const professionRecord = buildProfessionRecord(target, professionId);
   const professionCompetencies = buildProfessionCompetencies(map, professionId);

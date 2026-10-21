@@ -1,7 +1,7 @@
 ---
 id: COS-RES-018
 title: Модель сфера → профессия → компетенции и систематизация источников
-version: 1.3.0
+version: 1.4.0
 status: Draft
 owner: Research Team
 last_updated: 2026-10-21
@@ -134,9 +134,9 @@ src/methodology/v1/competency/
 `model:views` материализует это в `model/profession-competencies/<slug>.json` с `sectionId/sectionTitle`, не создавая копий компетенций. Так `ui-motion` может быть `foundation` у motion, `core` у UX/UI и `optional` у product.
 
 Текущие view:
-- `it.product` — 25 ссылок, уклон в метрики, продукт и исследования;
-- `it.motion` — 16 ссылок, уклон в кинетику, тайминг и инструменты;
-- `it.graphic` — 15 ссылок, уклон в визуальную коммуникацию и бренд-инструменты.
+- `it.product` — 28 ссылок, уклон в метрики, стратегию, рост и эксперименты;
+- `it.motion` — 19 ссылок, уклон в кинетику, тайминг, сторибординг и 3D;
+- `it.graphic` — 18 ссылок, уклон в бренд, печать и редакционный дизайн.
 
 ## 5. Команды
 
@@ -155,9 +155,9 @@ npm run canvas:profession -- --profession graphic
 
 - сфера: `it`;
 - профессий: **4** — `it.uxui`, `it.product`, `it.motion`, `it.graphic`;
-- компетенций в едином массиве: **34**;
-- profession-competencies: UX/UI — 34, product — 25, motion — 16, graphic — 15;
-- переиспользуемых компетенций: **34** (каждая входит хотя бы в одну другую профессию);
+- компетенций в едином массиве: **43** (34 базовых + 9 профессио-специфичных);
+- profession-competencies: UX/UI — 34, product — 28, motion — 19, graphic — 18;
+- переиспользуемых компетенций: **34** (базовые входят в несколько профессий; 9 специфичных — в свою);
 - источники: `sources/spheres/it.json` + отдельный файл на каждую профессию (`sources/professions/it.*.json`); Material Agent берёт `materialSourceIds` из source-файла профессии, по умолчанию только active;
 - страницы: `web/it-uxui-competency-canvas.html`, `web/it-product-competency-map.html`, `web/it-motion-competency-map.html`, `web/it-graphic-competency-map.html`;
 - `model:validate --all`: 0 ошибок.
@@ -189,3 +189,4 @@ npm run canvas:profession -- --profession graphic
 | 1.1.0 | 2026-10-21 | Добавлены profession views для product/motion/graphic, `model:views`, переиспользование 34 компетенций и разные tier/order |
 | 1.2.0 | 2026-10-21 | Добавлены profession map pages (`canvas:profession`), Material Agent читает source-файл профессии, active material sources по умолчанию |
 | 1.3.0 | 2026-10-21 | `professions:collect --profession` и `tags:collect --profession` подключены к source-файлам; motion smoke: 1 профессия, 172 тега |
+| 1.4.0 | 2026-10-21 | Добавлены 9 профессио-специфичных компетенций (motion timing/3D, product strategy/growth/experiments, graphic brand/print/editorial); общий массив 43, страницы пересобраны |

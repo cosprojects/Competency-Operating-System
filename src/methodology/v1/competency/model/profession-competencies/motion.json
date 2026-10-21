@@ -129,6 +129,30 @@
       "prerequisites": [],
       "sectionId": "motion-systems",
       "sectionTitle": "Системы и доступность"
+    },
+    {
+      "competencyId": "motion-timing-easing",
+      "tier": "foundation",
+      "order": 17,
+      "prerequisites": [],
+      "sectionId": "motion-specialization",
+      "sectionTitle": "Специализация motion"
+    },
+    {
+      "competencyId": "motion-storyboarding",
+      "tier": "core",
+      "order": 18,
+      "prerequisites": [],
+      "sectionId": "motion-specialization",
+      "sectionTitle": "Специализация motion"
+    },
+    {
+      "competencyId": "motion-3d-rendering",
+      "tier": "core",
+      "order": 19,
+      "prerequisites": [],
+      "sectionId": "motion-specialization",
+      "sectionTitle": "Специализация motion"
     }
   ]
 }

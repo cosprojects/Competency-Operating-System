@@ -10,10 +10,26 @@
       "title": "Визуальные основы движения",
       "definition": "Цвет, типографика, композиция и мышление, без которых движение распадается.",
       "competencies": [
-        { "competencyId": "ux-design-thinking", "tier": "foundation", "order": 1 },
-        { "competencyId": "ui-color", "tier": "foundation", "order": 2 },
-        { "competencyId": "ui-typography", "tier": "foundation", "order": 3 },
-        { "competencyId": "ui-layout", "tier": "foundation", "order": 4 }
+        {
+          "competencyId": "ux-design-thinking",
+          "tier": "foundation",
+          "order": 1
+        },
+        {
+          "competencyId": "ui-color",
+          "tier": "foundation",
+          "order": 2
+        },
+        {
+          "competencyId": "ui-typography",
+          "tier": "foundation",
+          "order": 3
+        },
+        {
+          "competencyId": "ui-layout",
+          "tier": "foundation",
+          "order": 4
+        }
       ]
     },
     {
@@ -21,10 +37,26 @@
       "title": "Кинетика и интерактив",
       "definition": "Тайминг, движение, состояния и интерактивные прототипы.",
       "competencies": [
-        { "competencyId": "ui-motion", "tier": "foundation", "order": 5 },
-        { "competencyId": "ui-interaction-states", "tier": "core", "order": 6 },
-        { "competencyId": "ui-visual-communication", "tier": "core", "order": 7 },
-        { "competencyId": "ux-interactive-prototype", "tier": "core", "order": 8 }
+        {
+          "competencyId": "ui-motion",
+          "tier": "foundation",
+          "order": 5
+        },
+        {
+          "competencyId": "ui-interaction-states",
+          "tier": "core",
+          "order": 6
+        },
+        {
+          "competencyId": "ui-visual-communication",
+          "tier": "core",
+          "order": 7
+        },
+        {
+          "competencyId": "ux-interactive-prototype",
+          "tier": "core",
+          "order": 8
+        }
       ]
     },
     {
@@ -32,10 +64,26 @@
       "title": "Инструменты моушн-дизайна",
       "definition": "Figma, Framer и передача движения в разработку.",
       "competencies": [
-        { "competencyId": "ui-figma", "tier": "core", "order": 9 },
-        { "competencyId": "ui-framer", "tier": "foundation", "order": 10 },
-        { "competencyId": "ui-handoff", "tier": "core", "order": 11 },
-        { "competencyId": "ui-figjam", "tier": "optional", "order": 12 }
+        {
+          "competencyId": "ui-figma",
+          "tier": "core",
+          "order": 9
+        },
+        {
+          "competencyId": "ui-framer",
+          "tier": "foundation",
+          "order": 10
+        },
+        {
+          "competencyId": "ui-handoff",
+          "tier": "core",
+          "order": 11
+        },
+        {
+          "competencyId": "ui-figjam",
+          "tier": "optional",
+          "order": 12
+        }
       ]
     },
     {
@@ -43,10 +91,48 @@
       "title": "Системы и доступность",
       "definition": "Масштабирование движения в продукте и доступность.",
       "competencies": [
-        { "competencyId": "ui-design-systems", "tier": "optional", "order": 13 },
-        { "competencyId": "ui-accessibility", "tier": "core", "order": 14 },
-        { "competencyId": "ui-responsive", "tier": "optional", "order": 15 },
-        { "competencyId": "ui-data-visualization", "tier": "optional", "order": 16 }
+        {
+          "competencyId": "ui-design-systems",
+          "tier": "optional",
+          "order": 13
+        },
+        {
+          "competencyId": "ui-accessibility",
+          "tier": "core",
+          "order": 14
+        },
+        {
+          "competencyId": "ui-responsive",
+          "tier": "optional",
+          "order": 15
+        },
+        {
+          "competencyId": "ui-data-visualization",
+          "tier": "optional",
+          "order": 16
+        }
+      ]
+    },
+    {
+      "id": "motion-specialization",
+      "title": "Специализация motion",
+      "definition": "Тайминг, режиссура и 3D.",
+      "competencies": [
+        {
+          "competencyId": "motion-timing-easing",
+          "tier": "foundation",
+          "order": 17
+        },
+        {
+          "competencyId": "motion-storyboarding",
+          "tier": "core",
+          "order": 18
+        },
+        {
+          "competencyId": "motion-3d-rendering",
+          "tier": "core",
+          "order": 19
+        }
       ]
     }
   ]

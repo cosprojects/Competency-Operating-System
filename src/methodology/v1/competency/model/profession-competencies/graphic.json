@@ -121,6 +121,30 @@
       "prerequisites": [],
       "sectionId": "graphic-systems",
       "sectionTitle": "Системы и доступность"
+    },
+    {
+      "competencyId": "graphic-brand-identity",
+      "tier": "foundation",
+      "order": 16,
+      "prerequisites": [],
+      "sectionId": "graphic-specialization",
+      "sectionTitle": "Специализация graphic"
+    },
+    {
+      "competencyId": "graphic-print-production",
+      "tier": "core",
+      "order": 17,
+      "prerequisites": [],
+      "sectionId": "graphic-specialization",
+      "sectionTitle": "Специализация graphic"
+    },
+    {
+      "competencyId": "graphic-editorial-layout",
+      "tier": "core",
+      "order": 18,
+      "prerequisites": [],
+      "sectionId": "graphic-specialization",
+      "sectionTitle": "Специализация graphic"
     }
   ]
 }

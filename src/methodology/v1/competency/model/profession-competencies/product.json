@@ -201,6 +201,30 @@
       "prerequisites": [],
       "sectionId": "product-ui",
       "sectionTitle": "Интерфейс и системы"
+    },
+    {
+      "competencyId": "product-strategy",
+      "tier": "foundation",
+      "order": 26,
+      "prerequisites": [],
+      "sectionId": "product-growth",
+      "sectionTitle": "Развитие продукта"
+    },
+    {
+      "competencyId": "product-growth",
+      "tier": "core",
+      "order": 27,
+      "prerequisites": [],
+      "sectionId": "product-growth",
+      "sectionTitle": "Развитие продукта"
+    },
+    {
+      "competencyId": "product-experimentation",
+      "tier": "core",
+      "order": 28,
+      "prerequisites": [],
+      "sectionId": "product-growth",
+      "sectionTitle": "Развитие продукта"
     }
   ]
 }

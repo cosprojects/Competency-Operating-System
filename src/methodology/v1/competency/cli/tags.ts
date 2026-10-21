@@ -22,7 +22,11 @@ async function main(): Promise<void> {
   const root = process.cwd();
   const domain = flagValue(argv, "--domain") ?? "it";
   const professionFilter = flagValue(argv, "--profession");
-  const inputPath = path.join(root, "data/competency", `professions-${domain}.json`);
+  const inputPath = path.join(
+    root,
+    "data/competency",
+    professionFilter ? `professions-${domain}-${professionFilter}.json` : `professions-${domain}.json`,
+  );
   const source = JSON.parse(await readFile(inputPath, "utf8")) as ProfessionsFile;
   const professions = professionFilter
     ? source.professions.filter((item) => item.slug === professionFilter || item.id === professionFilter)

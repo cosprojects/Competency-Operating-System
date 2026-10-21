@@ -3,6 +3,7 @@ import path from "node:path";
 import type { FetchLike } from "../../candidate-parser/types.ts";
 import type { TargetFile } from "../types.ts";
 import { collectProfessions } from "../collect.ts";
+import { applyProfessionSource, loadProfessionSource } from "../sources/profession-config.ts";
 
 function flagValue(argv: string[], name: string): string | undefined {
   const index = argv.indexOf(name);
@@ -18,11 +19,26 @@ async function main(): Promise<void> {
   const targets = JSON.parse(
     await readFile(path.join(root, "src/methodology/v1/competency/targets", `${domain}.json`), "utf8"),
   ) as TargetFile;
+  const requestedProfession = flagValue(argv, "--profession");
+  const selectedTargets = requestedProfession
+    ? targets.professions.filter((item) => item.id === requestedProfession || `${domain}.${item.id}` === requestedProfession)
+    : targets.professions;
+  if (selectedTargets.length === 0) throw new Error(`Профессия «${requestedProfession}» не найдена в targets`);
+  const useSourceModel = !argv.includes("--no-source-model");
+  const effectiveTargets = await Promise.all(
+    selectedTargets.map(async (target) => {
+      if (!useSourceModel) return target;
+      const source = await loadProfessionSource(root, domain, `${domain}.${target.id}`, async (file) =>
+        JSON.parse(await readFile(file, "utf8")) as never,
+      );
+      return applyProfessionSource(target, source);
+    }),
+  );
   const fetchImpl: FetchLike = (input, init) => fetch(input, init);
   const retrievedOn = new Date().toISOString().slice(0, 10);
   const result = await collectProfessions({
     domain,
-    targets: targets.professions,
+    targets: effectiveTargets,
     fetchImpl,
     retrievedOn,
     cache: { dir: path.join(root, "data/competency/cache"), refresh: argv.includes("--refresh") },
@@ -30,7 +46,10 @@ async function main(): Promise<void> {
 
   const outDir = path.join(root, "data/competency");
   await mkdir(outDir, { recursive: true });
-  const outputPath = path.join(outDir, `professions-${domain}.json`);
+  const outputPath = path.join(
+    outDir,
+    requestedProfession ? `professions-${domain}-${requestedProfession}.json` : `professions-${domain}.json`,
+  );
   await writeFile(
     outputPath,
     `${JSON.stringify(

@@ -39,3 +39,6 @@ npm run canonical:validate -- --domain it --profession uxui --source review --in
 ## Карты профессий
 
 `npm run canvas:profession -- --profession motion` (также `product`, `graphic`) собирает HTML-карту профессии из profession view и единого массива компетенций.
+
+
+Сборка по профессии: `npm run professions:collect -- --domain it --profession motion`, затем `npm run tags:collect -- --domain it --profession motion`. Запросы берутся из `sources/professions/<profession>.json`.

@@ -1,7 +1,7 @@
 ---
 id: COS-RES-018
 title: Модель сфера → профессия → компетенции и систематизация источников
-version: 1.2.0
+version: 1.3.0
 status: Draft
 owner: Research Team
 last_updated: 2026-10-21
@@ -176,7 +176,10 @@ npm run canvas:profession -- --profession graphic
 
 - Пока нормализованная модель генерируется из UX/UI canonical map; ручное редактирование `competencies.json` не является источником истины.
 - `profession-competencies` использует `priorityHint` canonical map. Для разных профессий это нужно заменить на profession-specific tier/order.
-- Источники сферы/профессии пока не подключены к сборщикам напрямую; следующий шаг — читать эти файлы в `professions:collect` / `tags:collect`.
+- `professions:collect` читает `sources/professions/<profession>.json` и разрешает только объявленные occupation sources; `--profession motion` использует motion-запросы.
+- `tags:collect --profession <slug>` читает `data/competency/professions-<domain>-<slug>.json`, а не общий файл.
+- Material Agent использует `materialSourceIds` из source-файла и по умолчанию только active.
+- Следующий шаг — source-driven теги/материалы для profession-specific сборки и полная очередь.
 
 ## 9. История изменений
 
@@ -185,3 +188,4 @@ npm run canvas:profession -- --profession graphic
 | 1.0.0 | 2026-10-21 | Введены сфера/профессия/единый массив компетенций и source-файлы; `model:sync`, `model:validate`, нормализованный UX/UI |
 | 1.1.0 | 2026-10-21 | Добавлены profession views для product/motion/graphic, `model:views`, переиспользование 34 компетенций и разные tier/order |
 | 1.2.0 | 2026-10-21 | Добавлены profession map pages (`canvas:profession`), Material Agent читает source-файл профессии, active material sources по умолчанию |
+| 1.3.0 | 2026-10-21 | `professions:collect --profession` и `tags:collect --profession` подключены к source-файлам; motion smoke: 1 профессия, 172 тега |

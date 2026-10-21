@@ -1,5 +1,6 @@
 import type {
   ProfileKind,
+  ProfileScope,
   TaxonomyBranch,
   TaxonomyFile,
   TaxonomyGroup,
@@ -11,6 +12,7 @@ export interface TaxonomyTarget {
   groupId?: string;
   leafId?: string;
   kind: ProfileKind;
+  scope: ProfileScope;
 }
 
 export interface TaxonomyIndex {
@@ -24,6 +26,11 @@ export interface TaxonomyIndex {
 }
 
 const KINDS: ReadonlySet<string> = new Set(["skill", "knowledge", "tool"]);
+const SCOPES: ReadonlySet<string> = new Set(["profession", "universal"]);
+
+export function leafScope(leaf: TaxonomyLeaf): ProfileScope {
+  return leaf.scope ?? "profession";
+}
 
 export function indexTaxonomy(taxonomy: TaxonomyFile): TaxonomyIndex {
   const branches = new Map<string, TaxonomyBranch>();
@@ -37,11 +44,11 @@ export function indexTaxonomy(taxonomy: TaxonomyFile): TaxonomyIndex {
   for (const branch of taxonomy.branches) {
     branches.set(branch.id, branch);
     branchesInOrder.push(branch);
-    targets.set(branch.id, { branchId: branch.id, kind: "knowledge" });
+    targets.set(branch.id, { branchId: branch.id, kind: "knowledge", scope: "profession" });
     for (const group of branch.groups) {
       groups.set(group.id, group);
       groupsInOrder.push(group);
-      targets.set(group.id, { branchId: branch.id, groupId: group.id, kind: group.kind });
+      targets.set(group.id, { branchId: branch.id, groupId: group.id, kind: group.kind, scope: "profession" });
       for (const leaf of group.leaves) {
         leaves.set(leaf.id, leaf);
         leavesInOrder.push(leaf);
@@ -50,6 +57,7 @@ export function indexTaxonomy(taxonomy: TaxonomyFile): TaxonomyIndex {
           groupId: group.id,
           leafId: leaf.id,
           kind: leaf.kind,
+          scope: leafScope(leaf),
         });
       }
     }
@@ -82,6 +90,9 @@ export function validateTaxonomy(taxonomy: TaxonomyFile): string[] {
       for (const leaf of group.leaves) {
         remember(leaf.id, `группа ${group.id}`);
         if (!KINDS.has(leaf.kind)) errors.push(`${leaf.id}: недопустимый kind «${leaf.kind}»`);
+        if (leaf.scope !== undefined && !SCOPES.has(leaf.scope)) {
+          errors.push(`${leaf.id}: недопустимый scope «${leaf.scope}»`);
+        }
         if (!leaf.id.startsWith(`${group.id}.`)) {
           errors.push(`${leaf.id}: id листа должен начинаться с «${group.id}.»`);
         }

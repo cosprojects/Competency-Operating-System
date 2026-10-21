@@ -43,6 +43,12 @@ function cell(text: string): string {
   return oneLine(text).replace(/\|/g, "\\|");
 }
 
+function roleLabel(role: string): string {
+  if (role === "core") return "ядро";
+  if (role === "supporting") return "поддержка";
+  return "универсальная база";
+}
+
 function relationLabel(relation: string): string {
   return relation === "essential" ? "обязательный" : "опциональный";
 }
@@ -55,6 +61,7 @@ function entryLine(entry: ProfileEntry): string {
     `· ${relationLabel(entry.occupations.some((item) => item.relation === "essential") ? "essential" : "optional")}`,
   ];
   if (entry.occupations.length > 1) parts.push(`· занятий: ${entry.occupations.length}`);
+  if (entry.evidence === "universal") parts.push("· универсальная база");
   if (entry.needsReview) parts.push("· **нужна проверка**");
   if (entry.sourceError) parts.push(`· ошибка источника: ${shorten(entry.sourceError, 80)}`);
   if (entry.nodeMatch) {
@@ -80,6 +87,10 @@ export function renderProfileMarkdown(journal: ProfileJournal): string {
   lines.push(
     "> Сборка не записывает граф и не подтверждает компетенции. Лист считается подтверждённым, если источник дал запись навыка с описанием и она попала в дерево; всё остальное — пробел или материал для проверки человеком.",
   );
+  lines.push(">");
+  lines.push(
+    "> ∞ — универсальная база: запись относится ко всем дизайнерам, а не к требованиям одной профессии.",
+  );
   lines.push("");
 
   lines.push("## Сводка");
@@ -90,10 +101,17 @@ export function renderProfileMarkdown(journal: ProfileJournal): string {
   lines.push(`| Навыков получено ссылками | ${journal.stats.skillsSeen} |`);
   lines.push(`| Уникальных записей ESCO | ${journal.stats.uniqueSkills} |`);
   lines.push(`| Сопоставлено с деревом | ${journal.stats.mapped} |`);
+  lines.push(`| Из них универсальная база | ${journal.stats.universalSkills} |`);
   lines.push(`| Вне области профиля | ${journal.stats.outOfScope} |`);
   lines.push(`| Не сопоставлено | ${journal.stats.unmapped} |`);
   lines.push(
     `| Листья: подтверждено / всего | ${journal.stats.leavesSupported} / ${journal.stats.leavesTotal} |`,
+  );
+  lines.push(
+    `| Универсальная база: листья | ${journal.stats.universalLeavesSupported} / ${journal.stats.universalLeavesTotal} |`,
+  );
+  lines.push(
+    `| Профессиональные листья | ${journal.stats.professionLeavesSupported} / ${journal.stats.professionLeavesTotal} |`,
   );
   lines.push(
     `| Группы: есть свидетельства / всего | ${journal.stats.groupsSupported} / ${journal.stats.groupsTotal} |`,
@@ -107,7 +125,7 @@ export function renderProfileMarkdown(journal: ProfileJournal): string {
   lines.push("|---|---|---|---|");
   for (const source of journal.sourceOccupations) {
     lines.push(
-      `| [${cell(source.title)}](${source.uri}) | ${source.role === "core" ? "ядро" : "поддержка"} | ${source.essentialCount} | ${source.optionalCount} |`,
+      `| [${cell(source.title)}](${source.uri}) | ${roleLabel(source.role)} | ${source.essentialCount} | ${source.optionalCount} |`,
     );
   }
   lines.push("");
@@ -143,7 +161,7 @@ export function renderProfileMarkdown(journal: ProfileJournal): string {
       for (const leaf of group.leaves) {
         const leafTitle = leaf.titleRu ? `${leaf.title} / ${leaf.titleRu}` : leaf.title;
         if (leaf.status === "supported") {
-          lines.push(`##### ✅ ${leafTitle} · ${KIND_LABEL[leaf.kind]}`);
+          lines.push(`##### ✅ ${leafTitle} · ${KIND_LABEL[leaf.kind]}${leaf.scope === "universal" ? " · ∞ универсальная база" : ""}`);
           lines.push("");
           for (const id of leaf.entryIds) {
             const entry = entryById.get(id);
@@ -151,7 +169,7 @@ export function renderProfileMarkdown(journal: ProfileJournal): string {
           }
           lines.push("");
         } else {
-          lines.push(`##### ⛔ ${leafTitle} · ${KIND_LABEL[leaf.kind]} — пробел`);
+          lines.push(`##### ⛔ ${leafTitle} · ${KIND_LABEL[leaf.kind]}${leaf.scope === "universal" ? " · ∞ универсальная база" : ""} — пробел`);
           lines.push("");
           lines.push("_В выбранных источниках нет записи, подтверждающей этот лист._");
           lines.push("");
@@ -171,7 +189,7 @@ export function renderProfileMarkdown(journal: ProfileJournal): string {
     lines.push("");
     for (const gap of journal.gaps) {
       const gapTitle = gap.titleRu ? `${gap.title} / ${gap.titleRu}` : gap.title;
-      lines.push(`- \`${gap.leafId}\` — ${gapTitle} (${KIND_LABEL[gap.kind]})`);
+      lines.push(`- \`${gap.leafId}\` — ${gapTitle} (${KIND_LABEL[gap.kind]}${gap.scope === "universal" ? ", универсальная база" : ""})`);
     }
   }
   lines.push("");
@@ -226,6 +244,19 @@ export function renderProfileMarkdown(journal: ProfileJournal): string {
     lines.push("");
     for (const item of journal.mappingMissing) {
       lines.push(`- «${item.escoTitle}» → \`${item.targetId}\``);
+    }
+    lines.push("");
+  }
+
+  if (journal.universalMissing.length > 0) {
+    lines.push("## Универсальные записи без источника");
+    lines.push("");
+    lines.push(
+      "Эти правила универсальной базы не нашли запись ESCO ни в универсальных занятиях, ни по прямой ссылке.",
+    );
+    lines.push("");
+    for (const item of journal.universalMissing) {
+      lines.push(`- «${item.title}» → \`${item.targetId}\``);
     }
     lines.push("");
   }

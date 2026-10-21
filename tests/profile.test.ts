@@ -18,6 +18,7 @@ const URI = {
   abap: "http://data.europa.eu/esco/skill/abap",
   cobol: "http://data.europa.eu/esco/skill/cobol",
   business: "http://data.europa.eu/esco/skill/business",
+  colorTheory: "http://data.europa.eu/esco/skill/design-principles",
 };
 
 const taxonomy: TaxonomyFile = {
@@ -90,6 +91,10 @@ const skillDescriptions: Record<string, { title: string; description: string }> 
   [URI.abap]: { title: "ABAP", description: "Program in ABAP." },
   [URI.cobol]: { title: "COBOL", description: "Program in COBOL." },
   [URI.business]: { title: "build business relationships", description: "Maintain relationships with partners." },
+  [URI.colorTheory]: {
+    title: "design principles",
+    description: "The elements used in design such as unity, scale, proportion, balance, colour, light and shade.",
+  },
 };
 
 function createFetch(): FetchLike {
@@ -145,11 +150,49 @@ function createFetch(): FetchLike {
 const graph = { nodes: [], tracks: [] };
 const professions = [{ id: "uxui", status: "open_for_assessment" }];
 
+const universalTaxonomy: TaxonomyFile = {
+  ...taxonomy,
+  branches: taxonomy.branches.map((branch) => ({
+    ...branch,
+    groups: branch.groups.map((group) => ({
+      ...group,
+      leaves: group.leaves.map((leaf) =>
+        leaf.id === "ui.visual.color" ? { ...leaf, scope: "universal" as const } : leaf,
+      ),
+    })),
+  })),
+};
+
+const universalMapping: MappingFile = {
+  ...mapping,
+  universalSkills: [
+    {
+      escoUri: URI.colorTheory,
+      escoTitle: "design principles",
+      targetId: "ui.visual.color",
+      kind: "knowledge",
+      basis: "Описание ESCO прямо называет colour, light и shade — универсальная база.",
+    },
+  ],
+};
+
 async function buildFixture() {
   return buildProfile({
     professionId: "uxui",
     taxonomy,
     mapping,
+    graph,
+    professions,
+    fetchImpl: createFetch(),
+    generatedOn: "2026-10-21",
+  });
+}
+
+async function buildUniversalFixture() {
+  return buildProfile({
+    professionId: "uxui",
+    taxonomy: universalTaxonomy,
+    mapping: universalMapping,
     graph,
     professions,
     fetchImpl: createFetch(),
@@ -246,6 +289,50 @@ describe("профиль компетенций профессии", () => {
     );
   });
 
+  it("заполняет универсальный лист доменной записью ESCO", async () => {
+    const journal = await buildUniversalFixture();
+    const colorLeaf = journal.branches
+      .flatMap((branch) => branch.groups)
+      .flatMap((group) => group.leaves)
+      .find((leaf) => leaf.id === "ui.visual.color");
+    assert.equal(colorLeaf?.status, "supported");
+    assert.equal(colorLeaf?.scope, "universal");
+    const entry = journal.entries.find((item) => item.title === "design principles");
+    assert.equal(entry?.evidence, "universal");
+    assert.equal(entry?.scope, "universal");
+    assert.equal(entry?.kind, "knowledge");
+    assert.equal(journal.stats.universalSkills, 1);
+    assert.equal(journal.stats.universalLeavesSupported, 1);
+    assert.equal(journal.stats.universalLeavesTotal, 1);
+    assert.equal(journal.stats.professionLeavesSupported, 3);
+    assert.deepEqual(journal.gaps.map((gap) => gap.leafId), []);
+  });
+
+  it("отклоняет универсальную запись, если её цель не универсальная", async () => {
+    const broken: MappingFile = {
+      ...universalMapping,
+      universalSkills: [
+        {
+          escoUri: URI.colorTheory,
+          targetId: "ui.visual.typography",
+          basis: "цель не универсальная",
+        },
+      ],
+    };
+    await assert.rejects(
+      buildProfile({
+        professionId: "uxui",
+        taxonomy: universalTaxonomy,
+        mapping: broken,
+        graph,
+        professions,
+        fetchImpl: createFetch(),
+        generatedOn: "2026-10-21",
+      }),
+      /должна быть листом универсальной базы/,
+    );
+  });
+
   it("рендерит дерево, пробелы и ограничения без записи в граф", async () => {
     const journal = await buildFixture();
     const markdown = renderProfileMarkdown(journal);
@@ -272,6 +359,20 @@ describe("эталонная таксономия и маппинг UX/UI", () =
     assert.equal(index.branches.size, 2);
     assert.equal(index.groups.size, 6);
     assert.equal(index.leaves.size, 18);
+  });
+
+  it("универсальная база задана листьями scope=universal и доменными занятиями", () => {
+    const index = indexTaxonomy(realTaxonomy);
+    const universal = [...index.leaves.values()].filter((leaf) => leaf.scope === "universal");
+    assert.deepEqual(
+      universal.map((leaf) => leaf.id).sort(),
+      ["ui.visual.color", "ui.visual.layout", "ui.visual.typography"],
+    );
+    assert.ok((realMapping.universalSkills ?? []).length >= 4);
+    assert.equal((realMapping.universalOccupations ?? []).length, 2);
+    for (const occupation of realMapping.universalOccupations ?? []) {
+      assert.equal(occupation.role, "universal");
+    }
   });
 
   it("каждое правило маппинга указывает на существующую цель", () => {

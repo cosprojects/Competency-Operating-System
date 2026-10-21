@@ -3,7 +3,7 @@
   "professionId": "uxui",
   "title": "UI/UX Design",
   "titleRu": "UI/UX-дизайн",
-  "note": "Целевая структура профиля. Листья задают, что должно быть подтверждено источником, а не готовый список компетенций. Дерево повторяет структуру из исследования LOGICVERSE (UI Design / UX Design).",
+  "note": "Целевая структура профиля. Листья со scope=universal относятся ко всем дизайнерам и подтверждаются доменными свидетельствами, а не требованиями одной профессии. Листья задают, что должно быть подтверждено источником, а не готовый список компетенций. Дерево повторяет структуру из исследования LOGICVERSE (UI Design / UX Design).",
   "branches": [
     {
       "id": "ui",
@@ -27,9 +27,9 @@
           "titleRu": "Визуальный дизайн",
           "kind": "knowledge",
           "leaves": [
-            { "id": "ui.visual.typography", "title": "Typography", "titleRu": "Типографика", "kind": "knowledge" },
-            { "id": "ui.visual.color", "title": "Color", "titleRu": "Цвет", "kind": "knowledge" },
-            { "id": "ui.visual.layout", "title": "Layout", "titleRu": "Композиция и макет", "kind": "knowledge" }
+            { "id": "ui.visual.typography", "title": "Typography", "titleRu": "Типографика", "kind": "knowledge", "scope": "universal" },
+            { "id": "ui.visual.color", "title": "Color theory", "titleRu": "Теория цвета и цветовая гармония", "kind": "knowledge", "scope": "universal" },
+            { "id": "ui.visual.layout", "title": "Layout & composition", "titleRu": "Композиция и макет", "kind": "knowledge", "scope": "universal" }
           ]
         },
         {

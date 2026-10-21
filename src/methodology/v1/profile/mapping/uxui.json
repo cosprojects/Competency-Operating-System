@@ -36,77 +36,341 @@
     }
   ],
   "rules": [
-    { "escoTitle": "design user interface", "targetId": "ui", "basis": "Действие прямо называет проектирование пользовательского интерфейса." },
-    { "escoTitle": "interactive media", "targetId": "ui", "basis": "Знание об интерактивных медиа относится к UI-ветке." },
-
-    { "escoTitle": "graphics editor software", "targetId": "ui.tools", "kind": "tool", "basis": "Программное обеспечение — инструмент, не компетенция." },
-    { "escoTitle": "adobe creative suite", "targetId": "ui.tools", "kind": "tool", "basis": "Инструмент дизайна." },
-    { "escoTitle": "use creative suite software", "targetId": "ui.tools", "kind": "tool", "basis": "Инструмент дизайна." },
-    { "escoTitle": "Adobe Illustrator", "targetId": "ui.tools", "kind": "tool", "basis": "Инструмент дизайна." },
-    { "escoTitle": "Adobe Photoshop", "targetId": "ui.tools", "kind": "tool", "basis": "Инструмент дизайна." },
-    { "escoTitle": "SketchBook Pro", "targetId": "ui.tools", "kind": "tool", "basis": "Инструмент дизайна." },
-    { "escoTitle": "Synfig", "targetId": "ui.tools", "kind": "tool", "basis": "Инструмент дизайна." },
-    { "escoTitle": "GIMP (graphics editor software)", "targetId": "ui.tools", "kind": "tool", "basis": "Инструмент дизайна." },
-    { "escoTitle": "Microsoft Visio", "targetId": "ui.tools", "kind": "tool", "basis": "Инструмент схем и диаграмм." },
-
-    { "escoTitle": "design graphics", "targetId": "ui.visual", "basis": "Действие создаёт графический материал, это визуальный дизайн." },
-    { "escoTitle": "translate requirements into visual design", "targetId": "ui.visual", "basis": "Прямо называет визуальный дизайн как результат." },
-    { "escoTitle": "graphic design", "targetId": "ui.visual", "basis": "Знание графического дизайна." },
-    { "escoTitle": "develop an artistic framework", "targetId": "ui.visual", "basis": "Художественная рамка относится к визуальному слою." },
-    { "escoTitle": "aesthetics", "targetId": "ui.visual", "basis": "Знание эстетики — основа визуального дизайна." },
-    { "escoTitle": "computer graphics", "targetId": "ui.visual", "basis": "Компьютерная графика — визуальный слой." },
-    { "escoTitle": "visual presentation techniques", "targetId": "ui.visual", "basis": "Приёмы визуальной подачи." },
-    { "escoTitle": "use digital illustration techniques", "targetId": "ui.visual", "basis": "Цифровая иллюстрация — визуальный навык." },
-    { "escoTitle": "use traditional illustration techniques", "targetId": "ui.visual", "basis": "Иллюстрация — визуальный навык." },
-    { "escoTitle": "adapt to type of media", "targetId": "ui.visual", "basis": "Адаптация визуального решения под носитель." },
-
-    { "escoTitle": "application usability", "targetId": "ui.systems", "basis": "Юзабилити приложения — качество UI-системы." },
-    { "escoTitle": "World Wide Web Consortium standards", "targetId": "ui.systems", "basis": "Веб-стандарты задают требования к UI." },
-    { "escoTitle": "software UI design patterns", "targetId": "ui.systems.components", "basis": "Паттерны UI задают устройство компонентов." },
-    { "escoTitle": "ICT accessibility standards", "targetId": "ui.systems.accessibility", "basis": "Стандарты доступности прямо называют область." },
-    { "escoTitle": "test system accessibility for users with special needs", "targetId": "ui.systems.accessibility", "basis": "Проверка доступности системы." },
-    { "escoTitle": "screen reader", "targetId": "ui.systems.accessibility", "basis": "Экранный диктор — ассистивная технология." },
-
-    { "escoTitle": "execute ICT user research activities", "targetId": "ux.research", "basis": "Прямо называет исследование пользователей." },
-    { "escoTitle": "conduct qualitative research", "targetId": "ux.research", "basis": "Качественное исследование." },
-    { "escoTitle": "conduct quantitative research", "targetId": "ux.research", "basis": "Количественное исследование." },
-    { "escoTitle": "conduct research interview", "targetId": "ux.research.interviews", "basis": "Интервью — метод исследования, лист Interviews." },
-    { "escoTitle": "measure customer feedback", "targetId": "ux.research", "basis": "Сбор и измерение обратной связи." },
-    { "escoTitle": "report analysis results", "targetId": "ux.research", "basis": "Отчёт по результатам анализа." },
-    { "escoTitle": "use experience map", "targetId": "ux.research", "basis": "Карта опыта — артефакт исследования." },
-    { "escoTitle": "cognitive psychology", "targetId": "ux.research", "basis": "Когнитивная психология — база исследования." },
-    { "escoTitle": "behavioural science", "targetId": "ux.research", "basis": "Поведенческие науки — база исследования." },
-    { "escoTitle": "identify ICT user needs", "targetId": "ux.research", "basis": "Выявление потребностей пользователей." },
-    { "escoTitle": "identify customer's needs", "targetId": "ux.research", "basis": "Выявление потребностей заказчика." },
-    { "escoTitle": "meet expectations of target audience", "targetId": "ux.research", "basis": "Ориентация на целевую аудиторию." },
-    { "escoTitle": "perform market research", "targetId": "ux.research", "basis": "Исследование рынка как часть исследования." },
-    { "escoTitle": "web analytics", "targetId": "ux.research", "basis": "Веб-аналитика — измерение поведения." },
-    { "escoTitle": "online moderation techniques", "targetId": "ux.research", "needsReview": true, "basis": "Модерация онлайн-исследований." },
-    { "escoTitle": "ICT system user requirements", "targetId": "ux.research", "basis": "Требования пользователей системы." },
-    { "escoTitle": "interact with users to gather requirements", "targetId": "ux.research", "basis": "Сбор требований через взаимодействие." },
-    { "escoTitle": "assess users' interaction with ICT applications", "targetId": "ux.research.user-testing", "basis": "Оценка взаимодействия пользователя." },
-    { "escoTitle": "measure software usability", "targetId": "ux.research.user-testing", "basis": "Измерение юзабилити." },
-    { "escoTitle": "test for behavioural patterns", "targetId": "ux.research.user-testing", "basis": "Тестирование поведенческих паттернов." },
-    { "escoTitle": "test for emotional patterns", "targetId": "ux.research.user-testing", "basis": "Тестирование эмоциональных реакций." },
-    { "escoTitle": "report test findings", "targetId": "ux.research.user-testing", "basis": "Отчёт по результатам тестирования." },
-    { "escoTitle": "replicate customer software issues", "targetId": "ux.research.user-testing", "basis": "Воспроизведение проблем пользователя." },
-
-    { "escoTitle": "design process", "targetId": "ux.process", "basis": "Процесс дизайна." },
-    { "escoTitle": "use methodologies for user-centered design", "targetId": "ux.process", "basis": "Человеко-центричный дизайн — процесс." },
-    { "escoTitle": "software interaction design", "targetId": "ux.process", "basis": "Проектирование взаимодействия." },
-    { "escoTitle": "human-computer interaction", "targetId": "ux.process", "basis": "HCI — основа проектирования взаимодействия." },
-    { "escoTitle": "follow a brief", "targetId": "ux.process", "basis": "Работа по брифу — этап процесса." },
-    { "escoTitle": "apply systemic design thinking", "targetId": "ux.process", "basis": "Дизайн-мышление — процесс." },
-    { "escoTitle": "develop creative ideas", "targetId": "ux.process", "basis": "Генерация идей — этап процесса." },
-    { "escoTitle": "brainstorm ideas", "targetId": "ux.process", "basis": "Брейншторм — этап процесса." },
-    { "escoTitle": "perform ideation activities", "targetId": "ux.process", "basis": "Идеация — этап процесса." },
-    { "escoTitle": "create website wireframe", "targetId": "ux.process.wireframes", "basis": "Вайрфрейм прямо назван результатом." },
-
-    { "escoTitle": "create prototype of user experience solutions", "targetId": "ux.prototyping.interactive", "basis": "Прототип UX-решения." },
-    { "escoTitle": "design prototypes", "targetId": "ux.prototyping.interactive", "basis": "Проектирование прототипов." },
-    { "escoTitle": "Prototyping development", "targetId": "ux.prototyping.interactive", "basis": "Знание о разработке прототипов." },
-    { "escoTitle": "draw design sketches", "targetId": "ux.prototyping.low-fi", "basis": "Эскиз — низкодетализированный прототип." },
-    { "escoTitle": "convert scribbles into virtual sketches", "targetId": "ux.prototyping.low-fi", "basis": "Набросок → виртуальный эскиз." }
+    {
+      "escoTitle": "design user interface",
+      "targetId": "ui",
+      "basis": "Действие прямо называет проектирование пользовательского интерфейса."
+    },
+    {
+      "escoTitle": "interactive media",
+      "targetId": "ui",
+      "basis": "Знание об интерактивных медиа относится к UI-ветке."
+    },
+    {
+      "escoTitle": "graphics editor software",
+      "targetId": "ui.tools",
+      "kind": "tool",
+      "basis": "Программное обеспечение — инструмент, не компетенция."
+    },
+    {
+      "escoTitle": "adobe creative suite",
+      "targetId": "ui.tools",
+      "kind": "tool",
+      "basis": "Инструмент дизайна."
+    },
+    {
+      "escoTitle": "use creative suite software",
+      "targetId": "ui.tools",
+      "kind": "tool",
+      "basis": "Инструмент дизайна."
+    },
+    {
+      "escoTitle": "Adobe Illustrator",
+      "targetId": "ui.tools",
+      "kind": "tool",
+      "basis": "Инструмент дизайна."
+    },
+    {
+      "escoTitle": "Adobe Photoshop",
+      "targetId": "ui.tools",
+      "kind": "tool",
+      "basis": "Инструмент дизайна."
+    },
+    {
+      "escoTitle": "SketchBook Pro",
+      "targetId": "ui.tools",
+      "kind": "tool",
+      "basis": "Инструмент дизайна."
+    },
+    {
+      "escoTitle": "Synfig",
+      "targetId": "ui.tools",
+      "kind": "tool",
+      "basis": "Инструмент дизайна."
+    },
+    {
+      "escoTitle": "GIMP (graphics editor software)",
+      "targetId": "ui.tools",
+      "kind": "tool",
+      "basis": "Инструмент дизайна."
+    },
+    {
+      "escoTitle": "Microsoft Visio",
+      "targetId": "ui.tools",
+      "kind": "tool",
+      "basis": "Инструмент схем и диаграмм."
+    },
+    {
+      "escoTitle": "design graphics",
+      "targetId": "ui.visual",
+      "basis": "Действие создаёт графический материал, это визуальный дизайн."
+    },
+    {
+      "escoTitle": "translate requirements into visual design",
+      "targetId": "ui.visual",
+      "basis": "Прямо называет визуальный дизайн как результат."
+    },
+    {
+      "escoTitle": "graphic design",
+      "targetId": "ui.visual",
+      "basis": "Знание графического дизайна."
+    },
+    {
+      "escoTitle": "develop an artistic framework",
+      "targetId": "ui.visual",
+      "basis": "Художественная рамка относится к визуальному слою."
+    },
+    {
+      "escoTitle": "aesthetics",
+      "targetId": "ui.visual",
+      "basis": "Знание эстетики — основа визуального дизайна."
+    },
+    {
+      "escoTitle": "computer graphics",
+      "targetId": "ui.visual",
+      "basis": "Компьютерная графика — визуальный слой."
+    },
+    {
+      "escoTitle": "visual presentation techniques",
+      "targetId": "ui.visual",
+      "basis": "Приёмы визуальной подачи."
+    },
+    {
+      "escoTitle": "use digital illustration techniques",
+      "targetId": "ui.visual",
+      "basis": "Цифровая иллюстрация — визуальный навык."
+    },
+    {
+      "escoTitle": "use traditional illustration techniques",
+      "targetId": "ui.visual",
+      "basis": "Иллюстрация — визуальный навык."
+    },
+    {
+      "escoTitle": "adapt to type of media",
+      "targetId": "ui.visual",
+      "basis": "Адаптация визуального решения под носитель."
+    },
+    {
+      "escoTitle": "application usability",
+      "targetId": "ui.systems",
+      "basis": "Юзабилити приложения — качество UI-системы."
+    },
+    {
+      "escoTitle": "World Wide Web Consortium standards",
+      "targetId": "ui.systems",
+      "basis": "Веб-стандарты задают требования к UI."
+    },
+    {
+      "escoTitle": "software UI design patterns",
+      "targetId": "ui.systems.components",
+      "basis": "Паттерны UI задают устройство компонентов."
+    },
+    {
+      "escoTitle": "ICT accessibility standards",
+      "targetId": "ui.systems.accessibility",
+      "basis": "Стандарты доступности прямо называют область."
+    },
+    {
+      "escoTitle": "test system accessibility for users with special needs",
+      "targetId": "ui.systems.accessibility",
+      "basis": "Проверка доступности системы."
+    },
+    {
+      "escoTitle": "screen reader",
+      "targetId": "ui.systems.accessibility",
+      "basis": "Экранный диктор — ассистивная технология."
+    },
+    {
+      "escoTitle": "execute ICT user research activities",
+      "targetId": "ux.research",
+      "basis": "Прямо называет исследование пользователей."
+    },
+    {
+      "escoTitle": "conduct qualitative research",
+      "targetId": "ux.research",
+      "basis": "Качественное исследование."
+    },
+    {
+      "escoTitle": "conduct quantitative research",
+      "targetId": "ux.research",
+      "basis": "Количественное исследование."
+    },
+    {
+      "escoTitle": "conduct research interview",
+      "targetId": "ux.research.interviews",
+      "basis": "Интервью — метод исследования, лист Interviews."
+    },
+    {
+      "escoTitle": "measure customer feedback",
+      "targetId": "ux.research",
+      "basis": "Сбор и измерение обратной связи."
+    },
+    {
+      "escoTitle": "report analysis results",
+      "targetId": "ux.research",
+      "basis": "Отчёт по результатам анализа."
+    },
+    {
+      "escoTitle": "use experience map",
+      "targetId": "ux.research",
+      "basis": "Карта опыта — артефакт исследования."
+    },
+    {
+      "escoTitle": "cognitive psychology",
+      "targetId": "ux.research",
+      "basis": "Когнитивная психология — база исследования."
+    },
+    {
+      "escoTitle": "behavioural science",
+      "targetId": "ux.research",
+      "basis": "Поведенческие науки — база исследования."
+    },
+    {
+      "escoTitle": "identify ICT user needs",
+      "targetId": "ux.research",
+      "basis": "Выявление потребностей пользователей."
+    },
+    {
+      "escoTitle": "identify customer's needs",
+      "targetId": "ux.research",
+      "basis": "Выявление потребностей заказчика."
+    },
+    {
+      "escoTitle": "meet expectations of target audience",
+      "targetId": "ux.research",
+      "basis": "Ориентация на целевую аудиторию."
+    },
+    {
+      "escoTitle": "perform market research",
+      "targetId": "ux.research",
+      "basis": "Исследование рынка как часть исследования."
+    },
+    {
+      "escoTitle": "web analytics",
+      "targetId": "ux.research",
+      "basis": "Веб-аналитика — измерение поведения."
+    },
+    {
+      "escoTitle": "online moderation techniques",
+      "targetId": "ux.research",
+      "needsReview": true,
+      "basis": "Модерация онлайн-исследований."
+    },
+    {
+      "escoTitle": "ICT system user requirements",
+      "targetId": "ux.research",
+      "basis": "Требования пользователей системы."
+    },
+    {
+      "escoTitle": "interact with users to gather requirements",
+      "targetId": "ux.research",
+      "basis": "Сбор требований через взаимодействие."
+    },
+    {
+      "escoTitle": "assess users' interaction with ICT applications",
+      "targetId": "ux.research.user-testing",
+      "basis": "Оценка взаимодействия пользователя."
+    },
+    {
+      "escoTitle": "measure software usability",
+      "targetId": "ux.research.user-testing",
+      "basis": "Измерение юзабилити."
+    },
+    {
+      "escoTitle": "test for behavioural patterns",
+      "targetId": "ux.research.user-testing",
+      "basis": "Тестирование поведенческих паттернов."
+    },
+    {
+      "escoTitle": "test for emotional patterns",
+      "targetId": "ux.research.user-testing",
+      "basis": "Тестирование эмоциональных реакций."
+    },
+    {
+      "escoTitle": "report test findings",
+      "targetId": "ux.research.user-testing",
+      "basis": "Отчёт по результатам тестирования."
+    },
+    {
+      "escoTitle": "replicate customer software issues",
+      "targetId": "ux.research.user-testing",
+      "basis": "Воспроизведение проблем пользователя."
+    },
+    {
+      "escoTitle": "design process",
+      "targetId": "ux.process",
+      "basis": "Процесс дизайна."
+    },
+    {
+      "escoTitle": "use methodologies for user-centered design",
+      "targetId": "ux.process",
+      "basis": "Человеко-центричный дизайн — процесс."
+    },
+    {
+      "escoTitle": "software interaction design",
+      "targetId": "ux.process",
+      "basis": "Проектирование взаимодействия."
+    },
+    {
+      "escoTitle": "human-computer interaction",
+      "targetId": "ux.process",
+      "basis": "HCI — основа проектирования взаимодействия."
+    },
+    {
+      "escoTitle": "follow a brief",
+      "targetId": "ux.process",
+      "basis": "Работа по брифу — этап процесса."
+    },
+    {
+      "escoTitle": "apply systemic design thinking",
+      "targetId": "ux.process",
+      "basis": "Дизайн-мышление — процесс."
+    },
+    {
+      "escoTitle": "develop creative ideas",
+      "targetId": "ux.process",
+      "basis": "Генерация идей — этап процесса."
+    },
+    {
+      "escoTitle": "brainstorm ideas",
+      "targetId": "ux.process",
+      "basis": "Брейншторм — этап процесса."
+    },
+    {
+      "escoTitle": "perform ideation activities",
+      "targetId": "ux.process",
+      "basis": "Идеация — этап процесса."
+    },
+    {
+      "escoTitle": "create website wireframe",
+      "targetId": "ux.process.wireframes",
+      "basis": "Вайрфрейм прямо назван результатом."
+    },
+    {
+      "escoTitle": "create prototype of user experience solutions",
+      "targetId": "ux.prototyping.interactive",
+      "basis": "Прототип UX-решения."
+    },
+    {
+      "escoTitle": "design prototypes",
+      "targetId": "ux.prototyping.interactive",
+      "basis": "Проектирование прототипов."
+    },
+    {
+      "escoTitle": "Prototyping development",
+      "targetId": "ux.prototyping.interactive",
+      "basis": "Знание о разработке прототипов."
+    },
+    {
+      "escoTitle": "draw design sketches",
+      "targetId": "ux.prototyping.low-fi",
+      "basis": "Эскиз — низкодетализированный прототип."
+    },
+    {
+      "escoTitle": "convert scribbles into virtual sketches",
+      "targetId": "ux.prototyping.low-fi",
+      "basis": "Набросок → виртуальный эскиз."
+    }
   ],
   "outOfScope": [
     {
@@ -152,6 +416,57 @@
     {
       "regex": "^(address problems critically|give live presentation|use an application-specific interface|use presentation software|use word processing software)$",
       "reason": "transversal"
+    }
+  ],
+  "universalOccupations": [
+    {
+      "id": "art-director",
+      "title": "art director",
+      "uri": "http://data.europa.eu/esco/occupation/cb93fd23-1f51-4495-867a-936c1967066b",
+      "role": "universal"
+    },
+    {
+      "id": "desktop-publisher",
+      "title": "desktop publisher",
+      "uri": "http://data.europa.eu/esco/occupation/78216000-edc1-474b-9569-28ed6a657da2",
+      "role": "universal"
+    }
+  ],
+  "universalSkills": [
+    {
+      "escoTitle": "typography",
+      "targetId": "ui.visual.typography",
+      "kind": "knowledge",
+      "basis": "Запись ESCO «typography» есть у занятия desktop publisher: расстановка письменного текста. Универсальная база для всех дизайнеров."
+    },
+    {
+      "escoTitle": "design principles",
+      "targetId": "ui.visual.color",
+      "kind": "knowledge",
+      "basis": "Запись ESCO «design principles» есть у art director; в описании прямо перечислены colour, light, shade наряду с unity, scale, proportion, balance. Это универсальная база визуального дизайна."
+    },
+    {
+      "escoUri": "http://data.europa.eu/esco/skill/d13ec79c-ed13-4f4a-bed7-850f3fec57ef",
+      "escoTitle": "determine colour shades",
+      "targetId": "ui.visual.color",
+      "kind": "skill",
+      "needsReview": true,
+      "basis": "Определение и применение корректного цвета по требованиям. Цветовая работа, но ближе к производству — человек проверяет."
+    },
+    {
+      "escoUri": "http://data.europa.eu/esco/skill/418c13d1-2b4e-4bdd-82f4-4eaa5efb630c",
+      "escoTitle": "develop visual elements",
+      "targetId": "ui.visual.layout",
+      "kind": "skill",
+      "basis": "Описание ESCO: линия, пространство, цвет и масса для выражения идей. Это композиционная работа универсальной базы."
+    },
+    {
+      "escoUri": "http://data.europa.eu/esco/skill/a6c06345-6ca0-42f2-b01e-bb4078fef1e2",
+      "escoTitle": "determine image composition",
+      "targetId": "ui.visual.layout",
+      "kind": "skill",
+      "needsReview": true,
+      "basis": "Композиция изображения: выбор и настройка объектов, оборудования и света. Ближе к фотографии — человек проверяет."
     }
   ]
 }

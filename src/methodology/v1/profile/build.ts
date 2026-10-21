@@ -23,6 +23,7 @@ import {
 import { indexTaxonomy, validateTaxonomy, type TaxonomyIndex, type TaxonomyTarget } from "./taxonomy.ts";
 import type {
   EscoSkillLink,
+  EvidenceLayer,
   LeafStatus,
   MappingFile,
   MappingRule,
@@ -38,6 +39,7 @@ import type {
   SkillRelation,
   SourceOccupationReport,
   TaxonomyFile,
+  UniversalSkillRule,
 } from "./types.ts";
 
 export interface CacheOptions {
@@ -64,13 +66,25 @@ interface SeenSkill {
   occupations: OccupationEvidence[];
 }
 
-interface LoadedMapped {
-  skill: SeenSkill;
-  rule: MappingRule;
+interface PlannedEntry {
+  recordId: string;
+  title: string;
+  skillType: string;
+  rule: MappingRule | UniversalSkillRule;
   target: TaxonomyTarget;
+  occupations: OccupationEvidence[];
+  evidence: EvidenceLayer;
+}
+
+interface LoadedPlanned extends PlannedEntry {
   description: string;
   language: string;
   error?: string;
+}
+
+interface UniversalLink {
+  link: EscoSkillLink;
+  occupations: OccupationEvidence[];
 }
 
 async function mapLimited<T, R>(
@@ -185,15 +199,35 @@ export async function buildProfile(input: BuildProfileInput): Promise<ProfileJou
     );
     return { ref, data };
   });
+  const universalOccupations = await mapLimited(
+    input.mapping.universalOccupations ?? [],
+    2,
+    async (ref) => {
+      const data = await cachedJson(input.cache, `occupation-${ref.id}`, () =>
+        readOccupation(input.fetchImpl, ref.uri),
+      );
+      return { ref, data };
+    },
+  );
 
-  const sourceOccupations: SourceOccupationReport[] = occupations.map(({ ref, data }) => ({
-    id: ref.id,
-    title: data.title || ref.title,
-    uri: ref.uri,
-    role: ref.role,
-    essentialCount: data.essential.length,
-    optionalCount: data.optional.length,
-  }));
+  const sourceOccupations: SourceOccupationReport[] = [
+    ...occupations.map(({ ref, data }) => ({
+      id: ref.id,
+      title: data.title || ref.title,
+      uri: ref.uri,
+      role: ref.role,
+      essentialCount: data.essential.length,
+      optionalCount: data.optional.length,
+    })),
+    ...universalOccupations.map(({ ref, data }) => ({
+      id: ref.id,
+      title: data.title || ref.title,
+      uri: ref.uri,
+      role: ref.role,
+      essentialCount: data.essential.length,
+      optionalCount: data.optional.length,
+    })),
+  ];
 
   const seen = new Map<string, SeenSkill>();
   const register = (link: EscoSkillLink, occupation: OccupationRef, relation: SkillRelation): void => {
@@ -236,14 +270,22 @@ export async function buildProfile(input: BuildProfileInput): Promise<ProfileJou
   }
 
   const skills = [...seen.values()].sort((a, b) => a.title.localeCompare(b.title));
-  const mappedSkills: Array<{ skill: SeenSkill; rule: MappingRule; target: TaxonomyTarget }> = [];
+  const planned: PlannedEntry[] = [];
   const outOfScopeMap = new Map<string, { title: string; reason: string; occupations: Set<string> }>();
   const unmapped: ProfileUnmapped[] = [];
 
   for (const skill of skills) {
     const rule = ruleFor(mapping, skill.title);
     if (rule) {
-      mappedSkills.push({ skill, rule, target: targetOrThrow(taxonomy, rule.targetId) });
+      planned.push({
+        recordId: skill.uri,
+        title: skill.title,
+        skillType: skill.skillType,
+        rule,
+        target: targetOrThrow(taxonomy, rule.targetId),
+        occupations: skill.occupations,
+        evidence: "occupation",
+      });
       continue;
     }
     const reason = outOfScopeReasonFor(mapping, skill.title);
@@ -269,12 +311,89 @@ export async function buildProfile(input: BuildProfileInput): Promise<ProfileJou
     });
   }
 
-  const loaded = await mapLimited(mappedSkills, 4, async (item): Promise<LoadedMapped> => {
+  // Универсальная база: записи, которые относятся ко всем дизайнерам.
+  const universalLinks = new Map<string, UniversalLink>();
+  for (const { ref, data } of universalOccupations) {
+    const add = (link: EscoSkillLink, relation: SkillRelation): void => {
+      const existing = universalLinks.get(normalizeTitle(link.title));
+      if (existing) {
+        existing.occupations.push({
+          uri: ref.uri,
+          title: ref.title,
+          role: ref.role,
+          relation,
+        });
+        return;
+      }
+      universalLinks.set(normalizeTitle(link.title), {
+        link,
+        occupations: [
+          { uri: ref.uri, title: ref.title, role: ref.role, relation },
+        ],
+      });
+    };
+    for (const link of data.essential) add(link, "essential");
+    for (const link of data.optional) add(link, "optional");
+  }
+
+  const universalMissing: Array<{ title: string; targetId: string }> = [];
+  const plannedRecordIds = new Set(planned.map((item) => item.recordId));
+  const universalSeen = new Set<string>();
+  let universalSkillsCount = 0;
+
+  for (const rule of input.mapping.universalSkills ?? []) {
+    const target = targetOrThrow(taxonomy, rule.targetId);
+    let record: { recordId: string; title: string; skillType: string; occupations: OccupationEvidence[] } | undefined;
+    if (rule.escoUri) {
+      record = {
+        recordId: rule.escoUri,
+        title: rule.escoTitle ?? "",
+        skillType: rule.kind ?? "unknown",
+        occupations: [],
+      };
+    } else if (rule.escoTitle) {
+      const link = universalLinks.get(normalizeTitle(rule.escoTitle));
+      if (link) {
+        record = {
+          recordId: link.link.uri,
+          title: link.link.title,
+          skillType: link.link.skillType,
+          occupations: link.occupations,
+        };
+      }
+    }
+    if (!record) {
+      universalMissing.push({
+        title: rule.escoTitle ?? rule.escoUri ?? "неизвестная запись",
+        targetId: rule.targetId,
+      });
+      continue;
+    }
+    if (plannedRecordIds.has(record.recordId) || universalSeen.has(record.recordId)) continue;
+    universalSeen.add(record.recordId);
+    planned.push({
+      recordId: record.recordId,
+      title: record.title,
+      skillType: record.skillType,
+      rule,
+      target,
+      occupations: record.occupations,
+      evidence: "universal",
+    });
+    universalSkillsCount += 1;
+  }
+
+  const loaded = await mapLimited(planned, 4, async (item): Promise<LoadedPlanned> => {
     try {
-      const data = await cachedJson(input.cache, `skill-${fileKey(item.skill.uri)}`, () =>
-        readSkill(input.fetchImpl, item.skill.uri),
+      const data = await cachedJson(input.cache, `skill-${fileKey(item.recordId)}`, () =>
+        readSkill(input.fetchImpl, item.recordId),
       );
-      return { ...item, description: data.description, language: data.language };
+      return {
+        ...item,
+        title: item.title || data.title,
+        description: data.description,
+        language: data.language,
+      };
     } catch (error) {
       const message = error instanceof Error ? error.message : "неизвестная ошибка";
       return { ...item, description: "", language: "unknown", error: message };
@@ -282,24 +401,26 @@ export async function buildProfile(input: BuildProfileInput): Promise<ProfileJou
   });
 
   const entries: ProfileEntry[] = loaded.map((item) => {
-    const { skill, rule, target } = item;
+    const { target, rule } = item;
     const leaf = target.leafId ? taxonomy.leaves.get(target.leafId) : undefined;
     const group = target.groupId ? taxonomy.groups.get(target.groupId) : undefined;
     const fallbackKind = leaf?.kind ?? group?.kind ?? "knowledge";
-    const kind = rule.kind ?? kindFromSkillType(skill.skillType) ?? fallbackKind;
+    const kind = rule.kind ?? kindFromSkillType(item.skillType) ?? fallbackKind;
     const entry: ProfileEntry = {
-      id: candidateId(input.professionId, skill.uri, skill.title),
-      title: skill.title,
+      id: candidateId(input.professionId, item.recordId, item.title),
+      title: item.title,
       kind,
+      scope: target.scope,
+      evidence: item.evidence,
       description: item.description,
       branchId: target.branchId,
       groupId: target.groupId ?? "",
       targetId: rule.targetId,
       mappingBasis: rule.basis,
       needsReview: (rule.needsReview ?? false) || item.description.length === 0,
-      recordId: skill.uri,
-      sourceUrl: skill.uri,
-      occupations: skill.occupations
+      recordId: item.recordId,
+      sourceUrl: item.recordId,
+      occupations: item.occupations
         .slice()
         .sort((a, b) => a.title.localeCompare(b.title) || a.relation.localeCompare(b.relation)),
     };
@@ -342,12 +463,15 @@ export async function buildProfile(input: BuildProfileInput): Promise<ProfileJou
       : { outcome: decision.outcome };
   }
 
+  const entryById = new Map(entries.map((entry) => [entry.id, entry]));
   const byTarget = new Map<string, string[]>();
   for (const entry of entries) {
     const list = byTarget.get(entry.targetId) ?? [];
     list.push(entry.id);
     byTarget.set(entry.targetId, list);
   }
+  const hasEvidence = (entryIds: string[]): boolean =>
+    entryIds.some((id) => (entryById.get(id)?.description.length ?? 0) > 0);
 
   const branches = input.taxonomy.branches.map((branch) => {
     const groups: ProfileGroupState[] = branch.groups.map((group) => ({
@@ -358,12 +482,13 @@ export async function buildProfile(input: BuildProfileInput): Promise<ProfileJou
       generalEntryIds: byTarget.get(group.id) ?? [],
       leaves: group.leaves.map((leaf) => {
         const entryIds = byTarget.get(leaf.id) ?? [];
-        const status: LeafStatus = entryIds.length > 0 ? "supported" : "no_evidence";
+        const status: LeafStatus = hasEvidence(entryIds) ? "supported" : "no_evidence";
         return {
           id: leaf.id,
           title: leaf.title,
           ...(leaf.titleRu ? { titleRu: leaf.titleRu } : {}),
           kind: leaf.kind,
+          scope: leaf.scope ?? "profession",
           status,
           entryIds,
         };
@@ -381,12 +506,14 @@ export async function buildProfile(input: BuildProfileInput): Promise<ProfileJou
   const gaps: ProfileGap[] = [];
   for (const group of taxonomy.groupsInOrder) {
     for (const leaf of group.leaves) {
-      if ((byTarget.get(leaf.id)?.length ?? 0) > 0) continue;
+      const entryIds = byTarget.get(leaf.id) ?? [];
+      if (hasEvidence(entryIds)) continue;
       gaps.push({
         leafId: leaf.id,
         title: leaf.title,
         ...(leaf.titleRu ? { titleRu: leaf.titleRu } : {}),
         kind: leaf.kind,
+        scope: leaf.scope ?? "profession",
       });
     }
   }
@@ -408,9 +535,13 @@ export async function buildProfile(input: BuildProfileInput): Promise<ProfileJou
 
   const leavesTotal = taxonomy.leavesInOrder.length;
   const leavesSupported = leavesTotal - gaps.length;
+  const universalLeaves = taxonomy.leavesInOrder.filter((leaf) => (leaf.scope ?? "profession") === "universal");
+  const professionLeaves = taxonomy.leavesInOrder.filter((leaf) => (leaf.scope ?? "profession") === "profession");
+  const universalGaps = gaps.filter((gap) => gap.scope === "universal").length;
+  const professionGaps = gaps.filter((gap) => gap.scope === "profession").length;
   const groupsSupported = taxonomy.groupsInOrder.filter((group) => {
     const general = (byTarget.get(group.id)?.length ?? 0) > 0;
-    const inLeaves = group.leaves.some((leaf) => (byTarget.get(leaf.id)?.length ?? 0) > 0);
+    const inLeaves = group.leaves.some((leaf) => hasEvidence(byTarget.get(leaf.id) ?? []));
     return general || inLeaves;
   }).length;
 
@@ -437,19 +568,26 @@ export async function buildProfile(input: BuildProfileInput): Promise<ProfileJou
     unmapped,
     gaps,
     mappingMissing,
+    universalMissing,
     graphFit: {
       counts,
       note: "Диагностика сопоставления с текущим графом COS. Исходы methodologist не являются записью требований. Инструменты из сопоставления исключены: они не требования.",
     },
     stats: {
       sourceOccupations: sourceOccupations.length,
+      universalOccupations: universalOccupations.length,
       skillsSeen,
       uniqueSkills: skills.length,
       mapped: entries.length,
+      universalSkills: universalSkillsCount,
       outOfScope: outOfScope.length,
       unmapped: unmapped.length,
       leavesSupported,
       leavesTotal,
+      universalLeavesSupported: universalLeaves.length - universalGaps,
+      universalLeavesTotal: universalLeaves.length,
+      professionLeavesSupported: professionLeaves.length - professionGaps,
+      professionLeavesTotal: professionLeaves.length,
       groupsSupported,
       groupsTotal: taxonomy.groupsInOrder.length,
       entriesWithoutDescription: entries.filter((entry) => entry.description.length === 0).length,

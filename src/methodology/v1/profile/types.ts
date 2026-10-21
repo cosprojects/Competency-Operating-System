@@ -7,15 +7,19 @@
  */
 
 export type ProfileKind = "skill" | "knowledge" | "tool";
+export type ProfileScope = "profession" | "universal";
 export type LeafStatus = "supported" | "no_evidence";
-export type OccupationRole = "core" | "supporting";
+export type OccupationRole = "core" | "supporting" | "universal";
 export type SkillRelation = "essential" | "optional";
+export type EvidenceLayer = "occupation" | "universal";
 
 export interface TaxonomyLeaf {
   id: string;
   title: string;
   titleRu?: string;
   kind: ProfileKind;
+  /** universal — база для всех дизайнеров, а не только для этой профессии. */
+  scope?: ProfileScope;
 }
 
 export interface TaxonomyGroup {
@@ -59,6 +63,19 @@ export interface MappingRule {
   basis: string;
 }
 
+/**
+ * Универсальная база: запись ESCO, которая относится ко всем дизайнерам, а не к одной
+ * профессии. Источник задаётся либо ссылкой на запись, либо названием в универсальном занятии.
+ */
+export interface UniversalSkillRule {
+  escoUri?: string;
+  escoTitle?: string;
+  targetId: string;
+  kind?: ProfileKind;
+  needsReview?: boolean;
+  basis: string;
+}
+
 export interface OutOfScopeRule {
   title?: string;
   regex?: string;
@@ -72,7 +89,10 @@ export interface MappingFile {
   taxonomyVersion: string;
   note?: string;
   sourceOccupations: OccupationRef[];
+  /** Занятия, которые нужны только для универсальной базы. */
+  universalOccupations?: OccupationRef[];
   rules: MappingRule[];
+  universalSkills?: UniversalSkillRule[];
   outOfScope: OutOfScopeRule[];
 }
 
@@ -118,6 +138,9 @@ export interface ProfileEntry {
   id: string;
   title: string;
   kind: ProfileKind;
+  /** universal — свидетельство универсальной базы, а не требования профессии. */
+  scope: ProfileScope;
+  evidence: EvidenceLayer;
   /** Дословное описание записи ESCO. Пусто, если источник не дал описания. */
   description: string;
   branchId: string;
@@ -143,6 +166,7 @@ export interface ProfileLeafState {
   title: string;
   titleRu?: string;
   kind: ProfileKind;
+  scope: ProfileScope;
   status: LeafStatus;
   entryIds: string[];
 }
@@ -181,6 +205,7 @@ export interface ProfileGap {
   title: string;
   titleRu?: string;
   kind: ProfileKind;
+  scope: ProfileScope;
 }
 
 export interface ProfileJournal {
@@ -199,19 +224,26 @@ export interface ProfileJournal {
   unmapped: ProfileUnmapped[];
   gaps: ProfileGap[];
   mappingMissing: Array<{ escoTitle: string; targetId: string }>;
+  universalMissing: Array<{ title: string; targetId: string }>;
   graphFit: {
     counts: Record<string, number>;
     note: string;
   };
   stats: {
     sourceOccupations: number;
+    universalOccupations: number;
     skillsSeen: number;
     uniqueSkills: number;
     mapped: number;
+    universalSkills: number;
     outOfScope: number;
     unmapped: number;
     leavesSupported: number;
     leavesTotal: number;
+    universalLeavesSupported: number;
+    universalLeavesTotal: number;
+    professionLeavesSupported: number;
+    professionLeavesTotal: number;
     groupsSupported: number;
     groupsTotal: number;
     entriesWithoutDescription: number;
@@ -228,4 +260,5 @@ export interface ProfileReviewFile {
   unmapped: ProfileUnmapped[];
   gaps: ProfileGap[];
   mappingMissing: Array<{ escoTitle: string; targetId: string }>;
+  universalMissing: Array<{ title: string; targetId: string }>;
 }

@@ -89,6 +89,7 @@ async function main(): Promise<void> {
     unmapped: journal.unmapped,
     gaps: journal.gaps,
     mappingMissing: journal.mappingMissing,
+    universalMissing: journal.universalMissing,
   };
 
   await mkdir(outDir, { recursive: true });
@@ -111,7 +112,10 @@ async function main(): Promise<void> {
     `Дерево: сопоставлено ${journal.stats.mapped}, вне области ${journal.stats.outOfScope}, не сопоставлено ${journal.stats.unmapped}`,
   );
   console.log(
-    `Листья: ${journal.stats.leavesSupported}/${journal.stats.leavesTotal}; группы: ${journal.stats.groupsSupported}/${journal.stats.groupsTotal}`,
+    `Листья: ${journal.stats.leavesSupported}/${journal.stats.leavesTotal} (универсальная база ${journal.stats.universalLeavesSupported}/${journal.stats.universalLeavesTotal}); группы: ${journal.stats.groupsSupported}/${journal.stats.groupsTotal}`,
+  );
+  console.log(
+    `Универсальная база: ${journal.stats.universalSkills} записей из ${journal.stats.universalOccupations} доменных занятий`,
   );
   console.log(`Граф COS: ${outcomes}`);
   if (journal.gaps.length > 0) {

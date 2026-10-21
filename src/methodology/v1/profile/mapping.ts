@@ -48,11 +48,21 @@ export function validateMapping(mapping: MappingFile, taxonomy: TaxonomyIndex): 
   if (mapping.sourceOccupations.length === 0) errors.push("нет sourceOccupations");
   if (mapping.rules.length === 0) errors.push("нет правил сопоставления");
 
-  for (const occupation of mapping.sourceOccupations) {
-    if (!occupation.id) errors.push("sourceOccupations: пустой id");
+  const occupationIds = new Set<string>();
+  const checkOccupation = (occupation: { id: string; uri: string; role: string }, where: string): void => {
+    if (!occupation.id) errors.push(`${where}: пустой id`);
+    if (occupationIds.has(occupation.id)) errors.push(`${where}: повтор занятия «${occupation.id}»`);
+    occupationIds.add(occupation.id);
     if (!occupation.uri) errors.push(`${occupation.id}: пустой uri`);
-    if (occupation.role !== "core" && occupation.role !== "supporting") {
+    if (occupation.role !== "core" && occupation.role !== "supporting" && occupation.role !== "universal") {
       errors.push(`${occupation.id}: недопустимая роль «${occupation.role}»`);
+    }
+  };
+  for (const occupation of mapping.sourceOccupations) checkOccupation(occupation, "sourceOccupations");
+  for (const occupation of mapping.universalOccupations ?? []) {
+    checkOccupation(occupation, "universalOccupations");
+    if (occupation.role !== "universal") {
+      errors.push(`${occupation.id}: в universalOccupations роль должна быть universal`);
     }
   }
 
@@ -66,6 +76,27 @@ export function validateMapping(mapping: MappingFile, taxonomy: TaxonomyIndex): 
       errors.push(`«${rule.escoTitle}»: цели «${rule.targetId}» нет в таксономии`);
     }
     if (!rule.basis) errors.push(`«${rule.escoTitle}»: нет basis`);
+  }
+
+  const universalKeys = new Set<string>();
+  for (const rule of mapping.universalSkills ?? []) {
+    const hasUri = typeof rule.escoUri === "string" && rule.escoUri.length > 0;
+    const hasTitle = typeof rule.escoTitle === "string" && rule.escoTitle.length > 0;
+    if (!hasUri && !hasTitle) {
+      errors.push("universalSkills: нужен escoUri или escoTitle");
+    }
+    const key = hasUri ? `uri:${rule.escoUri ?? ""}` : `title:${normalizeTitle(rule.escoTitle ?? "")}`;
+    const target = taxonomy.targets.get(rule.targetId);
+    if (!target) {
+      errors.push(`universalSkills «${key}»: цели «${rule.targetId}» нет в таксономии`);
+    } else if (!target.leafId || target.scope !== "universal") {
+      errors.push(
+        `universalSkills «${key}»: цель «${rule.targetId}» должна быть листом универсальной базы (scope: universal)`,
+      );
+    }
+    if (universalKeys.has(key)) errors.push(`universalSkills: повтор записи «${key}»`);
+    universalKeys.add(key);
+    if (!rule.basis) errors.push(`universalSkills «${key}»: нет basis`);
   }
 
   let outOfScopeCount = 0;

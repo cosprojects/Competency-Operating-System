@@ -181,6 +181,12 @@ export interface ProfessionProfile {
     title: string;
     definition: string;
     scope: "universal" | "profession";
+    studyPriority?: {
+      tier: "foundation" | "core" | "optional";
+      order: number;
+      rationale: string;
+      confidence: "high" | "medium" | "low";
+    };
     components: Array<{
       componentId: string;
       title: string;
@@ -206,6 +212,9 @@ export interface ProfessionProfile {
     tags: number;
     materials: number;
     tagsWithoutDefinition: number;
+    foundation: number;
+    core: number;
+    optional: number;
   };
 }
 

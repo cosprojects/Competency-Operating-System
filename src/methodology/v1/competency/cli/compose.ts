@@ -3,6 +3,8 @@ import { mkdir, writeFile } from "node:fs/promises";
 import type { CatalogFile, ProfessionProfile, ProfessionRecord } from "../types.ts";
 import { dataDir, flagValue, readJson, writeJson } from "./common.ts";
 import { loadCatalog } from "../catalog.ts";
+import type { PriorityFile } from "../priority/types.ts";
+import { TIER_LABELS } from "../priority/types.ts";
 
 interface ProfessionsFile {
   professions: ProfessionRecord[];
@@ -15,7 +17,8 @@ function renderProfile(profile: ProfessionProfile): string {
   lines.push(`> domain: ${profile.domain} · \`writesToGraph: false\``);
   lines.push("");
   for (const competency of profile.competencies) {
-    lines.push(`## ${competency.title}`);
+    const tier = competency.studyPriority ? `[${TIER_LABELS[competency.studyPriority.tier]}] ` : "";
+    lines.push(`## ${tier}${competency.title}`);
     lines.push("");
     lines.push(competency.definition);
     lines.push("");
@@ -54,12 +57,35 @@ async function main(): Promise<void> {
   if (!profession) throw new Error(`Профессия «${professionSlug}» не найдена`);
   const catalog: CatalogFile = await loadCatalog(root, domain);
   const blocks = catalog.blocks.filter((block) => block.professionIds.includes(profession.id));
+  const priorityPath =
+    flagValue(argv, "--priority-file") ??
+    path.join(root, "src/methodology/v1/competency/priority", `${profession.slug}.json`);
+  let priorityFile: PriorityFile | undefined;
+  try {
+    priorityFile = await readJson<PriorityFile>(priorityPath);
+  } catch {
+    priorityFile = undefined;
+  }
+  if (argv.includes("--require-priority") && !priorityFile) {
+    throw new Error(`Нет файла приоритетов: ${priorityPath}`);
+  }
+  const marks = new Map((priorityFile?.marks ?? []).map((mark) => [mark.competencyId, mark]));
 
   const competencies = blocks.map((block) => ({
     competencyId: block.id,
     title: block.title,
     definition: block.definition,
     scope: block.scope,
+    ...(marks.get(block.id)
+      ? {
+          studyPriority: {
+            tier: marks.get(block.id)!.tier,
+            order: marks.get(block.id)!.order,
+            rationale: marks.get(block.id)!.rationale,
+            confidence: marks.get(block.id)!.confidence,
+          },
+        }
+      : {}),
     components: block.components.map((component) => ({
       componentId: component.id,
       title: component.title,
@@ -101,6 +127,9 @@ async function main(): Promise<void> {
           sum + item.components.reduce((n, c) => n + c.tags.filter((tag) => !tag.definition).length, 0),
         0,
       ),
+      foundation: competencies.filter((item) => item.studyPriority?.tier === "foundation").length,
+      core: competencies.filter((item) => item.studyPriority?.tier === "core").length,
+      optional: competencies.filter((item) => item.studyPriority?.tier === "optional").length,
     },
   };
 

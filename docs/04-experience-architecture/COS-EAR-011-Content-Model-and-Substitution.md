@@ -1,7 +1,7 @@
 ---
 id: COS-EAR-011
 title: Модель контента и подстановка в секции
-version: 1.0.0
+version: 1.1.0
 status: Draft
 owner: Product Team
 last_updated: 2026-10-16
@@ -13,6 +13,7 @@ references:
   - COS-RES-008
   - COS-RES-005
   - COS-ARCH-160
+  - COS-RES-015
 ---
 
 # COS-EAR-011 — Модель контента и подстановка в секции
@@ -56,6 +57,8 @@ references:
 |---|---|---|
 | Кластер | `id`, `title`, `description` | Пакет |
 | Узел | `title`, `shortTitle`, `behavioralAnchors` L0–L3, `aiAutomationRisk`, `marketDemandWeight`, `aiEvolutionNote`, `uiVisualMeta` | Пакет |
+| Компетенция каталога | `title`, `definition`, `components`, `studyPriority` (`foundation`/`core`/`optional`) | Каталог + `priority/<profession>.json` (`COS-RES-015`) |
+| Раскладка канваса | `nodes`, `edges`, `ring`, `emphasis`, `bounds` | `canvas/<domain>-<profession>.json`; координаты не рисуются в макете |
 | Связь | `fromNodeId`, `toNodeId`, `relationType`, `transferWeight`, `rationale` | Пакет |
 | Трек | `title`, `macroDomain`, `launchPhase`, `aiRiskSummary`, `marketReality2026`, `typicalArtifacts`, `requiredNodes` | Пакет |
 | Микро-кейс | `band` (`ENTRY`/`PRACTICE`), `difficultyLevel`, `scenarioPrompt`, `questions` (ровно 2), `rubricChecklist` (ровно 4), `evaluatedNodeIds`, `estimatedMinutes` | Пакет, **генерируется и валидируется** |
@@ -83,7 +86,7 @@ references:
 | Развитие | Направление | `title` трека | Текущий и целевой трек |
 | Развитие | Собранный контекст | Сводка ответов | Из подтверждённых фактов сессии |
 | Развитие | Узлы-мосты | `transferWeight`, `rationale` | Расчёт перехода в целевой трек |
-| Канвас | Сеть узлов | `nodes`, `edges`, `uiVisualMeta` | Текущий трек |
+| Канвас | Сеть узлов | `nodes`, `edges`, `uiVisualMeta`, `studyPriority` | Текущий трек + приоритеты (`COS-RES-015`) |
 | Шапка | Прогресс | Значение паттерна | Смысловой паттерн по этапу |
 | Рельс | Список материалов | Загруженные файлы и ссылки | Сессия |
 
@@ -145,3 +148,4 @@ references:
 | Версия | Дата | Что изменилось |
 |---|---|---|
 | 1.0.0 | 2026-10-16 | Первая редакция: два потока контента, сущности, слоты, правила подстановки, жизненный цикл |
+| 1.1.0 | 2026-10-21 | Добавлены `studyPriority` компетенции и раскладка канваса по `COS-RES-015`; координаты приходят из данных, а не рисуются в макете |

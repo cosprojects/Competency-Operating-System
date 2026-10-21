@@ -1,0 +1,24 @@
+{
+  "priorityVersion": "1.0.0",
+  "domain": "it",
+  "professionId": "it.uxui",
+  "updatedOn": "2026-10-21",
+  "status": "draft",
+  "marks": [
+    {
+      "competencyId": "comp_c8e03682adf7",
+      "tier": "foundation",
+      "order": 1,
+      "prerequisites": [],
+      "rationale": "Универсальная визуальная база: цвет, композиция и восприятие нужны для большинства остальных визуальных компетенций UX/UI.",
+      "confidence": "high",
+      "reviewer": "methodologist",
+      "reviewedAt": "2026-10-21",
+      "signals": {
+        "scope": "universal",
+        "professionCoverage": 0.07,
+        "graphNodeIds": ["node_form_comp"]
+      }
+    }
+  ]
+}

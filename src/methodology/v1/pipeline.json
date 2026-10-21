@@ -211,8 +211,93 @@
       ]
     },
     {
-      "id": "catalog-validate",
+      "id": "priority-template",
       "order": 14,
+      "title": "Шаблон приоритетов",
+      "description": "Генерирует шаблон маркировки foundation/core/optional по review-блокам.",
+      "executor": "agent",
+      "command": "npm",
+      "args": [
+        "run",
+        "priority:template",
+        "--",
+        "--domain",
+        "it",
+        "--profession",
+        "uxui",
+        "--source",
+        "review",
+        "--include-seed"
+      ],
+      "requires": [
+        "data/competency/blocks-it.json"
+      ],
+      "produces": "data/competency/priority/it-uxui-template.json"
+    },
+    {
+      "id": "priority-review",
+      "order": 15,
+      "title": "Приоритеты компетенций",
+      "description": "Человек заполняет tier/order/rationale в priority/uxui.json. Это не LLM-решение.",
+      "executor": "human",
+      "command": "",
+      "args": [],
+      "requires": [
+        "data/competency/priority/it-uxui-template.json"
+      ]
+    },
+    {
+      "id": "priority-validate",
+      "order": 16,
+      "title": "Валидация приоритетов",
+      "description": "Проверяет полноту, уникальность order, зависимости и отсутствие циклов.",
+      "executor": "agent",
+      "command": "npm",
+      "args": [
+        "run",
+        "priority:validate",
+        "--",
+        "--domain",
+        "it",
+        "--profession",
+        "uxui",
+        "--source",
+        "review",
+        "--include-seed"
+      ],
+      "requires": [
+        "src/methodology/v1/competency/priority/uxui.json"
+      ]
+    },
+    {
+      "id": "canvas-build",
+      "order": 17,
+      "title": "Раскладка канваса",
+      "description": "Строит детерминированную раскладку компетенций по приоритетам.",
+      "executor": "agent",
+      "command": "npm",
+      "args": [
+        "run",
+        "competency:canvas",
+        "--",
+        "--domain",
+        "it",
+        "--profession",
+        "uxui",
+        "--source",
+        "review",
+        "--include-seed",
+        "--allow-partial"
+      ],
+      "requires": [
+        "src/methodology/v1/competency/priority/uxui.json",
+        "data/competency/blocks-it.json"
+      ],
+      "produces": "data/competency/canvas/it-uxui.json"
+    },
+    {
+      "id": "catalog-validate",
+      "order": 18,
       "title": "Валидация каталога",
       "description": "Проверяет принятый каталог компетенций.",
       "executor": "agent",
@@ -230,7 +315,7 @@
     },
     {
       "id": "materials-collect",
-      "order": 15,
+      "order": 19,
       "title": "Материалы компетенций",
       "description": "Собирает статьи, курсы и видео из открытых источников; платные — только метаданные.",
       "executor": "agent",
@@ -249,7 +334,7 @@
     },
     {
       "id": "materials-classify",
-      "order": 16,
+      "order": 20,
       "title": "Сопоставление материалов",
       "description": "LLM сопоставляет материалы с компетенциями; скрипт валидирует.",
       "executor": "agent",
@@ -271,7 +356,7 @@
     },
     {
       "id": "materials-review",
-      "order": 17,
+      "order": 21,
       "title": "Проверка материалов",
       "description": "Человек принимает материалы и связи.",
       "executor": "human",
@@ -283,7 +368,7 @@
     },
     {
       "id": "materials-validate",
-      "order": 18,
+      "order": 22,
       "title": "Валидация материалов",
       "description": "Проверяет покрытие, доступ и ссылки.",
       "executor": "agent",

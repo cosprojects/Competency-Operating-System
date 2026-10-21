@@ -32,7 +32,10 @@
     "materials:refresh": "node --experimental-strip-types src/methodology/v1/competency/cli/materials-refresh.ts",
     "competency:evaluate": "node --experimental-strip-types src/methodology/v1/competency/cli/evaluate.ts",
     "competency:reconcile": "node --experimental-strip-types src/methodology/v1/competency/cli/reconcile.ts",
-    "competency:seed": "node --experimental-strip-types src/methodology/v1/competency/cli/seed.ts"
+    "competency:seed": "node --experimental-strip-types src/methodology/v1/competency/cli/seed.ts",
+    "priority:template": "node --experimental-strip-types src/methodology/v1/competency/cli/priority-template.ts",
+    "priority:validate": "node --experimental-strip-types src/methodology/v1/competency/cli/priority-validate.ts",
+    "competency:canvas": "node --experimental-strip-types src/methodology/v1/competency/cli/canvas.ts"
   },
   "dependencies": {
     "@prisma/client": "^6.4.0",

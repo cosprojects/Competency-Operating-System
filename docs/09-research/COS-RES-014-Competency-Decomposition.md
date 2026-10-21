@@ -1,7 +1,7 @@
 ---
 id: COS-RES-014
 title: Сборка каталога компетенций, компонентов и тегов
-version: 1.4.0
+version: 1.5.0
 status: Draft
 owner: Research Team
 last_updated: 2026-10-21
@@ -127,6 +127,7 @@ LLM предлагает 2–8 компонентов, 1–12 тегов в ка
 ```
 sources:discover, professions:collect, tags:collect,
 competency:seed, competency:candidates, competency:reconcile, competency:build, competency:review, competency:evaluate,
+priority:template, priority:validate, competency:canvas,
 catalog:validate, competency:compose,
 materials:sources, materials:collect, materials:classify, materials:review,
 materials:validate, materials:refresh
@@ -174,3 +175,4 @@ materials:validate, materials:refresh
 | 1.2.0 | 2026-10-21 | Батчи Pass A сгруппированы по профессии; UX/UI: 34 кандидата, 95 unassigned, 18 issues. Gold по-прежнему 0/5; зафиксировано решение о granularity |
 | 1.3.0 | 2026-10-21 | Добавлен top-down seed канонических компетенций (`competency:seed`, `seeds/it.json`). Seed «Теория цвета» → 5 компонентов, 11 тегов, 3 материала; блок остаётся `needs_review` |
 | 1.4.0 | 2026-10-21 | Добавлены Хабр и Medium (robots-safe: без `/search/`), язык ru→en, `other` отбрасывается; Learn Anything зарегистрирован как degraded из-за client-only Jazz. Эталон: 9 материалов, 7 связей |
+| 1.5.0 | 2026-10-21 | Добавлена ссылка на `COS-RES-015`: приоритеты foundation/core/optional и раскладка канваса |

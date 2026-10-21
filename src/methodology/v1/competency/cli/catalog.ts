@@ -1,6 +1,8 @@
 import path from "node:path";
 import type { CatalogFile } from "../types.ts";
+import type { PriorityFile } from "../priority/types.ts";
 import { validateCatalog } from "../catalog.ts";
+import { validatePriorityFile } from "../priority/validate.ts";
 import { dataDir, flagValue, readJson } from "./common.ts";
 
 async function main(): Promise<void> {
@@ -10,6 +12,18 @@ async function main(): Promise<void> {
   const catalogPath = flagValue(argv, "--catalog") ?? path.join(root, "src/methodology/v1/competency/catalog", `${domain}.json`);
   const catalog = await readJson<CatalogFile>(catalogPath);
   const errors = validateCatalog(catalog);
+  if (argv.includes("--require-priority")) {
+    const professionSlug = flagValue(argv, "--profession") ?? "uxui";
+    const priorityPath =
+      flagValue(argv, "--priority-file") ??
+      path.join(root, "src/methodology/v1/competency/priority", `${professionSlug}.json`);
+    const priority = await readJson<PriorityFile>(priorityPath);
+    const priorityResult = validatePriorityFile(priority, {
+      blocks: catalog.blocks,
+      requireComplete: true,
+    });
+    errors.push(...priorityResult.errors);
+  }
   if (errors.length > 0) {
     console.error(`Каталог ${domain}: ошибок ${errors.length}`);
     for (const error of errors) console.error(`  - ${error}`);

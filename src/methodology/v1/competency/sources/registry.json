@@ -1,0 +1,123 @@
+{
+  "registryVersion": "1.0.0",
+  "sources": [
+    {
+      "id": "esco",
+      "title": "ESCO",
+      "kind": "classification",
+      "license": "EUPL 1.2",
+      "access": "api",
+      "baseUrl": "https://ec.europa.eu/esco/api",
+      "capabilities": ["occupations", "skills", "knowledge"],
+      "status": "active",
+      "adapter": "esco",
+      "notes": "Официальная классификация ЕС. API без ключа."
+    },
+    {
+      "id": "onet",
+      "title": "O*NET 31.0",
+      "kind": "classification",
+      "license": "CC BY 4.0",
+      "access": "csv",
+      "baseUrl": "https://www.onetcenter.org/dl_files/database/db_31_0_csv/",
+      "capabilities": ["occupations", "skills", "knowledge", "tools"],
+      "status": "active",
+      "adapter": "onet",
+      "notes": "Официальная база США. CSV без ключа."
+    },
+    {
+      "id": "practicum",
+      "title": "Яндекс Практикум",
+      "kind": "program",
+      "license": "© Яндекс Практикум; извлекаются названия навыков и короткие цитаты",
+      "access": "html",
+      "baseUrl": "https://practicum.yandex.ru",
+      "capabilities": ["professions", "skills"],
+      "status": "active",
+      "adapter": "practicum",
+      "notes": "robots.txt запрещает query-параметры; запросы только по каноническим адресам."
+    },
+    {
+      "id": "wikipedia",
+      "title": "Wikipedia",
+      "kind": "materials",
+      "license": "CC BY-SA 4.0",
+      "access": "api",
+      "baseUrl": "https://ru.wikipedia.org/w/api.php",
+      "capabilities": ["articles"],
+      "status": "active",
+      "adapter": "wikipedia",
+      "notes": "Публичный MediaWiki API; только метаданные и короткий snippet."
+    },
+    {
+      "id": "internet-archive",
+      "title": "Internet Archive",
+      "kind": "materials",
+      "license": "зависит от записи; метаданные публичны",
+      "access": "api",
+      "baseUrl": "https://archive.org/advancedsearch.php",
+      "capabilities": ["videos", "books", "courses", "articles"],
+      "status": "active",
+      "adapter": "internet-archive",
+      "notes": "Публичный advancedsearch API; лицензия конкретной записи проверяется."
+    },
+    {
+      "id": "stepik",
+      "title": "Stepik",
+      "kind": "materials",
+      "license": "метаданные публичны; лицензия курса индивидуальна",
+      "access": "api",
+      "baseUrl": "https://stepik.org/api",
+      "capabilities": ["courses"],
+      "status": "degraded",
+      "adapter": "stepik",
+      "notes": "При недоступности API материал не собирается; обхода нет."
+    },
+    {
+      "id": "youtube",
+      "title": "YouTube",
+      "kind": "materials",
+      "license": "метаданные публичны; условия YouTube",
+      "access": "api",
+      "baseUrl": "https://www.googleapis.com/youtube/v3",
+      "capabilities": ["videos"],
+      "status": "planned",
+      "adapter": "youtube",
+      "requiresEnv": ["YOUTUBE_API_KEY"],
+      "notes": "Только официальный Data API при наличии ключа; без скачивания и без обхода."
+    },
+    {
+      "id": "rf-profstandards",
+      "title": "Реестр профстандартов РФ",
+      "kind": "standard",
+      "license": "государственный открытый реестр; проверить условия",
+      "access": "html",
+      "baseUrl": "https://profstandart.rosmintrud.ru",
+      "capabilities": ["professions", "requirements"],
+      "status": "planned",
+      "notes": "Ordinary-профессии, отдельная фаза. PDF/HTML только легально."
+    },
+    {
+      "id": "fgo",
+      "title": "ФГОС",
+      "kind": "standard",
+      "license": "государственный открытый реестр; проверить условия",
+      "access": "html",
+      "baseUrl": "https://fgos.ru",
+      "capabilities": ["professions", "requirements"],
+      "status": "planned",
+      "notes": "Ordinary-профессии, отдельная фаза."
+    },
+    {
+      "id": "hh-api",
+      "title": "hh.ru API",
+      "kind": "market",
+      "license": "условия hh.ru; нужен партнёрский доступ",
+      "access": "api",
+      "baseUrl": "https://api.hh.ru",
+      "capabilities": ["market-signals"],
+      "status": "blocked",
+      "notes": "Анонимный запрос вернул 403 DDoS-Guard. Обход не делаем; только официальный доступ."
+    }
+  ]
+}

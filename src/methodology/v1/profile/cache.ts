@@ -53,10 +53,11 @@ export async function fetchText(
   fetchImpl: (input: string, init?: { headers?: Record<string, string>; signal?: AbortSignal }) => Promise<{ ok: boolean; status: number }>,
   url: string,
   accept: string,
+  timeoutMs = 60_000,
 ): Promise<string> {
   const response = await fetchImpl(url, {
     headers: { Accept: accept },
-    signal: AbortSignal.timeout(60_000),
+    signal: AbortSignal.timeout(timeoutMs),
   });
   if (!response.ok) throw new Error(`Источник ответил ${response.status} на ${url}`);
   const candidate = response as unknown as { text?: () => Promise<string> };

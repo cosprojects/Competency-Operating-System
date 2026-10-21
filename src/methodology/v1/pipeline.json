@@ -94,6 +94,187 @@
       "requires": [
         "data/competency-candidates/methodologist-patch.json"
       ]
+    },
+    {
+      "id": "competency-professions",
+      "order": 8,
+      "title": "IT-профессии",
+      "description": "Собирает целевые IT-профессии из ESCO и O*NET.",
+      "executor": "agent",
+      "command": "npm",
+      "args": [
+        "run",
+        "professions:collect",
+        "--",
+        "--domain",
+        "it"
+      ],
+      "produces": "data/competency/professions-it.json"
+    },
+    {
+      "id": "competency-tags",
+      "order": 9,
+      "title": "Теги профессий",
+      "description": "Собирает навыки и знания IT-профессий из источников.",
+      "executor": "agent",
+      "command": "npm",
+      "args": [
+        "run",
+        "tags:collect",
+        "--",
+        "--domain",
+        "it"
+      ],
+      "requires": [
+        "data/competency/professions-it.json"
+      ],
+      "produces": "data/competency/tags-it.json"
+    },
+    {
+      "id": "competency-candidates",
+      "order": 10,
+      "title": "Кандидаты в компетенции",
+      "description": "LLM предлагает группы тегов; скрипт валидирует.",
+      "executor": "agent",
+      "command": "npm",
+      "args": [
+        "run",
+        "competency:candidates",
+        "--",
+        "--domain",
+        "it"
+      ],
+      "requires": [
+        "data/competency/tags-it.json"
+      ],
+      "requiresEnv": [
+        "DEEPSEEK_API_KEY"
+      ],
+      "produces": "data/competency/candidates-it.json"
+    },
+    {
+      "id": "competency-blocks",
+      "order": 11,
+      "title": "Блоки компетенций",
+      "description": "LLM предлагает компоненты и теги; скрипт валидирует.",
+      "executor": "agent",
+      "command": "npm",
+      "args": [
+        "run",
+        "competency:build",
+        "--",
+        "--domain",
+        "it"
+      ],
+      "requires": [
+        "data/competency/candidates-it.json"
+      ],
+      "requiresEnv": [
+        "DEEPSEEK_API_KEY"
+      ],
+      "produces": "data/competency/blocks-it.json"
+    },
+    {
+      "id": "competency-review",
+      "order": 12,
+      "title": "Проверка блоков",
+      "description": "Человек принимает блоки в каталог. Агент этого не делает.",
+      "executor": "human",
+      "command": "",
+      "args": [],
+      "requires": [
+        "data/competency/blocks-it.json"
+      ]
+    },
+    {
+      "id": "catalog-validate",
+      "order": 13,
+      "title": "Валидация каталога",
+      "description": "Проверяет принятый каталог компетенций.",
+      "executor": "agent",
+      "command": "npm",
+      "args": [
+        "run",
+        "catalog:validate",
+        "--",
+        "--domain",
+        "it"
+      ],
+      "requires": [
+        "src/methodology/v1/competency/catalog/it.json"
+      ]
+    },
+    {
+      "id": "materials-collect",
+      "order": 14,
+      "title": "Материалы компетенций",
+      "description": "Собирает статьи, курсы и видео из открытых источников; платные — только метаданные.",
+      "executor": "agent",
+      "command": "npm",
+      "args": [
+        "run",
+        "materials:collect",
+        "--",
+        "--domain",
+        "it"
+      ],
+      "requires": [
+        "data/competency/blocks-it.json"
+      ],
+      "produces": "data/competency/materials-it.json"
+    },
+    {
+      "id": "materials-classify",
+      "order": 15,
+      "title": "Сопоставление материалов",
+      "description": "LLM сопоставляет материалы с компетенциями; скрипт валидирует.",
+      "executor": "agent",
+      "command": "npm",
+      "args": [
+        "run",
+        "materials:classify",
+        "--",
+        "--domain",
+        "it"
+      ],
+      "requires": [
+        "data/competency/materials-it.json"
+      ],
+      "requiresEnv": [
+        "DEEPSEEK_API_KEY"
+      ],
+      "produces": "data/competency/materials-classified-it.json"
+    },
+    {
+      "id": "materials-review",
+      "order": 16,
+      "title": "Проверка материалов",
+      "description": "Человек принимает материалы и связи.",
+      "executor": "human",
+      "command": "",
+      "args": [],
+      "requires": [
+        "data/competency/materials-classified-it.json"
+      ]
+    },
+    {
+      "id": "materials-validate",
+      "order": 17,
+      "title": "Валидация материалов",
+      "description": "Проверяет покрытие, доступ и ссылки.",
+      "executor": "agent",
+      "command": "npm",
+      "args": [
+        "run",
+        "materials:validate",
+        "--",
+        "--domain",
+        "it",
+        "--require-coverage"
+      ],
+      "requires": [
+        "data/competency/materials-classified-it.json"
+      ]
     }
   ]
 }

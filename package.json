@@ -15,7 +15,21 @@
     "methodologist:patch": "node --experimental-strip-types src/methodology/v1/methodologist/cli.ts",
     "pipeline": "node --experimental-strip-types src/methodology/v1/pipeline-run.ts",
     "db:generate": "prisma generate",
-    "db:migrate": "prisma migrate dev"
+    "db:migrate": "prisma migrate dev",
+    "sources:discover": "node --experimental-strip-types src/methodology/v1/competency/cli/sources.ts",
+    "professions:collect": "node --experimental-strip-types src/methodology/v1/competency/cli/professions.ts",
+    "tags:collect": "node --experimental-strip-types src/methodology/v1/competency/cli/tags.ts",
+    "competency:candidates": "node --experimental-strip-types src/methodology/v1/competency/cli/candidates.ts",
+    "competency:build": "node --experimental-strip-types src/methodology/v1/competency/cli/blocks.ts",
+    "competency:review": "node --experimental-strip-types src/methodology/v1/competency/cli/review.ts",
+    "catalog:validate": "node --experimental-strip-types src/methodology/v1/competency/cli/catalog.ts",
+    "competency:compose": "node --experimental-strip-types src/methodology/v1/competency/cli/compose.ts",
+    "materials:sources": "node --experimental-strip-types src/methodology/v1/competency/cli/materials-sources.ts",
+    "materials:collect": "node --experimental-strip-types src/methodology/v1/competency/cli/materials-collect.ts",
+    "materials:classify": "node --experimental-strip-types src/methodology/v1/competency/cli/materials-classify.ts",
+    "materials:review": "node --experimental-strip-types src/methodology/v1/competency/cli/materials-review.ts",
+    "materials:validate": "node --experimental-strip-types src/methodology/v1/competency/cli/materials-validate.ts",
+    "materials:refresh": "node --experimental-strip-types src/methodology/v1/competency/cli/materials-refresh.ts"
   },
   "dependencies": {
     "@prisma/client": "^6.4.0",

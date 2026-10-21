@@ -1,0 +1,41 @@
+[
+  {
+    "links": [
+      {
+        "competencyId": "comp_c8e03682adf7",
+        "componentId": "competency-1d6ba7c9.component-38298a72",
+        "tagId": "tag_03e2d961343c",
+        "relevance": 0.92,
+        "reason": "Статья «Колористика» объясняет систему цветовых схем.",
+        "modelProposal": false
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "links": [
+      {
+        "competencyId": "comp_c8e03682adf7",
+        "componentId": "competency-1d6ba7c9.component-38298a72",
+        "tagId": "tag_40aaa7e9b343",
+        "relevance": 0.88,
+        "reason": "Статья «Насыщенность (цвет)» объясняет характеристику цвета.",
+        "modelProposal": false
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "links": [
+      {
+        "competencyId": "comp_c8e03682adf7",
+        "componentId": "competency-1d6ba7c9.component-11b56df4",
+        "tagId": "tag_88c6caeaa7c5",
+        "relevance": 0.9,
+        "reason": "Статья «Цвет» объясняет физику цвета.",
+        "modelProposal": false
+      }
+    ],
+    "rejected": []
+  }
+]

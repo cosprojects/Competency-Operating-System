@@ -1,0 +1,125 @@
+{
+  "domain": "it",
+  "tags": [
+    {
+      "id": "tag_73d29717fc59",
+      "slug": "tag-84b22ed2",
+      "title": "Цвет",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Тема/навык на странице программы «interface-designer»",
+      "professionIds": [
+        "it.uxui"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "interface-designer",
+          "url": "https://practicum.yandex.ru/interface-designer/",
+          "retrievedAt": "2026-10-21",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_01ee07d0315d",
+      "slug": "tag-b763ba13",
+      "title": "Основы композиции",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Тема/навык на странице программы «interface-designer»",
+      "professionIds": [
+        "it.uxui"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "interface-designer",
+          "url": "https://practicum.yandex.ru/interface-designer/",
+          "retrievedAt": "2026-10-21",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_0376f61aa177",
+      "slug": "tag-580e428d",
+      "title": "Визуальное единство: композиция и стили",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Тема/навык на странице программы «interface-designer»",
+      "professionIds": [
+        "it.uxui"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "interface-designer",
+          "url": "https://practicum.yandex.ru/interface-designer/",
+          "retrievedAt": "2026-10-21",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_b174c3a0ccea",
+      "slug": "tag-858e0976",
+      "title": "Работаю с композицией, типографикой и визуальной иерархией",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Тема/навык на странице программы «interface-designer»",
+      "professionIds": [
+        "it.uxui"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "interface-designer",
+          "url": "https://practicum.yandex.ru/interface-designer/",
+          "retrievedAt": "2026-10-21",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_73a84c5ef0d0",
+      "slug": "translate-requirements-into-visual-design",
+      "title": "translate requirements into visual design",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Develop visual design from given specifications and requirements, based on the analysis of the scope and target audience. Create a visual representation of ideas such as logos, website graphics, digital games and layouts.",
+      "professionIds": [
+        "it.uxui"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "esco",
+          "externalId": "http://data.europa.eu/esco/skill/2d6d4784-0992-48e7-b100-22d7229b3f0a",
+          "url": "http://data.europa.eu/esco/skill/2d6d4784-0992-48e7-b100-22d7229b3f0a",
+          "retrievedAt": "2026-10-21",
+          "license": "EUPL 1.2"
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [],
+      "materialIds": [],
+      "needsReview": false
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "domain": "it",
+  "version": "1.0.0",
+  "professions": [
+    {
+      "id": "uxui",
+      "title": "UX/UI-дизайнер",
+      "titleEn": "UX/UI designer",
+      "aliases": ["UX/UI designer", "user interface designer", "user experience designer"],
+      "esco": { "search": "user interface designer", "titleIncludes": ["user interface designer"] },
+      "onet": { "titleIncludes": ["Web and Digital Interface Designers"], "socCodes": ["15-1255.00"] },
+      "practicum": { "slug": "interface-designer" }
+    },
+    {
+      "id": "product",
+      "title": "Продуктовый дизайнер",
+      "titleEn": "Product designer",
+      "aliases": ["product designer", "продуктовый дизайнер"],
+      "esco": { "search": "product designer", "titleIncludes": ["product designer", "industrial designer"] },
+      "onet": { "titleIncludes": ["Commercial and Industrial Designers"], "socCodes": ["27-1021.00"] }
+    },
+    {
+      "id": "frontend",
+      "title": "Frontend-разработчик",
+      "titleEn": "Frontend developer",
+      "aliases": ["frontend developer", "front-end developer", "веб-разработчик"],
+      "esco": { "search": "frontend developer", "titleIncludes": ["frontend developer", "web developer"] },
+      "onet": { "titleIncludes": ["Web Developers"], "socCodes": ["15-1254.00"] }
+    },
+    {
+      "id": "backend",
+      "title": "Backend-разработчик",
+      "titleEn": "Backend developer",
+      "aliases": ["backend developer", "back-end developer", "software developer"],
+      "esco": { "search": "software developer", "titleIncludes": ["software developer", "backend developer"] },
+      "onet": { "titleIncludes": ["Software Developers"], "socCodes": ["15-1252.00"] }
+    },
+    {
+      "id": "fullstack",
+      "title": "Fullstack-разработчик",
+      "titleEn": "Fullstack developer",
+      "aliases": ["fullstack developer", "full-stack developer"],
+      "esco": { "search": "full stack developer", "titleIncludes": ["full stack developer", "software developer"] },
+      "onet": { "titleIncludes": ["Software Developers"], "socCodes": ["15-1252.00"] }
+    },
+    {
+      "id": "mobile",
+      "title": "Мобильный разработчик",
+      "titleEn": "Mobile developer",
+      "aliases": ["mobile developer", "mobile application developer"],
+      "esco": { "search": "mobile application developer", "titleIncludes": ["mobile application developer"] },
+      "onet": { "titleIncludes": ["Software Developers"], "socCodes": ["15-1252.00"] }
+    },
+    {
+      "id": "qa",
+      "title": "QA-инженер",
+      "titleEn": "QA engineer",
+      "aliases": ["qa engineer", "software tester", "quality assurance engineer"],
+      "esco": { "search": "software tester", "titleIncludes": ["software tester", "ICT tester"] },
+      "onet": { "titleIncludes": ["Software Quality Assurance Analysts and Testers"], "socCodes": ["15-1253.00"] }
+    },
+    {
+      "id": "data-analyst",
+      "title": "Аналитик данных",
+      "titleEn": "Data analyst",
+      "aliases": ["data analyst", "business intelligence analyst"],
+      "esco": { "search": "data analyst", "titleIncludes": ["data analyst", "business intelligence analyst"] },
+      "onet": { "titleIncludes": ["Data Scientists", "Business Intelligence Analysts"], "socCodes": ["15-2051.00", "15-2051.01"] }
+    },
+    {
+      "id": "data-engineer",
+      "title": "Дата-инженер",
+      "titleEn": "Data engineer",
+      "aliases": ["data engineer", "database architect"],
+      "esco": { "search": "data engineer", "titleIncludes": ["data engineer", "database designer"] },
+      "onet": { "titleIncludes": ["Database Architects", "Data Warehousing Specialists"], "socCodes": ["15-1243.00", "15-1299.06"] }
+    },
+    {
+      "id": "ml",
+      "title": "ML-инженер",
+      "titleEn": "Machine learning engineer",
+      "aliases": ["machine learning engineer", "ML engineer", "AI engineer"],
+      "esco": { "search": "machine learning engineer", "titleIncludes": ["machine learning engineer", "artificial intelligence engineer"] },
+      "onet": { "titleIncludes": ["Computer and Information Research Scientists"], "socCodes": ["15-1221.00"] }
+    },
+    {
+      "id": "devops",
+      "title": "DevOps-инженер",
+      "titleEn": "DevOps engineer",
+      "aliases": ["devops engineer", "site reliability engineer", "SRE"],
+      "esco": { "search": "devops engineer", "titleIncludes": ["devops engineer", "ICT system administrator"] },
+      "onet": { "titleIncludes": ["Network and Computer Systems Administrators"], "socCodes": ["15-1244.00"] }
+    },
+    {
+      "id": "security",
+      "title": "Специалист по информационной безопасности",
+      "titleEn": "Information security specialist",
+      "aliases": ["information security specialist", "security engineer", "cybersecurity specialist"],
+      "esco": { "search": "ICT security specialist", "titleIncludes": ["ICT security specialist", "security specialist"] },
+      "onet": { "titleIncludes": ["Information Security Analysts"], "socCodes": ["15-1212.00"] }
+    },
+    {
+      "id": "pm",
+      "title": "Продакт-менеджер",
+      "titleEn": "Product manager",
+      "aliases": ["product manager", "IT project manager"],
+      "esco": { "search": "product manager", "titleIncludes": ["product manager", "ICT project manager"] },
+      "onet": { "titleIncludes": ["Computer and Information Systems Managers", "Project Management Specialists"], "socCodes": ["11-3021.00", "13-1082.00"] }
+    },
+    {
+      "id": "game",
+      "title": "Гейм-дизайнер",
+      "titleEn": "Game designer",
+      "aliases": ["game designer", "digital games designer"],
+      "esco": { "search": "digital games designer", "titleIncludes": ["digital games designer", "game designer"] },
+      "onet": { "titleIncludes": ["Video Game Designers"], "socCodes": ["15-1255.01"] }
+    }
+  ]
+}

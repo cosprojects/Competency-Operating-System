@@ -7,6 +7,7 @@ export interface PipelineStep {
   command: string;
   args: string[];
   requires?: string[];
+  requiresEnv?: string[];
   produces?: string;
 }
 

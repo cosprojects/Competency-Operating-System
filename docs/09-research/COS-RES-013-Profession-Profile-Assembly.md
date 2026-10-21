@@ -1,7 +1,7 @@
 ---
 id: COS-RES-013
 title: Сборка профиля профессии из свидетельств ESCO
-version: 1.3.0
+version: 1.4.0
 status: Draft
 owner: Research Team
 last_updated: 2026-10-21
@@ -10,6 +10,7 @@ references:
   - COS-RES-010
   - COS-RES-011
   - COS-ARCH-002
+  - COS-RES-014
 ---
 
 # COS-RES-013 — Сборка профиля профессии из свидетельств ESCO
@@ -131,6 +132,7 @@ npm run program:extract                                # журнал прогр
 - **O\*NET API** не обязателен: база Software Skills используется файлом.
 - Уровни, кейсы и персональная оценка — после устойчивости модели.
 - Приёмка метода на независимой размеченной выборке — по `COS-ARCH-002`; текущий прогон её не заменяет.
+- Каталог компетенций, компонентов, тегов и материалов — отдельный метод `COS-RES-014`; профиль остаётся деревом представления.
 
 ## 9. Проверка
 
@@ -144,3 +146,4 @@ npm run program:extract                                # журнал прогр
 | 1.1.0 | 2026-10-21 | Добавлена универсальная база (`scope: universal`): доменные занятия `art director` и `desktop publisher`, записи `typography`, `design principles`, `determine colour shades`, `develop visual elements`, `determine image composition`. Закрыты листья Typography, Color theory, Layout & composition |
 | 1.2.0 | 2026-10-21 | Закрыты оставшиеся листья: O\*NET Software Skills (Figma), мульти-цель ESCO-прототипа (User Flows, High-Fidelity), GOV.UK guidance (Personas), якоря графа (Grids, Information Architecture), watchlist (FigJam, Framer). Введены статусы `supported`/`model_only`/`watchlist`/`no_evidence` и проверка цитат по каждому слою |
 | 1.3.0 | 2026-10-21 | Добавлен слой программы: извлечение 19 дизайнерских профессий Яндекс Практикума (`npm run program:extract`), 12 с навыками, 1026 тем. Из него подтверждены FigJam и Grids, усилены Personas/User Flows/User Testing/Components/Prototyping/универсальная база. Остались `model_only` (Information Architecture) и `watchlist` (Framer). 87 сопоставлений, 16/18 листьев supported |
+| 1.4.0 | 2026-10-21 | Добавлена ссылка на `COS-RES-014`: каталог компетенций, компонентов, тегов и материалов строится отдельным методом; профиль не меняется |

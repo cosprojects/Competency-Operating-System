@@ -53,6 +53,22 @@ for (const item of planned) {
     continue;
   }
 
+  const missingEnv = (item.step.requiresEnv ?? []).filter((name) => !process.env[name]);
+  if (missingEnv.length > 0) {
+    const reason = `нет env: ${missingEnv.join(", ")}`;
+    console.log(`пропуск ${item.step.order}. ${item.step.title}: ${reason}`);
+    entries.push({
+      id: item.step.id,
+      order: item.step.order,
+      command: commandLine,
+      args: item.step.args,
+      status: "skipped",
+      exitCode: null,
+      reason,
+    });
+    continue;
+  }
+
   const missing = [];
   for (const required of item.step.requires ?? []) {
     if (!(await fileExists(required))) missing.push(required);

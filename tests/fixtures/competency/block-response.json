@@ -1,0 +1,106 @@
+[
+  {
+    "title": "Теория цвета и колористика",
+    "titleEn": "Color theory",
+    "aliases": ["Колористика"],
+    "definition": "Системное понимание цвета: физика света, восприятие, геометрия гармонии и культурно-психологический контекст.",
+    "scope": "universal",
+    "components": [
+      {
+        "title": "Физика цвета",
+        "definition": "Как возникает цвет и как его описывают математически.",
+        "items": [
+          {
+            "title": "Световой спектр",
+            "kind": "knowledge",
+            "definition": "Видимый диапазон электромагнитных волн и разложение белого света.",
+            "evidenceTagIds": ["tag_73d29717fc59"],
+            "modelProposal": false
+          },
+          {
+            "title": "Цветовые модели RGB, CMYK, HSB/HSL",
+            "kind": "knowledge",
+            "definition": "Способы математического описания цвета для экранов и печати.",
+            "evidenceTagIds": [],
+            "modelProposal": true
+          }
+        ]
+      },
+      {
+        "title": "Физиология восприятия",
+        "definition": "Как глаз и мозг воспринимают цвет.",
+        "items": [
+          {
+            "title": "Строение глаза и колбочки",
+            "kind": "knowledge",
+            "definition": "Роль колбочек и палочек в трёхкомпонентном цветовом зрении.",
+            "evidenceTagIds": [],
+            "modelProposal": true
+          },
+          {
+            "title": "Контрасты и цветовая адаптация",
+            "kind": "knowledge",
+            "definition": "Одновременный контраст, контрасты по Иттену и адаптация глаза.",
+            "evidenceTagIds": ["tag_0376f61aa177"],
+            "modelProposal": false
+          }
+        ]
+      },
+      {
+        "title": "Геометрия и гармония",
+        "definition": "Систематизация оттенков и правила построения палитр.",
+        "items": [
+          {
+            "title": "Цветовые круги и системы",
+            "kind": "knowledge",
+            "definition": "Круг Ньютона, 12-секторный круг Иттена и система Манселла.",
+            "evidenceTagIds": ["tag_01ee07d0315d"],
+            "modelProposal": false
+          },
+          {
+            "title": "Цветовые схемы",
+            "kind": "knowledge",
+            "definition": "Монохроматические, аналоговые, комплементарные и триадические палитры.",
+            "evidenceTagIds": ["tag_b174c3a0ccea"],
+            "modelProposal": false
+          },
+          {
+            "title": "Характеристики цвета",
+            "kind": "knowledge",
+            "definition": "Тон, светлота и насыщенность как параметры цвета.",
+            "evidenceTagIds": [],
+            "modelProposal": true
+          }
+        ]
+      },
+      {
+        "title": "Психология и социология",
+        "definition": "Эмоциональное, культурное и прикладное значение цвета.",
+        "items": [
+          {
+            "title": "Эмоциональное влияние цвета",
+            "kind": "knowledge",
+            "definition": "Воздействие оттенков на внимание, восприятие и поведение.",
+            "evidenceTagIds": [],
+            "modelProposal": true
+          },
+          {
+            "title": "Культурный контекст цвета",
+            "kind": "knowledge",
+            "definition": "Различия символики цвета в культурах и эпохах.",
+            "evidenceTagIds": [],
+            "modelProposal": true
+          },
+          {
+            "title": "Цвет в брендинге и конверсии",
+            "kind": "skill",
+            "definition": "Применение цвета для брендинга, акцентов и повышения конверсии.",
+            "evidenceTagIds": ["tag_73a84c5ef0d0"],
+            "modelProposal": false
+          }
+        ]
+      }
+    ],
+    "unresolved": []
+  }
+]

@@ -1,0 +1,156 @@
+---
+id: COS-RES-014
+title: Сборка каталога компетенций, компонентов и тегов
+version: 1.0.0
+status: Draft
+owner: Research Team
+last_updated: 2026-10-21
+references:
+  - COS-RES-009
+  - COS-RES-010
+  - COS-RES-011
+  - COS-RES-013
+  - COS-ARCH-002
+---
+
+# COS-RES-014 — Сборка каталога компетенций, компонентов и тегов
+
+## 1. Назначение
+
+Документ описывает метод «от общего к частному»:
+
+```
+домен → профессия → компетенция → компонент → тег (знание/навык) → материал
+```
+
+Скрипты делают детерминированную работу: поиск, сбор, дедуп, идентичность, валидацию, запись. LLM-методолог делает только смысловую часть: группировку тегов, декомпозицию компетенции, формулировки и сопоставление материалов. Человек принимает блоки и материалы.
+
+Документ не заменяет `COS-RES-013`: профиль профессии остаётся деревом представления, а каталог компетенций — отдельной сущностью, которая может ссылаться на листья профиля и узлы графа позже.
+
+## 2. Границы
+
+- Каталог не меняет `design-competency-graph.json` и не поднимает `methodologyVersion` графа.
+- LLM не принимает решения: его ответ — предложение, статус вычисляет детерминированный валидатор.
+- Инструмент не становится компетенцией или тегом знания. `kind: tool` хранится отдельно.
+- Сходство слов, близость тегов и уверенность LLM не являются доказательством.
+- Материалы: только метаданные и короткий snippet; полные тексты, транскрипты и скачивание не сохраняются.
+- Платные курсы: только публичная карточка/метаданные и ссылка. Paywall, логин и обход защиты не используются.
+- Каталог пишется в `src/methodology/v1/competency/catalog/<domain>.json` только после human-приёмки. Журналы-кандидаты — в `data/competency/`.
+
+## 3. Уровни и модель данных
+
+| Уровень | Сущность | Что хранится |
+|---|---|---|
+| L0 | Domain | `it`, `design`, ... |
+| L1 | ProfessionRecord | название, алиасы, классификаторы, sourceRefs |
+| L2 | CompetencyBlock | определение, scope, профессии, компоненты, теги, evidence |
+| L3 | CompetencyComponent | раздел компетенции: название, определение, порядок, tagIds |
+| L4 | TagRecord | знание/навык: название, определение, kind, sourceRefs, evidenceState, materialIds |
+| L5 | Material | статья/курс/видео/книга: провайдер, URL, язык, доступ, цена (observed), лицензия, links |
+
+Основные идентификаторы:
+- `Tag.id = tag_<hash(normalized title + kind)>` — один тег у нескольких профессий.
+- `CompetencyBlock.id = comp_<hash(normalized title)>`, slug после приёмки; переименование даёт alias.
+- `Component.id = <competencySlug>.<componentSlug>`.
+- `Material.id = material_<hash(provider + externalId)>`; fallback — canonical URL.
+- `previousSlugs` хранит старые slug после переименования.
+
+Статусы: `candidate`, `needs_review`, `accepted`, `rejected`. Evidence states: `supported`, `qualified`, `contradicted`, `refuted`, `incomplete`, `no_evidence`, `unread`, `unavailable`, `needs_review`.
+
+## 4. Этапы
+
+### Stage 0. Реестр источников и разведка
+`src/methodology/v1/competency/sources/registry.json`: id, тип, лицензия, доступ, возможности, статус, адаптер. `npm run sources:discover -- --domain it --query "..."` проверяет доступность и пишет `data/competency/sources.json`. `blocked`/`unavailable` не используются, обход не делается.
+
+### Stage 1. Профессии
+`npm run professions:collect -- --domain it` читает `targets/it.json` (14 IT-профессий) и собирает источники ESCO/O*NET/Практикум. Кросс-идентичность — по внешним ID, не по похожести. Выход: `data/competency/professions-it.json`.
+
+### Stage 2. Теги
+`npm run tags:collect -- --domain it [--profession id]` собирает навыки/знания:
+- ESCO — essential/optional + описание;
+- O*NET — Software Skills (tool), Essential Skills (skill), Knowledge (knowledge);
+- Практикум — инструменты и темы уроков.
+Теги дедуплицируются по `(normalized title, kind)`, sourceRefs агрегируются. Выход: `data/competency/tags-it.json`.
+
+### Stage 3. Кандидаты (Pass A)
+`npm run competency:candidates -- --domain it [--fixture file] [--limit-batches N] [--budget-usd N]`.
+LLM предлагает группы тегов; валидатор проверяет: все `tagId` из батча, ≥2 тегов, без tool/transversal, без дублей названий, каждый тег назначен или в `unassignedTagIds`. Выход: `data/competency/candidates-it.json` + review.
+
+### Stage 4. Блоки (Pass B)
+`npm run competency:build -- --domain it [--slug ...] [--fixture file] [--limit N]`.
+LLM предлагает 2–8 компонентов, 1–12 тегов в каждом; тег: `title`, `kind`, `definition`, `evidenceTagIds`, `modelProposal`. Валидатор: id из входа, без инструментов, без URL/выдуманных цитат, покрытие ≥50%, без дублей, `modelProposal=false` требует evidence. Выход: `data/competency/blocks-it.json` + review; статус всегда `needs_review`.
+
+### Stage 5. Приёмка
+`npm run competency:review -- --domain it` собирает review-пакет. Человек принимает блок в `src/methodology/v1/competency/catalog/it.json`; `npm run catalog:validate -- --domain it` проверяет каталог (id, slug, ссылки, accepted-статусы).
+
+### Stage 6. Профиль профессии
+`npm run competency:compose -- --domain it --profession frontend` собирает `profession → competency → components → tags → materials` в `data/competency/profiles/`. `writesToGraph:false`.
+
+### Stage 7. Материалы (финальный этап)
+`npm run materials:sources` — реестр material-источников.
+`npm run materials:collect -- --domain it [--profession id] [--sources ...]`:
+- статьи: Wikipedia (MediaWiki API, CC BY-SA);
+- видео/книги: Internet Archive advancedsearch (лицензия записи проверяется);
+- курсы: Stepik API (free/paid, цена как observed metadata);
+- видео: YouTube Data API только при `YOUTUBE_API_KEY`, без скачивания.
+`npm run materials:classify -- --domain it [--fixture file]` — LLM Pass D, валидатор связей; `access`/`price` берутся из адаптера, не из LLM.
+`npm run materials:review -- --domain it` — review-пакет.
+`npm run materials:validate -- --domain it --require-coverage` — ссылки, доступ, покрытие, платные с датой наблюдения цены.
+`npm run materials:refresh -- --domain it [--check-links]` — обновление `retrievedAt`, проверка ссылок.
+
+## 5. LLM-методолог
+
+`competency/llm/`: transport, prompts, schemas (zod), policy/budget, structured runner.
+
+| Pass | Задача | Что не делает |
+|---|---|---|
+| A | группировка тегов в кандидатов | не добавляет теги, не принимает |
+| B | компоненты и теги компетенции | не выдумывает источники, не ставит уровни |
+| C (опц.) | аудит блока | только issues |
+| D | сопоставление материалов | не меняет access/price, не придумывает URL |
+| E (опц.) | аудит материалов | только issues |
+
+Правила: JSON по zod-схеме; статический system-блок стабилен для prefix caching; входные фрагменты в `<source_evidence>`; один repair-retry; бюджет вызовов/стоимости; кеш по `inputHash`; `modelConfidence` не влияет на статус; валидатор — единственный источник статуса.
+
+## 6. Команды и артефакты
+
+```
+sources:discover, professions:collect, tags:collect,
+competency:candidates, competency:build, competency:review, catalog:validate, competency:compose,
+materials:sources, materials:collect, materials:classify, materials:review,
+materials:validate, materials:refresh
+```
+
+Кандидаты — `data/competency/` (gitignore). Принятый каталог — `src/methodology/v1/competency/catalog/it.json` (в git). Все журналы `writesToGraph:false`.
+
+## 7. Текущий срез (2026-10-21)
+
+- Реестр: 10 источников; активны ESCO, O*NET, Практикум, Wikipedia, Internet Archive; Stepik degraded; hh.ru blocked (403 DDoS-Guard, обход не делаем).
+- 14 IT-профессий собраны; UX/UI: **469 тегов** (knowledge 197, skill 31, tool 241).
+- Фикстурный прогон Pass A/B: блок **«Теория цвета и колористика»** — 4 компонента, 10 тегов; статус `needs_review`; новых тегов 10; issues 0.
+- Материалы: живой сбор Wikipedia дал 3 статьи по компетенции; Stepik ответил 502; classification проверена на фикстуре (3 связи), `materials:validate` — 0 ошибок.
+- Живой LLM-прогон не выполнялся: нужен `DEEPSEEK_API_KEY`; проверка выполнена на `--fixture`.
+- Каталог `catalog/it.json` пока пуст: приёмка блоков — следующий human-шаг.
+
+## 8. Приёмка
+
+- Каждый тег имеет sourceRef; 0 tool-as-knowledge.
+- Pass A/B: gold set 100+ пар «тег → компетенция», precision ≥0.90, recall ≥0.70, exact verdict (COS-RES-011); разметка фиксируется до прогона.
+- Блоки: 10–20 блоков по рубрике; Color Theory — эталон; все accepted подписаны человеком.
+- Материалы: у каждой accepted-компетенции ≥1 принятый материал; 0 paywall-обхода и выдуманных snippet; платные помечены и имеют `price.observedAt`; покрытие free/paid видно в отчёте.
+- Система: детерминированный повтор, resume, бюджет LLM, 0 graph/DB writes.
+
+## 9. Журнал ошибок и запретов
+
+- Не восстанавливать закрытый список фраз; группировка не по словам.
+- Не считать LLM-confidence доказательством.
+- Не принимать блок без human-приёмки.
+- Не обходить paywall/логин/robots; `blocked` фиксируется.
+- Не хранить полные тексты и транскрипты; только метаданные и короткий snippet.
+- Не подгонять каталог под один источник.
+
+## 10. История изменений
+
+| Версия | Дата | Что изменилось |
+|---|---|---|
+| 1.0.0 | 2026-10-21 | Метод: реестр источников, профессии, теги, Pass A/B, приёмка, профиль, материалы; реализован каркас команд и тестов |

@@ -8,7 +8,11 @@
       "license": "EUPL 1.2",
       "access": "api",
       "baseUrl": "https://ec.europa.eu/esco/api",
-      "capabilities": ["occupations", "skills", "knowledge"],
+      "capabilities": [
+        "occupations",
+        "skills",
+        "knowledge"
+      ],
       "status": "active",
       "adapter": "esco",
       "notes": "Официальная классификация ЕС. API без ключа."
@@ -20,7 +24,12 @@
       "license": "CC BY 4.0",
       "access": "csv",
       "baseUrl": "https://www.onetcenter.org/dl_files/database/db_31_0_csv/",
-      "capabilities": ["occupations", "skills", "knowledge", "tools"],
+      "capabilities": [
+        "occupations",
+        "skills",
+        "knowledge",
+        "tools"
+      ],
       "status": "active",
       "adapter": "onet",
       "notes": "Официальная база США. CSV без ключа."
@@ -32,7 +41,10 @@
       "license": "© Яндекс Практикум; извлекаются названия навыков и короткие цитаты",
       "access": "html",
       "baseUrl": "https://practicum.yandex.ru",
-      "capabilities": ["professions", "skills"],
+      "capabilities": [
+        "professions",
+        "skills"
+      ],
       "status": "active",
       "adapter": "practicum",
       "notes": "robots.txt запрещает query-параметры; запросы только по каноническим адресам."
@@ -44,7 +56,9 @@
       "license": "CC BY-SA 4.0",
       "access": "api",
       "baseUrl": "https://ru.wikipedia.org/w/api.php",
-      "capabilities": ["articles"],
+      "capabilities": [
+        "articles"
+      ],
       "status": "active",
       "adapter": "wikipedia",
       "notes": "Публичный MediaWiki API; только метаданные и короткий snippet."
@@ -56,7 +70,12 @@
       "license": "зависит от записи; метаданные публичны",
       "access": "api",
       "baseUrl": "https://archive.org/advancedsearch.php",
-      "capabilities": ["videos", "books", "courses", "articles"],
+      "capabilities": [
+        "videos",
+        "books",
+        "courses",
+        "articles"
+      ],
       "status": "active",
       "adapter": "internet-archive",
       "notes": "Публичный advancedsearch API; лицензия конкретной записи проверяется."
@@ -68,7 +87,9 @@
       "license": "метаданные публичны; лицензия курса индивидуальна",
       "access": "api",
       "baseUrl": "https://stepik.org/api",
-      "capabilities": ["courses"],
+      "capabilities": [
+        "courses"
+      ],
       "status": "degraded",
       "adapter": "stepik",
       "notes": "При недоступности API материал не собирается; обхода нет."
@@ -80,11 +101,63 @@
       "license": "метаданные публичны; условия YouTube",
       "access": "api",
       "baseUrl": "https://www.googleapis.com/youtube/v3",
-      "capabilities": ["videos"],
+      "capabilities": [
+        "videos"
+      ],
       "status": "planned",
       "adapter": "youtube",
-      "requiresEnv": ["YOUTUBE_API_KEY"],
+      "requiresEnv": [
+        "YOUTUBE_API_KEY"
+      ],
       "notes": "Только официальный Data API при наличии ключа; без скачивания и без обхода."
+    },
+    {
+      "id": "habr",
+      "title": "Хабр",
+      "kind": "materials",
+      "license": "Habr ToS; авторские права автора",
+      "access": "api",
+      "baseUrl": "https://habr.com/kek/v2/articles/",
+      "capabilities": [
+        "articles",
+        "ru",
+        "en"
+      ],
+      "status": "active",
+      "adapter": "habr",
+      "notes": "robots.txt запрещает /search/; используем публичный json-эндпоинт статей по query без /search/. Русские результаты приоритетнее."
+    },
+    {
+      "id": "medium",
+      "title": "Medium",
+      "kind": "materials",
+      "license": "Medium ToS; авторские права автора",
+      "access": "api",
+      "baseUrl": "https://medium.com/feed/tag/",
+      "capabilities": [
+        "articles",
+        "en"
+      ],
+      "status": "active",
+      "adapter": "medium",
+      "notes": "robots.txt запрещает /search?q=; используем тематический RSS /feed/tag/. Доступ freemium: только метаданные и короткий snippet."
+    },
+    {
+      "id": "learn-anything",
+      "title": "Learn Anything",
+      "kind": "materials",
+      "license": "условия Learn Anything; ссылки ведут на сторонние ресурсы",
+      "access": "html",
+      "baseUrl": "https://learn-anything.xyz",
+      "capabilities": [
+        "articles",
+        "courses",
+        "videos",
+        "books"
+      ],
+      "status": "degraded",
+      "adapter": "learn-anything",
+      "notes": "Публичного HTTP API нет: темы и ссылки отдаются клиентским Jazz sync. Клиентский JS не исполняем и не скрейпим. Оставлен как зарегистрированный источник; при появлении API адаптер включается."
     },
     {
       "id": "rf-profstandards",
@@ -93,7 +166,10 @@
       "license": "государственный открытый реестр; проверить условия",
       "access": "html",
       "baseUrl": "https://profstandart.rosmintrud.ru",
-      "capabilities": ["professions", "requirements"],
+      "capabilities": [
+        "professions",
+        "requirements"
+      ],
       "status": "planned",
       "notes": "Ordinary-профессии, отдельная фаза. PDF/HTML только легально."
     },
@@ -104,7 +180,10 @@
       "license": "государственный открытый реестр; проверить условия",
       "access": "html",
       "baseUrl": "https://fgos.ru",
-      "capabilities": ["professions", "requirements"],
+      "capabilities": [
+        "professions",
+        "requirements"
+      ],
       "status": "planned",
       "notes": "Ordinary-профессии, отдельная фаза."
     },
@@ -115,7 +194,9 @@
       "license": "условия hh.ru; нужен партнёрский доступ",
       "access": "api",
       "baseUrl": "https://api.hh.ru",
-      "capabilities": ["market-signals"],
+      "capabilities": [
+        "market-signals"
+      ],
       "status": "blocked",
       "notes": "Анонимный запрос вернул 403 DDoS-Guard. Обход не делаем; только официальный доступ."
     }

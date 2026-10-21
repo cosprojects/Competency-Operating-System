@@ -2,7 +2,11 @@ import type { FetchLike } from "../../candidate-parser/types.ts";
 import type { CompetencyBlock, Material, MaterialKind } from "../types.ts";
 import { hashId } from "../sources/common.ts";
 import {
+  normalizeLanguage,
+  searchHabr,
   searchInternetArchive,
+  searchLearnAnything,
+  searchMedium,
   searchStepik,
   searchWikipedia,
   searchYoutube,
@@ -34,8 +38,11 @@ export interface MaterialCollectResult {
 
 interface Adapter {
   id: string;
-  search: (query: string) => Promise<MaterialDraft[]>;
+  search: (query: string, queryEn: string) => Promise<MaterialDraft[]>;
 }
+
+const languageRank = (language: MaterialDraft["language"]): number =>
+  language === "ru" ? 0 : language === "en" ? 1 : 2;
 
 export function materialIdFor(draft: MaterialDraft): string {
   return hashId("material", `${draft.provider}|${draft.sourceRef.externalId}`);
@@ -69,7 +76,7 @@ function toMaterial(draft: MaterialDraft, competencyId: string): Material {
 export async function collectMaterials(input: MaterialCollectInput): Promise<MaterialCollectResult> {
   const limit = input.limitPerCompetency ?? 3;
   const selected = new Set(
-    input.sourceIds ?? ["wikipedia", "internet-archive", "stepik", "youtube"],
+    input.sourceIds ?? ["wikipedia", "habr", "medium", "internet-archive", "stepik", "youtube"],
   );
   const allAdapters: Adapter[] = [
     {
@@ -77,8 +84,17 @@ export async function collectMaterials(input: MaterialCollectInput): Promise<Mat
       search: (query) => searchWikipedia(input.fetchImpl, query, input.retrievedOn, limit),
     },
     {
+      id: "habr",
+      search: (query) => searchHabr(input.fetchImpl, query, input.retrievedOn, limit),
+    },
+    {
+      id: "medium",
+      search: (query, queryEn) => searchMedium(input.fetchImpl, queryEn, input.retrievedOn, limit),
+    },
+    {
       id: "internet-archive",
-      search: (query) => searchInternetArchive(input.fetchImpl, query, input.retrievedOn, limit),
+      search: (query, queryEn) =>
+        searchInternetArchive(input.fetchImpl, queryEn || query, input.retrievedOn, limit),
     },
     {
       id: "stepik",
@@ -88,6 +104,10 @@ export async function collectMaterials(input: MaterialCollectInput): Promise<Mat
       id: "youtube",
       search: (query) =>
         searchYoutube(input.fetchImpl, query, input.retrievedOn, input.youtubeApiKey, limit),
+    },
+    {
+      id: "learn-anything",
+      search: (query) => searchLearnAnything(input.fetchImpl, query, input.retrievedOn),
     },
   ];
   const adapters = allAdapters.filter((adapter) => selected.has(adapter.id));
@@ -99,10 +119,13 @@ export async function collectMaterials(input: MaterialCollectInput): Promise<Mat
   for (const competency of input.competencies) {
     const kinds: Partial<Record<MaterialKind, number>> = {};
     let found = 0;
+    let failed = false;
+    const queryEn = competency.titleEn ?? competency.title;
     for (const adapter of adapters) {
       try {
-        const drafts = await adapter.search(competency.title);
+        const drafts = await adapter.search(competency.title, queryEn);
         for (const draft of drafts) {
+          if (normalizeLanguage(draft.language) === "other") continue;
           const key = draft.canonicalUrl || draft.url;
           const existing = byUrl.get(key);
           if (existing) {
@@ -118,6 +141,7 @@ export async function collectMaterials(input: MaterialCollectInput): Promise<Mat
           kinds[draft.kind] = (kinds[draft.kind] ?? 0) + 1;
         }
       } catch (error) {
+        failed = true;
         notes.push(
           `${competency.title} / ${adapter.id}: ${error instanceof Error ? error.message : "ошибка источника"}`,
         );
@@ -129,13 +153,16 @@ export async function collectMaterials(input: MaterialCollectInput): Promise<Mat
       materials: found,
       kinds,
       ...(found === 0
-        ? { noMaterialState: notes.length > 0 ? ("source_unavailable" as const) : ("no_material" as const) }
+        ? { noMaterialState: failed ? ("source_unavailable" as const) : ("no_material" as const) }
         : {}),
     });
   }
 
   return {
-    materials: [...byUrl.values()].sort((a, b) => a.title.localeCompare(b.title)),
+    materials: [...byUrl.values()].sort(
+      (a, b) =>
+        languageRank(a.language) - languageRank(b.language) || a.title.localeCompare(b.title),
+    ),
     coverage,
     notes,
   };

@@ -33,6 +33,9 @@
 
 ## Pass D — материалы
 
+Источники: Wikipedia, Хабр, Medium, Internet Archive, Stepik (degraded), YouTube (при ключе). Хабр/Medium — только публичные API/RSS, без `/search/` (запрещён robots). Learn Anything не скрейпим: у него нет публичного HTTP API, данные идут через клиентский Jazz sync.
+
+
 Вход: материал (название, провайдер, язык, доступ, описание/сниппет) и компетенция с компонентами/тегами. Выход: `links[]` (компетенция, опционально компонент/тег, relevance, reason, modelProposal) и `rejected[]`. Связь только при смысловом совпадении; сомнительное — в rejected. Не менять access/price, не придумывать URL.
 
 ## Запреты

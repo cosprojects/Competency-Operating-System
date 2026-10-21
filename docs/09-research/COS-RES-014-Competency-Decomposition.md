@@ -1,7 +1,7 @@
 ---
 id: COS-RES-014
 title: Сборка каталога компетенций, компонентов и тегов
-version: 1.3.0
+version: 1.4.0
 status: Draft
 owner: Research Team
 last_updated: 2026-10-21
@@ -96,9 +96,13 @@ LLM предлагает 2–8 компонентов, 1–12 тегов в ка
 `npm run materials:sources` — реестр material-источников.
 `npm run materials:collect -- --domain it [--profession id] [--sources ...]`:
 - статьи: Wikipedia (MediaWiki API, CC BY-SA);
+- статьи: Хабр (публичный json-эндпоинт `/kek/v2/articles/`; `/search/` запрещён robots — не используем; приоритет ru, затем en);
+- статьи: Medium (тематический RSS `/feed/tag/`; `/search?q=` запрещён robots — не используем; только en, доступ freemium, метаданные и snippet);
 - видео/книги: Internet Archive advancedsearch (лицензия записи проверяется);
 - курсы: Stepik API (free/paid, цена как observed metadata);
-- видео: YouTube Data API только при `YOUTUBE_API_KEY`, без скачивания.
+- видео: YouTube Data API только при `YOUTUBE_API_KEY`, без скачивания;
+- Learn Anything: зарегистрирован, но публичного HTTP API нет — темы/ссылки отдаются клиентским Jazz sync; клиентский JS не исполняем и не скрейпим, источник `degraded`.
+- Языки: собираем ru/en; `other` отбрасываем; сортировка ru → en.
 `npm run materials:classify -- --domain it [--fixture file]` — LLM Pass D, валидатор связей; `access`/`price` берутся из адаптера, не из LLM.
 `npm run materials:review -- --domain it` — review-пакет.
 `npm run materials:validate -- --domain it --require-coverage` — ссылки, доступ, покрытие, платные с датой наблюдения цены.
@@ -132,12 +136,13 @@ materials:validate, materials:refresh
 
 ## 7. Текущий срез (2026-10-21)
 
-- Реестр: 10 источников; активны ESCO, O*NET, Практикум, Wikipedia, Internet Archive; Stepik degraded; hh.ru blocked (403 DDoS-Guard, обход не делаем).
+- Реестр: 13 источников; активны ESCO, O*NET, Практикум, Wikipedia, Internet Archive, Хабр, Medium; Stepik degraded; Learn Anything degraded (client-only Jazz, публичного HTTP API нет); hh.ru blocked (403 DDoS-Guard, обход не делаем).
 - 14 IT-профессий собраны; полный `tags:collect` дал **1512 тегов** (knowledge 376, skill 235, tool 901).
 - Pass A по всем IT-тегам: **114 кандидатов**, 322 неназначенных тега, 115 замечаний, 49 вызовов, ~$0.12; reconcile: **114 → 94** кандидата, 3 вызова, issues 0.
 - Pass B (первые 20 кандидатов): **20 блоков**, 26 новых тегов, issues 0, ~$0.015. Это черновики `needs_review`.
 - Seed-эталон: `color-theory` → 6 тегов → Pass B дал **5 компонентов, 11 тегов**, issues 0, $0.0019; материалы — 3 статьи Wikipedia, классификация 3 связи, `materials:validate` — 0 ошибок. Блок `needs_review`, не принят.
 - Материалы: 20 блоков → **53 статьи Wikipedia** (сбор ~4 мин); классификация: 24 связи, 14/20 компетенций с материалом, issues 29 (в основном корректные отказы от нерелевантных статей); `materials:validate` — 0 ошибок. Stepik 502, Internet Archive по этим запросам не дал видео; YouTube без ключа.
+- Материалы эталона «Теория цвета»: **9 материалов** — 3 Wikipedia (ru), 3 Хабра (ru), 3 Medium (en); после классификации 7 связей, 0 ошибок; Internet Archive — timeout, Learn Anything — degraded.
 - Gold-set протокол: `competency:evaluate`, фикстура `gold-candidates.json`; на ней precision/recall/exact = 1. На живом Pass A — **0/5**: кандидаты дробят «Теорию цвета» на визуальные подтемы; reconcile этого не исправляет. Батчинг по профессиям (UX/UI: 34 кандидата, 9 вызовов, ~$0.027) разрыв сохраняет.
 - Вывод: bottom-up группировка даёт гранулярность «учебных тем», а не каноническую компетенцию уровня «Теория цвета». Нужно продуктовое решение: (а) принять granularity как есть, (б) top-down seed/рубрика канонических компетенций, (в) отдельный Pass «свести подтемы в компетенцию» с human-приёмкой. Это открытый вопрос, не приёмка.
 - Тесты: **92/92**; typecheck чистый.
@@ -168,3 +173,4 @@ materials:validate, materials:refresh
 | 1.1.0 | 2026-10-21 | Полный сбор IT-тегов (1512), Pass A (114→94 после reconcile), Pass B (20 блоков), материалы (53 статьи, 24 связи), `competency:evaluate` и gold-set протокол; зафиксирован разрыв качества Pass A на живой разметке |
 | 1.2.0 | 2026-10-21 | Батчи Pass A сгруппированы по профессии; UX/UI: 34 кандидата, 95 unassigned, 18 issues. Gold по-прежнему 0/5; зафиксировано решение о granularity |
 | 1.3.0 | 2026-10-21 | Добавлен top-down seed канонических компетенций (`competency:seed`, `seeds/it.json`). Seed «Теория цвета» → 5 компонентов, 11 тегов, 3 материала; блок остаётся `needs_review` |
+| 1.4.0 | 2026-10-21 | Добавлены Хабр и Medium (robots-safe: без `/search/`), язык ru→en, `other` отбрасывается; Learn Anything зарегистрирован как degraded из-за client-only Jazz. Эталон: 9 материалов, 7 связей |

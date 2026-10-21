@@ -12,7 +12,11 @@ import {
   collectMaterials,
 } from "../src/methodology/v1/competency/materials/collect.ts";
 import {
+  normalizeLanguage,
+  searchHabr,
+  searchLearnAnything,
   searchInternetArchive,
+  searchMedium,
   searchStepik,
   searchWikipedia,
 } from "../src/methodology/v1/competency/materials/sources.ts";
@@ -150,6 +154,105 @@ describe("материалы компетенций", () => {
     assert.equal(drafts[0]?.kind, "video");
     assert.equal(drafts[0]?.provider, "Internet Archive");
     assert.match(drafts[0]?.license ?? "", /creativecommons/);
+  });
+
+  it("парсит Хабр: русские и английские статьи без /search/", async () => {
+    const fetchImpl: FetchLike = async (input) => {
+      if (!input.includes("habr.com/kek/v2/articles")) throw new Error(`unexpected ${input}`);
+      const english = input.includes("fl=en");
+      return json({
+        publicationRefs: {
+          "1": {
+            id: "1",
+            lang: english ? "en" : "ru",
+            titleHtml: english ? "Color theory" : "Теория <em>цвета</em>",
+            leadData: { textHtml: "<p>Короткий лид статьи</p>" },
+            timePublished: "2026-01-01T00:00:00+00:00",
+            statistics: { score: 12 },
+          },
+        },
+      });
+    };
+    const drafts = await searchHabr(fetchImpl, "теория цвета", "2026-10-21");
+    assert.equal(drafts.length, 2);
+    assert.ok(drafts.some((draft) => draft.language === "ru" && draft.title === "Теория цвета"));
+    assert.ok(drafts.some((draft) => draft.language === "en"));
+    assert.ok(drafts.every((draft) => draft.url.includes("/articles/1/")));
+    assert.ok(drafts.every((draft) => !draft.url.includes("/search/")));
+  });
+
+  it("парсит Medium tag RSS и помечает freemium", async () => {
+    const xml = `<?xml version="1.0"?><rss><channel><item>
+      <title><![CDATA[Color theory in practice]]></title>
+      <link>https://medium.com/@author/color-theory-practice-abc?source=rss------color_theory-5</link>
+      <description><![CDATA[<div><p class="medium-feed-snippet">A practical intro to color.</p></div>]]></description>
+    </item></channel></rss>`;
+    const fetchImpl: FetchLike = async (input) => {
+      if (!input.includes("medium.com/feed/tag/color-theory")) throw new Error(`unexpected ${input}`);
+      return text(xml);
+    };
+    const drafts = await searchMedium(fetchImpl, "Color theory", "2026-10-21");
+    assert.equal(drafts.length, 1);
+    assert.equal(drafts[0]?.provider, "Medium");
+    assert.equal(drafts[0]?.language, "en");
+    assert.equal(drafts[0]?.access, "freemium");
+    assert.ok(drafts[0]?.snippet?.includes("practical intro"));
+    assert.ok(!drafts[0]?.url.includes("source=rss"));
+  });
+
+  it("фильтрует языки и ставит русский выше английского", async () => {
+    const block = await builtBlock();
+    const fetchImpl: FetchLike = async (input) => {
+      if (input.includes("wikipedia")) {
+        return json({ query: { search: [{ title: "Цвет", snippet: "статья", pageid: 1 }] } });
+      }
+      if (input.includes("medium.com/feed")) {
+        return text(`<?xml version="1.0"?><rss><channel><item>
+          <title><![CDATA[Color theory]]></title>
+          <link>https://medium.com/@a/color-1</link>
+          <description><![CDATA[<p class="medium-feed-snippet">English article</p>]]></description>
+        </item></channel></rss>`);
+      }
+      if (input.includes("archive.org")) {
+        return json({
+          response: {
+            docs: [
+              {
+                identifier: "german-video",
+                title: "Farbe",
+                mediatype: "movies",
+                description: "Deutsch",
+                language: "german",
+              },
+            ],
+          },
+        });
+      }
+      return json({});
+    };
+    const result = await collectMaterials({
+      competencies: [block],
+      fetchImpl,
+      retrievedOn: "2026-10-21",
+      sourceIds: ["wikipedia", "medium", "internet-archive"],
+    });
+    assert.equal(result.materials.length, 2);
+    assert.equal(result.materials[0]?.language, "ru");
+    assert.equal(result.materials[1]?.language, "en");
+    assert.equal(result.coverage[0]?.materials, 2);
+  });
+
+  it("не скрейпит Learn Anything и явно сообщает причину", async () => {
+    await assert.rejects(
+      () => searchLearnAnything(async () => json({}), "color", "2026-10-21"),
+      /Jazz/,
+    );
+  });
+
+  it("нормализует языковые метки", () => {
+    assert.equal(normalizeLanguage("russian"), "ru");
+    assert.equal(normalizeLanguage("eng"), "en");
+    assert.equal(normalizeLanguage("deutsch"), "other");
   });
 
   it("собирает материалы по компетенции и отдаёт покрытие", async () => {

@@ -74,6 +74,7 @@ export interface CompetencyCandidate {
   aliases: string[];
   definition: string;
   scopeHint: "universal" | "profession";
+  canonicalId?: string;
   tagIds: string[];
   professionIds: string[];
   rationale: string;
@@ -99,6 +100,7 @@ export interface CompetencyBlock {
   aliases: string[];
   definition: string;
   scope: "universal" | "profession";
+  canonicalIds?: string[];
   professionIds: string[];
   components: CompetencyComponent[];
   tags: TagRecord[];

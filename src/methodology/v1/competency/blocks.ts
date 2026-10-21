@@ -284,6 +284,7 @@ export async function buildBlocks(input: BlockBuildInput): Promise<BlockBuildRes
       aliases: validated.aliases,
       definition: validated.definition,
       scope: validated.scope,
+      ...(candidate.canonicalId ? { canonicalIds: [candidate.canonicalId] } : {}),
       professionIds: [...candidate.professionIds],
       components,
       tags: blockTags,

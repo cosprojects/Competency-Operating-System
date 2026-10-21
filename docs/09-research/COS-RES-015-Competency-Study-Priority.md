@@ -159,14 +159,14 @@ npm run priority:template -- --domain it --profession uxui --source review --inc
 npm run canvas:page -- --domain it --profession uxui --source review --include-seed
 ```
 
-Генерирует `web/uxui-competency-canvas.html`: самодостаточную страницу без внешних зависимостей. На ней:
+Генерирует `web/uxui-competency-canvas.html`: самодостаточную страницу без внешних зависимостей. По умолчанию страница собирается от **канонической карты** (`COS-RES-016`): 34 компетенции, 26 связей, tier-подсказки и coverage-подпись. На ней:
 - карточки компетенций с коротким описанием и tier-бейджем;
 - SVG-сеть по `prerequisites`;
 - кольца foundation/core/optional;
 - hover подсвечивает связи, клик открывает панель с компонентами и тегами;
 - фильтры по tier.
 
-Для страницы используется **отдельный черновой слой** `visualization/uxui.json`: он позволяет показать все собранные блоки до завершения human-маркировки. Баннер и `status: "draft"` явно говорят, что tier/связи не утверждены. После заполнения `priority/uxui.json` страница может быть пересобрана поверх официальных marks (команда поддерживает `--source catalog`; конфиг визуализации можно заменить).
+Для страницы используется **каноническая карта** и её `priorityHint`: это черновой слой, пока `priority/uxui.json` не заполнен. Баннер и `status: "draft"` явно говорят, что tier/связи не утверждены. Для старого 16-узлового слоя можно передать `--visualization-file src/methodology/v1/competency/visualization/uxui.json`. После заполнения `priority/uxui.json` страница может быть пересобрана поверх официальных marks (`--source catalog`).
 
 ### 6.4. Визуальные правила
 

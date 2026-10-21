@@ -50,13 +50,16 @@
               "titleEn": "Personas",
               "definition": "Модели целевых пользователей, их целей, контекста и критериев выбора.",
               "priorityHint": "core",
-              "status": "gap",
-              "coveredBy": [],
+              "status": "partial",
+              "coveredBy": [
+                "comp_212887d793e2"
+              ],
               "sourceEvidence": {
                 "taxonomyLeaves": [
                   "Personas"
                 ]
-              }
+              },
+              "note": "Сгенерирован из seed; блок needs_review"
             },
             {
               "id": "ux-interviews",
@@ -65,13 +68,16 @@
               "titleEn": "Interviews",
               "definition": "Подготовка и проведение глубинных интервью, наблюдений и анализ качественных данных.",
               "priorityHint": "core",
-              "status": "gap",
-              "coveredBy": [],
+              "status": "partial",
+              "coveredBy": [
+                "comp_209c850b7e37"
+              ],
               "sourceEvidence": {
                 "taxonomyLeaves": [
                   "Interviews"
                 ]
-              }
+              },
+              "note": "Сгенерирован из seed; блок needs_review"
             },
             {
               "id": "ux-usability-testing",
@@ -80,13 +86,16 @@
               "titleEn": "Usability testing",
               "definition": "Проверка сценариев и прототипов на реальных пользователях, фиксация и приоритизация проблем.",
               "priorityHint": "core",
-              "status": "gap",
-              "coveredBy": [],
+              "status": "partial",
+              "coveredBy": [
+                "comp_c2cd7e56553d"
+              ],
               "sourceEvidence": {
                 "taxonomyLeaves": [
                   "User Testing"
                 ]
-              }
+              },
+              "note": "Сгенерирован из seed; блок needs_review"
             },
             {
               "id": "ux-analytics",
@@ -120,8 +129,10 @@
               "titleEn": "Information architecture",
               "definition": "Структура контента и навигации, категоризация и находимость информации.",
               "priorityHint": "foundation",
-              "status": "gap",
-              "coveredBy": [],
+              "status": "partial",
+              "coveredBy": [
+                "comp_ba86d2248db0"
+              ],
               "sourceEvidence": {
                 "taxonomyLeaves": [
                   "Information Architecture"
@@ -129,7 +140,8 @@
                 "graphNodeIds": [
                   "node_info_arch"
                 ]
-              }
+              },
+              "note": "Сгенерирован из seed; блок needs_review"
             },
             {
               "id": "ux-user-flows",
@@ -138,8 +150,10 @@
               "titleEn": "User flows",
               "definition": "Моделирование пути пользователя, развилок, ошибок и восстановления.",
               "priorityHint": "core",
-              "status": "gap",
-              "coveredBy": [],
+              "status": "partial",
+              "coveredBy": [
+                "comp_e4f2ab2892c2"
+              ],
               "sourceEvidence": {
                 "taxonomyLeaves": [
                   "User Flows"
@@ -147,7 +161,8 @@
                 "graphNodeIds": [
                   "node_ux_flows"
                 ]
-              }
+              },
+              "note": "Сгенерирован из seed; блок needs_review"
             },
             {
               "id": "ux-wireframes",
@@ -156,13 +171,16 @@
               "titleEn": "Wireframes",
               "definition": "Быстрая структура экранов и взаимодействий без визуальной детализации.",
               "priorityHint": "core",
-              "status": "gap",
-              "coveredBy": [],
+              "status": "partial",
+              "coveredBy": [
+                "comp_281fdd473ddf"
+              ],
               "sourceEvidence": {
                 "taxonomyLeaves": [
                   "Wireframes"
                 ]
-              }
+              },
+              "note": "Сгенерирован из seed; блок needs_review"
             },
             {
               "id": "ux-requirements",
@@ -191,13 +209,16 @@
               "titleEn": "Low-fidelity prototyping",
               "definition": "Быстрые бумажные и схематичные прототипы для проверки структуры.",
               "priorityHint": "core",
-              "status": "gap",
-              "coveredBy": [],
+              "status": "partial",
+              "coveredBy": [
+                "comp_c9042039c71b"
+              ],
               "sourceEvidence": {
                 "taxonomyLeaves": [
                   "Low-Fidelity"
                 ]
-              }
+              },
+              "note": "Сгенерирован из seed; блок needs_review"
             },
             {
               "id": "ux-hifi-prototype",
@@ -206,13 +227,16 @@
               "titleEn": "High-fidelity prototyping",
               "definition": "Детализированные прототипы, приближенные к финальному интерфейсу.",
               "priorityHint": "core",
-              "status": "gap",
-              "coveredBy": [],
+              "status": "partial",
+              "coveredBy": [
+                "comp_f30be83c07b9"
+              ],
               "sourceEvidence": {
                 "taxonomyLeaves": [
                   "High-Fidelity"
                 ]
-              }
+              },
+              "note": "Сгенерирован из seed; блок needs_review"
             },
             {
               "id": "ux-interactive-prototype",
@@ -221,13 +245,16 @@
               "titleEn": "Interactive prototyping",
               "definition": "Прототипы с переходами и состояниями для проверки поведения продукта.",
               "priorityHint": "core",
-              "status": "gap",
-              "coveredBy": [],
+              "status": "partial",
+              "coveredBy": [
+                "comp_fa6b64a98d04"
+              ],
               "sourceEvidence": {
                 "taxonomyLeaves": [
                   "Interactive Prototype"
                 ]
-              }
+              },
+              "note": "Сгенерирован из seed; блок needs_review"
             },
             {
               "id": "ux-experiments",
@@ -236,8 +263,11 @@
               "titleEn": "UX metrics and experiments",
               "definition": "Выбор метрик, дизайн экспериментов и интерпретация результатов.",
               "priorityHint": "optional",
-              "status": "gap",
-              "coveredBy": []
+              "status": "partial",
+              "coveredBy": [
+                "comp_94c55eb76f7e"
+              ],
+              "note": "Сгенерирован из seed; блок needs_review"
             }
           ]
         },
@@ -254,8 +284,11 @@
               "titleEn": "Product thinking",
               "definition": "Понимание ценности, аудитории, ограничений и жизненного цикла продукта.",
               "priorityHint": "core",
-              "status": "gap",
-              "coveredBy": []
+              "status": "partial",
+              "coveredBy": [
+                "comp_ebd843b35ccf"
+              ],
+              "note": "Сгенерирован из seed; блок needs_review"
             },
             {
               "id": "ux-metrics",
@@ -393,8 +426,10 @@
               "titleEn": "Design systems",
               "definition": "Архитектура дизайн-системы, семантические токены и синхронизация с кодом.",
               "priorityHint": "core",
-              "status": "gap",
-              "coveredBy": [],
+              "status": "partial",
+              "coveredBy": [
+                "comp_9a71b8071561"
+              ],
               "sourceEvidence": {
                 "taxonomyLeaves": [
                   "Components"
@@ -402,7 +437,8 @@
                 "graphNodeIds": [
                   "node_design_systems"
                 ]
-              }
+              },
+              "note": "Сгенерирован из seed; блок needs_review"
             },
             {
               "id": "ui-components",
@@ -411,13 +447,16 @@
               "titleEn": "Components and patterns",
               "definition": "Проектирование переиспользуемых компонентов, вариантов и поведенческих паттернов.",
               "priorityHint": "core",
-              "status": "gap",
-              "coveredBy": [],
+              "status": "partial",
+              "coveredBy": [
+                "comp_ee65cfba2fc2"
+              ],
               "sourceEvidence": {
                 "taxonomyLeaves": [
                   "Components"
                 ]
-              }
+              },
+              "note": "Сгенерирован из seed; блок needs_review"
             },
             {
               "id": "ui-responsive",
@@ -460,8 +499,11 @@
               "titleEn": "States and microinteractions",
               "definition": "Состояния компонентов, обратная связь и микровзаимодействия.",
               "priorityHint": "core",
-              "status": "gap",
-              "coveredBy": []
+              "status": "partial",
+              "coveredBy": [
+                "comp_1426ad336c6f"
+              ],
+              "note": "Сгенерирован из seed; блок needs_review"
             }
           ]
         },
@@ -487,12 +529,15 @@
             {
               "id": "ui-interactive-prototype",
               "order": 2,
-              "title": "Интерактивные прототипы",
-              "titleEn": "Interactive prototypes",
+              "title": "Интерактивные прототипы интерфейса",
+              "titleEn": "Interactive UI prototypes",
               "definition": "Интерактивные прототипы интерфейсов с переходами и состояниями.",
               "priorityHint": "optional",
-              "status": "gap",
-              "coveredBy": []
+              "status": "partial",
+              "coveredBy": [
+                "comp_158001e4c84f"
+              ],
+              "note": "Сгенерирован из seed; блок needs_review"
             }
           ]
         },
@@ -509,13 +554,16 @@
               "titleEn": "Figma",
               "definition": "Работа с Figma: компоненты, варианты, автолейаут и библиотеки.",
               "priorityHint": "core",
-              "status": "gap",
-              "coveredBy": [],
+              "status": "partial",
+              "coveredBy": [
+                "comp_3baa5b3a9b1a"
+              ],
               "sourceEvidence": {
                 "taxonomyLeaves": [
                   "Figma"
                 ]
-              }
+              },
+              "note": "Сгенерирован из seed; блок needs_review"
             },
             {
               "id": "ui-figjam",
@@ -524,13 +572,16 @@
               "titleEn": "FigJam",
               "definition": "Совместные воркшопы, картирование и фасилитация в FigJam.",
               "priorityHint": "optional",
-              "status": "gap",
-              "coveredBy": [],
+              "status": "partial",
+              "coveredBy": [
+                "comp_e8fd6afc9563"
+              ],
               "sourceEvidence": {
                 "taxonomyLeaves": [
                   "FigJam"
                 ]
-              }
+              },
+              "note": "Сгенерирован из seed; блок needs_review"
             },
             {
               "id": "ui-framer",
@@ -539,13 +590,16 @@
               "titleEn": "Framer",
               "definition": "Создание интерактивных прототипов и микровзаимодействий в Framer.",
               "priorityHint": "optional",
-              "status": "gap",
-              "coveredBy": [],
+              "status": "partial",
+              "coveredBy": [
+                "comp_70dc27286adc"
+              ],
               "sourceEvidence": {
                 "taxonomyLeaves": [
                   "Framer"
                 ]
-              }
+              },
+              "note": "Сгенерирован из seed; блок needs_review"
             },
             {
               "id": "ui-handoff",

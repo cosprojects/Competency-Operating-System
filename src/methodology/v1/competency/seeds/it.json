@@ -7,12 +7,494 @@
       "id": "color-theory",
       "title": "Теория цвета и колористика",
       "titleEn": "Color theory",
-      "aliases": ["Колористика", "Цветоведение"],
+      "aliases": [
+        "Колористика",
+        "Цветоведение"
+      ],
       "definition": "Системное понимание цвета: физика света, физиология восприятия, геометрия гармонии и культурно-психологический контекст.",
-      "professionIds": ["it.uxui"],
-      "tagHints": ["цвет", "колорист", "цветов", "контраст", "гармони", "композиц", "типограф", "визуальн", "спектр", "насыщенн", "оттенк", "палитр"],
-      "excludeHints": ["цветотерап", "цветение", "цветной металл"],
-      "maxTags": 30
+      "professionIds": [
+        "it.uxui"
+      ],
+      "tagHints": [
+        "цвет",
+        "колорист",
+        "цветов",
+        "контраст",
+        "гармони",
+        "композиц",
+        "типограф",
+        "визуальн",
+        "спектр",
+        "насыщенн",
+        "оттенк",
+        "палитр"
+      ],
+      "excludeHints": [
+        "цветотерап",
+        "цветение",
+        "цветной металл"
+      ],
+      "maxTags": 30,
+      "canonicalId": "ui-color"
+    },
+    {
+      "id": "ux-personas",
+      "canonicalId": "ux-personas",
+      "title": "Персоны и сегментация",
+      "titleEn": "Personas",
+      "aliases": [
+        "Personas"
+      ],
+      "definition": "Модели целевых пользователей, их целей, контекста и критериев выбора.",
+      "professionIds": [
+        "it.uxui"
+      ],
+      "tagHints": [
+        "персон",
+        "аудитор",
+        "сегмент",
+        "пользовател",
+        "исследова"
+      ],
+      "excludeHints": [
+        "цветотерап",
+        "цветение"
+      ],
+      "maxTags": 24
+    },
+    {
+      "id": "ux-interviews",
+      "canonicalId": "ux-interviews",
+      "title": "Интервью и наблюдение",
+      "titleEn": "Interviews",
+      "aliases": [
+        "Interviews"
+      ],
+      "definition": "Подготовка и проведение глубинных интервью, наблюдений и анализ качественных данных.",
+      "professionIds": [
+        "it.uxui"
+      ],
+      "tagHints": [
+        "интервью",
+        "опрос",
+        "исследова",
+        "аудитор",
+        "пользовател"
+      ],
+      "excludeHints": [
+        "цветотерап",
+        "цветение"
+      ],
+      "maxTags": 24
+    },
+    {
+      "id": "ux-usability-testing",
+      "canonicalId": "ux-usability-testing",
+      "title": "Юзабилити-тестирование",
+      "titleEn": "Usability testing",
+      "aliases": [
+        "Usability testing"
+      ],
+      "definition": "Проверка сценариев и прототипов на реальных пользователях, фиксация и приоритизация проблем.",
+      "professionIds": [
+        "it.uxui"
+      ],
+      "tagHints": [
+        "юзабилити",
+        "тестирован",
+        "исследова",
+        "провер",
+        "пользовател"
+      ],
+      "excludeHints": [
+        "цветотерап",
+        "цветение"
+      ],
+      "maxTags": 24
+    },
+    {
+      "id": "ux-information-architecture",
+      "canonicalId": "ux-information-architecture",
+      "title": "Информационная архитектура",
+      "titleEn": "Information architecture",
+      "aliases": [
+        "Information architecture"
+      ],
+      "definition": "Структура контента и навигации, категоризация и находимость информации.",
+      "professionIds": [
+        "it.uxui"
+      ],
+      "tagHints": [
+        "информацион",
+        "навигац",
+        "структур",
+        "архитектур",
+        "карточ",
+        "сценар"
+      ],
+      "excludeHints": [
+        "цветотерап",
+        "цветение"
+      ],
+      "maxTags": 24
+    },
+    {
+      "id": "ux-user-flows",
+      "canonicalId": "ux-user-flows",
+      "title": "Пользовательские сценарии и флоу",
+      "titleEn": "User flows",
+      "aliases": [
+        "User flows"
+      ],
+      "definition": "Моделирование пути пользователя, развилок, ошибок и восстановления.",
+      "professionIds": [
+        "it.uxui"
+      ],
+      "tagHints": [
+        "сценари",
+        "пользовательск",
+        "flow",
+        "cjm",
+        "cjv",
+        "переход",
+        "паттерн"
+      ],
+      "excludeHints": [
+        "цветотерап",
+        "цветение"
+      ],
+      "maxTags": 24
+    },
+    {
+      "id": "ux-wireframes",
+      "canonicalId": "ux-wireframes",
+      "title": "Вайрфреймы и структура экранов",
+      "titleEn": "Wireframes",
+      "aliases": [
+        "Wireframes"
+      ],
+      "definition": "Быстрая структура экранов и взаимодействий без визуальной детализации.",
+      "professionIds": [
+        "it.uxui"
+      ],
+      "tagHints": [
+        "вайрфрейм",
+        "wireframe",
+        "наброс",
+        "схем",
+        "прототип",
+        "структур"
+      ],
+      "excludeHints": [
+        "цветотерап",
+        "цветение"
+      ],
+      "maxTags": 24
+    },
+    {
+      "id": "ux-lowfi-prototype",
+      "canonicalId": "ux-lowfi-prototype",
+      "title": "Низкодетализированные прототипы",
+      "titleEn": "Low-fidelity prototyping",
+      "aliases": [
+        "Low-fidelity prototyping"
+      ],
+      "definition": "Быстрые бумажные и схематичные прототипы для проверки структуры.",
+      "professionIds": [
+        "it.uxui"
+      ],
+      "tagHints": [
+        "вайрфрейм",
+        "прототип",
+        "бумаж",
+        "наброс",
+        "low"
+      ],
+      "excludeHints": [
+        "цветотерап",
+        "цветение"
+      ],
+      "maxTags": 24
+    },
+    {
+      "id": "ux-hifi-prototype",
+      "canonicalId": "ux-hifi-prototype",
+      "title": "Высокодетализированные прототипы",
+      "titleEn": "High-fidelity prototyping",
+      "aliases": [
+        "High-fidelity prototyping"
+      ],
+      "definition": "Детализированные прототипы, приближенные к финальному интерфейсу.",
+      "professionIds": [
+        "it.uxui"
+      ],
+      "tagHints": [
+        "макет",
+        "прототип",
+        "figma",
+        "hifi",
+        "детализ"
+      ],
+      "excludeHints": [
+        "цветотерап",
+        "цветение"
+      ],
+      "maxTags": 24
+    },
+    {
+      "id": "ux-interactive-prototype",
+      "canonicalId": "ux-interactive-prototype",
+      "title": "Интерактивные прототипы",
+      "titleEn": "Interactive prototyping",
+      "aliases": [
+        "Interactive prototyping"
+      ],
+      "definition": "Прототипы с переходами и состояниями для проверки поведения продукта.",
+      "professionIds": [
+        "it.uxui"
+      ],
+      "tagHints": [
+        "интерактивн",
+        "прототип",
+        "переменн",
+        "услов",
+        "анимац"
+      ],
+      "excludeHints": [
+        "цветотерап",
+        "цветение"
+      ],
+      "maxTags": 24
+    },
+    {
+      "id": "ux-experiments",
+      "canonicalId": "ux-experiments",
+      "title": "UX-метрики и эксперименты",
+      "titleEn": "UX metrics and experiments",
+      "aliases": [
+        "UX metrics and experiments"
+      ],
+      "definition": "Выбор метрик, дизайн экспериментов и интерпретация результатов.",
+      "professionIds": [
+        "it.uxui"
+      ],
+      "tagHints": [
+        "метрик",
+        "эксперимент",
+        "a/b",
+        "аналитик",
+        "воронк",
+        "данн"
+      ],
+      "excludeHints": [
+        "цветотерап",
+        "цветение"
+      ],
+      "maxTags": 24
+    },
+    {
+      "id": "ux-product-thinking",
+      "canonicalId": "ux-product-thinking",
+      "title": "Продуктовое мышление",
+      "titleEn": "Product thinking",
+      "aliases": [
+        "Product thinking"
+      ],
+      "definition": "Понимание ценности, аудитории, ограничений и жизненного цикла продукта.",
+      "professionIds": [
+        "it.uxui"
+      ],
+      "tagHints": [
+        "продукт",
+        "ценност",
+        "аудитор",
+        "бизнес",
+        "стратег",
+        "метрик"
+      ],
+      "excludeHints": [
+        "цветотерап",
+        "цветение"
+      ],
+      "maxTags": 24
+    },
+    {
+      "id": "ui-design-systems",
+      "canonicalId": "ui-design-systems",
+      "title": "Дизайн-системы и токены",
+      "titleEn": "Design systems",
+      "aliases": [
+        "Design systems"
+      ],
+      "definition": "Архитектура дизайн-системы, семантические токены и синхронизация с кодом.",
+      "professionIds": [
+        "it.uxui"
+      ],
+      "tagHints": [
+        "дизайн.?систем",
+        "ui.?кит",
+        "компонент",
+        "токен",
+        "библиотек"
+      ],
+      "excludeHints": [
+        "цветотерап",
+        "цветение"
+      ],
+      "maxTags": 24
+    },
+    {
+      "id": "ui-components",
+      "canonicalId": "ui-components",
+      "title": "Компоненты и паттерны",
+      "titleEn": "Components and patterns",
+      "aliases": [
+        "Components and patterns"
+      ],
+      "definition": "Проектирование переиспользуемых компонентов, вариантов и поведенческих паттернов.",
+      "professionIds": [
+        "it.uxui"
+      ],
+      "tagHints": [
+        "компонент",
+        "вариант",
+        "паттерн",
+        "ui.?кит",
+        "библиотек"
+      ],
+      "excludeHints": [
+        "цветотерап",
+        "цветение"
+      ],
+      "maxTags": 24
+    },
+    {
+      "id": "ui-interaction-states",
+      "canonicalId": "ui-interaction-states",
+      "title": "Состояния и микровзаимодействия",
+      "titleEn": "States and microinteractions",
+      "aliases": [
+        "States and microinteractions"
+      ],
+      "definition": "Состояния компонентов, обратная связь и микровзаимодействия.",
+      "professionIds": [
+        "it.uxui"
+      ],
+      "tagHints": [
+        "состояни",
+        "паттерн",
+        "микровзаим",
+        "интеракц",
+        "переход",
+        "взаимодейств",
+        "анимац"
+      ],
+      "excludeHints": [
+        "цветотерап",
+        "цветение"
+      ],
+      "maxTags": 24
+    },
+    {
+      "id": "ui-interactive-prototype",
+      "canonicalId": "ui-interactive-prototype",
+      "title": "Интерактивные прототипы интерфейса",
+      "titleEn": "Interactive UI prototypes",
+      "aliases": [
+        "Interactive prototypes"
+      ],
+      "definition": "Интерактивные прототипы интерфейсов с переходами и состояниями.",
+      "professionIds": [
+        "it.uxui"
+      ],
+      "tagHints": [
+        "интерактивн",
+        "прототип",
+        "переменн",
+        "анимац",
+        "переход"
+      ],
+      "excludeHints": [
+        "цветотерап",
+        "цветение"
+      ],
+      "maxTags": 24
+    },
+    {
+      "id": "ui-figma",
+      "canonicalId": "ui-figma",
+      "title": "Figma: компоненты и автолейаут",
+      "titleEn": "Figma",
+      "aliases": [
+        "Figma"
+      ],
+      "definition": "Работа с Figma: компоненты, варианты, автолейаут и библиотеки.",
+      "professionIds": [
+        "it.uxui"
+      ],
+      "tagHints": [
+        "figma",
+        "автолейаут",
+        "компонент",
+        "макет",
+        "вариатив"
+      ],
+      "excludeHints": [
+        "цветотерап",
+        "цветение"
+      ],
+      "maxTags": 24
+    },
+    {
+      "id": "ui-figjam",
+      "canonicalId": "ui-figjam",
+      "title": "FigJam: воркшопы и картирование",
+      "titleEn": "FigJam",
+      "aliases": [
+        "FigJam"
+      ],
+      "definition": "Совместные воркшопы, картирование и фасилитация в FigJam.",
+      "professionIds": [
+        "it.uxui"
+      ],
+      "tagHints": [
+        "figjam",
+        "воркшоп",
+        "совмест",
+        "фасилитац",
+        "figma",
+        "макет"
+      ],
+      "excludeHints": [
+        "цветотерап",
+        "цветение"
+      ],
+      "maxTags": 24
+    },
+    {
+      "id": "ui-framer",
+      "canonicalId": "ui-framer",
+      "title": "Framer: интерактивные прототипы",
+      "titleEn": "Framer",
+      "aliases": [
+        "Framer"
+      ],
+      "definition": "Создание интерактивных прототипов и микровзаимодействий в Framer.",
+      "professionIds": [
+        "it.uxui"
+      ],
+      "tagHints": [
+        "framer",
+        "прототип",
+        "интерактивн",
+        "анимац",
+        "переход"
+      ],
+      "excludeHints": [
+        "цветотерап",
+        "цветение"
+      ],
+      "maxTags": 24
     }
   ]
 }

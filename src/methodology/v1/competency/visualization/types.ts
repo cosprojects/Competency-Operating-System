@@ -7,6 +7,8 @@ export interface VisualizationNodeConfig {
   order: number;
   prerequisites: string[];
   shortDescription: string;
+  branch?: string;
+  section?: string;
 }
 
 export interface VisualizationConfig {
@@ -29,6 +31,8 @@ export interface VisualizationPageNode {
   components: string[];
   tags: string[];
   evidenceState: EvidenceState;
+  branch?: string;
+  section?: string;
   x: number;
   y: number;
   width: number;

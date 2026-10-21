@@ -41,6 +41,8 @@ export function buildVisualizationPageData(input: {
         components: block.components.map((component) => component.title),
         tags: block.tags.map((tag) => tag.title),
         evidenceState: block.evidenceState,
+        ...(config?.branch ? { branch: config.branch } : {}),
+        ...(config?.section ? { section: config.section } : {}),
         x: node.x,
         y: node.y,
         width: node.width,
@@ -291,7 +293,7 @@ export function renderCanvasPage(data: VisualizationPageData): string {
       document.getElementById('detail-full').textContent = node.fullDescription;
       document.getElementById('detail-components').replaceChildren(...node.components.map((item) => { const li = document.createElement('li'); li.textContent = item; return li; }));
       document.getElementById('detail-tags').replaceChildren(...node.tags.slice(0, 12).map((item) => { const li = document.createElement('li'); li.textContent = item; return li; }));
-      document.getElementById('detail-meta').textContent = 'Порядок ' + node.order + ' · evidence: ' + node.evidenceState + ' · ring ' + node.ring;
+      document.getElementById('detail-meta').textContent = [node.branch, node.section, 'Порядок ' + node.order, 'evidence: ' + node.evidenceState, 'ring ' + node.ring].filter(Boolean).join(' · ');
       detail.hidden = false;
     }
     cards.forEach((card) => {

@@ -3,6 +3,7 @@ import { hashId, normalizeTitle, slugify } from "./sources/common.ts";
 
 export interface CompetencySeed {
   id: string;
+  canonicalId?: string;
   title: string;
   titleEn?: string;
   aliases?: string[];
@@ -55,6 +56,7 @@ export function materializeSeed(
     aliases: seed.aliases ?? [],
     definition: seed.definition,
     scopeHint: "universal",
+    ...(seed.canonicalId ? { canonicalId: seed.canonicalId } : {}),
     tagIds,
     professionIds: seed.professionIds,
     rationale: `Top-down seed «${seed.id}» от ${generatedOn}; теги подобраны по подсказкам, не LLM.`,

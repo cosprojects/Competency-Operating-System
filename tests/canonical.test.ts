@@ -4,6 +4,7 @@ import type { CompetencyBlock } from "../src/methodology/v1/competency/types.ts"
 import type { CanonicalMap } from "../src/methodology/v1/competency/canonical/types.ts";
 import { validateCanonicalMap } from "../src/methodology/v1/competency/canonical/validate.ts";
 import { renderCanonicalCoverage } from "../src/methodology/v1/competency/canonical/report.ts";
+import { buildCanonicalVisualization } from "../src/methodology/v1/competency/visualization/canonical.ts";
 
 function block(id: string, title: string): CompetencyBlock {
   return {
@@ -135,6 +136,17 @@ describe("canonical map", () => {
       requireUxUiBranches: false,
     });
     assert.equal(result.errors.filter((error) => error.includes("верхнего блока")).length, 0);
+  });
+
+  it("строит визуализацию со всеми каноническими компетенциями и цепочками", () => {
+    const built = buildCanonicalVisualization(map(), [block("b1", "Исследование"), block("b2", "Цвет")]);
+    assert.equal(built.blocks.length, 3);
+    assert.equal(built.config.nodes.length, 3);
+    assert.equal(built.statusCounts.covered, 1);
+    assert.equal(built.statusCounts.partial, 1);
+    assert.equal(built.statusCounts.gap, 1);
+    const personas = built.config.nodes.find((node) => node.competencyId === "personas");
+    assert.deepEqual(personas?.prerequisites, ["research-methods"]);
   });
 
   it("рисует coverage-отчёт по секциям", () => {

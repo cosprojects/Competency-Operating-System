@@ -153,15 +153,15 @@
       "produces": "data/competency/candidates-it.json"
     },
     {
-      "id": "competency-blocks",
+      "id": "competency-reconcile",
       "order": 11,
-      "title": "Блоки компетенций",
-      "description": "LLM предлагает компоненты и теги; скрипт валидирует.",
+      "title": "Сведение кандидатов",
+      "description": "LLM объединяет кандидатов одного предмета; скрипт проверяет, что теги не потеряны.",
       "executor": "agent",
       "command": "npm",
       "args": [
         "run",
-        "competency:build",
+        "competency:reconcile",
         "--",
         "--domain",
         "it"
@@ -172,11 +172,35 @@
       "requiresEnv": [
         "DEEPSEEK_API_KEY"
       ],
+      "produces": "data/competency/candidates-reconciled-it.json"
+    },
+    {
+      "id": "competency-blocks",
+      "order": 12,
+      "title": "Блоки компетенций",
+      "description": "LLM предлагает компоненты и теги; скрипт валидирует.",
+      "executor": "agent",
+      "command": "npm",
+      "args": [
+        "run",
+        "competency:build",
+        "--",
+        "--domain",
+        "it",
+        "--candidates-file",
+        "data/competency/candidates-reconciled-it.json"
+      ],
+      "requires": [
+        "data/competency/candidates-reconciled-it.json"
+      ],
+      "requiresEnv": [
+        "DEEPSEEK_API_KEY"
+      ],
       "produces": "data/competency/blocks-it.json"
     },
     {
       "id": "competency-review",
-      "order": 12,
+      "order": 13,
       "title": "Проверка блоков",
       "description": "Человек принимает блоки в каталог. Агент этого не делает.",
       "executor": "human",
@@ -188,7 +212,7 @@
     },
     {
       "id": "catalog-validate",
-      "order": 13,
+      "order": 14,
       "title": "Валидация каталога",
       "description": "Проверяет принятый каталог компетенций.",
       "executor": "agent",
@@ -206,7 +230,7 @@
     },
     {
       "id": "materials-collect",
-      "order": 14,
+      "order": 15,
       "title": "Материалы компетенций",
       "description": "Собирает статьи, курсы и видео из открытых источников; платные — только метаданные.",
       "executor": "agent",
@@ -225,7 +249,7 @@
     },
     {
       "id": "materials-classify",
-      "order": 15,
+      "order": 16,
       "title": "Сопоставление материалов",
       "description": "LLM сопоставляет материалы с компетенциями; скрипт валидирует.",
       "executor": "agent",
@@ -247,7 +271,7 @@
     },
     {
       "id": "materials-review",
-      "order": 16,
+      "order": 17,
       "title": "Проверка материалов",
       "description": "Человек принимает материалы и связи.",
       "executor": "human",
@@ -259,7 +283,7 @@
     },
     {
       "id": "materials-validate",
-      "order": 17,
+      "order": 18,
       "title": "Валидация материалов",
       "description": "Проверяет покрытие, доступ и ссылки.",
       "executor": "agent",

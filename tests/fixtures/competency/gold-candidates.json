@@ -1,0 +1,11 @@
+{
+  "version": "1.0.0",
+  "description": "Протокол независимой разметки для Pass A. Не доказывает полноту каталога; разметка фиксируется до прогона.",
+  "pairs": [
+    { "tagId": "tag_73d29717fc59", "tagTitle": "Цвет", "expectedCompetency": "Теория цвета и колористика" },
+    { "tagId": "tag_01ee07d0315d", "tagTitle": "Основы композиции", "expectedCompetency": "Теория цвета и колористика" },
+    { "tagId": "tag_0376f61aa177", "tagTitle": "Визуальное единство: композиция и стили", "expectedCompetency": "Теория цвета и колористика" },
+    { "tagId": "tag_b174c3a0ccea", "tagTitle": "Работаю с композицией, типографикой и визуальной иерархией", "expectedCompetency": "Теория цвета и колористика" },
+    { "tagId": "tag_73a84c5ef0d0", "tagTitle": "translate requirements into visual design", "expectedCompetency": "Теория цвета и колористика" }
+  ]
+}

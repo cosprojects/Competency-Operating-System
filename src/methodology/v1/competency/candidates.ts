@@ -10,7 +10,7 @@ import { candidateResponseSchema } from "./llm/schemas.ts";
 import { buildCandidatePrompt } from "./llm/prompts.ts";
 import { runStructuredStep } from "./llm/run.ts";
 import type { LlmPolicy } from "./llm/policy.ts";
-import { LlmBudget } from "./llm/policy.ts";
+import { BudgetExceededError, LlmBudget } from "./llm/policy.ts";
 import type { LlmTransport } from "./llm/transport.ts";
 
 export interface CandidateBuildInput {
@@ -138,15 +138,24 @@ export async function buildCandidates(input: CandidateBuildInput): Promise<Candi
       tags: batch,
       existingCatalogTitles: existingTitles,
     });
-    const step = await runStructuredStep({
-      transport: input.transport,
-      prompt,
-      schema: candidateResponseSchema,
-      policy: input.policy,
-      budget: input.budget,
-      ...(input.cache ? { cache: input.cache } : {}),
-      ...(input.allowRepair === false ? { allowRepair: false } : {}),
-    });
+    let step;
+    try {
+      step = await runStructuredStep({
+        transport: input.transport,
+        prompt,
+        schema: candidateResponseSchema,
+        policy: input.policy,
+        budget: input.budget,
+        ...(input.cache ? { cache: input.cache } : {}),
+        ...(input.allowRepair === false ? { allowRepair: false } : {}),
+      });
+    } catch (error) {
+      if (error instanceof BudgetExceededError) {
+        issues.push(error.message);
+        break;
+      }
+      throw error;
+    }
     runs.push(step.meta);
     if (!step.data) {
       issues.push(...step.issues.map((issue) => `batch ${existingTitles.length}: ${issue}`));

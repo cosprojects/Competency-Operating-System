@@ -13,7 +13,7 @@ import { blockResponseSchema } from "./llm/schemas.ts";
 import { buildBlockPrompt } from "./llm/prompts.ts";
 import { runStructuredStep } from "./llm/run.ts";
 import type { LlmPolicy } from "./llm/policy.ts";
-import type { LlmBudget } from "./llm/policy.ts";
+import { BudgetExceededError, type LlmBudget } from "./llm/policy.ts";
 import type { LlmTransport } from "./llm/transport.ts";
 
 export interface ValidatedBlockItem {
@@ -181,15 +181,24 @@ export async function buildBlocks(input: BlockBuildInput): Promise<BlockBuildRes
       tags: candidateTags,
       existingCatalogTitles: existingTitles,
     });
-    const step = await runStructuredStep({
-      transport: input.transport,
-      prompt,
-      schema: blockResponseSchema,
-      policy: input.policy,
-      budget: input.budget,
-      ...(input.cache ? { cache: input.cache } : {}),
-      ...(input.allowRepair === false ? { allowRepair: false } : {}),
-    });
+    let step;
+    try {
+      step = await runStructuredStep({
+        transport: input.transport,
+        prompt,
+        schema: blockResponseSchema,
+        policy: input.policy,
+        budget: input.budget,
+        ...(input.cache ? { cache: input.cache } : {}),
+        ...(input.allowRepair === false ? { allowRepair: false } : {}),
+      });
+    } catch (error) {
+      if (error instanceof BudgetExceededError) {
+        issues.push(error.message);
+        break;
+      }
+      throw error;
+    }
     runs.push(step.meta);
     if (!step.data) {
       issues.push(...step.issues.map((issue) => `${candidate.title}: ${issue}`));

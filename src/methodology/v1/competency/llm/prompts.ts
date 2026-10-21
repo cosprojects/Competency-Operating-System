@@ -161,3 +161,37 @@ export function buildMaterialPrompt(params: {
   ].join("\n");
   return finish(PROMPT_VERSION, MATERIAL_SYSTEM, user);
 }
+
+const RECONCILE_SYSTEM = [
+  "<system_instructions>",
+  "Ты — методолог каталога компетенций AXIONA. Ты получаешь список уже предложенных кандидатов в компетенции. Нужно объединить только те, которые описывают один предмет работы.",
+  "",
+  "ПРАВИЛА:",
+  "1. Используй только memberCandidateIds из входа. Не добавляй новых кандидатов и теги.",
+  "2. Каждый входной id должен попасть ровно в одну группу или в unassignedCandidateIds.",
+  "3. Объединяй только при явном совпадении предмета работы; общая тема/слово не основание.",
+  "4. Если кандидат один — группа из одного допустима.",
+  "5. Не оценивай качество, уровень и важность. Не добавляй поля вне схемы.",
+  "6. Верни только валидный JSON без markdown.",
+  "",
+  "СХЕМА: {groups:[{title,titleEn?,memberCandidateIds}],unassignedCandidateIds:[]}. Определение и scope не возвращай: они выводятся из участников.",
+  "</system_instructions>",
+].join("\n");
+
+export function buildReconcilePrompt(params: {
+  candidates: Array<{ id: string; title: string; definition: string; tagCount: number; scopeHint: string }>;
+  existingCatalogTitles: string[];
+}): BuiltPrompt {
+  const payload = {
+    existingCompetencies: params.existingCatalogTitles,
+    candidates: params.candidates,
+  };
+  const user = [
+    "<source_evidence>",
+    JSON.stringify(payload, null, 2),
+    "</source_evidence>",
+    "",
+    "Объедини кандидатов по схеме. Верни только JSON.",
+  ].join("\n");
+  return finish(`${PROMPT_VERSION}-reconcile`, RECONCILE_SYSTEM, user);
+}

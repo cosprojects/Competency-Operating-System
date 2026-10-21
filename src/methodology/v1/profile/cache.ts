@@ -22,6 +22,7 @@ export async function cachedJson<T>(
     }
   }
   const value = await loader();
+  if (value === undefined) return value;
   await mkdir(cache.dir, { recursive: true });
   await writeFile(file, `${JSON.stringify(value, null, 2)}\n`, "utf8");
   return value;

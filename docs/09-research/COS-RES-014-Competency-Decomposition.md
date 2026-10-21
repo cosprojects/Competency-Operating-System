@@ -1,7 +1,7 @@
 ---
 id: COS-RES-014
 title: Сборка каталога компетенций, компонентов и тегов
-version: 1.0.0
+version: 1.1.0
 status: Draft
 owner: Research Team
 last_updated: 2026-10-21
@@ -80,6 +80,9 @@ LLM предлагает группы тегов; валидатор прове�
 `npm run competency:build -- --domain it [--slug ...] [--fixture file] [--limit N]`.
 LLM предлагает 2–8 компонентов, 1–12 тегов в каждом; тег: `title`, `kind`, `definition`, `evidenceTagIds`, `modelProposal`. Валидатор: id из входа, без инструментов, без URL/выдуманных цитат, покрытие ≥50%, без дублей, `modelProposal=false` требует evidence. Выход: `data/competency/blocks-it.json` + review; статус всегда `needs_review`.
 
+### Stage 4b. Сведение кандидатов
+`npm run competency:reconcile -- --domain it [--fixture file]`. LLM получает только id/названия/определения кандидатов и объединяет те, что описывают один предмет работы. Валидатор проверяет: каждый id ровно один раз, нет новых id, названия не дублируют каталог, теги объединённых кандидатов не теряются. Ответ разбит на чанки по 40 кандидатов, чтобы не упираться в лимит вывода. Это предложение, не приёмка.
+
 ### Stage 5. Приёмка
 `npm run competency:review -- --domain it` собирает review-пакет. Человек принимает блок в `src/methodology/v1/competency/catalog/it.json`; `npm run catalog:validate -- --domain it` проверяет каталог (id, slug, ссылки, accepted-статусы).
 
@@ -116,7 +119,8 @@ LLM предлагает 2–8 компонентов, 1–12 тегов в ка
 
 ```
 sources:discover, professions:collect, tags:collect,
-competency:candidates, competency:build, competency:review, catalog:validate, competency:compose,
+competency:candidates, competency:reconcile, competency:build, competency:review, competency:evaluate,
+catalog:validate, competency:compose,
 materials:sources, materials:collect, materials:classify, materials:review,
 materials:validate, materials:refresh
 ```
@@ -126,16 +130,18 @@ materials:validate, materials:refresh
 ## 7. Текущий срез (2026-10-21)
 
 - Реестр: 10 источников; активны ESCO, O*NET, Практикум, Wikipedia, Internet Archive; Stepik degraded; hh.ru blocked (403 DDoS-Guard, обход не делаем).
-- 14 IT-профессий собраны; UX/UI: **469 тегов** (knowledge 197, skill 31, tool 241).
-- Фикстурный прогон Pass A/B: блок **«Теория цвета и колористика»** — 4 компонента, 10 тегов; статус `needs_review`; новых тегов 10; issues 0.
-- Материалы: живой сбор Wikipedia дал 3 статьи по компетенции; Stepik ответил 502; classification проверена на фикстуре (3 связи), `materials:validate` — 0 ошибок.
-- Живой LLM-прогон не выполнялся: нужен `DEEPSEEK_API_KEY`; проверка выполнена на `--fixture`.
+- 14 IT-профессий собраны; полный `tags:collect` дал **1512 тегов** (knowledge 376, skill 235, tool 901).
+- Pass A по всем IT-тегам: **114 кандидатов**, 322 неназначенных тега, 115 замечаний, 49 вызовов, ~$0.12; reconcile: **114 → 94** кандидата, 3 вызова, issues 0.
+- Pass B (первые 20 кандидатов): **20 блоков**, 26 новых тегов, issues 0, ~$0.015. Это черновики `needs_review`.
+- Материалы: 20 блоков → **53 статьи Wikipedia** (сбор ~4 мин); классификация: 24 связи, 14/20 компетенций с материалом, issues 29 (в основном корректные отказы от нерелевантных статей); `materials:validate` — 0 ошибок. Stepik 502, Internet Archive по этим запросам не дал видео; YouTube без ключа.
+- Gold-set протокол: `competency:evaluate`, фикстура `gold-candidates.json`; на ней precision/recall/exact = 1. На живом Pass A — **0/5**: кандидаты дробят «Теорию цвета» на визуальные подтемы, reconcile этого не исправляет. Это открытый вопрос качества, а не приёмка.
+- Тесты: **92/92**; typecheck чистый.
 - Каталог `catalog/it.json` пока пуст: приёмка блоков — следующий human-шаг.
 
 ## 8. Приёмка
 
 - Каждый тег имеет sourceRef; 0 tool-as-knowledge.
-- Pass A/B: gold set 100+ пар «тег → компетенция», precision ≥0.90, recall ≥0.70, exact verdict (COS-RES-011); разметка фиксируется до прогона.
+- Pass A: gold set 100+ пар «тег → компетенция», precision ≥0.90, recall ≥0.70, exact verdict (COS-RES-011); разметка фиксируется до прогона. Команда: `npm run competency:evaluate -- --domain it --gold <file> --candidates <file>`. Фикстурный протокол: `tests/fixtures/competency/gold-candidates.json`.
 - Блоки: 10–20 блоков по рубрике; Color Theory — эталон; все accepted подписаны человеком.
 - Материалы: у каждой accepted-компетенции ≥1 принятый материал; 0 paywall-обхода и выдуманных snippet; платные помечены и имеют `price.observedAt`; покрытие free/paid видно в отчёте.
 - Система: детерминированный повтор, resume, бюджет LLM, 0 graph/DB writes.
@@ -154,3 +160,4 @@ materials:validate, materials:refresh
 | Версия | Дата | Что изменилось |
 |---|---|---|
 | 1.0.0 | 2026-10-21 | Метод: реестр источников, профессии, теги, Pass A/B, приёмка, профиль, материалы; реализован каркас команд и тестов |
+| 1.1.0 | 2026-10-21 | Полный сбор IT-тегов (1512), Pass A (114→94 после reconcile), Pass B (20 блоков), материалы (53 статьи, 24 связи), `competency:evaluate` и gold-set протокол; зафиксирован разрыв качества Pass A на живой разметке |

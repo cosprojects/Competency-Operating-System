@@ -11,6 +11,9 @@ import { emptyCatalog, validateCatalog } from "../src/methodology/v1/competency/
 import type { TagRecord } from "../src/methodology/v1/competency/types.ts";
 import { cleanText, normalizeTitle } from "../src/methodology/v1/competency/sources/common.ts";
 import { searchOnetOccupations, collectOnetTags } from "../src/methodology/v1/competency/sources/onet.ts";
+import { evaluateCandidateGold } from "../src/methodology/v1/competency/evaluate.ts";
+import { validateReconcileResponse } from "../src/methodology/v1/competency/reconcile.ts";
+import type { ReconcileResponse } from "../src/methodology/v1/competency/llm/schemas.ts";
 
 const root = process.cwd();
 const tagsFixture = JSON.parse(
@@ -176,6 +179,74 @@ describe("компетенции: теги, кандидаты и блоки", (
     });
     const errors = validateCatalog(catalog);
     assert.ok(errors.some((error) => error.includes("только accepted")));
+  });
+
+  it("считает precision/recall/exact на gold set", async () => {
+    const gold = JSON.parse(
+      readFileSync(`${root}/tests/fixtures/competency/gold-candidates.json`, "utf8"),
+    ) as import("../src/methodology/v1/competency/evaluate.ts").CandidateGoldFile;
+    const candidates = await buildCandidates({
+      domain: "it",
+      tags: tagsFixture.tags,
+      transport: new FixtureTransport([JSON.stringify(candidateResponse[0])]),
+      policy: policy(),
+      budget: new LlmBudget(policy()),
+      existingCatalogTitles: [],
+    });
+    const result = evaluateCandidateGold(gold, candidates.candidates);
+    assert.equal(result.metrics.truePositives, 5);
+    assert.equal(result.metrics.falsePositives, 0);
+    assert.equal(result.metrics.falseNegatives, 0);
+    assert.equal(result.metrics.precision, 1);
+    assert.equal(result.metrics.recall, 1);
+    assert.equal(result.metrics.exactRate, 1);
+  });
+
+  it("объединяет кандидатов одного предмета и не теряет теги", () => {
+    const tags = tagsFixture.tags;
+    const base = {
+      definition: "Достаточно длинное определение кандидата для проверки.",
+      rationale: "основание",
+      scopeHint: "profession" as const,
+      status: "candidate" as const,
+      llmMeta: { promptVersion: "v", model: "m", inputHash: "h", costUsd: 0 },
+      issues: [],
+      aliases: [],
+      professionIds: ["it.uxui"],
+    };
+    const candidates = [
+      {
+        ...base,
+        id: "candidate_a",
+        slug: "a",
+        title: "Визуальные основы",
+        tagIds: [tags[0]!.id, tags[1]!.id],
+      },
+      {
+        ...base,
+        id: "candidate_b",
+        slug: "b",
+        title: "Композиция",
+        tagIds: [tags[2]!.id, tags[3]!.id],
+      },
+    ];
+    const response: ReconcileResponse = {
+      groups: [
+        {
+          title: "Визуальная композиция",
+          memberCandidateIds: ["candidate_a", "candidate_b"],
+        },
+      ],
+      unassignedCandidateIds: [],
+    };
+    const result = validateReconcileResponse(response, {
+      candidates,
+      existingCatalogTitles: [],
+    });
+    assert.equal(result.candidates.length, 1);
+    assert.equal(result.candidates[0]?.tagIds.length, 4);
+    assert.equal(result.unassignedCandidateIds.length, 0);
+    assert.deepEqual(result.issues, []);
   });
 
   it("парсит O*NET-профессии и теги из CSV-фикстур", async () => {

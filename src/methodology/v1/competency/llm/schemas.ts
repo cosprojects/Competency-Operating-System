@@ -7,7 +7,12 @@ export const candidateItemSchema = z.object({
   tagIds: z.array(z.string().min(1)).min(2).max(30),
   definition: z.string().min(10).max(1200),
   rationale: z.string().min(5).max(800),
-  scopeHint: z.enum(["universal", "profession"]).default("profession"),
+  // Модель иногда отвечает фразой вместо enum: свободный текст сводим к profession,
+  // universal принимаем только при точном значении.
+  scopeHint: z.preprocess(
+    (value) => (value === "universal" ? "universal" : "profession"),
+    z.enum(["universal", "profession"]),
+  ),
 });
 
 export const candidateResponseSchema = z.object({
@@ -36,7 +41,10 @@ export const blockResponseSchema = z.object({
   titleEn: z.string().min(2).max(200).optional(),
   aliases: z.array(z.string().min(1).max(200)).max(8).default([]),
   definition: z.string().min(20).max(1500),
-  scope: z.enum(["universal", "profession"]).default("profession"),
+  scope: z.preprocess(
+    (value) => (value === "universal" ? "universal" : "profession"),
+    z.enum(["universal", "profession"]),
+  ),
   components: z.array(blockComponentSchema).min(2).max(8),
   unresolved: z.array(z.string().max(800)).max(20).default([]),
 });
@@ -54,7 +62,21 @@ export const materialLinkSchema = z.object({
 
 export const materialResponseSchema = z.object({
   links: z.array(materialLinkSchema).max(20).default([]),
-  rejected: z.array(z.string().min(1).max(600)).max(20).default([]),
+  // Модель иногда возвращает объекты; принимаем и нормализуем в строки в валидаторе.
+  rejected: z.array(z.unknown()).max(20).default([]),
 });
 
 export type MaterialResponse = z.infer<typeof materialResponseSchema>;
+
+export const reconcileGroupSchema = z.object({
+  title: z.string().min(2).max(200),
+  titleEn: z.string().min(2).max(200).optional(),
+  memberCandidateIds: z.array(z.string().min(1)).min(1).max(30),
+});
+
+export const reconcileResponseSchema = z.object({
+  groups: z.array(reconcileGroupSchema).min(1).max(60),
+  unassignedCandidateIds: z.array(z.string().min(1)).default([]),
+});
+
+export type ReconcileResponse = z.infer<typeof reconcileResponseSchema>;

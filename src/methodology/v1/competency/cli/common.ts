@@ -30,6 +30,16 @@ export function policyFromArgv(argv: string[]): LlmPolicy {
     const value = Number(budget);
     if (Number.isFinite(value) && value > 0) policy.maxCostUsd = value;
   }
+  const maxTokens = flagValue(argv, "--max-tokens");
+  if (maxTokens) {
+    const value = Number(maxTokens);
+    if (Number.isFinite(value) && value > 0) policy.maxOutputTokens = Math.floor(value);
+  }
+  const maxCalls = flagValue(argv, "--max-calls");
+  if (maxCalls) {
+    const value = Number(maxCalls);
+    if (Number.isFinite(value) && value > 0) policy.maxCallsPerRun = Math.floor(value);
+  }
   return policy;
 }
 

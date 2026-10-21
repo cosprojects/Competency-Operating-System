@@ -117,7 +117,13 @@ npm run materials:agent:queue -- --domain it --profession uxui \
 
 ## 7. Текущий smoke-результат
 
-Worker-очередь: 2 элемента, 2 completed, 2 discovered, 0 failed.
+Worker-очередь:
+- motion: 3 элемента, 14 материалов, 3 связи;
+- product: 4 элемента, 16 материалов, 8 связей;
+- graphic: 3 элемента, 13 материалов, 7 связей;
+- failed: 0.
+
+Review-артефакты: `data/materials-agent/<domain>-<profession>-review.md`, команда `npm run materials:agent:review -- --domain it --profession motion`.
 
 
 На 2 accepted-компетенциях, sources `wikipedia,habr,medium`:

@@ -29,3 +29,8 @@ npm run canonical:validate -- --domain it --profession uxui --source review --in
 ## Модель сфера → профессия → компетенции
 
 `npm run model:sync -- --domain it --profession uxui --write` собирает `model/spheres.json`, `model/professions.json`, `model/competencies.json` и `model/profession-competencies/uxui.json`. Компетенции хранятся один раз в едином массиве; профессия ссылается на них с tier/order. Источники — `sources/spheres/it.json` и `sources/professions/it.uxui.json`.
+
+
+## Профессиональные view
+
+`model/professions/views/{product,motion,graphic}.json` задают разделы и приоритеты для разных профессий, переиспользуя единый массив компетенций. `model:views --write` генерирует `model/profession-competencies/*.json` и source-файлы профессий.

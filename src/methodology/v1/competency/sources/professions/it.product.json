@@ -1,0 +1,26 @@
+{
+  "professionId": "it.product",
+  "sphereId": "it",
+  "occupationSources": [
+    {
+      "sourceId": "esco",
+      "query": "product designer"
+    },
+    {
+      "sourceId": "onet",
+      "query": "27-1021.00, Commercial and Industrial Designers"
+    }
+  ],
+  "materialSourceIds": [
+    "wikipedia",
+    "internet-archive",
+    "stepik",
+    "youtube",
+    "habr",
+    "medium",
+    "learn-anything"
+  ],
+  "blockedSourceIds": [
+    "hh-api"
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "viewVersion": "1.0.0",
+  "professionId": "it.product",
+  "sphereId": "it",
+  "title": "Продуктовый дизайнер",
+  "titleEn": "Product designer",
+  "sections": [
+    {
+      "id": "product-foundations",
+      "title": "Продуктовые основы",
+      "definition": "Мышление продуктом, пользователем и ценностью.",
+      "competencies": [
+        { "competencyId": "ux-design-thinking", "tier": "foundation", "order": 1 },
+        { "competencyId": "ux-product-thinking", "tier": "foundation", "order": 2 },
+        { "competencyId": "ux-ethics-privacy", "tier": "optional", "order": 3 }
+      ]
+    },
+    {
+      "id": "product-research",
+      "title": "Исследования и пользователь",
+      "definition": "Понимание аудитории, поведения и барьеров.",
+      "competencies": [
+        { "competencyId": "ux-user-research", "tier": "core", "order": 4 },
+        { "competencyId": "ux-personas", "tier": "core", "order": 5 },
+        { "competencyId": "ux-interviews", "tier": "core", "order": 6 },
+        { "competencyId": "ux-analytics", "tier": "core", "order": 7 },
+        { "competencyId": "ux-usability-testing", "tier": "core", "order": 8 }
+      ]
+    },
+    {
+      "id": "product-systems",
+      "title": "Сценарии и продуктовая логика",
+      "definition": "Структура продукта, сценарии и проверка решений.",
+      "competencies": [
+        { "competencyId": "ux-information-architecture", "tier": "core", "order": 9 },
+        { "competencyId": "ux-user-flows", "tier": "core", "order": 10 },
+        { "competencyId": "ux-wireframes", "tier": "core", "order": 11 },
+        { "competencyId": "ux-requirements", "tier": "core", "order": 12 },
+        { "competencyId": "ux-lowfi-prototype", "tier": "core", "order": 13 },
+        { "competencyId": "ux-hifi-prototype", "tier": "core", "order": 14 },
+        { "competencyId": "ux-interactive-prototype", "tier": "core", "order": 15 }
+      ]
+    },
+    {
+      "id": "product-metrics",
+      "title": "Метрики и развитие продукта",
+      "definition": "Связь дизайна с метриками, экспериментами и ростом продукта.",
+      "competencies": [
+        { "competencyId": "ux-metrics", "tier": "core", "order": 16 },
+        { "competencyId": "ux-experiments", "tier": "core", "order": 17 },
+        { "competencyId": "ui-data-visualization", "tier": "optional", "order": 18 }
+      ]
+    },
+    {
+      "id": "product-ui",
+      "title": "Интерфейс и системы",
+      "definition": "Визуальный и системный слой продукта.",
+      "competencies": [
+        { "competencyId": "ui-color", "tier": "core", "order": 19 },
+        { "competencyId": "ui-typography", "tier": "core", "order": 20 },
+        { "competencyId": "ui-layout", "tier": "core", "order": 21 },
+        { "competencyId": "ui-design-systems", "tier": "core", "order": 22 },
+        { "competencyId": "ui-components", "tier": "core", "order": 23 },
+        { "competencyId": "ui-accessibility", "tier": "core", "order": 24 },
+        { "competencyId": "ui-visual-communication", "tier": "optional", "order": 25 }
+      ]
+    }
+  ]
+}

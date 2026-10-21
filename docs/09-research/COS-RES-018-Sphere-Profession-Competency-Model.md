@@ -1,7 +1,7 @@
 ---
 id: COS-RES-018
 title: Модель сфера → профессия → компетенции и систематизация источников
-version: 1.0.0
+version: 1.1.0
 status: Draft
 owner: Research Team
 last_updated: 2026-10-21
@@ -47,6 +47,10 @@ src/methodology/v1/competency/
     competencies.json                # ЕДИНЫЙ массив компетенций
     profession-competencies/
       uxui.json                      # ссылки: competencyId + tier + order + prerequisites
+    professions/views/
+      product.json                   # профессиональная view: разделы + ссылки + tier/order
+      motion.json
+      graphic.json
 ```
 
 ### Сфера
@@ -105,26 +109,56 @@ src/methodology/v1/competency/
 
 Это разделяет «где искать вообще» (сфера) и «как искать эту профессию» (профессия). Реестр остаётся единственным источником определений и лицензий.
 
-## 4. Команды
+## 4. Профессиональные view и переиспользование
+
+Для нескольких профессий одна и та же глобальная компетенция получает **разные tier/order**:
+
+`model/professions/views/motion.json`:
+
+```json
+{
+  "professionId": "it.motion",
+  "sections": [
+    {
+      "id": "motion-craft",
+      "title": "Кинетика и интерактив",
+      "competencies": [
+        { "competencyId": "ui-motion", "tier": "foundation", "order": 5 },
+        { "competencyId": "ui-interaction-states", "tier": "core", "order": 6 }
+      ]
+    }
+  ]
+}
+```
+
+`model:views` материализует это в `model/profession-competencies/<slug>.json` с `sectionId/sectionTitle`, не создавая копий компетенций. Так `ui-motion` может быть `foundation` у motion, `core` у UX/UI и `optional` у product.
+
+Текущие view:
+- `it.product` — 25 ссылок, уклон в метрики, продукт и исследования;
+- `it.motion` — 16 ссылок, уклон в кинетику, тайминг и инструменты;
+- `it.graphic` — 15 ссылок, уклон в визуальную коммуникацию и бренд-инструменты.
+
+## 5. Команды
 
 ```bash
 npm run model:sync -- --domain it --profession uxui --write
-npm run model:validate -- --domain it --profession uxui
+npm run model:views -- --domain it --write
+npm run model:validate -- --domain it --profession uxui --all
 ```
 
 `model:sync` собирает нормализованные файлы из canonical map, priority, registry и targets. `model:validate` проверяет ссылочную целостность: сфера → профессия, профессия → компетенция, порядок, prerequisites, source-файлы.
 
-## 5. Текущий срез
+## 6. Текущий срез
 
 - сфера: `it`;
-- профессия: `it.uxui`;
+- профессий: **4** — `it.uxui`, `it.product`, `it.motion`, `it.graphic`;
 - компетенций в едином массиве: **34**;
-- profession-competencies: **34**;
-- источников сферы: все из registry, с ролями и статусами;
-- у профессии: ESCO/O*NET/Практикум + material sources;
-- `model:validate`: 0 ошибок.
+- profession-competencies: UX/UI — 34, product — 25, motion — 16, graphic — 15;
+- переиспользуемых компетенций: **34** (каждая входит хотя бы в одну другую профессию);
+- источники: `sources/spheres/it.json` + отдельный файл на каждую профессию (`sources/professions/it.*.json`);
+- `model:validate --all`: 0 ошибок.
 
-## 6. Следующие профессии
+## 7. Следующие профессии
 
 Для motion / product / graphic:
 
@@ -134,14 +168,15 @@ npm run model:validate -- --domain it --profession uxui
 4. расширить `spheres/it.json` списком профессий;
 5. `model:sync`/`model:validate` — без дублирования компетенций.
 
-## 7. Ограничения
+## 8. Ограничения
 
 - Пока нормализованная модель генерируется из UX/UI canonical map; ручное редактирование `competencies.json` не является источником истины.
 - `profession-competencies` использует `priorityHint` canonical map. Для разных профессий это нужно заменить на profession-specific tier/order.
 - Источники сферы/профессии пока не подключены к сборщикам напрямую; следующий шаг — читать эти файлы в `professions:collect` / `tags:collect`.
 
-## 8. История изменений
+## 9. История изменений
 
 | Версия | Дата | Что изменилось |
 |---|---|---|
 | 1.0.0 | 2026-10-21 | Введены сфера/профессия/единый массив компетенций и source-файлы; `model:sync`, `model:validate`, нормализованный UX/UI |
+| 1.1.0 | 2026-10-21 | Добавлены profession views для product/motion/graphic, `model:views`, переиспользование 34 компетенций и разные tier/order |

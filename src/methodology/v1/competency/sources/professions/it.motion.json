@@ -1,0 +1,26 @@
+{
+  "professionId": "it.motion",
+  "sphereId": "it",
+  "occupationSources": [
+    {
+      "sourceId": "esco",
+      "query": "motion designer"
+    },
+    {
+      "sourceId": "onet",
+      "query": "27-1014.00, Multimedia Artists and Animators"
+    }
+  ],
+  "materialSourceIds": [
+    "wikipedia",
+    "internet-archive",
+    "stepik",
+    "youtube",
+    "habr",
+    "medium",
+    "learn-anything"
+  ],
+  "blockedSourceIds": [
+    "hh-api"
+  ]
+}

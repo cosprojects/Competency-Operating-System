@@ -1,0 +1,26 @@
+{
+  "professionId": "it.graphic",
+  "sphereId": "it",
+  "occupationSources": [
+    {
+      "sourceId": "esco",
+      "query": "graphic designer"
+    },
+    {
+      "sourceId": "onet",
+      "query": "27-1024.00, Graphic Designers"
+    }
+  ],
+  "materialSourceIds": [
+    "wikipedia",
+    "internet-archive",
+    "stepik",
+    "youtube",
+    "habr",
+    "medium",
+    "learn-anything"
+  ],
+  "blockedSourceIds": [
+    "hh-api"
+  ]
+}

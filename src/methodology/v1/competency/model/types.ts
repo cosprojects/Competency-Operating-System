@@ -11,6 +11,7 @@ export interface ProfessionModelRecord {
   title: string;
   titleEn?: string;
   canonicalMapFile: string;
+  viewFile?: string;
   catalogFile: string;
   priorityFile: string;
   sourcesFile: string;
@@ -37,6 +38,8 @@ export interface ProfessionCompetency {
   tier: "foundation" | "core" | "optional";
   order: number;
   prerequisites: string[];
+  sectionId?: string;
+  sectionTitle?: string;
 }
 
 export interface ProfessionCompetencyFile {

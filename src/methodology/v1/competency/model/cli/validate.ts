@@ -28,6 +28,28 @@ async function main(): Promise<void> {
   console.log(`model:validate ${professionId}: competencies ${competencies.competencies.length}; profession links ${professionCompetencies.competencies.length}; errors ${errors.length}`);
   for (const error of errors) console.error(`  ${error}`);
   if (errors.length > 0) process.exit(1);
+
+  if (argv.includes("--all")) {
+    const allErrors: string[] = [];
+    const seen = new Map<string, string[]>();
+    for (const profession of professions.professions) {
+      const slug = profession.id.slice(profession.id.indexOf(".") + 1);
+      const file = await readJson<ProfessionCompetencyFile>(path.join(base, `model/profession-competencies/${slug}.json`)).catch(() => null);
+      if (!file) {
+        allErrors.push(`profession-competencies: нет файла для ${profession.id}`);
+        continue;
+      }
+      const result = validateModel({ spheres, professions, competencies, professionCompetencies: file });
+      allErrors.push(...result);
+      seen.set(profession.id, file.competencies.map((item) => item.competencyId));
+    }
+    const shared = new Map<string, number>();
+    for (const ids of seen.values()) for (const id of ids) shared.set(id, (shared.get(id) ?? 0) + 1);
+    const reused = [...shared.entries()].filter(([, count]) => count > 1).length;
+    console.log(`model:validate --all: professions ${professions.professions.length}; reused competencies ${reused}; errors ${allErrors.length}`);
+    for (const error of allErrors) console.error(`  ${error}`);
+    if (allErrors.length > 0) process.exit(1);
+  }
 }
 
 try {

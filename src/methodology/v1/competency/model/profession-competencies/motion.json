@@ -1,0 +1,134 @@
+{
+  "professionId": "it.motion",
+  "sphereId": "it",
+  "competencies": [
+    {
+      "competencyId": "ux-design-thinking",
+      "tier": "foundation",
+      "order": 1,
+      "prerequisites": [],
+      "sectionId": "motion-foundations",
+      "sectionTitle": "Визуальные основы движения"
+    },
+    {
+      "competencyId": "ui-color",
+      "tier": "foundation",
+      "order": 2,
+      "prerequisites": [],
+      "sectionId": "motion-foundations",
+      "sectionTitle": "Визуальные основы движения"
+    },
+    {
+      "competencyId": "ui-typography",
+      "tier": "foundation",
+      "order": 3,
+      "prerequisites": [],
+      "sectionId": "motion-foundations",
+      "sectionTitle": "Визуальные основы движения"
+    },
+    {
+      "competencyId": "ui-layout",
+      "tier": "foundation",
+      "order": 4,
+      "prerequisites": [],
+      "sectionId": "motion-foundations",
+      "sectionTitle": "Визуальные основы движения"
+    },
+    {
+      "competencyId": "ui-motion",
+      "tier": "foundation",
+      "order": 5,
+      "prerequisites": [],
+      "sectionId": "motion-craft",
+      "sectionTitle": "Кинетика и интерактив"
+    },
+    {
+      "competencyId": "ui-interaction-states",
+      "tier": "core",
+      "order": 6,
+      "prerequisites": [],
+      "sectionId": "motion-craft",
+      "sectionTitle": "Кинетика и интерактив"
+    },
+    {
+      "competencyId": "ui-visual-communication",
+      "tier": "core",
+      "order": 7,
+      "prerequisites": [],
+      "sectionId": "motion-craft",
+      "sectionTitle": "Кинетика и интерактив"
+    },
+    {
+      "competencyId": "ux-interactive-prototype",
+      "tier": "core",
+      "order": 8,
+      "prerequisites": [],
+      "sectionId": "motion-craft",
+      "sectionTitle": "Кинетика и интерактив"
+    },
+    {
+      "competencyId": "ui-figma",
+      "tier": "core",
+      "order": 9,
+      "prerequisites": [],
+      "sectionId": "motion-tools",
+      "sectionTitle": "Инструменты моушн-дизайна"
+    },
+    {
+      "competencyId": "ui-framer",
+      "tier": "foundation",
+      "order": 10,
+      "prerequisites": [],
+      "sectionId": "motion-tools",
+      "sectionTitle": "Инструменты моушн-дизайна"
+    },
+    {
+      "competencyId": "ui-handoff",
+      "tier": "core",
+      "order": 11,
+      "prerequisites": [],
+      "sectionId": "motion-tools",
+      "sectionTitle": "Инструменты моушн-дизайна"
+    },
+    {
+      "competencyId": "ui-figjam",
+      "tier": "optional",
+      "order": 12,
+      "prerequisites": [],
+      "sectionId": "motion-tools",
+      "sectionTitle": "Инструменты моушн-дизайна"
+    },
+    {
+      "competencyId": "ui-design-systems",
+      "tier": "optional",
+      "order": 13,
+      "prerequisites": [],
+      "sectionId": "motion-systems",
+      "sectionTitle": "Системы и доступность"
+    },
+    {
+      "competencyId": "ui-accessibility",
+      "tier": "core",
+      "order": 14,
+      "prerequisites": [],
+      "sectionId": "motion-systems",
+      "sectionTitle": "Системы и доступность"
+    },
+    {
+      "competencyId": "ui-responsive",
+      "tier": "optional",
+      "order": 15,
+      "prerequisites": [],
+      "sectionId": "motion-systems",
+      "sectionTitle": "Системы и доступность"
+    },
+    {
+      "competencyId": "ui-data-visualization",
+      "tier": "optional",
+      "order": 16,
+      "prerequisites": [],
+      "sectionId": "motion-systems",
+      "sectionTitle": "Системы и доступность"
+    }
+  ]
+}

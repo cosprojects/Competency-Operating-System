@@ -1,0 +1,126 @@
+{
+  "professionId": "it.graphic",
+  "sphereId": "it",
+  "competencies": [
+    {
+      "competencyId": "ux-design-thinking",
+      "tier": "foundation",
+      "order": 1,
+      "prerequisites": [],
+      "sectionId": "graphic-foundations",
+      "sectionTitle": "Визуальные основы"
+    },
+    {
+      "competencyId": "ui-color",
+      "tier": "foundation",
+      "order": 2,
+      "prerequisites": [],
+      "sectionId": "graphic-foundations",
+      "sectionTitle": "Визуальные основы"
+    },
+    {
+      "competencyId": "ui-typography",
+      "tier": "foundation",
+      "order": 3,
+      "prerequisites": [],
+      "sectionId": "graphic-foundations",
+      "sectionTitle": "Визуальные основы"
+    },
+    {
+      "competencyId": "ui-layout",
+      "tier": "foundation",
+      "order": 4,
+      "prerequisites": [],
+      "sectionId": "graphic-foundations",
+      "sectionTitle": "Визуальные основы"
+    },
+    {
+      "competencyId": "ui-visual-elements",
+      "tier": "foundation",
+      "order": 5,
+      "prerequisites": [],
+      "sectionId": "graphic-foundations",
+      "sectionTitle": "Визуальные основы"
+    },
+    {
+      "competencyId": "ui-visual-communication",
+      "tier": "foundation",
+      "order": 6,
+      "prerequisites": [],
+      "sectionId": "graphic-brand",
+      "sectionTitle": "Коммуникация и бренд"
+    },
+    {
+      "competencyId": "ux-product-thinking",
+      "tier": "optional",
+      "order": 7,
+      "prerequisites": [],
+      "sectionId": "graphic-brand",
+      "sectionTitle": "Коммуникация и бренд"
+    },
+    {
+      "competencyId": "ui-data-visualization",
+      "tier": "optional",
+      "order": 8,
+      "prerequisites": [],
+      "sectionId": "graphic-brand",
+      "sectionTitle": "Коммуникация и бренд"
+    },
+    {
+      "competencyId": "ui-figma",
+      "tier": "core",
+      "order": 9,
+      "prerequisites": [],
+      "sectionId": "graphic-tools",
+      "sectionTitle": "Инструменты и передача"
+    },
+    {
+      "competencyId": "ui-figjam",
+      "tier": "optional",
+      "order": 10,
+      "prerequisites": [],
+      "sectionId": "graphic-tools",
+      "sectionTitle": "Инструменты и передача"
+    },
+    {
+      "competencyId": "ui-handoff",
+      "tier": "core",
+      "order": 11,
+      "prerequisites": [],
+      "sectionId": "graphic-tools",
+      "sectionTitle": "Инструменты и передача"
+    },
+    {
+      "competencyId": "ui-web-technologies",
+      "tier": "optional",
+      "order": 12,
+      "prerequisites": [],
+      "sectionId": "graphic-tools",
+      "sectionTitle": "Инструменты и передача"
+    },
+    {
+      "competencyId": "ui-design-systems",
+      "tier": "optional",
+      "order": 13,
+      "prerequisites": [],
+      "sectionId": "graphic-systems",
+      "sectionTitle": "Системы и доступность"
+    },
+    {
+      "competencyId": "ui-components",
+      "tier": "optional",
+      "order": 14,
+      "prerequisites": [],
+      "sectionId": "graphic-systems",
+      "sectionTitle": "Системы и доступность"
+    },
+    {
+      "competencyId": "ui-accessibility",
+      "tier": "optional",
+      "order": 15,
+      "prerequisites": [],
+      "sectionId": "graphic-systems",
+      "sectionTitle": "Системы и доступность"
+    }
+  ]
+}

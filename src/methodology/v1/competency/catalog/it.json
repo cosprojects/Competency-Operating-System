@@ -4,6 +4,167 @@
   "updatedOn": "2026-10-21",
   "blocks": [
     {
+      "id": "comp_5ed63dc3a73a",
+      "slug": "3d-svet-i-render",
+      "title": "3D, свет и рендер",
+      "titleEn": "3D, Lighting and Rendering",
+      "aliases": [
+        "3D-графика в моушн-дизайне",
+        "Трёхмерная визуализация и рендер"
+      ],
+      "definition": "Трёхмерная форма, материалы, свет и рендер в моушн-продакшене.",
+      "scope": "universal",
+      "canonicalIds": [
+        "motion-3d-rendering"
+      ],
+      "professionIds": [
+        "it.motion"
+      ],
+      "components": [
+        {
+          "id": "3d-svet-i-render.trehmernaya-forma-i-modelirovanie",
+          "slug": "trehmernaya-forma-i-modelirovanie",
+          "title": "Трёхмерная форма и моделирование",
+          "definition": "Создание и компоновка трёхмерных объектов как основы 3D-сцены.",
+          "order": 1,
+          "tagIds": [
+            "tag_a1061b8896f8"
+          ]
+        },
+        {
+          "id": "3d-svet-i-render.materialy-i-sheyding",
+          "slug": "materialy-i-sheyding",
+          "title": "Материалы и шейдинг",
+          "definition": "Настройка внешнего вида поверхностей 3D-объектов через материалы и шейдеры.",
+          "order": 2,
+          "tagIds": [
+            "tag_317208fbddbb"
+          ]
+        },
+        {
+          "id": "3d-svet-i-render.svet-i-kompozitsiya-stseny",
+          "slug": "svet-i-kompozitsiya-stseny",
+          "title": "Свет и композиция сцены",
+          "definition": "Постановка освещения и организация пространства 3D-сцены.",
+          "order": 3,
+          "tagIds": [
+            "tag_90294e662ca5"
+          ]
+        },
+        {
+          "id": "3d-svet-i-render.rendering-i-vyvod-izobrazheniya",
+          "slug": "rendering-i-vyvod-izobrazheniya",
+          "title": "Рендеринг и вывод изображения",
+          "definition": "Настройка рендера и подготовка финального изображения из 3D-сцены.",
+          "order": 4,
+          "tagIds": [
+            "tag_a0843eb4f6bd"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_a1061b8896f8",
+          "slug": "3d-modelirovanie",
+          "title": "3D-моделирование",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Создание и компоновка трёхмерных объектов.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_5ed63dc3a73a",
+              "componentId": "3d-svet-i-render.trehmernaya-forma-i-modelirovanie",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_317208fbddbb",
+          "slug": "materialy-i-sheyding",
+          "title": "Материалы и шейдинг",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Настройка материалов и шейдеров для 3D-сцены.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_5ed63dc3a73a",
+              "componentId": "3d-svet-i-render.materialy-i-sheyding",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_90294e662ca5",
+          "slug": "svet-i-kompozitsiya",
+          "title": "Свет и композиция",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Постановка света и композиция 3D-сцены.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_5ed63dc3a73a",
+              "componentId": "3d-svet-i-render.svet-i-kompozitsiya-stseny",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_a0843eb4f6bd",
+          "slug": "rendering",
+          "title": "Рендеринг",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Настройка рендера и подготовка финального изображения.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_5ed63dc3a73a",
+              "componentId": "3d-svet-i-render.rendering-i-vyvod-izobrazheniya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_4a4efb48c663",
+        "costUsd": 0
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
       "id": "comp_f394a15b1499",
       "slug": "adaptivnyy-dizayn-interfeysov",
       "title": "Адаптивный дизайн интерфейсов",
@@ -515,6 +676,171 @@
           "cacheHitTokens": 128,
           "cacheMissTokens": 539,
           "outputTokens": 527
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
+      "id": "comp_287b573c505e",
+      "slug": "brend-aydentika",
+      "title": "Бренд-айдентика",
+      "aliases": [
+        "Визуальная идентичность бренда",
+        "Айдентика"
+      ],
+      "definition": "Создание визуальной идентичности: знак, палитра, типографика и правила бренда.",
+      "scope": "universal",
+      "canonicalIds": [
+        "graphic-brand-identity"
+      ],
+      "professionIds": [
+        "it.graphic"
+      ],
+      "components": [
+        {
+          "id": "brend-aydentika.smyslovaya-osnova-brenda",
+          "slug": "smyslovaya-osnova-brenda",
+          "title": "Смысловая основа бренда",
+          "definition": "Формирование смысловой и визуальной платформы, задающей принципы идентичности.",
+          "order": 1,
+          "tagIds": [
+            "tag_818f8a205eaf"
+          ]
+        },
+        {
+          "id": "brend-aydentika.sistema-vizualnoy-identichnosti",
+          "slug": "sistema-vizualnoy-identichnosti",
+          "title": "Система визуальной идентичности",
+          "definition": "Совокупность визуальных элементов, образующих целостную айдентику бренда.",
+          "order": 2,
+          "tagIds": [
+            "tag_004d5639753c"
+          ]
+        },
+        {
+          "id": "brend-aydentika.bazovye-vizualnye-konstanty",
+          "slug": "bazovye-vizualnye-konstanty",
+          "title": "Базовые визуальные константы",
+          "definition": "Разработка ключевых визуальных элементов: знака, палитры и базовых констант.",
+          "order": 3,
+          "tagIds": [
+            "tag_0a7b06a47ef5"
+          ]
+        },
+        {
+          "id": "brend-aydentika.pravila-ispolzovaniya-aydentiki",
+          "slug": "pravila-ispolzovaniya-aydentiki",
+          "title": "Правила использования айдентики",
+          "definition": "Регламентация применения визуальной идентичности в гайдлайне бренда.",
+          "order": 4,
+          "tagIds": [
+            "tag_bbcbdae70a5e"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_818f8a205eaf",
+          "slug": "brend-platforma",
+          "title": "Бренд-платформа",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Смысловая и визуальная платформа бренда.",
+          "professionIds": [
+            "it.graphic"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_287b573c505e",
+              "componentId": "brend-aydentika.smyslovaya-osnova-brenda",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_004d5639753c",
+          "slug": "aydentika",
+          "title": "Айдентика",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Система визуальной идентичности бренда.",
+          "professionIds": [
+            "it.graphic"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_287b573c505e",
+              "componentId": "brend-aydentika.sistema-vizualnoy-identichnosti",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_0a7b06a47ef5",
+          "slug": "znak-i-palitra",
+          "title": "Знак и палитра",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Разработка знака, палитры и базовых констант.",
+          "professionIds": [
+            "it.graphic"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_287b573c505e",
+              "componentId": "brend-aydentika.bazovye-vizualnye-konstanty",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_bbcbdae70a5e",
+          "slug": "pravila-brenda",
+          "title": "Правила бренда",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Гайдлайн и правила использования айдентики.",
+          "professionIds": [
+            "it.graphic"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_287b573c505e",
+              "componentId": "brend-aydentika.pravila-ispolzovaniya-aydentiki",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_2ed2bdb2464e",
+        "costUsd": 0.00095847,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1003,
+          "outputTokens": 617
         }
       },
       "issues": [],
@@ -6216,6 +6542,171 @@
       "methodologyVersion": "0.1.0"
     },
     {
+      "id": "comp_91d03f4fb672",
+      "slug": "pechat-i-proizvodstvo",
+      "title": "Печать и производство",
+      "aliases": [
+        "Полиграфия и производство",
+        "Допечатная подготовка и печать"
+      ],
+      "definition": "Допечатная подготовка, цветовые профили, материалы и производственные ограничения.",
+      "scope": "universal",
+      "canonicalIds": [
+        "graphic-print-production"
+      ],
+      "professionIds": [
+        "it.graphic"
+      ],
+      "components": [
+        {
+          "id": "pechat-i-proizvodstvo.dopechatnaya-podgotovka",
+          "slug": "dopechatnaya-podgotovka",
+          "title": "Допечатная подготовка",
+          "definition": "Процессы и требования подготовки макетов к передаче в типографию.",
+          "order": 1,
+          "tagIds": [
+            "tag_9a3ddbc5866b"
+          ]
+        },
+        {
+          "id": "pechat-i-proizvodstvo.upravlenie-tsvetom-v-pechati",
+          "slug": "upravlenie-tsvetom-v-pechati",
+          "title": "Управление цветом в печати",
+          "definition": "Цветовые пространства и профили, применяемые при печати.",
+          "order": 2,
+          "tagIds": [
+            "tag_34ef14f402af"
+          ]
+        },
+        {
+          "id": "pechat-i-proizvodstvo.materialy-i-otdelka",
+          "slug": "materialy-i-otdelka",
+          "title": "Материалы и отделка",
+          "definition": "Выбор материалов печати и вариантов отделки.",
+          "order": 3,
+          "tagIds": [
+            "tag_cb59004aaa44"
+          ]
+        },
+        {
+          "id": "pechat-i-proizvodstvo.proizvodstvennye-ogranicheniya",
+          "slug": "proizvodstvennye-ogranicheniya",
+          "title": "Производственные ограничения",
+          "definition": "Технологические ограничения материалов и печатных процессов.",
+          "order": 4,
+          "tagIds": [
+            "tag_a921977422d1"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_9a3ddbc5866b",
+          "slug": "dopechatnaya-podgotovka",
+          "title": "Допечатная подготовка",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Подготовка макетов к печати и требования типографии.",
+          "professionIds": [
+            "it.graphic"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_91d03f4fb672",
+              "componentId": "pechat-i-proizvodstvo.dopechatnaya-podgotovka",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_34ef14f402af",
+          "slug": "tsvetovye-profili",
+          "title": "Цветовые профили",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Цветовые пространства и профили для печати.",
+          "professionIds": [
+            "it.graphic"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_91d03f4fb672",
+              "componentId": "pechat-i-proizvodstvo.upravlenie-tsvetom-v-pechati",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_cb59004aaa44",
+          "slug": "materialy-pechati",
+          "title": "Материалы печати",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Выбор бумаги, красок и отделки.",
+          "professionIds": [
+            "it.graphic"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_91d03f4fb672",
+              "componentId": "pechat-i-proizvodstvo.materialy-i-otdelka",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_a921977422d1",
+          "slug": "proizvodstvennye-ogranicheniya",
+          "title": "Производственные ограничения",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Технологические ограничения материалов и печати.",
+          "professionIds": [
+            "it.graphic"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_91d03f4fb672",
+              "componentId": "pechat-i-proizvodstvo.proizvodstvennye-ogranicheniya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_b94ab36ec775",
+        "costUsd": 0.00084878,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 996,
+          "outputTokens": 519
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
       "id": "comp_e4f2ab2892c2",
       "slug": "polzovatelskie-stsenarii-i-flou",
       "title": "Пользовательские сценарии и флоу",
@@ -6618,6 +7109,170 @@
       "methodologyVersion": "0.1.0"
     },
     {
+      "id": "comp_275b0c8fc9b6",
+      "slug": "produktovaya-strategiya",
+      "title": "Продуктовая стратегия",
+      "aliases": [
+        "Стратегия продукта"
+      ],
+      "definition": "Выбор целевой ценности, аудитории и стратегии развития продукта.",
+      "scope": "universal",
+      "canonicalIds": [
+        "product-strategy"
+      ],
+      "professionIds": [
+        "it.product"
+      ],
+      "components": [
+        {
+          "id": "produktovaya-strategiya.formulirovka-produktovoy-strategii",
+          "slug": "formulirovka-produktovoy-strategii",
+          "title": "Формулировка продуктовой стратегии",
+          "definition": "Определение стратегии продукта и его целевой ценности как основы продуктовых решений.",
+          "order": 1,
+          "tagIds": [
+            "tag_d3532641ba6e"
+          ]
+        },
+        {
+          "id": "produktovaya-strategiya.tselevaya-auditoriya-i-tsennostnoe-predlozhenie",
+          "slug": "tselevaya-auditoriya-i-tsennostnoe-predlozhenie",
+          "title": "Целевая аудитория и ценностное предложение",
+          "definition": "Выбор аудитории продукта и формулирование ценности, которую продукт ей предлагает.",
+          "order": 2,
+          "tagIds": [
+            "tag_fc9fcffada02"
+          ]
+        },
+        {
+          "id": "produktovaya-strategiya.produktovye-stavki-i-prioritizatsiya",
+          "slug": "produktovye-stavki-i-prioritizatsiya",
+          "title": "Продуктовые ставки и приоритизация",
+          "definition": "Выбор и приоритизация продуктовых ставок и гипотез в рамках стратегии.",
+          "order": 3,
+          "tagIds": [
+            "tag_cbf214f148b4"
+          ]
+        },
+        {
+          "id": "produktovaya-strategiya.planirovanie-razvitiya-produkta",
+          "slug": "planirovanie-razvitiya-produkta",
+          "title": "Планирование развития продукта",
+          "definition": "Планирование этапов развития продукта и их последовательности.",
+          "order": 4,
+          "tagIds": [
+            "tag_77ced55193ba"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_d3532641ba6e",
+          "slug": "produktovaya-strategiya",
+          "title": "Продуктовая стратегия",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Формулировка стратегии продукта и целевой ценности.",
+          "professionIds": [
+            "it.product"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_275b0c8fc9b6",
+              "componentId": "produktovaya-strategiya.formulirovka-produktovoy-strategii",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_fc9fcffada02",
+          "slug": "tselevaya-auditoriya-i-tsennost",
+          "title": "Целевая аудитория и ценность",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Выбор аудитории и ценностного предложения.",
+          "professionIds": [
+            "it.product"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_275b0c8fc9b6",
+              "componentId": "produktovaya-strategiya.tselevaya-auditoriya-i-tsennostnoe-predlozhenie",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_cbf214f148b4",
+          "slug": "produktovye-stavki",
+          "title": "Продуктовые ставки",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Приоритизация продуктовых ставок и гипотез.",
+          "professionIds": [
+            "it.product"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_275b0c8fc9b6",
+              "componentId": "produktovaya-strategiya.produktovye-stavki-i-prioritizatsiya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_77ced55193ba",
+          "slug": "produktovyy-roadmap",
+          "title": "Продуктовый роадмап",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Планирование развития продукта по этапам.",
+          "professionIds": [
+            "it.product"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_275b0c8fc9b6",
+              "componentId": "produktovaya-strategiya.planirovanie-razvitiya-produkta",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_9378caf2325e",
+        "costUsd": 0.00093871,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 995,
+          "outputTokens": 601
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
       "id": "comp_ebd843b35ccf",
       "slug": "produktovoe-myshlenie",
       "title": "Продуктовое мышление",
@@ -6966,6 +7621,327 @@
           "cacheHitTokens": 512,
           "cacheMissTokens": 1067,
           "outputTokens": 1054
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
+      "id": "comp_97cd897072ec",
+      "slug": "redaktsionnyy-dizayn-i-verstka",
+      "title": "Редакционный дизайн и вёрстка",
+      "aliases": [
+        "Вёрстка изданий",
+        "Редакционный дизайн"
+      ],
+      "definition": "Проектирование и вёрстка многостраничных и цифровых изданий: построение сеток, типографической иерархии и композиции разворотов и серий.",
+      "scope": "universal",
+      "canonicalIds": [
+        "graphic-editorial-layout"
+      ],
+      "professionIds": [
+        "it.graphic"
+      ],
+      "components": [
+        {
+          "id": "redaktsionnyy-dizayn-i-verstka.setki-i-struktura-izdaniya",
+          "slug": "setki-i-struktura-izdaniya",
+          "title": "Сетки и структура издания",
+          "definition": "Построение модульных сеток и структурных основ для многостраничных и цифровых публикаций.",
+          "order": 1,
+          "tagIds": [
+            "tag_b3666864fd50",
+            "tag_b4257cbbad30"
+          ]
+        },
+        {
+          "id": "redaktsionnyy-dizayn-i-verstka.tipografika-izdaniya",
+          "slug": "tipografika-izdaniya",
+          "title": "Типографика издания",
+          "definition": "Организация текста и типографических систем в многостраничных и цифровых публикациях.",
+          "order": 2,
+          "tagIds": [
+            "tag_85c2b01ba82f"
+          ]
+        },
+        {
+          "id": "redaktsionnyy-dizayn-i-verstka.verstka-publikatsiy",
+          "slug": "verstka-publikatsiy",
+          "title": "Вёрстка публикаций",
+          "definition": "Практика вёрстки журналов, книг и цифровых публикаций.",
+          "order": 3,
+          "tagIds": [
+            "tag_edf3e2803afc"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_b3666864fd50",
+          "slug": "redaktsionnaya-setka",
+          "title": "Редакционная сетка",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Модульные сетки для многостраничных изданий.",
+          "professionIds": [
+            "it.graphic"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_97cd897072ec",
+              "componentId": "redaktsionnyy-dizayn-i-verstka.setki-i-struktura-izdaniya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_b4257cbbad30",
+          "slug": "mnogostranichnyy-dizayn",
+          "title": "Многостраничный дизайн",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Проектирование серий и разворотов.",
+          "professionIds": [
+            "it.graphic"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_97cd897072ec",
+              "componentId": "redaktsionnyy-dizayn-i-verstka.setki-i-struktura-izdaniya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_85c2b01ba82f",
+          "slug": "tipograficheskaya-ierarhiya",
+          "title": "Типографическая иерархия",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Иерархия текста и типографические системы.",
+          "professionIds": [
+            "it.graphic"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_97cd897072ec",
+              "componentId": "redaktsionnyy-dizayn-i-verstka.tipografika-izdaniya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_edf3e2803afc",
+          "slug": "verstka-izdaniy",
+          "title": "Вёрстка изданий",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Вёрстка журналов, книг и цифровых публикаций.",
+          "professionIds": [
+            "it.graphic"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_97cd897072ec",
+              "componentId": "redaktsionnyy-dizayn-i-verstka.verstka-publikatsiy",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_fcf7286a08b8",
+        "costUsd": 0.0009399000000000001,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1032,
+          "outputTokens": 593
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
+      "id": "comp_90f6aad56a1e",
+      "slug": "rost-voronki-i-uderzhanie",
+      "title": "Рост, воронки и удержание",
+      "aliases": [
+        "Продуктовый рост",
+        "Growth и удержание"
+      ],
+      "definition": "Работа с воронкой, активацией, удержанием и продуктовыми циклами роста.",
+      "scope": "universal",
+      "canonicalIds": [
+        "product-growth"
+      ],
+      "professionIds": [
+        "it.product"
+      ],
+      "components": [
+        {
+          "id": "rost-voronki-i-uderzhanie.voronka-i-aktivatsiya",
+          "slug": "voronka-i-aktivatsiya",
+          "title": "Воронка и активация",
+          "definition": "Анализ пути пользователя от первого контакта до целевого действия и работа с активацией.",
+          "order": 1,
+          "tagIds": [
+            "tag_7fd695c3dc17"
+          ]
+        },
+        {
+          "id": "rost-voronki-i-uderzhanie.uderzhanie-polzovateley",
+          "slug": "uderzhanie-polzovateley",
+          "title": "Удержание пользователей",
+          "definition": "Работа с retention и возвращаемостью пользователей.",
+          "order": 2,
+          "tagIds": [
+            "tag_381e3a309f6f"
+          ]
+        },
+        {
+          "id": "rost-voronki-i-uderzhanie.produktovye-tsikly-rosta",
+          "slug": "produktovye-tsikly-rosta",
+          "title": "Продуктовые циклы роста",
+          "definition": "Циклы роста и продуктовые механики удержания.",
+          "order": 3,
+          "tagIds": [
+            "tag_e1ba56cd6391"
+          ]
+        },
+        {
+          "id": "rost-voronki-i-uderzhanie.ekonomika-produkta",
+          "slug": "ekonomika-produkta",
+          "title": "Экономика продукта",
+          "definition": "Связь дизайнерских решений с юнит-экономикой и ценностью продукта.",
+          "order": 4,
+          "tagIds": [
+            "tag_33bd0e21d155"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_7fd695c3dc17",
+          "slug": "voronka-i-aktivatsiya",
+          "title": "Воронка и активация",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Анализ воронки и активации пользователей.",
+          "professionIds": [
+            "it.product"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_90f6aad56a1e",
+              "componentId": "rost-voronki-i-uderzhanie.voronka-i-aktivatsiya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_381e3a309f6f",
+          "slug": "uderzhanie",
+          "title": "Удержание",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Работа с retention и возвращаемостью пользователей.",
+          "professionIds": [
+            "it.product"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_90f6aad56a1e",
+              "componentId": "rost-voronki-i-uderzhanie.uderzhanie-polzovateley",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_e1ba56cd6391",
+          "slug": "produktovye-tsikly-rosta",
+          "title": "Продуктовые циклы роста",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Циклы роста и продуктовые механики удержания.",
+          "professionIds": [
+            "it.product"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_90f6aad56a1e",
+              "componentId": "rost-voronki-i-uderzhanie.produktovye-tsikly-rosta",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_33bd0e21d155",
+          "slug": "yunit-ekonomika",
+          "title": "Юнит-экономика",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Связь дизайна с юнит-экономикой и ценностью продукта.",
+          "professionIds": [
+            "it.product"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_90f6aad56a1e",
+              "componentId": "rost-voronki-i-uderzhanie.ekonomika-produkta",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_812606496222",
+        "costUsd": 0.00088166,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1020,
+          "outputTokens": 543
         }
       },
       "issues": [],
@@ -7448,6 +8424,299 @@
       "methodologyVersion": "0.1.0"
     },
     {
+      "id": "comp_425bd4dc7c7f",
+      "slug": "storibording-i-rezhissura-dvizheniya",
+      "title": "Сторибординг и режиссура движения",
+      "aliases": [
+        "Раскадровка и режиссура motion-сцены",
+        "Motion storyboarding and direction"
+      ],
+      "definition": "Раскадровка, драматургия движения и режиссура динамической сцены.",
+      "scope": "universal",
+      "canonicalIds": [
+        "motion-storyboarding"
+      ],
+      "professionIds": [
+        "it.motion"
+      ],
+      "components": [
+        {
+          "id": "storibording-i-rezhissura-dvizheniya.raskadrovka-dinamicheskoy-stseny",
+          "slug": "raskadrovka-dinamicheskoy-stseny",
+          "title": "Раскадровка динамической сцены",
+          "definition": "Подготовка визуальной последовательности кадров для motion-сцены до продакшена.",
+          "order": 1,
+          "tagIds": [
+            "tag_d6f699d7e3e6",
+            "tag_91edfefe96b8"
+          ]
+        },
+        {
+          "id": "storibording-i-rezhissura-dvizheniya.dramaturgiya-dvizheniya",
+          "slug": "dramaturgiya-dvizheniya",
+          "title": "Драматургия движения",
+          "definition": "Построение сюжета и эмоциональной арки в моушн-ролике.",
+          "order": 2,
+          "tagIds": [
+            "tag_fd47fdaa944c"
+          ]
+        },
+        {
+          "id": "storibording-i-rezhissura-dvizheniya.rezhissura-dinamicheskoy-stseny",
+          "slug": "rezhissura-dinamicheskoy-stseny",
+          "title": "Режиссура динамической сцены",
+          "definition": "Постановка движения и управление вниманием зрителя в сцене.",
+          "order": 3,
+          "tagIds": [
+            "tag_680de0b00fe3"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_d6f699d7e3e6",
+          "slug": "storibord",
+          "title": "Сториборд",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Раскадровка динамической сцены до продакшена.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_425bd4dc7c7f",
+              "componentId": "storibording-i-rezhissura-dvizheniya.raskadrovka-dinamicheskoy-stseny",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_91edfefe96b8",
+          "slug": "raskadrovka-dvizheniya",
+          "title": "Раскадровка движения",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Последовательность кадров и переходов для motion-сцены.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_425bd4dc7c7f",
+              "componentId": "storibording-i-rezhissura-dvizheniya.raskadrovka-dinamicheskoy-stseny",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_fd47fdaa944c",
+          "slug": "dramaturgiya-dvizheniya",
+          "title": "Драматургия движения",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Сюжет и эмоциональная арка в моушн-ролике.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_425bd4dc7c7f",
+              "componentId": "storibording-i-rezhissura-dvizheniya.dramaturgiya-dvizheniya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_680de0b00fe3",
+          "slug": "rezhissura-stseny",
+          "title": "Режиссура сцены",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Постановка движения, акцентов и фокуса внимания.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_425bd4dc7c7f",
+              "componentId": "storibording-i-rezhissura-dvizheniya.rezhissura-dinamicheskoy-stseny",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_5357e7499704",
+        "costUsd": 0
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
+      "id": "comp_92e9921f59b8",
+      "slug": "tayming-i-krivye-uskoreniya",
+      "title": "Тайминг и кривые ускорения",
+      "aliases": [
+        "Тайминг анимации",
+        "Кривые ускорения в анимации"
+      ],
+      "definition": "Проектирование движения во времени: тайминг, кривые ускорения, ритм и ощущение веса.",
+      "scope": "universal",
+      "canonicalIds": [
+        "motion-timing-easing"
+      ],
+      "professionIds": [
+        "it.motion"
+      ],
+      "components": [
+        {
+          "id": "tayming-i-krivye-uskoreniya.tayming-i-ritm-animatsii",
+          "slug": "tayming-i-ritm-animatsii",
+          "title": "Тайминг и ритм анимации",
+          "definition": "Расчёт длительности, пауз и ритма анимационных переходов для управления восприятием движения.",
+          "order": 1,
+          "tagIds": [
+            "tag_294513cf02d5",
+            "tag_e28a8277535e"
+          ]
+        },
+        {
+          "id": "tayming-i-krivye-uskoreniya.krivye-uskoreniya-i-fizika-dvizheniya",
+          "slug": "krivye-uskoreniya-i-fizika-dvizheniya",
+          "title": "Кривые ускорения и физика движения",
+          "definition": "Настройка easing-кривых и моделирование веса, инерции и физики в анимации.",
+          "order": 2,
+          "tagIds": [
+            "tag_8d27766a3766",
+            "tag_06697b8af0c2"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_294513cf02d5",
+          "slug": "tayming-animatsii",
+          "title": "Тайминг анимации",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Расчёт длительности и ритма анимационных переходов.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_92e9921f59b8",
+              "componentId": "tayming-i-krivye-uskoreniya.tayming-i-ritm-animatsii",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_e28a8277535e",
+          "slug": "klyuchevye-kadry",
+          "title": "Ключевые кадры",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Расстановка ключевых кадров и тайминга сцены.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_92e9921f59b8",
+              "componentId": "tayming-i-krivye-uskoreniya.tayming-i-ritm-animatsii",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_8d27766a3766",
+          "slug": "krivye-uskoreniya",
+          "title": "Кривые ускорения",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Настройка easing-кривых для естественного движения.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_92e9921f59b8",
+              "componentId": "tayming-i-krivye-uskoreniya.krivye-uskoreniya-i-fizika-dvizheniya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_06697b8af0c2",
+          "slug": "ves-i-inertsiya-dvizheniya",
+          "title": "Вес и инерция движения",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Ощущение массы, инерции и физики в анимации.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_92e9921f59b8",
+              "componentId": "tayming-i-krivye-uskoreniya.krivye-uskoreniya-i-fizika-dvizheniya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_a00d43a6f490",
+        "costUsd": 0
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
       "id": "comp_c8e03682adf7",
       "slug": "teoriya-tsveta-i-koloristika",
       "title": "Теория цвета и колористика",
@@ -7796,6 +9065,162 @@
           "cacheHitTokens": 512,
           "cacheMissTokens": 791,
           "outputTokens": 1193
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
+      "id": "comp_1ebd55d6b563",
+      "slug": "eksperimenty-i-proverka-gipotez",
+      "title": "Эксперименты и проверка гипотез",
+      "aliases": [
+        "Продуктовые эксперименты",
+        "A/B-тестирование и гипотезы"
+      ],
+      "definition": "Дизайн продуктовых экспериментов, A/B-проверки и интерпретация результатов.",
+      "scope": "universal",
+      "canonicalIds": [
+        "product-experimentation"
+      ],
+      "professionIds": [
+        "it.product"
+      ],
+      "components": [
+        {
+          "id": "eksperimenty-i-proverka-gipotez.gipotezy-i-planirovanie-eksperimentov",
+          "slug": "gipotezy-i-planirovanie-eksperimentov",
+          "title": "Гипотезы и планирование экспериментов",
+          "definition": "Формулировка проверяемых продуктовых гипотез и подготовка экспериментального дизайна.",
+          "order": 1,
+          "tagIds": [
+            "tag_7e8d69908dcb",
+            "tag_23dbb4f42bd8"
+          ]
+        },
+        {
+          "id": "eksperimenty-i-proverka-gipotez.metriki-i-otsenka-effekta",
+          "slug": "metriki-i-otsenka-effekta",
+          "title": "Метрики и оценка эффекта",
+          "definition": "Выбор измеримых показателей и количественная оценка результата эксперимента.",
+          "order": 2,
+          "tagIds": [
+            "tag_01d018c59eb9"
+          ]
+        },
+        {
+          "id": "eksperimenty-i-proverka-gipotez.protsess-i-kultura-eksperimentov",
+          "slug": "protsess-i-kultura-eksperimentov",
+          "title": "Процесс и культура экспериментов",
+          "definition": "Организация повторяемого процесса экспериментов и извлечение уроков из результатов.",
+          "order": 3,
+          "tagIds": [
+            "tag_5450cb50d8e7"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_7e8d69908dcb",
+          "slug": "proverka-gipotez",
+          "title": "Проверка гипотез",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Формулировка и проверка продуктовых гипотез.",
+          "professionIds": [
+            "it.product"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_1ebd55d6b563",
+              "componentId": "eksperimenty-i-proverka-gipotez.gipotezy-i-planirovanie-eksperimentov",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_23dbb4f42bd8",
+          "slug": "planirovanie-a-b-eksperimentov",
+          "title": "Планирование A/B-экспериментов",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Планирование и интерпретация A/B-экспериментов. Охватывает постановку эксперимента, выбор вариантов и чтение результатов.",
+          "professionIds": [
+            "it.product"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_1ebd55d6b563",
+              "componentId": "eksperimenty-i-proverka-gipotez.gipotezy-i-planirovanie-eksperimentov",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_01d018c59eb9",
+          "slug": "metriki-eksperimentov",
+          "title": "Метрики экспериментов",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Выбор метрик и оценка эффекта эксперимента.",
+          "professionIds": [
+            "it.product"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_1ebd55d6b563",
+              "componentId": "eksperimenty-i-proverka-gipotez.metriki-i-otsenka-effekta",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_5450cb50d8e7",
+          "slug": "kultura-eksperimentov",
+          "title": "Культура экспериментов",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Процесс экспериментов и обучение на результатах.",
+          "professionIds": [
+            "it.product"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_1ebd55d6b563",
+              "componentId": "eksperimenty-i-proverka-gipotez.protsess-i-kultura-eksperimentov",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_15100f5a7310",
+        "costUsd": 0.0009346900000000001,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1029,
+          "outputTokens": 589
         }
       },
       "issues": [],
@@ -9788,6 +11213,28 @@
   ],
   "tags": [
     {
+      "id": "tag_a1061b8896f8",
+      "slug": "3d-modelirovanie",
+      "title": "3D-моделирование",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Создание и компоновка трёхмерных объектов.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_5ed63dc3a73a",
+          "componentId": "3d-svet-i-render.trehmernaya-forma-i-modelirovanie",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_e53c47ae4be7",
       "slug": "avtoleyauty",
       "title": "Автолейауты",
@@ -9846,6 +11293,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_004d5639753c",
+      "slug": "aydentika",
+      "title": "Айдентика",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Система визуальной идентичности бренда.",
+      "professionIds": [
+        "it.graphic"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_287b573c505e",
+          "componentId": "brend-aydentika.sistema-vizualnoy-identichnosti",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_e00cdf7a1ec0",
@@ -10221,6 +11690,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_818f8a205eaf",
+      "slug": "brend-platforma",
+      "title": "Бренд-платформа",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Смысловая и визуальная платформа бренда.",
+      "professionIds": [
+        "it.graphic"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_287b573c505e",
+          "componentId": "brend-aydentika.smyslovaya-osnova-brenda",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_33eb03906cf3",
       "slug": "vayrfreymy",
       "title": "Вайрфреймы",
@@ -10396,6 +11887,50 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_edf3e2803afc",
+      "slug": "verstka-izdaniy",
+      "title": "Вёрстка изданий",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Вёрстка журналов, книг и цифровых публикаций.",
+      "professionIds": [
+        "it.graphic"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_97cd897072ec",
+          "componentId": "redaktsionnyy-dizayn-i-verstka.verstka-publikatsiy",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_06697b8af0c2",
+      "slug": "ves-i-inertsiya-dvizheniya",
+      "title": "Вес и инерция движения",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Ощущение массы, инерции и физики в анимации.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_92e9921f59b8",
+          "componentId": "tayming-i-krivye-uskoreniya.krivye-uskoreniya-i-fizika-dvizheniya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_dc2414c4e5ad",
@@ -10635,6 +12170,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_7fd695c3dc17",
+      "slug": "voronka-i-aktivatsiya",
+      "title": "Воронка и активация",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Анализ воронки и активации пользователей.",
+      "professionIds": [
+        "it.product"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_90f6aad56a1e",
+          "componentId": "rost-voronki-i-uderzhanie.voronka-i-aktivatsiya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_e0eb83cc2907",
       "slug": "vybor-prioritetnyh-segmentov",
       "title": "Выбор приоритетных сегментов",
@@ -10818,6 +12375,50 @@
       "needsReview": true
     },
     {
+      "id": "tag_9a3ddbc5866b",
+      "slug": "dopechatnaya-podgotovka",
+      "title": "Допечатная подготовка",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Подготовка макетов к печати и требования типографии.",
+      "professionIds": [
+        "it.graphic"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_91d03f4fb672",
+          "componentId": "pechat-i-proizvodstvo.dopechatnaya-podgotovka",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_fd47fdaa944c",
+      "slug": "dramaturgiya-dvizheniya",
+      "title": "Драматургия движения",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Сюжет и эмоциональная арка в моушн-ролике.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_425bd4dc7c7f",
+          "componentId": "storibording-i-rezhissura-dvizheniya.dramaturgiya-dvizheniya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_fe047e016362",
       "slug": "zhiznennyy-tsikl-produkta",
       "title": "Жизненный цикл продукта",
@@ -10883,6 +12484,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_0a7b06a47ef5",
+      "slug": "znak-i-palitra",
+      "title": "Знак и палитра",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Разработка знака, палитры и базовых констант.",
+      "professionIds": [
+        "it.graphic"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_287b573c505e",
+          "componentId": "brend-aydentika.bazovye-vizualnye-konstanty",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_31cbe338913a",
@@ -11127,6 +12750,28 @@
       "needsReview": true
     },
     {
+      "id": "tag_e28a8277535e",
+      "slug": "klyuchevye-kadry",
+      "title": "Ключевые кадры",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Расстановка ключевых кадров и тайминга сцены.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_92e9921f59b8",
+          "componentId": "tayming-i-krivye-uskoreniya.tayming-i-ritm-animatsii",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_ba0af964726a",
       "slug": "kolichestvennye-issledovaniya",
       "title": "Количественные исследования",
@@ -11202,6 +12847,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_8d27766a3766",
+      "slug": "krivye-uskoreniya",
+      "title": "Кривые ускорения",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Настройка easing-кривых для естественного движения.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_92e9921f59b8",
+          "componentId": "tayming-i-krivye-uskoreniya.krivye-uskoreniya-i-fizika-dvizheniya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_437a85b15712",
       "slug": "kriterii-segmentatsii-auditorii",
       "title": "Критерии сегментации аудитории",
@@ -11217,6 +12884,28 @@
         {
           "competencyId": "comp_212887d793e2",
           "componentId": "persony-i-segmentatsiya.segmentatsiya-auditorii",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_5450cb50d8e7",
+      "slug": "kultura-eksperimentov",
+      "title": "Культура экспериментов",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Процесс экспериментов и обучение на результатах.",
+      "professionIds": [
+        "it.product"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_1ebd55d6b563",
+          "componentId": "eksperimenty-i-proverka-gipotez.protsess-i-kultura-eksperimentov",
           "role": "primary"
         }
       ],
@@ -11276,6 +12965,50 @@
       "needsReview": false
     },
     {
+      "id": "tag_317208fbddbb",
+      "slug": "materialy-i-sheyding",
+      "title": "Материалы и шейдинг",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Настройка материалов и шейдеров для 3D-сцены.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_5ed63dc3a73a",
+          "componentId": "3d-svet-i-render.materialy-i-sheyding",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_cb59004aaa44",
+      "slug": "materialy-pechati",
+      "title": "Материалы печати",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Выбор бумаги, красок и отделки.",
+      "professionIds": [
+        "it.graphic"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_91d03f4fb672",
+          "componentId": "pechat-i-proizvodstvo.materialy-i-otdelka",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_57b69d47dc86",
       "slug": "mesto-nizkodetalizirovannyh-prototipov-v-dizayn-protsesse",
       "title": "Место низкодетализированных прототипов в дизайн-процессе",
@@ -11299,6 +13032,50 @@
         {
           "competencyId": "comp_c9042039c71b",
           "componentId": "nizkodetalizirovannye-prototipy.osnovy-prototipirovaniya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_01d018c59eb9",
+      "slug": "metriki-eksperimentov",
+      "title": "Метрики экспериментов",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Выбор метрик и оценка эффекта эксперимента.",
+      "professionIds": [
+        "it.product"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_1ebd55d6b563",
+          "componentId": "eksperimenty-i-proverka-gipotez.metriki-i-otsenka-effekta",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_b4257cbbad30",
+      "slug": "mnogostranichnyy-dizayn",
+      "title": "Многостраничный дизайн",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Проектирование серий и разворотов.",
+      "professionIds": [
+        "it.graphic"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_97cd897072ec",
+          "componentId": "redaktsionnyy-dizayn-i-verstka.setki-i-struktura-izdaniya",
           "role": "primary"
         }
       ],
@@ -11860,6 +13637,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_23dbb4f42bd8",
+      "slug": "planirovanie-a-b-eksperimentov",
+      "title": "Планирование A/B-экспериментов",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Планирование и интерпретация A/B-экспериментов. Охватывает постановку эксперимента, выбор вариантов и чтение результатов.",
+      "professionIds": [
+        "it.product"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_1ebd55d6b563",
+          "componentId": "eksperimenty-i-proverka-gipotez.gipotezy-i-planirovanie-eksperimentov",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_a07f20426dc7",
       "slug": "podgotovka-spetsifikatsiy-i-uchastie-v-testirovanii",
       "title": "Подготовка спецификаций и участие в тестировании",
@@ -12222,6 +14021,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_bbcbdae70a5e",
+      "slug": "pravila-brenda",
+      "title": "Правила бренда",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Гайдлайн и правила использования айдентики.",
+      "professionIds": [
+        "it.graphic"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_287b573c505e",
+          "componentId": "brend-aydentika.pravila-ispolzovaniya-aydentiki",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_af99ef2cd46b",
       "slug": "primenenie-person-v-proektnyh-resheniyah",
       "title": "Применение персон в проектных решениях",
@@ -12383,6 +14204,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_7e8d69908dcb",
+      "slug": "proverka-gipotez",
+      "title": "Проверка гипотез",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Формулировка и проверка продуктовых гипотез.",
+      "professionIds": [
+        "it.product"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_1ebd55d6b563",
+          "componentId": "eksperimenty-i-proverka-gipotez.gipotezy-i-planirovanie-eksperimentov",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_594444aa92f6",
       "slug": "provozhu-ux-issledovaniya-analiziruyu-auditoriyu-stroyu-polzovatelskie-stsenarii",
       "title": "Провожу UX-исследования, анализирую аудиторию, строю пользовательские сценарии и CJM",
@@ -12418,6 +14261,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_d3532641ba6e",
+      "slug": "produktovaya-strategiya",
+      "title": "Продуктовая стратегия",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Формулировка стратегии продукта и целевой ценности.",
+      "professionIds": [
+        "it.product"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_275b0c8fc9b6",
+          "componentId": "produktovaya-strategiya.formulirovka-produktovoy-strategii",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_c11f17963f98",
       "slug": "produktovye-metriki-i-tseli",
       "title": "Продуктовые метрики и цели",
@@ -12433,6 +14298,72 @@
         {
           "competencyId": "comp_ebd843b35ccf",
           "componentId": "produktovoe-myshlenie.biznes-kontekst-i-metriki",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_cbf214f148b4",
+      "slug": "produktovye-stavki",
+      "title": "Продуктовые ставки",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Приоритизация продуктовых ставок и гипотез.",
+      "professionIds": [
+        "it.product"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_275b0c8fc9b6",
+          "componentId": "produktovaya-strategiya.produktovye-stavki-i-prioritizatsiya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_e1ba56cd6391",
+      "slug": "produktovye-tsikly-rosta",
+      "title": "Продуктовые циклы роста",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Циклы роста и продуктовые механики удержания.",
+      "professionIds": [
+        "it.product"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_90f6aad56a1e",
+          "componentId": "rost-voronki-i-uderzhanie.produktovye-tsikly-rosta",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_77ced55193ba",
+      "slug": "produktovyy-roadmap",
+      "title": "Продуктовый роадмап",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Планирование развития продукта по этапам.",
+      "professionIds": [
+        "it.product"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_275b0c8fc9b6",
+          "componentId": "produktovaya-strategiya.planirovanie-razvitiya-produkta",
           "role": "primary"
         }
       ],
@@ -12589,6 +14520,28 @@
         {
           "competencyId": "comp_1426ad336c6f",
           "componentId": "sostoyaniya-i-mikrovzaimodeystviya.sostoyaniya-komponentov-i-obratnaya-svyaz",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_a921977422d1",
+      "slug": "proizvodstvennye-ogranicheniya",
+      "title": "Производственные ограничения",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Технологические ограничения материалов и печати.",
+      "professionIds": [
+        "it.graphic"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_91d03f4fb672",
+          "componentId": "pechat-i-proizvodstvo.proizvodstvennye-ogranicheniya",
           "role": "primary"
         }
       ],
@@ -12916,6 +14869,94 @@
       "needsReview": false
     },
     {
+      "id": "tag_91edfefe96b8",
+      "slug": "raskadrovka-dvizheniya",
+      "title": "Раскадровка движения",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Последовательность кадров и переходов для motion-сцены.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_425bd4dc7c7f",
+          "componentId": "storibording-i-rezhissura-dvizheniya.raskadrovka-dinamicheskoy-stseny",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_b3666864fd50",
+      "slug": "redaktsionnaya-setka",
+      "title": "Редакционная сетка",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Модульные сетки для многостраничных изданий.",
+      "professionIds": [
+        "it.graphic"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_97cd897072ec",
+          "componentId": "redaktsionnyy-dizayn-i-verstka.setki-i-struktura-izdaniya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_680de0b00fe3",
+      "slug": "rezhissura-stseny",
+      "title": "Режиссура сцены",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Постановка движения, акцентов и фокуса внимания.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_425bd4dc7c7f",
+          "componentId": "storibording-i-rezhissura-dvizheniya.rezhissura-dinamicheskoy-stseny",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_a0843eb4f6bd",
+      "slug": "rendering",
+      "title": "Рендеринг",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Настройка рендера и подготовка финального изображения.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_5ed63dc3a73a",
+          "componentId": "3d-svet-i-render.rendering-i-vyvod-izobrazheniya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_6012cd9520a7",
       "slug": "rol-stsenariev-v-informatsionnoy-arhitekture",
       "title": "Роль сценариев в информационной архитектуре",
@@ -13039,6 +15080,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_90294e662ca5",
+      "slug": "svet-i-kompozitsiya",
+      "title": "Свет и композиция",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Постановка света и композиция 3D-сцены.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_5ed63dc3a73a",
+          "componentId": "3d-svet-i-render.svet-i-kompozitsiya-stseny",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_f90e4d3f8eb6",
@@ -13356,6 +15419,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_d6f699d7e3e6",
+      "slug": "storibord",
+      "title": "Сториборд",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Раскадровка динамической сцены до продакшена.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_425bd4dc7c7f",
+          "componentId": "storibording-i-rezhissura-dvizheniya.raskadrovka-dinamicheskoy-stseny",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_0ac8e03acbe8",
       "slug": "struktura-i-soderzhanie-persony",
       "title": "Структура и содержание персоны",
@@ -13458,6 +15543,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_294513cf02d5",
+      "slug": "tayming-animatsii",
+      "title": "Тайминг анимации",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Расчёт длительности и ритма анимационных переходов.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_92e9921f59b8",
+          "componentId": "tayming-i-krivye-uskoreniya.tayming-i-ritm-animatsii",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_e4f049388c28",
@@ -13570,6 +15677,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_85c2b01ba82f",
+      "slug": "tipograficheskaya-ierarhiya",
+      "title": "Типографическая иерархия",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Иерархия текста и типографические системы.",
+      "professionIds": [
+        "it.graphic"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_97cd897072ec",
+          "componentId": "redaktsionnyy-dizayn-i-verstka.tipografika-izdaniya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_99d30ca48180",
       "slug": "tipograficheskaya-ierarhiya-i-chitaemost",
       "title": "Типографическая иерархия и читаемость",
@@ -13674,6 +15803,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_381e3a309f6f",
+      "slug": "uderzhanie",
+      "title": "Удержание",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Работа с retention и возвращаемостью пользователей.",
+      "professionIds": [
+        "it.product"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_90f6aad56a1e",
+          "componentId": "rost-voronki-i-uderzhanie.uderzhanie-polzovateley",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_4cbfe43921cd",
@@ -13982,6 +16133,28 @@
       "needsReview": true
     },
     {
+      "id": "tag_34ef14f402af",
+      "slug": "tsvetovye-profili",
+      "title": "Цветовые профили",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Цветовые пространства и профили для печати.",
+      "professionIds": [
+        "it.graphic"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_91d03f4fb672",
+          "componentId": "pechat-i-proizvodstvo.upravlenie-tsvetom-v-pechati",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_f83e9eb07c27",
       "slug": "tselevaya-auditoriya",
       "title": "Целевая аудитория",
@@ -14027,6 +16200,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_fc9fcffada02",
+      "slug": "tselevaya-auditoriya-i-tsennost",
+      "title": "Целевая аудитория и ценность",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Выбор аудитории и ценностного предложения.",
+      "professionIds": [
+        "it.product"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_275b0c8fc9b6",
+          "componentId": "produktovaya-strategiya.tselevaya-auditoriya-i-tsennostnoe-predlozhenie",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_8fea13e85da8",
       "slug": "chto-takoe-produkt-i-kak-s-nim-vzaimodeystvovat",
       "title": "Что такое продукт и как с ним взаимодействовать",
@@ -14055,6 +16250,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_33bd0e21d155",
+      "slug": "yunit-ekonomika",
+      "title": "Юнит-экономика",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Связь дизайна с юнит-экономикой и ценностью продукта.",
+      "professionIds": [
+        "it.product"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_90f6aad56a1e",
+          "componentId": "rost-voronki-i-uderzhanie.ekonomika-produkta",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_82965469f7ff",

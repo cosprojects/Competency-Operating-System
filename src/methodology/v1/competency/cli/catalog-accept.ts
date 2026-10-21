@@ -57,11 +57,19 @@ async function main(): Promise<void> {
       }
     }
   }
+  // Extra profession-specific competencies live in the normalized model, not in canonical/uxui.
+  try {
+    const model = await readJson<{ competencies: Array<{ id: string }> }>(
+      path.join(root, "src/methodology/v1/competency/model/competencies.json"),
+    );
+    for (const competency of model.competencies) canonicalIds.add(competency.id);
+  } catch {
+    // model may not be generated yet
+  }
   const byId = new Map<string, CompetencyBlock>();
   for (const file of blockFiles) {
     const payload = await readJson<{ blocks: CompetencyBlock[] }>(path.resolve(root, file));
     for (const block of payload.blocks ?? []) {
-      if (!block.professionIds.includes(professionId)) continue;
       const hasCanonical = (block.canonicalIds ?? []).some((id) => canonicalIds.has(id));
       if (!mapped.has(block.id) && !hasCanonical) continue;
       byId.set(block.id, {

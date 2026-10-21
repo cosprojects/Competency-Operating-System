@@ -52,59 +52,66 @@ export async function collectProfessions(
     const notes: string[] = [];
 
     if (target.esco) {
-      const hits = await searchEscoOccupations(input.fetchImpl, target.esco.search);
-      const accepted = hits.find((hit) => {
-        if (!target.esco?.titleIncludes || target.esco.titleIncludes.length === 0) return true;
-        const title = normalizeTitle(hit.title);
-        return target.esco.titleIncludes.some((part) => title.includes(normalizeTitle(part)));
-      });
-      searches.push({
-        professionId: target.id,
-        sourceId: "esco",
-        query: target.esco.search,
-        found: hits.length,
-        ...(accepted ? { chosen: accepted.uri } : {}),
-        ...(accepted ? {} : { note: "нет занятия с заголовком из titleIncludes" }),
-      });
-      if (accepted) {
-        classification.escoOccupation = accepted.uri;
-        sources.push({
-          sourceId: "esco",
-          externalId: accepted.uri,
-          url: accepted.url,
-          retrievedAt: input.retrievedOn,
-          license: LICENSES.esco ?? "EUPL 1.2",
+      try {
+        const hits = await searchEscoOccupations(input.fetchImpl, target.esco.search);
+        const accepted = hits.find((hit) => {
+          if (!target.esco?.titleIncludes || target.esco.titleIncludes.length === 0) return true;
+          const title = normalizeTitle(hit.title);
+          return target.esco.titleIncludes.some((part) => title.includes(normalizeTitle(part)));
         });
-      } else {
-        notes.push("ESCO: занятие не найдено");
+        searches.push({
+          professionId: target.id,
+          sourceId: "esco",
+          query: target.esco.search,
+          found: hits.length,
+          ...(accepted ? { chosen: accepted.uri } : {}),
+          ...(accepted ? {} : { note: "нет занятия с заголовком из titleIncludes" }),
+        });
+        if (accepted) {
+          classification.escoOccupation = accepted.uri;
+          sources.push({
+            sourceId: "esco",
+            externalId: accepted.uri,
+            url: accepted.url,
+            retrievedAt: input.retrievedOn,
+            license: LICENSES.esco ?? "EUPL 1.2",
+          });
+        } else {
+          notes.push("ESCO: занятие не найдено");
+        }
+      } catch (error) {
+        notes.push(`ESCO: ${error instanceof Error ? error.message : "ошибка источника"}`);
+        searches.push({ professionId: target.id, sourceId: "esco", query: target.esco.search, found: 0, note: "источник недоступен" });
       }
     }
 
     if (target.onet) {
-      const hits = await searchOnetOccupations(input.fetchImpl, input.cache, target.onet);
-      const accepted = hits[0];
-      searches.push({
-        professionId: target.id,
-        sourceId: "onet",
-        query: [
-          ...(target.onet.socCodes ?? []),
-          ...(target.onet.titleIncludes ?? []),
-        ].join(", "),
-        found: hits.length,
-        ...(accepted ? { chosen: accepted.socCode } : {}),
-        ...(accepted ? {} : { note: "нет O*NET-занятия по фильтру" }),
-      });
-      if (accepted) {
-        classification.onetSoc = accepted.socCode;
-        sources.push({
+      try {
+        const hits = await searchOnetOccupations(input.fetchImpl, input.cache, target.onet);
+        const accepted = hits[0];
+        searches.push({
+          professionId: target.id,
           sourceId: "onet",
-          externalId: accepted.socCode,
-          url: accepted.url,
-          retrievedAt: input.retrievedOn,
-          license: LICENSES.onet ?? "CC BY 4.0",
+          query: [...(target.onet.socCodes ?? []), ...(target.onet.titleIncludes ?? [])].join(", "),
+          found: hits.length,
+          ...(accepted ? { chosen: accepted.socCode } : {}),
+          ...(accepted ? {} : { note: "нет O*NET-занятия по фильтру" }),
         });
-      } else {
-        notes.push("O*NET: занятие не найдено");
+        if (accepted) {
+          classification.onetSoc = accepted.socCode;
+          sources.push({
+            sourceId: "onet",
+            externalId: accepted.socCode,
+            url: accepted.url,
+            retrievedAt: input.retrievedOn,
+            license: LICENSES.onet ?? "CC BY 4.0",
+          });
+        } else {
+          notes.push("O*NET: занятие не найдено");
+        }
+      } catch (error) {
+        notes.push(`O*NET: ${error instanceof Error ? error.message : "ошибка источника"}`);
+        searches.push({ professionId: target.id, sourceId: "onet", query: "target", found: 0, note: "источник недоступен" });
       }
     }
 

@@ -14,7 +14,7 @@ AI-native platform for competency assessment, learning pathways and workforce de
 
 ## Каноническая карта UX/UI
 
-`src/methodology/v1/competency/canonical/uxui.json` — два блока (UX/UI), 9 разделов и 34 компетенции со статусами `covered` / `partial` / `gap`. Сейчас: 34 covered / 0 partial / 0 gap; в каталоге 33 блока, 150 тегов. Проверка и coverage-отчёт:
+`src/methodology/v1/competency/canonical/uxui.json` — два блока (UX/UI), 9 разделов и 34 компетенции со статусами `covered` / `partial` / `gap`. Сейчас: 34 covered / 0 partial / 0 gap; в каталоге 42 блока, 186 тегов. Проверка и coverage-отчёт:
 
 ```bash
 npm run canonical:validate -- --domain it --profession uxui --source review --include-seed --report
@@ -44,4 +44,4 @@ npm run canonical:validate -- --domain it --profession uxui --source review --in
 Сборка по профессии: `npm run professions:collect -- --domain it --profession motion`, затем `npm run tags:collect -- --domain it --profession motion`. Запросы берутся из `sources/professions/<profession>.json`.
 
 
-Единый массив компетенций: **43** (34 базовых + 9 профессио-специфичных); profession views: product 28, motion 19, graphic 18.
+Единый массив компетенций: **43** (34 базовых + 9 профессио-специфичных); profession views: product 28, motion 19, graphic 18; каталог: 42 блока, 186 тегов.

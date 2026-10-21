@@ -10,13 +10,17 @@ async function main(): Promise<void> {
   const root = process.cwd();
   const domain = flagValue(argv, "--domain") ?? "it";
   const seedId = flagValue(argv, "--seed");
+  const professionId = flagValue(argv, "--profession");
   const seedFile = await readJson<SeedFile>(
     path.join(root, "src/methodology/v1/competency/seeds", `${domain}.json`),
   );
   const tags = await readJson<{ tags: TagRecord[] }>(
     flagValue(argv, "--tags-file") ?? path.join(dataDir(root), `tags-${domain}.json`),
   );
-  const seeds = seedId ? seedFile.seeds.filter((seed) => seed.id === seedId) : seedFile.seeds;
+  const selectedProfession = professionId ? (professionId.includes(".") ? professionId : `${domain}.${professionId}`) : undefined;
+  const seeds = seedFile.seeds.filter(
+    (seed) => (!seedId || seed.id === seedId) && (!selectedProfession || seed.professionIds.includes(selectedProfession)),
+  );
   if (seeds.length === 0) throw new Error(`Seed «${seedId ?? ""}» не найден`);
   const generatedOn = new Date().toISOString().slice(0, 10);
   const extraTags: TagRecord[] = [];
@@ -40,7 +44,8 @@ async function main(): Promise<void> {
     }
     return materializeSeed(seed, tags.tags, generatedOn, seedExtra);
   });
-  const output = path.join(dataDir(root), "seeds", `${domain}${seedId ? `-${seedId}` : ""}.candidates.json`);
+  const suffix = professionId ? `-${professionId.split(".").pop()}` : seedId ? `-${seedId}` : "";
+  const output = path.join(dataDir(root), "seeds", `${domain}${suffix}.candidates.json`);
   await writeJson(output, {
     domain,
     generatedOn,

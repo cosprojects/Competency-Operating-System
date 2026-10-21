@@ -156,6 +156,7 @@ npm run canvas:profession -- --profession graphic
 - сфера: `it`;
 - профессий: **4** — `it.uxui`, `it.product`, `it.motion`, `it.graphic`;
 - компетенций в едином массиве: **43** (34 базовых + 9 профессио-специфичных);
+- каталог домена: **42 блока, 186 тегов** (UX/UI + profession-specific);
 - profession-competencies: UX/UI — 34, product — 28, motion — 19, graphic — 18;
 - переиспользуемых компетенций: **34** (базовые входят в несколько профессий; 9 специфичных — в свою);
 - источники: `sources/spheres/it.json` + отдельный файл на каждую профессию (`sources/professions/it.*.json`); Material Agent берёт `materialSourceIds` из source-файла профессии, по умолчанию только active;

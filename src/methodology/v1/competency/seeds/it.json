@@ -562,6 +562,348 @@
           "kind": "skill"
         }
       ]
+    },
+    {
+      "id": "motion-timing-easing",
+      "canonicalId": "motion-timing-easing",
+      "title": "Тайминг и кривые ускорения",
+      "titleEn": "Timing and easing",
+      "aliases": [
+        "Timing and easing"
+      ],
+      "definition": "Проектирование движения во времени: тайминг, кривые ускорения, ритм и ощущение веса.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Тайминг анимации",
+          "definition": "Расчёт длительности и ритма анимационных переходов.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Кривые ускорения",
+          "definition": "Настройка easing-кривых для естественного движения.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Вес и инерция движения",
+          "definition": "Ощущение массы, инерции и физики в анимации.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Ключевые кадры",
+          "definition": "Расстановка ключевых кадров и тайминга сцены.",
+          "kind": "knowledge"
+        }
+      ]
+    },
+    {
+      "id": "motion-storyboarding",
+      "canonicalId": "motion-storyboarding",
+      "title": "Сторибординг и режиссура движения",
+      "titleEn": "Storyboarding and motion direction",
+      "aliases": [
+        "Storyboarding and motion direction"
+      ],
+      "definition": "Раскадровка, драматургия движения и режиссура динамической сцены.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Сториборд",
+          "definition": "Раскадровка динамической сцены до продакшена.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Раскадровка движения",
+          "definition": "Последовательность кадров и переходов для motion-сцены.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Режиссура сцены",
+          "definition": "Постановка движения, акцентов и фокуса внимания.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Драматургия движения",
+          "definition": "Сюжет и эмоциональная арка в моушн-ролике.",
+          "kind": "knowledge"
+        }
+      ]
+    },
+    {
+      "id": "motion-3d-rendering",
+      "canonicalId": "motion-3d-rendering",
+      "title": "3D, свет и рендер",
+      "titleEn": "3D, lighting and rendering",
+      "aliases": [
+        "3D, lighting and rendering"
+      ],
+      "definition": "Трёхмерная форма, материалы, свет и рендер в моушн-продакшене.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "3D-моделирование",
+          "definition": "Создание и компоновка трёхмерных объектов.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Материалы и шейдинг",
+          "definition": "Настройка материалов и шейдеров для 3D-сцены.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Свет и композиция",
+          "definition": "Постановка света и композиция 3D-сцены.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Рендеринг",
+          "definition": "Настройка рендера и подготовка финального изображения.",
+          "kind": "knowledge"
+        }
+      ]
+    },
+    {
+      "id": "product-strategy",
+      "canonicalId": "product-strategy",
+      "title": "Продуктовая стратегия",
+      "titleEn": "Product strategy",
+      "aliases": [
+        "Product strategy"
+      ],
+      "definition": "Выбор целевой ценности, аудитории и стратегии развития продукта.",
+      "professionIds": [
+        "it.product"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Продуктовая стратегия",
+          "definition": "Формулировка стратегии продукта и целевой ценности.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Целевая аудитория и ценность",
+          "definition": "Выбор аудитории и ценностного предложения.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Продуктовые ставки",
+          "definition": "Приоритизация продуктовых ставок и гипотез.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Продуктовый роадмап",
+          "definition": "Планирование развития продукта по этапам.",
+          "kind": "knowledge"
+        }
+      ]
+    },
+    {
+      "id": "product-growth",
+      "canonicalId": "product-growth",
+      "title": "Рост, воронки и удержание",
+      "titleEn": "Growth and retention",
+      "aliases": [
+        "Growth and retention"
+      ],
+      "definition": "Работа с воронкой, активацией, удержанием и продуктовыми циклами роста.",
+      "professionIds": [
+        "it.product"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Воронка и активация",
+          "definition": "Анализ воронки и активации пользователей.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Удержание",
+          "definition": "Работа с retention и возвращаемостью пользователей.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Продуктовые циклы роста",
+          "definition": "Циклы роста и продуктовые механики удержания.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Юнит-экономика",
+          "definition": "Связь дизайна с юнит-экономикой и ценностью продукта.",
+          "kind": "knowledge"
+        }
+      ]
+    },
+    {
+      "id": "product-experimentation",
+      "canonicalId": "product-experimentation",
+      "title": "Эксперименты и проверка гипотез",
+      "titleEn": "Product experimentation",
+      "aliases": [
+        "Product experimentation"
+      ],
+      "definition": "Дизайн продуктовых экспериментов, A/B-проверки и интерпретация результатов.",
+      "professionIds": [
+        "it.product"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "A/B-эксперименты",
+          "definition": "Планирование и интерпретация A/B-экспериментов.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Проверка гипотез",
+          "definition": "Формулировка и проверка продуктовых гипотез.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Метрики экспериментов",
+          "definition": "Выбор метрик и оценка эффекта эксперимента.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Культура экспериментов",
+          "definition": "Процесс экспериментов и обучение на результатах.",
+          "kind": "knowledge"
+        }
+      ]
+    },
+    {
+      "id": "graphic-brand-identity",
+      "canonicalId": "graphic-brand-identity",
+      "title": "Бренд-айдентика",
+      "titleEn": "Brand identity",
+      "aliases": [
+        "Brand identity"
+      ],
+      "definition": "Создание визуальной идентичности: знак, палитра, типографика и правила бренда.",
+      "professionIds": [
+        "it.graphic"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Бренд-платформа",
+          "definition": "Смысловая и визуальная платформа бренда.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Айдентика",
+          "definition": "Система визуальной идентичности бренда.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Знак и палитра",
+          "definition": "Разработка знака, палитры и базовых констант.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Правила бренда",
+          "definition": "Гайдлайн и правила использования айдентики.",
+          "kind": "knowledge"
+        }
+      ]
+    },
+    {
+      "id": "graphic-print-production",
+      "canonicalId": "graphic-print-production",
+      "title": "Печать и производство",
+      "titleEn": "Print and production",
+      "aliases": [
+        "Print and production"
+      ],
+      "definition": "Допечатная подготовка, цветовые профили, материалы и производственные ограничения.",
+      "professionIds": [
+        "it.graphic"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Допечатная подготовка",
+          "definition": "Подготовка макетов к печати и требования типографии.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Цветовые профили",
+          "definition": "Цветовые пространства и профили для печати.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Производственные ограничения",
+          "definition": "Технологические ограничения материалов и печати.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Материалы печати",
+          "definition": "Выбор бумаги, красок и отделки.",
+          "kind": "knowledge"
+        }
+      ]
+    },
+    {
+      "id": "graphic-editorial-layout",
+      "canonicalId": "graphic-editorial-layout",
+      "title": "Редакционный дизайн и вёрстка",
+      "titleEn": "Editorial design",
+      "aliases": [
+        "Editorial design"
+      ],
+      "definition": "Вёрстка многостраничных и цифровых изданий, сетки и типографическая иерархия.",
+      "professionIds": [
+        "it.graphic"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Редакционная сетка",
+          "definition": "Модульные сетки для многостраничных изданий.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Вёрстка изданий",
+          "definition": "Вёрстка журналов, книг и цифровых публикаций.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Типографическая иерархия",
+          "definition": "Иерархия текста и типографические системы.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Многостраничный дизайн",
+          "definition": "Проектирование серий и разворотов.",
+          "kind": "knowledge"
+        }
+      ]
     }
   ]
 }

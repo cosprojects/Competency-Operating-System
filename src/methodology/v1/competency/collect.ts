@@ -10,7 +10,7 @@ import type {
 import { cleanText, hashId, normalizeTitle, slugify, uniqueBy } from "./sources/common.ts";
 import { collectEscoTags, searchEscoOccupations } from "./sources/esco.ts";
 import { collectOnetTags, searchOnetOccupations } from "./sources/onet.ts";
-import { collectPracticumTags } from "./sources/practicum.ts";
+import { collectPracticumCatalogTags, collectPracticumTags } from "./sources/practicum.ts";
 
 export interface CollectProfessionsInput {
   domain: string;
@@ -217,6 +217,22 @@ async function tagsForProfession(
         definition: tag.definition,
         kind: tag.kind,
       })));
+      try {
+        const catalogTags = await collectPracticumCatalogTags(
+          input.fetchImpl,
+          input.cache,
+          source.externalId,
+          input.retrievedOn,
+        );
+        out.push(...catalogTags.map((tag) => ({
+          sourceRef: tag.sourceRef,
+          title: tag.title,
+          definition: tag.definition,
+          kind: tag.kind,
+        })));
+      } catch {
+        // каталог может быть недоступен; страница программы уже обработана
+      }
     }
   }
   return out;

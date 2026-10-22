@@ -1,7 +1,7 @@
 ---
 id: COS-RES-018
 title: Модель сфера → профессия → компетенции и систематизация источников
-version: 1.7.0
+version: 1.8.0
 status: Draft
 owner: Research Team
 last_updated: 2026-10-21
@@ -200,3 +200,4 @@ Human-review канвас: `web/competencies-review-canvas.html` — табы п
 | 1.5.0 | 2026-10-21 | Добавлены сетевые канвасы для product/motion/graphic (`canvas:profession-network`); source-файлы используются сборщиками; 127 тестов |
 | 1.6.0 | 2026-10-21 | Порядок UX/UI исправлен: дизайн-мышление → исследования, аналитика 17-я после метрик, requirements/wireframes переставлены; добавлен tabbed review canvas по профессиям без tier-фильтров |
 | 1.7.0 | 2026-10-22 | Product graph: 28 узлов / 27 связей; добавлены межраздельные prerequisites (design thinking → product thinking/research, UX research → IA, product thinking → metrics, design → UI color) |
+| 1.8.0 | 2026-10-22 | Product: Practicum `product-approach-for-designers` подключён через профессию, из каталога извлекаются тематические теги (CJM, JTBD, гипотезы, юзабилити, дизайн-системы); 182 тега |

@@ -1,7 +1,7 @@
 {
   "catalogVersion": "0.1.0",
   "domain": "it",
-  "updatedOn": "2026-10-21",
+  "updatedOn": "2026-10-22",
   "blocks": [
     {
       "id": "comp_5ed63dc3a73a",
@@ -7125,40 +7125,40 @@
       ],
       "components": [
         {
-          "id": "produktovaya-strategiya.formulirovka-produktovoy-strategii",
-          "slug": "formulirovka-produktovoy-strategii",
-          "title": "Формулировка продуктовой стратегии",
-          "definition": "Определение стратегии продукта и его целевой ценности как основы продуктовых решений.",
+          "id": "produktovaya-strategiya.tselevaya-tsennost-i-auditoriya",
+          "slug": "tselevaya-tsennost-i-auditoriya",
+          "title": "Целевая ценность и аудитория",
+          "definition": "Определение целевой аудитории и ценностного предложения продукта.",
           "order": 1,
-          "tagIds": [
-            "tag_d3532641ba6e"
-          ]
-        },
-        {
-          "id": "produktovaya-strategiya.tselevaya-auditoriya-i-tsennostnoe-predlozhenie",
-          "slug": "tselevaya-auditoriya-i-tsennostnoe-predlozhenie",
-          "title": "Целевая аудитория и ценностное предложение",
-          "definition": "Выбор аудитории продукта и формулирование ценности, которую продукт ей предлагает.",
-          "order": 2,
           "tagIds": [
             "tag_fc9fcffada02"
           ]
         },
         {
-          "id": "produktovaya-strategiya.produktovye-stavki-i-prioritizatsiya",
-          "slug": "produktovye-stavki-i-prioritizatsiya",
-          "title": "Продуктовые ставки и приоритизация",
-          "definition": "Выбор и приоритизация продуктовых ставок и гипотез в рамках стратегии.",
+          "id": "produktovaya-strategiya.formulirovka-strategii",
+          "slug": "formulirovka-strategii",
+          "title": "Формулировка стратегии",
+          "definition": "Формулировка стратегии продукта и целевой ценности.",
+          "order": 2,
+          "tagIds": [
+            "tag_d3532641ba6e"
+          ]
+        },
+        {
+          "id": "produktovaya-strategiya.prioritizatsiya-stavok",
+          "slug": "prioritizatsiya-stavok",
+          "title": "Приоритизация ставок",
+          "definition": "Приоритизация продуктовых ставок и гипотез.",
           "order": 3,
           "tagIds": [
             "tag_cbf214f148b4"
           ]
         },
         {
-          "id": "produktovaya-strategiya.planirovanie-razvitiya-produkta",
-          "slug": "planirovanie-razvitiya-produkta",
-          "title": "Планирование развития продукта",
-          "definition": "Планирование этапов развития продукта и их последовательности.",
+          "id": "produktovaya-strategiya.planirovanie-razvitiya",
+          "slug": "planirovanie-razvitiya",
+          "title": "Планирование развития",
+          "definition": "Планирование развития продукта по этапам.",
           "order": 4,
           "tagIds": [
             "tag_77ced55193ba"
@@ -7166,28 +7166,6 @@
         }
       ],
       "tags": [
-        {
-          "id": "tag_d3532641ba6e",
-          "slug": "produktovaya-strategiya",
-          "title": "Продуктовая стратегия",
-          "aliases": [],
-          "kind": "knowledge",
-          "definition": "Формулировка стратегии продукта и целевой ценности.",
-          "professionIds": [
-            "it.product"
-          ],
-          "sourceRefs": [],
-          "evidenceState": "needs_review",
-          "competencyLinks": [
-            {
-              "competencyId": "comp_275b0c8fc9b6",
-              "componentId": "produktovaya-strategiya.formulirovka-produktovoy-strategii",
-              "role": "primary"
-            }
-          ],
-          "materialIds": [],
-          "needsReview": true
-        },
         {
           "id": "tag_fc9fcffada02",
           "slug": "tselevaya-auditoriya-i-tsennost",
@@ -7203,7 +7181,29 @@
           "competencyLinks": [
             {
               "competencyId": "comp_275b0c8fc9b6",
-              "componentId": "produktovaya-strategiya.tselevaya-auditoriya-i-tsennostnoe-predlozhenie",
+              "componentId": "produktovaya-strategiya.tselevaya-tsennost-i-auditoriya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_d3532641ba6e",
+          "slug": "produktovaya-strategiya",
+          "title": "Продуктовая стратегия",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Формулировка стратегии продукта и целевой ценности.",
+          "professionIds": [
+            "it.product"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_275b0c8fc9b6",
+              "componentId": "produktovaya-strategiya.formulirovka-strategii",
               "role": "primary"
             }
           ],
@@ -7225,7 +7225,7 @@
           "competencyLinks": [
             {
               "competencyId": "comp_275b0c8fc9b6",
-              "componentId": "produktovaya-strategiya.produktovye-stavki-i-prioritizatsiya",
+              "componentId": "produktovaya-strategiya.prioritizatsiya-stavok",
               "role": "primary"
             }
           ],
@@ -7247,7 +7247,7 @@
           "competencyLinks": [
             {
               "competencyId": "comp_275b0c8fc9b6",
-              "componentId": "produktovaya-strategiya.planirovanie-razvitiya-produkta",
+              "componentId": "produktovaya-strategiya.planirovanie-razvitiya",
               "role": "primary"
             }
           ],
@@ -7261,12 +7261,12 @@
       "llmMeta": {
         "promptVersion": "competency-v1",
         "model": "deepseek-flash",
-        "inputHash": "llm_9378caf2325e",
-        "costUsd": 0.00093871,
+        "inputHash": "llm_b87fac74ad95",
+        "costUsd": 0.0008394100000000001,
         "tokens": {
-          "cacheHitTokens": 128,
-          "cacheMissTokens": 995,
-          "outputTokens": 601
+          "cacheHitTokens": 256,
+          "cacheMissTokens": 977,
+          "outputTokens": 507
         }
       },
       "issues": [],
@@ -7786,9 +7786,11 @@
       "id": "comp_90f6aad56a1e",
       "slug": "rost-voronki-i-uderzhanie",
       "title": "Рост, воронки и удержание",
+      "titleEn": "Growth, Funnels and Retention",
       "aliases": [
         "Продуктовый рост",
-        "Growth и удержание"
+        "Growth-дизайн",
+        "Воронки и удержание"
       ],
       "definition": "Работа с воронкой, активацией, удержанием и продуктовыми циклами роста.",
       "scope": "universal",
@@ -7803,7 +7805,7 @@
           "id": "rost-voronki-i-uderzhanie.voronka-i-aktivatsiya",
           "slug": "voronka-i-aktivatsiya",
           "title": "Воронка и активация",
-          "definition": "Анализ пути пользователя от первого контакта до целевого действия и работа с активацией.",
+          "definition": "Раздел о пути пользователя от первого контакта до целевого действия и о механике активации.",
           "order": 1,
           "tagIds": [
             "tag_7fd695c3dc17"
@@ -7813,7 +7815,7 @@
           "id": "rost-voronki-i-uderzhanie.uderzhanie-polzovateley",
           "slug": "uderzhanie-polzovateley",
           "title": "Удержание пользователей",
-          "definition": "Работа с retention и возвращаемостью пользователей.",
+          "definition": "Раздел о возвращаемости пользователей и работе с retention.",
           "order": 2,
           "tagIds": [
             "tag_381e3a309f6f"
@@ -7823,7 +7825,7 @@
           "id": "rost-voronki-i-uderzhanie.produktovye-tsikly-rosta",
           "slug": "produktovye-tsikly-rosta",
           "title": "Продуктовые циклы роста",
-          "definition": "Циклы роста и продуктовые механики удержания.",
+          "definition": "Раздел о циклах роста и продуктовых механиках, поддерживающих удержание.",
           "order": 3,
           "tagIds": [
             "tag_e1ba56cd6391"
@@ -7833,7 +7835,7 @@
           "id": "rost-voronki-i-uderzhanie.ekonomika-produkta",
           "slug": "ekonomika-produkta",
           "title": "Экономика продукта",
-          "definition": "Связь дизайнерских решений с юнит-экономикой и ценностью продукта.",
+          "definition": "Раздел о связи дизайнерских решений с юнит-экономикой и ценностью продукта.",
           "order": 4,
           "tagIds": [
             "tag_33bd0e21d155"
@@ -7936,12 +7938,12 @@
       "llmMeta": {
         "promptVersion": "competency-v1",
         "model": "deepseek-flash",
-        "inputHash": "llm_812606496222",
-        "costUsd": 0.00088166,
+        "inputHash": "llm_b2c72aad58da",
+        "costUsd": 0.0009209600000000001,
         "tokens": {
-          "cacheHitTokens": 128,
-          "cacheMissTokens": 1020,
-          "outputTokens": 543
+          "cacheHitTokens": 256,
+          "cacheMissTokens": 1002,
+          "outputTokens": 575
         }
       },
       "issues": [],
@@ -9091,7 +9093,7 @@
           "id": "eksperimenty-i-proverka-gipotez.gipotezy-i-planirovanie-eksperimentov",
           "slug": "gipotezy-i-planirovanie-eksperimentov",
           "title": "Гипотезы и планирование экспериментов",
-          "definition": "Формулировка проверяемых продуктовых гипотез и подготовка экспериментального дизайна.",
+          "definition": "Формулировка проверяемых продуктовых гипотез и подготовка эксперимента.",
           "order": 1,
           "tagIds": [
             "tag_7e8d69908dcb",
@@ -9099,20 +9101,21 @@
           ]
         },
         {
-          "id": "eksperimenty-i-proverka-gipotez.metriki-i-otsenka-effekta",
-          "slug": "metriki-i-otsenka-effekta",
-          "title": "Метрики и оценка эффекта",
-          "definition": "Выбор измеримых показателей и количественная оценка результата эксперимента.",
+          "id": "eksperimenty-i-proverka-gipotez.metriki-i-interpretatsiya-rezultatov",
+          "slug": "metriki-i-interpretatsiya-rezultatov",
+          "title": "Метрики и интерпретация результатов",
+          "definition": "Выбор метрик эксперимента и оценка наблюдаемого эффекта.",
           "order": 2,
           "tagIds": [
-            "tag_01d018c59eb9"
+            "tag_01d018c59eb9",
+            "tag_7e0fda2790c5"
           ]
         },
         {
-          "id": "eksperimenty-i-proverka-gipotez.protsess-i-kultura-eksperimentov",
-          "slug": "protsess-i-kultura-eksperimentov",
-          "title": "Процесс и культура экспериментов",
-          "definition": "Организация повторяемого процесса экспериментов и извлечение уроков из результатов.",
+          "id": "eksperimenty-i-proverka-gipotez.kultura-eksperimentov",
+          "slug": "kultura-eksperimentov",
+          "title": "Культура экспериментов",
+          "definition": "Организация процесса экспериментов и обучение на результатах.",
           "order": 3,
           "tagIds": [
             "tag_5450cb50d8e7"
@@ -9148,7 +9151,7 @@
           "title": "Планирование A/B-экспериментов",
           "aliases": [],
           "kind": "skill",
-          "definition": "Планирование и интерпретация A/B-экспериментов. Охватывает постановку эксперимента, выбор вариантов и чтение результатов.",
+          "definition": "Разработка дизайна A/B-эксперимента: выбор вариантов, определение выборки и условий проведения.",
           "professionIds": [
             "it.product"
           ],
@@ -9179,7 +9182,29 @@
           "competencyLinks": [
             {
               "competencyId": "comp_1ebd55d6b563",
-              "componentId": "eksperimenty-i-proverka-gipotez.metriki-i-otsenka-effekta",
+              "componentId": "eksperimenty-i-proverka-gipotez.metriki-i-interpretatsiya-rezultatov",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_7e0fda2790c5",
+          "slug": "interpretatsiya-rezultatov-a-b-testov",
+          "title": "Интерпретация результатов A/B-тестов",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Анализ результатов A/B-эксперимента и формулирование выводов о влиянии изменений.",
+          "professionIds": [
+            "it.product"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_1ebd55d6b563",
+              "componentId": "eksperimenty-i-proverka-gipotez.metriki-i-interpretatsiya-rezultatov",
               "role": "primary"
             }
           ],
@@ -9201,7 +9226,7 @@
           "competencyLinks": [
             {
               "competencyId": "comp_1ebd55d6b563",
-              "componentId": "eksperimenty-i-proverka-gipotez.protsess-i-kultura-eksperimentov",
+              "componentId": "eksperimenty-i-proverka-gipotez.kultura-eksperimentov",
               "role": "primary"
             }
           ],
@@ -9215,12 +9240,12 @@
       "llmMeta": {
         "promptVersion": "competency-v1",
         "model": "deepseek-flash",
-        "inputHash": "llm_15100f5a7310",
-        "costUsd": 0.0009346900000000001,
+        "inputHash": "llm_07f42edbf70a",
+        "costUsd": 0.00093769,
         "tokens": {
-          "cacheHitTokens": 128,
-          "cacheMissTokens": 1029,
-          "outputTokens": 589
+          "cacheHitTokens": 256,
+          "cacheMissTokens": 1011,
+          "outputTokens": 588
         }
       },
       "issues": [],
@@ -9952,6 +9977,173 @@
           "cacheHitTokens": 512,
           "cacheMissTokens": 1459,
           "outputTokens": 1880
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
+      "id": "comp_bee3f2b037f5",
+      "slug": "customer-journey-map",
+      "title": "Customer Journey Map",
+      "titleEn": "Customer Journey Map",
+      "aliases": [
+        "CJM",
+        "Карта пути пользователя",
+        "Карта клиентского пути"
+      ],
+      "definition": "Карта пути пользователя: этапы, точки контакта, боли и возможности улучшения опыта.",
+      "scope": "universal",
+      "canonicalIds": [
+        "product-cjm"
+      ],
+      "professionIds": [
+        "it.product"
+      ],
+      "components": [
+        {
+          "id": "customer-journey-map.struktura-i-etapy-puti",
+          "slug": "struktura-i-etapy-puti",
+          "title": "Структура и этапы пути",
+          "definition": "Построение карты пути пользователя: выделение этапов, действий и переходов между ними.",
+          "order": 1,
+          "tagIds": [
+            "tag_e863b4ab300c"
+          ]
+        },
+        {
+          "id": "customer-journey-map.tochki-kontakta-i-kanaly",
+          "slug": "tochki-kontakta-i-kanaly",
+          "title": "Точки контакта и каналы",
+          "definition": "Выявление и описание точек контакта пользователя с продуктом и каналов взаимодействия.",
+          "order": 2,
+          "tagIds": [
+            "tag_dba4607ade2f"
+          ]
+        },
+        {
+          "id": "customer-journey-map.boli-i-barery-polzovatelya",
+          "slug": "boli-i-barery-polzovatelya",
+          "title": "Боли и барьеры пользователя",
+          "definition": "Выявление проблем, барьеров и негативных переживаний пользователя на пути.",
+          "order": 3,
+          "tagIds": [
+            "tag_5c6f87bf8505"
+          ]
+        },
+        {
+          "id": "customer-journey-map.vozmozhnosti-uluchsheniya-opyta",
+          "slug": "vozmozhnosti-uluchsheniya-opyta",
+          "title": "Возможности улучшения опыта",
+          "definition": "Формулирование и приоритизация возможностей улучшения пользовательского опыта на основе карты пути.",
+          "order": 4,
+          "tagIds": [
+            "tag_2575c9c7a981"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_e863b4ab300c",
+          "slug": "cjm",
+          "title": "CJM",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Построение customer journey map.",
+          "professionIds": [
+            "it.product"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_bee3f2b037f5",
+              "componentId": "customer-journey-map.struktura-i-etapy-puti",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_dba4607ade2f",
+          "slug": "tochki-kontakta",
+          "title": "Точки контакта",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Карта точек контакта и каналов.",
+          "professionIds": [
+            "it.product"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_bee3f2b037f5",
+              "componentId": "customer-journey-map.tochki-kontakta-i-kanaly",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_5c6f87bf8505",
+          "slug": "boli-polzovatelya",
+          "title": "Боли пользователя",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Выявление барьеров и болей на пути.",
+          "professionIds": [
+            "it.product"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_bee3f2b037f5",
+              "componentId": "customer-journey-map.boli-i-barery-polzovatelya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_2575c9c7a981",
+          "slug": "vozmozhnosti-uluchsheniya",
+          "title": "Возможности улучшения",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Приоритизация улучшений опыта.",
+          "professionIds": [
+            "it.product"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_bee3f2b037f5",
+              "componentId": "customer-journey-map.vozmozhnosti-uluchsheniya-opyta",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_f6c87340201b",
+        "costUsd": 0.00096196,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1130,
+          "outputTokens": 589
         }
       },
       "issues": [],
@@ -10937,6 +11129,172 @@
       "methodologyVersion": "0.1.0"
     },
     {
+      "id": "comp_8dba4d21d998",
+      "slug": "jobs-to-be-done",
+      "title": "Jobs-to-be-Done",
+      "titleEn": "Jobs-to-be-Done",
+      "aliases": [
+        "JTBD",
+        "Задачи пользователя"
+      ],
+      "definition": "Понимание задач, на которые пользователь нанимает продукт, и критериев выбора решения.",
+      "scope": "universal",
+      "canonicalIds": [
+        "product-jtbd"
+      ],
+      "professionIds": [
+        "it.product"
+      ],
+      "components": [
+        {
+          "id": "jobs-to-be-done.osnovy-podhoda-jobs-to-be-done",
+          "slug": "osnovy-podhoda-jobs-to-be-done",
+          "title": "Основы подхода Jobs-to-be-Done",
+          "definition": "Концептуальная рамка JTBD: взгляд на продукт как на средство выполнения задачи пользователя.",
+          "order": 1,
+          "tagIds": [
+            "tag_e8f7ef7cab90"
+          ]
+        },
+        {
+          "id": "jobs-to-be-done.tipologiya-zadach-polzovatelya",
+          "slug": "tipologiya-zadach-polzovatelya",
+          "title": "Типология задач пользователя",
+          "definition": "Различение функциональных, эмоциональных и социальных задач, на которые нанимается продукт.",
+          "order": 2,
+          "tagIds": [
+            "tag_5ec924d1dd46"
+          ]
+        },
+        {
+          "id": "jobs-to-be-done.kriterii-vybora-resheniya",
+          "slug": "kriterii-vybora-resheniya",
+          "title": "Критерии выбора решения",
+          "definition": "Факторы, по которым пользователь сравнивает и выбирает решение для выполнения задачи.",
+          "order": 3,
+          "tagIds": [
+            "tag_3a1de621f595"
+          ]
+        },
+        {
+          "id": "jobs-to-be-done.svyaz-zadachi-i-tsennosti-produkta",
+          "slug": "svyaz-zadachi-i-tsennosti-produkta",
+          "title": "Связь задачи и ценности продукта",
+          "definition": "Сопоставление задачи пользователя с ценностью, которую продукт обещает и доставляет.",
+          "order": 4,
+          "tagIds": [
+            "tag_1db2b7eb36e5"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_e8f7ef7cab90",
+          "slug": "jtbd",
+          "title": "JTBD",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Подход Jobs-to-be-Done и формулировка задач пользователя.",
+          "professionIds": [
+            "it.product"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_8dba4d21d998",
+              "componentId": "jobs-to-be-done.osnovy-podhoda-jobs-to-be-done",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_5ec924d1dd46",
+          "slug": "zadachi-polzovatelya",
+          "title": "Задачи пользователя",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Функциональные, эмоциональные и социальные задачи.",
+          "professionIds": [
+            "it.product"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_8dba4d21d998",
+              "componentId": "jobs-to-be-done.tipologiya-zadach-polzovatelya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_3a1de621f595",
+          "slug": "kriterii-vybora",
+          "title": "Критерии выбора",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Критерии, по которым пользователь выбирает решение.",
+          "professionIds": [
+            "it.product"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_8dba4d21d998",
+              "componentId": "jobs-to-be-done.kriterii-vybora-resheniya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_1db2b7eb36e5",
+          "slug": "tsennostnoe-predlozhenie",
+          "title": "Ценностное предложение",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Связь задачи пользователя с ценностью продукта.",
+          "professionIds": [
+            "it.product"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_8dba4d21d998",
+              "componentId": "jobs-to-be-done.svyaz-zadachi-i-tsennosti-produkta",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_e7f0e9cf4122",
+        "costUsd": 0.0010103,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1142,
+          "outputTokens": 630
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
       "id": "comp_94c55eb76f7e",
       "slug": "ux-metriki-i-eksperimenty",
       "title": "UX-метрики и эксперименты",
@@ -11690,6 +12048,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_5c6f87bf8505",
+      "slug": "boli-polzovatelya",
+      "title": "Боли пользователя",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Выявление барьеров и болей на пути.",
+      "professionIds": [
+        "it.product"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_bee3f2b037f5",
+          "componentId": "customer-journey-map.boli-i-barery-polzovatelya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_818f8a205eaf",
       "slug": "brend-platforma",
       "title": "Бренд-платформа",
@@ -12140,6 +12520,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_2575c9c7a981",
+      "slug": "vozmozhnosti-uluchsheniya",
+      "title": "Возможности улучшения",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Приоритизация улучшений опыта.",
+      "professionIds": [
+        "it.product"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_bee3f2b037f5",
+          "componentId": "customer-journey-map.vozmozhnosti-uluchsheniya-opyta",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_cdb6c1793c98",
       "slug": "vorkshopy-s-ekspertami",
       "title": "Воркшопы с экспертами",
@@ -12441,6 +12843,28 @@
       "needsReview": true
     },
     {
+      "id": "tag_5ec924d1dd46",
+      "slug": "zadachi-polzovatelya",
+      "title": "Задачи пользователя",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Функциональные, эмоциональные и социальные задачи.",
+      "professionIds": [
+        "it.product"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_8dba4d21d998",
+          "componentId": "jobs-to-be-done.tipologiya-zadach-polzovatelya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_2ec2ac0348f8",
       "slug": "zachem-polzovatelyu-stsenariy",
       "title": "Зачем пользователю сценарий",
@@ -12616,6 +13040,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_7e0fda2790c5",
+      "slug": "interpretatsiya-rezultatov-a-b-testov",
+      "title": "Интерпретация результатов A/B-тестов",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Анализ результатов A/B-эксперимента и формулирование выводов о влиянии изменений.",
+      "professionIds": [
+        "it.product"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_1ebd55d6b563",
+          "componentId": "eksperimenty-i-proverka-gipotez.metriki-i-interpretatsiya-rezultatov",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_0fca5c19caf1",
@@ -12869,6 +13315,28 @@
       "needsReview": true
     },
     {
+      "id": "tag_3a1de621f595",
+      "slug": "kriterii-vybora",
+      "title": "Критерии выбора",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Критерии, по которым пользователь выбирает решение.",
+      "professionIds": [
+        "it.product"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_8dba4d21d998",
+          "componentId": "jobs-to-be-done.kriterii-vybora-resheniya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_437a85b15712",
       "slug": "kriterii-segmentatsii-auditorii",
       "title": "Критерии сегментации аудитории",
@@ -12905,7 +13373,7 @@
       "competencyLinks": [
         {
           "competencyId": "comp_1ebd55d6b563",
-          "componentId": "eksperimenty-i-proverka-gipotez.protsess-i-kultura-eksperimentov",
+          "componentId": "eksperimenty-i-proverka-gipotez.kultura-eksperimentov",
           "role": "primary"
         }
       ],
@@ -13053,7 +13521,7 @@
       "competencyLinks": [
         {
           "competencyId": "comp_1ebd55d6b563",
-          "componentId": "eksperimenty-i-proverka-gipotez.metriki-i-otsenka-effekta",
+          "componentId": "eksperimenty-i-proverka-gipotez.metriki-i-interpretatsiya-rezultatov",
           "role": "primary"
         }
       ],
@@ -13642,7 +14110,7 @@
       "title": "Планирование A/B-экспериментов",
       "aliases": [],
       "kind": "skill",
-      "definition": "Планирование и интерпретация A/B-экспериментов. Охватывает постановку эксперимента, выбор вариантов и чтение результатов.",
+      "definition": "Разработка дизайна A/B-эксперимента: выбор вариантов, определение выборки и условий проведения.",
       "professionIds": [
         "it.product"
       ],
@@ -14275,7 +14743,7 @@
       "competencyLinks": [
         {
           "competencyId": "comp_275b0c8fc9b6",
-          "componentId": "produktovaya-strategiya.formulirovka-produktovoy-strategii",
+          "componentId": "produktovaya-strategiya.formulirovka-strategii",
           "role": "primary"
         }
       ],
@@ -14319,7 +14787,7 @@
       "competencyLinks": [
         {
           "competencyId": "comp_275b0c8fc9b6",
-          "componentId": "produktovaya-strategiya.produktovye-stavki-i-prioritizatsiya",
+          "componentId": "produktovaya-strategiya.prioritizatsiya-stavok",
           "role": "primary"
         }
       ],
@@ -14363,7 +14831,7 @@
       "competencyLinks": [
         {
           "competencyId": "comp_275b0c8fc9b6",
-          "componentId": "produktovaya-strategiya.planirovanie-razvitiya-produkta",
+          "componentId": "produktovaya-strategiya.planirovanie-razvitiya",
           "role": "primary"
         }
       ],
@@ -15774,6 +16242,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_dba4607ade2f",
+      "slug": "tochki-kontakta",
+      "title": "Точки контакта",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Карта точек контакта и каналов.",
+      "professionIds": [
+        "it.product"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_bee3f2b037f5",
+          "componentId": "customer-journey-map.tochki-kontakta-i-kanaly",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_c60933a9cee2",
       "slug": "ubezhdenie-klientov-cherez-alternativy",
       "title": "Убеждение клиентов через альтернативы",
@@ -16214,7 +16704,29 @@
       "competencyLinks": [
         {
           "competencyId": "comp_275b0c8fc9b6",
-          "componentId": "produktovaya-strategiya.tselevaya-auditoriya-i-tsennostnoe-predlozhenie",
+          "componentId": "produktovaya-strategiya.tselevaya-tsennost-i-auditoriya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_1db2b7eb36e5",
+      "slug": "tsennostnoe-predlozhenie",
+      "title": "Ценностное предложение",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Связь задачи пользователя с ценностью продукта.",
+      "professionIds": [
+        "it.product"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_8dba4d21d998",
+          "componentId": "jobs-to-be-done.svyaz-zadachi-i-tsennosti-produkta",
           "role": "primary"
         }
       ],
@@ -16342,6 +16854,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_e863b4ab300c",
+      "slug": "cjm",
+      "title": "CJM",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Построение customer journey map.",
+      "professionIds": [
+        "it.product"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_bee3f2b037f5",
+          "componentId": "customer-journey-map.struktura-i-etapy-puti",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_65ff14cf79a5",
@@ -16491,6 +17025,28 @@
         {
           "competencyId": "comp_70dc27286adc",
           "componentId": "framer-interaktivnye-prototipy.animatsiya-i-mikrovzaimodeystviya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_e8f7ef7cab90",
+      "slug": "jtbd",
+      "title": "JTBD",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Подход Jobs-to-be-Done и формулировка задач пользователя.",
+      "professionIds": [
+        "it.product"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_8dba4d21d998",
+          "componentId": "jobs-to-be-done.osnovy-podhoda-jobs-to-be-done",
           "role": "primary"
         }
       ],

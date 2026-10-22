@@ -99,6 +99,28 @@
       "titleEn": "Editorial design",
       "definition": "Вёрстка многостраничных и цифровых изданий, сетки и типографическая иерархия.",
       "priorityHint": "core"
+    },
+    {
+      "id": "product-jtbd",
+      "branchId": "product",
+      "branchTitle": "Product",
+      "sectionId": "product-discovery",
+      "sectionTitle": "Discovery",
+      "title": "Jobs-to-be-Done",
+      "titleEn": "Jobs to be done",
+      "definition": "Понимание задач, на которые пользователь нанимает продукт, и критериев выбора решения.",
+      "priorityHint": "foundation"
+    },
+    {
+      "id": "product-cjm",
+      "branchId": "product",
+      "branchTitle": "Product",
+      "sectionId": "product-discovery",
+      "sectionTitle": "Discovery",
+      "title": "Customer Journey Map",
+      "titleEn": "Customer journey map",
+      "definition": "Карта пути пользователя: этапы, точки контакта, боли и возможности улучшения опыта.",
+      "priorityHint": "core"
     }
   ]
 }

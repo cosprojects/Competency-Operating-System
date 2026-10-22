@@ -904,6 +904,82 @@
           "kind": "knowledge"
         }
       ]
+    },
+    {
+      "id": "product-jtbd",
+      "canonicalId": "product-jtbd",
+      "title": "Jobs-to-be-Done",
+      "titleEn": "Jobs to be done",
+      "aliases": [
+        "Jobs to be done"
+      ],
+      "definition": "Понимание задач, на которые пользователь нанимает продукт, и критериев выбора решения.",
+      "professionIds": [
+        "it.product"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "JTBD",
+          "definition": "Подход Jobs-to-be-Done и формулировка задач пользователя.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Задачи пользователя",
+          "definition": "Функциональные, эмоциональные и социальные задачи.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Критерии выбора",
+          "definition": "Критерии, по которым пользователь выбирает решение.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Ценностное предложение",
+          "definition": "Связь задачи пользователя с ценностью продукта.",
+          "kind": "knowledge"
+        }
+      ]
+    },
+    {
+      "id": "product-cjm",
+      "canonicalId": "product-cjm",
+      "title": "Customer Journey Map",
+      "titleEn": "Customer journey map",
+      "aliases": [
+        "Customer journey map"
+      ],
+      "definition": "Карта пути пользователя: этапы, точки контакта, боли и возможности улучшения опыта.",
+      "professionIds": [
+        "it.product"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "CJM",
+          "definition": "Построение customer journey map.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Точки контакта",
+          "definition": "Карта точек контакта и каналов.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Боли пользователя",
+          "definition": "Выявление барьеров и болей на пути.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Возможности улучшения",
+          "definition": "Приоритизация улучшений опыта.",
+          "kind": "knowledge"
+        }
+      ]
     }
   ]
 }

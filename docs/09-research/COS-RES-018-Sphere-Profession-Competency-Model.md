@@ -1,7 +1,7 @@
 ---
 id: COS-RES-018
 title: Модель сфера → профессия → компетенции и систематизация источников
-version: 1.8.0
+version: 1.9.0
 status: Draft
 owner: Research Team
 last_updated: 2026-10-21
@@ -134,7 +134,7 @@ src/methodology/v1/competency/
 `model:views` материализует это в `model/profession-competencies/<slug>.json` с `sectionId/sectionTitle`, не создавая копий компетенций. Так `ui-motion` может быть `foundation` у motion, `core` у UX/UI и `optional` у product.
 
 Текущие view:
-- `it.product` — 28 ссылок, уклон в метрики, стратегию, рост и эксперименты;
+- `it.product` — 30 ссылок, включая Discovery/JTBD/CJM, метрики, стратегию, рост и эксперименты;
 - `it.motion` — 19 ссылок, уклон в кинетику, тайминг, сторибординг и 3D;
 - `it.graphic` — 18 ссылок, уклон в бренд, печать и редакционный дизайн.
 
@@ -161,9 +161,9 @@ Human-review канвас: `web/competencies-review-canvas.html` — табы п
 
 - сфера: `it`;
 - профессий: **4** — `it.uxui`, `it.product`, `it.motion`, `it.graphic`;
-- компетенций в едином массиве: **43** (34 базовых + 9 профессио-специфичных);
-- каталог домена: **42 блока, 186 тегов** (UX/UI + profession-specific);
-- profession-competencies: UX/UI — 34, product — 28, motion — 19, graphic — 18;
+- компетенций в едином массиве: **45** (34 базовых + 11 профессио-специфичных);
+- каталог домена: **44 блока, 195 тегов** (UX/UI + profession-specific);
+- profession-competencies: UX/UI — 34, product — 30, motion — 19, graphic — 18;
 - переиспользуемых компетенций: **34** (базовые входят в несколько профессий; 9 специфичных — в свою);
 - источники: `sources/spheres/it.json` + отдельный файл на каждую профессию (`sources/professions/it.*.json`); Material Agent берёт `materialSourceIds` из source-файла профессии, по умолчанию только active;
 - страницы: `web/it-uxui-competency-canvas.html`, `web/it-product-competency-map.html`, `web/it-motion-competency-map.html`, `web/it-graphic-competency-map.html`, сетевые `web/it-product-competency-canvas.html`, `web/it-motion-competency-canvas.html`, `web/it-graphic-competency-canvas.html`; единый review-канвас `web/competencies-review-canvas.html` с табами по профессиям;
@@ -201,3 +201,4 @@ Human-review канвас: `web/competencies-review-canvas.html` — табы п
 | 1.6.0 | 2026-10-21 | Порядок UX/UI исправлен: дизайн-мышление → исследования, аналитика 17-я после метрик, requirements/wireframes переставлены; добавлен tabbed review canvas по профессиям без tier-фильтров |
 | 1.7.0 | 2026-10-22 | Product graph: 28 узлов / 27 связей; добавлены межраздельные prerequisites (design thinking → product thinking/research, UX research → IA, product thinking → metrics, design → UI color) |
 | 1.8.0 | 2026-10-22 | Product: Practicum `product-approach-for-designers` подключён через профессию, из каталога извлекаются тематические теги (CJM, JTBD, гипотезы, юзабилити, дизайн-системы); 182 тега |
+| 1.9.0 | 2026-10-22 | Product graph расширен до 30 узлов: JTBD и CJM; 29 связей; каталог 44 блока / 195 тегов; глобальный массив 45 компетенций |

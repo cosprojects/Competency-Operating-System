@@ -45,7 +45,10 @@ export async function searchEscoOccupations(
     selectedVersion: ESCO_VERSION,
   });
   const response = await fetchImpl(`${ESCO_ORIGIN}/search?${params.toString()}`, {
-    headers: { Accept: "application/json" },
+    headers: {
+      Accept: "application/json",
+      "User-Agent": "CosCompetencyResearch/0.1 (+https://github.com/cosprojects/Competency-Operating-System)",
+    },
     signal: AbortSignal.timeout(20_000),
   });
   if (!response.ok) throw new Error(`ESCO search ответил ${response.status}`);

@@ -35,7 +35,10 @@
         {
           "competencyId": "ux-user-research",
           "tier": "core",
-          "order": 4
+          "order": 4,
+          "prerequisites": [
+            "ux-design-thinking"
+          ]
         },
         {
           "competencyId": "ux-personas",
@@ -67,7 +70,10 @@
         {
           "competencyId": "ux-information-architecture",
           "tier": "core",
-          "order": 9
+          "order": 9,
+          "prerequisites": [
+            "ux-user-research"
+          ]
         },
         {
           "competencyId": "ux-user-flows",
@@ -109,7 +115,11 @@
         {
           "competencyId": "ux-metrics",
           "tier": "core",
-          "order": 16
+          "order": 16,
+          "prerequisites": [
+            "ux-product-thinking",
+            "ux-user-research"
+          ]
         },
         {
           "competencyId": "ux-experiments",
@@ -131,7 +141,10 @@
         {
           "competencyId": "ui-color",
           "tier": "core",
-          "order": 19
+          "order": 19,
+          "prerequisites": [
+            "ux-design-thinking"
+          ]
         },
         {
           "competencyId": "ui-typography",
@@ -146,7 +159,10 @@
         {
           "competencyId": "ui-design-systems",
           "tier": "core",
-          "order": 22
+          "order": 22,
+          "prerequisites": [
+            "ux-information-architecture"
+          ]
         },
         {
           "competencyId": "ui-components",

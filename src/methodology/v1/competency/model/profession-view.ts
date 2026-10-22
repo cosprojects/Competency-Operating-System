@@ -4,6 +4,7 @@ export interface ProfessionViewCompetency {
   competencyId: string;
   tier: "foundation" | "core" | "optional";
   order: number;
+  prerequisites?: string[];
 }
 
 export interface ProfessionViewSection {

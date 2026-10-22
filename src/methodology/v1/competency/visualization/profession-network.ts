@@ -54,11 +54,12 @@ export function buildProfessionNetworkPage(
       order += 1;
       const block = syntheticBlock(competency, view, sourceByCanonical.get(item.competencyId));
       blocks.push(block);
+      const prerequisites = item.prerequisites ?? (previous ? [previous] : []);
       const mark: StudyPriorityMark = {
         competencyId: item.competencyId,
         tier: item.tier,
         order,
-        prerequisites: previous ? [previous] : [],
+        prerequisites,
         rationale: competency.definition,
         confidence: "low",
         reviewer: "profession-view",
@@ -69,7 +70,7 @@ export function buildProfessionNetworkPage(
         competencyId: item.competencyId,
         tier: item.tier,
         order,
-        prerequisites: mark.prerequisites,
+        prerequisites,
         shortDescription: competency.definition,
         branch: view.title,
         section: section.title,

@@ -30,6 +30,7 @@ export function buildCanonicalVisualization(map: CanonicalMap, sourceBlocks: Com
         const covered = competency.coveredBy
           .map((id) => sourceById.get(id))
           .find((block): block is CompetencyBlock => block !== undefined);
+        const prerequisites = competency.prerequisites ?? (previousCompetencyId ? [previousCompetencyId] : []);
         const block: CompetencyBlock = {
           id: competency.id,
           slug: competency.id,
@@ -55,7 +56,7 @@ export function buildCanonicalVisualization(map: CanonicalMap, sourceBlocks: Com
           competencyId: competency.id,
           tier: tierOf(competency.priorityHint),
           order,
-          prerequisites: previousCompetencyId ? [previousCompetencyId] : [],
+          prerequisites,
           shortDescription: competency.definition,
           branch: branch.title,
           section: section.title,
@@ -64,7 +65,7 @@ export function buildCanonicalVisualization(map: CanonicalMap, sourceBlocks: Com
           competencyId: competency.id,
           tier: tierOf(competency.priorityHint),
           order,
-          prerequisites: previousCompetencyId ? [previousCompetencyId] : [],
+          prerequisites,
           rationale: competency.definition,
           confidence: "low",
           reviewer: "canonical-visual",

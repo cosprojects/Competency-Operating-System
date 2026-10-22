@@ -1,7 +1,7 @@
 ---
 id: COS-RES-018
 title: Модель сфера → профессия → компетенции и систематизация источников
-version: 1.5.0
+version: 1.6.0
 status: Draft
 owner: Research Team
 last_updated: 2026-10-21
@@ -150,7 +150,10 @@ npm run canvas:profession -- --profession graphic
 npm run canvas:profession-network -- --profession product
 npm run canvas:profession-network -- --profession motion
 npm run canvas:profession-network -- --profession graphic
+npm run canvas:tabs
 ```
+
+Human-review канвас: `web/competencies-review-canvas.html` — табы по профессиям (UX/UI, Product, Motion, Graphic) вместо tier-фильтров внутри страницы. Tier-легенда остаётся в карточках/деталях.
 
 `model:sync` собирает нормализованные файлы из canonical map, priority, registry и targets. `model:validate` проверяет ссылочную целостность: сфера → профессия, профессия → компетенция, порядок, prerequisites, source-файлы.
 
@@ -163,7 +166,7 @@ npm run canvas:profession-network -- --profession graphic
 - profession-competencies: UX/UI — 34, product — 28, motion — 19, graphic — 18;
 - переиспользуемых компетенций: **34** (базовые входят в несколько профессий; 9 специфичных — в свою);
 - источники: `sources/spheres/it.json` + отдельный файл на каждую профессию (`sources/professions/it.*.json`); Material Agent берёт `materialSourceIds` из source-файла профессии, по умолчанию только active;
-- страницы: `web/it-uxui-competency-canvas.html`, `web/it-product-competency-map.html`, `web/it-motion-competency-map.html`, `web/it-graphic-competency-map.html`, а также сетевые `web/it-product-competency-canvas.html`, `web/it-motion-competency-canvas.html`, `web/it-graphic-competency-canvas.html`;
+- страницы: `web/it-uxui-competency-canvas.html`, `web/it-product-competency-map.html`, `web/it-motion-competency-map.html`, `web/it-graphic-competency-map.html`, сетевые `web/it-product-competency-canvas.html`, `web/it-motion-competency-canvas.html`, `web/it-graphic-competency-canvas.html`; единый review-канвас `web/competencies-review-canvas.html` с табами по профессиям;
 - `model:validate --all`: 0 ошибок.
 
 ## 7. Следующие профессии
@@ -195,3 +198,4 @@ npm run canvas:profession-network -- --profession graphic
 | 1.3.0 | 2026-10-21 | `professions:collect --profession` и `tags:collect --profession` подключены к source-файлам; motion smoke: 1 профессия, 172 тега |
 | 1.4.0 | 2026-10-21 | Добавлены 9 профессио-специфичных компетенций (motion timing/3D, product strategy/growth/experiments, graphic brand/print/editorial); общий массив 43, страницы пересобраны |
 | 1.5.0 | 2026-10-21 | Добавлены сетевые канвасы для product/motion/graphic (`canvas:profession-network`); source-файлы используются сборщиками; 127 тестов |
+| 1.6.0 | 2026-10-21 | Порядок UX/UI исправлен: дизайн-мышление → исследования, аналитика 17-я после метрик, requirements/wireframes переставлены; добавлен tabbed review canvas по профессиям без tier-фильтров |

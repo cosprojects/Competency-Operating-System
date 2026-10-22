@@ -10,39 +10,6 @@
       "catalogFile": "catalog/it.json",
       "priorityFile": "priority/uxui.json",
       "sourcesFile": "sources/professions/it.uxui.json"
-    },
-    {
-      "id": "it.graphic",
-      "sphereId": "it",
-      "title": "Графический дизайнер",
-      "titleEn": "Graphic designer",
-      "canonicalMapFile": "model/professions/views/graphic.json",
-      "viewFile": "model/professions/views/graphic.json",
-      "catalogFile": "catalog/it.json",
-      "priorityFile": "model/profession-competencies/graphic.json",
-      "sourcesFile": "sources/professions/it.graphic.json"
-    },
-    {
-      "id": "it.motion",
-      "sphereId": "it",
-      "title": "Моушн-дизайнер",
-      "titleEn": "Motion designer",
-      "canonicalMapFile": "model/professions/views/motion.json",
-      "viewFile": "model/professions/views/motion.json",
-      "catalogFile": "catalog/it.json",
-      "priorityFile": "model/profession-competencies/motion.json",
-      "sourcesFile": "sources/professions/it.motion.json"
-    },
-    {
-      "id": "it.product",
-      "sphereId": "it",
-      "title": "Продуктовый дизайнер",
-      "titleEn": "Product designer",
-      "canonicalMapFile": "model/professions/views/product.json",
-      "viewFile": "model/professions/views/product.json",
-      "catalogFile": "catalog/it.json",
-      "priorityFile": "model/profession-competencies/product.json",
-      "sourcesFile": "sources/professions/it.product.json"
     }
   ]
 }

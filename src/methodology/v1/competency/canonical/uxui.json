@@ -63,7 +63,10 @@
                   "node_ux_research"
                 ]
               },
-              "note": "Покрыто accepted-блоком"
+              "note": "Покрыто accepted-блоком",
+              "prerequisites": [
+                "ux-design-thinking"
+              ]
             },
             {
               "id": "ux-personas",
@@ -97,24 +100,6 @@
               "sourceEvidence": {
                 "taxonomyLeaves": [
                   "Interviews"
-                ]
-              },
-              "note": "Покрыто accepted-блоком"
-            },
-            {
-              "id": "ux-analytics",
-              "order": 4,
-              "title": "Продуктовая аналитика",
-              "titleEn": "Product analytics",
-              "definition": "Работа с поведенческими данными, воронками и метриками для проверки гипотез.",
-              "priorityHint": "core",
-              "status": "covered",
-              "coveredBy": [
-                "comp_ec6bb5ba0dd5"
-              ],
-              "sourceEvidence": {
-                "graphNodeIds": [
-                  "node_ux_research"
                 ]
               },
               "note": "Покрыто accepted-блоком"
@@ -170,8 +155,21 @@
               "note": "Покрыто accepted-блоком"
             },
             {
-              "id": "ux-wireframes",
+              "id": "ux-requirements",
               "order": 3,
+              "title": "Анализ требований и постановка задач",
+              "titleEn": "Requirements analysis",
+              "definition": "Перевод бизнес- и пользовательских потребностей в проверяемые требования и ограничения.",
+              "priorityHint": "core",
+              "status": "covered",
+              "coveredBy": [
+                "comp_bb0fe81fb74f"
+              ],
+              "note": "Покрыто accepted-блоком"
+            },
+            {
+              "id": "ux-wireframes",
+              "order": 4,
               "title": "Вайрфреймы и структура экранов",
               "titleEn": "Wireframes",
               "definition": "Быстрая структура экранов и взаимодействий без визуальной детализации.",
@@ -185,19 +183,6 @@
                   "Wireframes"
                 ]
               },
-              "note": "Покрыто accepted-блоком"
-            },
-            {
-              "id": "ux-requirements",
-              "order": 4,
-              "title": "Анализ требований и постановка задач",
-              "titleEn": "Requirements analysis",
-              "definition": "Перевод бизнес- и пользовательских потребностей в проверяемые требования и ограничения.",
-              "priorityHint": "core",
-              "status": "covered",
-              "coveredBy": [
-                "comp_bb0fe81fb74f"
-              ],
               "note": "Покрыто accepted-блоком"
             }
           ]
@@ -338,6 +323,24 @@
               "coveredBy": [
                 "comp_058ffb486eb7"
               ],
+              "note": "Покрыто accepted-блоком"
+            },
+            {
+              "id": "ux-analytics",
+              "order": 4,
+              "title": "Продуктовая аналитика",
+              "titleEn": "Product analytics",
+              "definition": "Работа с поведенческими данными, воронками и метриками для проверки гипотез.",
+              "priorityHint": "core",
+              "status": "covered",
+              "coveredBy": [
+                "comp_ec6bb5ba0dd5"
+              ],
+              "sourceEvidence": {
+                "graphNodeIds": [
+                  "node_ux_research"
+                ]
+              },
               "note": "Покрыто accepted-блоком"
             }
           ]

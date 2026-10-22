@@ -64,22 +64,6 @@
       }
     },
     {
-      "id": "ux-analytics",
-      "branchId": "ux",
-      "branchTitle": "UX — пользовательский опыт",
-      "sectionId": "ux-research",
-      "sectionTitle": "Исследования",
-      "title": "Продуктовая аналитика",
-      "titleEn": "Product analytics",
-      "definition": "Работа с поведенческими данными, воронками и метриками для проверки гипотез.",
-      "priorityHint": "core",
-      "sourceEvidence": {
-        "graphNodeIds": [
-          "node_ux_research"
-        ]
-      }
-    },
-    {
       "id": "ux-information-architecture",
       "branchId": "ux",
       "branchTitle": "UX — пользовательский опыт",
@@ -118,6 +102,17 @@
       }
     },
     {
+      "id": "ux-requirements",
+      "branchId": "ux",
+      "branchTitle": "UX — пользовательский опыт",
+      "sectionId": "ux-architecture",
+      "sectionTitle": "Сценарии и информационная архитектура",
+      "title": "Анализ требований и постановка задач",
+      "titleEn": "Requirements analysis",
+      "definition": "Перевод бизнес- и пользовательских потребностей в проверяемые требования и ограничения.",
+      "priorityHint": "core"
+    },
+    {
       "id": "ux-wireframes",
       "branchId": "ux",
       "branchTitle": "UX — пользовательский опыт",
@@ -132,17 +127,6 @@
           "Wireframes"
         ]
       }
-    },
-    {
-      "id": "ux-requirements",
-      "branchId": "ux",
-      "branchTitle": "UX — пользовательский опыт",
-      "sectionId": "ux-architecture",
-      "sectionTitle": "Сценарии и информационная архитектура",
-      "title": "Анализ требований и постановка задач",
-      "titleEn": "Requirements analysis",
-      "definition": "Перевод бизнес- и пользовательских потребностей в проверяемые требования и ограничения.",
-      "priorityHint": "core"
     },
     {
       "id": "ux-lowfi-prototype",
@@ -251,6 +235,22 @@
       "titleEn": "Ethics and privacy",
       "definition": "Этические, правовые и безопасностные ограничения дизайна.",
       "priorityHint": "optional"
+    },
+    {
+      "id": "ux-analytics",
+      "branchId": "ux",
+      "branchTitle": "UX — пользовательский опыт",
+      "sectionId": "ux-product",
+      "sectionTitle": "Продукт и стратегия",
+      "title": "Продуктовая аналитика",
+      "titleEn": "Product analytics",
+      "definition": "Работа с поведенческими данными, воронками и метриками для проверки гипотез.",
+      "priorityHint": "core",
+      "sourceEvidence": {
+        "graphNodeIds": [
+          "node_ux_research"
+        ]
+      }
     },
     {
       "id": "ui-color",

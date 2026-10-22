@@ -51,3 +51,6 @@ npm run canonical:validate -- --domain it --profession uxui --source review --in
 
 
 Материалы новых профессий: `npm run materials:agent:review -- --domain it --profession motion` (также `product`, `graphic`). Это review-артефакты, не accepted-материалы.
+
+
+Human-review канвас: `npm run canvas:tabs`, затем открыть `web/competencies-review-canvas.html` — переключение UX/UI, Product, Motion, Graphic в одном окне.

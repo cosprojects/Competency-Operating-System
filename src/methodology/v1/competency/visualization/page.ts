@@ -220,11 +220,6 @@ export function renderCanvasPage(data: VisualizationPageData): string {
     </header>
     <div class="banner"><strong>Черновой слой.</strong> ${esc(data.note)} Сгенерировано ${esc(data.generatedOn)}.</div>
     <div class="toolbar">
-      <span class="toolbar-label">Показать:</span>
-      <button class="filter active" data-filter="all">Все</button>
-      <button class="filter" data-filter="foundation">Фундамент</button>
-      <button class="filter" data-filter="core">Основные</button>
-      <button class="filter" data-filter="optional">Необязательные</button>
       <span class="hint">Наведите на карточку, чтобы увидеть связи; нажмите — подробности</span>
     </div>
     <main class="workspace">
@@ -306,20 +301,6 @@ export function renderCanvasPage(data: VisualizationPageData): string {
     });
     document.getElementById('detail-close').addEventListener('click', () => { detail.hidden = true; clearHighlight(); });
     document.addEventListener('keydown', (event) => { if (event.key === 'Escape') { detail.hidden = true; clearHighlight(); } });
-    document.querySelectorAll('.filter').forEach((button) => {
-      button.addEventListener('click', () => {
-        document.querySelectorAll('.filter').forEach((item) => item.classList.remove('active'));
-        button.classList.add('active');
-        const filter = button.dataset.filter;
-        cards.forEach((card) => { card.style.display = filter === 'all' || card.dataset.tier === filter ? '' : 'none'; });
-        edges.forEach((edge) => {
-          const from = byId.get(edge.dataset.from);
-          const to = byId.get(edge.dataset.to);
-          edge.style.display = filter === 'all' || (from && from.tier === filter) || (to && to.tier === filter) ? '' : 'none';
-        });
-        clearHighlight();
-      });
-    });
   </script>
 </body>
 </html>

@@ -31,25 +31,25 @@
       ]
     },
     {
-      "competencyId": "ux-analytics",
-      "tier": "core",
-      "order": 5,
-      "prerequisites": [
-        "ux-interviews"
-      ]
-    },
-    {
       "competencyId": "ux-information-architecture",
       "tier": "foundation",
-      "order": 6,
+      "order": 5,
       "prerequisites": []
     },
     {
       "competencyId": "ux-user-flows",
       "tier": "core",
-      "order": 7,
+      "order": 6,
       "prerequisites": [
         "ux-information-architecture"
+      ]
+    },
+    {
+      "competencyId": "ux-requirements",
+      "tier": "core",
+      "order": 7,
+      "prerequisites": [
+        "ux-user-flows"
       ]
     },
     {
@@ -57,27 +57,19 @@
       "tier": "core",
       "order": 8,
       "prerequisites": [
-        "ux-user-flows"
-      ]
-    },
-    {
-      "competencyId": "ux-requirements",
-      "tier": "core",
-      "order": 9,
-      "prerequisites": [
-        "ux-wireframes"
+        "ux-requirements"
       ]
     },
     {
       "competencyId": "ux-lowfi-prototype",
       "tier": "core",
-      "order": 10,
+      "order": 9,
       "prerequisites": []
     },
     {
       "competencyId": "ux-hifi-prototype",
       "tier": "core",
-      "order": 11,
+      "order": 10,
       "prerequisites": [
         "ux-lowfi-prototype"
       ]
@@ -85,7 +77,7 @@
     {
       "competencyId": "ux-interactive-prototype",
       "tier": "core",
-      "order": 12,
+      "order": 11,
       "prerequisites": [
         "ux-hifi-prototype"
       ]
@@ -93,7 +85,7 @@
     {
       "competencyId": "ux-usability-testing",
       "tier": "core",
-      "order": 13,
+      "order": 12,
       "prerequisites": [
         "ux-interactive-prototype"
       ]
@@ -101,7 +93,7 @@
     {
       "competencyId": "ux-experiments",
       "tier": "optional",
-      "order": 14,
+      "order": 13,
       "prerequisites": [
         "ux-usability-testing"
       ]
@@ -109,13 +101,13 @@
     {
       "competencyId": "ux-product-thinking",
       "tier": "core",
-      "order": 15,
+      "order": 14,
       "prerequisites": []
     },
     {
       "competencyId": "ux-metrics",
       "tier": "core",
-      "order": 16,
+      "order": 15,
       "prerequisites": [
         "ux-product-thinking"
       ]
@@ -123,9 +115,17 @@
     {
       "competencyId": "ux-ethics-privacy",
       "tier": "optional",
-      "order": 17,
+      "order": 16,
       "prerequisites": [
         "ux-metrics"
+      ]
+    },
+    {
+      "competencyId": "ux-analytics",
+      "tier": "core",
+      "order": 17,
+      "prerequisites": [
+        "ux-ethics-privacy"
       ]
     },
     {

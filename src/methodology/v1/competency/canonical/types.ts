@@ -18,6 +18,7 @@ export interface CanonicalCompetency {
   priorityHint: CanonicalPriorityHint;
   status: CanonicalStatus;
   coveredBy: string[];
+  prerequisites?: string[];
   sourceEvidence?: CanonicalSourceEvidence;
   note?: string;
 }

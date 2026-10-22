@@ -2,7 +2,7 @@
   "priorityVersion": "1.0.0",
   "domain": "it",
   "professionId": "it.uxui",
-  "updatedOn": "2026-10-21",
+  "updatedOn": "2026-10-22",
   "status": "accepted",
   "marks": [
     {
@@ -13,7 +13,7 @@
       "rationale": "Системный подход к решению задач: понимание пользователя, формулировка проблемы, генерация и проверка гипотез, итерации.",
       "confidence": "medium",
       "reviewer": "cos-methodologist",
-      "reviewedAt": "2026-10-21",
+      "reviewedAt": "2026-10-22",
       "signals": {
         "scope": "profession"
       }
@@ -26,7 +26,7 @@
       "rationale": "Планирование и проведение исследований, синтез наблюдений в проверяемые инсайты.",
       "confidence": "medium",
       "reviewer": "cos-methodologist",
-      "reviewedAt": "2026-10-21",
+      "reviewedAt": "2026-10-22",
       "signals": {
         "scope": "profession"
       }
@@ -39,7 +39,7 @@
       "rationale": "Модели целевых пользователей, их целей, контекста и критериев выбора.",
       "confidence": "medium",
       "reviewer": "cos-methodologist",
-      "reviewedAt": "2026-10-21",
+      "reviewedAt": "2026-10-22",
       "signals": {
         "scope": "profession"
       }
@@ -52,7 +52,7 @@
       "rationale": "Подготовка и проведение глубинных интервью, наблюдений и анализ качественных данных.",
       "confidence": "medium",
       "reviewer": "cos-methodologist",
-      "reviewedAt": "2026-10-21",
+      "reviewedAt": "2026-10-22",
       "signals": {
         "scope": "profession"
       }
@@ -65,7 +65,7 @@
       "rationale": "Структура контента и навигации, категоризация и находимость информации.",
       "confidence": "medium",
       "reviewer": "cos-methodologist",
-      "reviewedAt": "2026-10-21",
+      "reviewedAt": "2026-10-22",
       "signals": {
         "scope": "profession"
       }
@@ -78,20 +78,7 @@
       "rationale": "Моделирование пути пользователя, развилок, ошибок и восстановления.",
       "confidence": "medium",
       "reviewer": "cos-methodologist",
-      "reviewedAt": "2026-10-21",
-      "signals": {
-        "scope": "profession"
-      }
-    },
-    {
-      "competencyId": "comp_281fdd473ddf",
-      "tier": "core",
-      "order": 7,
-      "prerequisites": [],
-      "rationale": "Быстрая структура экранов и взаимодействий без визуальной детализации.",
-      "confidence": "medium",
-      "reviewer": "cos-methodologist",
-      "reviewedAt": "2026-10-21",
+      "reviewedAt": "2026-10-22",
       "signals": {
         "scope": "profession"
       }
@@ -99,12 +86,25 @@
     {
       "competencyId": "comp_bb0fe81fb74f",
       "tier": "core",
-      "order": 8,
+      "order": 7,
       "prerequisites": [],
       "rationale": "Перевод бизнес- и пользовательских потребностей в проверяемые требования и ограничения.",
       "confidence": "medium",
       "reviewer": "cos-methodologist",
-      "reviewedAt": "2026-10-21",
+      "reviewedAt": "2026-10-22",
+      "signals": {
+        "scope": "profession"
+      }
+    },
+    {
+      "competencyId": "comp_281fdd473ddf",
+      "tier": "core",
+      "order": 8,
+      "prerequisites": [],
+      "rationale": "Быстрая структура экранов и взаимодействий без визуальной детализации.",
+      "confidence": "medium",
+      "reviewer": "cos-methodologist",
+      "reviewedAt": "2026-10-22",
       "signals": {
         "scope": "profession"
       }
@@ -117,7 +117,7 @@
       "rationale": "Быстрые бумажные и схематичные прототипы для проверки структуры.",
       "confidence": "medium",
       "reviewer": "cos-methodologist",
-      "reviewedAt": "2026-10-21",
+      "reviewedAt": "2026-10-22",
       "signals": {
         "scope": "profession"
       }
@@ -130,7 +130,7 @@
       "rationale": "Детализированные прототипы, приближенные к финальному интерфейсу.",
       "confidence": "medium",
       "reviewer": "cos-methodologist",
-      "reviewedAt": "2026-10-21",
+      "reviewedAt": "2026-10-22",
       "signals": {
         "scope": "profession"
       }
@@ -143,7 +143,7 @@
       "rationale": "Прототипы с переходами и состояниями для проверки поведения продукта.",
       "confidence": "medium",
       "reviewer": "cos-methodologist",
-      "reviewedAt": "2026-10-21",
+      "reviewedAt": "2026-10-22",
       "signals": {
         "scope": "profession"
       }
@@ -156,7 +156,7 @@
       "rationale": "Проверка сценариев и прототипов на реальных пользователях, фиксация и приоритизация проблем.",
       "confidence": "medium",
       "reviewer": "cos-methodologist",
-      "reviewedAt": "2026-10-21",
+      "reviewedAt": "2026-10-22",
       "signals": {
         "scope": "profession"
       }
@@ -169,7 +169,7 @@
       "rationale": "Выбор метрик, дизайн экспериментов и интерпретация результатов.",
       "confidence": "medium",
       "reviewer": "cos-methodologist",
-      "reviewedAt": "2026-10-21",
+      "reviewedAt": "2026-10-22",
       "signals": {
         "scope": "profession"
       }
@@ -182,7 +182,7 @@
       "rationale": "Понимание ценности, аудитории, ограничений и жизненного цикла продукта.",
       "confidence": "medium",
       "reviewer": "cos-methodologist",
-      "reviewedAt": "2026-10-21",
+      "reviewedAt": "2026-10-22",
       "signals": {
         "scope": "profession"
       }
@@ -195,7 +195,7 @@
       "rationale": "Связь дизайн-решений с метриками, юнит-экономикой и бизнес-результатом.",
       "confidence": "medium",
       "reviewer": "cos-methodologist",
-      "reviewedAt": "2026-10-21",
+      "reviewedAt": "2026-10-22",
       "signals": {
         "scope": "profession"
       }
@@ -208,7 +208,7 @@
       "rationale": "Этические, правовые и безопасностные ограничения дизайна.",
       "confidence": "medium",
       "reviewer": "cos-methodologist",
-      "reviewedAt": "2026-10-21",
+      "reviewedAt": "2026-10-22",
       "signals": {
         "scope": "profession"
       }
@@ -221,7 +221,7 @@
       "rationale": "Физика цвета, восприятие, гармония, контраст и культурный контекст.",
       "confidence": "medium",
       "reviewer": "cos-methodologist",
-      "reviewedAt": "2026-10-21",
+      "reviewedAt": "2026-10-22",
       "signals": {
         "scope": "profession"
       }
@@ -234,7 +234,7 @@
       "rationale": "Физика цвета, восприятие, гармония, контраст и культурный контекст.",
       "confidence": "medium",
       "reviewer": "cos-methodologist",
-      "reviewedAt": "2026-10-21",
+      "reviewedAt": "2026-10-22",
       "signals": {
         "scope": "profession"
       }
@@ -247,7 +247,7 @@
       "rationale": "Шрифтовая иерархия, читаемость, ритм и типографические системы.",
       "confidence": "medium",
       "reviewer": "cos-methodologist",
-      "reviewedAt": "2026-10-21",
+      "reviewedAt": "2026-10-22",
       "signals": {
         "scope": "profession"
       }
@@ -260,7 +260,7 @@
       "rationale": "Управление вниманием через композицию, сетки, пропорции и иерархию.",
       "confidence": "medium",
       "reviewer": "cos-methodologist",
-      "reviewedAt": "2026-10-21",
+      "reviewedAt": "2026-10-22",
       "signals": {
         "scope": "profession"
       }
@@ -273,7 +273,7 @@
       "rationale": "Иконки, графика и визуальные элементы как часть интерфейсной системы.",
       "confidence": "medium",
       "reviewer": "cos-methodologist",
-      "reviewedAt": "2026-10-21",
+      "reviewedAt": "2026-10-22",
       "signals": {
         "scope": "profession"
       }
@@ -286,7 +286,7 @@
       "rationale": "Стилистика, визуальные коды и целостность интерфейсной коммуникации.",
       "confidence": "medium",
       "reviewer": "cos-methodologist",
-      "reviewedAt": "2026-10-21",
+      "reviewedAt": "2026-10-22",
       "signals": {
         "scope": "profession"
       }
@@ -299,7 +299,7 @@
       "rationale": "Архитектура дизайн-системы, семантические токены и синхронизация с кодом.",
       "confidence": "medium",
       "reviewer": "cos-methodologist",
-      "reviewedAt": "2026-10-21",
+      "reviewedAt": "2026-10-22",
       "signals": {
         "scope": "profession"
       }
@@ -312,7 +312,7 @@
       "rationale": "Проектирование переиспользуемых компонентов, вариантов и поведенческих паттернов.",
       "confidence": "medium",
       "reviewer": "cos-methodologist",
-      "reviewedAt": "2026-10-21",
+      "reviewedAt": "2026-10-22",
       "signals": {
         "scope": "profession"
       }
@@ -325,7 +325,7 @@
       "rationale": "Адаптация интерфейса под устройства, размеры и контекст использования.",
       "confidence": "medium",
       "reviewer": "cos-methodologist",
-      "reviewedAt": "2026-10-21",
+      "reviewedAt": "2026-10-22",
       "signals": {
         "scope": "profession"
       }
@@ -338,7 +338,7 @@
       "rationale": "Доступность интерфейса для людей с разными возможностями и ограничениями.",
       "confidence": "medium",
       "reviewer": "cos-methodologist",
-      "reviewedAt": "2026-10-21",
+      "reviewedAt": "2026-10-22",
       "signals": {
         "scope": "profession"
       }
@@ -351,7 +351,7 @@
       "rationale": "Состояния компонентов, обратная связь и микровзаимодействия.",
       "confidence": "medium",
       "reviewer": "cos-methodologist",
-      "reviewedAt": "2026-10-21",
+      "reviewedAt": "2026-10-22",
       "signals": {
         "scope": "profession"
       }
@@ -364,7 +364,7 @@
       "rationale": "Работа с Figma: компоненты, варианты, автолейаут и библиотеки.",
       "confidence": "medium",
       "reviewer": "cos-methodologist",
-      "reviewedAt": "2026-10-21",
+      "reviewedAt": "2026-10-22",
       "signals": {
         "scope": "profession"
       }
@@ -377,7 +377,7 @@
       "rationale": "Совместные воркшопы, картирование и фасилитация в FigJam.",
       "confidence": "medium",
       "reviewer": "cos-methodologist",
-      "reviewedAt": "2026-10-21",
+      "reviewedAt": "2026-10-22",
       "signals": {
         "scope": "profession"
       }
@@ -390,7 +390,7 @@
       "rationale": "Создание интерактивных прототипов и микровзаимодействий в Framer.",
       "confidence": "medium",
       "reviewer": "cos-methodologist",
-      "reviewedAt": "2026-10-21",
+      "reviewedAt": "2026-10-22",
       "signals": {
         "scope": "profession"
       }
@@ -403,7 +403,7 @@
       "rationale": "Спецификации, компонентные контракты и коммуникация с инженерами.",
       "confidence": "medium",
       "reviewer": "cos-methodologist",
-      "reviewedAt": "2026-10-21",
+      "reviewedAt": "2026-10-22",
       "signals": {
         "scope": "profession"
       }
@@ -416,7 +416,7 @@
       "rationale": "Понимание HTML/CSS/JS, веб-стандартов и ограничений реализации.",
       "confidence": "medium",
       "reviewer": "cos-methodologist",
-      "reviewedAt": "2026-10-21",
+      "reviewedAt": "2026-10-22",
       "signals": {
         "scope": "profession"
       }
@@ -429,7 +429,7 @@
       "rationale": "Понимание HTML/CSS/JS, веб-стандартов и ограничений реализации.",
       "confidence": "medium",
       "reviewer": "cos-methodologist",
-      "reviewedAt": "2026-10-21",
+      "reviewedAt": "2026-10-22",
       "signals": {
         "scope": "profession"
       }

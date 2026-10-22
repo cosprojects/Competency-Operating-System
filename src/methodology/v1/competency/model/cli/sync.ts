@@ -3,6 +3,7 @@ import { writeFile } from "node:fs/promises";
 import type { CanonicalMap } from "../../canonical/types.ts";
 import type { PriorityFile } from "../../priority/types.ts";
 import type { SourceRegistry, TargetFile } from "../../types.ts";
+import type { ProfessionsFile, SpheresFile } from "../types.ts";
 import { professionIdOf, professionSlugOf } from "../../priority/source.ts";
 import { flagValue, readJson } from "../../cli/common.ts";
 import {
@@ -42,7 +43,16 @@ async function main(): Promise<void> {
   } catch {
     // extra competencies optional
   }
+  let existingProfessions: ProfessionsFile = { modelVersion: "1.0.0", professions: [] };
+  let existingSpheres: SpheresFile = { modelVersion: "1.0.0", spheres: [] };
+  try { existingProfessions = await readJson<ProfessionsFile>(path.join(modelDir, "professions.json")); } catch { /* first run */ }
+  try { existingSpheres = await readJson<SpheresFile>(path.join(modelDir, "spheres.json")); } catch { /* first run */ }
   const spheres = buildSphere();
+  for (const existing of existingSpheres.spheres) {
+    const targetSphere = spheres.spheres.find((item) => item.id === existing.id);
+    if (targetSphere) targetSphere.professionIds = [...new Set([...targetSphere.professionIds, ...existing.professionIds])];
+    else spheres.spheres.push(existing);
+  }
   const professionRecord = buildProfessionRecord(target, professionId);
   const professionCompetencies = buildProfessionCompetencies(map, professionId);
   const projection = buildPriorityProjection(priority, map);
@@ -63,8 +73,10 @@ async function main(): Promise<void> {
     await writeFile(out, `${JSON.stringify(value, null, 2)}\n`, "utf8");
     console.log(out);
   };
+  const byProfession = new Map(existingProfessions.professions.map((item) => [item.id, item]));
+  byProfession.set(professionRecord.id, professionRecord);
   await write("src/methodology/v1/competency/model/spheres.json", spheres);
-  await write("src/methodology/v1/competency/model/professions.json", { modelVersion: "1.0.0", professions: [professionRecord] });
+  await write("src/methodology/v1/competency/model/professions.json", { modelVersion: "1.0.0", professions: [...byProfession.values()] });
   await write("src/methodology/v1/competency/model/competencies.json", competencies);
   await write(`src/methodology/v1/competency/model/profession-competencies/${slug}.json`, professionCompetencies);
   await write(`src/methodology/v1/competency/sources/spheres/${domain}.json`, sourceFiles.sphere);

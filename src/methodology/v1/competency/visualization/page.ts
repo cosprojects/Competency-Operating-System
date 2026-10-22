@@ -3,6 +3,7 @@ import type { CompetencyBlock } from "../types.ts";
 import type { StudyPriorityTier } from "../priority/types.ts";
 import { TIER_LABELS } from "../priority/types.ts";
 import type { VisualizationConfig, VisualizationPageData, VisualizationPageNode } from "./types.ts";
+import { PROFESSION_TABS } from "./profession-nav.ts";
 
 const TIER_ORDER: Record<StudyPriorityTier, number> = { foundation: 0, core: 1, optional: 2 };
 
@@ -124,8 +125,12 @@ function nodeCard(node: VisualizationPageNode, data: VisualizationPageData): str
         </article>`;
 }
 
-export function renderCanvasPage(data: VisualizationPageData): string {
+export function renderCanvasPage(data: VisualizationPageData, options: { activeProfession?: string } = {}): string {
   const embedded = JSON.stringify(data).replace(/</g, "\\u003c");
+  const active = options.activeProfession;
+  const professionTabs = PROFESSION_TABS.map(
+    (tab) => `<a class="profession-tab${tab.id === active ? " active" : ""}" href="${tab.href}">${tab.label}</a>`,
+  ).join("");
   return `<!doctype html>
 <html lang="ru">
 <head>
@@ -155,7 +160,11 @@ export function renderCanvasPage(data: VisualizationPageData): string {
     * { box-sizing: border-box; }
     body { margin: 0; color: var(--ink); background: var(--canvas); }
     .page { max-width: 1580px; margin: 0 auto; padding: 22px 22px 30px; }
-    .topbar { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; padding: 2px 2px 16px; }
+    .topbar { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; padding: 2px 2px 10px; }
+    .profession-tabs { display: flex; gap: 6px; flex-wrap: wrap; margin: 0 2px 12px; }
+    .profession-tab { border: 1px solid var(--line); background: #fff; color: var(--ink); border-radius: 999px; padding: 7px 12px; font-size: 12px; font-weight: 700; text-decoration: none; }
+    .profession-tab:hover { border-color: #94a3b8; }
+    .profession-tab.active { background: var(--ink); color: #fff; border-color: var(--ink); }
     .eyebrow { color: var(--accent); font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
     h1 { margin: 5px 0 4px; font-size: clamp(28px, 4vw, 48px); letter-spacing: -.04em; line-height: 1; }
     .subtitle { margin: 0; color: var(--muted); font-size: 14px; }
@@ -218,6 +227,7 @@ export function renderCanvasPage(data: VisualizationPageData): string {
         <span class="o">${data.counts.optional} необязательных</span>
       </div>
     </header>
+    <nav class="profession-tabs" aria-label="Профессии">${professionTabs}</nav>
     <div class="banner"><strong>Черновой слой.</strong> ${esc(data.note)} Сгенерировано ${esc(data.generatedOn)}.</div>
     <div class="toolbar">
       <span class="hint">Наведите на карточку, чтобы увидеть связи; нажмите — подробности</span>

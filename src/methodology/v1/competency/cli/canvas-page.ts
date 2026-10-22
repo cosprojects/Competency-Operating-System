@@ -70,7 +70,7 @@ async function main(): Promise<void> {
     flagValue(argv, "--out") ??
     path.join(root, "web", "uxui-competency-canvas.html");
   await mkdir(path.dirname(output), { recursive: true });
-  await writeFile(output, renderCanvasPage(data), "utf8");
+  await writeFile(output, renderCanvasPage(data, { activeProfession: slug }), "utf8");
   console.log(
     `Страница ${professionId}: узлов ${data.nodes.length}; рёбер ${data.edges.length}; tier ${data.counts.foundation}/${data.counts.core}/${data.counts.optional}`,
   );

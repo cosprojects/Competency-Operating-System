@@ -18,7 +18,7 @@ async function main(): Promise<void> {
   const data = buildProfessionNetworkPage(view, competencies.competencies, catalog.blocks, new Date().toISOString().slice(0, 10));
   const output = path.join(root, "web", `it-${slug}-competency-canvas.html`);
   await mkdir(path.dirname(output), { recursive: true });
-  await writeFile(output, renderCanvasPage(data), "utf8");
+  await writeFile(output, renderCanvasPage(data, { activeProfession: slug }), "utf8");
   console.log(`${view.professionId}: nodes ${data.nodes.length}; edges ${data.edges.length}; tier ${data.counts.foundation}/${data.counts.core}/${data.counts.optional}`);
   console.log(output);
 }

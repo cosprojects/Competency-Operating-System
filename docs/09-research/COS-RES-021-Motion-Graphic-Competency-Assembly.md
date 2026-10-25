@@ -165,7 +165,7 @@ npm run canvas:tabs
 
 ## 8. Ограничения и открытые задачи
 
-1. Human-review mapping Motion/Graphic и привязка реальных Practicum-тегов к accepted-блокам (сейчас теги 6 собственных блоков синтетические).
+1. Human-review mapping Motion/Graphic и evidence-backed предложений блоков: `tagHints` заполнены для 3 motion и 3 graphic компетенций; `competency:seed` даёт 6–10 тегов, Pass B — предложения блоков с `sourceRefs` (motion 3 блока 2–6 ссылок, graphic 3 блока 5–6 ссылок). Артефакты: `data/competency/proposed-blocks-it-motion.json`, `proposed-blocks-it-graphic.json`. Accepted-блоки не менялись.
 2. Human-review журналов материалов и приёмка в `catalog.materials` — только после проверки.
 3. Motion/Graphic mapping содержит «none»-компетенции и исключённые темы (проекты, инструменты, карьерные модули) — это нормальный черновик, а не финальная онтология.
 4. ESCO в текущем окружении недоступен (прокси/HTML); сборка через O\*NET/Практикум без обхода.

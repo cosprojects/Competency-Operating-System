@@ -151,6 +151,7 @@ UX/UI при этом не затронут: `priority:validate --domain it --pr
 - **Собственные accepted-блоки:** 5 product-specific блоков (JTBD, CJM, стратегия, рост, эксперименты) с 20 тегами.
 - **Синтетическое / не accepted:** теги этих 5 блоков не имеют `sourceRefs` и остаются `needs_review` — mapping показывает, какие реальные product-теги могут их подтвердить, но принятие остаётся human-gated. Переиспользованные блоки UX/UI для 25 компетенций — осознанный reuse, а не собственные product-блоки.
 - **Pass A на улучшенных тегах:** 13 кандидатов / 17 неназначенных / 0 issues (на старом индустриальном наборе было 9 / 86). Кандидаты — черновики в `data/`, не приняты; гранулярность «учебных тем» сохраняется, поэтому канонический уровень задают seeds/view, а не bottom-up.
+- **Evidence-backed пересборка (подготовлено, не принято):** в `seeds/it.json` для 5 product-компетенций заполнены `tagHints` из собранных Practicum-тегов; `competency:seed --profession product --tags-file data/competency/tags-it-product.json` даёт 5–9 тегов на компетенцию, Pass B — 5 блоков-предложений с реальными `sourceRefs` (1–5 на блок). Артефакты: `data/competency/proposed-blocks-it-product.json`, `review/proposed-blocks-it-product.md`. Accepted-каталог не менялся; приёмка остаётся human-gated.
 - Материалов accepted: 0. Knowledge graph не строится (отложен по решению пользователя).
 
 ## 7. Команды итерации
@@ -176,8 +177,8 @@ npm run canvas:tabs
 
 ## 8. Ограничения и открытые задачи
 
-1. Подтвердить mapping human-review и при необходимости привязать реальные product-теги к accepted-блокам (тогда нужно пересобрать их через seed с тегами или отдельным evidence-шагом).
-2. Product seeds (`seeds/it.json`) пока без `tagHints` — следующий шаг для evidence-backed пересборки 5 собственных блоков.
+1. Подтвердить mapping human-review и принять/отклонить evidence-backed предложения блоков (`proposed-blocks-it-product.json`) — только человек решает, заменять ли synthetic-теги accepted-блоков.
+2. Seeds для Product уже содержат `tagHints`; после приёмки предложений — перегенерировать каталог и mapping.
 3. Материалы Product — только после фиксации графа: `materials:agent:queue`, затем human-review журналов.
 4. Motion и Graphic — по той же схеме (источники → mapping → prerequisites → canvas).
 5. Knowledge graph (competency → components/tags/materials) не строится.

@@ -25,7 +25,7 @@ npm run canonical:validate -- --domain it --profession uxui --source review --in
 
 Материалы вынесены в отдельный контур: `npm run materials:agent -- --domain it --profession uxui --limit 2 --sources wikipedia,habr,medium`. Журнал — `data/materials-agent/`; агент не меняет каталог и не пишет в граф.
 
-Очередь покрывает компетенции profession view (включая переиспользованные блоки через `canonicalIds`). Полные прогоны: Product — 31 элемент / 68 материалов / 35 связей (30/30 компетенций); Motion — 20 / 38 / 20 (19/19); Graphic — 20 / 39 / 22 (18/18). `catalog.materials` = 0 (human-review не выполнен). Команда:
+Очередь покрывает компетенции profession view (включая переиспользованные блоки через `canonicalIds`). Полные прогоны: UX/UI — 33 элемента / 65 материалов / 31 связь (34/34 компетенций); Product — 31 / 68 / 35 (30/30); Motion — 20 / 38 / 20 (19/19); Graphic — 20 / 39 / 22 (18/18). Все 4 профессии покрыты на 100%, `catalog.materials` = 0 (human-review не выполнен). Команда:
 
 ```bash
 npm run materials:agent:queue -- --domain it --profession product --per-competency 1 \
@@ -69,6 +69,8 @@ npm run model:validate -- --domain it --profession product --all --require-block
 
 Материалы новых профессий: `npm run materials:agent:review -- --domain it --profession motion` (также `product`, `graphic`). Review показывает покрытие компетенций профессии; это review-артефакты, не accepted-материалы.
 
+
+Evidence-backed блоки: в `seeds/it.json` заполнены `tagHints` для 11 профессио-специфичных компетенций; `competency:seed --domain it --profession product --tags-file data/competency/tags-it-product.json`, затем `competency:build` дают предложения блоков с реальными sourceRefs (`data/competency/proposed-blocks-*.json`, не приняты).
 
 Human-review канвас: `npm run canvas:tabs`, затем открыть `web/competencies-review-canvas.html` — переключение UX/UI, Product, Motion, Graphic в одном окне.
 

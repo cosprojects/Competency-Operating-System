@@ -1,7 +1,7 @@
 ---
 id: COS-RES-019
 title: Competency Module — session handoff
-version: 1.3.0
+version: 1.4.0
 status: Draft
 owner: Research Team
 last_updated: 2026-10-25
@@ -77,9 +77,11 @@ references:
 - Worker queue: состав задаёт profession view — для каждой компетенции берутся covering-блоки по `canonicalIds` (включая переиспользованные), дубли схлопываются; concurrency, retry, общий LlmBudget, coverage по элементу. При исчерпании бюджета найденные материалы сохраняются как `needs_review`, не выбрасываются.
 - Журналы: `data/materials-agent/<domain>-<profession>-queue.json` (gitignored).
 - Review: `materials:agent:review` — отчёт по блокам + таблица покрытия компетенций профессии.
-- Product full run (2026-10-25): 31 элемент, completed 31, failed 0; 68 материалов (Wikipedia 30, Хабр 32, Medium 6); 35 связей; **покрытие 30/30 компетенций**; $0.0239.
+- UX/UI full run: 33 элемента, 65 материалов, 31 связь, **34/34** компетенций; $0.0004 (LLM-кеш). Для UX/UI порядок компетенций берётся из `profession-competencies/uxui.json` (view нет).
+- Product full run: 31 элемент, 68 материалов, 35 связей, **30/30** компетенций; $0.0239.
 - Motion full run: 20 элементов, 38 материалов, 20 связей, **19/19** компетенций; $0.0055.
 - Graphic full run: 20 элементов, 39 материалов, 22 связи, **18/18** компетенций; $0.0020.
+- Итог: все 4 профессии покрыты материалами на 100%; accepted-материалов 0 (human-gated).
 - **Материалы не приняты в каталог:** `catalog.materials` = 0.
 
 ## 2. Ключевые команды
@@ -135,7 +137,7 @@ open web/it-product-competency-canvas.html
 
 ## 4. Открытые задачи (по приоритету)
 
-1. **Human-review Product mapping** и привязка реальных product-тегов к accepted-блокам: сейчас теги 5 product-блоков синтетические (`sourceRefs: []`). Следующий шаг — `tagHints` в `seeds/it.json` для Product и пересборка блоков через seed/Pass B, затем human-приёмка.
+1. **Human-review evidence-backed блоков.** В `seeds/it.json` заполнены `tagHints` для 11 профессио-специфичных компетенций (product 5, motion 3, graphic 3); `competency:seed` + Pass B дали предложения блоков с реальными Practicum-связями: product 5 блоков (sourceRefs 1–5 на блок), motion 3 (2–6), graphic 3 (5–6). Артефакты — `data/competency/proposed-blocks-it-*.json`, `review/proposed-blocks-it-*.md` (gitignored). Приёмка не выполнена; текущие accepted-блоки не менялись.
 2. **Human-review материалов** — журналы и review готовы для Product (30/30), Motion (19/19), Graphic (18/18). Нужно решить, какие материалы принимать; только после этого `catalog.materials`. Перезапуск: `materials:agent:queue -- --domain it --profession <prof> --classify --budget-usd 0.15 --max-calls 120`, затем `materials:agent:review`.
 3. **Human-review mapping Motion/Graphic** и привязка Practicum-тегов к accepted-блокам (теги 6 собственных блоков синтетические).
 4. **Knowledge graph** (competency → components/tags/materials) — отложен по решению пользователя.
@@ -169,3 +171,4 @@ open web/it-product-competency-canvas.html
 | 1.1.0 | 2026-10-25 | Product-итерация: canonicalIds для всех блоков, исправленные O*NET-занятия, 368 тегов, mapping 30/30, связный граф 41 связь, решение по priority/order, 141 тест |
 | 1.2.0 | 2026-10-25 | Priority 3: очередь материалов покрывает компетенции view (Product 31 элемент, 30/30 компетенций, 68 материалов, 35 связей); review с покрытием; фикс потери материалов при исчерпании бюджета; 145 тестов |
 | 1.3.0 | 2026-10-25 | Priority 4: Motion/Graphic — Practicum-источники и санитайзер тегов, mapping 19/19 и 18/18, связные графы 29/33 связи, материалы 19/19 и 18/18; все 4 профессии с review-журналами; 146 тестов |
+| 1.4.0 | 2026-10-25 | Evidence-backlog: seeds tagHints для 11 компетенций, Pass B предложения блоков (product 5, motion 3, graphic 3) с реальными sourceRefs; UX/UI materials 34/34; все 4 профессии покрыты материалами, catalog.materials = 0 |

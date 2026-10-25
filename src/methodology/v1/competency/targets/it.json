@@ -40,16 +40,17 @@
       "esco": {
         "search": "product designer",
         "titleIncludes": [
-          "product designer",
-          "industrial designer"
+          "product designer"
         ]
       },
       "onet": {
         "titleIncludes": [
-          "Commercial and Industrial Designers"
+          "Web and Digital Interface Designers",
+          "Market Research Analysts and Marketing Specialists"
         ],
         "socCodes": [
-          "27-1021.00"
+          "15-1255.00",
+          "13-1161.00"
         ]
       },
       "practicum": {

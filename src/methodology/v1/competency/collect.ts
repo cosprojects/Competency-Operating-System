@@ -88,24 +88,32 @@ export async function collectProfessions(
     if (target.onet) {
       try {
         const hits = await searchOnetOccupations(input.fetchImpl, input.cache, target.onet);
-        const accepted = hits[0];
+        // Явно объявленные SOC-коды — это осознанный выбор методолога: берём все,
+        // а не только первое совпадение. Иначе профессия с несколькими релевантными
+        // занятиями (например, product designer) теряет часть источников.
+        const declaredSocCodes = target.onet.socCodes ?? [];
+        const accepted = declaredSocCodes.length > 0
+          ? hits.filter((hit) => declaredSocCodes.includes(hit.socCode))
+          : hits.slice(0, 1);
         searches.push({
           professionId: target.id,
           sourceId: "onet",
           query: [...(target.onet.socCodes ?? []), ...(target.onet.titleIncludes ?? [])].join(", "),
           found: hits.length,
-          ...(accepted ? { chosen: accepted.socCode } : {}),
-          ...(accepted ? {} : { note: "нет O*NET-занятия по фильтру" }),
+          ...(accepted.length > 0 ? { chosen: accepted.map((hit) => hit.socCode).join(",") } : {}),
+          ...(accepted.length > 0 ? {} : { note: "нет O*NET-занятия по фильтру" }),
         });
-        if (accepted) {
-          classification.onetSoc = accepted.socCode;
-          sources.push({
-            sourceId: "onet",
-            externalId: accepted.socCode,
-            url: accepted.url,
-            retrievedAt: input.retrievedOn,
-            license: LICENSES.onet ?? "CC BY 4.0",
-          });
+        if (accepted.length > 0) {
+          classification.onetSoc = accepted.map((hit) => hit.socCode).join(",");
+          for (const hit of accepted) {
+            sources.push({
+              sourceId: "onet",
+              externalId: hit.socCode,
+              url: hit.url,
+              retrievedAt: input.retrievedOn,
+              license: LICENSES.onet ?? "CC BY 4.0",
+            });
+          }
         } else {
           notes.push("O*NET: занятие не найдено");
         }

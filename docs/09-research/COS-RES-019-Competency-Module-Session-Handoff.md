@@ -72,11 +72,12 @@ Product-граф теперь связный: единственный коре�
 
 ### Material Agent
 - `src/methodology/v1/materials-agent/` — discovery → optional LLM classification → validation.
-- Worker queue: `professionId + competencyId`, concurrency, retry, общий LlmBudget, coverage по элементу.
+- Worker queue: состав задаёт profession view — для каждой компетенции берутся covering-блоки по `canonicalIds` (включая переиспользованные), дубли схлопываются; concurrency, retry, общий LlmBudget, coverage по элементу. При исчерпании бюджета найденные материалы сохраняются как `needs_review`, не выбрасываются.
 - Журналы: `data/materials-agent/<domain>-<profession>-queue.json` (gitignored).
-- Review: `materials:agent:review`.
-- Product/Motion/Graphic review уже есть (product: 16 discovered / 8 linked; motion: 14 / 3; graphic: 13 / 7).
-- **Материалы не приняты в каталог.**
+- Review: `materials:agent:review` — отчёт по блокам + таблица покрытия компетенций профессии.
+- Product full run (2026-10-25): 31 элемент (30 компетенций view + 1 блок вне view), completed 31, failed 0; 68 материалов (Wikipedia 30, Хабр 32, Medium 6); 35 связей; **покрытие 30/30 компетенций**, 0 без материалов; $0.0239.
+- Motion/Graphic review (smoke): motion 14 / 3, graphic 13 / 7.
+- **Материалы не приняты в каталог:** `catalog.materials` = 0.
 
 ## 2. Ключевые команды
 
@@ -132,7 +133,7 @@ open web/it-product-competency-canvas.html
 ## 4. Открытые задачи (по приоритету)
 
 1. **Human-review Product mapping** и привязка реальных product-тегов к accepted-блокам: сейчас теги 5 product-блоков синтетические (`sourceRefs: []`). Следующий шаг — `tagHints` в `seeds/it.json` для Product и пересборка блоков через seed/Pass B, затем human-приёмка.
-2. **Материалы Product** — после фиксации графа: `materials:agent:queue`, затем human-review журналов, только потом `catalog.materials`.
+2. **Human-review материалов Product** — журнал и review готовы (`data/materials-agent/it-product-review.md`, 30/30 компетенций покрыты, 35 связей). Нужно решить, какие материалы принимать; только после этого `catalog.materials`. Перезапуск: `materials:agent:queue -- --domain it --profession product --classify --budget-usd 0.15 --max-calls 120`, затем `materials:agent:review`.
 3. **Motion/Graphic** — та же схема: исправить occupation-маппинг, mapping тегов, prerequisites, пересобрать canvas.
 4. **Knowledge graph** (competency → components/tags/materials) — отложен по решению пользователя.
 5. **Push** — если SSH-агент пуст: `ssh-add ~/.ssh/id_ed25519`, затем `git push origin main`.
@@ -142,7 +143,7 @@ open web/it-product-competency-canvas.html
 
 - Product/Motion/Graphic графы строятся из view; 5 product-specific блоков accepted, остальные 25 — переиспользованные UX/UI блоки.
 - Теги product-specific блоков синтетические и `needs_review`; mapping — черновик, не приёмка.
-- Каталог материалов пуст; Material Agent только готовит кандидатов.
+- Каталог материалов пуст; Material Agent готовит журнал/review, покрытие Product 30/30, но приёмка не выполнена.
 - `data/` (кроме tracked source/model) gitignored: журналы, candidates, blocks, materials не попадают в репозиторий.
 - ESCO для Product/Graphic в текущем окружении отдаёт HTML (прокси); fallback O*NET/Практикум, без обхода.
 - JSON-файлы и `web/*.html` детерминированно пересобираются `model:views` / `canvas:*`.
@@ -163,3 +164,4 @@ open web/it-product-competency-canvas.html
 |---|---|---|
 | 1.0.0 | 2026-10-22 | Handoff после сборки 4 профессий, 44 блоков, 45 компетенций, Material Agent и сетевых канвасов |
 | 1.1.0 | 2026-10-25 | Product-итерация: canonicalIds для всех блоков, исправленные O*NET-занятия, 368 тегов, mapping 30/30, связный граф 41 связь, решение по priority/order, 141 тест |
+| 1.2.0 | 2026-10-25 | Priority 3: очередь материалов покрывает компетенции view (Product 31 элемент, 30/30 компетенций, 68 материалов, 35 связей); review с покрытием; фикс потери материалов при исчерпании бюджета; 145 тестов |

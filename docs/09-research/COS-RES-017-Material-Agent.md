@@ -1,10 +1,10 @@
 ---
 id: COS-RES-017
 title: Material Agent — отдельный контур наполнения материалами
-version: 1.0.0
+version: 1.1.0
 status: Draft
 owner: Research Team
-last_updated: 2026-10-21
+last_updated: 2026-10-25
 references:
   - COS-RES-014
   - COS-RES-016
@@ -99,10 +99,13 @@ npm run materials:agent -- --domain it --profession uxui --limit 2 \
 Очередь реализована в `materials-agent/queue.ts`:
 
 - задача = `professionId + competencyId` (`id = professionId:blockId`);
+- **состав очереди задаёт profession view**: для каждой компетенции профессии берутся её covering-блоки по `canonicalIds`, включая переиспользованные блоки других профессий; дубли блоков схлопываются. Поэтому Product покрывает 30 компетенций, а не только 6 блоков с `professionIds: it.product` (раньше материалы видели лишь собственные блоки профессии);
+- accepted-блоки, объявленные за профессией, но не входящие во view, тоже попадают в очередь (не теряем каталог);
 - `concurrency` — параллельные элементы;
 - `maxAttempts` — retry на уровне элемента;
 - общий `LlmBudget` для классификации, вызовы/стоимость в итоговом журнале;
 - каждый элемент получает discovery coverage и linked count;
+- при исчерпании бюджета классификация останавливается, но **найденные материалы не выбрасываются**: они остаются в журнале со `status: needs_review` и без LLM-связей. Иначе discovery выглядел бы пустым и покрытие занижалось;
 - упавший элемент не валит очередь: журнал получает `status: partial`, остальные продолжаются.
 
 ```bash
@@ -113,31 +116,35 @@ npm run materials:agent:queue -- --domain it --profession uxui \
 
 Журнал: `data/materials-agent/<domain>-<profession>-queue.json`.
 
+Review: `npm run materials:agent:review -- --domain it --profession product` — помимо материалов по блокам отчёт содержит таблицу **покрытия компетенций профессии** (компетенция → covering-блок → материалов → связей) и список компетенций без материалов. Это позволяет принимать решения на уровне view, а не отдельных блоков.
+
 Агрегатор компетенций не ждёт материалы; очередь можно запускать отдельным процессом/по расписанию.
 
-## 7. Текущий smoke-результат
+## 7. Текущий прогон (2026-10-25)
 
-Worker-очередь:
+Product, sources `wikipedia,habr,medium`, `--per-competency 1 --concurrency 3 --retry 2 --classify --budget-usd 0.15 --max-calls 120`:
+
+- элементов: **31** (30 компетенций view + 1 accepted-блок профессии вне view), completed 31, failed 0;
+- discovery: **68 материалов** (Wikipedia 30, Хабр 32, Medium 6; ru 62, en 6);
+- classified: **23 вызова**, $0.0239 (часть материалов закрыта LLM-кешем);
+- linked: **35**;
+- покрытие view: **30/30 компетенций имеют материалы**, 0 без материалов;
+- `catalog.materials` остаётся **0** — материалы не приняты, только журнал и review.
+
+Ранее (smoke, до покрытия по view):
 - motion: 3 элемента, 14 материалов, 3 связи;
 - product: 4 элемента, 16 материалов, 8 связей;
 - graphic: 3 элемента, 13 материалов, 7 связей;
-- failed: 0.
+- uxui: 2 элемента, 2 материала, 0 ошибок.
 
-Review-артефакты: `data/materials-agent/<domain>-<profession>-review.md`, команда `npm run materials:agent:review -- --domain it --profession motion`.
+Review-артефакты: `data/materials-agent/<domain>-<profession>-review.md`.
 
-
-На 2 accepted-компетенциях, sources `wikipedia,habr,medium`:
-
-- discovery: 8 материалов;
-- classification: 3 связи;
-- validation: 0 ошибок;
-- журнал: `data/materials-agent/it-uxui.json`.
-
-Это проверка механики, не полное покрытие каталога.
+Покрытие материалов не означает приёмку: связи `needs_review`, выбор материала — human-gated.
 
 ## 8. Ограничения
 
-- Агент не принимает материалы в каталог.
+- Агент не принимает материалы в каталог; `catalog.materials` пуст до human-приёмки.
+- Покрытие очереди зависит от view: без view материалы смотрят только блоки с `professionIds` профессии.
 - Полные тексты, транскрипты и платный контент не сохраняются.
 - Платные курсы — только публичные метаданные и `price.observedAt`.
 - Robots/paywall/логин не обходятся.
@@ -148,3 +155,4 @@ Review-артефакты: `data/materials-agent/<domain>-<profession>-review.md
 | Версия | Дата | Что изменилось |
 |---|---|---|
 | 1.0.0 | 2026-10-21 | Выделен отдельный Material Agent: контракт, стадии, CLI, журнал, тесты, smoke-прогон |
+| 1.1.0 | 2026-10-25 | Очередь покрывает компетенции view через canonicalIds (Product: 31 элемент вместо 6); review показывает покрытие 30/30; при исчерпании бюджета найденные материалы сохраняются; Product full run: 68 материалов / 35 связей, 0 failed |

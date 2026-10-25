@@ -25,6 +25,14 @@ npm run canonical:validate -- --domain it --profession uxui --source review --in
 
 Материалы вынесены в отдельный контур: `npm run materials:agent -- --domain it --profession uxui --limit 2 --sources wikipedia,habr,medium`. Журнал — `data/materials-agent/`; агент не меняет каталог и не пишет в граф.
 
+Очередь покрывает компетенции profession view (включая переиспользованные блоки через `canonicalIds`). Product full run: 31 элемент, 68 материалов, 35 связей, покрытие **30/30 компетенций**, `catalog.materials` = 0 (human-review не выполнен). Команда:
+
+```bash
+npm run materials:agent:queue -- --domain it --profession product --per-competency 1 \
+  --sources wikipedia,habr,medium --concurrency 3 --retry 2 --classify --budget-usd 0.15 --max-calls 120
+npm run materials:agent:review -- --domain it --profession product
+```
+
 
 ## Модель сфера → профессия → компетенции
 
@@ -59,7 +67,7 @@ npm run model:validate -- --domain it --profession product --all --require-block
 Сопоставление product-тегов компетенциям: `mapping/it.product.json` + `npm run mapping:validate -- --domain it --profession product --report` (30/30 компетенций; direct 11 / adjacent 15 / none 4). Подробнее — [COS-RES-020](docs/09-research/COS-RES-020-Product-Competency-Assembly.md).
 
 
-Материалы новых профессий: `npm run materials:agent:review -- --domain it --profession motion` (также `product`, `graphic`). Это review-артефакты, не accepted-материалы.
+Материалы новых профессий: `npm run materials:agent:review -- --domain it --profession motion` (также `product`, `graphic`). Review показывает покрытие компетенций профессии; это review-артефакты, не accepted-материалы.
 
 
 Human-review канвас: `npm run canvas:tabs`, затем открыть `web/competencies-review-canvas.html` — переключение UX/UI, Product, Motion, Graphic в одном окне.

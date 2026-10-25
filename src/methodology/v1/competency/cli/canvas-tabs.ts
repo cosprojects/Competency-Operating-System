@@ -8,7 +8,7 @@ async function main(): Promise<void> {
   const html = `<!doctype html>
 <html lang="ru"><head><meta charset="utf-8"/>
 <title>AXIONA · Competency Review Canvas</title>
-<meta http-equiv="refresh" content="0; url=it-uxui-competency-canvas.html"/>
+<meta http-equiv="refresh" content="0; url=${PROFESSION_TABS[0]?.href ?? "uxui-competency-canvas.html"}"/>
 <style>body{font-family:Inter,"Segoe UI",system-ui,sans-serif;background:#eef4f8;color:#132238;padding:32px}a{color:#0f766e;font-weight:700;text-decoration:none}</style>
 </head><body><p>Открываю UX/UI-канвас…</p><p>${links}</p></body></html>`;
   const output = path.join(root, "web", "competencies-review-canvas.html");

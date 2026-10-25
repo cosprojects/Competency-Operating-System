@@ -136,7 +136,7 @@ export function renderCanvasPage(data: VisualizationPageData, options: { activeP
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>UX/UI — карта компетенций</title>
+  <title>${esc(data.title)} — карта компетенций</title>
   <style>
     :root {
       color-scheme: light;

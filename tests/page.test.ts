@@ -77,6 +77,25 @@ describe("visualization page", () => {
     assert.match(html, /const DATA =/);
   });
 
+  it("ставит title профессии и рабочие ссылки табов", () => {
+    const html = renderCanvasPage(
+      {
+        title: "Продуктовый дизайнер",
+        subtitle: "S",
+        note: "N",
+        generatedOn: "2026-10-25",
+        nodes: [],
+        edges: [],
+        stage: { width: 10, height: 10, offsetX: 0, offsetY: 0 },
+        counts: { foundation: 0, core: 0, optional: 0 },
+      },
+      { activeProfession: "product" },
+    );
+    assert.match(html, /<title>Продуктовый дизайнер — карта компетенций<\/title>/);
+    assert.match(html, /class="profession-tab active" href="it-product-competency-canvas.html"/);
+    assert.match(html, /href="uxui-competency-canvas.html"/);
+  });
+
   it("экранирует названия в HTML", () => {
     const html = renderCanvasPage({
       title: "<script>alert(1)</script>",

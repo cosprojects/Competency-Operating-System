@@ -9,6 +9,7 @@ import {
   stripTags,
 } from "../src/methodology/v1/profile/practicum.ts";
 import type { PracticumDesignJournal } from "../src/methodology/v1/profile/practicum.ts";
+import { isUsablePracticumTitle } from "../src/methodology/v1/competency/sources/practicum.ts";
 
 const catalogHtml = `<html><body><script>
 window.__GLOBAL_STATE__ = {"store":{"getV2CatalogProfessions":[
@@ -82,5 +83,17 @@ describe("извлечение профессий и навыков Яндекс
     assert.match(markdown, /Дизайнер интерфейсов/);
     assert.match(markdown, /Сетки в дизайне/);
     assert.match(markdown, /writesToGraph: false/);
+  });
+});
+
+describe("фильтр тем Практикума", () => {
+  it("оставляет короткие темы и отбрасывает абзацы, карьерные и маркетинговые фразы", () => {
+    assert.equal(isUsablePracticumTitle("Кинетическая типографика"), true);
+    assert.equal(isUsablePracticumTitle("Предпечатная подготовка"), true);
+    assert.equal(isUsablePracticumTitle("Навыки работы с ИИ сейчас так же важны, как и хардскилы. Поэтому модуль по нейросетям входит в базовую программу."), false);
+    assert.equal(isUsablePracticumTitle("Выстроите собственную стратегию поиска работы"), false);
+    assert.equal(isUsablePracticumTitle("Куда пойти работать"), false);
+    assert.equal(isUsablePracticumTitle("Подключитесь к Карьере от Практикума — сервису для поиска вакансий"), false);
+    assert.equal(isUsablePracticumTitle("Составите резюме и портфолио"), false);
   });
 });

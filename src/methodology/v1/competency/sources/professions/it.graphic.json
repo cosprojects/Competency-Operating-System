@@ -9,6 +9,10 @@
     {
       "sourceId": "onet",
       "query": "27-1024.00, Graphic Designers"
+    },
+    {
+      "sourceId": "practicum",
+      "query": "graphic-designer"
     }
   ],
   "materialSourceIds": [

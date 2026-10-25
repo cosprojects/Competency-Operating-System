@@ -14,6 +14,31 @@ export interface PracticumTagHit {
   kind: TagKind;
 }
 
+const MAX_TAG_LENGTH = 80;
+const SENTENCE = /[.!?](\s|$)/;
+const MARKETING_PREFIX =
+  /^(выстро|посет|состав|потрен|науч|смож|узна|получ|подключ|применя|примен|предсказ|портфол|куп|найд|выбер|разбер|изуч|осво|попроб|рассмотр)/i;
+const CAREER_BOILERPLATE = /(карьер|ваканс|резюме|портфолио|зарплат|фриланс|отклик|сопроводительн|стажиров|работодател|ментор|мастерск|собеседован|трудоустро|поиск работы|поиска работы|куда пойти|пойти работать)/i;
+const QUESTION_PREFIX = /^(как|какие|какой|какая|что|куда|зачем|почему|когда|сколько)\b/i;
+const FIRST_PERSON_PREFIX = /^(владею|создаю|делаю|монтирую|использую|понимаю|разбираюсь|умею|знаю|учусь|посмотрю)/i;
+const GENERIC_TITLES = new Set(["профессия", "инструменты и навыки"]);
+
+/**
+ * Тема курса должна быть короткой фразой, а не абзацем. Страницы Практикума
+ * содержат и уроки, и маркетинговые тексты — фильтр не даёт им стать тегами.
+ */
+export function isUsablePracticumTitle(title: string): boolean {
+  const value = cleanText(title);
+  if (value.length < 2 || value.length > MAX_TAG_LENGTH) return false;
+  if (SENTENCE.test(value)) return false;
+  if (MARKETING_PREFIX.test(value)) return false;
+  if (CAREER_BOILERPLATE.test(value)) return false;
+  if (QUESTION_PREFIX.test(value)) return false;
+  if (FIRST_PERSON_PREFIX.test(value)) return false;
+  if (GENERIC_TITLES.has(value.toLowerCase())) return false;
+  return true;
+}
+
 function sourceRef(slug: string, retrievedOn: string): SourceRef {
   return {
     sourceId: "practicum",
@@ -42,12 +67,14 @@ export async function collectPracticumTags(
       definition: `Инструмент на странице программы «${slug}»`,
       kind: "tool" as const,
     })),
-    ...page.lessons.map((title) => ({
-      sourceRef: ref,
-      title: cleanText(title),
-      definition: `Тема/навык на странице программы «${slug}»`,
-      kind: "knowledge" as const,
-    })),
+    ...page.lessons
+      .filter((title) => isUsablePracticumTitle(title))
+      .map((title) => ({
+        sourceRef: ref,
+        title: cleanText(title),
+        definition: `Тема/навык на странице программы «${slug}»`,
+        kind: "knowledge" as const,
+      })),
   ].filter((hit) => hit.title.length > 0);
 }
 

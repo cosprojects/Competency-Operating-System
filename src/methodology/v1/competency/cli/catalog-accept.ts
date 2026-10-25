@@ -2,6 +2,7 @@ import path from "node:path";
 import { writeFile } from "node:fs/promises";
 import type { CatalogFile, CompetencyBlock, TagRecord } from "../types.ts";
 import type { CanonicalMap } from "../canonical/types.ts";
+import { canonicalIdsByBlock, withDerivedCanonicalIds } from "../canonical/block-coverage.ts";
 import { emptyCatalog, loadCatalog, validateCatalog } from "../catalog.ts";
 import { professionIdOf, professionSlugOf } from "../priority/source.ts";
 import { dataDir, flagValue, readJson } from "./common.ts";
@@ -66,6 +67,7 @@ async function main(): Promise<void> {
   } catch {
     // model may not be generated yet
   }
+  const derivedCanonicalIds = canonicalIdsByBlock(map);
   const byId = new Map<string, CompetencyBlock>();
   for (const file of blockFiles) {
     const payload = await readJson<{ blocks: CompetencyBlock[] }>(path.resolve(root, file));
@@ -73,7 +75,7 @@ async function main(): Promise<void> {
       const hasCanonical = (block.canonicalIds ?? []).some((id) => canonicalIds.has(id));
       if (!mapped.has(block.id) && !hasCanonical) continue;
       byId.set(block.id, {
-        ...block,
+        ...withDerivedCanonicalIds(block, derivedCanonicalIds, canonicalIds),
         status: "accepted",
         issues: block.issues.filter((issue) => !issue.includes("уже есть")),
       });

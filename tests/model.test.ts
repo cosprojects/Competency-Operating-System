@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 import type { CanonicalMap } from "../src/methodology/v1/competency/canonical/types.ts";
 import { buildCompetencies, buildProfessionCompetencies, buildSphere } from "../src/methodology/v1/competency/model/build.ts";
-import { validateModel } from "../src/methodology/v1/competency/model/validate.ts";
+import { validateModel, validateProfessionPrerequisites } from "../src/methodology/v1/competency/model/validate.ts";
 
 const map: CanonicalMap = {
   canonicalVersion: "0.1.0",
@@ -61,5 +61,37 @@ describe("normalized model", () => {
       professionCompetencies,
     });
     assert.ok(bad.some((error) => error.includes("неизвестная компетенция")));
+  });
+
+  it("с --require-blocks требует accepted-блок для каждой компетенции профессии", () => {
+    const competencies = buildCompetencies(map);
+    const professionCompetencies = buildProfessionCompetencies(map, "it.uxui");
+    const professions = { modelVersion: "1.0.0" as const, professions: [{ id: "it.uxui", sphereId: "it", title: "UX/UI", canonicalMapFile: "canonical/uxui.json", catalogFile: "catalog/it.json", priorityFile: "priority/uxui.json", sourcesFile: "sources/professions/it.uxui.json" }] };
+    const block = (id: string, canonicalIds: string[]) => ({
+      id, slug: id, title: id, aliases: [], definition: "D", scope: "universal" as const,
+      canonicalIds, professionIds: ["it.uxui"], components: [], tags: [], sourceRefs: [],
+      evidenceState: "supported" as const, status: "accepted" as const,
+      llmMeta: { promptVersion: "t", model: "t", inputHash: "t", costUsd: 0 }, issues: [], methodologyVersion: "0.1.0",
+    });
+    const withoutBlocks = validateModel({ spheres: buildSphere(), professions, competencies, professionCompetencies, requireBlocks: true, blocks: [] });
+    assert.ok(withoutBlocks.some((error) => error.includes("нет accepted-блока")));
+    const withBlocks = validateModel({
+      spheres: buildSphere(), professions, competencies, professionCompetencies, requireBlocks: true,
+      blocks: [block("b1", ["c1"]), block("b2", ["c2"]), block("b3", ["c3"])],
+    });
+    assert.deepEqual(withBlocks, []);
+  });
+
+  it("проверяет циклы и порядок prerequisites в слое профессии", () => {
+    const competencies = buildCompetencies(map);
+    const professionCompetencies = buildProfessionCompetencies(map, "it.uxui");
+    professionCompetencies.competencies[0]!.prerequisites = ["c3"];
+    professionCompetencies.competencies[2]!.prerequisites = ["c1"];
+    const errors = validateProfessionPrerequisites(professionCompetencies);
+    assert.ok(errors.some((error) => error.includes("цикл prerequisites")));
+    const late = structuredClone(professionCompetencies);
+    late.competencies[0]!.prerequisites = ["c2"];
+    assert.ok(validateProfessionPrerequisites(late).some((error) => error.includes("не раньше order")));
+    assert.deepEqual(validateProfessionPrerequisites(buildProfessionCompetencies(map, "it.uxui")), []);
   });
 });

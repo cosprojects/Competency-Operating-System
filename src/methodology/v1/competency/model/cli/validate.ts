@@ -8,6 +8,7 @@ import type {
   SphereSourceFile,
 } from "../types.ts";
 import { validateModel } from "../validate.ts";
+import { loadCatalog } from "../../catalog.ts";
 import { flagValue, readJson } from "../../cli/common.ts";
 
 async function main(): Promise<void> {
@@ -24,7 +25,21 @@ async function main(): Promise<void> {
   const professionCompetencies = await readJson<ProfessionCompetencyFile>(path.join(base, `model/profession-competencies/${slug}.json`));
   const sphereSource = await readJson<SphereSourceFile>(path.join(base, `sources/spheres/${domain}.json`)).catch(() => undefined);
   const professionSource = await readJson<ProfessionSourceFile>(path.join(base, `sources/professions/${professionId}.json`)).catch(() => undefined);
-  const errors = validateModel({ spheres, professions, competencies, professionCompetencies, ...(sphereSource ? { sphereSource } : {}), ...(professionSource ? { professionSource } : {}) });
+  const catalog = await loadCatalog(root, domain).catch(() => undefined);
+  const requireBlocks = argv.includes("--require-blocks");
+  const sharedInput = {
+    spheres,
+    professions,
+    competencies,
+    ...(catalog ? { blocks: catalog.blocks } : {}),
+    requireBlocks,
+  };
+  const errors = validateModel({
+    ...sharedInput,
+    professionCompetencies,
+    ...(sphereSource ? { sphereSource } : {}),
+    ...(professionSource ? { professionSource } : {}),
+  });
   console.log(`model:validate ${professionId}: competencies ${competencies.competencies.length}; profession links ${professionCompetencies.competencies.length}; errors ${errors.length}`);
   for (const error of errors) console.error(`  ${error}`);
   if (errors.length > 0) process.exit(1);
@@ -39,7 +54,7 @@ async function main(): Promise<void> {
         allErrors.push(`profession-competencies: нет файла для ${profession.id}`);
         continue;
       }
-      const result = validateModel({ spheres, professions, competencies, professionCompetencies: file });
+      const result = validateModel({ ...sharedInput, professionCompetencies: file });
       allErrors.push(...result);
       seen.set(profession.id, file.competencies.map((item) => item.competencyId));
     }

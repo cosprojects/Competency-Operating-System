@@ -1,7 +1,7 @@
 {
   "catalogVersion": "0.1.0",
   "domain": "it",
-  "updatedOn": "2026-10-22",
+  "updatedOn": "2026-10-25",
   "blocks": [
     {
       "id": "comp_5ed63dc3a73a",
@@ -284,7 +284,10 @@
         }
       },
       "issues": [],
-      "methodologyVersion": "0.1.0"
+      "methodologyVersion": "0.1.0",
+      "canonicalIds": [
+        "ui-responsive"
+      ]
     },
     {
       "id": "comp_ec6bb5ba0dd5",
@@ -415,7 +418,11 @@
         }
       },
       "issues": [],
-      "methodologyVersion": "0.1.0"
+      "methodologyVersion": "0.1.0",
+      "canonicalIds": [
+        "ux-analytics",
+        "ux-user-research"
+      ]
     },
     {
       "id": "comp_bb0fe81fb74f",
@@ -560,7 +567,10 @@
         }
       },
       "issues": [],
-      "methodologyVersion": "0.1.0"
+      "methodologyVersion": "0.1.0",
+      "canonicalIds": [
+        "ux-requirements"
+      ]
     },
     {
       "id": "comp_058ffb486eb7",
@@ -679,7 +689,10 @@
         }
       },
       "issues": [],
-      "methodologyVersion": "0.1.0"
+      "methodologyVersion": "0.1.0",
+      "canonicalIds": [
+        "ux-ethics-privacy"
+      ]
     },
     {
       "id": "comp_287b573c505e",
@@ -1240,7 +1253,10 @@
         }
       },
       "issues": [],
-      "methodologyVersion": "0.1.0"
+      "methodologyVersion": "0.1.0",
+      "canonicalIds": [
+        "ui-accessibility"
+      ]
     },
     {
       "id": "comp_a245c1b4ec0a",
@@ -1433,7 +1449,10 @@
         }
       },
       "issues": [],
-      "methodologyVersion": "0.1.0"
+      "methodologyVersion": "0.1.0",
+      "canonicalIds": [
+        "ui-web-technologies"
+      ]
     },
     {
       "id": "comp_88be87bf8498",
@@ -1577,7 +1596,10 @@
         }
       },
       "issues": [],
-      "methodologyVersion": "0.1.0"
+      "methodologyVersion": "0.1.0",
+      "canonicalIds": [
+        "ui-web-technologies"
+      ]
     },
     {
       "id": "comp_8984ce9da8c1",
@@ -1943,7 +1965,10 @@
         }
       },
       "issues": [],
-      "methodologyVersion": "0.1.0"
+      "methodologyVersion": "0.1.0",
+      "canonicalIds": [
+        "ui-handoff"
+      ]
     },
     {
       "id": "comp_ce23f79a5220",
@@ -2102,7 +2127,11 @@
         }
       },
       "issues": [],
-      "methodologyVersion": "0.1.0"
+      "methodologyVersion": "0.1.0",
+      "canonicalIds": [
+        "ui-data-visualization",
+        "ux-metrics"
+      ]
     },
     {
       "id": "comp_2d2a9ebacafe",
@@ -2326,7 +2355,11 @@
         }
       },
       "issues": [],
-      "methodologyVersion": "0.1.0"
+      "methodologyVersion": "0.1.0",
+      "canonicalIds": [
+        "ui-motion",
+        "ui-visual-communication"
+      ]
     },
     {
       "id": "comp_c305bec788c2",
@@ -2527,7 +2560,10 @@
         }
       },
       "issues": [],
-      "methodologyVersion": "0.1.0"
+      "methodologyVersion": "0.1.0",
+      "canonicalIds": [
+        "ui-layout"
+      ]
     },
     {
       "id": "comp_07a221882772",
@@ -2729,7 +2765,11 @@
         }
       },
       "issues": [],
-      "methodologyVersion": "0.1.0"
+      "methodologyVersion": "0.1.0",
+      "canonicalIds": [
+        "ui-layout",
+        "ui-typography"
+      ]
     },
     {
       "id": "comp_ab6396631b12",
@@ -2850,7 +2890,11 @@
         }
       },
       "issues": [],
-      "methodologyVersion": "0.1.0"
+      "methodologyVersion": "0.1.0",
+      "canonicalIds": [
+        "ui-color",
+        "ui-motion"
+      ]
     },
     {
       "id": "comp_047348e54050",
@@ -2972,7 +3016,11 @@
         }
       },
       "issues": [],
-      "methodologyVersion": "0.1.0"
+      "methodologyVersion": "0.1.0",
+      "canonicalIds": [
+        "ui-data-visualization",
+        "ui-visual-elements"
+      ]
     },
     {
       "id": "comp_f30be83c07b9",

@@ -1,6 +1,6 @@
 import path from "node:path";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
-import type { CompetenciesFile } from "../../competency/model/types.ts";
+import type { CompetenciesFile, ProfessionCompetencyFile } from "../../competency/model/types.ts";
 import type { ProfessionView } from "../../competency/model/profession-view.ts";
 import { loadCatalog } from "../../competency/catalog.ts";
 import type { MaterialQueueJournal } from "../queue.ts";
@@ -25,21 +25,36 @@ async function main(): Promise<void> {
   console.log(output);
 }
 
-/** View и каталог дают покрытие по компетенциям профессии, а не только по блокам. */
+/** View (или profession-competencies для UX/UI) и каталог дают покрытие по компетенциям профессии. */
 async function buildCoverageContext(root: string, slug: string): Promise<ReviewCoverageContext | undefined> {
+  const base = path.join(root, "src/methodology/v1/competency");
+  const ids = await loadCompetencyOrder(base, slug);
+  if (!ids) return undefined;
   try {
-    const base = path.join(root, "src/methodology/v1/competency");
-    const view = await readJson<ProfessionView>(path.join(base, "model/professions/views", `${slug}.json`));
     const competencies = await readJson<CompetenciesFile>(path.join(base, "model/competencies.json"));
     const catalog = await loadCatalog(root, "it");
     const titles = new Map(competencies.competencies.map((item) => [item.id, item.title]));
-    const ids = view.sections.flatMap((section) => section.competencies.map((competency) => competency.competencyId));
     return {
       competencies: ids.map((competencyId) => ({ competencyId, title: titles.get(competencyId) ?? competencyId })),
       blocks: catalog.blocks,
     };
   } catch {
     return undefined;
+  }
+}
+
+/** Порядок компетенций: view профессии, иначе материализованный слой (UX/UI без view). */
+async function loadCompetencyOrder(base: string, slug: string): Promise<string[] | undefined> {
+  try {
+    const view = await readJson<ProfessionView>(path.join(base, "model/professions/views", `${slug}.json`));
+    return view.sections.flatMap((section) => section.competencies.map((competency) => competency.competencyId));
+  } catch {
+    try {
+      const file = await readJson<ProfessionCompetencyFile>(path.join(base, "model/profession-competencies", `${slug}.json`));
+      return file.competencies.map((competency) => competency.competencyId);
+    } catch {
+      return undefined;
+    }
   }
 }
 

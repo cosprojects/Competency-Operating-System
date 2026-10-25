@@ -575,9 +575,14 @@
       "professionIds": [
         "it.motion"
       ],
-      "tagHints": [],
+      "tagHints": [
+        "принципы анимации",
+        "тайминг",
+        "кривые ускорения",
+        "ритм и композиция"
+      ],
       "excludeHints": [],
-      "maxTags": 12,
+      "maxTags": 16,
       "extraTags": [
         {
           "title": "Тайминг анимации",
@@ -613,9 +618,14 @@
       "professionIds": [
         "it.motion"
       ],
-      "tagHints": [],
+      "tagHints": [
+        "сториборд",
+        "раскадровк",
+        "ритм и композиция",
+        "анимированный"
+      ],
       "excludeHints": [],
-      "maxTags": 12,
+      "maxTags": 16,
       "extraTags": [
         {
           "title": "Сториборд",
@@ -651,9 +661,15 @@
       "professionIds": [
         "it.motion"
       ],
-      "tagHints": [],
+      "tagHints": [
+        "3d",
+        "рендер",
+        "cinema 4d",
+        "моделинг",
+        "свет"
+      ],
       "excludeHints": [],
-      "maxTags": 12,
+      "maxTags": 20,
       "extraTags": [
         {
           "title": "3D-моделирование",
@@ -689,9 +705,15 @@
       "professionIds": [
         "it.product"
       ],
-      "tagHints": [],
+      "tagHints": [
+        "rice",
+        "smart",
+        "управление в дизайне",
+        "administration and management",
+        "sales and marketing"
+      ],
       "excludeHints": [],
-      "maxTags": 12,
+      "maxTags": 18,
       "extraTags": [
         {
           "title": "Продуктовая стратегия",
@@ -727,9 +749,16 @@
       "professionIds": [
         "it.product"
       ],
-      "tagHints": [],
+      "tagHints": [
+        "воронк",
+        "удержан",
+        "sales and marketing",
+        "economics and accounting",
+        "customer and personal service",
+        "продуктовые циклы"
+      ],
       "excludeHints": [],
-      "maxTags": 12,
+      "maxTags": 18,
       "extraTags": [
         {
           "title": "Воронка и активация",
@@ -765,9 +794,16 @@
       "professionIds": [
         "it.product"
       ],
-      "tagHints": [],
+      "tagHints": [
+        "гипотез",
+        "rice",
+        "agile",
+        "scrum",
+        "critical thinking",
+        "a/b"
+      ],
       "excludeHints": [],
-      "maxTags": 12,
+      "maxTags": 18,
       "extraTags": [
         {
           "title": "A/B-эксперименты",
@@ -803,9 +839,15 @@
       "professionIds": [
         "it.graphic"
       ],
-      "tagHints": [],
+      "tagHints": [
+        "айдентик",
+        "фирменн",
+        "логотип",
+        "брендинг",
+        "брендбук"
+      ],
       "excludeHints": [],
-      "maxTags": 12,
+      "maxTags": 20,
       "extraTags": [
         {
           "title": "Бренд-платформа",
@@ -841,9 +883,14 @@
       "professionIds": [
         "it.graphic"
       ],
-      "tagHints": [],
+      "tagHints": [
+        "печат",
+        "предпечат",
+        "многостраничн",
+        "полиграф"
+      ],
       "excludeHints": [],
-      "maxTags": 12,
+      "maxTags": 18,
       "extraTags": [
         {
           "title": "Допечатная подготовка",
@@ -879,9 +926,14 @@
       "professionIds": [
         "it.graphic"
       ],
-      "tagHints": [],
+      "tagHints": [
+        "вёрстк",
+        "верстк",
+        "редакцион",
+        "многостраничн"
+      ],
       "excludeHints": [],
-      "maxTags": 12,
+      "maxTags": 18,
       "extraTags": [
         {
           "title": "Редакционная сетка",
@@ -917,7 +969,10 @@
       "professionIds": [
         "it.product"
       ],
-      "tagHints": [],
+      "tagHints": [
+        "jtbd",
+        "jobs to be done"
+      ],
       "excludeHints": [],
       "maxTags": 12,
       "extraTags": [
@@ -955,7 +1010,10 @@
       "professionIds": [
         "it.product"
       ],
-      "tagHints": [],
+      "tagHints": [
+        "cjm",
+        "customer journey"
+      ],
       "excludeHints": [],
       "maxTags": 12,
       "extraTags": [

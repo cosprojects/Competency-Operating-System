@@ -25,7 +25,7 @@ npm run canonical:validate -- --domain it --profession uxui --source review --in
 
 Материалы вынесены в отдельный контур: `npm run materials:agent -- --domain it --profession uxui --limit 2 --sources wikipedia,habr,medium`. Журнал — `data/materials-agent/`; агент не меняет каталог и не пишет в граф.
 
-Очередь покрывает компетенции profession view (включая переиспользованные блоки через `canonicalIds`). Product full run: 31 элемент, 68 материалов, 35 связей, покрытие **30/30 компетенций**, `catalog.materials` = 0 (human-review не выполнен). Команда:
+Очередь покрывает компетенции profession view (включая переиспользованные блоки через `canonicalIds`). Полные прогоны: Product — 31 элемент / 68 материалов / 35 связей (30/30 компетенций); Motion — 20 / 38 / 20 (19/19); Graphic — 20 / 39 / 22 (18/18). `catalog.materials` = 0 (human-review не выполнен). Команда:
 
 ```bash
 npm run materials:agent:queue -- --domain it --profession product --per-competency 1 \
@@ -61,10 +61,10 @@ npm run model:validate -- --domain it --profession product --all --require-block
 ```
 
 
-Сетевые канвасы профессий: `npm run canvas:profession-network -- --profession product` (также `motion`, `graphic`). Product: 30 узлов / 41 связь, связный граф от фондаментальных к продвинутым.
+Сетевые канвасы профессий: `npm run canvas:profession-network -- --profession product` (также `motion`, `graphic`). Все три графа связные, с единственным корнем `ux-design-thinking`: Product 30 узлов / 41 связь, Motion 19 / 29, Graphic 18 / 33.
 
 
-Сопоставление product-тегов компетенциям: `mapping/it.product.json` + `npm run mapping:validate -- --domain it --profession product --report` (30/30 компетенций; direct 11 / adjacent 15 / none 4). Подробнее — [COS-RES-020](docs/09-research/COS-RES-020-Product-Competency-Assembly.md).
+Сопоставление тегов компетенциям: `mapping/it.<profession>.json` + `npm run mapping:validate -- --domain it --profession <profession> --report`. Product 30/30 (direct 11 / adjacent 15 / none 4), Motion 19/19 (9/5/5), Graphic 18/18 (11/6/1). Подробнее — [COS-RES-020](docs/09-research/COS-RES-020-Product-Competency-Assembly.md) и [COS-RES-021](docs/09-research/COS-RES-021-Motion-Graphic-Competency-Assembly.md). Practicum подключён как источник для всех четырёх профессий; теги курсов проходят санитайзер.
 
 
 Материалы новых профессий: `npm run materials:agent:review -- --domain it --profession motion` (также `product`, `graphic`). Review показывает покрытие компетенций профессии; это review-артефакты, не accepted-материалы.

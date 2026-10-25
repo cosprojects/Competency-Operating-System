@@ -1,7 +1,7 @@
 ---
 id: COS-RES-018
 title: Модель сфера → профессия → компетенции и систематизация источников
-version: 2.0.0
+version: 2.1.0
 status: Draft
 owner: Research Team
 last_updated: 2026-10-25
@@ -10,6 +10,7 @@ references:
   - COS-RES-016
   - COS-RES-017
   - COS-RES-020
+  - COS-RES-021
 ---
 
 # COS-RES-018 — Сфера → профессия → компетенции и источники
@@ -167,23 +168,18 @@ Human-review канвас: `web/competencies-review-canvas.html` — табы п
 - профессий: **4** — `it.uxui`, `it.product`, `it.motion`, `it.graphic`;
 - компетенций в едином массиве: **45** (34 базовых + 11 профессио-специфичных);
 - каталог домена: **44 блока, 195 тегов** (UX/UI + profession-specific);
-- profession-competencies: UX/UI — 34, product — 30 (41 prerequisites, 1 компонента графа), motion — 19, graphic — 18;
+- profession-competencies: UX/UI — 34, product — 30 (41 prerequisites), motion — 19 (29 prerequisites), graphic — 18 (33 prerequisites); все графы — 1 компонента с корнем `ux-design-thinking`;
 - переиспользуемых компетенций: **34** (базовые входят в несколько профессий; 9 специфичных — в свою);
 - источники: `sources/spheres/it.json` + отдельный файл на каждую профессию (`sources/professions/it.*.json`); Material Agent берёт `materialSourceIds` из source-файла профессии, по умолчанию только active;
 - страницы: `web/it-uxui-competency-canvas.html`, `web/it-product-competency-map.html`, `web/it-motion-competency-map.html`, `web/it-graphic-competency-map.html`, сетевые `web/it-product-competency-canvas.html`, `web/it-motion-competency-canvas.html`, `web/it-graphic-competency-canvas.html`; единый review-канвас `web/competencies-review-canvas.html` с табами по профессиям;
-- mapping: `mapping/it.product.json` — 30/30 компетенций Product сопоставлены собранным тегам (direct 11 / adjacent 15 / none 4), 0 ошибок;
+- mapping: `mapping/it.product.json` — 30/30 (direct 11 / adjacent 15 / none 4); `mapping/it.motion.json` — 19/19 (9/5/5); `mapping/it.graphic.json` — 18/18 (11/6/1); «без решения» 0;
+- источники профессий: Practicum подключён для UX/UI, product, motion и graphic;
 - acceptance-состояние: 44/44 accepted-блоков имеют `canonicalIds`; 0 accepted-материалов;
-- `model:validate --all --require-blocks`: 0 ошибок; тесты 141/141.
+- `model:validate --all --require-blocks`: 0 ошибок; тесты 146/146.
 
 ## 7. Следующие профессии
 
-Product-итерация завершена (см. `COS-RES-020`): view, prerequisites, mapping и canvas пересобраны. Для motion / graphic остаётся та же схема:
-
-1. проверить occupation-маппинг профессии (O*NET/ESCO) и при необходимости расширить до нескольких занятий, как сделано для product;
-2. добавить `mapping/<domain>.<profession>.json` и прогнать `mapping:validate`;
-3. добавить `model/professions/views/<profession>.json` с явными prerequisites и связным графом;
-4. `model:views --write`, `model:validate --all --require-blocks`, пересобрать canvas/map;
-5. human-review mapping и тегов перед приёмкой блоков.
+Product-, Motion- и Graphic-итерации завершены (`COS-RES-020`, `COS-RES-021`): view, prerequisites, mapping и canvas пересобраны для всех трёх профессий. Дальше — калибровка методики и расширение за пределы дизайнерских профессий: проверить occupation-маппинг, mapping тегов, prerequisites, материалы, затем human-review.
 
 ## 8. Ограничения
 
@@ -211,3 +207,4 @@ Product-итерация завершена (см. `COS-RES-020`): view, prerequ
 | 1.8.0 | 2026-10-22 | Product: Practicum `product-approach-for-designers` подключён через профессию, из каталога извлекаются тематические теги (CJM, JTBD, гипотезы, юзабилити, дизайн-системы); 182 тега |
 | 1.9.0 | 2026-10-22 | Product graph расширен до 30 узлов: JTBD и CJM; 29 связей; каталог 44 блока / 195 тегов; глобальный массив 45 компетенций |
 | 2.0.0 | 2026-10-25 | canonicalIds у всех 44 accepted-блоков; prerequisites материализуются и валидируются; `--require-blocks`; Product: исправлены O*NET-занятия (15-1255.00 + 13-1161.00), 368 тегов, mapping 30/30, связный граф 41 связь, canvas/map пересобраны; решение по priority/order — `COS-RES-020` |
+| 2.1.0 | 2026-10-25 | Motion/Graphic: Practicum-источники и санитайзер тегов (228/204 тега), mapping 19/19 и 18/18, связные графы 29/33 связи, материалы 19/19 и 18/18 покрытия — `COS-RES-021` |

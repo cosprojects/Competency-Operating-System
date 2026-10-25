@@ -1,7 +1,7 @@
 ---
 id: COS-RES-019
 title: Competency Module — session handoff
-version: 1.1.0
+version: 1.3.0
 status: Draft
 owner: Research Team
 last_updated: 2026-10-25
@@ -12,6 +12,7 @@ references:
   - COS-RES-017
   - COS-RES-018
   - COS-RES-020
+  - COS-RES-021
   - COS-ARCH-002
 ---
 
@@ -35,7 +36,8 @@ references:
 - `catalog/it.json`: **44 accepted-блока, 195 тегов, 0 материалов**. У всех 44 блоков заполнены `canonicalIds` (backfill из canonical map; раньше 14 блоков без него выпадали из графов).
 - UX/UI: 33 accepted priority-mark, `status: accepted`, reviewer `cos-methodologist`.
 - Canonical UX/UI: **34 компетенции**, `covered = 34`, `partial = 0`, `gap = 0`.
-- Product mapping: `mapping/it.product.json` — 30/30 компетенций сопоставлены собранным тегам (direct 11, adjacent 15, none 4); `mapping:validate` — 0 ошибок.
+- Mapping: `mapping/it.product.json` — 30/30 (direct 11, adjacent 15, none 4); `it.motion.json` — 19/19 (9/5/5); `it.graphic.json` — 18/18 (11/6/1); `mapping:validate` — 0 ошибок, «без решения» 0.
+- Practicum подключён как источник для всех четырёх профессий; курс-теги проходят санитайзер (без абзацев, карьерных и маркетинговых фраз).
 
 ### Нормализованная модель
 - `model/spheres.json` — сфера `it`.
@@ -50,14 +52,14 @@ references:
 |---|---:|---:|---:|
 | UX/UI | 34 | 34 | 26 |
 | Product | 30 | 30 | **41** |
-| Motion | 19 | 19 | 14 |
-| Graphic | 18 | 18 | 13 |
+| Motion | 19 | 19 | **29** |
+| Graphic | 18 | 18 | **33** |
 
-Product-граф теперь связный: единственный корень `ux-design-thinking`, компонент — 1; JTBD/CJM/стратегия/рост/эксперименты связаны с остальным графом. Product view: 3 foundation / 24 core / 3 optional.
+Все три графа (product, motion, graphic) теперь связные: единственный корень `ux-design-thinking`, компонент — 1. Product view: 3 foundation / 24 core / 3 optional; motion: 6/9/4; graphic: 7/4/7.
 
 ### Решение по priority/order (Priority 2)
-- Отдельный `priority/product.json` **не вводится**: `priority/uxui.json` — block-level accepted marks UX/UI, а Product view работает на уровне канонических компетенций с переиспользованными блоками; копия создала бы второй источник истины.
-- Источник истины Product: `model/professions/views/product.json`. Материализованная проекция: `model/profession-competencies/product.json` (теперь сохраняет prerequisites).
+- Отдельные `priority/product.json`, `priority/motion.json`, `priority/graphic.json` **не вводятся**: `priority/uxui.json` — block-level accepted marks UX/UI, а profession views работают на уровне канонических компетенций с переиспользованными блоками; копия создала бы второй источник истины.
+- Источник истины: `model/professions/views/<profession>.json`. Материализованная проекция: `model/profession-competencies/<profession>.json` (сохраняет prerequisites).
 - `model:validate` проверяет prerequisites (существование, порядок, циклы) и `--require-blocks`; `validateProfessionView` ловит ошибки на `model:views`. UX/UI priority не затронут (33 marks, 0 ошибок).
 
 ### Канвасы
@@ -75,8 +77,9 @@ Product-граф теперь связный: единственный коре�
 - Worker queue: состав задаёт profession view — для каждой компетенции берутся covering-блоки по `canonicalIds` (включая переиспользованные), дубли схлопываются; concurrency, retry, общий LlmBudget, coverage по элементу. При исчерпании бюджета найденные материалы сохраняются как `needs_review`, не выбрасываются.
 - Журналы: `data/materials-agent/<domain>-<profession>-queue.json` (gitignored).
 - Review: `materials:agent:review` — отчёт по блокам + таблица покрытия компетенций профессии.
-- Product full run (2026-10-25): 31 элемент (30 компетенций view + 1 блок вне view), completed 31, failed 0; 68 материалов (Wikipedia 30, Хабр 32, Medium 6); 35 связей; **покрытие 30/30 компетенций**, 0 без материалов; $0.0239.
-- Motion/Graphic review (smoke): motion 14 / 3, graphic 13 / 7.
+- Product full run (2026-10-25): 31 элемент, completed 31, failed 0; 68 материалов (Wikipedia 30, Хабр 32, Medium 6); 35 связей; **покрытие 30/30 компетенций**; $0.0239.
+- Motion full run: 20 элементов, 38 материалов, 20 связей, **19/19** компетенций; $0.0055.
+- Graphic full run: 20 элементов, 39 материалов, 22 связи, **18/18** компетенций; $0.0020.
 - **Материалы не приняты в каталог:** `catalog.materials` = 0.
 
 ## 2. Ключевые команды
@@ -133,11 +136,11 @@ open web/it-product-competency-canvas.html
 ## 4. Открытые задачи (по приоритету)
 
 1. **Human-review Product mapping** и привязка реальных product-тегов к accepted-блокам: сейчас теги 5 product-блоков синтетические (`sourceRefs: []`). Следующий шаг — `tagHints` в `seeds/it.json` для Product и пересборка блоков через seed/Pass B, затем human-приёмка.
-2. **Human-review материалов Product** — журнал и review готовы (`data/materials-agent/it-product-review.md`, 30/30 компетенций покрыты, 35 связей). Нужно решить, какие материалы принимать; только после этого `catalog.materials`. Перезапуск: `materials:agent:queue -- --domain it --profession product --classify --budget-usd 0.15 --max-calls 120`, затем `materials:agent:review`.
-3. **Motion/Graphic** — та же схема: исправить occupation-маппинг, mapping тегов, prerequisites, пересобрать canvas.
+2. **Human-review материалов** — журналы и review готовы для Product (30/30), Motion (19/19), Graphic (18/18). Нужно решить, какие материалы принимать; только после этого `catalog.materials`. Перезапуск: `materials:agent:queue -- --domain it --profession <prof> --classify --budget-usd 0.15 --max-calls 120`, затем `materials:agent:review`.
+3. **Human-review mapping Motion/Graphic** и привязка Practicum-тегов к accepted-блокам (теги 6 собственных блоков синтетические).
 4. **Knowledge graph** (competency → components/tags/materials) — отложен по решению пользователя.
 5. **Push** — если SSH-агент пуст: `ssh-add ~/.ssh/id_ed25519`, затем `git push origin main`.
-6. **Остальные профессии** — после стабилизации методики расширять за пределы 4 дизайнерских.
+6. **Остальные профессии** — после стабилизации методики расширять за пределы 4 дизайнерских (использовать схему `COS-RES-020`/`COS-RES-021`).
 
 ## 5. Известные ограничения и риски
 
@@ -165,3 +168,4 @@ open web/it-product-competency-canvas.html
 | 1.0.0 | 2026-10-22 | Handoff после сборки 4 профессий, 44 блоков, 45 компетенций, Material Agent и сетевых канвасов |
 | 1.1.0 | 2026-10-25 | Product-итерация: canonicalIds для всех блоков, исправленные O*NET-занятия, 368 тегов, mapping 30/30, связный граф 41 связь, решение по priority/order, 141 тест |
 | 1.2.0 | 2026-10-25 | Priority 3: очередь материалов покрывает компетенции view (Product 31 элемент, 30/30 компетенций, 68 материалов, 35 связей); review с покрытием; фикс потери материалов при исчерпании бюджета; 145 тестов |
+| 1.3.0 | 2026-10-25 | Priority 4: Motion/Graphic — Practicum-источники и санитайзер тегов, mapping 19/19 и 18/18, связные графы 29/33 связи, материалы 19/19 и 18/18; все 4 профессии с review-журналами; 146 тестов |

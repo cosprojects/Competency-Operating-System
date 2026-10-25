@@ -39,7 +39,7 @@ export function buildProfessionCompetenciesFromView(
         competencyId: competency.competencyId,
         tier: competency.tier,
         order: competency.order,
-        prerequisites: [],
+        prerequisites: [...(competency.prerequisites ?? [])],
         sectionId: section.id,
         sectionTitle: section.title,
       });
@@ -55,6 +55,7 @@ export function validateProfessionView(view: ProfessionView, competencies: Globa
   const existing = new Set(competencies.map((item) => item.id));
   const orders = new Set<number>();
   const seen = new Set<string>();
+  const byId = new Map<string, ProfessionViewCompetency>();
   for (const section of view.sections) {
     if (!section.id || !section.title) errors.push(`view ${view.professionId}: секция без id/title`);
     for (const item of section.competencies) {
@@ -64,6 +65,19 @@ export function validateProfessionView(view: ProfessionView, competencies: Globa
       if (!Number.isInteger(item.order) || item.order <= 0) errors.push(`view ${view.professionId} «${item.competencyId}»: плохой order`);
       if (orders.has(item.order)) errors.push(`view ${view.professionId}: повтор order ${item.order}`);
       orders.add(item.order);
+      byId.set(item.competencyId, item);
+    }
+  }
+  for (const item of byId.values()) {
+    for (const prerequisite of item.prerequisites ?? []) {
+      const prerequisiteItem = byId.get(prerequisite);
+      if (!prerequisiteItem) {
+        errors.push(`view ${view.professionId} «${item.competencyId}»: prerequisite «${prerequisite}» не входит в профессию`);
+        continue;
+      }
+      if (prerequisiteItem.order >= item.order) {
+        errors.push(`view ${view.professionId} «${item.competencyId}»: prerequisite «${prerequisite}» не раньше по order`);
+      }
     }
   }
   return errors;

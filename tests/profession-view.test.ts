@@ -38,4 +38,22 @@ describe("profession view", () => {
     assert.ok(errors.some((error) => error.includes("неизвестная компетенция")));
     assert.ok(errors.some((error) => error.includes("повтор order")));
   });
+
+  it("материализует prerequisites из view в слой профессии", () => {
+    const withPrerequisites = structuredClone(view);
+    withPrerequisites.sections[0]!.competencies[1]!.prerequisites = ["c1"];
+    const built = buildProfessionCompetenciesFromView(withPrerequisites, competencies);
+    assert.deepEqual(built.competencies[1]?.prerequisites, ["c1"]);
+    assert.deepEqual(validateProfessionView(withPrerequisites, competencies), []);
+  });
+
+  it("ловит prerequisite вне профессии и prerequisite позже по order", () => {
+    const bad = structuredClone(view);
+    bad.sections[0]!.competencies[1]!.prerequisites = ["c-unknown"];
+    const errors = validateProfessionView(bad, competencies);
+    assert.ok(errors.some((error) => error.includes("не входит в профессию")));
+    bad.sections[0]!.competencies[1]!.prerequisites = ["c3"];
+    const late = validateProfessionView(bad, competencies);
+    assert.ok(late.some((error) => error.includes("не раньше по order")));
+  });
 });

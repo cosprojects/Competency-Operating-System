@@ -14,7 +14,9 @@
       "competencyId": "ux-product-thinking",
       "tier": "foundation",
       "order": 2,
-      "prerequisites": [],
+      "prerequisites": [
+        "ux-design-thinking"
+      ],
       "sectionId": "product-foundations",
       "sectionTitle": "Продуктовые основы"
     },
@@ -22,31 +24,39 @@
       "competencyId": "ux-ethics-privacy",
       "tier": "optional",
       "order": 3,
-      "prerequisites": [],
+      "prerequisites": [
+        "ux-product-thinking"
+      ],
       "sectionId": "product-foundations",
       "sectionTitle": "Продуктовые основы"
     },
     {
-      "competencyId": "ux-user-research",
-      "tier": "core",
-      "order": 4,
-      "prerequisites": [],
-      "sectionId": "product-discovery",
-      "sectionTitle": "Discovery и JTBD"
-    },
-    {
       "competencyId": "product-jtbd",
       "tier": "foundation",
-      "order": 5,
-      "prerequisites": [],
+      "order": 4,
+      "prerequisites": [
+        "ux-design-thinking"
+      ],
       "sectionId": "product-discovery",
       "sectionTitle": "Discovery и JTBD"
     },
     {
-      "competencyId": "product-cjm",
+      "competencyId": "ux-user-research",
+      "tier": "core",
+      "order": 5,
+      "prerequisites": [
+        "ux-design-thinking"
+      ],
+      "sectionId": "product-discovery",
+      "sectionTitle": "Discovery и JTBD"
+    },
+    {
+      "competencyId": "ux-interviews",
       "tier": "core",
       "order": 6,
-      "prerequisites": [],
+      "prerequisites": [
+        "ux-user-research"
+      ],
       "sectionId": "product-discovery",
       "sectionTitle": "Discovery и JTBD"
     },
@@ -54,95 +64,124 @@
       "competencyId": "ux-personas",
       "tier": "core",
       "order": 7,
-      "prerequisites": [],
+      "prerequisites": [
+        "ux-user-research",
+        "ux-interviews"
+      ],
       "sectionId": "product-discovery",
       "sectionTitle": "Discovery и JTBD"
     },
     {
-      "competencyId": "ux-interviews",
+      "competencyId": "product-cjm",
       "tier": "core",
       "order": 8,
-      "prerequisites": [],
-      "sectionId": "product-discovery",
-      "sectionTitle": "Discovery и JTBD"
-    },
-    {
-      "competencyId": "ux-usability-testing",
-      "tier": "core",
-      "order": 9,
-      "prerequisites": [],
-      "sectionId": "product-discovery",
-      "sectionTitle": "Discovery и JTBD"
-    },
-    {
-      "competencyId": "ux-analytics",
-      "tier": "core",
-      "order": 10,
-      "prerequisites": [],
+      "prerequisites": [
+        "product-jtbd",
+        "ux-personas"
+      ],
       "sectionId": "product-discovery",
       "sectionTitle": "Discovery и JTBD"
     },
     {
       "competencyId": "ux-information-architecture",
       "tier": "core",
-      "order": 11,
-      "prerequisites": [],
+      "order": 9,
+      "prerequisites": [
+        "ux-user-research"
+      ],
       "sectionId": "product-systems",
       "sectionTitle": "Сценарии и продуктовая логика"
     },
     {
       "competencyId": "ux-user-flows",
       "tier": "core",
-      "order": 12,
-      "prerequisites": [],
+      "order": 10,
+      "prerequisites": [
+        "ux-information-architecture"
+      ],
       "sectionId": "product-systems",
       "sectionTitle": "Сценарии и продуктовая логика"
     },
     {
       "competencyId": "ux-wireframes",
       "tier": "core",
-      "order": 13,
-      "prerequisites": [],
+      "order": 11,
+      "prerequisites": [
+        "ux-user-flows"
+      ],
       "sectionId": "product-systems",
       "sectionTitle": "Сценарии и продуктовая логика"
     },
     {
       "competencyId": "ux-requirements",
       "tier": "core",
-      "order": 14,
-      "prerequisites": [],
+      "order": 12,
+      "prerequisites": [
+        "ux-user-flows",
+        "ux-wireframes"
+      ],
       "sectionId": "product-systems",
       "sectionTitle": "Сценарии и продуктовая логика"
     },
     {
       "competencyId": "ux-lowfi-prototype",
       "tier": "core",
-      "order": 15,
-      "prerequisites": [],
+      "order": 13,
+      "prerequisites": [
+        "ux-wireframes"
+      ],
       "sectionId": "product-systems",
       "sectionTitle": "Сценарии и продуктовая логика"
     },
     {
       "competencyId": "ux-hifi-prototype",
       "tier": "core",
-      "order": 16,
-      "prerequisites": [],
+      "order": 14,
+      "prerequisites": [
+        "ux-lowfi-prototype"
+      ],
       "sectionId": "product-systems",
       "sectionTitle": "Сценарии и продуктовая логика"
     },
     {
       "competencyId": "ux-interactive-prototype",
       "tier": "core",
-      "order": 17,
-      "prerequisites": [],
+      "order": 15,
+      "prerequisites": [
+        "ux-hifi-prototype"
+      ],
+      "sectionId": "product-systems",
+      "sectionTitle": "Сценарии и продуктовая логика"
+    },
+    {
+      "competencyId": "ux-usability-testing",
+      "tier": "core",
+      "order": 16,
+      "prerequisites": [
+        "ux-interactive-prototype",
+        "ux-personas"
+      ],
       "sectionId": "product-systems",
       "sectionTitle": "Сценарии и продуктовая логика"
     },
     {
       "competencyId": "ux-metrics",
       "tier": "core",
+      "order": 17,
+      "prerequisites": [
+        "ux-product-thinking",
+        "ux-user-research"
+      ],
+      "sectionId": "product-metrics",
+      "sectionTitle": "Метрики и развитие продукта"
+    },
+    {
+      "competencyId": "ux-analytics",
+      "tier": "core",
       "order": 18,
-      "prerequisites": [],
+      "prerequisites": [
+        "ux-metrics"
+      ],
       "sectionId": "product-metrics",
       "sectionTitle": "Метрики и развитие продукта"
     },
@@ -150,7 +189,10 @@
       "competencyId": "ux-experiments",
       "tier": "core",
       "order": 19,
-      "prerequisites": [],
+      "prerequisites": [
+        "ux-metrics",
+        "ux-analytics"
+      ],
       "sectionId": "product-metrics",
       "sectionTitle": "Метрики и развитие продукта"
     },
@@ -158,7 +200,9 @@
       "competencyId": "ui-data-visualization",
       "tier": "optional",
       "order": 20,
-      "prerequisites": [],
+      "prerequisites": [
+        "ux-analytics"
+      ],
       "sectionId": "product-metrics",
       "sectionTitle": "Метрики и развитие продукта"
     },
@@ -166,7 +210,9 @@
       "competencyId": "ui-color",
       "tier": "core",
       "order": 21,
-      "prerequisites": [],
+      "prerequisites": [
+        "ux-design-thinking"
+      ],
       "sectionId": "product-ui",
       "sectionTitle": "Интерфейс и системы"
     },
@@ -174,7 +220,9 @@
       "competencyId": "ui-typography",
       "tier": "core",
       "order": 22,
-      "prerequisites": [],
+      "prerequisites": [
+        "ui-color"
+      ],
       "sectionId": "product-ui",
       "sectionTitle": "Интерфейс и системы"
     },
@@ -182,7 +230,9 @@
       "competencyId": "ui-layout",
       "tier": "core",
       "order": 23,
-      "prerequisites": [],
+      "prerequisites": [
+        "ui-typography"
+      ],
       "sectionId": "product-ui",
       "sectionTitle": "Интерфейс и системы"
     },
@@ -190,7 +240,10 @@
       "competencyId": "ui-design-systems",
       "tier": "core",
       "order": 24,
-      "prerequisites": [],
+      "prerequisites": [
+        "ux-information-architecture",
+        "ui-layout"
+      ],
       "sectionId": "product-ui",
       "sectionTitle": "Интерфейс и системы"
     },
@@ -198,7 +251,9 @@
       "competencyId": "ui-components",
       "tier": "core",
       "order": 25,
-      "prerequisites": [],
+      "prerequisites": [
+        "ui-design-systems"
+      ],
       "sectionId": "product-ui",
       "sectionTitle": "Интерфейс и системы"
     },
@@ -206,7 +261,10 @@
       "competencyId": "ui-accessibility",
       "tier": "core",
       "order": 26,
-      "prerequisites": [],
+      "prerequisites": [
+        "ui-components",
+        "ui-layout"
+      ],
       "sectionId": "product-ui",
       "sectionTitle": "Интерфейс и системы"
     },
@@ -214,15 +272,21 @@
       "competencyId": "ui-visual-communication",
       "tier": "optional",
       "order": 27,
-      "prerequisites": [],
+      "prerequisites": [
+        "ui-typography",
+        "ui-layout"
+      ],
       "sectionId": "product-ui",
       "sectionTitle": "Интерфейс и системы"
     },
     {
       "competencyId": "product-strategy",
-      "tier": "foundation",
+      "tier": "core",
       "order": 28,
-      "prerequisites": [],
+      "prerequisites": [
+        "ux-product-thinking",
+        "ux-metrics"
+      ],
       "sectionId": "product-growth",
       "sectionTitle": "Развитие продукта"
     },
@@ -230,7 +294,10 @@
       "competencyId": "product-growth",
       "tier": "core",
       "order": 29,
-      "prerequisites": [],
+      "prerequisites": [
+        "product-strategy",
+        "ux-analytics"
+      ],
       "sectionId": "product-growth",
       "sectionTitle": "Развитие продукта"
     },
@@ -238,7 +305,10 @@
       "competencyId": "product-experimentation",
       "tier": "core",
       "order": 30,
-      "prerequisites": [],
+      "prerequisites": [
+        "product-strategy",
+        "ux-experiments"
+      ],
       "sectionId": "product-growth",
       "sectionTitle": "Развитие продукта"
     }

@@ -1,24 +1,25 @@
 ---
 id: COS-RES-019
 title: Competency Module — session handoff
-version: 1.0.0
+version: 1.1.0
 status: Draft
 owner: Research Team
-last_updated: 2026-10-22
+last_updated: 2026-10-25
 references:
   - COS-RES-014
   - COS-RES-015
   - COS-RES-016
   - COS-RES-017
   - COS-RES-018
+  - COS-RES-020
   - COS-ARCH-002
 ---
 
 # COS-RES-019 — Handoff: модуль компетенций и профессий
 
-Документ фиксирует состояние на **2026-10-22**, чтобы продолжить работу в новой сессии без восстановления контекста.
+Документ фиксирует состояние на **2026-10-25**, чтобы продолжить работу в новой сессии без восстановления контекста. Итерация Product описана отдельно в `COS-RES-020`.
 
-Текущий коммит: **`67b13b3`** (`main`, запушен в `origin/main`). Тесты: **127/127**, `tsc --noEmit` чистый.
+Локальный `main` содержит коммиты итерации Product: `370265d` (canonicalIds), `3d66417` (источники Product), `b99730e` (связный граф Product + mapping), плюс docs-коммит. Тесты: **141/141**, `tsc --noEmit` чистый. `origin/main` может отставать: если агент запускался без SSH-ключа в агенте, push не прошёл. Проверить: `git status -sb`; при `ahead N` — `ssh-add ~/.ssh/id_ed25519 && git push origin main`. Reset/rebase не делать.
 
 ## 1. Что уже собрано
 
@@ -26,19 +27,21 @@ references:
 - `sources/registry.json` — определения источников (ESCO, O*NET, Практикум, Wikipedia, Internet Archive, Хабр, Medium, Stepik, YouTube, Learn Anything, профстандарты/ФГОС, hh.ru).
 - `sources/spheres/it.json` — источники сферы и language priority.
 - `sources/professions/it.uxui.json`, `it.product.json`, `it.motion.json`, `it.graphic.json` — occupation queries, material sources, blocked sources.
+- Product O*NET исправлен: `15-1255.00 Web and Digital Interface Designers` + `13-1161.00 Market Research Analysts and Marketing Specialists` вместо индустриального `27-1021.00`. `collectProfessions` принимает все объявленные SOC-коды.
+- Product tags: **368** (knowledge 47, skill 10, tool 311) вместо 182 индустриальных.
 - Сборщики `professions:collect` и `tags:collect` читают source-файл профессии (`--profession`).
-- Product/Graphic ESCO иногда отдаёт HTML — ошибка изолируется, сборка продолжается через O*NET. Product дополнительно получает теги из каталога Практикума `product-approach-for-designers`.
 
 ### Каталог и приоритеты
-- `catalog/it.json`: **44 accepted-блока, 195 тегов, 0 материалов**.
+- `catalog/it.json`: **44 accepted-блока, 195 тегов, 0 материалов**. У всех 44 блоков заполнены `canonicalIds` (backfill из canonical map; раньше 14 блоков без него выпадали из графов).
 - UX/UI: 33 accepted priority-mark, `status: accepted`, reviewer `cos-methodologist`.
 - Canonical UX/UI: **34 компетенции**, `covered = 34`, `partial = 0`, `gap = 0`.
+- Product mapping: `mapping/it.product.json` — 30/30 компетенций сопоставлены собранным тегам (direct 11, adjacent 15, none 4); `mapping:validate` — 0 ошибок.
 
 ### Нормализованная модель
 - `model/spheres.json` — сфера `it`.
 - `model/professions.json` — 4 профессии: `it.uxui`, `it.product`, `it.motion`, `it.graphic`.
 - `model/competencies.json` — **единый массив 45 компетенций** (34 базовых + 11 профессио-специфичных).
-- `model/profession-competencies/*.json` — ссылки competencyId + tier/order по профессии.
+- `model/profession-competencies/*.json` — ссылки competencyId + tier/order + prerequisites по профессии.
 - `model/professions/views/*.json` — профессиональные view: разделы, tier/order, prerequisites.
 
 ### Профессиональные view
@@ -46,30 +49,33 @@ references:
 | Профессия | Компетенций | Узлы графа | Связи |
 |---|---:|---:|---:|
 | UX/UI | 34 | 34 | 26 |
-| Product | 30 | 30 | 29 |
+| Product | 30 | 30 | **41** |
 | Motion | 19 | 19 | 14 |
 | Graphic | 18 | 18 | 13 |
 
-Product-граф включает JTBD, CJM, discovery, исследования, прототипы, метрики, growth/experiments и UI-слой.
+Product-граф теперь связный: единственный корень `ux-design-thinking`, компонент — 1; JTBD/CJM/стратегия/рост/эксперименты связаны с остальным графом. Product view: 3 foundation / 24 core / 3 optional.
+
+### Решение по priority/order (Priority 2)
+- Отдельный `priority/product.json` **не вводится**: `priority/uxui.json` — block-level accepted marks UX/UI, а Product view работает на уровне канонических компетенций с переиспользованными блоками; копия создала бы второй источник истины.
+- Источник истины Product: `model/professions/views/product.json`. Материализованная проекция: `model/profession-competencies/product.json` (теперь сохраняет prerequisites).
+- `model:validate` проверяет prerequisites (существование, порядок, циклы) и `--require-blocks`; `validateProfessionView` ловит ошибки на `model:views`. UX/UI priority не затронут (33 marks, 0 ошибок).
 
 ### Канвасы
-- `web/uxui-competency-canvas.html` — основной UX/UI.
-- `web/it-product-competency-canvas.html`.
-- `web/it-motion-competency-canvas.html`.
-- `web/it-graphic-competency-canvas.html`.
+- `web/uxui-competency-canvas.html` — UX/UI (34 узла / 26 связей).
+- `web/it-product-competency-canvas.html` — Product (30 / 41).
+- `web/it-motion-competency-canvas.html` — Motion (19 / 14).
+- `web/it-graphic-competency-canvas.html` — Graphic (18 / 13).
+- `web/it-*-competency-map.html` — сгруппированные карты профессий.
 - Табы **UX/UI · Product · Motion · Graphic** встроены прямо в каждый канвас.
-- `web/competencies-review-canvas.html` — redirect на UX/UI (iframe-версия убрана).
-- `canvas:profession` — сгруппированные карты; `canvas:profession-network` — сетевые канвасы; `canvas:tabs` — landing.
+- `web/competencies-review-canvas.html` — landing со ссылками на профессии.
+- `canvas:profession`, `canvas:profession-network`, `canvas:tabs`.
 
 ### Material Agent
-- `src/methodology/v1/materials-agent/` — отдельный модуль: discovery → optional LLM classification → validation.
+- `src/methodology/v1/materials-agent/` — discovery → optional LLM classification → validation.
 - Worker queue: `professionId + competencyId`, concurrency, retry, общий LlmBudget, coverage по элементу.
 - Журналы: `data/materials-agent/<domain>-<profession>-queue.json` (gitignored).
 - Review: `materials:agent:review`.
-- Product/Motion/Graphic review уже есть:
-  - product: 16 discovered / 8 linked;
-  - motion: 14 / 3;
-  - graphic: 13 / 7.
+- Product/Motion/Graphic review уже есть (product: 16 discovered / 8 linked; motion: 14 / 3; graphic: 13 / 7).
 - **Материалы не приняты в каталог.**
 
 ## 2. Ключевые команды
@@ -82,7 +88,10 @@ npm test
 # модель
 npm run model:sync -- --domain it --profession uxui --write
 npm run model:views -- --domain it --write
-npm run model:validate -- --domain it --profession uxui --all
+npm run model:validate -- --domain it --profession product --all --require-blocks
+
+# mapping тегов
+npm run mapping:validate -- --domain it --profession product --report
 
 # источники и сбор
 npm run professions:collect -- --domain it --profession product
@@ -96,9 +105,8 @@ npm run priority:validate -- --domain it --profession uxui --require-complete --
 
 # канвасы
 npm run canvas:page -- --domain it --profession uxui --source catalog
+npm run canvas:profession -- --profession product
 npm run canvas:profession-network -- --profession product
-npm run canvas:profession-network -- --profession motion
-npm run canvas:profession-network -- --profession graphic
 npm run canvas:tabs
 
 # материалы
@@ -106,50 +114,52 @@ npm run materials:agent:queue -- --domain it --profession product --classify --b
 npm run materials:agent:review -- --domain it --profession product
 ```
 
-Открыть review-канвас:
+Открыть канвас:
 
 ```bash
-open web/uxui-competency-canvas.html
+open web/it-product-competency-canvas.html
 ```
 
 ## 3. Что считается готовым
 
-- Профессии и теги собираются из официальных источников.
-- Каталог и приоритеты UX/UI accepted.
-- Единый массив компетенций и profession views работают.
-- Product/Motion/Graphic имеют собственные блоки для профессио-специфичных компетенций.
-- Табы профессий и сетевые канвасы работают.
+- Профессии и теги собираются из официальных источников; Product-источники исправлены на цифровые/исследовательские занятия.
+- Каталог и приоритеты UX/UI accepted; у всех accepted-блоков есть `canonicalIds`.
+- Единый массив компетенций и profession views работают; prerequisites материализуются и валидируются.
+- Product-граф связный; все 30 компетенций имеют tier/order, блок и связи.
+- Product-теги сопоставлены 30 компетенциям (mapping draft).
 - Material Agent отделён от сборки компетенций.
 
 ## 4. Открытые задачи (по приоритету)
 
-1. **Product graph**: заменить reuse-часть на product-specific каталог. Pass A по product-тегам пока даёт только 9 кандидатов и 86 unassigned из-за industrial design в ESCO/O*NET.
-2. **Priority-файлы Product/Motion/Graphic**: сейчас tier/order только в profession views; отдельных priority-файлов нет.
-3. **Материалы**: human-review журналов, затем `catalog.materials`; полный прогон по 44 блокам.
-4. **Motion/Graphic**: добавить profession-specific блоки и материалы, затем сетевые графы.
-5. **Knowledge graph**: отдельный слой competency → components/tags/materials пока не строится; по решению пользователя это следующий этап через агента материалов.
-6. **Остальные профессии**: после стабилизации методики расширять за пределы 4 дизайнерских.
+1. **Human-review Product mapping** и привязка реальных product-тегов к accepted-блокам: сейчас теги 5 product-блоков синтетические (`sourceRefs: []`). Следующий шаг — `tagHints` в `seeds/it.json` для Product и пересборка блоков через seed/Pass B, затем human-приёмка.
+2. **Материалы Product** — после фиксации графа: `materials:agent:queue`, затем human-review журналов, только потом `catalog.materials`.
+3. **Motion/Graphic** — та же схема: исправить occupation-маппинг, mapping тегов, prerequisites, пересобрать canvas.
+4. **Knowledge graph** (competency → components/tags/materials) — отложен по решению пользователя.
+5. **Push** — если SSH-агент пуст: `ssh-add ~/.ssh/id_ed25519`, затем `git push origin main`.
+6. **Остальные профессии** — после стабилизации методики расширять за пределы 4 дизайнерских.
 
 ## 5. Известные ограничения и риски
 
-- Product/Motion/Graphic графы частично синтетические: строятся из view, а не из полного profession-specific каталога.
+- Product/Motion/Graphic графы строятся из view; 5 product-specific блоков accepted, остальные 25 — переиспользованные UX/UI блоки.
+- Теги product-specific блоков синтетические и `needs_review`; mapping — черновик, не приёмка.
 - Каталог материалов пуст; Material Agent только готовит кандидатов.
 - `data/` (кроме tracked source/model) gitignored: журналы, candidates, blocks, materials не попадают в репозиторий.
-- `model:sync` раньше перезаписывал `professions.json`; исправлено — теперь записи других профессий сохраняются.
-- ESCO для Product/Graphic может отдавать HTML; fallback O*NET, без обхода.
+- ESCO для Product/Graphic в текущем окружении отдаёт HTML (прокси); fallback O*NET/Практикум, без обхода.
+- JSON-файлы и `web/*.html` детерминированно пересобираются `model:views` / `canvas:*`.
 - Канвасы — статические HTML; отдельного frontend-приложения в репозитории нет.
-- Финальная приёмка блоков/материалов остаётся human-gated.
+- Финальная приёмка блоков/материалов/приоритетов остаётся human-gated.
 
 ## 6. С чего начать новую сессию
 
 1. `git pull` и `npm run typecheck && npm test`.
-2. Проверить `git status` — должен быть clean, последний коммит `67b13b3` или новее.
-3. Запустить `npm run model:validate -- --domain it --profession uxui --all`.
-4. Открыть `web/uxui-competency-canvas.html`, проверить табы Product/Motion/Graphic.
-5. Продолжить с задачи 1: product-specific сборка навыков/знаний → компетенции → приоритеты → связи.
+2. Проверить `git status -sb`; при `ahead N` — push (см. п. 5).
+3. Запустить `npm run model:validate -- --domain it --profession product --all --require-blocks`.
+4. Открыть `web/it-product-competency-canvas.html`, проверить табы и 41 связь.
+5. Продолжить с задачи 1: human-review Product mapping → seed/block evidence.
 
 ## 7. История
 
 | Версия | Дата | Что зафиксировано |
 |---|---|---|
 | 1.0.0 | 2026-10-22 | Handoff после сборки 4 профессий, 44 блоков, 45 компетенций, Material Agent и сетевых канвасов |
+| 1.1.0 | 2026-10-25 | Product-итерация: canonicalIds для всех блоков, исправленные O*NET-занятия, 368 тегов, mapping 30/30, связный граф 41 связь, решение по priority/order, 141 тест |

@@ -44,10 +44,19 @@ npm run canonical:validate -- --domain it --profession uxui --source review --in
 Сборка по профессии: `npm run professions:collect -- --domain it --profession motion`, затем `npm run tags:collect -- --domain it --profession motion`. Запросы берутся из `sources/professions/<profession>.json`.
 
 
-Единый массив компетенций: **45** (34 базовых + 11 профессио-специфичных); profession views: product 28, motion 19, graphic 18; каталог: 44 блока, 195 тегов.
+Единый массив компетенций: **45** (34 базовых + 11 профессио-специфичных); profession views: product 30, motion 19, graphic 18; каталог: 44 блока, 195 тегов (у всех accepted-блоков заполнены `canonicalIds`).
+
+Priority/order профессии хранится в `model/professions/views/<profession>.json` и материализуется в `model/profession-competencies/<profession>.json` вместе с prerequisites. Отдельный `priority/product.json` не вводится: `priority/uxui.json` — block-level accepted marks UX/UI, а Product работает на уровне канонических компетенций. Проверка:
+
+```bash
+npm run model:validate -- --domain it --profession product --all --require-blocks
+```
 
 
-Сетевые канвасы профессий: `npm run canvas:profession-network -- --profession product` (также `motion`, `graphic`).
+Сетевые канвасы профессий: `npm run canvas:profession-network -- --profession product` (также `motion`, `graphic`). Product: 30 узлов / 41 связь, связный граф от фондаментальных к продвинутым.
+
+
+Сопоставление product-тегов компетенциям: `mapping/it.product.json` + `npm run mapping:validate -- --domain it --profession product --report` (30/30 компетенций; direct 11 / adjacent 15 / none 4). Подробнее — [COS-RES-020](docs/09-research/COS-RES-020-Product-Competency-Assembly.md).
 
 
 Материалы новых профессий: `npm run materials:agent:review -- --domain it --profession motion` (также `product`, `graphic`). Это review-артефакты, не accepted-материалы.

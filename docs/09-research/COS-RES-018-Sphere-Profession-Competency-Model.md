@@ -1,14 +1,15 @@
 ---
 id: COS-RES-018
 title: Модель сфера → профессия → компетенции и систематизация источников
-version: 1.9.0
+version: 2.0.0
 status: Draft
 owner: Research Team
-last_updated: 2026-10-21
+last_updated: 2026-10-25
 references:
   - COS-RES-014
   - COS-RES-016
   - COS-RES-017
+  - COS-RES-020
 ---
 
 # COS-RES-018 — Сфера → профессия → компетенции и источники
@@ -131,10 +132,12 @@ src/methodology/v1/competency/
 }
 ```
 
-`model:views` материализует это в `model/profession-competencies/<slug>.json` с `sectionId/sectionTitle`, не создавая копий компетенций. Так `ui-motion` может быть `foundation` у motion, `core` у UX/UI и `optional` у product.
+`model:views` материализует это в `model/profession-competencies/<slug>.json` с `sectionId/sectionTitle` и **prerequisites**, не создавая копий компетенций. Так `ui-motion` может быть `foundation` у motion, `core` у UX/UI и `optional` у product.
+
+Prerequisites из view — источник истины для слоя order профессии: `buildProfessionCompetenciesFromView` переносит их в `profession-competencies`, `validateProfessionView` требует, чтобы prerequisite входил в профессию и имел меньший `order`, а `model:validate` дополнительно ловит циклы. Для product/motion/graphic это и есть priority/order слой; отдельный `priority/<profession>.json` не вводится, потому что `priority/uxui.json` — block-level accepted marks UX/UI (см. `COS-RES-020`, §5).
 
 Текущие view:
-- `it.product` — 30 ссылок, включая Discovery/JTBD/CJM, метрики, стратегию, рост и эксперименты;
+- `it.product` — 30 ссылок и **41 связь prerequisites**, связный граф с единственным корнем `ux-design-thinking`; включая Discovery/JTBD/CJM, метрики, стратегию, рост и эксперименты;
 - `it.motion` — 19 ссылок, уклон в кинетику, тайминг, сторибординг и 3D;
 - `it.graphic` — 18 ссылок, уклон в бренд, печать и редакционный дизайн.
 
@@ -143,7 +146,8 @@ src/methodology/v1/competency/
 ```bash
 npm run model:sync -- --domain it --profession uxui --write
 npm run model:views -- --domain it --write
-npm run model:validate -- --domain it --profession uxui --all
+npm run model:validate -- --domain it --profession uxui --all --require-blocks
+npm run mapping:validate -- --domain it --profession product --report
 npm run canvas:profession -- --profession motion
 npm run canvas:profession -- --profession product
 npm run canvas:profession -- --profession graphic
@@ -155,7 +159,7 @@ npm run canvas:tabs
 
 Human-review канвас: `web/competencies-review-canvas.html` — табы по профессиям (UX/UI, Product, Motion, Graphic) вместо tier-фильтров внутри страницы. Tier-легенда остаётся в карточках/деталях.
 
-`model:sync` собирает нормализованные файлы из canonical map, priority, registry и targets. `model:validate` проверяет ссылочную целостность: сфера → профессия, профессия → компетенция, порядок, prerequisites, source-файлы.
+`model:sync` собирает нормализованные файлы из canonical map, priority, registry и targets. `model:validate` проверяет ссылочную целостность: сфера → профессия, профессия → компетенция, порядок, prerequisites (существование, порядок, циклы), source-файлы; с `--require-blocks` — наличие accepted-блока для каждой компетенции профессии. `mapping:validate` проверяет сопоставление собранных тегов компетенциям (см. `COS-RES-020`).
 
 ## 6. Текущий срез
 
@@ -163,30 +167,34 @@ Human-review канвас: `web/competencies-review-canvas.html` — табы п
 - профессий: **4** — `it.uxui`, `it.product`, `it.motion`, `it.graphic`;
 - компетенций в едином массиве: **45** (34 базовых + 11 профессио-специфичных);
 - каталог домена: **44 блока, 195 тегов** (UX/UI + profession-specific);
-- profession-competencies: UX/UI — 34, product — 30, motion — 19, graphic — 18;
+- profession-competencies: UX/UI — 34, product — 30 (41 prerequisites, 1 компонента графа), motion — 19, graphic — 18;
 - переиспользуемых компетенций: **34** (базовые входят в несколько профессий; 9 специфичных — в свою);
 - источники: `sources/spheres/it.json` + отдельный файл на каждую профессию (`sources/professions/it.*.json`); Material Agent берёт `materialSourceIds` из source-файла профессии, по умолчанию только active;
 - страницы: `web/it-uxui-competency-canvas.html`, `web/it-product-competency-map.html`, `web/it-motion-competency-map.html`, `web/it-graphic-competency-map.html`, сетевые `web/it-product-competency-canvas.html`, `web/it-motion-competency-canvas.html`, `web/it-graphic-competency-canvas.html`; единый review-канвас `web/competencies-review-canvas.html` с табами по профессиям;
-- `model:validate --all`: 0 ошибок.
+- mapping: `mapping/it.product.json` — 30/30 компетенций Product сопоставлены собранным тегам (direct 11 / adjacent 15 / none 4), 0 ошибок;
+- acceptance-состояние: 44/44 accepted-блоков имеют `canonicalIds`; 0 accepted-материалов;
+- `model:validate --all --require-blocks`: 0 ошибок; тесты 141/141.
 
 ## 7. Следующие профессии
 
-Для motion / product / graphic:
+Product-итерация завершена (см. `COS-RES-020`): view, prerequisites, mapping и canvas пересобраны. Для motion / graphic остаётся та же схема:
 
-1. добавить `canonical/<profession>.json` с собственными разделами (или переиспользовать существующие competency ids);
-2. добавить `model/profession-competencies/<profession>.json` с tier/order этой профессии;
-3. добавить `sources/professions/<profession>.json` с поисковыми запросами;
-4. расширить `spheres/it.json` списком профессий;
-5. `model:sync`/`model:validate` — без дублирования компетенций.
+1. проверить occupation-маппинг профессии (O*NET/ESCO) и при необходимости расширить до нескольких занятий, как сделано для product;
+2. добавить `mapping/<domain>.<profession>.json` и прогнать `mapping:validate`;
+3. добавить `model/professions/views/<profession>.json` с явными prerequisites и связным графом;
+4. `model:views --write`, `model:validate --all --require-blocks`, пересобрать canvas/map;
+5. human-review mapping и тегов перед приёмкой блоков.
 
 ## 8. Ограничения
 
 - Пока нормализованная модель генерируется из UX/UI canonical map; ручное редактирование `competencies.json` не является источником истины.
-- `profession-competencies` использует `priorityHint` canonical map. Для разных профессий это нужно заменить на profession-specific tier/order.
+- `profession-competencies` для UX/UI использует `priorityHint` canonical map; для product/motion/graphic tier/order/prerequisites берутся из view.
+- Product priority/order слой — view + материализованная `profession-competencies/product.json`; отдельный `priority/product.json` не вводится (см. `COS-RES-020`, §5).
 - `professions:collect` читает `sources/professions/<profession>.json` и разрешает только объявленные occupation sources; `--profession motion` использует motion-запросы.
 - `tags:collect --profession <slug>` читает `data/competency/professions-<domain>-<slug>.json`, а не общий файл.
 - Material Agent использует `materialSourceIds` из source-файла и по умолчанию только active.
-- Следующий шаг — source-driven теги/материалы для profession-specific сборки и полная очередь.
+- Теги 5 product-specific блоков синтетические (`sourceRefs: []`, `needs_review`); mapping — черновик для human-review.
+- Следующий шаг — human-review mapping → evidence-backed пересборка блоков, затем материалы (Material Agent) и motion/graphic по той же схеме.
 
 ## 9. История изменений
 
@@ -202,3 +210,4 @@ Human-review канвас: `web/competencies-review-canvas.html` — табы п
 | 1.7.0 | 2026-10-22 | Product graph: 28 узлов / 27 связей; добавлены межраздельные prerequisites (design thinking → product thinking/research, UX research → IA, product thinking → metrics, design → UI color) |
 | 1.8.0 | 2026-10-22 | Product: Practicum `product-approach-for-designers` подключён через профессию, из каталога извлекаются тематические теги (CJM, JTBD, гипотезы, юзабилити, дизайн-системы); 182 тега |
 | 1.9.0 | 2026-10-22 | Product graph расширен до 30 узлов: JTBD и CJM; 29 связей; каталог 44 блока / 195 тегов; глобальный массив 45 компетенций |
+| 2.0.0 | 2026-10-25 | canonicalIds у всех 44 accepted-блоков; prerequisites материализуются и валидируются; `--require-blocks`; Product: исправлены O*NET-занятия (15-1255.00 + 13-1161.00), 368 тегов, mapping 30/30, связный граф 41 связь, canvas/map пересобраны; решение по priority/order — `COS-RES-020` |

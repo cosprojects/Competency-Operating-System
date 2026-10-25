@@ -38,11 +38,41 @@ export interface MaterialQueueJournal {
   notes: string[];
 }
 
-export function buildMaterialQueue(catalog: CatalogFile, professionId: string): MaterialQueueItem[] {
-  return catalog.blocks
-    .filter((block) => block.professionIds.includes(professionId))
-    .sort((a, b) => a.title.localeCompare(b.title))
-    .map((block) => ({ id: `${professionId}:${block.id}`, professionId, competencyId: block.id, title: block.title }));
+export function buildMaterialQueue(
+  catalog: CatalogFile,
+  professionId: string,
+  options: { competencyIds?: string[] } = {},
+): MaterialQueueItem[] {
+  const accepted = catalog.blocks.filter((block) => block.status === "accepted");
+  const byCompetency = new Map<string, CompetencyBlock[]>();
+  for (const block of accepted) {
+    for (const canonicalId of block.canonicalIds ?? []) {
+      const list = byCompetency.get(canonicalId) ?? [];
+      if (!list.some((item) => item.id === block.id)) list.push(block);
+      byCompetency.set(canonicalId, list);
+    }
+  }
+  const ordered: CompetencyBlock[] = [];
+  const seen = new Set<string>();
+  const add = (block: CompetencyBlock): void => {
+    if (seen.has(block.id)) return;
+    seen.add(block.id);
+    ordered.push(block);
+  };
+  if (options.competencyIds && options.competencyIds.length > 0) {
+    // Очередь идёт по графу профессии: каждая компетенция получает свой блок,
+    // в том числе переиспользованный из другой профессии (canonicalIds).
+    for (const competencyId of options.competencyIds) {
+      for (const block of byCompetency.get(competencyId) ?? []) add(block);
+    }
+    // Accepted-блоки, объявленные за профессией, но не входящие в view, не теряем.
+    for (const block of accepted.filter((item) => item.professionIds.includes(professionId))) add(block);
+  } else {
+    for (const block of accepted.filter((item) => item.professionIds.includes(professionId)).sort((a, b) => a.title.localeCompare(b.title))) {
+      add(block);
+    }
+  }
+  return ordered.map((block) => ({ id: `${professionId}:${block.id}`, professionId, competencyId: block.id, title: block.title }));
 }
 
 export interface MaterialQueueInput {
@@ -54,6 +84,8 @@ export interface MaterialQueueInput {
   sourceIds?: string[];
   limit?: number;
   limitPerCompetency?: number;
+  /** Компетенции профессии в порядке view; очередь покрывает их covering-блоки. */
+  competencyIds?: string[];
   classify?: boolean;
   concurrency?: number;
   maxAttempts?: number;
@@ -113,7 +145,9 @@ export async function runMaterialQueue(
   input: MaterialQueueInput,
   deps: MaterialAgentDeps,
 ): Promise<MaterialQueueJournal> {
-  const queue = buildMaterialQueue(input.catalog, input.professionId).slice(0, input.limit ?? undefined);
+  const queue = buildMaterialQueue(input.catalog, input.professionId, {
+    ...(input.competencyIds ? { competencyIds: input.competencyIds } : {}),
+  }).slice(0, input.limit ?? undefined);
   if (queue.length === 0) throw new Error(`Очередь пуста для ${input.professionId}`);
   const blocks = new Map(input.catalog.blocks.map((block) => [block.id, block]));
   const results: MaterialQueueItemResult[] = [];

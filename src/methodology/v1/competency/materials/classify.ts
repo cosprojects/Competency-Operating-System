@@ -111,7 +111,12 @@ export async function classifyMaterials(input: MaterialClassifyInput): Promise<M
       });
     } catch (error) {
       if (error instanceof BudgetExceededError) {
+        // Бюджет кончился: найденные материалы не выбрасываем, а оставляем на review
+        // без LLM-связей — иначе discovery выглядит пустым и покрытие занижается.
         issues.push(error.message);
+        for (const rest of selected.slice(selected.indexOf(material))) {
+          materials.push({ ...rest, links: [], status: "needs_review", issues: [error.message] });
+        }
         break;
       }
       throw error;

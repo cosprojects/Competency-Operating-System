@@ -330,6 +330,24 @@ describe("материалы компетенций", () => {
     assert.deepEqual(result.issues, []);
   });
 
+  it("при исчерпании бюджета не выбрасывает найденные материалы", async () => {
+    const block = await builtBlock();
+    const first = materialFor(block);
+    const second = { ...materialFor(block), id: "material_2", slug: "material-2", title: "Цветовосприятие" };
+    const exhausted = { ...policy(), maxCallsPerRun: 0 };
+    const result = await classifyMaterials({
+      materials: [first, second],
+      blocks: [block],
+      transport: new FixtureTransport([]),
+      policy: exhausted,
+      budget: new LlmBudget(exhausted),
+    });
+    assert.equal(result.materials.length, 2);
+    assert.ok(result.materials.every((material) => material.links.length === 0));
+    assert.ok(result.materials.every((material) => material.status === "needs_review"));
+    assert.ok(result.issues.some((issue) => issue.includes("исчерпан")));
+  });
+
   it("валидирует материалы и считает покрытие free/paid", async () => {
     const block = await builtBlock();
     const material = materialFor(block);

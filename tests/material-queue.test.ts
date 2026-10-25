@@ -3,12 +3,14 @@ import { describe, it } from "node:test";
 import type { CompetencyBlock, Material } from "../src/methodology/v1/competency/types.ts";
 import { createMaterialAgentDeps } from "../src/methodology/v1/materials-agent/agent.ts";
 import { buildMaterialQueue, runMaterialQueue } from "../src/methodology/v1/materials-agent/queue.ts";
+import { renderMaterialQueueReview } from "../src/methodology/v1/materials-agent/review.ts";
 
-function block(id: string, title: string): CompetencyBlock {
+function block(id: string, title: string, overrides: Partial<CompetencyBlock> = {}): CompetencyBlock {
   return {
     id, slug: id, title, aliases: [], definition: "Определение", scope: "profession", professionIds: ["it.uxui"],
     components: [], tags: [], sourceRefs: [], evidenceState: "needs_review", status: "accepted",
     llmMeta: { promptVersion: "v", model: "m", inputHash: "h", costUsd: 0 }, issues: [], methodologyVersion: "0.1.0",
+    ...overrides,
   };
 }
 function material(id: string, competencyId: string): Material {
@@ -30,6 +32,26 @@ describe("material queue", () => {
     const queue = buildMaterialQueue(catalog as never, "it.uxui");
     assert.equal(queue.length, 2);
     assert.equal(queue[0]?.id, "it.uxui:b1");
+  });
+
+  it("строит очередь по компетенциям view, включая переиспользованные блоки", () => {
+    const productCatalog = {
+      ...catalog,
+      blocks: [
+        block("own", "Продуктовый блок", { professionIds: ["it.product"], canonicalIds: ["product-jtbd"] }),
+        block("reused", "Переиспользованный UX-блок", { canonicalIds: ["ux-user-research", "ux-analytics"] }),
+        block("shared", "Общий блок", { canonicalIds: ["ux-personas"] }),
+        block("foreign", "Чужой блок", { professionIds: ["it.motion"], canonicalIds: ["motion-timing-easing"] }),
+      ],
+    };
+    const queue = buildMaterialQueue(productCatalog as never, "it.product", {
+      competencyIds: ["ux-user-research", "product-jtbd", "ux-analytics", "ux-personas"],
+    });
+    assert.deepEqual(queue.map((item) => item.competencyId), ["reused", "own", "shared"]);
+    assert.equal(queue[0]?.id, "it.product:reused");
+    assert.ok(!queue.some((item) => item.competencyId === "foreign"));
+    const legacy = buildMaterialQueue(productCatalog as never, "it.product");
+    assert.deepEqual(legacy.map((item) => item.competencyId), ["own"]);
   });
 
   it("делает retry по элементу и агрегирует coverage", async () => {
@@ -59,6 +81,42 @@ describe("material queue", () => {
     assert.equal(journal.totals.discovered, 2);
     assert.ok(journal.items.some((item) => item.item.competencyId === "b1" && item.attempts === 2));
     assert.equal(journal.writesToGraph, false);
+  });
+
+  it("показывает покрытие компетенций профессии в review", async () => {
+    const blocks = [
+      block("reused", "Переиспользованный блок", { canonicalIds: ["ux-user-research"] }),
+      block("own", "Свой блок", { canonicalIds: ["product-jtbd"] }),
+    ];
+    const reviewCatalog = { ...catalog, blocks };
+    const deps = createMaterialAgentDeps({
+      collect: async ({ competencies }) => {
+        const competency = competencies[0]!;
+        return {
+          materials: competency.id === "reused" ? [material("m1", competency.id)] : [],
+          coverage: [{ competencyId: competency.id, title: competency.title, materials: competency.id === "reused" ? 1 : 0, kinds: {} }],
+          notes: [],
+        };
+      },
+      validate: () => ({ errors: [], coverage: [] }),
+    });
+    const journal = await runMaterialQueue({
+      domain: "it", professionId: "it.product", catalog: reviewCatalog as never,
+      competencyIds: ["ux-user-research", "product-jtbd"],
+      fetchImpl: async () => ({ ok: true, status: 200, json: async () => ({}) }),
+      retrievedOn: "2026-10-25", concurrency: 1, maxAttempts: 1,
+    }, deps);
+    const review = renderMaterialQueueReview(journal, {
+      competencies: [
+        { competencyId: "ux-user-research", title: "Пользовательские исследования" },
+        { competencyId: "product-jtbd", title: "Jobs-to-be-Done" },
+      ],
+      blocks,
+    });
+    assert.match(review, /Покрытие компетенций профессии/);
+    assert.match(review, /Пользовательские исследования \| Переиспользованный блок \| 1 \| 0/);
+    assert.match(review, /Без материалов: 1 из 2/);
+    assert.match(review, /Jobs-to-be-Done/);
   });
 
   it("помечает элемент failed после исчерпания попыток", async () => {

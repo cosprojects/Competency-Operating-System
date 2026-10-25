@@ -2,6 +2,7 @@ import path from "node:path";
 import type { FetchLike } from "../../candidate-parser/types.ts";
 import type { CatalogFile } from "../../competency/types.ts";
 import { loadCatalog } from "../../competency/catalog.ts";
+import type { ProfessionView } from "../../competency/model/profession-view.ts";
 import { LlmBudget } from "../../competency/llm/policy.ts";
 import { cacheDir, flagValue, makeTransport, policyFromArgv, readJson, writeJson } from "../../competency/cli/common.ts";
 import { createMaterialAgentDeps } from "../agent.ts";
@@ -16,6 +17,14 @@ async function main(): Promise<void> {
   const professionId = profession.includes(".") ? profession : `${domain}.${profession}`;
   const slug = professionId.slice(professionId.indexOf(".") + 1);
   const catalog: CatalogFile = await loadCatalog(root, domain);
+  // View задаёт состав профессии и порядок; очередь материалов покрывает её компетенции,
+  // включая переиспользованные блоки других профессий.
+  const view = await readJson<ProfessionView>(
+    path.join(root, "src/methodology/v1/competency/model/professions/views", `${slug}.json`),
+  ).catch(() => undefined);
+  const competencyIds = view
+    ? view.sections.flatMap((section) => section.competencies.map((competency) => competency.competencyId))
+    : undefined;
   const classify = argv.includes("--classify");
   const policy = classify ? policyFromArgv(argv) : undefined;
   const budget = policy ? new LlmBudget(policy) : undefined;
@@ -35,6 +44,7 @@ async function main(): Promise<void> {
       ...(sourceIds ? { sourceIds } : {}),
       ...(flagValue(argv, "--limit") ? { limit: Number(flagValue(argv, "--limit")) } : {}),
       ...(flagValue(argv, "--per-competency") ? { limitPerCompetency: Number(flagValue(argv, "--per-competency")) } : {}),
+      ...(competencyIds ? { competencyIds } : {}),
       ...(flagValue(argv, "--concurrency") ? { concurrency: Number(flagValue(argv, "--concurrency")) } : {}),
       ...(flagValue(argv, "--retry") ? { maxAttempts: Number(flagValue(argv, "--retry")) } : {}),
       ...(classify ? { classify: true, transport, policy, budget, cache: { dir: cacheDir(root) } } : {}),

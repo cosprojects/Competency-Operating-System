@@ -1,0 +1,525 @@
+{
+  "mappingVersion": "1.0.0",
+  "domain": "it",
+  "professionId": "it.motion",
+  "updatedOn": "2026-10-25",
+  "status": "draft",
+  "description": "Сопоставление собранных motion-тегов (Практикум + O*NET) компетенциям profession view. direct — тег прямо подтверждает компетенцию; adjacent — смежное свидетельство; пустой список — доказательств нет и блок переиспользован. Mapping — вход для human-review, не приёмка.",
+  "entries": [
+    {
+      "competencyId": "ux-design-thinking",
+      "tags": [
+        {
+          "title": "Critical Thinking",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Active Learning",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Итеративный подход",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Поиск визуальных идей",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Работа с брифом",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Аргументация решений",
+          "relation": "adjacent"
+        }
+      ],
+      "rationale": "O*NET essential skill: критическое мышление как база итеративного дизайн-процесса. Обучаемость — основа освоения быстро меняющегося моушн-стека. Итеративность прямо описана в теме программы Практикума. Поиск идей — этап дизайн-мышления, подтверждён темой Практикума. Работа с брифом — вход дизайн-процесса, подтверждён Практикумом. Защита решений — коммуникационная часть дизайн-мышления."
+    },
+    {
+      "competencyId": "motion-timing-easing",
+      "tags": [
+        {
+          "title": "Принципы анимации",
+          "relation": "direct"
+        },
+        {
+          "title": "Концепция, ритм и композиция видео",
+          "relation": "direct"
+        }
+      ],
+      "rationale": "Практикум даёт тему принципов анимации — ядро тайминга и easing. Тема Практикума про ритм и композицию видео прямо про тайминг."
+    },
+    {
+      "competencyId": "ui-color",
+      "tags": [
+        {
+          "title": "Цвет",
+          "relation": "direct"
+        },
+        {
+          "title": "Fine Arts",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Design",
+          "relation": "adjacent"
+        }
+      ],
+      "rationale": "Тема Практикума «Цвет» прямо подтверждает компетенцию. O*NET Fine Arts — смежная область цветоведения и визуальной культуры. O*NET Design — общий домен визуальной работы."
+    },
+    {
+      "competencyId": "ui-typography",
+      "tags": [
+        {
+          "title": "Основы типографики",
+          "relation": "direct"
+        },
+        {
+          "title": "Кинетическая типографика",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Цифровой плакат",
+          "relation": "adjacent"
+        }
+      ],
+      "rationale": "Практикум даёт тему основ типографики. Кинетическая типографика — моушн-расширение типографики. Плакат — типографическая работа, подтверждённая программой."
+    },
+    {
+      "competencyId": "ui-layout",
+      "tags": [
+        {
+          "title": "Основы композиции",
+          "relation": "direct"
+        },
+        {
+          "title": "Сетки",
+          "relation": "direct"
+        },
+        {
+          "title": "Дизайн макета сторис",
+          "relation": "adjacent"
+        }
+      ],
+      "rationale": "Практикум даёт тему основ композиции. Тема сеток прямо относится к сеткам и композиции. Макет сторис — компоновка формата, смежное свидетельство."
+    },
+    {
+      "competencyId": "ui-motion",
+      "tags": [
+        {
+          "title": "Моушн-дизайн",
+          "relation": "direct"
+        },
+        {
+          "title": "Принципы анимации",
+          "relation": "direct"
+        },
+        {
+          "title": "Анимация плаката",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Анимированный логотип",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Анимированный плакат для музыкального фестиваля",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Генеративная графика в Adobe After Effects",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Основы Adobe After Effects",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Углублённое изучение Adobe After Effects",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Ролик с генеративной графикой для конференции",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Шоурил",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Звук",
+          "relation": "adjacent"
+        }
+      ],
+      "rationale": "Тема «Моушн-дизайн» прямо подтверждает базовую компетенцию. Принципы анимации — ядро motion-компетенции. Анимация плаката — прикладной моушн-проект Практикума. Анимированный логотип — прикладной моушн-проект Практикума. Моушн-проект Практикума, смежное свидетельство. Генеративная графика — тема моушн-инструментария. Базовый моушн-инструмент, подтверждён темой Практикума. Продвинутая тема по моушн-инструменту. Моушн-проект программы, смежное свидетельство. Шоурил — формат демонстрации моушн-работ. Звук — часть моушн-продакшена, подтверждён темой программы."
+    },
+    {
+      "competencyId": "ui-interaction-states",
+      "tags": [
+        {
+          "title": "Моушн-дизайн",
+          "relation": "adjacent"
+        }
+      ],
+      "rationale": "Состояния интерфейса связаны с движением, подтверждены темой моушн-дизайна."
+    },
+    {
+      "competencyId": "ui-visual-communication",
+      "tags": [
+        {
+          "title": "Визуальная коммуникация",
+          "relation": "direct"
+        },
+        {
+          "title": "Коммуникация бренда",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Насмотренность",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Насмотренность и мудборд",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Communications and Media",
+          "relation": "adjacent"
+        }
+      ],
+      "rationale": "Тема Практикума прямо подтверждает компетенцию. Коммуникация бренда — прикладной аспект визуальной коммуникации. Насмотренность — база визуальной коммуникации, тема Практикума. Мудборд — инструмент визуальной коммуникации, тема Практикума. O*NET Communications and Media — смежная область."
+    },
+    {
+      "competencyId": "ux-interactive-prototype",
+      "tags": [],
+      "rationale": "Собранные Practicum/O*NET-теги не дают доказательств компетенции; блок переиспользован из UX/UI."
+    },
+    {
+      "competencyId": "ui-figma",
+      "tags": [
+        {
+          "title": "Основы Figma",
+          "relation": "direct"
+        }
+      ],
+      "rationale": "Практикум даёт тему основ Figma."
+    },
+    {
+      "competencyId": "ui-framer",
+      "tags": [],
+      "rationale": "Собранные Practicum/O*NET-теги не дают доказательств компетенции; блок переиспользован из UX/UI."
+    },
+    {
+      "competencyId": "ui-handoff",
+      "tags": [
+        {
+          "title": "Презентация продукта",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Работа с заказчиком",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Customer and Personal Service",
+          "relation": "adjacent"
+        }
+      ],
+      "rationale": "Презентация продукта — часть передачи результата. Работа с заказчиком — часть процесса передачи. O*NET домен работы с клиентом поддерживает передачу."
+    },
+    {
+      "competencyId": "ui-figjam",
+      "tags": [],
+      "rationale": "Собранные Practicum/O*NET-теги не дают доказательств компетенции; блок переиспользован из UX/UI."
+    },
+    {
+      "competencyId": "ui-design-systems",
+      "tags": [],
+      "rationale": "Собранные Practicum/O*NET-теги не дают доказательств компетенции; блок переиспользован из UX/UI."
+    },
+    {
+      "competencyId": "ui-accessibility",
+      "tags": [
+        {
+          "title": "Соблюдать ограничения и требования безопасности",
+          "relation": "adjacent"
+        }
+      ],
+      "rationale": "Тема ограничений и требований безопасности связана с доступностью."
+    },
+    {
+      "competencyId": "ui-responsive",
+      "tags": [],
+      "rationale": "Собранные Practicum/O*NET-теги не дают доказательств компетенции; блок переиспользован из UX/UI."
+    },
+    {
+      "competencyId": "ui-data-visualization",
+      "tags": [
+        {
+          "title": "Mathematics",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Monitoring",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Design",
+          "relation": "adjacent"
+        }
+      ],
+      "rationale": "O*NET Mathematics — база количественной визуализации. O*NET Monitoring — работа с данными и метриками. O*NET Design — общий домен визуализации."
+    },
+    {
+      "competencyId": "motion-storyboarding",
+      "tags": [
+        {
+          "title": "Концепция, ритм и композиция видео",
+          "relation": "direct"
+        },
+        {
+          "title": "Анимированный логотип",
+          "relation": "adjacent"
+        }
+      ],
+      "rationale": "Ритм и композиция видео — основа раскадровки. Анимированный логотип требует раскадровки движения."
+    },
+    {
+      "competencyId": "motion-3d-rendering",
+      "tags": [
+        {
+          "title": "3D-графика в Womp",
+          "relation": "direct"
+        },
+        {
+          "title": "Моделинг в Cinema 4D",
+          "relation": "direct"
+        },
+        {
+          "title": "Стандартный реалистичный рендер в Cinema 4D",
+          "relation": "direct"
+        },
+        {
+          "title": "Стандартный стилизованный рендер в Cinema 4D",
+          "relation": "direct"
+        },
+        {
+          "title": "Генеративная графика в Cinema 4D",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Промо 3D-продукта",
+          "relation": "adjacent"
+        }
+      ],
+      "rationale": "Практикум даёт тему 3D-графики. Моделинг — ядро 3D-компетенции. Рендер прямо подтверждает компетенцию. Стилизованный рендер прямо подтверждает компетенцию. Генеративная 3D-графика — смежное свидетельство. 3D-промо — прикладной проект, смежное свидетельство."
+    }
+  ],
+  "excludedTags": [
+    {
+      "title": "Алиса AI",
+      "reason": "Учебная тема или проект курса без прямой связи с конкретной компетенцией view; оставлено на human-review."
+    },
+    {
+      "title": "Векторная графика в Adobe Illustrator",
+      "reason": "Учебная тема или проект курса без прямой связи с конкретной компетенцией view; оставлено на human-review."
+    },
+    {
+      "title": "Как понять, что работа готова",
+      "reason": "Учебная тема или проект курса без прямой связи с конкретной компетенцией view; оставлено на human-review."
+    },
+    {
+      "title": "Как проходит работа над моушн-проектом",
+      "reason": "Учебная тема или проект курса без прямой связи с конкретной компетенцией view; оставлено на human-review."
+    },
+    {
+      "title": "Корректно работать с данными и учитывать авторские права",
+      "reason": "Учебная тема или проект курса без прямой связи с конкретной компетенцией view; оставлено на human-review."
+    },
+    {
+      "title": "Нейросети в дизайне",
+      "reason": "Учебная тема или проект курса без прямой связи с конкретной компетенцией view; оставлено на human-review."
+    },
+    {
+      "title": "Основы Adobe Premiere Pro",
+      "reason": "Учебная тема или проект курса без прямой связи с конкретной компетенцией view; оставлено на human-review."
+    },
+    {
+      "title": "Портрет целевой аудитории",
+      "reason": "Учебная тема или проект курса без прямой связи с конкретной компетенцией view; оставлено на human-review."
+    },
+    {
+      "title": "Профессия",
+      "reason": "Учебная тема или проект курса без прямой связи с конкретной компетенцией view; оставлено на human-review."
+    },
+    {
+      "title": "Что такое моушн-дизайн",
+      "reason": "Учебная тема или проект курса без прямой связи с конкретной компетенцией view; оставлено на human-review."
+    },
+    {
+      "title": "Active Listening",
+      "reason": "Общая область O*NET, не подтверждает конкретную компетенцию view."
+    },
+    {
+      "title": "Administration and Management",
+      "reason": "Общая область O*NET, не подтверждает конкретную компетенцию view."
+    },
+    {
+      "title": "Administrative",
+      "reason": "Общая область O*NET, не подтверждает конкретную компетенцию view."
+    },
+    {
+      "title": "Adobe After Effects",
+      "reason": "Инструмент или платформа, а не знание; инструменты не являются доказательством компетенции."
+    },
+    {
+      "title": "Adobe Illustrator",
+      "reason": "Инструмент или платформа, а не знание; инструменты не являются доказательством компетенции."
+    },
+    {
+      "title": "Adobe Premiere Pro",
+      "reason": "Инструмент или платформа, а не знание; инструменты не являются доказательством компетенции."
+    },
+    {
+      "title": "Biology",
+      "reason": "Общая область O*NET, не подтверждает конкретную компетенцию view."
+    },
+    {
+      "title": "Building and Construction",
+      "reason": "Общая область O*NET, не подтверждает конкретную компетенцию view."
+    },
+    {
+      "title": "Chemistry",
+      "reason": "Общая область O*NET, не подтверждает конкретную компетенцию view."
+    },
+    {
+      "title": "Computers and Electronics",
+      "reason": "Общая область O*NET, не подтверждает конкретную компетенцию view."
+    },
+    {
+      "title": "DALL·E 3",
+      "reason": "Инструмент или платформа, а не знание; инструменты не являются доказательством компетенции."
+    },
+    {
+      "title": "Economics and Accounting",
+      "reason": "Общая область O*NET, не подтверждает конкретную компетенцию view."
+    },
+    {
+      "title": "Education and Training",
+      "reason": "Общая область O*NET, не подтверждает конкретную компетенцию view."
+    },
+    {
+      "title": "Engineering and Technology",
+      "reason": "Общая область O*NET, не подтверждает конкретную компетенцию view."
+    },
+    {
+      "title": "English Language",
+      "reason": "Общая область O*NET, не подтверждает конкретную компетенцию view."
+    },
+    {
+      "title": "Food Production",
+      "reason": "Общая область O*NET, не подтверждает конкретную компетенцию view."
+    },
+    {
+      "title": "Foreign Language",
+      "reason": "Общая область O*NET, не подтверждает конкретную компетенцию view."
+    },
+    {
+      "title": "Geography",
+      "reason": "Общая область O*NET, не подтверждает конкретную компетенцию view."
+    },
+    {
+      "title": "History and Archeology",
+      "reason": "Общая область O*NET, не подтверждает конкретную компетенцию view."
+    },
+    {
+      "title": "Illustrator",
+      "reason": "Инструмент или платформа, а не знание; инструменты не являются доказательством компетенции."
+    },
+    {
+      "title": "KREA AI",
+      "reason": "Инструмент или платформа, а не знание; инструменты не являются доказательством компетенции."
+    },
+    {
+      "title": "Law and Government",
+      "reason": "Общая область O*NET, не подтверждает конкретную компетенцию view."
+    },
+    {
+      "title": "Learning Strategies",
+      "reason": "Общая область O*NET, не подтверждает конкретную компетенцию view."
+    },
+    {
+      "title": "Mechanical",
+      "reason": "Общая область O*NET, не подтверждает конкретную компетенцию view."
+    },
+    {
+      "title": "Medicine and Dentistry",
+      "reason": "Общая область O*NET, не подтверждает конкретную компетенцию view."
+    },
+    {
+      "title": "Personnel and Human Resources",
+      "reason": "Общая область O*NET, не подтверждает конкретную компетенцию view."
+    },
+    {
+      "title": "Philosophy and Theology",
+      "reason": "Общая область O*NET, не подтверждает конкретную компетенцию view."
+    },
+    {
+      "title": "Photoshop",
+      "reason": "Инструмент или платформа, а не знание; инструменты не являются доказательством компетенции."
+    },
+    {
+      "title": "Physics",
+      "reason": "Общая область O*NET, не подтверждает конкретную компетенцию view."
+    },
+    {
+      "title": "Production and Processing",
+      "reason": "Общая область O*NET, не подтверждает конкретную компетенцию view."
+    },
+    {
+      "title": "Psychology",
+      "reason": "Общая область O*NET, не подтверждает конкретную компетенцию view."
+    },
+    {
+      "title": "Public Safety and Security",
+      "reason": "Общая область O*NET, не подтверждает конкретную компетенцию view."
+    },
+    {
+      "title": "Reading Comprehension",
+      "reason": "Общая область O*NET, не подтверждает конкретную компетенцию view."
+    },
+    {
+      "title": "Sales and Marketing",
+      "reason": "Общая область O*NET, не подтверждает конкретную компетенцию view."
+    },
+    {
+      "title": "Science",
+      "reason": "Общая область O*NET, не подтверждает конкретную компетенцию view."
+    },
+    {
+      "title": "Sociology and Anthropology",
+      "reason": "Общая область O*NET, не подтверждает конкретную компетенцию view."
+    },
+    {
+      "title": "Speaking",
+      "reason": "Общая область O*NET, не подтверждает конкретную компетенцию view."
+    },
+    {
+      "title": "Telecommunications",
+      "reason": "Общая область O*NET, не подтверждает конкретную компетенцию view."
+    },
+    {
+      "title": "Therapy and Counseling",
+      "reason": "Общая область O*NET, не подтверждает конкретную компетенцию view."
+    },
+    {
+      "title": "Transportation",
+      "reason": "Общая область O*NET, не подтверждает конкретную компетенцию view."
+    },
+    {
+      "title": "Writing",
+      "reason": "Общая область O*NET, не подтверждает конкретную компетенцию view."
+    }
+  ]
+}

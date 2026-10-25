@@ -14,7 +14,9 @@
       "competencyId": "ui-color",
       "tier": "foundation",
       "order": 2,
-      "prerequisites": [],
+      "prerequisites": [
+        "ux-design-thinking"
+      ],
       "sectionId": "graphic-foundations",
       "sectionTitle": "Визуальные основы"
     },
@@ -22,7 +24,9 @@
       "competencyId": "ui-typography",
       "tier": "foundation",
       "order": 3,
-      "prerequisites": [],
+      "prerequisites": [
+        "ui-color"
+      ],
       "sectionId": "graphic-foundations",
       "sectionTitle": "Визуальные основы"
     },
@@ -30,7 +34,9 @@
       "competencyId": "ui-layout",
       "tier": "foundation",
       "order": 4,
-      "prerequisites": [],
+      "prerequisites": [
+        "ui-typography"
+      ],
       "sectionId": "graphic-foundations",
       "sectionTitle": "Визуальные основы"
     },
@@ -38,7 +44,10 @@
       "competencyId": "ui-visual-elements",
       "tier": "foundation",
       "order": 5,
-      "prerequisites": [],
+      "prerequisites": [
+        "ui-color",
+        "ui-layout"
+      ],
       "sectionId": "graphic-foundations",
       "sectionTitle": "Визуальные основы"
     },
@@ -46,7 +55,11 @@
       "competencyId": "ui-visual-communication",
       "tier": "foundation",
       "order": 6,
-      "prerequisites": [],
+      "prerequisites": [
+        "ui-layout",
+        "ui-typography",
+        "ui-visual-elements"
+      ],
       "sectionId": "graphic-brand",
       "sectionTitle": "Коммуникация и бренд"
     },
@@ -54,7 +67,9 @@
       "competencyId": "ux-product-thinking",
       "tier": "optional",
       "order": 7,
-      "prerequisites": [],
+      "prerequisites": [
+        "ux-design-thinking"
+      ],
       "sectionId": "graphic-brand",
       "sectionTitle": "Коммуникация и бренд"
     },
@@ -62,7 +77,10 @@
       "competencyId": "ui-data-visualization",
       "tier": "optional",
       "order": 8,
-      "prerequisites": [],
+      "prerequisites": [
+        "ui-visual-communication",
+        "ui-layout"
+      ],
       "sectionId": "graphic-brand",
       "sectionTitle": "Коммуникация и бренд"
     },
@@ -70,7 +88,10 @@
       "competencyId": "ui-figma",
       "tier": "core",
       "order": 9,
-      "prerequisites": [],
+      "prerequisites": [
+        "ui-layout",
+        "ux-design-thinking"
+      ],
       "sectionId": "graphic-tools",
       "sectionTitle": "Инструменты и передача"
     },
@@ -78,7 +99,9 @@
       "competencyId": "ui-figjam",
       "tier": "optional",
       "order": 10,
-      "prerequisites": [],
+      "prerequisites": [
+        "ui-figma"
+      ],
       "sectionId": "graphic-tools",
       "sectionTitle": "Инструменты и передача"
     },
@@ -86,7 +109,10 @@
       "competencyId": "ui-handoff",
       "tier": "core",
       "order": 11,
-      "prerequisites": [],
+      "prerequisites": [
+        "ui-figma",
+        "ui-layout"
+      ],
       "sectionId": "graphic-tools",
       "sectionTitle": "Инструменты и передача"
     },
@@ -94,7 +120,10 @@
       "competencyId": "ui-web-technologies",
       "tier": "optional",
       "order": 12,
-      "prerequisites": [],
+      "prerequisites": [
+        "ui-figma",
+        "ui-handoff"
+      ],
       "sectionId": "graphic-tools",
       "sectionTitle": "Инструменты и передача"
     },
@@ -102,7 +131,11 @@
       "competencyId": "ui-design-systems",
       "tier": "optional",
       "order": 13,
-      "prerequisites": [],
+      "prerequisites": [
+        "ui-layout",
+        "ui-visual-elements",
+        "ui-typography"
+      ],
       "sectionId": "graphic-systems",
       "sectionTitle": "Системы и доступность"
     },
@@ -110,7 +143,9 @@
       "competencyId": "ui-components",
       "tier": "optional",
       "order": 14,
-      "prerequisites": [],
+      "prerequisites": [
+        "ui-design-systems"
+      ],
       "sectionId": "graphic-systems",
       "sectionTitle": "Системы и доступность"
     },
@@ -118,7 +153,10 @@
       "competencyId": "ui-accessibility",
       "tier": "optional",
       "order": 15,
-      "prerequisites": [],
+      "prerequisites": [
+        "ui-visual-communication",
+        "ui-components"
+      ],
       "sectionId": "graphic-systems",
       "sectionTitle": "Системы и доступность"
     },
@@ -126,7 +164,11 @@
       "competencyId": "graphic-brand-identity",
       "tier": "foundation",
       "order": 16,
-      "prerequisites": [],
+      "prerequisites": [
+        "ui-visual-communication",
+        "ui-typography",
+        "ui-color"
+      ],
       "sectionId": "graphic-specialization",
       "sectionTitle": "Специализация graphic"
     },
@@ -134,7 +176,11 @@
       "competencyId": "graphic-print-production",
       "tier": "core",
       "order": 17,
-      "prerequisites": [],
+      "prerequisites": [
+        "graphic-brand-identity",
+        "ui-color",
+        "ui-layout"
+      ],
       "sectionId": "graphic-specialization",
       "sectionTitle": "Специализация graphic"
     },
@@ -142,7 +188,11 @@
       "competencyId": "graphic-editorial-layout",
       "tier": "core",
       "order": 18,
-      "prerequisites": [],
+      "prerequisites": [
+        "ui-typography",
+        "ui-layout",
+        "graphic-print-production"
+      ],
       "sectionId": "graphic-specialization",
       "sectionTitle": "Специализация graphic"
     }

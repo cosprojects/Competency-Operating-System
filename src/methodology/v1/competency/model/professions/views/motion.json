@@ -16,19 +16,36 @@
           "order": 1
         },
         {
+          "competencyId": "motion-timing-easing",
+          "tier": "foundation",
+          "order": 2,
+          "prerequisites": [
+            "ux-design-thinking"
+          ]
+        },
+        {
           "competencyId": "ui-color",
           "tier": "foundation",
-          "order": 2
+          "order": 3,
+          "prerequisites": [
+            "ux-design-thinking"
+          ]
         },
         {
           "competencyId": "ui-typography",
           "tier": "foundation",
-          "order": 3
+          "order": 4,
+          "prerequisites": [
+            "ui-color"
+          ]
         },
         {
           "competencyId": "ui-layout",
           "tier": "foundation",
-          "order": 4
+          "order": 5,
+          "prerequisites": [
+            "ui-typography"
+          ]
         }
       ]
     },
@@ -40,22 +57,37 @@
         {
           "competencyId": "ui-motion",
           "tier": "foundation",
-          "order": 5
+          "order": 6,
+          "prerequisites": [
+            "motion-timing-easing",
+            "ui-layout"
+          ]
         },
         {
           "competencyId": "ui-interaction-states",
           "tier": "core",
-          "order": 6
+          "order": 7,
+          "prerequisites": [
+            "ui-motion"
+          ]
         },
         {
           "competencyId": "ui-visual-communication",
           "tier": "core",
-          "order": 7
+          "order": 8,
+          "prerequisites": [
+            "ui-motion",
+            "ui-layout"
+          ]
         },
         {
           "competencyId": "ux-interactive-prototype",
           "tier": "core",
-          "order": 8
+          "order": 9,
+          "prerequisites": [
+            "ui-interaction-states",
+            "ui-motion"
+          ]
         }
       ]
     },
@@ -67,22 +99,37 @@
         {
           "competencyId": "ui-figma",
           "tier": "core",
-          "order": 9
+          "order": 10,
+          "prerequisites": [
+            "ui-layout"
+          ]
         },
         {
           "competencyId": "ui-framer",
-          "tier": "foundation",
-          "order": 10
+          "tier": "core",
+          "order": 11,
+          "prerequisites": [
+            "ui-figma",
+            "ux-interactive-prototype"
+          ]
         },
         {
           "competencyId": "ui-handoff",
           "tier": "core",
-          "order": 11
+          "order": 12,
+          "prerequisites": [
+            "ui-framer",
+            "ui-motion"
+          ]
         },
         {
           "competencyId": "ui-figjam",
           "tier": "optional",
-          "order": 12
+          "order": 13,
+          "prerequisites": [
+            "ui-figma",
+            "ux-design-thinking"
+          ]
         }
       ]
     },
@@ -94,22 +141,37 @@
         {
           "competencyId": "ui-design-systems",
           "tier": "optional",
-          "order": 13
+          "order": 14,
+          "prerequisites": [
+            "ui-layout",
+            "ui-motion"
+          ]
         },
         {
           "competencyId": "ui-accessibility",
           "tier": "core",
-          "order": 14
+          "order": 15,
+          "prerequisites": [
+            "ui-interaction-states",
+            "ui-motion"
+          ]
         },
         {
           "competencyId": "ui-responsive",
           "tier": "optional",
-          "order": 15
+          "order": 16,
+          "prerequisites": [
+            "ui-layout"
+          ]
         },
         {
           "competencyId": "ui-data-visualization",
           "tier": "optional",
-          "order": 16
+          "order": 17,
+          "prerequisites": [
+            "ui-layout",
+            "ui-motion"
+          ]
         }
       ]
     },
@@ -119,19 +181,22 @@
       "definition": "Тайминг, режиссура и 3D.",
       "competencies": [
         {
-          "competencyId": "motion-timing-easing",
-          "tier": "foundation",
-          "order": 17
-        },
-        {
           "competencyId": "motion-storyboarding",
           "tier": "core",
-          "order": 18
+          "order": 18,
+          "prerequisites": [
+            "motion-timing-easing",
+            "ui-layout"
+          ]
         },
         {
           "competencyId": "motion-3d-rendering",
           "tier": "core",
-          "order": 19
+          "order": 19,
+          "prerequisites": [
+            "motion-timing-easing",
+            "ui-motion"
+          ]
         }
       ]
     }

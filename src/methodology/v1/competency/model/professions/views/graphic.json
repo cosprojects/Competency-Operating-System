@@ -18,22 +18,35 @@
         {
           "competencyId": "ui-color",
           "tier": "foundation",
-          "order": 2
+          "order": 2,
+          "prerequisites": [
+            "ux-design-thinking"
+          ]
         },
         {
           "competencyId": "ui-typography",
           "tier": "foundation",
-          "order": 3
+          "order": 3,
+          "prerequisites": [
+            "ui-color"
+          ]
         },
         {
           "competencyId": "ui-layout",
           "tier": "foundation",
-          "order": 4
+          "order": 4,
+          "prerequisites": [
+            "ui-typography"
+          ]
         },
         {
           "competencyId": "ui-visual-elements",
           "tier": "foundation",
-          "order": 5
+          "order": 5,
+          "prerequisites": [
+            "ui-color",
+            "ui-layout"
+          ]
         }
       ]
     },
@@ -45,17 +58,29 @@
         {
           "competencyId": "ui-visual-communication",
           "tier": "foundation",
-          "order": 6
+          "order": 6,
+          "prerequisites": [
+            "ui-layout",
+            "ui-typography",
+            "ui-visual-elements"
+          ]
         },
         {
           "competencyId": "ux-product-thinking",
           "tier": "optional",
-          "order": 7
+          "order": 7,
+          "prerequisites": [
+            "ux-design-thinking"
+          ]
         },
         {
           "competencyId": "ui-data-visualization",
           "tier": "optional",
-          "order": 8
+          "order": 8,
+          "prerequisites": [
+            "ui-visual-communication",
+            "ui-layout"
+          ]
         }
       ]
     },
@@ -67,22 +92,37 @@
         {
           "competencyId": "ui-figma",
           "tier": "core",
-          "order": 9
+          "order": 9,
+          "prerequisites": [
+            "ui-layout",
+            "ux-design-thinking"
+          ]
         },
         {
           "competencyId": "ui-figjam",
           "tier": "optional",
-          "order": 10
+          "order": 10,
+          "prerequisites": [
+            "ui-figma"
+          ]
         },
         {
           "competencyId": "ui-handoff",
           "tier": "core",
-          "order": 11
+          "order": 11,
+          "prerequisites": [
+            "ui-figma",
+            "ui-layout"
+          ]
         },
         {
           "competencyId": "ui-web-technologies",
           "tier": "optional",
-          "order": 12
+          "order": 12,
+          "prerequisites": [
+            "ui-figma",
+            "ui-handoff"
+          ]
         }
       ]
     },
@@ -94,17 +134,29 @@
         {
           "competencyId": "ui-design-systems",
           "tier": "optional",
-          "order": 13
+          "order": 13,
+          "prerequisites": [
+            "ui-layout",
+            "ui-visual-elements",
+            "ui-typography"
+          ]
         },
         {
           "competencyId": "ui-components",
           "tier": "optional",
-          "order": 14
+          "order": 14,
+          "prerequisites": [
+            "ui-design-systems"
+          ]
         },
         {
           "competencyId": "ui-accessibility",
           "tier": "optional",
-          "order": 15
+          "order": 15,
+          "prerequisites": [
+            "ui-visual-communication",
+            "ui-components"
+          ]
         }
       ]
     },
@@ -116,17 +168,32 @@
         {
           "competencyId": "graphic-brand-identity",
           "tier": "foundation",
-          "order": 16
+          "order": 16,
+          "prerequisites": [
+            "ui-visual-communication",
+            "ui-typography",
+            "ui-color"
+          ]
         },
         {
           "competencyId": "graphic-print-production",
           "tier": "core",
-          "order": 17
+          "order": 17,
+          "prerequisites": [
+            "graphic-brand-identity",
+            "ui-color",
+            "ui-layout"
+          ]
         },
         {
           "competencyId": "graphic-editorial-layout",
           "tier": "core",
-          "order": 18
+          "order": 18,
+          "prerequisites": [
+            "ui-typography",
+            "ui-layout",
+            "graphic-print-production"
+          ]
         }
       ]
     }

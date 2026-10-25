@@ -142,7 +142,7 @@ export function validateTagMapping(input: MappingValidationInput): MappingValida
     byCompetency,
   };
   if (coverage.none > 0) {
-    warnings.push(`mapping: без product-доказательств ${coverage.none} из ${coverage.competencies} компетенций`);
+    warnings.push(`mapping: без доказательств ${coverage.none} из ${coverage.competencies} компетенций`);
   }
 
   return { errors, warnings, coverage, usedTagTitles, unresolvedTagTitles, unaccountedTagTitles: [...unaccounted.values()] };

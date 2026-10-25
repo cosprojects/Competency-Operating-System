@@ -54,3 +54,6 @@ npm run canonical:validate -- --domain it --profession uxui --source review --in
 
 
 Human-review канвас: `npm run canvas:tabs`, затем открыть `web/competencies-review-canvas.html` — переключение UX/UI, Product, Motion, Graphic в одном окне.
+
+
+Handoff для продолжения: [COS-RES-019](docs/09-research/COS-RES-019-Competency-Module-Session-Handoff.md).

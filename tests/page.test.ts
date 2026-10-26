@@ -75,6 +75,12 @@ describe("visualization page", () => {
     assert.match(html, /Черновой слой/);
     assert.match(html, /data-from="f"/);
     assert.match(html, /const DATA =/);
+    assert.match(html, /class="canvas-viewport"/);
+    assert.match(html, /class="app-header"/);
+    assert.match(html, /backdrop-filter: blur\(30px\)/);
+    assert.match(html, /id="zoom-in"/);
+    assert.match(html, /id="zoom-out"/);
+    assert.match(html, /class="detail-panel" id="detail"/);
   });
 
   it("ставит title профессии и рабочие ссылки табов", () => {

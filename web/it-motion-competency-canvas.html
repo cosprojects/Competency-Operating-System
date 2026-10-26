@@ -10,7 +10,7 @@
       --ink: #132238;
       --muted: #64748b;
       --line: #cbd5e1;
-      --canvas: #f1f5f9;
+      --canvas: #eef4f8;
       --card: #ffffff;
       --foundation: #b45309;
       --foundation-bg: #fff7ed;
@@ -22,32 +22,31 @@
       --optional-bg: #f8fafc;
       --optional-border: #cbd5e1;
       --accent: #0f766e;
+      --glass: rgba(255, 255, 255, .58);
+      --glass-line: rgba(255, 255, 255, .78);
+      --shadow: 0 18px 50px rgba(15, 23, 42, .14);
       font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
     }
     * { box-sizing: border-box; }
-    body { margin: 0; color: var(--ink); background: var(--canvas); }
-    .page { max-width: 1580px; margin: 0 auto; padding: 22px 22px 30px; }
-    .topbar { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; padding: 2px 2px 10px; }
-    .profession-tabs { display: flex; gap: 6px; flex-wrap: wrap; margin: 0 2px 12px; }
-    .profession-tab { border: 1px solid var(--line); background: #fff; color: var(--ink); border-radius: 999px; padding: 7px 12px; font-size: 12px; font-weight: 700; text-decoration: none; }
-    .profession-tab:hover { border-color: #94a3b8; }
-    .profession-tab.active { background: var(--ink); color: #fff; border-color: var(--ink); }
-    .eyebrow { color: var(--accent); font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
-    h1 { margin: 5px 0 4px; font-size: clamp(28px, 4vw, 48px); letter-spacing: -.04em; line-height: 1; }
-    .subtitle { margin: 0; color: var(--muted); font-size: 14px; }
-    .summary { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
-    .summary span { border: 1px solid var(--line); background: #fff; border-radius: 999px; padding: 7px 11px; font-size: 12px; font-weight: 700; white-space: nowrap; }
-    .summary .f { color: var(--foundation); } .summary .c { color: var(--core); } .summary .o { color: var(--optional); }
-    .banner { border: 1px solid #fde68a; background: #fffbeb; color: #92400e; border-radius: 12px; padding: 10px 13px; font-size: 12px; margin-bottom: 12px; }
-    .toolbar { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
-    .toolbar-label { color: var(--muted); font-size: 12px; margin-right: 2px; }
-    .filter { border: 1px solid var(--line); background: #fff; color: var(--ink); border-radius: 999px; padding: 7px 11px; font: inherit; font-size: 12px; font-weight: 700; cursor: pointer; }
-    .filter:hover { border-color: #94a3b8; }
-    .filter.active { background: var(--ink); color: #fff; border-color: var(--ink); }
-    .hint { margin-left: auto; color: var(--muted); font-size: 12px; }
-    .workspace { display: grid; grid-template-columns: minmax(0, 1fr) 310px; gap: 14px; align-items: start; }
-    .canvas-wrap { overflow: auto; border: 1px solid var(--line); border-radius: 18px; background-color: var(--canvas); background-image: radial-gradient(#cbd5e1 1px, transparent 1px); background-size: 22px 22px; box-shadow: inset 0 1px 0 #fff, 0 16px 40px rgba(15, 23, 42, .06); }
-    .canvas-stage { position: relative; }
+    html, body { height: 100%; }
+    body { margin: 0; overflow: hidden; color: var(--ink); background: var(--canvas); }
+
+    .canvas-viewport {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      background-color: var(--canvas);
+      background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    .canvas-stage {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) scale(var(--zoom, .55));
+      transform-origin: center center;
+      will-change: transform;
+    }
     .edges { position: absolute; inset: 0; overflow: visible; pointer-events: none; }
     .edge { fill: none; stroke: #94a3b8; stroke-width: 1.4; opacity: .55; transition: opacity .15s, stroke .15s; }
     .edge.is-active { stroke: var(--accent); stroke-width: 2.4; opacity: 1; }
@@ -66,49 +65,103 @@
     .order { color: #94a3b8; font-size: 10px; font-variant-numeric: tabular-nums; }
     .competency-card h2 { margin: 0; font-size: 12px; line-height: 1.18; letter-spacing: -.01em; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
     .competency-card p { margin: 0; color: var(--muted); font-size: 10px; line-height: 1.28; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
-    .detail { position: sticky; top: 12px; border: 1px solid var(--line); border-radius: 18px; background: #fff; padding: 16px; box-shadow: 0 16px 40px rgba(15, 23, 42, .06); min-height: 240px; }
-    .detail[hidden] { display: none; }
-    .detail-close { float: right; border: 0; background: #f1f5f9; color: var(--muted); width: 26px; height: 26px; border-radius: 50%; cursor: pointer; font-size: 16px; }
-    .detail .tier-badge { display: inline-block; margin-bottom: 8px; }
-    .detail h2 { margin: 0 0 6px; font-size: 19px; line-height: 1.15; }
-    .detail .full { color: var(--muted); font-size: 12px; line-height: 1.45; margin: 0 0 12px; }
-    .detail h3 { margin: 12px 0 4px; font-size: 10px; text-transform: uppercase; letter-spacing: .09em; color: var(--muted); }
-    .detail ul { margin: 0; padding-left: 17px; color: var(--ink); font-size: 12px; line-height: 1.45; }
-    .detail li { margin: 2px 0; }
-    .detail .muted { color: var(--muted); font-size: 11px; line-height: 1.4; }
-    @media (max-width: 1050px) { .workspace { grid-template-columns: 1fr; } .detail { position: static; } .summary { justify-content: flex-start; } .topbar { align-items: flex-start; flex-direction: column; } }
-    @media (max-width: 620px) { .page { padding: 14px; } .hint { display: none; } }
+
+    .app-header {
+      position: fixed;
+      z-index: 30;
+      top: 40px;
+      left: 40px;
+      right: 40px;
+      padding: 20px 24px 16px;
+      border: 1px solid var(--glass-line);
+      border-radius: 24px;
+      background: var(--glass);
+      -webkit-backdrop-filter: blur(30px) saturate(150%);
+      backdrop-filter: blur(30px) saturate(150%);
+      box-shadow: var(--shadow);
+    }
+    .header-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; }
+    .eyebrow { color: var(--accent); font-size: 10px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    h1 { margin: 5px 0 4px; font-size: clamp(24px, 3.2vw, 42px); letter-spacing: -.045em; line-height: 1; }
+    .subtitle { margin: 0; color: var(--muted); font-size: 13px; }
+    .summary { display: flex; gap: 7px; flex-wrap: wrap; justify-content: flex-end; }
+    .summary span { border: 1px solid rgba(203, 213, 225, .9); background: rgba(255, 255, 255, .7); border-radius: 999px; padding: 6px 10px; font-size: 11px; font-weight: 700; white-space: nowrap; }
+    .summary .f { color: var(--foundation); } .summary .c { color: var(--core); } .summary .o { color: var(--optional); }
+    .header-bottom { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 14px; }
+    .profession-tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+    .profession-tab { border: 1px solid rgba(203, 213, 225, .9); background: rgba(255, 255, 255, .58); color: var(--ink); border-radius: 999px; padding: 7px 12px; font-size: 12px; font-weight: 700; text-decoration: none; transition: border-color .15s, background .15s; }
+    .profession-tab:hover { border-color: #94a3b8; background: rgba(255, 255, 255, .85); }
+    .profession-tab.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+    .hint { margin-left: auto; color: var(--muted); font-size: 11px; }
+    .banner { margin-top: 12px; border: 1px solid rgba(253, 230, 138, .9); background: rgba(255, 251, 235, .72); color: #92400e; border-radius: 14px; padding: 8px 12px; font-size: 11px; }
+
+    .zoom-controls {
+      position: fixed;
+      z-index: 35;
+      left: 40px;
+      bottom: 40px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 5px;
+      border: 1px solid var(--glass-line);
+      border-radius: 16px;
+      background: var(--glass);
+      -webkit-backdrop-filter: blur(30px) saturate(150%);
+      backdrop-filter: blur(30px) saturate(150%);
+      box-shadow: var(--shadow);
+    }
+    .zoom-controls button { width: 34px; height: 34px; border: 1px solid transparent; border-radius: 11px; background: transparent; color: var(--ink); font: inherit; font-size: 20px; line-height: 1; cursor: pointer; }
+    .zoom-controls button:hover { background: rgba(255, 255, 255, .8); border-color: var(--line); }
+    .zoom-controls button:active { transform: translateY(1px); }
+    .zoom-value { min-width: 48px; text-align: center; color: var(--muted); font-size: 11px; font-weight: 800; font-variant-numeric: tabular-nums; }
+
+    .detail-panel {
+      position: fixed;
+      z-index: 40;
+      top: 40px;
+      right: 40px;
+      bottom: 40px;
+      width: min(380px, calc(100vw - 80px));
+      overflow: auto;
+      padding: 24px;
+      border: 1px solid var(--glass-line);
+      border-radius: 24px;
+      background: var(--glass);
+      -webkit-backdrop-filter: blur(30px) saturate(150%);
+      backdrop-filter: blur(30px) saturate(150%);
+      box-shadow: var(--shadow);
+    }
+    .detail-panel[hidden] { display: none; }
+    .detail-close { float: right; border: 0; background: rgba(241, 245, 249, .8); color: var(--muted); width: 30px; height: 30px; border-radius: 50%; cursor: pointer; font-size: 18px; line-height: 1; }
+    .detail-panel .tier-badge { display: inline-block; margin-bottom: 10px; }
+    .detail-panel h2 { margin: 0 0 8px; font-size: 22px; line-height: 1.12; letter-spacing: -.02em; }
+    .detail-panel .full { color: var(--muted); font-size: 13px; line-height: 1.5; margin: 0 0 16px; }
+    .detail-panel h3 { margin: 16px 0 5px; font-size: 10px; text-transform: uppercase; letter-spacing: .09em; color: var(--muted); }
+    .detail-panel ul { margin: 0; padding-left: 18px; color: var(--ink); font-size: 13px; line-height: 1.5; }
+    .detail-panel li { margin: 3px 0; }
+    .detail-panel .muted { color: var(--muted); font-size: 11px; line-height: 1.45; margin-top: 16px; }
+
+    @media (max-width: 720px) {
+      .app-header { top: 16px; left: 16px; right: 16px; padding: 16px; border-radius: 20px; }
+      .header-top { flex-direction: column; gap: 12px; }
+      .summary { justify-content: flex-start; }
+      .hint { display: none; }
+      .zoom-controls { left: 16px; bottom: 16px; }
+      .detail-panel { top: 16px; right: 16px; bottom: 16px; width: calc(100vw - 32px); border-radius: 20px; }
+    }
   </style>
 </head>
 <body>
-  <div class="page">
-    <header class="topbar">
-      <div>
-        <div class="eyebrow">AXIONA · Competency Canvas</div>
-        <h1>Моушн-дизайнер</h1>
-        <p class="subtitle">Сеть компетенций: разделы, связи и приоритеты профессии</p>
-      </div>
-      <div class="summary">
-        <span class="f">8 фундаментальных</span>
-        <span class="c">15 основных</span>
-        <span class="o">5 необязательных</span>
-      </div>
-    </header>
-    <nav class="profession-tabs" aria-label="Профессии"><a class="profession-tab" href="uxui-competency-canvas.html">UX/UI</a><a class="profession-tab" href="it-product-competency-canvas.html">Product</a><a class="profession-tab active" href="it-motion-competency-canvas.html">Motion</a><a class="profession-tab" href="it-graphic-competency-canvas.html">Graphic</a></nav>
-    <div class="banner"><strong>Черновой слой.</strong> Моушн-дизайнер: профессио-специфичная сеть, собранная из единого массива компетенций. Tier/order специфичны для профессии; компетенции переиспользуются. Сгенерировано 2026-10-26.</div>
-    <div class="toolbar">
-      <span class="hint">Наведите на карточку, чтобы увидеть связи; нажмите — подробности</span>
-    </div>
-    <main class="workspace">
-      <div class="canvas-wrap">
-        <div class="canvas-stage" style="width:1771px;height:1602px">
-          <svg class="edges" width="1771" height="1602" viewBox="0 0 1771 1602" aria-hidden="true">
-            <defs>
-              <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-                <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8" />
-              </marker>
-            </defs>
-            <path class="edge" data-from="ux-design-thinking" data-to="motion-animation-principles" d="M 625.5 764.0 Q 755.5 784.8 885.5 764.0" marker-end="url(#arrow)" />
+  <div class="canvas-viewport" id="canvas-viewport" aria-label="Канвас компетенций">
+    <div class="canvas-stage" id="canvas-stage" style="width:1771px;height:1602px">
+      <svg class="edges" width="1771" height="1602" viewBox="0 0 1771 1602" aria-hidden="true">
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8" />
+          </marker>
+        </defs>
+        <path class="edge" data-from="ux-design-thinking" data-to="motion-animation-principles" d="M 625.5 764.0 Q 755.5 784.8 885.5 764.0" marker-end="url(#arrow)" />
         <path class="edge" data-from="motion-animation-principles" data-to="motion-timing-easing" d="M 885.5 764.0 Q 1015.5 784.8 1145.5 764.0" marker-end="url(#arrow)" />
         <path class="edge" data-from="ux-design-thinking" data-to="motion-styleframes" d="M 625.5 764.0 Q 616.8 818.0 625.5 872.0" marker-end="url(#arrow)" />
         <path class="edge" data-from="ux-design-thinking" data-to="ui-color" d="M 625.5 764.0 Q 746.8 838.8 885.5 872.0" marker-end="url(#arrow)" />
@@ -150,8 +203,8 @@
         <path class="edge" data-from="ui-layout" data-to="ui-responsive" d="M 755.5 980.0 Q 561.6 1203.1 447.0 1475.5" marker-end="url(#arrow)" />
         <path class="edge" data-from="ui-layout" data-to="ui-data-visualization" d="M 755.5 980.0 Q 492.8 764.4 176.0 641.5" marker-end="url(#arrow)" />
         <path class="edge" data-from="ui-motion" data-to="ui-data-visualization" d="M 1015.5 980.0 Q 622.8 743.6 176.0 641.5" marker-end="url(#arrow)" />
-          </svg>
-          <article class="competency-card tier-foundation" data-id="ux-design-thinking" data-tier="foundation" style="left:515.5px;top:718.0px;width:220px;height:92px;opacity:1" tabindex="0">
+      </svg>
+      <article class="competency-card tier-foundation" data-id="ux-design-thinking" data-tier="foundation" style="left:515.5px;top:718.0px;width:220px;height:92px;opacity:1" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Фундаментальная</span>
             <span class="order">1</span>
@@ -159,7 +212,7 @@
           <h2>Дизайн-мышление</h2>
           <p>Системный подход к решению задач: понимание пользователя, формулировка проблемы, генерация и проверка гипотез, итерации.</p>
         </article>
-          <article class="competency-card tier-foundation" data-id="motion-animation-principles" data-tier="foundation" style="left:775.5px;top:718.0px;width:220px;height:92px;opacity:1" tabindex="0">
+      <article class="competency-card tier-foundation" data-id="motion-animation-principles" data-tier="foundation" style="left:775.5px;top:718.0px;width:220px;height:92px;opacity:1" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Фундаментальная</span>
             <span class="order">2</span>
@@ -167,7 +220,7 @@
           <h2>Принципы анимации</h2>
           <p>Двенадцать принципов анимации: тайминг, spacing, вес, инерция, exaggeration и appeal.</p>
         </article>
-          <article class="competency-card tier-foundation" data-id="motion-timing-easing" data-tier="foundation" style="left:1035.5px;top:718.0px;width:220px;height:92px;opacity:1" tabindex="0">
+      <article class="competency-card tier-foundation" data-id="motion-timing-easing" data-tier="foundation" style="left:1035.5px;top:718.0px;width:220px;height:92px;opacity:1" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Фундаментальная</span>
             <span class="order">3</span>
@@ -175,7 +228,7 @@
           <h2>Тайминг и кривые ускорения</h2>
           <p>Проектирование движения во времени: тайминг, кривые ускорения, ритм и ощущение веса.</p>
         </article>
-          <article class="competency-card tier-foundation" data-id="motion-styleframes" data-tier="foundation" style="left:515.5px;top:826.0px;width:220px;height:92px;opacity:1" tabindex="0">
+      <article class="competency-card tier-foundation" data-id="motion-styleframes" data-tier="foundation" style="left:515.5px;top:826.0px;width:220px;height:92px;opacity:1" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Фундаментальная</span>
             <span class="order">4</span>
@@ -183,7 +236,7 @@
           <h2>Style frames и арт-дирекшн</h2>
           <p>Поиск визуального стиля, референсы, цветовые сценарии и кадры-концепты до продакшена.</p>
         </article>
-          <article class="competency-card tier-foundation" data-id="ui-color" data-tier="foundation" style="left:775.5px;top:826.0px;width:220px;height:92px;opacity:1" tabindex="0">
+      <article class="competency-card tier-foundation" data-id="ui-color" data-tier="foundation" style="left:775.5px;top:826.0px;width:220px;height:92px;opacity:1" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Фундаментальная</span>
             <span class="order">5</span>
@@ -191,7 +244,7 @@
           <h2>Теория цвета и колористика</h2>
           <p>Физика цвета, восприятие, гармония, контраст и культурный контекст.</p>
         </article>
-          <article class="competency-card tier-foundation" data-id="ui-typography" data-tier="foundation" style="left:1035.5px;top:826.0px;width:220px;height:92px;opacity:1" tabindex="0">
+      <article class="competency-card tier-foundation" data-id="ui-typography" data-tier="foundation" style="left:1035.5px;top:826.0px;width:220px;height:92px;opacity:1" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Фундаментальная</span>
             <span class="order">6</span>
@@ -199,7 +252,7 @@
           <h2>Типографика</h2>
           <p>Шрифтовая иерархия, читаемость, ритм и типографические системы.</p>
         </article>
-          <article class="competency-card tier-foundation" data-id="ui-layout" data-tier="foundation" style="left:645.5px;top:934.0px;width:220px;height:92px;opacity:1" tabindex="0">
+      <article class="competency-card tier-foundation" data-id="ui-layout" data-tier="foundation" style="left:645.5px;top:934.0px;width:220px;height:92px;opacity:1" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Фундаментальная</span>
             <span class="order">7</span>
@@ -207,7 +260,7 @@
           <h2>Композиция, сетки и визуальная иерархия</h2>
           <p>Управление вниманием через композицию, сетки, пропорции и иерархию.</p>
         </article>
-          <article class="competency-card tier-foundation" data-id="ui-motion" data-tier="foundation" style="left:905.5px;top:934.0px;width:220px;height:92px;opacity:1" tabindex="0">
+      <article class="competency-card tier-foundation" data-id="ui-motion" data-tier="foundation" style="left:905.5px;top:934.0px;width:220px;height:92px;opacity:1" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Фундаментальная</span>
             <span class="order">8</span>
@@ -215,7 +268,7 @@
           <h2>Анимация и motion design</h2>
           <p>Кинетика, тайминг и анимационные системы интерфейса.</p>
         </article>
-          <article class="competency-card tier-core" data-id="ui-interaction-states" data-tier="core" style="left:789.5px;top:260.0px;width:192px;height:92px;opacity:0.9" tabindex="0">
+      <article class="competency-card tier-core" data-id="ui-interaction-states" data-tier="core" style="left:789.5px;top:260.0px;width:192px;height:92px;opacity:0.9" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Основная</span>
             <span class="order">9</span>
@@ -223,7 +276,7 @@
           <h2>Состояния и микровзаимодействия</h2>
           <p>Состояния компонентов, обратная связь и микровзаимодействия.</p>
         </article>
-          <article class="competency-card tier-core" data-id="ui-visual-communication" data-tier="core" style="left:1019.7px;top:308.9px;width:192px;height:92px;opacity:0.9" tabindex="0">
+      <article class="competency-card tier-core" data-id="ui-visual-communication" data-tier="core" style="left:1019.7px;top:308.9px;width:192px;height:92px;opacity:0.9" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Основная</span>
             <span class="order">10</span>
@@ -231,7 +284,7 @@
           <h2>Визуальная коммуникация</h2>
           <p>Стилистика, визуальные коды и целостность интерфейсной коммуникации.</p>
         </article>
-          <article class="competency-card tier-core" data-id="ux-interactive-prototype" data-tier="core" style="left:1210.1px;top:447.3px;width:192px;height:92px;opacity:0.9" tabindex="0">
+      <article class="competency-card tier-core" data-id="ux-interactive-prototype" data-tier="core" style="left:1210.1px;top:447.3px;width:192px;height:92px;opacity:0.9" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Основная</span>
             <span class="order">11</span>
@@ -239,7 +292,7 @@
           <h2>Интерактивные прототипы</h2>
           <p>Прототипы с переходами и состояниями для проверки поведения продукта.</p>
         </article>
-          <article class="competency-card tier-core" data-id="motion-editing" data-tier="core" style="left:1327.8px;top:651.1px;width:192px;height:92px;opacity:0.9" tabindex="0">
+      <article class="competency-card tier-core" data-id="motion-editing" data-tier="core" style="left:1327.8px;top:651.1px;width:192px;height:92px;opacity:0.9" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Основная</span>
             <span class="order">12</span>
@@ -247,7 +300,7 @@
           <h2>Монтаж и ритм</h2>
           <p>Монтаж ролика, темп, паузы, переходы и драматургия движения в кадре.</p>
         </article>
-          <article class="competency-card tier-core" data-id="motion-sound-design" data-tier="core" style="left:1352.4px;top:885.2px;width:192px;height:92px;opacity:0.9" tabindex="0">
+      <article class="competency-card tier-core" data-id="motion-sound-design" data-tier="core" style="left:1352.4px;top:885.2px;width:192px;height:92px;opacity:0.9" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Основная</span>
             <span class="order">13</span>
@@ -255,7 +308,7 @@
           <h2>Звуковой дизайн и синхронизация</h2>
           <p>Подбор и монтаж звука, музыкальный ритм, синхронизация движения и звуковых акцентов.</p>
         </article>
-          <article class="competency-card tier-core" data-id="motion-3d-animation" data-tier="core" style="left:1279.7px;top:1109.0px;width:192px;height:92px;opacity:0.9" tabindex="0">
+      <article class="competency-card tier-core" data-id="motion-3d-animation" data-tier="core" style="left:1279.7px;top:1109.0px;width:192px;height:92px;opacity:0.9" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Основная</span>
             <span class="order">14</span>
@@ -263,7 +316,7 @@
           <h2>3D-анимация и риггинг</h2>
           <p>Анимация 3D-персонажей и объектов: риггинг, ключевые кадры, симуляции и динамика.</p>
         </article>
-          <article class="competency-card tier-core" data-id="motion-3d-rendering" data-tier="core" style="left:1122.2px;top:1283.9px;width:192px;height:92px;opacity:0.9" tabindex="0">
+      <article class="competency-card tier-core" data-id="motion-3d-rendering" data-tier="core" style="left:1122.2px;top:1283.9px;width:192px;height:92px;opacity:0.9" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Основная</span>
             <span class="order">15</span>
@@ -271,7 +324,7 @@
           <h2>3D, свет и рендер</h2>
           <p>Трёхмерная форма, материалы, свет и рендер в моушн-продакшене.</p>
         </article>
-          <article class="competency-card tier-core" data-id="motion-compositing" data-tier="core" style="left:907.2px;top:1379.6px;width:192px;height:92px;opacity:0.9" tabindex="0">
+      <article class="competency-card tier-core" data-id="motion-compositing" data-tier="core" style="left:907.2px;top:1379.6px;width:192px;height:92px;opacity:0.9" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Основная</span>
             <span class="order">16</span>
@@ -279,7 +332,7 @@
           <h2>Композитинг и VFX</h2>
           <p>Сборка слоёв, кеинг, трекинг, маски, цветокоррекция и совмещение 3D с live-action.</p>
         </article>
-          <article class="competency-card tier-core" data-id="motion-brand-systems" data-tier="core" style="left:671.8px;top:1379.6px;width:192px;height:92px;opacity:0.9" tabindex="0">
+      <article class="competency-card tier-core" data-id="motion-brand-systems" data-tier="core" style="left:671.8px;top:1379.6px;width:192px;height:92px;opacity:0.9" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Основная</span>
             <span class="order">17</span>
@@ -287,7 +340,7 @@
           <h2>Motion-айдентика и бренд-системы</h2>
           <p>Перенос айдентики в движение: motion-логотипы, бренд-гайды, системы анимации.</p>
         </article>
-          <article class="competency-card tier-core" data-id="motion-toolchain" data-tier="core" style="left:456.8px;top:1283.9px;width:192px;height:92px;opacity:0.9" tabindex="0">
+      <article class="competency-card tier-core" data-id="motion-toolchain" data-tier="core" style="left:456.8px;top:1283.9px;width:192px;height:92px;opacity:0.9" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Основная</span>
             <span class="order">18</span>
@@ -295,7 +348,7 @@
           <h2>Моушн-инструментарий</h2>
           <p>After Effects, Cinema 4D, Blender, Spline, Unreal Engine и производственные плагины.</p>
         </article>
-          <article class="competency-card tier-core" data-id="motion-production" data-tier="core" style="left:299.3px;top:1109.0px;width:192px;height:92px;opacity:0.9" tabindex="0">
+      <article class="competency-card tier-core" data-id="motion-production" data-tier="core" style="left:299.3px;top:1109.0px;width:192px;height:92px;opacity:0.9" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Основная</span>
             <span class="order">19</span>
@@ -303,7 +356,7 @@
           <h2>Продакшн и пайплайн</h2>
           <p>Планирование производства, рендер, форматы, сроки и передача материалов.</p>
         </article>
-          <article class="competency-card tier-core" data-id="ui-figma" data-tier="core" style="left:226.6px;top:885.2px;width:192px;height:92px;opacity:0.9" tabindex="0">
+      <article class="competency-card tier-core" data-id="ui-figma" data-tier="core" style="left:226.6px;top:885.2px;width:192px;height:92px;opacity:0.9" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Основная</span>
             <span class="order">21</span>
@@ -311,7 +364,7 @@
           <h2>Figma: компоненты и автолейаут</h2>
           <p>Работа с Figma: компоненты, варианты, автолейаут и библиотеки.</p>
         </article>
-          <article class="competency-card tier-core" data-id="ui-framer" data-tier="core" style="left:251.2px;top:651.1px;width:192px;height:92px;opacity:0.9" tabindex="0">
+      <article class="competency-card tier-core" data-id="ui-framer" data-tier="core" style="left:251.2px;top:651.1px;width:192px;height:92px;opacity:0.9" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Основная</span>
             <span class="order">22</span>
@@ -319,7 +372,7 @@
           <h2>Framer: интерактивные прототипы</h2>
           <p>Создание интерактивных прототипов и микровзаимодействий в Framer.</p>
         </article>
-          <article class="competency-card tier-core" data-id="ui-handoff" data-tier="core" style="left:368.9px;top:447.3px;width:192px;height:92px;opacity:0.9" tabindex="0">
+      <article class="competency-card tier-core" data-id="ui-handoff" data-tier="core" style="left:368.9px;top:447.3px;width:192px;height:92px;opacity:0.9" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Основная</span>
             <span class="order">23</span>
@@ -327,7 +380,7 @@
           <h2>Передача макетов в разработку</h2>
           <p>Спецификации, компонентные контракты и коммуникация с инженерами.</p>
         </article>
-          <article class="competency-card tier-core" data-id="ui-accessibility" data-tier="core" style="left:559.3px;top:308.9px;width:192px;height:92px;opacity:0.9" tabindex="0">
+      <article class="competency-card tier-core" data-id="ui-accessibility" data-tier="core" style="left:559.3px;top:308.9px;width:192px;height:92px;opacity:0.9" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Основная</span>
             <span class="order">26</span>
@@ -335,7 +388,7 @@
           <h2>Доступность и инклюзивный дизайн</h2>
           <p>Доступность интерфейса для людей с разными возможностями и ограничениями.</p>
         </article>
-          <article class="competency-card tier-optional" data-id="motion-showreel" data-tier="optional" style="left:789.5px;top:80.0px;width:192px;height:92px;opacity:0.65" tabindex="0">
+      <article class="competency-card tier-optional" data-id="motion-showreel" data-tier="optional" style="left:789.5px;top:80.0px;width:192px;height:92px;opacity:0.65" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Необязательная</span>
             <span class="order">20</span>
@@ -343,7 +396,7 @@
           <h2>Showreel и портфолио</h2>
           <p>Сборка шоурила, кейсов и презентации работ для заказчиков и студий.</p>
         </article>
-          <article class="competency-card tier-optional" data-id="ui-figjam" data-tier="optional" style="left:1499.0px;top:595.5px;width:192px;height:92px;opacity:0.65" tabindex="0">
+      <article class="competency-card tier-optional" data-id="ui-figjam" data-tier="optional" style="left:1499.0px;top:595.5px;width:192px;height:92px;opacity:0.65" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Необязательная</span>
             <span class="order">24</span>
@@ -351,7 +404,7 @@
           <h2>FigJam: воркшопы и картирование</h2>
           <p>Совместные воркшопы, картирование и фасилитация в FigJam.</p>
         </article>
-          <article class="competency-card tier-optional" data-id="ui-design-systems" data-tier="optional" style="left:1228.0px;top:1429.5px;width:192px;height:92px;opacity:0.65" tabindex="0">
+      <article class="competency-card tier-optional" data-id="ui-design-systems" data-tier="optional" style="left:1228.0px;top:1429.5px;width:192px;height:92px;opacity:0.65" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Необязательная</span>
             <span class="order">25</span>
@@ -359,7 +412,7 @@
           <h2>Дизайн-системы и токены</h2>
           <p>Архитектура дизайн-системы, семантические токены и синхронизация с кодом.</p>
         </article>
-          <article class="competency-card tier-optional" data-id="ui-responsive" data-tier="optional" style="left:351.0px;top:1429.5px;width:192px;height:92px;opacity:0.65" tabindex="0">
+      <article class="competency-card tier-optional" data-id="ui-responsive" data-tier="optional" style="left:351.0px;top:1429.5px;width:192px;height:92px;opacity:0.65" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Необязательная</span>
             <span class="order">27</span>
@@ -367,7 +420,7 @@
           <h2>Адаптивность и responsive UI</h2>
           <p>Адаптация интерфейса под устройства, размеры и контекст использования.</p>
         </article>
-          <article class="competency-card tier-optional" data-id="ui-data-visualization" data-tier="optional" style="left:80.0px;top:595.5px;width:192px;height:92px;opacity:0.65" tabindex="0">
+      <article class="competency-card tier-optional" data-id="ui-data-visualization" data-tier="optional" style="left:80.0px;top:595.5px;width:192px;height:92px;opacity:0.65" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Необязательная</span>
             <span class="order">28</span>
@@ -375,27 +428,74 @@
           <h2>Визуализация данных</h2>
           <p>Графики, диаграммы и визуализация данных в интерфейсе.</p>
         </article>
-        </div>
-      </div>
-      <aside class="detail" id="detail" hidden>
-        <button class="detail-close" id="detail-close" aria-label="Закрыть">×</button>
-        <span class="tier-badge" id="detail-tier"></span>
-        <h2 id="detail-title"></h2>
-        <p class="full" id="detail-full"></p>
-        <h3>Компоненты</h3>
-        <ul id="detail-components"></ul>
-        <h3>Теги и знания</h3>
-        <ul id="detail-tags"></ul>
-        <p class="muted" id="detail-meta"></p>
-      </aside>
-    </main>
+    </div>
   </div>
+
+  <header class="app-header">
+    <div class="header-top">
+      <div>
+        <div class="eyebrow">AXIONA · Competency Canvas</div>
+        <h1>Моушн-дизайнер</h1>
+        <p class="subtitle">Сеть компетенций: разделы, связи и приоритеты профессии</p>
+      </div>
+      <div class="summary">
+        <span class="f">8 фундаментальных</span>
+        <span class="c">15 основных</span>
+        <span class="o">5 необязательных</span>
+      </div>
+    </div>
+    <div class="header-bottom">
+      <nav class="profession-tabs" aria-label="Профессии"><a class="profession-tab" href="uxui-competency-canvas.html">UX/UI</a><a class="profession-tab" href="it-product-competency-canvas.html">Product</a><a class="profession-tab active" href="it-motion-competency-canvas.html">Motion</a><a class="profession-tab" href="it-graphic-competency-canvas.html">Graphic</a></nav>
+      <span class="hint">Наведите на карточку, чтобы увидеть связи; нажмите — подробности</span>
+    </div>
+    <div class="banner"><strong>Черновой слой.</strong> Моушн-дизайнер: профессио-специфичная сеть, собранная из единого массива компетенций. Tier/order специфичны для профессии; компетенции переиспользуются. Сгенерировано 2026-10-26.</div>
+  </header>
+
+  <div class="zoom-controls" aria-label="Масштаб канваса">
+    <button type="button" id="zoom-out" aria-label="Уменьшить">−</button>
+    <span class="zoom-value" id="zoom-value" aria-live="polite">100%</span>
+    <button type="button" id="zoom-in" aria-label="Увеличить">+</button>
+  </div>
+
+  <aside class="detail-panel" id="detail" hidden>
+    <button class="detail-close" id="detail-close" aria-label="Закрыть">×</button>
+    <span class="tier-badge" id="detail-tier"></span>
+    <h2 id="detail-title"></h2>
+    <p class="full" id="detail-full"></p>
+    <h3>Компоненты</h3>
+    <ul id="detail-components"></ul>
+    <h3>Теги и знания</h3>
+    <ul id="detail-tags"></ul>
+    <p class="muted" id="detail-meta"></p>
+  </aside>
+
   <script>
     const DATA = {"title":"Моушн-дизайнер","subtitle":"Сеть компетенций: разделы, связи и приоритеты профессии","note":"Моушн-дизайнер: профессио-специфичная сеть, собранная из единого массива компетенций. Tier/order специфичны для профессии; компетенции переиспользуются.","generatedOn":"2026-10-26","nodes":[{"id":"ux-design-thinking","title":"Дизайн-мышление","tier":"foundation","tierLabel":"Фундаментальная","order":1,"description":"Системный подход к решению задач: понимание пользователя, формулировка проблемы, генерация и проверка гипотез, итерации.","fullDescription":"Системный подход к решению задач: понимание пользователя, формулировка проблемы, генерация и проверка гипотез, итерации.","components":["Эмпатия и исследование пользователя","Формулировка проблемы и пользовательские сценарии","Генерация и проверка гипотез","Итерационный процесс и командное взаимодействие"],"tags":["Исследование аудитории","Целевая аудитория","Типы исследований","Количественные исследования","Проведение исследований и проектирование сервиса","Проведение UX-исследований и анализ аудитории","Зачем пользователю сценарий","Пользовательские сценарии и паттерны взаимодействия","Гипотезы","Интерактивный прототип с тестированием","Прототипирование с помощью переменных и условий","Воркшопы с экспертами"],"evidenceState":"supported","branch":"Моушн-дизайнер","section":"Визуальные основы движения","x":340,"y":292,"width":220,"height":92,"ring":0,"emphasis":"primary","opacity":1},{"id":"motion-animation-principles","title":"Принципы анимации","tier":"foundation","tierLabel":"Фундаментальная","order":2,"description":"Двенадцать принципов анимации: тайминг, spacing, вес, инерция, exaggeration и appeal.","fullDescription":"Двенадцать принципов анимации: тайминг, spacing, вес, инерция, exaggeration и appeal.","components":["Тайминг и spacing","Физика движения","Выразительность движения","Общая система принципов"],"tags":["Spacing и тайминг","Вес и инерция","Exaggeration и appeal","Принципы анимации"],"evidenceState":"needs_review","branch":"Моушн-дизайнер","section":"Визуальные основы движения","x":600,"y":292,"width":220,"height":92,"ring":0,"emphasis":"primary","opacity":1},{"id":"motion-timing-easing","title":"Тайминг и кривые ускорения","tier":"foundation","tierLabel":"Фундаментальная","order":3,"description":"Проектирование движения во времени: тайминг, кривые ускорения, ритм и ощущение веса.","fullDescription":"Проектирование движения во времени: тайминг, кривые ускорения, ритм и ощущение веса.","components":["Тайминг и ритм","Кривые ускорения","Вес и инерция"],"tags":["Тайминг анимации","Ключевые кадры","Кривые ускорения","Вес и инерция движения"],"evidenceState":"needs_review","branch":"Моушн-дизайнер","section":"Визуальные основы движения","x":860,"y":292,"width":220,"height":92,"ring":0,"emphasis":"primary","opacity":1},{"id":"motion-styleframes","title":"Style frames и арт-дирекшн","tier":"foundation","tierLabel":"Фундаментальная","order":4,"description":"Поиск визуального стиля, референсы, цветовые сценарии и кадры-концепты до продакшена.","fullDescription":"Поиск визуального стиля, референсы, цветовые сценарии и кадры-концепты до продакшена.","components":["Поиск и фиксация визуального стиля","Цветовая драматургия","Арт-дирекшн"],"tags":["Style frames","Референсы и мудборд","Цветовые сценарии","Арт-дирекшн"],"evidenceState":"needs_review","branch":"Моушн-дизайнер","section":"Визуальные основы движения","x":340,"y":400,"width":220,"height":92,"ring":0,"emphasis":"primary","opacity":1},{"id":"ui-color","title":"Теория цвета и колористика","tier":"foundation","tierLabel":"Фундаментальная","order":5,"description":"Физика цвета, восприятие, гармония, контраст и культурный контекст.","fullDescription":"Физика цвета, восприятие, гармония, контраст и культурный контекст.","components":["Физика света и природа цвета","Физиология и психология восприятия цвета","Цветовые модели и системы","Цвет в визуальной композиции","Цвет в интерфейсе и визуальной коммуникации"],"tags":["Цвет как физическое явление","Психофизиология цветового восприятия","Культурно-психологический контекст цвета","Цветовые модели и пространства","Цветовой круг и гармония","Цвет и визуальная иерархия","Цвет в композиции и стиле","Цвет как средство визуальной коммуникации","Цветовые палитры и токены"],"evidenceState":"needs_review","branch":"Моушн-дизайнер","section":"Визуальные основы движения","x":600,"y":400,"width":220,"height":92,"ring":0,"emphasis":"primary","opacity":1},{"id":"ui-typography","title":"Типографика","tier":"foundation","tierLabel":"Фундаментальная","order":6,"description":"Шрифтовая иерархия, читаемость, ритм и типографические системы.","fullDescription":"Шрифтовая иерархия, читаемость, ритм и типографические системы.","components":["Композиция в интерфейсе","Типографика в интерфейсе","Визуальная иерархия","Сетки в дизайне"],"tags":["Работа с композицией, типографикой и визуальной иерархией","Типографическая иерархия и читаемость","Построение визуальной иерархии","Сетки в дизайне"],"evidenceState":"needs_review","branch":"Моушн-дизайнер","section":"Визуальные основы движения","x":860,"y":400,"width":220,"height":92,"ring":0,"emphasis":"primary","opacity":1},{"id":"ui-layout","title":"Композиция, сетки и визуальная иерархия","tier":"foundation","tierLabel":"Фундаментальная","order":7,"description":"Управление вниманием через композицию, сетки, пропорции и иерархию.","fullDescription":"Управление вниманием через композицию, сетки, пропорции и иерархию.","components":["Композиция в интерфейсе","Типографика в интерфейсе","Визуальная иерархия","Сетки в дизайне"],"tags":["Работа с композицией, типографикой и визуальной иерархией","Типографическая иерархия и читаемость","Построение визуальной иерархии","Сетки в дизайне"],"evidenceState":"needs_review","branch":"Моушн-дизайнер","section":"Визуальные основы движения","x":470,"y":508,"width":220,"height":92,"ring":0,"emphasis":"primary","opacity":1},{"id":"ui-motion","title":"Анимация и motion design","tier":"foundation","tierLabel":"Фундаментальная","order":8,"description":"Кинетика, тайминг и анимационные системы интерфейса.","fullDescription":"Кинетика, тайминг и анимационные системы интерфейса.","components":["Теория цвета","Теория анимации"],"tags":["Цвет","Теория анимации"],"evidenceState":"supported","branch":"Моушн-дизайнер","section":"Кинетика, звук и композитинг","x":730,"y":508,"width":220,"height":92,"ring":0,"emphasis":"primary","opacity":1},{"id":"ui-interaction-states","title":"Состояния и микровзаимодействия","tier":"core","tierLabel":"Основная","order":9,"description":"Состояния компонентов, обратная связь и микровзаимодействия.","fullDescription":"Состояния компонентов, обратная связь и микровзаимодействия.","components":["Состояния компонентов и обратная связь","Микровзаимодействия","Анимация и визуальная коммуникация","Передача поведения в разработку"],"tags":["Пользовательские сценарии и паттерны взаимодействия","Проектирование состояний компонентов","Обратная связь на действия пользователя","Понятие микровзаимодействий","Проектирование микровзаимодействий","Теория анимации","Анимация в интерфейсе","Анимация и визуальная коммуникация","Анимация как отстройка от конкурентов","Взаимодействие с разработкой","Подготовка спецификаций и участие в тестировании","Понимание продукта и взаимодействия с ним"],"evidenceState":"needs_review","branch":"Моушн-дизайнер","section":"Кинетика, звук и композитинг","x":600,"y":-166,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ui-visual-communication","title":"Визуальная коммуникация","tier":"core","tierLabel":"Основная","order":10,"description":"Стилистика, визуальные коды и целостность интерфейсной коммуникации.","fullDescription":"Стилистика, визуальные коды и целостность интерфейсной коммуникации.","components":["Визуальная коммуникация в интерфейсе","Композиция и стилистика интерфейса","Анимация в интерфейсе"],"tags":["Визуальная коммуникация","Анимация и визуальная коммуникация","Визуальное единство: композиция и стили","Анимация в интерфейсе","Анимация в проекте как отстройка от конкурентов"],"evidenceState":"supported","branch":"Моушн-дизайнер","section":"Кинетика, звук и композитинг","x":830.2129399809029,"y":-117.0667290257121,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ux-interactive-prototype","title":"Интерактивные прототипы","tier":"core","tierLabel":"Основная","order":11,"description":"Прототипы с переходами и состояниями для проверки поведения продукта.","fullDescription":"Прототипы с переходами и состояниями для проверки поведения продукта.","components":["Основы интерактивного прототипирования","Переходы и состояния","Анимация в интерактивных прототипах"],"tags":["Интерактивный прототип с тестированием","Прототипирование с помощью переменных и условий","Переменные и темы внутри макетов","Теория анимации","Анимация в интерфейсе","Анимация и визуальная коммуникация","Анимация в проекте как отстройка от конкурентов"],"evidenceState":"supported","branch":"Моушн-дизайнер","section":"Кинетика, звук и композитинг","x":1020.6199712202051,"y":21.272076800886225,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"motion-editing","title":"Монтаж и ритм","tier":"core","tierLabel":"Основная","order":12,"description":"Монтаж ролика, темп, паузы, переходы и драматургия движения в кадре.","fullDescription":"Монтаж ролика, темп, паузы, переходы и драматургия движения в кадре.","components":["Сборка и структура монтажа","Ритм и темп","Переходы и склейки","Драматургия монтажа"],"tags":["Монтаж ролика","Ритм и темп","Переходы","Драматургия монтажа"],"evidenceState":"needs_review","branch":"Моушн-дизайнер","section":"Кинетика, звук и композитинг","x":1138.297988223057,"y":225.09638118377978,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"motion-sound-design","title":"Звуковой дизайн и синхронизация","tier":"core","tierLabel":"Основная","order":13,"description":"Подбор и монтаж звука, музыкальный ритм, синхронизация движения и звуковых акцентов.","fullDescription":"Подбор и монтаж звука, музыкальный ритм, синхронизация движения и звуковых акцентов.","components":["Звуковой дизайн","Синхронизация звука и движения","Музыкальный ритм","Звуковая драматургия"],"tags":["Звуковой дизайн","Синхронизация звука","Музыкальный ритм","Звуковая драматургия"],"evidenceState":"needs_review","branch":"Моушн-дизайнер","section":"Кинетика, звук и композитинг","x":1162.8993927784427,"y":459.16311020949183,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"motion-3d-animation","title":"3D-анимация и риггинг","tier":"core","tierLabel":"Основная","order":14,"description":"Анимация 3D-персонажей и объектов: риггинг, ключевые кадры, симуляции и динамика.","fullDescription":"Анимация 3D-персонажей и объектов: риггинг, ключевые кадры, симуляции и динамика.","components":["Основы 3D-анимации","Риггинг","Ключевые кадры и кривые","Симуляции и динамика"],"tags":["3D-анимация","Риггинг","Ключевые кадры 3D","Симуляции"],"evidenceState":"needs_review","branch":"Моушн-дизайнер","section":"3D-анимация","x":1090.1703785419922,"y":682.9999999999999,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"motion-3d-rendering","title":"3D, свет и рендер","tier":"core","tierLabel":"Основная","order":15,"description":"Трёхмерная форма, материалы, свет и рендер в моушн-продакшене.","fullDescription":"Трёхмерная форма, материалы, свет и рендер в моушн-продакшене.","components":["Трёхмерная форма и моделирование","Материалы и шейдинг","Свет и композиция сцены","Рендеринг и вывод изображения"],"tags":["3D-моделирование","Материалы и шейдинг","Свет и композиция","Рендеринг"],"evidenceState":"needs_review","branch":"Моушн-дизайнер","section":"3D-анимация","x":932.6864527975398,"y":857.9036188162203,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"motion-compositing","title":"Композитинг и VFX","tier":"core","tierLabel":"Основная","order":16,"description":"Сборка слоёв, кеинг, трекинг, маски, цветокоррекция и совмещение 3D с live-action.","fullDescription":"Сборка слоёв, кеинг, трекинг, маски, цветокоррекция и совмещение 3D с live-action.","components":["Основы композитинга","Выделение объектов и маскирование","Трекинг и стабилизация","Визуальные эффекты и цветокоррекция","Совмещение 3D и live-action"],"tags":["Композитинг","Кеинг и маски","Трекинг","VFX и цветокоррекция","Совмещение 3D с live-action"],"evidenceState":"needs_review","branch":"Моушн-дизайнер","section":"3D-анимация","x":717.6780170028517,"y":953.631542015334,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"motion-brand-systems","title":"Motion-айдентика и бренд-системы","tier":"core","tierLabel":"Основная","order":17,"description":"Перенос айдентики в движение: motion-логотипы, бренд-гайды, системы анимации.","fullDescription":"Перенос айдентики в движение: motion-логотипы, бренд-гайды, системы анимации.","components":["Motion-логотип и знак","Бренд-гайд движения","Motion-система бренда","Перенос айдентики в движение"],"tags":["Motion-логотип","Бренд-гайд движения","Motion-система","Айдентика в движении"],"evidenceState":"needs_review","branch":"Моушн-дизайнер","section":"Продакшн и специализация","x":482.3219829971483,"y":953.631542015334,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"motion-toolchain","title":"Моушн-инструментарий","tier":"core","tierLabel":"Основная","order":18,"description":"After Effects, Cinema 4D, Blender, Spline, Unreal Engine и производственные плагины.","fullDescription":"After Effects, Cinema 4D, Blender, Spline, Unreal Engine и производственные плагины.","components":["Композитинг и 2D-анимация","3D-моделирование и анимация","Интерактивный 3D и реальное время","Производственные плагины"],"tags":["After Effects","Cinema 4D","Blender","Spline и Unreal","Производственные плагины"],"evidenceState":"needs_review","branch":"Моушн-дизайнер","section":"Продакшн и специализация","x":267.31354720246026,"y":857.9036188162203,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"motion-production","title":"Продакшн и пайплайн","tier":"core","tierLabel":"Основная","order":19,"description":"Планирование производства, рендер, форматы, сроки и передача материалов.","fullDescription":"Планирование производства, рендер, форматы, сроки и передача материалов.","components":["Планирование производства","Рендер и форматы","Сроки и бюджет","Передача материалов"],"tags":["Продакшн-пайплайн","Рендер и форматы","Сроки и бюджет","Передача материалов"],"evidenceState":"needs_review","branch":"Моушн-дизайнер","section":"Продакшн и специализация","x":109.82962145800781,"y":683.0000000000002,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ui-figma","title":"Figma: компоненты и автолейаут","tier":"core","tierLabel":"Основная","order":21,"description":"Работа с Figma: компоненты, варианты, автолейаут и библиотеки.","fullDescription":"Работа с Figma: компоненты, варианты, автолейаут и библиотеки.","components":["Основы работы в Figma","Автолейаут и адаптивная вёрстка макетов","Компоненты, варианты и библиотеки","Переменные и темы","Передача макетов в разработку"],"tags":["Основы Figma","Работа с изображениями в Figma","Автолейауты","Адаптирование и автолейауты","Проектирование адаптивных интерфейсов в Figma для web и mobile","Разработка дизайн-систем и UI-китов на компонентах Figma","Варианты компонентов","Библиотеки компонентов","Переменные и темы внутри макетов","Сборка сайта в Tilda по макету из Figma"],"evidenceState":"needs_review","branch":"Моушн-дизайнер","section":"Интерфейсные инструменты","x":37.10060722155731,"y":459.1631102094923,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ui-framer","title":"Framer: интерактивные прототипы","tier":"core","tierLabel":"Основная","order":22,"description":"Создание интерактивных прототипов и микровзаимодействий в Framer.","fullDescription":"Создание интерактивных прототипов и микровзаимодействий в Framer.","components":["Основы прототипирования в Framer","Компоненты и состояния","Анимация и микровзаимодействия","Передача прототипа в разработку"],"tags":["Framer: интерактивные прототипы","Интерактивный прототип с тестированием","Framer: компоненты и варианты","Прототипирование с помощью переменных и условий","Теория анимации","Анимация в интерфейсе","Framer: тайминг и микровзаимодействия","Анимация и визуальная коммуникация","Анимация в проекте как отстройка от конкурентов","Framer: передача прототипа в разработку"],"evidenceState":"needs_review","branch":"Моушн-дизайнер","section":"Интерфейсные инструменты","x":61.70201177694298,"y":225.09638118377984,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ui-handoff","title":"Передача макетов в разработку","tier":"core","tierLabel":"Основная","order":23,"description":"Спецификации, компонентные контракты и коммуникация с инженерами.","fullDescription":"Спецификации, компонентные контракты и коммуникация с инженерами.","components":["Взаимодействие с инженерами при разработке продукта","Правовые и государственные основы профессиональной деятельности"],"tags":["Согласование понимания с инженерами","Обсуждение дизайна и разработки продукта","Основы права и государственного регулирования"],"evidenceState":"supported","branch":"Моушн-дизайнер","section":"Интерфейсные инструменты","x":179.38002877979505,"y":21.272076800886055,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ui-accessibility","title":"Доступность и инклюзивный дизайн","tier":"core","tierLabel":"Основная","order":26,"description":"Доступность интерфейса для людей с разными возможностями и ограничениями.","fullDescription":"Доступность интерфейса для людей с разными возможностями и ограничениями.","components":["Стилевые языки описания представления документов","Вспомогательные технологии экранного доступа"],"tags":["Sass","screen reader"],"evidenceState":"supported","branch":"Моушн-дизайнер","section":"Системы и доступность","x":369.7870600190971,"y":-117.0667290257121,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"motion-showreel","title":"Showreel и портфолио","tier":"optional","tierLabel":"Необязательная","order":20,"description":"Сборка шоурила, кейсов и презентации работ для заказчиков и студий.","fullDescription":"Сборка шоурила, кейсов и презентации работ для заказчиков и студий.","components":["Шоурил","Кейсы","Портфолио","Презентация работ"],"tags":["Шоурил","Кейсы","Портфолио","Презентация работ"],"evidenceState":"needs_review","branch":"Моушн-дизайнер","section":"Продакшн и специализация","x":600,"y":-346,"width":192,"height":92,"ring":2,"emphasis":"tertiary","opacity":0.65},{"id":"ui-figjam","title":"FigJam: воркшопы и картирование","tier":"optional","tierLabel":"Необязательная","order":24,"description":"Совместные воркшопы, картирование и фасилитация в FigJam.","fullDescription":"Совместные воркшопы, картирование и фасилитация в FigJam.","components":["Совместные воркшопы в FigJam","Картирование в FigJam","Инструменты совместной работы в FigJam"],"tags":["FigJam: совместные воркшопы","Фасилитация групповых сессий","FigJam: картирование пользовательских путей","FigJam: шаблоны, стикеры и голосование"],"evidenceState":"needs_review","branch":"Моушн-дизайнер","section":"Интерфейсные инструменты","x":1309.4881611561846,"y":169.47332219628925,"width":192,"height":92,"ring":2,"emphasis":"tertiary","opacity":0.65},{"id":"ui-design-systems","title":"Дизайн-системы и токены","tier":"optional","tierLabel":"Необязательная","order":25,"description":"Архитектура дизайн-системы, семантические токены и синхронизация с кодом.","fullDescription":"Архитектура дизайн-системы, семантические токены и синхронизация с кодом.","components":["Основы дизайн-систем","Токены дизайна","Архитектура компонентов"],"tags":["Назначение и структура дизайн-системы","Разработка дизайн-системы и UI-кита","Семантические токены","Синхронизация токенов с кодом","Масштабируемые компоненты"],"evidenceState":"needs_review","branch":"Моушн-дизайнер","section":"Системы и доступность","x":1038.487798210185,"y":1003.5266778037108,"width":192,"height":92,"ring":2,"emphasis":"tertiary","opacity":0.65},{"id":"ui-responsive","title":"Адаптивность и responsive UI","tier":"optional","tierLabel":"Необязательная","order":27,"description":"Адаптация интерфейса под устройства, размеры и контекст использования.","fullDescription":"Адаптация интерфейса под устройства, размеры и контекст использования.","components":["Основы адаптивного дизайна","Проектирование адаптивных страниц"],"tags":["Как адаптировать интерфейсы","Дизайн сайта с адаптивной версией главной страницы"],"evidenceState":"supported","branch":"Моушн-дизайнер","section":"Системы и доступность","x":161.5122017898151,"y":1003.5266778037108,"width":192,"height":92,"ring":2,"emphasis":"tertiary","opacity":0.65},{"id":"ui-data-visualization","title":"Визуализация данных","tier":"optional","tierLabel":"Необязательная","order":28,"description":"Графики, диаграммы и визуализация данных в интерфейсе.","fullDescription":"Графики, диаграммы и визуализация данных в интерфейсе.","components":["Иконки как визуальные элементы","Дизайн данных: графики и диаграммы"],"tags":["Иконки","Дизайн данных. Графики и диаграммы"],"evidenceState":"supported","branch":"Моушн-дизайнер","section":"Системы и доступность","x":-109.48816115618456,"y":169.47332219628933,"width":192,"height":92,"ring":2,"emphasis":"tertiary","opacity":0.65}],"edges":[{"from":"ux-design-thinking","to":"motion-animation-principles"},{"from":"motion-animation-principles","to":"motion-timing-easing"},{"from":"ux-design-thinking","to":"motion-styleframes"},{"from":"ux-design-thinking","to":"ui-color"},{"from":"ui-color","to":"ui-typography"},{"from":"ui-typography","to":"ui-layout"},{"from":"motion-timing-easing","to":"ui-motion"},{"from":"ui-layout","to":"ui-motion"},{"from":"ui-motion","to":"ui-interaction-states"},{"from":"ui-motion","to":"ui-visual-communication"},{"from":"ui-layout","to":"ui-visual-communication"},{"from":"ui-interaction-states","to":"ux-interactive-prototype"},{"from":"ui-motion","to":"ux-interactive-prototype"},{"from":"ui-motion","to":"motion-editing"},{"from":"ui-motion","to":"motion-sound-design"},{"from":"motion-editing","to":"motion-sound-design"},{"from":"motion-timing-easing","to":"motion-3d-animation"},{"from":"ui-motion","to":"motion-3d-animation"},{"from":"motion-3d-animation","to":"motion-3d-rendering"},{"from":"motion-3d-rendering","to":"motion-compositing"},{"from":"ui-motion","to":"motion-compositing"},{"from":"ui-motion","to":"motion-brand-systems"},{"from":"motion-styleframes","to":"motion-brand-systems"},{"from":"ui-motion","to":"motion-toolchain"},{"from":"motion-toolchain","to":"motion-production"},{"from":"motion-compositing","to":"motion-production"},{"from":"ui-layout","to":"ui-figma"},{"from":"ui-figma","to":"ui-framer"},{"from":"ux-interactive-prototype","to":"ui-framer"},{"from":"ui-framer","to":"ui-handoff"},{"from":"ui-motion","to":"ui-handoff"},{"from":"ui-interaction-states","to":"ui-accessibility"},{"from":"ui-motion","to":"ui-accessibility"},{"from":"motion-production","to":"motion-showreel"},{"from":"motion-brand-systems","to":"motion-showreel"},{"from":"ui-figma","to":"ui-figjam"},{"from":"ux-design-thinking","to":"ui-figjam"},{"from":"ui-layout","to":"ui-design-systems"},{"from":"ui-motion","to":"ui-design-systems"},{"from":"ui-layout","to":"ui-responsive"},{"from":"ui-layout","to":"ui-data-visualization"},{"from":"ui-motion","to":"ui-data-visualization"}],"stage":{"width":1771,"height":1602,"offsetX":285.48816115618456,"offsetY":472},"counts":{"foundation":8,"core":15,"optional":5}};
     const byId = new Map(DATA.nodes.map((node) => [node.id, node]));
     const cards = [...document.querySelectorAll('.competency-card')];
     const edges = [...document.querySelectorAll('.edge')];
     const detail = document.getElementById('detail');
+    const viewport = document.getElementById('canvas-viewport');
+    const stage = document.getElementById('canvas-stage');
+    let zoom = 1;
+
+    function setZoom(next) {
+      zoom = Math.min(2.5, Math.max(.25, next));
+      stage.style.setProperty('--zoom', String(zoom));
+      document.getElementById('zoom-value').textContent = Math.round(zoom * 100) + '%';
+    }
+    function fitZoom() {
+      const header = document.querySelector('.app-header');
+      const topInset = header ? header.getBoundingClientRect().bottom + 18 : 40;
+      const availableHeight = Math.max(240, viewport.clientHeight - topInset - 40);
+      const scale = Math.min((viewport.clientWidth - 80) / stage.offsetWidth, availableHeight / stage.offsetHeight) * 0.94;
+      stage.style.top = String(topInset + availableHeight / 2) + 'px';
+      setZoom(Number.isFinite(scale) ? scale : 1);
+    }
+    document.getElementById('zoom-in').addEventListener('click', () => setZoom(zoom + 0.1));
+    document.getElementById('zoom-out').addEventListener('click', () => setZoom(zoom - 0.1));
+    fitZoom();
+    window.addEventListener('resize', fitZoom);
 
     function connected(id) {
       const ids = new Set([id]);

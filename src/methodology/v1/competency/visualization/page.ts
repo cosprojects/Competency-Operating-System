@@ -143,7 +143,7 @@ export function renderCanvasPage(data: VisualizationPageData, options: { activeP
       --ink: #132238;
       --muted: #64748b;
       --line: #cbd5e1;
-      --canvas: #f1f5f9;
+      --canvas: #eef4f8;
       --card: #ffffff;
       --foundation: #b45309;
       --foundation-bg: #fff7ed;
@@ -155,32 +155,31 @@ export function renderCanvasPage(data: VisualizationPageData, options: { activeP
       --optional-bg: #f8fafc;
       --optional-border: #cbd5e1;
       --accent: #0f766e;
+      --glass: rgba(255, 255, 255, .58);
+      --glass-line: rgba(255, 255, 255, .78);
+      --shadow: 0 18px 50px rgba(15, 23, 42, .14);
       font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
     }
     * { box-sizing: border-box; }
-    body { margin: 0; color: var(--ink); background: var(--canvas); }
-    .page { max-width: 1580px; margin: 0 auto; padding: 22px 22px 30px; }
-    .topbar { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; padding: 2px 2px 10px; }
-    .profession-tabs { display: flex; gap: 6px; flex-wrap: wrap; margin: 0 2px 12px; }
-    .profession-tab { border: 1px solid var(--line); background: #fff; color: var(--ink); border-radius: 999px; padding: 7px 12px; font-size: 12px; font-weight: 700; text-decoration: none; }
-    .profession-tab:hover { border-color: #94a3b8; }
-    .profession-tab.active { background: var(--ink); color: #fff; border-color: var(--ink); }
-    .eyebrow { color: var(--accent); font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
-    h1 { margin: 5px 0 4px; font-size: clamp(28px, 4vw, 48px); letter-spacing: -.04em; line-height: 1; }
-    .subtitle { margin: 0; color: var(--muted); font-size: 14px; }
-    .summary { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
-    .summary span { border: 1px solid var(--line); background: #fff; border-radius: 999px; padding: 7px 11px; font-size: 12px; font-weight: 700; white-space: nowrap; }
-    .summary .f { color: var(--foundation); } .summary .c { color: var(--core); } .summary .o { color: var(--optional); }
-    .banner { border: 1px solid #fde68a; background: #fffbeb; color: #92400e; border-radius: 12px; padding: 10px 13px; font-size: 12px; margin-bottom: 12px; }
-    .toolbar { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
-    .toolbar-label { color: var(--muted); font-size: 12px; margin-right: 2px; }
-    .filter { border: 1px solid var(--line); background: #fff; color: var(--ink); border-radius: 999px; padding: 7px 11px; font: inherit; font-size: 12px; font-weight: 700; cursor: pointer; }
-    .filter:hover { border-color: #94a3b8; }
-    .filter.active { background: var(--ink); color: #fff; border-color: var(--ink); }
-    .hint { margin-left: auto; color: var(--muted); font-size: 12px; }
-    .workspace { display: grid; grid-template-columns: minmax(0, 1fr) 310px; gap: 14px; align-items: start; }
-    .canvas-wrap { overflow: auto; border: 1px solid var(--line); border-radius: 18px; background-color: var(--canvas); background-image: radial-gradient(#cbd5e1 1px, transparent 1px); background-size: 22px 22px; box-shadow: inset 0 1px 0 #fff, 0 16px 40px rgba(15, 23, 42, .06); }
-    .canvas-stage { position: relative; }
+    html, body { height: 100%; }
+    body { margin: 0; overflow: hidden; color: var(--ink); background: var(--canvas); }
+
+    .canvas-viewport {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      background-color: var(--canvas);
+      background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    .canvas-stage {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) scale(var(--zoom, .55));
+      transform-origin: center center;
+      will-change: transform;
+    }
     .edges { position: absolute; inset: 0; overflow: visible; pointer-events: none; }
     .edge { fill: none; stroke: #94a3b8; stroke-width: 1.4; opacity: .55; transition: opacity .15s, stroke .15s; }
     .edge.is-active { stroke: var(--accent); stroke-width: 2.4; opacity: 1; }
@@ -199,23 +198,110 @@ export function renderCanvasPage(data: VisualizationPageData, options: { activeP
     .order { color: #94a3b8; font-size: 10px; font-variant-numeric: tabular-nums; }
     .competency-card h2 { margin: 0; font-size: 12px; line-height: 1.18; letter-spacing: -.01em; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
     .competency-card p { margin: 0; color: var(--muted); font-size: 10px; line-height: 1.28; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
-    .detail { position: sticky; top: 12px; border: 1px solid var(--line); border-radius: 18px; background: #fff; padding: 16px; box-shadow: 0 16px 40px rgba(15, 23, 42, .06); min-height: 240px; }
-    .detail[hidden] { display: none; }
-    .detail-close { float: right; border: 0; background: #f1f5f9; color: var(--muted); width: 26px; height: 26px; border-radius: 50%; cursor: pointer; font-size: 16px; }
-    .detail .tier-badge { display: inline-block; margin-bottom: 8px; }
-    .detail h2 { margin: 0 0 6px; font-size: 19px; line-height: 1.15; }
-    .detail .full { color: var(--muted); font-size: 12px; line-height: 1.45; margin: 0 0 12px; }
-    .detail h3 { margin: 12px 0 4px; font-size: 10px; text-transform: uppercase; letter-spacing: .09em; color: var(--muted); }
-    .detail ul { margin: 0; padding-left: 17px; color: var(--ink); font-size: 12px; line-height: 1.45; }
-    .detail li { margin: 2px 0; }
-    .detail .muted { color: var(--muted); font-size: 11px; line-height: 1.4; }
-    @media (max-width: 1050px) { .workspace { grid-template-columns: 1fr; } .detail { position: static; } .summary { justify-content: flex-start; } .topbar { align-items: flex-start; flex-direction: column; } }
-    @media (max-width: 620px) { .page { padding: 14px; } .hint { display: none; } }
+
+    .app-header {
+      position: fixed;
+      z-index: 30;
+      top: 40px;
+      left: 40px;
+      right: 40px;
+      padding: 20px 24px 16px;
+      border: 1px solid var(--glass-line);
+      border-radius: 24px;
+      background: var(--glass);
+      -webkit-backdrop-filter: blur(30px) saturate(150%);
+      backdrop-filter: blur(30px) saturate(150%);
+      box-shadow: var(--shadow);
+    }
+    .header-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; }
+    .eyebrow { color: var(--accent); font-size: 10px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    h1 { margin: 5px 0 4px; font-size: clamp(24px, 3.2vw, 42px); letter-spacing: -.045em; line-height: 1; }
+    .subtitle { margin: 0; color: var(--muted); font-size: 13px; }
+    .summary { display: flex; gap: 7px; flex-wrap: wrap; justify-content: flex-end; }
+    .summary span { border: 1px solid rgba(203, 213, 225, .9); background: rgba(255, 255, 255, .7); border-radius: 999px; padding: 6px 10px; font-size: 11px; font-weight: 700; white-space: nowrap; }
+    .summary .f { color: var(--foundation); } .summary .c { color: var(--core); } .summary .o { color: var(--optional); }
+    .header-bottom { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 14px; }
+    .profession-tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+    .profession-tab { border: 1px solid rgba(203, 213, 225, .9); background: rgba(255, 255, 255, .58); color: var(--ink); border-radius: 999px; padding: 7px 12px; font-size: 12px; font-weight: 700; text-decoration: none; transition: border-color .15s, background .15s; }
+    .profession-tab:hover { border-color: #94a3b8; background: rgba(255, 255, 255, .85); }
+    .profession-tab.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+    .hint { margin-left: auto; color: var(--muted); font-size: 11px; }
+    .banner { margin-top: 12px; border: 1px solid rgba(253, 230, 138, .9); background: rgba(255, 251, 235, .72); color: #92400e; border-radius: 14px; padding: 8px 12px; font-size: 11px; }
+
+    .zoom-controls {
+      position: fixed;
+      z-index: 35;
+      left: 40px;
+      bottom: 40px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 5px;
+      border: 1px solid var(--glass-line);
+      border-radius: 16px;
+      background: var(--glass);
+      -webkit-backdrop-filter: blur(30px) saturate(150%);
+      backdrop-filter: blur(30px) saturate(150%);
+      box-shadow: var(--shadow);
+    }
+    .zoom-controls button { width: 34px; height: 34px; border: 1px solid transparent; border-radius: 11px; background: transparent; color: var(--ink); font: inherit; font-size: 20px; line-height: 1; cursor: pointer; }
+    .zoom-controls button:hover { background: rgba(255, 255, 255, .8); border-color: var(--line); }
+    .zoom-controls button:active { transform: translateY(1px); }
+    .zoom-value { min-width: 48px; text-align: center; color: var(--muted); font-size: 11px; font-weight: 800; font-variant-numeric: tabular-nums; }
+
+    .detail-panel {
+      position: fixed;
+      z-index: 40;
+      top: 40px;
+      right: 40px;
+      bottom: 40px;
+      width: min(380px, calc(100vw - 80px));
+      overflow: auto;
+      padding: 24px;
+      border: 1px solid var(--glass-line);
+      border-radius: 24px;
+      background: var(--glass);
+      -webkit-backdrop-filter: blur(30px) saturate(150%);
+      backdrop-filter: blur(30px) saturate(150%);
+      box-shadow: var(--shadow);
+    }
+    .detail-panel[hidden] { display: none; }
+    .detail-close { float: right; border: 0; background: rgba(241, 245, 249, .8); color: var(--muted); width: 30px; height: 30px; border-radius: 50%; cursor: pointer; font-size: 18px; line-height: 1; }
+    .detail-panel .tier-badge { display: inline-block; margin-bottom: 10px; }
+    .detail-panel h2 { margin: 0 0 8px; font-size: 22px; line-height: 1.12; letter-spacing: -.02em; }
+    .detail-panel .full { color: var(--muted); font-size: 13px; line-height: 1.5; margin: 0 0 16px; }
+    .detail-panel h3 { margin: 16px 0 5px; font-size: 10px; text-transform: uppercase; letter-spacing: .09em; color: var(--muted); }
+    .detail-panel ul { margin: 0; padding-left: 18px; color: var(--ink); font-size: 13px; line-height: 1.5; }
+    .detail-panel li { margin: 3px 0; }
+    .detail-panel .muted { color: var(--muted); font-size: 11px; line-height: 1.45; margin-top: 16px; }
+
+    @media (max-width: 720px) {
+      .app-header { top: 16px; left: 16px; right: 16px; padding: 16px; border-radius: 20px; }
+      .header-top { flex-direction: column; gap: 12px; }
+      .summary { justify-content: flex-start; }
+      .hint { display: none; }
+      .zoom-controls { left: 16px; bottom: 16px; }
+      .detail-panel { top: 16px; right: 16px; bottom: 16px; width: calc(100vw - 32px); border-radius: 20px; }
+    }
   </style>
 </head>
 <body>
-  <div class="page">
-    <header class="topbar">
+  <div class="canvas-viewport" id="canvas-viewport" aria-label="Канвас компетенций">
+    <div class="canvas-stage" id="canvas-stage" style="width:${data.stage.width}px;height:${data.stage.height}px">
+      <svg class="edges" width="${data.stage.width}" height="${data.stage.height}" viewBox="0 0 ${data.stage.width} ${data.stage.height}" aria-hidden="true">
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8" />
+          </marker>
+        </defs>
+        ${edgePaths(data)}
+      </svg>
+      ${data.nodes.map((node) => nodeCard(node, data)).join("\n      ")}
+    </div>
+  </div>
+
+  <header class="app-header">
+    <div class="header-top">
       <div>
         <div class="eyebrow">AXIONA · Competency Canvas</div>
         <h1>${esc(data.title)}</h1>
@@ -226,45 +312,59 @@ export function renderCanvasPage(data: VisualizationPageData, options: { activeP
         <span class="c">${data.counts.core} основных</span>
         <span class="o">${data.counts.optional} необязательных</span>
       </div>
-    </header>
-    <nav class="profession-tabs" aria-label="Профессии">${professionTabs}</nav>
-    <div class="banner"><strong>Черновой слой.</strong> ${esc(data.note)} Сгенерировано ${esc(data.generatedOn)}.</div>
-    <div class="toolbar">
+    </div>
+    <div class="header-bottom">
+      <nav class="profession-tabs" aria-label="Профессии">${professionTabs}</nav>
       <span class="hint">Наведите на карточку, чтобы увидеть связи; нажмите — подробности</span>
     </div>
-    <main class="workspace">
-      <div class="canvas-wrap">
-        <div class="canvas-stage" style="width:${data.stage.width}px;height:${data.stage.height}px">
-          <svg class="edges" width="${data.stage.width}" height="${data.stage.height}" viewBox="0 0 ${data.stage.width} ${data.stage.height}" aria-hidden="true">
-            <defs>
-              <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-                <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8" />
-              </marker>
-            </defs>
-            ${edgePaths(data)}
-          </svg>
-          ${data.nodes.map((node) => nodeCard(node, data)).join("\n          ")}
-        </div>
-      </div>
-      <aside class="detail" id="detail" hidden>
-        <button class="detail-close" id="detail-close" aria-label="Закрыть">×</button>
-        <span class="tier-badge" id="detail-tier"></span>
-        <h2 id="detail-title"></h2>
-        <p class="full" id="detail-full"></p>
-        <h3>Компоненты</h3>
-        <ul id="detail-components"></ul>
-        <h3>Теги и знания</h3>
-        <ul id="detail-tags"></ul>
-        <p class="muted" id="detail-meta"></p>
-      </aside>
-    </main>
+    <div class="banner"><strong>Черновой слой.</strong> ${esc(data.note)} Сгенерировано ${esc(data.generatedOn)}.</div>
+  </header>
+
+  <div class="zoom-controls" aria-label="Масштаб канваса">
+    <button type="button" id="zoom-out" aria-label="Уменьшить">−</button>
+    <span class="zoom-value" id="zoom-value" aria-live="polite">100%</span>
+    <button type="button" id="zoom-in" aria-label="Увеличить">+</button>
   </div>
+
+  <aside class="detail-panel" id="detail" hidden>
+    <button class="detail-close" id="detail-close" aria-label="Закрыть">×</button>
+    <span class="tier-badge" id="detail-tier"></span>
+    <h2 id="detail-title"></h2>
+    <p class="full" id="detail-full"></p>
+    <h3>Компоненты</h3>
+    <ul id="detail-components"></ul>
+    <h3>Теги и знания</h3>
+    <ul id="detail-tags"></ul>
+    <p class="muted" id="detail-meta"></p>
+  </aside>
+
   <script>
     const DATA = ${embedded};
     const byId = new Map(DATA.nodes.map((node) => [node.id, node]));
     const cards = [...document.querySelectorAll('.competency-card')];
     const edges = [...document.querySelectorAll('.edge')];
     const detail = document.getElementById('detail');
+    const viewport = document.getElementById('canvas-viewport');
+    const stage = document.getElementById('canvas-stage');
+    let zoom = 1;
+
+    function setZoom(next) {
+      zoom = Math.min(2.5, Math.max(.25, next));
+      stage.style.setProperty('--zoom', String(zoom));
+      document.getElementById('zoom-value').textContent = Math.round(zoom * 100) + '%';
+    }
+    function fitZoom() {
+      const header = document.querySelector('.app-header');
+      const topInset = header ? header.getBoundingClientRect().bottom + 18 : 40;
+      const availableHeight = Math.max(240, viewport.clientHeight - topInset - 40);
+      const scale = Math.min((viewport.clientWidth - 80) / stage.offsetWidth, availableHeight / stage.offsetHeight) * 0.94;
+      stage.style.top = String(topInset + availableHeight / 2) + 'px';
+      setZoom(Number.isFinite(scale) ? scale : 1);
+    }
+    document.getElementById('zoom-in').addEventListener('click', () => setZoom(zoom + 0.1));
+    document.getElementById('zoom-out').addEventListener('click', () => setZoom(zoom - 0.1));
+    fitZoom();
+    window.addEventListener('resize', fitZoom);
 
     function connected(id) {
       const ids = new Set([id]);

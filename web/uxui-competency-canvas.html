@@ -10,7 +10,7 @@
       --ink: #132238;
       --muted: #64748b;
       --line: #cbd5e1;
-      --canvas: #f1f5f9;
+      --canvas: #eef4f8;
       --card: #ffffff;
       --foundation: #b45309;
       --foundation-bg: #fff7ed;
@@ -22,32 +22,31 @@
       --optional-bg: #f8fafc;
       --optional-border: #cbd5e1;
       --accent: #0f766e;
+      --glass: rgba(255, 255, 255, .58);
+      --glass-line: rgba(255, 255, 255, .78);
+      --shadow: 0 18px 50px rgba(15, 23, 42, .14);
       font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
     }
     * { box-sizing: border-box; }
-    body { margin: 0; color: var(--ink); background: var(--canvas); }
-    .page { max-width: 1580px; margin: 0 auto; padding: 22px 22px 30px; }
-    .topbar { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; padding: 2px 2px 10px; }
-    .profession-tabs { display: flex; gap: 6px; flex-wrap: wrap; margin: 0 2px 12px; }
-    .profession-tab { border: 1px solid var(--line); background: #fff; color: var(--ink); border-radius: 999px; padding: 7px 12px; font-size: 12px; font-weight: 700; text-decoration: none; }
-    .profession-tab:hover { border-color: #94a3b8; }
-    .profession-tab.active { background: var(--ink); color: #fff; border-color: var(--ink); }
-    .eyebrow { color: var(--accent); font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
-    h1 { margin: 5px 0 4px; font-size: clamp(28px, 4vw, 48px); letter-spacing: -.04em; line-height: 1; }
-    .subtitle { margin: 0; color: var(--muted); font-size: 14px; }
-    .summary { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
-    .summary span { border: 1px solid var(--line); background: #fff; border-radius: 999px; padding: 7px 11px; font-size: 12px; font-weight: 700; white-space: nowrap; }
-    .summary .f { color: var(--foundation); } .summary .c { color: var(--core); } .summary .o { color: var(--optional); }
-    .banner { border: 1px solid #fde68a; background: #fffbeb; color: #92400e; border-radius: 12px; padding: 10px 13px; font-size: 12px; margin-bottom: 12px; }
-    .toolbar { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
-    .toolbar-label { color: var(--muted); font-size: 12px; margin-right: 2px; }
-    .filter { border: 1px solid var(--line); background: #fff; color: var(--ink); border-radius: 999px; padding: 7px 11px; font: inherit; font-size: 12px; font-weight: 700; cursor: pointer; }
-    .filter:hover { border-color: #94a3b8; }
-    .filter.active { background: var(--ink); color: #fff; border-color: var(--ink); }
-    .hint { margin-left: auto; color: var(--muted); font-size: 12px; }
-    .workspace { display: grid; grid-template-columns: minmax(0, 1fr) 310px; gap: 14px; align-items: start; }
-    .canvas-wrap { overflow: auto; border: 1px solid var(--line); border-radius: 18px; background-color: var(--canvas); background-image: radial-gradient(#cbd5e1 1px, transparent 1px); background-size: 22px 22px; box-shadow: inset 0 1px 0 #fff, 0 16px 40px rgba(15, 23, 42, .06); }
-    .canvas-stage { position: relative; }
+    html, body { height: 100%; }
+    body { margin: 0; overflow: hidden; color: var(--ink); background: var(--canvas); }
+
+    .canvas-viewport {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      background-color: var(--canvas);
+      background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    .canvas-stage {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) scale(var(--zoom, .55));
+      transform-origin: center center;
+      will-change: transform;
+    }
     .edges { position: absolute; inset: 0; overflow: visible; pointer-events: none; }
     .edge { fill: none; stroke: #94a3b8; stroke-width: 1.4; opacity: .55; transition: opacity .15s, stroke .15s; }
     .edge.is-active { stroke: var(--accent); stroke-width: 2.4; opacity: 1; }
@@ -66,49 +65,103 @@
     .order { color: #94a3b8; font-size: 10px; font-variant-numeric: tabular-nums; }
     .competency-card h2 { margin: 0; font-size: 12px; line-height: 1.18; letter-spacing: -.01em; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
     .competency-card p { margin: 0; color: var(--muted); font-size: 10px; line-height: 1.28; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
-    .detail { position: sticky; top: 12px; border: 1px solid var(--line); border-radius: 18px; background: #fff; padding: 16px; box-shadow: 0 16px 40px rgba(15, 23, 42, .06); min-height: 240px; }
-    .detail[hidden] { display: none; }
-    .detail-close { float: right; border: 0; background: #f1f5f9; color: var(--muted); width: 26px; height: 26px; border-radius: 50%; cursor: pointer; font-size: 16px; }
-    .detail .tier-badge { display: inline-block; margin-bottom: 8px; }
-    .detail h2 { margin: 0 0 6px; font-size: 19px; line-height: 1.15; }
-    .detail .full { color: var(--muted); font-size: 12px; line-height: 1.45; margin: 0 0 12px; }
-    .detail h3 { margin: 12px 0 4px; font-size: 10px; text-transform: uppercase; letter-spacing: .09em; color: var(--muted); }
-    .detail ul { margin: 0; padding-left: 17px; color: var(--ink); font-size: 12px; line-height: 1.45; }
-    .detail li { margin: 2px 0; }
-    .detail .muted { color: var(--muted); font-size: 11px; line-height: 1.4; }
-    @media (max-width: 1050px) { .workspace { grid-template-columns: 1fr; } .detail { position: static; } .summary { justify-content: flex-start; } .topbar { align-items: flex-start; flex-direction: column; } }
-    @media (max-width: 620px) { .page { padding: 14px; } .hint { display: none; } }
+
+    .app-header {
+      position: fixed;
+      z-index: 30;
+      top: 40px;
+      left: 40px;
+      right: 40px;
+      padding: 20px 24px 16px;
+      border: 1px solid var(--glass-line);
+      border-radius: 24px;
+      background: var(--glass);
+      -webkit-backdrop-filter: blur(30px) saturate(150%);
+      backdrop-filter: blur(30px) saturate(150%);
+      box-shadow: var(--shadow);
+    }
+    .header-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; }
+    .eyebrow { color: var(--accent); font-size: 10px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    h1 { margin: 5px 0 4px; font-size: clamp(24px, 3.2vw, 42px); letter-spacing: -.045em; line-height: 1; }
+    .subtitle { margin: 0; color: var(--muted); font-size: 13px; }
+    .summary { display: flex; gap: 7px; flex-wrap: wrap; justify-content: flex-end; }
+    .summary span { border: 1px solid rgba(203, 213, 225, .9); background: rgba(255, 255, 255, .7); border-radius: 999px; padding: 6px 10px; font-size: 11px; font-weight: 700; white-space: nowrap; }
+    .summary .f { color: var(--foundation); } .summary .c { color: var(--core); } .summary .o { color: var(--optional); }
+    .header-bottom { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 14px; }
+    .profession-tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+    .profession-tab { border: 1px solid rgba(203, 213, 225, .9); background: rgba(255, 255, 255, .58); color: var(--ink); border-radius: 999px; padding: 7px 12px; font-size: 12px; font-weight: 700; text-decoration: none; transition: border-color .15s, background .15s; }
+    .profession-tab:hover { border-color: #94a3b8; background: rgba(255, 255, 255, .85); }
+    .profession-tab.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+    .hint { margin-left: auto; color: var(--muted); font-size: 11px; }
+    .banner { margin-top: 12px; border: 1px solid rgba(253, 230, 138, .9); background: rgba(255, 251, 235, .72); color: #92400e; border-radius: 14px; padding: 8px 12px; font-size: 11px; }
+
+    .zoom-controls {
+      position: fixed;
+      z-index: 35;
+      left: 40px;
+      bottom: 40px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 5px;
+      border: 1px solid var(--glass-line);
+      border-radius: 16px;
+      background: var(--glass);
+      -webkit-backdrop-filter: blur(30px) saturate(150%);
+      backdrop-filter: blur(30px) saturate(150%);
+      box-shadow: var(--shadow);
+    }
+    .zoom-controls button { width: 34px; height: 34px; border: 1px solid transparent; border-radius: 11px; background: transparent; color: var(--ink); font: inherit; font-size: 20px; line-height: 1; cursor: pointer; }
+    .zoom-controls button:hover { background: rgba(255, 255, 255, .8); border-color: var(--line); }
+    .zoom-controls button:active { transform: translateY(1px); }
+    .zoom-value { min-width: 48px; text-align: center; color: var(--muted); font-size: 11px; font-weight: 800; font-variant-numeric: tabular-nums; }
+
+    .detail-panel {
+      position: fixed;
+      z-index: 40;
+      top: 40px;
+      right: 40px;
+      bottom: 40px;
+      width: min(380px, calc(100vw - 80px));
+      overflow: auto;
+      padding: 24px;
+      border: 1px solid var(--glass-line);
+      border-radius: 24px;
+      background: var(--glass);
+      -webkit-backdrop-filter: blur(30px) saturate(150%);
+      backdrop-filter: blur(30px) saturate(150%);
+      box-shadow: var(--shadow);
+    }
+    .detail-panel[hidden] { display: none; }
+    .detail-close { float: right; border: 0; background: rgba(241, 245, 249, .8); color: var(--muted); width: 30px; height: 30px; border-radius: 50%; cursor: pointer; font-size: 18px; line-height: 1; }
+    .detail-panel .tier-badge { display: inline-block; margin-bottom: 10px; }
+    .detail-panel h2 { margin: 0 0 8px; font-size: 22px; line-height: 1.12; letter-spacing: -.02em; }
+    .detail-panel .full { color: var(--muted); font-size: 13px; line-height: 1.5; margin: 0 0 16px; }
+    .detail-panel h3 { margin: 16px 0 5px; font-size: 10px; text-transform: uppercase; letter-spacing: .09em; color: var(--muted); }
+    .detail-panel ul { margin: 0; padding-left: 18px; color: var(--ink); font-size: 13px; line-height: 1.5; }
+    .detail-panel li { margin: 3px 0; }
+    .detail-panel .muted { color: var(--muted); font-size: 11px; line-height: 1.45; margin-top: 16px; }
+
+    @media (max-width: 720px) {
+      .app-header { top: 16px; left: 16px; right: 16px; padding: 16px; border-radius: 20px; }
+      .header-top { flex-direction: column; gap: 12px; }
+      .summary { justify-content: flex-start; }
+      .hint { display: none; }
+      .zoom-controls { left: 16px; bottom: 16px; }
+      .detail-panel { top: 16px; right: 16px; bottom: 16px; width: calc(100vw - 32px); border-radius: 20px; }
+    }
   </style>
 </head>
 <body>
-  <div class="page">
-    <header class="topbar">
-      <div>
-        <div class="eyebrow">AXIONA · Competency Canvas</div>
-        <h1>UX/UI дизайнер</h1>
-        <p class="subtitle">Сеть компетенций: от фундамента к углублённым и необязательным</p>
-      </div>
-      <div class="summary">
-        <span class="f">5 фундаментальных</span>
-        <span class="c">23 основных</span>
-        <span class="o">6 необязательных</span>
-      </div>
-    </header>
-    <nav class="profession-tabs" aria-label="Профессии"><a class="profession-tab active" href="uxui-competency-canvas.html">UX/UI</a><a class="profession-tab" href="it-product-competency-canvas.html">Product</a><a class="profession-tab" href="it-motion-competency-canvas.html">Motion</a><a class="profession-tab" href="it-graphic-competency-canvas.html">Graphic</a></nav>
-    <div class="banner"><strong>Черновой слой.</strong> Каноническая карта UX/UI: два блока, 9 разделов, 34 компетенции. Связи — учебная последовательность внутри разделов; статусы coverage видны в отчёте. Покрытие: 34 covered / 0 partial / 0 gap. Сгенерировано 2026-10-25.</div>
-    <div class="toolbar">
-      <span class="hint">Наведите на карточку, чтобы увидеть связи; нажмите — подробности</span>
-    </div>
-    <main class="workspace">
-      <div class="canvas-wrap">
-        <div class="canvas-stage" style="width:2135px;height:2311px">
-          <svg class="edges" width="2135" height="2311" viewBox="0 0 2135 2311" aria-hidden="true">
-            <defs>
-              <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-                <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8" />
-              </marker>
-            </defs>
-            <path class="edge" data-from="ui-color" data-to="ui-typography" d="M 1327.4 1101.3 Q 1123.7 1124.1 937.4 1209.3" marker-end="url(#arrow)" />
+  <div class="canvas-viewport" id="canvas-viewport" aria-label="Канвас компетенций">
+    <div class="canvas-stage" id="canvas-stage" style="width:2135px;height:2311px">
+      <svg class="edges" width="2135" height="2311" viewBox="0 0 2135 2311" aria-hidden="true">
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8" />
+          </marker>
+        </defs>
+        <path class="edge" data-from="ui-color" data-to="ui-typography" d="M 1327.4 1101.3 Q 1123.7 1124.1 937.4 1209.3" marker-end="url(#arrow)" />
         <path class="edge" data-from="ui-typography" data-to="ui-layout" d="M 937.4 1209.3 Q 1067.4 1230.1 1197.4 1209.3" marker-end="url(#arrow)" />
         <path class="edge" data-from="ux-design-thinking" data-to="ux-user-research" d="M 807.4 1101.3 Q 1001.0 724.4 1067.4 306.0" marker-end="url(#arrow)" />
         <path class="edge" data-from="ux-user-research" data-to="ux-personas" d="M 1067.4 306.0 Q 1179.4 340.1 1296.5 337.5" marker-end="url(#arrow)" />
@@ -134,8 +187,8 @@
         <path class="edge" data-from="ui-figjam" data-to="ui-framer" d="M 1958.7 1669.9 Q 1471.9 1855.9 1067.4 2184.5" marker-end="url(#arrow)" />
         <path class="edge" data-from="ui-handoff" data-to="ui-web-technologies" d="M 838.2 337.5 Q 400.5 950.7 176.0 1669.9" marker-end="url(#arrow)" />
         <path class="edge" data-from="ui-web-technologies" data-to="ui-data-visualization" d="M 176.0 1669.9 Q 258.3 1155.3 176.0 640.6" marker-end="url(#arrow)" />
-          </svg>
-          <article class="competency-card tier-foundation" data-id="ux-design-thinking" data-tier="foundation" style="left:697.4px;top:1055.3px;width:220px;height:92px;opacity:1" tabindex="0">
+      </svg>
+      <article class="competency-card tier-foundation" data-id="ux-design-thinking" data-tier="foundation" style="left:697.4px;top:1055.3px;width:220px;height:92px;opacity:1" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Фундаментальная</span>
             <span class="order">1</span>
@@ -143,7 +196,7 @@
           <h2>Дизайн-мышление</h2>
           <p>Системный подход к решению задач: понимание пользователя, формулировка проблемы, генерация и проверка гипотез, итерации.</p>
         </article>
-          <article class="competency-card tier-foundation" data-id="ux-information-architecture" data-tier="foundation" style="left:957.4px;top:1055.3px;width:220px;height:92px;opacity:1" tabindex="0">
+      <article class="competency-card tier-foundation" data-id="ux-information-architecture" data-tier="foundation" style="left:957.4px;top:1055.3px;width:220px;height:92px;opacity:1" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Фундаментальная</span>
             <span class="order">5</span>
@@ -151,7 +204,7 @@
           <h2>Информационная архитектура</h2>
           <p>Структура контента и навигации, категоризация и находимость информации.</p>
         </article>
-          <article class="competency-card tier-foundation" data-id="ui-color" data-tier="foundation" style="left:1217.4px;top:1055.3px;width:220px;height:92px;opacity:1" tabindex="0">
+      <article class="competency-card tier-foundation" data-id="ui-color" data-tier="foundation" style="left:1217.4px;top:1055.3px;width:220px;height:92px;opacity:1" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Фундаментальная</span>
             <span class="order">18</span>
@@ -159,7 +212,7 @@
           <h2>Теория цвета и колористика</h2>
           <p>Физика цвета, восприятие, гармония, контраст и культурный контекст.</p>
         </article>
-          <article class="competency-card tier-foundation" data-id="ui-typography" data-tier="foundation" style="left:827.4px;top:1163.3px;width:220px;height:92px;opacity:1" tabindex="0">
+      <article class="competency-card tier-foundation" data-id="ui-typography" data-tier="foundation" style="left:827.4px;top:1163.3px;width:220px;height:92px;opacity:1" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Фундаментальная</span>
             <span class="order">19</span>
@@ -167,7 +220,7 @@
           <h2>Типографика</h2>
           <p>Шрифтовая иерархия, читаемость, ритм и типографические системы.</p>
         </article>
-          <article class="competency-card tier-foundation" data-id="ui-layout" data-tier="foundation" style="left:1087.4px;top:1163.3px;width:220px;height:92px;opacity:1" tabindex="0">
+      <article class="competency-card tier-foundation" data-id="ui-layout" data-tier="foundation" style="left:1087.4px;top:1163.3px;width:220px;height:92px;opacity:1" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Фундаментальная</span>
             <span class="order">20</span>
@@ -175,7 +228,7 @@
           <h2>Композиция, сетки и визуальная иерархия</h2>
           <p>Управление вниманием через композицию, сетки, пропорции и иерархию.</p>
         </article>
-          <article class="competency-card tier-core" data-id="ux-user-research" data-tier="core" style="left:971.4px;top:260.0px;width:192px;height:92px;opacity:0.9" tabindex="0">
+      <article class="competency-card tier-core" data-id="ux-user-research" data-tier="core" style="left:971.4px;top:260.0px;width:192px;height:92px;opacity:0.9" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Основная</span>
             <span class="order">2</span>
@@ -183,7 +236,7 @@
           <h2>Пользовательские исследования</h2>
           <p>Планирование и проведение исследований, синтез наблюдений в проверяемые инсайты.</p>
         </article>
-          <article class="competency-card tier-core" data-id="ux-personas" data-tier="core" style="left:1200.5px;top:291.5px;width:192px;height:92px;opacity:0.9" tabindex="0">
+      <article class="competency-card tier-core" data-id="ux-personas" data-tier="core" style="left:1200.5px;top:291.5px;width:192px;height:92px;opacity:0.9" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Основная</span>
             <span class="order">3</span>
@@ -191,7 +244,7 @@
           <h2>Персоны и сегментация</h2>
           <p>Модели целевых пользователей, их целей, контекста и критериев выбора.</p>
         </article>
-          <article class="competency-card tier-core" data-id="ux-interviews" data-tier="core" style="left:1412.6px;top:383.6px;width:192px;height:92px;opacity:0.9" tabindex="0">
+      <article class="competency-card tier-core" data-id="ux-interviews" data-tier="core" style="left:1412.6px;top:383.6px;width:192px;height:92px;opacity:0.9" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Основная</span>
             <span class="order">4</span>
@@ -199,7 +252,7 @@
           <h2>Интервью и наблюдение</h2>
           <p>Подготовка и проведение глубинных интервью, наблюдений и анализ качественных данных.</p>
         </article>
-          <article class="competency-card tier-core" data-id="ux-user-flows" data-tier="core" style="left:1592.0px;top:529.6px;width:192px;height:92px;opacity:0.9" tabindex="0">
+      <article class="competency-card tier-core" data-id="ux-user-flows" data-tier="core" style="left:1592.0px;top:529.6px;width:192px;height:92px;opacity:0.9" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Основная</span>
             <span class="order">6</span>
@@ -207,7 +260,7 @@
           <h2>Пользовательские сценарии и флоу</h2>
           <p>Моделирование пути пользователя, развилок, ошибок и восстановления.</p>
         </article>
-          <article class="competency-card tier-core" data-id="ux-requirements" data-tier="core" style="left:1725.4px;top:718.5px;width:192px;height:92px;opacity:0.9" tabindex="0">
+      <article class="competency-card tier-core" data-id="ux-requirements" data-tier="core" style="left:1725.4px;top:718.5px;width:192px;height:92px;opacity:0.9" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Основная</span>
             <span class="order">7</span>
@@ -215,7 +268,7 @@
           <h2>Анализ требований и постановка задач</h2>
           <p>Перевод бизнес- и пользовательских потребностей в проверяемые требования и ограничения.</p>
         </article>
-          <article class="competency-card tier-core" data-id="ux-wireframes" data-tier="core" style="left:1802.8px;top:936.5px;width:192px;height:92px;opacity:0.9" tabindex="0">
+      <article class="competency-card tier-core" data-id="ux-wireframes" data-tier="core" style="left:1802.8px;top:936.5px;width:192px;height:92px;opacity:0.9" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Основная</span>
             <span class="order">8</span>
@@ -223,7 +276,7 @@
           <h2>Вайрфреймы и структура экранов</h2>
           <p>Быстрая структура экранов и взаимодействий без визуальной детализации.</p>
         </article>
-          <article class="competency-card tier-core" data-id="ux-lowfi-prototype" data-tier="core" style="left:1818.6px;top:1167.2px;width:192px;height:92px;opacity:0.9" tabindex="0">
+      <article class="competency-card tier-core" data-id="ux-lowfi-prototype" data-tier="core" style="left:1818.6px;top:1167.2px;width:192px;height:92px;opacity:0.9" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Основная</span>
             <span class="order">9</span>
@@ -231,7 +284,7 @@
           <h2>Низкодетализированные прототипы</h2>
           <p>Быстрые бумажные и схематичные прототипы для проверки структуры.</p>
         </article>
-          <article class="competency-card tier-core" data-id="ux-hifi-prototype" data-tier="core" style="left:1771.6px;top:1393.6px;width:192px;height:92px;opacity:0.9" tabindex="0">
+      <article class="competency-card tier-core" data-id="ux-hifi-prototype" data-tier="core" style="left:1771.6px;top:1393.6px;width:192px;height:92px;opacity:0.9" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Основная</span>
             <span class="order">10</span>
@@ -239,7 +292,7 @@
           <h2>Высокодетализированные прототипы</h2>
           <p>Детализированные прототипы, приближенные к финальному интерфейсу.</p>
         </article>
-          <article class="competency-card tier-core" data-id="ux-interactive-prototype" data-tier="core" style="left:1665.2px;top:1599.0px;width:192px;height:92px;opacity:0.9" tabindex="0">
+      <article class="competency-card tier-core" data-id="ux-interactive-prototype" data-tier="core" style="left:1665.2px;top:1599.0px;width:192px;height:92px;opacity:0.9" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Основная</span>
             <span class="order">11</span>
@@ -247,7 +300,7 @@
           <h2>Интерактивные прототипы</h2>
           <p>Прототипы с переходами и состояниями для проверки поведения продукта.</p>
         </article>
-          <article class="competency-card tier-core" data-id="ux-usability-testing" data-tier="core" style="left:1507.3px;top:1768.0px;width:192px;height:92px;opacity:0.9" tabindex="0">
+      <article class="competency-card tier-core" data-id="ux-usability-testing" data-tier="core" style="left:1507.3px;top:1768.0px;width:192px;height:92px;opacity:0.9" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Основная</span>
             <span class="order">12</span>
@@ -255,7 +308,7 @@
           <h2>Юзабилити-тестирование</h2>
           <p>Проверка сценариев и прототипов на реальных пользователях, фиксация и приоритизация проблем.</p>
         </article>
-          <article class="competency-card tier-core" data-id="ux-product-thinking" data-tier="core" style="left:1309.7px;top:1888.2px;width:192px;height:92px;opacity:0.9" tabindex="0">
+      <article class="competency-card tier-core" data-id="ux-product-thinking" data-tier="core" style="left:1309.7px;top:1888.2px;width:192px;height:92px;opacity:0.9" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Основная</span>
             <span class="order">14</span>
@@ -263,7 +316,7 @@
           <h2>Продуктовое мышление</h2>
           <p>Понимание ценности, аудитории, ограничений и жизненного цикла продукта.</p>
         </article>
-          <article class="competency-card tier-core" data-id="ux-metrics" data-tier="core" style="left:1087.0px;top:1950.6px;width:192px;height:92px;opacity:0.9" tabindex="0">
+      <article class="competency-card tier-core" data-id="ux-metrics" data-tier="core" style="left:1087.0px;top:1950.6px;width:192px;height:92px;opacity:0.9" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Основная</span>
             <span class="order">15</span>
@@ -271,7 +324,7 @@
           <h2>Продуктовые метрики и бизнес-обоснование</h2>
           <p>Связь дизайн-решений с метриками, юнит-экономикой и бизнес-результатом.</p>
         </article>
-          <article class="competency-card tier-core" data-id="ux-analytics" data-tier="core" style="left:855.7px;top:1950.6px;width:192px;height:92px;opacity:0.9" tabindex="0">
+      <article class="competency-card tier-core" data-id="ux-analytics" data-tier="core" style="left:855.7px;top:1950.6px;width:192px;height:92px;opacity:0.9" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Основная</span>
             <span class="order">17</span>
@@ -279,7 +332,7 @@
           <h2>Продуктовая аналитика</h2>
           <p>Работа с поведенческими данными, воронками и метриками для проверки гипотез.</p>
         </article>
-          <article class="competency-card tier-core" data-id="ui-visual-elements" data-tier="core" style="left:633.0px;top:1888.2px;width:192px;height:92px;opacity:0.9" tabindex="0">
+      <article class="competency-card tier-core" data-id="ui-visual-elements" data-tier="core" style="left:633.0px;top:1888.2px;width:192px;height:92px;opacity:0.9" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Основная</span>
             <span class="order">21</span>
@@ -287,7 +340,7 @@
           <h2>Иконки и визуальные элементы</h2>
           <p>Иконки, графика и визуальные элементы как часть интерфейсной системы.</p>
         </article>
-          <article class="competency-card tier-core" data-id="ui-visual-communication" data-tier="core" style="left:435.4px;top:1768.0px;width:192px;height:92px;opacity:0.9" tabindex="0">
+      <article class="competency-card tier-core" data-id="ui-visual-communication" data-tier="core" style="left:435.4px;top:1768.0px;width:192px;height:92px;opacity:0.9" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Основная</span>
             <span class="order">22</span>
@@ -295,7 +348,7 @@
           <h2>Визуальная коммуникация</h2>
           <p>Стилистика, визуальные коды и целостность интерфейсной коммуникации.</p>
         </article>
-          <article class="competency-card tier-core" data-id="ui-design-systems" data-tier="core" style="left:277.5px;top:1599.0px;width:192px;height:92px;opacity:0.9" tabindex="0">
+      <article class="competency-card tier-core" data-id="ui-design-systems" data-tier="core" style="left:277.5px;top:1599.0px;width:192px;height:92px;opacity:0.9" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Основная</span>
             <span class="order">23</span>
@@ -303,7 +356,7 @@
           <h2>Дизайн-системы и токены</h2>
           <p>Архитектура дизайн-системы, семантические токены и синхронизация с кодом.</p>
         </article>
-          <article class="competency-card tier-core" data-id="ui-components" data-tier="core" style="left:171.1px;top:1393.6px;width:192px;height:92px;opacity:0.9" tabindex="0">
+      <article class="competency-card tier-core" data-id="ui-components" data-tier="core" style="left:171.1px;top:1393.6px;width:192px;height:92px;opacity:0.9" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Основная</span>
             <span class="order">24</span>
@@ -311,7 +364,7 @@
           <h2>Компоненты и паттерны</h2>
           <p>Проектирование переиспользуемых компонентов, вариантов и поведенческих паттернов.</p>
         </article>
-          <article class="competency-card tier-core" data-id="ui-responsive" data-tier="core" style="left:124.1px;top:1167.2px;width:192px;height:92px;opacity:0.9" tabindex="0">
+      <article class="competency-card tier-core" data-id="ui-responsive" data-tier="core" style="left:124.1px;top:1167.2px;width:192px;height:92px;opacity:0.9" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Основная</span>
             <span class="order">25</span>
@@ -319,7 +372,7 @@
           <h2>Адаптивность и responsive UI</h2>
           <p>Адаптация интерфейса под устройства, размеры и контекст использования.</p>
         </article>
-          <article class="competency-card tier-core" data-id="ui-accessibility" data-tier="core" style="left:139.9px;top:936.5px;width:192px;height:92px;opacity:0.9" tabindex="0">
+      <article class="competency-card tier-core" data-id="ui-accessibility" data-tier="core" style="left:139.9px;top:936.5px;width:192px;height:92px;opacity:0.9" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Основная</span>
             <span class="order">26</span>
@@ -327,7 +380,7 @@
           <h2>Доступность и инклюзивный дизайн</h2>
           <p>Доступность интерфейса для людей с разными возможностями и ограничениями.</p>
         </article>
-          <article class="competency-card tier-core" data-id="ui-interaction-states" data-tier="core" style="left:217.3px;top:718.5px;width:192px;height:92px;opacity:0.9" tabindex="0">
+      <article class="competency-card tier-core" data-id="ui-interaction-states" data-tier="core" style="left:217.3px;top:718.5px;width:192px;height:92px;opacity:0.9" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Основная</span>
             <span class="order">27</span>
@@ -335,7 +388,7 @@
           <h2>Состояния и микровзаимодействия</h2>
           <p>Состояния компонентов, обратная связь и микровзаимодействия.</p>
         </article>
-          <article class="competency-card tier-core" data-id="ui-motion" data-tier="core" style="left:350.7px;top:529.6px;width:192px;height:92px;opacity:0.9" tabindex="0">
+      <article class="competency-card tier-core" data-id="ui-motion" data-tier="core" style="left:350.7px;top:529.6px;width:192px;height:92px;opacity:0.9" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Основная</span>
             <span class="order">28</span>
@@ -343,7 +396,7 @@
           <h2>Анимация и motion design</h2>
           <p>Кинетика, тайминг и анимационные системы интерфейса.</p>
         </article>
-          <article class="competency-card tier-core" data-id="ui-figma" data-tier="core" style="left:530.1px;top:383.6px;width:192px;height:92px;opacity:0.9" tabindex="0">
+      <article class="competency-card tier-core" data-id="ui-figma" data-tier="core" style="left:530.1px;top:383.6px;width:192px;height:92px;opacity:0.9" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Основная</span>
             <span class="order">29</span>
@@ -351,7 +404,7 @@
           <h2>Figma: компоненты и автолейаут</h2>
           <p>Работа с Figma: компоненты, варианты, автолейаут и библиотеки.</p>
         </article>
-          <article class="competency-card tier-core" data-id="ui-handoff" data-tier="core" style="left:742.2px;top:291.5px;width:192px;height:92px;opacity:0.9" tabindex="0">
+      <article class="competency-card tier-core" data-id="ui-handoff" data-tier="core" style="left:742.2px;top:291.5px;width:192px;height:92px;opacity:0.9" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Основная</span>
             <span class="order">32</span>
@@ -359,7 +412,7 @@
           <h2>Передача макетов в разработку</h2>
           <p>Спецификации, компонентные контракты и коммуникация с инженерами.</p>
         </article>
-          <article class="competency-card tier-optional" data-id="ux-experiments" data-tier="optional" style="left:971.4px;top:80.0px;width:192px;height:92px;opacity:0.65" tabindex="0">
+      <article class="competency-card tier-optional" data-id="ux-experiments" data-tier="optional" style="left:971.4px;top:80.0px;width:192px;height:92px;opacity:0.65" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Необязательная</span>
             <span class="order">13</span>
@@ -367,7 +420,7 @@
           <h2>UX-метрики и эксперименты</h2>
           <p>Выбор метрик, дизайн экспериментов и интерпретация результатов.</p>
         </article>
-          <article class="competency-card tier-optional" data-id="ux-ethics-privacy" data-tier="optional" style="left:1862.7px;top:594.6px;width:192px;height:92px;opacity:0.65" tabindex="0">
+      <article class="competency-card tier-optional" data-id="ux-ethics-privacy" data-tier="optional" style="left:1862.7px;top:594.6px;width:192px;height:92px;opacity:0.65" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Необязательная</span>
             <span class="order">16</span>
@@ -375,7 +428,7 @@
           <h2>Этика, приватность и ограничения</h2>
           <p>Этические, правовые и безопасностные ограничения дизайна.</p>
         </article>
-          <article class="competency-card tier-optional" data-id="ui-figjam" data-tier="optional" style="left:1862.7px;top:1623.9px;width:192px;height:92px;opacity:0.65" tabindex="0">
+      <article class="competency-card tier-optional" data-id="ui-figjam" data-tier="optional" style="left:1862.7px;top:1623.9px;width:192px;height:92px;opacity:0.65" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Необязательная</span>
             <span class="order">30</span>
@@ -383,7 +436,7 @@
           <h2>FigJam: воркшопы и картирование</h2>
           <p>Совместные воркшопы, картирование и фасилитация в FigJam.</p>
         </article>
-          <article class="competency-card tier-optional" data-id="ui-framer" data-tier="optional" style="left:971.4px;top:2138.5px;width:192px;height:92px;opacity:0.65" tabindex="0">
+      <article class="competency-card tier-optional" data-id="ui-framer" data-tier="optional" style="left:971.4px;top:2138.5px;width:192px;height:92px;opacity:0.65" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Необязательная</span>
             <span class="order">31</span>
@@ -391,7 +444,7 @@
           <h2>Framer: интерактивные прототипы</h2>
           <p>Создание интерактивных прототипов и микровзаимодействий в Framer.</p>
         </article>
-          <article class="competency-card tier-optional" data-id="ui-web-technologies" data-tier="optional" style="left:80.0px;top:1623.9px;width:192px;height:92px;opacity:0.65" tabindex="0">
+      <article class="competency-card tier-optional" data-id="ui-web-technologies" data-tier="optional" style="left:80.0px;top:1623.9px;width:192px;height:92px;opacity:0.65" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Необязательная</span>
             <span class="order">33</span>
@@ -399,7 +452,7 @@
           <h2>Веб-технологии и ограничения реализации</h2>
           <p>Понимание HTML/CSS/JS, веб-стандартов и ограничений реализации.</p>
         </article>
-          <article class="competency-card tier-optional" data-id="ui-data-visualization" data-tier="optional" style="left:80.0px;top:594.6px;width:192px;height:92px;opacity:0.65" tabindex="0">
+      <article class="competency-card tier-optional" data-id="ui-data-visualization" data-tier="optional" style="left:80.0px;top:594.6px;width:192px;height:92px;opacity:0.65" tabindex="0">
           <div class="card-top">
             <span class="tier-badge">Необязательная</span>
             <span class="order">34</span>
@@ -407,27 +460,74 @@
           <h2>Визуализация данных</h2>
           <p>Графики, диаграммы и визуализация данных в интерфейсе.</p>
         </article>
-        </div>
-      </div>
-      <aside class="detail" id="detail" hidden>
-        <button class="detail-close" id="detail-close" aria-label="Закрыть">×</button>
-        <span class="tier-badge" id="detail-tier"></span>
-        <h2 id="detail-title"></h2>
-        <p class="full" id="detail-full"></p>
-        <h3>Компоненты</h3>
-        <ul id="detail-components"></ul>
-        <h3>Теги и знания</h3>
-        <ul id="detail-tags"></ul>
-        <p class="muted" id="detail-meta"></p>
-      </aside>
-    </main>
+    </div>
   </div>
+
+  <header class="app-header">
+    <div class="header-top">
+      <div>
+        <div class="eyebrow">AXIONA · Competency Canvas</div>
+        <h1>UX/UI дизайнер</h1>
+        <p class="subtitle">Сеть компетенций: от фундамента к углублённым и необязательным</p>
+      </div>
+      <div class="summary">
+        <span class="f">5 фундаментальных</span>
+        <span class="c">23 основных</span>
+        <span class="o">6 необязательных</span>
+      </div>
+    </div>
+    <div class="header-bottom">
+      <nav class="profession-tabs" aria-label="Профессии"><a class="profession-tab active" href="uxui-competency-canvas.html">UX/UI</a><a class="profession-tab" href="it-product-competency-canvas.html">Product</a><a class="profession-tab" href="it-motion-competency-canvas.html">Motion</a><a class="profession-tab" href="it-graphic-competency-canvas.html">Graphic</a></nav>
+      <span class="hint">Наведите на карточку, чтобы увидеть связи; нажмите — подробности</span>
+    </div>
+    <div class="banner"><strong>Черновой слой.</strong> Каноническая карта UX/UI: два блока, 9 разделов, 34 компетенции. Связи — учебная последовательность внутри разделов; статусы coverage видны в отчёте. Покрытие: 34 covered / 0 partial / 0 gap. Сгенерировано 2026-10-26.</div>
+  </header>
+
+  <div class="zoom-controls" aria-label="Масштаб канваса">
+    <button type="button" id="zoom-out" aria-label="Уменьшить">−</button>
+    <span class="zoom-value" id="zoom-value" aria-live="polite">100%</span>
+    <button type="button" id="zoom-in" aria-label="Увеличить">+</button>
+  </div>
+
+  <aside class="detail-panel" id="detail" hidden>
+    <button class="detail-close" id="detail-close" aria-label="Закрыть">×</button>
+    <span class="tier-badge" id="detail-tier"></span>
+    <h2 id="detail-title"></h2>
+    <p class="full" id="detail-full"></p>
+    <h3>Компоненты</h3>
+    <ul id="detail-components"></ul>
+    <h3>Теги и знания</h3>
+    <ul id="detail-tags"></ul>
+    <p class="muted" id="detail-meta"></p>
+  </aside>
+
   <script>
-    const DATA = {"title":"UX/UI дизайнер","subtitle":"Сеть компетенций: от фундамента к углублённым и необязательным","note":"Каноническая карта UX/UI: два блока, 9 разделов, 34 компетенции. Связи — учебная последовательность внутри разделов; статусы coverage видны в отчёте. Покрытие: 34 covered / 0 partial / 0 gap.","generatedOn":"2026-10-25","nodes":[{"id":"ux-design-thinking","title":"Дизайн-мышление","tier":"foundation","tierLabel":"Фундаментальная","order":1,"description":"Системный подход к решению задач: понимание пользователя, формулировка проблемы, генерация и проверка гипотез, итерации.","fullDescription":"Системный подход к решению задач: понимание пользователя, формулировка проблемы, генерация и проверка гипотез, итерации.","components":["Эмпатия и исследование пользователя","Формулировка проблемы и пользовательские сценарии","Генерация и проверка гипотез","Итерационный процесс и командное взаимодействие"],"tags":["Исследование аудитории","Целевая аудитория","Типы исследований","Количественные исследования","Проведение исследований и проектирование сервиса","Проведение UX-исследований и анализ аудитории","Зачем пользователю сценарий","Пользовательские сценарии и паттерны взаимодействия","Гипотезы","Интерактивный прототип с тестированием","Прототипирование с помощью переменных и условий","Воркшопы с экспертами"],"evidenceState":"supported","branch":"UX — пользовательский опыт","section":"Дизайн-мышление и основы профессии","x":340,"y":346,"width":220,"height":92,"ring":0,"emphasis":"primary","opacity":1},{"id":"ux-information-architecture","title":"Информационная архитектура","tier":"foundation","tierLabel":"Фундаментальная","order":5,"description":"Структура контента и навигации, категоризация и находимость информации.","fullDescription":"Структура контента и навигации, категоризация и находимость информации.","components":["Основы информационной архитектуры","Исследование и моделирование пользователей","Структурирование контента","Навигация и находимость"],"tags":["Роль сценариев в информационной архитектуре","Пользовательские сценарии и паттерны взаимодействия","UX-исследования и анализ аудитории","Построение пользовательских сценариев и CJM","Категоризация и таксономия контента","Группировка и маркировка элементов","Проектирование навигационных систем","Обеспечение находимости информации"],"evidenceState":"needs_review","branch":"UX — пользовательский опыт","section":"Сценарии и информационная архитектура","x":600,"y":346,"width":220,"height":92,"ring":0,"emphasis":"primary","opacity":1},{"id":"ui-color","title":"Теория цвета и колористика","tier":"foundation","tierLabel":"Фундаментальная","order":18,"description":"Физика цвета, восприятие, гармония, контраст и культурный контекст.","fullDescription":"Физика цвета, восприятие, гармония, контраст и культурный контекст.","components":["Физика света и природа цвета","Физиология и психология восприятия цвета","Цветовые модели и системы","Цвет в визуальной композиции","Цвет в интерфейсе и визуальной коммуникации"],"tags":["Цвет как физическое явление","Психофизиология цветового восприятия","Культурно-психологический контекст цвета","Цветовые модели и пространства","Цветовой круг и гармония","Цвет и визуальная иерархия","Цвет в композиции и стиле","Цвет как средство визуальной коммуникации","Цветовые палитры и токены"],"evidenceState":"needs_review","branch":"UI — интерфейс","section":"Визуальные основы","x":860,"y":346,"width":220,"height":92,"ring":0,"emphasis":"primary","opacity":1},{"id":"ui-typography","title":"Типографика","tier":"foundation","tierLabel":"Фундаментальная","order":19,"description":"Шрифтовая иерархия, читаемость, ритм и типографические системы.","fullDescription":"Шрифтовая иерархия, читаемость, ритм и типографические системы.","components":["Композиция в интерфейсе","Типографика в интерфейсе","Визуальная иерархия","Сетки в дизайне"],"tags":["Работа с композицией, типографикой и визуальной иерархией","Типографическая иерархия и читаемость","Построение визуальной иерархии","Сетки в дизайне"],"evidenceState":"needs_review","branch":"UI — интерфейс","section":"Визуальные основы","x":470,"y":454,"width":220,"height":92,"ring":0,"emphasis":"primary","opacity":1},{"id":"ui-layout","title":"Композиция, сетки и визуальная иерархия","tier":"foundation","tierLabel":"Фундаментальная","order":20,"description":"Управление вниманием через композицию, сетки, пропорции и иерархию.","fullDescription":"Управление вниманием через композицию, сетки, пропорции и иерархию.","components":["Основы композиции","Насмотренность","Восприятие пользователя","Мудборды"],"tags":["Основы композиции","Насмотренность","На что смотрит пользователь","Мудборд"],"evidenceState":"supported","branch":"UI — интерфейс","section":"Визуальные основы","x":730,"y":454,"width":220,"height":92,"ring":0,"emphasis":"primary","opacity":1},{"id":"ux-user-research","title":"Пользовательские исследования","tier":"core","tierLabel":"Основная","order":2,"description":"Планирование и проведение исследований, синтез наблюдений в проверяемые инсайты.","fullDescription":"Планирование и проведение исследований, синтез наблюдений в проверяемые инсайты.","components":["Анализ онлайн-данных и поведения пользователей","Взаимодействие с клиентами и представление альтернатив"],"tags":["Анализ онлайн-опыта и данных","Убеждение клиентов через альтернативы"],"evidenceState":"supported","branch":"UX — пользовательский опыт","section":"Исследования","x":600,"y":-449.2507763383535,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ux-personas","title":"Персоны и сегментация","tier":"core","tierLabel":"Основная","order":3,"description":"Модели целевых пользователей, их целей, контекста и критериев выбора.","fullDescription":"Модели целевых пользователей, их целей, контекста и критериев выбора.","components":["Исследование аудитории","Сегментация аудитории","Построение персон","Связь с пользовательскими сценариями","Учёт особых групп пользователей"],"tags":["Исследование аудитории","Целевая аудитория","Количественные исследования","Типы исследований","Критерии сегментации аудитории","Выбор приоритетных сегментов","Структура и содержание персоны","Разработка персон на основе данных","Применение персон в проектных решениях","Пользовательские сценарии и паттерны взаимодействия","Роль сценария для пользователя","Построение сценариев на основе персон","Потребности пользователей с ОВЗ. Нозологии, цифровая доступность"],"evidenceState":"needs_review","branch":"UX — пользовательский опыт","section":"Исследования","x":829.125117358684,"y":-417.75825382974006,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ux-interviews","title":"Интервью и наблюдение","tier":"core","tierLabel":"Основная","order":4,"description":"Подготовка и проведение глубинных интервью, наблюдений и анализ качественных данных.","fullDescription":"Подготовка и проведение глубинных интервью, наблюдений и анализ качественных данных.","components":["Основы качественных исследований","Подготовка к интервью и наблюдению","Проведение интервью и наблюдения","Анализ качественных данных"],"tags":["Типы исследований","Количественные исследования","Проведение исследований и проектирование сервиса","Исследование аудитории","Целевая аудитория","Потребности пользователей с ОВЗ. Нозологии, цифровая доступность","Провожу UX-исследования, анализирую аудиторию, строю пользовательские сценарии и CJM","Зачем пользователю сценарий","На что смотрит пользователь","Пользовательские сценарии и паттерны взаимодействия"],"evidenceState":"supported","branch":"UX — пользовательский опыт","section":"Исследования","x":1041.2570729405402,"y":-325.61634262965913,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ux-user-flows","title":"Пользовательские сценарии и флоу","tier":"core","tierLabel":"Основная","order":6,"description":"Моделирование пути пользователя, развилок, ошибок и восстановления.","fullDescription":"Моделирование пути пользователя, развилок, ошибок и восстановления.","components":["Назначение и роль сценариев","Пользовательские сценарии и паттерны взаимодействия","Исследование и карта пути пользователя","Проектирование флоу в интерфейсах","Процессный подход к моделированию","Совместная работа над сценариями","Развилки, ошибки и восстановление"],"tags":["Зачем пользователю сценарий","Пользовательские сценарии и паттерны взаимодействия","UX-исследования и построение CJM","Проектирование интерфейсов и адаптивных макетов","Моделирование процессов","Веб-платформы для совместной работы","Ветвления и точки принятия решений","Ошибочные состояния и восстановление"],"evidenceState":"needs_review","branch":"UX — пользовательский опыт","section":"Сценарии и информационная архитектура","x":1220.6630100391862,"y":-179.6587867706254,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ux-requirements","title":"Анализ требований и постановка задач","tier":"core","tierLabel":"Основная","order":7,"description":"Перевод бизнес- и пользовательских потребностей в проверяемые требования и ограничения.","fullDescription":"Перевод бизнес- и пользовательских потребностей в проверяемые требования и ограничения.","components":["Анализ бизнес-требований","Анализ спецификаций ПО"],"tags":["Анализ бизнес-требований","Анализ спецификаций ПО"],"evidenceState":"supported","branch":"UX — пользовательский опыт","section":"Сценарии и информационная архитектура","x":1354.0372110275657,"y":9.289409540685142,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ux-wireframes","title":"Вайрфреймы и структура экранов","tier":"core","tierLabel":"Основная","order":8,"description":"Быстрая структура экранов и взаимодействий без визуальной детализации.","fullDescription":"Быстрая структура экранов и взаимодействий без визуальной детализации.","components":["Основы вайрфрейминга","Структура экранов","Прототипирование на основе вайрфреймов"],"tags":["Вайрфреймы","Создание вайрфрейма сайта","Структурирование экранов без визуальной детализации","Интерактивный прототип с тестированием","Прототипирование с помощью переменных и условий"],"evidenceState":"needs_review","branch":"UX — пользовательский опыт","section":"Сценарии и информационная архитектура","x":1431.4879215647413,"y":227.21482296434465,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ux-lowfi-prototype","title":"Низкодетализированные прототипы","tier":"core","tierLabel":"Основная","order":9,"description":"Быстрые бумажные и схематичные прототипы для проверки структуры.","fullDescription":"Быстрые бумажные и схематичные прототипы для проверки структуры.","components":["Основы прототипирования","Техники быстрого прототипирования","Проверка структуры и сценариев","Ограничения и стандарты"],"tags":["Вайрфреймы","Место низкодетализированных прототипов в дизайн-процессе","Создание бумажных прототипов","Схематичное представление структуры экранов","Тестирование структуры на прототипах","Совместная работа над прототипами","Учёт стандартов доступности","Соблюдение веб-стандартов"],"evidenceState":"needs_review","branch":"UX — пользовательский опыт","section":"Прототипирование и проверка","x":1447.270976763595,"y":457.95492252914966,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ux-hifi-prototype","title":"Высокодетализированные прототипы","tier":"core","tierLabel":"Основная","order":10,"description":"Детализированные прототипы, приближенные к финальному интерфейсу.","fullDescription":"Детализированные прототипы, приближенные к финальному интерфейсу.","components":["Инструментальная база прототипирования","Интерактивность и состояния в прототипе","Проверка и передача прототипа"],"tags":["Основы Figma","Работа с изображениями в Figma","Проектирование адаптивных макетов для web и mobile","Переменные и темы внутри макетов","Прототипирование с помощью переменных и условий","Интерактивный прототип с тестированием","Сборка сайта в Tilda по макету из Figma"],"evidenceState":"supported","branch":"UX — пользовательский опыт","section":"Прототипирование и проверка","x":1400.215819622701,"y":684.3967706160968,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ux-interactive-prototype","title":"Интерактивные прототипы","tier":"core","tierLabel":"Основная","order":11,"description":"Прототипы с переходами и состояниями для проверки поведения продукта.","fullDescription":"Прототипы с переходами и состояниями для проверки поведения продукта.","components":["Основы интерактивного прототипирования","Переходы и состояния","Анимация в интерактивных прототипах"],"tags":["Интерактивный прототип с тестированием","Прототипирование с помощью переменных и условий","Переменные и темы внутри макетов","Теория анимации","Анимация в интерфейсе","Анимация и визуальная коммуникация","Анимация в проекте как отстройка от конкурентов"],"evidenceState":"supported","branch":"UX — пользовательский опыт","section":"Прототипирование и проверка","x":1293.8123158841795,"y":889.7462112551027,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ux-usability-testing","title":"Юзабилити-тестирование","tier":"core","tierLabel":"Основная","order":12,"description":"Проверка сценариев и прототипов на реальных пользователях, фиксация и приоритизация проблем.","fullDescription":"Проверка сценариев и прототипов на реальных пользователях, фиксация и приоритизация проблем.","components":["Основы юзабилити и место тестирования в исследованиях","Подготовка к тестированию: сценарии и прототипы","Участники и аудитория тестирования","Проведение тестирования и наблюдение","Анализ результатов и приоритизация проблем","Связь с разработкой и смежными проверками"],"tags":["Понятие юзабилити","Типы исследований","Количественные исследования","Проведение исследований и проектирование сервиса","Зачем пользователю сценарий","Пользовательские сценарии и паттерны взаимодействия","Построение пользовательских сценариев и CJM","Интерактивный прототип с тестированием","Исследование аудитории","Потребности пользователей с ОВЗ и цифровая доступность","На что смотрит пользователь","Проведение юзабилити-тестов","Фиксация наблюдений за пользователем","Выявление проблем юзабилити","Приоритизация проблем","Взаимодействие с разработчиками и спецификации","Тестирование воронки продаж и спроса"],"evidenceState":"needs_review","branch":"UX — пользовательский опыт","section":"Прототипирование и проверка","x":1135.951926656676,"y":1058.7734158451547,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ux-product-thinking","title":"Продуктовое мышление","tier":"core","tierLabel":"Основная","order":14,"description":"Понимание ценности, аудитории, ограничений и жизненного цикла продукта.","fullDescription":"Понимание ценности, аудитории, ограничений и жизненного цикла продукта.","components":["Основы продукта","Аудитория и ценность","Бизнес-контекст и метрики","Жизненный цикл продукта"],"tags":["Что такое продукт и как с ним взаимодействовать","Исследование аудитории","Целевая аудитория","Провожу UX-исследования, анализирую аудиторию, строю пользовательские сценарии и CJM","Бизнес-эмпатия","Как задачи влияют на цели бизнеса, а разные метрики — на цели","Продуктовые метрики и цели","Жизненный цикл продукта"],"evidenceState":"needs_review","branch":"UX — пользовательский опыт","section":"Продукт и стратегия","x":938.3424348459666,"y":1178.9424098698178,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ux-metrics","title":"Продуктовые метрики и бизнес-обоснование","tier":"core","tierLabel":"Основная","order":15,"description":"Связь дизайн-решений с метриками, юнит-экономикой и бизнес-результатом.","fullDescription":"Связь дизайн-решений с метриками, юнит-экономикой и бизнес-результатом.","components":["Визуализация данных","Аргументация проектных решений","Бизнес-контекст проектирования"],"tags":["Виды визуализации данных","Аргументация решений","Бизнес-эмпатия"],"evidenceState":"supported","branch":"UX — пользовательский опыт","section":"Продукт и стратегия","x":715.63963245638,"y":1241.3408087788498,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ux-analytics","title":"Продуктовая аналитика","tier":"core","tierLabel":"Основная","order":17,"description":"Работа с поведенческими данными, воронками и метриками для проверки гипотез.","fullDescription":"Работа с поведенческими данными, воронками и метриками для проверки гипотез.","components":["Анализ онлайн-данных и поведения пользователей","Взаимодействие с клиентами и представление альтернатив"],"tags":["Анализ онлайн-опыта и данных","Убеждение клиентов через альтернативы"],"evidenceState":"supported","branch":"UX — пользовательский опыт","section":"Продукт и стратегия","x":484.36036754362055,"y":1241.34080877885,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ui-visual-elements","title":"Иконки и визуальные элементы","tier":"core","tierLabel":"Основная","order":21,"description":"Иконки, графика и визуальные элементы как часть интерфейсной системы.","fullDescription":"Иконки, графика и визуальные элементы как часть интерфейсной системы.","components":["Иконки как визуальные элементы","Дизайн данных: графики и диаграммы"],"tags":["Иконки","Дизайн данных. Графики и диаграммы"],"evidenceState":"supported","branch":"UI — интерфейс","section":"Визуальные основы","x":261.6575651540332,"y":1178.9424098698175,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ui-visual-communication","title":"Визуальная коммуникация","tier":"core","tierLabel":"Основная","order":22,"description":"Стилистика, визуальные коды и целостность интерфейсной коммуникации.","fullDescription":"Стилистика, визуальные коды и целостность интерфейсной коммуникации.","components":["Визуальная коммуникация в интерфейсе","Композиция и стилистика интерфейса","Анимация в интерфейсе"],"tags":["Визуальная коммуникация","Анимация и визуальная коммуникация","Визуальное единство: композиция и стили","Анимация в интерфейсе","Анимация в проекте как отстройка от конкурентов"],"evidenceState":"supported","branch":"UI — интерфейс","section":"Визуальные основы","x":64.04807334332395,"y":1058.773415845155,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ui-design-systems","title":"Дизайн-системы и токены","tier":"core","tierLabel":"Основная","order":23,"description":"Архитектура дизайн-системы, семантические токены и синхронизация с кодом.","fullDescription":"Архитектура дизайн-системы, семантические токены и синхронизация с кодом.","components":["Основы дизайн-систем","Токены дизайна","Архитектура компонентов"],"tags":["Назначение и структура дизайн-системы","Разработка дизайн-системы и UI-кита","Семантические токены","Синхронизация токенов с кодом","Масштабируемые компоненты"],"evidenceState":"needs_review","branch":"UI — интерфейс","section":"Дизайн-системы и компоненты","x":-93.8123158841795,"y":889.7462112551027,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ui-components","title":"Компоненты и паттерны","tier":"core","tierLabel":"Основная","order":24,"description":"Проектирование переиспользуемых компонентов, вариантов и поведенческих паттернов.","fullDescription":"Проектирование переиспользуемых компонентов, вариантов и поведенческих паттернов.","components":["Основы компонентного подхода","Проектирование компонентов и вариантов","Поведенческие паттерны взаимодействия","Дизайн-система и UI-кит"],"tags":["Понятие UI-компонента и его переиспользование","Роль UI-кита в проектировании","Настройка компонентов для масштабируемости","Варианты и состояния компонентов","Паттерны взаимодействия в пользовательских сценариях","Связь паттернов с компонентами","Разработка дизайн-систем и UI-китов","Документирование компонентов и паттернов"],"evidenceState":"needs_review","branch":"UI — интерфейс","section":"Дизайн-системы и компоненты","x":-200.21581962270102,"y":684.3967706160969,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ui-responsive","title":"Адаптивность и responsive UI","tier":"core","tierLabel":"Основная","order":25,"description":"Адаптация интерфейса под устройства, размеры и контекст использования.","fullDescription":"Адаптация интерфейса под устройства, размеры и контекст использования.","components":["Основы адаптивного дизайна","Проектирование адаптивных страниц"],"tags":["Как адаптировать интерфейсы","Дизайн сайта с адаптивной версией главной страницы"],"evidenceState":"supported","branch":"UI — интерфейс","section":"Дизайн-системы и компоненты","x":-247.27097676359506,"y":457.95492252914914,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ui-accessibility","title":"Доступность и инклюзивный дизайн","tier":"core","tierLabel":"Основная","order":26,"description":"Доступность интерфейса для людей с разными возможностями и ограничениями.","fullDescription":"Доступность интерфейса для людей с разными возможностями и ограничениями.","components":["Стилевые языки описания представления документов","Вспомогательные технологии экранного доступа"],"tags":["Sass","screen reader"],"evidenceState":"supported","branch":"UI — интерфейс","section":"Дизайн-системы и компоненты","x":-231.48792156474144,"y":227.21482296434493,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ui-interaction-states","title":"Состояния и микровзаимодействия","tier":"core","tierLabel":"Основная","order":27,"description":"Состояния компонентов, обратная связь и микровзаимодействия.","fullDescription":"Состояния компонентов, обратная связь и микровзаимодействия.","components":["Состояния компонентов и обратная связь","Микровзаимодействия","Анимация и визуальная коммуникация","Передача поведения в разработку"],"tags":["Пользовательские сценарии и паттерны взаимодействия","Проектирование состояний компонентов","Обратная связь на действия пользователя","Понятие микровзаимодействий","Проектирование микровзаимодействий","Теория анимации","Анимация в интерфейсе","Анимация и визуальная коммуникация","Анимация как отстройка от конкурентов","Взаимодействие с разработкой","Подготовка спецификаций и участие в тестировании","Понимание продукта и взаимодействия с ним"],"evidenceState":"needs_review","branch":"UI — интерфейс","section":"Дизайн-системы и компоненты","x":-154.03721102756583,"y":9.289409540685597,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ui-motion","title":"Анимация и motion design","tier":"core","tierLabel":"Основная","order":28,"description":"Кинетика, тайминг и анимационные системы интерфейса.","fullDescription":"Кинетика, тайминг и анимационные системы интерфейса.","components":["Визуальная коммуникация в интерфейсе","Композиция и стилистика интерфейса","Анимация в интерфейсе"],"tags":["Визуальная коммуникация","Анимация и визуальная коммуникация","Визуальное единство: композиция и стили","Анимация в интерфейсе","Анимация в проекте как отстройка от конкурентов"],"evidenceState":"supported","branch":"UI — интерфейс","section":"Интерактивность и анимация","x":-20.663010039185906,"y":-179.6587867706255,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ui-figma","title":"Figma: компоненты и автолейаут","tier":"core","tierLabel":"Основная","order":29,"description":"Работа с Figma: компоненты, варианты, автолейаут и библиотеки.","fullDescription":"Работа с Figma: компоненты, варианты, автолейаут и библиотеки.","components":["Основы работы в Figma","Автолейаут и адаптивная вёрстка макетов","Компоненты, варианты и библиотеки","Переменные и темы","Передача макетов в разработку"],"tags":["Основы Figma","Работа с изображениями в Figma","Автолейауты","Адаптирование и автолейауты","Проектирование адаптивных интерфейсов в Figma для web и mobile","Разработка дизайн-систем и UI-китов на компонентах Figma","Варианты компонентов","Библиотеки компонентов","Переменные и темы внутри макетов","Сборка сайта в Tilda по макету из Figma"],"evidenceState":"needs_review","branch":"UI — интерфейс","section":"Инструментарий и передача в разработку","x":158.74292705945976,"y":-325.61634262965913,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ui-handoff","title":"Передача макетов в разработку","tier":"core","tierLabel":"Основная","order":32,"description":"Спецификации, компонентные контракты и коммуникация с инженерами.","fullDescription":"Спецификации, компонентные контракты и коммуникация с инженерами.","components":["Взаимодействие с инженерами при разработке продукта","Правовые и государственные основы профессиональной деятельности"],"tags":["Согласование понимания с инженерами","Обсуждение дизайна и разработки продукта","Основы права и государственного регулирования"],"evidenceState":"supported","branch":"UI — интерфейс","section":"Инструментарий и передача в разработку","x":370.87488264131525,"y":-417.7582538297397,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ux-experiments","title":"UX-метрики и эксперименты","tier":"optional","tierLabel":"Необязательная","order":13,"description":"Выбор метрик, дизайн экспериментов и интерпретация результатов.","fullDescription":"Выбор метрик, дизайн экспериментов и интерпретация результатов.","components":["Связь задач, метрик и целей бизнеса","Метрики и данные","Эксперименты и тестирование гипотез","Этика и правовые аспекты работы с данными"],"tags":["Влияние задач на цели бизнеса","Таблицы и типы данных","Виды визуализации данных","Дизайн данных. Графики и диаграммы","Тестирование воронки продаж и спроса","Корректная работа с данными и авторские права"],"evidenceState":"supported","branch":"UX — пользовательский опыт","section":"Прототипирование и проверка","x":600.0000000000001,"y":-629.2507763383535,"width":192,"height":92,"ring":2,"emphasis":"tertiary","opacity":0.65},{"id":"ux-ethics-privacy","title":"Этика, приватность и ограничения","tier":"optional","tierLabel":"Необязательная","order":16,"description":"Этические, правовые и безопасностные ограничения дизайна.","fullDescription":"Этические, правовые и безопасностные ограничения дизайна.","components":["Ограничения и требования безопасности в дизайне","Работа с изображениями в Adobe Photoshop"],"tags":["Соблюдать ограничения и требования безопасности","Работа с изображениями в Adobe Photoshop"],"evidenceState":"supported","branch":"UX — пользовательский опыт","section":"Продукт и стратегия","x":1491.3573191738694,"y":-114.62538816917674,"width":192,"height":92,"ring":2,"emphasis":"tertiary","opacity":0.65},{"id":"ui-figjam","title":"FigJam: воркшопы и картирование","tier":"optional","tierLabel":"Необязательная","order":30,"description":"Совместные воркшопы, картирование и фасилитация в FigJam.","fullDescription":"Совместные воркшопы, картирование и фасилитация в FigJam.","components":["Совместные воркшопы в FigJam","Картирование в FigJam","Инструменты совместной работы в FigJam"],"tags":["FigJam: совместные воркшопы","Фасилитация групповых сессий","FigJam: картирование пользовательских путей","FigJam: шаблоны, стикеры и голосование"],"evidenceState":"needs_review","branch":"UI — интерфейс","section":"Инструментарий и передача в разработку","x":1491.3573191738697,"y":914.6253881691765,"width":192,"height":92,"ring":2,"emphasis":"tertiary","opacity":0.65},{"id":"ui-framer","title":"Framer: интерактивные прототипы","tier":"optional","tierLabel":"Необязательная","order":31,"description":"Создание интерактивных прототипов и микровзаимодействий в Framer.","fullDescription":"Создание интерактивных прототипов и микровзаимодействий в Framer.","components":["Основы прототипирования в Framer","Компоненты и состояния","Анимация и микровзаимодействия","Передача прототипа в разработку"],"tags":["Framer: интерактивные прототипы","Интерактивный прототип с тестированием","Framer: компоненты и варианты","Прототипирование с помощью переменных и условий","Теория анимации","Анимация в интерфейсе","Framer: тайминг и микровзаимодействия","Анимация и визуальная коммуникация","Анимация в проекте как отстройка от конкурентов","Framer: передача прототипа в разработку"],"evidenceState":"needs_review","branch":"UI — интерфейс","section":"Инструментарий и передача в разработку","x":600.0000000000001,"y":1429.2507763383535,"width":192,"height":92,"ring":2,"emphasis":"tertiary","opacity":0.65},{"id":"ui-web-technologies","title":"Веб-технологии и ограничения реализации","tier":"optional","tierLabel":"Необязательная","order":33,"description":"Понимание HTML/CSS/JS, веб-стандартов и ограничений реализации.","fullDescription":"Понимание HTML/CSS/JS, веб-стандартов и ограничений реализации.","components":["Парадигмы веб-программирования","Веб-сервисы и взаимодействие приложений","Стандарты и спецификации W3C"],"tags":["Веб-программирование","Веб-сервисы","Стандарты World Wide Web Consortium"],"evidenceState":"supported","branch":"UI — интерфейс","section":"Инструментарий и передача в разработку","x":-291.3573191738693,"y":914.6253881691771,"width":192,"height":92,"ring":2,"emphasis":"tertiary","opacity":0.65},{"id":"ui-data-visualization","title":"Визуализация данных","tier":"optional","tierLabel":"Необязательная","order":34,"description":"Графики, диаграммы и визуализация данных в интерфейсе.","fullDescription":"Графики, диаграммы и визуализация данных в интерфейсе.","components":["Иконки как визуальные элементы","Дизайн данных: графики и диаграммы"],"tags":["Иконки","Дизайн данных. Графики и диаграммы"],"evidenceState":"supported","branch":"UI — интерфейс","section":"Инструментарий и передача в разработку","x":-291.3573191738694,"y":-114.62538816917686,"width":192,"height":92,"ring":2,"emphasis":"tertiary","opacity":0.65}],"edges":[{"from":"ui-color","to":"ui-typography"},{"from":"ui-typography","to":"ui-layout"},{"from":"ux-design-thinking","to":"ux-user-research"},{"from":"ux-user-research","to":"ux-personas"},{"from":"ux-personas","to":"ux-interviews"},{"from":"ux-information-architecture","to":"ux-user-flows"},{"from":"ux-user-flows","to":"ux-requirements"},{"from":"ux-requirements","to":"ux-wireframes"},{"from":"ux-lowfi-prototype","to":"ux-hifi-prototype"},{"from":"ux-hifi-prototype","to":"ux-interactive-prototype"},{"from":"ux-interactive-prototype","to":"ux-usability-testing"},{"from":"ux-product-thinking","to":"ux-metrics"},{"from":"ux-ethics-privacy","to":"ux-analytics"},{"from":"ui-layout","to":"ui-visual-elements"},{"from":"ui-visual-elements","to":"ui-visual-communication"},{"from":"ui-design-systems","to":"ui-components"},{"from":"ui-components","to":"ui-responsive"},{"from":"ui-responsive","to":"ui-accessibility"},{"from":"ui-accessibility","to":"ui-interaction-states"},{"from":"ui-framer","to":"ui-handoff"},{"from":"ux-usability-testing","to":"ux-experiments"},{"from":"ux-metrics","to":"ux-ethics-privacy"},{"from":"ui-figma","to":"ui-figjam"},{"from":"ui-figjam","to":"ui-framer"},{"from":"ui-handoff","to":"ui-web-technologies"},{"from":"ui-web-technologies","to":"ui-data-visualization"}],"stage":{"width":2135,"height":2311,"offsetX":467.3573191738694,"offsetY":755.2507763383535},"counts":{"foundation":5,"core":23,"optional":6}};
+    const DATA = {"title":"UX/UI дизайнер","subtitle":"Сеть компетенций: от фундамента к углублённым и необязательным","note":"Каноническая карта UX/UI: два блока, 9 разделов, 34 компетенции. Связи — учебная последовательность внутри разделов; статусы coverage видны в отчёте. Покрытие: 34 covered / 0 partial / 0 gap.","generatedOn":"2026-10-26","nodes":[{"id":"ux-design-thinking","title":"Дизайн-мышление","tier":"foundation","tierLabel":"Фундаментальная","order":1,"description":"Системный подход к решению задач: понимание пользователя, формулировка проблемы, генерация и проверка гипотез, итерации.","fullDescription":"Системный подход к решению задач: понимание пользователя, формулировка проблемы, генерация и проверка гипотез, итерации.","components":["Эмпатия и исследование пользователя","Формулировка проблемы и пользовательские сценарии","Генерация и проверка гипотез","Итерационный процесс и командное взаимодействие"],"tags":["Исследование аудитории","Целевая аудитория","Типы исследований","Количественные исследования","Проведение исследований и проектирование сервиса","Проведение UX-исследований и анализ аудитории","Зачем пользователю сценарий","Пользовательские сценарии и паттерны взаимодействия","Гипотезы","Интерактивный прототип с тестированием","Прототипирование с помощью переменных и условий","Воркшопы с экспертами"],"evidenceState":"supported","branch":"UX — пользовательский опыт","section":"Дизайн-мышление и основы профессии","x":340,"y":346,"width":220,"height":92,"ring":0,"emphasis":"primary","opacity":1},{"id":"ux-information-architecture","title":"Информационная архитектура","tier":"foundation","tierLabel":"Фундаментальная","order":5,"description":"Структура контента и навигации, категоризация и находимость информации.","fullDescription":"Структура контента и навигации, категоризация и находимость информации.","components":["Основы информационной архитектуры","Исследование и моделирование пользователей","Структурирование контента","Навигация и находимость"],"tags":["Роль сценариев в информационной архитектуре","Пользовательские сценарии и паттерны взаимодействия","UX-исследования и анализ аудитории","Построение пользовательских сценариев и CJM","Категоризация и таксономия контента","Группировка и маркировка элементов","Проектирование навигационных систем","Обеспечение находимости информации"],"evidenceState":"needs_review","branch":"UX — пользовательский опыт","section":"Сценарии и информационная архитектура","x":600,"y":346,"width":220,"height":92,"ring":0,"emphasis":"primary","opacity":1},{"id":"ui-color","title":"Теория цвета и колористика","tier":"foundation","tierLabel":"Фундаментальная","order":18,"description":"Физика цвета, восприятие, гармония, контраст и культурный контекст.","fullDescription":"Физика цвета, восприятие, гармония, контраст и культурный контекст.","components":["Физика света и природа цвета","Физиология и психология восприятия цвета","Цветовые модели и системы","Цвет в визуальной композиции","Цвет в интерфейсе и визуальной коммуникации"],"tags":["Цвет как физическое явление","Психофизиология цветового восприятия","Культурно-психологический контекст цвета","Цветовые модели и пространства","Цветовой круг и гармония","Цвет и визуальная иерархия","Цвет в композиции и стиле","Цвет как средство визуальной коммуникации","Цветовые палитры и токены"],"evidenceState":"needs_review","branch":"UI — интерфейс","section":"Визуальные основы","x":860,"y":346,"width":220,"height":92,"ring":0,"emphasis":"primary","opacity":1},{"id":"ui-typography","title":"Типографика","tier":"foundation","tierLabel":"Фундаментальная","order":19,"description":"Шрифтовая иерархия, читаемость, ритм и типографические системы.","fullDescription":"Шрифтовая иерархия, читаемость, ритм и типографические системы.","components":["Композиция в интерфейсе","Типографика в интерфейсе","Визуальная иерархия","Сетки в дизайне"],"tags":["Работа с композицией, типографикой и визуальной иерархией","Типографическая иерархия и читаемость","Построение визуальной иерархии","Сетки в дизайне"],"evidenceState":"needs_review","branch":"UI — интерфейс","section":"Визуальные основы","x":470,"y":454,"width":220,"height":92,"ring":0,"emphasis":"primary","opacity":1},{"id":"ui-layout","title":"Композиция, сетки и визуальная иерархия","tier":"foundation","tierLabel":"Фундаментальная","order":20,"description":"Управление вниманием через композицию, сетки, пропорции и иерархию.","fullDescription":"Управление вниманием через композицию, сетки, пропорции и иерархию.","components":["Основы композиции","Насмотренность","Восприятие пользователя","Мудборды"],"tags":["Основы композиции","Насмотренность","На что смотрит пользователь","Мудборд"],"evidenceState":"supported","branch":"UI — интерфейс","section":"Визуальные основы","x":730,"y":454,"width":220,"height":92,"ring":0,"emphasis":"primary","opacity":1},{"id":"ux-user-research","title":"Пользовательские исследования","tier":"core","tierLabel":"Основная","order":2,"description":"Планирование и проведение исследований, синтез наблюдений в проверяемые инсайты.","fullDescription":"Планирование и проведение исследований, синтез наблюдений в проверяемые инсайты.","components":["Анализ онлайн-данных и поведения пользователей","Взаимодействие с клиентами и представление альтернатив"],"tags":["Анализ онлайн-опыта и данных","Убеждение клиентов через альтернативы"],"evidenceState":"supported","branch":"UX — пользовательский опыт","section":"Исследования","x":600,"y":-449.2507763383535,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ux-personas","title":"Персоны и сегментация","tier":"core","tierLabel":"Основная","order":3,"description":"Модели целевых пользователей, их целей, контекста и критериев выбора.","fullDescription":"Модели целевых пользователей, их целей, контекста и критериев выбора.","components":["Исследование аудитории","Сегментация аудитории","Построение персон","Связь с пользовательскими сценариями","Учёт особых групп пользователей"],"tags":["Исследование аудитории","Целевая аудитория","Количественные исследования","Типы исследований","Критерии сегментации аудитории","Выбор приоритетных сегментов","Структура и содержание персоны","Разработка персон на основе данных","Применение персон в проектных решениях","Пользовательские сценарии и паттерны взаимодействия","Роль сценария для пользователя","Построение сценариев на основе персон","Потребности пользователей с ОВЗ. Нозологии, цифровая доступность"],"evidenceState":"needs_review","branch":"UX — пользовательский опыт","section":"Исследования","x":829.125117358684,"y":-417.75825382974006,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ux-interviews","title":"Интервью и наблюдение","tier":"core","tierLabel":"Основная","order":4,"description":"Подготовка и проведение глубинных интервью, наблюдений и анализ качественных данных.","fullDescription":"Подготовка и проведение глубинных интервью, наблюдений и анализ качественных данных.","components":["Основы качественных исследований","Подготовка к интервью и наблюдению","Проведение интервью и наблюдения","Анализ качественных данных"],"tags":["Типы исследований","Количественные исследования","Проведение исследований и проектирование сервиса","Исследование аудитории","Целевая аудитория","Потребности пользователей с ОВЗ. Нозологии, цифровая доступность","Провожу UX-исследования, анализирую аудиторию, строю пользовательские сценарии и CJM","Зачем пользователю сценарий","На что смотрит пользователь","Пользовательские сценарии и паттерны взаимодействия"],"evidenceState":"supported","branch":"UX — пользовательский опыт","section":"Исследования","x":1041.2570729405402,"y":-325.61634262965913,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ux-user-flows","title":"Пользовательские сценарии и флоу","tier":"core","tierLabel":"Основная","order":6,"description":"Моделирование пути пользователя, развилок, ошибок и восстановления.","fullDescription":"Моделирование пути пользователя, развилок, ошибок и восстановления.","components":["Назначение и роль сценариев","Пользовательские сценарии и паттерны взаимодействия","Исследование и карта пути пользователя","Проектирование флоу в интерфейсах","Процессный подход к моделированию","Совместная работа над сценариями","Развилки, ошибки и восстановление"],"tags":["Зачем пользователю сценарий","Пользовательские сценарии и паттерны взаимодействия","UX-исследования и построение CJM","Проектирование интерфейсов и адаптивных макетов","Моделирование процессов","Веб-платформы для совместной работы","Ветвления и точки принятия решений","Ошибочные состояния и восстановление"],"evidenceState":"needs_review","branch":"UX — пользовательский опыт","section":"Сценарии и информационная архитектура","x":1220.6630100391862,"y":-179.6587867706254,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ux-requirements","title":"Анализ требований и постановка задач","tier":"core","tierLabel":"Основная","order":7,"description":"Перевод бизнес- и пользовательских потребностей в проверяемые требования и ограничения.","fullDescription":"Перевод бизнес- и пользовательских потребностей в проверяемые требования и ограничения.","components":["Анализ бизнес-требований","Анализ спецификаций ПО"],"tags":["Анализ бизнес-требований","Анализ спецификаций ПО"],"evidenceState":"supported","branch":"UX — пользовательский опыт","section":"Сценарии и информационная архитектура","x":1354.0372110275657,"y":9.289409540685142,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ux-wireframes","title":"Вайрфреймы и структура экранов","tier":"core","tierLabel":"Основная","order":8,"description":"Быстрая структура экранов и взаимодействий без визуальной детализации.","fullDescription":"Быстрая структура экранов и взаимодействий без визуальной детализации.","components":["Основы вайрфрейминга","Структура экранов","Прототипирование на основе вайрфреймов"],"tags":["Вайрфреймы","Создание вайрфрейма сайта","Структурирование экранов без визуальной детализации","Интерактивный прототип с тестированием","Прототипирование с помощью переменных и условий"],"evidenceState":"needs_review","branch":"UX — пользовательский опыт","section":"Сценарии и информационная архитектура","x":1431.4879215647413,"y":227.21482296434465,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ux-lowfi-prototype","title":"Низкодетализированные прототипы","tier":"core","tierLabel":"Основная","order":9,"description":"Быстрые бумажные и схематичные прототипы для проверки структуры.","fullDescription":"Быстрые бумажные и схематичные прототипы для проверки структуры.","components":["Основы прототипирования","Техники быстрого прототипирования","Проверка структуры и сценариев","Ограничения и стандарты"],"tags":["Вайрфреймы","Место низкодетализированных прототипов в дизайн-процессе","Создание бумажных прототипов","Схематичное представление структуры экранов","Тестирование структуры на прототипах","Совместная работа над прототипами","Учёт стандартов доступности","Соблюдение веб-стандартов"],"evidenceState":"needs_review","branch":"UX — пользовательский опыт","section":"Прототипирование и проверка","x":1447.270976763595,"y":457.95492252914966,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ux-hifi-prototype","title":"Высокодетализированные прототипы","tier":"core","tierLabel":"Основная","order":10,"description":"Детализированные прототипы, приближенные к финальному интерфейсу.","fullDescription":"Детализированные прототипы, приближенные к финальному интерфейсу.","components":["Инструментальная база прототипирования","Интерактивность и состояния в прототипе","Проверка и передача прототипа"],"tags":["Основы Figma","Работа с изображениями в Figma","Проектирование адаптивных макетов для web и mobile","Переменные и темы внутри макетов","Прототипирование с помощью переменных и условий","Интерактивный прототип с тестированием","Сборка сайта в Tilda по макету из Figma"],"evidenceState":"supported","branch":"UX — пользовательский опыт","section":"Прототипирование и проверка","x":1400.215819622701,"y":684.3967706160968,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ux-interactive-prototype","title":"Интерактивные прототипы","tier":"core","tierLabel":"Основная","order":11,"description":"Прототипы с переходами и состояниями для проверки поведения продукта.","fullDescription":"Прототипы с переходами и состояниями для проверки поведения продукта.","components":["Основы интерактивного прототипирования","Переходы и состояния","Анимация в интерактивных прототипах"],"tags":["Интерактивный прототип с тестированием","Прототипирование с помощью переменных и условий","Переменные и темы внутри макетов","Теория анимации","Анимация в интерфейсе","Анимация и визуальная коммуникация","Анимация в проекте как отстройка от конкурентов"],"evidenceState":"supported","branch":"UX — пользовательский опыт","section":"Прототипирование и проверка","x":1293.8123158841795,"y":889.7462112551027,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ux-usability-testing","title":"Юзабилити-тестирование","tier":"core","tierLabel":"Основная","order":12,"description":"Проверка сценариев и прототипов на реальных пользователях, фиксация и приоритизация проблем.","fullDescription":"Проверка сценариев и прототипов на реальных пользователях, фиксация и приоритизация проблем.","components":["Основы юзабилити и место тестирования в исследованиях","Подготовка к тестированию: сценарии и прототипы","Участники и аудитория тестирования","Проведение тестирования и наблюдение","Анализ результатов и приоритизация проблем","Связь с разработкой и смежными проверками"],"tags":["Понятие юзабилити","Типы исследований","Количественные исследования","Проведение исследований и проектирование сервиса","Зачем пользователю сценарий","Пользовательские сценарии и паттерны взаимодействия","Построение пользовательских сценариев и CJM","Интерактивный прототип с тестированием","Исследование аудитории","Потребности пользователей с ОВЗ и цифровая доступность","На что смотрит пользователь","Проведение юзабилити-тестов","Фиксация наблюдений за пользователем","Выявление проблем юзабилити","Приоритизация проблем","Взаимодействие с разработчиками и спецификации","Тестирование воронки продаж и спроса"],"evidenceState":"needs_review","branch":"UX — пользовательский опыт","section":"Прототипирование и проверка","x":1135.951926656676,"y":1058.7734158451547,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ux-product-thinking","title":"Продуктовое мышление","tier":"core","tierLabel":"Основная","order":14,"description":"Понимание ценности, аудитории, ограничений и жизненного цикла продукта.","fullDescription":"Понимание ценности, аудитории, ограничений и жизненного цикла продукта.","components":["Основы продукта","Аудитория и ценность","Бизнес-контекст и метрики","Жизненный цикл продукта"],"tags":["Что такое продукт и как с ним взаимодействовать","Исследование аудитории","Целевая аудитория","Провожу UX-исследования, анализирую аудиторию, строю пользовательские сценарии и CJM","Бизнес-эмпатия","Как задачи влияют на цели бизнеса, а разные метрики — на цели","Продуктовые метрики и цели","Жизненный цикл продукта"],"evidenceState":"needs_review","branch":"UX — пользовательский опыт","section":"Продукт и стратегия","x":938.3424348459666,"y":1178.9424098698178,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ux-metrics","title":"Продуктовые метрики и бизнес-обоснование","tier":"core","tierLabel":"Основная","order":15,"description":"Связь дизайн-решений с метриками, юнит-экономикой и бизнес-результатом.","fullDescription":"Связь дизайн-решений с метриками, юнит-экономикой и бизнес-результатом.","components":["Визуализация данных","Аргументация проектных решений","Бизнес-контекст проектирования"],"tags":["Виды визуализации данных","Аргументация решений","Бизнес-эмпатия"],"evidenceState":"supported","branch":"UX — пользовательский опыт","section":"Продукт и стратегия","x":715.63963245638,"y":1241.3408087788498,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ux-analytics","title":"Продуктовая аналитика","tier":"core","tierLabel":"Основная","order":17,"description":"Работа с поведенческими данными, воронками и метриками для проверки гипотез.","fullDescription":"Работа с поведенческими данными, воронками и метриками для проверки гипотез.","components":["Анализ онлайн-данных и поведения пользователей","Взаимодействие с клиентами и представление альтернатив"],"tags":["Анализ онлайн-опыта и данных","Убеждение клиентов через альтернативы"],"evidenceState":"supported","branch":"UX — пользовательский опыт","section":"Продукт и стратегия","x":484.36036754362055,"y":1241.34080877885,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ui-visual-elements","title":"Иконки и визуальные элементы","tier":"core","tierLabel":"Основная","order":21,"description":"Иконки, графика и визуальные элементы как часть интерфейсной системы.","fullDescription":"Иконки, графика и визуальные элементы как часть интерфейсной системы.","components":["Иконки как визуальные элементы","Дизайн данных: графики и диаграммы"],"tags":["Иконки","Дизайн данных. Графики и диаграммы"],"evidenceState":"supported","branch":"UI — интерфейс","section":"Визуальные основы","x":261.6575651540332,"y":1178.9424098698175,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ui-visual-communication","title":"Визуальная коммуникация","tier":"core","tierLabel":"Основная","order":22,"description":"Стилистика, визуальные коды и целостность интерфейсной коммуникации.","fullDescription":"Стилистика, визуальные коды и целостность интерфейсной коммуникации.","components":["Визуальная коммуникация в интерфейсе","Композиция и стилистика интерфейса","Анимация в интерфейсе"],"tags":["Визуальная коммуникация","Анимация и визуальная коммуникация","Визуальное единство: композиция и стили","Анимация в интерфейсе","Анимация в проекте как отстройка от конкурентов"],"evidenceState":"supported","branch":"UI — интерфейс","section":"Визуальные основы","x":64.04807334332395,"y":1058.773415845155,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ui-design-systems","title":"Дизайн-системы и токены","tier":"core","tierLabel":"Основная","order":23,"description":"Архитектура дизайн-системы, семантические токены и синхронизация с кодом.","fullDescription":"Архитектура дизайн-системы, семантические токены и синхронизация с кодом.","components":["Основы дизайн-систем","Токены дизайна","Архитектура компонентов"],"tags":["Назначение и структура дизайн-системы","Разработка дизайн-системы и UI-кита","Семантические токены","Синхронизация токенов с кодом","Масштабируемые компоненты"],"evidenceState":"needs_review","branch":"UI — интерфейс","section":"Дизайн-системы и компоненты","x":-93.8123158841795,"y":889.7462112551027,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ui-components","title":"Компоненты и паттерны","tier":"core","tierLabel":"Основная","order":24,"description":"Проектирование переиспользуемых компонентов, вариантов и поведенческих паттернов.","fullDescription":"Проектирование переиспользуемых компонентов, вариантов и поведенческих паттернов.","components":["Основы компонентного подхода","Проектирование компонентов и вариантов","Поведенческие паттерны взаимодействия","Дизайн-система и UI-кит"],"tags":["Понятие UI-компонента и его переиспользование","Роль UI-кита в проектировании","Настройка компонентов для масштабируемости","Варианты и состояния компонентов","Паттерны взаимодействия в пользовательских сценариях","Связь паттернов с компонентами","Разработка дизайн-систем и UI-китов","Документирование компонентов и паттернов"],"evidenceState":"needs_review","branch":"UI — интерфейс","section":"Дизайн-системы и компоненты","x":-200.21581962270102,"y":684.3967706160969,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ui-responsive","title":"Адаптивность и responsive UI","tier":"core","tierLabel":"Основная","order":25,"description":"Адаптация интерфейса под устройства, размеры и контекст использования.","fullDescription":"Адаптация интерфейса под устройства, размеры и контекст использования.","components":["Основы адаптивного дизайна","Проектирование адаптивных страниц"],"tags":["Как адаптировать интерфейсы","Дизайн сайта с адаптивной версией главной страницы"],"evidenceState":"supported","branch":"UI — интерфейс","section":"Дизайн-системы и компоненты","x":-247.27097676359506,"y":457.95492252914914,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ui-accessibility","title":"Доступность и инклюзивный дизайн","tier":"core","tierLabel":"Основная","order":26,"description":"Доступность интерфейса для людей с разными возможностями и ограничениями.","fullDescription":"Доступность интерфейса для людей с разными возможностями и ограничениями.","components":["Стилевые языки описания представления документов","Вспомогательные технологии экранного доступа"],"tags":["Sass","screen reader"],"evidenceState":"supported","branch":"UI — интерфейс","section":"Дизайн-системы и компоненты","x":-231.48792156474144,"y":227.21482296434493,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ui-interaction-states","title":"Состояния и микровзаимодействия","tier":"core","tierLabel":"Основная","order":27,"description":"Состояния компонентов, обратная связь и микровзаимодействия.","fullDescription":"Состояния компонентов, обратная связь и микровзаимодействия.","components":["Состояния компонентов и обратная связь","Микровзаимодействия","Анимация и визуальная коммуникация","Передача поведения в разработку"],"tags":["Пользовательские сценарии и паттерны взаимодействия","Проектирование состояний компонентов","Обратная связь на действия пользователя","Понятие микровзаимодействий","Проектирование микровзаимодействий","Теория анимации","Анимация в интерфейсе","Анимация и визуальная коммуникация","Анимация как отстройка от конкурентов","Взаимодействие с разработкой","Подготовка спецификаций и участие в тестировании","Понимание продукта и взаимодействия с ним"],"evidenceState":"needs_review","branch":"UI — интерфейс","section":"Дизайн-системы и компоненты","x":-154.03721102756583,"y":9.289409540685597,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ui-motion","title":"Анимация и motion design","tier":"core","tierLabel":"Основная","order":28,"description":"Кинетика, тайминг и анимационные системы интерфейса.","fullDescription":"Кинетика, тайминг и анимационные системы интерфейса.","components":["Визуальная коммуникация в интерфейсе","Композиция и стилистика интерфейса","Анимация в интерфейсе"],"tags":["Визуальная коммуникация","Анимация и визуальная коммуникация","Визуальное единство: композиция и стили","Анимация в интерфейсе","Анимация в проекте как отстройка от конкурентов"],"evidenceState":"supported","branch":"UI — интерфейс","section":"Интерактивность и анимация","x":-20.663010039185906,"y":-179.6587867706255,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ui-figma","title":"Figma: компоненты и автолейаут","tier":"core","tierLabel":"Основная","order":29,"description":"Работа с Figma: компоненты, варианты, автолейаут и библиотеки.","fullDescription":"Работа с Figma: компоненты, варианты, автолейаут и библиотеки.","components":["Основы работы в Figma","Автолейаут и адаптивная вёрстка макетов","Компоненты, варианты и библиотеки","Переменные и темы","Передача макетов в разработку"],"tags":["Основы Figma","Работа с изображениями в Figma","Автолейауты","Адаптирование и автолейауты","Проектирование адаптивных интерфейсов в Figma для web и mobile","Разработка дизайн-систем и UI-китов на компонентах Figma","Варианты компонентов","Библиотеки компонентов","Переменные и темы внутри макетов","Сборка сайта в Tilda по макету из Figma"],"evidenceState":"needs_review","branch":"UI — интерфейс","section":"Инструментарий и передача в разработку","x":158.74292705945976,"y":-325.61634262965913,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ui-handoff","title":"Передача макетов в разработку","tier":"core","tierLabel":"Основная","order":32,"description":"Спецификации, компонентные контракты и коммуникация с инженерами.","fullDescription":"Спецификации, компонентные контракты и коммуникация с инженерами.","components":["Взаимодействие с инженерами при разработке продукта","Правовые и государственные основы профессиональной деятельности"],"tags":["Согласование понимания с инженерами","Обсуждение дизайна и разработки продукта","Основы права и государственного регулирования"],"evidenceState":"supported","branch":"UI — интерфейс","section":"Инструментарий и передача в разработку","x":370.87488264131525,"y":-417.7582538297397,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ux-experiments","title":"UX-метрики и эксперименты","tier":"optional","tierLabel":"Необязательная","order":13,"description":"Выбор метрик, дизайн экспериментов и интерпретация результатов.","fullDescription":"Выбор метрик, дизайн экспериментов и интерпретация результатов.","components":["Связь задач, метрик и целей бизнеса","Метрики и данные","Эксперименты и тестирование гипотез","Этика и правовые аспекты работы с данными"],"tags":["Влияние задач на цели бизнеса","Таблицы и типы данных","Виды визуализации данных","Дизайн данных. Графики и диаграммы","Тестирование воронки продаж и спроса","Корректная работа с данными и авторские права"],"evidenceState":"supported","branch":"UX — пользовательский опыт","section":"Прототипирование и проверка","x":600.0000000000001,"y":-629.2507763383535,"width":192,"height":92,"ring":2,"emphasis":"tertiary","opacity":0.65},{"id":"ux-ethics-privacy","title":"Этика, приватность и ограничения","tier":"optional","tierLabel":"Необязательная","order":16,"description":"Этические, правовые и безопасностные ограничения дизайна.","fullDescription":"Этические, правовые и безопасностные ограничения дизайна.","components":["Ограничения и требования безопасности в дизайне","Работа с изображениями в Adobe Photoshop"],"tags":["Соблюдать ограничения и требования безопасности","Работа с изображениями в Adobe Photoshop"],"evidenceState":"supported","branch":"UX — пользовательский опыт","section":"Продукт и стратегия","x":1491.3573191738694,"y":-114.62538816917674,"width":192,"height":92,"ring":2,"emphasis":"tertiary","opacity":0.65},{"id":"ui-figjam","title":"FigJam: воркшопы и картирование","tier":"optional","tierLabel":"Необязательная","order":30,"description":"Совместные воркшопы, картирование и фасилитация в FigJam.","fullDescription":"Совместные воркшопы, картирование и фасилитация в FigJam.","components":["Совместные воркшопы в FigJam","Картирование в FigJam","Инструменты совместной работы в FigJam"],"tags":["FigJam: совместные воркшопы","Фасилитация групповых сессий","FigJam: картирование пользовательских путей","FigJam: шаблоны, стикеры и голосование"],"evidenceState":"needs_review","branch":"UI — интерфейс","section":"Инструментарий и передача в разработку","x":1491.3573191738697,"y":914.6253881691765,"width":192,"height":92,"ring":2,"emphasis":"tertiary","opacity":0.65},{"id":"ui-framer","title":"Framer: интерактивные прототипы","tier":"optional","tierLabel":"Необязательная","order":31,"description":"Создание интерактивных прототипов и микровзаимодействий в Framer.","fullDescription":"Создание интерактивных прототипов и микровзаимодействий в Framer.","components":["Основы прототипирования в Framer","Компоненты и состояния","Анимация и микровзаимодействия","Передача прототипа в разработку"],"tags":["Framer: интерактивные прототипы","Интерактивный прототип с тестированием","Framer: компоненты и варианты","Прототипирование с помощью переменных и условий","Теория анимации","Анимация в интерфейсе","Framer: тайминг и микровзаимодействия","Анимация и визуальная коммуникация","Анимация в проекте как отстройка от конкурентов","Framer: передача прототипа в разработку"],"evidenceState":"needs_review","branch":"UI — интерфейс","section":"Инструментарий и передача в разработку","x":600.0000000000001,"y":1429.2507763383535,"width":192,"height":92,"ring":2,"emphasis":"tertiary","opacity":0.65},{"id":"ui-web-technologies","title":"Веб-технологии и ограничения реализации","tier":"optional","tierLabel":"Необязательная","order":33,"description":"Понимание HTML/CSS/JS, веб-стандартов и ограничений реализации.","fullDescription":"Понимание HTML/CSS/JS, веб-стандартов и ограничений реализации.","components":["Парадигмы веб-программирования","Веб-сервисы и взаимодействие приложений","Стандарты и спецификации W3C"],"tags":["Веб-программирование","Веб-сервисы","Стандарты World Wide Web Consortium"],"evidenceState":"supported","branch":"UI — интерфейс","section":"Инструментарий и передача в разработку","x":-291.3573191738693,"y":914.6253881691771,"width":192,"height":92,"ring":2,"emphasis":"tertiary","opacity":0.65},{"id":"ui-data-visualization","title":"Визуализация данных","tier":"optional","tierLabel":"Необязательная","order":34,"description":"Графики, диаграммы и визуализация данных в интерфейсе.","fullDescription":"Графики, диаграммы и визуализация данных в интерфейсе.","components":["Иконки как визуальные элементы","Дизайн данных: графики и диаграммы"],"tags":["Иконки","Дизайн данных. Графики и диаграммы"],"evidenceState":"supported","branch":"UI — интерфейс","section":"Инструментарий и передача в разработку","x":-291.3573191738694,"y":-114.62538816917686,"width":192,"height":92,"ring":2,"emphasis":"tertiary","opacity":0.65}],"edges":[{"from":"ui-color","to":"ui-typography"},{"from":"ui-typography","to":"ui-layout"},{"from":"ux-design-thinking","to":"ux-user-research"},{"from":"ux-user-research","to":"ux-personas"},{"from":"ux-personas","to":"ux-interviews"},{"from":"ux-information-architecture","to":"ux-user-flows"},{"from":"ux-user-flows","to":"ux-requirements"},{"from":"ux-requirements","to":"ux-wireframes"},{"from":"ux-lowfi-prototype","to":"ux-hifi-prototype"},{"from":"ux-hifi-prototype","to":"ux-interactive-prototype"},{"from":"ux-interactive-prototype","to":"ux-usability-testing"},{"from":"ux-product-thinking","to":"ux-metrics"},{"from":"ux-ethics-privacy","to":"ux-analytics"},{"from":"ui-layout","to":"ui-visual-elements"},{"from":"ui-visual-elements","to":"ui-visual-communication"},{"from":"ui-design-systems","to":"ui-components"},{"from":"ui-components","to":"ui-responsive"},{"from":"ui-responsive","to":"ui-accessibility"},{"from":"ui-accessibility","to":"ui-interaction-states"},{"from":"ui-framer","to":"ui-handoff"},{"from":"ux-usability-testing","to":"ux-experiments"},{"from":"ux-metrics","to":"ux-ethics-privacy"},{"from":"ui-figma","to":"ui-figjam"},{"from":"ui-figjam","to":"ui-framer"},{"from":"ui-handoff","to":"ui-web-technologies"},{"from":"ui-web-technologies","to":"ui-data-visualization"}],"stage":{"width":2135,"height":2311,"offsetX":467.3573191738694,"offsetY":755.2507763383535},"counts":{"foundation":5,"core":23,"optional":6}};
     const byId = new Map(DATA.nodes.map((node) => [node.id, node]));
     const cards = [...document.querySelectorAll('.competency-card')];
     const edges = [...document.querySelectorAll('.edge')];
     const detail = document.getElementById('detail');
+    const viewport = document.getElementById('canvas-viewport');
+    const stage = document.getElementById('canvas-stage');
+    let zoom = 1;
+
+    function setZoom(next) {
+      zoom = Math.min(2.5, Math.max(.25, next));
+      stage.style.setProperty('--zoom', String(zoom));
+      document.getElementById('zoom-value').textContent = Math.round(zoom * 100) + '%';
+    }
+    function fitZoom() {
+      const header = document.querySelector('.app-header');
+      const topInset = header ? header.getBoundingClientRect().bottom + 18 : 40;
+      const availableHeight = Math.max(240, viewport.clientHeight - topInset - 40);
+      const scale = Math.min((viewport.clientWidth - 80) / stage.offsetWidth, availableHeight / stage.offsetHeight) * 0.94;
+      stage.style.top = String(topInset + availableHeight / 2) + 'px';
+      setZoom(Number.isFinite(scale) ? scale : 1);
+    }
+    document.getElementById('zoom-in').addEventListener('click', () => setZoom(zoom + 0.1));
+    document.getElementById('zoom-out').addEventListener('click', () => setZoom(zoom - 0.1));
+    fitZoom();
+    window.addEventListener('resize', fitZoom);
 
     function connected(id) {
       const ids = new Set([id]);

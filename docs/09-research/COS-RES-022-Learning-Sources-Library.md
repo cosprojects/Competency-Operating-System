@@ -1,7 +1,7 @@
 ---
 id: COS-RES-022
 title: Learning Sources Library — обновляемый реестр учебных источников
-version: 1.1.0
+version: 1.2.0
 status: Draft
 owner: Research Team
 last_updated: 2026-10-26
@@ -35,9 +35,11 @@ src/methodology/v1/learning-sources/
   audit.ts          # HTTP-проверка доступности
   search.ts         # Google CSE provider + поисковые шаблоны
   registry.json     # сам реестр (tracked)
+  map.ts            # проекция source→competency, валидация и покрытие
   cli/validate.ts
   cli/audit.ts
   cli/discover.ts
+  cli/map.ts
 ```
 
 Реестр: `src/methodology/v1/learning-sources/registry.json`.
@@ -169,9 +171,31 @@ export GOOGLE_CSE_CX=...
 ```bash
 npm run learning:validate   # схема, дубли, source links
 npm run learning:audit -- --profession motion
+npm run learning:map -- --report
 ```
 
-`learning:audit` проверяет доступность активных источников, пишет отчёт в `data/learning-sources/` и не меняет реестр автоматически.
+`learning:audit` проверяет доступность активных источников, пишет отчёт в `data/learning-sources/` и не меняет реестр автоматически. Аудит Motion (2026-10-26): 9 проверенных источников, 9 active, 0 degraded.
+
+### 6.1. Mapping source → competency
+
+`learning:map` строит обратную проекцию `competency.learningSourceIds` и проверяет:
+
+- источник существует в реестре;
+- `blocked`/`duplicate` источник не может быть доказательством компетенции;
+- источник объявлен для профессии компетенции (`professionIds`);
+- агрегатор не считается достаточным свидетельством — только предупреждение с требованием первичного источника;
+- активные источники без связей попадают в предупреждения, чтобы их не забывали.
+
+Покрытие на 2026-10-26 (после расширения Motion):
+
+| Профессия | Компетенций с активным первичным источником |
+|---|---:|
+| Motion | 10/28 |
+| UX/UI | 0/34 |
+| Product | 0/30 |
+| Graphic | 0/18 |
+
+Ошибок 0. Низкое покрытие UX/UI/Product/Graphic — честный backlog: реестр источников для них есть, но связи `learningSourceIds` пока проставлены только у 10 новых motion-компетенций. Добавление связей — редакционная работа под human-review, а не автоматическое доверие к курсам.
 
 ## 7. Границы
 
@@ -185,7 +209,7 @@ npm run learning:audit -- --profession motion
 
 1. Human-review 10 motion seed-блоков и 55 компетенций.
 2. Запустить `learning:discover` для UX/UI, Product, Graphic при наличии Google CSE ключа.
-3. Добавить извлечение тематических блоков из course pages (без копирования текста) и mapping source→competency.
+3. Добавить извлечение тематических блоков из course pages (без копирования текста); механизм mapping source→competency готов (`learning:map`), дальше — редакционное заполнение связей для UX/UI, Product, Graphic.
 4. Обновить Motion materials после принятия блока (сделано: 30 элементов / 59 материалов / покрытие 28/28).
 5. Расширить библиотеку на остальные профессии.
 
@@ -195,3 +219,4 @@ npm run learning:audit -- --profession motion
 |---|---|---|
 | 1.0.0 | 2026-10-26 | Реестр 33 учебных источников, motion расширен до 28 компетенций (10 новых блоков), `learning:validate` / `learning:audit` / `learning:discover` |
 | 1.1.0 | 2026-10-26 | Консистентность Motion: mapping 28/28, исправлен санитайзер кириллических вопросов, теги каталога проходят фильтр, материалы Motion 28/28 |
+| 1.2.0 | 2026-10-26 | `learning:map`: проекция source→competency, проверка blocked/duplicate/профессии, coverage-отчёт; аудит Motion 9/9 active; покрытие Motion 10/28, остальные профессии — backlog |

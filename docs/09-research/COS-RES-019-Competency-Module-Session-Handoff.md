@@ -1,7 +1,7 @@
 ---
 id: COS-RES-019
 title: Competency Module — session handoff
-version: 1.6.0
+version: 1.7.0
 status: Draft
 owner: Research Team
 last_updated: 2026-10-26
@@ -140,7 +140,7 @@ open web/it-product-competency-canvas.html
 
 1. **Human-review Motion-расширения.** 10 новых motion-компетенций и 10 seed-блоков (`COS-RES-022`) приняты технически; теги блоков синтетические (без `sourceRefs`). Mapping Motion уже сопоставляет их с собранными Practicum/O*NET-тегами — нужно подтвердить людьми и решить, привязывать ли теги к блокам.
 2. **Human-review evidence-backed блоков (Product/Graphic).** `tagHints` заполнены, `competency:seed` + Pass B дали предложения: product 5 блоков (sourceRefs 1–5), graphic 3 (5–6). Артефакты — `data/competency/proposed-blocks-it-*.json` (gitignored), приёмка не выполнена.
-3. **Learning sources (`COS-RES-022`).** `learning:validate` — 33 источника, 24 active, 0 ошибок; `learning:discover` требует Google CSE keys и human-review.
+3. **Learning sources (`COS-RES-022`).** `learning:validate` — 33 источника, 24 active, 0 ошибок; `learning:audit --profession motion` — 9/9 active; `learning:map` — проекция source→competency, покрытие Motion 10/28, UX/UI/Product/Graphic 0/… (редакционный backlog); `learning:discover` требует Google CSE keys и human-review.
 2. **Human-review материалов** — журналы и review готовы: UX/UI 34/34, Product 30/30, Motion 28/28, Graphic 18/18. Нужно решить, какие материалы принимать; только после этого `catalog.materials`. Перезапуск: `materials:agent:queue -- --domain it --profession <prof> --classify --budget-usd 0.15 --max-calls 120`, затем `materials:agent:review`.
 4. **Human-review mapping Graphic** и привязка Practicum-тегов к accepted-блокам (теги собственных блоков синтетические).
 5. **Knowledge graph** (competency → components/tags/materials) — отложен по решению пользователя.
@@ -177,4 +177,5 @@ open web/it-product-competency-canvas.html
 | 1.4.0 | 2026-10-25 | Evidence-backlog: seeds tagHints для 11 компетенций, Pass B предложения блоков (product 5, motion 3, graphic 3) с реальными sourceRefs; UX/UI materials 34/34; все 4 профессии покрыты материалами, catalog.materials = 0 |
 | 1.5.0 | 2026-10-26 | Learning Sources Library (`COS-RES-022`): 33 источника, Motion расширен до 28 компетенций / 42 связей, 10 новых блоков, каталог 54/237, глобальный массив 55; 148 тестов |
 | 1.6.0 | 2026-10-26 | Починка консистентности Motion: mapping 28/28, `mapping:validate` 0 ошибок; санитайзер Practicum-тегов исправлен (кириллические вопросы через \b не отсекались) и применён к каталоговым тегам; материалы Motion 30/59/26, покрытие 28/28; canvas/map пересобраны |
+| 1.7.0 | 2026-10-26 | `learning:map` (source→competency, blocked/duplicate/профессия-контроль, coverage), аудит Motion 9/9 active, покрытие источников Motion 10/28; консистентность Motion завершена, 150 тестов |
 | 1.5.0 | 2026-10-26 | Motion evidence pass + learning source library: 10 motion компетенций (28 узлов / 42 связи), 10 motion-блоков, каталог 54/237, глобальный массив 55; `learning-sources` registry (33 записи, 24 active) и Google CSE discovery scaffold |

@@ -707,6 +707,60 @@
         "coursera-blueprint-interior-design"
       ],
       "rationale": "Источник программы it.interior покрывает тему в рамках курса."
+    },
+    {
+      "competencyId": "artdir-brand-strategy",
+      "sourceIds": [
+        "learntube-art-direction"
+      ],
+      "rationale": "Источник программы it.artdir покрывает тему в рамках курса."
+    },
+    {
+      "competencyId": "artdir-brand-platform",
+      "sourceIds": [
+        "learntube-art-direction"
+      ],
+      "rationale": "Источник программы it.artdir покрывает тему в рамках курса."
+    },
+    {
+      "competencyId": "artdir-presentation",
+      "sourceIds": [
+        "learntube-art-direction"
+      ],
+      "rationale": "Источник программы it.artdir покрывает тему в рамках курса."
+    },
+    {
+      "competencyId": "uxresearch-principles",
+      "sourceIds": [
+        "uxrinstitute-free-ux-research",
+        "coursera-ux-research-courses",
+        "fountaininstitute-free-ux-research"
+      ],
+      "rationale": "Источник программы it.uxresearch покрывает тему в рамках курса."
+    },
+    {
+      "competencyId": "uxresearch-qualitative",
+      "sourceIds": [
+        "uxrinstitute-free-ux-research",
+        "coursera-ux-research-courses"
+      ],
+      "rationale": "Источник программы it.uxresearch покрывает тему в рамках курса."
+    },
+    {
+      "competencyId": "uxresearch-quantitative",
+      "sourceIds": [
+        "uxrinstitute-free-ux-research",
+        "coursera-ux-research-courses"
+      ],
+      "rationale": "Источник программы it.uxresearch покрывает тему в рамках курса."
+    },
+    {
+      "competencyId": "uxresearch-synthesis",
+      "sourceIds": [
+        "uxrinstitute-free-ux-research",
+        "fountaininstitute-free-ux-research"
+      ],
+      "rationale": "Источник программы it.uxresearch покрывает тему в рамках курса."
     }
   ]
 }

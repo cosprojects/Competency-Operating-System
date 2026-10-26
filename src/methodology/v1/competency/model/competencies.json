@@ -1129,7 +1129,10 @@
       "definition": "Принципы и этапы исследований, роль исследований в продуктовом цикле.",
       "priorityHint": "foundation",
       "learningSourceIds": [
-        "practicum-uxresearch"
+        "practicum-uxresearch",
+        "uxrinstitute-free-ux-research",
+        "coursera-ux-research-courses",
+        "fountaininstitute-free-ux-research"
       ]
     },
     {
@@ -1171,7 +1174,9 @@
       "definition": "Глубинные интервью и другие качественные методы, гайды и модерация.",
       "priorityHint": "core",
       "learningSourceIds": [
-        "practicum-uxresearch"
+        "practicum-uxresearch",
+        "uxrinstitute-free-ux-research",
+        "coursera-ux-research-courses"
       ]
     },
     {
@@ -1185,7 +1190,9 @@
       "definition": "Опросы, метрики, А/В-тестирование и статистическая интерпретация.",
       "priorityHint": "core",
       "learningSourceIds": [
-        "practicum-uxresearch"
+        "practicum-uxresearch",
+        "uxrinstitute-free-ux-research",
+        "coursera-ux-research-courses"
       ]
     },
     {
@@ -1227,7 +1234,9 @@
       "definition": "Анализ данных, протоколы, отчёт и выводы для дизайна.",
       "priorityHint": "core",
       "learningSourceIds": [
-        "practicum-uxresearch"
+        "practicum-uxresearch",
+        "uxrinstitute-free-ux-research",
+        "fountaininstitute-free-ux-research"
       ]
     },
     {
@@ -1241,7 +1250,8 @@
       "definition": "Цели бренда, коммуникационная стратегия и связь с бизнесом.",
       "priorityHint": "core",
       "learningSourceIds": [
-        "practicum-artdir"
+        "practicum-artdir",
+        "learntube-art-direction"
       ]
     },
     {
@@ -1255,7 +1265,8 @@
       "definition": "Бренд-платформа, система дизайна и консистентность коммуникаций.",
       "priorityHint": "core",
       "learningSourceIds": [
-        "practicum-artdir"
+        "practicum-artdir",
+        "learntube-art-direction"
       ]
     },
     {
@@ -1297,7 +1308,8 @@
       "definition": "Презентация и аргументация идей со стратегией и цифрами.",
       "priorityHint": "core",
       "learningSourceIds": [
-        "practicum-artdir"
+        "practicum-artdir",
+        "learntube-art-direction"
       ]
     },
     {

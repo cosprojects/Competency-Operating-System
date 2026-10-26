@@ -1738,6 +1738,377 @@
       "httpStatus": 403,
       "discoveryOnly": true,
       "notes": "HTTP 403 (Cloudflare) — только ссылка для человека, автоматический сбор не выполняется."
+    },
+    {
+      "id": "alison-careers-art-director",
+      "title": "Alison — Art Director career page",
+      "url": "https://alison.com/careers/arts/art-director",
+      "kind": "reference",
+      "professionIds": [
+        "it.artdir"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "art director role",
+        "career overview"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 200,
+      "discoveryOnly": true
+    },
+    {
+      "id": "classcentral-subject-art-direction",
+      "title": "Class Central — Art Direction subject",
+      "url": "https://www.classcentral.com/subject/art-direction",
+      "kind": "aggregator",
+      "professionIds": [
+        "it.artdir"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "aggregator",
+      "status": "blocked",
+      "topics": [
+        "course catalog",
+        "art direction"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 403,
+      "discoveryOnly": true,
+      "notes": "HTTP 403 (Cloudflare) — только ссылка для человека, автоматический сбор не выполняется."
+    },
+    {
+      "id": "learntube-art-direction",
+      "title": "LearnTube — Art Direction course",
+      "url": "https://learntube.ai/learn/course/art-direction",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.artdir"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "art direction",
+        "brand",
+        "visual communication"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 200
+    },
+    {
+      "id": "classcentral-udemy-art-direction",
+      "title": "Class Central — Advertising Art Direction (Udemy)",
+      "url": "https://www.classcentral.com/course/udemy-advertising-art-direction-design-techniques-121474",
+      "kind": "aggregator",
+      "professionIds": [
+        "it.artdir"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "aggregator",
+      "status": "blocked",
+      "topics": [
+        "course catalog",
+        "advertising art direction"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 403,
+      "discoveryOnly": true,
+      "notes": "HTTP 403 (Cloudflare) — только ссылка для человека, автоматический сбор не выполняется."
+    },
+    {
+      "id": "substack-free-creative-courses",
+      "title": "Sarah Rae — 15 free online courses for creatives",
+      "url": "https://sarahraedraws.substack.com/p/15-free-online-courses-for-creatives",
+      "kind": "aggregator",
+      "professionIds": [
+        "it.artdir"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "aggregator",
+      "status": "active",
+      "topics": [
+        "course list",
+        "creative courses"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 200,
+      "discoveryOnly": true
+    },
+    {
+      "id": "skillshare-art-direction-web",
+      "title": "Skillshare — Art Direction for the Web",
+      "url": "https://www.skillshare.com/en/classes/art-direction-for-the-web/916622745",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.artdir"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "paid",
+      "authority": "secondary",
+      "status": "blocked",
+      "topics": [
+        "art direction",
+        "web"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 403,
+      "discoveryOnly": true,
+      "notes": "HTTP 403 (Cloudflare) — только ссылка для человека, автоматический сбор не выполняется."
+    },
+    {
+      "id": "creativeboom-free-creative-courses",
+      "title": "Creative Boom — 50 free online courses for creatives",
+      "url": "https://www.creativeboom.com/tips/50-free-online-courses-for-creatives-and-entrepreneurs/",
+      "kind": "aggregator",
+      "professionIds": [
+        "it.artdir"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "aggregator",
+      "status": "active",
+      "topics": [
+        "course list",
+        "creative courses"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 200,
+      "discoveryOnly": true
+    },
+    {
+      "id": "coursera-creative-courses",
+      "title": "Coursera — Creative courses",
+      "url": "https://www.coursera.org/courses?query=creative",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.artdir"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "mixed",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "creative courses",
+        "course catalog"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 200,
+      "discoveryOnly": true
+    },
+    {
+      "id": "classcentral-subject-ux-research",
+      "title": "Class Central — UX Research subject",
+      "url": "https://www.classcentral.com/subject/ux-research",
+      "kind": "aggregator",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "aggregator",
+      "status": "blocked",
+      "topics": [
+        "course catalog",
+        "ux research"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 403,
+      "discoveryOnly": true,
+      "notes": "HTTP 403 (Cloudflare) — только ссылка для человека, автоматический сбор не выполняется."
+    },
+    {
+      "id": "uxwoman-free-ux-research",
+      "title": "UX Woman — Free UX Research courses",
+      "url": "https://www.uxwoman.com/free-ux-research-courses-online",
+      "kind": "aggregator",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "aggregator",
+      "status": "active",
+      "topics": [
+        "course list",
+        "ux research"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 200,
+      "discoveryOnly": true
+    },
+    {
+      "id": "alison-careers-ux-researcher",
+      "title": "Alison — UX Researcher career page",
+      "url": "https://alison.com/careers/it/ux-researcher",
+      "kind": "reference",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "ux researcher role",
+        "career overview"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 200,
+      "discoveryOnly": true
+    },
+    {
+      "id": "mooc-list-ux-research",
+      "title": "MOOC List — UX Research",
+      "url": "https://www.mooc-list.com/tags/ux-research",
+      "kind": "aggregator",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "aggregator",
+      "status": "blocked",
+      "topics": [
+        "course catalog",
+        "ux research"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 403,
+      "discoveryOnly": true,
+      "notes": "HTTP 403 (Cloudflare) — только ссылка для человека, автоматический сбор не выполняется."
+    },
+    {
+      "id": "uxrinstitute-free-ux-research",
+      "title": "UXR Institute — Free UX Research courses",
+      "url": "https://www.uxrinstitute.com/free-ux-research-courses",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "ux research",
+        "research methods"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 200
+    },
+    {
+      "id": "medium-sergushkin-ux-research-courses",
+      "title": "Medium — 5 best free UX research courses",
+      "url": "https://sergushkin.medium.com/5-best-free-ux-research-courses-1e8566f13f9e",
+      "kind": "aggregator",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "aggregator",
+      "status": "blocked",
+      "topics": [
+        "course list",
+        "ux research"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 403,
+      "discoveryOnly": true,
+      "notes": "HTTP 403 (Cloudflare) — только ссылка для человека, автоматический сбор не выполняется."
+    },
+    {
+      "id": "coursera-ux-research-courses",
+      "title": "Coursera — UX Research courses",
+      "url": "https://www.coursera.org/courses?query=ux%20research",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "mixed",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "ux research",
+        "course catalog"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 200
+    },
+    {
+      "id": "fountaininstitute-free-ux-research",
+      "title": "Fountain Institute — Free UX Research short course",
+      "url": "https://www.thefountaininstitute.com/free-ux-research-short-course",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "ux research",
+        "research methods"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 200
     }
   ]
 }

@@ -82,9 +82,21 @@ references:
 
 ## 4. Learning sources
 
-В реестр добавлены 7 источников (primary, active, paid): `practicum-presentation`, `practicum-appdesign`, `practicum-uxresearch`, `practicum-artdir`, `practicum-3ddesigner`, `practicum-interior`, `practicum-webdesigner`. Реестр: **40 источников, 31 active, 0 ошибок**.
+В реестр добавлены 7 Practicum-источников (primary, active, paid): `practicum-presentation`, `practicum-appdesign`, `practicum-uxresearch`, `practicum-artdir`, `practicum-3ddesigner`, `practicum-interior`, `practicum-webdesigner`.
 
-`learning:map` после связывания: **все 7 новых профессий покрыты на 100%** (13/13, 26/26, 18/18, 16/16, 15/15, 14/14, 24/24); всего связанных компетенций 99, 0 ошибок и 0 предупреждений.
+Дополнительно добавлены **33 источника, присланных заказчиком** (2026-10-26), все — английские курсы/агрегаторы. Доступность проверена HTTP-аудитом с User-Agent: **24 active, 9 blocked (HTTP 403, Cloudflare)**. Заблокированные помечены `discoveryOnly`: они остаются ссылками для человека и не считаются свидетельством компетенции.
+
+| Профессия | Добавлено | Active | Blocked (403) |
+|---|---:|---:|---:|
+| 3D-дизайнер | 9 | 6 | 3 (Class Central, Udemy, MOOC List) |
+| Дизайнер презентаций | 7 | 4 | 3 (MOOC List, Class Central, Canva Design School) |
+| Веб-дизайнер | 6 | 5 | 1 (MOOC List) |
+| Дизайнер приложений | 4 | 4 | — |
+| Дизайнер интерьеров | 7 | 5 | 2 (Class Central, Udemy) |
+
+Итого реестр: **73 источника, 55 active, 0 ошибок**. `figma-design-basics` уже был в реестре — не дублировали. Активные источники связаны с компетенциями через `model/learning-source-links.json`; `learning:map` — **0 ошибок, 0 предупреждений**, все 11 профессий покрыты.
+
+`learning:map` после связывания: **все 11 профессий покрыты** (UX/UI 32/34, product 28/30, motion 27/28, graphic 18/18, новые — 100%); всего связанных компетенций 99, 0 ошибок и 0 предупреждений.
 
 ## 5. Что пока не сделано
 
@@ -121,3 +133,4 @@ npm run canvas:tabs
 | Версия | Дата | Что изменилось |
 |---|---|---|
 | 1.0.0 | 2026-10-26 | Этап 1: 7 новых дизайнерских профессий, 48 новых компетенций, 11 professions, 103 компетенции, 7 новых learning-источников; модели и learning:map зелёные |
+| 1.1.0 | 2026-10-26 | Добавлены 33 присланных заказчиком источника для 5 профессий (24 active, 9 blocked → discoveryOnly); реестр 73/55, learning:map 99 компетенций / 0 ошибок / 0 предупреждений |

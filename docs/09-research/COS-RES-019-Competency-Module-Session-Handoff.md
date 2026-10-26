@@ -1,7 +1,7 @@
 ---
 id: COS-RES-019
 title: Competency Module — session handoff
-version: 1.11.0
+version: 1.12.0
 status: Draft
 owner: Research Team
 last_updated: 2026-10-26
@@ -149,7 +149,7 @@ open web/it-product-competency-canvas.html
 
 1. **Human-review Motion-расширения.** 10 новых motion-компетенций и 10 seed-блоков (`COS-RES-022`) приняты технически; теги блоков синтетические (без `sourceRefs`). Mapping Motion уже сопоставляет их с собранными Practicum/O*NET-тегами — нужно подтвердить людьми и решить, привязывать ли теги к блокам.
 2. **Human-review evidence-backed блоков (Product/Graphic).** `tagHints` заполнены, `competency:seed` + Pass B дали предложения: product 5 блоков (sourceRefs 1–5), graphic 3 (5–6). Артефакты — `data/competency/proposed-blocks-it-*.json` (gitignored), приёмка не выполнена.
-3. **Learning sources (`COS-RES-022`).** `learning:validate` — 40 источников, 31 active, 0 ошибок; `learning:map` — 99 связанных компетенций, все 11 профессий покрыты; `learning:audit --profession motion` — 9/9 active; `learning:map` — проекция source→competency и покрытие: UX/UI 24/34, Product 23/30, Motion 23/28, Graphic 14/18 (43/55 компетенций), 0 предупреждений; связи ведутся в `model/learning-source-links.json` и мержатся в `model:sync`; каталоги/обзоры размечены `discoveryOnly` (8 шт.); `learning:topics` — robots-safe извлечение коротких тем из course pages (Motion 5/7 источников / 45 тем, UX/UI 180, Product 198, Graphic 140); `learning:discover` требует Google CSE keys и human-review.
+3. **Learning sources (`COS-RES-022`).** `learning:validate` — 73 источника, 55 active, 0 ошибок; 33 источника присланы заказчиком (24 active, 9 blocked→discoveryOnly); `learning:map` — 99 связанных компетенций, все 11 профессий покрыты; `learning:audit --profession motion` — 9/9 active; `learning:map` — проекция source→competency и покрытие: UX/UI 24/34, Product 23/30, Motion 23/28, Graphic 14/18 (43/55 компетенций), 0 предупреждений; связи ведутся в `model/learning-source-links.json` и мержатся в `model:sync`; каталоги/обзоры размечены `discoveryOnly` (8 шт.); `learning:topics` — robots-safe извлечение коротких тем из course pages (Motion 5/7 источников / 45 тем, UX/UI 180, Product 198, Graphic 140); `learning:discover` требует Google CSE keys и human-review.
 2. **Human-review материалов** — журналы и review готовы: UX/UI 34/34, Product 30/30, Motion 28/28, Graphic 18/18. Нужно решить, какие материалы принимать; только после этого `catalog.materials`. Перезапуск: `materials:agent:queue -- --domain it --profession <prof> --classify --budget-usd 0.15 --max-calls 120`, затем `materials:agent:review`.
 4. **Human-review mapping Graphic** и привязка Practicum-тегов к accepted-блокам (теги собственных блоков синтетические).
 5. **Knowledge graph** (competency → components/tags/materials) — отложен по решению пользователя.
@@ -196,4 +196,5 @@ open web/it-product-competency-canvas.html
 | 1.9.0 | 2026-10-26 | `discoveryOnly` для 8 каталогов/обзоров; `learning:map` 0 предупреждений, discoveryOnly не может быть свидетельством; 154 теста |
 | 1.10.0 | 2026-10-26 | `learning:topics`: robots-safe извлечение тем из course pages (парсер robots.txt, только заголовки/списки), первый прогон по 4 профессиям; 157 тестов |
 | 1.11.0 | 2026-10-26 | Этап 1 (`COS-RES-023`): 7 новых дизайнерских профессий, 48 новых компетенций, 103 компетенции, 11 professions; 7 Practicum learning-источников, learning:map 99 компетенций / 0 ошибок; канвасы и табы на 11 профессий; 157 тестов |
+| 1.12.0 | 2026-10-26 | Добавлены 33 присланных заказчиком learning-источника для 3D/презентаций/веба/приложений/интерьеров (24 active, 9 blocked→discoveryOnly); реестр 73/55; learning:map 0 ошибок/0 предупреждений; 157 тестов |
 | 1.5.0 | 2026-10-26 | Motion evidence pass + learning source library: 10 motion компетенций (28 узлов / 42 связи), 10 motion-блоков, каталог 54/237, глобальный массив 55; `learning-sources` registry (33 записи, 24 active) и Google CSE discovery scaffold |

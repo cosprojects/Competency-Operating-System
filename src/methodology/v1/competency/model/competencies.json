@@ -16,7 +16,9 @@
         "codecademy-intro-uiux",
         "coursera-uxui-fundamentals",
         "practicum-design-catalog",
-        "coursera-microsoft-product-design"
+        "coursera-microsoft-product-design",
+        "coursera-design-fundamentals-ai",
+        "uxdesigninstitute-free-ux-course"
       ]
     },
     {
@@ -42,7 +44,8 @@
         "greatlearning-uiux",
         "practicum-design-catalog",
         "coursera-microsoft-product-design",
-        "udacity-product-design"
+        "udacity-product-design",
+        "uxdesigninstitute-free-ux-course"
       ]
     },
     {
@@ -391,6 +394,7 @@
       },
       "learningSourceIds": [
         "practicum-design-catalog",
+        "scrimba-ui-design-fundamentals",
         "coursera-uxui-fundamentals",
         "greatlearning-uiux",
         "coursera-graphic-fundamentals"
@@ -429,7 +433,8 @@
         "greatlearning-uiux",
         "practicum-design-catalog",
         "alison-graphic-design",
-        "coursera-graphic-fundamentals"
+        "coursera-graphic-fundamentals",
+        "coursera-web-design-free"
       ]
     },
     {
@@ -623,7 +628,8 @@
       "definition": "Понимание HTML/CSS/JS, веб-стандартов и ограничений реализации.",
       "priorityHint": "optional",
       "learningSourceIds": [
-        "practicum-webdesigner"
+        "practicum-webdesigner",
+        "alison-web-design-html"
       ]
     },
     {
@@ -959,7 +965,8 @@
       "definition": "Цель, логика и сценарий презентации: от сообщения к последовательности слайдов.",
       "priorityHint": "foundation",
       "learningSourceIds": [
-        "practicum-presentation"
+        "practicum-presentation",
+        "coursera-presentation-design-canva"
       ]
     },
     {
@@ -987,7 +994,8 @@
       "definition": "Формулировка ключевого сообщения, тезисов, аргументов и выводов.",
       "priorityHint": "core",
       "learningSourceIds": [
-        "practicum-presentation"
+        "practicum-presentation",
+        "autoppt-presentation-slide-design"
       ]
     },
     {
@@ -1015,7 +1023,11 @@
       "definition": "Выбор способа визуализации и сборка слайдов под сообщение и аудиторию.",
       "priorityHint": "core",
       "learningSourceIds": [
-        "practicum-presentation"
+        "practicum-presentation",
+        "coursera-presentation-design-canva",
+        "greatlearning-powerpoint-free",
+        "learnfree-powerpoint-foundations",
+        "autoppt-presentation-slide-design"
       ]
     },
     {
@@ -1029,7 +1041,8 @@
       "definition": "Репетиция защиты идеи, работа с вопросами и обратной связью.",
       "priorityHint": "core",
       "learningSourceIds": [
-        "practicum-presentation"
+        "practicum-presentation",
+        "greatlearning-powerpoint-free"
       ]
     },
     {
@@ -1057,7 +1070,8 @@
       "definition": "Распространённые элементы, навигация и поведенческие паттерны мобильных приложений.",
       "priorityHint": "core",
       "learningSourceIds": [
-        "practicum-appdesign"
+        "practicum-appdesign",
+        "greatlearning-design-app"
       ]
     },
     {
@@ -1071,7 +1085,9 @@
       "definition": "Интерактивные прототипы и продвинутая анимация в Figma для мобильных сценариев.",
       "priorityHint": "core",
       "learningSourceIds": [
-        "practicum-appdesign"
+        "practicum-appdesign",
+        "greatlearning-design-app",
+        "coursera-design-fundamentals-ai"
       ]
     },
     {
@@ -1323,7 +1339,13 @@
       "definition": "Основы 3D: примитивы, полигональное моделирование и этапы работы над моделью.",
       "priorityHint": "foundation",
       "learningSourceIds": [
-        "practicum-3ddesigner"
+        "practicum-3ddesigner",
+        "alison-3d-modeling-tag",
+        "coursera-3d-modeling-intro",
+        "greatlearning-blender-3d",
+        "coursera-3d-cad-fundamental",
+        "tinkercad-learn-designs",
+        "instructables-3d-modeling-guide"
       ]
     },
     {
@@ -1337,7 +1359,9 @@
       "definition": "Моделирование техники и объектов с жёсткими формами.",
       "priorityHint": "core",
       "learningSourceIds": [
-        "practicum-3ddesigner"
+        "practicum-3ddesigner",
+        "coursera-3d-modeling-intro",
+        "coursera-3d-cad-fundamental"
       ]
     },
     {
@@ -1365,7 +1389,8 @@
       "definition": "Материалы, текстуры, шейдинг и работа с картами.",
       "priorityHint": "core",
       "learningSourceIds": [
-        "practicum-3ddesigner"
+        "practicum-3ddesigner",
+        "greatlearning-blender-3d"
       ]
     },
     {
@@ -1379,7 +1404,8 @@
       "definition": "Постановка света и тени в трёхмерной сцене.",
       "priorityHint": "core",
       "learningSourceIds": [
-        "practicum-3ddesigner"
+        "practicum-3ddesigner",
+        "greatlearning-blender-3d"
       ]
     },
     {
@@ -1393,7 +1419,8 @@
       "definition": "Настройка рендера, камер и оптимизация сцены.",
       "priorityHint": "core",
       "learningSourceIds": [
-        "practicum-3ddesigner"
+        "practicum-3ddesigner",
+        "greatlearning-blender-3d"
       ]
     },
     {
@@ -1435,7 +1462,8 @@
       "definition": "Анализ пространства, обмеры, брифинг и ограничения объекта.",
       "priorityHint": "foundation",
       "learningSourceIds": [
-        "practicum-interior"
+        "practicum-interior",
+        "greatlearning-interior-design-space-planning"
       ]
     },
     {
@@ -1463,7 +1491,8 @@
       "definition": "Зонирование, планировочные решения и работа с новостройками/вторичным жильём.",
       "priorityHint": "core",
       "learningSourceIds": [
-        "practicum-interior"
+        "practicum-interior",
+        "greatlearning-interior-design-space-planning"
       ]
     },
     {
@@ -1477,7 +1506,10 @@
       "definition": "Базовые стили интерьера, цвет и цветовая композиция.",
       "priorityHint": "core",
       "learningSourceIds": [
-        "practicum-interior"
+        "practicum-interior",
+        "alna-free-interior-courses",
+        "alison-interior-design-practical",
+        "oxfordhomestudy-interior-design"
       ]
     },
     {
@@ -1491,7 +1523,9 @@
       "definition": "Подбор мебели, материалов, сочетаемость и световая концепция.",
       "priorityHint": "core",
       "learningSourceIds": [
-        "practicum-interior"
+        "practicum-interior",
+        "alna-free-interior-courses",
+        "alison-interior-design-practical"
       ]
     },
     {
@@ -1505,7 +1539,8 @@
       "definition": "Моделирование, материалы, свет, ракурсы и рендер интерьера.",
       "priorityHint": "core",
       "learningSourceIds": [
-        "practicum-interior"
+        "practicum-interior",
+        "coursera-blueprint-interior-design"
       ]
     },
     {
@@ -1519,7 +1554,8 @@
       "definition": "Чертежи по ГОСТу, планы, развёртки и инженерные схемы.",
       "priorityHint": "core",
       "learningSourceIds": [
-        "practicum-interior"
+        "practicum-interior",
+        "coursera-blueprint-interior-design"
       ]
     },
     {
@@ -1561,7 +1597,11 @@
       "definition": "Структура лендингов и страниц: блоки, смыслы и конверсионные сценарии.",
       "priorityHint": "foundation",
       "learningSourceIds": [
-        "practicum-webdesigner"
+        "practicum-webdesigner",
+        "coursera-web-design-free",
+        "greatlearning-web-design-free",
+        "alison-web-design-html",
+        "simplilearn-web-designing-free"
       ]
     },
     {
@@ -1575,7 +1615,9 @@
       "definition": "Адаптивность, сетки и поведение интерфейса на разных экранах.",
       "priorityHint": "core",
       "learningSourceIds": [
-        "practicum-webdesigner"
+        "practicum-webdesigner",
+        "greatlearning-web-design-free",
+        "webflow-university-courses"
       ]
     },
     {
@@ -1589,7 +1631,8 @@
       "definition": "Работа с CMS и конструкторами (Tilda и аналоги) при сборке сайтов.",
       "priorityHint": "core",
       "learningSourceIds": [
-        "practicum-webdesigner"
+        "practicum-webdesigner",
+        "webflow-university-courses"
       ]
     },
     {

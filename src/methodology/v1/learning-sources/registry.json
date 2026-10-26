@@ -990,6 +990,754 @@
       "discoveredBy": "user",
       "lastChecked": "2026-10-26",
       "httpStatus": 200
+    },
+    {
+      "id": "alison-3d-modeling-tag",
+      "title": "Alison — 3D Modeling courses",
+      "url": "https://alison.com/tag/3d-modeling",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "3d modeling",
+        "3d design"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 200
+    },
+    {
+      "id": "coursera-3d-modeling-intro",
+      "title": "Coursera — Introduction to 3D Modeling",
+      "url": "https://www.coursera.org/learn/introduction-to-3d-modeling",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "mixed",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "3d modeling",
+        "modeling fundamentals"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 200
+    },
+    {
+      "id": "classcentral-3d-modeling-fundamentals",
+      "title": "Class Central — 3D Modeling Fundamentals (LCI Education)",
+      "url": "https://www.classcentral.com/course/design-lci-education-3d-modeling-fundamentals-288779",
+      "kind": "aggregator",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "mixed",
+      "authority": "aggregator",
+      "status": "blocked",
+      "topics": [
+        "course catalog",
+        "3d modeling"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 403,
+      "discoveryOnly": true,
+      "notes": "HTTP 403 (Cloudflare) — только ссылка для человека, автоматический сбор не выполняется."
+    },
+    {
+      "id": "greatlearning-blender-3d",
+      "title": "Great Learning — Blender 3D Design (free)",
+      "url": "https://www.mygreatlearning.com/academy/learn-for-free/courses/blender-3d-design",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "blender",
+        "3d modeling",
+        "rendering"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 200
+    },
+    {
+      "id": "udemy-3d-modeling-free",
+      "title": "Udemy — Free 3D Modeling courses",
+      "url": "https://www.udemy.com/topic/3d-modeling/free/",
+      "kind": "aggregator",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "mixed",
+      "authority": "aggregator",
+      "status": "blocked",
+      "topics": [
+        "course catalog",
+        "3d modeling"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 403,
+      "discoveryOnly": true,
+      "notes": "HTTP 403 (Cloudflare) — только ссылка для человека, автоматический сбор не выполняется."
+    },
+    {
+      "id": "mooc-list-3d-modeling",
+      "title": "MOOC List — 3D Modeling",
+      "url": "https://www.mooc-list.com/tags/3d-modeling",
+      "kind": "aggregator",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "mixed",
+      "authority": "aggregator",
+      "status": "blocked",
+      "topics": [
+        "course catalog",
+        "3d modeling"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 403,
+      "discoveryOnly": true,
+      "notes": "HTTP 403 (Cloudflare) — только ссылка для человека, автоматический сбор не выполняется."
+    },
+    {
+      "id": "coursera-3d-cad-fundamental",
+      "title": "Coursera — 3D CAD Fundamental",
+      "url": "https://www.coursera.org/learn/3d-cad-fundamental",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "mixed",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "cad",
+        "3d modeling"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 200
+    },
+    {
+      "id": "tinkercad-learn-designs",
+      "title": "Tinkercad — Learn Designs",
+      "url": "https://www.tinkercad.com/learn/designs",
+      "kind": "reference",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "3d design",
+        "cad basics"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 200
+    },
+    {
+      "id": "instructables-3d-modeling-guide",
+      "title": "Instructables — From Beginner to Advanced 3D Modeling",
+      "url": "https://www.instructables.com/From-Beginner-to-Advanced-3D-Modeling-for-Free/",
+      "kind": "blog",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "3d modeling guide"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 200
+    },
+    {
+      "id": "mooc-list-presentation-design",
+      "title": "MOOC List — Presentation Design",
+      "url": "https://www.mooc-list.com/tags/presentation-design",
+      "kind": "aggregator",
+      "professionIds": [
+        "it.presentation"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "mixed",
+      "authority": "aggregator",
+      "status": "blocked",
+      "topics": [
+        "course catalog",
+        "presentation design"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 403,
+      "discoveryOnly": true,
+      "notes": "HTTP 403 (Cloudflare) — только ссылка для человека, автоматический сбор не выполняется."
+    },
+    {
+      "id": "coursera-presentation-design-canva",
+      "title": "Coursera — Presentation Design Mastery in Canva",
+      "url": "https://www.coursera.org/learn/presentation-design-mastery-in-canva",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.presentation"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "mixed",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "presentation design",
+        "canva",
+        "slides"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 200
+    },
+    {
+      "id": "classcentral-presentation-design-report",
+      "title": "Class Central — Best Presentation Design Courses",
+      "url": "https://www.classcentral.com/report/best-presentation-design-courses/",
+      "kind": "aggregator",
+      "professionIds": [
+        "it.presentation"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "mixed",
+      "authority": "aggregator",
+      "status": "blocked",
+      "topics": [
+        "course list",
+        "presentation design"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 403,
+      "discoveryOnly": true,
+      "notes": "HTTP 403 (Cloudflare) — только ссылка для человека, автоматический сбор не выполняется."
+    },
+    {
+      "id": "greatlearning-powerpoint-free",
+      "title": "Great Learning — Free PowerPoint courses",
+      "url": "https://www.mygreatlearning.com/powerpoint/free-courses",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.presentation"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "powerpoint",
+        "slides"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 200
+    },
+    {
+      "id": "learnfree-powerpoint-foundations",
+      "title": "LearnFree — PowerPoint Foundations",
+      "url": "https://www.learnfree.org/series/powerpoint-foundations",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.presentation"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "powerpoint",
+        "presentation basics"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 200
+    },
+    {
+      "id": "canva-design-school-presentations",
+      "title": "Canva Design School — Presentations to Impress",
+      "url": "https://www.canva.com/en/design-school/courses/presentations-to-impress/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.presentation"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "blocked",
+      "topics": [
+        "presentation design",
+        "canva"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 403,
+      "discoveryOnly": true,
+      "notes": "HTTP 403 (Cloudflare) — только ссылка для человека, автоматический сбор не выполняется."
+    },
+    {
+      "id": "autoppt-presentation-slide-design",
+      "title": "AutoPPT — Master Presentation Slide Design",
+      "url": "https://autoppt.com/blog/master-presentation-slide-design/",
+      "kind": "blog",
+      "professionIds": [
+        "it.presentation"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "slide design",
+        "visual structure"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 200
+    },
+    {
+      "id": "coursera-web-design-free",
+      "title": "Coursera — Free Web Design courses",
+      "url": "https://www.coursera.org/courses?query=free&skills=Web%20Design",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.webdesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "mixed",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "web design",
+        "course catalog"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 200
+    },
+    {
+      "id": "greatlearning-web-design-free",
+      "title": "Great Learning — Free Web Design courses",
+      "url": "https://www.mygreatlearning.com/web-design/free-courses",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.webdesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "web design",
+        "responsive"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 200
+    },
+    {
+      "id": "mooc-list-web-design",
+      "title": "MOOC List — Web Design",
+      "url": "https://www.mooc-list.com/tags/web-design",
+      "kind": "aggregator",
+      "professionIds": [
+        "it.webdesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "mixed",
+      "authority": "aggregator",
+      "status": "blocked",
+      "topics": [
+        "course catalog",
+        "web design"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 403,
+      "discoveryOnly": true,
+      "notes": "HTTP 403 (Cloudflare) — только ссылка для человека, автоматический сбор не выполняется."
+    },
+    {
+      "id": "alison-web-design-html",
+      "title": "Alison — Web Design with HTML",
+      "url": "https://alison.com/course/web-design-with-html",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.webdesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "html",
+        "web design"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 200
+    },
+    {
+      "id": "webflow-university-courses",
+      "title": "Webflow University — Courses",
+      "url": "https://university.webflow.com/courses",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.webdesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "webflow",
+        "cms",
+        "responsive web"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 200
+    },
+    {
+      "id": "simplilearn-web-designing-free",
+      "title": "Simplilearn — Free Web Designing Course",
+      "url": "https://www.simplilearn.com/free-web-designing-course-skillup",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.webdesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "mixed",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "web design",
+        "html/css basics"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 200
+    },
+    {
+      "id": "greatlearning-design-app",
+      "title": "Great Learning — Design App (free)",
+      "url": "https://www.mygreatlearning.com/academy/learn-for-free/courses/design-app",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.appdesign"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "app design",
+        "mobile patterns"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 200
+    },
+    {
+      "id": "coursera-design-fundamentals-ai",
+      "title": "Coursera — Design Fundamentals with AI",
+      "url": "https://www.coursera.org/learn/design-fundamentals-ai",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.appdesign"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "mixed",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "design fundamentals",
+        "ai in design"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 200
+    },
+    {
+      "id": "uxdesigninstitute-free-ux-course",
+      "title": "UX Design Institute — Free UX Design Course",
+      "url": "https://www.uxdesigninstitute.com/courses/free-ux-design-course",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.appdesign"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "ux design",
+        "research basics"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 200
+    },
+    {
+      "id": "scrimba-ui-design-fundamentals",
+      "title": "Scrimba — Intro to UI Design Fundamentals",
+      "url": "https://scrimba.com/intro-to-ui-design-fundamentals-c0q",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.appdesign"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "ui design",
+        "visual fundamentals"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 200
+    },
+    {
+      "id": "alna-free-interior-courses",
+      "title": "Alna Design — Free Interior Design Courses",
+      "url": "https://alna-design.com/free-interior-design-courses/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.interior"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "interior design",
+        "styles",
+        "materials"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 200
+    },
+    {
+      "id": "alison-interior-design-practical",
+      "title": "Alison — Practical Guide to Interior Design",
+      "url": "https://alison.com/course/practical-guide-to-interior-design",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.interior"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "interior design",
+        "materials"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 200
+    },
+    {
+      "id": "classcentral-interior-design-essentials",
+      "title": "Class Central — Interior Design Essentials (LCI Education)",
+      "url": "https://www.classcentral.com/course/design-lci-education-interior-design-essentials-283939",
+      "kind": "aggregator",
+      "professionIds": [
+        "it.interior"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "mixed",
+      "authority": "aggregator",
+      "status": "blocked",
+      "topics": [
+        "course catalog",
+        "interior design"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 403,
+      "discoveryOnly": true,
+      "notes": "HTTP 403 (Cloudflare) — только ссылка для человека, автоматический сбор не выполняется."
+    },
+    {
+      "id": "oxfordhomestudy-interior-design",
+      "title": "Oxford Home Study — Free Online Interior Design Courses",
+      "url": "https://www.oxfordhomestudy.com/free-online-interior-design-courses",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.interior"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "interior design",
+        "styles"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 200
+    },
+    {
+      "id": "greatlearning-interior-design-space-planning",
+      "title": "Great Learning — Interior Design and Space Planning (free)",
+      "url": "https://www.mygreatlearning.com/academy/learn-for-free/courses/interior-design-and-space-planning",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.interior"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "interior design",
+        "space planning"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 200
+    },
+    {
+      "id": "coursera-blueprint-interior-design",
+      "title": "Coursera — Blueprint to Brilliance Through Interior Design",
+      "url": "https://www.coursera.org/learn/blueprint-to-brilliance-through-interior-design",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.interior"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "mixed",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "interior design",
+        "visualization",
+        "drawings"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 200
+    },
+    {
+      "id": "udemy-interior-design-free",
+      "title": "Udemy — Free Interior Design courses",
+      "url": "https://www.udemy.com/topic/interior-design/free/",
+      "kind": "aggregator",
+      "professionIds": [
+        "it.interior"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "mixed",
+      "authority": "aggregator",
+      "status": "blocked",
+      "topics": [
+        "course catalog",
+        "interior design"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 403,
+      "discoveryOnly": true,
+      "notes": "HTTP 403 (Cloudflare) — только ссылка для человека, автоматический сбор не выполняется."
     }
   ]
 }

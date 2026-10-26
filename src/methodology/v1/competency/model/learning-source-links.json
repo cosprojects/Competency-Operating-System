@@ -13,7 +13,8 @@
     {
       "competencyId": "ui-layout",
       "sourceIds": [
-        "practicum-design-catalog"
+        "practicum-design-catalog",
+        "scrimba-ui-design-fundamentals"
       ],
       "rationale": "Программа Практикума по дизайну покрывает композицию и сетки в рамках курса."
     },
@@ -268,7 +269,8 @@
       "sourceIds": [
         "coursera-microsoft-product-design",
         "udacity-product-design",
-        "practicum-design-catalog"
+        "practicum-design-catalog",
+        "uxdesigninstitute-free-ux-course"
       ],
       "rationale": "Research-модули курсов и программа Практикума."
     },
@@ -417,7 +419,9 @@
     {
       "competencyId": "ux-design-thinking",
       "sourceIds": [
-        "practicum-design-catalog"
+        "practicum-design-catalog",
+        "coursera-design-fundamentals-ai",
+        "uxdesigninstitute-free-ux-course"
       ],
       "rationale": "Программа Практикума по графическому дизайну задаёт рамку профессии."
     },
@@ -455,7 +459,8 @@
       "competencyId": "ui-visual-communication",
       "sourceIds": [
         "alison-graphic-design",
-        "coursera-graphic-fundamentals"
+        "coursera-graphic-fundamentals",
+        "coursera-web-design-free"
       ],
       "rationale": "Visual communication и основы дизайна в курсах."
     },
@@ -541,9 +546,167 @@
     {
       "competencyId": "ui-web-technologies",
       "sourceIds": [
-        "practicum-webdesigner"
+        "practicum-webdesigner",
+        "alison-web-design-html"
       ],
       "rationale": "Источник программы «Веб-дизайнер» покрывает тему в рамках курса."
+    },
+    {
+      "competencyId": "3d-modeling",
+      "sourceIds": [
+        "alison-3d-modeling-tag",
+        "coursera-3d-modeling-intro",
+        "greatlearning-blender-3d",
+        "coursera-3d-cad-fundamental",
+        "tinkercad-learn-designs",
+        "instructables-3d-modeling-guide"
+      ],
+      "rationale": "Источник программы it.3ddesigner покрывает тему в рамках курса."
+    },
+    {
+      "competencyId": "3d-hard-surface",
+      "sourceIds": [
+        "coursera-3d-modeling-intro",
+        "coursera-3d-cad-fundamental"
+      ],
+      "rationale": "Источник программы it.3ddesigner покрывает тему в рамках курса."
+    },
+    {
+      "competencyId": "3d-texturing",
+      "sourceIds": [
+        "greatlearning-blender-3d"
+      ],
+      "rationale": "Источник программы it.3ddesigner покрывает тему в рамках курса."
+    },
+    {
+      "competencyId": "3d-lighting",
+      "sourceIds": [
+        "greatlearning-blender-3d"
+      ],
+      "rationale": "Источник программы it.3ddesigner покрывает тему в рамках курса."
+    },
+    {
+      "competencyId": "3d-rendering",
+      "sourceIds": [
+        "greatlearning-blender-3d"
+      ],
+      "rationale": "Источник программы it.3ddesigner покрывает тему в рамках курса."
+    },
+    {
+      "competencyId": "presentation-structure",
+      "sourceIds": [
+        "coursera-presentation-design-canva"
+      ],
+      "rationale": "Источник программы it.presentation покрывает тему в рамках курса."
+    },
+    {
+      "competencyId": "presentation-visualization",
+      "sourceIds": [
+        "coursera-presentation-design-canva",
+        "greatlearning-powerpoint-free",
+        "learnfree-powerpoint-foundations",
+        "autoppt-presentation-slide-design"
+      ],
+      "rationale": "Источник программы it.presentation покрывает тему в рамках курса."
+    },
+    {
+      "competencyId": "presentation-delivery",
+      "sourceIds": [
+        "greatlearning-powerpoint-free"
+      ],
+      "rationale": "Источник программы it.presentation покрывает тему в рамках курса."
+    },
+    {
+      "competencyId": "presentation-message",
+      "sourceIds": [
+        "autoppt-presentation-slide-design"
+      ],
+      "rationale": "Источник программы it.presentation покрывает тему в рамках курса."
+    },
+    {
+      "competencyId": "web-landing",
+      "sourceIds": [
+        "coursera-web-design-free",
+        "greatlearning-web-design-free",
+        "alison-web-design-html",
+        "simplilearn-web-designing-free"
+      ],
+      "rationale": "Источник программы it.webdesigner покрывает тему в рамках курса."
+    },
+    {
+      "competencyId": "web-adaptive",
+      "sourceIds": [
+        "greatlearning-web-design-free",
+        "webflow-university-courses"
+      ],
+      "rationale": "Источник программы it.webdesigner покрывает тему в рамках курса."
+    },
+    {
+      "competencyId": "web-cms",
+      "sourceIds": [
+        "webflow-university-courses"
+      ],
+      "rationale": "Источник программы it.webdesigner покрывает тему в рамках курса."
+    },
+    {
+      "competencyId": "app-mobile-patterns",
+      "sourceIds": [
+        "greatlearning-design-app"
+      ],
+      "rationale": "Источник программы it.appdesign покрывает тему в рамках курса."
+    },
+    {
+      "competencyId": "app-prototyping",
+      "sourceIds": [
+        "greatlearning-design-app",
+        "coursera-design-fundamentals-ai"
+      ],
+      "rationale": "Источник программы it.appdesign покрывает тему в рамках курса."
+    },
+    {
+      "competencyId": "interior-styles",
+      "sourceIds": [
+        "alna-free-interior-courses",
+        "alison-interior-design-practical",
+        "oxfordhomestudy-interior-design"
+      ],
+      "rationale": "Источник программы it.interior покрывает тему в рамках курса."
+    },
+    {
+      "competencyId": "interior-materials",
+      "sourceIds": [
+        "alna-free-interior-courses",
+        "alison-interior-design-practical"
+      ],
+      "rationale": "Источник программы it.interior покрывает тему в рамках курса."
+    },
+    {
+      "competencyId": "interior-space-analysis",
+      "sourceIds": [
+        "greatlearning-interior-design-space-planning"
+      ],
+      "rationale": "Источник программы it.interior покрывает тему в рамках курса."
+    },
+    {
+      "competencyId": "interior-zoning",
+      "sourceIds": [
+        "greatlearning-interior-design-space-planning"
+      ],
+      "rationale": "Источник программы it.interior покрывает тему в рамках курса."
+    },
+    {
+      "competencyId": "interior-visualization",
+      "sourceIds": [
+        "coursera-blueprint-interior-design"
+      ],
+      "rationale": "Источник программы it.interior покрывает тему в рамках курса."
+    },
+    {
+      "competencyId": "interior-drawings",
+      "sourceIds": [
+        "coursera-blueprint-interior-design"
+      ],
+      "rationale": "Источник программы it.interior покрывает тему в рамках курса."
     }
   ]
 }

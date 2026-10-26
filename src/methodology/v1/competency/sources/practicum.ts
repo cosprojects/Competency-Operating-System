@@ -19,7 +19,7 @@ const SENTENCE = /[.!?](\s|$)/;
 const MARKETING_PREFIX =
   /^(выстро|посет|состав|потрен|науч|смож|узна|получ|подключ|применя|примен|предсказ|портфол|куп|найд|выбер|разбер|изуч|осво|попроб|рассмотр)/i;
 const CAREER_BOILERPLATE = /(карьер|ваканс|резюме|портфолио|зарплат|фриланс|отклик|сопроводительн|стажиров|работодател|ментор|мастерск|собеседован|трудоустро|поиск работы|поиска работы|куда пойти|пойти работать)/i;
-const QUESTION_PREFIX = /^(как|какие|какой|какая|что|куда|зачем|почему|когда|сколько)\b/i;
+const QUESTION_PREFIX = /^(как|какие|какой|какая|что|куда|зачем|почему|когда|сколько)(\s|$)/i;
 const FIRST_PERSON_PREFIX = /^(владею|создаю|делаю|монтирую|использую|понимаю|разбираюсь|умею|знаю|учусь|посмотрю)/i;
 const GENERIC_TITLES = new Set(["профессия", "инструменты и навыки"]);
 
@@ -101,6 +101,7 @@ export async function collectPracticumCatalogTags(
   return profession.tags
     .map((title) => ({ title: cleanText(title), normalized: cleanText(title).toLowerCase() }))
     .filter((item) => item.title.length > 1 && !ignored.has(item.normalized) && !toolNames.has(item.normalized))
+    .filter((item) => isUsablePracticumTitle(item.title))
     .map((item) => ({
       sourceRef: ref,
       title: item.title,

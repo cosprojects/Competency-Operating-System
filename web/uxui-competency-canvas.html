@@ -38,12 +38,18 @@
       background-color: var(--canvas);
       background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
       background-size: 24px 24px;
+      cursor: grab;
+      touch-action: none;
+      user-select: none;
+      -webkit-user-select: none;
     }
+    .canvas-viewport.is-panning { cursor: grabbing; }
+    .canvas-viewport.is-panning .competency-card { cursor: grabbing; }
     .canvas-stage {
       position: absolute;
       left: 50%;
       top: 50%;
-      transform: translate(-50%, -50%) scale(var(--zoom, .55));
+      transform: translate(calc(-50% + var(--pan-x, 0px)), calc(-50% + var(--pan-y, 0px))) scale(var(--zoom, .55));
       transform-origin: center center;
       will-change: transform;
     }
@@ -510,11 +516,22 @@
     const viewport = document.getElementById('canvas-viewport');
     const stage = document.getElementById('canvas-stage');
     let zoom = 1;
+    let panX = 0;
+    let panY = 0;
+    let dragging = false;
+    let dragStartX = 0;
+    let dragStartY = 0;
+    let dragOriginX = 0;
+    let dragOriginY = 0;
 
     function setZoom(next) {
       zoom = Math.min(2.5, Math.max(.25, next));
       stage.style.setProperty('--zoom', String(zoom));
       document.getElementById('zoom-value').textContent = Math.round(zoom * 100) + '%';
+    }
+    function applyPan() {
+      stage.style.setProperty('--pan-x', String(panX) + 'px');
+      stage.style.setProperty('--pan-y', String(panY) + 'px');
     }
     function fitZoom() {
       const header = document.querySelector('.app-header');
@@ -522,12 +539,41 @@
       const availableHeight = Math.max(240, viewport.clientHeight - topInset - 40);
       const scale = Math.min((viewport.clientWidth - 80) / stage.offsetWidth, availableHeight / stage.offsetHeight) * 0.94;
       stage.style.top = String(topInset + availableHeight / 2) + 'px';
+      panX = 0;
+      panY = 0;
+      applyPan();
       setZoom(Number.isFinite(scale) ? scale : 1);
     }
     document.getElementById('zoom-in').addEventListener('click', () => setZoom(zoom + 0.1));
     document.getElementById('zoom-out').addEventListener('click', () => setZoom(zoom - 0.1));
     fitZoom();
     window.addEventListener('resize', fitZoom);
+
+    function endPan(event) {
+      if (!dragging) return;
+      dragging = false;
+      viewport.classList.remove('is-panning');
+      if (event && viewport.hasPointerCapture(event.pointerId)) viewport.releasePointerCapture(event.pointerId);
+    }
+    viewport.addEventListener('pointerdown', (event) => {
+      if (event.button !== 0 || event.target.closest('.competency-card')) return;
+      dragging = true;
+      dragStartX = event.clientX;
+      dragStartY = event.clientY;
+      dragOriginX = panX;
+      dragOriginY = panY;
+      viewport.classList.add('is-panning');
+      viewport.setPointerCapture(event.pointerId);
+      event.preventDefault();
+    });
+    viewport.addEventListener('pointermove', (event) => {
+      if (!dragging) return;
+      panX = dragOriginX + (event.clientX - dragStartX);
+      panY = dragOriginY + (event.clientY - dragStartY);
+      applyPan();
+    });
+    viewport.addEventListener('pointerup', endPan);
+    viewport.addEventListener('pointercancel', endPan);
 
     function connected(id) {
       const ids = new Set([id]);

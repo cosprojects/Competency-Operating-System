@@ -1,0 +1,265 @@
+{
+  "viewVersion": "1.0.0",
+  "professionId": "it.aidesigner",
+  "sphereId": "it",
+  "title": "AI-дизайнер",
+  "titleEn": "AI designer",
+  "sections": [
+    {
+      "id": "aidesigner-foundations",
+      "title": "Основы AI-дизайна",
+      "definition": "Модели и инструменты, промптинг и оценка инструментов.",
+      "competencies": [
+        {
+          "competencyId": "ux-design-thinking",
+          "tier": "foundation",
+          "order": 1
+        },
+        {
+          "competencyId": "ai-model-landscape",
+          "tier": "foundation",
+          "prerequisites": [
+            "ux-design-thinking"
+          ],
+          "order": 2
+        },
+        {
+          "competencyId": "aidesigner-tool-landscape",
+          "tier": "foundation",
+          "prerequisites": [
+            "ai-model-landscape"
+          ],
+          "order": 3
+        },
+        {
+          "competencyId": "ai-prompting",
+          "tier": "foundation",
+          "prerequisites": [
+            "ai-model-landscape"
+          ],
+          "order": 4
+        },
+        {
+          "competencyId": "aidesigner-prompt-systems",
+          "tier": "core",
+          "prerequisites": [
+            "ai-prompting",
+            "aidesigner-tool-landscape"
+          ],
+          "order": 5
+        },
+        {
+          "competencyId": "aidesigner-tool-evaluation",
+          "tier": "core",
+          "prerequisites": [
+            "aidesigner-tool-landscape",
+            "aidesigner-prompt-systems"
+          ],
+          "order": 6
+        }
+      ]
+    },
+    {
+      "id": "aidesigner-design",
+      "title": "AI-проектирование",
+      "definition": "AI-фичи, требования, визуальная база и инструменты дизайна.",
+      "competencies": [
+        {
+          "competencyId": "ux-product-thinking",
+          "tier": "core",
+          "prerequisites": [
+            "ux-design-thinking"
+          ],
+          "order": 7
+        },
+        {
+          "competencyId": "ux-user-research",
+          "tier": "core",
+          "prerequisites": [
+            "ux-design-thinking"
+          ],
+          "order": 8
+        },
+        {
+          "competencyId": "aidesigner-ai-features",
+          "tier": "core",
+          "prerequisites": [
+            "ux-product-thinking",
+            "ux-user-research",
+            "ai-model-landscape"
+          ],
+          "order": 9
+        },
+        {
+          "competencyId": "ux-requirements",
+          "tier": "core",
+          "prerequisites": [
+            "ux-user-research",
+            "aidesigner-ai-features"
+          ],
+          "order": 10
+        },
+        {
+          "competencyId": "ui-layout",
+          "tier": "core",
+          "prerequisites": [
+            "ux-design-thinking"
+          ],
+          "order": 11
+        },
+        {
+          "competencyId": "ui-visual-communication",
+          "tier": "core",
+          "prerequisites": [
+            "ui-layout"
+          ],
+          "order": 12
+        },
+        {
+          "competencyId": "ui-figma",
+          "tier": "core",
+          "prerequisites": [
+            "ui-layout"
+          ],
+          "order": 13
+        }
+      ]
+    },
+    {
+      "id": "aidesigner-production",
+      "title": "AI-продакшн",
+      "definition": "Визуал, серии, видео/аудио, макеты и контроль качества.",
+      "competencies": [
+        {
+          "competencyId": "ai-visual-generation",
+          "tier": "core",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 14
+        },
+        {
+          "competencyId": "aidesigner-visual-generation",
+          "tier": "core",
+          "prerequisites": [
+            "ai-visual-generation",
+            "aidesigner-prompt-systems"
+          ],
+          "order": 15
+        },
+        {
+          "competencyId": "aidesigner-series-adaptation",
+          "tier": "core",
+          "prerequisites": [
+            "aidesigner-visual-generation",
+            "ui-visual-communication"
+          ],
+          "order": 16
+        },
+        {
+          "competencyId": "ai-video-audio",
+          "tier": "core",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 17
+        },
+        {
+          "competencyId": "aidesigner-video-audio",
+          "tier": "core",
+          "prerequisites": [
+            "ai-video-audio",
+            "aidesigner-series-adaptation"
+          ],
+          "order": 18
+        },
+        {
+          "competencyId": "ai-copy-content",
+          "tier": "core",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 19
+        },
+        {
+          "competencyId": "ai-layout-docs",
+          "tier": "optional",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 20
+        },
+        {
+          "competencyId": "aidesigner-automation",
+          "tier": "core",
+          "prerequisites": [
+            "aidesigner-tool-evaluation",
+            "aidesigner-series-adaptation"
+          ],
+          "order": 21
+        },
+        {
+          "competencyId": "ai-workflow-integration",
+          "tier": "core",
+          "prerequisites": [
+            "ai-prompting",
+            "ai-model-landscape"
+          ],
+          "order": 22
+        },
+        {
+          "competencyId": "aidesigner-quality-eval",
+          "tier": "core",
+          "prerequisites": [
+            "aidesigner-visual-generation",
+            "aidesigner-video-audio",
+            "ai-workflow-integration"
+          ],
+          "order": 23
+        },
+        {
+          "competencyId": "ui-handoff",
+          "tier": "optional",
+          "prerequisites": [
+            "ui-figma",
+            "aidesigner-quality-eval"
+          ],
+          "order": 24
+        }
+      ]
+    },
+    {
+      "id": "aidesigner-governance",
+      "title": "Этика и внедрение",
+      "definition": "Исследования, права и внедрение AI в процесс.",
+      "competencies": [
+        {
+          "competencyId": "ai-research-synthesis",
+          "tier": "optional",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 25
+        },
+        {
+          "competencyId": "ai-ethics-rights",
+          "tier": "core",
+          "prerequisites": [
+            "ai-model-landscape"
+          ],
+          "order": 26
+        },
+        {
+          "competencyId": "aidesigner-integration",
+          "tier": "core",
+          "prerequisites": [
+            "aidesigner-quality-eval",
+            "ai-workflow-integration",
+            "ai-ethics-rights"
+          ],
+          "order": 27
+        }
+      ]
+    }
+  ]
+}

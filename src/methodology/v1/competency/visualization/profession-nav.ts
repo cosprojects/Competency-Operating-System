@@ -16,4 +16,5 @@ export const PROFESSION_TABS: ProfessionTab[] = [
   { id: "3ddesigner", label: "3D", href: "it-3ddesigner-competency-canvas.html" },
   { id: "interior", label: "Интерьеры", href: "it-interior-competency-canvas.html" },
   { id: "webdesigner", label: "Веб-дизайн", href: "it-webdesigner-competency-canvas.html" },
+  { id: "aidesigner", label: "AI-дизайнер", href: "it-aidesigner-competency-canvas.html" },
 ];

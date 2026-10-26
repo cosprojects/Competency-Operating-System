@@ -473,6 +473,18 @@
       "practicum": {
         "slug": "web-designer"
       }
+    },
+    {
+      "id": "aidesigner",
+      "title": "AI-дизайнер",
+      "titleEn": "AI designer",
+      "aliases": [
+        "AI designer",
+        "ИИ-дизайнер"
+      ],
+      "practicum": {
+        "slug": "ai-for-design"
+      }
     }
   ]
 }

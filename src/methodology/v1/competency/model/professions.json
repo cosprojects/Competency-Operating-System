@@ -120,6 +120,17 @@
       "catalogFile": "catalog/it.json",
       "priorityFile": "model/profession-competencies/webdesigner.json",
       "sourcesFile": "sources/professions/it.webdesigner.json"
+    },
+    {
+      "id": "it.aidesigner",
+      "sphereId": "it",
+      "title": "AI-дизайнер",
+      "titleEn": "AI designer",
+      "canonicalMapFile": "model/professions/views/aidesigner.json",
+      "viewFile": "model/professions/views/aidesigner.json",
+      "catalogFile": "catalog/it.json",
+      "priorityFile": "model/profession-competencies/aidesigner.json",
+      "sourcesFile": "sources/professions/it.aidesigner.json"
     }
   ]
 }

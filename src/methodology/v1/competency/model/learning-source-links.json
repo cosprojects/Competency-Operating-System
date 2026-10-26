@@ -773,7 +773,8 @@
         "practicum-interior",
         "practicum-webdesigner",
         "practicum-design-catalog",
-        "motiondesign-school-courses"
+        "motiondesign-school-courses",
+        "practicum-ai-tools-for-designers"
       ],
       "rationale": "Программа содержит модуль/тему по ИИ, подтверждённую страницей курса."
     },
@@ -787,7 +788,8 @@
         "practicum-3ddesigner",
         "practicum-interior",
         "practicum-webdesigner",
-        "motiondesign-school-courses"
+        "motiondesign-school-courses",
+        "practicum-ai-tools-for-designers"
       ],
       "rationale": "Программа содержит модуль/тему по ИИ, подтверждённую страницей курса."
     },
@@ -796,7 +798,8 @@
       "sourceIds": [
         "practicum-presentation",
         "practicum-artdir",
-        "practicum-design-catalog"
+        "practicum-design-catalog",
+        "practicum-ai-tools-for-designers"
       ],
       "rationale": "Программа содержит модуль/тему по ИИ, подтверждённую страницей курса."
     },
@@ -810,7 +813,9 @@
         "practicum-interior",
         "practicum-webdesigner",
         "practicum-design-catalog",
-        "motiondesign-school-courses"
+        "motiondesign-school-courses",
+        "practicum-ai-tools-for-designers",
+        "practicum-ai-for-design"
       ],
       "rationale": "Программа содержит модуль/тему по ИИ, подтверждённую страницей курса."
     },
@@ -847,9 +852,70 @@
     {
       "competencyId": "ai-video-audio",
       "sourceIds": [
-        "motiondesign-school-courses"
+        "motiondesign-school-courses",
+        "practicum-ai-tools-for-designers",
+        "practicum-ai-for-design"
       ],
       "rationale": "Программа содержит модуль/тему по ИИ, подтверждённую страницей курса."
+    },
+    {
+      "competencyId": "aidesigner-tool-landscape",
+      "sourceIds": [
+        "practicum-ai-tools-for-designers"
+      ],
+      "rationale": "Курс Практикума по нейросетям покрывает тему в рамках программы."
+    },
+    {
+      "competencyId": "aidesigner-prompt-systems",
+      "sourceIds": [
+        "practicum-ai-tools-for-designers"
+      ],
+      "rationale": "Курс Практикума по нейросетям покрывает тему в рамках программы."
+    },
+    {
+      "competencyId": "aidesigner-tool-evaluation",
+      "sourceIds": [
+        "practicum-ai-tools-for-designers"
+      ],
+      "rationale": "Курс Практикума по нейросетям покрывает тему в рамках программы."
+    },
+    {
+      "competencyId": "aidesigner-visual-generation",
+      "sourceIds": [
+        "practicum-ai-tools-for-designers",
+        "practicum-ai-for-design"
+      ],
+      "rationale": "Курс Практикума по нейросетям покрывает тему в рамках программы."
+    },
+    {
+      "competencyId": "aidesigner-video-audio",
+      "sourceIds": [
+        "practicum-ai-tools-for-designers",
+        "practicum-ai-for-design"
+      ],
+      "rationale": "Курс Практикума по нейросетям покрывает тему в рамках программы."
+    },
+    {
+      "competencyId": "aidesigner-quality-eval",
+      "sourceIds": [
+        "practicum-ai-tools-for-designers",
+        "practicum-ai-for-design"
+      ],
+      "rationale": "Курс Практикума по нейросетям покрывает тему в рамках программы."
+    },
+    {
+      "competencyId": "aidesigner-integration",
+      "sourceIds": [
+        "practicum-ai-tools-for-designers"
+      ],
+      "rationale": "Курс Практикума по нейросетям покрывает тему в рамках программы."
+    },
+    {
+      "competencyId": "aidesigner-series-adaptation",
+      "sourceIds": [
+        "practicum-ai-for-design"
+      ],
+      "rationale": "Курс Практикума по нейросетям покрывает тему в рамках программы."
     }
   ]
 }

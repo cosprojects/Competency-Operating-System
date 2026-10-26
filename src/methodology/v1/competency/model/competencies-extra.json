@@ -1043,6 +1043,146 @@
       "titleEn": "AI ethics and rights",
       "definition": "Авторские права, приватность, безопасность данных, смещения моделей и фактчекинг ИИ-результатов.",
       "priorityHint": "core"
+    },
+    {
+      "id": "aidesigner-tool-landscape",
+      "branchId": "aidesigner",
+      "branchTitle": "AI-дизайнер",
+      "sectionId": "aidesigner-foundations",
+      "sectionTitle": "Основы AI-дизайна",
+      "title": "Ландшафт AI-инструментов",
+      "titleEn": "AI tool landscape",
+      "definition": "Какие инструменты существуют для текста, изображений, аудио, видео и 3D; для чего нужен каждый и где его ограничения.",
+      "priorityHint": "foundation",
+      "learningSourceIds": [
+        "practicum-ai-tools-for-designers"
+      ]
+    },
+    {
+      "id": "aidesigner-prompt-systems",
+      "branchId": "aidesigner",
+      "branchTitle": "AI-дизайнер",
+      "sectionId": "aidesigner-foundations",
+      "sectionTitle": "Основы AI-дизайна",
+      "title": "Промпт-системы и библиотеки",
+      "titleEn": "Prompt systems",
+      "definition": "Переиспользуемые рецепты промптов: ядро и переменные, библиотека под задачи, воспроизводимость результата.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-ai-tools-for-designers"
+      ]
+    },
+    {
+      "id": "aidesigner-tool-evaluation",
+      "branchId": "aidesigner",
+      "branchTitle": "AI-дизайнер",
+      "sectionId": "aidesigner-foundations",
+      "sectionTitle": "Основы AI-дизайна",
+      "title": "Оценка и выбор AI-инструмента",
+      "titleEn": "Tool evaluation",
+      "definition": "Тестирование и сравнение инструментов по качеству, стоимости, скорости и ограничениям; выбор под задачу.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-ai-tools-for-designers"
+      ]
+    },
+    {
+      "id": "aidesigner-visual-generation",
+      "branchId": "aidesigner",
+      "branchTitle": "AI-дизайнер",
+      "sectionId": "aidesigner-foundations",
+      "sectionTitle": "Основы AI-дизайна",
+      "title": "Генерация и доведение визуала",
+      "titleEn": "AI visual generation",
+      "definition": "Генерация изображений, устранение артефактов, апскейл, стилизация и доведение до рабочего качества.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-ai-tools-for-designers"
+      ]
+    },
+    {
+      "id": "aidesigner-series-adaptation",
+      "branchId": "aidesigner",
+      "branchTitle": "AI-дизайнер",
+      "sectionId": "aidesigner-foundations",
+      "sectionTitle": "Основы AI-дизайна",
+      "title": "Серии визуалов и адаптация под каналы",
+      "titleEn": "Visual series and adaptation",
+      "definition": "Серийные визуалы на ядре и переменных, адаптация под каналы, форматы и комплекты.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-ai-tools-for-designers"
+      ]
+    },
+    {
+      "id": "aidesigner-video-audio",
+      "branchId": "aidesigner",
+      "branchTitle": "AI-дизайнер",
+      "sectionId": "aidesigner-foundations",
+      "sectionTitle": "Основы AI-дизайна",
+      "title": "AI-видео, анимация и аудио",
+      "titleEn": "AI video and audio",
+      "definition": "Генерация видео и аудио, анимация, монтаж, озвучка, музыка и синхронизация с визуалом.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-ai-tools-for-designers"
+      ]
+    },
+    {
+      "id": "aidesigner-ai-features",
+      "branchId": "aidesigner",
+      "branchTitle": "AI-дизайнер",
+      "sectionId": "aidesigner-foundations",
+      "sectionTitle": "Основы AI-дизайна",
+      "title": "Проектирование AI-фич и продуктов",
+      "titleEn": "Designing AI features",
+      "definition": "UX AI-продуктов: human-in-the-loop, неопределённость моделей, объяснимость и контроль пользователя.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-ai-tools-for-designers"
+      ]
+    },
+    {
+      "id": "aidesigner-automation",
+      "branchId": "aidesigner",
+      "branchTitle": "AI-дизайнер",
+      "sectionId": "aidesigner-foundations",
+      "sectionTitle": "Основы AI-дизайна",
+      "title": "Автоматизация и мультимодальные пайплайны",
+      "titleEn": "Automation pipelines",
+      "definition": "Связки инструментов и автоматизация рутины: текст → визуал → видео/аудио → документ.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-ai-tools-for-designers"
+      ]
+    },
+    {
+      "id": "aidesigner-quality-eval",
+      "branchId": "aidesigner",
+      "branchTitle": "AI-дизайнер",
+      "sectionId": "aidesigner-foundations",
+      "sectionTitle": "Основы AI-дизайна",
+      "title": "Контроль качества AI-результата",
+      "titleEn": "AI quality evaluation",
+      "definition": "Чек-листы, критика и тестирование результата: артефакты, фактчекинг, соответствие брифу и стилю.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-ai-tools-for-designers"
+      ]
+    },
+    {
+      "id": "aidesigner-integration",
+      "branchId": "aidesigner",
+      "branchTitle": "AI-дизайнер",
+      "sectionId": "aidesigner-foundations",
+      "sectionTitle": "Основы AI-дизайна",
+      "title": "Внедрение AI в процесс и команду",
+      "titleEn": "AI process integration",
+      "definition": "Встраивание AI в командный процесс: регламенты, обучение, выбор стека, границы применимости.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-ai-tools-for-designers"
+      ]
     }
   ]
 }

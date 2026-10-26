@@ -2109,6 +2109,57 @@
       "discoveredBy": "user",
       "lastChecked": "2026-10-26",
       "httpStatus": 200
+    },
+    {
+      "id": "practicum-ai-for-design",
+      "title": "Яндекс Практикум — нейросети для дизайна",
+      "url": "https://practicum.yandex.ru/ai-for-design/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "paid",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design",
+        "visual generation",
+        "animation with ai",
+        "style transfer",
+        "visual series"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 200
+    },
+    {
+      "id": "practicum-ai-tools-for-designers",
+      "title": "Яндекс Практикум — AI-инструменты для дизайнеров",
+      "url": "https://practicum.yandex.ru/ai-tools-for-designers/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "paid",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai tools",
+        "image generation",
+        "text generation",
+        "audio generation",
+        "video generation",
+        "tool evaluation"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 200
     }
   ]
 }

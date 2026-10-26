@@ -1,0 +1,19 @@
+{
+  "professionId": "it.aidesigner",
+  "sphereId": "it",
+  "occupationSources": [
+    {
+      "sourceId": "practicum",
+      "query": "ai-for-design"
+    }
+  ],
+  "materialSourceIds": [
+    "wikipedia",
+    "internet-archive",
+    "habr",
+    "medium"
+  ],
+  "blockedSourceIds": [
+    "hh-api"
+  ]
+}

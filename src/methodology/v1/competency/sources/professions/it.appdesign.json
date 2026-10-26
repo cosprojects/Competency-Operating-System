@@ -1,0 +1,19 @@
+{
+  "professionId": "it.appdesign",
+  "sphereId": "it",
+  "occupationSources": [
+    {
+      "sourceId": "practicum",
+      "query": "mobile-app-design"
+    }
+  ],
+  "materialSourceIds": [
+    "wikipedia",
+    "internet-archive",
+    "habr",
+    "medium"
+  ],
+  "blockedSourceIds": [
+    "hh-api"
+  ]
+}

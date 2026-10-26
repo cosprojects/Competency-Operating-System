@@ -1,0 +1,188 @@
+{
+  "viewVersion": "1.0.0",
+  "professionId": "it.uxresearch",
+  "sphereId": "it",
+  "title": "UX-исследователь",
+  "titleEn": "UX researcher",
+  "sections": [
+    {
+      "id": "research-foundations",
+      "title": "Основы исследований",
+      "definition": "Мышление, вопросы, этика.",
+      "competencies": [
+        {
+          "competencyId": "ux-design-thinking",
+          "tier": "foundation",
+          "order": 1
+        },
+        {
+          "competencyId": "uxresearch-principles",
+          "tier": "foundation",
+          "order": 2,
+          "prerequisites": [
+            "ux-design-thinking"
+          ]
+        },
+        {
+          "competencyId": "uxresearch-questions",
+          "tier": "core",
+          "order": 3,
+          "prerequisites": [
+            "uxresearch-principles"
+          ]
+        },
+        {
+          "competencyId": "uxresearch-ethics",
+          "tier": "optional",
+          "order": 4,
+          "prerequisites": [
+            "uxresearch-principles"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "research-methods",
+      "title": "Методы",
+      "definition": "Качественные и количественные методы.",
+      "competencies": [
+        {
+          "competencyId": "uxresearch-qualitative",
+          "tier": "core",
+          "order": 5,
+          "prerequisites": [
+            "uxresearch-principles",
+            "uxresearch-questions"
+          ]
+        },
+        {
+          "competencyId": "uxresearch-quantitative",
+          "tier": "core",
+          "order": 6,
+          "prerequisites": [
+            "uxresearch-principles",
+            "uxresearch-questions"
+          ]
+        },
+        {
+          "competencyId": "uxresearch-recruiting",
+          "tier": "core",
+          "order": 7,
+          "prerequisites": [
+            "uxresearch-qualitative",
+            "uxresearch-quantitative"
+          ]
+        },
+        {
+          "competencyId": "ux-interviews",
+          "tier": "core",
+          "order": 8,
+          "prerequisites": [
+            "uxresearch-qualitative"
+          ]
+        },
+        {
+          "competencyId": "ux-personas",
+          "tier": "core",
+          "order": 9,
+          "prerequisites": [
+            "uxresearch-qualitative",
+            "uxresearch-recruiting"
+          ]
+        },
+        {
+          "competencyId": "uxresearch-usability",
+          "tier": "core",
+          "order": 10,
+          "prerequisites": [
+            "uxresearch-qualitative",
+            "uxresearch-recruiting"
+          ]
+        },
+        {
+          "competencyId": "ux-experiments",
+          "tier": "core",
+          "order": 11,
+          "prerequisites": [
+            "uxresearch-quantitative",
+            "uxresearch-questions"
+          ]
+        },
+        {
+          "competencyId": "ux-analytics",
+          "tier": "core",
+          "order": 12,
+          "prerequisites": [
+            "uxresearch-quantitative"
+          ]
+        },
+        {
+          "competencyId": "ux-metrics",
+          "tier": "core",
+          "order": 13,
+          "prerequisites": [
+            "uxresearch-quantitative",
+            "ux-analytics"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "research-synthesis",
+      "title": "Синтез",
+      "definition": "Анализ, отчёт и визуализация выводов.",
+      "competencies": [
+        {
+          "competencyId": "uxresearch-synthesis",
+          "tier": "core",
+          "order": 14,
+          "prerequisites": [
+            "uxresearch-qualitative",
+            "uxresearch-quantitative",
+            "uxresearch-usability"
+          ]
+        },
+        {
+          "competencyId": "ui-data-visualization",
+          "tier": "optional",
+          "order": 15,
+          "prerequisites": [
+            "uxresearch-synthesis",
+            "ux-analytics"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "research-application",
+      "title": "Применение",
+      "definition": "Как выводы влияют на продукт.",
+      "competencies": [
+        {
+          "competencyId": "ux-product-thinking",
+          "tier": "core",
+          "order": 16,
+          "prerequisites": [
+            "ux-design-thinking"
+          ]
+        },
+        {
+          "competencyId": "ux-information-architecture",
+          "tier": "core",
+          "order": 17,
+          "prerequisites": [
+            "uxresearch-synthesis"
+          ]
+        },
+        {
+          "competencyId": "ui-figjam",
+          "tier": "optional",
+          "order": 18,
+          "prerequisites": [
+            "ux-design-thinking"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "professionId": "it.interior",
+  "sphereId": "it",
+  "competencies": [
+    {
+      "competencyId": "ux-design-thinking",
+      "tier": "foundation",
+      "order": 1,
+      "prerequisites": [],
+      "sectionId": "interior-foundations",
+      "sectionTitle": "Основы интерьера"
+    },
+    {
+      "competencyId": "ui-color",
+      "tier": "foundation",
+      "order": 2,
+      "prerequisites": [
+        "ux-design-thinking"
+      ],
+      "sectionId": "interior-foundations",
+      "sectionTitle": "Основы интерьера"
+    },
+    {
+      "competencyId": "ui-layout",
+      "tier": "foundation",
+      "order": 3,
+      "prerequisites": [
+        "ux-design-thinking"
+      ],
+      "sectionId": "interior-foundations",
+      "sectionTitle": "Основы интерьера"
+    },
+    {
+      "competencyId": "interior-space-analysis",
+      "tier": "foundation",
+      "order": 4,
+      "prerequisites": [
+        "ux-design-thinking"
+      ],
+      "sectionId": "interior-foundations",
+      "sectionTitle": "Основы интерьера"
+    },
+    {
+      "competencyId": "interior-ergonomics",
+      "tier": "core",
+      "order": 5,
+      "prerequisites": [
+        "interior-space-analysis"
+      ],
+      "sectionId": "interior-foundations",
+      "sectionTitle": "Основы интерьера"
+    },
+    {
+      "competencyId": "interior-zoning",
+      "tier": "core",
+      "order": 6,
+      "prerequisites": [
+        "interior-space-analysis",
+        "interior-ergonomics"
+      ],
+      "sectionId": "interior-foundations",
+      "sectionTitle": "Основы интерьера"
+    },
+    {
+      "competencyId": "interior-styles",
+      "tier": "core",
+      "order": 7,
+      "prerequisites": [
+        "ui-color",
+        "ux-design-thinking"
+      ],
+      "sectionId": "interior-design",
+      "sectionTitle": "Проектирование"
+    },
+    {
+      "competencyId": "interior-materials",
+      "tier": "core",
+      "order": 8,
+      "prerequisites": [
+        "interior-styles",
+        "interior-zoning"
+      ],
+      "sectionId": "interior-design",
+      "sectionTitle": "Проектирование"
+    },
+    {
+      "competencyId": "interior-visualization",
+      "tier": "core",
+      "order": 9,
+      "prerequisites": [
+        "interior-zoning",
+        "interior-materials"
+      ],
+      "sectionId": "interior-design",
+      "sectionTitle": "Проектирование"
+    },
+    {
+      "competencyId": "ui-visual-communication",
+      "tier": "core",
+      "order": 10,
+      "prerequisites": [
+        "ui-color",
+        "ui-layout"
+      ],
+      "sectionId": "interior-design",
+      "sectionTitle": "Проектирование"
+    },
+    {
+      "competencyId": "interior-drawings",
+      "tier": "core",
+      "order": 11,
+      "prerequisites": [
+        "interior-zoning",
+        "interior-materials"
+      ],
+      "sectionId": "interior-docs",
+      "sectionTitle": "Документация"
+    },
+    {
+      "competencyId": "interior-specs",
+      "tier": "core",
+      "order": 12,
+      "prerequisites": [
+        "interior-drawings",
+        "interior-materials"
+      ],
+      "sectionId": "interior-docs",
+      "sectionTitle": "Документация"
+    },
+    {
+      "competencyId": "interior-project-management",
+      "tier": "core",
+      "order": 13,
+      "prerequisites": [
+        "interior-specs",
+        "interior-space-analysis"
+      ],
+      "sectionId": "interior-docs",
+      "sectionTitle": "Документация"
+    },
+    {
+      "competencyId": "ui-figma",
+      "tier": "optional",
+      "order": 14,
+      "prerequisites": [
+        "ui-layout",
+        "interior-visualization"
+      ],
+      "sectionId": "interior-docs",
+      "sectionTitle": "Документация"
+    }
+  ]
+}

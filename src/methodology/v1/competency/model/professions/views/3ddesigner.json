@@ -1,0 +1,153 @@
+{
+  "viewVersion": "1.0.0",
+  "professionId": "it.3ddesigner",
+  "sphereId": "it",
+  "title": "3D-дизайнер",
+  "titleEn": "3D designer",
+  "sections": [
+    {
+      "id": "3d-foundations",
+      "title": "Основы 3D",
+      "definition": "Моделирование, скульптинг и визуальные основы.",
+      "competencies": [
+        {
+          "competencyId": "ux-design-thinking",
+          "tier": "foundation",
+          "order": 1
+        },
+        {
+          "competencyId": "ui-color",
+          "tier": "foundation",
+          "order": 2,
+          "prerequisites": [
+            "ux-design-thinking"
+          ]
+        },
+        {
+          "competencyId": "ui-layout",
+          "tier": "foundation",
+          "order": 3,
+          "prerequisites": [
+            "ux-design-thinking"
+          ]
+        },
+        {
+          "competencyId": "3d-modeling",
+          "tier": "foundation",
+          "order": 4,
+          "prerequisites": [
+            "ux-design-thinking"
+          ]
+        },
+        {
+          "competencyId": "3d-hard-surface",
+          "tier": "core",
+          "order": 5,
+          "prerequisites": [
+            "3d-modeling"
+          ]
+        },
+        {
+          "competencyId": "3d-sculpting",
+          "tier": "core",
+          "order": 6,
+          "prerequisites": [
+            "3d-modeling"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3d-look",
+      "title": "Внешний вид",
+      "definition": "Материалы, свет, рендер и композитинг.",
+      "competencies": [
+        {
+          "competencyId": "3d-texturing",
+          "tier": "core",
+          "order": 7,
+          "prerequisites": [
+            "3d-modeling",
+            "3d-sculpting"
+          ]
+        },
+        {
+          "competencyId": "3d-lighting",
+          "tier": "core",
+          "order": 8,
+          "prerequisites": [
+            "3d-modeling",
+            "ui-color"
+          ]
+        },
+        {
+          "competencyId": "3d-rendering",
+          "tier": "core",
+          "order": 9,
+          "prerequisites": [
+            "3d-texturing",
+            "3d-lighting"
+          ]
+        },
+        {
+          "competencyId": "3d-compositing",
+          "tier": "core",
+          "order": 10,
+          "prerequisites": [
+            "3d-rendering"
+          ]
+        },
+        {
+          "competencyId": "ui-visual-communication",
+          "tier": "core",
+          "order": 11,
+          "prerequisites": [
+            "ui-color",
+            "ui-layout"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3d-motion",
+      "title": "Движение и продакшн",
+      "definition": "Анимация, тайминг и подача проекта.",
+      "competencies": [
+        {
+          "competencyId": "motion-3d-animation",
+          "tier": "core",
+          "order": 12,
+          "prerequisites": [
+            "3d-modeling",
+            "3d-rendering"
+          ]
+        },
+        {
+          "competencyId": "motion-timing-easing",
+          "tier": "optional",
+          "order": 13,
+          "prerequisites": [
+            "motion-3d-animation"
+          ]
+        },
+        {
+          "competencyId": "3d-presentation",
+          "tier": "core",
+          "order": 14,
+          "prerequisites": [
+            "3d-rendering",
+            "ui-visual-communication"
+          ]
+        },
+        {
+          "competencyId": "ux-product-thinking",
+          "tier": "optional",
+          "order": 15,
+          "prerequisites": [
+            "ux-design-thinking"
+          ]
+        }
+      ]
+    }
+  ]
+}

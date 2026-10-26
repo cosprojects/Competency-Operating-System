@@ -1,0 +1,273 @@
+{
+  "professionId": "it.appdesign",
+  "sphereId": "it",
+  "competencies": [
+    {
+      "competencyId": "ux-design-thinking",
+      "tier": "foundation",
+      "order": 1,
+      "prerequisites": [],
+      "sectionId": "app-foundations",
+      "sectionTitle": "Основы приложений"
+    },
+    {
+      "competencyId": "ui-color",
+      "tier": "foundation",
+      "order": 2,
+      "prerequisites": [
+        "ux-design-thinking"
+      ],
+      "sectionId": "app-foundations",
+      "sectionTitle": "Основы приложений"
+    },
+    {
+      "competencyId": "ui-typography",
+      "tier": "foundation",
+      "order": 3,
+      "prerequisites": [
+        "ux-design-thinking"
+      ],
+      "sectionId": "app-foundations",
+      "sectionTitle": "Основы приложений"
+    },
+    {
+      "competencyId": "ui-layout",
+      "tier": "foundation",
+      "order": 4,
+      "prerequisites": [
+        "ui-typography"
+      ],
+      "sectionId": "app-foundations",
+      "sectionTitle": "Основы приложений"
+    },
+    {
+      "competencyId": "app-platform-guidelines",
+      "tier": "foundation",
+      "order": 5,
+      "prerequisites": [
+        "ui-layout"
+      ],
+      "sectionId": "app-foundations",
+      "sectionTitle": "Основы приложений"
+    },
+    {
+      "competencyId": "ux-user-research",
+      "tier": "core",
+      "order": 6,
+      "prerequisites": [
+        "ux-design-thinking"
+      ],
+      "sectionId": "app-research",
+      "sectionTitle": "Исследования и паттерны"
+    },
+    {
+      "competencyId": "ux-interviews",
+      "tier": "core",
+      "order": 7,
+      "prerequisites": [
+        "ux-user-research"
+      ],
+      "sectionId": "app-research",
+      "sectionTitle": "Исследования и паттерны"
+    },
+    {
+      "competencyId": "ux-personas",
+      "tier": "core",
+      "order": 8,
+      "prerequisites": [
+        "ux-user-research",
+        "ux-interviews"
+      ],
+      "sectionId": "app-research",
+      "sectionTitle": "Исследования и паттерны"
+    },
+    {
+      "competencyId": "app-mobile-patterns",
+      "tier": "core",
+      "order": 9,
+      "prerequisites": [
+        "app-platform-guidelines",
+        "ux-personas"
+      ],
+      "sectionId": "app-research",
+      "sectionTitle": "Исследования и паттерны"
+    },
+    {
+      "competencyId": "ux-information-architecture",
+      "tier": "core",
+      "order": 10,
+      "prerequisites": [
+        "ux-user-research"
+      ],
+      "sectionId": "app-prototyping",
+      "sectionTitle": "Прототипирование"
+    },
+    {
+      "competencyId": "ux-user-flows",
+      "tier": "core",
+      "order": 11,
+      "prerequisites": [
+        "ux-information-architecture"
+      ],
+      "sectionId": "app-prototyping",
+      "sectionTitle": "Прототипирование"
+    },
+    {
+      "competencyId": "ux-wireframes",
+      "tier": "core",
+      "order": 12,
+      "prerequisites": [
+        "ux-user-flows"
+      ],
+      "sectionId": "app-prototyping",
+      "sectionTitle": "Прототипирование"
+    },
+    {
+      "competencyId": "ux-lowfi-prototype",
+      "tier": "core",
+      "order": 13,
+      "prerequisites": [
+        "ux-wireframes"
+      ],
+      "sectionId": "app-prototyping",
+      "sectionTitle": "Прототипирование"
+    },
+    {
+      "competencyId": "ux-hifi-prototype",
+      "tier": "core",
+      "order": 14,
+      "prerequisites": [
+        "ux-lowfi-prototype"
+      ],
+      "sectionId": "app-prototyping",
+      "sectionTitle": "Прототипирование"
+    },
+    {
+      "competencyId": "app-prototyping",
+      "tier": "core",
+      "order": 15,
+      "prerequisites": [
+        "ux-hifi-prototype",
+        "app-platform-guidelines"
+      ],
+      "sectionId": "app-prototyping",
+      "sectionTitle": "Прототипирование"
+    },
+    {
+      "competencyId": "ux-interactive-prototype",
+      "tier": "core",
+      "order": 16,
+      "prerequisites": [
+        "app-prototyping"
+      ],
+      "sectionId": "app-prototyping",
+      "sectionTitle": "Прототипирование"
+    },
+    {
+      "competencyId": "ui-design-systems",
+      "tier": "core",
+      "order": 17,
+      "prerequisites": [
+        "ux-information-architecture",
+        "ui-layout"
+      ],
+      "sectionId": "app-ui",
+      "sectionTitle": "Интерфейс и системы"
+    },
+    {
+      "competencyId": "ui-components",
+      "tier": "core",
+      "order": 18,
+      "prerequisites": [
+        "ui-design-systems"
+      ],
+      "sectionId": "app-ui",
+      "sectionTitle": "Интерфейс и системы"
+    },
+    {
+      "competencyId": "ui-responsive",
+      "tier": "core",
+      "order": 19,
+      "prerequisites": [
+        "ui-layout",
+        "app-platform-guidelines"
+      ],
+      "sectionId": "app-ui",
+      "sectionTitle": "Интерфейс и системы"
+    },
+    {
+      "competencyId": "ui-accessibility",
+      "tier": "core",
+      "order": 20,
+      "prerequisites": [
+        "ui-components",
+        "ui-layout"
+      ],
+      "sectionId": "app-ui",
+      "sectionTitle": "Интерфейс и системы"
+    },
+    {
+      "competencyId": "ui-figma",
+      "tier": "core",
+      "order": 21,
+      "prerequisites": [
+        "ui-layout"
+      ],
+      "sectionId": "app-ui",
+      "sectionTitle": "Интерфейс и системы"
+    },
+    {
+      "competencyId": "ui-interaction-states",
+      "tier": "optional",
+      "order": 22,
+      "prerequisites": [
+        "app-prototyping"
+      ],
+      "sectionId": "app-ui",
+      "sectionTitle": "Интерфейс и системы"
+    },
+    {
+      "competencyId": "app-native-crossplatform",
+      "tier": "core",
+      "order": 23,
+      "prerequisites": [
+        "app-platform-guidelines",
+        "app-prototyping"
+      ],
+      "sectionId": "app-delivery",
+      "sectionTitle": "Передача и метрики"
+    },
+    {
+      "competencyId": "ui-handoff",
+      "tier": "core",
+      "order": 24,
+      "prerequisites": [
+        "app-prototyping",
+        "ui-figma"
+      ],
+      "sectionId": "app-delivery",
+      "sectionTitle": "Передача и метрики"
+    },
+    {
+      "competencyId": "app-metrics",
+      "tier": "core",
+      "order": 25,
+      "prerequisites": [
+        "ux-personas"
+      ],
+      "sectionId": "app-delivery",
+      "sectionTitle": "Передача и метрики"
+    },
+    {
+      "competencyId": "ux-usability-testing",
+      "tier": "core",
+      "order": 26,
+      "prerequisites": [
+        "ux-interactive-prototype",
+        "ux-personas"
+      ],
+      "sectionId": "app-delivery",
+      "sectionTitle": "Передача и метрики"
+    }
+  ]
+}

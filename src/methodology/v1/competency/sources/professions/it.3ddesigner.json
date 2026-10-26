@@ -1,0 +1,19 @@
+{
+  "professionId": "it.3ddesigner",
+  "sphereId": "it",
+  "occupationSources": [
+    {
+      "sourceId": "practicum",
+      "query": "3d-generalist"
+    }
+  ],
+  "materialSourceIds": [
+    "wikipedia",
+    "internet-archive",
+    "habr",
+    "medium"
+  ],
+  "blockedSourceIds": [
+    "hh-api"
+  ]
+}

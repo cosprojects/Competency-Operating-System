@@ -1,0 +1,257 @@
+{
+  "professionId": "it.webdesigner",
+  "sphereId": "it",
+  "competencies": [
+    {
+      "competencyId": "ux-design-thinking",
+      "tier": "foundation",
+      "order": 1,
+      "prerequisites": [],
+      "sectionId": "web-foundations",
+      "sectionTitle": "Основы веба"
+    },
+    {
+      "competencyId": "ui-color",
+      "tier": "foundation",
+      "order": 2,
+      "prerequisites": [
+        "ux-design-thinking"
+      ],
+      "sectionId": "web-foundations",
+      "sectionTitle": "Основы веба"
+    },
+    {
+      "competencyId": "ui-typography",
+      "tier": "foundation",
+      "order": 3,
+      "prerequisites": [
+        "ui-color"
+      ],
+      "sectionId": "web-foundations",
+      "sectionTitle": "Основы веба"
+    },
+    {
+      "competencyId": "ui-layout",
+      "tier": "foundation",
+      "order": 4,
+      "prerequisites": [
+        "ui-typography"
+      ],
+      "sectionId": "web-foundations",
+      "sectionTitle": "Основы веба"
+    },
+    {
+      "competencyId": "web-landing",
+      "tier": "foundation",
+      "order": 5,
+      "prerequisites": [
+        "ux-design-thinking",
+        "ui-layout"
+      ],
+      "sectionId": "web-foundations",
+      "sectionTitle": "Основы веба"
+    },
+    {
+      "competencyId": "ux-user-research",
+      "tier": "core",
+      "order": 6,
+      "prerequisites": [
+        "ux-design-thinking"
+      ],
+      "sectionId": "web-ux",
+      "sectionTitle": "UX веб-страниц"
+    },
+    {
+      "competencyId": "ux-information-architecture",
+      "tier": "core",
+      "order": 7,
+      "prerequisites": [
+        "ux-user-research"
+      ],
+      "sectionId": "web-ux",
+      "sectionTitle": "UX веб-страниц"
+    },
+    {
+      "competencyId": "ux-user-flows",
+      "tier": "core",
+      "order": 8,
+      "prerequisites": [
+        "ux-information-architecture"
+      ],
+      "sectionId": "web-ux",
+      "sectionTitle": "UX веб-страниц"
+    },
+    {
+      "competencyId": "ux-wireframes",
+      "tier": "core",
+      "order": 9,
+      "prerequisites": [
+        "ux-user-flows"
+      ],
+      "sectionId": "web-ux",
+      "sectionTitle": "UX веб-страниц"
+    },
+    {
+      "competencyId": "ux-hifi-prototype",
+      "tier": "core",
+      "order": 10,
+      "prerequisites": [
+        "ux-wireframes"
+      ],
+      "sectionId": "web-ux",
+      "sectionTitle": "UX веб-страниц"
+    },
+    {
+      "competencyId": "ux-interactive-prototype",
+      "tier": "core",
+      "order": 11,
+      "prerequisites": [
+        "ux-hifi-prototype"
+      ],
+      "sectionId": "web-ux",
+      "sectionTitle": "UX веб-страниц"
+    },
+    {
+      "competencyId": "web-visual",
+      "tier": "core",
+      "order": 12,
+      "prerequisites": [
+        "ui-color",
+        "web-landing"
+      ],
+      "sectionId": "web-visual",
+      "sectionTitle": "Визуальный слой"
+    },
+    {
+      "competencyId": "ui-visual-elements",
+      "tier": "core",
+      "order": 13,
+      "prerequisites": [
+        "ui-color",
+        "ui-layout"
+      ],
+      "sectionId": "web-visual",
+      "sectionTitle": "Визуальный слой"
+    },
+    {
+      "competencyId": "ui-visual-communication",
+      "tier": "core",
+      "order": 14,
+      "prerequisites": [
+        "ui-color",
+        "ui-typography",
+        "ui-layout"
+      ],
+      "sectionId": "web-visual",
+      "sectionTitle": "Визуальный слой"
+    },
+    {
+      "competencyId": "web-adaptive",
+      "tier": "core",
+      "order": 15,
+      "prerequisites": [
+        "ui-layout",
+        "web-landing"
+      ],
+      "sectionId": "web-visual",
+      "sectionTitle": "Визуальный слой"
+    },
+    {
+      "competencyId": "ui-design-systems",
+      "tier": "core",
+      "order": 16,
+      "prerequisites": [
+        "ui-layout",
+        "ui-visual-elements"
+      ],
+      "sectionId": "web-visual",
+      "sectionTitle": "Визуальный слой"
+    },
+    {
+      "competencyId": "ui-components",
+      "tier": "core",
+      "order": 17,
+      "prerequisites": [
+        "ui-design-systems"
+      ],
+      "sectionId": "web-visual",
+      "sectionTitle": "Визуальный слой"
+    },
+    {
+      "competencyId": "ui-responsive",
+      "tier": "core",
+      "order": 18,
+      "prerequisites": [
+        "ui-layout",
+        "web-adaptive"
+      ],
+      "sectionId": "web-visual",
+      "sectionTitle": "Визуальный слой"
+    },
+    {
+      "competencyId": "ui-accessibility",
+      "tier": "core",
+      "order": 19,
+      "prerequisites": [
+        "ui-components",
+        "ui-responsive"
+      ],
+      "sectionId": "web-visual",
+      "sectionTitle": "Визуальный слой"
+    },
+    {
+      "competencyId": "ui-figma",
+      "tier": "core",
+      "order": 20,
+      "prerequisites": [
+        "ui-layout"
+      ],
+      "sectionId": "web-tools",
+      "sectionTitle": "Инструменты"
+    },
+    {
+      "competencyId": "ui-web-technologies",
+      "tier": "core",
+      "order": 21,
+      "prerequisites": [
+        "web-landing",
+        "ui-figma"
+      ],
+      "sectionId": "web-tools",
+      "sectionTitle": "Инструменты"
+    },
+    {
+      "competencyId": "web-cms",
+      "tier": "core",
+      "order": 22,
+      "prerequisites": [
+        "web-landing",
+        "ui-web-technologies"
+      ],
+      "sectionId": "web-tools",
+      "sectionTitle": "Инструменты"
+    },
+    {
+      "competencyId": "ui-handoff",
+      "tier": "core",
+      "order": 23,
+      "prerequisites": [
+        "ui-figma",
+        "ui-web-technologies"
+      ],
+      "sectionId": "web-tools",
+      "sectionTitle": "Инструменты"
+    },
+    {
+      "competencyId": "web-performance",
+      "tier": "optional",
+      "order": 24,
+      "prerequisites": [
+        "ui-web-technologies",
+        "web-cms"
+      ],
+      "sectionId": "web-tools",
+      "sectionTitle": "Инструменты"
+    }
+  ]
+}

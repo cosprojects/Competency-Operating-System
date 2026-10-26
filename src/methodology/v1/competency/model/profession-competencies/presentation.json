@@ -1,0 +1,137 @@
+{
+  "professionId": "it.presentation",
+  "sphereId": "it",
+  "competencies": [
+    {
+      "competencyId": "ux-design-thinking",
+      "tier": "foundation",
+      "order": 1,
+      "prerequisites": [],
+      "sectionId": "presentation-foundations",
+      "sectionTitle": "Основы презентации"
+    },
+    {
+      "competencyId": "ui-typography",
+      "tier": "foundation",
+      "order": 2,
+      "prerequisites": [
+        "ux-design-thinking"
+      ],
+      "sectionId": "presentation-foundations",
+      "sectionTitle": "Основы презентации"
+    },
+    {
+      "competencyId": "ui-color",
+      "tier": "foundation",
+      "order": 3,
+      "prerequisites": [
+        "ux-design-thinking"
+      ],
+      "sectionId": "presentation-foundations",
+      "sectionTitle": "Основы презентации"
+    },
+    {
+      "competencyId": "ui-layout",
+      "tier": "foundation",
+      "order": 4,
+      "prerequisites": [
+        "ui-typography"
+      ],
+      "sectionId": "presentation-foundations",
+      "sectionTitle": "Основы презентации"
+    },
+    {
+      "competencyId": "presentation-structure",
+      "tier": "foundation",
+      "order": 5,
+      "prerequisites": [
+        "ux-design-thinking"
+      ],
+      "sectionId": "presentation-foundations",
+      "sectionTitle": "Основы презентации"
+    },
+    {
+      "competencyId": "presentation-audience",
+      "tier": "core",
+      "order": 6,
+      "prerequisites": [
+        "presentation-structure"
+      ],
+      "sectionId": "presentation-content",
+      "sectionTitle": "Контент и смысл"
+    },
+    {
+      "competencyId": "presentation-message",
+      "tier": "core",
+      "order": 7,
+      "prerequisites": [
+        "presentation-structure"
+      ],
+      "sectionId": "presentation-content",
+      "sectionTitle": "Контент и смысл"
+    },
+    {
+      "competencyId": "presentation-data",
+      "tier": "core",
+      "order": 8,
+      "prerequisites": [
+        "presentation-message"
+      ],
+      "sectionId": "presentation-content",
+      "sectionTitle": "Контент и смысл"
+    },
+    {
+      "competencyId": "presentation-visualization",
+      "tier": "core",
+      "order": 9,
+      "prerequisites": [
+        "ui-layout",
+        "presentation-data"
+      ],
+      "sectionId": "presentation-content",
+      "sectionTitle": "Контент и смысл"
+    },
+    {
+      "competencyId": "ui-data-visualization",
+      "tier": "optional",
+      "order": 10,
+      "prerequisites": [
+        "presentation-data"
+      ],
+      "sectionId": "presentation-content",
+      "sectionTitle": "Контент и смысл"
+    },
+    {
+      "competencyId": "ui-figma",
+      "tier": "core",
+      "order": 11,
+      "prerequisites": [
+        "ui-layout"
+      ],
+      "sectionId": "presentation-tools",
+      "sectionTitle": "Инструменты"
+    },
+    {
+      "competencyId": "ui-visual-communication",
+      "tier": "core",
+      "order": 12,
+      "prerequisites": [
+        "ui-color",
+        "ui-layout"
+      ],
+      "sectionId": "presentation-tools",
+      "sectionTitle": "Инструменты"
+    },
+    {
+      "competencyId": "presentation-delivery",
+      "tier": "core",
+      "order": 13,
+      "prerequisites": [
+        "presentation-message",
+        "presentation-audience"
+      ],
+      "sectionId": "presentation-delivery",
+      "sectionTitle": "Защита презентации"
+    }
+  ]
+}

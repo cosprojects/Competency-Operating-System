@@ -481,6 +481,69 @@
         "practicum-design-catalog"
       ],
       "rationale": "Типографика/композиция в курсе и программа Практикума."
+    },
+    {
+      "competencyId": "ui-data-visualization",
+      "sourceIds": [
+        "practicum-presentation"
+      ],
+      "rationale": "Источник программы «Дизайнер презентаций» покрывает тему в рамках курса."
+    },
+    {
+      "competencyId": "ui-responsive",
+      "sourceIds": [
+        "practicum-appdesign"
+      ],
+      "rationale": "Источник программы «Дизайнер приложений» покрывает тему в рамках курса."
+    },
+    {
+      "competencyId": "ui-accessibility",
+      "sourceIds": [
+        "practicum-appdesign"
+      ],
+      "rationale": "Источник программы «Дизайнер приложений» покрывает тему в рамках курса."
+    },
+    {
+      "competencyId": "ux-experiments",
+      "sourceIds": [
+        "practicum-uxresearch"
+      ],
+      "rationale": "Источник программы «UX-исследователь» покрывает тему в рамках курса."
+    },
+    {
+      "competencyId": "ux-analytics",
+      "sourceIds": [
+        "practicum-uxresearch"
+      ],
+      "rationale": "Источник программы «UX-исследователь» покрывает тему в рамках курса."
+    },
+    {
+      "competencyId": "ux-metrics",
+      "sourceIds": [
+        "practicum-uxresearch"
+      ],
+      "rationale": "Источник программы «UX-исследователь» покрывает тему в рамках курса."
+    },
+    {
+      "competencyId": "ui-figjam",
+      "sourceIds": [
+        "practicum-uxresearch"
+      ],
+      "rationale": "Источник программы «UX-исследователь» покрывает тему в рамках курса."
+    },
+    {
+      "competencyId": "motion-3d-animation",
+      "sourceIds": [
+        "practicum-3ddesigner"
+      ],
+      "rationale": "Источник программы «3D-дизайнер» покрывает тему в рамках курса."
+    },
+    {
+      "competencyId": "ui-web-technologies",
+      "sourceIds": [
+        "practicum-webdesigner"
+      ],
+      "rationale": "Источник программы «Веб-дизайнер» покрывает тему в рамках курса."
     }
   ]
 }

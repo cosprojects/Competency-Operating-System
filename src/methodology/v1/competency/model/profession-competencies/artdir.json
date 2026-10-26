@@ -1,0 +1,173 @@
+{
+  "professionId": "it.artdir",
+  "sphereId": "it",
+  "competencies": [
+    {
+      "competencyId": "ux-design-thinking",
+      "tier": "foundation",
+      "order": 1,
+      "prerequisites": [],
+      "sectionId": "artdir-foundations",
+      "sectionTitle": "Визуальные основы"
+    },
+    {
+      "competencyId": "ui-color",
+      "tier": "foundation",
+      "order": 2,
+      "prerequisites": [
+        "ux-design-thinking"
+      ],
+      "sectionId": "artdir-foundations",
+      "sectionTitle": "Визуальные основы"
+    },
+    {
+      "competencyId": "ui-typography",
+      "tier": "foundation",
+      "order": 3,
+      "prerequisites": [
+        "ux-design-thinking"
+      ],
+      "sectionId": "artdir-foundations",
+      "sectionTitle": "Визуальные основы"
+    },
+    {
+      "competencyId": "ui-layout",
+      "tier": "foundation",
+      "order": 4,
+      "prerequisites": [
+        "ui-typography"
+      ],
+      "sectionId": "artdir-foundations",
+      "sectionTitle": "Визуальные основы"
+    },
+    {
+      "competencyId": "ui-visual-communication",
+      "tier": "foundation",
+      "order": 5,
+      "prerequisites": [
+        "ui-color",
+        "ui-typography",
+        "ui-layout"
+      ],
+      "sectionId": "artdir-foundations",
+      "sectionTitle": "Визуальные основы"
+    },
+    {
+      "competencyId": "graphic-brand-identity",
+      "tier": "core",
+      "order": 6,
+      "prerequisites": [
+        "ui-visual-communication",
+        "ui-typography",
+        "ui-color"
+      ],
+      "sectionId": "artdir-brand",
+      "sectionTitle": "Бренд и стратегия"
+    },
+    {
+      "competencyId": "artdir-brand-strategy",
+      "tier": "core",
+      "order": 7,
+      "prerequisites": [
+        "ux-design-thinking",
+        "graphic-brand-identity"
+      ],
+      "sectionId": "artdir-brand",
+      "sectionTitle": "Бренд и стратегия"
+    },
+    {
+      "competencyId": "artdir-brand-platform",
+      "tier": "core",
+      "order": 8,
+      "prerequisites": [
+        "artdir-brand-strategy",
+        "ui-visual-communication"
+      ],
+      "sectionId": "artdir-brand",
+      "sectionTitle": "Бренд и стратегия"
+    },
+    {
+      "competencyId": "ui-design-systems",
+      "tier": "core",
+      "order": 9,
+      "prerequisites": [
+        "ui-visual-communication",
+        "ui-layout"
+      ],
+      "sectionId": "artdir-brand",
+      "sectionTitle": "Бренд и стратегия"
+    },
+    {
+      "competencyId": "ui-components",
+      "tier": "optional",
+      "order": 10,
+      "prerequisites": [
+        "ui-design-systems"
+      ],
+      "sectionId": "artdir-brand",
+      "sectionTitle": "Бренд и стратегия"
+    },
+    {
+      "competencyId": "artdir-brief",
+      "tier": "core",
+      "order": 11,
+      "prerequisites": [
+        "ux-design-thinking"
+      ],
+      "sectionId": "artdir-process",
+      "sectionTitle": "Процесс и коммуникация"
+    },
+    {
+      "competencyId": "ux-product-thinking",
+      "tier": "core",
+      "order": 12,
+      "prerequisites": [
+        "ux-design-thinking"
+      ],
+      "sectionId": "artdir-process",
+      "sectionTitle": "Процесс и коммуникация"
+    },
+    {
+      "competencyId": "artdir-communication",
+      "tier": "core",
+      "order": 13,
+      "prerequisites": [
+        "artdir-brief",
+        "ux-product-thinking"
+      ],
+      "sectionId": "artdir-process",
+      "sectionTitle": "Процесс и коммуникация"
+    },
+    {
+      "competencyId": "artdir-presentation",
+      "tier": "core",
+      "order": 14,
+      "prerequisites": [
+        "artdir-brand-platform",
+        "artdir-communication"
+      ],
+      "sectionId": "artdir-process",
+      "sectionTitle": "Процесс и коммуникация"
+    },
+    {
+      "competencyId": "artdir-team",
+      "tier": "core",
+      "order": 15,
+      "prerequisites": [
+        "artdir-communication"
+      ],
+      "sectionId": "artdir-team",
+      "sectionTitle": "Команда"
+    },
+    {
+      "competencyId": "artdir-hiring",
+      "tier": "optional",
+      "order": 16,
+      "prerequisites": [
+        "artdir-team"
+      ],
+      "sectionId": "artdir-team",
+      "sectionTitle": "Команда"
+    }
+  ]
+}

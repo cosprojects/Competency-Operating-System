@@ -810,6 +810,186 @@
       "httpStatus": 200,
       "duplicateOf": "motiondesign-school-courses",
       "notes": "Дубль листинга MDS."
+    },
+    {
+      "id": "practicum-presentation",
+      "title": "Яндекс Практикум — презентации с ИИ",
+      "url": "https://practicum.yandex.ru/ai-for-presentations/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.presentation"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "paid",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "presentations",
+        "ai presentations",
+        "storytelling",
+        "data visualization"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 200
+    },
+    {
+      "id": "practicum-appdesign",
+      "title": "Яндекс Практикум — дизайн мобильных приложений",
+      "url": "https://practicum.yandex.ru/mobile-app-design/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.appdesign"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "paid",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "mobile app design",
+        "ios guidelines",
+        "android guidelines",
+        "prototyping",
+        "design systems"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 200
+    },
+    {
+      "id": "practicum-uxresearch",
+      "title": "Яндекс Практикум — UX-исследования для дизайнеров",
+      "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "paid",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ux research",
+        "interviews",
+        "usability testing",
+        "surveys",
+        "analytics",
+        "synthesis"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 200
+    },
+    {
+      "id": "practicum-artdir",
+      "title": "Яндекс Практикум — арт-дирекшн",
+      "url": "https://practicum.yandex.ru/art-dir/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.artdir"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "paid",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "art direction",
+        "brand strategy",
+        "design leadership",
+        "briefing",
+        "presentation"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 200
+    },
+    {
+      "id": "practicum-3ddesigner",
+      "title": "Яндекс Практикум — 3D-дженералист",
+      "url": "https://practicum.yandex.ru/3d-generalist/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "paid",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "3d modeling",
+        "blender",
+        "sculpting",
+        "texturing",
+        "lighting",
+        "rendering",
+        "compositing"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 200
+    },
+    {
+      "id": "practicum-interior",
+      "title": "Яндекс Практикум — дизайнер интерьеров",
+      "url": "https://practicum.yandex.ru/interior-designer/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.interior"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "paid",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "interior design",
+        "ergonomics",
+        "zoning",
+        "materials",
+        "visualization",
+        "drawings",
+        "specifications"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 200
+    },
+    {
+      "id": "practicum-webdesigner",
+      "title": "Яндекс Практикум — веб-дизайнер",
+      "url": "https://practicum.yandex.ru/web-designer/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.webdesigner"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "paid",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "web design",
+        "landing pages",
+        "figma",
+        "tilda",
+        "responsive",
+        "webflow"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-26",
+      "httpStatus": 200
     }
   ]
 }

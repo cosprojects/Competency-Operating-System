@@ -272,6 +272,678 @@
         "motiondesign-school-vimeo",
         "motiondesign-school-youtube"
       ]
+    },
+    {
+      "id": "presentation-structure",
+      "branchId": "it.presentation",
+      "branchTitle": "Дизайнер презентаций",
+      "sectionId": "presentation-foundations",
+      "sectionTitle": "Основы презентации",
+      "title": "Структура и сценарий презентации",
+      "titleEn": "Presentation structure",
+      "definition": "Цель, логика и сценарий презентации: от сообщения к последовательности слайдов.",
+      "priorityHint": "foundation",
+      "learningSourceIds": [
+        "practicum-presentation"
+      ]
+    },
+    {
+      "id": "presentation-audience",
+      "branchId": "it.presentation",
+      "branchTitle": "Дизайнер презентаций",
+      "sectionId": "presentation-content",
+      "sectionTitle": "Контент и смысл",
+      "title": "Адаптация под аудиторию",
+      "titleEn": "Audience adaptation",
+      "definition": "Профиль слушателей, их задачи и адаптация языка, глубины и подачи материала.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-presentation"
+      ]
+    },
+    {
+      "id": "presentation-message",
+      "branchId": "it.presentation",
+      "branchTitle": "Дизайнер презентаций",
+      "sectionId": "presentation-content",
+      "sectionTitle": "Контент и смысл",
+      "title": "Ключевое сообщение и аргументация",
+      "titleEn": "Key message and argumentation",
+      "definition": "Формулировка ключевого сообщения, тезисов, аргументов и выводов.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-presentation"
+      ]
+    },
+    {
+      "id": "presentation-data",
+      "branchId": "it.presentation",
+      "branchTitle": "Дизайнер презентаций",
+      "sectionId": "presentation-content",
+      "sectionTitle": "Контент и смысл",
+      "title": "Достоверность данных и фактчекинг",
+      "titleEn": "Data credibility and fact-checking",
+      "definition": "Поиск достоверных данных, проверка фактов и корректная интерпретация источников.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-presentation"
+      ]
+    },
+    {
+      "id": "presentation-visualization",
+      "branchId": "it.presentation",
+      "branchTitle": "Дизайнер презентаций",
+      "sectionId": "presentation-content",
+      "sectionTitle": "Контент и смысл",
+      "title": "Визуализация и формат слайдов",
+      "titleEn": "Slide visualization",
+      "definition": "Выбор способа визуализации и сборка слайдов под сообщение и аудиторию.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-presentation"
+      ]
+    },
+    {
+      "id": "presentation-delivery",
+      "branchId": "it.presentation",
+      "branchTitle": "Дизайнер презентаций",
+      "sectionId": "presentation-delivery",
+      "sectionTitle": "Защита презентации",
+      "title": "Защита и репетиция презентации",
+      "titleEn": "Presentation delivery",
+      "definition": "Репетиция защиты идеи, работа с вопросами и обратной связью.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-presentation"
+      ]
+    },
+    {
+      "id": "app-platform-guidelines",
+      "branchId": "it.appdesign",
+      "branchTitle": "Дизайнер приложений",
+      "sectionId": "app-foundations",
+      "sectionTitle": "Основы приложений",
+      "title": "Гайдлайны iOS и Android",
+      "titleEn": "iOS and Android guidelines",
+      "definition": "Платформенные гайдлайны, нативные паттерны и ограничения мобильных ОС.",
+      "priorityHint": "foundation",
+      "learningSourceIds": [
+        "practicum-appdesign"
+      ]
+    },
+    {
+      "id": "app-mobile-patterns",
+      "branchId": "it.appdesign",
+      "branchTitle": "Дизайнер приложений",
+      "sectionId": "app-research",
+      "sectionTitle": "Исследования и паттерны",
+      "title": "Паттерны мобильных приложений",
+      "titleEn": "Mobile app patterns",
+      "definition": "Распространённые элементы, навигация и поведенческие паттерны мобильных приложений.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-appdesign"
+      ]
+    },
+    {
+      "id": "app-prototyping",
+      "branchId": "it.appdesign",
+      "branchTitle": "Дизайнер приложений",
+      "sectionId": "app-prototyping",
+      "sectionTitle": "Прототипирование",
+      "title": "Продвинутое прототипирование",
+      "titleEn": "Advanced prototyping",
+      "definition": "Интерактивные прототипы и продвинутая анимация в Figma для мобильных сценариев.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-appdesign"
+      ]
+    },
+    {
+      "id": "app-native-crossplatform",
+      "branchId": "it.appdesign",
+      "branchTitle": "Дизайнер приложений",
+      "sectionId": "app-delivery",
+      "sectionTitle": "Передача и метрики",
+      "title": "Нативные и кросс-платформенные приложения",
+      "titleEn": "Native and cross-platform apps",
+      "definition": "Различия нативных и кросс-платформенных приложений, адаптация компонентов.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-appdesign"
+      ]
+    },
+    {
+      "id": "app-metrics",
+      "branchId": "it.appdesign",
+      "branchTitle": "Дизайнер приложений",
+      "sectionId": "app-delivery",
+      "sectionTitle": "Передача и метрики",
+      "title": "Метрики мобильных приложений",
+      "titleEn": "Mobile app metrics",
+      "definition": "Метрики мобильных приложений и анализ обратной связи.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-appdesign"
+      ]
+    },
+    {
+      "id": "uxresearch-principles",
+      "branchId": "it.uxresearch",
+      "branchTitle": "UX-исследователь",
+      "sectionId": "research-foundations",
+      "sectionTitle": "Основы исследований",
+      "title": "Принципы и этапы исследований",
+      "titleEn": "Research principles",
+      "definition": "Принципы и этапы исследований, роль исследований в продуктовом цикле.",
+      "priorityHint": "foundation",
+      "learningSourceIds": [
+        "practicum-uxresearch"
+      ]
+    },
+    {
+      "id": "uxresearch-questions",
+      "branchId": "it.uxresearch",
+      "branchTitle": "UX-исследователь",
+      "sectionId": "research-foundations",
+      "sectionTitle": "Основы исследований",
+      "title": "Исследовательские вопросы и гипотезы",
+      "titleEn": "Research questions",
+      "definition": "Формулировка исследовательских вопросов и гипотез.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-uxresearch"
+      ]
+    },
+    {
+      "id": "uxresearch-ethics",
+      "branchId": "it.uxresearch",
+      "branchTitle": "UX-исследователь",
+      "sectionId": "research-foundations",
+      "sectionTitle": "Основы исследований",
+      "title": "Этика и хранение данных",
+      "titleEn": "Research ethics",
+      "definition": "Этика исследований, согласие и хранение данных пользователей.",
+      "priorityHint": "optional",
+      "learningSourceIds": [
+        "practicum-uxresearch"
+      ]
+    },
+    {
+      "id": "uxresearch-qualitative",
+      "branchId": "it.uxresearch",
+      "branchTitle": "UX-исследователь",
+      "sectionId": "research-methods",
+      "sectionTitle": "Методы",
+      "title": "Качественные методы",
+      "titleEn": "Qualitative methods",
+      "definition": "Глубинные интервью и другие качественные методы, гайды и модерация.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-uxresearch"
+      ]
+    },
+    {
+      "id": "uxresearch-quantitative",
+      "branchId": "it.uxresearch",
+      "branchTitle": "UX-исследователь",
+      "sectionId": "research-methods",
+      "sectionTitle": "Методы",
+      "title": "Количественные методы",
+      "titleEn": "Quantitative methods",
+      "definition": "Опросы, метрики, А/В-тестирование и статистическая интерпретация.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-uxresearch"
+      ]
+    },
+    {
+      "id": "uxresearch-recruiting",
+      "branchId": "it.uxresearch",
+      "branchTitle": "UX-исследователь",
+      "sectionId": "research-methods",
+      "sectionTitle": "Методы",
+      "title": "Выборка и рекрутинг респондентов",
+      "titleEn": "Recruiting",
+      "definition": "Формирование выборки и рекрутинг респондентов.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-uxresearch"
+      ]
+    },
+    {
+      "id": "uxresearch-usability",
+      "branchId": "it.uxresearch",
+      "branchTitle": "UX-исследователь",
+      "sectionId": "research-methods",
+      "sectionTitle": "Методы",
+      "title": "Юзабилити-тестирование и модерация",
+      "titleEn": "Usability research",
+      "definition": "Подготовка и модерация юзабилити-тестов, анализ результатов.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-uxresearch"
+      ]
+    },
+    {
+      "id": "uxresearch-synthesis",
+      "branchId": "it.uxresearch",
+      "branchTitle": "UX-исследователь",
+      "sectionId": "research-synthesis",
+      "sectionTitle": "Синтез",
+      "title": "Анализ данных и отчёт",
+      "titleEn": "Research synthesis",
+      "definition": "Анализ данных, протоколы, отчёт и выводы для дизайна.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-uxresearch"
+      ]
+    },
+    {
+      "id": "artdir-brand-strategy",
+      "branchId": "it.artdir",
+      "branchTitle": "Арт-директор",
+      "sectionId": "artdir-brand",
+      "sectionTitle": "Бренд и стратегия",
+      "title": "Цели бренда и коммуникационная стратегия",
+      "titleEn": "Brand strategy",
+      "definition": "Цели бренда, коммуникационная стратегия и связь с бизнесом.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-artdir"
+      ]
+    },
+    {
+      "id": "artdir-brand-platform",
+      "branchId": "it.artdir",
+      "branchTitle": "Арт-директор",
+      "sectionId": "artdir-brand",
+      "sectionTitle": "Бренд и стратегия",
+      "title": "Бренд-платформа и система дизайна",
+      "titleEn": "Brand platform",
+      "definition": "Бренд-платформа, система дизайна и консистентность коммуникаций.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-artdir"
+      ]
+    },
+    {
+      "id": "artdir-brief",
+      "branchId": "it.artdir",
+      "branchTitle": "Арт-директор",
+      "sectionId": "artdir-process",
+      "sectionTitle": "Процесс и коммуникация",
+      "title": "Бриф и работа с бизнесом",
+      "titleEn": "Briefing",
+      "definition": "Брифование заказчика, цели бизнеса и маркетинга.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-artdir"
+      ]
+    },
+    {
+      "id": "artdir-communication",
+      "branchId": "it.artdir",
+      "branchTitle": "Арт-директор",
+      "sectionId": "artdir-process",
+      "sectionTitle": "Процесс и коммуникация",
+      "title": "Коммуникация со стейкхолдерами",
+      "titleEn": "Stakeholder communication",
+      "definition": "Коммуникация со стейкхолдерами и смежными отделами.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-artdir"
+      ]
+    },
+    {
+      "id": "artdir-presentation",
+      "branchId": "it.artdir",
+      "branchTitle": "Арт-директор",
+      "sectionId": "artdir-process",
+      "sectionTitle": "Процесс и коммуникация",
+      "title": "Презентация и защита идей",
+      "titleEn": "Idea presentation",
+      "definition": "Презентация и аргументация идей со стратегией и цифрами.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-artdir"
+      ]
+    },
+    {
+      "id": "artdir-team",
+      "branchId": "it.artdir",
+      "branchTitle": "Арт-директор",
+      "sectionId": "artdir-team",
+      "sectionTitle": "Команда",
+      "title": "Управление дизайн-отделом",
+      "titleEn": "Design team leadership",
+      "definition": "Построение дизайн-отдела, планирование и распределение задач.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-artdir"
+      ]
+    },
+    {
+      "id": "artdir-hiring",
+      "branchId": "it.artdir",
+      "branchTitle": "Арт-директор",
+      "sectionId": "artdir-team",
+      "sectionTitle": "Команда",
+      "title": "Наём, оценка и развитие дизайнеров",
+      "titleEn": "Hiring and growth",
+      "definition": "Наём, оценка компетенций, обратная связь и развитие команды.",
+      "priorityHint": "optional",
+      "learningSourceIds": [
+        "practicum-artdir"
+      ]
+    },
+    {
+      "id": "3d-modeling",
+      "branchId": "it.3ddesigner",
+      "branchTitle": "3D-дизайнер",
+      "sectionId": "3d-foundations",
+      "sectionTitle": "Основы 3D",
+      "title": "3D-моделирование",
+      "titleEn": "3D modeling",
+      "definition": "Основы 3D: примитивы, полигональное моделирование и этапы работы над моделью.",
+      "priorityHint": "foundation",
+      "learningSourceIds": [
+        "practicum-3ddesigner"
+      ]
+    },
+    {
+      "id": "3d-hard-surface",
+      "branchId": "it.3ddesigner",
+      "branchTitle": "3D-дизайнер",
+      "sectionId": "3d-foundations",
+      "sectionTitle": "Основы 3D",
+      "title": "Hard-surface моделирование",
+      "titleEn": "Hard-surface modeling",
+      "definition": "Моделирование техники и объектов с жёсткими формами.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-3ddesigner"
+      ]
+    },
+    {
+      "id": "3d-sculpting",
+      "branchId": "it.3ddesigner",
+      "branchTitle": "3D-дизайнер",
+      "sectionId": "3d-foundations",
+      "sectionTitle": "Основы 3D",
+      "title": "Скульптинг и органика",
+      "titleEn": "Sculpting and organic",
+      "definition": "Скульптинг, органические формы, ретопология и груминг.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-3ddesigner"
+      ]
+    },
+    {
+      "id": "3d-texturing",
+      "branchId": "it.3ddesigner",
+      "branchTitle": "3D-дизайнер",
+      "sectionId": "3d-look",
+      "sectionTitle": "Внешний вид",
+      "title": "Материалы и текстуры",
+      "titleEn": "Materials and texturing",
+      "definition": "Материалы, текстуры, шейдинг и работа с картами.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-3ddesigner"
+      ]
+    },
+    {
+      "id": "3d-lighting",
+      "branchId": "it.3ddesigner",
+      "branchTitle": "3D-дизайнер",
+      "sectionId": "3d-look",
+      "sectionTitle": "Внешний вид",
+      "title": "Свет и тень",
+      "titleEn": "Lighting",
+      "definition": "Постановка света и тени в трёхмерной сцене.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-3ddesigner"
+      ]
+    },
+    {
+      "id": "3d-rendering",
+      "branchId": "it.3ddesigner",
+      "branchTitle": "3D-дизайнер",
+      "sectionId": "3d-look",
+      "sectionTitle": "Внешний вид",
+      "title": "Рендер и оптимизация",
+      "titleEn": "Rendering",
+      "definition": "Настройка рендера, камер и оптимизация сцены.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-3ddesigner"
+      ]
+    },
+    {
+      "id": "3d-compositing",
+      "branchId": "it.3ddesigner",
+      "branchTitle": "3D-дизайнер",
+      "sectionId": "3d-look",
+      "sectionTitle": "Внешний вид",
+      "title": "Композитинг 3D",
+      "titleEn": "3D compositing",
+      "definition": "Композитинг 3D-сцены и постобработка результата.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-3ddesigner"
+      ]
+    },
+    {
+      "id": "3d-presentation",
+      "branchId": "it.3ddesigner",
+      "branchTitle": "3D-дизайнер",
+      "sectionId": "3d-production",
+      "sectionTitle": "Продакшн",
+      "title": "Презентация 3D-проекта",
+      "titleEn": "3D project presentation",
+      "definition": "Подача и защита 3D-проекта, аргументация решений.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-3ddesigner"
+      ]
+    },
+    {
+      "id": "interior-space-analysis",
+      "branchId": "it.interior",
+      "branchTitle": "Дизайнер интерьеров",
+      "sectionId": "interior-foundations",
+      "sectionTitle": "Основы интерьера",
+      "title": "Анализ пространства и бриф",
+      "titleEn": "Space analysis",
+      "definition": "Анализ пространства, обмеры, брифинг и ограничения объекта.",
+      "priorityHint": "foundation",
+      "learningSourceIds": [
+        "practicum-interior"
+      ]
+    },
+    {
+      "id": "interior-ergonomics",
+      "branchId": "it.interior",
+      "branchTitle": "Дизайнер интерьеров",
+      "sectionId": "interior-foundations",
+      "sectionTitle": "Основы интерьера",
+      "title": "Эргономика",
+      "titleEn": "Ergonomics",
+      "definition": "Эргономика и удобство пространства.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-interior"
+      ]
+    },
+    {
+      "id": "interior-zoning",
+      "branchId": "it.interior",
+      "branchTitle": "Дизайнер интерьеров",
+      "sectionId": "interior-foundations",
+      "sectionTitle": "Основы интерьера",
+      "title": "Зонирование и планировка",
+      "titleEn": "Zoning and planning",
+      "definition": "Зонирование, планировочные решения и работа с новостройками/вторичным жильём.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-interior"
+      ]
+    },
+    {
+      "id": "interior-styles",
+      "branchId": "it.interior",
+      "branchTitle": "Дизайнер интерьеров",
+      "sectionId": "interior-design",
+      "sectionTitle": "Проектирование",
+      "title": "Стили и цветовые концепции",
+      "titleEn": "Styles and color concepts",
+      "definition": "Базовые стили интерьера, цвет и цветовая композиция.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-interior"
+      ]
+    },
+    {
+      "id": "interior-materials",
+      "branchId": "it.interior",
+      "branchTitle": "Дизайнер интерьеров",
+      "sectionId": "interior-design",
+      "sectionTitle": "Проектирование",
+      "title": "Материалы, мебель и свет",
+      "titleEn": "Materials and furniture",
+      "definition": "Подбор мебели, материалов, сочетаемость и световая концепция.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-interior"
+      ]
+    },
+    {
+      "id": "interior-visualization",
+      "branchId": "it.interior",
+      "branchTitle": "Дизайнер интерьеров",
+      "sectionId": "interior-design",
+      "sectionTitle": "Проектирование",
+      "title": "3D-визуализация интерьера",
+      "titleEn": "Interior visualization",
+      "definition": "Моделирование, материалы, свет, ракурсы и рендер интерьера.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-interior"
+      ]
+    },
+    {
+      "id": "interior-drawings",
+      "branchId": "it.interior",
+      "branchTitle": "Дизайнер интерьеров",
+      "sectionId": "interior-docs",
+      "sectionTitle": "Документация",
+      "title": "Чертежи и перепланировка",
+      "titleEn": "Drawings and planning",
+      "definition": "Чертежи по ГОСТу, планы, развёртки и инженерные схемы.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-interior"
+      ]
+    },
+    {
+      "id": "interior-specs",
+      "branchId": "it.interior",
+      "branchTitle": "Дизайнер интерьеров",
+      "sectionId": "interior-docs",
+      "sectionTitle": "Документация",
+      "title": "Спецификации и смета",
+      "titleEn": "Specifications and estimate",
+      "definition": "Спецификации, смета и график реализации.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-interior"
+      ]
+    },
+    {
+      "id": "interior-project-management",
+      "branchId": "it.interior",
+      "branchTitle": "Дизайнер интерьеров",
+      "sectionId": "interior-docs",
+      "sectionTitle": "Документация",
+      "title": "Ведение проекта и авторский надзор",
+      "titleEn": "Interior project management",
+      "definition": "Ведение проекта от первого контакта до фотосъёмки и авторский надзор.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-interior"
+      ]
+    },
+    {
+      "id": "web-landing",
+      "branchId": "it.webdesigner",
+      "branchTitle": "Веб-дизайнер",
+      "sectionId": "web-foundations",
+      "sectionTitle": "Основы веба",
+      "title": "Лендинги и структура страниц",
+      "titleEn": "Landing pages",
+      "definition": "Структура лендингов и страниц: блоки, смыслы и конверсионные сценарии.",
+      "priorityHint": "foundation",
+      "learningSourceIds": [
+        "practicum-webdesigner"
+      ]
+    },
+    {
+      "id": "web-adaptive",
+      "branchId": "it.webdesigner",
+      "branchTitle": "Веб-дизайнер",
+      "sectionId": "web-visual",
+      "sectionTitle": "Визуальный слой",
+      "title": "Адаптивная вёрстка и сетки",
+      "titleEn": "Adaptive layout",
+      "definition": "Адаптивность, сетки и поведение интерфейса на разных экранах.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-webdesigner"
+      ]
+    },
+    {
+      "id": "web-cms",
+      "branchId": "it.webdesigner",
+      "branchTitle": "Веб-дизайнер",
+      "sectionId": "web-tools",
+      "sectionTitle": "Инструменты",
+      "title": "CMS и конструкторы",
+      "titleEn": "CMS and builders",
+      "definition": "Работа с CMS и конструкторами (Tilda и аналоги) при сборке сайтов.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-webdesigner"
+      ]
+    },
+    {
+      "id": "web-visual",
+      "branchId": "it.webdesigner",
+      "branchTitle": "Веб-дизайнер",
+      "sectionId": "web-visual",
+      "sectionTitle": "Визуальный слой",
+      "title": "Визуальный дизайн для веба",
+      "titleEn": "Web visual design",
+      "definition": "Графика, изображения и визуальные элементы для веб-страниц.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-webdesigner"
+      ]
+    },
+    {
+      "id": "web-performance",
+      "branchId": "it.webdesigner",
+      "branchTitle": "Веб-дизайнер",
+      "sectionId": "web-tools",
+      "sectionTitle": "Инструменты",
+      "title": "Оптимизация и технические ограничения",
+      "titleEn": "Web performance",
+      "definition": "Технические ограничения, оптимизация и качество реализации.",
+      "priorityHint": "optional",
+      "learningSourceIds": [
+        "practicum-webdesigner"
+      ]
     }
   ]
 }

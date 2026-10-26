@@ -410,6 +410,69 @@
       "practicum": {
         "slug": "graphic-designer"
       }
+    },
+    {
+      "id": "presentation",
+      "title": "Дизайнер презентаций",
+      "titleEn": "Presentation designer",
+      "aliases": [],
+      "practicum": {
+        "slug": "ai-for-presentations"
+      }
+    },
+    {
+      "id": "appdesign",
+      "title": "Дизайнер приложений",
+      "titleEn": "App designer",
+      "aliases": [],
+      "practicum": {
+        "slug": "mobile-app-design"
+      }
+    },
+    {
+      "id": "uxresearch",
+      "title": "UX-исследователь",
+      "titleEn": "UX researcher",
+      "aliases": [],
+      "practicum": {
+        "slug": "ux-research-for-designers"
+      }
+    },
+    {
+      "id": "artdir",
+      "title": "Арт-директор",
+      "titleEn": "Art director",
+      "aliases": [],
+      "practicum": {
+        "slug": "art-dir"
+      }
+    },
+    {
+      "id": "3ddesigner",
+      "title": "3D-дизайнер",
+      "titleEn": "3D designer",
+      "aliases": [],
+      "practicum": {
+        "slug": "3d-generalist"
+      }
+    },
+    {
+      "id": "interior",
+      "title": "Дизайнер интерьеров",
+      "titleEn": "Interior designer",
+      "aliases": [],
+      "practicum": {
+        "slug": "interior-designer"
+      }
+    },
+    {
+      "id": "webdesigner",
+      "title": "Веб-дизайнер",
+      "titleEn": "Web designer",
+      "aliases": [],
+      "practicum": {
+        "slug": "web-designer"
+      }
     }
   ]
 }

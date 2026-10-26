@@ -1,0 +1,19 @@
+{
+  "professionId": "it.webdesigner",
+  "sphereId": "it",
+  "occupationSources": [
+    {
+      "sourceId": "practicum",
+      "query": "web-designer"
+    }
+  ],
+  "materialSourceIds": [
+    "wikipedia",
+    "internet-archive",
+    "habr",
+    "medium"
+  ],
+  "blockedSourceIds": [
+    "hh-api"
+  ]
+}

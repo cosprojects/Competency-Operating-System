@@ -43,6 +43,83 @@
       "catalogFile": "catalog/it.json",
       "priorityFile": "model/profession-competencies/product.json",
       "sourcesFile": "sources/professions/it.product.json"
+    },
+    {
+      "id": "it.3ddesigner",
+      "sphereId": "it",
+      "title": "3D-дизайнер",
+      "titleEn": "3D designer",
+      "canonicalMapFile": "model/professions/views/3ddesigner.json",
+      "viewFile": "model/professions/views/3ddesigner.json",
+      "catalogFile": "catalog/it.json",
+      "priorityFile": "model/profession-competencies/3ddesigner.json",
+      "sourcesFile": "sources/professions/it.3ddesigner.json"
+    },
+    {
+      "id": "it.appdesign",
+      "sphereId": "it",
+      "title": "Дизайнер приложений",
+      "titleEn": "App designer",
+      "canonicalMapFile": "model/professions/views/appdesign.json",
+      "viewFile": "model/professions/views/appdesign.json",
+      "catalogFile": "catalog/it.json",
+      "priorityFile": "model/profession-competencies/appdesign.json",
+      "sourcesFile": "sources/professions/it.appdesign.json"
+    },
+    {
+      "id": "it.artdir",
+      "sphereId": "it",
+      "title": "Арт-директор",
+      "titleEn": "Art director",
+      "canonicalMapFile": "model/professions/views/artdir.json",
+      "viewFile": "model/professions/views/artdir.json",
+      "catalogFile": "catalog/it.json",
+      "priorityFile": "model/profession-competencies/artdir.json",
+      "sourcesFile": "sources/professions/it.artdir.json"
+    },
+    {
+      "id": "it.interior",
+      "sphereId": "it",
+      "title": "Дизайнер интерьеров",
+      "titleEn": "Interior designer",
+      "canonicalMapFile": "model/professions/views/interior.json",
+      "viewFile": "model/professions/views/interior.json",
+      "catalogFile": "catalog/it.json",
+      "priorityFile": "model/profession-competencies/interior.json",
+      "sourcesFile": "sources/professions/it.interior.json"
+    },
+    {
+      "id": "it.presentation",
+      "sphereId": "it",
+      "title": "Дизайнер презентаций",
+      "titleEn": "Presentation designer",
+      "canonicalMapFile": "model/professions/views/presentation.json",
+      "viewFile": "model/professions/views/presentation.json",
+      "catalogFile": "catalog/it.json",
+      "priorityFile": "model/profession-competencies/presentation.json",
+      "sourcesFile": "sources/professions/it.presentation.json"
+    },
+    {
+      "id": "it.uxresearch",
+      "sphereId": "it",
+      "title": "UX-исследователь",
+      "titleEn": "UX researcher",
+      "canonicalMapFile": "model/professions/views/uxresearch.json",
+      "viewFile": "model/professions/views/uxresearch.json",
+      "catalogFile": "catalog/it.json",
+      "priorityFile": "model/profession-competencies/uxresearch.json",
+      "sourcesFile": "sources/professions/it.uxresearch.json"
+    },
+    {
+      "id": "it.webdesigner",
+      "sphereId": "it",
+      "title": "Веб-дизайнер",
+      "titleEn": "Web designer",
+      "canonicalMapFile": "model/professions/views/webdesigner.json",
+      "viewFile": "model/professions/views/webdesigner.json",
+      "catalogFile": "catalog/it.json",
+      "priorityFile": "model/profession-competencies/webdesigner.json",
+      "sourcesFile": "sources/professions/it.webdesigner.json"
     }
   ]
 }

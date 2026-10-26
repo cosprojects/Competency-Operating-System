@@ -1,0 +1,19 @@
+{
+  "professionId": "it.artdir",
+  "sphereId": "it",
+  "occupationSources": [
+    {
+      "sourceId": "practicum",
+      "query": "art-dir"
+    }
+  ],
+  "materialSourceIds": [
+    "wikipedia",
+    "internet-archive",
+    "habr",
+    "medium"
+  ],
+  "blockedSourceIds": [
+    "hh-api"
+  ]
+}

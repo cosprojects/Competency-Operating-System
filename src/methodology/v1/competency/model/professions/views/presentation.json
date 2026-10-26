@@ -1,0 +1,141 @@
+{
+  "viewVersion": "1.0.0",
+  "professionId": "it.presentation",
+  "sphereId": "it",
+  "title": "Дизайнер презентаций",
+  "titleEn": "Presentation designer",
+  "sections": [
+    {
+      "id": "presentation-foundations",
+      "title": "Основы презентации",
+      "definition": "Мышление, типографика, цвет и структура.",
+      "competencies": [
+        {
+          "competencyId": "ux-design-thinking",
+          "tier": "foundation",
+          "order": 1
+        },
+        {
+          "competencyId": "ui-typography",
+          "tier": "foundation",
+          "order": 2,
+          "prerequisites": [
+            "ux-design-thinking"
+          ]
+        },
+        {
+          "competencyId": "ui-color",
+          "tier": "foundation",
+          "order": 3,
+          "prerequisites": [
+            "ux-design-thinking"
+          ]
+        },
+        {
+          "competencyId": "ui-layout",
+          "tier": "foundation",
+          "order": 4,
+          "prerequisites": [
+            "ui-typography"
+          ]
+        },
+        {
+          "competencyId": "presentation-structure",
+          "tier": "foundation",
+          "order": 5,
+          "prerequisites": [
+            "ux-design-thinking"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "presentation-content",
+      "title": "Контент и смысл",
+      "definition": "Аудитория, сообщение, данные и визуализация.",
+      "competencies": [
+        {
+          "competencyId": "presentation-audience",
+          "tier": "core",
+          "order": 6,
+          "prerequisites": [
+            "presentation-structure"
+          ]
+        },
+        {
+          "competencyId": "presentation-message",
+          "tier": "core",
+          "order": 7,
+          "prerequisites": [
+            "presentation-structure"
+          ]
+        },
+        {
+          "competencyId": "presentation-data",
+          "tier": "core",
+          "order": 8,
+          "prerequisites": [
+            "presentation-message"
+          ]
+        },
+        {
+          "competencyId": "presentation-visualization",
+          "tier": "core",
+          "order": 9,
+          "prerequisites": [
+            "ui-layout",
+            "presentation-data"
+          ]
+        },
+        {
+          "competencyId": "ui-data-visualization",
+          "tier": "optional",
+          "order": 10,
+          "prerequisites": [
+            "presentation-data"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "presentation-tools",
+      "title": "Инструменты",
+      "definition": "Figma и визуальная коммуникация.",
+      "competencies": [
+        {
+          "competencyId": "ui-figma",
+          "tier": "core",
+          "order": 11,
+          "prerequisites": [
+            "ui-layout"
+          ]
+        },
+        {
+          "competencyId": "ui-visual-communication",
+          "tier": "core",
+          "order": 12,
+          "prerequisites": [
+            "ui-color",
+            "ui-layout"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "presentation-delivery",
+      "title": "Защита презентации",
+      "definition": "Репетиция, вопросы, обратная связь.",
+      "competencies": [
+        {
+          "competencyId": "presentation-delivery",
+          "tier": "core",
+          "order": 13,
+          "prerequisites": [
+            "presentation-message",
+            "presentation-audience"
+          ]
+        }
+      ]
+    }
+  ]
+}

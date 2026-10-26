@@ -1,7 +1,7 @@
 ---
 id: COS-RES-019
 title: Competency Module — session handoff
-version: 1.13.0
+version: 1.14.0
 status: Draft
 owner: Research Team
 last_updated: 2026-10-26
@@ -15,6 +15,7 @@ references:
   - COS-RES-021
   - COS-RES-022
   - COS-RES-023
+  - COS-RES-024
   - COS-ARCH-002
 ---
 
@@ -45,7 +46,7 @@ references:
 ### Нормализованная модель
 - `model/spheres.json` — сфера `it`.
 - `model/professions.json` — **11 профессий**: `it.uxui`, `it.product`, `it.motion`, `it.graphic` + новые `it.presentation`, `it.appdesign`, `it.uxresearch`, `it.artdir`, `it.3ddesigner`, `it.interior`, `it.webdesigner` (схемы этапа 1, `COS-RES-023`).
-- `model/competencies.json` — **единый массив 103 компетенций** (34 базовых + 69 профессио-специфичных: product/motion/graphic + 48 новых дизайнерских, `COS-RES-023`).
+- `model/competencies.json` — **единый массив 112 компетенций** (34 базовых + 69 профессио-специфичных + 9 сквозных AI-компетенций этапа 2, `COS-RES-024`).
 - `model/profession-competencies/*.json` — ссылки competencyId + tier/order + prerequisites по профессии.
 - `model/professions/views/*.json` — профессиональные view: разделы, tier/order, prerequisites.
 
@@ -57,13 +58,15 @@ references:
 | Product | 30 | 30 | **41** |
 | Motion | 28 | 28 | **42** |
 | Graphic | 18 | 18 | **33** |
-| Презентации | 13 | 13 | 15 |
-| Приложения | 26 | 26 | 34 |
-| UX-исследования | 18 | 18 | 27 |
-| Арт-дирекшн | 16 | 16 | 24 |
-| 3D | 15 | 15 | 20 |
-| Интерьеры | 14 | 14 | 22 |
-| Веб-дизайн | 24 | 24 | 36 |
+| Презентации | 22 | 22 | 25 |
+| Приложения | 35 | 35 | 44 |
+| UX-исследования | 27 | 27 | 37 |
+| Арт-дирекшн | 25 | 25 | 34 |
+| 3D | 24 | 24 | 30 |
+| Интерьеры | 23 | 23 | 32 |
+| Веб-дизайн | 33 | 33 | 46 |
+
+Во все 11 профессий добавлен сквозной слой из 9 AI-компетенций (`COS-RES-024`): в 10 views — секция «ИИ на этапах работы», в UX/UI — через `model:sync` (43 = 34+9).
 
 Все три графа (product, motion, graphic) теперь связные: единственный корень `ux-design-thinking`, компонент — 1. Product view: 3 foundation / 24 core / 3 optional; motion: 8/15/5; graphic: 7/4/7.
 
@@ -158,7 +161,7 @@ open web/it-product-competency-canvas.html
 
 ## 4a. Roadmap этапов 2–3 (зафиксировано)
 
-- **Этап 2**: слой AI/нейрокомпетенций во **все** профессии (ресёрч, проектирование, презентации, фото/видео/аудио/контент, монтаж, макеты, документация, вёрстка) — отдельное решение о гранулярности, затем сборка.
+- **Этап 2**: слой AI/нейрокомпетенций во **все** профессии — **сделано** (`COS-RES-024`): 9 сквозных компетенций, 112 в массиве, learning:map 107 / 0 ошибок.
 - **Этап 3**: профессия **«AI-дизайнер»** — инструменты, их особенности и интеграция в процесс; финальный шаг после этапов 1–2.
 
 ## 5. Известные ограничения и риски
@@ -198,4 +201,5 @@ open web/it-product-competency-canvas.html
 | 1.11.0 | 2026-10-26 | Этап 1 (`COS-RES-023`): 7 новых дизайнерских профессий, 48 новых компетенций, 103 компетенции, 11 professions; 7 Practicum learning-источников, learning:map 99 компетенций / 0 ошибок; канвасы и табы на 11 профессий; 157 тестов |
 | 1.12.0 | 2026-10-26 | Добавлены 33 присланных заказчиком learning-источника для 3D/презентаций/веба/приложений/интерьеров (24 active, 9 blocked→discoveryOnly); реестр 73/55; learning:map 0 ошибок/0 предупреждений; 157 тестов |
 | 1.13.0 | 2026-10-26 | Второй пакет источников: арт-дирекшн (8: 5 active/3 blocked) и UX-исследователь (8: 5 active/3 blocked; один URL — дубль); реестр 89/65; learning:map 99 компетенций, 0 ошибок/0 предупреждений |
+| 1.14.0 | 2026-10-26 | Этап 2 (`COS-RES-024`): 9 сквозных AI-компетенций во всех 11 профессиях, массив 112, AI-секции в 10 views + UX/UI через model:sync; learning:map 107 компетенций / 0 ошибок; канвасы 10 профессий с AI-узлами; 157 тестов |
 | 1.5.0 | 2026-10-26 | Motion evidence pass + learning source library: 10 motion компетенций (28 узлов / 42 связи), 10 motion-блоков, каталог 54/237, глобальный массив 55; `learning-sources` registry (33 записи, 24 active) и Google CSE discovery scaffold |

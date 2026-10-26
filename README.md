@@ -52,7 +52,7 @@ npm run materials:agent:review -- --domain it --profession product
 Сборка по профессии: `npm run professions:collect -- --domain it --profession motion`, затем `npm run tags:collect -- --domain it --profession motion`. Запросы берутся из `sources/professions/<profession>.json`.
 
 
-Единый массив компетенций: **103** (34 базовых + 69 профессио-специфичных); 11 profession views: uxui 34, product 30, motion 28, graphic 18, presentation 13, appdesign 26, uxresearch 18, artdir 16, 3ddesigner 15, interior 14, webdesigner 24; каталог: 54 блока, 237 тегов (у всех accepted-блоков заполнены `canonicalIds`).
+Единый массив компетенций: **112** (34 базовых + 69 профессио-специфичных + 9 сквозных AI-компетенций этапа 2, см. [COS-RES-024](docs/09-research/COS-RES-024-AI-Skills-Layer.md)); 11 profession views: uxui 43, product 39, motion 37, graphic 27, presentation 22, appdesign 35, uxresearch 27, artdir 25, 3ddesigner 24, interior 23, webdesigner 33; каталог: 54 блока, 237 тегов (у всех accepted-блоков заполнены `canonicalIds`).
 
 Priority/order профессии хранится в `model/professions/views/<profession>.json` и материализуется в `model/profession-competencies/<profession>.json` вместе с prerequisites. Отдельный `priority/product.json` не вводится: `priority/uxui.json` — block-level accepted marks UX/UI, а Product работает на уровне канонических компетенций. Проверка:
 

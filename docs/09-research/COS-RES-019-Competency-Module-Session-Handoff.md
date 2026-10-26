@@ -1,7 +1,7 @@
 ---
 id: COS-RES-019
 title: Competency Module — session handoff
-version: 1.14.0
+version: 1.15.0
 status: Draft
 owner: Research Team
 last_updated: 2026-10-26
@@ -16,6 +16,7 @@ references:
   - COS-RES-022
   - COS-RES-023
   - COS-RES-024
+  - COS-RES-025
   - COS-ARCH-002
 ---
 
@@ -45,8 +46,8 @@ references:
 
 ### Нормализованная модель
 - `model/spheres.json` — сфера `it`.
-- `model/professions.json` — **11 профессий**: `it.uxui`, `it.product`, `it.motion`, `it.graphic` + новые `it.presentation`, `it.appdesign`, `it.uxresearch`, `it.artdir`, `it.3ddesigner`, `it.interior`, `it.webdesigner` (схемы этапа 1, `COS-RES-023`).
-- `model/competencies.json` — **единый массив 112 компетенций** (34 базовых + 69 профессио-специфичных + 9 сквозных AI-компетенций этапа 2, `COS-RES-024`).
+- `model/professions.json` — **12 профессий**: `it.uxui`, `it.product`, `it.motion`, `it.graphic` + новые `it.presentation`, `it.appdesign`, `it.uxresearch`, `it.artdir`, `it.3ddesigner`, `it.interior`, `it.webdesigner` (`COS-RES-023`) + `it.aidesigner` (`COS-RES-025`).
+- `model/competencies.json` — **единый массив 122 компетенций** (34 базовых + 69 профессио-специфичных + 9 сквозных AI-компетенций + 10 компетенций AI-дизайнера; `COS-RES-024`, `COS-RES-025`).
 - `model/profession-competencies/*.json` — ссылки competencyId + tier/order + prerequisites по профессии.
 - `model/professions/views/*.json` — профессиональные view: разделы, tier/order, prerequisites.
 
@@ -65,8 +66,9 @@ references:
 | 3D | 24 | 24 | 30 |
 | Интерьеры | 23 | 23 | 32 |
 | Веб-дизайн | 33 | 33 | 46 |
+| AI-дизайнер | 27 | 27 | 41 |
 
-Во все 11 профессий добавлен сквозной слой из 9 AI-компетенций (`COS-RES-024`): в 10 views — секция «ИИ на этапах работы», в UX/UI — через `model:sync` (43 = 34+9).
+Во все 12 профессий добавлен сквозной слой из 9 AI-компетенций (`COS-RES-024`): в 10 views — секция «ИИ на этапах работы», в UX/UI — через `model:sync` (43 = 34+9). Профессия «AI-дизайнер» (`COS-RES-025`) переиспользует AI-слой и добавляет 10 собственных компетенций.
 
 Все три графа (product, motion, graphic) теперь связные: единственный корень `ux-design-thinking`, компонент — 1. Product view: 3 foundation / 24 core / 3 optional; motion: 8/15/5; graphic: 7/4/7.
 
@@ -162,7 +164,7 @@ open web/it-product-competency-canvas.html
 ## 4a. Roadmap этапов 2–3 (зафиксировано)
 
 - **Этап 2**: слой AI/нейрокомпетенций во **все** профессии — **сделано** (`COS-RES-024`): 9 сквозных компетенций, 112 в массиве, learning:map 107 / 0 ошибок.
-- **Этап 3**: профессия **«AI-дизайнер»** — инструменты, их особенности и интеграция в процесс; финальный шаг после этапов 1–2.
+- **Этап 3**: профессия **«AI-дизайнер»** — **сделано** (`COS-RES-025`): `it.aidesigner`, 27 компетенций (17 переиспользованных + 10 собственных), 41 связь, 2 Practicum AI-источника.
 
 ## 5. Известные ограничения и риски
 
@@ -202,4 +204,5 @@ open web/it-product-competency-canvas.html
 | 1.12.0 | 2026-10-26 | Добавлены 33 присланных заказчиком learning-источника для 3D/презентаций/веба/приложений/интерьеров (24 active, 9 blocked→discoveryOnly); реестр 73/55; learning:map 0 ошибок/0 предупреждений; 157 тестов |
 | 1.13.0 | 2026-10-26 | Второй пакет источников: арт-дирекшн (8: 5 active/3 blocked) и UX-исследователь (8: 5 active/3 blocked; один URL — дубль); реестр 89/65; learning:map 99 компетенций, 0 ошибок/0 предупреждений |
 | 1.14.0 | 2026-10-26 | Этап 2 (`COS-RES-024`): 9 сквозных AI-компетенций во всех 11 профессиях, массив 112, AI-секции в 10 views + UX/UI через model:sync; learning:map 107 компетенций / 0 ошибок; канвасы 10 профессий с AI-узлами; 157 тестов |
+| 1.15.0 | 2026-10-26 | Этап 3 (`COS-RES-025`): профессия `it.aidesigner` — 10 собственных компетенций, view 27 / 41 связь; массив 122, 12 профессий; 2 новых Practicum AI-источника (реестр 91/67), learning:map 117 / 0 ошибок; канвас + таб; 157 тестов |
 | 1.5.0 | 2026-10-26 | Motion evidence pass + learning source library: 10 motion компетенций (28 узлов / 42 связи), 10 motion-блоков, каталог 54/237, глобальный массив 55; `learning-sources` registry (33 записи, 24 active) и Google CSE discovery scaffold |

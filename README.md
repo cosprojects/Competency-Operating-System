@@ -41,7 +41,7 @@ npm run materials:agent:review -- --domain it --profession product
 
 ## Профессиональные view
 
-`model/professions/views/<profession>.json` задают разделы и приоритеты для разных профессий, переиспользуя единый массив компетенций. `model:views --write` генерирует `model/profession-competencies/*.json` и source-файлы профессий. Схемы собраны для 11 профессий: UX/UI, product, motion, graphic + presentation, appdesign, uxresearch, artdir, 3ddesigner, interior, webdesigner (см. [COS-RES-023](docs/09-research/COS-RES-023-Additional-Designer-Professions.md)).
+`model/professions/views/<profession>.json` задают разделы и приоритеты для разных профессий, переиспользуя единый массив компетенций. `model:views --write` генерирует `model/profession-competencies/*.json` и source-файлы профессий. Схемы собраны для 12 профессий: UX/UI, product, motion, graphic + presentation, appdesign, uxresearch, artdir, 3ddesigner, interior, webdesigner ([COS-RES-023](docs/09-research/COS-RES-023-Additional-Designer-Professions.md)) + aidesigner ([COS-RES-025](docs/09-research/COS-RES-025-AI-Designer-Profession.md)).
 
 
 ## Карты профессий
@@ -52,7 +52,7 @@ npm run materials:agent:review -- --domain it --profession product
 Сборка по профессии: `npm run professions:collect -- --domain it --profession motion`, затем `npm run tags:collect -- --domain it --profession motion`. Запросы берутся из `sources/professions/<profession>.json`.
 
 
-Единый массив компетенций: **112** (34 базовых + 69 профессио-специфичных + 9 сквозных AI-компетенций этапа 2, см. [COS-RES-024](docs/09-research/COS-RES-024-AI-Skills-Layer.md)); 11 profession views: uxui 43, product 39, motion 37, graphic 27, presentation 22, appdesign 35, uxresearch 27, artdir 25, 3ddesigner 24, interior 23, webdesigner 33; каталог: 54 блока, 237 тегов (у всех accepted-блоков заполнены `canonicalIds`).
+Единый массив компетенций: **122** (34 базовых + 69 профессио-специфичных + 9 сквозных AI-компетенций + 10 компетенций AI-дизайнера; [COS-RES-024](docs/09-research/COS-RES-024-AI-Skills-Layer.md), [COS-RES-025](docs/09-research/COS-RES-025-AI-Designer-Profession.md)); 12 profession views: uxui 43, product 39, motion 37, graphic 27, presentation 22, appdesign 35, uxresearch 27, artdir 25, 3ddesigner 24, interior 23, webdesigner 33, aidesigner 27; каталог: 54 блока, 237 тегов (у всех accepted-блоков заполнены `canonicalIds`).
 
 Priority/order профессии хранится в `model/professions/views/<profession>.json` и материализуется в `model/profession-competencies/<profession>.json` вместе с prerequisites. Отдельный `priority/product.json` не вводится: `priority/uxui.json` — block-level accepted marks UX/UI, а Product работает на уровне канонических компетенций. Проверка:
 
@@ -72,7 +72,7 @@ npm run model:validate -- --domain it --profession product --all --require-block
 
 Evidence-backed блоки: в `seeds/it.json` заполнены `tagHints` для 11 профессио-специфичных компетенций; `competency:seed --domain it --profession product --tags-file data/competency/tags-it-product.json`, затем `competency:build` дают предложения блоков с реальными sourceRefs (`data/competency/proposed-blocks-*.json`, не приняты).
 
-Human-review канвас: `npm run canvas:tabs`, затем открыть `web/competencies-review-canvas.html` — переключение 11 профессий в одном окне (UX/UI, Product, Motion, Graphic, Презентации, Приложения, UX-исследования, Арт-дирекшн, 3D, Интерьеры, Веб-дизайн).
+Human-review канвас: `npm run canvas:tabs`, затем открыть `web/competencies-review-canvas.html` — переключение 12 профессий в одном окне (UX/UI, Product, Motion, Graphic, Презентации, Приложения, UX-исследования, Арт-дирекшн, 3D, Интерьеры, Веб-дизайн, AI-дизайнер).
 
 
 Handoff для продолжения: [COS-RES-019](docs/09-research/COS-RES-019-Competency-Module-Session-Handoff.md).

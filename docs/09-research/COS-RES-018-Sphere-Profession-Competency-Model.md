@@ -1,7 +1,7 @@
 ---
 id: COS-RES-018
 title: Модель сфера → профессия → компетенции и систематизация источников
-version: 2.3.0
+version: 2.4.0
 status: Draft
 owner: Research Team
 last_updated: 2026-10-25
@@ -13,6 +13,7 @@ references:
   - COS-RES-021
   - COS-RES-023
   - COS-RES-024
+  - COS-RES-025
 ---
 
 # COS-RES-018 — Сфера → профессия → компетенции и источники
@@ -167,10 +168,10 @@ Human-review канвас: `web/competencies-review-canvas.html` — табы п
 ## 6. Текущий срез
 
 - сфера: `it`;
-- профессий: **11** — `it.uxui`, `it.product`, `it.motion`, `it.graphic`, `it.presentation`, `it.appdesign`, `it.uxresearch`, `it.artdir`, `it.3ddesigner`, `it.interior`, `it.webdesigner`;
-- компетенций в едином массиве: **112** (34 базовых + 69 профессио-специфичных + 9 сквозных AI-компетенций; `COS-RES-023`, `COS-RES-024`);
+- профессий: **12** — `it.uxui`, `it.product`, `it.motion`, `it.graphic`, `it.presentation`, `it.appdesign`, `it.uxresearch`, `it.artdir`, `it.3ddesigner`, `it.interior`, `it.webdesigner`, `it.aidesigner`;
+- компетенций в едином массиве: **122** (34 базовых + 69 профессио-специфичных + 9 сквозных AI-компетенций + 10 компетенций AI-дизайнера; `COS-RES-023`, `COS-RES-024`, `COS-RES-025`);
 - каталог домена: **44 блока, 195 тегов** (UX/UI + profession-specific);
-- profession-competencies: UX/UI — 43 (35), product — 39 (51), motion — 37 (52), graphic — 27 (43), presentation — 22 (25), appdesign — 35 (44), uxresearch — 27 (37), artdir — 25 (34), 3ddesigner — 24 (30), interior — 23 (32), webdesigner — 33 (46); в каждой профессии — 9 AI-компетенций; графы связные;
+- profession-competencies: UX/UI — 43 (35), product — 39 (51), motion — 37 (52), graphic — 27 (43), presentation — 22 (25), appdesign — 35 (44), uxresearch — 27 (37), artdir — 25 (34), 3ddesigner — 24 (30), interior — 23 (32), webdesigner — 33 (46), aidesigner — 27 (41); в каждой профессии — 9 AI-компетенций; графы связные;
 - переиспользуемых компетенций: **34** (базовые входят в несколько профессий; 9 специфичных — в свою);
 - источники: `sources/spheres/it.json` + отдельный файл на каждую профессию (`sources/professions/it.*.json`); Material Agent берёт `materialSourceIds` из source-файла профессии, по умолчанию только active;
 - страницы: `web/it-uxui-competency-canvas.html`, `web/it-product-competency-map.html`, `web/it-motion-competency-map.html`, `web/it-graphic-competency-map.html`, сетевые `web/it-product-competency-canvas.html`, `web/it-motion-competency-canvas.html`, `web/it-graphic-competency-canvas.html`; единый review-канвас `web/competencies-review-canvas.html` с табами по профессиям;
@@ -212,3 +213,4 @@ Product-, Motion- и Graphic-итерации завершены (`COS-RES-020`,
 | 2.1.0 | 2026-10-25 | Motion/Graphic: Practicum-источники и санитайзер тегов (228/204 тега), mapping 19/19 и 18/18, связные графы 29/33 связи, материалы 19/19 и 18/18 покрытия — `COS-RES-021` |
 | 2.2.0 | 2026-10-26 | Этап 1 (`COS-RES-023`): 7 новых дизайнерских профессий, 48 новых компетенций, единый массив 103, 11 professions; 7 Practicum learning-источников |
 | 2.3.0 | 2026-10-26 | Этап 2 (`COS-RES-024`): 9 сквозных AI-компетенций во всех 11 профессиях, массив 112; AI-секции в 10 views и AI-слой UX/UI через `model:sync` |
+| 2.4.0 | 2026-10-26 | Этап 3 (`COS-RES-025`): профессия `it.aidesigner` (10 собственных компетенций), массив 122, 12 профессий |

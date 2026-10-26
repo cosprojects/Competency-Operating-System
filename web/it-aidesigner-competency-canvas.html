@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI-дизайнер — карта компетенций</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #132238;
+      --muted: #64748b;
+      --line: #cbd5e1;
+      --canvas: #eef4f8;
+      --card: #ffffff;
+      --foundation: #b45309;
+      --foundation-bg: #fff7ed;
+      --foundation-border: #f59e0b;
+      --core: #1d4ed8;
+      --core-bg: #eff6ff;
+      --core-border: #93c5fd;
+      --optional: #64748b;
+      --optional-bg: #f8fafc;
+      --optional-border: #cbd5e1;
+      --accent: #0f766e;
+      --glass: rgba(255, 255, 255, .58);
+      --glass-line: rgba(255, 255, 255, .78);
+      --shadow: 0 18px 50px rgba(15, 23, 42, .14);
+      font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body { margin: 0; overflow: hidden; color: var(--ink); background: var(--canvas); }
+
+    .canvas-viewport {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      background-color: var(--canvas);
+      background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+      background-size: 24px 24px;
+      cursor: grab;
+      touch-action: none;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    .canvas-viewport.is-panning { cursor: grabbing; }
+    .canvas-viewport.is-panning .competency-card { cursor: grabbing; }
+    .canvas-stage {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(calc(-50% + var(--pan-x, 0px)), calc(-50% + var(--pan-y, 0px))) scale(var(--zoom, .55));
+      transform-origin: center center;
+      will-change: transform;
+    }
+    .edges { position: absolute; inset: 0; overflow: visible; pointer-events: none; }
+    .edge { fill: none; stroke: #94a3b8; stroke-width: 1.4; opacity: .55; transition: opacity .15s, stroke .15s; }
+    .edge.is-active { stroke: var(--accent); stroke-width: 2.4; opacity: 1; }
+    .edge.is-muted { opacity: .12; }
+    .competency-card { position: absolute; display: flex; flex-direction: column; gap: 4px; overflow: hidden; border: 1px solid var(--line); border-radius: 14px; background: var(--card); padding: 9px 11px; cursor: pointer; box-shadow: 0 5px 14px rgba(15, 23, 42, .07); transition: transform .15s, box-shadow .15s, opacity .15s, border-color .15s; }
+    .competency-card:hover, .competency-card:focus-visible { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(15, 23, 42, .14); outline: none; border-color: #94a3b8; }
+    .competency-card.is-active { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(15, 118, 110, .18), 0 12px 24px rgba(15, 23, 42, .14); }
+    .competency-card.is-muted { opacity: .22 !important; }
+    .tier-foundation { border-color: var(--foundation-border); background: linear-gradient(180deg, #fffdf8, var(--foundation-bg)); }
+    .tier-core { border-color: var(--core-border); background: linear-gradient(180deg, #ffffff, var(--core-bg)); }
+    .tier-optional { border-color: var(--optional-border); background: var(--optional-bg); opacity: .78; }
+    .card-top { display: flex; justify-content: space-between; align-items: center; gap: 6px; min-height: 17px; }
+    .tier-badge { font-size: 9px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
+    .tier-foundation .tier-badge { color: var(--foundation); }
+    .tier-core .tier-badge { color: var(--core); }
+    .order { color: #94a3b8; font-size: 10px; font-variant-numeric: tabular-nums; }
+    .competency-card h2 { margin: 0; font-size: 12px; line-height: 1.18; letter-spacing: -.01em; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+    .competency-card p { margin: 0; color: var(--muted); font-size: 10px; line-height: 1.28; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+
+    .app-header {
+      position: fixed;
+      z-index: 30;
+      top: 40px;
+      left: 40px;
+      right: 40px;
+      padding: 20px 24px 16px;
+      border: 1px solid var(--glass-line);
+      border-radius: 24px;
+      background: var(--glass);
+      -webkit-backdrop-filter: blur(30px) saturate(150%);
+      backdrop-filter: blur(30px) saturate(150%);
+      box-shadow: var(--shadow);
+    }
+    .header-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; }
+    .eyebrow { color: var(--accent); font-size: 10px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    h1 { margin: 5px 0 4px; font-size: clamp(24px, 3.2vw, 42px); letter-spacing: -.045em; line-height: 1; }
+    .subtitle { margin: 0; color: var(--muted); font-size: 13px; }
+    .summary { display: flex; gap: 7px; flex-wrap: wrap; justify-content: flex-end; }
+    .summary span { border: 1px solid rgba(203, 213, 225, .9); background: rgba(255, 255, 255, .7); border-radius: 999px; padding: 6px 10px; font-size: 11px; font-weight: 700; white-space: nowrap; }
+    .summary .f { color: var(--foundation); } .summary .c { color: var(--core); } .summary .o { color: var(--optional); }
+    .header-bottom { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 14px; }
+    .profession-tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+    .profession-tab { border: 1px solid rgba(203, 213, 225, .9); background: rgba(255, 255, 255, .58); color: var(--ink); border-radius: 999px; padding: 7px 12px; font-size: 12px; font-weight: 700; text-decoration: none; transition: border-color .15s, background .15s; }
+    .profession-tab:hover { border-color: #94a3b8; background: rgba(255, 255, 255, .85); }
+    .profession-tab.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+    .hint { margin-left: auto; color: var(--muted); font-size: 11px; }
+    .banner { margin-top: 12px; border: 1px solid rgba(253, 230, 138, .9); background: rgba(255, 251, 235, .72); color: #92400e; border-radius: 14px; padding: 8px 12px; font-size: 11px; }
+
+    .zoom-controls {
+      position: fixed;
+      z-index: 35;
+      left: 40px;
+      bottom: 40px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 5px;
+      border: 1px solid var(--glass-line);
+      border-radius: 16px;
+      background: var(--glass);
+      -webkit-backdrop-filter: blur(30px) saturate(150%);
+      backdrop-filter: blur(30px) saturate(150%);
+      box-shadow: var(--shadow);
+    }
+    .zoom-controls button { width: 34px; height: 34px; border: 1px solid transparent; border-radius: 11px; background: transparent; color: var(--ink); font: inherit; font-size: 20px; line-height: 1; cursor: pointer; }
+    .zoom-controls button:hover { background: rgba(255, 255, 255, .8); border-color: var(--line); }
+    .zoom-controls button:active { transform: translateY(1px); }
+    .zoom-value { min-width: 48px; text-align: center; color: var(--muted); font-size: 11px; font-weight: 800; font-variant-numeric: tabular-nums; }
+
+    .detail-panel {
+      position: fixed;
+      z-index: 40;
+      top: 40px;
+      right: 40px;
+      bottom: 40px;
+      width: min(380px, calc(100vw - 80px));
+      overflow: auto;
+      padding: 24px;
+      border: 1px solid var(--glass-line);
+      border-radius: 24px;
+      background: var(--glass);
+      -webkit-backdrop-filter: blur(30px) saturate(150%);
+      backdrop-filter: blur(30px) saturate(150%);
+      box-shadow: var(--shadow);
+    }
+    .detail-panel[hidden] { display: none; }
+    .detail-close { float: right; border: 0; background: rgba(241, 245, 249, .8); color: var(--muted); width: 30px; height: 30px; border-radius: 50%; cursor: pointer; font-size: 18px; line-height: 1; }
+    .detail-panel .tier-badge { display: inline-block; margin-bottom: 10px; }
+    .detail-panel h2 { margin: 0 0 8px; font-size: 22px; line-height: 1.12; letter-spacing: -.02em; }
+    .detail-panel .full { color: var(--muted); font-size: 13px; line-height: 1.5; margin: 0 0 16px; }
+    .detail-panel h3 { margin: 16px 0 5px; font-size: 10px; text-transform: uppercase; letter-spacing: .09em; color: var(--muted); }
+    .detail-panel ul { margin: 0; padding-left: 18px; color: var(--ink); font-size: 13px; line-height: 1.5; }
+    .detail-panel li { margin: 3px 0; }
+    .detail-panel .muted { color: var(--muted); font-size: 11px; line-height: 1.45; margin-top: 16px; }
+
+    @media (max-width: 720px) {
+      .app-header { top: 16px; left: 16px; right: 16px; padding: 16px; border-radius: 20px; }
+      .header-top { flex-direction: column; gap: 12px; }
+      .summary { justify-content: flex-start; }
+      .hint { display: none; }
+      .zoom-controls { left: 16px; bottom: 16px; }
+      .detail-panel { top: 16px; right: 16px; bottom: 16px; width: calc(100vw - 32px); border-radius: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="canvas-viewport" id="canvas-viewport" aria-label="Канвас компетенций">
+    <div class="canvas-stage" id="canvas-stage" style="width:1943px;height:1909px">
+      <svg class="edges" width="1943" height="1909" viewBox="0 0 1943 1909" aria-hidden="true">
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8" />
+          </marker>
+        </defs>
+        <path class="edge" data-from="ux-design-thinking" data-to="ai-model-landscape" d="M 711.4 990.5 Q 841.4 1011.3 971.4 990.5" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ai-model-landscape" data-to="aidesigner-tool-landscape" d="M 971.4 990.5 Q 1101.4 1011.3 1231.4 990.5" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ai-model-landscape" data-to="ai-prompting" d="M 971.4 990.5 Q 962.8 1044.5 971.4 1098.5" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ai-prompting" data-to="aidesigner-prompt-systems" d="M 971.4 1098.5 Q 1034.8 702.2 971.4 306.0" marker-end="url(#arrow)" />
+        <path class="edge" data-from="aidesigner-tool-landscape" data-to="aidesigner-prompt-systems" d="M 1231.4 990.5 Q 1156.2 627.4 971.4 306.0" marker-end="url(#arrow)" />
+        <path class="edge" data-from="aidesigner-tool-landscape" data-to="aidesigner-tool-evaluation" d="M 1231.4 990.5 Q 1267.4 663.8 1199.6 342.1" marker-end="url(#arrow)" />
+        <path class="edge" data-from="aidesigner-prompt-systems" data-to="aidesigner-tool-evaluation" d="M 971.4 306.0 Q 1082.6 342.3 1199.6 342.1" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ux-design-thinking" data-to="ux-product-thinking" d="M 711.4 990.5 Q 1101.9 774.3 1405.5 447.0" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ux-design-thinking" data-to="ux-user-research" d="M 711.4 990.5 Q 1170.6 869.0 1568.9 610.4" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ux-product-thinking" data-to="aidesigner-ai-features" d="M 1405.5 447.0 Q 1510.1 653.1 1673.8 816.3" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ux-user-research" data-to="aidesigner-ai-features" d="M 1568.9 610.4 Q 1604.8 721.7 1673.8 816.3" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ai-model-landscape" data-to="aidesigner-ai-features" d="M 971.4 990.5 Q 1336.5 959.6 1673.8 816.3" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ux-user-research" data-to="ux-requirements" d="M 1568.9 610.4 Q 1604.7 838.7 1709.9 1044.5" marker-end="url(#arrow)" />
+        <path class="edge" data-from="aidesigner-ai-features" data-to="ux-requirements" d="M 1673.8 816.3 Q 1673.6 933.3 1709.9 1044.5" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ux-design-thinking" data-to="ui-layout" d="M 711.4 990.5 Q 1170.0 1208.6 1673.8 1272.7" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ui-layout" data-to="ui-visual-communication" d="M 1673.8 1272.7 Q 1604.8 1367.2 1568.9 1478.5" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ui-layout" data-to="ui-figma" d="M 1673.8 1272.7 Q 1510.1 1435.8 1405.5 1641.9" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ai-prompting" data-to="ai-visual-generation" d="M 971.4 1098.5 Q 1033.7 1440.9 1199.6 1746.8" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ai-visual-generation" data-to="aidesigner-visual-generation" d="M 1199.6 1746.8 Q 1082.6 1746.6 971.4 1783.0" marker-end="url(#arrow)" />
+        <path class="edge" data-from="aidesigner-prompt-systems" data-to="aidesigner-visual-generation" d="M 971.4 306.0 Q 853.3 1044.5 971.4 1783.0" marker-end="url(#arrow)" />
+        <path class="edge" data-from="aidesigner-visual-generation" data-to="aidesigner-series-adaptation" d="M 971.4 1783.0 Q 860.2 1746.6 743.2 1746.8" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ui-visual-communication" data-to="aidesigner-series-adaptation" d="M 1568.9 1478.5 Q 1134.6 1546.6 743.2 1746.8" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ai-prompting" data-to="ai-video-audio" d="M 971.4 1098.5 Q 710.9 1335.5 537.4 1641.9" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ai-video-audio" data-to="aidesigner-video-audio" d="M 537.4 1641.9 Q 468.7 1547.2 374.0 1478.5" marker-end="url(#arrow)" />
+        <path class="edge" data-from="aidesigner-series-adaptation" data-to="aidesigner-video-audio" d="M 743.2 1746.8 Q 580.1 1583.1 374.0 1478.5" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ai-prompting" data-to="ai-copy-content" d="M 971.4 1098.5 Q 606.3 1129.4 269.1 1272.7" marker-end="url(#arrow)" />
+        <path class="edge" data-from="aidesigner-tool-evaluation" data-to="aidesigner-automation" d="M 1199.6 342.1 Q 660.1 616.0 232.9 1044.5" marker-end="url(#arrow)" />
+        <path class="edge" data-from="aidesigner-series-adaptation" data-to="aidesigner-automation" d="M 743.2 1746.8 Q 544.3 1354.8 232.9 1044.5" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ai-prompting" data-to="ai-workflow-integration" d="M 971.4 1098.5 Q 642.8 901.2 269.1 816.3" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ai-model-landscape" data-to="ai-workflow-integration" d="M 971.4 990.5 Q 634.2 847.2 269.1 816.3" marker-end="url(#arrow)" />
+        <path class="edge" data-from="aidesigner-visual-generation" data-to="aidesigner-quality-eval" d="M 971.4 1783.0 Q 766.5 1148.9 374.0 610.4" marker-end="url(#arrow)" />
+        <path class="edge" data-from="aidesigner-video-audio" data-to="aidesigner-quality-eval" d="M 374.0 1478.5 Q 443.4 1044.5 374.0 610.4" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ai-workflow-integration" data-to="aidesigner-quality-eval" d="M 269.1 816.3 Q 338.0 721.7 374.0 610.4" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ai-model-landscape" data-to="ai-ethics-rights" d="M 971.4 990.5 Q 797.9 684.0 537.4 447.0" marker-end="url(#arrow)" />
+        <path class="edge" data-from="aidesigner-quality-eval" data-to="aidesigner-integration" d="M 374.0 610.4 Q 580.1 505.8 743.2 342.1" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ai-workflow-integration" data-to="aidesigner-integration" d="M 269.1 816.3 Q 544.1 617.1 743.2 342.1" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ai-ethics-rights" data-to="aidesigner-integration" d="M 537.4 447.0 Q 648.7 411.1 743.2 342.1" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ai-prompting" data-to="ai-layout-docs" d="M 971.4 1098.5 Q 1049.2 612.2 971.4 126.0" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ui-figma" data-to="ui-handoff" d="M 1405.5 1641.9 Q 1597.2 1601.7 1766.9 1503.7" marker-end="url(#arrow)" />
+        <path class="edge" data-from="aidesigner-quality-eval" data-to="ui-handoff" d="M 374.0 610.4 Q 999.0 1168.5 1766.9 1503.7" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ai-prompting" data-to="ai-research-synthesis" d="M 971.4 1098.5 Q 541.3 1237.5 176.0 1503.7" marker-end="url(#arrow)" />
+      </svg>
+      <article class="competency-card tier-foundation" data-id="ux-design-thinking" data-tier="foundation" style="left:601.4px;top:944.5px;width:220px;height:92px;opacity:1" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Фундаментальная</span>
+            <span class="order">1</span>
+          </div>
+          <h2>Дизайн-мышление</h2>
+          <p>Системный подход к решению задач: понимание пользователя, формулировка проблемы, генерация и проверка гипотез, итерации.</p>
+        </article>
+      <article class="competency-card tier-foundation" data-id="ai-model-landscape" data-tier="foundation" style="left:861.4px;top:944.5px;width:220px;height:92px;opacity:1" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Фундаментальная</span>
+            <span class="order">2</span>
+          </div>
+          <h2>Модели и инструменты ИИ</h2>
+          <p>Виды генеративных моделей и инструментов, их возможности, ограничения и выбор под задачу.</p>
+        </article>
+      <article class="competency-card tier-foundation" data-id="aidesigner-tool-landscape" data-tier="foundation" style="left:1121.4px;top:944.5px;width:220px;height:92px;opacity:1" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Фундаментальная</span>
+            <span class="order">3</span>
+          </div>
+          <h2>Ландшафт AI-инструментов</h2>
+          <p>Какие инструменты существуют для текста, изображений, аудио, видео и 3D; для чего нужен каждый и где его ограничения.</p>
+        </article>
+      <article class="competency-card tier-foundation" data-id="ai-prompting" data-tier="foundation" style="left:861.4px;top:1052.5px;width:220px;height:92px;opacity:1" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Фундаментальная</span>
+            <span class="order">4</span>
+          </div>
+          <h2>Промптинг и управление моделями</h2>
+          <p>Постановка задач модели: структура промпта, итерации, уточнения, негативные промпты и контроль результата.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="aidesigner-prompt-systems" data-tier="core" style="left:875.4px;top:260.0px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">5</span>
+          </div>
+          <h2>Промпт-системы и библиотеки</h2>
+          <p>Переиспользуемые рецепты промптов: ядро и переменные, библиотека под задачи, воспроизводимость результата.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="aidesigner-tool-evaluation" data-tier="core" style="left:1103.6px;top:296.1px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">6</span>
+          </div>
+          <h2>Оценка и выбор AI-инструмента</h2>
+          <p>Тестирование и сравнение инструментов по качеству, стоимости, скорости и ограничениям; выбор под задачу.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="ux-product-thinking" data-tier="core" style="left:1309.5px;top:401.0px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">7</span>
+          </div>
+          <h2>Продуктовое мышление</h2>
+          <p>Понимание ценности, аудитории, ограничений и жизненного цикла продукта.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="ux-user-research" data-tier="core" style="left:1472.9px;top:564.4px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">8</span>
+          </div>
+          <h2>Пользовательские исследования</h2>
+          <p>Планирование и проведение исследований, синтез наблюдений в проверяемые инсайты.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="aidesigner-ai-features" data-tier="core" style="left:1577.8px;top:770.3px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">9</span>
+          </div>
+          <h2>Проектирование AI-фич и продуктов</h2>
+          <p>UX AI-продуктов: human-in-the-loop, неопределённость моделей, объяснимость и контроль пользователя.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="ux-requirements" data-tier="core" style="left:1613.9px;top:998.5px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">10</span>
+          </div>
+          <h2>Анализ требований и постановка задач</h2>
+          <p>Перевод бизнес- и пользовательских потребностей в проверяемые требования и ограничения.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="ui-layout" data-tier="core" style="left:1577.8px;top:1226.7px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">11</span>
+          </div>
+          <h2>Композиция, сетки и визуальная иерархия</h2>
+          <p>Управление вниманием через композицию, сетки, пропорции и иерархию.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="ui-visual-communication" data-tier="core" style="left:1472.9px;top:1432.5px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">12</span>
+          </div>
+          <h2>Визуальная коммуникация</h2>
+          <p>Стилистика, визуальные коды и целостность интерфейсной коммуникации.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="ui-figma" data-tier="core" style="left:1309.5px;top:1595.9px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">13</span>
+          </div>
+          <h2>Figma: компоненты и автолейаут</h2>
+          <p>Работа с Figma: компоненты, варианты, автолейаут и библиотеки.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="ai-visual-generation" data-tier="core" style="left:1103.6px;top:1700.8px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">14</span>
+          </div>
+          <h2>ИИ в генерации и обработке изображений</h2>
+          <p>Генерация и обработка фото, иллюстраций, иконок и референсов; стиль, консистентность и доработка вручную.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="aidesigner-visual-generation" data-tier="core" style="left:875.4px;top:1737.0px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">15</span>
+          </div>
+          <h2>Генерация и доведение визуала</h2>
+          <p>Генерация изображений, устранение артефактов, апскейл, стилизация и доведение до рабочего качества.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="aidesigner-series-adaptation" data-tier="core" style="left:647.2px;top:1700.8px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">16</span>
+          </div>
+          <h2>Серии визуалов и адаптация под каналы</h2>
+          <p>Серийные визуалы на ядре и переменных, адаптация под каналы, форматы и комплекты.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="ai-video-audio" data-tier="core" style="left:441.4px;top:1595.9px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">17</span>
+          </div>
+          <h2>ИИ в видео, монтаже и аудио</h2>
+          <p>Генерация видео и аудио, ИИ-монтаж, озвучка, музыка и синхронизация в продакшене.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="aidesigner-video-audio" data-tier="core" style="left:278.0px;top:1432.5px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">18</span>
+          </div>
+          <h2>AI-видео, анимация и аудио</h2>
+          <p>Генерация видео и аудио, анимация, монтаж, озвучка, музыка и синхронизация с визуалом.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="ai-copy-content" data-tier="core" style="left:173.1px;top:1226.7px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">19</span>
+          </div>
+          <h2>ИИ в тексте, контенте и презентациях</h2>
+          <p>Генерация и редактура текста, контента и слайдов; контроль смысла, фактов и тона.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="aidesigner-automation" data-tier="core" style="left:136.9px;top:998.5px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">21</span>
+          </div>
+          <h2>Автоматизация и мультимодальные пайплайны</h2>
+          <p>Связки инструментов и автоматизация рутины: текст → визуал → видео/аудио → документ.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="ai-workflow-integration" data-tier="core" style="left:173.1px;top:770.3px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">22</span>
+          </div>
+          <h2>Интеграция ИИ в процесс</h2>
+          <p>Встраивание ИИ в рабочий процесс, автоматизация рутины, контроль качества и границы применимости.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="aidesigner-quality-eval" data-tier="core" style="left:278.0px;top:564.4px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">23</span>
+          </div>
+          <h2>Контроль качества AI-результата</h2>
+          <p>Чек-листы, критика и тестирование результата: артефакты, фактчекинг, соответствие брифу и стилю.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="ai-ethics-rights" data-tier="core" style="left:441.4px;top:401.0px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">26</span>
+          </div>
+          <h2>Этика, авторские права и данные</h2>
+          <p>Авторские права, приватность, безопасность данных, смещения моделей и фактчекинг ИИ-результатов.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="aidesigner-integration" data-tier="core" style="left:647.2px;top:296.1px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">27</span>
+          </div>
+          <h2>Внедрение AI в процесс и команду</h2>
+          <p>Встраивание AI в командный процесс: регламенты, обучение, выбор стека, границы применимости.</p>
+        </article>
+      <article class="competency-card tier-optional" data-id="ai-layout-docs" data-tier="optional" style="left:875.4px;top:80.0px;width:192px;height:92px;opacity:0.65" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Необязательная</span>
+            <span class="order">20</span>
+          </div>
+          <h2>ИИ в макетах, документации и вёрстке</h2>
+          <p>ИИ-помощь в сборке макетов, спецификациях, документации и вёрстке; проверка результата.</p>
+        </article>
+      <article class="competency-card tier-optional" data-id="ui-handoff" data-tier="optional" style="left:1670.9px;top:1457.7px;width:192px;height:92px;opacity:0.65" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Необязательная</span>
+            <span class="order">24</span>
+          </div>
+          <h2>Передача макетов в разработку</h2>
+          <p>Спецификации, компонентные контракты и коммуникация с инженерами.</p>
+        </article>
+      <article class="competency-card tier-optional" data-id="ai-research-synthesis" data-tier="optional" style="left:80.0px;top:1457.7px;width:192px;height:92px;opacity:0.65" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Необязательная</span>
+            <span class="order">25</span>
+          </div>
+          <h2>ИИ в исследованиях и синтезе</h2>
+          <p>Ускорение ресёрча: подготовка гайдов, обработка интервью, синтез данных и проверка выводов модели.</p>
+        </article>
+    </div>
+  </div>
+
+  <header class="app-header">
+    <div class="header-top">
+      <div>
+        <div class="eyebrow">AXIONA · Competency Canvas</div>
+        <h1>AI-дизайнер</h1>
+        <p class="subtitle">Сеть компетенций: разделы, связи и приоритеты профессии</p>
+      </div>
+      <div class="summary">
+        <span class="f">4 фундаментальных</span>
+        <span class="c">20 основных</span>
+        <span class="o">3 необязательных</span>
+      </div>
+    </div>
+    <div class="header-bottom">
+      <nav class="profession-tabs" aria-label="Профессии"><a class="profession-tab" href="uxui-competency-canvas.html">UX/UI</a><a class="profession-tab" href="it-product-competency-canvas.html">Product</a><a class="profession-tab" href="it-motion-competency-canvas.html">Motion</a><a class="profession-tab" href="it-graphic-competency-canvas.html">Graphic</a><a class="profession-tab" href="it-presentation-competency-canvas.html">Презентации</a><a class="profession-tab" href="it-appdesign-competency-canvas.html">Приложения</a><a class="profession-tab" href="it-uxresearch-competency-canvas.html">UX-исследования</a><a class="profession-tab" href="it-artdir-competency-canvas.html">Арт-дирекшн</a><a class="profession-tab" href="it-3ddesigner-competency-canvas.html">3D</a><a class="profession-tab" href="it-interior-competency-canvas.html">Интерьеры</a><a class="profession-tab" href="it-webdesigner-competency-canvas.html">Веб-дизайн</a><a class="profession-tab active" href="it-aidesigner-competency-canvas.html">AI-дизайнер</a></nav>
+      <span class="hint">Перетаскивание — панорама; колесо мыши — масштаб; нажмите карточку — подробности</span>
+    </div>
+    <div class="banner"><strong>Черновой слой.</strong> AI-дизайнер: профессио-специфичная сеть, собранная из единого массива компетенций. Tier/order специфичны для профессии; компетенции переиспользуются. Сгенерировано 2026-10-26.</div>
+  </header>
+
+  <div class="zoom-controls" aria-label="Масштаб канваса">
+    <button type="button" id="zoom-out" aria-label="Уменьшить">−</button>
+    <span class="zoom-value" id="zoom-value" aria-live="polite">100%</span>
+    <button type="button" id="zoom-in" aria-label="Увеличить">+</button>
+  </div>
+
+  <aside class="detail-panel" id="detail" hidden>
+    <button class="detail-close" id="detail-close" aria-label="Закрыть">×</button>
+    <span class="tier-badge" id="detail-tier"></span>
+    <h2 id="detail-title"></h2>
+    <p class="full" id="detail-full"></p>
+    <h3>Компоненты</h3>
+    <ul id="detail-components"></ul>
+    <h3>Теги и знания</h3>
+    <ul id="detail-tags"></ul>
+    <p class="muted" id="detail-meta"></p>
+  </aside>
+
+  <script>
+    const DATA = {"title":"AI-дизайнер","subtitle":"Сеть компетенций: разделы, связи и приоритеты профессии","note":"AI-дизайнер: профессио-специфичная сеть, собранная из единого массива компетенций. Tier/order специфичны для профессии; компетенции переиспользуются.","generatedOn":"2026-10-26","nodes":[{"id":"ux-design-thinking","title":"Дизайн-мышление","tier":"foundation","tierLabel":"Фундаментальная","order":1,"description":"Системный подход к решению задач: понимание пользователя, формулировка проблемы, генерация и проверка гипотез, итерации.","fullDescription":"Системный подход к решению задач: понимание пользователя, формулировка проблемы, генерация и проверка гипотез, итерации.","components":["Эмпатия и исследование пользователя","Формулировка проблемы и пользовательские сценарии","Генерация и проверка гипотез","Итерационный процесс и командное взаимодействие"],"tags":["Исследование аудитории","Целевая аудитория","Типы исследований","Количественные исследования","Проведение исследований и проектирование сервиса","Проведение UX-исследований и анализ аудитории","Зачем пользователю сценарий","Пользовательские сценарии и паттерны взаимодействия","Гипотезы","Интерактивный прототип с тестированием","Прототипирование с помощью переменных и условий","Воркшопы с экспертами"],"evidenceState":"supported","branch":"AI-дизайнер","section":"Основы AI-дизайна","x":340,"y":346,"width":220,"height":92,"ring":0,"emphasis":"primary","opacity":1},{"id":"ai-model-landscape","title":"Модели и инструменты ИИ","tier":"foundation","tierLabel":"Фундаментальная","order":2,"description":"Виды генеративных моделей и инструментов, их возможности, ограничения и выбор под задачу.","fullDescription":"Виды генеративных моделей и инструментов, их возможности, ограничения и выбор под задачу.","components":[],"tags":[],"evidenceState":"needs_review","branch":"AI-дизайнер","section":"Основы AI-дизайна","x":600,"y":346,"width":220,"height":92,"ring":0,"emphasis":"primary","opacity":1},{"id":"aidesigner-tool-landscape","title":"Ландшафт AI-инструментов","tier":"foundation","tierLabel":"Фундаментальная","order":3,"description":"Какие инструменты существуют для текста, изображений, аудио, видео и 3D; для чего нужен каждый и где его ограничения.","fullDescription":"Какие инструменты существуют для текста, изображений, аудио, видео и 3D; для чего нужен каждый и где его ограничения.","components":[],"tags":[],"evidenceState":"needs_review","branch":"AI-дизайнер","section":"Основы AI-дизайна","x":860,"y":346,"width":220,"height":92,"ring":0,"emphasis":"primary","opacity":1},{"id":"ai-prompting","title":"Промптинг и управление моделями","tier":"foundation","tierLabel":"Фундаментальная","order":4,"description":"Постановка задач модели: структура промпта, итерации, уточнения, негативные промпты и контроль результата.","fullDescription":"Постановка задач модели: структура промпта, итерации, уточнения, негативные промпты и контроль результата.","components":[],"tags":[],"evidenceState":"needs_review","branch":"AI-дизайнер","section":"Основы AI-дизайна","x":600,"y":454,"width":220,"height":92,"ring":0,"emphasis":"primary","opacity":1},{"id":"aidesigner-prompt-systems","title":"Промпт-системы и библиотеки","tier":"core","tierLabel":"Основная","order":5,"description":"Переиспользуемые рецепты промптов: ядро и переменные, библиотека под задачи, воспроизводимость результата.","fullDescription":"Переиспользуемые рецепты промптов: ядро и переменные, библиотека под задачи, воспроизводимость результата.","components":[],"tags":[],"evidenceState":"needs_review","branch":"AI-дизайнер","section":"Основы AI-дизайна","x":600,"y":-338.47893594639436,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"aidesigner-tool-evaluation","title":"Оценка и выбор AI-инструмента","tier":"core","tierLabel":"Основная","order":6,"description":"Тестирование и сравнение инструментов по качеству, стоимости, скорости и ограничениям; выбор под задачу.","fullDescription":"Тестирование и сравнение инструментов по качеству, стоимости, скорости и ограничениям; выбор под задачу.","components":[],"tags":[],"evidenceState":"needs_review","branch":"AI-дизайнер","section":"Основы AI-дизайна","x":828.2025411953641,"y":-302.3352041785297,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ux-product-thinking","title":"Продуктовое мышление","tier":"core","tierLabel":"Основная","order":7,"description":"Понимание ценности, аудитории, ограничений и жизненного цикла продукта.","fullDescription":"Понимание ценности, аудитории, ограничений и жизненного цикла продукта.","components":["Основы продукта","Аудитория и ценность","Бизнес-контекст и метрики","Жизненный цикл продукта"],"tags":["Что такое продукт и как с ним взаимодействовать","Исследование аудитории","Целевая аудитория","Провожу UX-исследования, анализирую аудиторию, строю пользовательские сценарии и CJM","Бизнес-эмпатия","Как задачи влияют на цели бизнеса, а разные метрики — на цели","Продуктовые метрики и цели","Жизненный цикл продукта"],"evidenceState":"needs_review","branch":"AI-дизайнер","section":"AI-проектирование","x":1034.0670276779285,"y":-197.4420091685613,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ux-user-research","title":"Пользовательские исследования","tier":"core","tierLabel":"Основная","order":8,"description":"Планирование и проведение исследований, синтез наблюдений в проверяемые инсайты.","fullDescription":"Планирование и проведение исследований, синтез наблюдений в проверяемые инсайты.","components":["Анализ онлайн-данных и поведения пользователей","Взаимодействие с клиентами и представление альтернатив"],"tags":["Анализ онлайн-опыта и данных","Убеждение клиентов через альтернативы"],"evidenceState":"supported","branch":"AI-дизайнер","section":"AI-проектирование","x":1197.4420091685613,"y":-34.067027677928536,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"aidesigner-ai-features","title":"Проектирование AI-фич и продуктов","tier":"core","tierLabel":"Основная","order":9,"description":"UX AI-продуктов: human-in-the-loop, неопределённость моделей, объяснимость и контроль пользователя.","fullDescription":"UX AI-продуктов: human-in-the-loop, неопределённость моделей, объяснимость и контроль пользователя.","components":[],"tags":[],"evidenceState":"needs_review","branch":"AI-дизайнер","section":"AI-проектирование","x":1302.3352041785297,"y":171.7974588046359,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ux-requirements","title":"Анализ требований и постановка задач","tier":"core","tierLabel":"Основная","order":10,"description":"Перевод бизнес- и пользовательских потребностей в проверяемые требования и ограничения.","fullDescription":"Перевод бизнес- и пользовательских потребностей в проверяемые требования и ограничения.","components":["Анализ бизнес-требований","Анализ спецификаций ПО"],"tags":["Анализ бизнес-требований","Анализ спецификаций ПО"],"evidenceState":"supported","branch":"AI-дизайнер","section":"AI-проектирование","x":1338.4789359463944,"y":400,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ui-layout","title":"Композиция, сетки и визуальная иерархия","tier":"core","tierLabel":"Основная","order":11,"description":"Управление вниманием через композицию, сетки, пропорции и иерархию.","fullDescription":"Управление вниманием через композицию, сетки, пропорции и иерархию.","components":["Композиция в интерфейсе","Типографика в интерфейсе","Визуальная иерархия","Сетки в дизайне"],"tags":["Работа с композицией, типографикой и визуальной иерархией","Типографическая иерархия и читаемость","Построение визуальной иерархии","Сетки в дизайне"],"evidenceState":"needs_review","branch":"AI-дизайнер","section":"AI-проектирование","x":1302.3352041785297,"y":628.2025411953641,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ui-visual-communication","title":"Визуальная коммуникация","tier":"core","tierLabel":"Основная","order":12,"description":"Стилистика, визуальные коды и целостность интерфейсной коммуникации.","fullDescription":"Стилистика, визуальные коды и целостность интерфейсной коммуникации.","components":["Визуальная коммуникация в интерфейсе","Композиция и стилистика интерфейса","Анимация в интерфейсе"],"tags":["Визуальная коммуникация","Анимация и визуальная коммуникация","Визуальное единство: композиция и стили","Анимация в интерфейсе","Анимация в проекте как отстройка от конкурентов"],"evidenceState":"supported","branch":"AI-дизайнер","section":"AI-проектирование","x":1197.4420091685613,"y":834.0670276779285,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ui-figma","title":"Figma: компоненты и автолейаут","tier":"core","tierLabel":"Основная","order":13,"description":"Работа с Figma: компоненты, варианты, автолейаут и библиотеки.","fullDescription":"Работа с Figma: компоненты, варианты, автолейаут и библиотеки.","components":["Основы работы в Figma","Автолейаут и адаптивная вёрстка макетов","Компоненты, варианты и библиотеки","Переменные и темы","Передача макетов в разработку"],"tags":["Основы Figma","Работа с изображениями в Figma","Автолейауты","Адаптирование и автолейауты","Проектирование адаптивных интерфейсов в Figma для web и mobile","Разработка дизайн-систем и UI-китов на компонентах Figma","Варианты компонентов","Библиотеки компонентов","Переменные и темы внутри макетов","Сборка сайта в Tilda по макету из Figma"],"evidenceState":"needs_review","branch":"AI-дизайнер","section":"AI-проектирование","x":1034.0670276779285,"y":997.4420091685613,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ai-visual-generation","title":"ИИ в генерации и обработке изображений","tier":"core","tierLabel":"Основная","order":14,"description":"Генерация и обработка фото, иллюстраций, иконок и референсов; стиль, консистентность и доработка вручную.","fullDescription":"Генерация и обработка фото, иллюстраций, иконок и референсов; стиль, консистентность и доработка вручную.","components":[],"tags":[],"evidenceState":"needs_review","branch":"AI-дизайнер","section":"AI-продакшн","x":828.2025411953641,"y":1102.3352041785297,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"aidesigner-visual-generation","title":"Генерация и доведение визуала","tier":"core","tierLabel":"Основная","order":15,"description":"Генерация изображений, устранение артефактов, апскейл, стилизация и доведение до рабочего качества.","fullDescription":"Генерация изображений, устранение артефактов, апскейл, стилизация и доведение до рабочего качества.","components":[],"tags":[],"evidenceState":"needs_review","branch":"AI-дизайнер","section":"AI-продакшн","x":600,"y":1138.4789359463944,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"aidesigner-series-adaptation","title":"Серии визуалов и адаптация под каналы","tier":"core","tierLabel":"Основная","order":16,"description":"Серийные визуалы на ядре и переменных, адаптация под каналы, форматы и комплекты.","fullDescription":"Серийные визуалы на ядре и переменных, адаптация под каналы, форматы и комплекты.","components":[],"tags":[],"evidenceState":"needs_review","branch":"AI-дизайнер","section":"AI-продакшн","x":371.7974588046362,"y":1102.3352041785297,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ai-video-audio","title":"ИИ в видео, монтаже и аудио","tier":"core","tierLabel":"Основная","order":17,"description":"Генерация видео и аудио, ИИ-монтаж, озвучка, музыка и синхронизация в продакшене.","fullDescription":"Генерация видео и аудио, ИИ-монтаж, озвучка, музыка и синхронизация в продакшене.","components":[],"tags":[],"evidenceState":"needs_review","branch":"AI-дизайнер","section":"AI-продакшн","x":165.93297232207158,"y":997.4420091685613,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"aidesigner-video-audio","title":"AI-видео, анимация и аудио","tier":"core","tierLabel":"Основная","order":18,"description":"Генерация видео и аудио, анимация, монтаж, озвучка, музыка и синхронизация с визуалом.","fullDescription":"Генерация видео и аудио, анимация, монтаж, озвучка, музыка и синхронизация с визуалом.","components":[],"tags":[],"evidenceState":"needs_review","branch":"AI-дизайнер","section":"AI-продакшн","x":2.557990831438815,"y":834.0670276779285,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ai-copy-content","title":"ИИ в тексте, контенте и презентациях","tier":"core","tierLabel":"Основная","order":19,"description":"Генерация и редактура текста, контента и слайдов; контроль смысла, фактов и тона.","fullDescription":"Генерация и редактура текста, контента и слайдов; контроль смысла, фактов и тона.","components":[],"tags":[],"evidenceState":"needs_review","branch":"AI-дизайнер","section":"AI-продакшн","x":-102.3352041785297,"y":628.2025411953641,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"aidesigner-automation","title":"Автоматизация и мультимодальные пайплайны","tier":"core","tierLabel":"Основная","order":21,"description":"Связки инструментов и автоматизация рутины: текст → визуал → видео/аудио → документ.","fullDescription":"Связки инструментов и автоматизация рутины: текст → визуал → видео/аудио → документ.","components":[],"tags":[],"evidenceState":"needs_review","branch":"AI-дизайнер","section":"AI-продакшн","x":-138.47893594639436,"y":400.0000000000001,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ai-workflow-integration","title":"Интеграция ИИ в процесс","tier":"core","tierLabel":"Основная","order":22,"description":"Встраивание ИИ в рабочий процесс, автоматизация рутины, контроль качества и границы применимости.","fullDescription":"Встраивание ИИ в рабочий процесс, автоматизация рутины, контроль качества и границы применимости.","components":[],"tags":[],"evidenceState":"needs_review","branch":"AI-дизайнер","section":"AI-продакшн","x":-102.3352041785297,"y":171.797458804636,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"aidesigner-quality-eval","title":"Контроль качества AI-результата","tier":"core","tierLabel":"Основная","order":23,"description":"Чек-листы, критика и тестирование результата: артефакты, фактчекинг, соответствие брифу и стилю.","fullDescription":"Чек-листы, критика и тестирование результата: артефакты, фактчекинг, соответствие брифу и стилю.","components":[],"tags":[],"evidenceState":"needs_review","branch":"AI-дизайнер","section":"AI-продакшн","x":2.557990831438701,"y":-34.06702767792842,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ai-ethics-rights","title":"Этика, авторские права и данные","tier":"core","tierLabel":"Основная","order":26,"description":"Авторские права, приватность, безопасность данных, смещения моделей и фактчекинг ИИ-результатов.","fullDescription":"Авторские права, приватность, безопасность данных, смещения моделей и фактчекинг ИИ-результатов.","components":[],"tags":[],"evidenceState":"needs_review","branch":"AI-дизайнер","section":"Этика и внедрение","x":165.9329723220714,"y":-197.44200916856119,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"aidesigner-integration","title":"Внедрение AI в процесс и команду","tier":"core","tierLabel":"Основная","order":27,"description":"Встраивание AI в командный процесс: регламенты, обучение, выбор стека, границы применимости.","fullDescription":"Встраивание AI в командный процесс: регламенты, обучение, выбор стека, границы применимости.","components":[],"tags":[],"evidenceState":"needs_review","branch":"AI-дизайнер","section":"Этика и внедрение","x":371.79745880463577,"y":-302.3352041785297,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ai-layout-docs","title":"ИИ в макетах, документации и вёрстке","tier":"optional","tierLabel":"Необязательная","order":20,"description":"ИИ-помощь в сборке макетов, спецификациях, документации и вёрстке; проверка результата.","fullDescription":"ИИ-помощь в сборке макетов, спецификациях, документации и вёрстке; проверка результата.","components":[],"tags":[],"evidenceState":"needs_review","branch":"AI-дизайнер","section":"AI-продакшн","x":600,"y":-518.4789359463944,"width":192,"height":92,"ring":2,"emphasis":"tertiary","opacity":0.65},{"id":"ui-handoff","title":"Передача макетов в разработку","tier":"optional","tierLabel":"Необязательная","order":24,"description":"Спецификации, компонентные контракты и коммуникация с инженерами.","fullDescription":"Спецификации, компонентные контракты и коммуникация с инженерами.","components":["Взаимодействие с инженерами при разработке продукта","Правовые и государственные основы профессиональной деятельности"],"tags":["Согласование понимания с инженерами","Обсуждение дизайна и разработки продукта","Основы права и государственного регулирования"],"evidenceState":"supported","branch":"AI-дизайнер","section":"AI-продакшн","x":1395.426091370478,"y":859.239467973197,"width":192,"height":92,"ring":2,"emphasis":"tertiary","opacity":0.65},{"id":"ai-research-synthesis","title":"ИИ в исследованиях и синтезе","tier":"optional","tierLabel":"Необязательная","order":25,"description":"Ускорение ресёрча: подготовка гайдов, обработка интервью, синтез данных и проверка выводов модели.","fullDescription":"Ускорение ресёрча: подготовка гайдов, обработка интервью, синтез данных и проверка выводов модели.","components":[],"tags":[],"evidenceState":"needs_review","branch":"AI-дизайнер","section":"Этика и внедрение","x":-195.4260913704776,"y":859.2394679731974,"width":192,"height":92,"ring":2,"emphasis":"tertiary","opacity":0.65}],"edges":[{"from":"ux-design-thinking","to":"ai-model-landscape"},{"from":"ai-model-landscape","to":"aidesigner-tool-landscape"},{"from":"ai-model-landscape","to":"ai-prompting"},{"from":"ai-prompting","to":"aidesigner-prompt-systems"},{"from":"aidesigner-tool-landscape","to":"aidesigner-prompt-systems"},{"from":"aidesigner-tool-landscape","to":"aidesigner-tool-evaluation"},{"from":"aidesigner-prompt-systems","to":"aidesigner-tool-evaluation"},{"from":"ux-design-thinking","to":"ux-product-thinking"},{"from":"ux-design-thinking","to":"ux-user-research"},{"from":"ux-product-thinking","to":"aidesigner-ai-features"},{"from":"ux-user-research","to":"aidesigner-ai-features"},{"from":"ai-model-landscape","to":"aidesigner-ai-features"},{"from":"ux-user-research","to":"ux-requirements"},{"from":"aidesigner-ai-features","to":"ux-requirements"},{"from":"ux-design-thinking","to":"ui-layout"},{"from":"ui-layout","to":"ui-visual-communication"},{"from":"ui-layout","to":"ui-figma"},{"from":"ai-prompting","to":"ai-visual-generation"},{"from":"ai-visual-generation","to":"aidesigner-visual-generation"},{"from":"aidesigner-prompt-systems","to":"aidesigner-visual-generation"},{"from":"aidesigner-visual-generation","to":"aidesigner-series-adaptation"},{"from":"ui-visual-communication","to":"aidesigner-series-adaptation"},{"from":"ai-prompting","to":"ai-video-audio"},{"from":"ai-video-audio","to":"aidesigner-video-audio"},{"from":"aidesigner-series-adaptation","to":"aidesigner-video-audio"},{"from":"ai-prompting","to":"ai-copy-content"},{"from":"aidesigner-tool-evaluation","to":"aidesigner-automation"},{"from":"aidesigner-series-adaptation","to":"aidesigner-automation"},{"from":"ai-prompting","to":"ai-workflow-integration"},{"from":"ai-model-landscape","to":"ai-workflow-integration"},{"from":"aidesigner-visual-generation","to":"aidesigner-quality-eval"},{"from":"aidesigner-video-audio","to":"aidesigner-quality-eval"},{"from":"ai-workflow-integration","to":"aidesigner-quality-eval"},{"from":"ai-model-landscape","to":"ai-ethics-rights"},{"from":"aidesigner-quality-eval","to":"aidesigner-integration"},{"from":"ai-workflow-integration","to":"aidesigner-integration"},{"from":"ai-ethics-rights","to":"aidesigner-integration"},{"from":"ai-prompting","to":"ai-layout-docs"},{"from":"ui-figma","to":"ui-handoff"},{"from":"aidesigner-quality-eval","to":"ui-handoff"},{"from":"ai-prompting","to":"ai-research-synthesis"}],"stage":{"width":1943,"height":1909,"offsetX":371.4260913704776,"offsetY":644.4789359463944},"counts":{"foundation":4,"core":20,"optional":3}};
+    const byId = new Map(DATA.nodes.map((node) => [node.id, node]));
+    const cards = [...document.querySelectorAll('.competency-card')];
+    const edges = [...document.querySelectorAll('.edge')];
+    const detail = document.getElementById('detail');
+    const viewport = document.getElementById('canvas-viewport');
+    const stage = document.getElementById('canvas-stage');
+    let zoom = 1;
+    let panX = 0;
+    let panY = 0;
+    let dragging = false;
+    let dragStartX = 0;
+    let dragStartY = 0;
+    let dragOriginX = 0;
+    let dragOriginY = 0;
+
+    function setZoom(next) {
+      zoom = Math.min(2.5, Math.max(.25, next));
+      stage.style.setProperty('--zoom', String(zoom));
+      document.getElementById('zoom-value').textContent = Math.round(zoom * 100) + '%';
+    }
+    function applyPan() {
+      stage.style.setProperty('--pan-x', String(panX) + 'px');
+      stage.style.setProperty('--pan-y', String(panY) + 'px');
+    }
+    function zoomAround(clientX, clientY, next) {
+      const target = Math.min(2.5, Math.max(.25, next));
+      if (target === zoom) return;
+      const rect = stage.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      const ratio = target / zoom;
+      const nextCenterX = clientX - (clientX - centerX) * ratio;
+      const nextCenterY = clientY - (clientY - centerY) * ratio;
+      panX += nextCenterX - centerX;
+      panY += nextCenterY - centerY;
+      setZoom(target);
+      applyPan();
+    }
+    function fitZoom() {
+      const header = document.querySelector('.app-header');
+      const topInset = header ? header.getBoundingClientRect().bottom + 18 : 40;
+      const availableHeight = Math.max(240, viewport.clientHeight - topInset - 40);
+      const scale = Math.min((viewport.clientWidth - 80) / stage.offsetWidth, availableHeight / stage.offsetHeight) * 0.94;
+      stage.style.top = String(topInset + availableHeight / 2) + 'px';
+      panX = 0;
+      panY = 0;
+      applyPan();
+      setZoom(Number.isFinite(scale) ? scale : 1);
+    }
+    document.getElementById('zoom-in').addEventListener('click', () => setZoom(zoom + 0.1));
+    document.getElementById('zoom-out').addEventListener('click', () => setZoom(zoom - 0.1));
+    fitZoom();
+    window.addEventListener('resize', fitZoom);
+
+    function endPan(event) {
+      if (!dragging) return;
+      dragging = false;
+      viewport.classList.remove('is-panning');
+      if (event && viewport.hasPointerCapture(event.pointerId)) viewport.releasePointerCapture(event.pointerId);
+    }
+    viewport.addEventListener('pointerdown', (event) => {
+      if (event.button !== 0 || event.target.closest('.competency-card')) return;
+      dragging = true;
+      dragStartX = event.clientX;
+      dragStartY = event.clientY;
+      dragOriginX = panX;
+      dragOriginY = panY;
+      viewport.classList.add('is-panning');
+      viewport.setPointerCapture(event.pointerId);
+      event.preventDefault();
+    });
+    viewport.addEventListener('pointermove', (event) => {
+      if (!dragging) return;
+      panX = dragOriginX + (event.clientX - dragStartX);
+      panY = dragOriginY + (event.clientY - dragStartY);
+      applyPan();
+    });
+    viewport.addEventListener('pointerup', endPan);
+    viewport.addEventListener('pointercancel', endPan);
+    viewport.addEventListener('wheel', (event) => {
+      event.preventDefault();
+      const delta = event.deltaMode === 1 ? event.deltaY * 16 : event.deltaY;
+      zoomAround(event.clientX, event.clientY, zoom * Math.exp(-delta * 0.0015));
+    }, { passive: false });
+
+    function connected(id) {
+      const ids = new Set([id]);
+      for (const edge of edges) {
+        if (edge.dataset.from === id) ids.add(edge.dataset.to);
+        if (edge.dataset.to === id) ids.add(edge.dataset.from);
+      }
+      return ids;
+    }
+    function highlight(id) {
+      const ids = connected(id);
+      cards.forEach((card) => {
+        card.classList.toggle('is-active', card.dataset.id === id);
+        card.classList.toggle('is-muted', !ids.has(card.dataset.id));
+      });
+      edges.forEach((edge) => {
+        const active = edge.dataset.from === id || edge.dataset.to === id;
+        edge.classList.toggle('is-active', active);
+        edge.classList.toggle('is-muted', !active);
+      });
+    }
+    function clearHighlight() {
+      cards.forEach((card) => card.classList.remove('is-active', 'is-muted'));
+      edges.forEach((edge) => edge.classList.remove('is-active', 'is-muted'));
+    }
+    function openDetail(id) {
+      const node = byId.get(id);
+      if (!node) return;
+      document.getElementById('detail-tier').textContent = node.tierLabel;
+      document.getElementById('detail-title').textContent = node.title;
+      document.getElementById('detail-full').textContent = node.fullDescription;
+      document.getElementById('detail-components').replaceChildren(...node.components.map((item) => { const li = document.createElement('li'); li.textContent = item; return li; }));
+      document.getElementById('detail-tags').replaceChildren(...node.tags.slice(0, 12).map((item) => { const li = document.createElement('li'); li.textContent = item; return li; }));
+      document.getElementById('detail-meta').textContent = [node.branch, node.section, 'Порядок ' + node.order, 'evidence: ' + node.evidenceState, 'ring ' + node.ring].filter(Boolean).join(' · ');
+      detail.hidden = false;
+    }
+    cards.forEach((card) => {
+      card.addEventListener('mouseenter', () => highlight(card.dataset.id));
+      card.addEventListener('mouseleave', clearHighlight);
+      card.addEventListener('focus', () => highlight(card.dataset.id));
+      card.addEventListener('blur', clearHighlight);
+      card.addEventListener('click', () => { highlight(card.dataset.id); openDetail(card.dataset.id); });
+      card.addEventListener('keydown', (event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); card.click(); } });
+    });
+    document.getElementById('detail-close').addEventListener('click', () => { detail.hidden = true; clearHighlight(); });
+    document.addEventListener('keydown', (event) => { if (event.key === 'Escape') { detail.hidden = true; clearHighlight(); } });
+  </script>
+</body>
+</html>

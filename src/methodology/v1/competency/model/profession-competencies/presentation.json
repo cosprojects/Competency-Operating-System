@@ -51,9 +51,100 @@
       "sectionTitle": "Основы презентации"
     },
     {
+      "competencyId": "ai-model-landscape",
+      "tier": "foundation",
+      "order": 6,
+      "prerequisites": [
+        "ux-design-thinking"
+      ],
+      "sectionId": "presentation-ai",
+      "sectionTitle": "ИИ на этапах работы"
+    },
+    {
+      "competencyId": "ai-prompting",
+      "tier": "foundation",
+      "order": 7,
+      "prerequisites": [
+        "ai-model-landscape"
+      ],
+      "sectionId": "presentation-ai",
+      "sectionTitle": "ИИ на этапах работы"
+    },
+    {
+      "competencyId": "ai-research-synthesis",
+      "tier": "optional",
+      "order": 8,
+      "prerequisites": [
+        "ai-prompting"
+      ],
+      "sectionId": "presentation-ai",
+      "sectionTitle": "ИИ на этапах работы"
+    },
+    {
+      "competencyId": "ai-visual-generation",
+      "tier": "core",
+      "order": 9,
+      "prerequisites": [
+        "ai-prompting"
+      ],
+      "sectionId": "presentation-ai",
+      "sectionTitle": "ИИ на этапах работы"
+    },
+    {
+      "competencyId": "ai-video-audio",
+      "tier": "optional",
+      "order": 10,
+      "prerequisites": [
+        "ai-prompting"
+      ],
+      "sectionId": "presentation-ai",
+      "sectionTitle": "ИИ на этапах работы"
+    },
+    {
+      "competencyId": "ai-copy-content",
+      "tier": "core",
+      "order": 11,
+      "prerequisites": [
+        "ai-prompting"
+      ],
+      "sectionId": "presentation-ai",
+      "sectionTitle": "ИИ на этапах работы"
+    },
+    {
+      "competencyId": "ai-layout-docs",
+      "tier": "core",
+      "order": 12,
+      "prerequisites": [
+        "ai-prompting"
+      ],
+      "sectionId": "presentation-ai",
+      "sectionTitle": "ИИ на этапах работы"
+    },
+    {
+      "competencyId": "ai-workflow-integration",
+      "tier": "core",
+      "order": 13,
+      "prerequisites": [
+        "ai-prompting",
+        "ai-model-landscape"
+      ],
+      "sectionId": "presentation-ai",
+      "sectionTitle": "ИИ на этапах работы"
+    },
+    {
+      "competencyId": "ai-ethics-rights",
+      "tier": "optional",
+      "order": 14,
+      "prerequisites": [
+        "ai-model-landscape"
+      ],
+      "sectionId": "presentation-ai",
+      "sectionTitle": "ИИ на этапах работы"
+    },
+    {
       "competencyId": "presentation-audience",
       "tier": "core",
-      "order": 6,
+      "order": 15,
       "prerequisites": [
         "presentation-structure"
       ],
@@ -63,7 +154,7 @@
     {
       "competencyId": "presentation-message",
       "tier": "core",
-      "order": 7,
+      "order": 16,
       "prerequisites": [
         "presentation-structure"
       ],
@@ -73,7 +164,7 @@
     {
       "competencyId": "presentation-data",
       "tier": "core",
-      "order": 8,
+      "order": 17,
       "prerequisites": [
         "presentation-message"
       ],
@@ -83,7 +174,7 @@
     {
       "competencyId": "presentation-visualization",
       "tier": "core",
-      "order": 9,
+      "order": 18,
       "prerequisites": [
         "ui-layout",
         "presentation-data"
@@ -94,7 +185,7 @@
     {
       "competencyId": "ui-data-visualization",
       "tier": "optional",
-      "order": 10,
+      "order": 19,
       "prerequisites": [
         "presentation-data"
       ],
@@ -104,7 +195,7 @@
     {
       "competencyId": "ui-figma",
       "tier": "core",
-      "order": 11,
+      "order": 20,
       "prerequisites": [
         "ui-layout"
       ],
@@ -114,7 +205,7 @@
     {
       "competencyId": "ui-visual-communication",
       "tier": "core",
-      "order": 12,
+      "order": 21,
       "prerequisites": [
         "ui-color",
         "ui-layout"
@@ -125,7 +216,7 @@
     {
       "competencyId": "presentation-delivery",
       "tier": "core",
-      "order": 13,
+      "order": 22,
       "prerequisites": [
         "presentation-message",
         "presentation-audience"

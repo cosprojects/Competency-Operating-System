@@ -51,6 +51,86 @@
       ]
     },
     {
+      "id": "graphic-ai",
+      "title": "ИИ на этапах работы",
+      "definition": "Нейросети в ресёрче, проектировании, контенте и производстве: инструменты, промптинг, применение и контроль качества.",
+      "competencies": [
+        {
+          "competencyId": "ai-model-landscape",
+          "tier": "foundation",
+          "prerequisites": [
+            "ux-design-thinking"
+          ],
+          "order": 6
+        },
+        {
+          "competencyId": "ai-prompting",
+          "tier": "foundation",
+          "prerequisites": [
+            "ai-model-landscape"
+          ],
+          "order": 7
+        },
+        {
+          "competencyId": "ai-research-synthesis",
+          "tier": "optional",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 8
+        },
+        {
+          "competencyId": "ai-visual-generation",
+          "tier": "core",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 9
+        },
+        {
+          "competencyId": "ai-video-audio",
+          "tier": "optional",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 10
+        },
+        {
+          "competencyId": "ai-copy-content",
+          "tier": "core",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 11
+        },
+        {
+          "competencyId": "ai-layout-docs",
+          "tier": "core",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 12
+        },
+        {
+          "competencyId": "ai-workflow-integration",
+          "tier": "core",
+          "prerequisites": [
+            "ai-prompting",
+            "ai-model-landscape"
+          ],
+          "order": 13
+        },
+        {
+          "competencyId": "ai-ethics-rights",
+          "tier": "optional",
+          "prerequisites": [
+            "ai-model-landscape"
+          ],
+          "order": 14
+        }
+      ]
+    },
+    {
       "id": "graphic-brand",
       "title": "Коммуникация и бренд",
       "definition": "Визуальная коммуникация, смыслы и данные.",
@@ -58,7 +138,7 @@
         {
           "competencyId": "ui-visual-communication",
           "tier": "foundation",
-          "order": 6,
+          "order": 15,
           "prerequisites": [
             "ui-layout",
             "ui-typography",
@@ -68,7 +148,7 @@
         {
           "competencyId": "ux-product-thinking",
           "tier": "optional",
-          "order": 7,
+          "order": 16,
           "prerequisites": [
             "ux-design-thinking"
           ]
@@ -76,7 +156,7 @@
         {
           "competencyId": "ui-data-visualization",
           "tier": "optional",
-          "order": 8,
+          "order": 17,
           "prerequisites": [
             "ui-visual-communication",
             "ui-layout"
@@ -92,7 +172,7 @@
         {
           "competencyId": "ui-figma",
           "tier": "core",
-          "order": 9,
+          "order": 18,
           "prerequisites": [
             "ui-layout",
             "ux-design-thinking"
@@ -101,7 +181,7 @@
         {
           "competencyId": "ui-figjam",
           "tier": "optional",
-          "order": 10,
+          "order": 19,
           "prerequisites": [
             "ui-figma"
           ]
@@ -109,7 +189,7 @@
         {
           "competencyId": "ui-handoff",
           "tier": "core",
-          "order": 11,
+          "order": 20,
           "prerequisites": [
             "ui-figma",
             "ui-layout"
@@ -118,7 +198,7 @@
         {
           "competencyId": "ui-web-technologies",
           "tier": "optional",
-          "order": 12,
+          "order": 21,
           "prerequisites": [
             "ui-figma",
             "ui-handoff"
@@ -134,7 +214,7 @@
         {
           "competencyId": "ui-design-systems",
           "tier": "optional",
-          "order": 13,
+          "order": 22,
           "prerequisites": [
             "ui-layout",
             "ui-visual-elements",
@@ -144,7 +224,7 @@
         {
           "competencyId": "ui-components",
           "tier": "optional",
-          "order": 14,
+          "order": 23,
           "prerequisites": [
             "ui-design-systems"
           ]
@@ -152,7 +232,7 @@
         {
           "competencyId": "ui-accessibility",
           "tier": "optional",
-          "order": 15,
+          "order": 24,
           "prerequisites": [
             "ui-visual-communication",
             "ui-components"
@@ -168,7 +248,7 @@
         {
           "competencyId": "graphic-brand-identity",
           "tier": "foundation",
-          "order": 16,
+          "order": 25,
           "prerequisites": [
             "ui-visual-communication",
             "ui-typography",
@@ -178,7 +258,7 @@
         {
           "competencyId": "graphic-print-production",
           "tier": "core",
-          "order": 17,
+          "order": 26,
           "prerequisites": [
             "graphic-brand-identity",
             "ui-color",
@@ -188,7 +268,7 @@
         {
           "competencyId": "graphic-editorial-layout",
           "tier": "core",
-          "order": 18,
+          "order": 27,
           "prerequisites": [
             "ui-typography",
             "ui-layout",

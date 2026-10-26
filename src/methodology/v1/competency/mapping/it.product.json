@@ -9,82 +9,148 @@
     {
       "competencyId": "ux-design-thinking",
       "tags": [
-        { "title": "Critical Thinking", "relation": "adjacent" },
-        { "title": "Active Learning", "relation": "adjacent" }
+        {
+          "title": "Critical Thinking",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Active Learning",
+          "relation": "adjacent"
+        }
       ],
       "rationale": "O*NET essential skills: критическое мышление и обучаемость как база итеративного дизайн-процесса."
     },
     {
       "competencyId": "ux-product-thinking",
       "tags": [
-        { "title": "Sales and Marketing", "relation": "adjacent" },
-        { "title": "Economics and Accounting", "relation": "adjacent" },
-        { "title": "Customer and Personal Service", "relation": "adjacent" }
+        {
+          "title": "Sales and Marketing",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Economics and Accounting",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Customer and Personal Service",
+          "relation": "adjacent"
+        }
       ],
       "rationale": "O*NET 13-1161 knowledge-домены: рынок, экономика продукта и работа с клиентом."
     },
     {
       "competencyId": "ux-ethics-privacy",
       "tags": [
-        { "title": "Law and Government", "relation": "adjacent" }
+        {
+          "title": "Law and Government",
+          "relation": "adjacent"
+        }
       ],
       "rationale": "O*NET knowledge Law and Government покрывает правовые и регуляторные ограничения, но не заменяет этику дизайна."
     },
     {
       "competencyId": "product-jtbd",
       "tags": [
-        { "title": "JTBD", "relation": "direct" },
-        { "title": "Customer and Personal Service", "relation": "adjacent" }
+        {
+          "title": "JTBD",
+          "relation": "direct"
+        },
+        {
+          "title": "Customer and Personal Service",
+          "relation": "adjacent"
+        }
       ],
       "rationale": "Практикум даёт тег JTBD; customer service — смежная рамка понимания клиента."
     },
     {
       "competencyId": "ux-user-research",
       "tags": [
-        { "title": "Глубинные интервью", "relation": "direct" },
-        { "title": "Customer and Personal Service", "relation": "adjacent" },
-        { "title": "Active Listening", "relation": "adjacent" },
-        { "title": "Psychology", "relation": "adjacent" },
-        { "title": "Sociology and Anthropology", "relation": "adjacent" }
+        {
+          "title": "Глубинные интервью",
+          "relation": "direct"
+        },
+        {
+          "title": "Customer and Personal Service",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Active Listening",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Psychology",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Sociology and Anthropology",
+          "relation": "adjacent"
+        }
       ],
       "rationale": "Практикум: глубинные интервью; O*NET: работа с клиентом, активное слушание, психология и социология."
     },
     {
       "competencyId": "ux-interviews",
       "tags": [
-        { "title": "Глубинные интервью", "relation": "direct" },
-        { "title": "Active Listening", "relation": "adjacent" },
-        { "title": "Speaking", "relation": "adjacent" }
+        {
+          "title": "Глубинные интервью",
+          "relation": "direct"
+        },
+        {
+          "title": "Active Listening",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Speaking",
+          "relation": "adjacent"
+        }
       ],
       "rationale": "Прямой тег глубинных интервью; O*NET навыки слушания и говорения поддерживают проведение интервью."
     },
     {
       "competencyId": "ux-personas",
       "tags": [
-        { "title": "Sociology and Anthropology", "relation": "adjacent" },
-        { "title": "Psychology", "relation": "adjacent" },
-        { "title": "Customer and Personal Service", "relation": "adjacent" }
+        {
+          "title": "Sociology and Anthropology",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Psychology",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Customer and Personal Service",
+          "relation": "adjacent"
+        }
       ],
       "rationale": "Сегментация и персоны опираются на социальные науки и понимание клиента; прямого product-тега нет."
     },
     {
       "competencyId": "product-cjm",
       "tags": [
-        { "title": "CJM", "relation": "direct" }
+        {
+          "title": "CJM",
+          "relation": "direct"
+        }
       ],
       "rationale": "Практикум даёт тег CJM напрямую."
     },
     {
       "competencyId": "ux-information-architecture",
       "tags": [
-        { "title": "Communications and Media", "relation": "adjacent" }
+        {
+          "title": "Communications and Media",
+          "relation": "adjacent"
+        }
       ],
       "rationale": "Коммуникации и медиа — смежная область структурирования контента; прямого тега IA нет."
     },
     {
       "competencyId": "ux-user-flows",
       "tags": [
-        { "title": "CJM", "relation": "adjacent" }
+        {
+          "title": "CJM",
+          "relation": "adjacent"
+        }
       ],
       "rationale": "CJM описывает путь пользователя, на который опираются флоу; это смежное свидетельство."
     },
@@ -96,9 +162,18 @@
     {
       "competencyId": "ux-requirements",
       "tags": [
-        { "title": "User Story", "relation": "direct" },
-        { "title": "SMART", "relation": "adjacent" },
-        { "title": "Critical Thinking", "relation": "adjacent" }
+        {
+          "title": "User Story",
+          "relation": "direct"
+        },
+        {
+          "title": "SMART",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Critical Thinking",
+          "relation": "adjacent"
+        }
       ],
       "rationale": "Практикум: User Story и SMART прямо относятся к постановке требований и целей."
     },
@@ -120,163 +195,426 @@
     {
       "competencyId": "ux-usability-testing",
       "tags": [
-        { "title": "Юзабилити-тестирование", "relation": "direct" },
-        { "title": "Customer and Personal Service", "relation": "adjacent" },
-        { "title": "Active Listening", "relation": "adjacent" }
+        {
+          "title": "Юзабилити-тестирование",
+          "relation": "direct"
+        },
+        {
+          "title": "Customer and Personal Service",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Active Listening",
+          "relation": "adjacent"
+        }
       ],
       "rationale": "Практикум даёт тег юзабилити-тестирования; O*NET добавляет работу с клиентом и наблюдение."
     },
     {
       "competencyId": "ux-metrics",
       "tags": [
-        { "title": "Mathematics", "relation": "adjacent" },
-        { "title": "Monitoring", "relation": "adjacent" },
-        { "title": "Economics and Accounting", "relation": "adjacent" }
+        {
+          "title": "Mathematics",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Monitoring",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Economics and Accounting",
+          "relation": "adjacent"
+        }
       ],
       "rationale": "O*NET knowledge/skills: количественные методы, мониторинг и экономика — база продуктовых метрик."
     },
     {
       "competencyId": "ux-analytics",
       "tags": [
-        { "title": "Mathematics", "relation": "adjacent" },
-        { "title": "Computers and Electronics", "relation": "adjacent" },
-        { "title": "Monitoring", "relation": "adjacent" }
+        {
+          "title": "Mathematics",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Computers and Electronics",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Monitoring",
+          "relation": "adjacent"
+        }
       ],
       "rationale": "Продуктовая аналитика опирается на количественные методы и цифровые системы; прямого тега аналитики нет."
     },
     {
       "competencyId": "ux-experiments",
       "tags": [
-        { "title": "Продуктовые гипотезы", "relation": "direct" },
-        { "title": "RICE", "relation": "adjacent" },
-        { "title": "SMART", "relation": "adjacent" }
+        {
+          "title": "Продуктовые гипотезы",
+          "relation": "direct"
+        },
+        {
+          "title": "RICE",
+          "relation": "adjacent"
+        },
+        {
+          "title": "SMART",
+          "relation": "adjacent"
+        }
       ],
       "rationale": "Практикум: продуктовые гипотезы и RICE прямо относятся к проверке решений и приоритизации."
     },
     {
       "competencyId": "ui-data-visualization",
       "tags": [
-        { "title": "Mathematics", "relation": "adjacent" },
-        { "title": "Design", "relation": "adjacent" }
+        {
+          "title": "Mathematics",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Design",
+          "relation": "adjacent"
+        }
       ],
       "rationale": "Визуализация данных опирается на количественные данные и дизайн; отдельного product-тега нет."
     },
     {
       "competencyId": "ui-color",
       "tags": [
-        { "title": "Fine Arts", "relation": "adjacent" },
-        { "title": "Design", "relation": "adjacent" }
+        {
+          "title": "Fine Arts",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Design",
+          "relation": "adjacent"
+        }
       ],
       "rationale": "Product-теги покрывают визуальную культуру только общими доменами Fine Arts и Design."
     },
     {
       "competencyId": "ui-typography",
       "tags": [
-        { "title": "Design", "relation": "adjacent" },
-        { "title": "Fine Arts", "relation": "adjacent" }
+        {
+          "title": "Design",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Fine Arts",
+          "relation": "adjacent"
+        }
       ],
       "rationale": "Типографика подтверждается общими доменами дизайна и изобразительного искусства, не отдельным тегом."
     },
     {
       "competencyId": "ui-layout",
       "tags": [
-        { "title": "Design", "relation": "adjacent" },
-        { "title": "Fine Arts", "relation": "adjacent" }
+        {
+          "title": "Design",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Fine Arts",
+          "relation": "adjacent"
+        }
       ],
       "rationale": "Композиция и сетки подтверждаются общими доменами дизайна и изобразительного искусства."
     },
     {
       "competencyId": "ui-design-systems",
       "tags": [
-        { "title": "Дизайн-системы", "relation": "direct" },
-        { "title": "Гайдлайны iOS/Android", "relation": "adjacent" },
-        { "title": "Computers and Electronics", "relation": "adjacent" }
+        {
+          "title": "Дизайн-системы",
+          "relation": "direct"
+        },
+        {
+          "title": "Гайдлайны iOS/Android",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Computers and Electronics",
+          "relation": "adjacent"
+        }
       ],
       "rationale": "Практикум: дизайн-системы и платформенные гайдлайны прямо относятся к системному слою."
     },
     {
       "competencyId": "ui-components",
       "tags": [
-        { "title": "Гайдлайны iOS/Android", "relation": "direct" },
-        { "title": "Дизайн-системы", "relation": "adjacent" }
+        {
+          "title": "Гайдлайны iOS/Android",
+          "relation": "direct"
+        },
+        {
+          "title": "Дизайн-системы",
+          "relation": "adjacent"
+        }
       ],
       "rationale": "Платформенные гайдлайны задают компоненты и паттерны; дизайн-системы — смежная рамка."
     },
     {
       "competencyId": "ui-accessibility",
       "tags": [
-        { "title": "Law and Government", "relation": "adjacent" },
-        { "title": "Customer and Personal Service", "relation": "adjacent" }
+        {
+          "title": "Law and Government",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Customer and Personal Service",
+          "relation": "adjacent"
+        }
       ],
       "rationale": "Доступность связана с правовыми требованиями и разными пользователями; отдельного тега нет."
     },
     {
       "competencyId": "ui-visual-communication",
       "tags": [
-        { "title": "Design", "relation": "adjacent" },
-        { "title": "Fine Arts", "relation": "adjacent" },
-        { "title": "Communications and Media", "relation": "adjacent" }
+        {
+          "title": "Design",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Fine Arts",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Communications and Media",
+          "relation": "adjacent"
+        }
       ],
       "rationale": "Визуальная коммуникация подтверждается доменами дизайна, искусства и коммуникаций."
     },
     {
       "competencyId": "product-strategy",
       "tags": [
-        { "title": "SMART", "relation": "direct" },
-        { "title": "RICE", "relation": "direct" },
-        { "title": "Управление в дизайне", "relation": "adjacent" },
-        { "title": "Administration and Management", "relation": "adjacent" },
-        { "title": "Sales and Marketing", "relation": "adjacent" }
+        {
+          "title": "SMART",
+          "relation": "direct"
+        },
+        {
+          "title": "RICE",
+          "relation": "direct"
+        },
+        {
+          "title": "Управление в дизайне",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Administration and Management",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Sales and Marketing",
+          "relation": "adjacent"
+        }
       ],
       "rationale": "SMART и RICE — инструменты постановки целей и приоритизации ставок; управление и рынок — контекст стратегии."
     },
     {
       "competencyId": "product-growth",
       "tags": [
-        { "title": "Sales and Marketing", "relation": "adjacent" },
-        { "title": "Economics and Accounting", "relation": "adjacent" },
-        { "title": "Customer and Personal Service", "relation": "adjacent" }
+        {
+          "title": "Sales and Marketing",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Economics and Accounting",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Customer and Personal Service",
+          "relation": "adjacent"
+        }
       ],
       "rationale": "Рост и удержание опираются на рынок, экономику продукта и работу с клиентом; прямого growth-тега нет."
     },
     {
       "competencyId": "product-experimentation",
       "tags": [
-        { "title": "Продуктовые гипотезы", "relation": "direct" },
-        { "title": "RICE", "relation": "direct" },
-        { "title": "Agile", "relation": "adjacent" },
-        { "title": "Scrum", "relation": "adjacent" },
-        { "title": "Critical Thinking", "relation": "adjacent" }
+        {
+          "title": "Продуктовые гипотезы",
+          "relation": "direct"
+        },
+        {
+          "title": "RICE",
+          "relation": "direct"
+        },
+        {
+          "title": "Agile",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Scrum",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Critical Thinking",
+          "relation": "adjacent"
+        }
       ],
       "rationale": "Практикум: гипотезы и RICE прямо относятся к экспериментам; Agile/Scrum задают процессный контекст."
+    },
+    {
+      "competencyId": "ai-model-landscape",
+      "tags": [
+        {
+          "title": "Нейросети в дизайне",
+          "relation": "adjacent"
+        }
+      ],
+      "rationale": "Присланный Practicum-тег про нейросети в дизайне — смежное свидетельство ИИ-компетенции."
+    },
+    {
+      "competencyId": "ai-prompting",
+      "tags": [],
+      "rationale": "Собранные теги не дают ИИ-доказательств: компетенция добавлена на этапе 2, источник появится после сбора ИИ-источников."
+    },
+    {
+      "competencyId": "ai-research-synthesis",
+      "tags": [],
+      "rationale": "Собранные теги не дают ИИ-доказательств: компетенция добавлена на этапе 2, источник появится после сбора ИИ-источников."
+    },
+    {
+      "competencyId": "ai-visual-generation",
+      "tags": [
+        {
+          "title": "Нейросети в дизайне",
+          "relation": "adjacent"
+        }
+      ],
+      "rationale": "Присланный Practicum-тег про нейросети в дизайне — смежное свидетельство ИИ-компетенции."
+    },
+    {
+      "competencyId": "ai-video-audio",
+      "tags": [],
+      "rationale": "Собранные теги не дают ИИ-доказательств: компетенция добавлена на этапе 2, источник появится после сбора ИИ-источников."
+    },
+    {
+      "competencyId": "ai-copy-content",
+      "tags": [],
+      "rationale": "Собранные теги не дают ИИ-доказательств: компетенция добавлена на этапе 2, источник появится после сбора ИИ-источников."
+    },
+    {
+      "competencyId": "ai-layout-docs",
+      "tags": [],
+      "rationale": "Собранные теги не дают ИИ-доказательств: компетенция добавлена на этапе 2, источник появится после сбора ИИ-источников."
+    },
+    {
+      "competencyId": "ai-workflow-integration",
+      "tags": [
+        {
+          "title": "Нейросети в дизайне",
+          "relation": "adjacent"
+        }
+      ],
+      "rationale": "Присланный Practicum-тег про нейросети в дизайне — смежное свидетельство ИИ-компетенции."
+    },
+    {
+      "competencyId": "ai-ethics-rights",
+      "tags": [],
+      "rationale": "Собранные теги не дают ИИ-доказательств: компетенция добавлена на этапе 2, источник появится после сбора ИИ-источников."
     }
   ],
   "excludedTags": [
-    { "title": "Administrative", "reason": "Административная область O*NET, не компетенция продуктового дизайнера." },
-    { "title": "Biology", "reason": "Естественно-научная область вне предмета профессии." },
-    { "title": "Building and Construction", "reason": "Строительство относится к O*NET-профилю индустриального дизайна, не к цифровому продукту." },
-    { "title": "Chemistry", "reason": "Химия не входит в предмет продуктового дизайна." },
-    { "title": "Education and Training", "reason": "Образование и обучение — общая область, не специфичная для профессии." },
-    { "title": "Engineering and Technology", "reason": "Инженерная область слишком широка и не подтверждает конкретную компетенцию." },
-    { "title": "English Language", "reason": "Языковой навык, не компетенция профессии; язык уже учтён в language policy." },
-    { "title": "Food Production", "reason": "Пищевое производство не относится к цифровому продукту." },
-    { "title": "Foreign Language", "reason": "Языковой навык, не компетенция профессии." },
-    { "title": "Geography", "reason": "География не подтверждает ни одну компетенцию view." },
-    { "title": "History and Archeology", "reason": "История и археология не подтверждают ни одну компетенцию view." },
-    { "title": "Learning Strategies", "reason": "Общая учебная стратегия O*NET, не специфична для профессии." },
-    { "title": "Mechanical", "reason": "Механика относится к индустриальному дизайну, не к цифровому продукту." },
-    { "title": "Medicine and Dentistry", "reason": "Медицина не входит в предмет профессии." },
-    { "title": "Personnel and Human Resources", "reason": "HR-область не подтверждает ни одну компетенцию view." },
-    { "title": "Philosophy and Theology", "reason": "Философия и теология не подтверждают ни одну компетенцию view." },
-    { "title": "Physics", "reason": "Физика не входит в предмет продуктового дизайна." },
-    { "title": "Production and Processing", "reason": "Производственные процессы относятся к индустриальному дизайну." },
-    { "title": "Public Safety and Security", "reason": "Общественная безопасность не подтверждает ни одну компетенцию view." },
-    { "title": "Reading Comprehension", "reason": "Общий навык грамотности, не специфичен для профессии." },
-    { "title": "Science", "reason": "Общая естественно-научная область, не специфична для профессии." },
-    { "title": "Telecommunications", "reason": "Телекоммуникации не подтверждают ни одну компетенцию view." },
-    { "title": "Therapy and Counseling", "reason": "Терапия и консультирование не относятся к профессии." },
-    { "title": "Transportation", "reason": "Транспорт не относится к цифровому продукту." },
-    { "title": "Writing", "reason": "Общий навык письма, не специфичен для профессии." },
-    { "title": "Нейросети в дизайне", "reason": "Инструментальная тема Практикума; в product view нет отдельной AI-компетенции, добавлять её без human-review нельзя." }
+    {
+      "title": "Administrative",
+      "reason": "Административная область O*NET, не компетенция продуктового дизайнера."
+    },
+    {
+      "title": "Biology",
+      "reason": "Естественно-научная область вне предмета профессии."
+    },
+    {
+      "title": "Building and Construction",
+      "reason": "Строительство относится к O*NET-профилю индустриального дизайна, не к цифровому продукту."
+    },
+    {
+      "title": "Chemistry",
+      "reason": "Химия не входит в предмет продуктового дизайна."
+    },
+    {
+      "title": "Education and Training",
+      "reason": "Образование и обучение — общая область, не специфичная для профессии."
+    },
+    {
+      "title": "Engineering and Technology",
+      "reason": "Инженерная область слишком широка и не подтверждает конкретную компетенцию."
+    },
+    {
+      "title": "English Language",
+      "reason": "Языковой навык, не компетенция профессии; язык уже учтён в language policy."
+    },
+    {
+      "title": "Food Production",
+      "reason": "Пищевое производство не относится к цифровому продукту."
+    },
+    {
+      "title": "Foreign Language",
+      "reason": "Языковой навык, не компетенция профессии."
+    },
+    {
+      "title": "Geography",
+      "reason": "География не подтверждает ни одну компетенцию view."
+    },
+    {
+      "title": "History and Archeology",
+      "reason": "История и археология не подтверждают ни одну компетенцию view."
+    },
+    {
+      "title": "Learning Strategies",
+      "reason": "Общая учебная стратегия O*NET, не специфична для профессии."
+    },
+    {
+      "title": "Mechanical",
+      "reason": "Механика относится к индустриальному дизайну, не к цифровому продукту."
+    },
+    {
+      "title": "Medicine and Dentistry",
+      "reason": "Медицина не входит в предмет профессии."
+    },
+    {
+      "title": "Personnel and Human Resources",
+      "reason": "HR-область не подтверждает ни одну компетенцию view."
+    },
+    {
+      "title": "Philosophy and Theology",
+      "reason": "Философия и теология не подтверждают ни одну компетенцию view."
+    },
+    {
+      "title": "Physics",
+      "reason": "Физика не входит в предмет продуктового дизайна."
+    },
+    {
+      "title": "Production and Processing",
+      "reason": "Производственные процессы относятся к индустриальному дизайну."
+    },
+    {
+      "title": "Public Safety and Security",
+      "reason": "Общественная безопасность не подтверждает ни одну компетенцию view."
+    },
+    {
+      "title": "Reading Comprehension",
+      "reason": "Общий навык грамотности, не специфичен для профессии."
+    },
+    {
+      "title": "Science",
+      "reason": "Общая естественно-научная область, не специфична для профессии."
+    },
+    {
+      "title": "Telecommunications",
+      "reason": "Телекоммуникации не подтверждают ни одну компетенцию view."
+    },
+    {
+      "title": "Therapy and Counseling",
+      "reason": "Терапия и консультирование не относятся к профессии."
+    },
+    {
+      "title": "Transportation",
+      "reason": "Транспорт не относится к цифровому продукту."
+    },
+    {
+      "title": "Writing",
+      "reason": "Общий навык письма, не специфичен для профессии."
+    }
   ]
 }

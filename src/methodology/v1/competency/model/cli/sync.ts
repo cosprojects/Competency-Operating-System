@@ -69,11 +69,51 @@ async function main(): Promise<void> {
   }
   const professionRecord = buildProfessionRecord(target, professionId);
   const professionCompetencies = buildProfessionCompetencies(map, professionId);
+  // Сквозной слой ИИ (этап 2): для профессий на canonical map он добавляется здесь,
+  // потому что принятая canonical-карта UX/UI не переписывается автоматически.
+  const SHARED_AI_LAYER = [
+    { id: 'ai-model-landscape', tier: 'foundation' as const },
+    { id: 'ai-prompting', tier: 'foundation' as const },
+    { id: 'ai-research-synthesis', tier: 'core' as const },
+    { id: 'ai-visual-generation', tier: 'core' as const },
+    { id: 'ai-video-audio', tier: 'optional' as const },
+    { id: 'ai-copy-content', tier: 'optional' as const },
+    { id: 'ai-layout-docs', tier: 'core' as const },
+    { id: 'ai-workflow-integration', tier: 'core' as const },
+    { id: 'ai-ethics-rights', tier: 'core' as const },
+  ];
+  if (!professionCompetencies.competencies.some((item) => item.competencyId === 'ai-model-landscape')) {
+    const rootCompetencyId = professionCompetencies.competencies[0]?.competencyId ?? 'ux-design-thinking';
+    let nextOrder = professionCompetencies.competencies.reduce((max, item) => Math.max(max, item.order), 0);
+    const prerequisites: Record<string, string[]> = {
+      'ai-model-landscape': [rootCompetencyId],
+      'ai-prompting': ['ai-model-landscape'],
+      'ai-research-synthesis': ['ai-prompting'],
+      'ai-visual-generation': ['ai-prompting'],
+      'ai-video-audio': ['ai-prompting'],
+      'ai-copy-content': ['ai-prompting'],
+      'ai-layout-docs': ['ai-prompting'],
+      'ai-workflow-integration': ['ai-prompting', 'ai-model-landscape'],
+      'ai-ethics-rights': ['ai-model-landscape'],
+    };
+    for (const item of SHARED_AI_LAYER) {
+      nextOrder += 1;
+      professionCompetencies.competencies.push({
+        competencyId: item.id,
+        tier: item.tier,
+        order: nextOrder,
+        prerequisites: prerequisites[item.id] ?? [],
+        sectionId: 'ai-layer',
+        sectionTitle: 'ИИ на этапах работы',
+      });
+    }
+  }
   const projection = buildPriorityProjection(priority, map);
   const sourceFiles = buildSourceFiles({ target, professionId, registry });
 
   // projection used as consistency check; canonical order is source of truth for this sync.
-  if (projection.competencies.length !== professionCompetencies.competencies.length) {
+  const canonicalLinks = professionCompetencies.competencies.filter((item) => !item.competencyId.startsWith("ai-")).length;
+  if (projection.competencies.length !== canonicalLinks) {
     throw new Error("priority projection length mismatch");
   }
 

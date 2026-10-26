@@ -52,6 +52,86 @@
       ]
     },
     {
+      "id": "artdir-ai",
+      "title": "ИИ на этапах работы",
+      "definition": "Нейросети в ресёрче, проектировании, контенте и производстве: инструменты, промптинг, применение и контроль качества.",
+      "competencies": [
+        {
+          "competencyId": "ai-model-landscape",
+          "tier": "foundation",
+          "prerequisites": [
+            "ux-design-thinking"
+          ],
+          "order": 6
+        },
+        {
+          "competencyId": "ai-prompting",
+          "tier": "foundation",
+          "prerequisites": [
+            "ai-model-landscape"
+          ],
+          "order": 7
+        },
+        {
+          "competencyId": "ai-research-synthesis",
+          "tier": "optional",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 8
+        },
+        {
+          "competencyId": "ai-visual-generation",
+          "tier": "core",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 9
+        },
+        {
+          "competencyId": "ai-video-audio",
+          "tier": "core",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 10
+        },
+        {
+          "competencyId": "ai-copy-content",
+          "tier": "core",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 11
+        },
+        {
+          "competencyId": "ai-layout-docs",
+          "tier": "optional",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 12
+        },
+        {
+          "competencyId": "ai-workflow-integration",
+          "tier": "core",
+          "prerequisites": [
+            "ai-prompting",
+            "ai-model-landscape"
+          ],
+          "order": 13
+        },
+        {
+          "competencyId": "ai-ethics-rights",
+          "tier": "core",
+          "prerequisites": [
+            "ai-model-landscape"
+          ],
+          "order": 14
+        }
+      ]
+    },
+    {
       "id": "artdir-brand",
       "title": "Бренд и стратегия",
       "definition": "Айдентика, стратегия и система дизайна.",
@@ -59,7 +139,7 @@
         {
           "competencyId": "graphic-brand-identity",
           "tier": "core",
-          "order": 6,
+          "order": 15,
           "prerequisites": [
             "ui-visual-communication",
             "ui-typography",
@@ -69,7 +149,7 @@
         {
           "competencyId": "artdir-brand-strategy",
           "tier": "core",
-          "order": 7,
+          "order": 16,
           "prerequisites": [
             "ux-design-thinking",
             "graphic-brand-identity"
@@ -78,7 +158,7 @@
         {
           "competencyId": "artdir-brand-platform",
           "tier": "core",
-          "order": 8,
+          "order": 17,
           "prerequisites": [
             "artdir-brand-strategy",
             "ui-visual-communication"
@@ -87,7 +167,7 @@
         {
           "competencyId": "ui-design-systems",
           "tier": "core",
-          "order": 9,
+          "order": 18,
           "prerequisites": [
             "ui-visual-communication",
             "ui-layout"
@@ -96,7 +176,7 @@
         {
           "competencyId": "ui-components",
           "tier": "optional",
-          "order": 10,
+          "order": 19,
           "prerequisites": [
             "ui-design-systems"
           ]
@@ -111,7 +191,7 @@
         {
           "competencyId": "artdir-brief",
           "tier": "core",
-          "order": 11,
+          "order": 20,
           "prerequisites": [
             "ux-design-thinking"
           ]
@@ -119,7 +199,7 @@
         {
           "competencyId": "ux-product-thinking",
           "tier": "core",
-          "order": 12,
+          "order": 21,
           "prerequisites": [
             "ux-design-thinking"
           ]
@@ -127,7 +207,7 @@
         {
           "competencyId": "artdir-communication",
           "tier": "core",
-          "order": 13,
+          "order": 22,
           "prerequisites": [
             "artdir-brief",
             "ux-product-thinking"
@@ -136,7 +216,7 @@
         {
           "competencyId": "artdir-presentation",
           "tier": "core",
-          "order": 14,
+          "order": 23,
           "prerequisites": [
             "artdir-brand-platform",
             "artdir-communication"
@@ -152,7 +232,7 @@
         {
           "competencyId": "artdir-team",
           "tier": "core",
-          "order": 15,
+          "order": 24,
           "prerequisites": [
             "artdir-communication"
           ]
@@ -160,7 +240,7 @@
         {
           "competencyId": "artdir-hiring",
           "tier": "optional",
-          "order": 16,
+          "order": 25,
           "prerequisites": [
             "artdir-team"
           ]

@@ -255,6 +255,97 @@
       "prerequisites": [
         "ui-web-technologies"
       ]
+    },
+    {
+      "competencyId": "ai-model-landscape",
+      "tier": "foundation",
+      "order": 35,
+      "prerequisites": [
+        "ux-design-thinking"
+      ],
+      "sectionId": "ai-layer",
+      "sectionTitle": "ИИ на этапах работы"
+    },
+    {
+      "competencyId": "ai-prompting",
+      "tier": "foundation",
+      "order": 36,
+      "prerequisites": [
+        "ai-model-landscape"
+      ],
+      "sectionId": "ai-layer",
+      "sectionTitle": "ИИ на этапах работы"
+    },
+    {
+      "competencyId": "ai-research-synthesis",
+      "tier": "core",
+      "order": 37,
+      "prerequisites": [
+        "ai-prompting"
+      ],
+      "sectionId": "ai-layer",
+      "sectionTitle": "ИИ на этапах работы"
+    },
+    {
+      "competencyId": "ai-visual-generation",
+      "tier": "core",
+      "order": 38,
+      "prerequisites": [
+        "ai-prompting"
+      ],
+      "sectionId": "ai-layer",
+      "sectionTitle": "ИИ на этапах работы"
+    },
+    {
+      "competencyId": "ai-video-audio",
+      "tier": "optional",
+      "order": 39,
+      "prerequisites": [
+        "ai-prompting"
+      ],
+      "sectionId": "ai-layer",
+      "sectionTitle": "ИИ на этапах работы"
+    },
+    {
+      "competencyId": "ai-copy-content",
+      "tier": "optional",
+      "order": 40,
+      "prerequisites": [
+        "ai-prompting"
+      ],
+      "sectionId": "ai-layer",
+      "sectionTitle": "ИИ на этапах работы"
+    },
+    {
+      "competencyId": "ai-layout-docs",
+      "tier": "core",
+      "order": 41,
+      "prerequisites": [
+        "ai-prompting"
+      ],
+      "sectionId": "ai-layer",
+      "sectionTitle": "ИИ на этапах работы"
+    },
+    {
+      "competencyId": "ai-workflow-integration",
+      "tier": "core",
+      "order": 42,
+      "prerequisites": [
+        "ai-prompting",
+        "ai-model-landscape"
+      ],
+      "sectionId": "ai-layer",
+      "sectionTitle": "ИИ на этапах работы"
+    },
+    {
+      "competencyId": "ai-ethics-rights",
+      "tier": "core",
+      "order": 43,
+      "prerequisites": [
+        "ai-model-landscape"
+      ],
+      "sectionId": "ai-layer",
+      "sectionTitle": "ИИ на этапах работы"
     }
   ]
 }

@@ -761,6 +761,95 @@
         "fountaininstitute-free-ux-research"
       ],
       "rationale": "Источник программы it.uxresearch покрывает тему в рамках курса."
+    },
+    {
+      "competencyId": "ai-model-landscape",
+      "sourceIds": [
+        "practicum-presentation",
+        "practicum-appdesign",
+        "practicum-uxresearch",
+        "practicum-artdir",
+        "practicum-3ddesigner",
+        "practicum-interior",
+        "practicum-webdesigner",
+        "practicum-design-catalog",
+        "motiondesign-school-courses"
+      ],
+      "rationale": "Программа содержит модуль/тему по ИИ, подтверждённую страницей курса."
+    },
+    {
+      "competencyId": "ai-prompting",
+      "sourceIds": [
+        "practicum-presentation",
+        "practicum-appdesign",
+        "practicum-uxresearch",
+        "practicum-artdir",
+        "practicum-3ddesigner",
+        "practicum-interior",
+        "practicum-webdesigner",
+        "motiondesign-school-courses"
+      ],
+      "rationale": "Программа содержит модуль/тему по ИИ, подтверждённую страницей курса."
+    },
+    {
+      "competencyId": "ai-copy-content",
+      "sourceIds": [
+        "practicum-presentation",
+        "practicum-artdir",
+        "practicum-design-catalog"
+      ],
+      "rationale": "Программа содержит модуль/тему по ИИ, подтверждённую страницей курса."
+    },
+    {
+      "competencyId": "ai-visual-generation",
+      "sourceIds": [
+        "practicum-presentation",
+        "practicum-appdesign",
+        "practicum-artdir",
+        "practicum-3ddesigner",
+        "practicum-interior",
+        "practicum-webdesigner",
+        "practicum-design-catalog",
+        "motiondesign-school-courses"
+      ],
+      "rationale": "Программа содержит модуль/тему по ИИ, подтверждённую страницей курса."
+    },
+    {
+      "competencyId": "ai-layout-docs",
+      "sourceIds": [
+        "practicum-presentation",
+        "practicum-appdesign",
+        "practicum-webdesigner"
+      ],
+      "rationale": "Программа содержит модуль/тему по ИИ, подтверждённую страницей курса."
+    },
+    {
+      "competencyId": "ai-workflow-integration",
+      "sourceIds": [
+        "practicum-presentation",
+        "practicum-appdesign",
+        "practicum-uxresearch",
+        "practicum-artdir",
+        "practicum-3ddesigner",
+        "practicum-interior",
+        "practicum-webdesigner",
+        "practicum-design-catalog"
+      ],
+      "rationale": "Программа содержит модуль/тему по ИИ, подтверждённую страницей курса."
+    },
+    {
+      "competencyId": "ai-research-synthesis",
+      "sourceIds": [
+        "practicum-uxresearch"
+      ],
+      "rationale": "Программа содержит модуль/тему по ИИ, подтверждённую страницей курса."
+    },
+    {
+      "competencyId": "ai-video-audio",
+      "sourceIds": [
+        "motiondesign-school-courses"
+      ],
+      "rationale": "Программа содержит модуль/тему по ИИ, подтверждённую страницей курса."
     }
   ]
 }

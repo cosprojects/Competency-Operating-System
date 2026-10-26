@@ -31,9 +31,100 @@
       "sectionTitle": "Продуктовые основы"
     },
     {
-      "competencyId": "product-jtbd",
+      "competencyId": "ai-model-landscape",
       "tier": "foundation",
       "order": 4,
+      "prerequisites": [
+        "ux-design-thinking"
+      ],
+      "sectionId": "product-ai",
+      "sectionTitle": "ИИ на этапах работы"
+    },
+    {
+      "competencyId": "ai-prompting",
+      "tier": "foundation",
+      "order": 5,
+      "prerequisites": [
+        "ai-model-landscape"
+      ],
+      "sectionId": "product-ai",
+      "sectionTitle": "ИИ на этапах работы"
+    },
+    {
+      "competencyId": "ai-research-synthesis",
+      "tier": "core",
+      "order": 6,
+      "prerequisites": [
+        "ai-prompting"
+      ],
+      "sectionId": "product-ai",
+      "sectionTitle": "ИИ на этапах работы"
+    },
+    {
+      "competencyId": "ai-visual-generation",
+      "tier": "core",
+      "order": 7,
+      "prerequisites": [
+        "ai-prompting"
+      ],
+      "sectionId": "product-ai",
+      "sectionTitle": "ИИ на этапах работы"
+    },
+    {
+      "competencyId": "ai-video-audio",
+      "tier": "optional",
+      "order": 8,
+      "prerequisites": [
+        "ai-prompting"
+      ],
+      "sectionId": "product-ai",
+      "sectionTitle": "ИИ на этапах работы"
+    },
+    {
+      "competencyId": "ai-copy-content",
+      "tier": "core",
+      "order": 9,
+      "prerequisites": [
+        "ai-prompting"
+      ],
+      "sectionId": "product-ai",
+      "sectionTitle": "ИИ на этапах работы"
+    },
+    {
+      "competencyId": "ai-layout-docs",
+      "tier": "core",
+      "order": 10,
+      "prerequisites": [
+        "ai-prompting"
+      ],
+      "sectionId": "product-ai",
+      "sectionTitle": "ИИ на этапах работы"
+    },
+    {
+      "competencyId": "ai-workflow-integration",
+      "tier": "core",
+      "order": 11,
+      "prerequisites": [
+        "ai-prompting",
+        "ai-model-landscape"
+      ],
+      "sectionId": "product-ai",
+      "sectionTitle": "ИИ на этапах работы"
+    },
+    {
+      "competencyId": "ai-ethics-rights",
+      "tier": "optional",
+      "order": 12,
+      "prerequisites": [
+        "ai-model-landscape"
+      ],
+      "sectionId": "product-ai",
+      "sectionTitle": "ИИ на этапах работы"
+    },
+    {
+      "competencyId": "product-jtbd",
+      "tier": "foundation",
+      "order": 13,
       "prerequisites": [
         "ux-design-thinking"
       ],
@@ -43,7 +134,7 @@
     {
       "competencyId": "ux-user-research",
       "tier": "core",
-      "order": 5,
+      "order": 14,
       "prerequisites": [
         "ux-design-thinking"
       ],
@@ -53,7 +144,7 @@
     {
       "competencyId": "ux-interviews",
       "tier": "core",
-      "order": 6,
+      "order": 15,
       "prerequisites": [
         "ux-user-research"
       ],
@@ -63,7 +154,7 @@
     {
       "competencyId": "ux-personas",
       "tier": "core",
-      "order": 7,
+      "order": 16,
       "prerequisites": [
         "ux-user-research",
         "ux-interviews"
@@ -74,7 +165,7 @@
     {
       "competencyId": "product-cjm",
       "tier": "core",
-      "order": 8,
+      "order": 17,
       "prerequisites": [
         "product-jtbd",
         "ux-personas"
@@ -85,7 +176,7 @@
     {
       "competencyId": "ux-information-architecture",
       "tier": "core",
-      "order": 9,
+      "order": 18,
       "prerequisites": [
         "ux-user-research"
       ],
@@ -95,7 +186,7 @@
     {
       "competencyId": "ux-user-flows",
       "tier": "core",
-      "order": 10,
+      "order": 19,
       "prerequisites": [
         "ux-information-architecture"
       ],
@@ -105,7 +196,7 @@
     {
       "competencyId": "ux-wireframes",
       "tier": "core",
-      "order": 11,
+      "order": 20,
       "prerequisites": [
         "ux-user-flows"
       ],
@@ -115,7 +206,7 @@
     {
       "competencyId": "ux-requirements",
       "tier": "core",
-      "order": 12,
+      "order": 21,
       "prerequisites": [
         "ux-user-flows",
         "ux-wireframes"
@@ -126,7 +217,7 @@
     {
       "competencyId": "ux-lowfi-prototype",
       "tier": "core",
-      "order": 13,
+      "order": 22,
       "prerequisites": [
         "ux-wireframes"
       ],
@@ -136,7 +227,7 @@
     {
       "competencyId": "ux-hifi-prototype",
       "tier": "core",
-      "order": 14,
+      "order": 23,
       "prerequisites": [
         "ux-lowfi-prototype"
       ],
@@ -146,7 +237,7 @@
     {
       "competencyId": "ux-interactive-prototype",
       "tier": "core",
-      "order": 15,
+      "order": 24,
       "prerequisites": [
         "ux-hifi-prototype"
       ],
@@ -156,7 +247,7 @@
     {
       "competencyId": "ux-usability-testing",
       "tier": "core",
-      "order": 16,
+      "order": 25,
       "prerequisites": [
         "ux-interactive-prototype",
         "ux-personas"
@@ -167,7 +258,7 @@
     {
       "competencyId": "ux-metrics",
       "tier": "core",
-      "order": 17,
+      "order": 26,
       "prerequisites": [
         "ux-product-thinking",
         "ux-user-research"
@@ -178,7 +269,7 @@
     {
       "competencyId": "ux-analytics",
       "tier": "core",
-      "order": 18,
+      "order": 27,
       "prerequisites": [
         "ux-metrics"
       ],
@@ -188,7 +279,7 @@
     {
       "competencyId": "ux-experiments",
       "tier": "core",
-      "order": 19,
+      "order": 28,
       "prerequisites": [
         "ux-metrics",
         "ux-analytics"
@@ -199,7 +290,7 @@
     {
       "competencyId": "ui-data-visualization",
       "tier": "optional",
-      "order": 20,
+      "order": 29,
       "prerequisites": [
         "ux-analytics"
       ],
@@ -209,7 +300,7 @@
     {
       "competencyId": "ui-color",
       "tier": "core",
-      "order": 21,
+      "order": 30,
       "prerequisites": [
         "ux-design-thinking"
       ],
@@ -219,7 +310,7 @@
     {
       "competencyId": "ui-typography",
       "tier": "core",
-      "order": 22,
+      "order": 31,
       "prerequisites": [
         "ui-color"
       ],
@@ -229,7 +320,7 @@
     {
       "competencyId": "ui-layout",
       "tier": "core",
-      "order": 23,
+      "order": 32,
       "prerequisites": [
         "ui-typography"
       ],
@@ -239,7 +330,7 @@
     {
       "competencyId": "ui-design-systems",
       "tier": "core",
-      "order": 24,
+      "order": 33,
       "prerequisites": [
         "ux-information-architecture",
         "ui-layout"
@@ -250,7 +341,7 @@
     {
       "competencyId": "ui-components",
       "tier": "core",
-      "order": 25,
+      "order": 34,
       "prerequisites": [
         "ui-design-systems"
       ],
@@ -260,7 +351,7 @@
     {
       "competencyId": "ui-accessibility",
       "tier": "core",
-      "order": 26,
+      "order": 35,
       "prerequisites": [
         "ui-components",
         "ui-layout"
@@ -271,7 +362,7 @@
     {
       "competencyId": "ui-visual-communication",
       "tier": "optional",
-      "order": 27,
+      "order": 36,
       "prerequisites": [
         "ui-typography",
         "ui-layout"
@@ -282,7 +373,7 @@
     {
       "competencyId": "product-strategy",
       "tier": "core",
-      "order": 28,
+      "order": 37,
       "prerequisites": [
         "ux-product-thinking",
         "ux-metrics"
@@ -293,7 +384,7 @@
     {
       "competencyId": "product-growth",
       "tier": "core",
-      "order": 29,
+      "order": 38,
       "prerequisites": [
         "product-strategy",
         "ux-analytics"
@@ -304,7 +395,7 @@
     {
       "competencyId": "product-experimentation",
       "tier": "core",
-      "order": 30,
+      "order": 39,
       "prerequisites": [
         "product-strategy",
         "ux-experiments"

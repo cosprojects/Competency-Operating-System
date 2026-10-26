@@ -51,6 +51,86 @@
       ]
     },
     {
+      "id": "webdesigner-ai",
+      "title": "ИИ на этапах работы",
+      "definition": "Нейросети в ресёрче, проектировании, контенте и производстве: инструменты, промптинг, применение и контроль качества.",
+      "competencies": [
+        {
+          "competencyId": "ai-model-landscape",
+          "tier": "foundation",
+          "prerequisites": [
+            "ux-design-thinking"
+          ],
+          "order": 6
+        },
+        {
+          "competencyId": "ai-prompting",
+          "tier": "foundation",
+          "prerequisites": [
+            "ai-model-landscape"
+          ],
+          "order": 7
+        },
+        {
+          "competencyId": "ai-research-synthesis",
+          "tier": "optional",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 8
+        },
+        {
+          "competencyId": "ai-visual-generation",
+          "tier": "core",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 9
+        },
+        {
+          "competencyId": "ai-video-audio",
+          "tier": "optional",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 10
+        },
+        {
+          "competencyId": "ai-copy-content",
+          "tier": "core",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 11
+        },
+        {
+          "competencyId": "ai-layout-docs",
+          "tier": "core",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 12
+        },
+        {
+          "competencyId": "ai-workflow-integration",
+          "tier": "core",
+          "prerequisites": [
+            "ai-prompting",
+            "ai-model-landscape"
+          ],
+          "order": 13
+        },
+        {
+          "competencyId": "ai-ethics-rights",
+          "tier": "optional",
+          "prerequisites": [
+            "ai-model-landscape"
+          ],
+          "order": 14
+        }
+      ]
+    },
+    {
       "id": "web-ux",
       "title": "UX веб-страниц",
       "definition": "Исследования, структура и прототипы.",
@@ -58,7 +138,7 @@
         {
           "competencyId": "ux-user-research",
           "tier": "core",
-          "order": 6,
+          "order": 15,
           "prerequisites": [
             "ux-design-thinking"
           ]
@@ -66,7 +146,7 @@
         {
           "competencyId": "ux-information-architecture",
           "tier": "core",
-          "order": 7,
+          "order": 16,
           "prerequisites": [
             "ux-user-research"
           ]
@@ -74,7 +154,7 @@
         {
           "competencyId": "ux-user-flows",
           "tier": "core",
-          "order": 8,
+          "order": 17,
           "prerequisites": [
             "ux-information-architecture"
           ]
@@ -82,7 +162,7 @@
         {
           "competencyId": "ux-wireframes",
           "tier": "core",
-          "order": 9,
+          "order": 18,
           "prerequisites": [
             "ux-user-flows"
           ]
@@ -90,7 +170,7 @@
         {
           "competencyId": "ux-hifi-prototype",
           "tier": "core",
-          "order": 10,
+          "order": 19,
           "prerequisites": [
             "ux-wireframes"
           ]
@@ -98,7 +178,7 @@
         {
           "competencyId": "ux-interactive-prototype",
           "tier": "core",
-          "order": 11,
+          "order": 20,
           "prerequisites": [
             "ux-hifi-prototype"
           ]
@@ -113,7 +193,7 @@
         {
           "competencyId": "web-visual",
           "tier": "core",
-          "order": 12,
+          "order": 21,
           "prerequisites": [
             "ui-color",
             "web-landing"
@@ -122,7 +202,7 @@
         {
           "competencyId": "ui-visual-elements",
           "tier": "core",
-          "order": 13,
+          "order": 22,
           "prerequisites": [
             "ui-color",
             "ui-layout"
@@ -131,7 +211,7 @@
         {
           "competencyId": "ui-visual-communication",
           "tier": "core",
-          "order": 14,
+          "order": 23,
           "prerequisites": [
             "ui-color",
             "ui-typography",
@@ -141,7 +221,7 @@
         {
           "competencyId": "web-adaptive",
           "tier": "core",
-          "order": 15,
+          "order": 24,
           "prerequisites": [
             "ui-layout",
             "web-landing"
@@ -150,7 +230,7 @@
         {
           "competencyId": "ui-design-systems",
           "tier": "core",
-          "order": 16,
+          "order": 25,
           "prerequisites": [
             "ui-layout",
             "ui-visual-elements"
@@ -159,7 +239,7 @@
         {
           "competencyId": "ui-components",
           "tier": "core",
-          "order": 17,
+          "order": 26,
           "prerequisites": [
             "ui-design-systems"
           ]
@@ -167,7 +247,7 @@
         {
           "competencyId": "ui-responsive",
           "tier": "core",
-          "order": 18,
+          "order": 27,
           "prerequisites": [
             "ui-layout",
             "web-adaptive"
@@ -176,7 +256,7 @@
         {
           "competencyId": "ui-accessibility",
           "tier": "core",
-          "order": 19,
+          "order": 28,
           "prerequisites": [
             "ui-components",
             "ui-responsive"
@@ -192,7 +272,7 @@
         {
           "competencyId": "ui-figma",
           "tier": "core",
-          "order": 20,
+          "order": 29,
           "prerequisites": [
             "ui-layout"
           ]
@@ -200,7 +280,7 @@
         {
           "competencyId": "ui-web-technologies",
           "tier": "core",
-          "order": 21,
+          "order": 30,
           "prerequisites": [
             "web-landing",
             "ui-figma"
@@ -209,7 +289,7 @@
         {
           "competencyId": "web-cms",
           "tier": "core",
-          "order": 22,
+          "order": 31,
           "prerequisites": [
             "web-landing",
             "ui-web-technologies"
@@ -218,7 +298,7 @@
         {
           "competencyId": "ui-handoff",
           "tier": "core",
-          "order": 23,
+          "order": 32,
           "prerequisites": [
             "ui-figma",
             "ui-web-technologies"
@@ -227,7 +307,7 @@
         {
           "competencyId": "web-performance",
           "tier": "optional",
-          "order": 24,
+          "order": 33,
           "prerequisites": [
             "ui-web-technologies",
             "web-cms"

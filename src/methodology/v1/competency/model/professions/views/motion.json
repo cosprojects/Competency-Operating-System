@@ -66,6 +66,86 @@
       ]
     },
     {
+      "id": "motion-ai",
+      "title": "ИИ на этапах работы",
+      "definition": "Нейросети в ресёрче, проектировании, контенте и производстве: инструменты, промптинг, применение и контроль качества.",
+      "competencies": [
+        {
+          "competencyId": "ai-model-landscape",
+          "tier": "foundation",
+          "prerequisites": [
+            "ux-design-thinking"
+          ],
+          "order": 8
+        },
+        {
+          "competencyId": "ai-prompting",
+          "tier": "foundation",
+          "prerequisites": [
+            "ai-model-landscape"
+          ],
+          "order": 9
+        },
+        {
+          "competencyId": "ai-research-synthesis",
+          "tier": "optional",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 10
+        },
+        {
+          "competencyId": "ai-visual-generation",
+          "tier": "core",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 11
+        },
+        {
+          "competencyId": "ai-video-audio",
+          "tier": "core",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 12
+        },
+        {
+          "competencyId": "ai-copy-content",
+          "tier": "optional",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 13
+        },
+        {
+          "competencyId": "ai-layout-docs",
+          "tier": "optional",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 14
+        },
+        {
+          "competencyId": "ai-workflow-integration",
+          "tier": "core",
+          "prerequisites": [
+            "ai-prompting",
+            "ai-model-landscape"
+          ],
+          "order": 15
+        },
+        {
+          "competencyId": "ai-ethics-rights",
+          "tier": "core",
+          "prerequisites": [
+            "ai-model-landscape"
+          ],
+          "order": 16
+        }
+      ]
+    },
+    {
       "id": "motion-craft",
       "title": "Кинетика, звук и композитинг",
       "definition": "Движение, интерактив, монтаж, звук и сборка кадра.",
@@ -73,7 +153,7 @@
         {
           "competencyId": "ui-motion",
           "tier": "foundation",
-          "order": 8,
+          "order": 17,
           "prerequisites": [
             "motion-timing-easing",
             "ui-layout"
@@ -82,7 +162,7 @@
         {
           "competencyId": "ui-interaction-states",
           "tier": "core",
-          "order": 9,
+          "order": 18,
           "prerequisites": [
             "ui-motion"
           ]
@@ -90,7 +170,7 @@
         {
           "competencyId": "ui-visual-communication",
           "tier": "core",
-          "order": 10,
+          "order": 19,
           "prerequisites": [
             "ui-motion",
             "ui-layout"
@@ -99,7 +179,7 @@
         {
           "competencyId": "ux-interactive-prototype",
           "tier": "core",
-          "order": 11,
+          "order": 20,
           "prerequisites": [
             "ui-interaction-states",
             "ui-motion"
@@ -108,7 +188,7 @@
         {
           "competencyId": "motion-editing",
           "tier": "core",
-          "order": 12,
+          "order": 21,
           "prerequisites": [
             "ui-motion"
           ]
@@ -116,7 +196,7 @@
         {
           "competencyId": "motion-sound-design",
           "tier": "core",
-          "order": 13,
+          "order": 22,
           "prerequisites": [
             "ui-motion",
             "motion-editing"
@@ -132,7 +212,7 @@
         {
           "competencyId": "motion-3d-animation",
           "tier": "core",
-          "order": 14,
+          "order": 23,
           "prerequisites": [
             "motion-timing-easing",
             "ui-motion"
@@ -141,7 +221,7 @@
         {
           "competencyId": "motion-3d-rendering",
           "tier": "core",
-          "order": 15,
+          "order": 24,
           "prerequisites": [
             "motion-3d-animation"
           ]
@@ -149,7 +229,7 @@
         {
           "competencyId": "motion-compositing",
           "tier": "core",
-          "order": 16,
+          "order": 25,
           "prerequisites": [
             "motion-3d-rendering",
             "ui-motion"
@@ -165,7 +245,7 @@
         {
           "competencyId": "motion-brand-systems",
           "tier": "core",
-          "order": 17,
+          "order": 26,
           "prerequisites": [
             "ui-motion",
             "motion-styleframes"
@@ -174,7 +254,7 @@
         {
           "competencyId": "motion-toolchain",
           "tier": "core",
-          "order": 18,
+          "order": 27,
           "prerequisites": [
             "ui-motion"
           ]
@@ -182,7 +262,7 @@
         {
           "competencyId": "motion-production",
           "tier": "core",
-          "order": 19,
+          "order": 28,
           "prerequisites": [
             "motion-toolchain",
             "motion-compositing"
@@ -191,7 +271,7 @@
         {
           "competencyId": "motion-showreel",
           "tier": "optional",
-          "order": 20,
+          "order": 29,
           "prerequisites": [
             "motion-production",
             "motion-brand-systems"
@@ -207,7 +287,7 @@
         {
           "competencyId": "ui-figma",
           "tier": "core",
-          "order": 21,
+          "order": 30,
           "prerequisites": [
             "ui-layout"
           ]
@@ -215,7 +295,7 @@
         {
           "competencyId": "ui-framer",
           "tier": "core",
-          "order": 22,
+          "order": 31,
           "prerequisites": [
             "ui-figma",
             "ux-interactive-prototype"
@@ -224,7 +304,7 @@
         {
           "competencyId": "ui-handoff",
           "tier": "core",
-          "order": 23,
+          "order": 32,
           "prerequisites": [
             "ui-framer",
             "ui-motion"
@@ -233,7 +313,7 @@
         {
           "competencyId": "ui-figjam",
           "tier": "optional",
-          "order": 24,
+          "order": 33,
           "prerequisites": [
             "ui-figma",
             "ux-design-thinking"
@@ -249,7 +329,7 @@
         {
           "competencyId": "ui-design-systems",
           "tier": "optional",
-          "order": 25,
+          "order": 34,
           "prerequisites": [
             "ui-layout",
             "ui-motion"
@@ -258,7 +338,7 @@
         {
           "competencyId": "ui-accessibility",
           "tier": "core",
-          "order": 26,
+          "order": 35,
           "prerequisites": [
             "ui-interaction-states",
             "ui-motion"
@@ -267,7 +347,7 @@
         {
           "competencyId": "ui-responsive",
           "tier": "optional",
-          "order": 27,
+          "order": 36,
           "prerequisites": [
             "ui-layout"
           ]
@@ -275,7 +355,7 @@
         {
           "competencyId": "ui-data-visualization",
           "tier": "optional",
-          "order": 28,
+          "order": 37,
           "prerequisites": [
             "ui-layout",
             "ui-motion"

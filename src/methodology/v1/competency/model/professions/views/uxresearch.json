@@ -42,6 +42,86 @@
       ]
     },
     {
+      "id": "uxresearch-ai",
+      "title": "ИИ на этапах работы",
+      "definition": "Нейросети в ресёрче, проектировании, контенте и производстве: инструменты, промптинг, применение и контроль качества.",
+      "competencies": [
+        {
+          "competencyId": "ai-model-landscape",
+          "tier": "foundation",
+          "prerequisites": [
+            "ux-design-thinking"
+          ],
+          "order": 5
+        },
+        {
+          "competencyId": "ai-prompting",
+          "tier": "foundation",
+          "prerequisites": [
+            "ai-model-landscape"
+          ],
+          "order": 6
+        },
+        {
+          "competencyId": "ai-research-synthesis",
+          "tier": "core",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 7
+        },
+        {
+          "competencyId": "ai-visual-generation",
+          "tier": "optional",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 8
+        },
+        {
+          "competencyId": "ai-video-audio",
+          "tier": "optional",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 9
+        },
+        {
+          "competencyId": "ai-copy-content",
+          "tier": "optional",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 10
+        },
+        {
+          "competencyId": "ai-layout-docs",
+          "tier": "optional",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 11
+        },
+        {
+          "competencyId": "ai-workflow-integration",
+          "tier": "core",
+          "prerequisites": [
+            "ai-prompting",
+            "ai-model-landscape"
+          ],
+          "order": 12
+        },
+        {
+          "competencyId": "ai-ethics-rights",
+          "tier": "core",
+          "prerequisites": [
+            "ai-model-landscape"
+          ],
+          "order": 13
+        }
+      ]
+    },
+    {
       "id": "research-methods",
       "title": "Методы",
       "definition": "Качественные и количественные методы.",
@@ -49,7 +129,7 @@
         {
           "competencyId": "uxresearch-qualitative",
           "tier": "core",
-          "order": 5,
+          "order": 14,
           "prerequisites": [
             "uxresearch-principles",
             "uxresearch-questions"
@@ -58,7 +138,7 @@
         {
           "competencyId": "uxresearch-quantitative",
           "tier": "core",
-          "order": 6,
+          "order": 15,
           "prerequisites": [
             "uxresearch-principles",
             "uxresearch-questions"
@@ -67,7 +147,7 @@
         {
           "competencyId": "uxresearch-recruiting",
           "tier": "core",
-          "order": 7,
+          "order": 16,
           "prerequisites": [
             "uxresearch-qualitative",
             "uxresearch-quantitative"
@@ -76,7 +156,7 @@
         {
           "competencyId": "ux-interviews",
           "tier": "core",
-          "order": 8,
+          "order": 17,
           "prerequisites": [
             "uxresearch-qualitative"
           ]
@@ -84,7 +164,7 @@
         {
           "competencyId": "ux-personas",
           "tier": "core",
-          "order": 9,
+          "order": 18,
           "prerequisites": [
             "uxresearch-qualitative",
             "uxresearch-recruiting"
@@ -93,7 +173,7 @@
         {
           "competencyId": "uxresearch-usability",
           "tier": "core",
-          "order": 10,
+          "order": 19,
           "prerequisites": [
             "uxresearch-qualitative",
             "uxresearch-recruiting"
@@ -102,7 +182,7 @@
         {
           "competencyId": "ux-experiments",
           "tier": "core",
-          "order": 11,
+          "order": 20,
           "prerequisites": [
             "uxresearch-quantitative",
             "uxresearch-questions"
@@ -111,7 +191,7 @@
         {
           "competencyId": "ux-analytics",
           "tier": "core",
-          "order": 12,
+          "order": 21,
           "prerequisites": [
             "uxresearch-quantitative"
           ]
@@ -119,7 +199,7 @@
         {
           "competencyId": "ux-metrics",
           "tier": "core",
-          "order": 13,
+          "order": 22,
           "prerequisites": [
             "uxresearch-quantitative",
             "ux-analytics"
@@ -135,7 +215,7 @@
         {
           "competencyId": "uxresearch-synthesis",
           "tier": "core",
-          "order": 14,
+          "order": 23,
           "prerequisites": [
             "uxresearch-qualitative",
             "uxresearch-quantitative",
@@ -145,7 +225,7 @@
         {
           "competencyId": "ui-data-visualization",
           "tier": "optional",
-          "order": 15,
+          "order": 24,
           "prerequisites": [
             "uxresearch-synthesis",
             "ux-analytics"
@@ -161,7 +241,7 @@
         {
           "competencyId": "ux-product-thinking",
           "tier": "core",
-          "order": 16,
+          "order": 25,
           "prerequisites": [
             "ux-design-thinking"
           ]
@@ -169,7 +249,7 @@
         {
           "competencyId": "ux-information-architecture",
           "tier": "core",
-          "order": 17,
+          "order": 26,
           "prerequisites": [
             "uxresearch-synthesis"
           ]
@@ -177,7 +257,7 @@
         {
           "competencyId": "ui-figjam",
           "tier": "optional",
-          "order": 18,
+          "order": 27,
           "prerequisites": [
             "ux-design-thinking"
           ]

@@ -50,6 +50,86 @@
       ]
     },
     {
+      "id": "presentation-ai",
+      "title": "ИИ на этапах работы",
+      "definition": "Нейросети в ресёрче, проектировании, контенте и производстве: инструменты, промптинг, применение и контроль качества.",
+      "competencies": [
+        {
+          "competencyId": "ai-model-landscape",
+          "tier": "foundation",
+          "prerequisites": [
+            "ux-design-thinking"
+          ],
+          "order": 6
+        },
+        {
+          "competencyId": "ai-prompting",
+          "tier": "foundation",
+          "prerequisites": [
+            "ai-model-landscape"
+          ],
+          "order": 7
+        },
+        {
+          "competencyId": "ai-research-synthesis",
+          "tier": "optional",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 8
+        },
+        {
+          "competencyId": "ai-visual-generation",
+          "tier": "core",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 9
+        },
+        {
+          "competencyId": "ai-video-audio",
+          "tier": "optional",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 10
+        },
+        {
+          "competencyId": "ai-copy-content",
+          "tier": "core",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 11
+        },
+        {
+          "competencyId": "ai-layout-docs",
+          "tier": "core",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 12
+        },
+        {
+          "competencyId": "ai-workflow-integration",
+          "tier": "core",
+          "prerequisites": [
+            "ai-prompting",
+            "ai-model-landscape"
+          ],
+          "order": 13
+        },
+        {
+          "competencyId": "ai-ethics-rights",
+          "tier": "optional",
+          "prerequisites": [
+            "ai-model-landscape"
+          ],
+          "order": 14
+        }
+      ]
+    },
+    {
       "id": "presentation-content",
       "title": "Контент и смысл",
       "definition": "Аудитория, сообщение, данные и визуализация.",
@@ -57,7 +137,7 @@
         {
           "competencyId": "presentation-audience",
           "tier": "core",
-          "order": 6,
+          "order": 15,
           "prerequisites": [
             "presentation-structure"
           ]
@@ -65,7 +145,7 @@
         {
           "competencyId": "presentation-message",
           "tier": "core",
-          "order": 7,
+          "order": 16,
           "prerequisites": [
             "presentation-structure"
           ]
@@ -73,7 +153,7 @@
         {
           "competencyId": "presentation-data",
           "tier": "core",
-          "order": 8,
+          "order": 17,
           "prerequisites": [
             "presentation-message"
           ]
@@ -81,7 +161,7 @@
         {
           "competencyId": "presentation-visualization",
           "tier": "core",
-          "order": 9,
+          "order": 18,
           "prerequisites": [
             "ui-layout",
             "presentation-data"
@@ -90,7 +170,7 @@
         {
           "competencyId": "ui-data-visualization",
           "tier": "optional",
-          "order": 10,
+          "order": 19,
           "prerequisites": [
             "presentation-data"
           ]
@@ -105,7 +185,7 @@
         {
           "competencyId": "ui-figma",
           "tier": "core",
-          "order": 11,
+          "order": 20,
           "prerequisites": [
             "ui-layout"
           ]
@@ -113,7 +193,7 @@
         {
           "competencyId": "ui-visual-communication",
           "tier": "core",
-          "order": 12,
+          "order": 21,
           "prerequisites": [
             "ui-color",
             "ui-layout"
@@ -129,7 +209,7 @@
         {
           "competencyId": "presentation-delivery",
           "tier": "core",
-          "order": 13,
+          "order": 22,
           "prerequisites": [
             "presentation-message",
             "presentation-audience"

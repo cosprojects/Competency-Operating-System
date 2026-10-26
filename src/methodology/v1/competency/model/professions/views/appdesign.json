@@ -50,6 +50,86 @@
       ]
     },
     {
+      "id": "appdesign-ai",
+      "title": "ИИ на этапах работы",
+      "definition": "Нейросети в ресёрче, проектировании, контенте и производстве: инструменты, промптинг, применение и контроль качества.",
+      "competencies": [
+        {
+          "competencyId": "ai-model-landscape",
+          "tier": "foundation",
+          "prerequisites": [
+            "ux-design-thinking"
+          ],
+          "order": 6
+        },
+        {
+          "competencyId": "ai-prompting",
+          "tier": "foundation",
+          "prerequisites": [
+            "ai-model-landscape"
+          ],
+          "order": 7
+        },
+        {
+          "competencyId": "ai-research-synthesis",
+          "tier": "core",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 8
+        },
+        {
+          "competencyId": "ai-visual-generation",
+          "tier": "core",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 9
+        },
+        {
+          "competencyId": "ai-video-audio",
+          "tier": "optional",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 10
+        },
+        {
+          "competencyId": "ai-copy-content",
+          "tier": "optional",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 11
+        },
+        {
+          "competencyId": "ai-layout-docs",
+          "tier": "core",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 12
+        },
+        {
+          "competencyId": "ai-workflow-integration",
+          "tier": "core",
+          "prerequisites": [
+            "ai-prompting",
+            "ai-model-landscape"
+          ],
+          "order": 13
+        },
+        {
+          "competencyId": "ai-ethics-rights",
+          "tier": "optional",
+          "prerequisites": [
+            "ai-model-landscape"
+          ],
+          "order": 14
+        }
+      ]
+    },
+    {
       "id": "app-research",
       "title": "Исследования и паттерны",
       "definition": "Пользователи, сценарии и паттерны.",
@@ -57,7 +137,7 @@
         {
           "competencyId": "ux-user-research",
           "tier": "core",
-          "order": 6,
+          "order": 15,
           "prerequisites": [
             "ux-design-thinking"
           ]
@@ -65,7 +145,7 @@
         {
           "competencyId": "ux-interviews",
           "tier": "core",
-          "order": 7,
+          "order": 16,
           "prerequisites": [
             "ux-user-research"
           ]
@@ -73,7 +153,7 @@
         {
           "competencyId": "ux-personas",
           "tier": "core",
-          "order": 8,
+          "order": 17,
           "prerequisites": [
             "ux-user-research",
             "ux-interviews"
@@ -82,7 +162,7 @@
         {
           "competencyId": "app-mobile-patterns",
           "tier": "core",
-          "order": 9,
+          "order": 18,
           "prerequisites": [
             "app-platform-guidelines",
             "ux-personas"
@@ -98,7 +178,7 @@
         {
           "competencyId": "ux-information-architecture",
           "tier": "core",
-          "order": 10,
+          "order": 19,
           "prerequisites": [
             "ux-user-research"
           ]
@@ -106,7 +186,7 @@
         {
           "competencyId": "ux-user-flows",
           "tier": "core",
-          "order": 11,
+          "order": 20,
           "prerequisites": [
             "ux-information-architecture"
           ]
@@ -114,7 +194,7 @@
         {
           "competencyId": "ux-wireframes",
           "tier": "core",
-          "order": 12,
+          "order": 21,
           "prerequisites": [
             "ux-user-flows"
           ]
@@ -122,7 +202,7 @@
         {
           "competencyId": "ux-lowfi-prototype",
           "tier": "core",
-          "order": 13,
+          "order": 22,
           "prerequisites": [
             "ux-wireframes"
           ]
@@ -130,7 +210,7 @@
         {
           "competencyId": "ux-hifi-prototype",
           "tier": "core",
-          "order": 14,
+          "order": 23,
           "prerequisites": [
             "ux-lowfi-prototype"
           ]
@@ -138,7 +218,7 @@
         {
           "competencyId": "app-prototyping",
           "tier": "core",
-          "order": 15,
+          "order": 24,
           "prerequisites": [
             "ux-hifi-prototype",
             "app-platform-guidelines"
@@ -147,7 +227,7 @@
         {
           "competencyId": "ux-interactive-prototype",
           "tier": "core",
-          "order": 16,
+          "order": 25,
           "prerequisites": [
             "app-prototyping"
           ]
@@ -162,7 +242,7 @@
         {
           "competencyId": "ui-design-systems",
           "tier": "core",
-          "order": 17,
+          "order": 26,
           "prerequisites": [
             "ux-information-architecture",
             "ui-layout"
@@ -171,7 +251,7 @@
         {
           "competencyId": "ui-components",
           "tier": "core",
-          "order": 18,
+          "order": 27,
           "prerequisites": [
             "ui-design-systems"
           ]
@@ -179,7 +259,7 @@
         {
           "competencyId": "ui-responsive",
           "tier": "core",
-          "order": 19,
+          "order": 28,
           "prerequisites": [
             "ui-layout",
             "app-platform-guidelines"
@@ -188,7 +268,7 @@
         {
           "competencyId": "ui-accessibility",
           "tier": "core",
-          "order": 20,
+          "order": 29,
           "prerequisites": [
             "ui-components",
             "ui-layout"
@@ -197,7 +277,7 @@
         {
           "competencyId": "ui-figma",
           "tier": "core",
-          "order": 21,
+          "order": 30,
           "prerequisites": [
             "ui-layout"
           ]
@@ -205,7 +285,7 @@
         {
           "competencyId": "ui-interaction-states",
           "tier": "optional",
-          "order": 22,
+          "order": 31,
           "prerequisites": [
             "app-prototyping"
           ]
@@ -220,7 +300,7 @@
         {
           "competencyId": "app-native-crossplatform",
           "tier": "core",
-          "order": 23,
+          "order": 32,
           "prerequisites": [
             "app-platform-guidelines",
             "app-prototyping"
@@ -229,7 +309,7 @@
         {
           "competencyId": "ui-handoff",
           "tier": "core",
-          "order": 24,
+          "order": 33,
           "prerequisites": [
             "app-prototyping",
             "ui-figma"
@@ -238,7 +318,7 @@
         {
           "competencyId": "app-metrics",
           "tier": "core",
-          "order": 25,
+          "order": 34,
           "prerequisites": [
             "ux-personas"
           ]
@@ -246,7 +326,7 @@
         {
           "competencyId": "ux-usability-testing",
           "tier": "core",
-          "order": 26,
+          "order": 35,
           "prerequisites": [
             "ux-interactive-prototype",
             "ux-personas"

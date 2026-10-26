@@ -58,6 +58,86 @@
       ]
     },
     {
+      "id": "3ddesigner-ai",
+      "title": "ИИ на этапах работы",
+      "definition": "Нейросети в ресёрче, проектировании, контенте и производстве: инструменты, промптинг, применение и контроль качества.",
+      "competencies": [
+        {
+          "competencyId": "ai-model-landscape",
+          "tier": "foundation",
+          "prerequisites": [
+            "ux-design-thinking"
+          ],
+          "order": 7
+        },
+        {
+          "competencyId": "ai-prompting",
+          "tier": "foundation",
+          "prerequisites": [
+            "ai-model-landscape"
+          ],
+          "order": 8
+        },
+        {
+          "competencyId": "ai-research-synthesis",
+          "tier": "optional",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 9
+        },
+        {
+          "competencyId": "ai-visual-generation",
+          "tier": "core",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 10
+        },
+        {
+          "competencyId": "ai-video-audio",
+          "tier": "core",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 11
+        },
+        {
+          "competencyId": "ai-copy-content",
+          "tier": "optional",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 12
+        },
+        {
+          "competencyId": "ai-layout-docs",
+          "tier": "optional",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 13
+        },
+        {
+          "competencyId": "ai-workflow-integration",
+          "tier": "core",
+          "prerequisites": [
+            "ai-prompting",
+            "ai-model-landscape"
+          ],
+          "order": 14
+        },
+        {
+          "competencyId": "ai-ethics-rights",
+          "tier": "core",
+          "prerequisites": [
+            "ai-model-landscape"
+          ],
+          "order": 15
+        }
+      ]
+    },
+    {
       "id": "3d-look",
       "title": "Внешний вид",
       "definition": "Материалы, свет, рендер и композитинг.",
@@ -65,7 +145,7 @@
         {
           "competencyId": "3d-texturing",
           "tier": "core",
-          "order": 7,
+          "order": 16,
           "prerequisites": [
             "3d-modeling",
             "3d-sculpting"
@@ -74,7 +154,7 @@
         {
           "competencyId": "3d-lighting",
           "tier": "core",
-          "order": 8,
+          "order": 17,
           "prerequisites": [
             "3d-modeling",
             "ui-color"
@@ -83,7 +163,7 @@
         {
           "competencyId": "3d-rendering",
           "tier": "core",
-          "order": 9,
+          "order": 18,
           "prerequisites": [
             "3d-texturing",
             "3d-lighting"
@@ -92,7 +172,7 @@
         {
           "competencyId": "3d-compositing",
           "tier": "core",
-          "order": 10,
+          "order": 19,
           "prerequisites": [
             "3d-rendering"
           ]
@@ -100,7 +180,7 @@
         {
           "competencyId": "ui-visual-communication",
           "tier": "core",
-          "order": 11,
+          "order": 20,
           "prerequisites": [
             "ui-color",
             "ui-layout"
@@ -116,7 +196,7 @@
         {
           "competencyId": "motion-3d-animation",
           "tier": "core",
-          "order": 12,
+          "order": 21,
           "prerequisites": [
             "3d-modeling",
             "3d-rendering"
@@ -125,7 +205,7 @@
         {
           "competencyId": "motion-timing-easing",
           "tier": "optional",
-          "order": 13,
+          "order": 22,
           "prerequisites": [
             "motion-3d-animation"
           ]
@@ -133,7 +213,7 @@
         {
           "competencyId": "3d-presentation",
           "tier": "core",
-          "order": 14,
+          "order": 23,
           "prerequisites": [
             "3d-rendering",
             "ui-visual-communication"
@@ -142,7 +222,7 @@
         {
           "competencyId": "ux-product-thinking",
           "tier": "optional",
-          "order": 15,
+          "order": 24,
           "prerequisites": [
             "ux-design-thinking"
           ]

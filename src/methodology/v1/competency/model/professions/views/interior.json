@@ -59,6 +59,86 @@
       ]
     },
     {
+      "id": "interior-ai",
+      "title": "ИИ на этапах работы",
+      "definition": "Нейросети в ресёрче, проектировании, контенте и производстве: инструменты, промптинг, применение и контроль качества.",
+      "competencies": [
+        {
+          "competencyId": "ai-model-landscape",
+          "tier": "foundation",
+          "prerequisites": [
+            "ux-design-thinking"
+          ],
+          "order": 7
+        },
+        {
+          "competencyId": "ai-prompting",
+          "tier": "foundation",
+          "prerequisites": [
+            "ai-model-landscape"
+          ],
+          "order": 8
+        },
+        {
+          "competencyId": "ai-research-synthesis",
+          "tier": "optional",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 9
+        },
+        {
+          "competencyId": "ai-visual-generation",
+          "tier": "core",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 10
+        },
+        {
+          "competencyId": "ai-video-audio",
+          "tier": "optional",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 11
+        },
+        {
+          "competencyId": "ai-copy-content",
+          "tier": "optional",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 12
+        },
+        {
+          "competencyId": "ai-layout-docs",
+          "tier": "core",
+          "prerequisites": [
+            "ai-prompting"
+          ],
+          "order": 13
+        },
+        {
+          "competencyId": "ai-workflow-integration",
+          "tier": "core",
+          "prerequisites": [
+            "ai-prompting",
+            "ai-model-landscape"
+          ],
+          "order": 14
+        },
+        {
+          "competencyId": "ai-ethics-rights",
+          "tier": "optional",
+          "prerequisites": [
+            "ai-model-landscape"
+          ],
+          "order": 15
+        }
+      ]
+    },
+    {
       "id": "interior-design",
       "title": "Проектирование",
       "definition": "Стили, материалы, свет и визуализация.",
@@ -66,7 +146,7 @@
         {
           "competencyId": "interior-styles",
           "tier": "core",
-          "order": 7,
+          "order": 16,
           "prerequisites": [
             "ui-color",
             "ux-design-thinking"
@@ -75,7 +155,7 @@
         {
           "competencyId": "interior-materials",
           "tier": "core",
-          "order": 8,
+          "order": 17,
           "prerequisites": [
             "interior-styles",
             "interior-zoning"
@@ -84,7 +164,7 @@
         {
           "competencyId": "interior-visualization",
           "tier": "core",
-          "order": 9,
+          "order": 18,
           "prerequisites": [
             "interior-zoning",
             "interior-materials"
@@ -93,7 +173,7 @@
         {
           "competencyId": "ui-visual-communication",
           "tier": "core",
-          "order": 10,
+          "order": 19,
           "prerequisites": [
             "ui-color",
             "ui-layout"
@@ -109,7 +189,7 @@
         {
           "competencyId": "interior-drawings",
           "tier": "core",
-          "order": 11,
+          "order": 20,
           "prerequisites": [
             "interior-zoning",
             "interior-materials"
@@ -118,7 +198,7 @@
         {
           "competencyId": "interior-specs",
           "tier": "core",
-          "order": 12,
+          "order": 21,
           "prerequisites": [
             "interior-drawings",
             "interior-materials"
@@ -127,7 +207,7 @@
         {
           "competencyId": "interior-project-management",
           "tier": "core",
-          "order": 13,
+          "order": 22,
           "prerequisites": [
             "interior-specs",
             "interior-space-analysis"
@@ -136,7 +216,7 @@
         {
           "competencyId": "ui-figma",
           "tier": "optional",
-          "order": 14,
+          "order": 23,
           "prerequisites": [
             "ui-layout",
             "interior-visualization"

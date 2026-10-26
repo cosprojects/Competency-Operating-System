@@ -1674,6 +1674,162 @@
       "learningSourceIds": [
         "practicum-webdesigner"
       ]
+    },
+    {
+      "id": "ai-model-landscape",
+      "branchId": "ai",
+      "branchTitle": "ИИ и нейросети",
+      "sectionId": "ai-foundations",
+      "sectionTitle": "Основы ИИ",
+      "title": "Модели и инструменты ИИ",
+      "titleEn": "AI models and tools",
+      "definition": "Виды генеративных моделей и инструментов, их возможности, ограничения и выбор под задачу.",
+      "priorityHint": "foundation",
+      "learningSourceIds": [
+        "practicum-presentation",
+        "practicum-appdesign",
+        "practicum-uxresearch",
+        "practicum-artdir",
+        "practicum-3ddesigner",
+        "practicum-interior",
+        "practicum-webdesigner",
+        "practicum-design-catalog",
+        "motiondesign-school-courses"
+      ]
+    },
+    {
+      "id": "ai-prompting",
+      "branchId": "ai",
+      "branchTitle": "ИИ и нейросети",
+      "sectionId": "ai-foundations",
+      "sectionTitle": "Основы ИИ",
+      "title": "Промптинг и управление моделями",
+      "titleEn": "Prompting",
+      "definition": "Постановка задач модели: структура промпта, итерации, уточнения, негативные промпты и контроль результата.",
+      "priorityHint": "foundation",
+      "learningSourceIds": [
+        "practicum-presentation",
+        "practicum-appdesign",
+        "practicum-uxresearch",
+        "practicum-artdir",
+        "practicum-3ddesigner",
+        "practicum-interior",
+        "practicum-webdesigner",
+        "motiondesign-school-courses"
+      ]
+    },
+    {
+      "id": "ai-research-synthesis",
+      "branchId": "ai",
+      "branchTitle": "ИИ и нейросети",
+      "sectionId": "ai-applications",
+      "sectionTitle": "Применение по этапам",
+      "title": "ИИ в исследованиях и синтезе",
+      "titleEn": "AI in research",
+      "definition": "Ускорение ресёрча: подготовка гайдов, обработка интервью, синтез данных и проверка выводов модели.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-uxresearch"
+      ]
+    },
+    {
+      "id": "ai-visual-generation",
+      "branchId": "ai",
+      "branchTitle": "ИИ и нейросети",
+      "sectionId": "ai-applications",
+      "sectionTitle": "Применение по этапам",
+      "title": "ИИ в генерации и обработке изображений",
+      "titleEn": "AI visual generation",
+      "definition": "Генерация и обработка фото, иллюстраций, иконок и референсов; стиль, консистентность и доработка вручную.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-presentation",
+        "practicum-appdesign",
+        "practicum-artdir",
+        "practicum-3ddesigner",
+        "practicum-interior",
+        "practicum-webdesigner",
+        "practicum-design-catalog",
+        "motiondesign-school-courses"
+      ]
+    },
+    {
+      "id": "ai-video-audio",
+      "branchId": "ai",
+      "branchTitle": "ИИ и нейросети",
+      "sectionId": "ai-applications",
+      "sectionTitle": "Применение по этапам",
+      "title": "ИИ в видео, монтаже и аудио",
+      "titleEn": "AI video and audio",
+      "definition": "Генерация видео и аудио, ИИ-монтаж, озвучка, музыка и синхронизация в продакшене.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "motiondesign-school-courses"
+      ]
+    },
+    {
+      "id": "ai-copy-content",
+      "branchId": "ai",
+      "branchTitle": "ИИ и нейросети",
+      "sectionId": "ai-applications",
+      "sectionTitle": "Применение по этапам",
+      "title": "ИИ в тексте, контенте и презентациях",
+      "titleEn": "AI copy and content",
+      "definition": "Генерация и редактура текста, контента и слайдов; контроль смысла, фактов и тона.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-presentation",
+        "practicum-artdir",
+        "practicum-design-catalog"
+      ]
+    },
+    {
+      "id": "ai-layout-docs",
+      "branchId": "ai",
+      "branchTitle": "ИИ и нейросети",
+      "sectionId": "ai-production",
+      "sectionTitle": "Производство",
+      "title": "ИИ в макетах, документации и вёрстке",
+      "titleEn": "AI in layouts and docs",
+      "definition": "ИИ-помощь в сборке макетов, спецификациях, документации и вёрстке; проверка результата.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-presentation",
+        "practicum-appdesign",
+        "practicum-webdesigner"
+      ]
+    },
+    {
+      "id": "ai-workflow-integration",
+      "branchId": "ai",
+      "branchTitle": "ИИ и нейросети",
+      "sectionId": "ai-production",
+      "sectionTitle": "Производство",
+      "title": "Интеграция ИИ в процесс",
+      "titleEn": "AI workflow integration",
+      "definition": "Встраивание ИИ в рабочий процесс, автоматизация рутины, контроль качества и границы применимости.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-presentation",
+        "practicum-appdesign",
+        "practicum-uxresearch",
+        "practicum-artdir",
+        "practicum-3ddesigner",
+        "practicum-interior",
+        "practicum-webdesigner",
+        "practicum-design-catalog"
+      ]
+    },
+    {
+      "id": "ai-ethics-rights",
+      "branchId": "ai",
+      "branchTitle": "ИИ и нейросети",
+      "sectionId": "ai-governance",
+      "sectionTitle": "Этика и право",
+      "title": "Этика, авторские права и данные",
+      "titleEn": "AI ethics and rights",
+      "definition": "Авторские права, приватность, безопасность данных, смещения моделей и фактчекинг ИИ-результатов.",
+      "priorityHint": "core"
     }
   ]
 }

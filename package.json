@@ -56,7 +56,8 @@
     "learning:validate": "node --experimental-strip-types src/methodology/v1/learning-sources/cli/validate.ts",
     "learning:audit": "node --experimental-strip-types src/methodology/v1/learning-sources/cli/audit.ts",
     "learning:discover": "node --experimental-strip-types src/methodology/v1/learning-sources/cli/discover.ts",
-    "learning:map": "node --experimental-strip-types src/methodology/v1/learning-sources/cli/map.ts"
+    "learning:map": "node --experimental-strip-types src/methodology/v1/learning-sources/cli/map.ts",
+    "learning:topics": "node --experimental-strip-types src/methodology/v1/learning-sources/cli/topics.ts"
   },
   "dependencies": {
     "@prisma/client": "^6.4.0",

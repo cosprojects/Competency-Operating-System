@@ -1,7 +1,7 @@
 ---
 id: COS-RES-022
 title: Learning Sources Library — обновляемый реестр учебных источников
-version: 1.4.0
+version: 1.5.0
 status: Draft
 owner: Research Team
 last_updated: 2026-10-26
@@ -36,10 +36,13 @@ src/methodology/v1/learning-sources/
   search.ts         # Google CSE provider + поисковые шаблоны
   registry.json     # сам реестр (tracked)
   map.ts            # проекция source→competency, валидация и покрытие
+  robots.ts         # robots.txt: парсер, longest-match и безопасная проверка
+  topics.ts         # извлечение коротких тем из заголовков/списков страниц
   cli/validate.ts
   cli/audit.ts
   cli/discover.ts
   cli/map.ts
+  cli/topics.ts
 ```
 
 Реестр: `src/methodology/v1/learning-sources/registry.json`.
@@ -205,6 +208,31 @@ npm run learning:map -- --report
 
 После разметки `learning:map`: **0 предупреждений**, 0 ошибок; предупреждения остаются для неразмеченных активных источников с уникальными темами.
 
+### 6.3. Извлечение тематических блоков из course pages
+
+```bash
+npm run learning:topics -- --profession motion --limit 10 --report
+npm run learning:topics -- --source school-of-motion --report
+```
+
+Что делает:
+
+- берёт активные не-`discoveryOnly` источники профессии (или один `--source`);
+- проверяет **robots.txt**: парсит правила (longest match, Allow при равенстве), кеширует в `data/learning-sources/robots/`; при недоступном robots безопасно пропускает источник;
+- загружает страницу с явным User-Agent и извлекает **только короткие заголовки h1–h3 и пункты списков** (≤80 символов), отбрасывая абзацы, вопросы, цены, контакты, навигацию, карьерные и CTA-фразы;
+- пишет кандидатов в `data/learning-sources/topics-<scope>-<date>.json/.md`, **не меняя реестр**.
+
+Результат первого прогона (2026-10-26):
+
+| Профессия | Источников | Извлечено | Пропущено | Тем |
+|---|---:|---:|---:|---:|
+| Motion | 7 | 5 | 2 (YouTube/Vimeo — JS-страницы) | 45 |
+| UX/UI | 5 | 5 | 0 | 180 |
+| Product | 6 | 6 | 0 | 198 |
+| Graphic | 4 | 4 | 0 | 140 |
+
+Ограничения: извлечение эвристическое, в кандидатах остаётся навигационный шум (особенно на Coursera/Great Learning); это материал для human-review, а не готовые темы. Полные тексты, описания и транскрипты не сохраняются.
+
 Покрытие на 2026-10-26 (после связывания источников):
 
 | Профессия | Компетенций с активным первичным источником |
@@ -228,7 +256,7 @@ npm run learning:map -- --report
 
 1. Human-review 10 motion seed-блоков и 55 компетенций.
 2. Запустить `learning:discover` для UX/UI, Product, Graphic при наличии Google CSE ключа.
-3. Добавить извлечение тематических блоков из course pages (без копирования текста).
+3. Извлечение тематических блоков из course pages (сделано: `learning:topics`, robots-safe, `COS-RES-022` §6.3); дальше — human-review кандидатов и предложения по новым компетенциям.
 4. Разобрать предупреждения `learning:map` (сделано: 8 каталогов/обзоров размечены `discoveryOnly`, предупреждений 0).
 5. Обновить Motion materials после принятия блока (сделано: 30 элементов / 59 материалов / покрытие 28/28).
 6. Расширить библиотеку на остальные профессии.
@@ -242,3 +270,4 @@ npm run learning:map -- --report
 | 1.2.0 | 2026-10-26 | `learning:map`: проекция source→competency, проверка blocked/duplicate/профессии, coverage-отчёт; аудит Motion 9/9 active; покрытие Motion 10/28, остальные профессии — backlog |
 | 1.3.0 | 2026-10-26 | `model/learning-source-links.json`: 62 ручные связи competency→source, merge в `model:sync`; покрытие источников: UX/UI 24/34, Product 23/30, Motion 23/28, Graphic 14/18 (43/55 компетенций), ошибок 0 |
 | 1.4.0 | 2026-10-26 | Флаг `discoveryOnly` для каталогов/обзоров (8 источников); `learning:map` — 0 предупреждений; discoveryOnly нельзя использовать как свидетельство; 154 теста |
+| 1.5.0 | 2026-10-26 | `learning:topics`: robots-safe извлечение коротких тем из course pages (h1–h3/li, без полного текста); Motion 5/7 источников / 45 тем, UX/UI 180, Product 198, Graphic 140; 157 тестов |

@@ -5,6 +5,8 @@ import type { LearningSourceRegistry } from "../src/methodology/v1/learning-sour
 import { validateLearningSources } from "../src/methodology/v1/learning-sources/validate.ts";
 import { LEARNING_SEARCH_QUERIES } from "../src/methodology/v1/learning-sources/search.ts";
 import { buildLearningSourceMap } from "../src/methodology/v1/learning-sources/map.ts";
+import { isPathAllowed, parseRobots } from "../src/methodology/v1/learning-sources/robots.ts";
+import { extractTopicCandidates, sanitizeTopic } from "../src/methodology/v1/learning-sources/topics.ts";
 import type { CompetenciesFile, ProfessionCompetencyFile } from "../src/methodology/v1/competency/model/types.ts";
 
 const file = new URL("../src/methodology/v1/learning-sources/registry.json", import.meta.url);
@@ -149,5 +151,43 @@ describe("learning source → competency map", () => {
     assert.ok(result.errors.some((error) => error.includes("blocked") && error.includes("не может быть доказательством")));
     assert.ok(result.errors.some((error) => error.includes("не объявлен для профессии")));
     assert.equal(result.coverage[0]?.covered, 0);
+  });
+});
+
+describe("robots и тематические блоки источников", () => {
+  it("парсит robots и применяет longest-match/allow", () => {
+    const rules = parseRobots("User-agent: *\nDisallow: /private\nAllow: /private/public\nDisallow: /*?\n");
+    assert.equal(isPathAllowed(rules, "/courses/"), true);
+    assert.equal(isPathAllowed(rules, "/private/secret"), false);
+    assert.equal(isPathAllowed(rules, "/private/public/page"), true);
+    assert.equal(isPathAllowed(rules, "/courses?ref=1"), false);
+  });
+
+  it("извлекает темы из заголовков и списков, отбрасывая абзацы и карьеру", () => {
+    const html = [
+      "<html><body>",
+      "<h2>After Effects</h2>",
+      "<ul>",
+      "<li>Кинематографическая анимация</li>",
+      "<li>Куда пойти работать</li>",
+      "<li>В этом модуле вы узнаете, как устроены нейросети и научитесь применять их в работе дизайнера.</li>",
+      "<li>Кинематографическая анимация</li>",
+      "</ul>",
+      "</body></html>",
+    ].join("");
+    assert.deepEqual(extractTopicCandidates(html), ["After Effects", "Кинематографическая анимация"]);
+  });
+
+  it("санитайзер тем отбрасывает вопросы, абзацы, карьеру и подписки", () => {
+    assert.equal(sanitizeTopic("3D-анимация"), "3D-анимация");
+    assert.equal(sanitizeTopic("Что такое моушн-дизайн"), undefined);
+    assert.equal(sanitizeTopic("Как понять, что работа готова"), undefined);
+    assert.equal(sanitizeTopic("Подпишитесь на рассылку и получите скидку"), undefined);
+    assert.equal(sanitizeTopic("Карьерный трек и резюме"), undefined);
+    assert.equal(sanitizeTopic("Privacy Policy"), undefined);
+    assert.equal(sanitizeTopic("hello@example.com"), undefined);
+    assert.equal(sanitizeTopic("$497/quarter"), undefined);
+    assert.equal(sanitizeTopic("Grab your 50% OFF Coupon"), undefined);
+    assert.equal(sanitizeTopic("Cinema 4D Generalist"), "Cinema 4D Generalist");
   });
 });

@@ -26,6 +26,8 @@ export interface LearningSourceRecord {
   httpStatus?: number;
   finalUrl?: string;
   duplicateOf?: string;
+  /** Источник для discovery/обзора, не для связывания с компетенцией. */
+  discoveryOnly?: boolean;
   notes?: string;
 }
 

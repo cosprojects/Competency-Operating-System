@@ -152,7 +152,8 @@
       "discoveredBy": "user",
       "lastChecked": "2026-10-22",
       "httpStatus": 200,
-      "notes": "Агрегатор; не первоисточник."
+      "notes": "Агрегатор; не первоисточник. Discovery-only: обзор/каталог/карьерный контент — не связывается с компетенцией как свидетельство.",
+      "discoveryOnly": true
     },
     {
       "id": "coursehunter-motiondesign-school",
@@ -177,7 +178,8 @@
       "discoveredBy": "user",
       "lastChecked": "2026-10-22",
       "httpStatus": 200,
-      "notes": "Агрегатор; не первоисточник."
+      "notes": "Агрегатор; не первоисточник. Discovery-only: обзор/каталог/карьерный контент — не связывается с компетенцией как свидетельство.",
+      "discoveryOnly": true
     },
     {
       "id": "practicum-design-catalog",
@@ -401,7 +403,8 @@
       "discoveredBy": "user",
       "lastChecked": "2026-10-22",
       "httpStatus": 200,
-      "notes": "Кураторский список, не программа."
+      "notes": "Кураторский список, не программа. Discovery-only: обзор/каталог/карьерный контент — не связывается с компетенцией как свидетельство.",
+      "discoveryOnly": true
     },
     {
       "id": "uxdesigninstitute-free-courses",
@@ -428,7 +431,8 @@
       "discoveredBy": "user",
       "lastChecked": "2026-10-22",
       "httpStatus": 200,
-      "notes": "Обзорный список; полезен для карты тем."
+      "notes": "Обзорный список; полезен для карты тем. Discovery-only: обзор/каталог/карьерный контент — не связывается с компетенцией как свидетельство.",
+      "discoveryOnly": true
     },
     {
       "id": "coursera-microsoft-product-design",
@@ -498,7 +502,9 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-22",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "discoveryOnly": true,
+      "notes": "Discovery-only: обзор/каталог/карьерный контент — не связывается с компетенцией как свидетельство."
     },
     {
       "id": "udemy-product-design-free",
@@ -567,7 +573,9 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-22",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "discoveryOnly": true,
+      "notes": "Discovery-only: обзор/каталог/карьерный контент — не связывается с компетенцией как свидетельство."
     },
     {
       "id": "coursera-graphic-fundamentals",
@@ -636,7 +644,9 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-22",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "discoveryOnly": true,
+      "notes": "Discovery-only: обзор/каталог/карьерный контент — не связывается с компетенцией как свидетельство."
     },
     {
       "id": "greatlearning-photoshop-graphic",
@@ -749,7 +759,9 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-22",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "discoveryOnly": true,
+      "notes": "Discovery-only: обзор/каталог/карьерный контент — не связывается с компетенцией как свидетельство."
     },
     {
       "id": "coursetrain-motion-design-school-duplicate",

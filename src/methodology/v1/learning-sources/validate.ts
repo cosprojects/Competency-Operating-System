@@ -12,6 +12,9 @@ export function validateLearningSources(registry: LearningSourceRegistry): strin
     if (source.duplicateOf && !registry.sources.some((item) => item.id === source.duplicateOf)) {
       errors.push(`${source.id}: duplicateOf target not found`);
     }
+    if (source.discoveryOnly && source.authority === "primary") {
+      errors.push(`${source.id}: discoveryOnly не может быть primary источником`);
+    }
     if (source.status === "blocked" && source.authority === "primary") {
       errors.push(`${source.id}: blocked primary source needs review`);
     }

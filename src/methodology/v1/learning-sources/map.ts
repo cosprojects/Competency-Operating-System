@@ -60,6 +60,9 @@ export function buildLearningSourceMap(input: {
         continue;
       }
       resolved.push(source);
+      if (source.discoveryOnly) {
+        errors.push(`${competency.id}: «${sourceId}» помечен discoveryOnly и не может быть свидетельством компетенции`);
+      }
       const sourceList = bySource.get(sourceId) ?? [];
       if (!sourceList.includes(competency.id)) sourceList.push(competency.id);
       bySource.set(sourceId, sourceList);
@@ -99,7 +102,7 @@ export function buildLearningSourceMap(input: {
   }
 
   for (const source of input.registry.sources) {
-    if (source.status !== "active") continue;
+    if (source.status !== "active" || source.discoveryOnly) continue;
     const referenced = bySource.get(source.id) ?? [];
     if (referenced.length === 0) {
       warnings.push(`источник «${source.id}» активен, но не связан ни с одной компетенцией`);

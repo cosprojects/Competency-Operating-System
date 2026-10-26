@@ -67,7 +67,43 @@ const professionFile = (competencyIds: string[]): ProfessionCompetencyFile => ({
   })),
 });
 
+describe("learning source discoveryOnly", () => {
+  it("запрещает primary-источник как discoveryOnly", () => {
+    const registry: LearningSourceRegistry = {
+      registryVersion: "1.0.0",
+      updatedAt: "2026-10-26",
+      sources: [
+        source("a", { discoveryOnly: true, authority: "secondary" }),
+        source("b", { discoveryOnly: true, authority: "primary" }),
+      ],
+    };
+    const errors = validateLearningSources(registry);
+    assert.ok(errors.some((error) => error.includes("discoveryOnly не может быть primary")));
+    assert.ok(!errors.some((error) => error.includes('«a»')));
+  });
+});
+
 describe("learning source → competency map", () => {
+  it("discoveryOnly источник не даёт предупреждения и не может быть свидетельством", () => {
+    const registry = {
+      registryVersion: "1.0.0" as const,
+      updatedAt: "2026-10-26",
+      sources: [source("review-only", { authority: "aggregator", discoveryOnly: true })],
+    };
+    const clean = buildLearningSourceMap({
+      registry,
+      competencies: { modelVersion: "1.0.0", competencies: [competency("c1", [])] } as CompetenciesFile,
+      professionCompetencies: [professionFile(["c1"])],
+    });
+    assert.ok(!clean.warnings.some((warning) => warning.includes("не связан")));
+    const bad = buildLearningSourceMap({
+      registry,
+      competencies: { modelVersion: "1.0.0", competencies: [competency("c1", ["review-only"])] } as CompetenciesFile,
+      professionCompetencies: [professionFile(["c1"])],
+    });
+    assert.ok(bad.errors.some((error) => error.includes("discoveryOnly")));
+  });
+
   it("строит обратную проекцию и считает покрытие по активным первичным источникам", () => {
     const result = buildLearningSourceMap({
       registry: {

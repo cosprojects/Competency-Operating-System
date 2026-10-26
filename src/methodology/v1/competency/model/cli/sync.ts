@@ -7,6 +7,7 @@ import type { ProfessionsFile, SpheresFile } from "../types.ts";
 import { professionIdOf, professionSlugOf } from "../../priority/source.ts";
 import { flagValue, readJson } from "../../cli/common.ts";
 import {
+  applyLearningSourceLinks,
   buildCompetencies,
   buildPriorityProjection,
   buildProfessionRecord,
@@ -30,6 +31,7 @@ async function main(): Promise<void> {
   if (!target) throw new Error(`Нет target для ${professionId}`);
 
   const modelDir = path.join(root, "src/methodology/v1/competency/model");
+
   const sourcesDir = path.join(root, "src/methodology/v1/competency/sources");
   const competencies = buildCompetencies(map);
   const extraPath = path.join(root, "src/methodology/v1/competency/model/competencies-extra.json");
@@ -42,6 +44,18 @@ async function main(): Promise<void> {
     }
   } catch {
     // extra competencies optional
+  }
+  // Ручной слой связей с учебными источниками (tracked): переживает пересборку competencies.json.
+  try {
+    const linksFile = await readJson<{ links: Array<{ competencyId: string; sourceIds: string[] }> }>(
+      path.join(modelDir, "learning-source-links.json"),
+    );
+    const applied = applyLearningSourceLinks(competencies, linksFile.links ?? []);
+    if (applied.errors.length > 0) throw new Error(applied.errors.join("; "));
+    competencies.competencies = applied.competencies.competencies;
+  } catch (error) {
+    if (error instanceof Error && error.message.includes("learning-source-links")) throw error;
+    // link-файл опционален
   }
   let existingProfessions: ProfessionsFile = { modelVersion: "1.0.0", professions: [] };
   let existingSpheres: SpheresFile = { modelVersion: "1.0.0", spheres: [] };

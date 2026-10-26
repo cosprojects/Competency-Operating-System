@@ -13,6 +13,45 @@ import type {
   SphereSourceFile,
 } from "./types.ts";
 
+export interface LearningSourceLink {
+  competencyId: string;
+  sourceIds: string[];
+  rationale?: string;
+}
+
+export interface LearningSourceLinksFile {
+  linksVersion: "1.0.0";
+  updatedAt: string;
+  description?: string;
+  links: LearningSourceLink[];
+}
+
+/**
+ * Мержит ручной слой «компетенция → учебные источники» в единый массив.
+ * Ссылки из canonical/extra сохраняются, дубли убираются; неизвестные компетенции — ошибка,
+ * чтобы опечатка в link-файле не терялась молча.
+ */
+export function applyLearningSourceLinks(
+  file: CompetenciesFile,
+  links: LearningSourceLink[],
+): { competencies: CompetenciesFile; errors: string[] } {
+  const errors: string[] = [];
+  const byId = new Map(file.competencies.map((item) => [item.id, { ...item }]));
+  for (const link of links) {
+    const competency = byId.get(link.competencyId);
+    if (!competency) {
+      errors.push(`learning-source-links: неизвестная компетенция «${link.competencyId}»`);
+      continue;
+    }
+    const merged = [...new Set([...(competency.learningSourceIds ?? []), ...link.sourceIds])];
+    if (merged.length > 0) competency.learningSourceIds = merged;
+  }
+  return {
+    competencies: { ...file, competencies: [...byId.values()] },
+    errors,
+  };
+}
+
 export function buildCompetencies(map: CanonicalMap): CompetenciesFile {
   const competencies: GlobalCompetency[] = [];
   for (const branch of map.branches) {

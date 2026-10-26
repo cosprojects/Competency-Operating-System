@@ -78,4 +78,4 @@ Human-review канвас: `npm run canvas:tabs`, затем открыть `web
 Handoff для продолжения: [COS-RES-019](docs/09-research/COS-RES-019-Competency-Module-Session-Handoff.md).
 
 
-Библиотека учебных источников: [COS-RES-022](docs/09-research/COS-RES-022-Learning-Sources-Library.md). Команды: `npm run learning:validate`, `npm run learning:audit`, `npm run learning:map -- --report`, `npm run learning:discover`.
+Библиотека учебных источников: [COS-RES-022](docs/09-research/COS-RES-022-Learning-Sources-Library.md). Связи «компетенция → источник» ведутся в `model/learning-source-links.json` и мержатся при `model:sync`; покрытие: UX/UI 24/34, Product 23/30, Motion 23/28, Graphic 14/18. Команды: `npm run learning:validate`, `npm run learning:audit`, `npm run learning:map -- --report`, `npm run learning:discover`.

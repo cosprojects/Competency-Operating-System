@@ -1,0 +1,486 @@
+{
+  "linksVersion": "1.0.0",
+  "updatedAt": "2026-10-26",
+  "description": "Ручной слой связей «компетенция → учебные источники». Источник истины для learning:map; при model:sync мержится в competencies.json. Источник — место, где учиться компетенции, а не автоматическое доказательство её содержания.",
+  "links": [
+    {
+      "competencyId": "ux-design-thinking",
+      "sourceIds": [
+        "school-of-motion"
+      ],
+      "rationale": "School of Motion: learning paths — рамка обучения моушн-дизайну."
+    },
+    {
+      "competencyId": "ui-layout",
+      "sourceIds": [
+        "practicum-design-catalog"
+      ],
+      "rationale": "Программа Практикума по дизайну покрывает композицию и сетки в рамках курса."
+    },
+    {
+      "competencyId": "ui-motion",
+      "sourceIds": [
+        "motiondesign-school-courses",
+        "school-of-motion",
+        "motiondesign-school-youtube"
+      ],
+      "rationale": "Первоисточники Motion Design School и School of Motion по motion design и After Effects."
+    },
+    {
+      "competencyId": "ui-interaction-states",
+      "sourceIds": [
+        "motiondesign-school-youtube",
+        "school-of-motion"
+      ],
+      "rationale": "Туториалы и learning paths по анимации взаимодействий."
+    },
+    {
+      "competencyId": "ui-visual-communication",
+      "sourceIds": [
+        "motiondesign-school-courses",
+        "petrick-mds-case"
+      ],
+      "rationale": "Курсы и разбор кейса айдентики Motion Design School."
+    },
+    {
+      "competencyId": "ui-handoff",
+      "sourceIds": [
+        "school-of-motion-free"
+      ],
+      "rationale": "Бесплатные материалы School of Motion про workflow, брифы и reference."
+    },
+    {
+      "competencyId": "motion-timing-easing",
+      "sourceIds": [
+        "motiondesign-school-courses",
+        "school-of-motion"
+      ],
+      "rationale": "Первоисточники по таймингу и анимации."
+    },
+    {
+      "competencyId": "motion-3d-rendering",
+      "sourceIds": [
+        "motiondesign-school-courses",
+        "practicum-design-catalog"
+      ],
+      "rationale": "Курсы по 3D/Blender/Cinema 4D и программа Практикума (3D-дизайнер)."
+    },
+    {
+      "competencyId": "ux-design-thinking",
+      "sourceIds": [
+        "codecademy-intro-uiux",
+        "coursera-uxui-fundamentals",
+        "practicum-design-catalog"
+      ],
+      "rationale": "Курсы вводят дизайн-процесс; программа Практикума задаёт рамку профессии."
+    },
+    {
+      "competencyId": "ux-user-research",
+      "sourceIds": [
+        "coursera-uxui-fundamentals",
+        "greatlearning-uiux",
+        "practicum-design-catalog"
+      ],
+      "rationale": "Курсы по UX/UI с модулями исследований; программа Практикума по UX/UI."
+    },
+    {
+      "competencyId": "ux-personas",
+      "sourceIds": [
+        "coursera-uxui-fundamentals",
+        "greatlearning-uiux"
+      ],
+      "rationale": "Модули UX-исследований в курсах UX/UI."
+    },
+    {
+      "competencyId": "ux-interviews",
+      "sourceIds": [
+        "coursera-uxui-fundamentals",
+        "practicum-design-catalog"
+      ],
+      "rationale": "Исследовательские модули курсов и программ Практикума."
+    },
+    {
+      "competencyId": "ux-information-architecture",
+      "sourceIds": [
+        "figma-design-basics",
+        "coursera-uxui-fundamentals"
+      ],
+      "rationale": "Figma Design Basics и UX/UI-курсы покрывают структуру и навигацию."
+    },
+    {
+      "competencyId": "ux-user-flows",
+      "sourceIds": [
+        "figma-design-basics",
+        "codecademy-intro-uiux"
+      ],
+      "rationale": "Прототипирование и дизайн-процесс в курсах."
+    },
+    {
+      "competencyId": "ux-requirements",
+      "sourceIds": [
+        "codecademy-intro-uiux",
+        "practicum-design-catalog"
+      ],
+      "rationale": "Дизайн-процесс и постановка задач в программе Практикума."
+    },
+    {
+      "competencyId": "ux-wireframes",
+      "sourceIds": [
+        "figma-design-basics"
+      ],
+      "rationale": "Figma Design Basics: wireframes и структура экранов."
+    },
+    {
+      "competencyId": "ux-lowfi-prototype",
+      "sourceIds": [
+        "figma-design-basics",
+        "coursera-uxui-fundamentals"
+      ],
+      "rationale": "Прототипирование в курсах UX/UI."
+    },
+    {
+      "competencyId": "ux-hifi-prototype",
+      "sourceIds": [
+        "figma-design-basics",
+        "greatlearning-uiux"
+      ],
+      "rationale": "Прототипирование и visual design в курсах."
+    },
+    {
+      "competencyId": "ux-interactive-prototype",
+      "sourceIds": [
+        "figma-design-basics",
+        "codecademy-intro-uiux"
+      ],
+      "rationale": "Прототипирование и интерактив в курсах."
+    },
+    {
+      "competencyId": "ux-usability-testing",
+      "sourceIds": [
+        "coursera-uxui-fundamentals",
+        "greatlearning-uiux"
+      ],
+      "rationale": "Модули usability в курсах UX/UI."
+    },
+    {
+      "competencyId": "ux-product-thinking",
+      "sourceIds": [
+        "practicum-design-catalog",
+        "codecademy-intro-uiux"
+      ],
+      "rationale": "Программа Практикума и дизайн-процесс в курсах."
+    },
+    {
+      "competencyId": "ui-color",
+      "sourceIds": [
+        "coursera-uxui-fundamentals",
+        "greatlearning-uiux"
+      ],
+      "rationale": "Visual principles / visual design в курсах UX/UI."
+    },
+    {
+      "competencyId": "ui-typography",
+      "sourceIds": [
+        "coursera-uxui-fundamentals",
+        "greatlearning-uiux"
+      ],
+      "rationale": "Visual principles / visual design в курсах UX/UI."
+    },
+    {
+      "competencyId": "ui-layout",
+      "sourceIds": [
+        "coursera-uxui-fundamentals",
+        "greatlearning-uiux"
+      ],
+      "rationale": "Visual principles / visual design в курсах UX/UI."
+    },
+    {
+      "competencyId": "ui-visual-elements",
+      "sourceIds": [
+        "greatlearning-uiux",
+        "practicum-design-catalog"
+      ],
+      "rationale": "Visual design в курсе и программа Практикума."
+    },
+    {
+      "competencyId": "ui-visual-communication",
+      "sourceIds": [
+        "greatlearning-uiux",
+        "practicum-design-catalog"
+      ],
+      "rationale": "Visual design в курсе и программа Практикума."
+    },
+    {
+      "competencyId": "ui-design-systems",
+      "sourceIds": [
+        "figma-design-basics",
+        "greatlearning-uiux"
+      ],
+      "rationale": "Компоненты и дизайн-принципы в Figma-курсе и UX/UI-курсе."
+    },
+    {
+      "competencyId": "ui-components",
+      "sourceIds": [
+        "figma-design-basics"
+      ],
+      "rationale": "Figma Design Basics: компоненты."
+    },
+    {
+      "competencyId": "ui-interaction-states",
+      "sourceIds": [
+        "figma-design-basics"
+      ],
+      "rationale": "Прототипирование состояний в Figma-курсе."
+    },
+    {
+      "competencyId": "ui-figma",
+      "sourceIds": [
+        "figma-design-basics"
+      ],
+      "rationale": "Figma Design Basics — первичный источник по Figma."
+    },
+    {
+      "competencyId": "ux-design-thinking",
+      "sourceIds": [
+        "codecademy-intro-uiux",
+        "coursera-microsoft-product-design"
+      ],
+      "rationale": "Дизайн-процесс и product design в курсах."
+    },
+    {
+      "competencyId": "ux-product-thinking",
+      "sourceIds": [
+        "udacity-product-design",
+        "coursera-microsoft-product-design"
+      ],
+      "rationale": "Product strategy и product design в курсах."
+    },
+    {
+      "competencyId": "product-jtbd",
+      "sourceIds": [
+        "udacity-product-design",
+        "coursera-microsoft-product-design"
+      ],
+      "rationale": "Research и product strategy в курсах."
+    },
+    {
+      "competencyId": "ux-user-research",
+      "sourceIds": [
+        "coursera-microsoft-product-design",
+        "udacity-product-design",
+        "practicum-design-catalog"
+      ],
+      "rationale": "Research-модули курсов и программа Практикума."
+    },
+    {
+      "competencyId": "ux-interviews",
+      "sourceIds": [
+        "coursera-microsoft-product-design"
+      ],
+      "rationale": "Research-модули курса product design."
+    },
+    {
+      "competencyId": "ux-personas",
+      "sourceIds": [
+        "coursera-microsoft-product-design"
+      ],
+      "rationale": "Research-модули курса product design."
+    },
+    {
+      "competencyId": "product-cjm",
+      "sourceIds": [
+        "udacity-product-design",
+        "coursera-microsoft-product-design"
+      ],
+      "rationale": "Research и product design в курсах."
+    },
+    {
+      "competencyId": "ux-information-architecture",
+      "sourceIds": [
+        "figma-design-basics"
+      ],
+      "rationale": "Figma Design Basics: структура и навигация."
+    },
+    {
+      "competencyId": "ux-user-flows",
+      "sourceIds": [
+        "figma-design-basics"
+      ],
+      "rationale": "Figma Design Basics: сценарии и прототипы."
+    },
+    {
+      "competencyId": "ux-wireframes",
+      "sourceIds": [
+        "figma-design-basics",
+        "codecademy-intro-uiux"
+      ],
+      "rationale": "Wireframes в Figma-курсе и дизайн-процесс."
+    },
+    {
+      "competencyId": "ux-requirements",
+      "sourceIds": [
+        "codecademy-intro-uiux",
+        "udacity-product-design"
+      ],
+      "rationale": "Дизайн-процесс и product design."
+    },
+    {
+      "competencyId": "ux-lowfi-prototype",
+      "sourceIds": [
+        "figma-design-basics",
+        "coursera-microsoft-product-design"
+      ],
+      "rationale": "Прототипирование в курсах."
+    },
+    {
+      "competencyId": "ux-hifi-prototype",
+      "sourceIds": [
+        "figma-design-basics",
+        "greatlearning-uiux"
+      ],
+      "rationale": "Прототипирование и visual design."
+    },
+    {
+      "competencyId": "ux-interactive-prototype",
+      "sourceIds": [
+        "figma-design-basics",
+        "coursera-microsoft-product-design"
+      ],
+      "rationale": "Прототипирование в курсах."
+    },
+    {
+      "competencyId": "ux-usability-testing",
+      "sourceIds": [
+        "greatlearning-uiux",
+        "coursera-microsoft-product-design"
+      ],
+      "rationale": "Usability и research в курсах."
+    },
+    {
+      "competencyId": "ui-color",
+      "sourceIds": [
+        "greatlearning-uiux"
+      ],
+      "rationale": "Visual design в UX/UI-курсе."
+    },
+    {
+      "competencyId": "ui-layout",
+      "sourceIds": [
+        "greatlearning-uiux"
+      ],
+      "rationale": "Visual design в UX/UI-курсе."
+    },
+    {
+      "competencyId": "ui-visual-elements",
+      "sourceIds": [
+        "greatlearning-uiux"
+      ],
+      "rationale": "Visual design в UX/UI-курсе."
+    },
+    {
+      "competencyId": "ui-visual-communication",
+      "sourceIds": [
+        "greatlearning-uiux"
+      ],
+      "rationale": "Visual design в UX/UI-курсе."
+    },
+    {
+      "competencyId": "ui-design-systems",
+      "sourceIds": [
+        "figma-design-basics"
+      ],
+      "rationale": "Компоненты и дизайн-принципы в Figma-курсе."
+    },
+    {
+      "competencyId": "ui-components",
+      "sourceIds": [
+        "figma-design-basics"
+      ],
+      "rationale": "Компоненты в Figma-курсе."
+    },
+    {
+      "competencyId": "product-strategy",
+      "sourceIds": [
+        "udacity-product-design",
+        "coursera-microsoft-product-design"
+      ],
+      "rationale": "Product strategy в курсах product design."
+    },
+    {
+      "competencyId": "product-experimentation",
+      "sourceIds": [
+        "udacity-product-design",
+        "coursera-microsoft-product-design"
+      ],
+      "rationale": "Research и product design в курсах."
+    },
+    {
+      "competencyId": "ux-design-thinking",
+      "sourceIds": [
+        "practicum-design-catalog"
+      ],
+      "rationale": "Программа Практикума по графическому дизайну задаёт рамку профессии."
+    },
+    {
+      "competencyId": "ui-color",
+      "sourceIds": [
+        "coursera-graphic-fundamentals",
+        "alison-graphic-design"
+      ],
+      "rationale": "Курсы по основам графического дизайна: цвет."
+    },
+    {
+      "competencyId": "ui-typography",
+      "sourceIds": [
+        "coursera-graphic-fundamentals"
+      ],
+      "rationale": "Курс по основам графического дизайна: типографика."
+    },
+    {
+      "competencyId": "ui-layout",
+      "sourceIds": [
+        "coursera-graphic-fundamentals"
+      ],
+      "rationale": "Курс по основам графического дизайна: композиция."
+    },
+    {
+      "competencyId": "ui-visual-elements",
+      "sourceIds": [
+        "alison-graphic-design",
+        "greatlearning-photoshop-graphic"
+      ],
+      "rationale": "Визуальные элементы и инструменты в курсах."
+    },
+    {
+      "competencyId": "ui-visual-communication",
+      "sourceIds": [
+        "alison-graphic-design",
+        "coursera-graphic-fundamentals"
+      ],
+      "rationale": "Visual communication и основы дизайна в курсах."
+    },
+    {
+      "competencyId": "graphic-brand-identity",
+      "sourceIds": [
+        "alison-graphic-design",
+        "practicum-design-catalog"
+      ],
+      "rationale": "Айдентика в курсе и программе Практикума."
+    },
+    {
+      "competencyId": "graphic-print-production",
+      "sourceIds": [
+        "practicum-design-catalog"
+      ],
+      "rationale": "Программа Практикума покрывает печать и производство."
+    },
+    {
+      "competencyId": "graphic-editorial-layout",
+      "sourceIds": [
+        "coursera-graphic-fundamentals",
+        "practicum-design-catalog"
+      ],
+      "rationale": "Типографика/композиция в курсе и программа Практикума."
+    }
+  ]
+}

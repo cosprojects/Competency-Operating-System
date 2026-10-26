@@ -10,7 +10,14 @@
       "title": "Дизайн-мышление",
       "titleEn": "Design thinking",
       "definition": "Системный подход к решению задач: понимание пользователя, формулировка проблемы, генерация и проверка гипотез, итерации.",
-      "priorityHint": "foundation"
+      "priorityHint": "foundation",
+      "learningSourceIds": [
+        "school-of-motion",
+        "codecademy-intro-uiux",
+        "coursera-uxui-fundamentals",
+        "practicum-design-catalog",
+        "coursera-microsoft-product-design"
+      ]
     },
     {
       "id": "ux-user-research",
@@ -29,7 +36,14 @@
         "graphNodeIds": [
           "node_ux_research"
         ]
-      }
+      },
+      "learningSourceIds": [
+        "coursera-uxui-fundamentals",
+        "greatlearning-uiux",
+        "practicum-design-catalog",
+        "coursera-microsoft-product-design",
+        "udacity-product-design"
+      ]
     },
     {
       "id": "ux-personas",
@@ -45,7 +59,12 @@
         "taxonomyLeaves": [
           "Personas"
         ]
-      }
+      },
+      "learningSourceIds": [
+        "coursera-uxui-fundamentals",
+        "greatlearning-uiux",
+        "coursera-microsoft-product-design"
+      ]
     },
     {
       "id": "ux-interviews",
@@ -61,7 +80,12 @@
         "taxonomyLeaves": [
           "Interviews"
         ]
-      }
+      },
+      "learningSourceIds": [
+        "coursera-uxui-fundamentals",
+        "practicum-design-catalog",
+        "coursera-microsoft-product-design"
+      ]
     },
     {
       "id": "ux-information-architecture",
@@ -80,7 +104,11 @@
         "graphNodeIds": [
           "node_info_arch"
         ]
-      }
+      },
+      "learningSourceIds": [
+        "figma-design-basics",
+        "coursera-uxui-fundamentals"
+      ]
     },
     {
       "id": "ux-user-flows",
@@ -99,7 +127,11 @@
         "graphNodeIds": [
           "node_ux_flows"
         ]
-      }
+      },
+      "learningSourceIds": [
+        "figma-design-basics",
+        "codecademy-intro-uiux"
+      ]
     },
     {
       "id": "ux-requirements",
@@ -110,7 +142,12 @@
       "title": "Анализ требований и постановка задач",
       "titleEn": "Requirements analysis",
       "definition": "Перевод бизнес- и пользовательских потребностей в проверяемые требования и ограничения.",
-      "priorityHint": "core"
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "codecademy-intro-uiux",
+        "practicum-design-catalog",
+        "udacity-product-design"
+      ]
     },
     {
       "id": "ux-wireframes",
@@ -126,7 +163,11 @@
         "taxonomyLeaves": [
           "Wireframes"
         ]
-      }
+      },
+      "learningSourceIds": [
+        "figma-design-basics",
+        "codecademy-intro-uiux"
+      ]
     },
     {
       "id": "ux-lowfi-prototype",
@@ -142,7 +183,12 @@
         "taxonomyLeaves": [
           "Low-Fidelity"
         ]
-      }
+      },
+      "learningSourceIds": [
+        "figma-design-basics",
+        "coursera-uxui-fundamentals",
+        "coursera-microsoft-product-design"
+      ]
     },
     {
       "id": "ux-hifi-prototype",
@@ -158,7 +204,11 @@
         "taxonomyLeaves": [
           "High-Fidelity"
         ]
-      }
+      },
+      "learningSourceIds": [
+        "figma-design-basics",
+        "greatlearning-uiux"
+      ]
     },
     {
       "id": "ux-interactive-prototype",
@@ -174,7 +224,12 @@
         "taxonomyLeaves": [
           "Interactive Prototype"
         ]
-      }
+      },
+      "learningSourceIds": [
+        "figma-design-basics",
+        "codecademy-intro-uiux",
+        "coursera-microsoft-product-design"
+      ]
     },
     {
       "id": "ux-usability-testing",
@@ -190,7 +245,12 @@
         "taxonomyLeaves": [
           "User Testing"
         ]
-      }
+      },
+      "learningSourceIds": [
+        "coursera-uxui-fundamentals",
+        "greatlearning-uiux",
+        "coursera-microsoft-product-design"
+      ]
     },
     {
       "id": "ux-experiments",
@@ -212,7 +272,13 @@
       "title": "Продуктовое мышление",
       "titleEn": "Product thinking",
       "definition": "Понимание ценности, аудитории, ограничений и жизненного цикла продукта.",
-      "priorityHint": "core"
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-design-catalog",
+        "codecademy-intro-uiux",
+        "udacity-product-design",
+        "coursera-microsoft-product-design"
+      ]
     },
     {
       "id": "ux-metrics",
@@ -269,7 +335,13 @@
         "graphNodeIds": [
           "node_form_comp"
         ]
-      }
+      },
+      "learningSourceIds": [
+        "coursera-uxui-fundamentals",
+        "greatlearning-uiux",
+        "coursera-graphic-fundamentals",
+        "alison-graphic-design"
+      ]
     },
     {
       "id": "ui-typography",
@@ -285,7 +357,12 @@
         "taxonomyLeaves": [
           "Typography"
         ]
-      }
+      },
+      "learningSourceIds": [
+        "coursera-uxui-fundamentals",
+        "greatlearning-uiux",
+        "coursera-graphic-fundamentals"
+      ]
     },
     {
       "id": "ui-layout",
@@ -302,7 +379,13 @@
           "Layout & composition",
           "Grids"
         ]
-      }
+      },
+      "learningSourceIds": [
+        "practicum-design-catalog",
+        "coursera-uxui-fundamentals",
+        "greatlearning-uiux",
+        "coursera-graphic-fundamentals"
+      ]
     },
     {
       "id": "ui-visual-elements",
@@ -313,7 +396,13 @@
       "title": "Иконки и визуальные элементы",
       "titleEn": "Visual elements",
       "definition": "Иконки, графика и визуальные элементы как часть интерфейсной системы.",
-      "priorityHint": "core"
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "greatlearning-uiux",
+        "practicum-design-catalog",
+        "alison-graphic-design",
+        "greatlearning-photoshop-graphic"
+      ]
     },
     {
       "id": "ui-visual-communication",
@@ -324,7 +413,15 @@
       "title": "Визуальная коммуникация",
       "titleEn": "Visual communication",
       "definition": "Стилистика, визуальные коды и целостность интерфейсной коммуникации.",
-      "priorityHint": "core"
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "motiondesign-school-courses",
+        "petrick-mds-case",
+        "greatlearning-uiux",
+        "practicum-design-catalog",
+        "alison-graphic-design",
+        "coursera-graphic-fundamentals"
+      ]
     },
     {
       "id": "ui-design-systems",
@@ -343,7 +440,11 @@
         "graphNodeIds": [
           "node_design_systems"
         ]
-      }
+      },
+      "learningSourceIds": [
+        "figma-design-basics",
+        "greatlearning-uiux"
+      ]
     },
     {
       "id": "ui-components",
@@ -359,7 +460,10 @@
         "taxonomyLeaves": [
           "Components"
         ]
-      }
+      },
+      "learningSourceIds": [
+        "figma-design-basics"
+      ]
     },
     {
       "id": "ui-responsive",
@@ -402,7 +506,12 @@
       "title": "Состояния и микровзаимодействия",
       "titleEn": "States and microinteractions",
       "definition": "Состояния компонентов, обратная связь и микровзаимодействия.",
-      "priorityHint": "core"
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "motiondesign-school-youtube",
+        "school-of-motion",
+        "figma-design-basics"
+      ]
     },
     {
       "id": "ui-motion",
@@ -413,7 +522,12 @@
       "title": "Анимация и motion design",
       "titleEn": "Motion design",
       "definition": "Кинетика, тайминг и анимационные системы интерфейса.",
-      "priorityHint": "core"
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "motiondesign-school-courses",
+        "school-of-motion",
+        "motiondesign-school-youtube"
+      ]
     },
     {
       "id": "ui-figma",
@@ -429,7 +543,10 @@
         "taxonomyLeaves": [
           "Figma"
         ]
-      }
+      },
+      "learningSourceIds": [
+        "figma-design-basics"
+      ]
     },
     {
       "id": "ui-figjam",
@@ -472,7 +589,10 @@
       "title": "Передача макетов в разработку",
       "titleEn": "Design handoff",
       "definition": "Спецификации, компонентные контракты и коммуникация с инженерами.",
-      "priorityHint": "core"
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "school-of-motion-free"
+      ]
     },
     {
       "id": "ui-web-technologies",
@@ -505,7 +625,11 @@
       "title": "Тайминг и кривые ускорения",
       "titleEn": "Timing and easing",
       "definition": "Проектирование движения во времени: тайминг, кривые ускорения, ритм и ощущение веса.",
-      "priorityHint": "foundation"
+      "priorityHint": "foundation",
+      "learningSourceIds": [
+        "motiondesign-school-courses",
+        "school-of-motion"
+      ]
     },
     {
       "id": "motion-storyboarding",
@@ -527,7 +651,11 @@
       "title": "3D, свет и рендер",
       "titleEn": "3D, lighting and rendering",
       "definition": "Трёхмерная форма, материалы, свет и рендер в моушн-продакшене.",
-      "priorityHint": "core"
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "motiondesign-school-courses",
+        "practicum-design-catalog"
+      ]
     },
     {
       "id": "product-strategy",
@@ -538,7 +666,11 @@
       "title": "Продуктовая стратегия",
       "titleEn": "Product strategy",
       "definition": "Выбор целевой ценности, аудитории и стратегии развития продукта.",
-      "priorityHint": "foundation"
+      "priorityHint": "foundation",
+      "learningSourceIds": [
+        "udacity-product-design",
+        "coursera-microsoft-product-design"
+      ]
     },
     {
       "id": "product-growth",
@@ -560,7 +692,11 @@
       "title": "Эксперименты и проверка гипотез",
       "titleEn": "Product experimentation",
       "definition": "Дизайн продуктовых экспериментов, A/B-проверки и интерпретация результатов.",
-      "priorityHint": "core"
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "udacity-product-design",
+        "coursera-microsoft-product-design"
+      ]
     },
     {
       "id": "graphic-brand-identity",
@@ -571,7 +707,11 @@
       "title": "Бренд-айдентика",
       "titleEn": "Brand identity",
       "definition": "Создание визуальной идентичности: знак, палитра, типографика и правила бренда.",
-      "priorityHint": "foundation"
+      "priorityHint": "foundation",
+      "learningSourceIds": [
+        "alison-graphic-design",
+        "practicum-design-catalog"
+      ]
     },
     {
       "id": "graphic-print-production",
@@ -582,7 +722,10 @@
       "title": "Печать и производство",
       "titleEn": "Print and production",
       "definition": "Допечатная подготовка, цветовые профили, материалы и производственные ограничения.",
-      "priorityHint": "core"
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-design-catalog"
+      ]
     },
     {
       "id": "graphic-editorial-layout",
@@ -593,7 +736,11 @@
       "title": "Редакционный дизайн и вёрстка",
       "titleEn": "Editorial design",
       "definition": "Вёрстка многостраничных и цифровых изданий, сетки и типографическая иерархия.",
-      "priorityHint": "core"
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "coursera-graphic-fundamentals",
+        "practicum-design-catalog"
+      ]
     },
     {
       "id": "product-jtbd",
@@ -604,7 +751,11 @@
       "title": "Jobs-to-be-Done",
       "titleEn": "Jobs to be done",
       "definition": "Понимание задач, на которые пользователь нанимает продукт, и критериев выбора решения.",
-      "priorityHint": "foundation"
+      "priorityHint": "foundation",
+      "learningSourceIds": [
+        "udacity-product-design",
+        "coursera-microsoft-product-design"
+      ]
     },
     {
       "id": "product-cjm",
@@ -615,7 +766,11 @@
       "title": "Customer Journey Map",
       "titleEn": "Customer journey map",
       "definition": "Карта пути пользователя: этапы, точки контакта, боли и возможности улучшения опыта.",
-      "priorityHint": "core"
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "udacity-product-design",
+        "coursera-microsoft-product-design"
+      ]
     },
     {
       "id": "motion-animation-principles",

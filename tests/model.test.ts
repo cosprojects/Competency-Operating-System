@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 import type { CanonicalMap } from "../src/methodology/v1/competency/canonical/types.ts";
-import { buildCompetencies, buildProfessionCompetencies, buildSphere } from "../src/methodology/v1/competency/model/build.ts";
+import { applyLearningSourceLinks, buildCompetencies, buildProfessionCompetencies, buildSphere } from "../src/methodology/v1/competency/model/build.ts";
 import { validateModel, validateProfessionPrerequisites } from "../src/methodology/v1/competency/model/validate.ts";
 
 const map: CanonicalMap = {
@@ -93,5 +93,31 @@ describe("normalized model", () => {
     late.competencies[0]!.prerequisites = ["c2"];
     assert.ok(validateProfessionPrerequisites(late).some((error) => error.includes("не раньше order")));
     assert.deepEqual(validateProfessionPrerequisites(buildProfessionCompetencies(map, "it.uxui")), []);
+  });
+});
+
+describe("learning source links", () => {
+  it("мержит ссылки в единый массив без дублей и переживает пересборку", () => {
+    const competencies = buildCompetencies(map);
+    competencies.competencies[0]!.learningSourceIds = ["s1"];
+    const applied = applyLearningSourceLinks(competencies, [
+      { competencyId: "c1", sourceIds: ["s1", "s2"] },
+      { competencyId: "c2", sourceIds: ["s3"] },
+    ]);
+    assert.deepEqual(applied.errors, []);
+    assert.deepEqual(applied.competencies.competencies[0]?.learningSourceIds, ["s1", "s2"]);
+    assert.deepEqual(applied.competencies.competencies[1]?.learningSourceIds, ["s3"]);
+    const rebuilt = buildCompetencies(map);
+    const reapplied = applyLearningSourceLinks(rebuilt, [
+      { competencyId: "c1", sourceIds: ["s1", "s2"] },
+    ]);
+    assert.deepEqual(reapplied.competencies.competencies[0]?.learningSourceIds, ["s1", "s2"]);
+  });
+
+  it("ловит ссылку на неизвестную компетенцию", () => {
+    const applied = applyLearningSourceLinks(buildCompetencies(map), [
+      { competencyId: "unknown-competency", sourceIds: ["s1"] },
+    ]);
+    assert.ok(applied.errors.some((error) => error.includes("неизвестная компетенция")));
   });
 });

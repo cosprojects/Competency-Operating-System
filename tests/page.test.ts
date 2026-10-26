@@ -85,6 +85,8 @@ describe("visualization page", () => {
     assert.match(html, /is-panning/);
     assert.match(html, /--pan-x/);
     assert.match(html, /addEventListener\('pointerdown'/);
+    assert.match(html, /addEventListener\('wheel'/);
+    assert.match(html, /function zoomAround/);
   });
 
   it("ставит title профессии и рабочие ссылки табов", () => {

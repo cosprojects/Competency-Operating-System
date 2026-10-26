@@ -321,7 +321,7 @@ export function renderCanvasPage(data: VisualizationPageData, options: { activeP
     </div>
     <div class="header-bottom">
       <nav class="profession-tabs" aria-label="Профессии">${professionTabs}</nav>
-      <span class="hint">Наведите на карточку, чтобы увидеть связи; нажмите — подробности</span>
+      <span class="hint">Перетаскивание — панорама; колесо мыши — масштаб; нажмите карточку — подробности</span>
     </div>
     <div class="banner"><strong>Черновой слой.</strong> ${esc(data.note)} Сгенерировано ${esc(data.generatedOn)}.</div>
   </header>
@@ -370,6 +370,20 @@ export function renderCanvasPage(data: VisualizationPageData, options: { activeP
       stage.style.setProperty('--pan-x', String(panX) + 'px');
       stage.style.setProperty('--pan-y', String(panY) + 'px');
     }
+    function zoomAround(clientX, clientY, next) {
+      const target = Math.min(2.5, Math.max(.25, next));
+      if (target === zoom) return;
+      const rect = stage.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      const ratio = target / zoom;
+      const nextCenterX = clientX - (clientX - centerX) * ratio;
+      const nextCenterY = clientY - (clientY - centerY) * ratio;
+      panX += nextCenterX - centerX;
+      panY += nextCenterY - centerY;
+      setZoom(target);
+      applyPan();
+    }
     function fitZoom() {
       const header = document.querySelector('.app-header');
       const topInset = header ? header.getBoundingClientRect().bottom + 18 : 40;
@@ -411,6 +425,11 @@ export function renderCanvasPage(data: VisualizationPageData, options: { activeP
     });
     viewport.addEventListener('pointerup', endPan);
     viewport.addEventListener('pointercancel', endPan);
+    viewport.addEventListener('wheel', (event) => {
+      event.preventDefault();
+      const delta = event.deltaMode === 1 ? event.deltaY * 16 : event.deltaY;
+      zoomAround(event.clientX, event.clientY, zoom * Math.exp(-delta * 0.0015));
+    }, { passive: false });
 
     function connected(id) {
       const ids = new Set([id]);

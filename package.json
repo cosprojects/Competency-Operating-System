@@ -52,7 +52,10 @@
     "canvas:profession-network": "node --experimental-strip-types src/methodology/v1/competency/cli/profession-network.ts",
     "materials:agent:review": "node --experimental-strip-types src/methodology/v1/materials-agent/cli/review.ts",
     "canvas:tabs": "node --experimental-strip-types src/methodology/v1/competency/cli/canvas-tabs.ts",
-    "mapping:validate": "node --experimental-strip-types src/methodology/v1/competency/cli/mapping-validate.ts"
+    "mapping:validate": "node --experimental-strip-types src/methodology/v1/competency/cli/mapping-validate.ts",
+    "learning:validate": "node --experimental-strip-types src/methodology/v1/learning-sources/cli/validate.ts",
+    "learning:audit": "node --experimental-strip-types src/methodology/v1/learning-sources/cli/audit.ts",
+    "learning:discover": "node --experimental-strip-types src/methodology/v1/learning-sources/cli/discover.ts"
   },
   "dependencies": {
     "@prisma/client": "^6.4.0",

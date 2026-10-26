@@ -27,6 +27,7 @@ export interface GlobalCompetency {
   titleEn?: string;
   definition: string;
   priorityHint: "foundation" | "core" | "optional";
+  learningSourceIds?: string[];
   sourceEvidence?: {
     taxonomyLeaves?: string[];
     graphNodeIds?: string[];

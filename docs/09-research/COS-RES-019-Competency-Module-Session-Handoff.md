@@ -1,10 +1,10 @@
 ---
 id: COS-RES-019
 title: Competency Module — session handoff
-version: 1.4.0
+version: 1.5.0
 status: Draft
 owner: Research Team
-last_updated: 2026-10-25
+last_updated: 2026-10-26
 references:
   - COS-RES-014
   - COS-RES-015
@@ -18,9 +18,9 @@ references:
 
 # COS-RES-019 — Handoff: модуль компетенций и профессий
 
-Документ фиксирует состояние на **2026-10-25**, чтобы продолжить работу в новой сессии без восстановления контекста. Итерация Product описана отдельно в `COS-RES-020`.
+Документ фиксирует состояние на **2026-10-26**, чтобы продолжить работу в новой сессии без восстановления контекста. Итерация Product описана отдельно в `COS-RES-020`, Motion/Graphic — в `COS-RES-021`, учебные источники — в `COS-RES-022`.
 
-Локальный `main` содержит коммиты итерации Product: `370265d` (canonicalIds), `3d66417` (источники Product), `b99730e` (связный граф Product + mapping), плюс docs-коммит. Тесты: **141/141**, `tsc --noEmit` чистый. `origin/main` может отставать: если агент запускался без SSH-ключа в агенте, push не прошёл. Проверить: `git status -sb`; при `ahead N` — `ssh-add ~/.ssh/id_ed25519 && git push origin main`. Reset/rebase не делать.
+Локальный `main` содержит коммиты итерации Product: `370265d` (canonicalIds), `3d66417` (источники Product), `b99730e` (связный граф Product + mapping), плюс docs-коммит. Тесты: **148/148**, `tsc --noEmit` чистый. `origin/main` может отставать: если агент запускался без SSH-ключа в агенте, push не прошёл. Проверить: `git status -sb`; при `ahead N` — `ssh-add ~/.ssh/id_ed25519 && git push origin main`. Reset/rebase не делать.
 
 ## 1. Что уже собрано
 
@@ -31,9 +31,10 @@ references:
 - Product O*NET исправлен: `15-1255.00 Web and Digital Interface Designers` + `13-1161.00 Market Research Analysts and Marketing Specialists` вместо индустриального `27-1021.00`. `collectProfessions` принимает все объявленные SOC-коды.
 - Product tags: **368** (knowledge 47, skill 10, tool 311) вместо 182 индустриальных.
 - Сборщики `professions:collect` и `tags:collect` читают source-файл профессии (`--profession`).
+- Учебные источники вынесены в отдельный реестр `learning-sources/registry.json` (33 записи; primary/aggregator/blocked/duplicate), см. `COS-RES-022`.
 
 ### Каталог и приоритеты
-- `catalog/it.json`: **44 accepted-блока, 195 тегов, 0 материалов**. У всех 44 блоков заполнены `canonicalIds` (backfill из canonical map; раньше 14 блоков без него выпадали из графов).
+- `catalog/it.json`: **54 accepted-блока, 237 тегов, 0 материалов**. У всех блоков заполнены `canonicalIds` (backfill из canonical map; раньше 14 блоков без него выпадали из графов).
 - UX/UI: 33 accepted priority-mark, `status: accepted`, reviewer `cos-methodologist`.
 - Canonical UX/UI: **34 компетенции**, `covered = 34`, `partial = 0`, `gap = 0`.
 - Mapping: `mapping/it.product.json` — 30/30 (direct 11, adjacent 15, none 4); `it.motion.json` — 19/19 (9/5/5); `it.graphic.json` — 18/18 (11/6/1); `mapping:validate` — 0 ошибок, «без решения» 0.
@@ -42,7 +43,7 @@ references:
 ### Нормализованная модель
 - `model/spheres.json` — сфера `it`.
 - `model/professions.json` — 4 профессии: `it.uxui`, `it.product`, `it.motion`, `it.graphic`.
-- `model/competencies.json` — **единый массив 45 компетенций** (34 базовых + 11 профессио-специфичных).
+- `model/competencies.json` — **единый массив 55 компетенций** (34 базовых + 21 профессио-специфичная, включая 10 motion).
 - `model/profession-competencies/*.json` — ссылки competencyId + tier/order + prerequisites по профессии.
 - `model/professions/views/*.json` — профессиональные view: разделы, tier/order, prerequisites.
 
@@ -52,10 +53,10 @@ references:
 |---|---:|---:|---:|
 | UX/UI | 34 | 34 | 26 |
 | Product | 30 | 30 | **41** |
-| Motion | 19 | 19 | **29** |
+| Motion | 28 | 28 | **42** |
 | Graphic | 18 | 18 | **33** |
 
-Все три графа (product, motion, graphic) теперь связные: единственный корень `ux-design-thinking`, компонент — 1. Product view: 3 foundation / 24 core / 3 optional; motion: 6/9/4; graphic: 7/4/7.
+Все три графа (product, motion, graphic) теперь связные: единственный корень `ux-design-thinking`, компонент — 1. Product view: 3 foundation / 24 core / 3 optional; motion: 8/15/5; graphic: 7/4/7.
 
 ### Решение по priority/order (Priority 2)
 - Отдельные `priority/product.json`, `priority/motion.json`, `priority/graphic.json` **не вводятся**: `priority/uxui.json` — block-level accepted marks UX/UI, а profession views работают на уровне канонических компетенций с переиспользованными блоками; копия создала бы второй источник истины.
@@ -65,7 +66,7 @@ references:
 ### Канвасы
 - `web/uxui-competency-canvas.html` — UX/UI (34 узла / 26 связей).
 - `web/it-product-competency-canvas.html` — Product (30 / 41).
-- `web/it-motion-competency-canvas.html` — Motion (19 / 14).
+- `web/it-motion-competency-canvas.html` — Motion (28 / 42).
 - `web/it-graphic-competency-canvas.html` — Graphic (18 / 13).
 - `web/it-*-competency-map.html` — сгруппированные карты профессий.
 - Табы **UX/UI · Product · Motion · Graphic** встроены прямо в каждый канвас.
@@ -172,3 +173,4 @@ open web/it-product-competency-canvas.html
 | 1.2.0 | 2026-10-25 | Priority 3: очередь материалов покрывает компетенции view (Product 31 элемент, 30/30 компетенций, 68 материалов, 35 связей); review с покрытием; фикс потери материалов при исчерпании бюджета; 145 тестов |
 | 1.3.0 | 2026-10-25 | Priority 4: Motion/Graphic — Practicum-источники и санитайзер тегов, mapping 19/19 и 18/18, связные графы 29/33 связи, материалы 19/19 и 18/18; все 4 профессии с review-журналами; 146 тестов |
 | 1.4.0 | 2026-10-25 | Evidence-backlog: seeds tagHints для 11 компетенций, Pass B предложения блоков (product 5, motion 3, graphic 3) с реальными sourceRefs; UX/UI materials 34/34; все 4 профессии покрыты материалами, catalog.materials = 0 |
+| 1.5.0 | 2026-10-26 | Motion evidence pass + learning source library: 10 motion компетенций (28 узлов / 42 связи), 10 motion-блоков, каталог 54/237, глобальный массив 55; `learning-sources` registry (33 записи, 24 active) и Google CSE discovery scaffold |

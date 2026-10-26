@@ -1038,6 +1038,386 @@
           "kind": "knowledge"
         }
       ]
+    },
+    {
+      "id": "motion-animation-principles",
+      "canonicalId": "motion-animation-principles",
+      "title": "Принципы анимации",
+      "titleEn": "Animation principles",
+      "aliases": [
+        "Animation principles"
+      ],
+      "definition": "Двенадцать принципов анимации: тайминг, spacing, вес, инерция, exaggeration и appeal.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Принципы анимации",
+          "definition": "Двенадцать принципов анимации в движении.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Spacing и тайминг",
+          "definition": "Распределение кадров и ощущение скорости.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Вес и инерция",
+          "definition": "Физика массы, ускорения и затухания.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Exaggeration и appeal",
+          "definition": "Выразительность и привлекательность движения.",
+          "kind": "knowledge"
+        }
+      ]
+    },
+    {
+      "id": "motion-styleframes",
+      "canonicalId": "motion-styleframes",
+      "title": "Style frames и арт-дирекшн",
+      "titleEn": "Style frames and art direction",
+      "aliases": [
+        "Style frames and art direction"
+      ],
+      "definition": "Поиск визуального стиля, референсы, цветовые сценарии и кадры-концепты до продакшена.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Style frames",
+          "definition": "Кадры-концепты визуального стиля.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Референсы и мудборд",
+          "definition": "Сбор визуальных референсов и направления.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Цветовые сценарии",
+          "definition": "Цветовая драматургия ролика.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Арт-дирекшн",
+          "definition": "Визуальная целостность и стиль.",
+          "kind": "knowledge"
+        }
+      ]
+    },
+    {
+      "id": "motion-sound-design",
+      "canonicalId": "motion-sound-design",
+      "title": "Звуковой дизайн и синхронизация",
+      "titleEn": "Sound design and sync",
+      "aliases": [
+        "Sound design and sync"
+      ],
+      "definition": "Подбор и монтаж звука, музыкальный ритм, синхронизация движения и звуковых акцентов.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Звуковой дизайн",
+          "definition": "Подбор и создание звуковых эффектов.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Синхронизация звука",
+          "definition": "Совмещение движения и звуковых акцентов.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Музыкальный ритм",
+          "definition": "Работа с темпом и музыкальной структурой.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Звуковая драматургия",
+          "definition": "Звук как часть истории и настроения.",
+          "kind": "knowledge"
+        }
+      ]
+    },
+    {
+      "id": "motion-compositing",
+      "canonicalId": "motion-compositing",
+      "title": "Композитинг и VFX",
+      "titleEn": "Compositing and VFX",
+      "aliases": [
+        "Compositing and VFX"
+      ],
+      "definition": "Сборка слоёв, кеинг, трекинг, маски, цветокоррекция и совмещение 3D с live-action.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Композитинг",
+          "definition": "Сборка слоёв и элементов кадра.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Кеинг и маски",
+          "definition": "Вырезание объектов и работа с масками.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Трекинг",
+          "definition": "Слежение за движением камеры и объектов.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "VFX и цветокоррекция",
+          "definition": "Визуальные эффекты и финальная цветокоррекция.",
+          "kind": "knowledge"
+        }
+      ]
+    },
+    {
+      "id": "motion-editing",
+      "canonicalId": "motion-editing",
+      "title": "Монтаж и ритм",
+      "titleEn": "Editing and rhythm",
+      "aliases": [
+        "Editing and rhythm"
+      ],
+      "definition": "Монтаж ролика, темп, паузы, переходы и драматургия движения в кадре.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Монтаж ролика",
+          "definition": "Сборка сцен и последовательностей.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Ритм и темп",
+          "definition": "Управление скоростью и паузами.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Переходы",
+          "definition": "Склейки, переходы и движение между кадрами.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Драматургия монтажа",
+          "definition": "История и эмоциональная дуга ролика.",
+          "kind": "knowledge"
+        }
+      ]
+    },
+    {
+      "id": "motion-3d-animation",
+      "canonicalId": "motion-3d-animation",
+      "title": "3D-анимация и риггинг",
+      "titleEn": "3D animation and rigging",
+      "aliases": [
+        "3D animation and rigging"
+      ],
+      "definition": "Анимация 3D-персонажей и объектов: риггинг, ключевые кадры, симуляции и динамика.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "3D-анимация",
+          "definition": "Анимация объектов и персонажей в 3D.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Риггинг",
+          "definition": "Подготовка скелета и управляющих элементов.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Ключевые кадры 3D",
+          "definition": "Анимация через ключевые позы и кривые.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Симуляции",
+          "definition": "Динамика тканей, частиц и физики.",
+          "kind": "knowledge"
+        }
+      ]
+    },
+    {
+      "id": "motion-brand-systems",
+      "canonicalId": "motion-brand-systems",
+      "title": "Motion-айдентика и бренд-системы",
+      "titleEn": "Motion brand systems",
+      "aliases": [
+        "Motion brand systems"
+      ],
+      "definition": "Перенос айдентики в движение: motion-логотипы, бренд-гайды, системы анимации.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Motion-логотип",
+          "definition": "Анимация знака и логотипа.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Бренд-гайд движения",
+          "definition": "Правила и константы анимации бренда.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Motion-система",
+          "definition": "Библиотека движений и переходов.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Айдентика в движении",
+          "definition": "Перенос визуального стиля в motion.",
+          "kind": "knowledge"
+        }
+      ]
+    },
+    {
+      "id": "motion-toolchain",
+      "canonicalId": "motion-toolchain",
+      "title": "Моушн-инструментарий",
+      "titleEn": "Motion toolchain",
+      "aliases": [
+        "Motion toolchain"
+      ],
+      "definition": "After Effects, Cinema 4D, Blender, Spline, Unreal Engine и производственные плагины.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "After Effects",
+          "definition": "Композитинг и анимация в After Effects.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Cinema 4D",
+          "definition": "3D-моделирование и анимация в Cinema 4D.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Blender",
+          "definition": "3D-пайплайн в Blender.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Spline и Unreal",
+          "definition": "Интерактивный 3D и реальное время.",
+          "kind": "knowledge"
+        }
+      ]
+    },
+    {
+      "id": "motion-production",
+      "canonicalId": "motion-production",
+      "title": "Продакшн и пайплайн",
+      "titleEn": "Production pipeline",
+      "aliases": [
+        "Production pipeline"
+      ],
+      "definition": "Планирование производства, рендер, форматы, сроки и передача материалов.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Продакшн-пайплайн",
+          "definition": "Планирование и организация производства.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Рендер и форматы",
+          "definition": "Рендер, кодеки и форматы доставки.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Сроки и бюджет",
+          "definition": "Оценка сроков и стоимости производства.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Передача материалов",
+          "definition": "Подготовка файлов и сдача проекта.",
+          "kind": "knowledge"
+        }
+      ]
+    },
+    {
+      "id": "motion-showreel",
+      "canonicalId": "motion-showreel",
+      "title": "Showreel и портфолио",
+      "titleEn": "Showreel and portfolio",
+      "aliases": [
+        "Showreel and portfolio"
+      ],
+      "definition": "Сборка шоурила, кейсов и презентации работ для заказчиков и студий.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Шоурил",
+          "definition": "Сборка лучших работ в короткий ролик.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Кейсы",
+          "definition": "Описание задачи, процесса и результата.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Портфолио",
+          "definition": "Структура и подача работ.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Презентация работ",
+          "definition": "Защита идей и результатов.",
+          "kind": "knowledge"
+        }
+      ]
     }
   ]
 }

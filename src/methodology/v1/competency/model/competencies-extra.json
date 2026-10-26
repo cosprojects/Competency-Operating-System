@@ -121,6 +121,157 @@
       "titleEn": "Customer journey map",
       "definition": "Карта пути пользователя: этапы, точки контакта, боли и возможности улучшения опыта.",
       "priorityHint": "core"
+    },
+    {
+      "id": "motion-animation-principles",
+      "branchId": "motion",
+      "branchTitle": "Motion",
+      "sectionId": "motion-production",
+      "sectionTitle": "Продакшн и специализация",
+      "title": "Принципы анимации",
+      "titleEn": "Animation principles",
+      "definition": "Двенадцать принципов анимации: тайминг, spacing, вес, инерция, exaggeration и appeal.",
+      "priorityHint": "foundation",
+      "learningSourceIds": [
+        "motiondesign-school-courses",
+        "school-of-motion"
+      ]
+    },
+    {
+      "id": "motion-styleframes",
+      "branchId": "motion",
+      "branchTitle": "Motion",
+      "sectionId": "motion-production",
+      "sectionTitle": "Продакшн и специализация",
+      "title": "Style frames и арт-дирекшн",
+      "titleEn": "Style frames and art direction",
+      "definition": "Поиск визуального стиля, референсы, цветовые сценарии и кадры-концепты до продакшена.",
+      "priorityHint": "foundation",
+      "learningSourceIds": [
+        "motiondesign-school-courses",
+        "school-of-motion"
+      ]
+    },
+    {
+      "id": "motion-sound-design",
+      "branchId": "motion",
+      "branchTitle": "Motion",
+      "sectionId": "motion-production",
+      "sectionTitle": "Продакшн и специализация",
+      "title": "Звуковой дизайн и синхронизация",
+      "titleEn": "Sound design and sync",
+      "definition": "Подбор и монтаж звука, музыкальный ритм, синхронизация движения и звуковых акцентов.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "motiondesign-school-courses",
+        "school-of-motion"
+      ]
+    },
+    {
+      "id": "motion-compositing",
+      "branchId": "motion",
+      "branchTitle": "Motion",
+      "sectionId": "motion-production",
+      "sectionTitle": "Продакшн и специализация",
+      "title": "Композитинг и VFX",
+      "titleEn": "Compositing and VFX",
+      "definition": "Сборка слоёв, кеинг, трекинг, маски, цветокоррекция и совмещение 3D с live-action.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "motiondesign-school-courses",
+        "school-of-motion"
+      ]
+    },
+    {
+      "id": "motion-editing",
+      "branchId": "motion",
+      "branchTitle": "Motion",
+      "sectionId": "motion-production",
+      "sectionTitle": "Продакшн и специализация",
+      "title": "Монтаж и ритм",
+      "titleEn": "Editing and rhythm",
+      "definition": "Монтаж ролика, темп, паузы, переходы и драматургия движения в кадре.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "practicum-design-catalog",
+        "school-of-motion"
+      ]
+    },
+    {
+      "id": "motion-3d-animation",
+      "branchId": "motion",
+      "branchTitle": "Motion",
+      "sectionId": "motion-production",
+      "sectionTitle": "Продакшн и специализация",
+      "title": "3D-анимация и риггинг",
+      "titleEn": "3D animation and rigging",
+      "definition": "Анимация 3D-персонажей и объектов: риггинг, ключевые кадры, симуляции и динамика.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "motiondesign-school-courses",
+        "school-of-motion",
+        "practicum-design-catalog"
+      ]
+    },
+    {
+      "id": "motion-brand-systems",
+      "branchId": "motion",
+      "branchTitle": "Motion",
+      "sectionId": "motion-production",
+      "sectionTitle": "Продакшн и специализация",
+      "title": "Motion-айдентика и бренд-системы",
+      "titleEn": "Motion brand systems",
+      "definition": "Перенос айдентики в движение: motion-логотипы, бренд-гайды, системы анимации.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "motiondesign-school-courses",
+        "school-of-motion"
+      ]
+    },
+    {
+      "id": "motion-toolchain",
+      "branchId": "motion",
+      "branchTitle": "Motion",
+      "sectionId": "motion-production",
+      "sectionTitle": "Продакшн и специализация",
+      "title": "Моушн-инструментарий",
+      "titleEn": "Motion toolchain",
+      "definition": "After Effects, Cinema 4D, Blender, Spline, Unreal Engine и производственные плагины.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "motiondesign-school-courses",
+        "school-of-motion"
+      ]
+    },
+    {
+      "id": "motion-production",
+      "branchId": "motion",
+      "branchTitle": "Motion",
+      "sectionId": "motion-production",
+      "sectionTitle": "Продакшн и специализация",
+      "title": "Продакшн и пайплайн",
+      "titleEn": "Production pipeline",
+      "definition": "Планирование производства, рендер, форматы, сроки и передача материалов.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "school-of-motion-free",
+        "practicum-design-catalog"
+      ]
+    },
+    {
+      "id": "motion-showreel",
+      "branchId": "motion",
+      "branchTitle": "Motion",
+      "sectionId": "motion-production",
+      "sectionTitle": "Продакшн и специализация",
+      "title": "Showreel и портфолио",
+      "titleEn": "Showreel and portfolio",
+      "definition": "Сборка шоурила, кейсов и презентации работ для заказчиков и студий.",
+      "priorityHint": "optional",
+      "learningSourceIds": [
+        "motiondesign-school-vimeo",
+        "motiondesign-school-youtube"
+      ]
     }
   ]
 }

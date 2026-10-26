@@ -1,0 +1,803 @@
+{
+  "registryVersion": "1.0.0",
+  "updatedAt": "2026-10-22",
+  "sources": [
+    {
+      "id": "motiondesign-school-courses",
+      "title": "Motion Design School — курсы",
+      "url": "https://motiondesign.school/courses/",
+      "kind": "school",
+      "professionIds": [
+        "it.motion"
+      ],
+      "languages": [
+        "en",
+        "ru"
+      ],
+      "access": "mixed",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "motion design",
+        "after effects",
+        "blender",
+        "cinema 4d",
+        "spline",
+        "3d animation",
+        "character design",
+        "illustration",
+        "ai motion"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-22",
+      "httpStatus": 200,
+      "notes": "Каталог курсов и инструментов; первоисточник программы."
+    },
+    {
+      "id": "motiondesign-school-youtube",
+      "title": "Motion Design School — YouTube",
+      "url": "https://www.youtube.com/@motiondesignschool",
+      "kind": "video-channel",
+      "professionIds": [
+        "it.motion"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "motion design",
+        "after effects",
+        "tutorials",
+        "showreel"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-22",
+      "httpStatus": 200
+    },
+    {
+      "id": "petrick-mds-case",
+      "title": "What Is Motion Design School — Petrick",
+      "url": "https://www.petrick.co/projects/mds-what-is-motion-design-school",
+      "kind": "portfolio-case",
+      "professionIds": [
+        "it.motion"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "motion design",
+        "identity",
+        "brand case"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-22",
+      "httpStatus": 200,
+      "notes": "Кейс/обзор школы, не учебная программа."
+    },
+    {
+      "id": "school-of-motion",
+      "title": "School of Motion",
+      "url": "https://schoolofmotion.com/",
+      "kind": "school",
+      "professionIds": [
+        "it.motion"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "paid",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "motion design",
+        "learning paths",
+        "animation",
+        "after effects",
+        "design career"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-22",
+      "httpStatus": 200
+    },
+    {
+      "id": "motiondesign-school-vimeo",
+      "title": "Motion Design School — Vimeo",
+      "url": "https://vimeo.com/motiondesignschool",
+      "kind": "video-channel",
+      "professionIds": [
+        "it.motion"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "motion design",
+        "showreel",
+        "student work"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-22",
+      "httpStatus": 200
+    },
+    {
+      "id": "coursetrain-motiondesign-school",
+      "title": "CourseTrain — Motion Design School / After Effects",
+      "url": "https://coursetrain.net/source/motion-design-school/after-effects",
+      "kind": "aggregator",
+      "professionIds": [
+        "it.motion"
+      ],
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "access": "mixed",
+      "authority": "aggregator",
+      "status": "active",
+      "topics": [
+        "course catalog",
+        "after effects",
+        "motion design"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-22",
+      "httpStatus": 200,
+      "notes": "Агрегатор; не первоисточник."
+    },
+    {
+      "id": "coursehunter-motiondesign-school",
+      "title": "CourseHunter — Motion Design School / After Effects",
+      "url": "https://coursehunter.net/source/motion-design-school/after-effects",
+      "kind": "aggregator",
+      "professionIds": [
+        "it.motion"
+      ],
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "access": "mixed",
+      "authority": "aggregator",
+      "status": "active",
+      "topics": [
+        "course catalog",
+        "after effects",
+        "motion design"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-22",
+      "httpStatus": 200,
+      "notes": "Агрегатор; не первоисточник."
+    },
+    {
+      "id": "practicum-design-catalog",
+      "title": "Яндекс Практикум — каталог дизайна",
+      "url": "https://practicum.yandex.ru/catalog/design/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.motion",
+        "it.uxui",
+        "it.product",
+        "it.graphic"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "mixed",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "motion designer",
+        "3d designer",
+        "video editing",
+        "graphic design",
+        "ux/ui",
+        "art direction"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-22",
+      "httpStatus": 200,
+      "notes": "Официальный каталог программ; страницы профессий проверяются отдельно."
+    },
+    {
+      "id": "school-of-motion-free",
+      "title": "School of Motion — бесплатные материалы",
+      "url": "https://schoolofmotion.com/free",
+      "kind": "school",
+      "professionIds": [
+        "it.motion"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "motion design",
+        "career",
+        "briefs",
+        "reference",
+        "workflow"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-22",
+      "httpStatus": 200
+    },
+    {
+      "id": "classcentral-uxui-ipl",
+      "title": "Class Central — UX/UI course",
+      "url": "https://www.classcentral.com/course/design-institute-of-product-leadership-ipl-ux-ui-326055",
+      "kind": "aggregator",
+      "professionIds": [
+        "it.uxui",
+        "it.product"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "aggregator",
+      "status": "blocked",
+      "topics": [
+        "ux/ui",
+        "course catalog"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-22",
+      "httpStatus": 403,
+      "notes": "Cloudflare 403 при проверке; использовать только как ссылку для человека."
+    },
+    {
+      "id": "greatlearning-uiux",
+      "title": "Great Learning — Free UI/UX course",
+      "url": "https://www.mygreatlearning.com/academy/learn-for-free/courses/ui-ux",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.uxui",
+        "it.product"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "ux/ui",
+        "usability",
+        "visual design",
+        "prototyping"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-22",
+      "httpStatus": 200
+    },
+    {
+      "id": "coursera-uxui-fundamentals",
+      "title": "Coursera — UX/UI Design Fundamentals",
+      "url": "https://www.coursera.org/learn/uxui-design-fundamentals-usability-and-visual-principles",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.uxui"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "ux/ui",
+        "usability",
+        "visual principles",
+        "prototyping"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-22",
+      "httpStatus": 200
+    },
+    {
+      "id": "figma-design-basics",
+      "title": "Figma — Design Basics",
+      "url": "https://www.figma.com/resource-library/design-basics/",
+      "kind": "reference",
+      "professionIds": [
+        "it.uxui",
+        "it.product"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ui/ux",
+        "prototyping",
+        "design principles"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-22",
+      "httpStatus": 200
+    },
+    {
+      "id": "medium-free-uiux-courses",
+      "title": "Medium — free UI/UX courses list",
+      "url": "https://medium.com/@atnoforuiuxdesigning/the-15-best-free-ui-ux-design-courses-in-2026-4ce968d5513f",
+      "kind": "blog",
+      "professionIds": [
+        "it.uxui",
+        "it.product"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "aggregator",
+      "status": "blocked",
+      "topics": [
+        "course list",
+        "ux/ui"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-22",
+      "httpStatus": 403,
+      "notes": "Cloudflare 403; вторичный список."
+    },
+    {
+      "id": "codecademy-intro-uiux",
+      "title": "Codecademy — Introduction to UI/UX",
+      "url": "https://www.codecademy.com/learn/intro-to-ui-ux",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.uxui",
+        "it.product"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "ux/ui",
+        "design process",
+        "prototyping"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-22",
+      "httpStatus": 200
+    },
+    {
+      "id": "uxwoman-free-uiux",
+      "title": "UX Woman — free UX/UI courses",
+      "url": "https://www.uxwoman.com/free-ux-ui-design-courses-online",
+      "kind": "blog",
+      "professionIds": [
+        "it.uxui",
+        "it.product"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "aggregator",
+      "status": "active",
+      "topics": [
+        "course list",
+        "ux/ui"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-22",
+      "httpStatus": 200,
+      "notes": "Кураторский список, не программа."
+    },
+    {
+      "id": "uxdesigninstitute-free-courses",
+      "title": "UX Design Institute — free UX courses",
+      "url": "https://www.uxdesigninstitute.com/blog/best-free-ux-design-courses-in-2026/",
+      "kind": "blog",
+      "professionIds": [
+        "it.uxui",
+        "it.product"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "aggregator",
+      "status": "active",
+      "topics": [
+        "ux research",
+        "ux strategy",
+        "wireframes",
+        "prototypes",
+        "usability"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-22",
+      "httpStatus": 200,
+      "notes": "Обзорный список; полезен для карты тем."
+    },
+    {
+      "id": "coursera-microsoft-product-design",
+      "title": "Coursera — Microsoft Product Design and UX/UI Fundamentals",
+      "url": "https://www.coursera.org/learn/microsoft-product-design-and-ux-ui-fundamentals",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.product"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "product design",
+        "ux/ui",
+        "research",
+        "prototyping"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-22",
+      "httpStatus": 200
+    },
+    {
+      "id": "classcentral-udacity-product-design",
+      "title": "Class Central — Udacity Product Design",
+      "url": "https://www.classcentral.com/course/udacity-product-design-3646",
+      "kind": "aggregator",
+      "professionIds": [
+        "it.product"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "aggregator",
+      "status": "blocked",
+      "topics": [
+        "product design",
+        "course catalog"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-22",
+      "httpStatus": 403,
+      "notes": "Cloudflare 403."
+    },
+    {
+      "id": "greatlearning-career-product-design",
+      "title": "Great Learning — Career in UX and Product Design",
+      "url": "https://www.mygreatlearning.com/academy/learn-for-free/courses/career-in-ux-and-product-design",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.product"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "product design",
+        "ux/ui",
+        "career"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-22",
+      "httpStatus": 200
+    },
+    {
+      "id": "udemy-product-design-free",
+      "title": "Udemy — free product design courses",
+      "url": "https://www.udemy.com/topic/product-design/free/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.product"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "secondary",
+      "status": "blocked",
+      "topics": [
+        "product design",
+        "course catalog"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-22",
+      "httpStatus": 403,
+      "notes": "Bot protection; не автоматизировать."
+    },
+    {
+      "id": "udacity-product-design",
+      "title": "Udacity — Product Design",
+      "url": "https://www.udacity.com/course/product-design--ud509",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.product"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "product design",
+        "product strategy",
+        "research",
+        "prototyping"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-22",
+      "httpStatus": 200
+    },
+    {
+      "id": "alison-product-design",
+      "title": "Alison — free product design courses",
+      "url": "https://alison.com/tag/product-design",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.product"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "product design",
+        "course catalog"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-22",
+      "httpStatus": 200
+    },
+    {
+      "id": "coursera-graphic-fundamentals",
+      "title": "Coursera — Fundamentals of Graphic Design",
+      "url": "https://www.coursera.org/learn/fundamentals-of-graphic-design",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.graphic"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "graphic design",
+        "typography",
+        "color",
+        "composition"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-22",
+      "httpStatus": 200
+    },
+    {
+      "id": "alison-graphic-design",
+      "title": "Alison — Graphic Design",
+      "url": "https://alison.com/course/graphic-design",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.graphic"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "graphic design",
+        "visual communication",
+        "tools"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-22",
+      "httpStatus": 200
+    },
+    {
+      "id": "coursera-graphic-free",
+      "title": "Coursera — free graphic design courses",
+      "url": "https://www.coursera.org/courses?query=free&skills=Graphic%20Design",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.graphic"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "graphic design",
+        "course catalog"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-22",
+      "httpStatus": 200
+    },
+    {
+      "id": "greatlearning-photoshop-graphic",
+      "title": "Great Learning — Intro to Graphic Design with Photoshop",
+      "url": "https://www.mygreatlearning.com/academy/learn-for-free/courses/intro-to-graphic-design-with-photoshop",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.graphic"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "graphic design",
+        "photoshop",
+        "visual design"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-22",
+      "httpStatus": 200
+    },
+    {
+      "id": "classcentral-graphic-design",
+      "title": "Class Central — Graphic Design",
+      "url": "https://www.classcentral.com/course/graphic-design-66286",
+      "kind": "aggregator",
+      "professionIds": [
+        "it.graphic"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "aggregator",
+      "status": "blocked",
+      "topics": [
+        "graphic design",
+        "course catalog"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-22",
+      "httpStatus": 403,
+      "notes": "Cloudflare 403."
+    },
+    {
+      "id": "udemy-graphic-design-free",
+      "title": "Udemy — free graphic design courses",
+      "url": "https://www.udemy.com/topic/graphic-design/free/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.graphic"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "secondary",
+      "status": "blocked",
+      "topics": [
+        "graphic design",
+        "course catalog"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-22",
+      "httpStatus": 403,
+      "notes": "Bot protection; не автоматизировать."
+    },
+    {
+      "id": "canva-restricted-access",
+      "title": "Canva — restricted access",
+      "url": "https://www.canva.com/restricted-access/",
+      "kind": "reference",
+      "professionIds": [
+        "it.graphic"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "unknown",
+      "authority": "secondary",
+      "status": "blocked",
+      "topics": [
+        "graphic design"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-22",
+      "httpStatus": 403,
+      "notes": "Страница ограниченного доступа; не источник обучения."
+    },
+    {
+      "id": "youtube-graphic-playlist",
+      "title": "YouTube — Graphic Design Full Course",
+      "url": "https://www.youtube.com/playlist?list=PLdHyNrkiFQPp1J9iDdkjnz_wb0hOVMSba",
+      "kind": "video-playlist",
+      "professionIds": [
+        "it.graphic"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "graphic design",
+        "full course"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-22",
+      "httpStatus": 200
+    },
+    {
+      "id": "coursetrain-motion-design-school-duplicate",
+      "title": "CourseTrain — duplicate listing",
+      "url": "https://coursetrain.net/source/motion-design-school/after-effects",
+      "kind": "aggregator",
+      "professionIds": [
+        "it.motion"
+      ],
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "access": "mixed",
+      "authority": "aggregator",
+      "status": "duplicate",
+      "topics": [
+        "course catalog"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-22",
+      "httpStatus": 200,
+      "duplicateOf": "motiondesign-school-courses",
+      "notes": "Дубль листинга MDS."
+    },
+    {
+      "id": "coursehunter-motion-design-school-duplicate",
+      "title": "CourseHunter — duplicate listing",
+      "url": "https://coursehunter.net/source/motion-design-school/after-effects",
+      "kind": "aggregator",
+      "professionIds": [
+        "it.motion"
+      ],
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "access": "mixed",
+      "authority": "aggregator",
+      "status": "duplicate",
+      "topics": [
+        "course catalog"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-22",
+      "httpStatus": 200,
+      "duplicateOf": "motiondesign-school-courses",
+      "notes": "Дубль листинга MDS."
+    }
+  ]
+}

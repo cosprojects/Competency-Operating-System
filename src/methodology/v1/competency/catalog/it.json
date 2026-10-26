@@ -1,16 +1,181 @@
 {
   "catalogVersion": "0.1.0",
   "domain": "it",
-  "updatedOn": "2026-10-25",
+  "updatedOn": "2026-10-26",
   "blocks": [
+    {
+      "id": "comp_3b5bab068e42",
+      "slug": "3d-animatsiya-i-rigging",
+      "title": "3D-анимация и риггинг",
+      "aliases": [
+        "3D-анимация",
+        "Риггинг и анимация 3D"
+      ],
+      "definition": "Анимация 3D-персонажей и объектов: риггинг, ключевые кадры, симуляции и динамика.",
+      "scope": "universal",
+      "canonicalIds": [
+        "motion-3d-animation"
+      ],
+      "professionIds": [
+        "it.motion"
+      ],
+      "components": [
+        {
+          "id": "3d-animatsiya-i-rigging.osnovy-3d-animatsii",
+          "slug": "osnovy-3d-animatsii",
+          "title": "Основы 3D-анимации",
+          "definition": "Базовые принципы и практики анимации объектов и персонажей в трёхмерной среде.",
+          "order": 1,
+          "tagIds": [
+            "tag_b094c6be1b9e"
+          ]
+        },
+        {
+          "id": "3d-animatsiya-i-rigging.rigging",
+          "slug": "rigging",
+          "title": "Риггинг",
+          "definition": "Создание и настройка скелета и управляющих элементов для анимации 3D-моделей.",
+          "order": 2,
+          "tagIds": [
+            "tag_8617bd3c2b60"
+          ]
+        },
+        {
+          "id": "3d-animatsiya-i-rigging.klyuchevye-kadry-i-krivye",
+          "slug": "klyuchevye-kadry-i-krivye",
+          "title": "Ключевые кадры и кривые",
+          "definition": "Методы анимации через ключевые позы и управление кривыми интерполяции.",
+          "order": 3,
+          "tagIds": [
+            "tag_ec53ec5d8d52"
+          ]
+        },
+        {
+          "id": "3d-animatsiya-i-rigging.simulyatsii-i-dinamika",
+          "slug": "simulyatsii-i-dinamika",
+          "title": "Симуляции и динамика",
+          "definition": "Использование физических симуляций для анимации тканей, частиц и других динамических эффектов.",
+          "order": 4,
+          "tagIds": [
+            "tag_724268fa628b"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_b094c6be1b9e",
+          "slug": "3d-animatsiya",
+          "title": "3D-анимация",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Анимация объектов и персонажей в 3D.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_3b5bab068e42",
+              "componentId": "3d-animatsiya-i-rigging.osnovy-3d-animatsii",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_8617bd3c2b60",
+          "slug": "rigging",
+          "title": "Риггинг",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Подготовка скелета и управляющих элементов.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_3b5bab068e42",
+              "componentId": "3d-animatsiya-i-rigging.rigging",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_ec53ec5d8d52",
+          "slug": "klyuchevye-kadry-3d",
+          "title": "Ключевые кадры 3D",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Анимация через ключевые позы и кривые.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_3b5bab068e42",
+              "componentId": "3d-animatsiya-i-rigging.klyuchevye-kadry-i-krivye",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_724268fa628b",
+          "slug": "simulyatsii",
+          "title": "Симуляции",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Динамика тканей, частиц и физики.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_3b5bab068e42",
+              "componentId": "3d-animatsiya-i-rigging.simulyatsii-i-dinamika",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_08daef40b804",
+        "costUsd": 0.00098512,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1228,
+          "outputTokens": 586
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
     {
       "id": "comp_5ed63dc3a73a",
       "slug": "3d-svet-i-render",
       "title": "3D, свет и рендер",
       "titleEn": "3D, Lighting and Rendering",
       "aliases": [
-        "3D-графика в моушн-дизайне",
-        "Трёхмерная визуализация и рендер"
+        "Трёхмерная графика в моушн-дизайне",
+        "3D-продакшен и рендер"
       ],
       "definition": "Трёхмерная форма, материалы, свет и рендер в моушн-продакшене.",
       "scope": "universal",
@@ -25,7 +190,7 @@
           "id": "3d-svet-i-render.trehmernaya-forma-i-modelirovanie",
           "slug": "trehmernaya-forma-i-modelirovanie",
           "title": "Трёхмерная форма и моделирование",
-          "definition": "Создание и компоновка трёхмерных объектов как основы 3D-сцены.",
+          "definition": "Создание и компоновка трёхмерных объектов как основы сцены.",
           "order": 1,
           "tagIds": [
             "tag_a1061b8896f8"
@@ -35,7 +200,7 @@
           "id": "3d-svet-i-render.materialy-i-sheyding",
           "slug": "materialy-i-sheyding",
           "title": "Материалы и шейдинг",
-          "definition": "Настройка внешнего вида поверхностей 3D-объектов через материалы и шейдеры.",
+          "definition": "Настройка внешнего вида поверхностей и шейдеров в 3D-сцене.",
           "order": 2,
           "tagIds": [
             "tag_317208fbddbb"
@@ -45,7 +210,7 @@
           "id": "3d-svet-i-render.svet-i-kompozitsiya-stseny",
           "slug": "svet-i-kompozitsiya-stseny",
           "title": "Свет и композиция сцены",
-          "definition": "Постановка освещения и организация пространства 3D-сцены.",
+          "definition": "Постановка освещения и организация пространства кадра в 3D.",
           "order": 3,
           "tagIds": [
             "tag_90294e662ca5"
@@ -55,7 +220,7 @@
           "id": "3d-svet-i-render.rendering-i-vyvod-izobrazheniya",
           "slug": "rendering-i-vyvod-izobrazheniya",
           "title": "Рендеринг и вывод изображения",
-          "definition": "Настройка рендера и подготовка финального изображения из 3D-сцены.",
+          "definition": "Настройка рендера и подготовка финального изображения.",
           "order": 4,
           "tagIds": [
             "tag_a0843eb4f6bd"
@@ -158,8 +323,13 @@
       "llmMeta": {
         "promptVersion": "competency-v1",
         "model": "deepseek-flash",
-        "inputHash": "llm_4a4efb48c663",
-        "costUsd": 0
+        "inputHash": "llm_92f44f1b7911",
+        "costUsd": 0.0009461000000000001,
+        "tokens": {
+          "cacheHitTokens": 256,
+          "cacheMissTokens": 1034,
+          "outputTokens": 590
+        }
       },
       "issues": [],
       "methodologyVersion": "0.1.0"
@@ -4154,6 +4324,171 @@
       "methodologyVersion": "0.1.0"
     },
     {
+      "id": "comp_a7afb6c78c4c",
+      "slug": "zvukovoy-dizayn-i-sinhronizatsiya",
+      "title": "Звуковой дизайн и синхронизация",
+      "aliases": [
+        "Звук в моушн-дизайне",
+        "Аудиодизайн и синхронизация"
+      ],
+      "definition": "Подбор и монтаж звука, музыкальный ритм, синхронизация движения и звуковых акцентов.",
+      "scope": "universal",
+      "canonicalIds": [
+        "motion-sound-design"
+      ],
+      "professionIds": [
+        "it.motion"
+      ],
+      "components": [
+        {
+          "id": "zvukovoy-dizayn-i-sinhronizatsiya.zvukovoy-dizayn",
+          "slug": "zvukovoy-dizayn",
+          "title": "Звуковой дизайн",
+          "definition": "Создание и подбор звуковых эффектов и звуковой среды.",
+          "order": 1,
+          "tagIds": [
+            "tag_602fd814a4a4"
+          ]
+        },
+        {
+          "id": "zvukovoy-dizayn-i-sinhronizatsiya.sinhronizatsiya-zvuka-i-dvizheniya",
+          "slug": "sinhronizatsiya-zvuka-i-dvizheniya",
+          "title": "Синхронизация звука и движения",
+          "definition": "Совмещение движения и звуковых акцентов во времени.",
+          "order": 2,
+          "tagIds": [
+            "tag_fe05bd2e1af5"
+          ]
+        },
+        {
+          "id": "zvukovoy-dizayn-i-sinhronizatsiya.muzykalnyy-ritm",
+          "slug": "muzykalnyy-ritm",
+          "title": "Музыкальный ритм",
+          "definition": "Работа с темпом и музыкальной структурой.",
+          "order": 3,
+          "tagIds": [
+            "tag_f7c739e7277c"
+          ]
+        },
+        {
+          "id": "zvukovoy-dizayn-i-sinhronizatsiya.zvukovaya-dramaturgiya",
+          "slug": "zvukovaya-dramaturgiya",
+          "title": "Звуковая драматургия",
+          "definition": "Звук как часть истории и настроения.",
+          "order": 4,
+          "tagIds": [
+            "tag_2e4d633a1c69"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_602fd814a4a4",
+          "slug": "zvukovoy-dizayn",
+          "title": "Звуковой дизайн",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Подбор и создание звуковых эффектов.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_a7afb6c78c4c",
+              "componentId": "zvukovoy-dizayn-i-sinhronizatsiya.zvukovoy-dizayn",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_fe05bd2e1af5",
+          "slug": "sinhronizatsiya-zvuka",
+          "title": "Синхронизация звука",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Совмещение движения и звуковых акцентов.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_a7afb6c78c4c",
+              "componentId": "zvukovoy-dizayn-i-sinhronizatsiya.sinhronizatsiya-zvuka-i-dvizheniya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_f7c739e7277c",
+          "slug": "muzykalnyy-ritm",
+          "title": "Музыкальный ритм",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Работа с темпом и музыкальной структурой.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_a7afb6c78c4c",
+              "componentId": "zvukovoy-dizayn-i-sinhronizatsiya.muzykalnyy-ritm",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_2e4d633a1c69",
+          "slug": "zvukovaya-dramaturgiya",
+          "title": "Звуковая драматургия",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Звук как часть истории и настроения.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_a7afb6c78c4c",
+              "componentId": "zvukovoy-dizayn-i-sinhronizatsiya.zvukovaya-dramaturgiya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_ad7236994211",
+        "costUsd": 0.0009179500000000001,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1187,
+          "outputTokens": 535
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
       "id": "comp_fa6b64a98d04",
       "slug": "interaktivnye-prototipy",
       "title": "Интерактивные прототипы",
@@ -5366,6 +5701,203 @@
       "methodologyVersion": "0.1.0"
     },
     {
+      "id": "comp_a8aa252a35b8",
+      "slug": "kompoziting-i-vfx",
+      "title": "Композитинг и VFX",
+      "aliases": [
+        "Compositing and VFX",
+        "VFX-композитинг"
+      ],
+      "definition": "Сборка слоёв, кеинг, трекинг, маски, цветокоррекция и совмещение 3D с live-action.",
+      "scope": "universal",
+      "canonicalIds": [
+        "motion-compositing"
+      ],
+      "professionIds": [
+        "it.motion"
+      ],
+      "components": [
+        {
+          "id": "kompoziting-i-vfx.osnovy-kompozitinga",
+          "slug": "osnovy-kompozitinga",
+          "title": "Основы композитинга",
+          "definition": "Принципы и практика сборки многослойного кадра из отдельных элементов.",
+          "order": 1,
+          "tagIds": [
+            "tag_8f150f1c5cd3"
+          ]
+        },
+        {
+          "id": "kompoziting-i-vfx.vydelenie-obektov-i-maskirovanie",
+          "slug": "vydelenie-obektov-i-maskirovanie",
+          "title": "Выделение объектов и маскирование",
+          "definition": "Техники отделения объектов от фона и управления видимостью областей кадра.",
+          "order": 2,
+          "tagIds": [
+            "tag_78f7af880740"
+          ]
+        },
+        {
+          "id": "kompoziting-i-vfx.treking-i-stabilizatsiya",
+          "slug": "treking-i-stabilizatsiya",
+          "title": "Трекинг и стабилизация",
+          "definition": "Отслеживание движения камеры и объектов для согласованного совмещения слоёв.",
+          "order": 3,
+          "tagIds": [
+            "tag_15234ff914ab"
+          ]
+        },
+        {
+          "id": "kompoziting-i-vfx.vizualnye-effekty-i-tsvetokorrektsiya",
+          "slug": "vizualnye-effekty-i-tsvetokorrektsiya",
+          "title": "Визуальные эффекты и цветокоррекция",
+          "definition": "Создание эффектов и финальная цветовая обработка изображения.",
+          "order": 4,
+          "tagIds": [
+            "tag_c684d733a9be"
+          ]
+        },
+        {
+          "id": "kompoziting-i-vfx.sovmeschenie-3d-i-live-action",
+          "slug": "sovmeschenie-3d-i-live-action",
+          "title": "Совмещение 3D и live-action",
+          "definition": "Интеграция трёхмерных элементов в отснятый материал с учётом перспективы, света и движения.",
+          "order": 5,
+          "tagIds": [
+            "tag_3b0b614b64a2"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_8f150f1c5cd3",
+          "slug": "kompoziting",
+          "title": "Композитинг",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Сборка слоёв и элементов кадра.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_a8aa252a35b8",
+              "componentId": "kompoziting-i-vfx.osnovy-kompozitinga",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_78f7af880740",
+          "slug": "keing-i-maski",
+          "title": "Кеинг и маски",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Вырезание объектов и работа с масками.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_a8aa252a35b8",
+              "componentId": "kompoziting-i-vfx.vydelenie-obektov-i-maskirovanie",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_15234ff914ab",
+          "slug": "treking",
+          "title": "Трекинг",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Слежение за движением камеры и объектов.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_a8aa252a35b8",
+              "componentId": "kompoziting-i-vfx.treking-i-stabilizatsiya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_c684d733a9be",
+          "slug": "vfx-i-tsvetokorrektsiya",
+          "title": "VFX и цветокоррекция",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Визуальные эффекты и финальная цветокоррекция.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_a8aa252a35b8",
+              "componentId": "kompoziting-i-vfx.vizualnye-effekty-i-tsvetokorrektsiya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_3b0b614b64a2",
+          "slug": "sovmeschenie-3d-s-live-action",
+          "title": "Совмещение 3D с live-action",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Встраивание 3D-объектов и рендеров в живой материал с согласованием камеры, масок и цвета.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_a8aa252a35b8",
+              "componentId": "kompoziting-i-vfx.sovmeschenie-3d-i-live-action",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_11e7185020f3",
+        "costUsd": 0.001208,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1202,
+          "outputTokens": 795
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
       "id": "comp_ee65cfba2fc2",
       "slug": "komponenty-i-patterny",
       "title": "Компоненты и паттерны",
@@ -5666,6 +6198,359 @@
           "cacheHitTokens": 512,
           "cacheMissTokens": 781,
           "outputTokens": 1069
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
+      "id": "comp_481dccaaa75f",
+      "slug": "montazh-i-ritm",
+      "title": "Монтаж и ритм",
+      "aliases": [
+        "Монтаж ролика и ритм",
+        "Ритм и темп монтажа"
+      ],
+      "definition": "Монтаж ролика, темп, паузы, переходы и драматургия движения в кадре.",
+      "scope": "universal",
+      "canonicalIds": [
+        "motion-editing"
+      ],
+      "professionIds": [
+        "it.motion"
+      ],
+      "components": [
+        {
+          "id": "montazh-i-ritm.sborka-i-struktura-montazha",
+          "slug": "sborka-i-struktura-montazha",
+          "title": "Сборка и структура монтажа",
+          "definition": "Принципы соединения сцен и последовательностей в целостный ролик.",
+          "order": 1,
+          "tagIds": [
+            "tag_37288c3c1bd9"
+          ]
+        },
+        {
+          "id": "montazh-i-ritm.ritm-i-temp",
+          "slug": "ritm-i-temp",
+          "title": "Ритм и темп",
+          "definition": "Управление скоростью повествования, паузами и динамикой смены кадров.",
+          "order": 2,
+          "tagIds": [
+            "tag_746394d9773f"
+          ]
+        },
+        {
+          "id": "montazh-i-ritm.perehody-i-skleyki",
+          "slug": "perehody-i-skleyki",
+          "title": "Переходы и склейки",
+          "definition": "Способы соединения кадров и организации движения между ними.",
+          "order": 3,
+          "tagIds": [
+            "tag_e607d644659f"
+          ]
+        },
+        {
+          "id": "montazh-i-ritm.dramaturgiya-montazha",
+          "slug": "dramaturgiya-montazha",
+          "title": "Драматургия монтажа",
+          "definition": "Построение истории и эмоциональной дуги ролика средствами монтажа.",
+          "order": 4,
+          "tagIds": [
+            "tag_6b6fc35d11b0"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_37288c3c1bd9",
+          "slug": "montazh-rolika",
+          "title": "Монтаж ролика",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Сборка сцен и последовательностей.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_481dccaaa75f",
+              "componentId": "montazh-i-ritm.sborka-i-struktura-montazha",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_746394d9773f",
+          "slug": "ritm-i-temp",
+          "title": "Ритм и темп",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Управление скоростью и паузами.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_481dccaaa75f",
+              "componentId": "montazh-i-ritm.ritm-i-temp",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_e607d644659f",
+          "slug": "perehody",
+          "title": "Переходы",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Склейки, переходы и движение между кадрами.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_481dccaaa75f",
+              "componentId": "montazh-i-ritm.perehody-i-skleyki",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_6b6fc35d11b0",
+          "slug": "dramaturgiya-montazha",
+          "title": "Драматургия монтажа",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "История и эмоциональная дуга ролика.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_481dccaaa75f",
+              "componentId": "montazh-i-ritm.dramaturgiya-montazha",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_94e9ec7b067c",
+        "costUsd": 0.00096324,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1204,
+          "outputTokens": 572
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
+      "id": "comp_53d3a620b634",
+      "slug": "moushn-instrumentariy",
+      "title": "Моушн-инструментарий",
+      "aliases": [
+        "Motion-инструменты",
+        "Инструменты моушн-дизайна"
+      ],
+      "definition": "After Effects, Cinema 4D, Blender, Spline, Unreal Engine и производственные плагины.",
+      "scope": "universal",
+      "canonicalIds": [
+        "motion-toolchain"
+      ],
+      "professionIds": [
+        "it.motion"
+      ],
+      "components": [
+        {
+          "id": "moushn-instrumentariy.kompoziting-i-2d-animatsiya",
+          "slug": "kompoziting-i-2d-animatsiya",
+          "title": "Композитинг и 2D-анимация",
+          "definition": "Инструменты сборки сцен, анимации слоёв и композитинга в двумерном пространстве.",
+          "order": 1,
+          "tagIds": [
+            "tag_fa54af8c2cf8"
+          ]
+        },
+        {
+          "id": "moushn-instrumentariy.3d-modelirovanie-i-animatsiya",
+          "slug": "3d-modelirovanie-i-animatsiya",
+          "title": "3D-моделирование и анимация",
+          "definition": "Пакеты для создания трёхмерных моделей, сцен и анимации.",
+          "order": 2,
+          "tagIds": [
+            "tag_62be7f7d044c",
+            "tag_fd2e593016a9"
+          ]
+        },
+        {
+          "id": "moushn-instrumentariy.interaktivnyy-3d-i-realnoe-vremya",
+          "slug": "interaktivnyy-3d-i-realnoe-vremya",
+          "title": "Интерактивный 3D и реальное время",
+          "definition": "Среды для интерактивных трёхмерных сцен и рендеринга в реальном времени.",
+          "order": 3,
+          "tagIds": [
+            "tag_a092027bb56d"
+          ]
+        },
+        {
+          "id": "moushn-instrumentariy.proizvodstvennye-plaginy",
+          "slug": "proizvodstvennye-plaginy",
+          "title": "Производственные плагины",
+          "definition": "Дополнительные расширения и плагины, используемые в производственном пайплайне моушн-дизайна.",
+          "order": 4,
+          "tagIds": [
+            "tag_26d198381c02"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_fa54af8c2cf8",
+          "slug": "after-effects",
+          "title": "After Effects",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Композитинг и анимация в After Effects.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_53d3a620b634",
+              "componentId": "moushn-instrumentariy.kompoziting-i-2d-animatsiya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_62be7f7d044c",
+          "slug": "cinema-4d",
+          "title": "Cinema 4D",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "3D-моделирование и анимация в Cinema 4D.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_53d3a620b634",
+              "componentId": "moushn-instrumentariy.3d-modelirovanie-i-animatsiya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_fd2e593016a9",
+          "slug": "blender",
+          "title": "Blender",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "3D-пайплайн в Blender.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_53d3a620b634",
+              "componentId": "moushn-instrumentariy.3d-modelirovanie-i-animatsiya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_a092027bb56d",
+          "slug": "spline-i-unreal",
+          "title": "Spline и Unreal",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Интерактивный 3D и реальное время.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_53d3a620b634",
+              "componentId": "moushn-instrumentariy.interaktivnyy-3d-i-realnoe-vremya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_26d198381c02",
+          "slug": "proizvodstvennye-plaginy",
+          "title": "Производственные плагины",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Расширения и плагины, дополняющие базовые инструменты моушн-дизайна в производственном процессе.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_53d3a620b634",
+              "componentId": "moushn-instrumentariy.proizvodstvennye-plaginy",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_deb992d09e0a",
+        "costUsd": 0.00111046,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1240,
+          "outputTokens": 697
         }
       },
       "issues": [],
@@ -7157,6 +8042,337 @@
       "methodologyVersion": "0.1.0"
     },
     {
+      "id": "comp_e7a143f3e374",
+      "slug": "printsipy-animatsii",
+      "title": "Принципы анимации",
+      "titleEn": "Principles of Animation",
+      "aliases": [
+        "12 принципов анимации",
+        "Двенадцать принципов анимации"
+      ],
+      "definition": "Двенадцать принципов анимации: тайминг, spacing, вес, инерция, exaggeration и appeal.",
+      "scope": "universal",
+      "canonicalIds": [
+        "motion-animation-principles"
+      ],
+      "professionIds": [
+        "it.motion"
+      ],
+      "components": [
+        {
+          "id": "printsipy-animatsii.tayming-i-spacing",
+          "slug": "tayming-i-spacing",
+          "title": "Тайминг и spacing",
+          "definition": "Раздел о распределении кадров во времени и пространстве, определяющем ощущение скорости и ритма движения.",
+          "order": 1,
+          "tagIds": [
+            "tag_754dab1439a1"
+          ]
+        },
+        {
+          "id": "printsipy-animatsii.fizika-dvizheniya",
+          "slug": "fizika-dvizheniya",
+          "title": "Физика движения",
+          "definition": "Раздел о передаче массы, ускорения и затухания в анимации.",
+          "order": 2,
+          "tagIds": [
+            "tag_a9b6c6d94251"
+          ]
+        },
+        {
+          "id": "printsipy-animatsii.vyrazitelnost-dvizheniya",
+          "slug": "vyrazitelnost-dvizheniya",
+          "title": "Выразительность движения",
+          "definition": "Раздел о художественной выразительности и привлекательности анимации.",
+          "order": 3,
+          "tagIds": [
+            "tag_6d511eae1d8d"
+          ]
+        },
+        {
+          "id": "printsipy-animatsii.obschaya-sistema-printsipov",
+          "slug": "obschaya-sistema-printsipov",
+          "title": "Общая система принципов",
+          "definition": "Раздел о двенадцати принципах анимации как целостной системе.",
+          "order": 4,
+          "tagIds": [
+            "tag_4389e5e0e683"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_754dab1439a1",
+          "slug": "spacing-i-tayming",
+          "title": "Spacing и тайминг",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Распределение кадров и ощущение скорости.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_e7a143f3e374",
+              "componentId": "printsipy-animatsii.tayming-i-spacing",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_a9b6c6d94251",
+          "slug": "ves-i-inertsiya",
+          "title": "Вес и инерция",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Физика массы, ускорения и затухания.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_e7a143f3e374",
+              "componentId": "printsipy-animatsii.fizika-dvizheniya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_6d511eae1d8d",
+          "slug": "exaggeration-i-appeal",
+          "title": "Exaggeration и appeal",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Выразительность и привлекательность движения.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_e7a143f3e374",
+              "componentId": "printsipy-animatsii.vyrazitelnost-dvizheniya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_4389e5e0e683",
+          "slug": "printsipy-animatsii",
+          "title": "Принципы анимации",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Двенадцать принципов анимации в движении.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_e7a143f3e374",
+              "componentId": "printsipy-animatsii.obschaya-sistema-printsipov",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_aba22170ac98",
+        "costUsd": 0.0009367700000000001,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1163,
+          "outputTokens": 558
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
+      "id": "comp_4d33789a5be8",
+      "slug": "prodakshn-i-payplayn",
+      "title": "Продакшн и пайплайн",
+      "aliases": [
+        "Производство и пайплайн",
+        "Production pipeline"
+      ],
+      "definition": "Планирование производства, рендер, форматы, сроки и передача материалов.",
+      "scope": "universal",
+      "canonicalIds": [
+        "motion-production"
+      ],
+      "professionIds": [
+        "it.motion"
+      ],
+      "components": [
+        {
+          "id": "prodakshn-i-payplayn.planirovanie-proizvodstva",
+          "slug": "planirovanie-proizvodstva",
+          "title": "Планирование производства",
+          "definition": "Организация процесса производства от подготовки до сдачи проекта.",
+          "order": 1,
+          "tagIds": [
+            "tag_da36503bba8c"
+          ]
+        },
+        {
+          "id": "prodakshn-i-payplayn.render-i-formaty",
+          "slug": "render-i-formaty",
+          "title": "Рендер и форматы",
+          "definition": "Технические аспекты вывода и подготовки материалов к доставке.",
+          "order": 2,
+          "tagIds": [
+            "tag_038f7146d364"
+          ]
+        },
+        {
+          "id": "prodakshn-i-payplayn.sroki-i-byudzhet",
+          "slug": "sroki-i-byudzhet",
+          "title": "Сроки и бюджет",
+          "definition": "Оценка временных и стоимостных ресурсов производства.",
+          "order": 3,
+          "tagIds": [
+            "tag_10d0f6bcf152"
+          ]
+        },
+        {
+          "id": "prodakshn-i-payplayn.peredacha-materialov",
+          "slug": "peredacha-materialov",
+          "title": "Передача материалов",
+          "definition": "Подготовка и сдача итоговых файлов проекта.",
+          "order": 4,
+          "tagIds": [
+            "tag_730bec50dd10"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_da36503bba8c",
+          "slug": "prodakshn-payplayn",
+          "title": "Продакшн-пайплайн",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Планирование и организация производства.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_4d33789a5be8",
+              "componentId": "prodakshn-i-payplayn.planirovanie-proizvodstva",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_038f7146d364",
+          "slug": "render-i-formaty",
+          "title": "Рендер и форматы",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Рендер, кодеки и форматы доставки.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_4d33789a5be8",
+              "componentId": "prodakshn-i-payplayn.render-i-formaty",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_10d0f6bcf152",
+          "slug": "sroki-i-byudzhet",
+          "title": "Сроки и бюджет",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Оценка сроков и стоимости производства.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_4d33789a5be8",
+              "componentId": "prodakshn-i-payplayn.sroki-i-byudzhet",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_730bec50dd10",
+          "slug": "peredacha-materialov",
+          "title": "Передача материалов",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Подготовка файлов и сдача проекта.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_4d33789a5be8",
+              "componentId": "prodakshn-i-payplayn.peredacha-materialov",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_7889444195e9",
+        "costUsd": 0.0008926400000000001,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1244,
+          "outputTokens": 498
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
       "id": "comp_275b0c8fc9b6",
       "slug": "produktovaya-strategiya",
       "title": "Продуктовая стратегия",
@@ -8478,8 +9694,7 @@
       "slug": "storibording-i-rezhissura-dvizheniya",
       "title": "Сторибординг и режиссура движения",
       "aliases": [
-        "Раскадровка и режиссура motion-сцены",
-        "Motion storyboarding and direction"
+        "Раскадровка и режиссура motion-сцены"
       ],
       "definition": "Раскадровка, драматургия движения и режиссура динамической сцены.",
       "scope": "universal",
@@ -8491,10 +9706,10 @@
       ],
       "components": [
         {
-          "id": "storibording-i-rezhissura-dvizheniya.raskadrovka-dinamicheskoy-stseny",
-          "slug": "raskadrovka-dinamicheskoy-stseny",
-          "title": "Раскадровка динамической сцены",
-          "definition": "Подготовка визуальной последовательности кадров для motion-сцены до продакшена.",
+          "id": "storibording-i-rezhissura-dvizheniya.raskadrovka-motion-stseny",
+          "slug": "raskadrovka-motion-stseny",
+          "title": "Раскадровка motion-сцены",
+          "definition": "Подготовка визуальной последовательности кадров и переходов до этапа продакшена.",
           "order": 1,
           "tagIds": [
             "tag_d6f699d7e3e6",
@@ -8502,23 +9717,23 @@
           ]
         },
         {
+          "id": "storibording-i-rezhissura-dvizheniya.rezhissura-dinamicheskoy-stseny",
+          "slug": "rezhissura-dinamicheskoy-stseny",
+          "title": "Режиссура динамической сцены",
+          "definition": "Постановка движения и управление вниманием зрителя в динамической сцене.",
+          "order": 2,
+          "tagIds": [
+            "tag_680de0b00fe3"
+          ]
+        },
+        {
           "id": "storibording-i-rezhissura-dvizheniya.dramaturgiya-dvizheniya",
           "slug": "dramaturgiya-dvizheniya",
           "title": "Драматургия движения",
           "definition": "Построение сюжета и эмоциональной арки в моушн-ролике.",
-          "order": 2,
-          "tagIds": [
-            "tag_fd47fdaa944c"
-          ]
-        },
-        {
-          "id": "storibording-i-rezhissura-dvizheniya.rezhissura-dinamicheskoy-stseny",
-          "slug": "rezhissura-dinamicheskoy-stseny",
-          "title": "Режиссура динамической сцены",
-          "definition": "Постановка движения и управление вниманием зрителя в сцене.",
           "order": 3,
           "tagIds": [
-            "tag_680de0b00fe3"
+            "tag_fd47fdaa944c"
           ]
         }
       ],
@@ -8538,7 +9753,7 @@
           "competencyLinks": [
             {
               "competencyId": "comp_425bd4dc7c7f",
-              "componentId": "storibording-i-rezhissura-dvizheniya.raskadrovka-dinamicheskoy-stseny",
+              "componentId": "storibording-i-rezhissura-dvizheniya.raskadrovka-motion-stseny",
               "role": "primary"
             }
           ],
@@ -8560,29 +9775,7 @@
           "competencyLinks": [
             {
               "competencyId": "comp_425bd4dc7c7f",
-              "componentId": "storibording-i-rezhissura-dvizheniya.raskadrovka-dinamicheskoy-stseny",
-              "role": "primary"
-            }
-          ],
-          "materialIds": [],
-          "needsReview": true
-        },
-        {
-          "id": "tag_fd47fdaa944c",
-          "slug": "dramaturgiya-dvizheniya",
-          "title": "Драматургия движения",
-          "aliases": [],
-          "kind": "knowledge",
-          "definition": "Сюжет и эмоциональная арка в моушн-ролике.",
-          "professionIds": [
-            "it.motion"
-          ],
-          "sourceRefs": [],
-          "evidenceState": "needs_review",
-          "competencyLinks": [
-            {
-              "competencyId": "comp_425bd4dc7c7f",
-              "componentId": "storibording-i-rezhissura-dvizheniya.dramaturgiya-dvizheniya",
+              "componentId": "storibording-i-rezhissura-dvizheniya.raskadrovka-motion-stseny",
               "role": "primary"
             }
           ],
@@ -8610,6 +9803,28 @@
           ],
           "materialIds": [],
           "needsReview": true
+        },
+        {
+          "id": "tag_fd47fdaa944c",
+          "slug": "dramaturgiya-dvizheniya",
+          "title": "Драматургия движения",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Сюжет и эмоциональная арка в моушн-ролике.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_425bd4dc7c7f",
+              "componentId": "storibording-i-rezhissura-dvizheniya.dramaturgiya-dvizheniya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
         }
       ],
       "sourceRefs": [],
@@ -8618,8 +9833,13 @@
       "llmMeta": {
         "promptVersion": "competency-v1",
         "model": "deepseek-flash",
-        "inputHash": "llm_5357e7499704",
-        "costUsd": 0
+        "inputHash": "llm_531a3df3b255",
+        "costUsd": 0.00086806,
+        "tokens": {
+          "cacheHitTokens": 256,
+          "cacheMissTokens": 1022,
+          "outputTokens": 522
+        }
       },
       "issues": [],
       "methodologyVersion": "0.1.0"
@@ -8630,7 +9850,8 @@
       "title": "Тайминг и кривые ускорения",
       "aliases": [
         "Тайминг анимации",
-        "Кривые ускорения в анимации"
+        "Кривые ускорения",
+        "Easing и ритм движения"
       ],
       "definition": "Проектирование движения во времени: тайминг, кривые ускорения, ритм и ощущение веса.",
       "scope": "universal",
@@ -8642,10 +9863,10 @@
       ],
       "components": [
         {
-          "id": "tayming-i-krivye-uskoreniya.tayming-i-ritm-animatsii",
-          "slug": "tayming-i-ritm-animatsii",
-          "title": "Тайминг и ритм анимации",
-          "definition": "Расчёт длительности, пауз и ритма анимационных переходов для управления восприятием движения.",
+          "id": "tayming-i-krivye-uskoreniya.tayming-i-ritm",
+          "slug": "tayming-i-ritm",
+          "title": "Тайминг и ритм",
+          "definition": "Расчёт длительности, пауз и ритма анимационных переходов и сцен.",
           "order": 1,
           "tagIds": [
             "tag_294513cf02d5",
@@ -8653,13 +9874,22 @@
           ]
         },
         {
-          "id": "tayming-i-krivye-uskoreniya.krivye-uskoreniya-i-fizika-dvizheniya",
-          "slug": "krivye-uskoreniya-i-fizika-dvizheniya",
-          "title": "Кривые ускорения и физика движения",
-          "definition": "Настройка easing-кривых и моделирование веса, инерции и физики в анимации.",
+          "id": "tayming-i-krivye-uskoreniya.krivye-uskoreniya",
+          "slug": "krivye-uskoreniya",
+          "title": "Кривые ускорения",
+          "definition": "Настройка easing-кривых для естественного и управляемого движения.",
           "order": 2,
           "tagIds": [
-            "tag_8d27766a3766",
+            "tag_8d27766a3766"
+          ]
+        },
+        {
+          "id": "tayming-i-krivye-uskoreniya.ves-i-inertsiya",
+          "slug": "ves-i-inertsiya",
+          "title": "Вес и инерция",
+          "definition": "Ощущение массы, инерции и физики в анимации.",
+          "order": 3,
+          "tagIds": [
             "tag_06697b8af0c2"
           ]
         }
@@ -8680,7 +9910,7 @@
           "competencyLinks": [
             {
               "competencyId": "comp_92e9921f59b8",
-              "componentId": "tayming-i-krivye-uskoreniya.tayming-i-ritm-animatsii",
+              "componentId": "tayming-i-krivye-uskoreniya.tayming-i-ritm",
               "role": "primary"
             }
           ],
@@ -8702,7 +9932,7 @@
           "competencyLinks": [
             {
               "competencyId": "comp_92e9921f59b8",
-              "componentId": "tayming-i-krivye-uskoreniya.tayming-i-ritm-animatsii",
+              "componentId": "tayming-i-krivye-uskoreniya.tayming-i-ritm",
               "role": "primary"
             }
           ],
@@ -8724,7 +9954,7 @@
           "competencyLinks": [
             {
               "competencyId": "comp_92e9921f59b8",
-              "componentId": "tayming-i-krivye-uskoreniya.krivye-uskoreniya-i-fizika-dvizheniya",
+              "componentId": "tayming-i-krivye-uskoreniya.krivye-uskoreniya",
               "role": "primary"
             }
           ],
@@ -8746,7 +9976,7 @@
           "competencyLinks": [
             {
               "competencyId": "comp_92e9921f59b8",
-              "componentId": "tayming-i-krivye-uskoreniya.krivye-uskoreniya-i-fizika-dvizheniya",
+              "componentId": "tayming-i-krivye-uskoreniya.ves-i-inertsiya",
               "role": "primary"
             }
           ],
@@ -8760,8 +9990,13 @@
       "llmMeta": {
         "promptVersion": "competency-v1",
         "model": "deepseek-flash",
-        "inputHash": "llm_a00d43a6f490",
-        "costUsd": 0
+        "inputHash": "llm_0533345d459d",
+        "costUsd": 0.00086069,
+        "tokens": {
+          "cacheHitTokens": 256,
+          "cacheMissTokens": 1011,
+          "outputTokens": 518
+        }
       },
       "issues": [],
       "methodologyVersion": "0.1.0"
@@ -11343,6 +12578,494 @@
       "methodologyVersion": "0.1.0"
     },
     {
+      "id": "comp_9c942127a8f2",
+      "slug": "motion-aydentika-i-brend-sistemy",
+      "title": "Motion-айдентика и бренд-системы",
+      "aliases": [
+        "Motion-брендинг",
+        "Анимационная айдентика"
+      ],
+      "definition": "Перенос айдентики в движение: motion-логотипы, бренд-гайды, системы анимации.",
+      "scope": "universal",
+      "canonicalIds": [
+        "motion-brand-systems"
+      ],
+      "professionIds": [
+        "it.motion"
+      ],
+      "components": [
+        {
+          "id": "motion-aydentika-i-brend-sistemy.motion-logotip-i-znak",
+          "slug": "motion-logotip-i-znak",
+          "title": "Motion-логотип и знак",
+          "definition": "Анимация логотипа и знака как части айдентики бренда.",
+          "order": 1,
+          "tagIds": [
+            "tag_311e6960a0e7"
+          ]
+        },
+        {
+          "id": "motion-aydentika-i-brend-sistemy.brend-gayd-dvizheniya",
+          "slug": "brend-gayd-dvizheniya",
+          "title": "Бренд-гайд движения",
+          "definition": "Правила и константы анимации бренда, зафиксированные в гайде.",
+          "order": 2,
+          "tagIds": [
+            "tag_17fba95aecd3"
+          ]
+        },
+        {
+          "id": "motion-aydentika-i-brend-sistemy.motion-sistema-brenda",
+          "slug": "motion-sistema-brenda",
+          "title": "Motion-система бренда",
+          "definition": "Библиотека движений и переходов как системный инструмент бренда.",
+          "order": 3,
+          "tagIds": [
+            "tag_fb3cb13c93fd"
+          ]
+        },
+        {
+          "id": "motion-aydentika-i-brend-sistemy.perenos-aydentiki-v-dvizhenie",
+          "slug": "perenos-aydentiki-v-dvizhenie",
+          "title": "Перенос айдентики в движение",
+          "definition": "Перевод визуального стиля бренда в motion-среду.",
+          "order": 4,
+          "tagIds": [
+            "tag_c41707b67858"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_311e6960a0e7",
+          "slug": "motion-logotip",
+          "title": "Motion-логотип",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Анимация знака и логотипа.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_9c942127a8f2",
+              "componentId": "motion-aydentika-i-brend-sistemy.motion-logotip-i-znak",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_17fba95aecd3",
+          "slug": "brend-gayd-dvizheniya",
+          "title": "Бренд-гайд движения",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Правила и константы анимации бренда.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_9c942127a8f2",
+              "componentId": "motion-aydentika-i-brend-sistemy.brend-gayd-dvizheniya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_fb3cb13c93fd",
+          "slug": "motion-sistema",
+          "title": "Motion-система",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Библиотека движений и переходов.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_9c942127a8f2",
+              "componentId": "motion-aydentika-i-brend-sistemy.motion-sistema-brenda",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_c41707b67858",
+          "slug": "aydentika-v-dvizhenii",
+          "title": "Айдентика в движении",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Перенос визуального стиля в motion.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_9c942127a8f2",
+              "componentId": "motion-aydentika-i-brend-sistemy.perenos-aydentiki-v-dvizhenie",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_4669987c395b",
+        "costUsd": 0.0009504400000000001,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1234,
+          "outputTokens": 553
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
+      "id": "comp_b35802975fdf",
+      "slug": "showreel-i-portfolio",
+      "title": "Showreel и портфолио",
+      "titleEn": "Showreel and Portfolio",
+      "aliases": [
+        "Шоурил и портфолио",
+        "Портфолио и шоурил"
+      ],
+      "definition": "Сборка шоурила, кейсов и презентации работ для заказчиков и студий.",
+      "scope": "universal",
+      "canonicalIds": [
+        "motion-showreel"
+      ],
+      "professionIds": [
+        "it.motion"
+      ],
+      "components": [
+        {
+          "id": "showreel-i-portfolio.shouril",
+          "slug": "shouril",
+          "title": "Шоурил",
+          "definition": "Сборка лучших работ в короткий ролик для демонстрации возможностей.",
+          "order": 1,
+          "tagIds": [
+            "tag_305de1d0dcc3"
+          ]
+        },
+        {
+          "id": "showreel-i-portfolio.keysy",
+          "slug": "keysy",
+          "title": "Кейсы",
+          "definition": "Описание задачи, процесса и результата в портфолио.",
+          "order": 2,
+          "tagIds": [
+            "tag_1549e8afe284"
+          ]
+        },
+        {
+          "id": "showreel-i-portfolio.portfolio",
+          "slug": "portfolio",
+          "title": "Портфолио",
+          "definition": "Структура и подача работ в портфолио.",
+          "order": 3,
+          "tagIds": [
+            "tag_9a804d50320f"
+          ]
+        },
+        {
+          "id": "showreel-i-portfolio.prezentatsiya-rabot",
+          "slug": "prezentatsiya-rabot",
+          "title": "Презентация работ",
+          "definition": "Защита идей и результатов перед заказчиками и студиями.",
+          "order": 4,
+          "tagIds": [
+            "tag_f10e3733a41a"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_305de1d0dcc3",
+          "slug": "shouril",
+          "title": "Шоурил",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Сборка лучших работ в короткий ролик.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_b35802975fdf",
+              "componentId": "showreel-i-portfolio.shouril",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_1549e8afe284",
+          "slug": "keysy",
+          "title": "Кейсы",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Описание задачи, процесса и результата.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_b35802975fdf",
+              "componentId": "showreel-i-portfolio.keysy",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_9a804d50320f",
+          "slug": "portfolio",
+          "title": "Портфолио",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Структура и подача работ.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_b35802975fdf",
+              "componentId": "showreel-i-portfolio.portfolio",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_f10e3733a41a",
+          "slug": "prezentatsiya-rabot",
+          "title": "Презентация работ",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Защита идей и результатов.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_b35802975fdf",
+              "componentId": "showreel-i-portfolio.prezentatsiya-rabot",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_7583d40ec05c",
+        "costUsd": 0.00093382,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1258,
+          "outputTokens": 532
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
+      "id": "comp_3c9c8526d592",
+      "slug": "style-frames-i-art-direkshn",
+      "title": "Style frames и арт-дирекшн",
+      "titleEn": "Style Frames and Art Direction",
+      "aliases": [
+        "Арт-дирекшн и кадры-концепты",
+        "Визуальный стиль до продакшена"
+      ],
+      "definition": "Поиск визуального стиля, референсы, цветовые сценарии и кадры-концепты до продакшена.",
+      "scope": "universal",
+      "canonicalIds": [
+        "motion-styleframes"
+      ],
+      "professionIds": [
+        "it.motion"
+      ],
+      "components": [
+        {
+          "id": "style-frames-i-art-direkshn.poisk-i-fiksatsiya-vizualnogo-stilya",
+          "slug": "poisk-i-fiksatsiya-vizualnogo-stilya",
+          "title": "Поиск и фиксация визуального стиля",
+          "definition": "Формирование визуального направления проекта через референсы и кадры-концепты до начала продакшена.",
+          "order": 1,
+          "tagIds": [
+            "tag_c9a680d2825d",
+            "tag_0d06862889bd"
+          ]
+        },
+        {
+          "id": "style-frames-i-art-direkshn.tsvetovaya-dramaturgiya",
+          "slug": "tsvetovaya-dramaturgiya",
+          "title": "Цветовая драматургия",
+          "definition": "Построение цветовых сценариев, поддерживающих повествование и настроение ролика.",
+          "order": 2,
+          "tagIds": [
+            "tag_efd6b9cb9d32"
+          ]
+        },
+        {
+          "id": "style-frames-i-art-direkshn.art-direkshn",
+          "slug": "art-direkshn",
+          "title": "Арт-дирекшн",
+          "definition": "Обеспечение визуальной целостности и единого стиля на протяжении проекта.",
+          "order": 3,
+          "tagIds": [
+            "tag_adb09f74c4e4"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_c9a680d2825d",
+          "slug": "style-frames",
+          "title": "Style frames",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Кадры-концепты визуального стиля.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_3c9c8526d592",
+              "componentId": "style-frames-i-art-direkshn.poisk-i-fiksatsiya-vizualnogo-stilya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_0d06862889bd",
+          "slug": "referensy-i-mudbord",
+          "title": "Референсы и мудборд",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Сбор визуальных референсов и направления.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_3c9c8526d592",
+              "componentId": "style-frames-i-art-direkshn.poisk-i-fiksatsiya-vizualnogo-stilya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_efd6b9cb9d32",
+          "slug": "tsvetovye-stsenarii",
+          "title": "Цветовые сценарии",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Цветовая драматургия ролика.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_3c9c8526d592",
+              "componentId": "style-frames-i-art-direkshn.tsvetovaya-dramaturgiya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_adb09f74c4e4",
+          "slug": "art-direkshn",
+          "title": "Арт-дирекшн",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Визуальная целостность и стиль.",
+          "professionIds": [
+            "it.motion"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_3c9c8526d592",
+              "componentId": "style-frames-i-art-direkshn.art-direkshn",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_22ef782e4cbf",
+        "costUsd": 0.00101755,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1177,
+          "outputTokens": 628
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
       "id": "comp_94c55eb76f7e",
       "slug": "ux-metriki-i-eksperimenty",
       "title": "UX-метрики и эксперименты",
@@ -11619,6 +13342,28 @@
   ],
   "tags": [
     {
+      "id": "tag_b094c6be1b9e",
+      "slug": "3d-animatsiya",
+      "title": "3D-анимация",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Анимация объектов и персонажей в 3D.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_3b5bab068e42",
+          "componentId": "3d-animatsiya-i-rigging.osnovy-3d-animatsii",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_a1061b8896f8",
       "slug": "3d-modelirovanie",
       "title": "3D-моделирование",
@@ -11716,6 +13461,28 @@
         {
           "competencyId": "comp_287b573c505e",
           "componentId": "brend-aydentika.sistema-vizualnoy-identichnosti",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_c41707b67858",
+      "slug": "aydentika-v-dvizhenii",
+      "title": "Айдентика в движении",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Перенос визуального стиля в motion.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_9c942127a8f2",
+          "componentId": "motion-aydentika-i-brend-sistemy.perenos-aydentiki-v-dvizhenie",
           "role": "primary"
         }
       ],
@@ -12039,6 +13806,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_adb09f74c4e4",
+      "slug": "art-direkshn",
+      "title": "Арт-дирекшн",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Визуальная целостность и стиль.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_3c9c8526d592",
+          "componentId": "style-frames-i-art-direkshn.art-direkshn",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_2b04f073d881",
       "slug": "biblioteki-komponentov",
       "title": "Библиотеки компонентов",
@@ -12111,6 +13900,28 @@
         {
           "competencyId": "comp_bee3f2b037f5",
           "componentId": "customer-journey-map.boli-i-barery-polzovatelya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_17fba95aecd3",
+      "slug": "brend-gayd-dvizheniya",
+      "title": "Бренд-гайд движения",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Правила и константы анимации бренда.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_9c942127a8f2",
+          "componentId": "motion-aydentika-i-brend-sistemy.brend-gayd-dvizheniya",
           "role": "primary"
         }
       ],
@@ -12339,6 +14150,28 @@
       "needsReview": true
     },
     {
+      "id": "tag_a9b6c6d94251",
+      "slug": "ves-i-inertsiya",
+      "title": "Вес и инерция",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Физика массы, ускорения и затухания.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_e7a143f3e374",
+          "componentId": "printsipy-animatsii.fizika-dvizheniya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_06697b8af0c2",
       "slug": "ves-i-inertsiya-dvizheniya",
       "title": "Вес и инерция движения",
@@ -12353,7 +14186,7 @@
       "competencyLinks": [
         {
           "competencyId": "comp_92e9921f59b8",
-          "componentId": "tayming-i-krivye-uskoreniya.krivye-uskoreniya-i-fizika-dvizheniya",
+          "componentId": "tayming-i-krivye-uskoreniya.ves-i-inertsiya",
           "role": "primary"
         }
       ],
@@ -12869,6 +14702,28 @@
       "needsReview": true
     },
     {
+      "id": "tag_6b6fc35d11b0",
+      "slug": "dramaturgiya-montazha",
+      "title": "Драматургия монтажа",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "История и эмоциональная дуга ролика.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_481dccaaa75f",
+          "componentId": "montazh-i-ritm.dramaturgiya-montazha",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_fe047e016362",
       "slug": "zhiznennyy-tsikl-produkta",
       "title": "Жизненный цикл продукта",
@@ -12956,6 +14811,50 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_2e4d633a1c69",
+      "slug": "zvukovaya-dramaturgiya",
+      "title": "Звуковая драматургия",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Звук как часть истории и настроения.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_a7afb6c78c4c",
+          "componentId": "zvukovoy-dizayn-i-sinhronizatsiya.zvukovaya-dramaturgiya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_602fd814a4a4",
+      "slug": "zvukovoy-dizayn",
+      "title": "Звуковой дизайн",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Подбор и создание звуковых эффектов.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_a7afb6c78c4c",
+          "componentId": "zvukovoy-dizayn-i-sinhronizatsiya.zvukovoy-dizayn",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_0a7b06a47ef5",
@@ -13244,6 +15143,50 @@
       "needsReview": true
     },
     {
+      "id": "tag_78f7af880740",
+      "slug": "keing-i-maski",
+      "title": "Кеинг и маски",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Вырезание объектов и работа с масками.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_a8aa252a35b8",
+          "componentId": "kompoziting-i-vfx.vydelenie-obektov-i-maskirovanie",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_1549e8afe284",
+      "slug": "keysy",
+      "title": "Кейсы",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Описание задачи, процесса и результата.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_b35802975fdf",
+          "componentId": "showreel-i-portfolio.keysy",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_e28a8277535e",
       "slug": "klyuchevye-kadry",
       "title": "Ключевые кадры",
@@ -13258,7 +15201,29 @@
       "competencyLinks": [
         {
           "competencyId": "comp_92e9921f59b8",
-          "componentId": "tayming-i-krivye-uskoreniya.tayming-i-ritm-animatsii",
+          "componentId": "tayming-i-krivye-uskoreniya.tayming-i-ritm",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_ec53ec5d8d52",
+      "slug": "klyuchevye-kadry-3d",
+      "title": "Ключевые кадры 3D",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Анимация через ключевые позы и кривые.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_3b5bab068e42",
+          "componentId": "3d-animatsiya-i-rigging.klyuchevye-kadry-i-krivye",
           "role": "primary"
         }
       ],
@@ -13311,6 +15276,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_8f150f1c5cd3",
+      "slug": "kompoziting",
+      "title": "Композитинг",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Сборка слоёв и элементов кадра.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_a8aa252a35b8",
+          "componentId": "kompoziting-i-vfx.osnovy-kompozitinga",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_0fa35ae48d83",
       "slug": "korrektnaya-rabota-s-dannymi-i-avtorskie-prava",
       "title": "Корректная работа с данными и авторские права",
@@ -13355,7 +15342,7 @@
       "competencyLinks": [
         {
           "competencyId": "comp_92e9921f59b8",
-          "componentId": "tayming-i-krivye-uskoreniya.krivye-uskoreniya-i-fizika-dvizheniya",
+          "componentId": "tayming-i-krivye-uskoreniya.krivye-uskoreniya",
           "role": "primary"
         }
       ],
@@ -13629,6 +15616,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_37288c3c1bd9",
+      "slug": "montazh-rolika",
+      "title": "Монтаж ролика",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Сборка сцен и последовательностей.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_481dccaaa75f",
+          "componentId": "montazh-i-ritm.sborka-i-struktura-montazha",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_11a8501fd4a5",
       "slug": "mudbord",
       "title": "Мудборд",
@@ -13657,6 +15666,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_f7c739e7277c",
+      "slug": "muzykalnyy-ritm",
+      "title": "Музыкальный ритм",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Работа с темпом и музыкальной структурой.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_a7afb6c78c4c",
+          "componentId": "zvukovoy-dizayn-i-sinhronizatsiya.muzykalnyy-ritm",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_214eb8ac4348",
@@ -14113,6 +16144,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_730bec50dd10",
+      "slug": "peredacha-materialov",
+      "title": "Передача материалов",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Подготовка файлов и сдача проекта.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_4d33789a5be8",
+          "componentId": "prodakshn-i-payplayn.peredacha-materialov",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_77b50acdf662",
       "slug": "peremennye-i-temy-vnutri-maketov",
       "title": "Переменные и темы внутри макетов",
@@ -14151,6 +16204,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_e607d644659f",
+      "slug": "perehody",
+      "title": "Переходы",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Склейки, переходы и движение между кадрами.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_481dccaaa75f",
+          "componentId": "montazh-i-ritm.perehody-i-skleyki",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_23dbb4f42bd8",
@@ -14377,6 +16452,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_9a804d50320f",
+      "slug": "portfolio",
+      "title": "Портфолио",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Структура и подача работ.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_b35802975fdf",
+          "componentId": "showreel-i-portfolio.portfolio",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_84f5d6bdfc6d",
       "slug": "postroenie-vizualnoy-ierarhii",
       "title": "Построение визуальной иерархии",
@@ -14559,6 +16656,28 @@
       "needsReview": true
     },
     {
+      "id": "tag_f10e3733a41a",
+      "slug": "prezentatsiya-rabot",
+      "title": "Презентация работ",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Защита идей и результатов.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_b35802975fdf",
+          "componentId": "showreel-i-portfolio.prezentatsiya-rabot",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_af99ef2cd46b",
       "slug": "primenenie-person-v-proektnyh-resheniyah",
       "title": "Применение персон в проектных решениях",
@@ -14574,6 +16693,28 @@
         {
           "competencyId": "comp_212887d793e2",
           "componentId": "persony-i-segmentatsiya.postroenie-person",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_4389e5e0e683",
+      "slug": "printsipy-animatsii",
+      "title": "Принципы анимации",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Двенадцать принципов анимации в движении.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_e7a143f3e374",
+          "componentId": "printsipy-animatsii.obschaya-sistema-printsipov",
           "role": "primary"
         }
       ],
@@ -14775,6 +16916,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_da36503bba8c",
+      "slug": "prodakshn-payplayn",
+      "title": "Продакшн-пайплайн",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Планирование и организация производства.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_4d33789a5be8",
+          "componentId": "prodakshn-i-payplayn.planirovanie-proizvodstva",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_d3532641ba6e",
@@ -15058,6 +17221,28 @@
         {
           "competencyId": "comp_91d03f4fb672",
           "componentId": "pechat-i-proizvodstvo.proizvodstvennye-ogranicheniya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_26d198381c02",
+      "slug": "proizvodstvennye-plaginy",
+      "title": "Производственные плагины",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Расширения и плагины, дополняющие базовые инструменты моушн-дизайна в производственном процессе.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_53d3a620b634",
+          "componentId": "moushn-instrumentariy.proizvodstvennye-plaginy",
           "role": "primary"
         }
       ],
@@ -15399,7 +17584,7 @@
       "competencyLinks": [
         {
           "competencyId": "comp_425bd4dc7c7f",
-          "componentId": "storibording-i-rezhissura-dvizheniya.raskadrovka-dinamicheskoy-stseny",
+          "componentId": "storibording-i-rezhissura-dvizheniya.raskadrovka-motion-stseny",
           "role": "primary"
         }
       ],
@@ -15451,6 +17636,28 @@
       "needsReview": true
     },
     {
+      "id": "tag_038f7146d364",
+      "slug": "render-i-formaty",
+      "title": "Рендер и форматы",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Рендер, кодеки и форматы доставки.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_4d33789a5be8",
+          "componentId": "prodakshn-i-payplayn.render-i-formaty",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_a0843eb4f6bd",
       "slug": "rendering",
       "title": "Рендеринг",
@@ -15466,6 +17673,72 @@
         {
           "competencyId": "comp_5ed63dc3a73a",
           "componentId": "3d-svet-i-render.rendering-i-vyvod-izobrazheniya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_0d06862889bd",
+      "slug": "referensy-i-mudbord",
+      "title": "Референсы и мудборд",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Сбор визуальных референсов и направления.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_3c9c8526d592",
+          "componentId": "style-frames-i-art-direkshn.poisk-i-fiksatsiya-vizualnogo-stilya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_8617bd3c2b60",
+      "slug": "rigging",
+      "title": "Риггинг",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Подготовка скелета и управляющих элементов.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_3b5bab068e42",
+          "componentId": "3d-animatsiya-i-rigging.rigging",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_746394d9773f",
+      "slug": "ritm-i-temp",
+      "title": "Ритм и темп",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Управление скоростью и паузами.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_481dccaaa75f",
+          "componentId": "montazh-i-ritm.ritm-i-temp",
           "role": "primary"
         }
       ],
@@ -15694,6 +17967,50 @@
       "needsReview": false
     },
     {
+      "id": "tag_724268fa628b",
+      "slug": "simulyatsii",
+      "title": "Симуляции",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Динамика тканей, частиц и физики.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_3b5bab068e42",
+          "componentId": "3d-animatsiya-i-rigging.simulyatsii-i-dinamika",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_fe05bd2e1af5",
+      "slug": "sinhronizatsiya-zvuka",
+      "title": "Синхронизация звука",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Совмещение движения и звуковых акцентов.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_a7afb6c78c4c",
+          "componentId": "zvukovoy-dizayn-i-sinhronizatsiya.sinhronizatsiya-zvuka-i-dvizheniya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_ebfa82dadce4",
       "slug": "sinhronizatsiya-tokenov-s-kodom",
       "title": "Синхронизация токенов с кодом",
@@ -15806,6 +18123,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_3b0b614b64a2",
+      "slug": "sovmeschenie-3d-s-live-action",
+      "title": "Совмещение 3D с live-action",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Встраивание 3D-объектов и рендеров в живой материал с согласованием камеры, масок и цвета.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_a8aa252a35b8",
+          "componentId": "kompoziting-i-vfx.sovmeschenie-3d-i-live-action",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_3bb20b01c633",
       "slug": "soglasovanie-ponimaniya-s-inzhenerami",
       "title": "Согласование понимания с инженерами",
@@ -15901,6 +18240,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_10d0f6bcf152",
+      "slug": "sroki-i-byudzhet",
+      "title": "Сроки и бюджет",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Оценка сроков и стоимости производства.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_4d33789a5be8",
+          "componentId": "prodakshn-i-payplayn.sroki-i-byudzhet",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_5ada231ce3fc",
       "slug": "standarty-world-wide-web-consortium",
       "title": "Стандарты World Wide Web Consortium",
@@ -15949,7 +18310,7 @@
       "competencyLinks": [
         {
           "competencyId": "comp_425bd4dc7c7f",
-          "componentId": "storibording-i-rezhissura-dvizheniya.raskadrovka-dinamicheskoy-stseny",
+          "componentId": "storibording-i-rezhissura-dvizheniya.raskadrovka-motion-stseny",
           "role": "primary"
         }
       ],
@@ -16075,7 +18436,7 @@
       "competencyLinks": [
         {
           "competencyId": "comp_92e9921f59b8",
-          "componentId": "tayming-i-krivye-uskoreniya.tayming-i-ritm-animatsii",
+          "componentId": "tayming-i-krivye-uskoreniya.tayming-i-ritm",
           "role": "primary"
         }
       ],
@@ -16305,6 +18666,28 @@
         {
           "competencyId": "comp_bee3f2b037f5",
           "componentId": "customer-journey-map.tochki-kontakta-i-kanaly",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_15234ff914ab",
+      "slug": "treking",
+      "title": "Трекинг",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Слежение за движением камеры и объектов.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_a8aa252a35b8",
+          "componentId": "kompoziting-i-vfx.treking-i-stabilizatsiya",
           "role": "primary"
         }
       ],
@@ -16693,6 +19076,28 @@
       "needsReview": true
     },
     {
+      "id": "tag_efd6b9cb9d32",
+      "slug": "tsvetovye-stsenarii",
+      "title": "Цветовые сценарии",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Цветовая драматургия ролика.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_3c9c8526d592",
+          "componentId": "style-frames-i-art-direkshn.tsvetovaya-dramaturgiya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_f83e9eb07c27",
       "slug": "tselevaya-auditoriya",
       "title": "Целевая аудитория",
@@ -16812,6 +19217,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_305de1d0dcc3",
+      "slug": "shouril",
+      "title": "Шоурил",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Сборка лучших работ в короткий ролик.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_b35802975fdf",
+          "componentId": "showreel-i-portfolio.shouril",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_33bd0e21d155",
       "slug": "yunit-ekonomika",
       "title": "Юнит-экономика",
@@ -16827,6 +19254,28 @@
         {
           "competencyId": "comp_90f6aad56a1e",
           "componentId": "rost-voronki-i-uderzhanie.ekonomika-produkta",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_fa54af8c2cf8",
+      "slug": "after-effects",
+      "title": "After Effects",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Композитинг и анимация в After Effects.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_53d3a620b634",
+          "componentId": "moushn-instrumentariy.kompoziting-i-2d-animatsiya",
           "role": "primary"
         }
       ],
@@ -16904,6 +19353,50 @@
       "needsReview": false
     },
     {
+      "id": "tag_fd2e593016a9",
+      "slug": "blender",
+      "title": "Blender",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "3D-пайплайн в Blender.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_53d3a620b634",
+          "componentId": "moushn-instrumentariy.3d-modelirovanie-i-animatsiya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_62be7f7d044c",
+      "slug": "cinema-4d",
+      "title": "Cinema 4D",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "3D-моделирование и анимация в Cinema 4D.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_53d3a620b634",
+          "componentId": "moushn-instrumentariy.3d-modelirovanie-i-animatsiya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_e863b4ab300c",
       "slug": "cjm",
       "title": "CJM",
@@ -16919,6 +19412,28 @@
         {
           "competencyId": "comp_bee3f2b037f5",
           "componentId": "customer-journey-map.struktura-i-etapy-puti",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_6d511eae1d8d",
+      "slug": "exaggeration-i-appeal",
+      "title": "Exaggeration и appeal",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Выразительность и привлекательность движения.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_e7a143f3e374",
+          "componentId": "printsipy-animatsii.vyrazitelnost-dvizheniya",
           "role": "primary"
         }
       ],
@@ -17102,6 +19617,50 @@
       "needsReview": true
     },
     {
+      "id": "tag_311e6960a0e7",
+      "slug": "motion-logotip",
+      "title": "Motion-логотип",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Анимация знака и логотипа.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_9c942127a8f2",
+          "componentId": "motion-aydentika-i-brend-sistemy.motion-logotip-i-znak",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_fb3cb13c93fd",
+      "slug": "motion-sistema",
+      "title": "Motion-система",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Библиотека движений и переходов.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_9c942127a8f2",
+          "componentId": "motion-aydentika-i-brend-sistemy.motion-sistema-brenda",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_7530ecd3075b",
       "slug": "sass",
       "title": "Sass",
@@ -17168,6 +19727,72 @@
       "needsReview": false
     },
     {
+      "id": "tag_754dab1439a1",
+      "slug": "spacing-i-tayming",
+      "title": "Spacing и тайминг",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Распределение кадров и ощущение скорости.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_e7a143f3e374",
+          "componentId": "printsipy-animatsii.tayming-i-spacing",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_a092027bb56d",
+      "slug": "spline-i-unreal",
+      "title": "Spline и Unreal",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Интерактивный 3D и реальное время.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_53d3a620b634",
+          "componentId": "moushn-instrumentariy.interaktivnyy-3d-i-realnoe-vremya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_c9a680d2825d",
+      "slug": "style-frames",
+      "title": "Style frames",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Кадры-концепты визуального стиля.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_3c9c8526d592",
+          "componentId": "style-frames-i-art-direkshn.poisk-i-fiksatsiya-vizualnogo-stilya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_b4fbba126326",
       "slug": "ux-issledovaniya-i-analiz-auditorii",
       "title": "UX-исследования и анализ аудитории",
@@ -17226,6 +19851,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_c684d733a9be",
+      "slug": "vfx-i-tsvetokorrektsiya",
+      "title": "VFX и цветокоррекция",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Визуальные эффекты и финальная цветокоррекция.",
+      "professionIds": [
+        "it.motion"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_a8aa252a35b8",
+          "componentId": "kompoziting-i-vfx.vizualnye-effekty-i-tsvetokorrektsiya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     }
   ],
   "materials": []

@@ -11,7 +11,7 @@
       "sectionTitle": "Визуальные основы движения"
     },
     {
-      "competencyId": "motion-timing-easing",
+      "competencyId": "motion-animation-principles",
       "tier": "foundation",
       "order": 2,
       "prerequisites": [
@@ -21,9 +21,29 @@
       "sectionTitle": "Визуальные основы движения"
     },
     {
-      "competencyId": "ui-color",
+      "competencyId": "motion-timing-easing",
       "tier": "foundation",
       "order": 3,
+      "prerequisites": [
+        "motion-animation-principles"
+      ],
+      "sectionId": "motion-foundations",
+      "sectionTitle": "Визуальные основы движения"
+    },
+    {
+      "competencyId": "motion-styleframes",
+      "tier": "foundation",
+      "order": 4,
+      "prerequisites": [
+        "ux-design-thinking"
+      ],
+      "sectionId": "motion-foundations",
+      "sectionTitle": "Визуальные основы движения"
+    },
+    {
+      "competencyId": "ui-color",
+      "tier": "foundation",
+      "order": 5,
       "prerequisites": [
         "ux-design-thinking"
       ],
@@ -33,7 +53,7 @@
     {
       "competencyId": "ui-typography",
       "tier": "foundation",
-      "order": 4,
+      "order": 6,
       "prerequisites": [
         "ui-color"
       ],
@@ -43,7 +63,7 @@
     {
       "competencyId": "ui-layout",
       "tier": "foundation",
-      "order": 5,
+      "order": 7,
       "prerequisites": [
         "ui-typography"
       ],
@@ -53,93 +73,189 @@
     {
       "competencyId": "ui-motion",
       "tier": "foundation",
-      "order": 6,
+      "order": 8,
       "prerequisites": [
         "motion-timing-easing",
         "ui-layout"
       ],
       "sectionId": "motion-craft",
-      "sectionTitle": "Кинетика и интерактив"
+      "sectionTitle": "Кинетика, звук и композитинг"
     },
     {
       "competencyId": "ui-interaction-states",
       "tier": "core",
-      "order": 7,
+      "order": 9,
       "prerequisites": [
         "ui-motion"
       ],
       "sectionId": "motion-craft",
-      "sectionTitle": "Кинетика и интерактив"
+      "sectionTitle": "Кинетика, звук и композитинг"
     },
     {
       "competencyId": "ui-visual-communication",
       "tier": "core",
-      "order": 8,
+      "order": 10,
       "prerequisites": [
         "ui-motion",
         "ui-layout"
       ],
       "sectionId": "motion-craft",
-      "sectionTitle": "Кинетика и интерактив"
+      "sectionTitle": "Кинетика, звук и композитинг"
     },
     {
       "competencyId": "ux-interactive-prototype",
       "tier": "core",
-      "order": 9,
+      "order": 11,
       "prerequisites": [
         "ui-interaction-states",
         "ui-motion"
       ],
       "sectionId": "motion-craft",
-      "sectionTitle": "Кинетика и интерактив"
+      "sectionTitle": "Кинетика, звук и композитинг"
+    },
+    {
+      "competencyId": "motion-editing",
+      "tier": "core",
+      "order": 12,
+      "prerequisites": [
+        "ui-motion"
+      ],
+      "sectionId": "motion-craft",
+      "sectionTitle": "Кинетика, звук и композитинг"
+    },
+    {
+      "competencyId": "motion-sound-design",
+      "tier": "core",
+      "order": 13,
+      "prerequisites": [
+        "ui-motion",
+        "motion-editing"
+      ],
+      "sectionId": "motion-craft",
+      "sectionTitle": "Кинетика, звук и композитинг"
+    },
+    {
+      "competencyId": "motion-3d-animation",
+      "tier": "core",
+      "order": 14,
+      "prerequisites": [
+        "motion-timing-easing",
+        "ui-motion"
+      ],
+      "sectionId": "motion-3d",
+      "sectionTitle": "3D-анимация"
+    },
+    {
+      "competencyId": "motion-3d-rendering",
+      "tier": "core",
+      "order": 15,
+      "prerequisites": [
+        "motion-3d-animation"
+      ],
+      "sectionId": "motion-3d",
+      "sectionTitle": "3D-анимация"
+    },
+    {
+      "competencyId": "motion-compositing",
+      "tier": "core",
+      "order": 16,
+      "prerequisites": [
+        "motion-3d-rendering",
+        "ui-motion"
+      ],
+      "sectionId": "motion-3d",
+      "sectionTitle": "3D-анимация"
+    },
+    {
+      "competencyId": "motion-brand-systems",
+      "tier": "core",
+      "order": 17,
+      "prerequisites": [
+        "ui-motion",
+        "motion-styleframes"
+      ],
+      "sectionId": "motion-production",
+      "sectionTitle": "Продакшн и специализация"
+    },
+    {
+      "competencyId": "motion-toolchain",
+      "tier": "core",
+      "order": 18,
+      "prerequisites": [
+        "ui-motion"
+      ],
+      "sectionId": "motion-production",
+      "sectionTitle": "Продакшн и специализация"
+    },
+    {
+      "competencyId": "motion-production",
+      "tier": "core",
+      "order": 19,
+      "prerequisites": [
+        "motion-toolchain",
+        "motion-compositing"
+      ],
+      "sectionId": "motion-production",
+      "sectionTitle": "Продакшн и специализация"
+    },
+    {
+      "competencyId": "motion-showreel",
+      "tier": "optional",
+      "order": 20,
+      "prerequisites": [
+        "motion-production",
+        "motion-brand-systems"
+      ],
+      "sectionId": "motion-production",
+      "sectionTitle": "Продакшн и специализация"
     },
     {
       "competencyId": "ui-figma",
       "tier": "core",
-      "order": 10,
+      "order": 21,
       "prerequisites": [
         "ui-layout"
       ],
       "sectionId": "motion-tools",
-      "sectionTitle": "Инструменты моушн-дизайна"
+      "sectionTitle": "Интерфейсные инструменты"
     },
     {
       "competencyId": "ui-framer",
       "tier": "core",
-      "order": 11,
+      "order": 22,
       "prerequisites": [
         "ui-figma",
         "ux-interactive-prototype"
       ],
       "sectionId": "motion-tools",
-      "sectionTitle": "Инструменты моушн-дизайна"
+      "sectionTitle": "Интерфейсные инструменты"
     },
     {
       "competencyId": "ui-handoff",
       "tier": "core",
-      "order": 12,
+      "order": 23,
       "prerequisites": [
         "ui-framer",
         "ui-motion"
       ],
       "sectionId": "motion-tools",
-      "sectionTitle": "Инструменты моушн-дизайна"
+      "sectionTitle": "Интерфейсные инструменты"
     },
     {
       "competencyId": "ui-figjam",
       "tier": "optional",
-      "order": 13,
+      "order": 24,
       "prerequisites": [
         "ui-figma",
         "ux-design-thinking"
       ],
       "sectionId": "motion-tools",
-      "sectionTitle": "Инструменты моушн-дизайна"
+      "sectionTitle": "Интерфейсные инструменты"
     },
     {
       "competencyId": "ui-design-systems",
       "tier": "optional",
-      "order": 14,
+      "order": 25,
       "prerequisites": [
         "ui-layout",
         "ui-motion"
@@ -150,7 +266,7 @@
     {
       "competencyId": "ui-accessibility",
       "tier": "core",
-      "order": 15,
+      "order": 26,
       "prerequisites": [
         "ui-interaction-states",
         "ui-motion"
@@ -161,7 +277,7 @@
     {
       "competencyId": "ui-responsive",
       "tier": "optional",
-      "order": 16,
+      "order": 27,
       "prerequisites": [
         "ui-layout"
       ],
@@ -171,35 +287,13 @@
     {
       "competencyId": "ui-data-visualization",
       "tier": "optional",
-      "order": 17,
+      "order": 28,
       "prerequisites": [
         "ui-layout",
         "ui-motion"
       ],
       "sectionId": "motion-systems",
       "sectionTitle": "Системы и доступность"
-    },
-    {
-      "competencyId": "motion-storyboarding",
-      "tier": "core",
-      "order": 18,
-      "prerequisites": [
-        "motion-timing-easing",
-        "ui-layout"
-      ],
-      "sectionId": "motion-specialization",
-      "sectionTitle": "Специализация motion"
-    },
-    {
-      "competencyId": "motion-3d-rendering",
-      "tier": "core",
-      "order": 19,
-      "prerequisites": [
-        "motion-timing-easing",
-        "ui-motion"
-      ],
-      "sectionId": "motion-specialization",
-      "sectionTitle": "Специализация motion"
     }
   ]
 }

@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Дизайнер приложений — карта компетенций</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #132238;
+      --muted: #64748b;
+      --line: #cbd5e1;
+      --canvas: #eef4f8;
+      --card: #ffffff;
+      --foundation: #b45309;
+      --foundation-bg: #fff7ed;
+      --foundation-border: #f59e0b;
+      --core: #1d4ed8;
+      --core-bg: #eff6ff;
+      --core-border: #93c5fd;
+      --optional: #64748b;
+      --optional-bg: #f8fafc;
+      --optional-border: #cbd5e1;
+      --accent: #0f766e;
+      --glass: rgba(255, 255, 255, .58);
+      --glass-line: rgba(255, 255, 255, .78);
+      --shadow: 0 18px 50px rgba(15, 23, 42, .14);
+      font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body { margin: 0; overflow: hidden; color: var(--ink); background: var(--canvas); }
+
+    .canvas-viewport {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      background-color: var(--canvas);
+      background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+      background-size: 24px 24px;
+      cursor: grab;
+      touch-action: none;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    .canvas-viewport.is-panning { cursor: grabbing; }
+    .canvas-viewport.is-panning .competency-card { cursor: grabbing; }
+    .canvas-stage {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(calc(-50% + var(--pan-x, 0px)), calc(-50% + var(--pan-y, 0px))) scale(var(--zoom, .55));
+      transform-origin: center center;
+      will-change: transform;
+    }
+    .edges { position: absolute; inset: 0; overflow: visible; pointer-events: none; }
+    .edge { fill: none; stroke: #94a3b8; stroke-width: 1.4; opacity: .55; transition: opacity .15s, stroke .15s; }
+    .edge.is-active { stroke: var(--accent); stroke-width: 2.4; opacity: 1; }
+    .edge.is-muted { opacity: .12; }
+    .competency-card { position: absolute; display: flex; flex-direction: column; gap: 4px; overflow: hidden; border: 1px solid var(--line); border-radius: 14px; background: var(--card); padding: 9px 11px; cursor: pointer; box-shadow: 0 5px 14px rgba(15, 23, 42, .07); transition: transform .15s, box-shadow .15s, opacity .15s, border-color .15s; }
+    .competency-card:hover, .competency-card:focus-visible { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(15, 23, 42, .14); outline: none; border-color: #94a3b8; }
+    .competency-card.is-active { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(15, 118, 110, .18), 0 12px 24px rgba(15, 23, 42, .14); }
+    .competency-card.is-muted { opacity: .22 !important; }
+    .tier-foundation { border-color: var(--foundation-border); background: linear-gradient(180deg, #fffdf8, var(--foundation-bg)); }
+    .tier-core { border-color: var(--core-border); background: linear-gradient(180deg, #ffffff, var(--core-bg)); }
+    .tier-optional { border-color: var(--optional-border); background: var(--optional-bg); opacity: .78; }
+    .card-top { display: flex; justify-content: space-between; align-items: center; gap: 6px; min-height: 17px; }
+    .tier-badge { font-size: 9px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
+    .tier-foundation .tier-badge { color: var(--foundation); }
+    .tier-core .tier-badge { color: var(--core); }
+    .order { color: #94a3b8; font-size: 10px; font-variant-numeric: tabular-nums; }
+    .competency-card h2 { margin: 0; font-size: 12px; line-height: 1.18; letter-spacing: -.01em; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+    .competency-card p { margin: 0; color: var(--muted); font-size: 10px; line-height: 1.28; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+
+    .app-header {
+      position: fixed;
+      z-index: 30;
+      top: 40px;
+      left: 40px;
+      right: 40px;
+      padding: 20px 24px 16px;
+      border: 1px solid var(--glass-line);
+      border-radius: 24px;
+      background: var(--glass);
+      -webkit-backdrop-filter: blur(30px) saturate(150%);
+      backdrop-filter: blur(30px) saturate(150%);
+      box-shadow: var(--shadow);
+    }
+    .header-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; }
+    .eyebrow { color: var(--accent); font-size: 10px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    h1 { margin: 5px 0 4px; font-size: clamp(24px, 3.2vw, 42px); letter-spacing: -.045em; line-height: 1; }
+    .subtitle { margin: 0; color: var(--muted); font-size: 13px; }
+    .summary { display: flex; gap: 7px; flex-wrap: wrap; justify-content: flex-end; }
+    .summary span { border: 1px solid rgba(203, 213, 225, .9); background: rgba(255, 255, 255, .7); border-radius: 999px; padding: 6px 10px; font-size: 11px; font-weight: 700; white-space: nowrap; }
+    .summary .f { color: var(--foundation); } .summary .c { color: var(--core); } .summary .o { color: var(--optional); }
+    .header-bottom { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 14px; }
+    .profession-tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+    .profession-tab { border: 1px solid rgba(203, 213, 225, .9); background: rgba(255, 255, 255, .58); color: var(--ink); border-radius: 999px; padding: 7px 12px; font-size: 12px; font-weight: 700; text-decoration: none; transition: border-color .15s, background .15s; }
+    .profession-tab:hover { border-color: #94a3b8; background: rgba(255, 255, 255, .85); }
+    .profession-tab.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+    .hint { margin-left: auto; color: var(--muted); font-size: 11px; }
+    .banner { margin-top: 12px; border: 1px solid rgba(253, 230, 138, .9); background: rgba(255, 251, 235, .72); color: #92400e; border-radius: 14px; padding: 8px 12px; font-size: 11px; }
+
+    .zoom-controls {
+      position: fixed;
+      z-index: 35;
+      left: 40px;
+      bottom: 40px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 5px;
+      border: 1px solid var(--glass-line);
+      border-radius: 16px;
+      background: var(--glass);
+      -webkit-backdrop-filter: blur(30px) saturate(150%);
+      backdrop-filter: blur(30px) saturate(150%);
+      box-shadow: var(--shadow);
+    }
+    .zoom-controls button { width: 34px; height: 34px; border: 1px solid transparent; border-radius: 11px; background: transparent; color: var(--ink); font: inherit; font-size: 20px; line-height: 1; cursor: pointer; }
+    .zoom-controls button:hover { background: rgba(255, 255, 255, .8); border-color: var(--line); }
+    .zoom-controls button:active { transform: translateY(1px); }
+    .zoom-value { min-width: 48px; text-align: center; color: var(--muted); font-size: 11px; font-weight: 800; font-variant-numeric: tabular-nums; }
+
+    .detail-panel {
+      position: fixed;
+      z-index: 40;
+      top: 40px;
+      right: 40px;
+      bottom: 40px;
+      width: min(380px, calc(100vw - 80px));
+      overflow: auto;
+      padding: 24px;
+      border: 1px solid var(--glass-line);
+      border-radius: 24px;
+      background: var(--glass);
+      -webkit-backdrop-filter: blur(30px) saturate(150%);
+      backdrop-filter: blur(30px) saturate(150%);
+      box-shadow: var(--shadow);
+    }
+    .detail-panel[hidden] { display: none; }
+    .detail-close { float: right; border: 0; background: rgba(241, 245, 249, .8); color: var(--muted); width: 30px; height: 30px; border-radius: 50%; cursor: pointer; font-size: 18px; line-height: 1; }
+    .detail-panel .tier-badge { display: inline-block; margin-bottom: 10px; }
+    .detail-panel h2 { margin: 0 0 8px; font-size: 22px; line-height: 1.12; letter-spacing: -.02em; }
+    .detail-panel .full { color: var(--muted); font-size: 13px; line-height: 1.5; margin: 0 0 16px; }
+    .detail-panel h3 { margin: 16px 0 5px; font-size: 10px; text-transform: uppercase; letter-spacing: .09em; color: var(--muted); }
+    .detail-panel ul { margin: 0; padding-left: 18px; color: var(--ink); font-size: 13px; line-height: 1.5; }
+    .detail-panel li { margin: 3px 0; }
+    .detail-panel .muted { color: var(--muted); font-size: 11px; line-height: 1.45; margin-top: 16px; }
+
+    @media (max-width: 720px) {
+      .app-header { top: 16px; left: 16px; right: 16px; padding: 16px; border-radius: 20px; }
+      .header-top { flex-direction: column; gap: 12px; }
+      .summary { justify-content: flex-start; }
+      .hint { display: none; }
+      .zoom-controls { left: 16px; bottom: 16px; }
+      .detail-panel { top: 16px; right: 16px; bottom: 16px; width: calc(100vw - 32px); border-radius: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="canvas-viewport" id="canvas-viewport" aria-label="Канвас компетенций">
+    <div class="canvas-stage" id="canvas-stage" style="width:1829px;height:1909px">
+      <svg class="edges" width="1829" height="1909" viewBox="0 0 1829 1909" aria-hidden="true">
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8" />
+          </marker>
+        </defs>
+        <path class="edge" data-from="ux-design-thinking" data-to="ui-color" d="M 654.5 990.5 Q 784.5 1011.3 914.5 990.5" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ux-design-thinking" data-to="ui-typography" d="M 654.5 990.5 Q 914.5 1032.1 1174.5 990.5" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ui-typography" data-to="ui-layout" d="M 1174.5 990.5 Q 970.8 1013.3 784.5 1098.5" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ui-layout" data-to="app-platform-guidelines" d="M 784.5 1098.5 Q 914.5 1119.3 1044.5 1098.5" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ux-design-thinking" data-to="ux-user-research" d="M 654.5 990.5 Q 839.2 669.0 914.5 306.0" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ux-user-research" data-to="ux-interviews" d="M 914.5 306.0 Q 1025.7 342.3 1142.7 342.1" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ux-user-research" data-to="ux-personas" d="M 914.5 306.0 Q 1120.2 411.2 1348.5 447.0" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ux-interviews" data-to="ux-personas" d="M 1142.7 342.1 Q 1237.2 411.1 1348.5 447.0" marker-end="url(#arrow)" />
+        <path class="edge" data-from="app-platform-guidelines" data-to="app-mobile-patterns" d="M 1044.5 1098.5 Q 1317.2 891.8 1511.9 610.4" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ux-personas" data-to="app-mobile-patterns" d="M 1348.5 447.0 Q 1417.2 541.8 1511.9 610.4" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ux-user-research" data-to="ux-information-architecture" d="M 914.5 306.0 Q 1224.8 617.3 1616.8 816.3" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ux-information-architecture" data-to="ux-user-flows" d="M 1616.8 816.3 Q 1616.6 933.3 1653.0 1044.5" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ux-user-flows" data-to="ux-wireframes" d="M 1653.0 1044.5 Q 1616.6 1155.7 1616.8 1272.7" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ux-wireframes" data-to="ux-lowfi-prototype" d="M 1616.8 1272.7 Q 1547.9 1367.2 1511.9 1478.5" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ux-lowfi-prototype" data-to="ux-hifi-prototype" d="M 1511.9 1478.5 Q 1417.2 1547.2 1348.5 1641.9" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ux-hifi-prototype" data-to="app-prototyping" d="M 1348.5 1641.9 Q 1237.2 1677.9 1142.7 1746.8" marker-end="url(#arrow)" />
+        <path class="edge" data-from="app-platform-guidelines" data-to="app-prototyping" d="M 1044.5 1098.5 Q 1041.7 1430.5 1142.7 1746.8" marker-end="url(#arrow)" />
+        <path class="edge" data-from="app-prototyping" data-to="ux-interactive-prototype" d="M 1142.7 1746.8 Q 1025.7 1746.6 914.5 1783.0" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ux-information-architecture" data-to="ui-design-systems" d="M 1616.8 816.3 Q 1077.1 1207.1 686.3 1746.8" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ui-layout" data-to="ui-design-systems" d="M 784.5 1098.5 Q 683.5 1414.8 686.3 1746.8" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ui-design-systems" data-to="ui-components" d="M 686.3 1746.8 Q 591.7 1677.9 480.4 1641.9" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ui-layout" data-to="ui-responsive" d="M 784.5 1098.5 Q 520.4 1251.1 317.0 1478.5" marker-end="url(#arrow)" />
+        <path class="edge" data-from="app-platform-guidelines" data-to="ui-responsive" d="M 1044.5 1098.5 Q 650.4 1230.3 317.0 1478.5" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ui-components" data-to="ui-accessibility" d="M 480.4 1641.9 Q 375.8 1435.8 212.1 1272.7" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ui-layout" data-to="ui-accessibility" d="M 784.5 1098.5 Q 484.4 1139.8 212.1 1272.7" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ui-layout" data-to="ui-figma" d="M 784.5 1098.5 Q 484.6 1022.8 176.0 1044.5" marker-end="url(#arrow)" />
+        <path class="edge" data-from="app-platform-guidelines" data-to="app-native-crossplatform" d="M 1044.5 1098.5 Q 650.9 890.8 212.1 816.3" marker-end="url(#arrow)" />
+        <path class="edge" data-from="app-prototyping" data-to="app-native-crossplatform" d="M 1142.7 1746.8 Q 751.9 1207.1 212.1 816.3" marker-end="url(#arrow)" />
+        <path class="edge" data-from="app-prototyping" data-to="ui-handoff" d="M 1142.7 1746.8 Q 820.8 1112.6 317.0 610.4" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ui-figma" data-to="ui-handoff" d="M 176.0 1044.5 Q 281.2 838.7 317.0 610.4" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ux-personas" data-to="app-metrics" d="M 1348.5 447.0 Q 914.5 377.6 480.4 447.0" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ux-interactive-prototype" data-to="ux-usability-testing" d="M 914.5 1783.0 Q 915.6 1044.3 686.3 342.1" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ux-personas" data-to="ux-usability-testing" d="M 1348.5 447.0 Q 1025.8 341.6 686.3 342.1" marker-end="url(#arrow)" />
+        <path class="edge" data-from="app-prototyping" data-to="ui-interaction-states" d="M 1142.7 1746.8 Q 1158.2 918.2 914.5 126.0" marker-end="url(#arrow)" />
+      </svg>
+      <article class="competency-card tier-foundation" data-id="ux-design-thinking" data-tier="foundation" style="left:544.5px;top:944.5px;width:220px;height:92px;opacity:1" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Фундаментальная</span>
+            <span class="order">1</span>
+          </div>
+          <h2>Дизайн-мышление</h2>
+          <p>Системный подход к решению задач: понимание пользователя, формулировка проблемы, генерация и проверка гипотез, итерации.</p>
+        </article>
+      <article class="competency-card tier-foundation" data-id="ui-color" data-tier="foundation" style="left:804.5px;top:944.5px;width:220px;height:92px;opacity:1" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Фундаментальная</span>
+            <span class="order">2</span>
+          </div>
+          <h2>Теория цвета и колористика</h2>
+          <p>Физика цвета, восприятие, гармония, контраст и культурный контекст.</p>
+        </article>
+      <article class="competency-card tier-foundation" data-id="ui-typography" data-tier="foundation" style="left:1064.5px;top:944.5px;width:220px;height:92px;opacity:1" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Фундаментальная</span>
+            <span class="order">3</span>
+          </div>
+          <h2>Типографика</h2>
+          <p>Шрифтовая иерархия, читаемость, ритм и типографические системы.</p>
+        </article>
+      <article class="competency-card tier-foundation" data-id="ui-layout" data-tier="foundation" style="left:674.5px;top:1052.5px;width:220px;height:92px;opacity:1" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Фундаментальная</span>
+            <span class="order">4</span>
+          </div>
+          <h2>Композиция, сетки и визуальная иерархия</h2>
+          <p>Управление вниманием через композицию, сетки, пропорции и иерархию.</p>
+        </article>
+      <article class="competency-card tier-foundation" data-id="app-platform-guidelines" data-tier="foundation" style="left:934.5px;top:1052.5px;width:220px;height:92px;opacity:1" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Фундаментальная</span>
+            <span class="order">5</span>
+          </div>
+          <h2>Гайдлайны iOS и Android</h2>
+          <p>Платформенные гайдлайны, нативные паттерны и ограничения мобильных ОС.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="ux-user-research" data-tier="core" style="left:818.5px;top:260.0px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">6</span>
+          </div>
+          <h2>Пользовательские исследования</h2>
+          <p>Планирование и проведение исследований, синтез наблюдений в проверяемые инсайты.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="ux-interviews" data-tier="core" style="left:1046.7px;top:296.1px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">7</span>
+          </div>
+          <h2>Интервью и наблюдение</h2>
+          <p>Подготовка и проведение глубинных интервью, наблюдений и анализ качественных данных.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="ux-personas" data-tier="core" style="left:1252.5px;top:401.0px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">8</span>
+          </div>
+          <h2>Персоны и сегментация</h2>
+          <p>Модели целевых пользователей, их целей, контекста и критериев выбора.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="app-mobile-patterns" data-tier="core" style="left:1415.9px;top:564.4px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">9</span>
+          </div>
+          <h2>Паттерны мобильных приложений</h2>
+          <p>Распространённые элементы, навигация и поведенческие паттерны мобильных приложений.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="ux-information-architecture" data-tier="core" style="left:1520.8px;top:770.3px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">10</span>
+          </div>
+          <h2>Информационная архитектура</h2>
+          <p>Структура контента и навигации, категоризация и находимость информации.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="ux-user-flows" data-tier="core" style="left:1557.0px;top:998.5px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">11</span>
+          </div>
+          <h2>Пользовательские сценарии и флоу</h2>
+          <p>Моделирование пути пользователя, развилок, ошибок и восстановления.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="ux-wireframes" data-tier="core" style="left:1520.8px;top:1226.7px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">12</span>
+          </div>
+          <h2>Вайрфреймы и структура экранов</h2>
+          <p>Быстрая структура экранов и взаимодействий без визуальной детализации.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="ux-lowfi-prototype" data-tier="core" style="left:1415.9px;top:1432.5px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">13</span>
+          </div>
+          <h2>Низкодетализированные прототипы</h2>
+          <p>Быстрые бумажные и схематичные прототипы для проверки структуры.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="ux-hifi-prototype" data-tier="core" style="left:1252.5px;top:1595.9px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">14</span>
+          </div>
+          <h2>Высокодетализированные прототипы</h2>
+          <p>Детализированные прототипы, приближенные к финальному интерфейсу.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="app-prototyping" data-tier="core" style="left:1046.7px;top:1700.8px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">15</span>
+          </div>
+          <h2>Продвинутое прототипирование</h2>
+          <p>Интерактивные прототипы и продвинутая анимация в Figma для мобильных сценариев.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="ux-interactive-prototype" data-tier="core" style="left:818.5px;top:1737.0px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">16</span>
+          </div>
+          <h2>Интерактивные прототипы</h2>
+          <p>Прототипы с переходами и состояниями для проверки поведения продукта.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="ui-design-systems" data-tier="core" style="left:590.3px;top:1700.8px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">17</span>
+          </div>
+          <h2>Дизайн-системы и токены</h2>
+          <p>Архитектура дизайн-системы, семантические токены и синхронизация с кодом.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="ui-components" data-tier="core" style="left:384.4px;top:1595.9px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">18</span>
+          </div>
+          <h2>Компоненты и паттерны</h2>
+          <p>Проектирование переиспользуемых компонентов, вариантов и поведенческих паттернов.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="ui-responsive" data-tier="core" style="left:221.0px;top:1432.5px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">19</span>
+          </div>
+          <h2>Адаптивность и responsive UI</h2>
+          <p>Адаптация интерфейса под устройства, размеры и контекст использования.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="ui-accessibility" data-tier="core" style="left:116.1px;top:1226.7px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">20</span>
+          </div>
+          <h2>Доступность и инклюзивный дизайн</h2>
+          <p>Доступность интерфейса для людей с разными возможностями и ограничениями.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="ui-figma" data-tier="core" style="left:80.0px;top:998.5px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">21</span>
+          </div>
+          <h2>Figma: компоненты и автолейаут</h2>
+          <p>Работа с Figma: компоненты, варианты, автолейаут и библиотеки.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="app-native-crossplatform" data-tier="core" style="left:116.1px;top:770.3px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">23</span>
+          </div>
+          <h2>Нативные и кросс-платформенные приложения</h2>
+          <p>Различия нативных и кросс-платформенных приложений, адаптация компонентов.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="ui-handoff" data-tier="core" style="left:221.0px;top:564.4px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">24</span>
+          </div>
+          <h2>Передача макетов в разработку</h2>
+          <p>Спецификации, компонентные контракты и коммуникация с инженерами.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="app-metrics" data-tier="core" style="left:384.4px;top:401.0px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">25</span>
+          </div>
+          <h2>Метрики мобильных приложений</h2>
+          <p>Метрики мобильных приложений и анализ обратной связи.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="ux-usability-testing" data-tier="core" style="left:590.3px;top:296.1px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">26</span>
+          </div>
+          <h2>Юзабилити-тестирование</h2>
+          <p>Проверка сценариев и прототипов на реальных пользователях, фиксация и приоритизация проблем.</p>
+        </article>
+      <article class="competency-card tier-optional" data-id="ui-interaction-states" data-tier="optional" style="left:818.5px;top:80.0px;width:192px;height:92px;opacity:0.65" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Необязательная</span>
+            <span class="order">22</span>
+          </div>
+          <h2>Состояния и микровзаимодействия</h2>
+          <p>Состояния компонентов, обратная связь и микровзаимодействия.</p>
+        </article>
+    </div>
+  </div>
+
+  <header class="app-header">
+    <div class="header-top">
+      <div>
+        <div class="eyebrow">AXIONA · Competency Canvas</div>
+        <h1>Дизайнер приложений</h1>
+        <p class="subtitle">Сеть компетенций: разделы, связи и приоритеты профессии</p>
+      </div>
+      <div class="summary">
+        <span class="f">5 фундаментальных</span>
+        <span class="c">20 основных</span>
+        <span class="o">1 необязательных</span>
+      </div>
+    </div>
+    <div class="header-bottom">
+      <nav class="profession-tabs" aria-label="Профессии"><a class="profession-tab" href="uxui-competency-canvas.html">UX/UI</a><a class="profession-tab" href="it-product-competency-canvas.html">Product</a><a class="profession-tab" href="it-motion-competency-canvas.html">Motion</a><a class="profession-tab" href="it-graphic-competency-canvas.html">Graphic</a><a class="profession-tab" href="it-presentation-competency-canvas.html">Презентации</a><a class="profession-tab active" href="it-appdesign-competency-canvas.html">Приложения</a><a class="profession-tab" href="it-uxresearch-competency-canvas.html">UX-исследования</a><a class="profession-tab" href="it-artdir-competency-canvas.html">Арт-дирекшн</a><a class="profession-tab" href="it-3ddesigner-competency-canvas.html">3D</a><a class="profession-tab" href="it-interior-competency-canvas.html">Интерьеры</a><a class="profession-tab" href="it-webdesigner-competency-canvas.html">Веб-дизайн</a></nav>
+      <span class="hint">Перетаскивание — панорама; колесо мыши — масштаб; нажмите карточку — подробности</span>
+    </div>
+    <div class="banner"><strong>Черновой слой.</strong> Дизайнер приложений: профессио-специфичная сеть, собранная из единого массива компетенций. Tier/order специфичны для профессии; компетенции переиспользуются. Сгенерировано 2026-10-26.</div>
+  </header>
+
+  <div class="zoom-controls" aria-label="Масштаб канваса">
+    <button type="button" id="zoom-out" aria-label="Уменьшить">−</button>
+    <span class="zoom-value" id="zoom-value" aria-live="polite">100%</span>
+    <button type="button" id="zoom-in" aria-label="Увеличить">+</button>
+  </div>
+
+  <aside class="detail-panel" id="detail" hidden>
+    <button class="detail-close" id="detail-close" aria-label="Закрыть">×</button>
+    <span class="tier-badge" id="detail-tier"></span>
+    <h2 id="detail-title"></h2>
+    <p class="full" id="detail-full"></p>
+    <h3>Компоненты</h3>
+    <ul id="detail-components"></ul>
+    <h3>Теги и знания</h3>
+    <ul id="detail-tags"></ul>
+    <p class="muted" id="detail-meta"></p>
+  </aside>
+
+  <script>
+    const DATA = {"title":"Дизайнер приложений","subtitle":"Сеть компетенций: разделы, связи и приоритеты профессии","note":"Дизайнер приложений: профессио-специфичная сеть, собранная из единого массива компетенций. Tier/order специфичны для профессии; компетенции переиспользуются.","generatedOn":"2026-10-26","nodes":[{"id":"ux-design-thinking","title":"Дизайн-мышление","tier":"foundation","tierLabel":"Фундаментальная","order":1,"description":"Системный подход к решению задач: понимание пользователя, формулировка проблемы, генерация и проверка гипотез, итерации.","fullDescription":"Системный подход к решению задач: понимание пользователя, формулировка проблемы, генерация и проверка гипотез, итерации.","components":["Эмпатия и исследование пользователя","Формулировка проблемы и пользовательские сценарии","Генерация и проверка гипотез","Итерационный процесс и командное взаимодействие"],"tags":["Исследование аудитории","Целевая аудитория","Типы исследований","Количественные исследования","Проведение исследований и проектирование сервиса","Проведение UX-исследований и анализ аудитории","Зачем пользователю сценарий","Пользовательские сценарии и паттерны взаимодействия","Гипотезы","Интерактивный прототип с тестированием","Прототипирование с помощью переменных и условий","Воркшопы с экспертами"],"evidenceState":"supported","branch":"Дизайнер приложений","section":"Основы приложений","x":340,"y":346,"width":220,"height":92,"ring":0,"emphasis":"primary","opacity":1},{"id":"ui-color","title":"Теория цвета и колористика","tier":"foundation","tierLabel":"Фундаментальная","order":2,"description":"Физика цвета, восприятие, гармония, контраст и культурный контекст.","fullDescription":"Физика цвета, восприятие, гармония, контраст и культурный контекст.","components":["Физика света и природа цвета","Физиология и психология восприятия цвета","Цветовые модели и системы","Цвет в визуальной композиции","Цвет в интерфейсе и визуальной коммуникации"],"tags":["Цвет как физическое явление","Психофизиология цветового восприятия","Культурно-психологический контекст цвета","Цветовые модели и пространства","Цветовой круг и гармония","Цвет и визуальная иерархия","Цвет в композиции и стиле","Цвет как средство визуальной коммуникации","Цветовые палитры и токены"],"evidenceState":"needs_review","branch":"Дизайнер приложений","section":"Основы приложений","x":600,"y":346,"width":220,"height":92,"ring":0,"emphasis":"primary","opacity":1},{"id":"ui-typography","title":"Типографика","tier":"foundation","tierLabel":"Фундаментальная","order":3,"description":"Шрифтовая иерархия, читаемость, ритм и типографические системы.","fullDescription":"Шрифтовая иерархия, читаемость, ритм и типографические системы.","components":["Композиция в интерфейсе","Типографика в интерфейсе","Визуальная иерархия","Сетки в дизайне"],"tags":["Работа с композицией, типографикой и визуальной иерархией","Типографическая иерархия и читаемость","Построение визуальной иерархии","Сетки в дизайне"],"evidenceState":"needs_review","branch":"Дизайнер приложений","section":"Основы приложений","x":860,"y":346,"width":220,"height":92,"ring":0,"emphasis":"primary","opacity":1},{"id":"ui-layout","title":"Композиция, сетки и визуальная иерархия","tier":"foundation","tierLabel":"Фундаментальная","order":4,"description":"Управление вниманием через композицию, сетки, пропорции и иерархию.","fullDescription":"Управление вниманием через композицию, сетки, пропорции и иерархию.","components":["Композиция в интерфейсе","Типографика в интерфейсе","Визуальная иерархия","Сетки в дизайне"],"tags":["Работа с композицией, типографикой и визуальной иерархией","Типографическая иерархия и читаемость","Построение визуальной иерархии","Сетки в дизайне"],"evidenceState":"needs_review","branch":"Дизайнер приложений","section":"Основы приложений","x":470,"y":454,"width":220,"height":92,"ring":0,"emphasis":"primary","opacity":1},{"id":"app-platform-guidelines","title":"Гайдлайны iOS и Android","tier":"foundation","tierLabel":"Фундаментальная","order":5,"description":"Платформенные гайдлайны, нативные паттерны и ограничения мобильных ОС.","fullDescription":"Платформенные гайдлайны, нативные паттерны и ограничения мобильных ОС.","components":[],"tags":[],"evidenceState":"needs_review","branch":"Дизайнер приложений","section":"Основы приложений","x":730,"y":454,"width":220,"height":92,"ring":0,"emphasis":"primary","opacity":1},{"id":"ux-user-research","title":"Пользовательские исследования","tier":"core","tierLabel":"Основная","order":6,"description":"Планирование и проведение исследований, синтез наблюдений в проверяемые инсайты.","fullDescription":"Планирование и проведение исследований, синтез наблюдений в проверяемые инсайты.","components":["Анализ онлайн-данных и поведения пользователей","Взаимодействие с клиентами и представление альтернатив"],"tags":["Анализ онлайн-опыта и данных","Убеждение клиентов через альтернативы"],"evidenceState":"supported","branch":"Дизайнер приложений","section":"Исследования и паттерны","x":600,"y":-338.47893594639436,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ux-interviews","title":"Интервью и наблюдение","tier":"core","tierLabel":"Основная","order":7,"description":"Подготовка и проведение глубинных интервью, наблюдений и анализ качественных данных.","fullDescription":"Подготовка и проведение глубинных интервью, наблюдений и анализ качественных данных.","components":["Основы качественных исследований","Подготовка к интервью и наблюдению","Проведение интервью и наблюдения","Анализ качественных данных"],"tags":["Типы исследований","Количественные исследования","Проведение исследований и проектирование сервиса","Исследование аудитории","Целевая аудитория","Потребности пользователей с ОВЗ. Нозологии, цифровая доступность","Провожу UX-исследования, анализирую аудиторию, строю пользовательские сценарии и CJM","Зачем пользователю сценарий","На что смотрит пользователь","Пользовательские сценарии и паттерны взаимодействия"],"evidenceState":"supported","branch":"Дизайнер приложений","section":"Исследования и паттерны","x":828.2025411953641,"y":-302.3352041785297,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ux-personas","title":"Персоны и сегментация","tier":"core","tierLabel":"Основная","order":8,"description":"Модели целевых пользователей, их целей, контекста и критериев выбора.","fullDescription":"Модели целевых пользователей, их целей, контекста и критериев выбора.","components":["Исследование аудитории","Сегментация аудитории","Построение персон","Связь с пользовательскими сценариями","Учёт особых групп пользователей"],"tags":["Исследование аудитории","Целевая аудитория","Количественные исследования","Типы исследований","Критерии сегментации аудитории","Выбор приоритетных сегментов","Структура и содержание персоны","Разработка персон на основе данных","Применение персон в проектных решениях","Пользовательские сценарии и паттерны взаимодействия","Роль сценария для пользователя","Построение сценариев на основе персон","Потребности пользователей с ОВЗ. Нозологии, цифровая доступность"],"evidenceState":"needs_review","branch":"Дизайнер приложений","section":"Исследования и паттерны","x":1034.0670276779285,"y":-197.4420091685613,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"app-mobile-patterns","title":"Паттерны мобильных приложений","tier":"core","tierLabel":"Основная","order":9,"description":"Распространённые элементы, навигация и поведенческие паттерны мобильных приложений.","fullDescription":"Распространённые элементы, навигация и поведенческие паттерны мобильных приложений.","components":[],"tags":[],"evidenceState":"needs_review","branch":"Дизайнер приложений","section":"Исследования и паттерны","x":1197.4420091685613,"y":-34.067027677928536,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ux-information-architecture","title":"Информационная архитектура","tier":"core","tierLabel":"Основная","order":10,"description":"Структура контента и навигации, категоризация и находимость информации.","fullDescription":"Структура контента и навигации, категоризация и находимость информации.","components":["Основы информационной архитектуры","Исследование и моделирование пользователей","Структурирование контента","Навигация и находимость"],"tags":["Роль сценариев в информационной архитектуре","Пользовательские сценарии и паттерны взаимодействия","UX-исследования и анализ аудитории","Построение пользовательских сценариев и CJM","Категоризация и таксономия контента","Группировка и маркировка элементов","Проектирование навигационных систем","Обеспечение находимости информации"],"evidenceState":"needs_review","branch":"Дизайнер приложений","section":"Прототипирование","x":1302.3352041785297,"y":171.7974588046359,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ux-user-flows","title":"Пользовательские сценарии и флоу","tier":"core","tierLabel":"Основная","order":11,"description":"Моделирование пути пользователя, развилок, ошибок и восстановления.","fullDescription":"Моделирование пути пользователя, развилок, ошибок и восстановления.","components":["Назначение и роль сценариев","Пользовательские сценарии и паттерны взаимодействия","Исследование и карта пути пользователя","Проектирование флоу в интерфейсах","Процессный подход к моделированию","Совместная работа над сценариями","Развилки, ошибки и восстановление"],"tags":["Зачем пользователю сценарий","Пользовательские сценарии и паттерны взаимодействия","UX-исследования и построение CJM","Проектирование интерфейсов и адаптивных макетов","Моделирование процессов","Веб-платформы для совместной работы","Ветвления и точки принятия решений","Ошибочные состояния и восстановление"],"evidenceState":"needs_review","branch":"Дизайнер приложений","section":"Прототипирование","x":1338.4789359463944,"y":400,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ux-wireframes","title":"Вайрфреймы и структура экранов","tier":"core","tierLabel":"Основная","order":12,"description":"Быстрая структура экранов и взаимодействий без визуальной детализации.","fullDescription":"Быстрая структура экранов и взаимодействий без визуальной детализации.","components":["Основы вайрфрейминга","Структура экранов","Прототипирование на основе вайрфреймов"],"tags":["Вайрфреймы","Создание вайрфрейма сайта","Структурирование экранов без визуальной детализации","Интерактивный прототип с тестированием","Прототипирование с помощью переменных и условий"],"evidenceState":"needs_review","branch":"Дизайнер приложений","section":"Прототипирование","x":1302.3352041785297,"y":628.2025411953641,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ux-lowfi-prototype","title":"Низкодетализированные прототипы","tier":"core","tierLabel":"Основная","order":13,"description":"Быстрые бумажные и схематичные прототипы для проверки структуры.","fullDescription":"Быстрые бумажные и схематичные прототипы для проверки структуры.","components":["Основы прототипирования","Техники быстрого прототипирования","Проверка структуры и сценариев","Ограничения и стандарты"],"tags":["Вайрфреймы","Место низкодетализированных прототипов в дизайн-процессе","Создание бумажных прототипов","Схематичное представление структуры экранов","Тестирование структуры на прототипах","Совместная работа над прототипами","Учёт стандартов доступности","Соблюдение веб-стандартов"],"evidenceState":"needs_review","branch":"Дизайнер приложений","section":"Прототипирование","x":1197.4420091685613,"y":834.0670276779285,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ux-hifi-prototype","title":"Высокодетализированные прототипы","tier":"core","tierLabel":"Основная","order":14,"description":"Детализированные прототипы, приближенные к финальному интерфейсу.","fullDescription":"Детализированные прототипы, приближенные к финальному интерфейсу.","components":["Инструментальная база прототипирования","Интерактивность и состояния в прототипе","Проверка и передача прототипа"],"tags":["Основы Figma","Работа с изображениями в Figma","Проектирование адаптивных макетов для web и mobile","Переменные и темы внутри макетов","Прототипирование с помощью переменных и условий","Интерактивный прототип с тестированием","Сборка сайта в Tilda по макету из Figma"],"evidenceState":"supported","branch":"Дизайнер приложений","section":"Прототипирование","x":1034.0670276779285,"y":997.4420091685613,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"app-prototyping","title":"Продвинутое прототипирование","tier":"core","tierLabel":"Основная","order":15,"description":"Интерактивные прототипы и продвинутая анимация в Figma для мобильных сценариев.","fullDescription":"Интерактивные прототипы и продвинутая анимация в Figma для мобильных сценариев.","components":[],"tags":[],"evidenceState":"needs_review","branch":"Дизайнер приложений","section":"Прототипирование","x":828.2025411953641,"y":1102.3352041785297,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ux-interactive-prototype","title":"Интерактивные прототипы","tier":"core","tierLabel":"Основная","order":16,"description":"Прототипы с переходами и состояниями для проверки поведения продукта.","fullDescription":"Прототипы с переходами и состояниями для проверки поведения продукта.","components":["Основы интерактивного прототипирования","Переходы и состояния","Анимация в интерактивных прототипах"],"tags":["Интерактивный прототип с тестированием","Прототипирование с помощью переменных и условий","Переменные и темы внутри макетов","Теория анимации","Анимация в интерфейсе","Анимация и визуальная коммуникация","Анимация в проекте как отстройка от конкурентов"],"evidenceState":"supported","branch":"Дизайнер приложений","section":"Прототипирование","x":600,"y":1138.4789359463944,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ui-design-systems","title":"Дизайн-системы и токены","tier":"core","tierLabel":"Основная","order":17,"description":"Архитектура дизайн-системы, семантические токены и синхронизация с кодом.","fullDescription":"Архитектура дизайн-системы, семантические токены и синхронизация с кодом.","components":["Основы дизайн-систем","Токены дизайна","Архитектура компонентов"],"tags":["Назначение и структура дизайн-системы","Разработка дизайн-системы и UI-кита","Семантические токены","Синхронизация токенов с кодом","Масштабируемые компоненты"],"evidenceState":"needs_review","branch":"Дизайнер приложений","section":"Интерфейс и системы","x":371.7974588046362,"y":1102.3352041785297,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ui-components","title":"Компоненты и паттерны","tier":"core","tierLabel":"Основная","order":18,"description":"Проектирование переиспользуемых компонентов, вариантов и поведенческих паттернов.","fullDescription":"Проектирование переиспользуемых компонентов, вариантов и поведенческих паттернов.","components":["Основы компонентного подхода","Проектирование компонентов и вариантов","Поведенческие паттерны взаимодействия","Дизайн-система и UI-кит"],"tags":["Понятие UI-компонента и его переиспользование","Роль UI-кита в проектировании","Настройка компонентов для масштабируемости","Варианты и состояния компонентов","Паттерны взаимодействия в пользовательских сценариях","Связь паттернов с компонентами","Разработка дизайн-систем и UI-китов","Документирование компонентов и паттернов"],"evidenceState":"needs_review","branch":"Дизайнер приложений","section":"Интерфейс и системы","x":165.93297232207158,"y":997.4420091685613,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ui-responsive","title":"Адаптивность и responsive UI","tier":"core","tierLabel":"Основная","order":19,"description":"Адаптация интерфейса под устройства, размеры и контекст использования.","fullDescription":"Адаптация интерфейса под устройства, размеры и контекст использования.","components":["Основы адаптивного дизайна","Проектирование адаптивных страниц"],"tags":["Как адаптировать интерфейсы","Дизайн сайта с адаптивной версией главной страницы"],"evidenceState":"supported","branch":"Дизайнер приложений","section":"Интерфейс и системы","x":2.557990831438815,"y":834.0670276779285,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ui-accessibility","title":"Доступность и инклюзивный дизайн","tier":"core","tierLabel":"Основная","order":20,"description":"Доступность интерфейса для людей с разными возможностями и ограничениями.","fullDescription":"Доступность интерфейса для людей с разными возможностями и ограничениями.","components":["Стилевые языки описания представления документов","Вспомогательные технологии экранного доступа"],"tags":["Sass","screen reader"],"evidenceState":"supported","branch":"Дизайнер приложений","section":"Интерфейс и системы","x":-102.3352041785297,"y":628.2025411953641,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ui-figma","title":"Figma: компоненты и автолейаут","tier":"core","tierLabel":"Основная","order":21,"description":"Работа с Figma: компоненты, варианты, автолейаут и библиотеки.","fullDescription":"Работа с Figma: компоненты, варианты, автолейаут и библиотеки.","components":["Основы работы в Figma","Автолейаут и адаптивная вёрстка макетов","Компоненты, варианты и библиотеки","Переменные и темы","Передача макетов в разработку"],"tags":["Основы Figma","Работа с изображениями в Figma","Автолейауты","Адаптирование и автолейауты","Проектирование адаптивных интерфейсов в Figma для web и mobile","Разработка дизайн-систем и UI-китов на компонентах Figma","Варианты компонентов","Библиотеки компонентов","Переменные и темы внутри макетов","Сборка сайта в Tilda по макету из Figma"],"evidenceState":"needs_review","branch":"Дизайнер приложений","section":"Интерфейс и системы","x":-138.47893594639436,"y":400.0000000000001,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"app-native-crossplatform","title":"Нативные и кросс-платформенные приложения","tier":"core","tierLabel":"Основная","order":23,"description":"Различия нативных и кросс-платформенных приложений, адаптация компонентов.","fullDescription":"Различия нативных и кросс-платформенных приложений, адаптация компонентов.","components":[],"tags":[],"evidenceState":"needs_review","branch":"Дизайнер приложений","section":"Передача и метрики","x":-102.3352041785297,"y":171.797458804636,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ui-handoff","title":"Передача макетов в разработку","tier":"core","tierLabel":"Основная","order":24,"description":"Спецификации, компонентные контракты и коммуникация с инженерами.","fullDescription":"Спецификации, компонентные контракты и коммуникация с инженерами.","components":["Взаимодействие с инженерами при разработке продукта","Правовые и государственные основы профессиональной деятельности"],"tags":["Согласование понимания с инженерами","Обсуждение дизайна и разработки продукта","Основы права и государственного регулирования"],"evidenceState":"supported","branch":"Дизайнер приложений","section":"Передача и метрики","x":2.557990831438701,"y":-34.06702767792842,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"app-metrics","title":"Метрики мобильных приложений","tier":"core","tierLabel":"Основная","order":25,"description":"Метрики мобильных приложений и анализ обратной связи.","fullDescription":"Метрики мобильных приложений и анализ обратной связи.","components":[],"tags":[],"evidenceState":"needs_review","branch":"Дизайнер приложений","section":"Передача и метрики","x":165.9329723220714,"y":-197.44200916856119,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ux-usability-testing","title":"Юзабилити-тестирование","tier":"core","tierLabel":"Основная","order":26,"description":"Проверка сценариев и прототипов на реальных пользователях, фиксация и приоритизация проблем.","fullDescription":"Проверка сценариев и прототипов на реальных пользователях, фиксация и приоритизация проблем.","components":["Основы юзабилити и место тестирования в исследованиях","Подготовка к тестированию: сценарии и прототипы","Участники и аудитория тестирования","Проведение тестирования и наблюдение","Анализ результатов и приоритизация проблем","Связь с разработкой и смежными проверками"],"tags":["Понятие юзабилити","Типы исследований","Количественные исследования","Проведение исследований и проектирование сервиса","Зачем пользователю сценарий","Пользовательские сценарии и паттерны взаимодействия","Построение пользовательских сценариев и CJM","Интерактивный прототип с тестированием","Исследование аудитории","Потребности пользователей с ОВЗ и цифровая доступность","На что смотрит пользователь","Проведение юзабилити-тестов","Фиксация наблюдений за пользователем","Выявление проблем юзабилити","Приоритизация проблем","Взаимодействие с разработчиками и спецификации","Тестирование воронки продаж и спроса"],"evidenceState":"needs_review","branch":"Дизайнер приложений","section":"Передача и метрики","x":371.79745880463577,"y":-302.3352041785297,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ui-interaction-states","title":"Состояния и микровзаимодействия","tier":"optional","tierLabel":"Необязательная","order":22,"description":"Состояния компонентов, обратная связь и микровзаимодействия.","fullDescription":"Состояния компонентов, обратная связь и микровзаимодействия.","components":["Состояния компонентов и обратная связь","Микровзаимодействия","Анимация и визуальная коммуникация","Передача поведения в разработку"],"tags":["Пользовательские сценарии и паттерны взаимодействия","Проектирование состояний компонентов","Обратная связь на действия пользователя","Понятие микровзаимодействий","Проектирование микровзаимодействий","Теория анимации","Анимация в интерфейсе","Анимация и визуальная коммуникация","Анимация как отстройка от конкурентов","Взаимодействие с разработкой","Подготовка спецификаций и участие в тестировании","Понимание продукта и взаимодействия с ним"],"evidenceState":"needs_review","branch":"Дизайнер приложений","section":"Интерфейс и системы","x":600,"y":-518.4789359463944,"width":192,"height":92,"ring":2,"emphasis":"tertiary","opacity":0.65}],"edges":[{"from":"ux-design-thinking","to":"ui-color"},{"from":"ux-design-thinking","to":"ui-typography"},{"from":"ui-typography","to":"ui-layout"},{"from":"ui-layout","to":"app-platform-guidelines"},{"from":"ux-design-thinking","to":"ux-user-research"},{"from":"ux-user-research","to":"ux-interviews"},{"from":"ux-user-research","to":"ux-personas"},{"from":"ux-interviews","to":"ux-personas"},{"from":"app-platform-guidelines","to":"app-mobile-patterns"},{"from":"ux-personas","to":"app-mobile-patterns"},{"from":"ux-user-research","to":"ux-information-architecture"},{"from":"ux-information-architecture","to":"ux-user-flows"},{"from":"ux-user-flows","to":"ux-wireframes"},{"from":"ux-wireframes","to":"ux-lowfi-prototype"},{"from":"ux-lowfi-prototype","to":"ux-hifi-prototype"},{"from":"ux-hifi-prototype","to":"app-prototyping"},{"from":"app-platform-guidelines","to":"app-prototyping"},{"from":"app-prototyping","to":"ux-interactive-prototype"},{"from":"ux-information-architecture","to":"ui-design-systems"},{"from":"ui-layout","to":"ui-design-systems"},{"from":"ui-design-systems","to":"ui-components"},{"from":"ui-layout","to":"ui-responsive"},{"from":"app-platform-guidelines","to":"ui-responsive"},{"from":"ui-components","to":"ui-accessibility"},{"from":"ui-layout","to":"ui-accessibility"},{"from":"ui-layout","to":"ui-figma"},{"from":"app-platform-guidelines","to":"app-native-crossplatform"},{"from":"app-prototyping","to":"app-native-crossplatform"},{"from":"app-prototyping","to":"ui-handoff"},{"from":"ui-figma","to":"ui-handoff"},{"from":"ux-personas","to":"app-metrics"},{"from":"ux-interactive-prototype","to":"ux-usability-testing"},{"from":"ux-personas","to":"ux-usability-testing"},{"from":"app-prototyping","to":"ui-interaction-states"}],"stage":{"width":1829,"height":1909,"offsetX":314.47893594639436,"offsetY":644.4789359463944},"counts":{"foundation":5,"core":20,"optional":1}};
+    const byId = new Map(DATA.nodes.map((node) => [node.id, node]));
+    const cards = [...document.querySelectorAll('.competency-card')];
+    const edges = [...document.querySelectorAll('.edge')];
+    const detail = document.getElementById('detail');
+    const viewport = document.getElementById('canvas-viewport');
+    const stage = document.getElementById('canvas-stage');
+    let zoom = 1;
+    let panX = 0;
+    let panY = 0;
+    let dragging = false;
+    let dragStartX = 0;
+    let dragStartY = 0;
+    let dragOriginX = 0;
+    let dragOriginY = 0;
+
+    function setZoom(next) {
+      zoom = Math.min(2.5, Math.max(.25, next));
+      stage.style.setProperty('--zoom', String(zoom));
+      document.getElementById('zoom-value').textContent = Math.round(zoom * 100) + '%';
+    }
+    function applyPan() {
+      stage.style.setProperty('--pan-x', String(panX) + 'px');
+      stage.style.setProperty('--pan-y', String(panY) + 'px');
+    }
+    function zoomAround(clientX, clientY, next) {
+      const target = Math.min(2.5, Math.max(.25, next));
+      if (target === zoom) return;
+      const rect = stage.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      const ratio = target / zoom;
+      const nextCenterX = clientX - (clientX - centerX) * ratio;
+      const nextCenterY = clientY - (clientY - centerY) * ratio;
+      panX += nextCenterX - centerX;
+      panY += nextCenterY - centerY;
+      setZoom(target);
+      applyPan();
+    }
+    function fitZoom() {
+      const header = document.querySelector('.app-header');
+      const topInset = header ? header.getBoundingClientRect().bottom + 18 : 40;
+      const availableHeight = Math.max(240, viewport.clientHeight - topInset - 40);
+      const scale = Math.min((viewport.clientWidth - 80) / stage.offsetWidth, availableHeight / stage.offsetHeight) * 0.94;
+      stage.style.top = String(topInset + availableHeight / 2) + 'px';
+      panX = 0;
+      panY = 0;
+      applyPan();
+      setZoom(Number.isFinite(scale) ? scale : 1);
+    }
+    document.getElementById('zoom-in').addEventListener('click', () => setZoom(zoom + 0.1));
+    document.getElementById('zoom-out').addEventListener('click', () => setZoom(zoom - 0.1));
+    fitZoom();
+    window.addEventListener('resize', fitZoom);
+
+    function endPan(event) {
+      if (!dragging) return;
+      dragging = false;
+      viewport.classList.remove('is-panning');
+      if (event && viewport.hasPointerCapture(event.pointerId)) viewport.releasePointerCapture(event.pointerId);
+    }
+    viewport.addEventListener('pointerdown', (event) => {
+      if (event.button !== 0 || event.target.closest('.competency-card')) return;
+      dragging = true;
+      dragStartX = event.clientX;
+      dragStartY = event.clientY;
+      dragOriginX = panX;
+      dragOriginY = panY;
+      viewport.classList.add('is-panning');
+      viewport.setPointerCapture(event.pointerId);
+      event.preventDefault();
+    });
+    viewport.addEventListener('pointermove', (event) => {
+      if (!dragging) return;
+      panX = dragOriginX + (event.clientX - dragStartX);
+      panY = dragOriginY + (event.clientY - dragStartY);
+      applyPan();
+    });
+    viewport.addEventListener('pointerup', endPan);
+    viewport.addEventListener('pointercancel', endPan);
+    viewport.addEventListener('wheel', (event) => {
+      event.preventDefault();
+      const delta = event.deltaMode === 1 ? event.deltaY * 16 : event.deltaY;
+      zoomAround(event.clientX, event.clientY, zoom * Math.exp(-delta * 0.0015));
+    }, { passive: false });
+
+    function connected(id) {
+      const ids = new Set([id]);
+      for (const edge of edges) {
+        if (edge.dataset.from === id) ids.add(edge.dataset.to);
+        if (edge.dataset.to === id) ids.add(edge.dataset.from);
+      }
+      return ids;
+    }
+    function highlight(id) {
+      const ids = connected(id);
+      cards.forEach((card) => {
+        card.classList.toggle('is-active', card.dataset.id === id);
+        card.classList.toggle('is-muted', !ids.has(card.dataset.id));
+      });
+      edges.forEach((edge) => {
+        const active = edge.dataset.from === id || edge.dataset.to === id;
+        edge.classList.toggle('is-active', active);
+        edge.classList.toggle('is-muted', !active);
+      });
+    }
+    function clearHighlight() {
+      cards.forEach((card) => card.classList.remove('is-active', 'is-muted'));
+      edges.forEach((edge) => edge.classList.remove('is-active', 'is-muted'));
+    }
+    function openDetail(id) {
+      const node = byId.get(id);
+      if (!node) return;
+      document.getElementById('detail-tier').textContent = node.tierLabel;
+      document.getElementById('detail-title').textContent = node.title;
+      document.getElementById('detail-full').textContent = node.fullDescription;
+      document.getElementById('detail-components').replaceChildren(...node.components.map((item) => { const li = document.createElement('li'); li.textContent = item; return li; }));
+      document.getElementById('detail-tags').replaceChildren(...node.tags.slice(0, 12).map((item) => { const li = document.createElement('li'); li.textContent = item; return li; }));
+      document.getElementById('detail-meta').textContent = [node.branch, node.section, 'Порядок ' + node.order, 'evidence: ' + node.evidenceState, 'ring ' + node.ring].filter(Boolean).join(' · ');
+      detail.hidden = false;
+    }
+    cards.forEach((card) => {
+      card.addEventListener('mouseenter', () => highlight(card.dataset.id));
+      card.addEventListener('mouseleave', clearHighlight);
+      card.addEventListener('focus', () => highlight(card.dataset.id));
+      card.addEventListener('blur', clearHighlight);
+      card.addEventListener('click', () => { highlight(card.dataset.id); openDetail(card.dataset.id); });
+      card.addEventListener('keydown', (event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); card.click(); } });
+    });
+    document.getElementById('detail-close').addEventListener('click', () => { detail.hidden = true; clearHighlight(); });
+    document.addEventListener('keydown', (event) => { if (event.key === 'Escape') { detail.hidden = true; clearHighlight(); } });
+  </script>
+</body>
+</html>

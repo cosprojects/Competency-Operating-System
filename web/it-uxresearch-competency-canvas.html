@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UX-исследователь — карта компетенций</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #132238;
+      --muted: #64748b;
+      --line: #cbd5e1;
+      --canvas: #eef4f8;
+      --card: #ffffff;
+      --foundation: #b45309;
+      --foundation-bg: #fff7ed;
+      --foundation-border: #f59e0b;
+      --core: #1d4ed8;
+      --core-bg: #eff6ff;
+      --core-border: #93c5fd;
+      --optional: #64748b;
+      --optional-bg: #f8fafc;
+      --optional-border: #cbd5e1;
+      --accent: #0f766e;
+      --glass: rgba(255, 255, 255, .58);
+      --glass-line: rgba(255, 255, 255, .78);
+      --shadow: 0 18px 50px rgba(15, 23, 42, .14);
+      font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body { margin: 0; overflow: hidden; color: var(--ink); background: var(--canvas); }
+
+    .canvas-viewport {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      background-color: var(--canvas);
+      background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+      background-size: 24px 24px;
+      cursor: grab;
+      touch-action: none;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    .canvas-viewport.is-panning { cursor: grabbing; }
+    .canvas-viewport.is-panning .competency-card { cursor: grabbing; }
+    .canvas-stage {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(calc(-50% + var(--pan-x, 0px)), calc(-50% + var(--pan-y, 0px))) scale(var(--zoom, .55));
+      transform-origin: center center;
+      will-change: transform;
+    }
+    .edges { position: absolute; inset: 0; overflow: visible; pointer-events: none; }
+    .edge { fill: none; stroke: #94a3b8; stroke-width: 1.4; opacity: .55; transition: opacity .15s, stroke .15s; }
+    .edge.is-active { stroke: var(--accent); stroke-width: 2.4; opacity: 1; }
+    .edge.is-muted { opacity: .12; }
+    .competency-card { position: absolute; display: flex; flex-direction: column; gap: 4px; overflow: hidden; border: 1px solid var(--line); border-radius: 14px; background: var(--card); padding: 9px 11px; cursor: pointer; box-shadow: 0 5px 14px rgba(15, 23, 42, .07); transition: transform .15s, box-shadow .15s, opacity .15s, border-color .15s; }
+    .competency-card:hover, .competency-card:focus-visible { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(15, 23, 42, .14); outline: none; border-color: #94a3b8; }
+    .competency-card.is-active { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(15, 118, 110, .18), 0 12px 24px rgba(15, 23, 42, .14); }
+    .competency-card.is-muted { opacity: .22 !important; }
+    .tier-foundation { border-color: var(--foundation-border); background: linear-gradient(180deg, #fffdf8, var(--foundation-bg)); }
+    .tier-core { border-color: var(--core-border); background: linear-gradient(180deg, #ffffff, var(--core-bg)); }
+    .tier-optional { border-color: var(--optional-border); background: var(--optional-bg); opacity: .78; }
+    .card-top { display: flex; justify-content: space-between; align-items: center; gap: 6px; min-height: 17px; }
+    .tier-badge { font-size: 9px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
+    .tier-foundation .tier-badge { color: var(--foundation); }
+    .tier-core .tier-badge { color: var(--core); }
+    .order { color: #94a3b8; font-size: 10px; font-variant-numeric: tabular-nums; }
+    .competency-card h2 { margin: 0; font-size: 12px; line-height: 1.18; letter-spacing: -.01em; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+    .competency-card p { margin: 0; color: var(--muted); font-size: 10px; line-height: 1.28; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+
+    .app-header {
+      position: fixed;
+      z-index: 30;
+      top: 40px;
+      left: 40px;
+      right: 40px;
+      padding: 20px 24px 16px;
+      border: 1px solid var(--glass-line);
+      border-radius: 24px;
+      background: var(--glass);
+      -webkit-backdrop-filter: blur(30px) saturate(150%);
+      backdrop-filter: blur(30px) saturate(150%);
+      box-shadow: var(--shadow);
+    }
+    .header-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; }
+    .eyebrow { color: var(--accent); font-size: 10px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    h1 { margin: 5px 0 4px; font-size: clamp(24px, 3.2vw, 42px); letter-spacing: -.045em; line-height: 1; }
+    .subtitle { margin: 0; color: var(--muted); font-size: 13px; }
+    .summary { display: flex; gap: 7px; flex-wrap: wrap; justify-content: flex-end; }
+    .summary span { border: 1px solid rgba(203, 213, 225, .9); background: rgba(255, 255, 255, .7); border-radius: 999px; padding: 6px 10px; font-size: 11px; font-weight: 700; white-space: nowrap; }
+    .summary .f { color: var(--foundation); } .summary .c { color: var(--core); } .summary .o { color: var(--optional); }
+    .header-bottom { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 14px; }
+    .profession-tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+    .profession-tab { border: 1px solid rgba(203, 213, 225, .9); background: rgba(255, 255, 255, .58); color: var(--ink); border-radius: 999px; padding: 7px 12px; font-size: 12px; font-weight: 700; text-decoration: none; transition: border-color .15s, background .15s; }
+    .profession-tab:hover { border-color: #94a3b8; background: rgba(255, 255, 255, .85); }
+    .profession-tab.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+    .hint { margin-left: auto; color: var(--muted); font-size: 11px; }
+    .banner { margin-top: 12px; border: 1px solid rgba(253, 230, 138, .9); background: rgba(255, 251, 235, .72); color: #92400e; border-radius: 14px; padding: 8px 12px; font-size: 11px; }
+
+    .zoom-controls {
+      position: fixed;
+      z-index: 35;
+      left: 40px;
+      bottom: 40px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 5px;
+      border: 1px solid var(--glass-line);
+      border-radius: 16px;
+      background: var(--glass);
+      -webkit-backdrop-filter: blur(30px) saturate(150%);
+      backdrop-filter: blur(30px) saturate(150%);
+      box-shadow: var(--shadow);
+    }
+    .zoom-controls button { width: 34px; height: 34px; border: 1px solid transparent; border-radius: 11px; background: transparent; color: var(--ink); font: inherit; font-size: 20px; line-height: 1; cursor: pointer; }
+    .zoom-controls button:hover { background: rgba(255, 255, 255, .8); border-color: var(--line); }
+    .zoom-controls button:active { transform: translateY(1px); }
+    .zoom-value { min-width: 48px; text-align: center; color: var(--muted); font-size: 11px; font-weight: 800; font-variant-numeric: tabular-nums; }
+
+    .detail-panel {
+      position: fixed;
+      z-index: 40;
+      top: 40px;
+      right: 40px;
+      bottom: 40px;
+      width: min(380px, calc(100vw - 80px));
+      overflow: auto;
+      padding: 24px;
+      border: 1px solid var(--glass-line);
+      border-radius: 24px;
+      background: var(--glass);
+      -webkit-backdrop-filter: blur(30px) saturate(150%);
+      backdrop-filter: blur(30px) saturate(150%);
+      box-shadow: var(--shadow);
+    }
+    .detail-panel[hidden] { display: none; }
+    .detail-close { float: right; border: 0; background: rgba(241, 245, 249, .8); color: var(--muted); width: 30px; height: 30px; border-radius: 50%; cursor: pointer; font-size: 18px; line-height: 1; }
+    .detail-panel .tier-badge { display: inline-block; margin-bottom: 10px; }
+    .detail-panel h2 { margin: 0 0 8px; font-size: 22px; line-height: 1.12; letter-spacing: -.02em; }
+    .detail-panel .full { color: var(--muted); font-size: 13px; line-height: 1.5; margin: 0 0 16px; }
+    .detail-panel h3 { margin: 16px 0 5px; font-size: 10px; text-transform: uppercase; letter-spacing: .09em; color: var(--muted); }
+    .detail-panel ul { margin: 0; padding-left: 18px; color: var(--ink); font-size: 13px; line-height: 1.5; }
+    .detail-panel li { margin: 3px 0; }
+    .detail-panel .muted { color: var(--muted); font-size: 11px; line-height: 1.45; margin-top: 16px; }
+
+    @media (max-width: 720px) {
+      .app-header { top: 16px; left: 16px; right: 16px; padding: 16px; border-radius: 20px; }
+      .header-top { flex-direction: column; gap: 12px; }
+      .summary { justify-content: flex-start; }
+      .hint { display: none; }
+      .zoom-controls { left: 16px; bottom: 16px; }
+      .detail-panel { top: 16px; right: 16px; bottom: 16px; width: calc(100vw - 32px); border-radius: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="canvas-viewport" id="canvas-viewport" aria-label="Канвас компетенций">
+    <div class="canvas-stage" id="canvas-stage" style="width:1496px;height:1379px">
+      <svg class="edges" width="1496" height="1379" viewBox="0 0 1496 1379" aria-hidden="true">
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8" />
+          </marker>
+        </defs>
+        <path class="edge" data-from="ux-design-thinking" data-to="uxresearch-principles" d="M 617.6 786.0 Q 747.6 806.8 877.6 786.0" marker-end="url(#arrow)" />
+        <path class="edge" data-from="uxresearch-principles" data-to="uxresearch-questions" d="M 877.6 786.0 Q 851.0 535.6 747.6 306.0" marker-end="url(#arrow)" />
+        <path class="edge" data-from="uxresearch-principles" data-to="uxresearch-qualitative" d="M 877.6 786.0 Q 958.1 580.9 970.7 361.0" marker-end="url(#arrow)" />
+        <path class="edge" data-from="uxresearch-questions" data-to="uxresearch-qualitative" d="M 747.6 306.0 Q 854.7 351.3 970.7 361.0" marker-end="url(#arrow)" />
+        <path class="edge" data-from="uxresearch-principles" data-to="uxresearch-quantitative" d="M 877.6 786.0 Q 1031.9 670.9 1142.6 513.3" marker-end="url(#arrow)" />
+        <path class="edge" data-from="uxresearch-questions" data-to="uxresearch-quantitative" d="M 747.6 306.0 Q 928.5 441.3 1142.6 513.3" marker-end="url(#arrow)" />
+        <path class="edge" data-from="uxresearch-qualitative" data-to="uxresearch-recruiting" d="M 970.7 361.0 Q 1068.0 564.8 1224.1 728.2" marker-end="url(#arrow)" />
+        <path class="edge" data-from="uxresearch-quantitative" data-to="uxresearch-recruiting" d="M 1142.6 513.3 Q 1166.2 627.3 1224.1 728.2" marker-end="url(#arrow)" />
+        <path class="edge" data-from="uxresearch-qualitative" data-to="ux-interviews" d="M 970.7 361.0 Q 1035.9 676.7 1196.4 956.2" marker-end="url(#arrow)" />
+        <path class="edge" data-from="uxresearch-qualitative" data-to="ux-personas" d="M 970.7 361.0 Q 955.5 760.8 1065.9 1145.3" marker-end="url(#arrow)" />
+        <path class="edge" data-from="uxresearch-recruiting" data-to="ux-personas" d="M 1224.1 728.2 Q 1111.6 924.1 1065.9 1145.3" marker-end="url(#arrow)" />
+        <path class="edge" data-from="uxresearch-qualitative" data-to="uxresearch-usability" d="M 970.7 361.0 Q 845.3 797.9 862.5 1252.1" marker-end="url(#arrow)" />
+        <path class="edge" data-from="uxresearch-recruiting" data-to="uxresearch-usability" d="M 1224.1 728.2 Q 1001.4 961.2 862.5 1252.1" marker-end="url(#arrow)" />
+        <path class="edge" data-from="uxresearch-quantitative" data-to="ux-experiments" d="M 1142.6 513.3 Q 828.6 841.9 632.7 1252.1" marker-end="url(#arrow)" />
+        <path class="edge" data-from="uxresearch-questions" data-to="ux-experiments" d="M 747.6 306.0 Q 614.5 769.8 632.7 1252.1" marker-end="url(#arrow)" />
+        <path class="edge" data-from="uxresearch-quantitative" data-to="ux-analytics" d="M 1142.6 513.3 Q 735.4 772.3 429.3 1145.3" marker-end="url(#arrow)" />
+        <path class="edge" data-from="uxresearch-quantitative" data-to="ux-metrics" d="M 1142.6 513.3 Q 685.3 667.3 298.8 956.2" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ux-analytics" data-to="ux-metrics" d="M 429.3 1145.3 Q 379.2 1040.3 298.8 956.2" marker-end="url(#arrow)" />
+        <path class="edge" data-from="uxresearch-qualitative" data-to="uxresearch-synthesis" d="M 970.7 361.0 Q 591.5 488.6 271.1 728.2" marker-end="url(#arrow)" />
+        <path class="edge" data-from="uxresearch-quantitative" data-to="uxresearch-synthesis" d="M 1142.6 513.3 Q 689.7 551.0 271.1 728.2" marker-end="url(#arrow)" />
+        <path class="edge" data-from="uxresearch-usability" data-to="uxresearch-synthesis" d="M 862.5 1252.1 Q 608.7 942.8 271.1 728.2" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ux-design-thinking" data-to="ux-product-thinking" d="M 617.6 786.0 Q 506.9 628.5 352.5 513.3" marker-end="url(#arrow)" />
+        <path class="edge" data-from="uxresearch-synthesis" data-to="ux-information-architecture" d="M 271.1 728.2 Q 427.2 564.8 524.5 361.0" marker-end="url(#arrow)" />
+        <path class="edge" data-from="uxresearch-principles" data-to="uxresearch-ethics" d="M 877.6 786.0 Q 865.4 445.6 747.6 126.0" marker-end="url(#arrow)" />
+        <path class="edge" data-from="uxresearch-synthesis" data-to="ui-data-visualization" d="M 271.1 728.2 Q 764.1 1005.9 1319.2 1116.0" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ux-analytics" data-to="ui-data-visualization" d="M 429.3 1145.3 Q 876.6 1201.9 1319.2 1116.0" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ux-design-thinking" data-to="ui-figjam" d="M 617.6 786.0 Q 370.4 915.7 176.0 1116.0" marker-end="url(#arrow)" />
+      </svg>
+      <article class="competency-card tier-foundation" data-id="ux-design-thinking" data-tier="foundation" style="left:507.6px;top:740.0px;width:220px;height:92px;opacity:1" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Фундаментальная</span>
+            <span class="order">1</span>
+          </div>
+          <h2>Дизайн-мышление</h2>
+          <p>Системный подход к решению задач: понимание пользователя, формулировка проблемы, генерация и проверка гипотез, итерации.</p>
+        </article>
+      <article class="competency-card tier-foundation" data-id="uxresearch-principles" data-tier="foundation" style="left:767.6px;top:740.0px;width:220px;height:92px;opacity:1" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Фундаментальная</span>
+            <span class="order">2</span>
+          </div>
+          <h2>Принципы и этапы исследований</h2>
+          <p>Принципы и этапы исследований, роль исследований в продуктовом цикле.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="uxresearch-questions" data-tier="core" style="left:651.6px;top:260.0px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">3</span>
+          </div>
+          <h2>Исследовательские вопросы и гипотезы</h2>
+          <p>Формулировка исследовательских вопросов и гипотез.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="uxresearch-qualitative" data-tier="core" style="left:874.7px;top:315.0px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">5</span>
+          </div>
+          <h2>Качественные методы</h2>
+          <p>Глубинные интервью и другие качественные методы, гайды и модерация.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="uxresearch-quantitative" data-tier="core" style="left:1046.6px;top:467.3px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">6</span>
+          </div>
+          <h2>Количественные методы</h2>
+          <p>Опросы, метрики, А/В-тестирование и статистическая интерпретация.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="uxresearch-recruiting" data-tier="core" style="left:1128.1px;top:682.2px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">7</span>
+          </div>
+          <h2>Выборка и рекрутинг респондентов</h2>
+          <p>Формирование выборки и рекрутинг респондентов.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="ux-interviews" data-tier="core" style="left:1100.4px;top:910.2px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">8</span>
+          </div>
+          <h2>Интервью и наблюдение</h2>
+          <p>Подготовка и проведение глубинных интервью, наблюдений и анализ качественных данных.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="ux-personas" data-tier="core" style="left:969.9px;top:1099.3px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">9</span>
+          </div>
+          <h2>Персоны и сегментация</h2>
+          <p>Модели целевых пользователей, их целей, контекста и критериев выбора.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="uxresearch-usability" data-tier="core" style="left:766.5px;top:1206.1px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">10</span>
+          </div>
+          <h2>Юзабилити-тестирование и модерация</h2>
+          <p>Подготовка и модерация юзабилити-тестов, анализ результатов.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="ux-experiments" data-tier="core" style="left:536.7px;top:1206.1px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">11</span>
+          </div>
+          <h2>UX-метрики и эксперименты</h2>
+          <p>Выбор метрик, дизайн экспериментов и интерпретация результатов.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="ux-analytics" data-tier="core" style="left:333.3px;top:1099.3px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">12</span>
+          </div>
+          <h2>Продуктовая аналитика</h2>
+          <p>Работа с поведенческими данными, воронками и метриками для проверки гипотез.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="ux-metrics" data-tier="core" style="left:202.8px;top:910.2px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">13</span>
+          </div>
+          <h2>Продуктовые метрики и бизнес-обоснование</h2>
+          <p>Связь дизайн-решений с метриками, юнит-экономикой и бизнес-результатом.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="uxresearch-synthesis" data-tier="core" style="left:175.1px;top:682.2px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">14</span>
+          </div>
+          <h2>Анализ данных и отчёт</h2>
+          <p>Анализ данных, протоколы, отчёт и выводы для дизайна.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="ux-product-thinking" data-tier="core" style="left:256.5px;top:467.3px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">16</span>
+          </div>
+          <h2>Продуктовое мышление</h2>
+          <p>Понимание ценности, аудитории, ограничений и жизненного цикла продукта.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="ux-information-architecture" data-tier="core" style="left:428.5px;top:315.0px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">17</span>
+          </div>
+          <h2>Информационная архитектура</h2>
+          <p>Структура контента и навигации, категоризация и находимость информации.</p>
+        </article>
+      <article class="competency-card tier-optional" data-id="uxresearch-ethics" data-tier="optional" style="left:651.6px;top:80.0px;width:192px;height:92px;opacity:0.65" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Необязательная</span>
+            <span class="order">4</span>
+          </div>
+          <h2>Этика и хранение данных</h2>
+          <p>Этика исследований, согласие и хранение данных пользователей.</p>
+        </article>
+      <article class="competency-card tier-optional" data-id="ui-data-visualization" data-tier="optional" style="left:1223.2px;top:1070.0px;width:192px;height:92px;opacity:0.65" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Необязательная</span>
+            <span class="order">15</span>
+          </div>
+          <h2>Визуализация данных</h2>
+          <p>Графики, диаграммы и визуализация данных в интерфейсе.</p>
+        </article>
+      <article class="competency-card tier-optional" data-id="ui-figjam" data-tier="optional" style="left:80.0px;top:1070.0px;width:192px;height:92px;opacity:0.65" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Необязательная</span>
+            <span class="order">18</span>
+          </div>
+          <h2>FigJam: воркшопы и картирование</h2>
+          <p>Совместные воркшопы, картирование и фасилитация в FigJam.</p>
+        </article>
+    </div>
+  </div>
+
+  <header class="app-header">
+    <div class="header-top">
+      <div>
+        <div class="eyebrow">AXIONA · Competency Canvas</div>
+        <h1>UX-исследователь</h1>
+        <p class="subtitle">Сеть компетенций: разделы, связи и приоритеты профессии</p>
+      </div>
+      <div class="summary">
+        <span class="f">2 фундаментальных</span>
+        <span class="c">13 основных</span>
+        <span class="o">3 необязательных</span>
+      </div>
+    </div>
+    <div class="header-bottom">
+      <nav class="profession-tabs" aria-label="Профессии"><a class="profession-tab" href="uxui-competency-canvas.html">UX/UI</a><a class="profession-tab" href="it-product-competency-canvas.html">Product</a><a class="profession-tab" href="it-motion-competency-canvas.html">Motion</a><a class="profession-tab" href="it-graphic-competency-canvas.html">Graphic</a><a class="profession-tab" href="it-presentation-competency-canvas.html">Презентации</a><a class="profession-tab" href="it-appdesign-competency-canvas.html">Приложения</a><a class="profession-tab active" href="it-uxresearch-competency-canvas.html">UX-исследования</a><a class="profession-tab" href="it-artdir-competency-canvas.html">Арт-дирекшн</a><a class="profession-tab" href="it-3ddesigner-competency-canvas.html">3D</a><a class="profession-tab" href="it-interior-competency-canvas.html">Интерьеры</a><a class="profession-tab" href="it-webdesigner-competency-canvas.html">Веб-дизайн</a></nav>
+      <span class="hint">Перетаскивание — панорама; колесо мыши — масштаб; нажмите карточку — подробности</span>
+    </div>
+    <div class="banner"><strong>Черновой слой.</strong> UX-исследователь: профессио-специфичная сеть, собранная из единого массива компетенций. Tier/order специфичны для профессии; компетенции переиспользуются. Сгенерировано 2026-10-26.</div>
+  </header>
+
+  <div class="zoom-controls" aria-label="Масштаб канваса">
+    <button type="button" id="zoom-out" aria-label="Уменьшить">−</button>
+    <span class="zoom-value" id="zoom-value" aria-live="polite">100%</span>
+    <button type="button" id="zoom-in" aria-label="Увеличить">+</button>
+  </div>
+
+  <aside class="detail-panel" id="detail" hidden>
+    <button class="detail-close" id="detail-close" aria-label="Закрыть">×</button>
+    <span class="tier-badge" id="detail-tier"></span>
+    <h2 id="detail-title"></h2>
+    <p class="full" id="detail-full"></p>
+    <h3>Компоненты</h3>
+    <ul id="detail-components"></ul>
+    <h3>Теги и знания</h3>
+    <ul id="detail-tags"></ul>
+    <p class="muted" id="detail-meta"></p>
+  </aside>
+
+  <script>
+    const DATA = {"title":"UX-исследователь","subtitle":"Сеть компетенций: разделы, связи и приоритеты профессии","note":"UX-исследователь: профессио-специфичная сеть, собранная из единого массива компетенций. Tier/order специфичны для профессии; компетенции переиспользуются.","generatedOn":"2026-10-26","nodes":[{"id":"ux-design-thinking","title":"Дизайн-мышление","tier":"foundation","tierLabel":"Фундаментальная","order":1,"description":"Системный подход к решению задач: понимание пользователя, формулировка проблемы, генерация и проверка гипотез, итерации.","fullDescription":"Системный подход к решению задач: понимание пользователя, формулировка проблемы, генерация и проверка гипотез, итерации.","components":["Эмпатия и исследование пользователя","Формулировка проблемы и пользовательские сценарии","Генерация и проверка гипотез","Итерационный процесс и командное взаимодействие"],"tags":["Исследование аудитории","Целевая аудитория","Типы исследований","Количественные исследования","Проведение исследований и проектирование сервиса","Проведение UX-исследований и анализ аудитории","Зачем пользователю сценарий","Пользовательские сценарии и паттерны взаимодействия","Гипотезы","Интерактивный прототип с тестированием","Прототипирование с помощью переменных и условий","Воркшопы с экспертами"],"evidenceState":"supported","branch":"UX-исследователь","section":"Основы исследований","x":470,"y":400,"width":220,"height":92,"ring":0,"emphasis":"primary","opacity":1},{"id":"uxresearch-principles","title":"Принципы и этапы исследований","tier":"foundation","tierLabel":"Фундаментальная","order":2,"description":"Принципы и этапы исследований, роль исследований в продуктовом цикле.","fullDescription":"Принципы и этапы исследований, роль исследований в продуктовом цикле.","components":[],"tags":[],"evidenceState":"needs_review","branch":"UX-исследователь","section":"Основы исследований","x":730,"y":400,"width":220,"height":92,"ring":0,"emphasis":"primary","opacity":1},{"id":"uxresearch-questions","title":"Исследовательские вопросы и гипотезы","tier":"core","tierLabel":"Основная","order":3,"description":"Формулировка исследовательских вопросов и гипотез.","fullDescription":"Формулировка исследовательских вопросов и гипотез.","components":[],"tags":[],"evidenceState":"needs_review","branch":"UX-исследователь","section":"Основы исследований","x":600,"y":-80.01130836515637,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"uxresearch-qualitative","title":"Качественные методы","tier":"core","tierLabel":"Основная","order":5,"description":"Глубинные интервью и другие качественные методы, гайды и модерация.","fullDescription":"Глубинные интервью и другие качественные методы, гайды и модерация.","components":[],"tags":[],"evidenceState":"needs_review","branch":"UX-исследователь","section":"Методы","x":823.0723778403351,"y":-25.028905373608723,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"uxresearch-quantitative","title":"Количественные методы","tier":"core","tierLabel":"Основная","order":6,"description":"Опросы, метрики, А/В-тестирование и статистическая интерпретация.","fullDescription":"Опросы, метрики, А/В-тестирование и статистическая интерпретация.","components":[],"tags":[],"evidenceState":"needs_review","branch":"UX-исследователь","section":"Методы","x":995.0415622310284,"y":127.32249768545671,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"uxresearch-recruiting","title":"Выборка и рекрутинг респондентов","tier":"core","tierLabel":"Основная","order":7,"description":"Формирование выборки и рекрутинг респондентов.","fullDescription":"Формирование выборки и рекрутинг респондентов.","components":[],"tags":[],"evidenceState":"needs_review","branch":"UX-исследователь","section":"Методы","x":1076.511485481508,"y":342.14103040464994,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ux-interviews","title":"Интервью и наблюдение","tier":"core","tierLabel":"Основная","order":8,"description":"Подготовка и проведение глубинных интервью, наблюдений и анализ качественных данных.","fullDescription":"Подготовка и проведение глубинных интервью, наблюдений и анализ качественных данных.","components":["Основы качественных исследований","Подготовка к интервью и наблюдению","Проведение интервью и наблюдения","Анализ качественных данных"],"tags":["Типы исследований","Количественные исследования","Проведение исследований и проектирование сервиса","Исследование аудитории","Целевая аудитория","Потребности пользователей с ОВЗ. Нозологии, цифровая доступность","Провожу UX-исследования, анализирую аудиторию, строю пользовательские сценарии и CJM","Зачем пользователю сценарий","На что смотрит пользователь","Пользовательские сценарии и паттерны взаимодействия"],"evidenceState":"supported","branch":"UX-исследователь","section":"Методы","x":1048.8183699940985,"y":570.214355781966,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ux-personas","title":"Персоны и сегментация","tier":"core","tierLabel":"Основная","order":9,"description":"Модели целевых пользователей, их целей, контекста и критериев выбора.","fullDescription":"Модели целевых пользователей, их целей, контекста и критериев выбора.","components":["Исследование аудитории","Сегментация аудитории","Построение персон","Связь с пользовательскими сценариями","Учёт особых групп пользователей"],"tags":["Исследование аудитории","Целевая аудитория","Количественные исследования","Типы исследований","Критерии сегментации аудитории","Выбор приоритетных сегментов","Структура и содержание персоны","Разработка персон на основе данных","Применение персон в проектных решениях","Пользовательские сценарии и паттерны взаимодействия","Роль сценария для пользователя","Построение сценариев на основе персон","Потребности пользователей с ОВЗ. Нозологии, цифровая доступность"],"evidenceState":"needs_review","branch":"UX-исследователь","section":"Методы","x":918.3063747887445,"y":759.2936235549923,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"uxresearch-usability","title":"Юзабилити-тестирование и модерация","tier":"core","tierLabel":"Основная","order":10,"description":"Подготовка и модерация юзабилити-тестов, анализ результатов.","fullDescription":"Подготовка и модерация юзабилити-тестов, анализ результатов.","components":[],"tags":[],"evidenceState":"needs_review","branch":"UX-исследователь","section":"Методы","x":714.8742251269471,"y":866.0630521291221,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ux-experiments","title":"UX-метрики и эксперименты","tier":"core","tierLabel":"Основная","order":11,"description":"Выбор метрик, дизайн экспериментов и интерпретация результатов.","fullDescription":"Выбор метрик, дизайн экспериментов и интерпретация результатов.","components":["Связь задач, метрик и целей бизнеса","Метрики и данные","Эксперименты и тестирование гипотез","Этика и правовые аспекты работы с данными"],"tags":["Влияние задач на цели бизнеса","Таблицы и типы данных","Виды визуализации данных","Дизайн данных. Графики и диаграммы","Тестирование воронки продаж и спроса","Корректная работа с данными и авторские права"],"evidenceState":"supported","branch":"UX-исследователь","section":"Методы","x":485.125774873053,"y":866.0630521291221,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ux-analytics","title":"Продуктовая аналитика","tier":"core","tierLabel":"Основная","order":12,"description":"Работа с поведенческими данными, воронками и метриками для проверки гипотез.","fullDescription":"Работа с поведенческими данными, воронками и метриками для проверки гипотез.","components":["Анализ онлайн-данных и поведения пользователей","Взаимодействие с клиентами и представление альтернатив"],"tags":["Анализ онлайн-опыта и данных","Убеждение клиентов через альтернативы"],"evidenceState":"supported","branch":"UX-исследователь","section":"Методы","x":281.69362521125555,"y":759.2936235549923,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ux-metrics","title":"Продуктовые метрики и бизнес-обоснование","tier":"core","tierLabel":"Основная","order":13,"description":"Связь дизайн-решений с метриками, юнит-экономикой и бизнес-результатом.","fullDescription":"Связь дизайн-решений с метриками, юнит-экономикой и бизнес-результатом.","components":["Визуализация данных","Аргументация проектных решений","Бизнес-контекст проектирования"],"tags":["Виды визуализации данных","Аргументация решений","Бизнес-эмпатия"],"evidenceState":"supported","branch":"UX-исследователь","section":"Методы","x":151.18163000590152,"y":570.2143557819661,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"uxresearch-synthesis","title":"Анализ данных и отчёт","tier":"core","tierLabel":"Основная","order":14,"description":"Анализ данных, протоколы, отчёт и выводы для дизайна.","fullDescription":"Анализ данных, протоколы, отчёт и выводы для дизайна.","components":[],"tags":[],"evidenceState":"needs_review","branch":"UX-исследователь","section":"Синтез","x":123.48851451849185,"y":342.14103040464977,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ux-product-thinking","title":"Продуктовое мышление","tier":"core","tierLabel":"Основная","order":16,"description":"Понимание ценности, аудитории, ограничений и жизненного цикла продукта.","fullDescription":"Понимание ценности, аудитории, ограничений и жизненного цикла продукта.","components":["Основы продукта","Аудитория и ценность","Бизнес-контекст и метрики","Жизненный цикл продукта"],"tags":["Что такое продукт и как с ним взаимодействовать","Исследование аудитории","Целевая аудитория","Провожу UX-исследования, анализирую аудиторию, строю пользовательские сценарии и CJM","Бизнес-эмпатия","Как задачи влияют на цели бизнеса, а разные метрики — на цели","Продуктовые метрики и цели","Жизненный цикл продукта"],"evidenceState":"needs_review","branch":"UX-исследователь","section":"Применение","x":204.9584377689713,"y":127.32249768545717,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ux-information-architecture","title":"Информационная архитектура","tier":"core","tierLabel":"Основная","order":17,"description":"Структура контента и навигации, категоризация и находимость информации.","fullDescription":"Структура контента и навигации, категоризация и находимость информации.","components":["Основы информационной архитектуры","Исследование и моделирование пользователей","Структурирование контента","Навигация и находимость"],"tags":["Роль сценариев в информационной архитектуре","Пользовательские сценарии и паттерны взаимодействия","UX-исследования и анализ аудитории","Построение пользовательских сценариев и CJM","Категоризация и таксономия контента","Группировка и маркировка элементов","Проектирование навигационных систем","Обеспечение находимости информации"],"evidenceState":"needs_review","branch":"UX-исследователь","section":"Применение","x":376.92762215966513,"y":-25.02890537360878,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"uxresearch-ethics","title":"Этика и хранение данных","tier":"optional","tierLabel":"Необязательная","order":4,"description":"Этика исследований, согласие и хранение данных пользователей.","fullDescription":"Этика исследований, согласие и хранение данных пользователей.","components":[],"tags":[],"evidenceState":"needs_review","branch":"UX-исследователь","section":"Основы исследований","x":600,"y":-260.0113083651563,"width":192,"height":92,"ring":2,"emphasis":"tertiary","opacity":0.65},{"id":"ui-data-visualization","title":"Визуализация данных","tier":"optional","tierLabel":"Необязательная","order":15,"description":"Графики, диаграммы и визуализация данных в интерфейсе.","fullDescription":"Графики, диаграммы и визуализация данных в интерфейсе.","components":["Иконки как визуальные элементы","Дизайн данных: графики и диаграммы"],"tags":["Иконки","Дизайн данных. Графики и диаграммы"],"evidenceState":"supported","branch":"UX-исследователь","section":"Синтез","x":1171.5865598292303,"y":730.005654182578,"width":192,"height":92,"ring":2,"emphasis":"tertiary","opacity":0.65},{"id":"ui-figjam","title":"FigJam: воркшопы и картирование","tier":"optional","tierLabel":"Необязательная","order":18,"description":"Совместные воркшопы, картирование и фасилитация в FigJam.","fullDescription":"Совместные воркшопы, картирование и фасилитация в FigJam.","components":["Совместные воркшопы в FigJam","Картирование в FigJam","Инструменты совместной работы в FigJam"],"tags":["FigJam: совместные воркшопы","Фасилитация групповых сессий","FigJam: картирование пользовательских путей","FigJam: шаблоны, стикеры и голосование"],"evidenceState":"needs_review","branch":"UX-исследователь","section":"Применение","x":28.413440170769945,"y":730.0056541825784,"width":192,"height":92,"ring":2,"emphasis":"tertiary","opacity":0.65}],"edges":[{"from":"ux-design-thinking","to":"uxresearch-principles"},{"from":"uxresearch-principles","to":"uxresearch-questions"},{"from":"uxresearch-principles","to":"uxresearch-qualitative"},{"from":"uxresearch-questions","to":"uxresearch-qualitative"},{"from":"uxresearch-principles","to":"uxresearch-quantitative"},{"from":"uxresearch-questions","to":"uxresearch-quantitative"},{"from":"uxresearch-qualitative","to":"uxresearch-recruiting"},{"from":"uxresearch-quantitative","to":"uxresearch-recruiting"},{"from":"uxresearch-qualitative","to":"ux-interviews"},{"from":"uxresearch-qualitative","to":"ux-personas"},{"from":"uxresearch-recruiting","to":"ux-personas"},{"from":"uxresearch-qualitative","to":"uxresearch-usability"},{"from":"uxresearch-recruiting","to":"uxresearch-usability"},{"from":"uxresearch-quantitative","to":"ux-experiments"},{"from":"uxresearch-questions","to":"ux-experiments"},{"from":"uxresearch-quantitative","to":"ux-analytics"},{"from":"uxresearch-quantitative","to":"ux-metrics"},{"from":"ux-analytics","to":"ux-metrics"},{"from":"uxresearch-qualitative","to":"uxresearch-synthesis"},{"from":"uxresearch-quantitative","to":"uxresearch-synthesis"},{"from":"uxresearch-usability","to":"uxresearch-synthesis"},{"from":"ux-design-thinking","to":"ux-product-thinking"},{"from":"uxresearch-synthesis","to":"ux-information-architecture"},{"from":"uxresearch-principles","to":"uxresearch-ethics"},{"from":"uxresearch-synthesis","to":"ui-data-visualization"},{"from":"ux-analytics","to":"ui-data-visualization"},{"from":"ux-design-thinking","to":"ui-figjam"}],"stage":{"width":1496,"height":1379,"offsetX":147.58655982923005,"offsetY":386.0113083651563},"counts":{"foundation":2,"core":13,"optional":3}};
+    const byId = new Map(DATA.nodes.map((node) => [node.id, node]));
+    const cards = [...document.querySelectorAll('.competency-card')];
+    const edges = [...document.querySelectorAll('.edge')];
+    const detail = document.getElementById('detail');
+    const viewport = document.getElementById('canvas-viewport');
+    const stage = document.getElementById('canvas-stage');
+    let zoom = 1;
+    let panX = 0;
+    let panY = 0;
+    let dragging = false;
+    let dragStartX = 0;
+    let dragStartY = 0;
+    let dragOriginX = 0;
+    let dragOriginY = 0;
+
+    function setZoom(next) {
+      zoom = Math.min(2.5, Math.max(.25, next));
+      stage.style.setProperty('--zoom', String(zoom));
+      document.getElementById('zoom-value').textContent = Math.round(zoom * 100) + '%';
+    }
+    function applyPan() {
+      stage.style.setProperty('--pan-x', String(panX) + 'px');
+      stage.style.setProperty('--pan-y', String(panY) + 'px');
+    }
+    function zoomAround(clientX, clientY, next) {
+      const target = Math.min(2.5, Math.max(.25, next));
+      if (target === zoom) return;
+      const rect = stage.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      const ratio = target / zoom;
+      const nextCenterX = clientX - (clientX - centerX) * ratio;
+      const nextCenterY = clientY - (clientY - centerY) * ratio;
+      panX += nextCenterX - centerX;
+      panY += nextCenterY - centerY;
+      setZoom(target);
+      applyPan();
+    }
+    function fitZoom() {
+      const header = document.querySelector('.app-header');
+      const topInset = header ? header.getBoundingClientRect().bottom + 18 : 40;
+      const availableHeight = Math.max(240, viewport.clientHeight - topInset - 40);
+      const scale = Math.min((viewport.clientWidth - 80) / stage.offsetWidth, availableHeight / stage.offsetHeight) * 0.94;
+      stage.style.top = String(topInset + availableHeight / 2) + 'px';
+      panX = 0;
+      panY = 0;
+      applyPan();
+      setZoom(Number.isFinite(scale) ? scale : 1);
+    }
+    document.getElementById('zoom-in').addEventListener('click', () => setZoom(zoom + 0.1));
+    document.getElementById('zoom-out').addEventListener('click', () => setZoom(zoom - 0.1));
+    fitZoom();
+    window.addEventListener('resize', fitZoom);
+
+    function endPan(event) {
+      if (!dragging) return;
+      dragging = false;
+      viewport.classList.remove('is-panning');
+      if (event && viewport.hasPointerCapture(event.pointerId)) viewport.releasePointerCapture(event.pointerId);
+    }
+    viewport.addEventListener('pointerdown', (event) => {
+      if (event.button !== 0 || event.target.closest('.competency-card')) return;
+      dragging = true;
+      dragStartX = event.clientX;
+      dragStartY = event.clientY;
+      dragOriginX = panX;
+      dragOriginY = panY;
+      viewport.classList.add('is-panning');
+      viewport.setPointerCapture(event.pointerId);
+      event.preventDefault();
+    });
+    viewport.addEventListener('pointermove', (event) => {
+      if (!dragging) return;
+      panX = dragOriginX + (event.clientX - dragStartX);
+      panY = dragOriginY + (event.clientY - dragStartY);
+      applyPan();
+    });
+    viewport.addEventListener('pointerup', endPan);
+    viewport.addEventListener('pointercancel', endPan);
+    viewport.addEventListener('wheel', (event) => {
+      event.preventDefault();
+      const delta = event.deltaMode === 1 ? event.deltaY * 16 : event.deltaY;
+      zoomAround(event.clientX, event.clientY, zoom * Math.exp(-delta * 0.0015));
+    }, { passive: false });
+
+    function connected(id) {
+      const ids = new Set([id]);
+      for (const edge of edges) {
+        if (edge.dataset.from === id) ids.add(edge.dataset.to);
+        if (edge.dataset.to === id) ids.add(edge.dataset.from);
+      }
+      return ids;
+    }
+    function highlight(id) {
+      const ids = connected(id);
+      cards.forEach((card) => {
+        card.classList.toggle('is-active', card.dataset.id === id);
+        card.classList.toggle('is-muted', !ids.has(card.dataset.id));
+      });
+      edges.forEach((edge) => {
+        const active = edge.dataset.from === id || edge.dataset.to === id;
+        edge.classList.toggle('is-active', active);
+        edge.classList.toggle('is-muted', !active);
+      });
+    }
+    function clearHighlight() {
+      cards.forEach((card) => card.classList.remove('is-active', 'is-muted'));
+      edges.forEach((edge) => edge.classList.remove('is-active', 'is-muted'));
+    }
+    function openDetail(id) {
+      const node = byId.get(id);
+      if (!node) return;
+      document.getElementById('detail-tier').textContent = node.tierLabel;
+      document.getElementById('detail-title').textContent = node.title;
+      document.getElementById('detail-full').textContent = node.fullDescription;
+      document.getElementById('detail-components').replaceChildren(...node.components.map((item) => { const li = document.createElement('li'); li.textContent = item; return li; }));
+      document.getElementById('detail-tags').replaceChildren(...node.tags.slice(0, 12).map((item) => { const li = document.createElement('li'); li.textContent = item; return li; }));
+      document.getElementById('detail-meta').textContent = [node.branch, node.section, 'Порядок ' + node.order, 'evidence: ' + node.evidenceState, 'ring ' + node.ring].filter(Boolean).join(' · ');
+      detail.hidden = false;
+    }
+    cards.forEach((card) => {
+      card.addEventListener('mouseenter', () => highlight(card.dataset.id));
+      card.addEventListener('mouseleave', clearHighlight);
+      card.addEventListener('focus', () => highlight(card.dataset.id));
+      card.addEventListener('blur', clearHighlight);
+      card.addEventListener('click', () => { highlight(card.dataset.id); openDetail(card.dataset.id); });
+      card.addEventListener('keydown', (event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); card.click(); } });
+    });
+    document.getElementById('detail-close').addEventListener('click', () => { detail.hidden = true; clearHighlight(); });
+    document.addEventListener('keydown', (event) => { if (event.key === 'Escape') { detail.hidden = true; clearHighlight(); } });
+  </script>
+</body>
+</html>

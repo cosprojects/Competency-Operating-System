@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Дизайнер презентаций — карта компетенций</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #132238;
+      --muted: #64748b;
+      --line: #cbd5e1;
+      --canvas: #eef4f8;
+      --card: #ffffff;
+      --foundation: #b45309;
+      --foundation-bg: #fff7ed;
+      --foundation-border: #f59e0b;
+      --core: #1d4ed8;
+      --core-bg: #eff6ff;
+      --core-border: #93c5fd;
+      --optional: #64748b;
+      --optional-bg: #f8fafc;
+      --optional-border: #cbd5e1;
+      --accent: #0f766e;
+      --glass: rgba(255, 255, 255, .58);
+      --glass-line: rgba(255, 255, 255, .78);
+      --shadow: 0 18px 50px rgba(15, 23, 42, .14);
+      font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body { margin: 0; overflow: hidden; color: var(--ink); background: var(--canvas); }
+
+    .canvas-viewport {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      background-color: var(--canvas);
+      background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+      background-size: 24px 24px;
+      cursor: grab;
+      touch-action: none;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    .canvas-viewport.is-panning { cursor: grabbing; }
+    .canvas-viewport.is-panning .competency-card { cursor: grabbing; }
+    .canvas-stage {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(calc(-50% + var(--pan-x, 0px)), calc(-50% + var(--pan-y, 0px))) scale(var(--zoom, .55));
+      transform-origin: center center;
+      will-change: transform;
+    }
+    .edges { position: absolute; inset: 0; overflow: visible; pointer-events: none; }
+    .edge { fill: none; stroke: #94a3b8; stroke-width: 1.4; opacity: .55; transition: opacity .15s, stroke .15s; }
+    .edge.is-active { stroke: var(--accent); stroke-width: 2.4; opacity: 1; }
+    .edge.is-muted { opacity: .12; }
+    .competency-card { position: absolute; display: flex; flex-direction: column; gap: 4px; overflow: hidden; border: 1px solid var(--line); border-radius: 14px; background: var(--card); padding: 9px 11px; cursor: pointer; box-shadow: 0 5px 14px rgba(15, 23, 42, .07); transition: transform .15s, box-shadow .15s, opacity .15s, border-color .15s; }
+    .competency-card:hover, .competency-card:focus-visible { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(15, 23, 42, .14); outline: none; border-color: #94a3b8; }
+    .competency-card.is-active { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(15, 118, 110, .18), 0 12px 24px rgba(15, 23, 42, .14); }
+    .competency-card.is-muted { opacity: .22 !important; }
+    .tier-foundation { border-color: var(--foundation-border); background: linear-gradient(180deg, #fffdf8, var(--foundation-bg)); }
+    .tier-core { border-color: var(--core-border); background: linear-gradient(180deg, #ffffff, var(--core-bg)); }
+    .tier-optional { border-color: var(--optional-border); background: var(--optional-bg); opacity: .78; }
+    .card-top { display: flex; justify-content: space-between; align-items: center; gap: 6px; min-height: 17px; }
+    .tier-badge { font-size: 9px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
+    .tier-foundation .tier-badge { color: var(--foundation); }
+    .tier-core .tier-badge { color: var(--core); }
+    .order { color: #94a3b8; font-size: 10px; font-variant-numeric: tabular-nums; }
+    .competency-card h2 { margin: 0; font-size: 12px; line-height: 1.18; letter-spacing: -.01em; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+    .competency-card p { margin: 0; color: var(--muted); font-size: 10px; line-height: 1.28; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+
+    .app-header {
+      position: fixed;
+      z-index: 30;
+      top: 40px;
+      left: 40px;
+      right: 40px;
+      padding: 20px 24px 16px;
+      border: 1px solid var(--glass-line);
+      border-radius: 24px;
+      background: var(--glass);
+      -webkit-backdrop-filter: blur(30px) saturate(150%);
+      backdrop-filter: blur(30px) saturate(150%);
+      box-shadow: var(--shadow);
+    }
+    .header-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; }
+    .eyebrow { color: var(--accent); font-size: 10px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    h1 { margin: 5px 0 4px; font-size: clamp(24px, 3.2vw, 42px); letter-spacing: -.045em; line-height: 1; }
+    .subtitle { margin: 0; color: var(--muted); font-size: 13px; }
+    .summary { display: flex; gap: 7px; flex-wrap: wrap; justify-content: flex-end; }
+    .summary span { border: 1px solid rgba(203, 213, 225, .9); background: rgba(255, 255, 255, .7); border-radius: 999px; padding: 6px 10px; font-size: 11px; font-weight: 700; white-space: nowrap; }
+    .summary .f { color: var(--foundation); } .summary .c { color: var(--core); } .summary .o { color: var(--optional); }
+    .header-bottom { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 14px; }
+    .profession-tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+    .profession-tab { border: 1px solid rgba(203, 213, 225, .9); background: rgba(255, 255, 255, .58); color: var(--ink); border-radius: 999px; padding: 7px 12px; font-size: 12px; font-weight: 700; text-decoration: none; transition: border-color .15s, background .15s; }
+    .profession-tab:hover { border-color: #94a3b8; background: rgba(255, 255, 255, .85); }
+    .profession-tab.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+    .hint { margin-left: auto; color: var(--muted); font-size: 11px; }
+    .banner { margin-top: 12px; border: 1px solid rgba(253, 230, 138, .9); background: rgba(255, 251, 235, .72); color: #92400e; border-radius: 14px; padding: 8px 12px; font-size: 11px; }
+
+    .zoom-controls {
+      position: fixed;
+      z-index: 35;
+      left: 40px;
+      bottom: 40px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 5px;
+      border: 1px solid var(--glass-line);
+      border-radius: 16px;
+      background: var(--glass);
+      -webkit-backdrop-filter: blur(30px) saturate(150%);
+      backdrop-filter: blur(30px) saturate(150%);
+      box-shadow: var(--shadow);
+    }
+    .zoom-controls button { width: 34px; height: 34px; border: 1px solid transparent; border-radius: 11px; background: transparent; color: var(--ink); font: inherit; font-size: 20px; line-height: 1; cursor: pointer; }
+    .zoom-controls button:hover { background: rgba(255, 255, 255, .8); border-color: var(--line); }
+    .zoom-controls button:active { transform: translateY(1px); }
+    .zoom-value { min-width: 48px; text-align: center; color: var(--muted); font-size: 11px; font-weight: 800; font-variant-numeric: tabular-nums; }
+
+    .detail-panel {
+      position: fixed;
+      z-index: 40;
+      top: 40px;
+      right: 40px;
+      bottom: 40px;
+      width: min(380px, calc(100vw - 80px));
+      overflow: auto;
+      padding: 24px;
+      border: 1px solid var(--glass-line);
+      border-radius: 24px;
+      background: var(--glass);
+      -webkit-backdrop-filter: blur(30px) saturate(150%);
+      backdrop-filter: blur(30px) saturate(150%);
+      box-shadow: var(--shadow);
+    }
+    .detail-panel[hidden] { display: none; }
+    .detail-close { float: right; border: 0; background: rgba(241, 245, 249, .8); color: var(--muted); width: 30px; height: 30px; border-radius: 50%; cursor: pointer; font-size: 18px; line-height: 1; }
+    .detail-panel .tier-badge { display: inline-block; margin-bottom: 10px; }
+    .detail-panel h2 { margin: 0 0 8px; font-size: 22px; line-height: 1.12; letter-spacing: -.02em; }
+    .detail-panel .full { color: var(--muted); font-size: 13px; line-height: 1.5; margin: 0 0 16px; }
+    .detail-panel h3 { margin: 16px 0 5px; font-size: 10px; text-transform: uppercase; letter-spacing: .09em; color: var(--muted); }
+    .detail-panel ul { margin: 0; padding-left: 18px; color: var(--ink); font-size: 13px; line-height: 1.5; }
+    .detail-panel li { margin: 3px 0; }
+    .detail-panel .muted { color: var(--muted); font-size: 11px; line-height: 1.45; margin-top: 16px; }
+
+    @media (max-width: 720px) {
+      .app-header { top: 16px; left: 16px; right: 16px; padding: 16px; border-radius: 20px; }
+      .header-top { flex-direction: column; gap: 12px; }
+      .summary { justify-content: flex-start; }
+      .hint { display: none; }
+      .zoom-controls { left: 16px; bottom: 16px; }
+      .detail-panel { top: 16px; right: 16px; bottom: 16px; width: calc(100vw - 32px); border-radius: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="canvas-viewport" id="canvas-viewport" aria-label="Канвас компетенций">
+    <div class="canvas-stage" id="canvas-stage" style="width:1456px;height:1508px">
+      <svg class="edges" width="1456" height="1508" viewBox="0 0 1456 1508" aria-hidden="true">
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8" />
+          </marker>
+        </defs>
+        <path class="edge" data-from="ux-design-thinking" data-to="ui-typography" d="M 467.8 818.0 Q 597.8 838.8 727.8 818.0" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ux-design-thinking" data-to="ui-color" d="M 467.8 818.0 Q 727.8 859.6 987.8 818.0" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ui-typography" data-to="ui-layout" d="M 727.8 818.0 Q 654.2 861.6 597.8 926.0" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ux-design-thinking" data-to="presentation-structure" d="M 467.8 818.0 Q 654.2 903.2 857.8 926.0" marker-end="url(#arrow)" />
+        <path class="edge" data-from="presentation-structure" data-to="presentation-audience" d="M 857.8 926.0 Q 842.4 605.6 727.8 306.0" marker-end="url(#arrow)" />
+        <path class="edge" data-from="presentation-structure" data-to="presentation-message" d="M 857.8 926.0 Q 1046.6 747.6 1170.3 519.1" marker-end="url(#arrow)" />
+        <path class="edge" data-from="presentation-message" data-to="presentation-data" d="M 1170.3 519.1 Q 1186.7 767.3 1279.6 997.9" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ui-layout" data-to="presentation-visualization" d="M 597.8 926.0 Q 749.1 1184.0 973.4 1381.9" marker-end="url(#arrow)" />
+        <path class="edge" data-from="presentation-data" data-to="presentation-visualization" d="M 1279.6 997.9 Q 1095.8 1165.4 973.4 1381.9" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ui-layout" data-to="ui-figma" d="M 597.8 926.0 Q 503.5 1144.7 482.2 1381.9" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ui-color" data-to="ui-visual-communication" d="M 987.8 818.0 Q 567.5 843.0 176.0 997.9" marker-end="url(#arrow)" />
+        <path class="edge" data-from="ui-layout" data-to="ui-visual-communication" d="M 597.8 926.0 Q 381.1 928.2 176.0 997.9" marker-end="url(#arrow)" />
+        <path class="edge" data-from="presentation-message" data-to="presentation-delivery" d="M 1170.3 519.1 Q 727.8 448.3 285.3 519.1" marker-end="url(#arrow)" />
+        <path class="edge" data-from="presentation-audience" data-to="presentation-delivery" d="M 727.8 306.0 Q 489.5 377.2 285.3 519.1" marker-end="url(#arrow)" />
+        <path class="edge" data-from="presentation-data" data-to="ui-data-visualization" d="M 1279.6 997.9 Q 1073.5 517.8 727.8 126.0" marker-end="url(#arrow)" />
+      </svg>
+      <article class="competency-card tier-foundation" data-id="ux-design-thinking" data-tier="foundation" style="left:357.8px;top:772.0px;width:220px;height:92px;opacity:1" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Фундаментальная</span>
+            <span class="order">1</span>
+          </div>
+          <h2>Дизайн-мышление</h2>
+          <p>Системный подход к решению задач: понимание пользователя, формулировка проблемы, генерация и проверка гипотез, итерации.</p>
+        </article>
+      <article class="competency-card tier-foundation" data-id="ui-typography" data-tier="foundation" style="left:617.8px;top:772.0px;width:220px;height:92px;opacity:1" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Фундаментальная</span>
+            <span class="order">2</span>
+          </div>
+          <h2>Типографика</h2>
+          <p>Шрифтовая иерархия, читаемость, ритм и типографические системы.</p>
+        </article>
+      <article class="competency-card tier-foundation" data-id="ui-color" data-tier="foundation" style="left:877.8px;top:772.0px;width:220px;height:92px;opacity:1" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Фундаментальная</span>
+            <span class="order">3</span>
+          </div>
+          <h2>Теория цвета и колористика</h2>
+          <p>Физика цвета, восприятие, гармония, контраст и культурный контекст.</p>
+        </article>
+      <article class="competency-card tier-foundation" data-id="ui-layout" data-tier="foundation" style="left:487.8px;top:880.0px;width:220px;height:92px;opacity:1" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Фундаментальная</span>
+            <span class="order">4</span>
+          </div>
+          <h2>Композиция, сетки и визуальная иерархия</h2>
+          <p>Управление вниманием через композицию, сетки, пропорции и иерархию.</p>
+        </article>
+      <article class="competency-card tier-foundation" data-id="presentation-structure" data-tier="foundation" style="left:747.8px;top:880.0px;width:220px;height:92px;opacity:1" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Фундаментальная</span>
+            <span class="order">5</span>
+          </div>
+          <h2>Структура и сценарий презентации</h2>
+          <p>Цель, логика и сценарий презентации: от сообщения к последовательности слайдов.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="presentation-audience" data-tier="core" style="left:631.8px;top:260.0px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">6</span>
+          </div>
+          <h2>Адаптация под аудиторию</h2>
+          <p>Профиль слушателей, их задачи и адаптация языка, глубины и подачи материала.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="presentation-message" data-tier="core" style="left:1074.3px;top:473.1px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">7</span>
+          </div>
+          <h2>Ключевое сообщение и аргументация</h2>
+          <p>Формулировка ключевого сообщения, тезисов, аргументов и выводов.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="presentation-data" data-tier="core" style="left:1183.6px;top:951.9px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">8</span>
+          </div>
+          <h2>Достоверность данных и фактчекинг</h2>
+          <p>Поиск достоверных данных, проверка фактов и корректная интерпретация источников.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="presentation-visualization" data-tier="core" style="left:877.4px;top:1335.9px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">9</span>
+          </div>
+          <h2>Визуализация и формат слайдов</h2>
+          <p>Выбор способа визуализации и сборка слайдов под сообщение и аудиторию.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="ui-figma" data-tier="core" style="left:386.2px;top:1335.9px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">11</span>
+          </div>
+          <h2>Figma: компоненты и автолейаут</h2>
+          <p>Работа с Figma: компоненты, варианты, автолейаут и библиотеки.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="ui-visual-communication" data-tier="core" style="left:80.0px;top:951.9px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">12</span>
+          </div>
+          <h2>Визуальная коммуникация</h2>
+          <p>Стилистика, визуальные коды и целостность интерфейсной коммуникации.</p>
+        </article>
+      <article class="competency-card tier-core" data-id="presentation-delivery" data-tier="core" style="left:189.3px;top:473.1px;width:192px;height:92px;opacity:0.9" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Основная</span>
+            <span class="order">13</span>
+          </div>
+          <h2>Защита и репетиция презентации</h2>
+          <p>Репетиция защиты идеи, работа с вопросами и обратной связью.</p>
+        </article>
+      <article class="competency-card tier-optional" data-id="ui-data-visualization" data-tier="optional" style="left:631.8px;top:80.0px;width:192px;height:92px;opacity:0.65" tabindex="0">
+          <div class="card-top">
+            <span class="tier-badge">Необязательная</span>
+            <span class="order">10</span>
+          </div>
+          <h2>Визуализация данных</h2>
+          <p>Графики, диаграммы и визуализация данных в интерфейсе.</p>
+        </article>
+    </div>
+  </div>
+
+  <header class="app-header">
+    <div class="header-top">
+      <div>
+        <div class="eyebrow">AXIONA · Competency Canvas</div>
+        <h1>Дизайнер презентаций</h1>
+        <p class="subtitle">Сеть компетенций: разделы, связи и приоритеты профессии</p>
+      </div>
+      <div class="summary">
+        <span class="f">5 фундаментальных</span>
+        <span class="c">7 основных</span>
+        <span class="o">1 необязательных</span>
+      </div>
+    </div>
+    <div class="header-bottom">
+      <nav class="profession-tabs" aria-label="Профессии"><a class="profession-tab" href="uxui-competency-canvas.html">UX/UI</a><a class="profession-tab" href="it-product-competency-canvas.html">Product</a><a class="profession-tab" href="it-motion-competency-canvas.html">Motion</a><a class="profession-tab" href="it-graphic-competency-canvas.html">Graphic</a><a class="profession-tab active" href="it-presentation-competency-canvas.html">Презентации</a><a class="profession-tab" href="it-appdesign-competency-canvas.html">Приложения</a><a class="profession-tab" href="it-uxresearch-competency-canvas.html">UX-исследования</a><a class="profession-tab" href="it-artdir-competency-canvas.html">Арт-дирекшн</a><a class="profession-tab" href="it-3ddesigner-competency-canvas.html">3D</a><a class="profession-tab" href="it-interior-competency-canvas.html">Интерьеры</a><a class="profession-tab" href="it-webdesigner-competency-canvas.html">Веб-дизайн</a></nav>
+      <span class="hint">Перетаскивание — панорама; колесо мыши — масштаб; нажмите карточку — подробности</span>
+    </div>
+    <div class="banner"><strong>Черновой слой.</strong> Дизайнер презентаций: профессио-специфичная сеть, собранная из единого массива компетенций. Tier/order специфичны для профессии; компетенции переиспользуются. Сгенерировано 2026-10-26.</div>
+  </header>
+
+  <div class="zoom-controls" aria-label="Масштаб канваса">
+    <button type="button" id="zoom-out" aria-label="Уменьшить">−</button>
+    <span class="zoom-value" id="zoom-value" aria-live="polite">100%</span>
+    <button type="button" id="zoom-in" aria-label="Увеличить">+</button>
+  </div>
+
+  <aside class="detail-panel" id="detail" hidden>
+    <button class="detail-close" id="detail-close" aria-label="Закрыть">×</button>
+    <span class="tier-badge" id="detail-tier"></span>
+    <h2 id="detail-title"></h2>
+    <p class="full" id="detail-full"></p>
+    <h3>Компоненты</h3>
+    <ul id="detail-components"></ul>
+    <h3>Теги и знания</h3>
+    <ul id="detail-tags"></ul>
+    <p class="muted" id="detail-meta"></p>
+  </aside>
+
+  <script>
+    const DATA = {"title":"Дизайнер презентаций","subtitle":"Сеть компетенций: разделы, связи и приоритеты профессии","note":"Дизайнер презентаций: профессио-специфичная сеть, собранная из единого массива компетенций. Tier/order специфичны для профессии; компетенции переиспользуются.","generatedOn":"2026-10-26","nodes":[{"id":"ux-design-thinking","title":"Дизайн-мышление","tier":"foundation","tierLabel":"Фундаментальная","order":1,"description":"Системный подход к решению задач: понимание пользователя, формулировка проблемы, генерация и проверка гипотез, итерации.","fullDescription":"Системный подход к решению задач: понимание пользователя, формулировка проблемы, генерация и проверка гипотез, итерации.","components":["Эмпатия и исследование пользователя","Формулировка проблемы и пользовательские сценарии","Генерация и проверка гипотез","Итерационный процесс и командное взаимодействие"],"tags":["Исследование аудитории","Целевая аудитория","Типы исследований","Количественные исследования","Проведение исследований и проектирование сервиса","Проведение UX-исследований и анализ аудитории","Зачем пользователю сценарий","Пользовательские сценарии и паттерны взаимодействия","Гипотезы","Интерактивный прототип с тестированием","Прототипирование с помощью переменных и условий","Воркшопы с экспертами"],"evidenceState":"supported","branch":"Дизайнер презентаций","section":"Основы презентации","x":340,"y":346,"width":220,"height":92,"ring":0,"emphasis":"primary","opacity":1},{"id":"ui-typography","title":"Типографика","tier":"foundation","tierLabel":"Фундаментальная","order":2,"description":"Шрифтовая иерархия, читаемость, ритм и типографические системы.","fullDescription":"Шрифтовая иерархия, читаемость, ритм и типографические системы.","components":["Композиция в интерфейсе","Типографика в интерфейсе","Визуальная иерархия","Сетки в дизайне"],"tags":["Работа с композицией, типографикой и визуальной иерархией","Типографическая иерархия и читаемость","Построение визуальной иерархии","Сетки в дизайне"],"evidenceState":"needs_review","branch":"Дизайнер презентаций","section":"Основы презентации","x":600,"y":346,"width":220,"height":92,"ring":0,"emphasis":"primary","opacity":1},{"id":"ui-color","title":"Теория цвета и колористика","tier":"foundation","tierLabel":"Фундаментальная","order":3,"description":"Физика цвета, восприятие, гармония, контраст и культурный контекст.","fullDescription":"Физика цвета, восприятие, гармония, контраст и культурный контекст.","components":["Физика света и природа цвета","Физиология и психология восприятия цвета","Цветовые модели и системы","Цвет в визуальной композиции","Цвет в интерфейсе и визуальной коммуникации"],"tags":["Цвет как физическое явление","Психофизиология цветового восприятия","Культурно-психологический контекст цвета","Цветовые модели и пространства","Цветовой круг и гармония","Цвет и визуальная иерархия","Цвет в композиции и стиле","Цвет как средство визуальной коммуникации","Цветовые палитры и токены"],"evidenceState":"needs_review","branch":"Дизайнер презентаций","section":"Основы презентации","x":860,"y":346,"width":220,"height":92,"ring":0,"emphasis":"primary","opacity":1},{"id":"ui-layout","title":"Композиция, сетки и визуальная иерархия","tier":"foundation","tierLabel":"Фундаментальная","order":4,"description":"Управление вниманием через композицию, сетки, пропорции и иерархию.","fullDescription":"Управление вниманием через композицию, сетки, пропорции и иерархию.","components":["Композиция в интерфейсе","Типографика в интерфейсе","Визуальная иерархия","Сетки в дизайне"],"tags":["Работа с композицией, типографикой и визуальной иерархией","Типографическая иерархия и читаемость","Построение визуальной иерархии","Сетки в дизайне"],"evidenceState":"needs_review","branch":"Дизайнер презентаций","section":"Основы презентации","x":470,"y":454,"width":220,"height":92,"ring":0,"emphasis":"primary","opacity":1},{"id":"presentation-structure","title":"Структура и сценарий презентации","tier":"foundation","tierLabel":"Фундаментальная","order":5,"description":"Цель, логика и сценарий презентации: от сообщения к последовательности слайдов.","fullDescription":"Цель, логика и сценарий презентации: от сообщения к последовательности слайдов.","components":[],"tags":[],"evidenceState":"needs_review","branch":"Дизайнер презентаций","section":"Основы презентации","x":730,"y":454,"width":220,"height":92,"ring":0,"emphasis":"primary","opacity":1},{"id":"presentation-audience","title":"Адаптация под аудиторию","tier":"core","tierLabel":"Основная","order":6,"description":"Профиль слушателей, их задачи и адаптация языка, глубины и подачи материала.","fullDescription":"Профиль слушателей, их задачи и адаптация языка, глубины и подачи материала.","components":[],"tags":[],"evidenceState":"needs_review","branch":"Дизайнер презентаций","section":"Контент и смысл","x":600,"y":-166,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"presentation-message","title":"Ключевое сообщение и аргументация","tier":"core","tierLabel":"Основная","order":7,"description":"Формулировка ключевого сообщения, тезисов, аргументов и выводов.","fullDescription":"Формулировка ключевого сообщения, тезисов, аргументов и выводов.","components":[],"tags":[],"evidenceState":"needs_review","branch":"Дизайнер презентаций","section":"Контент и смысл","x":1042.5166190769048,"y":47.10477214795685,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"presentation-data","title":"Достоверность данных и фактчекинг","tier":"core","tierLabel":"Основная","order":8,"description":"Поиск достоверных данных, проверка фактов и корректная интерпретация источников.","fullDescription":"Поиск достоверных данных, проверка фактов и корректная интерпретация источников.","components":[],"tags":[],"evidenceState":"needs_review","branch":"Дизайнер презентаций","section":"Контент и смысл","x":1151.8091982949122,"y":525.946848619274,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"presentation-visualization","title":"Визуализация и формат слайдов","tier":"core","tierLabel":"Основная","order":9,"description":"Выбор способа визуализации и сборка слайдов под сообщение и аудиторию.","fullDescription":"Выбор способа визуализации и сборка слайдов под сообщение и аудиторию.","components":[],"tags":[],"evidenceState":"needs_review","branch":"Дизайнер презентаций","section":"Контент и смысл","x":845.5781963405379,"y":909.9483792327692,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ui-figma","title":"Figma: компоненты и автолейаут","tier":"core","tierLabel":"Основная","order":11,"description":"Работа с Figma: компоненты, варианты, автолейаут и библиотеки.","fullDescription":"Работа с Figma: компоненты, варианты, автолейаут и библиотеки.","components":["Основы работы в Figma","Автолейаут и адаптивная вёрстка макетов","Компоненты, варианты и библиотеки","Переменные и темы","Передача макетов в разработку"],"tags":["Основы Figma","Работа с изображениями в Figma","Автолейауты","Адаптирование и автолейауты","Проектирование адаптивных интерфейсов в Figma для web и mobile","Разработка дизайн-систем и UI-китов на компонентах Figma","Варианты компонентов","Библиотеки компонентов","Переменные и темы внутри макетов","Сборка сайта в Tilda по макету из Figma"],"evidenceState":"needs_review","branch":"Дизайнер презентаций","section":"Инструменты","x":354.42180365946217,"y":909.9483792327692,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ui-visual-communication","title":"Визуальная коммуникация","tier":"core","tierLabel":"Основная","order":12,"description":"Стилистика, визуальные коды и целостность интерфейсной коммуникации.","fullDescription":"Стилистика, визуальные коды и целостность интерфейсной коммуникации.","components":["Визуальная коммуникация в интерфейсе","Композиция и стилистика интерфейса","Анимация в интерфейсе"],"tags":["Визуальная коммуникация","Анимация и визуальная коммуникация","Визуальное единство: композиция и стили","Анимация в интерфейсе","Анимация в проекте как отстройка от конкурентов"],"evidenceState":"supported","branch":"Дизайнер презентаций","section":"Инструменты","x":48.19080170508778,"y":525.946848619274,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"presentation-delivery","title":"Защита и репетиция презентации","tier":"core","tierLabel":"Основная","order":13,"description":"Репетиция защиты идеи, работа с вопросами и обратной связью.","fullDescription":"Репетиция защиты идеи, работа с вопросами и обратной связью.","components":[],"tags":[],"evidenceState":"needs_review","branch":"Дизайнер презентаций","section":"Защита презентации","x":157.48338092309507,"y":47.10477214795691,"width":192,"height":92,"ring":1,"emphasis":"secondary","opacity":0.9},{"id":"ui-data-visualization","title":"Визуализация данных","tier":"optional","tierLabel":"Необязательная","order":10,"description":"Графики, диаграммы и визуализация данных в интерфейсе.","fullDescription":"Графики, диаграммы и визуализация данных в интерфейсе.","components":["Иконки как визуальные элементы","Дизайн данных: графики и диаграммы"],"tags":["Иконки","Дизайн данных. Графики и диаграммы"],"evidenceState":"supported","branch":"Дизайнер презентаций","section":"Контент и смысл","x":600,"y":-346,"width":192,"height":92,"ring":2,"emphasis":"tertiary","opacity":0.65}],"edges":[{"from":"ux-design-thinking","to":"ui-typography"},{"from":"ux-design-thinking","to":"ui-color"},{"from":"ui-typography","to":"ui-layout"},{"from":"ux-design-thinking","to":"presentation-structure"},{"from":"presentation-structure","to":"presentation-audience"},{"from":"presentation-structure","to":"presentation-message"},{"from":"presentation-message","to":"presentation-data"},{"from":"ui-layout","to":"presentation-visualization"},{"from":"presentation-data","to":"presentation-visualization"},{"from":"ui-layout","to":"ui-figma"},{"from":"ui-color","to":"ui-visual-communication"},{"from":"ui-layout","to":"ui-visual-communication"},{"from":"presentation-message","to":"presentation-delivery"},{"from":"presentation-audience","to":"presentation-delivery"},{"from":"presentation-data","to":"ui-data-visualization"}],"stage":{"width":1456,"height":1508,"offsetX":127.80919829491222,"offsetY":472},"counts":{"foundation":5,"core":7,"optional":1}};
+    const byId = new Map(DATA.nodes.map((node) => [node.id, node]));
+    const cards = [...document.querySelectorAll('.competency-card')];
+    const edges = [...document.querySelectorAll('.edge')];
+    const detail = document.getElementById('detail');
+    const viewport = document.getElementById('canvas-viewport');
+    const stage = document.getElementById('canvas-stage');
+    let zoom = 1;
+    let panX = 0;
+    let panY = 0;
+    let dragging = false;
+    let dragStartX = 0;
+    let dragStartY = 0;
+    let dragOriginX = 0;
+    let dragOriginY = 0;
+
+    function setZoom(next) {
+      zoom = Math.min(2.5, Math.max(.25, next));
+      stage.style.setProperty('--zoom', String(zoom));
+      document.getElementById('zoom-value').textContent = Math.round(zoom * 100) + '%';
+    }
+    function applyPan() {
+      stage.style.setProperty('--pan-x', String(panX) + 'px');
+      stage.style.setProperty('--pan-y', String(panY) + 'px');
+    }
+    function zoomAround(clientX, clientY, next) {
+      const target = Math.min(2.5, Math.max(.25, next));
+      if (target === zoom) return;
+      const rect = stage.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      const ratio = target / zoom;
+      const nextCenterX = clientX - (clientX - centerX) * ratio;
+      const nextCenterY = clientY - (clientY - centerY) * ratio;
+      panX += nextCenterX - centerX;
+      panY += nextCenterY - centerY;
+      setZoom(target);
+      applyPan();
+    }
+    function fitZoom() {
+      const header = document.querySelector('.app-header');
+      const topInset = header ? header.getBoundingClientRect().bottom + 18 : 40;
+      const availableHeight = Math.max(240, viewport.clientHeight - topInset - 40);
+      const scale = Math.min((viewport.clientWidth - 80) / stage.offsetWidth, availableHeight / stage.offsetHeight) * 0.94;
+      stage.style.top = String(topInset + availableHeight / 2) + 'px';
+      panX = 0;
+      panY = 0;
+      applyPan();
+      setZoom(Number.isFinite(scale) ? scale : 1);
+    }
+    document.getElementById('zoom-in').addEventListener('click', () => setZoom(zoom + 0.1));
+    document.getElementById('zoom-out').addEventListener('click', () => setZoom(zoom - 0.1));
+    fitZoom();
+    window.addEventListener('resize', fitZoom);
+
+    function endPan(event) {
+      if (!dragging) return;
+      dragging = false;
+      viewport.classList.remove('is-panning');
+      if (event && viewport.hasPointerCapture(event.pointerId)) viewport.releasePointerCapture(event.pointerId);
+    }
+    viewport.addEventListener('pointerdown', (event) => {
+      if (event.button !== 0 || event.target.closest('.competency-card')) return;
+      dragging = true;
+      dragStartX = event.clientX;
+      dragStartY = event.clientY;
+      dragOriginX = panX;
+      dragOriginY = panY;
+      viewport.classList.add('is-panning');
+      viewport.setPointerCapture(event.pointerId);
+      event.preventDefault();
+    });
+    viewport.addEventListener('pointermove', (event) => {
+      if (!dragging) return;
+      panX = dragOriginX + (event.clientX - dragStartX);
+      panY = dragOriginY + (event.clientY - dragStartY);
+      applyPan();
+    });
+    viewport.addEventListener('pointerup', endPan);
+    viewport.addEventListener('pointercancel', endPan);
+    viewport.addEventListener('wheel', (event) => {
+      event.preventDefault();
+      const delta = event.deltaMode === 1 ? event.deltaY * 16 : event.deltaY;
+      zoomAround(event.clientX, event.clientY, zoom * Math.exp(-delta * 0.0015));
+    }, { passive: false });
+
+    function connected(id) {
+      const ids = new Set([id]);
+      for (const edge of edges) {
+        if (edge.dataset.from === id) ids.add(edge.dataset.to);
+        if (edge.dataset.to === id) ids.add(edge.dataset.from);
+      }
+      return ids;
+    }
+    function highlight(id) {
+      const ids = connected(id);
+      cards.forEach((card) => {
+        card.classList.toggle('is-active', card.dataset.id === id);
+        card.classList.toggle('is-muted', !ids.has(card.dataset.id));
+      });
+      edges.forEach((edge) => {
+        const active = edge.dataset.from === id || edge.dataset.to === id;
+        edge.classList.toggle('is-active', active);
+        edge.classList.toggle('is-muted', !active);
+      });
+    }
+    function clearHighlight() {
+      cards.forEach((card) => card.classList.remove('is-active', 'is-muted'));
+      edges.forEach((edge) => edge.classList.remove('is-active', 'is-muted'));
+    }
+    function openDetail(id) {
+      const node = byId.get(id);
+      if (!node) return;
+      document.getElementById('detail-tier').textContent = node.tierLabel;
+      document.getElementById('detail-title').textContent = node.title;
+      document.getElementById('detail-full').textContent = node.fullDescription;
+      document.getElementById('detail-components').replaceChildren(...node.components.map((item) => { const li = document.createElement('li'); li.textContent = item; return li; }));
+      document.getElementById('detail-tags').replaceChildren(...node.tags.slice(0, 12).map((item) => { const li = document.createElement('li'); li.textContent = item; return li; }));
+      document.getElementById('detail-meta').textContent = [node.branch, node.section, 'Порядок ' + node.order, 'evidence: ' + node.evidenceState, 'ring ' + node.ring].filter(Boolean).join(' · ');
+      detail.hidden = false;
+    }
+    cards.forEach((card) => {
+      card.addEventListener('mouseenter', () => highlight(card.dataset.id));
+      card.addEventListener('mouseleave', clearHighlight);
+      card.addEventListener('focus', () => highlight(card.dataset.id));
+      card.addEventListener('blur', clearHighlight);
+      card.addEventListener('click', () => { highlight(card.dataset.id); openDetail(card.dataset.id); });
+      card.addEventListener('keydown', (event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); card.click(); } });
+    });
+    document.getElementById('detail-close').addEventListener('click', () => { detail.hidden = true; clearHighlight(); });
+    document.addEventListener('keydown', (event) => { if (event.key === 'Escape') { detail.hidden = true; clearHighlight(); } });
+  </script>
+</body>
+</html>

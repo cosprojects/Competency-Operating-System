@@ -41,7 +41,7 @@ npm run materials:agent:review -- --domain it --profession product
 
 ## Профессиональные view
 
-`model/professions/views/{product,motion,graphic}.json` задают разделы и приоритеты для разных профессий, переиспользуя единый массив компетенций. `model:views --write` генерирует `model/profession-competencies/*.json` и source-файлы профессий.
+`model/professions/views/<profession>.json` задают разделы и приоритеты для разных профессий, переиспользуя единый массив компетенций. `model:views --write` генерирует `model/profession-competencies/*.json` и source-файлы профессий. Схемы собраны для 11 профессий: UX/UI, product, motion, graphic + presentation, appdesign, uxresearch, artdir, 3ddesigner, interior, webdesigner (см. [COS-RES-023](docs/09-research/COS-RES-023-Additional-Designer-Professions.md)).
 
 
 ## Карты профессий
@@ -52,7 +52,7 @@ npm run materials:agent:review -- --domain it --profession product
 Сборка по профессии: `npm run professions:collect -- --domain it --profession motion`, затем `npm run tags:collect -- --domain it --profession motion`. Запросы берутся из `sources/professions/<profession>.json`.
 
 
-Единый массив компетенций: **55** (34 базовых + 21 профессио-специфичная); profession views: product 30, motion 28, graphic 18; каталог: 54 блока, 237 тегов (у всех accepted-блоков заполнены `canonicalIds`).
+Единый массив компетенций: **103** (34 базовых + 69 профессио-специфичных); 11 profession views: uxui 34, product 30, motion 28, graphic 18, presentation 13, appdesign 26, uxresearch 18, artdir 16, 3ddesigner 15, interior 14, webdesigner 24; каталог: 54 блока, 237 тегов (у всех accepted-блоков заполнены `canonicalIds`).
 
 Priority/order профессии хранится в `model/professions/views/<profession>.json` и материализуется в `model/profession-competencies/<profession>.json` вместе с prerequisites. Отдельный `priority/product.json` не вводится: `priority/uxui.json` — block-level accepted marks UX/UI, а Product работает на уровне канонических компетенций. Проверка:
 
@@ -72,7 +72,7 @@ npm run model:validate -- --domain it --profession product --all --require-block
 
 Evidence-backed блоки: в `seeds/it.json` заполнены `tagHints` для 11 профессио-специфичных компетенций; `competency:seed --domain it --profession product --tags-file data/competency/tags-it-product.json`, затем `competency:build` дают предложения блоков с реальными sourceRefs (`data/competency/proposed-blocks-*.json`, не приняты).
 
-Human-review канвас: `npm run canvas:tabs`, затем открыть `web/competencies-review-canvas.html` — переключение UX/UI, Product, Motion, Graphic в одном окне.
+Human-review канвас: `npm run canvas:tabs`, затем открыть `web/competencies-review-canvas.html` — переключение 11 профессий в одном окне (UX/UI, Product, Motion, Graphic, Презентации, Приложения, UX-исследования, Арт-дирекшн, 3D, Интерьеры, Веб-дизайн).
 
 
 Handoff для продолжения: [COS-RES-019](docs/09-research/COS-RES-019-Competency-Module-Session-Handoff.md).

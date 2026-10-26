@@ -1,7 +1,7 @@
 ---
 id: COS-RES-019
 title: Competency Module — session handoff
-version: 1.10.0
+version: 1.11.0
 status: Draft
 owner: Research Team
 last_updated: 2026-10-26
@@ -13,12 +13,14 @@ references:
   - COS-RES-018
   - COS-RES-020
   - COS-RES-021
+  - COS-RES-022
+  - COS-RES-023
   - COS-ARCH-002
 ---
 
 # COS-RES-019 — Handoff: модуль компетенций и профессий
 
-Документ фиксирует состояние на **2026-10-26**, чтобы продолжить работу в новой сессии без восстановления контекста. Итерация Product описана отдельно в `COS-RES-020`, Motion/Graphic — в `COS-RES-021`, учебные источники — в `COS-RES-022`.
+Документ фиксирует состояние на **2026-10-26**, чтобы продолжить работу в новой сессии без восстановления контекста. Итерация Product описана отдельно в `COS-RES-020`, Motion/Graphic — в `COS-RES-021`, учебные источники — в `COS-RES-022`, дополнительные дизайнерские профессии — в `COS-RES-023`.
 
 Локальный `main` содержит коммиты итерации Product: `370265d` (canonicalIds), `3d66417` (источники Product), `b99730e` (связный граф Product + mapping), плюс docs-коммит. Тесты: **148/148**, `tsc --noEmit` чистый. `origin/main` может отставать: если агент запускался без SSH-ключа в агенте, push не прошёл. Проверить: `git status -sb`; при `ahead N` — `ssh-add ~/.ssh/id_ed25519 && git push origin main`. Reset/rebase не делать.
 
@@ -42,8 +44,8 @@ references:
 
 ### Нормализованная модель
 - `model/spheres.json` — сфера `it`.
-- `model/professions.json` — 4 профессии: `it.uxui`, `it.product`, `it.motion`, `it.graphic`.
-- `model/competencies.json` — **единый массив 55 компетенций** (34 базовых + 21 профессио-специфичная, включая 10 motion).
+- `model/professions.json` — **11 профессий**: `it.uxui`, `it.product`, `it.motion`, `it.graphic` + новые `it.presentation`, `it.appdesign`, `it.uxresearch`, `it.artdir`, `it.3ddesigner`, `it.interior`, `it.webdesigner` (схемы этапа 1, `COS-RES-023`).
+- `model/competencies.json` — **единый массив 103 компетенций** (34 базовых + 69 профессио-специфичных: product/motion/graphic + 48 новых дизайнерских, `COS-RES-023`).
 - `model/profession-competencies/*.json` — ссылки competencyId + tier/order + prerequisites по профессии.
 - `model/professions/views/*.json` — профессиональные view: разделы, tier/order, prerequisites.
 
@@ -55,6 +57,13 @@ references:
 | Product | 30 | 30 | **41** |
 | Motion | 28 | 28 | **42** |
 | Graphic | 18 | 18 | **33** |
+| Презентации | 13 | 13 | 15 |
+| Приложения | 26 | 26 | 34 |
+| UX-исследования | 18 | 18 | 27 |
+| Арт-дирекшн | 16 | 16 | 24 |
+| 3D | 15 | 15 | 20 |
+| Интерьеры | 14 | 14 | 22 |
+| Веб-дизайн | 24 | 24 | 36 |
 
 Все три графа (product, motion, graphic) теперь связные: единственный корень `ux-design-thinking`, компонент — 1. Product view: 3 foundation / 24 core / 3 optional; motion: 8/15/5; graphic: 7/4/7.
 
@@ -140,12 +149,17 @@ open web/it-product-competency-canvas.html
 
 1. **Human-review Motion-расширения.** 10 новых motion-компетенций и 10 seed-блоков (`COS-RES-022`) приняты технически; теги блоков синтетические (без `sourceRefs`). Mapping Motion уже сопоставляет их с собранными Practicum/O*NET-тегами — нужно подтвердить людьми и решить, привязывать ли теги к блокам.
 2. **Human-review evidence-backed блоков (Product/Graphic).** `tagHints` заполнены, `competency:seed` + Pass B дали предложения: product 5 блоков (sourceRefs 1–5), graphic 3 (5–6). Артефакты — `data/competency/proposed-blocks-it-*.json` (gitignored), приёмка не выполнена.
-3. **Learning sources (`COS-RES-022`).** `learning:validate` — 33 источника, 24 active, 0 ошибок; `learning:audit --profession motion` — 9/9 active; `learning:map` — проекция source→competency и покрытие: UX/UI 24/34, Product 23/30, Motion 23/28, Graphic 14/18 (43/55 компетенций), 0 предупреждений; связи ведутся в `model/learning-source-links.json` и мержатся в `model:sync`; каталоги/обзоры размечены `discoveryOnly` (8 шт.); `learning:topics` — robots-safe извлечение коротких тем из course pages (Motion 5/7 источников / 45 тем, UX/UI 180, Product 198, Graphic 140); `learning:discover` требует Google CSE keys и human-review.
+3. **Learning sources (`COS-RES-022`).** `learning:validate` — 40 источников, 31 active, 0 ошибок; `learning:map` — 99 связанных компетенций, все 11 профессий покрыты; `learning:audit --profession motion` — 9/9 active; `learning:map` — проекция source→competency и покрытие: UX/UI 24/34, Product 23/30, Motion 23/28, Graphic 14/18 (43/55 компетенций), 0 предупреждений; связи ведутся в `model/learning-source-links.json` и мержатся в `model:sync`; каталоги/обзоры размечены `discoveryOnly` (8 шт.); `learning:topics` — robots-safe извлечение коротких тем из course pages (Motion 5/7 источников / 45 тем, UX/UI 180, Product 198, Graphic 140); `learning:discover` требует Google CSE keys и human-review.
 2. **Human-review материалов** — журналы и review готовы: UX/UI 34/34, Product 30/30, Motion 28/28, Graphic 18/18. Нужно решить, какие материалы принимать; только после этого `catalog.materials`. Перезапуск: `materials:agent:queue -- --domain it --profession <prof> --classify --budget-usd 0.15 --max-calls 120`, затем `materials:agent:review`.
 4. **Human-review mapping Graphic** и привязка Practicum-тегов к accepted-блокам (теги собственных блоков синтетические).
 5. **Knowledge graph** (competency → components/tags/materials) — отложен по решению пользователя.
 6. **Push** — если SSH-агент пуст: `ssh-add ~/.ssh/id_ed25519`, затем `git push origin main`.
-7. **Остальные профессии** — после стабилизации методики расширять за пределы 4 дизайнерских (использовать схему `COS-RES-020`/`COS-RES-021`; learning sources — `COS-RES-022`).
+7. **Дополнительные дизайнерские профессии (этап 1, `COS-RES-023`)** — схемы 7 профессий готовы; дальше human-review имён/связей, блоки и mapping, затем материалы.
+
+## 4a. Roadmap этапов 2–3 (зафиксировано)
+
+- **Этап 2**: слой AI/нейрокомпетенций во **все** профессии (ресёрч, проектирование, презентации, фото/видео/аудио/контент, монтаж, макеты, документация, вёрстка) — отдельное решение о гранулярности, затем сборка.
+- **Этап 3**: профессия **«AI-дизайнер»** — инструменты, их особенности и интеграция в процесс; финальный шаг после этапов 1–2.
 
 ## 5. Известные ограничения и риски
 
@@ -181,4 +195,5 @@ open web/it-product-competency-canvas.html
 | 1.8.0 | 2026-10-26 | Слой `model/learning-source-links.json`: 62 связи competency→source, merge в `model:sync`; покрытие источников 43/55 (UX/UI 24/34, Product 23/30, Motion 23/28, Graphic 14/18); 152 теста |
 | 1.9.0 | 2026-10-26 | `discoveryOnly` для 8 каталогов/обзоров; `learning:map` 0 предупреждений, discoveryOnly не может быть свидетельством; 154 теста |
 | 1.10.0 | 2026-10-26 | `learning:topics`: robots-safe извлечение тем из course pages (парсер robots.txt, только заголовки/списки), первый прогон по 4 профессиям; 157 тестов |
+| 1.11.0 | 2026-10-26 | Этап 1 (`COS-RES-023`): 7 новых дизайнерских профессий, 48 новых компетенций, 103 компетенции, 11 professions; 7 Practicum learning-источников, learning:map 99 компетенций / 0 ошибок; канвасы и табы на 11 профессий; 157 тестов |
 | 1.5.0 | 2026-10-26 | Motion evidence pass + learning source library: 10 motion компетенций (28 узлов / 42 связи), 10 motion-блоков, каталог 54/237, глобальный массив 55; `learning-sources` registry (33 записи, 24 active) и Google CSE discovery scaffold |

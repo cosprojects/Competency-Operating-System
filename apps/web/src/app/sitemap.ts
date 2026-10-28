@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getAllCompetencies, getProfessions } from "@/lib/content";
+import { CANVAS_LINKS } from "@/lib/canvas";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = process.env.APP_URL ?? "https://axiona.world";
@@ -27,9 +28,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: base, lastModified: now, changeFrequency: "weekly", priority: 1 },
     { url: `${base}/professions`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${base}/canvas`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
-    ...professions.map((profession) => ({
-      ...profession,
-      url: `${base}/canvas/${profession.url.split("/").at(-1)}`,
+    ...professions,
+    ...CANVAS_LINKS.map((item) => ({
+      url: `${base}/canvas/${item.slug}`,
+      lastModified: now,
+      changeFrequency: "weekly" as const,
+      priority: item.beta ? 0.7 : 0.4,
     })),
     ...competencies,
     { url: `${base}/legal/privacy`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },

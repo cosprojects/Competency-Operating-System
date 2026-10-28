@@ -12,28 +12,28 @@ export const CANVAS_LINKS: CanvasLink[] = [
     title: "UX/UI-дизайнер",
     file: "uxui-competency-canvas.html",
     beta: true,
-    description: "34 компетенции: исследования, архитектура, прототипы, UI и инструменты.",
+    description: "Исследования, архитектура, прототипы, UI и инструменты.",
   },
   {
     slug: "product",
     title: "Продуктовый дизайнер",
     file: "it-product-competency-canvas.html",
     beta: true,
-    description: "30 компетенций: discovery, JTBD, CJM, метрики, рост и эксперименты.",
+    description: "Discovery, JTBD, CJM, метрики, рост и эксперименты.",
   },
   {
     slug: "motion",
     title: "Моушн-дизайнер",
     file: "it-motion-competency-canvas.html",
     beta: true,
-    description: "28 компетенций: принципы анимации, 3D, звук, композитинг и продакшн.",
+    description: "Принципы анимации, 3D, звук, композитинг и продакшн.",
   },
   {
     slug: "graphic",
     title: "Графический дизайнер",
     file: "it-graphic-competency-canvas.html",
     beta: true,
-    description: "18 компетенций: типографика, бренд, печать и редакционный дизайн.",
+    description: "Типографика, бренд, печать и редакционный дизайн.",
   },
   {
     slug: "presentation",
@@ -99,4 +99,8 @@ export function canvasForProfession(slug: string): CanvasLink | undefined {
 
 export function canvasHref(file: string): string {
   return `/canvas/${file}`;
+}
+
+export function canvasPageHref(slug: string): string {
+  return `/canvas/${slug}`;
 }

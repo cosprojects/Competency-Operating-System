@@ -27,7 +27,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: base, lastModified: now, changeFrequency: "weekly", priority: 1 },
     { url: `${base}/professions`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${base}/canvas`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
-    ...professions,
+    ...professions.map((profession) => ({
+      ...profession,
+      url: `${base}/canvas/${profession.url.split("/").at(-1)}`,
+    })),
     ...competencies,
     { url: `${base}/legal/privacy`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
     { url: `${base}/legal/terms`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },

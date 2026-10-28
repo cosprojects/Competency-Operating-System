@@ -51,7 +51,7 @@ npm --workspace apps/web run start
 
 ## Схемы компетенций
 
-`/canvas` — индекс Beta-схем и исследовательских карт. Сами страницы генерируются в `web/*.html`, затем `npm run web:canvases` копирует их в `apps/web/public/canvas/`; ссылки открываются в новой вкладке. `web:build` и `web:dev` вызывают копирование автоматически.
+`/canvas` — индекс Beta-схем и исследовательских карт. `/canvas/<slug>` открывает схему во встроенном iframe внутри MVP; отдельная вкладка доступна по ссылке. Сами страницы генерируются в `web/*.html`, затем `npm run web:canvases` копирует их в `apps/web/public/canvas/`. `web:build` и `web:dev` вызывают копирование автоматически. Iframe разрешён только same-origin (`X-Frame-Options: SAMEORIGIN`, `frame-ancestors 'self'`).
 
 ## Данные
 

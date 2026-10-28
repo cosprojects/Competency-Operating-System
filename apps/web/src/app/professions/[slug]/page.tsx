@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CompetencyCard } from "@/components/CompetencyCard";
-import { canvasForProfession, canvasHref } from "@/lib/canvas";
+import { canvasForProfession, canvasPageHref } from "@/lib/canvas";
 import { getProfession, getProfessions } from "@/lib/content";
 
 export function generateStaticParams() {
@@ -48,7 +48,7 @@ export default async function ProfessionPage({
         </div>
         {canvas ? (
           <div className="actions" style={{ marginTop: 16 }}>
-            <a className="button secondary" href={canvasHref(canvas.file)} target="_blank" rel="noreferrer">
+            <a className="button secondary" href={canvasPageHref(canvas.slug)} target="_blank" rel="noreferrer">
               Открыть схему компетенций ↗
             </a>
           </div>

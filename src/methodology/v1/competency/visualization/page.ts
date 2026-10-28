@@ -137,6 +137,7 @@ export function renderCanvasPage(data: VisualizationPageData, options: { activeP
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>${esc(data.title)} — карта компетенций</title>
+  <script>if (new URLSearchParams(window.location.search).get("embed") === "1") document.documentElement.classList.add("embed");</script>
   <style>
     :root {
       color-scheme: light;
@@ -164,6 +165,7 @@ export function renderCanvasPage(data: VisualizationPageData, options: { activeP
     html, body { height: 100%; }
     body { margin: 0; overflow: hidden; color: var(--ink); background: var(--canvas); }
 
+    .embed .app-header { display: none; }
     .canvas-viewport {
       position: fixed;
       inset: 0;

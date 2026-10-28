@@ -1,4 +1,4 @@
-import { CANVAS_LINKS, canvasHref } from "@/lib/canvas";
+import { CANVAS_LINKS, canvasPageHref } from "@/lib/canvas";
 
 export const metadata = {
   title: "Схемы компетенций — AXIONA",
@@ -9,7 +9,7 @@ function CanvasCard({ item }: { item: (typeof CANVAS_LINKS)[number] }) {
   return (
     <a
       className="card profession-card"
-      href={canvasHref(item.file)}
+      href={canvasPageHref(item.slug)}
       target="_blank"
       rel="noreferrer"
     >

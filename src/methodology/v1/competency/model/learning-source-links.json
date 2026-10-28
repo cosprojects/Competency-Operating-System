@@ -1,6 +1,6 @@
 {
   "linksVersion": "1.0.0",
-  "updatedAt": "2026-10-26",
+  "updatedAt": "2026-10-28",
   "description": "Ручной слой связей «компетенция → учебные источники». Источник истины для learning:map; при model:sync мержится в competencies.json. Источник — место, где учиться компетенции, а не автоматическое доказательство её содержания.",
   "links": [
     {
@@ -994,6 +994,27 @@
         "anima-ai-design-ru"
       ],
       "rationale": "Источник по AI-дизайну покрывает тему «Хабр — статья про ИИ в дизайне»."
+    },
+    {
+      "competencyId": "ux-ethics-privacy",
+      "sourceIds": [
+        "nngroup-ethics"
+      ],
+      "rationale": "NN/g: этика UX, приватность и информированное согласие."
+    },
+    {
+      "competencyId": "ui-framer",
+      "sourceIds": [
+        "framer-learn"
+      ],
+      "rationale": "Framer Learn: официальные материалы по интерактивным прототипам."
+    },
+    {
+      "competencyId": "product-growth",
+      "sourceIds": [
+        "reforge-blog"
+      ],
+      "rationale": "Reforge: продуктовый рост, удержание и метрики."
     }
   ]
 }

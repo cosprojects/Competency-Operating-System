@@ -2,13 +2,1035 @@
   "reviewVersion": "1.0.0",
   "releaseId": "beta-1",
   "updatedAt": "2026-10-28",
-  "reviewedBy": null,
-  "decisions": [],
+  "reviewedBy": "deepseek-content-gate",
+  "decisions": [
+    {
+      "competencyId": "ux-design-thinking",
+      "sourceId": "school-of-motion",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ux-design-thinking",
+      "sourceId": "codecademy-intro-uiux",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ux-design-thinking",
+      "sourceId": "coursera-uxui-fundamentals",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ux-design-thinking",
+      "sourceId": "practicum-design-catalog",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ux-design-thinking",
+      "sourceId": "coursera-microsoft-product-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ux-design-thinking",
+      "sourceId": "coursera-design-fundamentals-ai",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ux-design-thinking",
+      "sourceId": "uxdesigninstitute-free-ux-course",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ux-user-research",
+      "sourceId": "coursera-uxui-fundamentals",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ux-user-research",
+      "sourceId": "greatlearning-uiux",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ux-user-research",
+      "sourceId": "practicum-design-catalog",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ux-user-research",
+      "sourceId": "coursera-microsoft-product-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ux-user-research",
+      "sourceId": "udacity-product-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ux-user-research",
+      "sourceId": "uxdesigninstitute-free-ux-course",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ux-personas",
+      "sourceId": "coursera-uxui-fundamentals",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ux-personas",
+      "sourceId": "greatlearning-uiux",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ux-personas",
+      "sourceId": "coursera-microsoft-product-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ux-interviews",
+      "sourceId": "coursera-uxui-fundamentals",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ux-interviews",
+      "sourceId": "practicum-design-catalog",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ux-interviews",
+      "sourceId": "coursera-microsoft-product-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ux-information-architecture",
+      "sourceId": "figma-design-basics",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ux-information-architecture",
+      "sourceId": "coursera-uxui-fundamentals",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ux-user-flows",
+      "sourceId": "figma-design-basics",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ux-user-flows",
+      "sourceId": "codecademy-intro-uiux",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ux-requirements",
+      "sourceId": "codecademy-intro-uiux",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ux-requirements",
+      "sourceId": "practicum-design-catalog",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ux-requirements",
+      "sourceId": "udacity-product-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ux-wireframes",
+      "sourceId": "figma-design-basics",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ux-wireframes",
+      "sourceId": "codecademy-intro-uiux",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ux-lowfi-prototype",
+      "sourceId": "figma-design-basics",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ux-lowfi-prototype",
+      "sourceId": "coursera-uxui-fundamentals",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ux-lowfi-prototype",
+      "sourceId": "coursera-microsoft-product-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ux-hifi-prototype",
+      "sourceId": "figma-design-basics",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ux-hifi-prototype",
+      "sourceId": "greatlearning-uiux",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ux-interactive-prototype",
+      "sourceId": "figma-design-basics",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ux-interactive-prototype",
+      "sourceId": "codecademy-intro-uiux",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ux-interactive-prototype",
+      "sourceId": "coursera-microsoft-product-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ux-usability-testing",
+      "sourceId": "coursera-uxui-fundamentals",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ux-usability-testing",
+      "sourceId": "greatlearning-uiux",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ux-usability-testing",
+      "sourceId": "coursera-microsoft-product-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ux-experiments",
+      "sourceId": "practicum-uxresearch",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ux-product-thinking",
+      "sourceId": "practicum-design-catalog",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ux-product-thinking",
+      "sourceId": "codecademy-intro-uiux",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ux-product-thinking",
+      "sourceId": "udacity-product-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ux-product-thinking",
+      "sourceId": "coursera-microsoft-product-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ux-metrics",
+      "sourceId": "practicum-uxresearch",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ux-ethics-privacy",
+      "sourceId": "nngroup-ethics",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ux-analytics",
+      "sourceId": "practicum-uxresearch",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ui-color",
+      "sourceId": "coursera-uxui-fundamentals",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ui-color",
+      "sourceId": "greatlearning-uiux",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ui-color",
+      "sourceId": "coursera-graphic-fundamentals",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ui-color",
+      "sourceId": "alison-graphic-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ui-typography",
+      "sourceId": "coursera-uxui-fundamentals",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ui-typography",
+      "sourceId": "greatlearning-uiux",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ui-typography",
+      "sourceId": "coursera-graphic-fundamentals",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ui-layout",
+      "sourceId": "practicum-design-catalog",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ui-layout",
+      "sourceId": "scrimba-ui-design-fundamentals",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ui-layout",
+      "sourceId": "coursera-uxui-fundamentals",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ui-layout",
+      "sourceId": "greatlearning-uiux",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ui-layout",
+      "sourceId": "coursera-graphic-fundamentals",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ui-visual-elements",
+      "sourceId": "greatlearning-uiux",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ui-visual-elements",
+      "sourceId": "practicum-design-catalog",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ui-visual-elements",
+      "sourceId": "alison-graphic-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ui-visual-elements",
+      "sourceId": "greatlearning-photoshop-graphic",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ui-visual-communication",
+      "sourceId": "motiondesign-school-courses",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ui-visual-communication",
+      "sourceId": "petrick-mds-case",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ui-visual-communication",
+      "sourceId": "greatlearning-uiux",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ui-visual-communication",
+      "sourceId": "practicum-design-catalog",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ui-visual-communication",
+      "sourceId": "alison-graphic-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ui-visual-communication",
+      "sourceId": "coursera-graphic-fundamentals",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ui-visual-communication",
+      "sourceId": "coursera-web-design-free",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ui-design-systems",
+      "sourceId": "figma-design-basics",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ui-design-systems",
+      "sourceId": "greatlearning-uiux",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ui-components",
+      "sourceId": "figma-design-basics",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ui-responsive",
+      "sourceId": "practicum-appdesign",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ui-accessibility",
+      "sourceId": "practicum-appdesign",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ui-interaction-states",
+      "sourceId": "motiondesign-school-youtube",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ui-interaction-states",
+      "sourceId": "school-of-motion",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ui-interaction-states",
+      "sourceId": "figma-design-basics",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ui-motion",
+      "sourceId": "motiondesign-school-courses",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ui-motion",
+      "sourceId": "school-of-motion",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ui-motion",
+      "sourceId": "motiondesign-school-youtube",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ui-figma",
+      "sourceId": "figma-design-basics",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ui-figjam",
+      "sourceId": "practicum-uxresearch",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ui-framer",
+      "sourceId": "framer-learn",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ui-handoff",
+      "sourceId": "school-of-motion-free",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ui-web-technologies",
+      "sourceId": "practicum-webdesigner",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ui-web-technologies",
+      "sourceId": "alison-web-design-html",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "ui-data-visualization",
+      "sourceId": "practicum-presentation",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "product-jtbd",
+      "sourceId": "udacity-product-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "product-jtbd",
+      "sourceId": "coursera-microsoft-product-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "product-cjm",
+      "sourceId": "udacity-product-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "product-cjm",
+      "sourceId": "coursera-microsoft-product-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "product-strategy",
+      "sourceId": "udacity-product-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "product-strategy",
+      "sourceId": "coursera-microsoft-product-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "product-growth",
+      "sourceId": "reforge-blog",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "product-experimentation",
+      "sourceId": "udacity-product-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "product-experimentation",
+      "sourceId": "coursera-microsoft-product-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "motion-animation-principles",
+      "sourceId": "motiondesign-school-courses",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "motion-animation-principles",
+      "sourceId": "school-of-motion",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "motion-timing-easing",
+      "sourceId": "motiondesign-school-courses",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "motion-timing-easing",
+      "sourceId": "school-of-motion",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "motion-styleframes",
+      "sourceId": "motiondesign-school-courses",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "motion-styleframes",
+      "sourceId": "school-of-motion",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "motion-editing",
+      "sourceId": "practicum-design-catalog",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "motion-editing",
+      "sourceId": "school-of-motion",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "motion-sound-design",
+      "sourceId": "motiondesign-school-courses",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "motion-sound-design",
+      "sourceId": "school-of-motion",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "motion-3d-animation",
+      "sourceId": "motiondesign-school-courses",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "motion-3d-animation",
+      "sourceId": "school-of-motion",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "motion-3d-animation",
+      "sourceId": "practicum-design-catalog",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "motion-3d-animation",
+      "sourceId": "practicum-3ddesigner",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "motion-3d-rendering",
+      "sourceId": "motiondesign-school-courses",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "motion-3d-rendering",
+      "sourceId": "practicum-design-catalog",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "motion-compositing",
+      "sourceId": "motiondesign-school-courses",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "motion-compositing",
+      "sourceId": "school-of-motion",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "motion-brand-systems",
+      "sourceId": "motiondesign-school-courses",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "motion-brand-systems",
+      "sourceId": "school-of-motion",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "motion-toolchain",
+      "sourceId": "motiondesign-school-courses",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "motion-toolchain",
+      "sourceId": "school-of-motion",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "motion-production",
+      "sourceId": "school-of-motion-free",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "motion-production",
+      "sourceId": "practicum-design-catalog",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "motion-showreel",
+      "sourceId": "motiondesign-school-vimeo",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "motion-showreel",
+      "sourceId": "motiondesign-school-youtube",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "graphic-brand-identity",
+      "sourceId": "alison-graphic-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "graphic-brand-identity",
+      "sourceId": "practicum-design-catalog",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "graphic-print-production",
+      "sourceId": "practicum-design-catalog",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "graphic-editorial-layout",
+      "sourceId": "coursera-graphic-fundamentals",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    },
+    {
+      "competencyId": "graphic-editorial-layout",
+      "sourceId": "practicum-design-catalog",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-10-28"
+    }
+  ],
   "notes": [
-    "Одна запись = решение по паре «компетенция — источник»; professionId не указывать или «*» для всех профессий.",
-    "decision: accepted | replaced | excluded.",
-    "Для replaced обязателен replacementSourceId; для excluded — reason.",
-    "reviewedBy и reviewedAt заполняются человеком, принявшим решение.",
-    "Пустой файл означает, что source gate ещё не пройден; release:validate считает это ошибкой."
+    "AI-assisted content gate: решения подготовлены агентом, не являются финальной человеческой приёмкой.",
+    "Перед release:build со status=ready основатель делает spot-check источников и блоков."
   ]
 }

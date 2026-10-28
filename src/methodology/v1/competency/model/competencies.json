@@ -309,7 +309,10 @@
       "title": "Этика, приватность и ограничения",
       "titleEn": "Ethics and privacy",
       "definition": "Этические, правовые и безопасностные ограничения дизайна.",
-      "priorityHint": "optional"
+      "priorityHint": "optional",
+      "learningSourceIds": [
+        "nngroup-ethics"
+      ]
     },
     {
       "id": "ux-analytics",
@@ -601,7 +604,10 @@
         "taxonomyLeaves": [
           "Framer"
         ]
-      }
+      },
+      "learningSourceIds": [
+        "framer-learn"
+      ]
     },
     {
       "id": "ui-handoff",
@@ -711,7 +717,10 @@
       "title": "Рост, воронки и удержание",
       "titleEn": "Growth and retention",
       "definition": "Работа с воронкой, активацией, удержанием и продуктовыми циклами роста.",
-      "priorityHint": "core"
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "reforge-blog"
+      ]
     },
     {
       "id": "product-experimentation",

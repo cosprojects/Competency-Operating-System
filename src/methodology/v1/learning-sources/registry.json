@@ -1,6 +1,6 @@
 {
   "registryVersion": "1.0.0",
-  "updatedAt": "2026-10-22",
+  "updatedAt": "2026-10-28",
   "sources": [
     {
       "id": "motiondesign-school-courses",
@@ -31,7 +31,8 @@
       "discoveredBy": "user",
       "lastChecked": "2026-10-22",
       "httpStatus": 200,
-      "notes": "Каталог курсов и инструментов; первоисточник программы."
+      "notes": "Каталог курсов и инструментов; первоисточник программы.",
+      "summary": "Каталог курсов Motion Design School: моушн, After Effects, 3D и производственные пайплайны."
     },
     {
       "id": "motiondesign-school-youtube",
@@ -55,7 +56,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-22",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "YouTube-канал Motion Design School: туториалы по After Effects, анимации и 3D."
     },
     {
       "id": "petrick-mds-case",
@@ -79,7 +81,8 @@
       "discoveredBy": "user",
       "lastChecked": "2026-10-22",
       "httpStatus": 200,
-      "notes": "Кейс/обзор школы, не учебная программа."
+      "notes": "Кейс/обзор школы, не учебная программа.",
+      "summary": "Кейс Petrick о Motion Design School: пример позиционирования и подачи образовательного проекта."
     },
     {
       "id": "school-of-motion",
@@ -104,7 +107,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-22",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Школа motion-дизайна: курсы и learning paths по анимации, After Effects и карьере."
     },
     {
       "id": "motiondesign-school-vimeo",
@@ -127,7 +131,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-22",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Vimeo-канал Motion Design School: студенческие работы, шоурилы и разборы motion-проектов."
     },
     {
       "id": "coursetrain-motiondesign-school",
@@ -209,7 +214,8 @@
       "discoveredBy": "user",
       "lastChecked": "2026-10-22",
       "httpStatus": 200,
-      "notes": "Официальный каталог программ; страницы профессий проверяются отдельно."
+      "notes": "Официальный каталог программ; страницы профессий проверяются отдельно.",
+      "summary": "Каталог программ Практикума по дизайну: UX/UI, продуктовый, графический, motion и другие направления."
     },
     {
       "id": "school-of-motion-free",
@@ -234,7 +240,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-22",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Бесплатные материалы School of Motion: туториалы, брифы и разборы работ."
     },
     {
       "id": "classcentral-uxui-ipl",
@@ -283,7 +290,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-22",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Бесплатный курс Great Learning по UI/UX: исследования, прототипы, визуальный дизайн."
     },
     {
       "id": "coursera-uxui-fundamentals",
@@ -307,7 +315,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-22",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Курс Coursera по UX/UI: юзабилити, визуальные принципы, прототипирование."
     },
     {
       "id": "figma-design-basics",
@@ -331,7 +340,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-22",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Официальная библиотека Figma Design Basics: основы интерфейса, компоненты, стили и прототипы."
     },
     {
       "id": "medium-free-uiux-courses",
@@ -379,7 +389,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-22",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Вводный курс Codecademy по UI/UX: исследования, прототипы и визуальные основы."
     },
     {
       "id": "uxwoman-free-uiux",
@@ -456,7 +467,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-22",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Программа Coursera/Microsoft по продуктовому дизайну и UX/UI: исследования, прототипы, продуктовое мышление."
     },
     {
       "id": "classcentral-udacity-product-design",
@@ -551,7 +563,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-22",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Курс Udacity по продуктовому дизайну: исследования, прототипы и проверка гипотез."
     },
     {
       "id": "alison-product-design",
@@ -599,7 +612,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-22",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Курс Coursera по основам графического дизайна: композиция, цвет, типографика, изображение."
     },
     {
       "id": "alison-graphic-design",
@@ -622,7 +636,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-22",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Бесплатный курс Alison по основам графического дизайна: композиция, цвет, типографика и практические упражнения."
     },
     {
       "id": "coursera-graphic-free",
@@ -669,7 +684,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-22",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Бесплатный курс Great Learning по графическому дизайну в Photoshop: визуальные элементы и обработка изображений."
     },
     {
       "id": "classcentral-graphic-design",
@@ -833,7 +849,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-26",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Программа Практикума по презентациям с ИИ: структура, визуализация данных и подача."
     },
     {
       "id": "practicum-appdesign",
@@ -858,7 +875,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-26",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Программа Практикума по дизайну мобильных приложений: платформы, паттерны, прототипы и метрики."
     },
     {
       "id": "practicum-uxresearch",
@@ -884,7 +902,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-26",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Программа Практикума по UX-исследованиям: методы, интервью, синтез и этика."
     },
     {
       "id": "practicum-artdir",
@@ -936,7 +955,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-26",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Программа Практикума «3D-дженералист»: моделирование, текстурирование, свет, рендер и анимация."
     },
     {
       "id": "practicum-interior",
@@ -989,7 +1009,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-26",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Программа Практикума «Веб-дизайнер»: лендинги, адаптивность, визуал, CMS и производительность."
     },
     {
       "id": "alison-3d-modeling-tag",
@@ -1376,7 +1397,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-26",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Подборка бесплатных курсов Coursera по веб-дизайну: адаптивность, вёрстка, визуальная коммуникация."
     },
     {
       "id": "greatlearning-web-design-free",
@@ -1444,7 +1466,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-26",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Курс Alison по веб-дизайну и HTML: структура страницы, адаптивность и базовая вёрстка."
     },
     {
       "id": "webflow-university-courses",
@@ -1534,7 +1557,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-26",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Курс Coursera о дизайн-фундаменте с ИИ: применение генеративных инструментов в дизайн-процессе."
     },
     {
       "id": "uxdesigninstitute-free-ux-course",
@@ -1556,7 +1580,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-26",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Бесплатный курс UX Design Institute: основы UX, исследования и проектирование."
     },
     {
       "id": "scrimba-ui-design-fundamentals",
@@ -1578,7 +1603,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-26",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Интерактивный курс Scrimba по основам UI-дизайна: композиция, цвет, типографика."
     },
     {
       "id": "alna-free-interior-courses",
@@ -2881,6 +2907,80 @@
       "httpStatus": 404,
       "discoveryOnly": true,
       "notes": "Недоступно для автоматического сбора; только ссылка для человека."
+    },
+    {
+      "id": "nngroup-ethics",
+      "title": "Nielsen Norman Group — Ethics",
+      "url": "https://www.nngroup.com/topic/ethics/",
+      "kind": "reference",
+      "professionIds": [
+        "it.uxui",
+        "it.product"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ux ethics",
+        "privacy",
+        "dark patterns",
+        "informed consent"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-10-28",
+      "summary": "Подборка NN/g об этике UX: тёмные паттерны, информированное согласие, приватность и ответственность исследователя."
+    },
+    {
+      "id": "framer-learn",
+      "title": "Framer — Learn",
+      "url": "https://www.framer.com/learn/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.uxui",
+        "it.motion"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "framer",
+        "prototyping",
+        "interaction design",
+        "responsive"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-10-28",
+      "summary": "Официальные учебные материалы Framer по интерактивным прототипам, компонентам и адаптивным интерфейсам."
+    },
+    {
+      "id": "reforge-blog",
+      "title": "Reforge — Blog",
+      "url": "https://www.reforge.com/blog",
+      "kind": "blog",
+      "professionIds": [
+        "it.product"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "mixed",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "product strategy",
+        "growth",
+        "retention",
+        "metrics"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-10-28",
+      "summary": "Статьи Reforge о продуктовой стратегии, росте, удержании и метриках продуктовых решений."
     }
   ]
 }

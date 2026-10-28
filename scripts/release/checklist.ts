@@ -3,7 +3,7 @@ import path from "node:path";
 import type { CompetenciesFile } from "../../src/methodology/v1/competency/model/types.ts";
 import type { ProfessionCompetencyFile } from "../../src/methodology/v1/competency/model/types.ts";
 import type { LearningSourceRegistry } from "../../src/methodology/v1/learning-sources/types.ts";
-import type { ReleaseManifest } from "./lib.ts";
+import type { ReleaseManifest, SourceReviewFile } from "./lib.ts";
 
 async function readJson<T>(file: string): Promise<T> {
   return JSON.parse(await readFile(file, "utf8")) as T;
@@ -20,6 +20,10 @@ async function main(): Promise<void> {
   );
   const compById = new Map(competencies.competencies.map((item) => [item.id, item]));
   const sourceById = new Map(registry.sources.map((item) => [item.id, item]));
+  const review = await readJson<SourceReviewFile>(path.join(root, "release/beta-1-source-review.json"));
+  const decisionByKey = new Map(
+    review.decisions.map((item) => [`${item.competencyId}|${item.sourceId}`, item.decision]),
+  );
   const pairs = new Map<string, { competencyId: string; sourceId: string; professions: Set<string> }>();
   for (const professionId of manifest.professionIds) {
     const slug = professionId.split(".").at(-1) ?? professionId;
@@ -49,7 +53,7 @@ async function main(): Promise<void> {
   const lines: string[] = [
     "# Beta 1 — source review checklist",
     "",
-    "Заполнить решения в `release/beta-1-source-review.json` (accepted / replaced / excluded + причина). Это не автоматическая приёмка.",
+    "Проверить решения в `release/beta-1-source-review.json` (accepted / replaced / excluded + причина). Решения подготовлены AI-assisted; нужен spot-check основателя.",
     "",
     "Правило Beta: активный источник, не агрегатор, не `discoveryOnly`; `primary` предпочтителен. `summary` обязателен.",
     "",
@@ -65,7 +69,7 @@ async function main(): Promise<void> {
   )) {
     const source = sourceById.get(pair.sourceId);
     lines.push(
-      `| \`${pair.competencyId}\` | \`${pair.sourceId}\`${source ? ` — ${source.title}` : ""} | ${source?.authority ?? "?"} | ${source?.status ?? "?"} | ${source?.summary ? "есть" : "нет"} | ${[...pair.professions].join(", ")} |  |`,
+      `| \`${pair.competencyId}\` | \`${pair.sourceId}\`${source ? ` — ${source.title}` : ""} | ${source?.authority ?? "?"} | ${source?.status ?? "?"} | ${source?.summary ? "есть" : "нет"} | ${[...pair.professions].join(", ")} | ${decisionByKey.get(`${pair.competencyId}|${pair.sourceId}`) ?? "—"} |`,
     );
   }
   lines.push("");

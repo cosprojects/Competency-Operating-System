@@ -8,6 +8,7 @@ AI-native platform for competency maps, learning sources and professional develo
 
 - Продукт: 4 профессии (UX/UI, Product, Motion, Graphic), 110 связей «профессия–компетенция», 54 уникальные компетенции.
 - AI-слой и AI-дизайнер исключены из публикации (`deferred-post-beta`).
+- Content gate: 110/110 связей, 54/54 компетенции, 0 пробелов; source review AI-assisted, нужен spot-check основателя.
 - Приложение: `apps/web` (Next.js), контент — производный JSON из `model/`, локальные пользовательские данные — SQLite, публичный контур — PostgreSQL.
 - Программа, quality bar, архитектура и runbook: [`docs/12-release/`](docs/12-release/).
 - Решения, меняющие рамку: [`COS-REL-008`](docs/12-release/COS-REL-008-Decision-Log.md).

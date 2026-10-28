@@ -14,7 +14,8 @@
 
 Отчёты:
 - [`reports/beta-1-gap-report.md`](reports/beta-1-gap-report.md) — текущий release gate.
-- [`reports/beta-1-content-backlog.md`](reports/beta-1-content-backlog.md) — чек-лист 37 компетенций и источников.
+- [`reports/beta-1-content-gate-closure.md`](reports/beta-1-content-gate-closure.md) — результат content gate.
+- [`reports/beta-1-content-backlog.md`](reports/beta-1-content-backlog.md) — исторический чек-лист до gate (superseded).
 - [`reports/beta-1-source-review-checklist.md`](reports/beta-1-source-review-checklist.md) — 125 уникальных пар «компетенция–источник» для source review.
 
-Текущий статус: манифест `draft`, source gate не пройден; публичный запуск заблокирован до `release:validate` и юридического sign-off.
+Текущий статус: `release:validate` проходит (110/110 связей, 54/54 компетенции, 0 пробелов); манифест остаётся `draft` до человеческого spot-check. Публичный запуск заблокирован до перевода в `ready`, РФ-хостинга и юридического sign-off.

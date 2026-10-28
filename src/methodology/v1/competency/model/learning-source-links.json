@@ -774,7 +774,13 @@
         "practicum-webdesigner",
         "practicum-design-catalog",
         "motiondesign-school-courses",
-        "practicum-ai-tools-for-designers"
+        "practicum-ai-tools-for-designers",
+        "oxfordhomestudy-ai-free",
+        "elements-of-ai",
+        "greatlearning-ai-free",
+        "alison-ai-fundamentals",
+        "coursera-ai-free",
+        "ideou-ai-design-resources"
       ],
       "rationale": "Программа содержит модуль/тему по ИИ, подтверждённую страницей курса."
     },
@@ -789,7 +795,14 @@
         "practicum-interior",
         "practicum-webdesigner",
         "motiondesign-school-courses",
-        "practicum-ai-tools-for-designers"
+        "practicum-ai-tools-for-designers",
+        "oxfordhomestudy-ai-free",
+        "elements-of-ai",
+        "greatlearning-ai-free",
+        "alison-ai-fundamentals",
+        "coursera-ai-free",
+        "simplilearn-genai-design",
+        "coursera-design-fundamentals-ai"
       ],
       "rationale": "Программа содержит модуль/тему по ИИ, подтверждённую страницей курса."
     },
@@ -815,7 +828,8 @@
         "practicum-design-catalog",
         "motiondesign-school-courses",
         "practicum-ai-tools-for-designers",
-        "practicum-ai-for-design"
+        "practicum-ai-for-design",
+        "learntube-ai-graphic-design"
       ],
       "rationale": "Программа содержит модуль/тему по ИИ, подтверждённую страницей курса."
     },
@@ -824,7 +838,8 @@
       "sourceIds": [
         "practicum-presentation",
         "practicum-appdesign",
-        "practicum-webdesigner"
+        "practicum-webdesigner",
+        "figma-blog-design-systems-ai"
       ],
       "rationale": "Программа содержит модуль/тему по ИИ, подтверждённую страницей курса."
     },
@@ -838,7 +853,9 @@
         "practicum-3ddesigner",
         "practicum-interior",
         "practicum-webdesigner",
-        "practicum-design-catalog"
+        "practicum-design-catalog",
+        "state-of-ai-design",
+        "kimvoronin-ai-design-guide"
       ],
       "rationale": "Программа содержит модуль/тему по ИИ, подтверждённую страницей курса."
     },
@@ -861,21 +878,35 @@
     {
       "competencyId": "aidesigner-tool-landscape",
       "sourceIds": [
-        "practicum-ai-tools-for-designers"
+        "practicum-ai-tools-for-designers",
+        "elements-of-ai",
+        "simplilearn-genai-design",
+        "state-of-ai-design",
+        "tgu-dpo-ai-tools-design",
+        "extyl-top-ai-tools-design",
+        "sostav-ai-design-112390",
+        "habr-ai-design-1096288",
+        "anima-ai-design-ru"
       ],
       "rationale": "Курс Практикума по нейросетям покрывает тему в рамках программы."
     },
     {
       "competencyId": "aidesigner-prompt-systems",
       "sourceIds": [
-        "practicum-ai-tools-for-designers"
+        "practicum-ai-tools-for-designers",
+        "elements-of-ai",
+        "learntube-ai-graphic-design"
       ],
       "rationale": "Курс Практикума по нейросетям покрывает тему в рамках программы."
     },
     {
       "competencyId": "aidesigner-tool-evaluation",
       "sourceIds": [
-        "practicum-ai-tools-for-designers"
+        "practicum-ai-tools-for-designers",
+        "simplilearn-ai-graphic-design",
+        "tgu-dpo-ai-tools-design",
+        "habr-ai-design-1065754",
+        "kimvoronin-ai-design-guide"
       ],
       "rationale": "Курс Практикума по нейросетям покрывает тему в рамках программы."
     },
@@ -883,7 +914,12 @@
       "competencyId": "aidesigner-visual-generation",
       "sourceIds": [
         "practicum-ai-tools-for-designers",
-        "practicum-ai-for-design"
+        "practicum-ai-for-design",
+        "learntube-ai-graphic-design",
+        "oxfordhomestudy-ai-graphics-designer",
+        "simplilearn-genai-design",
+        "extyl-top-ai-tools-design",
+        "coursera-design-fundamentals-ai"
       ],
       "rationale": "Курс Практикума по нейросетям покрывает тему в рамках программы."
     },
@@ -899,23 +935,65 @@
       "competencyId": "aidesigner-quality-eval",
       "sourceIds": [
         "practicum-ai-tools-for-designers",
-        "practicum-ai-for-design"
+        "practicum-ai-for-design",
+        "simplilearn-ai-graphic-design",
+        "cambridge-ai-design-process",
+        "habr-ai-design-1096288"
       ],
       "rationale": "Курс Практикума по нейросетям покрывает тему в рамках программы."
     },
     {
       "competencyId": "aidesigner-integration",
       "sourceIds": [
-        "practicum-ai-tools-for-designers"
+        "practicum-ai-tools-for-designers",
+        "coursera-will-ai-replace-designers",
+        "ideou-ai-design-resources",
+        "figma-blog-design-systems-ai",
+        "state-of-ai-design",
+        "cambridge-ai-design-process",
+        "sostav-ai-design-112390",
+        "almcorp-ai-design",
+        "kimvoronin-ai-design-guide"
       ],
       "rationale": "Курс Практикума по нейросетям покрывает тему в рамках программы."
     },
     {
       "competencyId": "aidesigner-series-adaptation",
       "sourceIds": [
-        "practicum-ai-for-design"
+        "practicum-ai-for-design",
+        "oxfordhomestudy-ai-graphics-designer"
       ],
       "rationale": "Курс Практикума по нейросетям покрывает тему в рамках программы."
+    },
+    {
+      "competencyId": "ai-ethics-rights",
+      "sourceIds": [
+        "oxfordhomestudy-ai-free",
+        "elements-of-ai",
+        "greatlearning-ai-free",
+        "alison-ai-fundamentals",
+        "coursera-ai-free"
+      ],
+      "rationale": "Курс по основам ИИ покрывает тему в рамках программы."
+    },
+    {
+      "competencyId": "aidesigner-ai-features",
+      "sourceIds": [
+        "coursera-will-ai-replace-designers",
+        "ideou-ai-design-resources",
+        "figma-blog-design-systems-ai",
+        "cambridge-ai-design-process",
+        "coursera-design-fundamentals-ai"
+      ],
+      "rationale": "Источник по AI-дизайну покрывает тему «Coursera — Will AI replace graphic designers»."
+    },
+    {
+      "competencyId": "aidesigner-automation",
+      "sourceIds": [
+        "habr-ai-design-1065754",
+        "anima-ai-design-ru"
+      ],
+      "rationale": "Источник по AI-дизайну покрывает тему «Хабр — статья про ИИ в дизайне»."
     }
   ]
 }

@@ -1,7 +1,7 @@
 ---
 id: COS-RES-019
 title: Competency Module — session handoff
-version: 1.15.0
+version: 1.16.0
 status: Draft
 owner: Research Team
 last_updated: 2026-10-26
@@ -154,7 +154,7 @@ open web/it-product-competency-canvas.html
 
 1. **Human-review Motion-расширения.** 10 новых motion-компетенций и 10 seed-блоков (`COS-RES-022`) приняты технически; теги блоков синтетические (без `sourceRefs`). Mapping Motion уже сопоставляет их с собранными Practicum/O*NET-тегами — нужно подтвердить людьми и решить, привязывать ли теги к блокам.
 2. **Human-review evidence-backed блоков (Product/Graphic).** `tagHints` заполнены, `competency:seed` + Pass B дали предложения: product 5 блоков (sourceRefs 1–5), graphic 3 (5–6). Артефакты — `data/competency/proposed-blocks-it-*.json` (gitignored), приёмка не выполнена.
-3. **Learning sources (`COS-RES-022`).** `learning:validate` — 89 источников, 65 active, 0 ошибок; 49 источников присланы заказчиком (34 active, 15 blocked→discoveryOnly); `learning:map` — 99 связанных компетенций, все 11 профессий покрыты; `learning:audit --profession motion` — 9/9 active; `learning:map` — проекция source→competency и покрытие: UX/UI 24/34, Product 23/30, Motion 23/28, Graphic 14/18 (43/55 компетенций), 0 предупреждений; связи ведутся в `model/learning-source-links.json` и мержатся в `model:sync`; каталоги/обзоры размечены `discoveryOnly` (8 шт.); `learning:topics` — robots-safe извлечение коротких тем из course pages (Motion 5/7 источников / 45 тем, UX/UI 180, Product 198, Graphic 140); `learning:discover` требует Google CSE keys и human-review.
+3. **Learning sources (`COS-RES-022`).** `learning:validate` — 118 источников, 89 active, 0 ошибок; 76 источников присланы заказчиком (56 active, 19 blocked/degraded → discoveryOnly/перепроверка); `learning:map` — 118 связанных компетенций, все 12 профессий покрыты (AI-дизайнер 27/27); `learning:audit --profession motion` — 9/9 active; `learning:map` — проекция source→competency и покрытие: UX/UI 24/34, Product 23/30, Motion 23/28, Graphic 14/18 (43/55 компетенций), 0 предупреждений; связи ведутся в `model/learning-source-links.json` и мержатся в `model:sync`; каталоги/обзоры размечены `discoveryOnly` (8 шт.); `learning:topics` — robots-safe извлечение коротких тем из course pages (Motion 5/7 источников / 45 тем, UX/UI 180, Product 198, Graphic 140); `learning:discover` требует Google CSE keys и human-review.
 2. **Human-review материалов** — журналы и review готовы: UX/UI 34/34, Product 30/30, Motion 28/28, Graphic 18/18. Нужно решить, какие материалы принимать; только после этого `catalog.materials`. Перезапуск: `materials:agent:queue -- --domain it --profession <prof> --classify --budget-usd 0.15 --max-calls 120`, затем `materials:agent:review`.
 4. **Human-review mapping Graphic** и привязка Practicum-тегов к accepted-блокам (теги собственных блоков синтетические).
 5. **Knowledge graph** (competency → components/tags/materials) — отложен по решению пользователя.
@@ -205,4 +205,5 @@ open web/it-product-competency-canvas.html
 | 1.13.0 | 2026-10-26 | Второй пакет источников: арт-дирекшн (8: 5 active/3 blocked) и UX-исследователь (8: 5 active/3 blocked; один URL — дубль); реестр 89/65; learning:map 99 компетенций, 0 ошибок/0 предупреждений |
 | 1.14.0 | 2026-10-26 | Этап 2 (`COS-RES-024`): 9 сквозных AI-компетенций во всех 11 профессиях, массив 112, AI-секции в 10 views + UX/UI через model:sync; learning:map 107 компетенций / 0 ошибок; канвасы 10 профессий с AI-узлами; 157 тестов |
 | 1.15.0 | 2026-10-26 | Этап 3 (`COS-RES-025`): профессия `it.aidesigner` — 10 собственных компетенций, view 27 / 41 связь; массив 122, 12 профессий; 2 новых Practicum AI-источника (реестр 91/67), learning:map 117 / 0 ошибок; канвас + таб; 157 тестов |
+| 1.16.0 | 2026-10-26 | AI-библиотека по ссылкам заказчика: +27 источников (22 active, 4 blocked, 1 degraded); фундаментальные ИИ-курсы для всех 12 профессий; реестр 118/89; learning:map 118 / 0 ошибок; покрытие AI-дизайнера 27/27 |
 | 1.5.0 | 2026-10-26 | Motion evidence pass + learning source library: 10 motion компетенций (28 узлов / 42 связи), 10 motion-блоков, каталог 54/237, глобальный массив 55; `learning-sources` registry (33 записи, 24 active) и Google CSE discovery scaffold |

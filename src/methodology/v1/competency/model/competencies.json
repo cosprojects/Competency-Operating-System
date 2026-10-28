@@ -1695,7 +1695,13 @@
         "practicum-webdesigner",
         "practicum-design-catalog",
         "motiondesign-school-courses",
-        "practicum-ai-tools-for-designers"
+        "practicum-ai-tools-for-designers",
+        "oxfordhomestudy-ai-free",
+        "elements-of-ai",
+        "greatlearning-ai-free",
+        "alison-ai-fundamentals",
+        "coursera-ai-free",
+        "ideou-ai-design-resources"
       ]
     },
     {
@@ -1717,7 +1723,14 @@
         "practicum-interior",
         "practicum-webdesigner",
         "motiondesign-school-courses",
-        "practicum-ai-tools-for-designers"
+        "practicum-ai-tools-for-designers",
+        "oxfordhomestudy-ai-free",
+        "elements-of-ai",
+        "greatlearning-ai-free",
+        "alison-ai-fundamentals",
+        "coursera-ai-free",
+        "simplilearn-genai-design",
+        "coursera-design-fundamentals-ai"
       ]
     },
     {
@@ -1754,7 +1767,8 @@
         "practicum-design-catalog",
         "motiondesign-school-courses",
         "practicum-ai-tools-for-designers",
-        "practicum-ai-for-design"
+        "practicum-ai-for-design",
+        "learntube-ai-graphic-design"
       ]
     },
     {
@@ -1803,7 +1817,8 @@
       "learningSourceIds": [
         "practicum-presentation",
         "practicum-appdesign",
-        "practicum-webdesigner"
+        "practicum-webdesigner",
+        "figma-blog-design-systems-ai"
       ]
     },
     {
@@ -1824,7 +1839,9 @@
         "practicum-3ddesigner",
         "practicum-interior",
         "practicum-webdesigner",
-        "practicum-design-catalog"
+        "practicum-design-catalog",
+        "state-of-ai-design",
+        "kimvoronin-ai-design-guide"
       ]
     },
     {
@@ -1836,7 +1853,14 @@
       "title": "Этика, авторские права и данные",
       "titleEn": "AI ethics and rights",
       "definition": "Авторские права, приватность, безопасность данных, смещения моделей и фактчекинг ИИ-результатов.",
-      "priorityHint": "core"
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "oxfordhomestudy-ai-free",
+        "elements-of-ai",
+        "greatlearning-ai-free",
+        "alison-ai-fundamentals",
+        "coursera-ai-free"
+      ]
     },
     {
       "id": "aidesigner-tool-landscape",
@@ -1849,7 +1873,15 @@
       "definition": "Какие инструменты существуют для текста, изображений, аудио, видео и 3D; для чего нужен каждый и где его ограничения.",
       "priorityHint": "foundation",
       "learningSourceIds": [
-        "practicum-ai-tools-for-designers"
+        "practicum-ai-tools-for-designers",
+        "elements-of-ai",
+        "simplilearn-genai-design",
+        "state-of-ai-design",
+        "tgu-dpo-ai-tools-design",
+        "extyl-top-ai-tools-design",
+        "sostav-ai-design-112390",
+        "habr-ai-design-1096288",
+        "anima-ai-design-ru"
       ]
     },
     {
@@ -1863,7 +1895,9 @@
       "definition": "Переиспользуемые рецепты промптов: ядро и переменные, библиотека под задачи, воспроизводимость результата.",
       "priorityHint": "core",
       "learningSourceIds": [
-        "practicum-ai-tools-for-designers"
+        "practicum-ai-tools-for-designers",
+        "elements-of-ai",
+        "learntube-ai-graphic-design"
       ]
     },
     {
@@ -1877,7 +1911,11 @@
       "definition": "Тестирование и сравнение инструментов по качеству, стоимости, скорости и ограничениям; выбор под задачу.",
       "priorityHint": "core",
       "learningSourceIds": [
-        "practicum-ai-tools-for-designers"
+        "practicum-ai-tools-for-designers",
+        "simplilearn-ai-graphic-design",
+        "tgu-dpo-ai-tools-design",
+        "habr-ai-design-1065754",
+        "kimvoronin-ai-design-guide"
       ]
     },
     {
@@ -1892,7 +1930,12 @@
       "priorityHint": "core",
       "learningSourceIds": [
         "practicum-ai-tools-for-designers",
-        "practicum-ai-for-design"
+        "practicum-ai-for-design",
+        "learntube-ai-graphic-design",
+        "oxfordhomestudy-ai-graphics-designer",
+        "simplilearn-genai-design",
+        "extyl-top-ai-tools-design",
+        "coursera-design-fundamentals-ai"
       ]
     },
     {
@@ -1907,7 +1950,8 @@
       "priorityHint": "core",
       "learningSourceIds": [
         "practicum-ai-tools-for-designers",
-        "practicum-ai-for-design"
+        "practicum-ai-for-design",
+        "oxfordhomestudy-ai-graphics-designer"
       ]
     },
     {
@@ -1936,7 +1980,12 @@
       "definition": "UX AI-продуктов: human-in-the-loop, неопределённость моделей, объяснимость и контроль пользователя.",
       "priorityHint": "core",
       "learningSourceIds": [
-        "practicum-ai-tools-for-designers"
+        "practicum-ai-tools-for-designers",
+        "coursera-will-ai-replace-designers",
+        "ideou-ai-design-resources",
+        "figma-blog-design-systems-ai",
+        "cambridge-ai-design-process",
+        "coursera-design-fundamentals-ai"
       ]
     },
     {
@@ -1950,7 +1999,9 @@
       "definition": "Связки инструментов и автоматизация рутины: текст → визуал → видео/аудио → документ.",
       "priorityHint": "core",
       "learningSourceIds": [
-        "practicum-ai-tools-for-designers"
+        "practicum-ai-tools-for-designers",
+        "habr-ai-design-1065754",
+        "anima-ai-design-ru"
       ]
     },
     {
@@ -1965,7 +2016,10 @@
       "priorityHint": "core",
       "learningSourceIds": [
         "practicum-ai-tools-for-designers",
-        "practicum-ai-for-design"
+        "practicum-ai-for-design",
+        "simplilearn-ai-graphic-design",
+        "cambridge-ai-design-process",
+        "habr-ai-design-1096288"
       ]
     },
     {
@@ -1979,7 +2033,15 @@
       "definition": "Встраивание AI в командный процесс: регламенты, обучение, выбор стека, границы применимости.",
       "priorityHint": "core",
       "learningSourceIds": [
-        "practicum-ai-tools-for-designers"
+        "practicum-ai-tools-for-designers",
+        "coursera-will-ai-replace-designers",
+        "ideou-ai-design-resources",
+        "figma-blog-design-systems-ai",
+        "state-of-ai-design",
+        "cambridge-ai-design-process",
+        "sostav-ai-design-112390",
+        "almcorp-ai-design",
+        "kimvoronin-ai-design-guide"
       ]
     }
   ]

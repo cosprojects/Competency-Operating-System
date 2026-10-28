@@ -1519,7 +1519,8 @@
       "url": "https://www.coursera.org/learn/design-fundamentals-ai",
       "kind": "course-platform",
       "professionIds": [
-        "it.appdesign"
+        "it.appdesign",
+        "it.aidesigner"
       ],
       "languages": [
         "en"
@@ -2160,6 +2161,726 @@
       "discoveredBy": "user",
       "lastChecked": "2026-10-26",
       "httpStatus": 200
+    },
+    {
+      "id": "freeacademy-ai",
+      "title": "freeAcademy.ai — AI courses",
+      "url": "https://freeacademy.ai/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.uxui",
+        "it.product",
+        "it.motion",
+        "it.graphic",
+        "it.presentation",
+        "it.appdesign",
+        "it.uxresearch",
+        "it.artdir",
+        "it.3ddesigner",
+        "it.interior",
+        "it.webdesigner",
+        "it.aidesigner"
+      ],
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "degraded",
+      "topics": [
+        "ai fundamentals",
+        "course platform"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-28",
+      "httpStatus": 429,
+      "notes": "HTTP 429 (rate limit) при аудите — перепроверить позже."
+    },
+    {
+      "id": "oxfordhomestudy-ai-free",
+      "title": "Oxford Home Study — Free AI courses",
+      "url": "https://www.oxfordhomestudy.com/ai-courses-online-free",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.uxui",
+        "it.product",
+        "it.motion",
+        "it.graphic",
+        "it.presentation",
+        "it.appdesign",
+        "it.uxresearch",
+        "it.artdir",
+        "it.3ddesigner",
+        "it.interior",
+        "it.webdesigner",
+        "it.aidesigner"
+      ],
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "ai fundamentals",
+        "course list"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-28",
+      "httpStatus": 200
+    },
+    {
+      "id": "classcentral-subject-ai",
+      "title": "Class Central — Artificial Intelligence subject",
+      "url": "https://www.classcentral.com/subject/ai",
+      "kind": "aggregator",
+      "professionIds": [
+        "it.uxui",
+        "it.product",
+        "it.motion",
+        "it.graphic",
+        "it.presentation",
+        "it.appdesign",
+        "it.uxresearch",
+        "it.artdir",
+        "it.3ddesigner",
+        "it.interior",
+        "it.webdesigner",
+        "it.aidesigner"
+      ],
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "access": "free",
+      "authority": "aggregator",
+      "status": "blocked",
+      "topics": [
+        "course catalog",
+        "artificial intelligence"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-28",
+      "httpStatus": 403,
+      "discoveryOnly": true,
+      "notes": "Недоступно для автоматического сбора; только ссылка для человека."
+    },
+    {
+      "id": "elements-of-ai",
+      "title": "Elements of AI — free online course",
+      "url": "https://www.elementsofai.com/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.uxui",
+        "it.product",
+        "it.motion",
+        "it.graphic",
+        "it.presentation",
+        "it.appdesign",
+        "it.uxresearch",
+        "it.artdir",
+        "it.3ddesigner",
+        "it.interior",
+        "it.webdesigner",
+        "it.aidesigner"
+      ],
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "access": "free",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai fundamentals",
+        "machine learning basics",
+        "ai ethics"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-28",
+      "httpStatus": 200
+    },
+    {
+      "id": "greatlearning-ai-free",
+      "title": "Great Learning — Free AI courses",
+      "url": "https://www.mygreatlearning.com/ai/free-courses",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.uxui",
+        "it.product",
+        "it.motion",
+        "it.graphic",
+        "it.presentation",
+        "it.appdesign",
+        "it.uxresearch",
+        "it.artdir",
+        "it.3ddesigner",
+        "it.interior",
+        "it.webdesigner",
+        "it.aidesigner"
+      ],
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "ai fundamentals",
+        "generative ai"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-28",
+      "httpStatus": 200
+    },
+    {
+      "id": "alison-ai-fundamentals",
+      "title": "Alison — Diploma in Fundamentals of AI",
+      "url": "https://alison.com/course/diploma-in-fundamentals-of-artificial-intelligence",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.uxui",
+        "it.product",
+        "it.motion",
+        "it.graphic",
+        "it.presentation",
+        "it.appdesign",
+        "it.uxresearch",
+        "it.artdir",
+        "it.3ddesigner",
+        "it.interior",
+        "it.webdesigner",
+        "it.aidesigner"
+      ],
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "ai fundamentals",
+        "machine learning"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-28",
+      "httpStatus": 200
+    },
+    {
+      "id": "coursera-ai-free",
+      "title": "Coursera — Free Artificial Intelligence courses",
+      "url": "https://www.coursera.org/courses?query=free&skills=Artificial%20Intelligence",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.uxui",
+        "it.product",
+        "it.motion",
+        "it.graphic",
+        "it.presentation",
+        "it.appdesign",
+        "it.uxresearch",
+        "it.artdir",
+        "it.3ddesigner",
+        "it.interior",
+        "it.webdesigner",
+        "it.aidesigner"
+      ],
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "access": "mixed",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "ai fundamentals",
+        "course catalog"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-28",
+      "httpStatus": 200
+    },
+    {
+      "id": "classcentral-elements-of-ai",
+      "title": "Class Central — Elements of AI course",
+      "url": "https://www.classcentral.com/course/independent-elements-of-ai-12469",
+      "kind": "aggregator",
+      "professionIds": [
+        "it.uxui",
+        "it.product",
+        "it.motion",
+        "it.graphic",
+        "it.presentation",
+        "it.appdesign",
+        "it.uxresearch",
+        "it.artdir",
+        "it.3ddesigner",
+        "it.interior",
+        "it.webdesigner",
+        "it.aidesigner"
+      ],
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "access": "free",
+      "authority": "aggregator",
+      "status": "blocked",
+      "topics": [
+        "course catalog",
+        "ai fundamentals"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-28",
+      "httpStatus": 403,
+      "discoveryOnly": true,
+      "notes": "Недоступно для автоматического сбора; только ссылка для человека."
+    },
+    {
+      "id": "learntube-ai-graphic-design",
+      "title": "LearnTube — AI for Graphic Design",
+      "url": "https://learntube.ai/learn/course/ai-for-graphic-design",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "ai for graphic design",
+        "image generation"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-28",
+      "httpStatus": 200
+    },
+    {
+      "id": "oxfordhomestudy-ai-graphics-designer",
+      "title": "Oxford Home Study — AI Graphics Designer",
+      "url": "https://www.oxfordhomestudy.com/courses/ai-courses-online/ai-graphics-designer",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "ai graphics",
+        "design with ai"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-28",
+      "httpStatus": 200
+    },
+    {
+      "id": "simplilearn-genai-design",
+      "title": "Simplilearn — Free Generative AI Design course",
+      "url": "https://www.simplilearn.com/free-generative-ai-design-course-skillup",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "generative ai design",
+        "ai tools"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-28",
+      "httpStatus": 200
+    },
+    {
+      "id": "simplilearn-ai-graphic-design",
+      "title": "Simplilearn — AI in Graphic Design article",
+      "url": "https://www.simplilearn.com/ai-in-graphic-design-article",
+      "kind": "blog",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "ai in graphic design",
+        "ai tools"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-28",
+      "httpStatus": 200
+    },
+    {
+      "id": "coursera-will-ai-replace-designers",
+      "title": "Coursera — Will AI replace graphic designers",
+      "url": "https://www.coursera.org/articles/will-ai-replace-graphic-designers",
+      "kind": "blog",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "ai and design careers",
+        "design process"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-28",
+      "httpStatus": 200
+    },
+    {
+      "id": "ideou-ai-design-resources",
+      "title": "IDEO U — Best AI x design thinking resources",
+      "url": "https://www.ideou.com/blogs/inspiration/best-ai-x-design-thinking-resources-books-articles-courses-more",
+      "kind": "blog",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "ai and design thinking",
+        "resources"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-28",
+      "httpStatus": 200
+    },
+    {
+      "id": "figma-blog-design-systems-ai",
+      "title": "Figma Blog — 5 shifts redefining design systems in the AI era",
+      "url": "https://www.figma.com/blog/5-shifts-redefining-design-systems-in-the-ai-era/",
+      "kind": "blog",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "access": "free",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "design systems",
+        "ai in design"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-28",
+      "httpStatus": 200
+    },
+    {
+      "id": "state-of-ai-design",
+      "title": "State of AI Design — research report",
+      "url": "https://stateofaidesign.com/",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "ai design adoption",
+        "industry report"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-28",
+      "httpStatus": 200
+    },
+    {
+      "id": "cambridge-ai-design-process",
+      "title": "Cambridge — AI in the design process (review)",
+      "url": "https://www.cambridge.org/core/journals/proceedings-of-the-design-society/article/artificial-intelligence-ai-in-the-design-process-a-review-and-analysis-on-generative-ai-perspectives/36E8736EEB55F0B38C2C9AB47EF381FE",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "access": "mixed",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "generative ai research",
+        "design process",
+        "ai review"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-28",
+      "httpStatus": 200
+    },
+    {
+      "id": "tgu-dpo-ai-tools-design",
+      "title": "ТГУ ДПО — топ-11 ИИ-инструментов для дизайна",
+      "url": "https://www.tgu-dpo.ru/news/2026/06/07/top-11-ii-instrumentov-dlya-dizayna/",
+      "kind": "blog",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "ai tools",
+        "tool review"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-28",
+      "httpStatus": 200
+    },
+    {
+      "id": "extyl-top-ai-tools-design",
+      "title": "Extyl — топ-10 нейросетей для дизайнера 2026",
+      "url": "https://ai.extyl-pro.ru/media/top-10-nejrosetej-dlya-dizajnera-2026",
+      "kind": "blog",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "ai tools",
+        "tool review"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-28",
+      "httpStatus": 200
+    },
+    {
+      "id": "habr-ai-design-1065754",
+      "title": "Хабр — статья про ИИ в дизайне",
+      "url": "https://habr.com/ru/articles/1065754/",
+      "kind": "blog",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "ai in design",
+        "practice"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-28",
+      "httpStatus": 200
+    },
+    {
+      "id": "sostav-ai-design-112390",
+      "title": "Sostav — блог про ИИ в дизайне",
+      "url": "https://www.sostav.ru/blogs/293503/112390",
+      "kind": "blog",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "ai in design",
+        "industry"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-28",
+      "httpStatus": 200
+    },
+    {
+      "id": "habr-ai-design-1096288",
+      "title": "Хабр — статья про ИИ-инструменты в дизайне",
+      "url": "https://habr.com/ru/articles/1096288/",
+      "kind": "blog",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "ai tools",
+        "practice"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-28",
+      "httpStatus": 200
+    },
+    {
+      "id": "reddit-ux-ai-workflows-2026",
+      "title": "Reddit r/UXDesign — actual AI design workflows 2026",
+      "url": "https://www.reddit.com/r/UXDesign/comments/1tf2yea/actual_ai_design_workflows_in_2026/",
+      "kind": "aggregator",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "access": "free",
+      "authority": "aggregator",
+      "status": "blocked",
+      "topics": [
+        "community discussion",
+        "ai workflows"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-28",
+      "httpStatus": 403,
+      "discoveryOnly": true,
+      "notes": "Недоступно для автоматического сбора; только ссылка для человека."
+    },
+    {
+      "id": "almcorp-ai-design",
+      "title": "ALM Corp — AI design reference",
+      "url": "https://almcorp.com/ru/",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "ai design",
+        "agency practice"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-28",
+      "httpStatus": 200
+    },
+    {
+      "id": "anima-ai-design-ru",
+      "title": "Anima — AI design (RU)",
+      "url": "https://animaapp.com/blog/ru/ai-design-ru/ai-design-ru/",
+      "kind": "blog",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "design to code"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-28",
+      "httpStatus": 200
+    },
+    {
+      "id": "kimvoronin-ai-design-guide",
+      "title": "Ким Воронин — гид по выбору и внедрению нейросетей 2026",
+      "url": "https://kimvoronin.com/neyroseti-dlya-dizayna-v-2026-gayd-po-vyboru-i-vnedreniyu-ii-kim-voronin",
+      "kind": "blog",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "ai tool selection",
+        "ai adoption"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-28",
+      "httpStatus": 200
+    },
+    {
+      "id": "wanttopay-ai-ux-ui-tools",
+      "title": "WantToPay — ИИ-инструменты для UX/UI-дизайнера 2026",
+      "url": "https://wanttopay.net/blog/ii-instrumenty-dlya-ux-ui-dizaynera-v-2026-godu-podborka-neyrosetej",
+      "kind": "blog",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "blocked",
+      "topics": [
+        "ai tools",
+        "ux/ui"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-10-28",
+      "httpStatus": 404,
+      "discoveryOnly": true,
+      "notes": "Недоступно для автоматического сбора; только ссылка для человека."
     }
   ]
 }

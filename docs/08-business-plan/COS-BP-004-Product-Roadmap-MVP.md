@@ -2,9 +2,10 @@
 id: COS-BP-004
 title: Дорожная карта продукта — от открытого MVP к Competency Operating System
 version: 0.5.0
-status: Draft
+status: Historical
 owner: Product Team
 last_updated: 2026-10-15
+superseded_by: COS-BP-005
 references:
   - docs/business/ROADMAP.md
   - COS-BP-003-Business-Plan.md
@@ -21,6 +22,8 @@ references:
 ---
 
 # Дорожная карта продукта — от открытого MVP к Competency Operating System
+
+> **Исторический документ.** Актуальная стратегическая последовательность — `COS-BP-005` «AXIONA / COS — дорожная карта развития системы». Этот документ сохраняется как история решений и не является текущим планом.
 
 **Название.** AXIONA — продукт и бренд. Competency Operating System (COS) — архитектурное название платформы и конвенция идентификаторов внутренних документов (`COS-*`).
 

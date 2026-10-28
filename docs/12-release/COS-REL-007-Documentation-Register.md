@@ -55,7 +55,8 @@ references:
 | `docs/07-website/COS-WEB-001 Landing page.md` | Контент лендинга | Синхронизировать | COM-001 | Website Book | Убрать pre-development и неподтверждённые показатели; добавить CTA в Beta | До Beta |
 | `docs/07-website/COS-WEB-002 For Investors.md` | Инвесторский контент | Синхронизировать | BP-003, Beta data | Pitch Deck | Не обещать диагностику как текущую функцию; обновить после Beta | После Beta |
 | `docs/08-business-plan/COS-BP-003-Business-Plan.md` | Бизнес-план | Синхронизировать | RES-005/008 | BP-004, Investors | Beta-addendum; диагностическая воронка — следующий слой, не текущий прогноз | После Beta |
-| `docs/08-business-plan/COS-BP-004-Product-Roadmap-MVP.md` | Roadmap MVP | Уточнить | BP-003 | Experience, ADE | Добавить пометку: текущая Beta — базовый слой, диагностика — следующий; не отменять roadmap | До Beta |
+| `docs/08-business-plan/COS-BP-004-Product-Roadmap-MVP.md` | Предыдущая roadmap MVP | Historical | BP-003 | Experience, ADE | Сохранять как историю; актуальная последовательность — `COS-BP-005` | Стратегический |
+| `docs/08-business-plan/COS-BP-005-Product-Roadmap-AXIONA-COS.md` | Стратегическая дорожная карта AXIONA/COS | Актуален (рабочая версия) | Foundation, ADE, Business | BP-003, REL-000 | Поддерживать этапы и критерии перехода; не превращать в календарный план | Стратегический |
 | `docs/09-research/COS-RES-005-User-Assessment-Scenario.md` | Сценарий диагностики | Будущий этап | RES-008 | EAR-009, Legal | Оставить как следующий слой; не использовать в коммуникации текущего MVP | До Beta |
 | `docs/09-research/COS-RES-008-Design-Competency-Graph-and-MVP-Blueprint.md` | Блюпринт диагностики | Будущий этап | RES-005 | BP-004, Legal | Сохранить как следующий слой; не выдавать за текущий MVP | До Beta |
 | `docs/10-legal/COS-LEG-001-Terms-of-Service.md` | Условия | Актуален для Beta 1 (draft) | Beta scope | Privacy, Consent | Заполнить реквизиты ИП и проверить юристом | До Beta |

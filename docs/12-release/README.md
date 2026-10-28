@@ -12,6 +12,8 @@
 | [COS-REL-007](COS-REL-007-Documentation-Register.md) | Реестр документации |
 | [COS-REL-008](COS-REL-008-Decision-Log.md) | Decision log |
 
+Стратегическая рамка: [`COS-BP-005`](../08-business-plan/COS-BP-005-Product-Roadmap-AXIONA-COS.md).
+
 Отчёты:
 - [`reports/beta-1-gap-report.md`](reports/beta-1-gap-report.md) — текущий release gate.
 - [`reports/beta-1-content-gate-closure.md`](reports/beta-1-content-gate-closure.md) — результат content gate.

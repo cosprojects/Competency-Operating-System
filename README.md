@@ -10,6 +10,7 @@ AI-native platform for competency maps, learning sources and professional develo
 - AI-слой и AI-дизайнер исключены из публикации (`deferred-post-beta`).
 - Content gate: 110/110 связей, 54/54 компетенции, 0 пробелов; source review AI-assisted, нужен spot-check основателя.
 - Приложение: `apps/web` (Next.js), контент — производный JSON из `model/`, локальные пользовательские данные — SQLite, публичный контур — PostgreSQL.
+- Стратегическая дорожная карта: [`COS-BP-005`](docs/08-business-plan/COS-BP-005-Product-Roadmap-AXIONA-COS.md).
 - Программа, quality bar, архитектура и runbook: [`docs/12-release/`](docs/12-release/).
 - Решения, меняющие рамку: [`COS-REL-008`](docs/12-release/COS-REL-008-Decision-Log.md).
 

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CompetencyCard } from "@/components/CompetencyCard";
+import { canvasForProfession, canvasHref } from "@/lib/canvas";
 import { getProfession, getProfessions } from "@/lib/content";
 
 export function generateStaticParams() {
@@ -15,6 +16,7 @@ export default async function ProfessionPage({
   const { slug } = await params;
   const profession = getProfession(slug);
   if (!profession) notFound();
+  const canvas = canvasForProfession(profession.slug);
 
   return (
     <>
@@ -44,6 +46,13 @@ export default async function ProfessionPage({
             <span>{profession.coverage.percent}%</span>
           </div>
         </div>
+        {canvas ? (
+          <div className="actions" style={{ marginTop: 16 }}>
+            <a className="button secondary" href={canvasHref(canvas.file)} target="_blank" rel="noreferrer">
+              Открыть схему компетенций ↗
+            </a>
+          </div>
+        ) : null}
       </div>
 
       {profession.sections.length === 0 ? (

@@ -19,6 +19,9 @@ export default function HomePage() {
             <Link className="button" href="/professions">
               Выбрать профессию
             </Link>
+            <Link className="button secondary" href="/canvas">
+              Схемы компетенций
+            </Link>
             <Link className="button secondary" href="/feedback">
               Оставить обратную связь
             </Link>

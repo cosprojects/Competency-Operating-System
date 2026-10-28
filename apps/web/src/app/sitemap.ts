@@ -26,6 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: base, lastModified: now, changeFrequency: "weekly", priority: 1 },
     { url: `${base}/professions`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${base}/canvas`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
     ...professions,
     ...competencies,
     { url: `${base}/legal/privacy`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },

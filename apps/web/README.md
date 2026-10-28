@@ -9,7 +9,7 @@ Next.js-приложение для карты компетенций. Конт�
 npm run db:local             # SQLite data/local.db + локальный Prisma client
 cp apps/web/.env.example apps/web/.env.local   # APP_URL, ADMIN_EMAILS, LEGAL_VERSION
 npm run release:build:draft  # черновой контент для preview
-npm run web:dev              # http://localhost:3000
+npm run web:dev              # http://localhost:3000; копирует web/*.html в public/canvas
 ```
 
 `db:local` — для разработки без PostgreSQL. Перед production build выполните `npm run db:generate` (PostgreSQL).
@@ -48,6 +48,10 @@ npm run release:build -- --release beta-1
 npm run web:build
 npm --workspace apps/web run start
 ```
+
+## Схемы компетенций
+
+`/canvas` — индекс Beta-схем и исследовательских карт. Сами страницы генерируются в `web/*.html`, затем `npm run web:canvases` копирует их в `apps/web/public/canvas/`; ссылки открываются в новой вкладке. `web:build` и `web:dev` вызывают копирование автоматически.
 
 ## Данные
 

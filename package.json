@@ -63,9 +63,9 @@
     "release:validate:draft": "node --experimental-strip-types scripts/release/validate.ts -- --release beta-1 --allow-draft",
     "release:build": "node --experimental-strip-types scripts/release/build.ts -- --release beta-1",
     "release:build:draft": "node --experimental-strip-types scripts/release/build.ts -- --release beta-1 --allow-draft",
-    "web:dev": "npm --workspace apps/web run dev",
-    "web:build": "npm run release:build:draft && npm --workspace apps/web run build",
-    "web:build:release": "npm run release:validate && npm run release:build && npm --workspace apps/web run build",
+    "web:dev": "npm run web:canvases && npm --workspace apps/web run dev",
+    "web:build": "npm run release:build:draft && npm run web:canvases && npm --workspace apps/web run build",
+    "web:build:release": "npm run release:validate && npm run release:build && npm run web:canvases && npm --workspace apps/web run build",
     "web:start": "npm --workspace apps/web run start",
     "web:typecheck": "npm run release:build:draft && npm --workspace apps/web run typecheck",
     "db:deploy": "prisma migrate deploy",
@@ -74,7 +74,8 @@
     "db:local:prepare": "node --experimental-strip-types scripts/dev/local-schema.ts",
     "db:local:push": "prisma db push --schema prisma/schema.local.prisma --skip-generate",
     "db:local:generate": "prisma generate --schema prisma/schema.local.prisma",
-    "db:local": "npm run db:local:prepare && npm run db:local:push && npm run db:local:generate"
+    "db:local": "npm run db:local:prepare && npm run db:local:push && npm run db:local:generate",
+    "web:canvases": "node --experimental-strip-types scripts/web/copy-canvases.ts"
   },
   "dependencies": {
     "@prisma/client": "^6.4.0",

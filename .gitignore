@@ -29,3 +29,4 @@ apps/web/src/content/generated/
 prisma/schema.local.prisma
 data/*.db
 data/*.db-journal
+apps/web/public/canvas/

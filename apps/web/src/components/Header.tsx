@@ -15,6 +15,7 @@ export async function Header() {
         </Link>
         <nav className="nav-links" aria-label="Основная навигация">
           <Link href="/professions">Профессии</Link>
+          <Link href="/canvas">Схемы</Link>
           <Link className="hide-mobile" href="/saved">
             Сохранённое
           </Link>

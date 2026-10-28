@@ -22,6 +22,26 @@ npm run web:dev              # http://localhost:3000
 - Продакшн: РФ-хостинг, PostgreSQL, `npm run db:deploy`, затем `npm run web:build`.
 - Docker: `Dockerfile` + `docker-compose.yml`, `Caddyfile`.
 
+### Настройки Vercel-проекта (важно)
+
+Репозиторий — npm-workspace монорепо: `next` объявлен только в `apps/web/package.json`,
+поэтому Vercel обязан смотреть именно в `apps/web`, а не в корень (иначе падает
+`Error: [NEXT_NO_VERSION] No Next.js version detected`).
+
+- **Root Directory**: `apps/web` (Settings → Build and Deployment). Не пустой и не `web` —
+  `web/` в корне это статические HTML-артефакты, не приложение.
+- **Framework Preset**: Next.js. **Node.js Version**: 24.x (нужен для `node --experimental-strip-types`).
+- **Include source files outside of the Root Directory in the Build Step**: включено
+  (по умолчанию включено у новых проектов). Install/build команды из `vercel.json`
+  обращаются к корню репозитория (`..`), без этой опции их не выполнить.
+- Install: `npm install --include-workspace-root` (ставит зависимости воркспейса и корня),
+  Build: `cd ../.. && npm run db:generate && npm run web:build` — берутся из `vercel.json`.
+- После изменения Root Directory нужен новый деплой (Redeploy); старые сборки настройку не подхватят.
+- Переменные окружения для demo: `APP_URL` (валидный абсолютный URL), `SESSION_SECRET`,
+  `LEGAL_VERSION`, `ADMIN_EMAILS`, `ANALYTICS_HASH_SALT`. Публичные страницы работают без БД;
+  вход, сохранения, отзывы и админка требуют `DATABASE_URL` (PostgreSQL + `npm run db:deploy`)
+  и, для magic link, `EMAIL_API_URL`/`EMAIL_API_TOKEN`/`EMAIL_FROM`.
+
 ```bash
 npm run release:validate -- --release beta-1
 npm run release:build -- --release beta-1

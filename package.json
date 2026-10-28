@@ -70,6 +70,7 @@
     "web:typecheck": "npm run release:build:draft && npm --workspace apps/web run typecheck",
     "db:deploy": "prisma migrate deploy",
     "metrics:report": "node --experimental-strip-types scripts/metrics/report.ts",
+    "finance:model": "node --experimental-strip-types scripts/business-model/financial-model.ts",
     "release:checklist": "node --experimental-strip-types scripts/release/checklist.ts",
     "db:local:prepare": "node --experimental-strip-types scripts/dev/local-schema.ts",
     "db:local:push": "prisma db push --schema prisma/schema.local.prisma --skip-generate",

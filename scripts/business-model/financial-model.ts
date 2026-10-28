@@ -481,7 +481,7 @@ const renderMarkdown = (): string => {
     `| Сожжено до включения платежа, ₽ | ${rub(results[0]!.burnBeforePaid)} | ${rub(results[1]!.burnBeforePaid)} | ${rub(results[2]!.burnBeforePaid)} |`,
   );
   lines.push(
-    `| Кассовая безубыточность (месяц) | ${results[0]!.breakevenMonth ?? "—"} | ${results[1]!.breakevenMonth ?? "—"} | ${results[2]!.breakevenMonth ?? "—"} |`,
+    `| Операционная безубыточность (месяц) | ${results[0]!.breakevenMonth ?? "—"} | ${results[1]!.breakevenMonth ?? "—"} | ${results[2]!.breakevenMonth ?? "—"} |`,
   );
   lines.push(
     `| LTV (ARPU конца горизонта / отток), ₽ | ${rub(results[0]!.ltv)} | ${rub(results[1]!.ltv)} | ${rub(results[2]!.ltv)} |`,

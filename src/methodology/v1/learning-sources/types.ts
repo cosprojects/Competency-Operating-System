@@ -23,6 +23,8 @@ export interface LearningSourceRecord {
   topics: string[];
   discoveredBy: "user" | "search" | "manual";
   lastChecked: string;
+  /** Короткое описание для карточки материала; обязательно для публикуемых источников Beta. */
+  summary?: string;
   httpStatus?: number;
   finalUrl?: string;
   duplicateOf?: string;

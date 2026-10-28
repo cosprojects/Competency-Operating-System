@@ -1,0 +1,49 @@
+{
+  "releaseVersion": "1.0.0",
+  "releaseId": "beta-1",
+  "title": "AXIONA Beta 1 — карта профессий дизайнера",
+  "status": "draft",
+  "domain": "it",
+  "professionIds": [
+    "it.uxui",
+    "it.product",
+    "it.motion",
+    "it.graphic"
+  ],
+  "excludedProfessionIds": [
+    "it.presentation",
+    "it.appdesign",
+    "it.uxresearch",
+    "it.artdir",
+    "it.3ddesigner",
+    "it.interior",
+    "it.webdesigner",
+    "it.aidesigner"
+  ],
+  "excludedCompetencyPrefixes": [
+    "ai-",
+    "aidesigner-"
+  ],
+  "excludedCompetencies": [],
+  "qualityBar": {
+    "minKnowledge": 2,
+    "minSkills": 1,
+    "requireSourceSummary": true,
+    "maxSourceAgeDays": 30,
+    "requireHumanReview": true,
+    "minActiveSources": 1,
+    "requirePrimarySource": false
+  },
+  "sourceReviewFile": "release/beta-1-source-review.json",
+  "publication": {
+    "allowPartialProfessions": true,
+    "showCoverage": true,
+    "language": "ru"
+  },
+  "notes": [
+    "Публикуются только компетенции, прошедшие quality bar; непрошедшие не показываются как пустые карточки.",
+    "AI-слой и AI-дизайнер исключены до post-Beta; причины — COS-REL-008 ADR-002.",
+    "Диагностика, кейсы, паспорт и платежи в Beta не входят — COS-REL-008 ADR-001.",
+    "Источник истины контента — model/, catalog/ и learning-sources/; манифест задаёт только публичный набор."
+  ]
+}

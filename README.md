@@ -1,10 +1,37 @@
 # Competency Operating System (COS)
 
-AI-native platform for competency assessment, learning pathways and workforce development.
+AI-native platform for competency maps, learning sources and professional development. MVP — базовый слой сборки компетенций; диагностика — следующий слой.
 
-## Status
+## Beta 1 — карта компетенций дизайнера
 
-🚧 Research & Architecture
+Текущий этап — подготовка Beta карты профессий: база, на которой дальше может строиться диагностика. Публичная Beta запускается после готовности MVP, РФ-хостинга и юридического контура; сейчас — локальная разработка и Vercel demo. Диагностика, оценка уровня, кейсы и паспорт компетенций не отменены; они требуют нормально собранных компетенций, знаний/навыков и материалов и идут следующим слоем.
+
+- Продукт: 4 профессии (UX/UI, Product, Motion, Graphic), 110 связей «профессия–компетенция», 54 уникальные компетенции.
+- AI-слой и AI-дизайнер исключены из публикации (`deferred-post-beta`).
+- Приложение: `apps/web` (Next.js), контент — производный JSON из `model/`, локальные пользовательские данные — SQLite, публичный контур — PostgreSQL.
+- Программа, quality bar, архитектура и runbook: [`docs/12-release/`](docs/12-release/).
+- Решения, меняющие рамку: [`COS-REL-008`](docs/12-release/COS-REL-008-Decision-Log.md).
+
+```bash
+# контентный gate: отчёт о пробелах
+npm run release:report -- --release beta-1
+
+# строгая проверка и сборка публичного контента
+npm run release:validate -- --release beta-1
+npm run release:build -- --release beta-1
+
+# локальный preview (черновой, не для публикации)
+npm run db:local            # SQLite data/local.db + локальный Prisma client
+cp apps/web/.env.example apps/web/.env.local
+npm run release:build:draft
+npm run web:dev
+```
+
+Пока MVP не готов, хостинг не покупается: разработка идёт локально, для показа используется Vercel demo (`apps/web/vercel.json`). Корпоративный сайт остаётся на `axiona.world`; переезд на `axiona.biz` и РФ-хостинг — после решения о публичном запуске. Vercel demo не открывает реальные регистрации: это не продакшн-контур персональных данных.
+
+## Статус
+
+🚧 Beta 1 — контентный gate и продуктовый слой в работе.
 
 
 ## Визуализация компетенций

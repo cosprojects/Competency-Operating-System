@@ -1,0 +1,16 @@
+node_modules
+.git
+.gitignore
+.next
+apps/web/.next
+apps/web/src/content/generated
+data
+docs
+tests
+web
+assets
+.env
+.env.*
+!.env.example
+npm-debug.log*
+.DS_Store

@@ -1,0 +1,14 @@
+{
+  "reviewVersion": "1.0.0",
+  "releaseId": "beta-1",
+  "updatedAt": "2026-10-28",
+  "reviewedBy": null,
+  "decisions": [],
+  "notes": [
+    "Одна запись = решение по паре «компетенция — источник»; professionId не указывать или «*» для всех профессий.",
+    "decision: accepted | replaced | excluded.",
+    "Для replaced обязателен replacementSourceId; для excluded — reason.",
+    "reviewedBy и reviewedAt заполняются человеком, принявшим решение.",
+    "Пустой файл означает, что source gate ещё не пройден; release:validate считает это ошибкой."
+  ]
+}

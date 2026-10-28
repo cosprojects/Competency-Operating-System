@@ -20,3 +20,12 @@ data/competency/
 
 data/materials-agent/
 data/learning-sources/
+
+# Beta web app
+apps/web/.next/
+apps/web/src/content/generated/
+.env.*
+!.env.example
+prisma/schema.local.prisma
+data/*.db
+data/*.db-journal

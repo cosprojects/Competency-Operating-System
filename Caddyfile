@@ -1,0 +1,8 @@
+axiona.world {
+  encode zstd gzip
+  reverse_proxy app:3000
+}
+
+www.axiona.world {
+  redir https://axiona.world{uri} permanent
+}

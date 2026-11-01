@@ -1,0 +1,133 @@
+{
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "screens": [
+    {
+      "slug": "01-home",
+      "name": "Главная",
+      "route": "/"
+    },
+    {
+      "slug": "02-professions",
+      "name": "Профессии",
+      "route": "/professions"
+    },
+    {
+      "slug": "03-profession-uxui",
+      "name": "Профессия · UX/UI",
+      "route": "/professions/uxui"
+    },
+    {
+      "slug": "04-competency-figma",
+      "name": "Компетенция · Figma",
+      "route": "/competencies/ui-figma"
+    },
+    {
+      "slug": "05-canvas",
+      "name": "Схемы",
+      "route": "/canvas"
+    },
+    {
+      "slug": "06-login",
+      "name": "Вход",
+      "route": "/login"
+    },
+    {
+      "slug": "07-feedback",
+      "name": "Обратная связь",
+      "route": "/feedback"
+    },
+    {
+      "slug": "08-legal-privacy",
+      "name": "Политика конфиденциальности",
+      "route": "/legal/privacy"
+    },
+    {
+      "slug": "09-saved",
+      "name": "Сохранённое",
+      "route": "/saved",
+      "auth": true,
+      "viewports": [
+        "desktop"
+      ]
+    },
+    {
+      "slug": "10-account",
+      "name": "Аккаунт",
+      "route": "/account",
+      "auth": true,
+      "viewports": [
+        "desktop"
+      ]
+    },
+    {
+      "slug": "11-admin-metrics",
+      "name": "Админка · метрики",
+      "route": "/admin/metrics",
+      "auth": true,
+      "viewports": [
+        "desktop"
+      ]
+    },
+    {
+      "slug": "12-admin-feedback",
+      "name": "Админка · обратная связь",
+      "route": "/admin/feedback",
+      "auth": true,
+      "viewports": [
+        "desktop"
+      ]
+    },
+    {
+      "slug": "05b-canvas-uxui",
+      "name": "Схема · UX/UI (канвас)",
+      "route": "/canvas/uxui-competency-canvas.html",
+      "capture": "raster",
+      "shell": "standalone",
+      "viewports": [
+        "wide"
+      ],
+      "preCapture": [
+        "for (let i = 0; i < 5; i += 1) document.querySelector('#zoom-in')?.click();",
+        "document.querySelector('#zoom-in') ? 'ok' : 'no-zoom-controls'"
+      ]
+    }
+  ],
+  "components": {
+    "header": ".site-header",
+    "footer": ".footer",
+    "profession-card": ".profession-card",
+    "competency-card": ".competency-card",
+    "source-card": ".source-card",
+    "auth-card": ".auth-card",
+    "notice": ".notice",
+    "consent-banner": ".consent-banner",
+    "button": ".button",
+    "badge": ".badge",
+    "pill": ".pill",
+    "card": ".card"
+  },
+  "viewports": [
+    {
+      "id": "desktop",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "id": "mobile",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "wide",
+      "width": 1600,
+      "height": 1000
+    }
+  ],
+  "defaultViewports": [
+    "desktop",
+    "mobile"
+  ]
+}

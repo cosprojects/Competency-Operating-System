@@ -1,7 +1,7 @@
 ---
 id: COS-REL-007
 title: Реестр документации перед Beta 1
-version: 1.0.0
+version: 1.1.0
 status: Draft
 owner: Product Team
 last_updated: 2026-10-28
@@ -12,8 +12,12 @@ references:
   - COS-ARCH-000
   - COS-EAR-002
   - COS-EAR-009
+  - COS-EAR-012
+  - COS-BP-005
+  - COS-BP-007
   - COS-BP-003
   - COS-BP-004
+  - COS-BP-009
   - COS-COM-001
   - COS-LEG-001
   - COS-LEG-002
@@ -42,13 +46,15 @@ references:
 | Документ | Роль | Состояние | Зависимости | Затронутые документы | Следующее действие | Приоритет |
 |---|---|---|---|---|---|---|
 | `docs/00-foundation/COS_Foundation_Book_v0.3.md` | Фундаментальное видение COS | Актуален + статус-раздел | North Star, Product Vision | Experience, Business | Добавить короткий раздел «Что реализовано в Beta 1» со ссылкой на `COS-REL-000`; не переписывать видение | До Beta |
-| `docs/04-experience-architecture/COS-EAR-002-Mental-Model.md` | Целевая ментальная модель | Уточнить | Foundation | Navigation, Journeys | Добавить границу: текущая Beta — карта, а не навигатор с диагностикой | До Beta |
-| `docs/04-experience-architecture/COS-EAR-009-User-Scenarios-Design-MVP.md` | Сценарий диагностики — следующий слой | Будущий этап | COS-RES-005/008 | Legal, Communication | Не менять как target; явно отделить от текущего Beta flow | До Beta |
+| `docs/04-experience-architecture/COS-EAR-002-Mental-Model.md` | Целевая ментальная модель | Уточнить | Foundation | Navigation, Journeys | **Сделано 2026-10-28:** добавлен раздел 1.1 — текущая Beta это карта, а не навигатор с диагностикой | До Beta |
+| `docs/04-experience-architecture/COS-EAR-001…011` (кроме `COS-EAR-009`) | Целевая архитектура опыта | Будущий этап | `COS-EAR-012` | Design, Engineering | **Сделано 2026-10-28:** в каждом документе есть раздел «Состояние и место в дорожной карте» с границей Beta 1, этапами `COS-BP-005` и планом года 1 `COS-BP-009`; не переписывать до этапов VII–IX | После Beta |
+| `docs/04-experience-architecture/COS-EAR-009-User-Scenarios-Design-MVP.md` | Сценарий диагностики — следующий слой | Будущий этап | `COS-RES-005`, `COS-RES-008` | Legal, Communication | Не менять как target; **сделано 2026-10-28:** раздел 1.1 отделяет поток S0–S4 от Beta 1 и ссылается на `COS-EAR-012` | До Beta |
+| `docs/04-experience-architecture/COS-EAR-012-Implemented-User-Flows-Beta-1.md` | Реализованные сценарии Beta 1 | Актуален | `COS-REL-000`, `COS-REL-001`, `COS-REL-003`, `COS-REL-004`, `COS-EAR-009` | Design, Engineering | Обновлять при каждом изменении продукта; §13 связывает сценарии с этапами `COS-BP-005`, шагами `COS-BP-007` §7.1 и месяцами `COS-BP-009` | До Beta |
 | `docs/02-architecture/COS-ARCH-000-Enterprise-Architecture-Overview.md` | Архитектурный обзор | Уточнить | Foundation, DDD | ADE, Experience | Добавить current-state note: Beta использует JSON-модель + тонкое приложение | До Beta |
 | `docs/02-architecture/COS-ARCH-001-Development Workflow.md` | Процесс развития | Уточнить | Foundation | Engineering Standard | Разделить архитектурную стадию и Beta release track; последовательность не менять | После Beta |
 | `docs/01-ddd/COS-DDD-SUMMARY-Domain-Driven-Design-Summary.md` | Сводка домена | Уточнить | DDD-001…010 | Model, Architecture | Добавить таблицу текущих объектов Beta (Profession, Competency, LearningSource, Favorite, StudyStatus, Feedback); не вводить новые bounded contexts | После Beta |
 | `docs/03-adaptive-development-engine/*` | Целевой ADE | Будущий этап | Foundation | Experience, Business | Не менять; явно не обещать в Beta | Стратегический |
-| `docs/04-experience-architecture/COS-Experience_Architecture_Book.md` | Целевой опыт | Будущий этап | EAR-001…011 | Communication | Добавить ссылку на Beta flow; не переписывать | После Beta |
+| `docs/04-experience-architecture/COS-EAR-000-Experience-Architecture-Summary.md` | Целевой опыт (сводная книга) | Будущий этап | `COS-EAR-001`…`COS-EAR-012` | Communication | **Сделано 2026-10-28:** присвоен `COS-EAR-000`, добавлены граница Beta 1, место в дорожной карте и ссылка на `COS-EAR-012`; содержание книги не переписывалось | После Beta |
 | `docs/05-business-architecture/COS-BUS-Business Book.md` | Бизнес-модель | Уточнить | Business Foundation | BP-003 | Добавить Beta-addendum: гипотезы map-продукта, диагностика post-Beta | После Beta |
 | `docs/06-communication/COS-COM-001-Product Communication.md` | Публичные сообщения | Синхронизировать | Foundation, Beta scope | Website docs | Привести описание к map-продукту; убрать diagnostics-first обещания | До Beta |
 | `docs/07-website/COS-WEB-000-Website Book.md` | Архитектура сайта | Уточнить | COM-001 | Landing, Investors | Добавить продукт `axiona.world` и корпоративный `axiona.biz`; обновить roles | До Beta |
@@ -88,3 +94,10 @@ references:
 6. Foundation/DDD/Business/Investment — после Beta, по данным.
 
 Не переписывать книги целиком; каждая правка — отдельный артефакт с записью в истории документа.
+
+## 5. История изменений
+
+| Версия | Дата | Что изменилось |
+|---|---|---|
+| 1.0.0 | 2026-10-28 | Первая редакция: состояния документов, приоритеты, порядок правок |
+| 1.1.0 | 2026-10-28 | Синхронизация с актуализацией `04-experience-architecture`: добавлены `COS-EAR-012` и группа `COS-EAR-001…011`; обновлены строки `COS-EAR-002`, `COS-EAR-009` и книги (`COS-EAR-000`); добавлены ссылки на `COS-BP-005` и `COS-BP-007` |

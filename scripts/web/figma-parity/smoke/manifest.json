@@ -1,0 +1,8 @@
+{
+  "name": "AXIONA — diagnostics (smoke)",
+  "id": "axiona-parity-smoke",
+  "api": "1.0.0",
+  "main": "code.js",
+  "editorType": ["figma"],
+  "documentAccess": "dynamic-page"
+}

@@ -32,3 +32,13 @@ data/*.db-journal
 apps/web/public/canvas/
 
 *.tsbuildinfo
+
+# Figma parity pipeline (генерируется, см. scripts/web/figma-parity/README.md)
+scripts/web/figma-parity/scenes/
+scripts/web/figma-parity/preview/
+scripts/web/figma-parity/plugin/code.js
+scripts/web/figma-parity/AXIONA\ _\ Web\ parity\ builder/code.js
+scripts/web/figma-parity/AXIONA\ _\ Web\ parity\ builder/code.ts
+
+# Локальные symlink-навыки DSH (внешние пути)
+.dsh/skills/

@@ -1,3 +1,13 @@
+/* Geist — дизайн-системный шрифт (variable, 100–900). Лежит в public/fonts,
+   чтобы рендер не зависел от того, установлен ли шрифт в системе. */
+@font-face {
+  font-family: "Geist";
+  src: url("/fonts/Geist-VariableFont_wght.ttf") format("truetype-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --ink: #132238;
   --muted: #5f6f85;
@@ -13,7 +23,7 @@
   --danger: #b91c1c;
   --radius: 18px;
   --shadow: 0 18px 44px rgba(19, 34, 56, 0.08);
-  --font: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font: "Geist", "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
 }
 
 * {

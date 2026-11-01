@@ -1,9 +1,51 @@
-# COS-EAR-Summary — Experience Architecture Summary
+---
+id: COS-EAR-000
+title: Experience Architecture Summary
+version: 1.1.0
+status: Draft
+owner: Competency Operating System Team
+last_updated: 2026-10-28
+references:
+  - COS-EAR-001
+  - COS-EAR-002
+  - COS-EAR-003
+  - COS-EAR-004
+  - COS-EAR-005
+  - COS-EAR-006
+  - COS-EAR-007
+  - COS-EAR-008
+  - COS-EAR-009
+  - COS-EAR-010
+  - COS-EAR-011
+  - COS-EAR-012
+  - COS-BP-005
+  - COS-BP-007
+  - COS-REL-008
+  - COS-BP-009
+---
+
+# COS-EAR-000 — Experience Architecture Summary
 
 **Status:** Draft  
 **Owner:** Competency Operating System Team  
 **Stage:** Experience Architecture  
-**Version:** 1.0
+**Version:** 1.1.0
+
+> Ранее документ не имел frontmatter и назывался `COS-EAR-Summary`. ID `COS-EAR-000` присвоен 2026-10-28 по `COS-010` §2; содержание книги не переписывалось.
+
+---
+
+# Status and Roadmap Position
+
+**This summary describes the target experience architecture, not the shipped product.** It is the conceptual foundation for the target COS; the current product implements a small, earlier slice of it.
+
+- **Shipped today (Beta 1, 2026-10-28):** a competency map — professions, competencies, knowledge and skills, external learning materials, email sign-in, favourites, self-tracked study statuses, feedback and first-party analytics. Implemented flows: `COS-EAR-012`.
+- **Not in the product:** diagnostics, level assessment, micro-cases, competency passport, personal routes and runtime AI (`COS-REL-008`, ADR-001). Target diagnostics flow — `COS-EAR-009`; target workspace — `COS-EAR-008`; target corner cases — `COS-EAR-010`; target content model — `COS-EAR-011`.
+- **Roadmap position:** stage I of `COS-BP-005` (public beta) is in progress. The decisions collected here assume stages VII–IX (Digital Competency Profile, personal routes, assessment). Monetization stages — `COS-BP-007` §7.1; year-1 operational plan — `COS-BP-009`.
+- **Terminology:** "competency profile" and "progress" mean self-tracked marks; "competency passport" is reserved for the deferred diagnostics result (`COS-BP-007` §7.2).
+- **Reading order for the current product:** `COS-EAR-012` (what exists) → this summary (why the target looks like this) → `COS-EAR-009`, `COS-EAR-008`, `COS-EAR-010`, `COS-EAR-011` (deferred detail).
+
+The statement below that the Experience Architecture stage is "complete" refers to the conceptual model, not to an implemented interface: **no part of the target workspace, diagnostics flow or AI interaction described in this book exists in Beta 1.**
 
 ---
 
@@ -926,6 +968,8 @@ At the completion of the Experience Architecture stage the following architectur
 
 Together these documents describe the complete Experience Architecture of the Competency Operating System.
 
+The set above is the conceptual core (target state). Deferred implementation specifications are `COS-EAR-008`, `COS-EAR-009`, `COS-EAR-010` and `COS-EAR-011`; the implemented Beta 1 flows are in `COS-EAR-012`.
+
 ---
 
 # Open Questions
@@ -1027,3 +1071,12 @@ This principle should remain the foundation of every future architectural decisi
 ---
 
 **End of Experience Architecture**
+
+---
+
+# История изменений / Change History
+
+| Версия | Дата | Что изменилось |
+|---|---|---|
+| 1.0.0 | — | Первая редакция; дата в документе не фиксировалась |
+| 1.1.0 | 2026-10-28 | Присвоен `id: COS-EAR-000`, добавлен frontmatter по `COS-010`; добавлен раздел о границе целевого опыта и Beta 1, место в дорожной карте `COS-BP-005`/`COS-BP-007`, связь с `COS-EAR-012`; файл переименован по `COS-010` §4 |

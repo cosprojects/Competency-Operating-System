@@ -1,14 +1,53 @@
-
+---
+id: COS-EAR-007
+title: Interaction Patterns
+version: 1.1.0
+status: Draft
+owner: Competency Operating System Team
+last_updated: 2026-10-28
+references:
+  - COS-EAR-006
+  - COS-EAR-012
+  - COS-BP-005
+  - COS-REL-008
+  - COS-BP-007
+  - COS-BP-009
+---
 
 # COS-EAR-007 — Interaction Patterns
 
 **Status:** Draft  
 **Owner:** Competency Operating System Team  
 **Stage:** Experience Architecture  
-**Version:** 1.0
+**Version:** 1.1.0
 
 ---
 
+# Status and Roadmap Position / Состояние и место в дорожной карте
+
+## English
+
+**This document describes the target experience, not the current product.** The COS described here assumes a completed competency base, diagnostics and a Digital Competency Profile; none of these exist in the beta.
+
+- **Shipped today (Beta 1, 2026-10-28):** a competency map — professions, competencies, knowledge and skills, external learning materials, email sign-in, favourites, self-tracked study statuses, feedback and first-party analytics. Implemented flows: `COS-EAR-012`.
+- **Not in the product:** diagnostics, level assessment, micro-cases, competency passport, personal routes and runtime AI (`COS-REL-008`, ADR-001). The target diagnostics flow is `COS-EAR-009`.
+- **Roadmap:** stage I of `COS-BP-005` (public beta) is in progress; this document describes the target of stages VII–IX. Monetization stages — `COS-BP-007` §7.1; year-1 operational plan — `COS-BP-009`.
+- **Terminology:** "competency profile" and "progress" mean self-tracked marks; "competency passport" is reserved for the deferred diagnostics result (`COS-BP-007` §7.2).
+
+**Beta 1 boundary for this document.** Gap: none of the five canonical patterns covers the Beta 1 flows (browse the map, open a competency, collect a material). Before designing new screens, decide whether to add a canonical «Explore / Reference» pattern or to accept that Beta 1 sits outside this pattern set — otherwise the document silently stops being the rule for the current product.
+
+## Русский
+
+**Документ описывает целевой опыт, а не текущий продукт.** COS, описанный здесь, предполагает собранную базу компетенций, диагностику и цифровой профиль компетенций; в Beta ничего из этого нет.
+
+- **Что работает сегодня (Beta 1, 2026-10-28):** карта компетенций — профессии, компетенции, знания и навыки, внешние учебные материалы, вход по email, избранное, самоотметки статусов изучения, обратная связь и first-party аналитика. Реализованные сценарии — `COS-EAR-012`.
+- **Чего в продукте нет:** диагностики, оценки уровня, микро-кейсов, паспорта компетенций, персональных маршрутов и ИИ в runtime (`COS-REL-008`, ADR-001). Целевой сценарий диагностики — `COS-EAR-009`.
+- **Дорожная карта:** этап I `COS-BP-005` (публичная Beta) в работе; документ описывает целевое состояние этапов VII–IX. Этапы монетизации — `COS-BP-007` §7.1; операционный план первого года — `COS-BP-009`.
+- **Термины:** «профиль компетенций» и «прогресс» — самоотметки; «паспорт компетенций» закреплён за результатом отложенной диагностики (`COS-BP-007` §7.2).
+
+**Граница Beta 1 для этого документа.** Пробел: ни один из пяти канонических паттернов не описывает сценарии Beta 1 (просмотр карты, открытие компетенции, сбор материала). До проектирования новых экранов нужно решить: добавить канонический паттерн «Explore / Reference» или зафиксировать, что Beta 1 лежит вне этого набора, — иначе документ молча перестаёт быть правилом для текущего продукта.
+
+---
 # Purpose / Назначение
 
 ## English
@@ -200,3 +239,12 @@ Interaction Patterns establish a consistent language of interaction between user
 ## Русский
 
 Interaction Patterns формируют единый язык взаимодействия между пользователем и COS. Независимо от роли или функциональности системы, пользователь сталкивается с одними и теми же фундаментальными моделями взаимодействия, что делает опыт целостным и понятным.
+
+---
+
+# История изменений / Change History
+
+| Версия | Дата | Что изменилось |
+|---|---|---|
+| 1.0.0 | — | Первая редакция; дата в документе не фиксировалась |
+| 1.1.0 | 2026-10-28 | Добавлен раздел «Состояние и место в дорожной карте»: граница между целевым опытом и Beta 1, этапы `COS-BP-005`, план первого года `COS-BP-009`, терминологическая граница `COS-BP-007`; добавлен frontmatter по `COS-010` |

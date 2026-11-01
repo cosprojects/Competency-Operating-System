@@ -1,0 +1,10 @@
+{
+  "name": "AXIONA — Web parity builder",
+  "id": "axiona-web-parity-builder",
+  "api": "1.0.0",
+  "main": "code.js",
+  "editorType": [
+    "figma"
+  ],
+  "documentAccess": "dynamic-page"
+}

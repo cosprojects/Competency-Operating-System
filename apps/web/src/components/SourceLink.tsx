@@ -9,16 +9,18 @@ export function SourceLink({
   competencyId,
   canOpen,
   returnTo,
+  className,
 }: {
   source: ContentSource;
   competencyId: string;
   canOpen: boolean;
   returnTo: string;
+  className?: string;
 }) {
   if (!canOpen) {
     return (
       <Link
-        className="button secondary small"
+        className={className ?? "button secondary small"}
         href={`/login?returnTo=${encodeURIComponent(returnTo)}`}
         onClick={() =>
           trackClient("source_gate_view", {
@@ -34,7 +36,7 @@ export function SourceLink({
 
   return (
     <a
-      className="button small"
+      className={className ?? "button small"}
       href={source.url}
       target="_blank"
       rel="noopener noreferrer"

@@ -55,3 +55,52 @@ function escapeHtml(value: string): string {
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#39;");
 }
+
+export interface FeedbackNotification {
+  type: string;
+  comment?: string;
+  rating?: number;
+  contactEmail?: string;
+  pagePath: string;
+  targetType?: string;
+  targetId?: string;
+}
+
+/**
+ * Уведомление о новом отзыве на почтовый ящик команды.
+ * Best-effort: отзыв уже сохранён в БД, доставка письма не должна ломать ответ.
+ */
+export async function sendFeedbackNotification(feedback: FeedbackNotification): Promise<void> {
+  const to = process.env.FEEDBACK_EMAIL ?? "hi.axiona@protonmail.com";
+  const lines = [
+    `Тип: ${feedback.type}`,
+    feedback.rating ? `Оценка полезности: ${feedback.rating}/5` : "",
+    feedback.comment ? `Комментарий: ${feedback.comment}` : "",
+    feedback.contactEmail ? `Email для ответа: ${feedback.contactEmail}` : "",
+    feedback.targetType && feedback.targetId ? `Объект: ${feedback.targetType} ${feedback.targetId}` : "",
+    `Страница: ${feedback.pagePath}`,
+  ].filter(Boolean);
+  const text = lines.join("\n");
+  const html = lines.map((line) => `<p>${escapeHtml(line)}</p>`).join("");
+  const apiUrl = process.env.EMAIL_API_URL;
+  const token = process.env.EMAIL_API_TOKEN;
+  if (!apiUrl) {
+    console.log(`[axiona:email] feedback to=${to}\n${text}`);
+    return;
+  }
+  const response = await fetch(apiUrl, {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+      ...(token ? { authorization: `Bearer ${token}` } : {}),
+    },
+    body: JSON.stringify({
+      to,
+      subject: "AXIONA: новый отзыв",
+      text,
+      html,
+      from: process.env.EMAIL_FROM ?? "no-reply@axiona.world",
+    }),
+  });
+  if (!response.ok) throw new Error(`Email provider error: ${response.status}`);
+}

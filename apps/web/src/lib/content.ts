@@ -3,6 +3,7 @@ import type {
   CompetencyWithProfession,
   ContentCompetency,
   ContentProfession,
+  ContentSection,
   ContentSource,
   PublicContent,
 } from "./content-types";
@@ -93,4 +94,119 @@ export function contentTypeSummary(competency: ContentCompetency): string {
   const skills = competency.skills.length;
   const sources = competency.sources.length;
   return `${knowledge} знаний · ${skills} навыков · ${sources} материалов`;
+}
+
+/* ------------------------------------------------------------------ */
+/* Группы профессий и поиск                                           */
+/* ------------------------------------------------------------------ */
+
+export interface ProfessionGroup {
+  id: string;
+  title: string;
+  professions: ContentProfession[];
+}
+
+/**
+ * Группы направлений на экране выбора профессии.
+ * Сейчас в Beta опубликовано одно направление — дизайн; правило
+ * оставлено расширяемым, чтобы новые направления не требовали правок UI.
+ */
+const GROUP_RULES: Array<{ id: string; title: string; test: (profession: ContentProfession) => boolean }> = [
+  {
+    id: "design",
+    title: "Дизайн",
+    test: (profession) => /дизайн/i.test(profession.title),
+  },
+];
+
+export function getProfessionGroups(): ProfessionGroup[] {
+  const groups: ProfessionGroup[] = [];
+  const rest: ContentProfession[] = [];
+  for (const profession of getProfessions()) {
+    const rule = GROUP_RULES.find((candidate) => candidate.test(profession));
+    if (!rule) {
+      rest.push(profession);
+      continue;
+    }
+    const group = groups.find((candidate) => candidate.id === rule.id);
+    if (group) group.professions.push(profession);
+    else groups.push({ id: rule.id, title: rule.title, professions: [profession] });
+  }
+  if (rest.length > 0) groups.push({ id: "other", title: "Профессии", professions: rest });
+  return groups;
+}
+
+export interface ProfessionCompetency {
+  profession: ContentProfession;
+  section: ContentSection;
+  competency: ContentCompetency;
+}
+
+export function professionCompetencies(profession: ContentProfession): ProfessionCompetency[] {
+  const result: ProfessionCompetency[] = [];
+  for (const section of profession.sections) {
+    for (const competency of section.competencies) {
+      result.push({ profession, section, competency });
+    }
+  }
+  return result;
+}
+
+/** Текст компетенции, по которому ищет поиск: название, описание, знания и навыки. */
+export function competencySearchText(competency: ContentCompetency): string {
+  return [
+    competency.title,
+    competency.titleEn ?? "",
+    competency.definition,
+    ...competency.knowledge.map((item) => `${item.title} ${item.definition ?? ""}`),
+    ...competency.skills.map((item) => `${item.title} ${item.definition ?? ""}`),
+  ]
+    .join(" ")
+    .toLowerCase();
+}
+
+export function normalizeQuery(query: string): string {
+  return query.trim().toLowerCase().replaceAll("ё", "е");
+}
+
+export function competencyMatches(competency: ContentCompetency, query: string): boolean {
+  const normalized = normalizeQuery(query);
+  if (!normalized) return false;
+  return competencySearchText(competency).replaceAll("ё", "е").includes(normalized);
+}
+
+export function professionMatches(profession: ContentProfession, query: string): boolean {
+  const normalized = normalizeQuery(query);
+  if (!normalized) return true;
+  const haystack = [profession.title, profession.titleEn ?? "", profession.description].join(" ").toLowerCase();
+  if (haystack.replaceAll("ё", "е").includes(normalized)) return true;
+  return professionCompetencies(profession).some((item) => competencyMatches(item.competency, normalized));
+}
+
+export function countLabel(count: number, forms: [string, string, string]): string {
+  const mod10 = count % 10;
+  const mod100 = count % 100;
+  if (mod10 === 1 && mod100 !== 11) return `${count} ${forms[0]}`;
+  if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return `${count} ${forms[1]}`;
+  return `${count} ${forms[2]}`;
+}
+
+export function competencyCounts(competency: ContentCompetency): {
+  knowledge: number;
+  skills: number;
+  sources: number;
+} {
+  return {
+    knowledge: competency.knowledge.length,
+    skills: competency.skills.length,
+    sources: competency.sources.length,
+  };
+}
+
+export function competencyMeta(competency: ContentCompetency): string {
+  const counts = competencyCounts(competency);
+  return `${countLabel(counts.knowledge, ["знание", "знания", "знаний"])} · ${countLabel(
+    counts.skills,
+    ["навык", "навыка", "навыков"],
+  )} · ${countLabel(counts.sources, ["материал", "материала", "материалов"])}`;
 }

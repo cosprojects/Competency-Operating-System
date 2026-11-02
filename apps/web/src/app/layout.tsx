@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
+import { AppShell } from "@/components/AppShell";
 import { ConsentBanner } from "@/components/ConsentBanner";
 import { PageViewTracker } from "@/components/PageViewTracker";
-import { content } from "@/lib/content";
+import { FeedbackProvider } from "@/components/feedback/FeedbackProvider";
+import { getCurrentUser } from "@/lib/auth";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -13,8 +13,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.APP_URL ?? "https://axiona.world"),
   openGraph: {
     title: "AXIONA — карта компетенций дизайнера",
-    description:
-      "Профессии, компетенции, знания и навыки, учебные материалы. Beta 1.",
+    description: "Профессии, компетенции, знания и навыки, учебные материалы. Beta 1.",
     type: "website",
     locale: "ru_RU",
   },
@@ -23,25 +22,15 @@ export const metadata: Metadata = {
 export default async function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  const user = await getCurrentUser();
   return (
     <html lang="ru">
       <body>
-        <Header />
-        <main>
-          <div className="container">
-            {content.status === "draft" ? (
-              <div className="notice" style={{ marginTop: 18 }}>
-                Черновой preview Beta 1: {content.stats.publishedCompetencies} компетенций в{" "}
-                {content.stats.professions} профессиях. Не публиковать без release:validate и
-                status=ready.
-              </div>
-            ) : null}
-            {children}
-          </div>
-        </main>
-        <Footer />
-        <ConsentBanner />
-        <PageViewTracker />
+        <FeedbackProvider>
+          <AppShell user={user ? { email: user.email } : null}>{children}</AppShell>
+          <ConsentBanner />
+          <PageViewTracker />
+        </FeedbackProvider>
       </body>
     </html>
   );

@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { getCurrentUser, rateLimit, requestIpHash, sameOrigin } from "@/lib/auth";
 import { findCompetency, findSource } from "@/lib/content";
 import { getDb } from "@/lib/db";
+import { sendFeedbackNotification } from "@/lib/email";
 import { feedbackSchema } from "@/lib/validation";
 
 export async function POST(request: Request) {
@@ -55,6 +56,18 @@ export async function POST(request: Request) {
       ...(data.contactEmail ? { contactEmail: data.contactEmail } : {}),
       pagePath: data.pagePath,
     },
+  });
+
+  await sendFeedbackNotification({
+    type: data.type,
+    ...(data.comment ? { comment: data.comment } : {}),
+    ...(data.rating ? { rating: data.rating } : {}),
+    ...(data.contactEmail ? { contactEmail: data.contactEmail } : {}),
+    pagePath: data.pagePath,
+    ...(data.targetType ? { targetType: data.targetType } : {}),
+    ...(data.targetId ? { targetId: data.targetId } : {}),
+  }).catch((error) => {
+    console.error("[axiona:email] feedback notification failed", error);
   });
 
   return NextResponse.json({ ok: true });

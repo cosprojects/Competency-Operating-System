@@ -1,0 +1,122 @@
+"use client";
+
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useMemo, useState } from "react";
+import { IconCloseSquare } from "@/components/icons";
+
+export interface SearchProfession {
+  slug: string;
+  title: string;
+  description: string;
+  published: number;
+  total: number;
+  percent: number;
+  searchText: string;
+}
+
+export interface SearchGroup {
+  id: string;
+  title: string;
+  professions: SearchProfession[];
+}
+
+function normalize(value: string): string {
+  return value.trim().toLowerCase().replaceAll("ё", "е");
+}
+
+export function ProfessionSearch({ groups }: { groups: SearchGroup[] }) {
+  const router = useRouter();
+  const [query, setQuery] = useState("");
+  const normalized = normalize(query);
+
+  const visibleGroups = useMemo(
+    () =>
+      groups
+        .map((group) => ({
+          ...group,
+          professions: group.professions.filter(
+            (profession) => !normalized || profession.searchText.includes(normalized),
+          ),
+        }))
+        .filter((group) => group.professions.length > 0),
+    [groups, normalized],
+  );
+
+  const firstMatch = visibleGroups[0]?.professions[0];
+
+  function submit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (firstMatch) router.push(`/professions/${firstMatch.slug}`);
+  }
+
+  return (
+    <div className="search-screen">
+      <form className="search-bar" role="search" onSubmit={submit}>
+        <input
+          type="search"
+          value={query}
+          onChange={(event) => setQuery(event.target.value)}
+          placeholder="Введите название профессии или навыка"
+          aria-label="Поиск профессии или навыка"
+          enterKeyHint="go"
+        />
+        {query ? (
+          <button
+            className="search-clear"
+            type="button"
+            onClick={() => setQuery("")}
+            aria-label="Очистить поиск"
+          >
+            <IconCloseSquare />
+          </button>
+        ) : null}
+      </form>
+
+      {visibleGroups.length === 0 ? (
+        <div className="empty">
+          <h2>Ничего не нашли</h2>
+          <p>
+            По запросу «{query.trim()}» нет профессии или навыка. Попробуйте другое название — например,
+            «исследования» или «дизайн».
+          </p>
+        </div>
+      ) : (
+        <div className="profession-groups">
+          {visibleGroups.map((group) => (
+            <section className="profession-group" key={group.id}>
+              <h2 className="group-title">{group.title}</h2>
+              <div className="profession-grid">
+                {group.professions.map((profession) => (
+                  <Link
+                    className="profession-tile"
+                    key={profession.slug}
+                    href={`/professions/${profession.slug}`}
+                  >
+                    <div className="tile-top">
+                      <span className="badge">Профессия</span>
+                      <span className="tile-count">
+                        {profession.published} из {profession.total} компетенций
+                      </span>
+                    </div>
+                    <h3 className="tile-title">{profession.title}</h3>
+                    <p className="tile-desc">{profession.description}</p>
+                    <div className="coverage">
+                      <div className="coverage-bar" aria-hidden="true">
+                        <span style={{ width: `${profession.percent}%` }} />
+                      </div>
+                      <div className="coverage-text">
+                        <span>Покрытие Beta</span>
+                        <span>{profession.percent}%</span>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}

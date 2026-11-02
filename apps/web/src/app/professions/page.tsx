@@ -1,28 +1,38 @@
-import { ProfessionCard } from "@/components/ProfessionCard";
-import { getProfessions } from "@/lib/content";
+import type { Metadata } from "next";
+import type { SearchGroup } from "@/components/ProfessionSearch";
+import { ProfessionSearch } from "@/components/ProfessionSearch";
+import { competencySearchText, getProfessionGroups, normalizeQuery } from "@/lib/content";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Профессии — AXIONA",
-  description: "Четыре профессии дизайнера: структура компетенций, знания и навыки.",
+  description:
+    "Выбор профессии дизайнера: поиск по названию профессии и навыкам, которые её составляют.",
 };
 
 export default function ProfessionsPage() {
-  const professions = getProfessions();
-  return (
-    <>
-      <div className="page-head">
-        <div className="eyebrow">Профессии</div>
-        <h1>Выберите направление</h1>
-        <p>
-          Каждая профессия — это разделы, компетенции и материалы. Покрытие показывает, сколько
-          компетенций уже прошло проверку и опубликовано.
-        </p>
-      </div>
-      <div className="card-grid">
-        {professions.map((profession) => (
-          <ProfessionCard key={profession.id} profession={profession} />
-        ))}
-      </div>
-    </>
-  );
+  const groups: SearchGroup[] = getProfessionGroups().map((group) => ({
+    id: group.id,
+    title: group.title,
+    professions: group.professions.map((profession) => ({
+      slug: profession.slug,
+      title: profession.title,
+      description: profession.description,
+      published: profession.coverage.published,
+      total: profession.coverage.total,
+      percent: profession.coverage.percent,
+      searchText: normalizeQuery(
+        [
+          profession.title,
+          profession.titleEn ?? "",
+          profession.description,
+          ...profession.sections.flatMap((section) => [
+            section.title,
+            ...section.competencies.map((competency) => competencySearchText(competency)),
+          ]),
+        ].join(" "),
+      ),
+    })),
+  }));
+
+  return <ProfessionSearch groups={groups} />;
 }

@@ -2018,16 +2018,16 @@ html[data-consent="pending"] .canvas-toolbar {
 .detail-rows {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
 }
 
 .detail-row {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  padding: 14px 16px;
+  padding: 16px;
   border: 1px solid var(--line);
-  border-radius: var(--r-12);
+  border-radius: var(--r-16);
   background: var(--card);
   transition: border-color 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
 }
@@ -2111,7 +2111,7 @@ html[data-consent="pending"] .canvas-toolbar {
 .material-groups {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 20px;
 }
 
 .material-group {
@@ -2137,7 +2137,7 @@ html[data-consent="pending"] .canvas-toolbar {
 .material-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: 12px;
+  gap: 16px;
 }
 
 .detail-rail.is-expanded .material-grid {
@@ -2148,10 +2148,10 @@ html[data-consent="pending"] .canvas-toolbar {
 .material-card {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
   padding: 16px;
   border: 1px solid var(--line);
-  border-radius: var(--r-12);
+  border-radius: var(--r-16);
   background: var(--card);
   transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.15s ease;
 }

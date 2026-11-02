@@ -79,10 +79,11 @@ export function CompetencyDetail({
 }) {
   const returnTo = `/professions/${profession.slug}?competency=${competency.id}`;
   const loginHref = `/login?returnTo=${encodeURIComponent(returnTo)}`;
+  const shorten = (value: string) => (value.length > 24 ? `${value.slice(0, 23).trimEnd()}…` : value);
   const tags = [
     profession.title,
-    competency.sectionTitle,
-    ...competency.knowledge.slice(0, 2).map((item) => item.title),
+    shorten(competency.sectionTitle),
+    ...competency.knowledge.slice(0, 2).map((item) => shorten(item.title)),
   ];
   const materialGroups = groupSources(competency.sources);
 

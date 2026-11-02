@@ -95,12 +95,23 @@ export const CompetencyGraph = forwardRef<
     const width = container.clientWidth;
     const height = container.clientHeight;
     if (width === 0 || height === 0) return;
-    const zoom = clamp(Math.min((width - 60) / current.width, (height - 140) / current.height, 1), MIN_ZOOM, MAX_ZOOM);
+    const fitted = Math.min((width - 60) / current.width, (height - 140) / current.height, 1);
+    // Карточки лент широкие: полностью «вписать всё» — значит сделать текст
+    // нечитаемым. Держим комфортный минимум, остальное доступно панорамой.
+    const minimum = mode === "board" ? 0.4 : MIN_ZOOM;
+    const zoom = clamp(Math.max(fitted, minimum), MIN_ZOOM, MAX_ZOOM);
+    const scaledWidth = current.width * zoom;
+    const scaledHeight = current.height * zoom;
+    // Если схема шире экрана — показываем её с левого верхнего края (чтобы
+    // названия разделов не обрезались), остальное доступно панорамой.
     setView({
       zoom,
-      pan: { x: (width - current.width * zoom) / 2, y: (height - current.height * zoom) / 2 + 12 },
+      pan: {
+        x: scaledWidth <= width - 60 ? (width - scaledWidth) / 2 : 24,
+        y: scaledHeight <= height - 140 ? (height - scaledHeight) / 2 + 12 : 64,
+      },
     });
-  }, []);
+  }, [mode]);
 
   const focus = useCallback((id: string) => {
     const container = containerRef.current;

@@ -62,7 +62,7 @@ export interface GraphLayout {
 
 // Размеры карточек подобраны так, чтобы обе раскладки вписывались в центр
 // канваса (между сайдбарами) при включённом зуме «по размеру».
-const BOARD_CARD = { width: 188, height: 92 };
+const BOARD_CARD = { width: 376, height: 92 };
 const BOARD_GAP = 24;
 const BOARD_ROW_GAP = 22;
 const BOARD_BAND_PADDING = 12;

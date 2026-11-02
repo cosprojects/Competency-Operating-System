@@ -1,15 +1,18 @@
 "use client";
 
 import { useState } from "react";
+import { IconStar } from "@/components/icons";
 
 export function SaveButton({
   targetType,
   targetId,
   initialSaved,
+  variant = "default",
 }: {
   targetType: "COMPETENCY" | "SOURCE";
   targetId: string;
   initialSaved: boolean;
+  variant?: "default" | "icon";
 }) {
   const [saved, setSaved] = useState(initialSaved);
   const [busy, setBusy] = useState(false);
@@ -32,6 +35,23 @@ export function SaveButton({
     } finally {
       setBusy(false);
     }
+  }
+
+  if (variant === "icon") {
+    return (
+      <button
+        className={`icon-button${saved ? " is-saved" : ""}`}
+        type="button"
+        onClick={toggle}
+        disabled={busy}
+        aria-pressed={saved}
+        aria-label={saved ? "Убрать из избранного" : "Сохранить в избранное"}
+        title={saved ? "Убрать из избранного" : "Сохранить в избранное"}
+      >
+        <IconStar />
+        {error ? <span className="sr-only">{error}</span> : null}
+      </button>
+    );
   }
 
   return (

@@ -210,3 +210,37 @@ export function competencyMeta(competency: ContentCompetency): string {
     ["навык", "навыка", "навыков"],
   )} · ${countLabel(counts.sources, ["материал", "материала", "материалов"])}`;
 }
+
+/* ------------------------------------------------------------------ */
+/* Материалы: подразделы                                              */
+/* ------------------------------------------------------------------ */
+
+export interface MaterialGroup {
+  id: string;
+  title: string;
+  sources: ContentSource[];
+}
+
+const MATERIAL_GROUPS: Array<{ id: string; title: string; kinds: string[] }> = [
+  { id: "courses", title: "Курсы", kinds: ["course-platform", "school"] },
+  { id: "videos", title: "Видео", kinds: ["video-playlist", "video-channel"] },
+  { id: "articles", title: "Статьи", kinds: ["blog", "aggregator"] },
+  { id: "references", title: "Справочники", kinds: ["reference"] },
+  { id: "cases", title: "Кейсы", kinds: ["portfolio-case"] },
+];
+
+/** Разбивает материалы компетенции на подразделы по типу источника. */
+export function groupSources(sources: ContentSource[]): MaterialGroup[] {
+  const known = new Set(MATERIAL_GROUPS.flatMap((group) => group.kinds));
+  // В контенте один и тот же источник может прийти из нескольких блоков —
+  // в сайдбаре показываем его один раз.
+  const unique = [...new Map(sources.map((source) => [source.id, source])).values()];
+  const groups: MaterialGroup[] = [];
+  for (const definition of MATERIAL_GROUPS) {
+    const items = unique.filter((source) => definition.kinds.includes(source.kind));
+    if (items.length > 0) groups.push({ id: definition.id, title: definition.title, sources: items });
+  }
+  const other = unique.filter((source) => !known.has(source.kind));
+  if (other.length > 0) groups.push({ id: "other", title: "Другое", sources: other });
+  return groups;
+}

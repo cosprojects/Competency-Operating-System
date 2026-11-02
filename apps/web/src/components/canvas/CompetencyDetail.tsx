@@ -1,18 +1,23 @@
 "use client";
 
 import Link from "next/link";
-import { accessLabel, authorityLabel, sourceKindLabel } from "@/lib/content";
-import type { ContentItem, ContentSource } from "@/lib/content-types";
 import { FeedbackTrigger } from "@/components/feedback/FeedbackTrigger";
+import {
+  IconArrowSquareLeft,
+  IconArrowSquareRight,
+  IconCloseCircle,
+  IconStar,
+} from "@/components/icons";
+import { MaterialCard } from "@/components/canvas/MaterialCard";
 import { SaveButton } from "@/components/SaveButton";
-import { SourceLink } from "@/components/SourceLink";
 import { StatusSelect } from "@/components/StatusSelect";
-import { IconCloseCircle } from "@/components/icons";
+import { countLabel, groupSources } from "@/lib/content";
+import type { ContentItem } from "@/lib/content-types";
 import type {
   CanvasCompetency,
   CanvasProfession,
-  CompetencyState,
   CanvasViewer,
+  CompetencyState,
 } from "./types";
 
 const TIER_LABEL: Record<CanvasCompetency["tier"], string> = {
@@ -44,56 +49,16 @@ function DetailBlock({
   );
 }
 
-function Track({ children }: { children: React.ReactNode }) {
-  return <div className="detail-track">{children}</div>;
-}
-
-function ItemCards({ items, wide = false }: { items: ContentItem[]; wide?: boolean }) {
+function ItemRows({ items }: { items: ContentItem[] }) {
   return (
-    <>
+    <div className="detail-rows">
       {items.map((item) => (
-        <article className={`detail-card${wide ? " wide" : ""}`} key={item.id}>
+        <article className="detail-row" key={item.id}>
           <h4>{item.title}</h4>
           {item.definition ? <p>{item.definition}</p> : null}
         </article>
       ))}
-    </>
-  );
-}
-
-function MaterialCard({
-  source,
-  competencyId,
-  canOpen,
-  returnTo,
-}: {
-  source: ContentSource;
-  competencyId: string;
-  canOpen: boolean;
-  returnTo: string;
-}) {
-  return (
-    <article className="material-card">
-      <div className="material-badges">
-        <span className="pill tone-neutral">{sourceKindLabel(source.kind)}</span>
-        <span className="pill">{accessLabel(source.access)}</span>
-        <span className="pill">{source.languages.length > 0 ? source.languages.map((language) => language.toUpperCase()).join(", ") : "язык не указан"}</span>
-        <span className="pill">{authorityLabel(source.authority)}</span>
-      </div>
-      <h4>{source.title}</h4>
-      <p>{source.summary}</p>
-      {source.rationale ? <p>Почему подходит: {source.rationale}</p> : null}
-      <div className="material-actions">
-        <SourceLink source={source} competencyId={competencyId} canOpen={canOpen} returnTo={returnTo} />
-        <span className="small muted">Проверен: {source.lastChecked}</span>
-        <FeedbackTrigger
-          className="link-button"
-          options={{ context: "source", type: "BAD_MATERIAL", targetType: "SOURCE", targetId: source.id }}
-        >
-          Сообщить о проблеме
-        </FeedbackTrigger>
-      </div>
-    </article>
+    </div>
   );
 }
 
@@ -102,33 +67,72 @@ export function CompetencyDetail({
   competency,
   state,
   viewer,
+  expanded,
+  onToggleExpanded,
   onClose,
 }: {
   profession: CanvasProfession;
   competency: CanvasCompetency;
   state: CompetencyState;
   viewer: CanvasViewer | null;
+  expanded: boolean;
+  onToggleExpanded: () => void;
   onClose: () => void;
 }) {
   const returnTo = `/professions/${profession.slug}?competency=${competency.id}`;
+  const loginHref = `/login?returnTo=${encodeURIComponent(returnTo)}`;
   const tags = [
     profession.title,
     competency.sectionTitle,
     ...competency.knowledge.slice(0, 2).map((item) => item.title),
   ];
+  const materialGroups = groupSources(competency.sources);
 
   return (
-    <aside className="detail-rail" aria-label={`Компетенция: ${competency.title}`}>
+    <aside
+      className={`detail-rail${expanded ? " is-expanded" : ""}`}
+      aria-label={`Компетенция: ${competency.title}`}
+    >
       <header className="detail-head">
-        <div className="detail-top">
+        <div className="detail-head-row">
+          <button
+            className="icon-button detail-expand"
+            type="button"
+            onClick={onToggleExpanded}
+            aria-expanded={expanded}
+            aria-label={expanded ? "Свернуть панель" : "Развернуть панель на всю ширину"}
+            title={expanded ? "Свернуть панель" : "Развернуть панель на всю ширину"}
+          >
+            {expanded ? <IconArrowSquareRight /> : <IconArrowSquareLeft />}
+          </button>
+
           <span className={`badge ${competency.tier}`}>{TIER_LABEL[competency.tier]}</span>
-          <div className="detail-top">
+
+          <div className="detail-head-actions">
             <span className="detail-source">{competency.titleEn ?? competency.sectionTitle}</span>
-            <button className="detail-close" type="button" onClick={onClose} aria-label="Закрыть компетенцию">
+            {viewer ? (
+              <SaveButton
+                variant="icon"
+                targetType="COMPETENCY"
+                targetId={competency.id}
+                initialSaved={state.saved}
+              />
+            ) : (
+              <Link
+                className="icon-button"
+                href={loginHref}
+                aria-label="Войти, чтобы сохранить компетенцию"
+                title="Войти, чтобы сохранить компетенцию"
+              >
+                <IconStar />
+              </Link>
+            )}
+            <button className="icon-button detail-close" type="button" onClick={onClose} aria-label="Закрыть компетенцию">
               <IconCloseCircle />
             </button>
           </div>
         </div>
+
         <h2>{competency.title}</h2>
         <p className="detail-desc">{competency.definition}</p>
         <div className="detail-tags">
@@ -140,27 +144,6 @@ export function CompetencyDetail({
         </div>
       </header>
 
-      <section className="detail-study">
-        <div className="detail-block-head">
-          <h3>Твой прогресс</h3>
-        </div>
-        {viewer ? (
-          <>
-            <SaveButton targetType="COMPETENCY" targetId={competency.id} initialSaved={state.saved} />
-            <StatusSelect competencyId={competency.id} initialStatus={state.status} />
-          </>
-        ) : (
-          <>
-            <p className="detail-hint">
-              Сохранения и статусы изучения привязаны к аккаунту. Материалы открываются после входа.
-            </p>
-            <Link className="button block" href={`/login?returnTo=${encodeURIComponent(returnTo)}`}>
-              Войти
-            </Link>
-          </>
-        )}
-      </section>
-
       <DetailBlock
         title="Что нужно знать"
         count={competency.knowledge.length}
@@ -169,29 +152,8 @@ export function CompetencyDetail({
         {competency.knowledge.length === 0 ? (
           <div className="notice">Состав знаний ещё уточняется.</div>
         ) : (
-          <Track>
-            <ItemCards items={competency.knowledge} />
-          </Track>
+          <ItemRows items={competency.knowledge} />
         )}
-      </DetailBlock>
-
-      <DetailBlock
-        title="В профессии"
-        count={competency.occurrences.length}
-        hint="Компетенция может входить в несколько направлений."
-      >
-        <Track>
-          {competency.occurrences.map((occurrence) => (
-            <Link
-              className="occurrence-card"
-              key={`${occurrence.professionSlug}-${occurrence.sectionTitle}`}
-              href={`/professions/${occurrence.professionSlug}?competency=${competency.id}`}
-            >
-              <strong>{occurrence.professionTitle}</strong>
-              <span>{occurrence.sectionTitle}</span>
-            </Link>
-          ))}
-        </Track>
       </DetailBlock>
 
       <DetailBlock
@@ -202,33 +164,98 @@ export function CompetencyDetail({
         {competency.skills.length === 0 ? (
           <div className="notice">Состав навыков ещё уточняется.</div>
         ) : (
-          <Track>
-            <ItemCards items={competency.skills} wide />
-          </Track>
+          <ItemRows items={competency.skills} />
         )}
       </DetailBlock>
 
       <DetailBlock
         title="Материалы"
         count={competency.sources.length}
-        hint="Курсы, статьи и другие источники. Ссылки открываются после входа: так можно сохранять материалы и возвращаться к ним."
+        hint="Курсы, статьи и другие источники. Ссылки открываются после входа; это позволяет сохранять материалы и возвращаться к ним."
       >
         {competency.sources.length === 0 ? (
           <div className="notice">Для этой компетенции пока нет опубликованного материала.</div>
         ) : (
-          <div className="source-list">
-            {competency.sources.map((source) => (
-              <MaterialCard
-                key={source.id}
-                source={source}
-                competencyId={competency.id}
-                canOpen={Boolean(viewer)}
-                returnTo={returnTo}
-              />
+          <div className="material-groups">
+            {materialGroups.map((group) => (
+              <section className="material-group" key={group.id}>
+                <header className="material-group-head">
+                  <h4>{group.title}</h4>
+                  <span className="num-badge">{group.sources.length}</span>
+                </header>
+                <div className="material-grid">
+                  {group.sources.map((source) => (
+                    <MaterialCard
+                      key={source.id}
+                      source={source}
+                      competencyId={competency.id}
+                      canOpen={Boolean(viewer)}
+                      returnTo={returnTo}
+                    />
+                  ))}
+                </div>
+              </section>
             ))}
           </div>
         )}
       </DetailBlock>
+
+      <DetailBlock
+        title="В профессии"
+        count={competency.occurrences.length}
+        hint="Компетенция может входить в несколько направлений."
+      >
+        <div className="occurrence-list">
+          {competency.occurrences.map((occurrence) => (
+            <Link
+              className="occurrence-row"
+              key={`${occurrence.professionSlug}-${occurrence.sectionTitle}`}
+              href={`/professions/${occurrence.professionSlug}?competency=${competency.id}`}
+            >
+              <span className="occurrence-text">
+                <strong>{occurrence.professionTitle}</strong>
+                <span>{occurrence.sectionTitle}</span>
+              </span>
+              <IconArrowSquareRight className="occurrence-icon" />
+            </Link>
+          ))}
+        </div>
+      </DetailBlock>
+
+      <section className="detail-study">
+        <div className="detail-block-head">
+          <h3>Твой прогресс</h3>
+        </div>
+        {viewer ? (
+          <StatusSelect competencyId={competency.id} initialStatus={state.status} />
+        ) : (
+          <>
+            <p className="detail-hint">Войдите, чтобы отмечать статус изучения и сохранять материалы.</p>
+            <Link className="button block" href={loginHref}>
+              Войти
+            </Link>
+          </>
+        )}
+      </section>
+
+      <div className="detail-foot">
+        <FeedbackTrigger
+          className="link-button"
+          options={{
+            context: "competency",
+            type: "CONTENT_ERROR",
+            targetType: "COMPETENCY",
+            targetId: competency.id,
+          }}
+        >
+          Сообщить о проблеме в компетенции
+        </FeedbackTrigger>
+        <span>
+          {countLabel(competency.knowledge.length, ["знание", "знания", "знаний"])} ·{" "}
+          {countLabel(competency.skills.length, ["навык", "навыка", "навыков"])} ·{" "}
+          {countLabel(competency.sources.length, ["материал", "материала", "материалов"])}
+        </span>
+      </div>
     </aside>
   );
 }

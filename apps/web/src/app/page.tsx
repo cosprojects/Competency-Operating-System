@@ -142,7 +142,8 @@ export default function HomePage() {
         </section>
 
         <section className="home-section">
-          <h2 className="lg">Дорожная карта развития</h2>
+          <p className="eyebrow">Платформа</p>
+          <h2>Дорожная карта развития</h2>
           <p className="section-subtitle">Последовательность этапов развития платформы компетенций.</p>
           <div className="roadmap-card">
             {ROADMAP.map((item) => (

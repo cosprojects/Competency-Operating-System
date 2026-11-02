@@ -45,6 +45,7 @@ export function ProfessionCanvas({
   const [query, setQuery] = useState("");
   const [zoomPercent, setZoomPercent] = useState(45);
   const [view, setView] = useState<GraphMode>(initialView);
+  const [expanded, setExpanded] = useState(false);
 
   const graphRef = useRef<GraphHandle>(null);
   const tileRefs = useRef(new Map<string, HTMLButtonElement>());
@@ -87,6 +88,12 @@ export function ProfessionCanvas({
       setSelectedId(id);
       if (options.scroll) scrollTileIntoView(id);
       if (options.focusGraph) graphRef.current?.focus(id);
+      // На узких экранах сайдбар компетенции идёт ниже канваса — подводим к нему.
+      if (window.matchMedia("(max-width: 1080px)").matches) {
+        window.requestAnimationFrame(() => {
+          document.querySelector(".detail-rail")?.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      }
       // Ссылку на открытую компетенцию можно скопировать и переслать.
       const url = new URL(window.location.href);
       url.searchParams.set("competency", id);
@@ -97,6 +104,7 @@ export function ProfessionCanvas({
 
   const closeDetail = useCallback(() => {
     setSelectedId(null);
+    setExpanded(false);
     const url = new URL(window.location.href);
     url.searchParams.delete("competency");
     window.history.replaceState(null, "", url);
@@ -109,6 +117,20 @@ export function ProfessionCanvas({
     else url.searchParams.set("view", next);
     window.history.replaceState(null, "", url);
   }, []);
+
+  useEffect(() => {
+    if (!selectedId) return;
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.key !== "Escape") return;
+      setExpanded((current) => {
+        if (current) return false;
+        setSelectedId(null);
+        return false;
+      });
+    }
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [selectedId]);
 
   // Открытая по ссылке компетенция центрируется в схеме после первого замера канваса.
   useEffect(() => {
@@ -124,9 +146,10 @@ export function ProfessionCanvas({
   const selectedState = selectedId ? states[selectedId] : undefined;
 
   return (
-    <div className={`canvas-screen${selected ? " has-detail" : ""}`}>
+    <div className={`canvas-screen${selected ? " has-detail" : ""}${expanded ? " is-expanded" : ""}`}>
       <div className="canvas-rail">
-        <section className="profession-summary">
+        <div className="rail-pinned">
+          <section className="profession-summary">
           <div className="summary-top">
             <span className="badge">Профессия</span>
             <span className="summary-count">
@@ -146,11 +169,13 @@ export function ProfessionCanvas({
           </div>
         </section>
 
-        <Link className="rail-choose" href="/professions">
-          Выбрать профессию
-        </Link>
+          <Link className="rail-choose" href="/professions">
+            Выбрать профессию
+          </Link>
+        </div>
 
-        <div className="section-list">
+        <div className="rail-scroll">
+          <div className="section-list">
           {profession.sections.map((section) => (
             <section className="section-panel" key={section.id}>
               <h3>{section.title}</h3>
@@ -193,13 +218,14 @@ export function ProfessionCanvas({
           ))}
         </div>
 
-        <div className="sidebar-notice">
-          В Beta опубликованы только проверенные компетенции. Если вы не нашли нужную —{" "}
-          <FeedbackTrigger
-            options={{ context: "competency", type: "MISSING_COMPETENCY", targetType: "COMPETENCY", targetId: selectedId ?? undefined }}
-          >
-            сообщите о пробеле
-          </FeedbackTrigger>
+          <div className="sidebar-notice">
+            В Beta опубликованы только проверенные компетенции. Если вы не нашли нужную —{" "}
+            <FeedbackTrigger
+              options={{ context: "competency", type: "MISSING_COMPETENCY", targetType: "COMPETENCY", targetId: selectedId ?? undefined }}
+            >
+              сообщите о пробеле
+            </FeedbackTrigger>
+          </div>
         </div>
       </div>
 
@@ -258,6 +284,8 @@ export function ProfessionCanvas({
           competency={selected}
           state={selectedState ?? { saved: false, status: "NOT_STARTED" }}
           viewer={viewer}
+          expanded={expanded}
+          onToggleExpanded={() => setExpanded((current) => !current)}
           onClose={closeDetail}
         />
       ) : null}

@@ -168,3 +168,47 @@ export function IconViewNetwork({ className }: { className?: string }) {
   );
 }
 
+export function IconPanelExpand({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className={className}>
+      <path d="M11 6 5 12l6 6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" stroke="currentColor" />
+      <path d="M18 6 12 12l6 6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" stroke="currentColor" />
+    </svg>
+  );
+}
+
+export function IconPanelCollapse({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className={className}>
+      <path d="M13 6l6 6-6 6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" stroke="currentColor" />
+      <path d="M6 6l6 6-6 6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" stroke="currentColor" />
+    </svg>
+  );
+}
+
+export function IconArrowRight({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className={className}>
+      <path d="M4 12h16" strokeWidth="1.5" strokeLinecap="round" stroke="currentColor" />
+      <path d="m14 6 6 6-6 6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" stroke="currentColor" />
+    </svg>
+  );
+}
+export function IconArrowSquareLeft({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className={className}>
+      <path d="M16 12H8M11 15L8 12L11 9" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" stroke="currentColor"/>
+      <path d="M12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22Z" strokeWidth="1.5" stroke="currentColor"/>
+    </svg>
+  );
+}
+
+export function IconArrowSquareRight({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className={className}>
+      <path d="M8 12H16M13 15L16 12L13 9" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" stroke="currentColor"/>
+      <path d="M12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22Z" strokeWidth="1.5" stroke="currentColor"/>
+    </svg>
+  );
+}
+

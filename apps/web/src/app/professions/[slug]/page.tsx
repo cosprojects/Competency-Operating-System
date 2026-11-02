@@ -40,13 +40,19 @@ export default async function ProfessionCanvasPage({
   );
 
   const states: CompetencyStates = {};
+  let professionSaved = false;
   if (user) {
     const db = getDb();
     const [favorites, studyStatuses] = await Promise.all([
-      db.favorite.findMany({ where: { userId: user.id, targetType: "COMPETENCY" } }),
+      db.favorite.findMany({ where: { userId: user.id } }),
       db.studyStatus.findMany({ where: { userId: user.id } }),
     ]);
-    const savedIds = new Set(favorites.map((favorite) => favorite.targetId));
+    const savedIds = new Set(
+      favorites.filter((favorite) => favorite.targetType === "COMPETENCY").map((favorite) => favorite.targetId),
+    );
+    professionSaved = favorites.some(
+      (favorite) => favorite.targetType === "PROFESSION" && favorite.targetId === profession.slug,
+    );
     const statusById = new Map(studyStatuses.map((record) => [record.competencyId, record.status]));
     for (const id of competencyIds) {
       states[id] = {
@@ -105,6 +111,7 @@ export default async function ProfessionCanvasPage({
         competencies={competencies}
         states={states}
         viewer={user ? { email: user.email } : null}
+        professionSaved={professionSaved}
         initialCompetencyId={initialCompetencyId}
         initialView={initialView}
       />

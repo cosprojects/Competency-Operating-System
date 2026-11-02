@@ -10,12 +10,16 @@ export function SourceLink({
   canOpen,
   returnTo,
   className,
+  openLabel = "Открыть материал",
+  gatedLabel = "Войти и открыть",
 }: {
   source: ContentSource;
   competencyId: string;
   canOpen: boolean;
   returnTo: string;
   className?: string;
+  openLabel?: string;
+  gatedLabel?: string;
 }) {
   if (!canOpen) {
     return (
@@ -29,7 +33,7 @@ export function SourceLink({
           })
         }
       >
-        Войти и открыть
+        {gatedLabel}
       </Link>
     );
   }
@@ -49,7 +53,7 @@ export function SourceLink({
         })
       }
     >
-      Открыть материал
+      {openLabel}
     </a>
   );
 }

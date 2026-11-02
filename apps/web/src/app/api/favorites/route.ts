@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { getCurrentUser, sameOrigin } from "@/lib/auth";
-import { findCompetency, findSource } from "@/lib/content";
+import { findCompetency, findSource, getProfession } from "@/lib/content";
 import { getDb } from "@/lib/db";
 import { trackServerEvent } from "@/lib/analytics";
 import { favoriteSchema } from "@/lib/validation";
@@ -10,7 +10,11 @@ async function readPayload(request: Request) {
   if (!parsed.success) return null;
   const { targetType, targetId } = parsed.data;
   const exists =
-    targetType === "COMPETENCY" ? Boolean(findCompetency(targetId)) : Boolean(findSource(targetId));
+    targetType === "COMPETENCY"
+      ? Boolean(findCompetency(targetId))
+      : targetType === "PROFESSION"
+        ? Boolean(getProfession(targetId))
+        : Boolean(findSource(targetId));
   if (!exists) return null;
   return parsed.data;
 }

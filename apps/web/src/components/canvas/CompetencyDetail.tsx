@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { FeedbackTrigger } from "@/components/feedback/FeedbackTrigger";
 import {
   IconArrowSquareLeft,
   IconArrowSquareRight,
@@ -10,8 +9,7 @@ import {
 } from "@/components/icons";
 import { MaterialCard } from "@/components/canvas/MaterialCard";
 import { SaveButton } from "@/components/SaveButton";
-import { StatusSelect } from "@/components/StatusSelect";
-import { countLabel, groupSources } from "@/lib/content";
+import { groupSources } from "@/lib/content";
 import type { ContentItem } from "@/lib/content-types";
 import type {
   CanvasCompetency,
@@ -177,6 +175,11 @@ export function CompetencyDetail({
           <div className="notice">Для этой компетенции пока нет опубликованного материала.</div>
         ) : (
           <div className="material-groups">
+            {viewer ? null : (
+              <Link className="button secondary block materials-login" href={loginHref}>
+                Войти по почте и открыть учебные материалы
+              </Link>
+            )}
             {materialGroups.map((group) => (
               <section className="material-group" key={group.id}>
                 <header className="material-group-head">
@@ -221,41 +224,6 @@ export function CompetencyDetail({
           ))}
         </div>
       </DetailBlock>
-
-      <section className="detail-study">
-        <div className="detail-block-head">
-          <h3>Твой прогресс</h3>
-        </div>
-        {viewer ? (
-          <StatusSelect competencyId={competency.id} initialStatus={state.status} />
-        ) : (
-          <>
-            <p className="detail-hint">Войдите, чтобы отмечать статус изучения и сохранять материалы.</p>
-            <Link className="button block" href={loginHref}>
-              Войти
-            </Link>
-          </>
-        )}
-      </section>
-
-      <div className="detail-foot">
-        <FeedbackTrigger
-          className="link-button"
-          options={{
-            context: "competency",
-            type: "CONTENT_ERROR",
-            targetType: "COMPETENCY",
-            targetId: competency.id,
-          }}
-        >
-          Сообщить о проблеме в компетенции
-        </FeedbackTrigger>
-        <span>
-          {countLabel(competency.knowledge.length, ["знание", "знания", "знаний"])} ·{" "}
-          {countLabel(competency.skills.length, ["навык", "навыка", "навыков"])} ·{" "}
-          {countLabel(competency.sources.length, ["материал", "материала", "материалов"])}
-        </span>
-      </div>
     </aside>
   );
 }

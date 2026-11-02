@@ -12,7 +12,8 @@ import type {
   CanvasViewer,
 } from "@/components/canvas/types";
 import { FeedbackTrigger } from "@/components/feedback/FeedbackTrigger";
-import { IconCloseSquare } from "@/components/icons";
+import { IconCloseSquare, IconStar } from "@/components/icons";
+import { SaveButton } from "@/components/SaveButton";
 import { competencyMatches, competencyMeta, countLabel, normalizeQuery } from "@/lib/content";
 import type { GraphMode, GraphNodeInput } from "@/lib/graph-layout";
 
@@ -27,6 +28,7 @@ export function ProfessionCanvas({
   competencies,
   states,
   viewer,
+  professionSaved,
   initialCompetencyId,
   initialView = "board",
 }: {
@@ -34,6 +36,7 @@ export function ProfessionCanvas({
   competencies: CanvasCompetency[];
   states: CompetencyStates;
   viewer: CanvasViewer | null;
+  professionSaved: boolean;
   initialCompetencyId?: string;
   initialView?: GraphMode;
 }) {
@@ -80,7 +83,7 @@ export function ProfessionCanvas({
 
   const scrollTileIntoView = useCallback((id: string) => {
     const tile = tileRefs.current.get(id);
-    if (tile) tile.scrollIntoView({ block: "nearest", behavior: "smooth" });
+    if (tile) tile.scrollIntoView({ block: "nearest", inline: "nearest", behavior: "smooth" });
   }, []);
 
   const select = useCallback(
@@ -155,6 +158,23 @@ export function ProfessionCanvas({
             <span className="summary-count">
               {profession.published} из {profession.total} компетенций
             </span>
+            {viewer ? (
+              <SaveButton
+                variant="icon"
+                targetType="PROFESSION"
+                targetId={profession.slug}
+                initialSaved={professionSaved}
+              />
+            ) : (
+              <Link
+                className="icon-button summary-star"
+                href={`/login?returnTo=${encodeURIComponent(`/professions/${profession.slug}`)}`}
+                aria-label="Войти, чтобы сохранить профессию"
+                title="Войти, чтобы сохранить профессию"
+              >
+                <IconStar />
+              </Link>
+            )}
           </div>
           <h1 className="summary-title">{profession.title}</h1>
           <p className="summary-desc">{profession.description}</p>
@@ -182,7 +202,7 @@ export function ProfessionCanvas({
               <p className="section-count">
                 {countLabel(section.competencyIds.length, ["компетенция", "компетенции", "компетенций"])}
               </p>
-              <div className="competency-stack">
+              <div className="competency-track">
                 {section.competencyIds.map((id) => {
                   const competency = byId.get(id);
                   if (!competency) return null;

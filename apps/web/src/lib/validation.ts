@@ -12,7 +12,7 @@ export const loginRequestSchema = z.object({
 });
 
 export const favoriteSchema = z.object({
-  targetType: z.enum(["COMPETENCY", "SOURCE"]),
+  targetType: z.enum(["COMPETENCY", "SOURCE", "PROFESSION"]),
   targetId: z.string().trim().min(1).max(200),
 });
 

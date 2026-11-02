@@ -9,7 +9,7 @@ export function SaveButton({
   initialSaved,
   variant = "default",
 }: {
-  targetType: "COMPETENCY" | "SOURCE";
+  targetType: "COMPETENCY" | "SOURCE" | "PROFESSION";
   targetId: string;
   initialSaved: boolean;
   variant?: "default" | "icon";

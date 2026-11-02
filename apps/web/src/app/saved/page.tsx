@@ -2,7 +2,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { SaveButton } from "@/components/SaveButton";
 import { getCurrentUser } from "@/lib/auth";
-import { findCompetency, findSource, statusLabel } from "@/lib/content";
+import { findCompetency, findSource, getProfession, statusLabel } from "@/lib/content";
 import { getDb } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
@@ -21,6 +21,11 @@ export default async function SavedPage() {
     db.studyStatus.findMany({ where: { userId: user.id } }),
   ]);
   const statusByCompetency = new Map(statuses.map((item) => [item.competencyId, item.status]));
+
+  const professionItems = favorites
+    .filter((item) => item.targetType === "PROFESSION")
+    .map((item) => ({ favorite: item, profession: getProfession(item.targetId) }))
+    .filter((item) => Boolean(item.profession));
 
   const competencyItems = favorites
     .filter((item) => item.targetType === "COMPETENCY")
@@ -42,7 +47,7 @@ export default async function SavedPage() {
         </p>
       </div>
 
-      {competencyItems.length === 0 && sourceItems.length === 0 ? (
+      {professionItems.length === 0 && competencyItems.length === 0 && sourceItems.length === 0 ? (
         <div className="empty">
           <h2>Пока пусто</h2>
           <p>Откройте профессию, найдите компетенцию и сохраните её или материал.</p>
@@ -50,6 +55,41 @@ export default async function SavedPage() {
             Перейти к профессиям
           </Link>
         </div>
+      ) : null}
+
+      {professionItems.length > 0 ? (
+        <section className="section">
+          <div className="section-head">
+            <div>
+              <h2>Профессии</h2>
+              <p>{professionItems.length} сохранённых</p>
+            </div>
+          </div>
+          <div className="card-grid">
+            {professionItems.map((item) => {
+              if (!item.profession) return null;
+              return (
+                <article className="card" key={item.favorite.id}>
+                  <div className="meta" style={{ justifyContent: "space-between" }}>
+                    <span className="badge neutral">Профессия</span>
+                    <span className="small muted">{item.profession.coverage.percent}% покрытие</span>
+                  </div>
+                  <h3 style={{ marginTop: 10 }}>
+                    <Link href={`/professions/${item.profession.slug}`}>{item.profession.title}</Link>
+                  </h3>
+                  <p>{item.profession.description}</p>
+                  <div style={{ marginTop: 14 }}>
+                    <SaveButton
+                      targetType="PROFESSION"
+                      targetId={item.profession.slug}
+                      initialSaved
+                    />
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </section>
       ) : null}
 
       {competencyItems.length > 0 ? (

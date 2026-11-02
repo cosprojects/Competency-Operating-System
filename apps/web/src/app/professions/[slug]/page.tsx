@@ -28,7 +28,7 @@ export default async function ProfessionCanvasPage({
   searchParams,
 }: {
   params: Promise<{ slug: string }>;
-  searchParams: Promise<{ competency?: string }>;
+  searchParams: Promise<{ competency?: string; view?: string }>;
 }) {
   const [{ slug }, query] = await Promise.all([params, searchParams]);
   const profession = getProfession(slug);
@@ -95,6 +95,7 @@ export default async function ProfessionCanvasPage({
 
   const initialCompetencyId =
     query.competency && competencyIds.includes(query.competency) ? query.competency : undefined;
+  const initialView = query.view === "network" ? "network" : "board";
 
   return (
     <>
@@ -105,6 +106,7 @@ export default async function ProfessionCanvasPage({
         states={states}
         viewer={user ? { email: user.email } : null}
         initialCompetencyId={initialCompetencyId}
+        initialView={initialView}
       />
     </>
   );

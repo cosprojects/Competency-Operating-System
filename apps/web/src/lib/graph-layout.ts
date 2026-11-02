@@ -1,13 +1,19 @@
 /**
  * Детерминированная раскладка схемы компетенций для канваса.
  *
- * Узлы — компетенции профессии. Разделы профессии становятся горизонтальными
- * полосами («лентами»): слева название раздела, справа карточки компетенций
- * по порядку. Связи — пререквизиты. Раскладка считается один раз и не
- * «прыгает» между рендерами: канвас можно панорамировать и масштабировать.
+ * Два режима отображения:
+ * - board — разделы профессии горизонтальными лентами: слева название, справа
+ *   карточки компетенций по порядку (как в левом сайдбаре);
+ * - network — сеть как в старых HTML-канвасах: фундаментальные компетенции
+ *   в центре, основные и необязательные — кольцами вокруг, связи-пререквизиты.
+ *
+ * Раскладка считается один раз и не «прыгает» между рендерами: канвас можно
+ * панорамировать и масштабировать.
  */
 
 export type CompetencyTier = "foundation" | "core" | "optional";
+
+export type GraphMode = "board" | "network";
 
 export interface GraphNodeInput {
   id: string;
@@ -54,13 +60,21 @@ export interface GraphLayout {
   height: number;
 }
 
-const CARD = { width: 188, height: 92 };
-const GAP = 24;
-const ROW_GAP = 22;
-const BAND_PADDING = 12;
-const LABEL_WIDTH = 176;
-const LABEL_GAP = 24;
+// Размеры карточек подобраны так, чтобы обе раскладки вписывались в центр
+// канваса (между сайдбарами) при включённом зуме «по размеру».
+const BOARD_CARD = { width: 188, height: 92 };
+const BOARD_GAP = 24;
+const BOARD_ROW_GAP = 22;
+const BOARD_BAND_PADDING = 12;
+const BOARD_LABEL_WIDTH = 176;
+const BOARD_LABEL_GAP = 24;
+
+const NETWORK_CARD = { width: 190, height: 78 };
+const NETWORK_GAP = 26;
+const NETWORK_PADDING = 96;
+
 const PADDING = 64;
+const TWO_PI = Math.PI * 2;
 
 interface SectionGroup {
   id: string;
@@ -86,19 +100,34 @@ function groupBySection(nodes: GraphNodeInput[]): SectionGroup[] {
   return groups;
 }
 
-export function layoutCompetencyGraph(input: GraphNodeInput[]): GraphLayout {
+function collectEdges(nodes: GraphNode[]): GraphEdge[] {
+  const nodeIds = new Set(nodes.map((node) => node.id));
+  const edges: GraphEdge[] = [];
+  for (const node of nodes) {
+    for (const prerequisite of node.prerequisites) {
+      if (nodeIds.has(prerequisite)) edges.push({ from: prerequisite, to: node.id });
+    }
+  }
+  return edges;
+}
+
+/* ------------------------------------------------------------------ */
+/* board: разделы лентами                                             */
+/* ------------------------------------------------------------------ */
+
+function layoutBoard(input: GraphNodeInput[]): GraphLayout {
   const groups = groupBySection(input);
   const nodes: GraphNode[] = [];
   const bands: GraphBand[] = [];
 
   let cursorY = PADDING;
   let maxRight = 0;
-  const bandHeight = CARD.height + BAND_PADDING * 2;
+  const bandHeight = BOARD_CARD.height + BOARD_BAND_PADDING * 2;
 
   for (const group of groups) {
     const bandX = PADDING / 2;
     const bandWidth =
-      LABEL_WIDTH + LABEL_GAP + group.items.length * CARD.width + (group.items.length - 1) * GAP;
+      BOARD_LABEL_WIDTH + BOARD_LABEL_GAP + group.items.length * BOARD_CARD.width + (group.items.length - 1) * BOARD_GAP;
     bands.push({
       id: group.id,
       title: group.title,
@@ -113,33 +142,138 @@ export function layoutCompetencyGraph(input: GraphNodeInput[]): GraphLayout {
     group.items.forEach((item, index) => {
       nodes.push({
         ...item,
-        x: bandX + LABEL_WIDTH + LABEL_GAP + index * (CARD.width + GAP),
-        y: cursorY + BAND_PADDING,
-        width: CARD.width,
-        height: CARD.height,
+        x: bandX + BOARD_LABEL_WIDTH + BOARD_LABEL_GAP + index * (BOARD_CARD.width + BOARD_GAP),
+        y: cursorY + BOARD_BAND_PADDING,
+        width: BOARD_CARD.width,
+        height: BOARD_CARD.height,
       });
     });
 
     maxRight = Math.max(maxRight, bandX + bandWidth);
-    cursorY += bandHeight + ROW_GAP;
-  }
-
-  const nodeIds = new Set(nodes.map((node) => node.id));
-  const edges: GraphEdge[] = [];
-  for (const node of input) {
-    for (const prerequisite of node.prerequisites) {
-      if (nodeIds.has(prerequisite)) edges.push({ from: prerequisite, to: node.id });
-    }
+    cursorY += bandHeight + BOARD_ROW_GAP;
   }
 
   return {
     nodes,
-    edges,
+    edges: collectEdges(nodes),
     bands,
     width: maxRight + PADDING / 2,
-    height: cursorY - ROW_GAP + PADDING,
+    height: cursorY - BOARD_ROW_GAP + PADDING,
   };
 }
+
+/* ------------------------------------------------------------------ */
+/* network: сеть по уровням, как в старых HTML-канвасах               */
+/* ------------------------------------------------------------------ */
+
+interface Positioned {
+  input: GraphNodeInput;
+  x: number;
+  y: number;
+}
+
+function gridPositions(items: GraphNodeInput[]): Positioned[] {
+  if (items.length === 0) return [];
+  const columns = items.length <= 1 ? 1 : items.length <= 4 ? 2 : 3;
+  const rows = Math.ceil(items.length / columns);
+  const totalWidth = columns * NETWORK_CARD.width + (columns - 1) * NETWORK_GAP;
+  const totalHeight = rows * NETWORK_CARD.height + (rows - 1) * NETWORK_GAP;
+  return items.map((input, index) => {
+    const row = Math.floor(index / columns);
+    const column = index % columns;
+    const rowCount = Math.min(columns, items.length - row * columns);
+    const rowWidth = rowCount * NETWORK_CARD.width + (rowCount - 1) * NETWORK_GAP;
+    return {
+      input,
+      x: -rowWidth / 2 + NETWORK_CARD.width / 2 + column * (NETWORK_CARD.width + NETWORK_GAP),
+      y: -totalHeight / 2 + NETWORK_CARD.height / 2 + row * (NETWORK_CARD.height + NETWORK_GAP),
+    };
+  });
+}
+
+function ringRadius(count: number, minimum: number): number {
+  if (count <= 1) return minimum;
+  const chordRadius = (NETWORK_CARD.width + NETWORK_GAP) / (2 * Math.sin(Math.PI / count));
+  return Math.max(minimum, chordRadius);
+}
+
+function ringPositions(items: GraphNodeInput[], radius: number, startAngle = -Math.PI / 2): Positioned[] {
+  if (items.length === 0) return [];
+  return items.map((input, index) => {
+    const angle = startAngle + (TWO_PI * index) / items.length;
+    return { input, x: Math.cos(angle) * radius, y: Math.sin(angle) * radius };
+  });
+}
+
+function layoutNetwork(input: GraphNodeInput[]): GraphLayout {
+  const byTier: Record<CompetencyTier, GraphNodeInput[]> = { foundation: [], core: [], optional: [] };
+  for (const node of input) byTier[node.tier].push(node);
+  const sort = (items: GraphNodeInput[]) =>
+    items.sort((a, b) => a.order - b.order || a.title.localeCompare(b.title, "ru"));
+  sort(byTier.foundation);
+  sort(byTier.core);
+  sort(byTier.optional);
+
+  const positioned: Positioned[] = [];
+  const foundation = gridPositions(byTier.foundation);
+  positioned.push(...foundation);
+  const foundationHalfHeight = foundation.length
+    ? Math.max(...foundation.map((item) => Math.abs(item.y))) + NETWORK_CARD.height / 2
+    : 0;
+
+  let coreRadius = 0;
+  if (byTier.core.length > 0) {
+    coreRadius = ringRadius(
+      byTier.core.length,
+      Math.max(300, foundationHalfHeight + NETWORK_CARD.width / 2 + NETWORK_GAP + 40),
+    );
+    positioned.push(...ringPositions(byTier.core, coreRadius));
+  }
+
+  if (byTier.optional.length > 0) {
+    const base =
+      coreRadius > 0 ? coreRadius + NETWORK_CARD.height + 110 : Math.max(300, foundationHalfHeight + 190);
+    const firstRing = byTier.optional.slice(0, 14);
+    const secondRing = byTier.optional.slice(14);
+    positioned.push(...ringPositions(firstRing, ringRadius(firstRing.length, base)));
+    if (secondRing.length > 0) {
+      positioned.push(...ringPositions(secondRing, ringRadius(secondRing.length, base + 170)));
+    }
+  }
+
+  if (positioned.length === 0) {
+    return { nodes: [], edges: [], bands: [], width: 0, height: 0 };
+  }
+
+  const minX = Math.min(...positioned.map((item) => item.x - NETWORK_CARD.width / 2)) - NETWORK_PADDING;
+  const minY = Math.min(...positioned.map((item) => item.y - NETWORK_CARD.height / 2)) - NETWORK_PADDING;
+  const maxX = Math.max(...positioned.map((item) => item.x + NETWORK_CARD.width / 2)) + NETWORK_PADDING;
+  const maxY = Math.max(...positioned.map((item) => item.y + NETWORK_CARD.height / 2)) + NETWORK_PADDING;
+
+  const nodes: GraphNode[] = positioned.map((item) => ({
+    ...item.input,
+    x: item.x - NETWORK_CARD.width / 2 - minX,
+    y: item.y - NETWORK_CARD.height / 2 - minY,
+    width: NETWORK_CARD.width,
+    height: NETWORK_CARD.height,
+  }));
+
+  return {
+    nodes,
+    edges: collectEdges(nodes),
+    bands: [],
+    width: maxX - minX,
+    height: maxY - minY,
+  };
+}
+
+export function layoutCompetencyGraph(input: GraphNodeInput[], mode: GraphMode = "board"): GraphLayout {
+  return mode === "network" ? layoutNetwork(input) : layoutBoard(input);
+}
+
+/* ------------------------------------------------------------------ */
+/* Связи                                                             */
+/* ------------------------------------------------------------------ */
 
 function edgeAnchors(
   from: GraphNode,

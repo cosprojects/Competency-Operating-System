@@ -38,6 +38,13 @@ export function FeedbackDialog({
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [error, setError] = useState<string | null>(null);
 
+  // Обязательный для отправки минимум: комментарий. Email — необязательный,
+  // но если его ввели, он должен быть валидным.
+  const trimmedComment = comment.trim();
+  const trimmedEmail = email.trim();
+  const emailValid = trimmedEmail === "" || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmedEmail);
+  const canSubmit = trimmedComment.length > 0 && emailValid;
+
   // На каждое открытие — чистая форма и нужный тип отзыва.
   useEffect(() => {
     if (!open) return;
@@ -233,10 +240,19 @@ export function FeedbackDialog({
               {error ? <div className="notice error">{error}</div> : null}
 
               <div className="form-row">
-                <button className="button" type="submit" disabled={status === "sending"}>
+                <button
+                  className="button"
+                  type="submit"
+                  disabled={!canSubmit || status === "sending"}
+                  title={canSubmit ? undefined : "Добавьте комментарий, чтобы отправить отзыв"}
+                >
                   {status === "sending" ? "Отправляем…" : "Отправить отзыв"}
                 </button>
-                <span className="small muted">Можно отправить без имени и email.</span>
+                <span className="small muted">
+                  {canSubmit
+                    ? "Можно отправить без имени и email."
+                    : "Комментарий обязателен — без него отправить нельзя."}
+                </span>
               </div>
             </form>
           </>

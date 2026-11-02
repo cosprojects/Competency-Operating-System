@@ -139,3 +139,32 @@ export function IconMinusSquare({ className }: { className?: string }) {
   );
 }
 
+export function IconViewBoard({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className={className}>
+      <g id="Linear / Essentional, UI / Posts Carousel Horizontal">
+      <path id="Vector" d="M7.5 9L7.5 15C7.5 16.8856 7.5 17.8284 8.08579 18.4142C8.67157 19 9.61438 19 11.5 19H12.5C14.3856 19 15.3284 19 15.9142 18.4142C16.5 17.8284 16.5 16.8856 16.5 15V9C16.5 7.11438 16.5 6.17157 15.9142 5.58579C15.3284 5 14.3856 5 12.5 5L11.5 5C9.61438 5 8.67157 5 8.08579 5.58579C7.5 6.17157 7.5 7.11438 7.5 9Z" strokeWidth="1.5" stroke="currentColor"/>
+      <path id="Vector_2" d="M22 19H21.5C20.1193 19 19 17.8807 19 16.5V7.5C19 6.11929 20.1193 5 21.5 5H22" strokeWidth="1.5" strokeLinecap="round" stroke="currentColor"/>
+      <path id="Vector_3" d="M2 19H2.5C3.88071 19 5 17.8807 5 16.5L5 7.5C5 6.11929 3.88071 5 2.5 5H2" strokeWidth="1.5" strokeLinecap="round" stroke="currentColor"/>
+      </g>
+    </svg>
+  );
+}
+
+export function IconViewNetwork({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className={className}>
+      <g id="Linear / Web">
+      <path id="Vector" d="M12 4C12 5.10457 11.1046 6 10 6C8.89543 6 8 5.10457 8 4C8 2.89543 8.89543 2 10 2C11.1046 2 12 2.89543 12 4Z" strokeWidth="1.5" stroke="currentColor"/>
+      <path id="Vector_2" d="M12 20C12 21.1046 11.1046 22 10 22C8.89543 22 8 21.1046 8 20C8 18.8954 8.89543 18 10 18C11.1046 18 12 18.8954 12 20Z" strokeWidth="1.5" stroke="currentColor"/>
+      <path id="Vector_3" d="M20 20C20 21.1046 19.1046 22 18 22C16.8954 22 16 21.1046 16 20C16 18.8954 16.8954 18 18 18C19.1046 18 20 18.8954 20 20Z" strokeWidth="1.5" stroke="currentColor"/>
+      <path id="Vector_4" d="M20 4C20 5.10457 19.1046 6 18 6C16.8954 6 16 5.10457 16 4C16 2.89543 16.8954 2 18 2C19.1046 2 20 2.89543 20 4Z" strokeWidth="1.5" stroke="currentColor"/>
+      <path id="Vector_5" d="M5 12C5 13.1046 4.10457 14 3 14C1.89543 14 1 13.1046 1 12C1 10.8954 1.89543 10 3 10C4.10457 10 5 10.8954 5 12Z" strokeWidth="1.5" stroke="currentColor"/>
+      <path id="Vector_6" d="M10 6V18" strokeWidth="1.5" strokeLinecap="round" stroke="currentColor"/>
+      <path id="Vector_7" d="M18 6V18" strokeWidth="1.5" strokeLinecap="round" stroke="currentColor"/>
+      <path id="Vector_8" d="M18 12H5.5" strokeWidth="1.5" strokeLinecap="round" stroke="currentColor"/>
+      </g>
+    </svg>
+  );
+}
+

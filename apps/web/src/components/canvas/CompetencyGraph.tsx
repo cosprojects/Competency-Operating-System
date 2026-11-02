@@ -4,6 +4,7 @@ import { forwardRef, useCallback, useEffect, useImperativeHandle, useMemo, useRe
 import {
   edgePath,
   layoutCompetencyGraph,
+  type GraphMode,
   type GraphNode,
   type GraphNodeInput,
 } from "@/lib/graph-layout";
@@ -62,6 +63,7 @@ export const CompetencyGraph = forwardRef<
   GraphHandle,
   {
     nodes: GraphNodeInput[];
+    mode: GraphMode;
     activeId: string | null;
     hoverId: string | null;
     matches: Set<string>;
@@ -70,7 +72,7 @@ export const CompetencyGraph = forwardRef<
     onZoomChange: (percent: number) => void;
   }
 >(function CompetencyGraph(
-  { nodes, activeId, hoverId, matches, onHover, onSelect, onZoomChange },
+  { nodes, mode, activeId, hoverId, matches, onHover, onSelect, onZoomChange },
   ref,
 ) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -80,7 +82,7 @@ export const CompetencyGraph = forwardRef<
   const [view, setView] = useState<ViewState>({ zoom: 0.5, pan: { x: 0, y: 0 } });
   const [panning, setPanning] = useState(false);
 
-  const layout = useMemo(() => layoutCompetencyGraph(nodes), [nodes]);
+  const layout = useMemo(() => layoutCompetencyGraph(nodes, mode), [nodes, mode]);
   const layoutRef = useRef(layout);
   layoutRef.current = layout;
   const viewRef = useRef(view);
@@ -188,6 +190,11 @@ export const CompetencyGraph = forwardRef<
     onZoomChange(Math.round(view.zoom * 100));
   }, [view.zoom, onZoomChange]);
 
+  // Смена режима отображения (ленты ↔ сеть) вписывает новую раскладку в экран.
+  useEffect(() => {
+    if (initializedRef.current) fit();
+  }, [mode, fit]);
+
   // Масштаб колесом — вокруг курсора.
   useEffect(() => {
     const container = containerRef.current;
@@ -265,6 +272,7 @@ export const CompetencyGraph = forwardRef<
       data-viewport={`${viewport.width}x${viewport.height}`}
     >
       <div
+        key={mode}
         className="graph-stage"
         style={{ transform: `translate(${view.pan.x}px, ${view.pan.y}px) scale(${view.zoom})` }}
       >
@@ -324,7 +332,7 @@ export const CompetencyGraph = forwardRef<
             <button
               key={node.id}
               type="button"
-              className={`graph-node tier-${node.tier}${active ? " is-active" : ""}${hovered ? " is-hover" : ""}${matched ? " is-match" : ""}${dimmed ? " is-dim" : ""}`}
+              className={`graph-node tier-${node.tier}${mode === "network" ? " is-network" : ""}${active ? " is-active" : ""}${hovered ? " is-hover" : ""}${matched ? " is-match" : ""}${dimmed ? " is-dim" : ""}`}
               style={{ left: node.x, top: node.y, width: node.width, height: node.height }}
               onMouseEnter={() => onHover(node.id)}
               onMouseLeave={() => onHover(null)}

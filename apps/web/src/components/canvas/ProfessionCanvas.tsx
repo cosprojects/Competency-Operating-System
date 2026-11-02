@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { CanvasToolbar } from "@/components/canvas/CanvasToolbar";
 import { CompetencyDetail } from "@/components/canvas/CompetencyDetail";
 import { CompetencyGraph, type GraphHandle } from "@/components/canvas/CompetencyGraph";
 import type {
@@ -11,9 +12,9 @@ import type {
   CanvasViewer,
 } from "@/components/canvas/types";
 import { FeedbackTrigger } from "@/components/feedback/FeedbackTrigger";
-import { IconAddSquare, IconCloseSquare, IconMinusSquare } from "@/components/icons";
+import { IconCloseSquare } from "@/components/icons";
 import { competencyMatches, competencyMeta, countLabel, normalizeQuery } from "@/lib/content";
-import type { GraphNodeInput } from "@/lib/graph-layout";
+import type { GraphMode, GraphNodeInput } from "@/lib/graph-layout";
 
 const TIER_LABEL: Record<CanvasCompetency["tier"], string> = {
   foundation: "Фундаментальная",
@@ -27,12 +28,14 @@ export function ProfessionCanvas({
   states,
   viewer,
   initialCompetencyId,
+  initialView = "board",
 }: {
   profession: CanvasProfession;
   competencies: CanvasCompetency[];
   states: CompetencyStates;
   viewer: CanvasViewer | null;
   initialCompetencyId?: string;
+  initialView?: GraphMode;
 }) {
   const byId = useMemo(() => new Map(competencies.map((item) => [item.id, item])), [competencies]);
   const [selectedId, setSelectedId] = useState<string | null>(
@@ -41,6 +44,7 @@ export function ProfessionCanvas({
   const [hoverId, setHoverId] = useState<string | null>(null);
   const [query, setQuery] = useState("");
   const [zoomPercent, setZoomPercent] = useState(45);
+  const [view, setView] = useState<GraphMode>(initialView);
 
   const graphRef = useRef<GraphHandle>(null);
   const tileRefs = useRef(new Map<string, HTMLButtonElement>());
@@ -98,6 +102,14 @@ export function ProfessionCanvas({
     window.history.replaceState(null, "", url);
   }, []);
 
+  const changeView = useCallback((next: GraphMode) => {
+    setView(next);
+    const url = new URL(window.location.href);
+    if (next === "board") url.searchParams.delete("view");
+    else url.searchParams.set("view", next);
+    window.history.replaceState(null, "", url);
+  }, []);
+
   // Открытая по ссылке компетенция центрируется в схеме после первого замера канваса.
   useEffect(() => {
     if (!initialCompetencyId || !byId.has(initialCompetencyId)) return;
@@ -114,10 +126,6 @@ export function ProfessionCanvas({
   return (
     <div className={`canvas-screen${selected ? " has-detail" : ""}`}>
       <div className="canvas-rail">
-        <Link className="rail-choose" href="/professions">
-          Выбрать профессию
-        </Link>
-
         <section className="profession-summary">
           <div className="summary-top">
             <span className="badge">Профессия</span>
@@ -137,6 +145,10 @@ export function ProfessionCanvas({
             </div>
           </div>
         </section>
+
+        <Link className="rail-choose" href="/professions">
+          Выбрать профессию
+        </Link>
 
         <div className="section-list">
           {profession.sections.map((section) => (
@@ -222,6 +234,7 @@ export function ProfessionCanvas({
         <CompetencyGraph
           ref={graphRef}
           nodes={graphNodes}
+          mode={view}
           activeId={selectedId}
           hoverId={hoverId}
           matches={matches}
@@ -230,25 +243,13 @@ export function ProfessionCanvas({
           onZoomChange={setZoomPercent}
         />
 
-        <div className="zoom-controls">
-          <button
-            className="zoom-button"
-            type="button"
-            onClick={() => graphRef.current?.zoomIn()}
-            aria-label="Приблизить"
-          >
-            <IconAddSquare />
-          </button>
-          <span className="zoom-value">{zoomPercent}%</span>
-          <button
-            className="zoom-button"
-            type="button"
-            onClick={() => graphRef.current?.zoomOut()}
-            aria-label="Отдалить"
-          >
-            <IconMinusSquare />
-          </button>
-        </div>
+        <CanvasToolbar
+          zoomPercent={zoomPercent}
+          view={view}
+          onViewChange={changeView}
+          onZoomIn={() => graphRef.current?.zoomIn()}
+          onZoomOut={() => graphRef.current?.zoomOut()}
+        />
       </div>
 
       {selected ? (

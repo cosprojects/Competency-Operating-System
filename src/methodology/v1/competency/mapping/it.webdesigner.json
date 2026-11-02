@@ -1,0 +1,410 @@
+{
+  "mappingVersion": "1.0.0",
+  "domain": "it",
+  "professionId": "it.webdesigner",
+  "updatedOn": "2026-11-02",
+  "status": "draft",
+  "description": "Черновой heuristic mapping собранных Practicum-тегов к profession view; не приёмка.",
+  "entries": [
+    {
+      "competencyId": "ux-design-thinking",
+      "tags": [
+        {
+          "title": "Дизайн и вёрстка в Tilda многостраничного сайта для экологического заповедника",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Дизайн-мышление",
+          "relation": "direct"
+        }
+      ],
+      "rationale": "Черновая эвристическая привязка собранных тегов к компетенции; требуется human-review."
+    },
+    {
+      "competencyId": "ui-color",
+      "tags": [
+        {
+          "title": "Цвет",
+          "relation": "direct"
+        }
+      ],
+      "rationale": "Черновая эвристическая привязка собранных тегов к компетенции; требуется human-review."
+    },
+    {
+      "competencyId": "ui-typography",
+      "tags": [
+        {
+          "title": "Типографика 2.0",
+          "relation": "direct"
+        }
+      ],
+      "rationale": "Черновая эвристическая привязка собранных тегов к компетенции; требуется human-review."
+    },
+    {
+      "competencyId": "ui-layout",
+      "tags": [
+        {
+          "title": "Композиция",
+          "relation": "direct"
+        },
+        {
+          "title": "Сетки 2.0",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Сетки в дизайне",
+          "relation": "adjacent"
+        }
+      ],
+      "rationale": "Черновая эвристическая привязка собранных тегов к компетенции; требуется human-review."
+    },
+    {
+      "competencyId": "web-landing",
+      "tags": [
+        {
+          "title": "Лендинг для кондитерской и UI-кит",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Лендинг карнавального SUP-фестиваля",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Лендинги и вайрфреймы",
+          "relation": "adjacent"
+        }
+      ],
+      "rationale": "Черновая эвристическая привязка собранных тегов к компетенции; требуется human-review."
+    },
+    {
+      "competencyId": "ai-model-landscape",
+      "tags": [
+        {
+          "title": "Рабочие инструменты",
+          "relation": "adjacent"
+        }
+      ],
+      "rationale": "Черновая эвристическая привязка собранных тегов к компетенции; требуется human-review."
+    },
+    {
+      "competencyId": "ai-prompting",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ai-research-synthesis",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ai-visual-generation",
+      "tags": [
+        {
+          "title": "Поиск и стилизация изображений",
+          "relation": "adjacent"
+        }
+      ],
+      "rationale": "Черновая эвристическая привязка собранных тегов к компетенции; требуется human-review."
+    },
+    {
+      "competencyId": "ai-video-audio",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ai-copy-content",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ai-layout-docs",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ai-workflow-integration",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ai-ethics-rights",
+      "tags": [
+        {
+          "title": "Корректно работать с данными и учитывать авторские права",
+          "relation": "direct"
+        }
+      ],
+      "rationale": "Черновая эвристическая привязка собранных тегов к компетенции; требуется human-review."
+    },
+    {
+      "competencyId": "ux-user-research",
+      "tags": [
+        {
+          "title": "Исследования",
+          "relation": "direct"
+        }
+      ],
+      "rationale": "Черновая эвристическая привязка собранных тегов к компетенции; требуется human-review."
+    },
+    {
+      "competencyId": "ux-information-architecture",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ux-user-flows",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ux-wireframes",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ux-hifi-prototype",
+      "tags": [
+        {
+          "title": "Прототип",
+          "relation": "direct"
+        }
+      ],
+      "rationale": "Черновая эвристическая привязка собранных тегов к компетенции; требуется human-review."
+    },
+    {
+      "competencyId": "ux-interactive-prototype",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "web-visual",
+      "tags": [
+        {
+          "title": "Веб-дизайн",
+          "relation": "adjacent"
+        },
+        {
+          "title": "UX/UI дизайн",
+          "relation": "adjacent"
+        }
+      ],
+      "rationale": "Черновая эвристическая привязка собранных тегов к компетенции; требуется human-review."
+    },
+    {
+      "competencyId": "ui-visual-elements",
+      "tags": [
+        {
+          "title": "Иконки",
+          "relation": "direct"
+        }
+      ],
+      "rationale": "Черновая эвристическая привязка собранных тегов к компетенции; требуется human-review."
+    },
+    {
+      "competencyId": "ui-visual-communication",
+      "tags": [
+        {
+          "title": "Визуальная коммуникация",
+          "relation": "direct"
+        }
+      ],
+      "rationale": "Черновая эвристическая привязка собранных тегов к компетенции; требуется human-review."
+    },
+    {
+      "competencyId": "web-adaptive",
+      "tags": [
+        {
+          "title": "Адаптивная вёрстка сайта бухгалтерского агентства",
+          "relation": "direct"
+        },
+        {
+          "title": "Вёрстка текста",
+          "relation": "adjacent"
+        }
+      ],
+      "rationale": "Черновая эвристическая привязка собранных тегов к компетенции; требуется human-review."
+    },
+    {
+      "competencyId": "ui-design-systems",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ui-components",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ui-responsive",
+      "tags": [
+        {
+          "title": "Обновление дизайна лендинга планетария с responsive-версией",
+          "relation": "adjacent"
+        }
+      ],
+      "rationale": "Черновая эвристическая привязка собранных тегов к компетенции; требуется human-review."
+    },
+    {
+      "competencyId": "ui-accessibility",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ui-figma",
+      "tags": [
+        {
+          "title": "Знакомство с Figma",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Интерфейс, фреймы, навигация и плагины в Figma",
+          "relation": "adjacent"
+        }
+      ],
+      "rationale": "Черновая эвристическая привязка собранных тегов к компетенции; требуется human-review."
+    },
+    {
+      "competencyId": "ui-web-technologies",
+      "tags": [
+        {
+          "title": "Алиса AI",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Нейросети в дизайне",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Соблюдать ограничения и требования безопасности",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Чем занимается веб‑дизайнер",
+          "relation": "adjacent"
+        },
+        {
+          "title": "DALL·E 3",
+          "relation": "adjacent"
+        },
+        {
+          "title": "KREA AI",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Photoshop",
+          "relation": "adjacent"
+        }
+      ],
+      "rationale": "Черновая эвристическая привязка собранных тегов к компетенции; требуется human-review."
+    },
+    {
+      "competencyId": "web-cms",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ui-handoff",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "web-performance",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    }
+  ],
+  "excludedTags": [
+    {
+      "title": "Анимация",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Аргументация решений",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Базовые навыки",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Введение в Tilda",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Векторы развития в профессии",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Верстаю многостраничные сайты на Tilda, работаю с zero‑блоками и адаптивами",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Взаимодействие с разработкой",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Гарнитуры и шрифты",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Интерфейсы и UX",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Мудборд",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Насмотренность",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Основы HTML и CSS",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Подбор шрифтов",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Построение композиции",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Работа с заказчиком",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Работа с командой",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Работа с цветом",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Растровая графика в Adobe Photoshop",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Создание сайтов",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Техническое задание",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Целевая аудитория: портрет и признаки",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "UI-кит",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "UX-копирайтинг",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    }
+  ]
+}

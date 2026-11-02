@@ -122,3 +122,6 @@ Handoff для продолжения: [COS-RES-019](docs/09-research/COS-RES-01
 
 
 Библиотека учебных источников: [COS-RES-022](docs/09-research/COS-RES-022-Learning-Sources-Library.md). Связи «компетенция → источник» ведутся в `model/learning-source-links.json` и мержатся при `model:sync`; реестр — 118 источников (89 active), покрытие: UX/UI 41/43, Product 37/39, Motion 36/37, Graphic 27/27, остальные профессии — 100%. Команды: `npm run learning:validate`, `npm run learning:audit`, `npm run learning:map -- --report`, `npm run learning:topics -- --profession motion --report` (robots-safe извлечение тем, без копирования текста), `npm run learning:discover`.
+
+
+Аудит восьми дополнительных профессий: [COS-RES-026](docs/09-research/COS-RES-026-Additional-Designers-Readiness-Audit.md).

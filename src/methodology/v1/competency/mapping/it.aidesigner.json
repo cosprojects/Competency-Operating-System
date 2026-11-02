@@ -1,0 +1,253 @@
+{
+  "mappingVersion": "1.0.0",
+  "domain": "it",
+  "professionId": "it.aidesigner",
+  "updatedOn": "2026-11-02",
+  "status": "draft",
+  "description": "Черновой heuristic mapping собранных Practicum-тегов к profession view; не приёмка.",
+  "entries": [
+    {
+      "competencyId": "ux-design-thinking",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ai-model-landscape",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "aidesigner-tool-landscape",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ai-prompting",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "aidesigner-prompt-systems",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "aidesigner-tool-evaluation",
+      "tags": [
+        {
+          "title": "Выбор сценария: создание, переработка или адаптация",
+          "relation": "adjacent"
+        }
+      ],
+      "rationale": "Черновая эвристическая привязка собранных тегов к компетенции; требуется human-review."
+    },
+    {
+      "competencyId": "ux-product-thinking",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ux-user-research",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "aidesigner-ai-features",
+      "tags": [
+        {
+          "title": "Проектирование визуального решения",
+          "relation": "adjacent"
+        }
+      ],
+      "rationale": "Черновая эвристическая привязка собранных тегов к компетенции; требуется human-review."
+    },
+    {
+      "competencyId": "ux-requirements",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ui-layout",
+      "tags": [
+        {
+          "title": "Характеристики стиля: цвет, композиция, фактура, форма, настроение",
+          "relation": "adjacent"
+        }
+      ],
+      "rationale": "Черновая эвристическая привязка собранных тегов к компетенции; требуется human-review."
+    },
+    {
+      "competencyId": "ui-visual-communication",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ui-figma",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ai-visual-generation",
+      "tags": [
+        {
+          "title": "Менеджмент",
+          "relation": "direct"
+        },
+        {
+          "title": "Нейросети",
+          "relation": "direct"
+        },
+        {
+          "title": "Нейросети в дизайне",
+          "relation": "direct"
+        }
+      ],
+      "rationale": "Черновая эвристическая привязка собранных тегов к компетенции; требуется human-review."
+    },
+    {
+      "competencyId": "aidesigner-visual-generation",
+      "tags": [
+        {
+          "title": "Генерация изображения",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Доведение до рабочего качества и устранение артефактов",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Параметры визуала: содержание, объекты, сцена, ограничения",
+          "relation": "adjacent"
+        }
+      ],
+      "rationale": "Черновая эвристическая привязка собранных тегов к компетенции; требуется human-review."
+    },
+    {
+      "competencyId": "aidesigner-series-adaptation",
+      "tags": [
+        {
+          "title": "Адаптация под каналы и форматы",
+          "relation": "direct"
+        },
+        {
+          "title": "Создание серии визуалов с ИИ",
+          "relation": "direct"
+        },
+        {
+          "title": "Типичные ошибки при создании серии визуалов",
+          "relation": "direct"
+        }
+      ],
+      "rationale": "Черновая эвристическая привязка собранных тегов к компетенции; требуется human-review."
+    },
+    {
+      "competencyId": "ai-video-audio",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "aidesigner-video-audio",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ai-copy-content",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ai-layout-docs",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "aidesigner-automation",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ai-workflow-integration",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "aidesigner-quality-eval",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ui-handoff",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ai-research-synthesis",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ai-ethics-rights",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "aidesigner-integration",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    }
+  ],
+  "excludedTags": [
+    {
+      "title": "Внесение изменений с ИИ: фон, цвет, объекты",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Воспроизведение стиля с ИИ и работа с референсами",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Первый визуал по готовому промпту",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Рабочее качество и чек-лист артефактов",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Сборка комплекта",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Создание анимации с ИИ",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Сценарии анимации: зацикленное движение, переход, акцент",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Технические параметры: длительность, зацикленность, размер",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Типичные ошибки комплексного визуального решения",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Типичные ошибки при воспроизведении стиля",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Типичные ошибки при переработке",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Хук и мотивация",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Ядро и переменные",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    }
+  ]
+}

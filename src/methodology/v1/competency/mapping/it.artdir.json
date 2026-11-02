@@ -1,0 +1,176 @@
+{
+  "mappingVersion": "1.0.0",
+  "domain": "it",
+  "professionId": "it.artdir",
+  "updatedOn": "2026-11-02",
+  "status": "draft",
+  "description": "Черновой heuristic mapping собранных Practicum-тегов к profession view; не приёмка.",
+  "entries": [
+    {
+      "competencyId": "ux-design-thinking",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ui-color",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ui-typography",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ui-layout",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ui-visual-communication",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ai-model-landscape",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ai-prompting",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ai-research-synthesis",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ai-visual-generation",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ai-video-audio",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ai-copy-content",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ai-layout-docs",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ai-workflow-integration",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ai-ethics-rights",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "graphic-brand-identity",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "artdir-brand-strategy",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "artdir-brand-platform",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ui-design-systems",
+      "tags": [
+        {
+          "title": "Дизайн-системы",
+          "relation": "direct"
+        }
+      ],
+      "rationale": "Черновая эвристическая привязка собранных тегов к компетенции; требуется human-review."
+    },
+    {
+      "competencyId": "ui-components",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "artdir-brief",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ux-product-thinking",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "artdir-communication",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "artdir-presentation",
+      "tags": [
+        {
+          "title": "Презентация решений",
+          "relation": "adjacent"
+        }
+      ],
+      "rationale": "Черновая эвристическая привязка собранных тегов к компетенции; требуется human-review."
+    },
+    {
+      "competencyId": "artdir-team",
+      "tags": [
+        {
+          "title": "Управление в дизайне",
+          "relation": "adjacent"
+        }
+      ],
+      "rationale": "Черновая эвристическая привязка собранных тегов к компетенции; требуется human-review."
+    },
+    {
+      "competencyId": "artdir-hiring",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    }
+  ],
+  "excludedTags": [
+    {
+      "title": "Методы мотивации",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Нейросети в дизайне",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Планирование",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "DeepSeek",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "KREA AI",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Prompt Engineering",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    }
+  ]
+}

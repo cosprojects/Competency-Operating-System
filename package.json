@@ -76,7 +76,9 @@
     "db:local:push": "prisma db push --schema prisma/schema.local.prisma --skip-generate",
     "db:local:generate": "prisma generate --schema prisma/schema.local.prisma",
     "db:local": "npm run db:local:prepare && npm run db:local:push && npm run db:local:generate",
-    "web:canvases": "node --experimental-strip-types scripts/web/copy-canvases.ts"
+    "web:canvases": "node --experimental-strip-types scripts/web/copy-canvases.ts",
+    "mapping:draft": "node --experimental-strip-types src/methodology/v1/competency/cli/mapping-draft.ts",
+    "blocks:from-mapping": "node --experimental-strip-types src/methodology/v1/competency/cli/blocks-from-mapping.ts"
   },
   "dependencies": {
     "@prisma/client": "^6.4.0",

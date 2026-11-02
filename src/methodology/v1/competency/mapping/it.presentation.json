@@ -1,0 +1,245 @@
+{
+  "mappingVersion": "1.0.0",
+  "domain": "it",
+  "professionId": "it.presentation",
+  "updatedOn": "2026-11-02",
+  "status": "draft",
+  "description": "Черновой heuristic mapping собранных Practicum-тегов к profession view; не приёмка.",
+  "entries": [
+    {
+      "competencyId": "ux-design-thinking",
+      "tags": [
+        {
+          "title": "UX/UI дизайн",
+          "relation": "adjacent"
+        }
+      ],
+      "rationale": "Черновая эвристическая привязка собранных тегов к компетенции; требуется human-review."
+    },
+    {
+      "competencyId": "ui-typography",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ui-color",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ui-layout",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "presentation-structure",
+      "tags": [
+        {
+          "title": "Проверка презентации с ИИ",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Структура презентации",
+          "relation": "direct"
+        },
+        {
+          "title": "Цель презентации",
+          "relation": "adjacent"
+        }
+      ],
+      "rationale": "Черновая эвристическая привязка собранных тегов к компетенции; требуется human-review."
+    },
+    {
+      "competencyId": "ai-model-landscape",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ai-prompting",
+      "tags": [
+        {
+          "title": "Управление командами",
+          "relation": "adjacent"
+        }
+      ],
+      "rationale": "Черновая эвристическая привязка собранных тегов к компетенции; требуется human-review."
+    },
+    {
+      "competencyId": "ai-research-synthesis",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ai-visual-generation",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ai-video-audio",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ai-copy-content",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ai-layout-docs",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ai-workflow-integration",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ai-ethics-rights",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "presentation-audience",
+      "tags": [
+        {
+          "title": "Адаптация языка и подачи под слушателей",
+          "relation": "direct"
+        }
+      ],
+      "rationale": "Черновая эвристическая привязка собранных тегов к компетенции; требуется human-review."
+    },
+    {
+      "competencyId": "presentation-message",
+      "tags": [
+        {
+          "title": "Аргументация и выводы",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Ключевое сообщение и тезисы",
+          "relation": "direct"
+        }
+      ],
+      "rationale": "Черновая эвристическая привязка собранных тегов к компетенции; требуется human-review."
+    },
+    {
+      "competencyId": "presentation-data",
+      "tags": [
+        {
+          "title": "Поиск достоверных данных",
+          "relation": "adjacent"
+        },
+        {
+          "title": "Фактчекинг",
+          "relation": "direct"
+        }
+      ],
+      "rationale": "Черновая эвристическая привязка собранных тегов к компетенции; требуется human-review."
+    },
+    {
+      "competencyId": "presentation-visualization",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ui-data-visualization",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ui-figma",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "ui-visual-communication",
+      "tags": [],
+      "rationale": "Прямых тегов в собранном Practicum-наборе нет; нужна дополнительная evidence-проверка."
+    },
+    {
+      "competencyId": "presentation-delivery",
+      "tags": [
+        {
+          "title": "Репетиция защиты идеи с ИИ",
+          "relation": "adjacent"
+        }
+      ],
+      "rationale": "Черновая эвристическая привязка собранных тегов к компетенции; требуется human-review."
+    }
+  ],
+  "excludedTags": [
+    {
+      "title": "Алиса AI",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Видеоразбор: доработка слайда экспертом по ИИ",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Выбор способа визуализации",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Генерация и сборка",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Генерация первого слайда из абзаца текста",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Контент и соцсети",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Маркетинг",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Менеджмент",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Нейросети",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Нейросети в дизайне",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Нейросети в профессиях",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Профиль целевой аудитории",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Шедеврум",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "DeepSeek",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Gamma",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Gemini",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "GigaChat",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    },
+    {
+      "title": "Kandinsky",
+      "reason": "Нет устойчивого совпадения с компетенцией; тег оставлен как контекст и требует ручного review."
+    }
+  ]
+}

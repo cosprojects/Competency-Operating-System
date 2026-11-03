@@ -1,7 +1,7 @@
 {
   "catalogVersion": "0.1.0",
   "domain": "it",
-  "updatedOn": "2026-11-02",
+  "updatedOn": "2026-11-03",
   "blocks": [
     {
       "id": "comp_3b5bab068e42",
@@ -186,10 +186,10 @@
       ],
       "components": [
         {
-          "id": "3d-modelirovanie.osnovy-i-bazovye-primitivy",
-          "slug": "osnovy-i-bazovye-primitivy",
-          "title": "Основы и базовые примитивы",
-          "definition": "Базовые понятия 3D-моделирования: примитивы, топология, этапы работы над моделью.",
+          "id": "3d-modelirovanie.osnovy-3d-i-primitivy",
+          "slug": "osnovy-3d-i-primitivy",
+          "title": "Основы 3D и примитивы",
+          "definition": "Базовые понятия трёхмерной графики и работа с примитивами как отправной точкой моделирования.",
           "order": 1,
           "tagIds": [
             "tag_94dc9a243b9c"
@@ -199,7 +199,7 @@
           "id": "3d-modelirovanie.poligonalnoe-modelirovanie",
           "slug": "poligonalnoe-modelirovanie",
           "title": "Полигональное моделирование",
-          "definition": "Создание и редактирование полигональной сетки объекта.",
+          "definition": "Создание и редактирование полигональной сетки: вершины, рёбра, грани, топология.",
           "order": 2,
           "tagIds": [
             "tag_ac3cb093224f"
@@ -209,7 +209,7 @@
           "id": "3d-modelirovanie.protsedurnoe-modelirovanie",
           "slug": "protsedurnoe-modelirovanie",
           "title": "Процедурное моделирование",
-          "definition": "Построение моделей на основе процедурных и параметрических методов.",
+          "definition": "Создание моделей на основе параметрических и процедурных методов вместо ручного редактирования сетки.",
           "order": 3,
           "tagIds": [
             "tag_6f4a5e512b9f"
@@ -219,7 +219,7 @@
           "id": "3d-modelirovanie.modelirovanie-personazhey",
           "slug": "modelirovanie-personazhey",
           "title": "Моделирование персонажей",
-          "definition": "Создание моделей человеческих персонажей.",
+          "definition": "Создание трёхмерных моделей человеческих персонажей.",
           "order": 4,
           "tagIds": [
             "tag_e21c498a84b2"
@@ -229,7 +229,7 @@
           "id": "3d-modelirovanie.modelirovanie-odezhdy",
           "slug": "modelirovanie-odezhdy",
           "title": "Моделирование одежды",
-          "definition": "Создание моделей одежды для персонажей.",
+          "definition": "Создание трёхмерной одежды и её посадки на персонажа.",
           "order": 5,
           "tagIds": [
             "tag_215b168a5db7",
@@ -240,7 +240,7 @@
           "id": "3d-modelirovanie.modelirovanie-igrovyh-lokatsiy",
           "slug": "modelirovanie-igrovyh-lokatsiy",
           "title": "Моделирование игровых локаций",
-          "definition": "Создание моделей окружения и игровых локаций.",
+          "definition": "Создание трёхмерного окружения и локаций для игровых проектов.",
           "order": 6,
           "tagIds": [
             "tag_7c84acba882e"
@@ -271,7 +271,7 @@
           "competencyLinks": [
             {
               "competencyId": "comp_456eb4cd9619",
-              "componentId": "3d-modelirovanie.osnovy-i-bazovye-primitivy",
+              "componentId": "3d-modelirovanie.osnovy-3d-i-primitivy",
               "role": "primary"
             }
           ],
@@ -284,7 +284,7 @@
           "title": "Полигональное моделирование в Blender",
           "aliases": [],
           "kind": "skill",
-          "definition": "Практическое создание и редактирование полигональной сетки в Blender.",
+          "definition": "Практическое построение и редактирование полигональной сетки в Blender для создания трёхмерных объектов.",
           "professionIds": [
             "it.3ddesigner"
           ],
@@ -314,7 +314,7 @@
           "title": "Blender: процедурное моделирование",
           "aliases": [],
           "kind": "skill",
-          "definition": "Создание моделей процедурными методами в Blender.",
+          "definition": "Использование процедурных инструментов Blender для генерации и модификации трёхмерных форм.",
           "professionIds": [
             "it.3ddesigner"
           ],
@@ -344,7 +344,7 @@
           "title": "Моделирование человеческих персонажей в Blender",
           "aliases": [],
           "kind": "skill",
-          "definition": "Создание моделей человеческих персонажей в Blender.",
+          "definition": "Построение трёхмерной модели человеческого персонажа в Blender с учётом анатомии и формы.",
           "professionIds": [
             "it.3ddesigner"
           ],
@@ -374,7 +374,7 @@
           "title": "Моделирование одежды в Blender",
           "aliases": [],
           "kind": "skill",
-          "definition": "Создание моделей одежды в Blender.",
+          "definition": "Построение трёхмерных моделей одежды средствами Blender.",
           "professionIds": [
             "it.3ddesigner"
           ],
@@ -404,7 +404,7 @@
           "title": "Моделирование одежды в Marvelous Designer",
           "aliases": [],
           "kind": "skill",
-          "definition": "Создание моделей одежды в Marvelous Designer.",
+          "definition": "Создание и симуляция трёхмерной одежды в Marvelous Designer.",
           "professionIds": [
             "it.3ddesigner"
           ],
@@ -434,7 +434,7 @@
           "title": "Моделирование игровых локаций в Unreal Engine",
           "aliases": [],
           "kind": "skill",
-          "definition": "Создание моделей игровых локаций в Unreal Engine.",
+          "definition": "Построение трёхмерных игровых локаций средствами Unreal Engine.",
           "professionIds": [
             "it.3ddesigner"
           ],
@@ -473,12 +473,12 @@
       "llmMeta": {
         "promptVersion": "competency-v1",
         "model": "deepseek-flash",
-        "inputHash": "llm_983edf1f89ad",
-        "costUsd": 0.0012150100000000003,
+        "inputHash": "llm_e85d2a0a6884",
+        "costUsd": 0.0015520800000000002,
         "tokens": {
-          "cacheHitTokens": 896,
-          "cacheMissTokens": 707,
-          "outputTokens": 874
+          "cacheHitTokens": 256,
+          "cacheMissTokens": 1498,
+          "outputTokens": 1027
         }
       },
       "issues": [],
@@ -6745,6 +6745,264 @@
       "methodologyVersion": "0.1.0"
     },
     {
+      "id": "comp_bd276732bf44",
+      "slug": "kompoziting-3d",
+      "title": "Композитинг 3D",
+      "aliases": [
+        "3D-композитинг",
+        "Сборка 3D-слоёв и постобработка"
+      ],
+      "definition": "Сборка 3D-слоёв, постобработка и совмещение с live-action.",
+      "scope": "universal",
+      "canonicalIds": [
+        "3d-compositing"
+      ],
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "components": [
+        {
+          "id": "kompoziting-3d.osnovy-kompozitsii-kadra",
+          "slug": "osnovy-kompozitsii-kadra",
+          "title": "Основы композиции кадра",
+          "definition": "Принципы построения изображения, распределения элементов и акцентов в кадре, применимые к сборке 3D-сцен.",
+          "order": 1,
+          "tagIds": [
+            "tag_01ee07d0315d"
+          ]
+        },
+        {
+          "id": "kompoziting-3d.kompoziting-3d-sloev",
+          "slug": "kompoziting-3d-sloev",
+          "title": "Композитинг 3D-слоёв",
+          "definition": "Сборка отдельных 3D-слоёв и проходов рендера в единое изображение с учётом порядка, прозрачности и взаимодействия элементов.",
+          "order": 2,
+          "tagIds": [
+            "tag_bdc43d8e4655"
+          ]
+        },
+        {
+          "id": "kompoziting-3d.postobrabotka-i-sovmeschenie-s-live-action",
+          "slug": "postobrabotka-i-sovmeschenie-s-live-action",
+          "title": "Постобработка и совмещение с live-action",
+          "definition": "Доработка собранного изображения и интеграция 3D-элементов в отснятый материал.",
+          "order": 3,
+          "tagIds": [
+            "tag_ef34829ed9b7",
+            "tag_3b0b614b64a2"
+          ]
+        },
+        {
+          "id": "kompoziting-3d.instrumentariy-kompozitinga",
+          "slug": "instrumentariy-kompozitinga",
+          "title": "Инструментарий композитинга",
+          "definition": "Программные средства, используемые для сборки и постобработки 3D-изображений.",
+          "order": 4,
+          "tagIds": [
+            "tag_7110c780499b",
+            "tag_ed1854c0e761"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_01ee07d0315d",
+          "slug": "osnovy-kompozitsii",
+          "title": "Основы композиции",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Тема/навык на странице программы «3d-generalist»",
+          "professionIds": [
+            "it.3ddesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "3d-generalist",
+              "url": "https://practicum.yandex.ru/3d-generalist/",
+              "retrievedAt": "2026-11-02",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_bd276732bf44",
+              "componentId": "kompoziting-3d.osnovy-kompozitsii-kadra",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_bdc43d8e4655",
+          "slug": "kompoziting",
+          "title": "Композитинг",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Тема/навык на странице программы «3d-generalist»",
+          "professionIds": [
+            "it.3ddesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "3d-generalist",
+              "url": "https://practicum.yandex.ru/3d-generalist/",
+              "retrievedAt": "2026-11-02",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_bd276732bf44",
+              "componentId": "kompoziting-3d.kompoziting-3d-sloev",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_ef34829ed9b7",
+          "slug": "postobrabotka-3d-izobrazheniya",
+          "title": "Постобработка 3D-изображения",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Настройка цвета, контраста и эффектов на собранном 3D-изображении для достижения целостного результата.",
+          "professionIds": [
+            "it.3ddesigner"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_bd276732bf44",
+              "componentId": "kompoziting-3d.postobrabotka-i-sovmeschenie-s-live-action",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_3b0b614b64a2",
+          "slug": "sovmeschenie-3d-s-live-action",
+          "title": "Совмещение 3D с live-action",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Интеграция 3D-слоёв в отснятый материал с согласованием перспективы, освещения и движения.",
+          "professionIds": [
+            "it.3ddesigner"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_bd276732bf44",
+              "componentId": "kompoziting-3d.postobrabotka-i-sovmeschenie-s-live-action",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_7110c780499b",
+          "slug": "adobe-after-effects",
+          "title": "Adobe After Effects",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Тег программы «3D-дженералист» в каталоге Практикума",
+          "professionIds": [
+            "it.3ddesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "3d-generalist:catalog",
+              "url": "https://practicum.yandex.ru/catalog/design/3d-generalist/",
+              "retrievedAt": "2026-11-02",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_bd276732bf44",
+              "componentId": "kompoziting-3d.instrumentariy-kompozitinga",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_ed1854c0e761",
+          "slug": "rabota-v-adobe-after-effects",
+          "title": "Работа в Adobe After Effects",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Практическое применение Adobe After Effects для сборки слоёв, анимации и постобработки.",
+          "professionIds": [
+            "it.3ddesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "3d-generalist",
+              "url": "https://practicum.yandex.ru/3d-generalist/",
+              "retrievedAt": "2026-11-02",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_bd276732bf44",
+              "componentId": "kompoziting-3d.instrumentariy-kompozitinga",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-02",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        },
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist:catalog",
+          "url": "https://practicum.yandex.ru/catalog/design/3d-generalist/",
+          "retrievedAt": "2026-11-02",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_24fb73a08fa1",
+        "costUsd": 0.0013650700000000001,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1413,
+          "outputTokens": 886
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
       "id": "comp_a8aa252a35b8",
       "slug": "kompoziting-i-vfx",
       "title": "Композитинг и VFX",
@@ -7471,6 +7729,355 @@
         }
       },
       "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
+      "id": "comp_d70ace963045",
+      "slug": "materialy-i-tekstury",
+      "title": "Материалы и текстуры",
+      "titleEn": "Materials and Textures",
+      "aliases": [
+        "Текстурирование и PBR-материалы",
+        "Шейдинг и текстуры"
+      ],
+      "definition": "Текстурирование, PBR-материалы, UV-развёртка и подготовка ассетов.",
+      "scope": "universal",
+      "canonicalIds": [
+        "3d-texturing"
+      ],
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "components": [
+        {
+          "id": "materialy-i-tekstury.osnovy-pbr-i-sheydinga",
+          "slug": "osnovy-pbr-i-sheydinga",
+          "title": "Основы PBR и шейдинга",
+          "definition": "Принципы физически корректного рендеринга и построения материалов.",
+          "order": 1,
+          "tagIds": [
+            "tag_76bd16e9082a",
+            "tag_9a6d84c22191"
+          ]
+        },
+        {
+          "id": "materialy-i-tekstury.uv-razvertka",
+          "slug": "uv-razvertka",
+          "title": "UV-развёртка",
+          "definition": "Подготовка UV-координат для корректного наложения текстур.",
+          "order": 2,
+          "tagIds": [
+            "tag_f2f35ac9db8e",
+            "tag_bd040d4d93cf"
+          ]
+        },
+        {
+          "id": "materialy-i-tekstury.teksturnye-karty",
+          "slug": "teksturnye-karty",
+          "title": "Текстурные карты",
+          "definition": "Создание и применение карт текстур для материалов.",
+          "order": 3,
+          "tagIds": [
+            "tag_a868e9716e27",
+            "tag_aaf5679eeeed"
+          ]
+        },
+        {
+          "id": "materialy-i-tekstury.instrumenty-teksturirovaniya",
+          "slug": "instrumenty-teksturirovaniya",
+          "title": "Инструменты текстурирования",
+          "definition": "Программные средства для создания и обработки текстур.",
+          "order": 4,
+          "tagIds": [
+            "tag_d52725c052f8",
+            "tag_10f4334e2838"
+          ]
+        },
+        {
+          "id": "materialy-i-tekstury.podgotovka-assetov",
+          "slug": "podgotovka-assetov",
+          "title": "Подготовка ассетов",
+          "definition": "Оптимизация и экспорт моделей с материалами для дальнейшего использования.",
+          "order": 5,
+          "tagIds": [
+            "tag_e05af078fea8",
+            "tag_f2f7abec80c4"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_76bd16e9082a",
+          "slug": "ponyatie-pbr-materiala",
+          "title": "Понятие PBR-материала",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Понимание принципов физически корректного рендеринга и структуры PBR-материала (альбедо, металличность, шероховатость, нормали).",
+          "professionIds": [
+            "it.3ddesigner"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_d70ace963045",
+              "componentId": "materialy-i-tekstury.osnovy-pbr-i-sheydinga",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_9a6d84c22191",
+          "slug": "nastroyka-materialov-v-blender",
+          "title": "Настройка материалов в Blender",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Создание и настройка материалов в Blender для достижения нужного вида поверхности.",
+          "professionIds": [
+            "it.3ddesigner"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_d70ace963045",
+              "componentId": "materialy-i-tekstury.osnovy-pbr-i-sheydinga",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_f2f35ac9db8e",
+          "slug": "sozdanie-uv-razvertki",
+          "title": "Создание UV-развёртки",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Развёртка трёхмерной модели на плоскость с минимизацией искажений и эффективным использованием UV-пространства.",
+          "professionIds": [
+            "it.3ddesigner"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_d70ace963045",
+              "componentId": "materialy-i-tekstury.uv-razvertka",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_bd040d4d93cf",
+          "slug": "upakovka-uv-ostrovov",
+          "title": "Упаковка UV-островов",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Оптимальное расположение UV-островов для повышения плотности текселей и снижения перекрытий.",
+          "professionIds": [
+            "it.3ddesigner"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_d70ace963045",
+              "componentId": "materialy-i-tekstury.uv-razvertka",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_a868e9716e27",
+          "slug": "karty-normaley-i-sherohovatosti",
+          "title": "Карты нормалей и шероховатости",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Назначение и способы создания карт нормалей, шероховатости и других вспомогательных карт.",
+          "professionIds": [
+            "it.3ddesigner"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_d70ace963045",
+              "componentId": "materialy-i-tekstury.teksturnye-karty",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_aaf5679eeeed",
+          "slug": "protsedurnye-tekstury",
+          "title": "Процедурные текстуры",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Создание процедурных текстур для поверхностей без ручной росписи.",
+          "professionIds": [
+            "it.3ddesigner"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_d70ace963045",
+              "componentId": "materialy-i-tekstury.teksturnye-karty",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_d52725c052f8",
+          "slug": "osnovy-raboty-s-substance-3d-sampler",
+          "title": "Основы работы с Substance 3D Sampler",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Тема/навык на странице программы «3d-generalist»",
+          "professionIds": [
+            "it.3ddesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "3d-generalist",
+              "url": "https://practicum.yandex.ru/3d-generalist/",
+              "retrievedAt": "2026-11-02",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_d70ace963045",
+              "componentId": "materialy-i-tekstury.instrumenty-teksturirovaniya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_10f4334e2838",
+          "slug": "ispolzovat-addony-dlya-uskoreniya-raboty-v-blender",
+          "title": "Использовать аддоны для ускорения работы в Blender",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Тема/навык на странице программы «3d-generalist»",
+          "professionIds": [
+            "it.3ddesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "3d-generalist",
+              "url": "https://practicum.yandex.ru/3d-generalist/",
+              "retrievedAt": "2026-11-02",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_d70ace963045",
+              "componentId": "materialy-i-tekstury.instrumenty-teksturirovaniya",
+              "role": "primary"
+            },
+            {
+              "competencyId": "comp_47fdd59893c1",
+              "componentId": "svet-i-ten.instrumentariy-3d-dizaynera",
+              "role": "primary"
+            },
+            {
+              "competencyId": "comp_203bace336e2",
+              "componentId": "render-i-optimizatsiya.optimizatsiya-stseny-i-proizvoditelnost",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_e05af078fea8",
+          "slug": "optimizatsiya-tekstur-i-materialov",
+          "title": "Оптимизация текстур и материалов",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Снижение разрешения текстур и упрощение материалов для соответствия требованиям производительности.",
+          "professionIds": [
+            "it.3ddesigner"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_d70ace963045",
+              "componentId": "materialy-i-tekstury.podgotovka-assetov",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        },
+        {
+          "id": "tag_f2f7abec80c4",
+          "slug": "eksport-assetov-s-materialami",
+          "title": "Экспорт ассетов с материалами",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Корректный экспорт моделей и текстур в целевые форматы с сохранением материалов.",
+          "professionIds": [
+            "it.3ddesigner"
+          ],
+          "sourceRefs": [],
+          "evidenceState": "needs_review",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_d70ace963045",
+              "componentId": "materialy-i-tekstury.podgotovka-assetov",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": true
+        }
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-02",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_d735d5b66b12",
+        "costUsd": 0.0017161400000000001,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1654,
+          "outputTokens": 1146
+        }
+      },
+      "issues": [
+        "покрытие входных тегов 25% < 50%"
+      ],
       "methodologyVersion": "0.1.0"
     },
     {
@@ -10795,6 +11402,190 @@
       "methodologyVersion": "0.1.0"
     },
     {
+      "id": "comp_203bace336e2",
+      "slug": "render-i-optimizatsiya",
+      "title": "Рендер и оптимизация",
+      "titleEn": "Rendering and Optimization",
+      "aliases": [
+        "Настройка рендера",
+        "Оптимизация сцены",
+        "Качество изображения"
+      ],
+      "definition": "Настройка рендера, качество изображения и оптимизация сцены.",
+      "scope": "universal",
+      "canonicalIds": [
+        "3d-rendering"
+      ],
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "components": [
+        {
+          "id": "render-i-optimizatsiya.nastroyka-rendera-i-kamery",
+          "slug": "nastroyka-rendera-i-kamery",
+          "title": "Настройка рендера и камеры",
+          "definition": "Параметры рендеринга и работа с камерой для получения итогового изображения.",
+          "order": 1,
+          "tagIds": [
+            "tag_9e7f72bcdfe0"
+          ]
+        },
+        {
+          "id": "render-i-optimizatsiya.svet-i-kachestvo-izobrazheniya",
+          "slug": "svet-i-kachestvo-izobrazheniya",
+          "title": "Свет и качество изображения",
+          "definition": "Освещение сцены и его влияние на качество итогового рендера.",
+          "order": 2,
+          "tagIds": [
+            "tag_7452fdd10911"
+          ]
+        },
+        {
+          "id": "render-i-optimizatsiya.optimizatsiya-stseny-i-proizvoditelnost",
+          "slug": "optimizatsiya-stseny-i-proizvoditelnost",
+          "title": "Оптимизация сцены и производительность",
+          "definition": "Приёмы ускорения работы и снижения нагрузки при подготовке сцены к рендеру.",
+          "order": 3,
+          "tagIds": [
+            "tag_10f4334e2838"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_9e7f72bcdfe0",
+          "slug": "prodvinutaya-rabota-s-kameroy",
+          "title": "Продвинутая работа с камерой",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Тема/навык на странице программы «3d-generalist»",
+          "professionIds": [
+            "it.3ddesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "3d-generalist",
+              "url": "https://practicum.yandex.ru/3d-generalist/",
+              "retrievedAt": "2026-11-02",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_203bace336e2",
+              "componentId": "render-i-optimizatsiya.nastroyka-rendera-i-kamery",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_7452fdd10911",
+          "slug": "nastroyka-sveta-v-blender",
+          "title": "Настройка света в Blender",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Тема/навык на странице программы «3d-generalist»",
+          "professionIds": [
+            "it.3ddesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "3d-generalist",
+              "url": "https://practicum.yandex.ru/3d-generalist/",
+              "retrievedAt": "2026-11-02",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_47fdd59893c1",
+              "componentId": "svet-i-ten.osnovy-sveta-v-3d",
+              "role": "primary"
+            },
+            {
+              "competencyId": "comp_203bace336e2",
+              "componentId": "render-i-optimizatsiya.svet-i-kachestvo-izobrazheniya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_10f4334e2838",
+          "slug": "ispolzovat-addony-dlya-uskoreniya-raboty-v-blender",
+          "title": "Использовать аддоны для ускорения работы в Blender",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Тема/навык на странице программы «3d-generalist»",
+          "professionIds": [
+            "it.3ddesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "3d-generalist",
+              "url": "https://practicum.yandex.ru/3d-generalist/",
+              "retrievedAt": "2026-11-02",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_d70ace963045",
+              "componentId": "materialy-i-tekstury.instrumenty-teksturirovaniya",
+              "role": "primary"
+            },
+            {
+              "competencyId": "comp_47fdd59893c1",
+              "componentId": "svet-i-ten.instrumentariy-3d-dizaynera",
+              "role": "primary"
+            },
+            {
+              "competencyId": "comp_203bace336e2",
+              "componentId": "render-i-optimizatsiya.optimizatsiya-stseny-i-proizvoditelnost",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-02",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_57d73edb22f5",
+        "costUsd": 0.0010651500000000002,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1667,
+          "outputTokens": 551
+        }
+      },
+      "issues": [
+        "покрытие входных тегов 38% < 50%"
+      ],
+      "methodologyVersion": "0.1.0"
+    },
+    {
       "id": "comp_90f6aad56a1e",
       "slug": "rost-voronki-i-uderzhanie",
       "title": "Рост, воронки и удержание",
@@ -10956,6 +11747,530 @@
           "cacheHitTokens": 256,
           "cacheMissTokens": 1002,
           "outputTokens": 575
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
+      "id": "comp_47fdd59893c1",
+      "slug": "svet-i-ten",
+      "title": "Свет и тень",
+      "titleEn": "Lighting and Shadow",
+      "aliases": [
+        "Постановка света в 3D",
+        "3D-освещение"
+      ],
+      "definition": "Постановка света, тени и атмосферы в 3D-сцене.",
+      "scope": "universal",
+      "canonicalIds": [
+        "3d-lighting"
+      ],
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "components": [
+        {
+          "id": "svet-i-ten.osnovy-sveta-v-3d",
+          "slug": "osnovy-sveta-v-3d",
+          "title": "Основы света в 3D",
+          "definition": "Теоретические и практические основы работы со светом в трёхмерной сцене.",
+          "order": 1,
+          "tagIds": [
+            "tag_7452fdd10911"
+          ]
+        },
+        {
+          "id": "svet-i-ten.ten-i-atmosfera",
+          "slug": "ten-i-atmosfera",
+          "title": "Тень и атмосфера",
+          "definition": "Формирование теней и атмосферы сцены средствами освещения и рендера.",
+          "order": 2,
+          "tagIds": [
+            "tag_778863b9f430"
+          ]
+        },
+        {
+          "id": "svet-i-ten.instrumentariy-3d-dizaynera",
+          "slug": "instrumentariy-3d-dizaynera",
+          "title": "Инструментарий 3D-дизайнера",
+          "definition": "Программные средства и приёмы, применяемые при работе со светом в 3D-пайплайне.",
+          "order": 3,
+          "tagIds": [
+            "tag_10f4334e2838"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_7452fdd10911",
+          "slug": "nastroyka-sveta-v-blender",
+          "title": "Настройка света в Blender",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Тема/навык на странице программы «3d-generalist»",
+          "professionIds": [
+            "it.3ddesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "3d-generalist",
+              "url": "https://practicum.yandex.ru/3d-generalist/",
+              "retrievedAt": "2026-11-02",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_47fdd59893c1",
+              "componentId": "svet-i-ten.osnovy-sveta-v-3d",
+              "role": "primary"
+            },
+            {
+              "competencyId": "comp_203bace336e2",
+              "componentId": "render-i-optimizatsiya.svet-i-kachestvo-izobrazheniya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_778863b9f430",
+          "slug": "prodvinutyy-render-animatsii",
+          "title": "Продвинутый рендер анимации",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Тема/навык на странице программы «3d-generalist»",
+          "professionIds": [
+            "it.3ddesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "3d-generalist",
+              "url": "https://practicum.yandex.ru/3d-generalist/",
+              "retrievedAt": "2026-11-02",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_47fdd59893c1",
+              "componentId": "svet-i-ten.ten-i-atmosfera",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_10f4334e2838",
+          "slug": "ispolzovat-addony-dlya-uskoreniya-raboty-v-blender",
+          "title": "Использовать аддоны для ускорения работы в Blender",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Тема/навык на странице программы «3d-generalist»",
+          "professionIds": [
+            "it.3ddesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "3d-generalist",
+              "url": "https://practicum.yandex.ru/3d-generalist/",
+              "retrievedAt": "2026-11-02",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_d70ace963045",
+              "componentId": "materialy-i-tekstury.instrumenty-teksturirovaniya",
+              "role": "primary"
+            },
+            {
+              "competencyId": "comp_47fdd59893c1",
+              "componentId": "svet-i-ten.instrumentariy-3d-dizaynera",
+              "role": "primary"
+            },
+            {
+              "competencyId": "comp_203bace336e2",
+              "componentId": "render-i-optimizatsiya.optimizatsiya-stseny-i-proizvoditelnost",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-02",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_bf78234bb3bc",
+        "costUsd": 0.0010775799999999999,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1656,
+          "outputTokens": 565
+        }
+      },
+      "issues": [
+        "покрытие входных тегов 38% < 50%"
+      ],
+      "methodologyVersion": "0.1.0"
+    },
+    {
+      "id": "comp_48a2b77978ab",
+      "slug": "skulpting-i-organika",
+      "title": "Скульптинг и органика",
+      "titleEn": "Sculpting and Organic Forms",
+      "aliases": [
+        "Скульптинг",
+        "Органическое моделирование",
+        "Лепка 3D"
+      ],
+      "definition": "Лепка органических форм и персонажей, работа со скульптурными кистями.",
+      "scope": "universal",
+      "canonicalIds": [
+        "3d-sculpting"
+      ],
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "components": [
+        {
+          "id": "skulpting-i-organika.osnovy-skulptinga-i-organicheskih-form",
+          "slug": "osnovy-skulptinga-i-organicheskih-form",
+          "title": "Основы скульптинга и органических форм",
+          "definition": "Базовые принципы лепки органики и работы скульптурными инструментами.",
+          "order": 1,
+          "tagIds": [
+            "tag_220570bbe3b0",
+            "tag_19ae370851b8"
+          ]
+        },
+        {
+          "id": "skulpting-i-organika.personazhi-i-dizayn-formy",
+          "slug": "personazhi-i-dizayn-formy",
+          "title": "Персонажи и дизайн формы",
+          "definition": "Создание персонажей и проработка их органической формы.",
+          "order": 2,
+          "tagIds": [
+            "tag_e44f6b4e1d04",
+            "tag_36e99758a547",
+            "tag_7f51e07c1093"
+          ]
+        },
+        {
+          "id": "skulpting-i-organika.odezhda-i-detalizatsiya-organiki",
+          "slug": "odezhda-i-detalizatsiya-organiki",
+          "title": "Одежда и детализация органики",
+          "definition": "Моделирование одежды и дополнительных органических элементов.",
+          "order": 3,
+          "tagIds": [
+            "tag_215b168a5db7"
+          ]
+        },
+        {
+          "id": "skulpting-i-organika.animatsiya-i-integratsiya-skulpta",
+          "slug": "animatsiya-i-integratsiya-skulpta",
+          "title": "Анимация и интеграция скульпта",
+          "definition": "Связь скульптинга с анимацией и риггингом персонажей.",
+          "order": 4,
+          "tagIds": [
+            "tag_bf17fd809829",
+            "tag_c771bd7bfc75"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_220570bbe3b0",
+          "slug": "instrumenty-modelirovaniya-v-blender",
+          "title": "Инструменты моделирования в Blender",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Тема/навык на странице программы «3d-generalist»",
+          "professionIds": [
+            "it.3ddesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "3d-generalist",
+              "url": "https://practicum.yandex.ru/3d-generalist/",
+              "retrievedAt": "2026-11-02",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_65603d52f78a",
+              "componentId": "hard-surface-modelirovanie.instrumentariy-modelirovaniya",
+              "role": "primary"
+            },
+            {
+              "competencyId": "comp_48a2b77978ab",
+              "componentId": "skulpting-i-organika.osnovy-skulptinga-i-organicheskih-form",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_19ae370851b8",
+          "slug": "ispolzovat-addony-dlya-uskoreniya-raboty-v-blender",
+          "title": "Использовать аддоны для ускорения работы в Blender",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Навык подключения и применения аддонов Blender для ускорения скульптинга и моделирования.",
+          "professionIds": [
+            "it.3ddesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "3d-generalist",
+              "url": "https://practicum.yandex.ru/3d-generalist/",
+              "retrievedAt": "2026-11-02",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_48a2b77978ab",
+              "componentId": "skulpting-i-organika.osnovy-skulptinga-i-organicheskih-form",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_e44f6b4e1d04",
+          "slug": "dizayn-personazha",
+          "title": "Дизайн персонажа",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Тема/навык на странице программы «3d-generalist»",
+          "professionIds": [
+            "it.3ddesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "3d-generalist",
+              "url": "https://practicum.yandex.ru/3d-generalist/",
+              "retrievedAt": "2026-11-02",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_48a2b77978ab",
+              "componentId": "skulpting-i-organika.personazhi-i-dizayn-formy",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_36e99758a547",
+          "slug": "igrovye-personazhi-i-ih-animatsiya",
+          "title": "Игровые персонажи и их анимация",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Тема/навык на странице программы «3d-generalist»",
+          "professionIds": [
+            "it.3ddesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "3d-generalist",
+              "url": "https://practicum.yandex.ru/3d-generalist/",
+              "retrievedAt": "2026-11-02",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_48a2b77978ab",
+              "componentId": "skulpting-i-organika.personazhi-i-dizayn-formy",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_7f51e07c1093",
+          "slug": "animirovannyy-3d-personazh",
+          "title": "Анимированный 3D‑персонаж",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Тема/навык на странице программы «3d-generalist»",
+          "professionIds": [
+            "it.3ddesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "3d-generalist",
+              "url": "https://practicum.yandex.ru/3d-generalist/",
+              "retrievedAt": "2026-11-02",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_48a2b77978ab",
+              "componentId": "skulpting-i-organika.personazhi-i-dizayn-formy",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_215b168a5db7",
+          "slug": "modelirovanie-odezhdy-v-blender",
+          "title": "Моделирование одежды в Blender",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Навык моделирования одежды в Blender, в том числе для персонажей.",
+          "professionIds": [
+            "it.3ddesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "3d-generalist",
+              "url": "https://practicum.yandex.ru/3d-generalist/",
+              "retrievedAt": "2026-11-02",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_48a2b77978ab",
+              "componentId": "skulpting-i-organika.odezhda-i-detalizatsiya-organiki",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_bf17fd809829",
+          "slug": "animatsiya-v-blender",
+          "title": "Анимация в Blender",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Тема/навык на странице программы «3d-generalist»",
+          "professionIds": [
+            "it.3ddesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "3d-generalist",
+              "url": "https://practicum.yandex.ru/3d-generalist/",
+              "retrievedAt": "2026-11-02",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_65603d52f78a",
+              "componentId": "hard-surface-modelirovanie.animatsiya-v-kontekste-hard-surface",
+              "role": "primary"
+            },
+            {
+              "competencyId": "comp_48a2b77978ab",
+              "componentId": "skulpting-i-organika.animatsiya-i-integratsiya-skulpta",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_c771bd7bfc75",
+          "slug": "animiruyu-3d-personazhey-i-obekty-ispolzuyu-rigging-simulyatsii-klyuchi",
+          "title": "Анимирую 3D-персонажей и объекты, использую риггинг, симуляции, ключи",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Навык анимации 3D-персонажей и объектов с использованием риггинга, симуляций и ключевых кадров.",
+          "professionIds": [
+            "it.3ddesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "3d-generalist",
+              "url": "https://practicum.yandex.ru/3d-generalist/",
+              "retrievedAt": "2026-11-02",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_48a2b77978ab",
+              "componentId": "skulpting-i-organika.animatsiya-i-integratsiya-skulpta",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-02",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_b3f72f733139",
+        "costUsd": 0.00158248,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1656,
+          "outputTokens": 1024
         }
       },
       "issues": [],
@@ -14609,6 +15924,356 @@
       "methodologyVersion": "0.1.0"
     },
     {
+      "id": "comp_65603d52f78a",
+      "slug": "hard-surface-modelirovanie",
+      "title": "Hard-surface моделирование",
+      "titleEn": "Hard-surface Modeling",
+      "aliases": [
+        "Хардсерфейс моделирование",
+        "Моделирование твёрдых поверхностей",
+        "Hard-surface"
+      ],
+      "definition": "Создание твёрдотельных объектов: оружия, техники, окружения и промышленных форм.",
+      "scope": "universal",
+      "canonicalIds": [
+        "3d-hard-surface"
+      ],
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "components": [
+        {
+          "id": "hard-surface-modelirovanie.osnovy-3d-modelirovaniya",
+          "slug": "osnovy-3d-modelirovaniya",
+          "title": "Основы 3D-моделирования",
+          "definition": "Базовые принципы и общие подходы к созданию трёхмерных моделей, на которых строится hard-surface.",
+          "order": 1,
+          "tagIds": [
+            "tag_94dc9a243b9c"
+          ]
+        },
+        {
+          "id": "hard-surface-modelirovanie.instrumentariy-modelirovaniya",
+          "slug": "instrumentariy-modelirovaniya",
+          "title": "Инструментарий моделирования",
+          "definition": "Практическое владение инструментами и средствами автоматизации моделирования в среде Blender.",
+          "order": 2,
+          "tagIds": [
+            "tag_220570bbe3b0",
+            "tag_6d23dcbda5b7",
+            "tag_8940d4fcde77"
+          ]
+        },
+        {
+          "id": "hard-surface-modelirovanie.modelirovanie-okruzheniya-i-lokatsiy",
+          "slug": "modelirovanie-okruzheniya-i-lokatsiy",
+          "title": "Моделирование окружения и локаций",
+          "definition": "Создание твёрдотельных объектов окружения и игровых локаций.",
+          "order": 3,
+          "tagIds": [
+            "tag_67fa10469e32"
+          ]
+        },
+        {
+          "id": "hard-surface-modelirovanie.modelirovanie-odezhdy-i-myagkih-form",
+          "slug": "modelirovanie-odezhdy-i-myagkih-form",
+          "title": "Моделирование одежды и мягких форм",
+          "definition": "Создание одежды и близких к ней форм в специализированных средах.",
+          "order": 4,
+          "tagIds": [
+            "tag_edd0ae466e68",
+            "tag_7d0fc88d165e"
+          ]
+        },
+        {
+          "id": "hard-surface-modelirovanie.animatsiya-v-kontekste-hard-surface",
+          "slug": "animatsiya-v-kontekste-hard-surface",
+          "title": "Анимация в контексте hard-surface",
+          "definition": "Анимационные возможности среды моделирования, сопутствующие работе с твёрдотельными объектами.",
+          "order": 5,
+          "tagIds": [
+            "tag_bf17fd809829"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_94dc9a243b9c",
+          "slug": "3d-modelirovanie",
+          "title": "3D-моделирование",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Тема/навык на странице программы «3d-generalist»",
+          "professionIds": [
+            "it.3ddesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "3d-generalist",
+              "url": "https://practicum.yandex.ru/3d-generalist/",
+              "retrievedAt": "2026-11-02",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_65603d52f78a",
+              "componentId": "hard-surface-modelirovanie.osnovy-3d-modelirovaniya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_220570bbe3b0",
+          "slug": "instrumenty-modelirovaniya-v-blender",
+          "title": "Инструменты моделирования в Blender",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Тема/навык на странице программы «3d-generalist»",
+          "professionIds": [
+            "it.3ddesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "3d-generalist",
+              "url": "https://practicum.yandex.ru/3d-generalist/",
+              "retrievedAt": "2026-11-02",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_65603d52f78a",
+              "componentId": "hard-surface-modelirovanie.instrumentariy-modelirovaniya",
+              "role": "primary"
+            },
+            {
+              "competencyId": "comp_48a2b77978ab",
+              "componentId": "skulpting-i-organika.osnovy-skulptinga-i-organicheskih-form",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_6d23dcbda5b7",
+          "slug": "avtomatizatsiya-protsessov-modelirovaniya",
+          "title": "Автоматизация процессов моделирования",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Тема/навык на странице программы «3d-generalist»",
+          "professionIds": [
+            "it.3ddesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "3d-generalist",
+              "url": "https://practicum.yandex.ru/3d-generalist/",
+              "retrievedAt": "2026-11-02",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_65603d52f78a",
+              "componentId": "hard-surface-modelirovanie.instrumentariy-modelirovaniya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_8940d4fcde77",
+          "slug": "ispolzovanie-addonov-dlya-uskoreniya-raboty-v-blender",
+          "title": "Использование аддонов для ускорения работы в Blender",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Применение дополнительных расширений Blender для ускорения рабочего процесса.",
+          "professionIds": [
+            "it.3ddesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "3d-generalist",
+              "url": "https://practicum.yandex.ru/3d-generalist/",
+              "retrievedAt": "2026-11-02",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_65603d52f78a",
+              "componentId": "hard-surface-modelirovanie.instrumentariy-modelirovaniya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_67fa10469e32",
+          "slug": "modelirovanie-igrovyh-lokatsiy-v-unreal-engine",
+          "title": "Моделирование игровых локаций в Unreal Engine",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Тема/навык на странице программы «3d-generalist»",
+          "professionIds": [
+            "it.3ddesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "3d-generalist",
+              "url": "https://practicum.yandex.ru/3d-generalist/",
+              "retrievedAt": "2026-11-02",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_65603d52f78a",
+              "componentId": "hard-surface-modelirovanie.modelirovanie-okruzheniya-i-lokatsiy",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_edd0ae466e68",
+          "slug": "modelirovanie-odezhdy-v-blender",
+          "title": "Моделирование одежды в Blender",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Тема/навык на странице программы «3d-generalist»",
+          "professionIds": [
+            "it.3ddesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "3d-generalist",
+              "url": "https://practicum.yandex.ru/3d-generalist/",
+              "retrievedAt": "2026-11-02",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_65603d52f78a",
+              "componentId": "hard-surface-modelirovanie.modelirovanie-odezhdy-i-myagkih-form",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_7d0fc88d165e",
+          "slug": "modelirovanie-odezhdy-v-marvelous-designer",
+          "title": "Моделирование одежды в Marvelous Designer",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Тема/навык на странице программы «3d-generalist»",
+          "professionIds": [
+            "it.3ddesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "3d-generalist",
+              "url": "https://practicum.yandex.ru/3d-generalist/",
+              "retrievedAt": "2026-11-02",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_65603d52f78a",
+              "componentId": "hard-surface-modelirovanie.modelirovanie-odezhdy-i-myagkih-form",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_bf17fd809829",
+          "slug": "animatsiya-v-blender",
+          "title": "Анимация в Blender",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Тема/навык на странице программы «3d-generalist»",
+          "professionIds": [
+            "it.3ddesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "3d-generalist",
+              "url": "https://practicum.yandex.ru/3d-generalist/",
+              "retrievedAt": "2026-11-02",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_65603d52f78a",
+              "componentId": "hard-surface-modelirovanie.animatsiya-v-kontekste-hard-surface",
+              "role": "primary"
+            },
+            {
+              "competencyId": "comp_48a2b77978ab",
+              "componentId": "skulpting-i-organika.animatsiya-i-integratsiya-skulpta",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-02",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_46d605f37436",
+        "costUsd": 0.0016123,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1632,
+          "outputTokens": 1057
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
       "id": "comp_8dba4d21d998",
       "slug": "jobs-to-be-done",
       "title": "Jobs-to-be-Done",
@@ -15583,7 +17248,12 @@
       "competencyLinks": [
         {
           "competencyId": "comp_456eb4cd9619",
-          "componentId": "3d-modelirovanie.osnovy-i-bazovye-primitivy",
+          "componentId": "3d-modelirovanie.osnovy-3d-i-primitivy",
+          "role": "primary"
+        },
+        {
+          "competencyId": "comp_65603d52f78a",
+          "componentId": "hard-surface-modelirovanie.osnovy-3d-modelirovaniya",
           "role": "primary"
         }
       ],
@@ -15636,6 +17306,36 @@
         {
           "competencyId": "comp_3baa5b3a9b1a",
           "componentId": "figma-komponenty-i-avtoleyaut.avtoleyaut-i-adaptivnaya-verstka-maketov",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_6d23dcbda5b7",
+      "slug": "avtomatizatsiya-protsessov-modelirovaniya",
+      "title": "Автоматизация процессов моделирования",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Тема/навык на странице программы «3d-generalist»",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-02",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_65603d52f78a",
+          "componentId": "hard-surface-modelirovanie.instrumentariy-modelirovaniya",
           "role": "primary"
         }
       ],
@@ -16070,6 +17770,41 @@
       "needsReview": false
     },
     {
+      "id": "tag_bf17fd809829",
+      "slug": "animatsiya-v-blender",
+      "title": "Анимация в Blender",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Тема/навык на странице программы «3d-generalist»",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-02",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_65603d52f78a",
+          "componentId": "hard-surface-modelirovanie.animatsiya-v-kontekste-hard-surface",
+          "role": "primary"
+        },
+        {
+          "competencyId": "comp_48a2b77978ab",
+          "componentId": "skulpting-i-organika.animatsiya-i-integratsiya-skulpta",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
       "id": "tag_b356d703922f",
       "slug": "animatsiya-i-vizualnaya-kommunikatsiya",
       "title": "Анимация и визуальная коммуникация",
@@ -16138,6 +17873,66 @@
         {
           "competencyId": "comp_1426ad336c6f",
           "componentId": "sostoyaniya-i-mikrovzaimodeystviya.animatsiya-i-vizualnaya-kommunikatsiya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_7f51e07c1093",
+      "slug": "animirovannyy-3d-personazh",
+      "title": "Анимированный 3D‑персонаж",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Тема/навык на странице программы «3d-generalist»",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-02",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_48a2b77978ab",
+          "componentId": "skulpting-i-organika.personazhi-i-dizayn-formy",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_c771bd7bfc75",
+      "slug": "animiruyu-3d-personazhey-i-obekty-ispolzuyu-rigging-simulyatsii-klyuchi",
+      "title": "Анимирую 3D-персонажей и объекты, использую риггинг, симуляции, ключи",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Навык анимации 3D-персонажей и объектов с использованием риггинга, симуляций и ключевых кадров.",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-02",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_48a2b77978ab",
+          "componentId": "skulpting-i-organika.animatsiya-i-integratsiya-skulpta",
           "role": "primary"
         }
       ],
@@ -17175,6 +18970,36 @@
       "needsReview": false
     },
     {
+      "id": "tag_e44f6b4e1d04",
+      "slug": "dizayn-personazha",
+      "title": "Дизайн персонажа",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Тема/навык на странице программы «3d-generalist»",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-02",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_48a2b77978ab",
+          "componentId": "skulpting-i-organika.personazhi-i-dizayn-formy",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
       "id": "tag_5853d37ca6cd",
       "slug": "dizayn-sayta-s-adaptivnoy-versiey-glavnoy-stranitsy",
       "title": "Дизайн сайта с адаптивной версией главной страницы",
@@ -17448,6 +19273,36 @@
       "needsReview": true
     },
     {
+      "id": "tag_36e99758a547",
+      "slug": "igrovye-personazhi-i-ih-animatsiya",
+      "title": "Игровые персонажи и их анимация",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Тема/навык на странице программы «3d-generalist»",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-02",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_48a2b77978ab",
+          "componentId": "skulpting-i-organika.personazhi-i-dizayn-formy",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
       "id": "tag_31cbe338913a",
       "slug": "ikonki",
       "title": "Иконки",
@@ -17498,6 +19353,41 @@
       ],
       "materialIds": [],
       "needsReview": true
+    },
+    {
+      "id": "tag_220570bbe3b0",
+      "slug": "instrumenty-modelirovaniya-v-blender",
+      "title": "Инструменты моделирования в Blender",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Тема/навык на странице программы «3d-generalist»",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-02",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_65603d52f78a",
+          "componentId": "hard-surface-modelirovanie.instrumentariy-modelirovaniya",
+          "role": "primary"
+        },
+        {
+          "competencyId": "comp_48a2b77978ab",
+          "componentId": "skulpting-i-organika.osnovy-skulptinga-i-organicheskih-form",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
     },
     {
       "id": "tag_13dbd89faed7",
@@ -17600,6 +19490,106 @@
       ],
       "materialIds": [],
       "needsReview": true
+    },
+    {
+      "id": "tag_8940d4fcde77",
+      "slug": "ispolzovanie-addonov-dlya-uskoreniya-raboty-v-blender",
+      "title": "Использование аддонов для ускорения работы в Blender",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Применение дополнительных расширений Blender для ускорения рабочего процесса.",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-02",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_65603d52f78a",
+          "componentId": "hard-surface-modelirovanie.instrumentariy-modelirovaniya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_10f4334e2838",
+      "slug": "ispolzovat-addony-dlya-uskoreniya-raboty-v-blender",
+      "title": "Использовать аддоны для ускорения работы в Blender",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Тема/навык на странице программы «3d-generalist»",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-02",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_d70ace963045",
+          "componentId": "materialy-i-tekstury.instrumenty-teksturirovaniya",
+          "role": "primary"
+        },
+        {
+          "competencyId": "comp_47fdd59893c1",
+          "componentId": "svet-i-ten.instrumentariy-3d-dizaynera",
+          "role": "primary"
+        },
+        {
+          "competencyId": "comp_203bace336e2",
+          "componentId": "render-i-optimizatsiya.optimizatsiya-stseny-i-proizvoditelnost",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_19ae370851b8",
+      "slug": "ispolzovat-addony-dlya-uskoreniya-raboty-v-blender",
+      "title": "Использовать аддоны для ускорения работы в Blender",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Навык подключения и применения аддонов Blender для ускорения скульптинга и моделирования.",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-02",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_48a2b77978ab",
+          "componentId": "skulpting-i-organika.osnovy-skulptinga-i-organicheskih-form",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
     },
     {
       "id": "tag_0fca5c19caf1",
@@ -17710,6 +19700,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_a868e9716e27",
+      "slug": "karty-normaley-i-sherohovatosti",
+      "title": "Карты нормалей и шероховатости",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Назначение и способы создания карт нормалей, шероховатости и других вспомогательных карт.",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_d70ace963045",
+          "componentId": "materialy-i-tekstury.teksturnye-karty",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_3a648abd994b",
@@ -17860,6 +19872,36 @@
         {
           "competencyId": "comp_c2cd7e56553d",
           "componentId": "yuzabiliti-testirovanie.osnovy-yuzabiliti-i-mesto-testirovaniya-v-issledovaniyah",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_bdc43d8e4655",
+      "slug": "kompoziting",
+      "title": "Композитинг",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Тема/навык на странице программы «3d-generalist»",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-02",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_bd276732bf44",
+          "componentId": "kompoziting-3d.kompoziting-3d-sloev",
           "role": "primary"
         }
       ],
@@ -18420,7 +20462,7 @@
       "title": "Моделирование игровых локаций в Unreal Engine",
       "aliases": [],
       "kind": "skill",
-      "definition": "Создание моделей игровых локаций в Unreal Engine.",
+      "definition": "Построение трёхмерных игровых локаций средствами Unreal Engine.",
       "professionIds": [
         "it.3ddesigner"
       ],
@@ -18445,12 +20487,107 @@
       "needsReview": false
     },
     {
+      "id": "tag_67fa10469e32",
+      "slug": "modelirovanie-igrovyh-lokatsiy-v-unreal-engine",
+      "title": "Моделирование игровых локаций в Unreal Engine",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Тема/навык на странице программы «3d-generalist»",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-02",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_65603d52f78a",
+          "componentId": "hard-surface-modelirovanie.modelirovanie-okruzheniya-i-lokatsiy",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
       "id": "tag_215b168a5db7",
       "slug": "modelirovanie-odezhdy-v-blender",
       "title": "Моделирование одежды в Blender",
       "aliases": [],
       "kind": "skill",
-      "definition": "Создание моделей одежды в Blender.",
+      "definition": "Построение трёхмерных моделей одежды средствами Blender.",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-02",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_456eb4cd9619",
+          "componentId": "3d-modelirovanie.modelirovanie-odezhdy",
+          "role": "primary"
+        },
+        {
+          "competencyId": "comp_48a2b77978ab",
+          "componentId": "skulpting-i-organika.odezhda-i-detalizatsiya-organiki",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_edd0ae466e68",
+      "slug": "modelirovanie-odezhdy-v-blender",
+      "title": "Моделирование одежды в Blender",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Тема/навык на странице программы «3d-generalist»",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-02",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_65603d52f78a",
+          "componentId": "hard-surface-modelirovanie.modelirovanie-odezhdy-i-myagkih-form",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_b24d643648b3",
+      "slug": "modelirovanie-odezhdy-v-marvelous-designer",
+      "title": "Моделирование одежды в Marvelous Designer",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Создание и симуляция трёхмерной одежды в Marvelous Designer.",
       "professionIds": [
         "it.3ddesigner"
       ],
@@ -18475,12 +20612,12 @@
       "needsReview": false
     },
     {
-      "id": "tag_b24d643648b3",
+      "id": "tag_7d0fc88d165e",
       "slug": "modelirovanie-odezhdy-v-marvelous-designer",
       "title": "Моделирование одежды в Marvelous Designer",
       "aliases": [],
-      "kind": "skill",
-      "definition": "Создание моделей одежды в Marvelous Designer.",
+      "kind": "knowledge",
+      "definition": "Тема/навык на странице программы «3d-generalist»",
       "professionIds": [
         "it.3ddesigner"
       ],
@@ -18496,8 +20633,8 @@
       "evidenceState": "supported",
       "competencyLinks": [
         {
-          "competencyId": "comp_456eb4cd9619",
-          "componentId": "3d-modelirovanie.modelirovanie-odezhdy",
+          "competencyId": "comp_65603d52f78a",
+          "componentId": "hard-surface-modelirovanie.modelirovanie-odezhdy-i-myagkih-form",
           "role": "primary"
         }
       ],
@@ -18540,7 +20677,7 @@
       "title": "Моделирование человеческих персонажей в Blender",
       "aliases": [],
       "kind": "skill",
-      "definition": "Создание моделей человеческих персонажей в Blender.",
+      "definition": "Построение трёхмерной модели человеческого персонажа в Blender с учётом анатомии и формы.",
       "professionIds": [
         "it.3ddesigner"
       ],
@@ -18791,6 +20928,63 @@
       "needsReview": false
     },
     {
+      "id": "tag_9a6d84c22191",
+      "slug": "nastroyka-materialov-v-blender",
+      "title": "Настройка материалов в Blender",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Создание и настройка материалов в Blender для достижения нужного вида поверхности.",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_d70ace963045",
+          "componentId": "materialy-i-tekstury.osnovy-pbr-i-sheydinga",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_7452fdd10911",
+      "slug": "nastroyka-sveta-v-blender",
+      "title": "Настройка света в Blender",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Тема/навык на странице программы «3d-generalist»",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-02",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_47fdd59893c1",
+          "componentId": "svet-i-ten.osnovy-sveta-v-3d",
+          "role": "primary"
+        },
+        {
+          "competencyId": "comp_203bace336e2",
+          "componentId": "render-i-optimizatsiya.svet-i-kachestvo-izobrazheniya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
       "id": "tag_afef5a0bafa4",
       "slug": "obespechenie-nahodimosti-informatsii",
       "title": "Обеспечение находимости информации",
@@ -18900,6 +21094,28 @@
       "needsReview": true
     },
     {
+      "id": "tag_e05af078fea8",
+      "slug": "optimizatsiya-tekstur-i-materialov",
+      "title": "Оптимизация текстур и материалов",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Снижение разрешения текстур и упрощение материалов для соответствия требованиям производительности.",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_d70ace963045",
+          "componentId": "materialy-i-tekstury.podgotovka-assetov",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_01ee07d0315d",
       "slug": "osnovy-kompozitsii",
       "title": "Основы композиции",
@@ -18907,7 +21123,8 @@
       "kind": "knowledge",
       "definition": "Тема/навык на странице программы «interface-designer»",
       "professionIds": [
-        "it.uxui"
+        "it.uxui",
+        "it.3ddesigner"
       ],
       "sourceRefs": [
         {
@@ -18916,6 +21133,13 @@
           "url": "https://practicum.yandex.ru/interface-designer/",
           "retrievedAt": "2026-10-21",
           "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        },
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-02",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
         }
       ],
       "evidenceState": "supported",
@@ -18923,6 +21147,11 @@
         {
           "competencyId": "comp_c305bec788c2",
           "componentId": "vizualnaya-kompozitsiya-i-nasmotrennost.osnovy-kompozitsii",
+          "role": "primary"
+        },
+        {
+          "competencyId": "comp_bd276732bf44",
+          "componentId": "kompoziting-3d.osnovy-kompozitsii-kadra",
           "role": "primary"
         }
       ],
@@ -19043,6 +21272,36 @@
         {
           "competencyId": "comp_8984ce9da8c1",
           "componentId": "vzaimodeystvie-s-inzhenerami-i-pravovye-osnovy.pravovye-i-gosudarstvennye-osnovy-professionalnoy-deyatelnosti",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_d52725c052f8",
+      "slug": "osnovy-raboty-s-substance-3d-sampler",
+      "title": "Основы работы с Substance 3D Sampler",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Тема/навык на странице программы «3d-generalist»",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-02",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_d70ace963045",
+          "componentId": "materialy-i-tekstury.instrumenty-teksturirovaniya",
           "role": "primary"
         }
       ],
@@ -19412,7 +21671,7 @@
       "title": "Полигональное моделирование в Blender",
       "aliases": [],
       "kind": "skill",
-      "definition": "Практическое создание и редактирование полигональной сетки в Blender.",
+      "definition": "Практическое построение и редактирование полигональной сетки в Blender для создания трёхмерных объектов.",
       "professionIds": [
         "it.3ddesigner"
       ],
@@ -19579,6 +21838,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_76bd16e9082a",
+      "slug": "ponyatie-pbr-materiala",
+      "title": "Понятие PBR-материала",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Понимание принципов физически корректного рендеринга и структуры PBR-материала (альбедо, металличность, шероховатость, нормали).",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_d70ace963045",
+          "componentId": "materialy-i-tekstury.osnovy-pbr-i-sheydinga",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_3c7835bf7918",
       "slug": "ponyatie-ui-komponenta-i-ego-pereispolzovanie",
       "title": "Понятие UI-компонента и его переиспользование",
@@ -19624,6 +21905,28 @@
         {
           "competencyId": "comp_b35802975fdf",
           "componentId": "showreel-i-portfolio.portfolio",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_ef34829ed9b7",
+      "slug": "postobrabotka-3d-izobrazheniya",
+      "title": "Постобработка 3D-изображения",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Настройка цвета, контраста и эффектов на собранном 3D-изображении для достижения целостного результата.",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_bd276732bf44",
+          "componentId": "kompoziting-3d.postobrabotka-i-sovmeschenie-s-live-action",
           "role": "primary"
         }
       ],
@@ -20149,6 +22452,66 @@
       "needsReview": true
     },
     {
+      "id": "tag_9e7f72bcdfe0",
+      "slug": "prodvinutaya-rabota-s-kameroy",
+      "title": "Продвинутая работа с камерой",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Тема/навык на странице программы «3d-generalist»",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-02",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_203bace336e2",
+          "componentId": "render-i-optimizatsiya.nastroyka-rendera-i-kamery",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_778863b9f430",
+      "slug": "prodvinutyy-render-animatsii",
+      "title": "Продвинутый рендер анимации",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Тема/навык на странице программы «3d-generalist»",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-02",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_47fdd59893c1",
+          "componentId": "svet-i-ten.ten-i-atmosfera",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
       "id": "tag_d3532641ba6e",
       "slug": "produktovaya-strategiya",
       "title": "Продуктовая стратегия",
@@ -20564,6 +22927,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_aaf5679eeeed",
+      "slug": "protsedurnye-tekstury",
+      "title": "Процедурные текстуры",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Создание процедурных текстур для поверхностей без ручной росписи.",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_d70ace963045",
+          "componentId": "materialy-i-tekstury.teksturnye-karty",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_e4c261635efd",
       "slug": "psihofiziologiya-tsvetovogo-vospriyatiya",
       "title": "Психофизиология цветового восприятия",
@@ -20587,6 +22972,36 @@
         {
           "competencyId": "comp_c8e03682adf7",
           "componentId": "teoriya-tsveta-i-koloristika.fiziologiya-i-psihologiya-vospriyatiya-tsveta",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_ed1854c0e761",
+      "slug": "rabota-v-adobe-after-effects",
+      "title": "Работа в Adobe After Effects",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Практическое применение Adobe After Effects для сборки слоёв, анимации и постобработки.",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-02",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_bd276732bf44",
+          "componentId": "kompoziting-3d.instrumentariy-kompozitinga",
           "role": "primary"
         }
       ],
@@ -21471,13 +23886,19 @@
       "title": "Совмещение 3D с live-action",
       "aliases": [],
       "kind": "skill",
-      "definition": "Встраивание 3D-объектов и рендеров в живой материал с согласованием камеры, масок и цвета.",
+      "definition": "Интеграция 3D-слоёв в отснятый материал с согласованием перспективы, освещения и движения.",
       "professionIds": [
+        "it.3ddesigner",
         "it.motion"
       ],
       "sourceRefs": [],
       "evidenceState": "needs_review",
       "competencyLinks": [
+        {
+          "competencyId": "comp_bd276732bf44",
+          "componentId": "kompoziting-3d.postobrabotka-i-sovmeschenie-s-live-action",
+          "role": "primary"
+        },
         {
           "competencyId": "comp_a8aa252a35b8",
           "componentId": "kompoziting-i-vfx.sovmeschenie-3d-i-live-action",
@@ -21611,6 +24032,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_f2f35ac9db8e",
+      "slug": "sozdanie-uv-razvertki",
+      "title": "Создание UV-развёртки",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Развёртка трёхмерной модели на плоскость с минимизацией искажений и эффективным использованием UV-пространства.",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_d70ace963045",
+          "componentId": "materialy-i-tekstury.uv-razvertka",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_d5494c1b173e",
@@ -22225,6 +24668,28 @@
       "needsReview": true
     },
     {
+      "id": "tag_bd040d4d93cf",
+      "slug": "upakovka-uv-ostrovov",
+      "title": "Упаковка UV-островов",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Оптимальное расположение UV-островов для повышения плотности текселей и снижения перекрытий.",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_d70ace963045",
+          "componentId": "materialy-i-tekstury.uv-razvertka",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_4cbfe43921cd",
       "slug": "uchet-standartov-dostupnosti",
       "title": "Учёт стандартов доступности",
@@ -22828,6 +25293,28 @@
       "needsReview": true
     },
     {
+      "id": "tag_f2f7abec80c4",
+      "slug": "eksport-assetov-s-materialami",
+      "title": "Экспорт ассетов с материалами",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Корректный экспорт моделей и текстур в целевые форматы с сохранением материалов.",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_d70ace963045",
+          "componentId": "materialy-i-tekstury.podgotovka-assetov",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_33bd0e21d155",
       "slug": "yunit-ekonomika",
       "title": "Юнит-экономика",
@@ -22848,6 +25335,36 @@
       ],
       "materialIds": [],
       "needsReview": true
+    },
+    {
+      "id": "tag_7110c780499b",
+      "slug": "adobe-after-effects",
+      "title": "Adobe After Effects",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Тег программы «3D-дженералист» в каталоге Практикума",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist:catalog",
+          "url": "https://practicum.yandex.ru/catalog/design/3d-generalist/",
+          "retrievedAt": "2026-11-02",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_bd276732bf44",
+          "componentId": "kompoziting-3d.instrumentariy-kompozitinga",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
     },
     {
       "id": "tag_fa54af8c2cf8",
@@ -22969,7 +25486,7 @@
       "title": "Blender: процедурное моделирование",
       "aliases": [],
       "kind": "skill",
-      "definition": "Создание моделей процедурными методами в Blender.",
+      "definition": "Использование процедурных инструментов Blender для генерации и модификации трёхмерных форм.",
       "professionIds": [
         "it.3ddesigner"
       ],

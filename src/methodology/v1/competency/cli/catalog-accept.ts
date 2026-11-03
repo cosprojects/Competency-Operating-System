@@ -81,8 +81,12 @@ async function main(): Promise<void> {
       });
     }
   }
-  const blocks = [...byId.values()].sort((a, b) => a.title.localeCompare(b.title));
   const current = await loadCatalog(root, domain);
+  // Сохраняем уже принятые блоки, которых нет в новом наборе файлов.
+  for (const existing of current.blocks) {
+    if (!byId.has(existing.id)) byId.set(existing.id, existing);
+  }
+  const blocks = [...byId.values()].sort((a, b) => a.title.localeCompare(b.title));
   const catalog: CatalogFile = {
     ...emptyCatalog(domain, new Date().toISOString().slice(0, 10)),
     blocks,

@@ -1418,6 +1418,157 @@
           "kind": "knowledge"
         }
       ]
+    },
+    {
+      "id": "3d-hard-surface",
+      "canonicalId": "3d-hard-surface",
+      "title": "Hard-surface моделирование",
+      "titleEn": "Hard-surface modeling",
+      "aliases": [
+        "Hard-surface modeling"
+      ],
+      "definition": "Создание твёрдотельных объектов: оружие, техника, окружение и промышленные формы.",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "tagHints": [
+        "hard-surface",
+        "hard surface",
+        "Blender",
+        "моделирован"
+      ],
+      "excludeHints": [],
+      "maxTags": 8
+    },
+    {
+      "id": "3d-sculpting",
+      "canonicalId": "3d-sculpting",
+      "title": "Скульптинг и органика",
+      "titleEn": "Sculpting and organic modeling",
+      "aliases": [
+        "Sculpting and organic modeling"
+      ],
+      "definition": "Лепка органических форм и персонажей, работа со скульптурными кистями.",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "tagHints": [
+        "скульпт",
+        "Blender",
+        "органическ",
+        "персонаж"
+      ],
+      "excludeHints": [],
+      "maxTags": 8
+    },
+    {
+      "id": "3d-texturing",
+      "canonicalId": "3d-texturing",
+      "title": "Материалы и текстуры",
+      "titleEn": "Materials and textures",
+      "aliases": [
+        "Materials and textures"
+      ],
+      "definition": "Текстурирование, PBR-материалы, UV-развёртка и подготовка ассетов.",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "tagHints": [
+        "текстур",
+        "материал",
+        "UV",
+        "Substance",
+        "Blender"
+      ],
+      "excludeHints": [],
+      "maxTags": 8
+    },
+    {
+      "id": "3d-lighting",
+      "canonicalId": "3d-lighting",
+      "title": "Свет и тень",
+      "titleEn": "Lighting and shadow",
+      "aliases": [
+        "Lighting and shadow"
+      ],
+      "definition": "Постановка света, тени и атмосферы в 3D-сцене.",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "tagHints": [
+        "свет",
+        "освещ",
+        "тень",
+        "Blender",
+        "рендер"
+      ],
+      "excludeHints": [],
+      "maxTags": 8
+    },
+    {
+      "id": "3d-rendering",
+      "canonicalId": "3d-rendering",
+      "title": "Рендер и оптимизация",
+      "titleEn": "Rendering and optimization",
+      "aliases": [
+        "Rendering and optimization"
+      ],
+      "definition": "Настройка рендера, качество изображения и оптимизация сцены.",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "tagHints": [
+        "рендер",
+        "оптимизац",
+        "Blender",
+        "Cycles",
+        "камер"
+      ],
+      "excludeHints": [],
+      "maxTags": 8
+    },
+    {
+      "id": "3d-compositing",
+      "canonicalId": "3d-compositing",
+      "title": "Композитинг 3D",
+      "titleEn": "3D compositing",
+      "aliases": [
+        "3D compositing"
+      ],
+      "definition": "Сборка 3D-слоёв, постобработка и совмещение с live-action.",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "tagHints": [
+        "композитинг",
+        "композ",
+        "постобработ",
+        "After Effects"
+      ],
+      "excludeHints": [],
+      "maxTags": 8
+    },
+    {
+      "id": "3d-presentation",
+      "canonicalId": "3d-presentation",
+      "title": "Презентация 3D-проекта",
+      "titleEn": "3D project presentation",
+      "aliases": [
+        "3D project presentation"
+      ],
+      "definition": "Подача 3D-работы: ракурсы, breakdown, портфолио и защита проекта.",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "tagHints": [
+        "презентац",
+        "портфолио",
+        "подач",
+        "3D-проект",
+        "breakdown"
+      ],
+      "excludeHints": [],
+      "maxTags": 8
     }
   ]
 }

@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
-import { IconCloseSquare } from "@/components/icons";
+import { IconCloseSquare, IconStar } from "@/components/icons";
+import { SaveButton } from "@/components/SaveButton";
 
 export interface SearchProfession {
   slug: string;
@@ -25,8 +26,17 @@ function normalize(value: string): string {
   return value.trim().toLowerCase().replaceAll("ё", "е");
 }
 
-export function ProfessionSearch({ groups }: { groups: SearchGroup[] }) {
+export function ProfessionSearch({
+  groups,
+  viewer,
+  savedSlugs,
+}: {
+  groups: SearchGroup[];
+  viewer: { email: string } | null;
+  savedSlugs: string[];
+}) {
   const router = useRouter();
+  const saved = new Set(savedSlugs);
   const [query, setQuery] = useState("");
   const normalized = normalize(query);
 
@@ -97,6 +107,31 @@ export function ProfessionSearch({ groups }: { groups: SearchGroup[] }) {
                       <span className="badge">Профессия</span>
                       <span className="tile-count">
                         {profession.published} из {profession.total} компетенций
+                      </span>
+                      <span
+                        className="tile-action"
+                        onClick={(event) => {
+                          event.preventDefault();
+                          event.stopPropagation();
+                        }}
+                      >
+                        {viewer ? (
+                          <SaveButton
+                            variant="icon"
+                            targetType="PROFESSION"
+                            targetId={profession.slug}
+                            initialSaved={saved.has(profession.slug)}
+                          />
+                        ) : (
+                          <Link
+                            className="icon-button"
+                            href={`/login?returnTo=${encodeURIComponent("/professions")}`}
+                            aria-label="Войти, чтобы сохранить профессию"
+                            title="Войти, чтобы сохранить профессию"
+                          >
+                            <IconStar />
+                          </Link>
+                        )}
                       </span>
                     </div>
                     <h3 className="tile-title">{profession.title}</h3>

@@ -13,14 +13,6 @@ interface PreviewData {
   siteName?: string;
 }
 
-function hostLabel(url: string): string {
-  try {
-    return new URL(url).hostname.replace(/^www\./, "");
-  } catch {
-    return "источник";
-  }
-}
-
 /**
  * Карточка материала. Обложка и аннотация подтягиваются со страницы источника
  * (og:image / og:description), с откатом на данные каталога; внизу — проверка,
@@ -67,8 +59,24 @@ export function MaterialCard({
 
   return (
     <article className="material-card">
+      <div className="material-bg" aria-hidden="true">
+        <div className="material-bg-image">
+          {showImage ? (
+            <img
+              src={image}
+              alt=""
+              loading="lazy"
+              referrerPolicy="no-referrer"
+              onError={() => setImageFailed(true)}
+            />
+          ) : (
+            <span className="material-bg-fallback" />
+          )}
+        </div>
+      </div>
+
       <div className="material-badges">
-        <span className="pill tone-neutral">{sourceKindLabel(source.kind)}</span>
+        <span className="pill">{sourceKindLabel(source.kind)}</span>
         <span className="pill">{accessLabel(source.access)}</span>
         <span className="pill">
           {source.languages.length > 0
@@ -76,22 +84,6 @@ export function MaterialCard({
             : "язык не указан"}
         </span>
         <span className="material-authority">{authorityLabel(source.authority)}</span>
-      </div>
-
-      <div className="material-preview">
-        {showImage ? (
-          <img
-            src={image}
-            alt=""
-            loading="lazy"
-            referrerPolicy="no-referrer"
-            onError={() => setImageFailed(true)}
-          />
-        ) : (
-          <span className="material-preview-fallback" aria-hidden="true">
-            {hostLabel(source.url).slice(0, 2).toUpperCase()}
-          </span>
-        )}
       </div>
 
       <div className="material-text">

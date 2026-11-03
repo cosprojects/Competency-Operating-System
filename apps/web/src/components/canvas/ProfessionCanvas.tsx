@@ -202,7 +202,7 @@ export function ProfessionCanvas({
               <p className="section-count">
                 {countLabel(section.competencyIds.length, ["компетенция", "компетенции", "компетенций"])}
               </p>
-              <div className="competency-track">
+              <div className={`competency-track${section.competencyIds.length > 1 ? " has-many" : ""}`}>
                 {section.competencyIds.map((id) => {
                   const competency = byId.get(id);
                   if (!competency) return null;

@@ -46428,5 +46428,1722 @@
       "needsReview": false
     }
   ],
-  "materials": []
+  "materials": [
+    {
+      "id": "material_774ed8f62141",
+      "slug": "mat_f619cd9d2d0b",
+      "kind": "article",
+      "title": "Анализ требований",
+      "provider": "Wikipedia",
+      "url": "https://ru.wikipedia.org/wiki/%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7_%D1%82%D1%80%D0%B5%D0%B1%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B9",
+      "canonicalUrl": "https://ru.wikipedia.org/wiki/%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7_%D1%82%D1%80%D0%B5%D0%B1%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B9",
+      "language": "ru",
+      "access": "free",
+      "description": "Требования могут быть функциональными и нефункциональными. Анализ требований включает три типа деятельности: Сбор требований — общение с клиентами и пользователями",
+      "snippet": "Требования могут быть функциональными и нефункциональными. Анализ требований включает три типа деятельности: Сбор требований — общение с клиентами и пользователями",
+      "license": "CC BY-SA 4.0",
+      "sourceRef": {
+        "sourceId": "wikipedia",
+        "externalId": "613996",
+        "url": "https://ru.wikipedia.org/wiki/%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7_%D1%82%D1%80%D0%B5%D0%B1%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B9",
+        "retrievedAt": "2026-10-25",
+        "license": "CC BY-SA 4.0"
+      },
+      "retrievedAt": "2026-10-25",
+      "links": [
+        {
+          "competencyId": "comp_bb0fe81fb74f",
+          "componentId": "analiz-trebovaniy-i-spetsifikatsiy-po.analiz-biznes-trebovaniy",
+          "tagId": "tag_e00cdf7a1ec0",
+          "relevance": 0.9,
+          "reason": "Статья описывает анализ требований, включая сбор требований через общение с клиентами и пользователями, что прямо соответствует выявлению потребностей заинтересованных сторон.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_bb0fe81fb74f",
+          "componentId": "analiz-trebovaniy-i-spetsifikatsiy-po.analiz-spetsifikatsiy-po",
+          "tagId": "tag_823cf9186145",
+          "relevance": 0.7,
+          "reason": "Материал рассматривает функциональные и нефункциональные требования, что относится к оценке спецификаций ПО, но snippet не детализирует работу со спецификациями.",
+          "modelProposal": true
+        }
+      ],
+      "discoveredFor": [
+        "comp_bb0fe81fb74f"
+      ],
+      "status": "accepted",
+      "issues": []
+    },
+    {
+      "id": "material_4b2fcd343e6b",
+      "slug": "mat_5c6678b55b5e",
+      "kind": "article",
+      "title": "Как стать настоящим аналитиком? Часть 2. Выявляем требования",
+      "provider": "Хабр",
+      "url": "https://habr.com/ru/articles/178379/",
+      "canonicalUrl": "https://habr.com/ru/articles/178379/",
+      "language": "ru",
+      "access": "free",
+      "description": "Доброе время суток, дорогие хабравчане! Данная статья является продолжением топика , и в ней хотелось бы начать обсуждение стадии создания требований. Если вы успешно справитесь с этой стадией процесса, вы получите отличный продукт, счастливых заказчиков и удовлетворенных разработчиков. В противном случае вам грозит н… (score 15)",
+      "snippet": "Доброе время суток, дорогие хабравчане! Данная статья является продолжением топика , и в ней хотелось бы начать обсуждение стадии создания требований. Если вы успешно справитесь с этой стадией процесса, вы получите отличный продукт, счастливых заказчиков и удовлетворенных разработчиков. В противном случае вам грозит н…",
+      "license": "Habr ToS; авторские права автора",
+      "sourceRef": {
+        "sourceId": "habr",
+        "externalId": "178379",
+        "url": "https://habr.com/ru/articles/178379/",
+        "retrievedAt": "2026-10-25",
+        "license": "Habr ToS"
+      },
+      "publishedAt": "2013-04-29T16:15:29+00:00",
+      "retrievedAt": "2026-10-25",
+      "links": [
+        {
+          "competencyId": "comp_bb0fe81fb74f",
+          "relevance": 0.85,
+          "reason": "Статья посвящена стадии выявления и создания требований к ПО, что соответствует предмету компетенции.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_bb0fe81fb74f",
+          "componentId": "analiz-trebovaniy-i-spetsifikatsiy-po.analiz-biznes-trebovaniy",
+          "relevance": 0.9,
+          "reason": "Материал описывает выявление требований и ориентацию на заказчиков, что соответствует анализу бизнес-требований.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_bb0fe81fb74f",
+          "tagId": "tag_e00cdf7a1ec0",
+          "relevance": 0.9,
+          "reason": "Тема статьи — выявление требований, что напрямую соответствует навыку анализа бизнес-требований.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_bb0fe81fb74f"
+      ],
+      "status": "accepted",
+      "issues": []
+    },
+    {
+      "id": "material_70b3bc909d85",
+      "slug": "mat_b66bf8595c9a",
+      "kind": "article",
+      "title": "AJAX",
+      "provider": "Wikipedia",
+      "url": "https://ru.wikipedia.org/wiki/AJAX",
+      "canonicalUrl": "https://ru.wikipedia.org/wiki/AJAX",
+      "language": "ru",
+      "access": "free",
+      "description": "перезагружается полностью, и веб -приложения становятся быстрее и удобнее. По-русски иногда произносится транслитом как «аякс». У аббревиатуры AJAX нет устоявшегося",
+      "snippet": "перезагружается полностью, и веб -приложения становятся быстрее и удобнее. По-русски иногда произносится транслитом как «аякс». У аббревиатуры AJAX нет устоявшегося",
+      "license": "CC BY-SA 4.0",
+      "sourceRef": {
+        "sourceId": "wikipedia",
+        "externalId": "81897",
+        "url": "https://ru.wikipedia.org/wiki/AJAX",
+        "retrievedAt": "2026-10-25",
+        "license": "CC BY-SA 4.0"
+      },
+      "retrievedAt": "2026-10-25",
+      "links": [
+        {
+          "competencyId": "comp_88be87bf8498",
+          "componentId": "veb-tehnologii-ajax.printsipy-i-tehniki-ajax",
+          "tagId": "tag_82965469f7ff",
+          "relevance": 0.85,
+          "reason": "Статья «AJAX» описывает базовые концепции асинхронного взаимодействия клиента и сервера и преимущества AJAX-приложений, что соответствует компоненту «Принципы и техники AJAX».",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_88be87bf8498"
+      ],
+      "status": "accepted",
+      "issues": []
+    },
+    {
+      "id": "material_1f2e61ab4bb4",
+      "slug": "mat_21e9228fc84c",
+      "kind": "article",
+      "title": "DataTalks #2: Визуализация данных",
+      "provider": "Хабр",
+      "url": "https://habr.com/ru/articles/256567/",
+      "canonicalUrl": "https://habr.com/ru/articles/256567/",
+      "language": "ru",
+      "access": "free",
+      "description": "Вторая встреча сообщества DataTalks была посвящена визуализации данных – одному из самых важных и сильных инструментов в руках аналитиков. Ведь именно от того, как представлены результаты исследовательской работы, зависят решения и выводы заказчика. Помимо этого, визуализация помогает проводить предварительный анализ … (score 7)",
+      "snippet": "Вторая встреча сообщества DataTalks была посвящена визуализации данных – одному из самых важных и сильных инструментов в руках аналитиков. Ведь именно от того, как представлены результаты исследовательской работы, зависят решения и выводы заказчика. Помимо этого, визуализация помогает проводить предварительный анализ …",
+      "license": "Habr ToS; авторские права автора",
+      "sourceRef": {
+        "sourceId": "habr",
+        "externalId": "256567",
+        "url": "https://habr.com/ru/articles/256567/",
+        "retrievedAt": "2026-10-25",
+        "license": "Habr ToS"
+      },
+      "publishedAt": "2015-04-25T08:45:43+00:00",
+      "retrievedAt": "2026-10-25",
+      "links": [
+        {
+          "competencyId": "comp_ce23f79a5220",
+          "componentId": "vizualizatsiya-dannyh-i-biznes-obosnovanie-resheniy.vizualizatsiya-dannyh",
+          "relevance": 0.78,
+          "reason": "Материал посвящён визуализации данных как инструменту представления результатов анализа и влияния на решения заказчика; тематически соответствует компоненту, хотя фокус на интерфейсах явно не раскрыт.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_ce23f79a5220"
+      ],
+      "status": "accepted",
+      "issues": []
+    },
+    {
+      "id": "material_180ae8d5d5bf",
+      "slug": "mat_8559ebc65437",
+      "kind": "article",
+      "title": "Плавная анимация интерфейса (easing)",
+      "provider": "Хабр",
+      "url": "https://habr.com/ru/articles/163197/",
+      "canonicalUrl": "https://habr.com/ru/articles/163197/",
+      "language": "ru",
+      "access": "free",
+      "description": "Приветствую всех читателей! Хочу поделиться с вами простым, но эффектным способом анимировать юзер-интерфейс вашего приложения или сайта. В статье представлен готовый код на С++, который я использовал для анимирования iOS и Android приложений, основанный на анимационных слайдерах. (score 29)",
+      "snippet": "Приветствую всех читателей! Хочу поделиться с вами простым, но эффектным способом анимировать юзер-интерфейс вашего приложения или сайта. В статье представлен готовый код на С++, который я использовал для анимирования iOS и Android приложений, основанный на анимационных слайдерах.",
+      "license": "Habr ToS; авторские права автора",
+      "sourceRef": {
+        "sourceId": "habr",
+        "externalId": "163197",
+        "url": "https://habr.com/ru/articles/163197/",
+        "retrievedAt": "2026-10-25",
+        "license": "Habr ToS"
+      },
+      "publishedAt": "2012-12-19T14:37:11+00:00",
+      "retrievedAt": "2026-10-25",
+      "links": [
+        {
+          "competencyId": "comp_2d2a9ebacafe",
+          "componentId": "vizualnaya-kommunikatsiya-i-animatsiya-v-interfeyse.animatsiya-v-interfeyse",
+          "tagId": "tag_72674000b506",
+          "relevance": 0.9,
+          "reason": "Статья посвящена технике плавной анимации интерфейса (easing) для iOS и Android приложений — прямое попадание в компонент «Анимация в интерфейсе» и тег «Анимация в интерфейсе».",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_2d2a9ebacafe",
+          "componentId": "vizualnaya-kommunikatsiya-i-animatsiya-v-interfeyse.animatsiya-v-interfeyse",
+          "relevance": 0.85,
+          "reason": "Материал описывает практический способ анимировать пользовательский интерфейс приложения/сайта, что относится к применению анимации в интерфейсе.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_2d2a9ebacafe"
+      ],
+      "status": "accepted",
+      "issues": []
+    },
+    {
+      "id": "material_37d062664ef1",
+      "slug": "mat_55e68a659eb4",
+      "kind": "article",
+      "title": "Визуализация данных",
+      "provider": "Wikipedia",
+      "url": "https://ru.wikipedia.org/wiki/%D0%92%D0%B8%D0%B7%D1%83%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F_%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85",
+      "canonicalUrl": "https://ru.wikipedia.org/wiki/%D0%92%D0%B8%D0%B7%D1%83%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F_%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85",
+      "language": "ru",
+      "access": "free",
+      "description": "Визуализация данных — это представление данных в виде, который обеспечивает наиболее эффективную работу человека по их изучению. Визуализация данных находит",
+      "snippet": "Визуализация данных — это представление данных в виде, который обеспечивает наиболее эффективную работу человека по их изучению. Визуализация данных находит",
+      "license": "CC BY-SA 4.0",
+      "sourceRef": {
+        "sourceId": "wikipedia",
+        "externalId": "5294630",
+        "url": "https://ru.wikipedia.org/wiki/%D0%92%D0%B8%D0%B7%D1%83%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F_%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85",
+        "retrievedAt": "2026-10-25",
+        "license": "CC BY-SA 4.0"
+      },
+      "retrievedAt": "2026-10-25",
+      "links": [
+        {
+          "competencyId": "comp_047348e54050",
+          "relevance": 0.9,
+          "reason": "Материал посвящён визуализации данных — одной из предметных областей компетенции.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_047348e54050",
+          "componentId": "vizualnye-elementy-i-vizualizatsiya-dannyh.dizayn-dannyh-grafiki-i-diagrammy",
+          "relevance": 0.8,
+          "reason": "Статья раскрывает общее понятие визуализации данных; связь с графиками и диаграммами как методами дизайна данных требует уточнения.",
+          "modelProposal": true
+        },
+        {
+          "competencyId": "comp_047348e54050",
+          "tagId": "tag_92f43408776d",
+          "relevance": 0.8,
+          "reason": "Тема визуализации данных соответствует тегу «Дизайн данных. Графики и диаграммы», но в snippet нет явного упоминания графиков и диаграмм.",
+          "modelProposal": true
+        }
+      ],
+      "discoveredFor": [
+        "comp_047348e54050"
+      ],
+      "status": "accepted",
+      "issues": []
+    },
+    {
+      "id": "material_660fe3832bd2",
+      "slug": "mat_6dcf4d912ff0",
+      "kind": "article",
+      "title": "Учебный курс «Визуализация данных»",
+      "provider": "Хабр",
+      "url": "https://habr.com/ru/articles/209122/",
+      "canonicalUrl": "https://habr.com/ru/articles/209122/",
+      "language": "ru",
+      "access": "free",
+      "description": "25 и 26 января лаборатория проводит практический учебный курс по визуализации данных. Весь прошлый год мы в лаборатории решали задачи по визуализации и придумывали новые форматы представления данных, я вела обычные и живые советы, читала лекции и проводила практические занятия со студентам МАИ, МГУ и участниками питер… (score 28)",
+      "snippet": "25 и 26 января лаборатория проводит практический учебный курс по визуализации данных. Весь прошлый год мы в лаборатории решали задачи по визуализации и придумывали новые форматы представления данных, я вела обычные и живые советы, читала лекции и проводила практические занятия со студентам МАИ, МГУ и участниками питер…",
+      "license": "Habr ToS; авторские права автора",
+      "sourceRef": {
+        "sourceId": "habr",
+        "externalId": "209122",
+        "url": "https://habr.com/ru/articles/209122/",
+        "retrievedAt": "2026-10-25",
+        "license": "Habr ToS"
+      },
+      "publishedAt": "2014-01-15T02:49:11+00:00",
+      "retrievedAt": "2026-10-25",
+      "links": [
+        {
+          "competencyId": "comp_047348e54050",
+          "relevance": 0.9,
+          "reason": "Материал посвящён визуализации данных и новым форматам представления данных, что напрямую соответствует компетенции.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_047348e54050",
+          "componentId": "vizualnye-elementy-i-vizualizatsiya-dannyh.dizayn-dannyh-grafiki-i-diagrammy",
+          "relevance": 0.9,
+          "reason": "Содержание материала относится к визуализации данных и представлению информации, что соответствует компоненту о дизайне данных.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_047348e54050",
+          "tagId": "tag_92f43408776d",
+          "relevance": 0.9,
+          "reason": "Тег «Дизайн данных. Графики и диаграммы» подтверждается темой материала — визуализацией данных.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_047348e54050"
+      ],
+      "status": "accepted",
+      "issues": []
+    },
+    {
+      "id": "material_8ca7d5d98f41",
+      "slug": "mat_f4085db0a0f2",
+      "kind": "article",
+      "title": "Дизайн-мышление",
+      "provider": "Wikipedia",
+      "url": "https://ru.wikipedia.org/wiki/%D0%94%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD-%D0%BC%D1%8B%D1%88%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5",
+      "canonicalUrl": "https://ru.wikipedia.org/wiki/%D0%94%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD-%D0%BC%D1%8B%D1%88%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5",
+      "language": "ru",
+      "access": "free",
+      "description": "университета и основали Стэнфордский институт дизайна [en], который продвигает идею дизайн - мышления . Дизайн - мышление также связано с разработкой инноваций продуктов",
+      "snippet": "университета и основали Стэнфордский институт дизайна [en], который продвигает идею дизайн - мышления . Дизайн - мышление также связано с разработкой инноваций продуктов",
+      "license": "CC BY-SA 4.0",
+      "sourceRef": {
+        "sourceId": "wikipedia",
+        "externalId": "6099223",
+        "url": "https://ru.wikipedia.org/wiki/%D0%94%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD-%D0%BC%D1%8B%D1%88%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5",
+        "retrievedAt": "2026-10-25",
+        "license": "CC BY-SA 4.0"
+      },
+      "retrievedAt": "2026-10-25",
+      "links": [
+        {
+          "competencyId": "comp_32d156df6c59",
+          "relevance": 0.85,
+          "reason": "Материал озаглавлен «Дизайн-мышление» и в описании/фрагменте напрямую раскрывает понятие дизайн-мышления, его связь со Стэнфордским институтом дизайна и разработкой продуктовых инноваций, что соответствует предмету компетенции в целом.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_32d156df6c59"
+      ],
+      "status": "accepted",
+      "issues": []
+    },
+    {
+      "id": "material_3bf0bb85c34a",
+      "slug": "mat_5ec9f40d506d",
+      "kind": "article",
+      "title": "Дизайн-система",
+      "provider": "Wikipedia",
+      "url": "https://ru.wikipedia.org/wiki/%D0%94%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0",
+      "canonicalUrl": "https://ru.wikipedia.org/wiki/%D0%94%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0",
+      "language": "ru",
+      "access": "free",
+      "description": "современные дизайн - системы используют дизайн - токены (design tokens) — наборы переменных, определяющих цвета, типографику, отступы, размеры и другие параметры",
+      "snippet": "современные дизайн - системы используют дизайн - токены (design tokens) — наборы переменных, определяющих цвета, типографику, отступы, размеры и другие параметры",
+      "license": "CC BY-SA 4.0",
+      "sourceRef": {
+        "sourceId": "wikipedia",
+        "externalId": "7805092",
+        "url": "https://ru.wikipedia.org/wiki/%D0%94%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0",
+        "retrievedAt": "2026-10-25",
+        "license": "CC BY-SA 4.0"
+      },
+      "retrievedAt": "2026-10-25",
+      "links": [
+        {
+          "competencyId": "comp_9a71b8071561",
+          "componentId": "dizayn-sistemy-i-tokeny.osnovy-dizayn-sistem",
+          "relevance": 0.9,
+          "reason": "Статья посвящена дизайн-системам и прямо упоминает использование дизайн-токенов как наборов переменных для цветов, типографики, отступов и размеров.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_9a71b8071561",
+          "componentId": "dizayn-sistemy-i-tokeny.tokeny-dizayna",
+          "relevance": 0.7,
+          "reason": "Фрагмент описывает design tokens как наборы переменных, но не раскрывает семантический слой токенов как абстракцию между дизайном и кодом.",
+          "modelProposal": true
+        }
+      ],
+      "discoveredFor": [
+        "comp_9a71b8071561"
+      ],
+      "status": "accepted",
+      "issues": []
+    },
+    {
+      "id": "material_ba99b4ba9a4f",
+      "slug": "mat_305e28b4ebb5",
+      "kind": "article",
+      "title": "Создание таблиц в дизайн системе Figma и реализация в Storybook (React)",
+      "provider": "Хабр",
+      "url": "https://habr.com/ru/articles/452478/",
+      "canonicalUrl": "https://habr.com/ru/articles/452478/",
+      "language": "ru",
+      "access": "free",
+      "description": "В предыдущей статье на тему дизайна таблиц в Фигме мы выяснили, что базовый элемент создания любого data grid — это компонент ячейки, внутри которого спрятано все необходимое для того, чтобы оставаться в одном экземпляре и строить таблицы ячейка-за-ячейкой. Теперь поговорим о её структуре: какие элементы вложены, случ… (score 16)",
+      "snippet": "В предыдущей статье на тему дизайна таблиц в Фигме мы выяснили, что базовый элемент создания любого data grid — это компонент ячейки, внутри которого спрятано все необходимое для того, чтобы оставаться в одном экземпляре и строить таблицы ячейка-за-ячейкой. Теперь поговорим о её структуре: какие элементы вложены, случ…",
+      "license": "Habr ToS; авторские права автора",
+      "sourceRef": {
+        "sourceId": "habr",
+        "externalId": "452478",
+        "url": "https://habr.com/ru/articles/452478/",
+        "retrievedAt": "2026-10-25",
+        "license": "Habr ToS"
+      },
+      "publishedAt": "2019-05-19T07:39:18+00:00",
+      "retrievedAt": "2026-10-25",
+      "links": [
+        {
+          "competencyId": "comp_9a71b8071561",
+          "componentId": "dizayn-sistemy-i-tokeny.arhitektura-komponentov",
+          "relevance": 0.88,
+          "reason": "Материал посвящён структуре компонента ячейки для таблиц в дизайн-системе и его реализации в Storybook (React), что соответствует проектированию повторно используемых компонентов.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_9a71b8071561",
+          "tagId": "tag_2eec2142980e",
+          "relevance": 0.8,
+          "reason": "Создание таблиц как компонента дизайн-системы в Figma и его реализация в Storybook относится к разработке дизайн-системы и UI-кита.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_9a71b8071561"
+      ],
+      "status": "accepted",
+      "issues": []
+    },
+    {
+      "id": "material_8253e2d60e07",
+      "slug": "mat_a6fb99031194",
+      "kind": "article",
+      "title": "Интерактивные прототипы . Действующая модель пользовательского интерфейса, часть 1. Классификация",
+      "provider": "Хабр",
+      "url": "https://habr.com/ru/articles/17379/",
+      "canonicalUrl": "https://habr.com/ru/articles/17379/",
+      "language": "ru",
+      "access": "free",
+      "description": "Проектирование интерфейсов — один из ключевых процессов в нашей компании. Причем непосредственно разрабатываем мы не все проекты — для многих готовится только модель интерфейса, проектная документация, оценка стоимости и сроков реализации. Интерфейсная модель может быть статичной или интерактивной. В первом случае это… (score 26)",
+      "snippet": "Проектирование интерфейсов — один из ключевых процессов в нашей компании. Причем непосредственно разрабатываем мы не все проекты — для многих готовится только модель интерфейса, проектная документация, оценка стоимости и сроков реализации. Интерфейсная модель может быть статичной или интерактивной. В первом случае это…",
+      "license": "Habr ToS; авторские права автора",
+      "sourceRef": {
+        "sourceId": "habr",
+        "externalId": "17379",
+        "url": "https://habr.com/ru/articles/17379/",
+        "retrievedAt": "2026-10-25",
+        "license": "Habr ToS"
+      },
+      "publishedAt": "2007-12-12T10:54:44+00:00",
+      "retrievedAt": "2026-10-25",
+      "links": [
+        {
+          "competencyId": "comp_fa6b64a98d04",
+          "relevance": 0.86,
+          "reason": "Статья посвящена интерактивным прототипам как действующей модели пользовательского интерфейса и их классификации, что соответствует компетенции.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_fa6b64a98d04",
+          "componentId": "interaktivnye-prototipy.osnovy-interaktivnogo-prototipirovaniya",
+          "relevance": 0.9,
+          "reason": "В заголовке и описании рассматриваются понятие интерактивной интерфейсной модели и классификация интерактивных прототипов, что относится к основам интерактивного прототипирования.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_fa6b64a98d04"
+      ],
+      "status": "accepted",
+      "issues": []
+    },
+    {
+      "id": "material_7c4dd0c39acc",
+      "slug": "mat_f5598a41b72a",
+      "kind": "article",
+      "title": "Разработка информационной архитектуры и прототипирование вебсайта при помощи метода ментальных карт",
+      "provider": "Хабр",
+      "url": "https://habr.com/ru/articles/25332/",
+      "canonicalUrl": "https://habr.com/ru/articles/25332/",
+      "language": "ru",
+      "access": "free",
+      "description": "С сообществом опытом поделиться хочу, отзывы и дополнение к статье услышать. (score 0)",
+      "snippet": "С сообществом опытом поделиться хочу, отзывы и дополнение к статье услышать.",
+      "license": "Habr ToS; авторские права автора",
+      "sourceRef": {
+        "sourceId": "habr",
+        "externalId": "25332",
+        "url": "https://habr.com/ru/articles/25332/",
+        "retrievedAt": "2026-10-25",
+        "license": "Habr ToS"
+      },
+      "publishedAt": "2008-05-13T14:21:30+00:00",
+      "retrievedAt": "2026-10-25",
+      "links": [
+        {
+          "competencyId": "comp_ba86d2248db0",
+          "relevance": 0.7,
+          "reason": "Название статьи прямо указывает на разработку информационной архитектуры вебсайта, что соответствует компетенции; сниппет не раскрывает содержание и не подтверждает связь.",
+          "modelProposal": true
+        }
+      ],
+      "discoveredFor": [
+        "comp_ba86d2248db0"
+      ],
+      "status": "accepted",
+      "issues": []
+    },
+    {
+      "id": "material_52da4b4ef89f",
+      "slug": "mat_c7b65f13bc68",
+      "kind": "article",
+      "title": "От гордыни до отчаяния: четыре ошибки в продуктовом мышлении",
+      "provider": "Хабр",
+      "url": "https://habr.com/ru/articles/413325/",
+      "canonicalUrl": "https://habr.com/ru/articles/413325/",
+      "language": "ru",
+      "access": "free",
+      "description": "Хороший продакт всегда думает о проблемах пользователя, интересах компании и о том, что надо сделать, чтобы обе стороны были довольны. Это и есть продуктовое мышление. Оно помогает принимать решения и находить точки роста. Но даже у опытных менеджеров бывают слепые зоны — незаметные ловушки, которые приводят к ошибкам… (score 10)",
+      "snippet": "Хороший продакт всегда думает о проблемах пользователя, интересах компании и о том, что надо сделать, чтобы обе стороны были довольны. Это и есть продуктовое мышление. Оно помогает принимать решения и находить точки роста. Но даже у опытных менеджеров бывают слепые зоны — незаметные ловушки, которые приводят к ошибкам…",
+      "license": "Habr ToS; авторские права автора",
+      "sourceRef": {
+        "sourceId": "habr",
+        "externalId": "413325",
+        "url": "https://habr.com/ru/articles/413325/",
+        "retrievedAt": "2026-10-25",
+        "license": "Habr ToS"
+      },
+      "publishedAt": "2018-06-07T07:52:03+00:00",
+      "retrievedAt": "2026-10-25",
+      "links": [
+        {
+          "competencyId": "comp_ebd843b35ccf",
+          "relevance": 0.93,
+          "reason": "Статья посвящена продуктовому мышлению: принятию решений с учётом проблем пользователя и интересов компании, а также поиску точек роста.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_ebd843b35ccf",
+          "componentId": "produktovoe-myshlenie.auditoriya-i-tsennost",
+          "relevance": 0.78,
+          "reason": "В описании и фрагменте прямо говорится о проблемах пользователя и необходимости удовлетворить обе стороны, что связано с пониманием аудитории и создаваемой для неё ценности.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_ebd843b35ccf",
+          "componentId": "produktovoe-myshlenie.biznes-kontekst-i-metriki",
+          "relevance": 0.7,
+          "reason": "Материал рассматривает баланс интересов компании и пользователя и влияние решений на точки роста; продуктовые метрики отдельно не раскрываются.",
+          "modelProposal": true
+        },
+        {
+          "competencyId": "comp_ebd843b35ccf",
+          "tagId": "tag_0e61d6ce8af0",
+          "relevance": 0.82,
+          "reason": "Фрагмент описывает учёт интересов компании и проблем пользователя ради взаимной выгоды, что соответствует бизнес-эмпатии.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_ebd843b35ccf"
+      ],
+      "status": "accepted",
+      "issues": []
+    },
+    {
+      "id": "material_521e50c7f0fb",
+      "slug": "mat_03b5f78df90b",
+      "kind": "article",
+      "title": "Дэн Саффер — Микровзаимодействия (Microinteractions). Конспект книги",
+      "provider": "Хабр",
+      "url": "https://habr.com/ru/articles/225435/",
+      "canonicalUrl": "https://habr.com/ru/articles/225435/",
+      "language": "ru",
+      "access": "free",
+      "description": "«Детали — это не детали. Они создают дизайн.» — Чарльз Имз. Успех цифровых продуктов определяется мелочами. Книга «Микровзаимодействия» Дэна Саффера научит вас проектировать эффективные функциональные элементы. А этот подробный конспект поможет лучше запомнить прочитанное или даже заменит англоязычный оригинал. Как по… (score 49)",
+      "snippet": "«Детали — это не детали. Они создают дизайн.» — Чарльз Имз. Успех цифровых продуктов определяется мелочами. Книга «Микровзаимодействия» Дэна Саффера научит вас проектировать эффективные функциональные элементы. А этот подробный конспект поможет лучше запомнить прочитанное или даже заменит англоязычный оригинал. Как по…",
+      "license": "Habr ToS; авторские права автора",
+      "sourceRef": {
+        "sourceId": "habr",
+        "externalId": "225435",
+        "url": "https://habr.com/ru/articles/225435/",
+        "retrievedAt": "2026-10-25",
+        "license": "Habr ToS"
+      },
+      "publishedAt": "2014-06-06T06:59:30+00:00",
+      "retrievedAt": "2026-10-25",
+      "links": [
+        {
+          "competencyId": "comp_1426ad336c6f",
+          "relevance": 0.95,
+          "reason": "Материал посвящён микровзаимодействиям и проектированию функциональных элементов интерфейса, что напрямую соответствует компетенции.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_1426ad336c6f",
+          "componentId": "sostoyaniya-i-mikrovzaimodeystviya.mikrovzaimodeystviya",
+          "relevance": 0.95,
+          "reason": "Конспект книги Дэна Саффера «Микровзаимодействия» прямо относится к компоненту проектирования микровзаимодействий.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_1426ad336c6f",
+          "tagId": "tag_14a9cec71e16",
+          "relevance": 0.9,
+          "reason": "Название и описание материала явно раскрывают понятие микровзаимодействий.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_1426ad336c6f",
+          "tagId": "tag_b867b9c59c92",
+          "relevance": 0.9,
+          "reason": "Материал учит проектировать эффективные функциональные элементы, что соответствует навыку проектирования микровзаимодействий.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_1426ad336c6f"
+      ],
+      "status": "accepted",
+      "issues": []
+    },
+    {
+      "id": "material_b20bbfb8581b",
+      "slug": "mat_bce94dfbfd0e",
+      "kind": "article",
+      "title": "Значение цветов в различных культурах",
+      "provider": "Хабр",
+      "url": "https://habr.com/ru/articles/95796/",
+      "canonicalUrl": "https://habr.com/ru/articles/95796/",
+      "language": "ru",
+      "access": "free",
+      "description": "Все знают, что в различных культурах цвета могут восприниматься по разному — представляю перевод инфографика, который описывает значения цветов для разных культур. (score 11)",
+      "snippet": "Все знают, что в различных культурах цвета могут восприниматься по разному — представляю перевод инфографика, который описывает значения цветов для разных культур.",
+      "license": "Habr ToS; авторские права автора",
+      "sourceRef": {
+        "sourceId": "habr",
+        "externalId": "95796",
+        "url": "https://habr.com/ru/articles/95796/",
+        "retrievedAt": "2026-10-25",
+        "license": "Habr ToS"
+      },
+      "publishedAt": "2010-06-07T22:40:54+00:00",
+      "retrievedAt": "2026-10-25",
+      "links": [
+        {
+          "competencyId": "comp_c8e03682adf7",
+          "componentId": "teoriya-tsveta-i-koloristika.fiziologiya-i-psihologiya-vospriyatiya-tsveta",
+          "tagId": "tag_9547532b959f",
+          "relevance": 0.9,
+          "reason": "Материал посвящён восприятию и значению цветов в разных культурах, что прямо соответствует культурно-психологическому аспекту восприятия цвета в рамках компонента и тега.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_c8e03682adf7"
+      ],
+      "status": "accepted",
+      "issues": []
+    },
+    {
+      "id": "material_e7008c4ea958",
+      "slug": "mat_8b01d32b3640",
+      "kind": "article",
+      "title": "Колористика",
+      "provider": "Wikipedia",
+      "url": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BB%D0%BE%D1%80%D0%B8%D1%81%D1%82%D0%B8%D0%BA%D0%B0",
+      "canonicalUrl": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BB%D0%BE%D1%80%D0%B8%D1%81%D1%82%D0%B8%D0%BA%D0%B0",
+      "language": "ru",
+      "access": "free",
+      "description": "Анисимова, О. В. Фирсанова. Колористика : учебное пособие Дополнительные цвета Колорит Психология восприятия цвета Светотень Тон ( цвет ) Тональность (живопись)",
+      "snippet": "Анисимова, О. В. Фирсанова. Колористика : учебное пособие Дополнительные цвета Колорит Психология восприятия цвета Светотень Тон ( цвет ) Тональность (живопись)",
+      "license": "CC BY-SA 4.0",
+      "sourceRef": {
+        "sourceId": "wikipedia",
+        "externalId": "7717564",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BB%D0%BE%D1%80%D0%B8%D1%81%D1%82%D0%B8%D0%BA%D0%B0",
+        "retrievedAt": "2026-10-25",
+        "license": "CC BY-SA 4.0"
+      },
+      "retrievedAt": "2026-10-25",
+      "links": [
+        {
+          "competencyId": "comp_c8e03682adf7",
+          "relevance": 0.9,
+          "reason": "Материал озаглавлен «Колористика» и по набору разделов (дополнительные цвета, колорит, психология восприятия цвета, светотень, тон) соответствует предмету компетенции — системному пониманию цвета.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_c8e03682adf7",
+          "componentId": "teoriya-tsveta-i-koloristika.fiziologiya-i-psihologiya-vospriyatiya-tsveta",
+          "tagId": "tag_e4c261635efd",
+          "relevance": 0.7,
+          "reason": "В описании материала прямо указан раздел «Психология восприятия цвета», что относится к физиологии и психологии восприятия цвета и соответствующему тегу.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_c8e03682adf7"
+      ],
+      "status": "accepted",
+      "issues": []
+    },
+    {
+      "id": "material_a5e0f65bdc20",
+      "slug": "mat_2054ec46cd41",
+      "kind": "article",
+      "title": "15 тезисов о юзабилити тестировании веб-сайтов",
+      "provider": "Хабр",
+      "url": "https://habr.com/ru/articles/20459/",
+      "canonicalUrl": "https://habr.com/ru/articles/20459/",
+      "language": "ru",
+      "access": "free",
+      "description": "Эффективная разработка веб-сайтов (включая дизайн, эстетику, навигацию по сайту и его содержание) предполагает получение обратной связи от пользователей. Обратную связь можно организовать различными способами и на разных этапах жизни веб-сайта. Однако получение обратной связи нельзя рассматривать как универсальное сре… (score 4)",
+      "snippet": "Эффективная разработка веб-сайтов (включая дизайн, эстетику, навигацию по сайту и его содержание) предполагает получение обратной связи от пользователей. Обратную связь можно организовать различными способами и на разных этапах жизни веб-сайта. Однако получение обратной связи нельзя рассматривать как универсальное сре…",
+      "license": "Habr ToS; авторские права автора",
+      "sourceRef": {
+        "sourceId": "habr",
+        "externalId": "20459",
+        "url": "https://habr.com/ru/articles/20459/",
+        "retrievedAt": "2026-10-25",
+        "license": "Habr ToS"
+      },
+      "publishedAt": "2008-02-18T14:10:19+00:00",
+      "retrievedAt": "2026-10-25",
+      "links": [
+        {
+          "competencyId": "comp_c2cd7e56553d",
+          "relevance": 0.92,
+          "reason": "Материал напрямую посвящён юзабилити-тестированию веб-сайтов и получению обратной связи от пользователей, что соответствует проверке сценариев и прототипов на реальных пользователях.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_c2cd7e56553d",
+          "componentId": "yuzabiliti-testirovanie.osnovy-yuzabiliti-i-mesto-testirovaniya-v-issledovaniyah",
+          "relevance": 0.82,
+          "reason": "Статья содержит общие тезисы о юзабилити-тестировании и его месте в процессе обратной связи при разработке сайта, что соотносится с основами юзабилити и местом тестирования в исследованиях.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_c2cd7e56553d",
+          "tagId": "tag_3ff7e35ce2e6",
+          "relevance": 0.74,
+          "reason": "Название и описание материала связаны с понятием юзабилити и юзабилити-тестированием веб-сайтов.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_c2cd7e56553d"
+      ],
+      "status": "accepted",
+      "issues": []
+    },
+    {
+      "id": "material_1934266286ed",
+      "slug": "mat_8755b6d6601b",
+      "kind": "article",
+      "title": "Юзабилити-тестирование",
+      "provider": "Wikipedia",
+      "url": "https://ru.wikipedia.org/wiki/%D0%AE%D0%B7%D0%B0%D0%B1%D0%B8%D0%BB%D0%B8%D1%82%D0%B8-%D1%82%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5",
+      "canonicalUrl": "https://ru.wikipedia.org/wiki/%D0%AE%D0%B7%D0%B0%D0%B1%D0%B8%D0%BB%D0%B8%D1%82%D0%B8-%D1%82%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5",
+      "language": "ru",
+      "access": "free",
+      "description": "а эксперты в области юзабилити , которые проводят юзабилити -экспертизу. Юзабилити A/B тестирование Автоматическое тестирование Эргономика Функциономика",
+      "snippet": "а эксперты в области юзабилити , которые проводят юзабилити -экспертизу. Юзабилити A/B тестирование Автоматическое тестирование Эргономика Функциономика",
+      "license": "CC BY-SA 4.0",
+      "sourceRef": {
+        "sourceId": "wikipedia",
+        "externalId": "91262",
+        "url": "https://ru.wikipedia.org/wiki/%D0%AE%D0%B7%D0%B0%D0%B1%D0%B8%D0%BB%D0%B8%D1%82%D0%B8-%D1%82%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5",
+        "retrievedAt": "2026-10-25",
+        "license": "CC BY-SA 4.0"
+      },
+      "retrievedAt": "2026-10-25",
+      "links": [
+        {
+          "competencyId": "comp_c2cd7e56553d",
+          "relevance": 0.9,
+          "reason": "Название материала прямо совпадает с компетенцией; фрагмент упоминает юзабилити и виды тестирования.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_c2cd7e56553d",
+          "tagId": "tag_3ff7e35ce2e6",
+          "relevance": 0.7,
+          "reason": "В названии и фрагменте материала присутствует понятие юзабилити.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_c2cd7e56553d"
+      ],
+      "status": "accepted",
+      "issues": [
+        "компонент «yuzabiliti-testirovanie.osnovy-yuzabiliti-i-mesto-testirovaniya-v-issledovaniyakh» не найден в компетенции"
+      ]
+    },
+    {
+      "id": "material_fbd1d8ec4f73",
+      "slug": "mat_6c78019fdae6",
+      "kind": "article",
+      "title": "Семь эмпирических правил для экспериментов с веб-сайтами",
+      "provider": "Хабр",
+      "url": "https://habr.com/ru/articles/423521/",
+      "canonicalUrl": "https://habr.com/ru/articles/423521/",
+      "language": "ru",
+      "access": "free",
+      "description": "Перевод статьи: Experimenters Rules of Thumb Владельцы веб-порталов, от самых маленьких, до таких крупных, как Amazon, Facebook, Google, LinkedIn, Microsoft и Yahoo, пытаются улучшить свой сайты, оптимизируя различные метрики, начиная с количества повторных использований до проведенного у них времени и выручки. Нас пр… (score 14)",
+      "snippet": "Перевод статьи: Experimenters Rules of Thumb Владельцы веб-порталов, от самых маленьких, до таких крупных, как Amazon, Facebook, Google, LinkedIn, Microsoft и Yahoo, пытаются улучшить свой сайты, оптимизируя различные метрики, начиная с количества повторных использований до проведенного у них времени и выручки. Нас пр…",
+      "license": "Habr ToS; авторские права автора",
+      "sourceRef": {
+        "sourceId": "habr",
+        "externalId": "423521",
+        "url": "https://habr.com/ru/articles/423521/",
+        "retrievedAt": "2026-10-25",
+        "license": "Habr ToS"
+      },
+      "publishedAt": "2018-09-17T08:55:34+00:00",
+      "retrievedAt": "2026-10-25",
+      "links": [
+        {
+          "competencyId": "comp_94c55eb76f7e",
+          "relevance": 0.92,
+          "reason": "Статья посвящена эмпирическим правилам проведения экспериментов с веб-сайтами и оптимизации метрик, что прямо соответствует компетенции «UX-метрики и эксперименты».",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_94c55eb76f7e",
+          "componentId": "ux-metriki-i-eksperimenty.eksperimenty-i-testirovanie-gipotez",
+          "relevance": 0.9,
+          "reason": "Название и описание материала указывают на правила экспериментов с веб-сайтами и проверку улучшений через метрики, что относится к дизайну и проведению экспериментов.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_94c55eb76f7e"
+      ],
+      "status": "accepted",
+      "issues": []
+    },
+    {
+      "id": "material_589786433f84",
+      "slug": "mat_e1dae43f3f61",
+      "kind": "article",
+      "title": "Job Stories для проектирования интерфейсов",
+      "provider": "Хабр",
+      "url": "https://habr.com/ru/articles/260457/",
+      "canonicalUrl": "https://habr.com/ru/articles/260457/",
+      "language": "ru",
+      "access": "free",
+      "description": "Моделирование целевой аудитории (персонажей) и написание «пользовательских историй» (user story) были эффективными, когда клиенты и разработчики продуктов находились далеко друг от друга. Теперь все по-другому. В этом посте говорится о том, как одна команда разработчиков применила метод Job Stories для создания страни… (score 10)",
+      "snippet": "Моделирование целевой аудитории (персонажей) и написание «пользовательских историй» (user story) были эффективными, когда клиенты и разработчики продуктов находились далеко друг от друга. Теперь все по-другому. В этом посте говорится о том, как одна команда разработчиков применила метод Job Stories для создания страни…",
+      "license": "Habr ToS; авторские права автора",
+      "sourceRef": {
+        "sourceId": "habr",
+        "externalId": "260457",
+        "url": "https://habr.com/ru/articles/260457/",
+        "retrievedAt": "2026-10-25",
+        "license": "Habr ToS"
+      },
+      "publishedAt": "2015-06-16T15:35:26+00:00",
+      "retrievedAt": "2026-10-25",
+      "links": [
+        {
+          "competencyId": "comp_8dba4d21d998",
+          "relevance": 0.7,
+          "reason": "Статья описывает Job Stories — практический формат, выросший из Jobs-to-be-Done и фиксирующий задачу пользователя в контексте.",
+          "modelProposal": true
+        },
+        {
+          "competencyId": "comp_8dba4d21d998",
+          "tagId": "tag_e8f7ef7cab90",
+          "relevance": 0.8,
+          "reason": "Job Stories — метод, связанный с JTBD; материал рассматривает его применение для проектирования интерфейсов.",
+          "modelProposal": true
+        },
+        {
+          "competencyId": "comp_8dba4d21d998",
+          "tagId": "tag_5ec924d1dd46",
+          "relevance": 0.7,
+          "reason": "Job Stories формулируют пользовательскую задачу через контекст и желаемый результат.",
+          "modelProposal": true
+        }
+      ],
+      "discoveredFor": [
+        "comp_8dba4d21d998"
+      ],
+      "status": "accepted",
+      "issues": []
+    },
+    {
+      "id": "material_a231e785c635",
+      "slug": "mat_3c6727eb28b2",
+      "kind": "article",
+      "title": "Jobs to Be Done",
+      "provider": "Wikipedia",
+      "url": "https://ru.wikipedia.org/wiki/Jobs_to_Be_Done",
+      "canonicalUrl": "https://ru.wikipedia.org/wiki/Jobs_to_Be_Done",
+      "language": "ru",
+      "access": "free",
+      "description": "Jobs to Be Done (JTBD, работа для выполнения) — методология, используемая в разработке программных продуктов и в разработке дизайна цифровых продуктов",
+      "snippet": "Jobs to Be Done (JTBD, работа для выполнения) — методология, используемая в разработке программных продуктов и в разработке дизайна цифровых продуктов",
+      "license": "CC BY-SA 4.0",
+      "sourceRef": {
+        "sourceId": "wikipedia",
+        "externalId": "9035462",
+        "url": "https://ru.wikipedia.org/wiki/Jobs_to_Be_Done",
+        "retrievedAt": "2026-10-25",
+        "license": "CC BY-SA 4.0"
+      },
+      "retrievedAt": "2026-10-25",
+      "links": [
+        {
+          "competencyId": "comp_8dba4d21d998",
+          "relevance": 0.95,
+          "reason": "Статья непосредственно посвящена Jobs to Be Done — методологии, описывающей «работу для выполнения», то есть задачу, на которую пользователь нанимает продукт.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_8dba4d21d998",
+          "componentId": "jobs-to-be-done.osnovy-podhoda-jobs-to-be-done",
+          "relevance": 0.9,
+          "reason": "Материал вводит концептуальную рамку JTBD и описывает методологию «работы для выполнения», что соответствует основам подхода.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_8dba4d21d998",
+          "tagId": "tag_e8f7ef7cab90",
+          "relevance": 0.98,
+          "reason": "Название и описание материала прямо соответствуют тегу JTBD.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_8dba4d21d998",
+          "tagId": "tag_5ec924d1dd46",
+          "relevance": 0.7,
+          "reason": "Формулировка «работа для выполнения» в описании JTBD соотносится с задачами пользователя, хотя тег явно не назван.",
+          "modelProposal": true
+        }
+      ],
+      "discoveredFor": [
+        "comp_8dba4d21d998"
+      ],
+      "status": "accepted",
+      "issues": []
+    },
+    {
+      "id": "material_20727cc7a8f9",
+      "slug": "mat_e37e5deeb4b5",
+      "kind": "article",
+      "title": "What are benefits of customer journey mapping?",
+      "provider": "Medium",
+      "url": "https://medium.com/@alexcrter8/what-are-benefits-of-customer-journey-mapping-847773b037cd",
+      "canonicalUrl": "https://medium.com/@alexcrter8/what-are-benefits-of-customer-journey-mapping-847773b037cd",
+      "language": "en",
+      "access": "freemium",
+      "description": "Customer interactions can span websites, WhatsApp, social media, and physical locations. Continue reading on Medium »",
+      "snippet": "Customer interactions can span websites, WhatsApp, social media, and physical locations. Continue reading on Medium »",
+      "license": "Medium ToS; авторские права автора",
+      "sourceRef": {
+        "sourceId": "medium",
+        "externalId": "https://medium.com/@alexcrter8/what-are-benefits-of-customer-journey-mapping-847773b037cd",
+        "url": "https://medium.com/@alexcrter8/what-are-benefits-of-customer-journey-mapping-847773b037cd",
+        "retrievedAt": "2026-10-25",
+        "license": "Medium ToS"
+      },
+      "retrievedAt": "2026-10-25",
+      "links": [
+        {
+          "competencyId": "comp_bee3f2b037f5",
+          "relevance": 0.9,
+          "reason": "Статья посвящена customer journey mapping и описывает взаимодействия клиента с продуктом через разные каналы, что соответствует предмету компетенции.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_bee3f2b037f5",
+          "componentId": "customer-journey-map.tochki-kontakta-i-kanaly",
+          "relevance": 0.88,
+          "reason": "В описании перечислены каналы и точки взаимодействия: сайты, WhatsApp, соцсети и физические локации, что напрямую относится к выявлению точек контакта и каналов.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_bee3f2b037f5",
+          "tagId": "tag_e863b4ab300c",
+          "relevance": 0.9,
+          "reason": "Название материала прямо содержит customer journey mapping, что соответствует тегу CJM.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_bee3f2b037f5",
+          "tagId": "tag_dba4607ade2f",
+          "relevance": 0.85,
+          "reason": "Сниппет описывает взаимодействия через сайты, мессенджеры, соцсети и физические локации, то есть точки контакта.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_bee3f2b037f5"
+      ],
+      "status": "accepted",
+      "issues": []
+    },
+    {
+      "id": "material_fc07cf00a1a5",
+      "slug": "mat_9fdd08151e14",
+      "kind": "article",
+      "title": "Дизайн взаимодействия с пользователем",
+      "provider": "Wikipedia",
+      "url": "https://ru.wikipedia.org/wiki/%D0%94%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD_%D0%B2%D0%B7%D0%B0%D0%B8%D0%BC%D0%BE%D0%B4%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%B8%D1%8F_%D1%81_%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D0%B5%D0%BC",
+      "canonicalUrl": "https://ru.wikipedia.org/wiki/%D0%94%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD_%D0%B2%D0%B7%D0%B0%D0%B8%D0%BC%D0%BE%D0%B4%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%B8%D1%8F_%D1%81_%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D0%B5%D0%BC",
+      "language": "ru",
+      "access": "free",
+      "description": "Информационная архитектура сайта как важнейший параметр юзабилити // Вестник магистратуры. — 2013. — № 5 (20). Искусство информационной архитектуры -",
+      "snippet": "Информационная архитектура сайта как важнейший параметр юзабилити // Вестник магистратуры. — 2013. — № 5 (20). Искусство информационной архитектуры -",
+      "license": "CC BY-SA 4.0",
+      "sourceRef": {
+        "sourceId": "wikipedia",
+        "externalId": "6563059",
+        "url": "https://ru.wikipedia.org/wiki/%D0%94%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD_%D0%B2%D0%B7%D0%B0%D0%B8%D0%BC%D0%BE%D0%B4%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%B8%D1%8F_%D1%81_%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D0%B5%D0%BC",
+        "retrievedAt": "2026-10-25",
+        "license": "CC BY-SA 4.0"
+      },
+      "retrievedAt": "2026-10-25",
+      "links": [
+        {
+          "competencyId": "comp_ba86d2248db0",
+          "componentId": "informatsionnaya-arhitektura.osnovy-informatsionnoy-arhitektury",
+          "relevance": 0.72,
+          "reason": "Фрагмент материала прямо упоминает информационную архитектуру сайта и её роль как параметра юзабилити, что соответствует основам информационной архитектуры.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_ba86d2248db0"
+      ],
+      "status": "accepted",
+      "issues": []
+    },
+    {
+      "id": "material_15597a3817bf",
+      "slug": "mat_59fc5a5b8d02",
+      "kind": "article",
+      "title": "Маркетинг стартапа: Клиент, исчезнувший на дне воронки и Почему уделять слишком много внимания трафику опасно для вашего бизнеса",
+      "provider": "Хабр",
+      "url": "https://habr.com/ru/articles/241339/",
+      "canonicalUrl": "https://habr.com/ru/articles/241339/",
+      "language": "ru",
+      "access": "free",
+      "description": "Приветствую вас, уважаемое Хабрасообщество. Привлечение и удержание клиентов – важнейшие задачи бизнеса. Поэтому хочу поделиться с вами переводом материала, написанного Робом Уоллингом. Информация окажется полезной как для стартапов, так и для тех, кто уже добился определенных результатов. . Часть 1: Клиент, исчезнувш… (score 14)",
+      "snippet": "Приветствую вас, уважаемое Хабрасообщество. Привлечение и удержание клиентов – важнейшие задачи бизнеса. Поэтому хочу поделиться с вами переводом материала, написанного Робом Уоллингом. Информация окажется полезной как для стартапов, так и для тех, кто уже добился определенных результатов. . Часть 1: Клиент, исчезнувш…",
+      "license": "Habr ToS; авторские права автора",
+      "sourceRef": {
+        "sourceId": "habr",
+        "externalId": "241339",
+        "url": "https://habr.com/ru/articles/241339/",
+        "retrievedAt": "2026-10-25",
+        "license": "Habr ToS"
+      },
+      "publishedAt": "2014-10-24T07:32:45+00:00",
+      "retrievedAt": "2026-10-25",
+      "links": [
+        {
+          "competencyId": "comp_90f6aad56a1e",
+          "relevance": 0.9,
+          "reason": "Материал посвящён привлечению и удержанию клиентов, разбирает потерю клиента на дне воронки и риски чрезмерного фокуса на трафике.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_90f6aad56a1e",
+          "componentId": "rost-voronki-i-uderzhanie.voronka-i-aktivatsiya",
+          "relevance": 0.86,
+          "reason": "В названии и описании прямо упоминается воронка и ситуация с клиентом, исчезающим на её дне.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_90f6aad56a1e",
+          "componentId": "rost-voronki-i-uderzhanie.uderzhanie-polzovateley",
+          "relevance": 0.82,
+          "reason": "Фрагмент явно указывает на удержание клиентов как одну из ключевых задач бизнеса.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_90f6aad56a1e",
+          "tagId": "tag_7fd695c3dc17",
+          "relevance": 0.84,
+          "reason": "Материал связан с воронкой: рассматривается потеря клиента на дне воронки и привлечение трафика.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_90f6aad56a1e",
+          "tagId": "tag_381e3a309f6f",
+          "relevance": 0.82,
+          "reason": "В описании и фрагменте прямо говорится об удержании клиентов.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_90f6aad56a1e"
+      ],
+      "status": "accepted",
+      "issues": []
+    },
+    {
+      "id": "material_05110ac2021c",
+      "slug": "mat_abde9eee0478",
+      "kind": "article",
+      "title": "Маркетинговая стратегия",
+      "provider": "Wikipedia",
+      "url": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%80%D0%BA%D0%B5%D1%82%D0%B8%D0%BD%D0%B3%D0%BE%D0%B2%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D1%82%D0%B5%D0%B3%D0%B8%D1%8F",
+      "canonicalUrl": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%80%D0%BA%D0%B5%D1%82%D0%B8%D0%BD%D0%B3%D0%BE%D0%B2%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D1%82%D0%B5%D0%B3%D0%B8%D1%8F",
+      "language": "ru",
+      "access": "free",
+      "description": "запомниться, отстроиться от конкурентов. Продуктовая стратегия — доработка продукта и сервиса или расширение продуктовой линейки для более качественного удовлетворения",
+      "snippet": "запомниться, отстроиться от конкурентов. Продуктовая стратегия — доработка продукта и сервиса или расширение продуктовой линейки для более качественного удовлетворения",
+      "license": "CC BY-SA 4.0",
+      "sourceRef": {
+        "sourceId": "wikipedia",
+        "externalId": "7903478",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%80%D0%BA%D0%B5%D1%82%D0%B8%D0%BD%D0%B3%D0%BE%D0%B2%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D1%82%D0%B5%D0%B3%D0%B8%D1%8F",
+        "retrievedAt": "2026-10-25",
+        "license": "CC BY-SA 4.0"
+      },
+      "retrievedAt": "2026-10-25",
+      "links": [
+        {
+          "competencyId": "comp_275b0c8fc9b6",
+          "tagId": "tag_d3532641ba6e",
+          "relevance": 0.8,
+          "reason": "В описании и фрагменте материала прямо упоминается продуктовая стратегия и её содержание.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_275b0c8fc9b6"
+      ],
+      "status": "accepted",
+      "issues": []
+    },
+    {
+      "id": "material_ae04f30344d8",
+      "slug": "mat_87d6c2d4500c",
+      "kind": "article",
+      "title": "12 принципов анимации",
+      "provider": "Wikipedia",
+      "url": "https://ru.wikipedia.org/wiki/12_%D0%BF%D1%80%D0%B8%D0%BD%D1%86%D0%B8%D0%BF%D0%BE%D0%B2_%D0%B0%D0%BD%D0%B8%D0%BC%D0%B0%D1%86%D0%B8%D0%B8",
+      "canonicalUrl": "https://ru.wikipedia.org/wiki/12_%D0%BF%D1%80%D0%B8%D0%BD%D1%86%D0%B8%D0%BF%D0%BE%D0%B2_%D0%B0%D0%BD%D0%B8%D0%BC%D0%B0%D1%86%D0%B8%D0%B8",
+      "language": "ru",
+      "access": "free",
+      "description": "Хотя первоначально принципы предназначались для традиционной, рисованной мультипликации, они вполне актуальны и для компьютерной анимации . Сжатие и растяжение",
+      "snippet": "Хотя первоначально принципы предназначались для традиционной, рисованной мультипликации, они вполне актуальны и для компьютерной анимации . Сжатие и растяжение",
+      "license": "CC BY-SA 4.0",
+      "sourceRef": {
+        "sourceId": "wikipedia",
+        "externalId": "3740521",
+        "url": "https://ru.wikipedia.org/wiki/12_%D0%BF%D1%80%D0%B8%D0%BD%D1%86%D0%B8%D0%BF%D0%BE%D0%B2_%D0%B0%D0%BD%D0%B8%D0%BC%D0%B0%D1%86%D0%B8%D0%B8",
+        "retrievedAt": "2026-10-26",
+        "license": "CC BY-SA 4.0"
+      },
+      "retrievedAt": "2026-10-26",
+      "links": [
+        {
+          "competencyId": "comp_e7a143f3e374",
+          "relevance": 0.95,
+          "reason": "Статья «12 принципов анимации» напрямую посвящена двенадцати принципам анимации и их применению, включая компьютерную анимацию; snippet подтверждает предмет материала.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_e7a143f3e374",
+          "componentId": "printsipy-animatsii.obschaya-sistema-printsipov",
+          "relevance": 0.9,
+          "reason": "Материал рассматривает двенадцать принципов анимации как целостную систему, актуальную для традиционной и компьютерной анимации.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_e7a143f3e374",
+          "tagId": "tag_4389e5e0e683",
+          "relevance": 0.95,
+          "reason": "Тег «Принципы анимации» соответствует теме статьи, прямо посвящённой 12 принципам анимации.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_e7a143f3e374"
+      ],
+      "status": "accepted",
+      "issues": []
+    },
+    {
+      "id": "material_a710fc075a59",
+      "slug": "mat_0cdba77bd44a",
+      "kind": "article",
+      "title": "Озвучивание фильма",
+      "provider": "Wikipedia",
+      "url": "https://ru.wikipedia.org/wiki/%D0%9E%D0%B7%D0%B2%D1%83%D1%87%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%84%D0%B8%D0%BB%D1%8C%D0%BC%D0%B0",
+      "canonicalUrl": "https://ru.wikipedia.org/wiki/%D0%9E%D0%B7%D0%B2%D1%83%D1%87%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%84%D0%B8%D0%BB%D1%8C%D0%BC%D0%B0",
+      "language": "ru",
+      "access": "free",
+      "description": "громкость которой приглушается. Синхронная съёмка Звуковой эффект Дублирование Закадровый перевод Звуковой дизайн Разница между вариантами состоит в том, что",
+      "snippet": "громкость которой приглушается. Синхронная съёмка Звуковой эффект Дублирование Закадровый перевод Звуковой дизайн Разница между вариантами состоит в том, что",
+      "license": "CC BY-SA 4.0",
+      "sourceRef": {
+        "sourceId": "wikipedia",
+        "externalId": "516302",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9E%D0%B7%D0%B2%D1%83%D1%87%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%84%D0%B8%D0%BB%D1%8C%D0%BC%D0%B0",
+        "retrievedAt": "2026-10-26",
+        "license": "CC BY-SA 4.0"
+      },
+      "retrievedAt": "2026-10-26",
+      "links": [
+        {
+          "competencyId": "comp_a7afb6c78c4c",
+          "tagId": "tag_602fd814a4a4",
+          "relevance": 0.7,
+          "reason": "Фрагмент материала содержит термин «Звуковой дизайн», соответствующий тегу.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_a7afb6c78c4c"
+      ],
+      "status": "accepted",
+      "issues": []
+    },
+    {
+      "id": "material_353416bc8848",
+      "slug": "mat_3e7731ad9cfe",
+      "kind": "article",
+      "title": "The Foundry Nuke. Введение",
+      "provider": "Хабр",
+      "url": "https://habr.com/ru/articles/129437/",
+      "canonicalUrl": "https://habr.com/ru/articles/129437/",
+      "language": "ru",
+      "access": "free",
+      "description": "большое разрешение — по клику Снова здравствуй, Хабр! В этом посте я бы хотел рассказать о великолепной программе под названием Nuke от компании The Foundry , которая уже затрагивалась вот в этом посте , но вызвала много вопросов читателей, далеких от 3д графики в общем, и от 3д-композитинга в частности. Если описать … (score 308)",
+      "snippet": "большое разрешение — по клику Снова здравствуй, Хабр! В этом посте я бы хотел рассказать о великолепной программе под названием Nuke от компании The Foundry , которая уже затрагивалась вот в этом посте , но вызвала много вопросов читателей, далеких от 3д графики в общем, и от 3д-композитинга в частности. Если описать …",
+      "license": "Habr ToS; авторские права автора",
+      "sourceRef": {
+        "sourceId": "habr",
+        "externalId": "129437",
+        "url": "https://habr.com/ru/articles/129437/",
+        "retrievedAt": "2026-10-26",
+        "license": "Habr ToS"
+      },
+      "publishedAt": "2011-09-29T11:59:05+00:00",
+      "retrievedAt": "2026-10-26",
+      "links": [
+        {
+          "competencyId": "comp_a8aa252a35b8",
+          "componentId": "kompoziting-i-vfx.osnovy-kompozitinga",
+          "tagId": "tag_8f150f1c5cd3",
+          "relevance": 0.86,
+          "reason": "Статья представляет программу Nuke и вводные понятия 3D-композитинга, что напрямую соответствует основам сборки многослойного кадра.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_a8aa252a35b8"
+      ],
+      "status": "accepted",
+      "issues": []
+    },
+    {
+      "id": "material_5b0b211dbaa7",
+      "slug": "mat_09cfd71b1674",
+      "kind": "article",
+      "title": "Autodesk 3ds Max",
+      "provider": "Wikipedia",
+      "url": "https://ru.wikipedia.org/wiki/Autodesk_3ds_Max",
+      "canonicalUrl": "https://ru.wikipedia.org/wiki/Autodesk_3ds_Max",
+      "language": "ru",
+      "access": "free",
+      "description": "(ранее 3D Studio и 3D Studio MAX) — профессиональное программное обеспечение для 3D -моделирования, анимации и визуализации при создании игр и проектировании",
+      "snippet": "(ранее 3D Studio и 3D Studio MAX) — профессиональное программное обеспечение для 3D -моделирования, анимации и визуализации при создании игр и проектировании",
+      "license": "CC BY-SA 4.0",
+      "sourceRef": {
+        "sourceId": "wikipedia",
+        "externalId": "310235",
+        "url": "https://ru.wikipedia.org/wiki/Autodesk_3ds_Max",
+        "retrievedAt": "2026-10-26",
+        "license": "CC BY-SA 4.0"
+      },
+      "retrievedAt": "2026-10-26",
+      "links": [
+        {
+          "competencyId": "comp_5ed63dc3a73a",
+          "componentId": "3d-svet-i-render.trehmernaya-forma-i-modelirovanie",
+          "tagId": "tag_a1061b8896f8",
+          "relevance": 0.82,
+          "reason": "Статья посвящена Autodesk 3ds Max — ПО для 3D-моделирования, анимации и визуализации; напрямую поддерживает компонент трёхмерной формы и моделирования и тег 3D-моделирование.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_5ed63dc3a73a"
+      ],
+      "status": "accepted",
+      "issues": []
+    },
+    {
+      "id": "material_74c1fd040304",
+      "slug": "mat_71ca97a58012",
+      "kind": "article",
+      "title": "Шоурил",
+      "provider": "Wikipedia",
+      "url": "https://ru.wikipedia.org/wiki/%D0%A8%D0%BE%D1%83%D1%80%D0%B8%D0%BB",
+      "canonicalUrl": "https://ru.wikipedia.org/wiki/%D0%A8%D0%BE%D1%83%D1%80%D0%B8%D0%BB",
+      "language": "ru",
+      "access": "free",
+      "description": "сюжетом Портфолио художника — художественное портфолио для демонстрации работ Представлено британское произношение слова. Шоурил: Что это и как его сделать (рус",
+      "snippet": "сюжетом Портфолио художника — художественное портфолио для демонстрации работ Представлено британское произношение слова. Шоурил: Что это и как его сделать (рус",
+      "license": "CC BY-SA 4.0",
+      "sourceRef": {
+        "sourceId": "wikipedia",
+        "externalId": "8301482",
+        "url": "https://ru.wikipedia.org/wiki/%D0%A8%D0%BE%D1%83%D1%80%D0%B8%D0%BB",
+        "retrievedAt": "2026-10-26",
+        "license": "CC BY-SA 4.0"
+      },
+      "retrievedAt": "2026-10-26",
+      "links": [
+        {
+          "competencyId": "comp_b35802975fdf",
+          "relevance": 0.9,
+          "reason": "Статья «Шоурил» напрямую относится к сборке шоурила и демонстрации работ, что составляет предмет компетенции «Showreel и портфолио».",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_b35802975fdf",
+          "componentId": "showreel-i-portfolio.shouril",
+          "tagId": "tag_305de1d0dcc3",
+          "relevance": 0.95,
+          "reason": "Название и описание материала посвящены шоурилу, в том числе вопросу «что это и как его сделать», что соответствует компоненту и тегу «Шоурил».",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_b35802975fdf"
+      ],
+      "status": "accepted",
+      "issues": []
+    },
+    {
+      "id": "material_0af2ff80c636",
+      "slug": "mat_9337d021dc8f",
+      "kind": "article",
+      "title": "Айдентика без логотипа",
+      "provider": "Хабр",
+      "url": "https://habr.com/ru/articles/53618/",
+      "canonicalUrl": "https://habr.com/ru/articles/53618/",
+      "language": "ru",
+      "access": "free",
+      "description": "Время от времени тот или иной дизайнер понимает, что формула «логотип + фирменный цвет» не есть универсальное решение для любого фирменного стиля. Недавно в ру_айдентити снова был поднят этот вопрос: какими способами помимо логотипа можно сделать бренд графически уникальным и узнаваемым. Я хочу поделиться с вами подбо… (score 39)",
+      "snippet": "Время от времени тот или иной дизайнер понимает, что формула «логотип + фирменный цвет» не есть универсальное решение для любого фирменного стиля. Недавно в ру_айдентити снова был поднят этот вопрос: какими способами помимо логотипа можно сделать бренд графически уникальным и узнаваемым. Я хочу поделиться с вами подбо…",
+      "license": "Habr ToS; авторские права автора",
+      "sourceRef": {
+        "sourceId": "habr",
+        "externalId": "53618",
+        "url": "https://habr.com/ru/articles/53618/",
+        "retrievedAt": "2026-10-25",
+        "license": "Habr ToS"
+      },
+      "publishedAt": "2009-03-05T10:05:51+00:00",
+      "retrievedAt": "2026-10-25",
+      "links": [
+        {
+          "competencyId": "comp_287b573c505e",
+          "componentId": "brend-aydentika.sistema-vizualnoy-identichnosti",
+          "tagId": "tag_004d5639753c",
+          "relevance": 0.8,
+          "reason": "Статья о способах создания графически уникальной и узнаваемой айдентики помимо логотипа — прямо относится к системе визуальной идентичности и тегу «Айдентика».",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_287b573c505e"
+      ],
+      "status": "accepted",
+      "issues": []
+    },
+    {
+      "id": "material_ea5f2682d076",
+      "slug": "mat_fc51d4f78d48",
+      "kind": "article",
+      "title": "Трёхмерная графика",
+      "provider": "Wikipedia",
+      "url": "https://ru.wikipedia.org/wiki/%D0%A2%D1%80%D1%91%D1%85%D0%BC%D0%B5%D1%80%D0%BD%D0%B0%D1%8F_%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%B0",
+      "canonicalUrl": "https://ru.wikipedia.org/wiki/%D0%A2%D1%80%D1%91%D1%85%D0%BC%D0%B5%D1%80%D0%BD%D0%B0%D1%8F_%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%B0",
+      "language": "ru",
+      "access": "free",
+      "description": "видео путём моделирования объектов в трёх измерениях. 3D - модели́рование — процесс создания трёхмерной модели объекта. Задача 3D - моделирования — разработать",
+      "snippet": "видео путём моделирования объектов в трёх измерениях. 3D - модели́рование — процесс создания трёхмерной модели объекта. Задача 3D - моделирования — разработать",
+      "license": "CC BY-SA 4.0",
+      "sourceRef": {
+        "sourceId": "wikipedia",
+        "externalId": "19462",
+        "url": "https://ru.wikipedia.org/wiki/%D0%A2%D1%80%D1%91%D1%85%D0%BC%D0%B5%D1%80%D0%BD%D0%B0%D1%8F_%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%B0",
+        "retrievedAt": "2026-11-03",
+        "license": "CC BY-SA 4.0"
+      },
+      "retrievedAt": "2026-11-03",
+      "links": [
+        {
+          "competencyId": "comp_456eb4cd9619",
+          "tagId": "tag_94dc9a243b9c",
+          "relevance": 0.9,
+          "reason": "Статья «Трёхмерная графика» напрямую определяет 3D-моделирование как процесс создания трёхмерной модели объекта, что соответствует предмету компетенции и тегу «3D-моделирование».",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_456eb4cd9619"
+      ],
+      "status": "accepted",
+      "issues": []
+    },
+    {
+      "id": "material_7da45a91259b",
+      "slug": "mat_f1a1782fd2f3",
+      "kind": "article",
+      "title": "Создание материалов для Unity в Substance Designer",
+      "provider": "Хабр",
+      "url": "https://habr.com/ru/articles/313916/",
+      "canonicalUrl": "https://habr.com/ru/articles/313916/",
+      "language": "ru",
+      "access": "free",
+      "description": "Ужасные мучения Текстурирование и создание игровых материалов всегда были интересной… и мучительной работой одновременно. До перехода на Substance Designer я использовал для создания всех нужных карт Photoshop и xNormal. Приходилось много раз переключаться между двумя этими приложениями, и это надоедало. Теперь я изба… (score 22)",
+      "snippet": "Ужасные мучения Текстурирование и создание игровых материалов всегда были интересной… и мучительной работой одновременно. До перехода на Substance Designer я использовал для создания всех нужных карт Photoshop и xNormal. Приходилось много раз переключаться между двумя этими приложениями, и это надоедало. Теперь я изба…",
+      "license": "Habr ToS; авторские права автора",
+      "sourceRef": {
+        "sourceId": "habr",
+        "externalId": "313916",
+        "url": "https://habr.com/ru/articles/313916/",
+        "retrievedAt": "2026-11-03",
+        "license": "Habr ToS"
+      },
+      "publishedAt": "2016-10-31T07:14:39+00:00",
+      "retrievedAt": "2026-11-03",
+      "links": [
+        {
+          "competencyId": "comp_11dd239445c4",
+          "componentId": "materialy-i-tekstury-praktika.pbr-materialy",
+          "tagId": "tag_4c48ce422f5b",
+          "relevance": 0.7,
+          "reason": "Статья о создании игровых материалов и текстурных карт в Substance Designer, что напрямую относится к практической работе с PBR-материалами.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_11dd239445c4"
+      ],
+      "status": "accepted",
+      "issues": []
+    },
+    {
+      "id": "material_a4346a1e6d96",
+      "slug": "mat_76d03e9b091c",
+      "kind": "article",
+      "title": "Пишем пользовательские сценариии для анализа дизайна сайта",
+      "provider": "Хабр",
+      "url": "https://habr.com/ru/articles/166077/",
+      "canonicalUrl": "https://habr.com/ru/articles/166077/",
+      "language": "ru",
+      "access": "free",
+      "description": "При анализе каждого нового проекта, непосредственно перед проектированием его дизайна, функционала и информационной архитектуры, для лучшего понимания главной задачи сайта, (score 18)",
+      "snippet": "При анализе каждого нового проекта, непосредственно перед проектированием его дизайна, функционала и информационной архитектуры, для лучшего понимания главной задачи сайта,",
+      "license": "Habr ToS; авторские права автора",
+      "sourceRef": {
+        "sourceId": "habr",
+        "externalId": "166077",
+        "url": "https://habr.com/ru/articles/166077/",
+        "retrievedAt": "2026-11-03",
+        "license": "Habr ToS"
+      },
+      "publishedAt": "2013-01-17T01:41:48+00:00",
+      "retrievedAt": "2026-11-03",
+      "links": [
+        {
+          "competencyId": "comp_e4f2ab2892c2",
+          "componentId": "polzovatelskie-stsenarii-i-flou.naznachenie-i-rol-stsenariev",
+          "tagId": "tag_2ec2ac0348f8",
+          "relevance": 0.8,
+          "reason": "Статья о написании пользовательских сценариев для анализа дизайна сайта до этапа проектирования — прямо раскрывает назначение и роль сценариев в проектировании.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_e4f2ab2892c2",
+          "componentId": "polzovatelskie-stsenarii-i-flou.polzovatelskie-stsenarii-i-patterny-vzaimodeystviya",
+          "tagId": "tag_c7cd36f73940",
+          "relevance": 0.7,
+          "reason": "Материал посвящён написанию пользовательских сценариев для анализа функционала и информационной архитектуры, что соответствует построению сценариев использования.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_e4f2ab2892c2"
+      ],
+      "status": "accepted",
+      "issues": []
+    },
+    {
+      "id": "material_ce842a9284e3",
+      "slug": "mat_988f129dd98f",
+      "kind": "article",
+      "title": "Веб-дизайн",
+      "provider": "Wikipedia",
+      "url": "https://ru.wikipedia.org/wiki/%D0%92%D0%B5%D0%B1-%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD",
+      "canonicalUrl": "https://ru.wikipedia.org/wiki/%D0%92%D0%B5%D0%B1-%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD",
+      "language": "ru",
+      "access": "free",
+      "description": "Веб - дизайн (от англ. web design) — отрасль веб -разработки и разновидность дизайна , в задачи которой входит проектирование пользовательских веб -интерфейсов",
+      "snippet": "Веб - дизайн (от англ. web design) — отрасль веб -разработки и разновидность дизайна , в задачи которой входит проектирование пользовательских веб -интерфейсов",
+      "license": "CC BY-SA 4.0",
+      "sourceRef": {
+        "sourceId": "wikipedia",
+        "externalId": "138568",
+        "url": "https://ru.wikipedia.org/wiki/%D0%92%D0%B5%D0%B1-%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD",
+        "retrievedAt": "2026-11-03",
+        "license": "CC BY-SA 4.0"
+      },
+      "retrievedAt": "2026-11-03",
+      "links": [
+        {
+          "competencyId": "comp_eddfb147a6cc",
+          "componentId": "vizualnyy-dizayn-dlya-veba.osnovy-veb-dizayna",
+          "tagId": "tag_a38301c45b7e",
+          "relevance": 0.9,
+          "reason": "Статья «Веб-дизайн» напрямую описывает проектирование пользовательских веб-интерфейсов, что соответствует основам веб-дизайна и тегу «Веб-дизайн».",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_eddfb147a6cc",
+          "componentId": "vizualnyy-dizayn-dlya-veba.vizualnye-elementy-interfeysa",
+          "tagId": "tag_e05218277053",
+          "relevance": 0.7,
+          "reason": "Проектирование пользовательских веб-интерфейсов связано с визуальными элементами интерфейса и UX/UI дизайном, но snippet не детализирует графику и изображения.",
+          "modelProposal": true
+        }
+      ],
+      "discoveredFor": [
+        "comp_eddfb147a6cc"
+      ],
+      "status": "accepted",
+      "issues": []
+    },
+    {
+      "id": "material_2d83b328c9f8",
+      "slug": "mat_9644ef594caf",
+      "kind": "article",
+      "title": "Самые простые техники адаптивной верстки",
+      "provider": "Хабр",
+      "url": "https://habr.com/ru/articles/144003/",
+      "canonicalUrl": "https://habr.com/ru/articles/144003/",
+      "language": "ru",
+      "access": "free",
+      "description": "Сайтов с адаптивной разметкой с каждым месяцем становится все больше, заказчики кроме кроссбраузерности все чаще требуют адаптивность, но многие разработчики не спешат обучаться новым техникам. Но адаптивный дизайн — это просто! В этой статье представлено 5 примеров адаптивной разметки различных элементов веб-страниц. (score 137)",
+      "snippet": "Сайтов с адаптивной разметкой с каждым месяцем становится все больше, заказчики кроме кроссбраузерности все чаще требуют адаптивность, но многие разработчики не спешат обучаться новым техникам. Но адаптивный дизайн — это просто! В этой статье представлено 5 примеров адаптивной разметки различных элементов веб-страниц.",
+      "license": "Habr ToS; авторские права автора",
+      "sourceRef": {
+        "sourceId": "habr",
+        "externalId": "144003",
+        "url": "https://habr.com/ru/articles/144003/",
+        "retrievedAt": "2026-11-03",
+        "license": "Habr ToS"
+      },
+      "publishedAt": "2012-05-17T00:10:40+00:00",
+      "retrievedAt": "2026-11-03",
+      "links": [
+        {
+          "competencyId": "comp_37507e0fc1a2",
+          "componentId": "adaptivnaya-verstka-i-setki.osnovy-adaptivnoy-verstki",
+          "relevance": 0.9,
+          "reason": "Статья посвящена техникам адаптивной вёрстки и примерам адаптивной разметки элементов страницы — прямо соответствует основам адаптивной вёрстки.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_37507e0fc1a2",
+          "componentId": "adaptivnaya-verstka-i-setki.povedenie-interfeysa-na-raznyh-ekranah",
+          "relevance": 0.7,
+          "reason": "Примеры адаптивной разметки элементов веб-страницы связаны с изменением компоновки под экран, но snippet не детализирует поведение на разных размерах.",
+          "modelProposal": true
+        }
+      ],
+      "discoveredFor": [
+        "comp_37507e0fc1a2"
+      ],
+      "status": "accepted",
+      "issues": []
+    },
+    {
+      "id": "material_53aba967b9be",
+      "slug": "mat_d95830c26eb0",
+      "kind": "article",
+      "title": "Визуализация презентаций в стиле IT-компаний",
+      "provider": "Хабр",
+      "url": "https://habr.com/ru/articles/162983/",
+      "canonicalUrl": "https://habr.com/ru/articles/162983/",
+      "language": "ru",
+      "access": "free",
+      "description": "Хочу рассказать о том, как можно использовать ярко-выраженные стили трех IT-компаний для оформления следующих инструментов визуализации в презентации: Иллюстрации — помогают передать сообщение быстрее текста. Цвет — позволяет поставить акцент. Список — структурирует информацию для лучшего восприятия. Заголовки (подзаг… (score 28)",
+      "snippet": "Хочу рассказать о том, как можно использовать ярко-выраженные стили трех IT-компаний для оформления следующих инструментов визуализации в презентации: Иллюстрации — помогают передать сообщение быстрее текста. Цвет — позволяет поставить акцент. Список — структурирует информацию для лучшего восприятия. Заголовки (подзаг…",
+      "license": "Habr ToS; авторские права автора",
+      "sourceRef": {
+        "sourceId": "habr",
+        "externalId": "162983",
+        "url": "https://habr.com/ru/articles/162983/",
+        "retrievedAt": "2026-11-03",
+        "license": "Habr ToS"
+      },
+      "publishedAt": "2012-12-18T08:37:16+00:00",
+      "retrievedAt": "2026-11-03",
+      "links": [
+        {
+          "competencyId": "comp_ca9302e30e3a",
+          "componentId": "vizualizatsiya-i-format-slaydov-praktika.format-i-komponovka-slayda",
+          "tagId": "tag_7997a07b7f10",
+          "relevance": 0.7,
+          "reason": "Статья о визуальном оформлении презентаций: иллюстрации, цвет, списки, заголовки — инструменты акцентирования и структурирования слайда, что относится к визуальной иерархии и компоновке.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_ca9302e30e3a"
+      ],
+      "status": "accepted",
+      "issues": []
+    },
+    {
+      "id": "material_732894374431",
+      "slug": "mat_41dd3f4fdf74",
+      "kind": "article",
+      "title": "Какой бриф лучше?",
+      "provider": "Хабр",
+      "url": "https://habr.com/ru/articles/46763/",
+      "canonicalUrl": "https://habr.com/ru/articles/46763/",
+      "language": "ru",
+      "access": "free",
+      "description": "У большинства веб-студий, равно как и у других творческо-ориентированных компаний (например у рекламных агентств, архитектурных бюро) общение с клиентом начинается с брифа. В этой статье мы разберемся, нужен ли бриф на предварительном этапе общения с клиентом, и если нужен, то какой его вид является оптимальным для пл… (score 0)",
+      "snippet": "У большинства веб-студий, равно как и у других творческо-ориентированных компаний (например у рекламных агентств, архитектурных бюро) общение с клиентом начинается с брифа. В этой статье мы разберемся, нужен ли бриф на предварительном этапе общения с клиентом, и если нужен, то какой его вид является оптимальным для пл…",
+      "license": "Habr ToS; авторские права автора",
+      "sourceRef": {
+        "sourceId": "habr",
+        "externalId": "46763",
+        "url": "https://habr.com/ru/articles/46763/",
+        "retrievedAt": "2026-11-03",
+        "license": "Habr ToS"
+      },
+      "publishedAt": "2008-12-11T17:56:23+00:00",
+      "retrievedAt": "2026-11-03",
+      "links": [
+        {
+          "competencyId": "comp_413224e903d3",
+          "componentId": "brif-i-biznes-praktika.brif-kak-instrument-proekta",
+          "tagId": "tag_6cddf1b38129",
+          "relevance": 0.85,
+          "reason": "Статья разбирает бриф как инструмент начала работы с клиентом и оптимальный вид брифа на предварительном этапе — прямо относится к структуре и практике составления брифа.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_413224e903d3",
+          "componentId": "brif-i-biznes-praktika.brif-kak-instrument-proekta",
+          "tagId": "tag_3cf9515172b7",
+          "relevance": 0.8,
+          "reason": "Материал посвящён выбору и составлению брифа при общении с клиентом, что соответствует навыку составления брифа.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_413224e903d3"
+      ],
+      "status": "accepted",
+      "issues": []
+    },
+    {
+      "id": "material_f91c90efebb6",
+      "slug": "mat_1921c412394c",
+      "kind": "article",
+      "title": "Яндекс запускает Метрику для приложений",
+      "provider": "Хабр",
+      "url": "https://habr.com/ru/articles/198386/",
+      "canonicalUrl": "https://habr.com/ru/articles/198386/",
+      "language": "ru",
+      "access": "free",
+      "description": "Сегодня мы бесплатно открываем Метрику для приложений для всех разработчиков. Она работает с iPhone, Android, Windows Phone, Windows Store, .NET. В ней мы объединили всё, что сами хотели бы от инструмента для разработчиков приложений. Прежде всего, понятный интерфейс, в котором нет ничего лишнего, — всего за несколько… (score 68)",
+      "snippet": "Сегодня мы бесплатно открываем Метрику для приложений для всех разработчиков. Она работает с iPhone, Android, Windows Phone, Windows Store, .NET. В ней мы объединили всё, что сами хотели бы от инструмента для разработчиков приложений. Прежде всего, понятный интерфейс, в котором нет ничего лишнего, — всего за несколько…",
+      "license": "Habr ToS; авторские права автора",
+      "sourceRef": {
+        "sourceId": "habr",
+        "externalId": "198386",
+        "url": "https://habr.com/ru/articles/198386/",
+        "retrievedAt": "2026-11-03",
+        "license": "Habr ToS"
+      },
+      "publishedAt": "2013-10-21T09:56:56+00:00",
+      "retrievedAt": "2026-11-03",
+      "links": [
+        {
+          "competencyId": "comp_5d09eb9186eb",
+          "componentId": "metriki-mobilnyh-prilozheniy-praktika.mobilnaya-analitika",
+          "tagId": "tag_27aae76ab885",
+          "relevance": 0.7,
+          "reason": "Статья о запуске Яндекс.Метрики для приложений — инструмент мобильной аналитики, соответствует компоненту «Мобильная аналитика».",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_5d09eb9186eb"
+      ],
+      "status": "accepted",
+      "issues": []
+    }
+  ]
 }

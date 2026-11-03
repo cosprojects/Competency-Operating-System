@@ -68,12 +68,13 @@ npm run canonical:validate -- --domain it --profession uxui --source review --in
 
 Материалы вынесены в отдельный контур: `npm run materials:agent -- --domain it --profession uxui --limit 2 --sources wikipedia,habr,medium`. Журнал — `data/materials-agent/`; агент не меняет каталог и не пишет в граф.
 
-Очередь покрывает компетенции profession view (включая переиспользованные блоки через `canonicalIds`). Полные прогоны: UX/UI — 33 элемента / 65 материалов / 31 связь (34/34 компетенций); Product — 31 / 68 / 35 (30/30); Motion — 30 / 59 / 26 (28/28); Graphic — 20 / 39 / 22 (18/18). Все 4 профессии покрыты на 100%, `catalog.materials` = 0 (human-review не выполнен). Команда:
+Очередь покрывает компетенции profession view (включая переиспользованные блоки через `canonicalIds`). Полные прогоны: UX/UI — 33 элемента / 65 материалов / 31 связь (34/34 компетенций); Product — 31 / 68 / 35 (30/30); Motion — 30 / 59 / 26 (28/28); Graphic — 20 / 39 / 22 (18/18). Принято **39 материалов** в `catalog.materials` (free/freemium, relevance ≥ 0.7, с привязкой к accepted-блоку). Материалы встроены в контент MVP как карточки. Команда приёмки:
 
 ```bash
 npm run materials:agent:queue -- --domain it --profession product --per-competency 1 \
   --sources wikipedia,habr,medium --concurrency 3 --retry 2 --classify --budget-usd 0.15 --max-calls 120
 npm run materials:agent:review -- --domain it --profession product
+npm run materials:accept -- --journal data/materials-agent/it-product-queue.json --min-relevance 0.7 --write
 ```
 
 

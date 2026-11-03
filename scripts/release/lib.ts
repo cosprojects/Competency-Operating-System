@@ -8,7 +8,7 @@ import type {
   ProfessionsFile,
 } from "../../src/methodology/v1/competency/model/types.ts";
 import type { ProfessionView } from "../../src/methodology/v1/competency/model/profession-view.ts";
-import type { CatalogFile, CompetencyBlock, TagRecord } from "../../src/methodology/v1/competency/types.ts";
+import type { CatalogFile, CompetencyBlock, Material, TagRecord } from "../../src/methodology/v1/competency/types.ts";
 import type { LearningSourceRecord, LearningSourceRegistry } from "../../src/methodology/v1/learning-sources/types.ts";
 
 export interface QualityBar {
@@ -129,6 +129,7 @@ export interface CompetencyEvaluation {
   knowledge: TagRecord[];
   skills: TagRecord[];
   sources: ResolvedSource[];
+  materials: Material[];
   gaps: ReleaseGap[];
   passed: boolean;
 }
@@ -379,6 +380,7 @@ export function evaluateRelease(
           knowledge: [],
           skills: [],
           sources: [],
+          materials: [],
           gaps: rowGaps,
           passed: false,
         });
@@ -560,6 +562,9 @@ export function evaluateRelease(
         knowledge,
         skills,
         sources,
+        materials: inputs.catalog.materials.filter((material) =>
+          material.status === "accepted" && material.links.some((link) => blocks.some((block) => block.id === link.competencyId)),
+        ),
         gaps: rowGaps,
         passed: !rowGaps.some((gap) => gap.blocking),
       });
@@ -780,6 +785,15 @@ function buildSections(
   return sections;
 }
 
+function materialKind(kind: string): string {
+  if (kind === "video") return "video-channel";
+  if (kind === "course") return "course-platform";
+  if (kind === "book") return "reference";
+  if (kind === "podcast") return "video-playlist";
+  if (kind === "article") return "blog";
+  return "reference";
+}
+
 function toPublicCompetency(row: CompetencyEvaluation, publishedIds: Set<string>): PublicCompetency {
   const knowledge = [...new Map(row.knowledge.map((tag) => [tag.id, tag])).values()]
     .map(toPublicItem)
@@ -790,6 +804,29 @@ function toPublicCompetency(row: CompetencyEvaluation, publishedIds: Set<string>
   const sources = [...new Map(row.sources.map((item) => [item.sourceId, item])).values()]
     .map(toPublicSource)
     .sort((a, b) => a.title.localeCompare(b.title, "ru"));
+  const materialSources = row.materials.map((material) => {
+    const link = material.links.find((item) => row.blocks.some((block) => block.id === item.competencyId));
+    return {
+      id: material.id,
+      title: material.title,
+      kind: materialKind(material.kind),
+      access: material.access,
+      languages: [material.language],
+      authority: "secondary",
+      summary: material.description,
+      url: material.url,
+      lastChecked: material.retrievedAt,
+      ...(link?.reason ? { rationale: link.reason } : {}),
+    };
+  });
+  const sourceIds = new Set(sources.map((source) => source.id));
+  const sourceUrls = new Set(sources.map((source) => source.url));
+  for (const material of materialSources) {
+    if (sourceIds.has(material.id) || sourceUrls.has(material.url)) continue;
+    sources.push(material);
+    sourceIds.add(material.id);
+    sourceUrls.add(material.url);
+  }
   return {
     id: row.competency.id,
     title: row.competency.title,

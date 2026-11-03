@@ -79,7 +79,8 @@
     "web:canvases": "node --experimental-strip-types scripts/web/copy-canvases.ts",
     "mapping:draft": "node --experimental-strip-types src/methodology/v1/competency/cli/mapping-draft.ts",
     "blocks:from-mapping": "node --experimental-strip-types src/methodology/v1/competency/cli/blocks-from-mapping.ts",
-    "learning:aggregate": "node --experimental-strip-types src/methodology/v1/learning-sources/cli/aggregate.ts"
+    "learning:aggregate": "node --experimental-strip-types src/methodology/v1/learning-sources/cli/aggregate.ts",
+    "materials:accept": "node --experimental-strip-types src/methodology/v1/materials-agent/cli/accept.ts"
   },
   "dependencies": {
     "@prisma/client": "^6.4.0",

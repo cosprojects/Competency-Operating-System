@@ -250,12 +250,13 @@ export function ProfessionCanvas({
         </div>
 
           <div className="sidebar-notice">
-            В Beta опубликованы только проверенные компетенции. Если вы не нашли нужную —{" "}
+            В Beta опубликованы не только проверенные компетенции. Если вы не нашли нужную —{" "}
             <FeedbackTrigger
               options={{ context: "competency", type: "MISSING_COMPETENCY", targetType: "COMPETENCY", targetId: selectedId ?? undefined }}
             >
               сообщите о пробеле
-            </FeedbackTrigger>
+            </FeedbackTrigger>{" "}
+            и помогите проверить добавленные. Вместе мы сделаем сервис полезнее!
           </div>
         </div>
       </div>

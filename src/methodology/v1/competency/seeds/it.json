@@ -1933,6 +1933,82 @@
           "kind": "knowledge"
         }
       ]
+    },
+    {
+      "id": "web-cms-practice",
+      "canonicalId": "web-cms",
+      "title": "CMS и конструкторы: практика",
+      "titleEn": "CMS and website builders practice",
+      "aliases": [
+        "CMS and website builders practice"
+      ],
+      "definition": "Сборка сайта в CMS и конструкторах, контент и структура страниц.",
+      "professionIds": [
+        "it.webdesigner"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "CMS и конструкторы",
+          "definition": "Выбор и использование CMS для сайта.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Структура сайта в CMS",
+          "definition": "Страницы, коллекции и навигация в CMS.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Сборка сайта",
+          "definition": "Практическая сборка страниц в конструкторе.",
+          "kind": "skill"
+        },
+        {
+          "title": "Наполнение контентом",
+          "definition": "Подготовка и публикация контента.",
+          "kind": "skill"
+        }
+      ]
+    },
+    {
+      "id": "web-performance-practice",
+      "canonicalId": "web-performance",
+      "title": "Оптимизация и технические ограничения: практика",
+      "titleEn": "Web performance practice",
+      "aliases": [
+        "Web performance practice"
+      ],
+      "definition": "Скорость загрузки, Core Web Vitals и технические ограничения.",
+      "professionIds": [
+        "it.webdesigner"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Core Web Vitals",
+          "definition": "Метрики скорости и качества загрузки.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Оптимизация изображений",
+          "definition": "Форматы, сжатие и загрузка изображений.",
+          "kind": "skill"
+        },
+        {
+          "title": "Производительность страницы",
+          "definition": "Аудит и ускорение загрузки страницы.",
+          "kind": "skill"
+        },
+        {
+          "title": "Технические ограничения",
+          "definition": "Ограничения браузера, хостинга и вёрстки.",
+          "kind": "knowledge"
+        }
+      ]
     }
   ]
 }

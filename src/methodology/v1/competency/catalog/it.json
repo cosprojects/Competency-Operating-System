@@ -1178,8 +1178,16 @@
           "professionIds": [
             "it.webdesigner"
           ],
-          "sourceRefs": [],
-          "evidenceState": "needs_review",
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "web-designer",
+              "url": "https://practicum.yandex.ru/web-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
           "competencyLinks": [
             {
               "competencyId": "comp_37507e0fc1a2",
@@ -1188,7 +1196,7 @@
             }
           ],
           "materialIds": [],
-          "needsReview": true
+          "needsReview": false
         },
         {
           "id": "tag_c0261b5e392d",
@@ -1200,8 +1208,16 @@
           "professionIds": [
             "it.webdesigner"
           ],
-          "sourceRefs": [],
-          "evidenceState": "needs_review",
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "web-designer",
+              "url": "https://practicum.yandex.ru/web-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
           "competencyLinks": [
             {
               "competencyId": "comp_37507e0fc1a2",
@@ -1210,7 +1226,7 @@
             }
           ],
           "materialIds": [],
-          "needsReview": true
+          "needsReview": false
         },
         {
           "id": "tag_f1381d968290",
@@ -1222,8 +1238,16 @@
           "professionIds": [
             "it.webdesigner"
           ],
-          "sourceRefs": [],
-          "evidenceState": "needs_review",
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "web-designer",
+              "url": "https://practicum.yandex.ru/web-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
           "competencyLinks": [
             {
               "competencyId": "comp_37507e0fc1a2",
@@ -1232,7 +1256,7 @@
             }
           ],
           "materialIds": [],
-          "needsReview": true
+          "needsReview": false
         },
         {
           "id": "tag_a5e8ce752c4a",
@@ -1244,8 +1268,16 @@
           "professionIds": [
             "it.webdesigner"
           ],
-          "sourceRefs": [],
-          "evidenceState": "needs_review",
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "web-designer",
+              "url": "https://practicum.yandex.ru/web-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
           "competencyLinks": [
             {
               "competencyId": "comp_37507e0fc1a2",
@@ -1254,7 +1286,7 @@
             }
           ],
           "materialIds": [],
-          "needsReview": true
+          "needsReview": false
         }
       ],
       "sourceRefs": [
@@ -5598,8 +5630,16 @@
           "professionIds": [
             "it.webdesigner"
           ],
-          "sourceRefs": [],
-          "evidenceState": "needs_review",
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "web-designer",
+              "url": "https://practicum.yandex.ru/web-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
           "competencyLinks": [
             {
               "competencyId": "comp_eddfb147a6cc",
@@ -5608,7 +5648,7 @@
             }
           ],
           "materialIds": [],
-          "needsReview": true
+          "needsReview": false
         },
         {
           "id": "tag_95a1d70e6a6a",
@@ -5620,8 +5660,16 @@
           "professionIds": [
             "it.webdesigner"
           ],
-          "sourceRefs": [],
-          "evidenceState": "needs_review",
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "web-designer",
+              "url": "https://practicum.yandex.ru/web-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
           "competencyLinks": [
             {
               "competencyId": "comp_eddfb147a6cc",
@@ -5630,7 +5678,7 @@
             }
           ],
           "materialIds": [],
-          "needsReview": true
+          "needsReview": false
         },
         {
           "id": "tag_62df8fda42fe",
@@ -5642,8 +5690,16 @@
           "professionIds": [
             "it.webdesigner"
           ],
-          "sourceRefs": [],
-          "evidenceState": "needs_review",
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "web-designer",
+              "url": "https://practicum.yandex.ru/web-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
           "competencyLinks": [
             {
               "competencyId": "comp_eddfb147a6cc",
@@ -5652,7 +5708,7 @@
             }
           ],
           "materialIds": [],
-          "needsReview": true
+          "needsReview": false
         },
         {
           "id": "tag_76e0ac22e6da",
@@ -5664,8 +5720,16 @@
           "professionIds": [
             "it.webdesigner"
           ],
-          "sourceRefs": [],
-          "evidenceState": "needs_review",
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "web-designer",
+              "url": "https://practicum.yandex.ru/web-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
           "competencyLinks": [
             {
               "competencyId": "comp_eddfb147a6cc",
@@ -5674,7 +5738,7 @@
             }
           ],
           "materialIds": [],
-          "needsReview": true
+          "needsReview": false
         },
         {
           "id": "tag_cdcfe7aa1ea7",
@@ -5686,8 +5750,16 @@
           "professionIds": [
             "it.webdesigner"
           ],
-          "sourceRefs": [],
-          "evidenceState": "needs_review",
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "web-designer",
+              "url": "https://practicum.yandex.ru/web-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
           "competencyLinks": [
             {
               "competencyId": "comp_eddfb147a6cc",
@@ -5696,7 +5768,7 @@
             }
           ],
           "materialIds": [],
-          "needsReview": true
+          "needsReview": false
         },
         {
           "id": "tag_378ad4a0ea46",
@@ -5708,8 +5780,16 @@
           "professionIds": [
             "it.webdesigner"
           ],
-          "sourceRefs": [],
-          "evidenceState": "needs_review",
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "web-designer",
+              "url": "https://practicum.yandex.ru/web-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
           "competencyLinks": [
             {
               "competencyId": "comp_eddfb147a6cc",
@@ -5718,7 +5798,7 @@
             }
           ],
           "materialIds": [],
-          "needsReview": true
+          "needsReview": false
         }
       ],
       "sourceRefs": [
@@ -9606,8 +9686,16 @@
           "professionIds": [
             "it.webdesigner"
           ],
-          "sourceRefs": [],
-          "evidenceState": "needs_review",
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "web-designer",
+              "url": "https://practicum.yandex.ru/web-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
           "competencyLinks": [
             {
               "competencyId": "comp_bf36ffff1027",
@@ -9616,7 +9704,7 @@
             }
           ],
           "materialIds": [],
-          "needsReview": true
+          "needsReview": false
         },
         {
           "id": "tag_7c8af1186877",
@@ -9628,8 +9716,16 @@
           "professionIds": [
             "it.webdesigner"
           ],
-          "sourceRefs": [],
-          "evidenceState": "needs_review",
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "web-designer",
+              "url": "https://practicum.yandex.ru/web-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
           "competencyLinks": [
             {
               "competencyId": "comp_bf36ffff1027",
@@ -9638,7 +9734,7 @@
             }
           ],
           "materialIds": [],
-          "needsReview": true
+          "needsReview": false
         },
         {
           "id": "tag_a780066ee0ef",
@@ -9710,8 +9806,16 @@
           "professionIds": [
             "it.webdesigner"
           ],
-          "sourceRefs": [],
-          "evidenceState": "needs_review",
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "web-designer",
+              "url": "https://practicum.yandex.ru/web-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
           "competencyLinks": [
             {
               "competencyId": "comp_bf36ffff1027",
@@ -9720,7 +9824,7 @@
             }
           ],
           "materialIds": [],
-          "needsReview": true
+          "needsReview": false
         }
       ],
       "sourceRefs": [
@@ -11802,6 +11906,203 @@
           "cacheHitTokens": 512,
           "cacheMissTokens": 984,
           "outputTokens": 1075
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
+      "id": "comp_a8804e73becd",
+      "slug": "optimizatsiya-i-tehnicheskie-ogranicheniya-praktika",
+      "title": "Оптимизация и технические ограничения: практика",
+      "aliases": [
+        "Производительность веб-страниц",
+        "Веб-производительность и ограничения"
+      ],
+      "definition": "Практика обеспечения скорости загрузки и качества веб-страниц через работу с метриками Core Web Vitals, оптимизацию ресурсов и учёт технических ограничений браузера, хостинга и вёрстки.",
+      "scope": "universal",
+      "canonicalIds": [
+        "web-performance"
+      ],
+      "professionIds": [
+        "it.webdesigner"
+      ],
+      "components": [
+        {
+          "id": "optimizatsiya-i-tehnicheskie-ogranicheniya-praktika.metriki-veb-proizvoditelnosti",
+          "slug": "metriki-veb-proizvoditelnosti",
+          "title": "Метрики веб-производительности",
+          "definition": "Понимание и использование метрик, характеризующих скорость и качество загрузки страницы.",
+          "order": 1,
+          "tagIds": [
+            "tag_94756e99f9a8"
+          ]
+        },
+        {
+          "id": "optimizatsiya-i-tehnicheskie-ogranicheniya-praktika.optimizatsiya-resursov",
+          "slug": "optimizatsiya-resursov",
+          "title": "Оптимизация ресурсов",
+          "definition": "Практические приёмы снижения веса и ускорения загрузки ресурсов страницы.",
+          "order": 2,
+          "tagIds": [
+            "tag_f228901a9bc9"
+          ]
+        },
+        {
+          "id": "optimizatsiya-i-tehnicheskie-ogranicheniya-praktika.audit-i-uskorenie-stranitsy",
+          "slug": "audit-i-uskorenie-stranitsy",
+          "title": "Аудит и ускорение страницы",
+          "definition": "Анализ производительности страницы и применение мер по её улучшению.",
+          "order": 3,
+          "tagIds": [
+            "tag_a2e998bbc460"
+          ]
+        },
+        {
+          "id": "optimizatsiya-i-tehnicheskie-ogranicheniya-praktika.tehnicheskie-ogranicheniya",
+          "slug": "tehnicheskie-ogranicheniya",
+          "title": "Технические ограничения",
+          "definition": "Учёт ограничений среды, влияющих на реализацию и производительность интерфейса.",
+          "order": 4,
+          "tagIds": [
+            "tag_25538efabfe7"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_94756e99f9a8",
+          "slug": "core-web-vitals",
+          "title": "Core Web Vitals",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Метрики скорости и качества загрузки.",
+          "professionIds": [
+            "it.webdesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "web-designer",
+              "url": "https://practicum.yandex.ru/web-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_a8804e73becd",
+              "componentId": "optimizatsiya-i-tehnicheskie-ogranicheniya-praktika.metriki-veb-proizvoditelnosti",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_f228901a9bc9",
+          "slug": "optimizatsiya-izobrazheniy",
+          "title": "Оптимизация изображений",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Форматы, сжатие и загрузка изображений.",
+          "professionIds": [
+            "it.webdesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "web-designer",
+              "url": "https://practicum.yandex.ru/web-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_a8804e73becd",
+              "componentId": "optimizatsiya-i-tehnicheskie-ogranicheniya-praktika.optimizatsiya-resursov",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_a2e998bbc460",
+          "slug": "proizvoditelnost-stranitsy",
+          "title": "Производительность страницы",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Аудит и ускорение загрузки страницы.",
+          "professionIds": [
+            "it.webdesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "web-designer",
+              "url": "https://practicum.yandex.ru/web-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_a8804e73becd",
+              "componentId": "optimizatsiya-i-tehnicheskie-ogranicheniya-praktika.audit-i-uskorenie-stranitsy",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_25538efabfe7",
+          "slug": "tehnicheskie-ogranicheniya",
+          "title": "Технические ограничения",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Ограничения браузера, хостинга и вёрстки.",
+          "professionIds": [
+            "it.webdesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "web-designer",
+              "url": "https://practicum.yandex.ru/web-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_a8804e73becd",
+              "componentId": "optimizatsiya-i-tehnicheskie-ogranicheniya-praktika.tehnicheskie-ogranicheniya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_6e8a0b234f36",
+        "costUsd": 0.0011189000000000001,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1532,
+          "outputTokens": 633
         }
       },
       "issues": [],
@@ -19323,6 +19624,203 @@
       "methodologyVersion": "0.1.0"
     },
     {
+      "id": "comp_4f5be00710f6",
+      "slug": "cms-i-konstruktory-praktika",
+      "title": "CMS и конструкторы: практика",
+      "aliases": [
+        "Сборка сайтов в CMS",
+        "Практика работы с конструкторами сайтов"
+      ],
+      "definition": "Практическая сборка сайта в CMS и конструкторах: выбор платформы, проектирование структуры страниц и коллекций, наполнение контентом и публикация.",
+      "scope": "universal",
+      "canonicalIds": [
+        "web-cms"
+      ],
+      "professionIds": [
+        "it.webdesigner"
+      ],
+      "components": [
+        {
+          "id": "cms-i-konstruktory-praktika.vybor-i-osnovy-cms",
+          "slug": "vybor-i-osnovy-cms",
+          "title": "Выбор и основы CMS",
+          "definition": "Понимание классов систем управления контентом и критериев выбора платформы под задачи сайта.",
+          "order": 1,
+          "tagIds": [
+            "tag_48c12e7cd78d"
+          ]
+        },
+        {
+          "id": "cms-i-konstruktory-praktika.struktura-sayta-v-cms",
+          "slug": "struktura-sayta-v-cms",
+          "title": "Структура сайта в CMS",
+          "definition": "Организация страниц, коллекций и навигации внутри системы управления контентом.",
+          "order": 2,
+          "tagIds": [
+            "tag_237f4fa77350"
+          ]
+        },
+        {
+          "id": "cms-i-konstruktory-praktika.sborka-stranits",
+          "slug": "sborka-stranits",
+          "title": "Сборка страниц",
+          "definition": "Практическое создание страниц и блоков в конструкторе или CMS.",
+          "order": 3,
+          "tagIds": [
+            "tag_28738ec710fd"
+          ]
+        },
+        {
+          "id": "cms-i-konstruktory-praktika.kontent-i-publikatsiya",
+          "slug": "kontent-i-publikatsiya",
+          "title": "Контент и публикация",
+          "definition": "Подготовка, размещение и публикация контента на сайте.",
+          "order": 4,
+          "tagIds": [
+            "tag_289a8be0752c"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_48c12e7cd78d",
+          "slug": "cms-i-konstruktory",
+          "title": "CMS и конструкторы",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Выбор и использование CMS для сайта.",
+          "professionIds": [
+            "it.webdesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "web-designer",
+              "url": "https://practicum.yandex.ru/web-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_4f5be00710f6",
+              "componentId": "cms-i-konstruktory-praktika.vybor-i-osnovy-cms",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_237f4fa77350",
+          "slug": "struktura-sayta-v-cms",
+          "title": "Структура сайта в CMS",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Страницы, коллекции и навигация в CMS.",
+          "professionIds": [
+            "it.webdesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "web-designer",
+              "url": "https://practicum.yandex.ru/web-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_4f5be00710f6",
+              "componentId": "cms-i-konstruktory-praktika.struktura-sayta-v-cms",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_28738ec710fd",
+          "slug": "sborka-sayta",
+          "title": "Сборка сайта",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Практическая сборка страниц в конструкторе.",
+          "professionIds": [
+            "it.webdesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "web-designer",
+              "url": "https://practicum.yandex.ru/web-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_4f5be00710f6",
+              "componentId": "cms-i-konstruktory-praktika.sborka-stranits",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_289a8be0752c",
+          "slug": "napolnenie-kontentom",
+          "title": "Наполнение контентом",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Подготовка и публикация контента.",
+          "professionIds": [
+            "it.webdesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "web-designer",
+              "url": "https://practicum.yandex.ru/web-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_4f5be00710f6",
+              "componentId": "cms-i-konstruktory-praktika.kontent-i-publikatsiya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_4067c1050ef9",
+        "costUsd": 0.0010290700000000002,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1513,
+          "outputTokens": 556
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
       "id": "comp_bee3f2b037f5",
       "slug": "customer-journey-map",
       "title": "Customer Journey Map",
@@ -22467,8 +22965,16 @@
       "professionIds": [
         "it.interior"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "interior-designer",
+          "url": "https://practicum.yandex.ru/interior-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_f0911ea7e557",
@@ -22477,7 +22983,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_94dc9a243b9c",
@@ -22614,8 +23120,16 @@
       "professionIds": [
         "it.interior"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "interior-designer",
+          "url": "https://practicum.yandex.ru/interior-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_928a5ee43c21",
@@ -22624,7 +23138,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_9db07d7532ca",
@@ -23269,8 +23783,16 @@
       "professionIds": [
         "it.interior"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "interior-designer",
+          "url": "https://practicum.yandex.ru/interior-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_200e648d7136",
@@ -23279,7 +23801,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_b1e6f8e4c8e4",
@@ -23803,8 +24325,16 @@
       "professionIds": [
         "it.interior"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "interior-designer",
+          "url": "https://practicum.yandex.ru/interior-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_7c13a4f900db",
@@ -23813,7 +24343,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_531e67c18e40",
@@ -24190,8 +24720,16 @@
       "professionIds": [
         "it.interior"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "interior-designer",
+          "url": "https://practicum.yandex.ru/interior-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_a6e9c9d34d14",
@@ -24200,7 +24738,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_2575c9c7a981",
@@ -24392,8 +24930,16 @@
       "professionIds": [
         "it.interior"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "interior-designer",
+          "url": "https://practicum.yandex.ru/interior-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_a6e9c9d34d14",
@@ -24402,7 +24948,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_c0261b5e392d",
@@ -25018,8 +25564,16 @@
       "professionIds": [
         "it.interior"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "interior-designer",
+          "url": "https://practicum.yandex.ru/interior-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_3f02632526e7",
@@ -25028,7 +25582,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_220570bbe3b0",
@@ -25345,8 +25899,16 @@
       "professionIds": [
         "it.interior"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "interior-designer",
+          "url": "https://practicum.yandex.ru/interior-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_928a5ee43c21",
@@ -25355,7 +25917,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_a868e9716e27",
@@ -25592,8 +26154,16 @@
       "professionIds": [
         "it.interior"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "interior-designer",
+          "url": "https://practicum.yandex.ru/interior-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_928a5ee43c21",
@@ -25602,7 +26172,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_bdc43d8e4655",
@@ -25860,8 +26430,16 @@
       "professionIds": [
         "it.interior"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "interior-designer",
+          "url": "https://practicum.yandex.ru/interior-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_a6e9c9d34d14",
@@ -25870,7 +26448,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_437a85b15712",
@@ -26182,8 +26760,16 @@
       "professionIds": [
         "it.interior"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "interior-designer",
+          "url": "https://practicum.yandex.ru/interior-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_f0911ea7e557",
@@ -26192,7 +26778,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_cb59004aaa44",
@@ -26802,6 +27388,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_289a8be0752c",
+      "slug": "napolnenie-kontentom",
+      "title": "Наполнение контентом",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Подготовка и публикация контента.",
+      "professionIds": [
+        "it.webdesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_4f5be00710f6",
+          "componentId": "cms-i-konstruktory-praktika.kontent-i-publikatsiya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_de9f1047aac0",
       "slug": "nasmotrennost",
       "title": "Насмотренность",
@@ -27165,6 +27773,28 @@
         {
           "competencyId": "comp_eddfb147a6cc",
           "componentId": "vizualnyy-dizayn-dlya-veba.veb-sreda-i-ogranicheniya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_f228901a9bc9",
+      "slug": "optimizatsiya-izobrazheniy",
+      "title": "Оптимизация изображений",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Форматы, сжатие и загрузка изображений.",
+      "professionIds": [
+        "it.webdesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_a8804e73becd",
+          "componentId": "optimizatsiya-i-tehnicheskie-ogranicheniya-praktika.optimizatsiya-resursov",
           "role": "primary"
         }
       ],
@@ -27771,8 +28401,16 @@
       "professionIds": [
         "it.interior"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "interior-designer",
+          "url": "https://practicum.yandex.ru/interior-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_65b68282fe4d",
@@ -27781,7 +28419,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_1b0b80e74a87",
@@ -27935,8 +28573,16 @@
       "professionIds": [
         "it.interior"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "interior-designer",
+          "url": "https://practicum.yandex.ru/interior-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_200e648d7136",
@@ -27945,7 +28591,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_a07f20426dc7",
@@ -28697,8 +29343,16 @@
       "professionIds": [
         "it.interior"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "interior-designer",
+          "url": "https://practicum.yandex.ru/interior-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_928a5ee43c21",
@@ -28707,7 +29361,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_af99ef2cd46b",
@@ -28842,8 +29496,16 @@
       "professionIds": [
         "it.interior"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "interior-designer",
+          "url": "https://practicum.yandex.ru/interior-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_65b68282fe4d",
@@ -28852,7 +29514,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_687d347cd754",
@@ -28954,8 +29616,16 @@
       "professionIds": [
         "it.interior"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "interior-designer",
+          "url": "https://practicum.yandex.ru/interior-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_dfa43121c434",
@@ -28964,7 +29634,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_f4e5da2e9fb7",
@@ -29637,6 +30307,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_a2e998bbc460",
+      "slug": "proizvoditelnost-stranitsy",
+      "title": "Производительность страницы",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Аудит и ускорение загрузки страницы.",
+      "professionIds": [
+        "it.webdesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_a8804e73becd",
+          "componentId": "optimizatsiya-i-tehnicheskie-ogranicheniya-praktika.audit-i-uskorenie-stranitsy",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_a921977422d1",
       "slug": "proizvodstvennye-ogranicheniya",
       "title": "Производственные ограничения",
@@ -29974,8 +30666,16 @@
       "professionIds": [
         "it.interior"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "interior-designer",
+          "url": "https://practicum.yandex.ru/interior-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_3f02632526e7",
@@ -29984,7 +30684,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_83db190c2bd4",
@@ -30168,8 +30868,16 @@
       "professionIds": [
         "it.interior"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "interior-designer",
+          "url": "https://practicum.yandex.ru/interior-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_7c13a4f900db",
@@ -30178,7 +30886,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_ec293bf00fb1",
@@ -30190,8 +30898,16 @@
       "professionIds": [
         "it.interior"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "interior-designer",
+          "url": "https://practicum.yandex.ru/interior-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_200e648d7136",
@@ -30200,7 +30916,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_b3666864fd50",
@@ -30525,6 +31241,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_28738ec710fd",
+      "slug": "sborka-sayta",
+      "title": "Сборка сайта",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Практическая сборка страниц в конструкторе.",
+      "professionIds": [
+        "it.webdesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_4f5be00710f6",
+          "componentId": "cms-i-konstruktory-praktika.sborka-stranits",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_bb185a8787e2",
       "slug": "sborka-sayta-v-tilda-po-maketu-iz-figma",
       "title": "Сборка сайта в Tilda по макету из Figma",
@@ -30569,8 +31307,16 @@
       "professionIds": [
         "it.interior"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "interior-designer",
+          "url": "https://practicum.yandex.ru/interior-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_f0911ea7e557",
@@ -30579,7 +31325,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_90294e662ca5",
@@ -30974,8 +31720,16 @@
       "professionIds": [
         "it.interior"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "interior-designer",
+          "url": "https://practicum.yandex.ru/interior-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_7c13a4f900db",
@@ -30984,7 +31738,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_d8031cfa7a70",
@@ -31503,8 +32257,16 @@
       "professionIds": [
         "it.interior"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "interior-designer",
+          "url": "https://practicum.yandex.ru/interior-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_3fea057153a2",
@@ -31513,7 +32275,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_2c80a60948d2",
@@ -31525,8 +32287,16 @@
       "professionIds": [
         "it.interior"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "interior-designer",
+          "url": "https://practicum.yandex.ru/interior-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_7c13a4f900db",
@@ -31535,7 +32305,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_180245ebbbd6",
@@ -31839,6 +32609,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_237f4fa77350",
+      "slug": "struktura-sayta-v-cms",
+      "title": "Структура сайта в CMS",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Страницы, коллекции и навигация в CMS.",
+      "professionIds": [
+        "it.webdesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_4f5be00710f6",
+          "componentId": "cms-i-konstruktory-praktika.struktura-sayta-v-cms",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_f0603f094bac",
       "slug": "strukturirovanie-ekranov-bez-vizualnoy-detalizatsii",
       "title": "Структурирование экранов без визуальной детализации",
@@ -31908,8 +32700,16 @@
       "professionIds": [
         "it.interior"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "interior-designer",
+          "url": "https://practicum.yandex.ru/interior-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_65b68282fe4d",
@@ -31918,7 +32718,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_80fe685a8ac8",
@@ -32151,6 +32951,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_25538efabfe7",
+      "slug": "tehnicheskie-ogranicheniya",
+      "title": "Технические ограничения",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Ограничения браузера, хостинга и вёрстки.",
+      "professionIds": [
+        "it.webdesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_a8804e73becd",
+          "componentId": "optimizatsiya-i-tehnicheskie-ogranicheniya-praktika.tehnicheskie-ogranicheniya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_85c2b01ba82f",
       "slug": "tipograficheskaya-ierarhiya",
       "title": "Типографическая иерархия",
@@ -32220,8 +33042,16 @@
       "professionIds": [
         "it.interior"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "interior-designer",
+          "url": "https://practicum.yandex.ru/interior-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_a6e9c9d34d14",
@@ -32230,7 +33060,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_a8e4a172936b",
@@ -32626,13 +33456,20 @@
       "sourceRefs": [
         {
           "sourceId": "practicum",
+          "externalId": "interior-designer",
+          "url": "https://practicum.yandex.ru/interior-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        },
+        {
+          "sourceId": "practicum",
           "externalId": "3d-generalist",
           "url": "https://practicum.yandex.ru/3d-generalist/",
           "retrievedAt": "2026-11-03",
           "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
         }
       ],
-      "evidenceState": "needs_review",
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_f0911ea7e557",
@@ -32646,7 +33483,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_df07dbea60ce",
@@ -32753,8 +33590,16 @@
       "professionIds": [
         "it.interior"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "interior-designer",
+          "url": "https://practicum.yandex.ru/interior-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_65b68282fe4d",
@@ -32763,7 +33608,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_73d29717fc59",
@@ -33412,8 +34257,16 @@
       "professionIds": [
         "it.interior"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "interior-designer",
+          "url": "https://practicum.yandex.ru/interior-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_200e648d7136",
@@ -33422,7 +34275,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_33bd0e21d155",
@@ -33733,6 +34586,50 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_48c12e7cd78d",
+      "slug": "cms-i-konstruktory",
+      "title": "CMS и конструкторы",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Выбор и использование CMS для сайта.",
+      "professionIds": [
+        "it.webdesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_4f5be00710f6",
+          "componentId": "cms-i-konstruktory-praktika.vybor-i-osnovy-cms",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_94756e99f9a8",
+      "slug": "core-web-vitals",
+      "title": "Core Web Vitals",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Метрики скорости и качества загрузки.",
+      "professionIds": [
+        "it.webdesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_a8804e73becd",
+          "componentId": "optimizatsiya-i-tehnicheskie-ogranicheniya-praktika.metriki-veb-proizvoditelnosti",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_6d511eae1d8d",

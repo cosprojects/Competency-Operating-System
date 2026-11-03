@@ -10,14 +10,14 @@
     "it.motion",
     "it.graphic",
     "it.3ddesigner",
-    "it.interior"
+    "it.interior",
+    "it.webdesigner"
   ],
   "excludedProfessionIds": [
     "it.presentation",
     "it.appdesign",
     "it.uxresearch",
     "it.artdir",
-    "it.webdesigner",
     "it.aidesigner"
   ],
   "excludedCompetencyPrefixes": [

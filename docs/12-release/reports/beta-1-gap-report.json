@@ -5,14 +5,14 @@
   "asOf": "2026-11-03",
   "strictSourceReview": false,
   "totals": {
-    "professions": 6,
-    "totalLinks": 193,
-    "includedLinks": 139,
-    "excludedLinks": 54,
-    "publishedLinks": 139,
-    "uniqueCompetencies": 71,
-    "uniquePublishedCompetencies": 71,
-    "uniqueSources": 41,
+    "professions": 7,
+    "totalLinks": 226,
+    "includedLinks": 163,
+    "excludedLinks": 63,
+    "publishedLinks": 163,
+    "uniqueCompetencies": 76,
+    "uniquePublishedCompetencies": 76,
+    "uniqueSources": 44,
     "gaps": 0,
     "blockingGaps": 0,
     "passed": true
@@ -75,6 +75,16 @@
       "includedLinks": 14,
       "excludedLinks": 9,
       "publishedLinks": 14,
+      "passed": true,
+      "gaps": []
+    },
+    {
+      "id": "it.webdesigner",
+      "title": "Веб-дизайнер",
+      "totalLinks": 33,
+      "includedLinks": 24,
+      "excludedLinks": 9,
+      "publishedLinks": 24,
       "passed": true,
       "gaps": []
     }
@@ -347,6 +357,51 @@
     },
     {
       "professionId": "it.interior",
+      "competencyId": "ai-ethics-rights",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.webdesigner",
+      "competencyId": "ai-model-landscape",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.webdesigner",
+      "competencyId": "ai-prompting",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.webdesigner",
+      "competencyId": "ai-research-synthesis",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.webdesigner",
+      "competencyId": "ai-visual-generation",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.webdesigner",
+      "competencyId": "ai-video-audio",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.webdesigner",
+      "competencyId": "ai-copy-content",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.webdesigner",
+      "competencyId": "ai-layout-docs",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.webdesigner",
+      "competencyId": "ai-workflow-integration",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.webdesigner",
       "competencyId": "ai-ethics-rights",
       "reason": "excluded-prefix:ai-"
     }

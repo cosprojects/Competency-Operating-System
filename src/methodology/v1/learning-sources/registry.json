@@ -1430,7 +1430,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-26",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Great Learning — Free Web Design courses: учебный материал по веб-дизайну и разработке интерфейсов."
     },
     {
       "id": "mooc-list-web-design",
@@ -1454,7 +1455,8 @@
       "lastChecked": "2026-10-26",
       "httpStatus": 403,
       "discoveryOnly": true,
-      "notes": "HTTP 403 (Cloudflare) — только ссылка для человека, автоматический сбор не выполняется."
+      "notes": "HTTP 403 (Cloudflare) — только ссылка для человека, автоматический сбор не выполняется.",
+      "summary": "MOOC List — Web Design: учебный материал по веб-дизайну и разработке интерфейсов."
     },
     {
       "id": "alison-web-design-html",
@@ -1500,7 +1502,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-26",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Webflow University — Courses: учебный материал по веб-дизайну и разработке интерфейсов."
     },
     {
       "id": "simplilearn-web-designing-free",
@@ -1522,7 +1525,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-26",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Simplilearn — Free Web Designing Course: учебный материал по веб-дизайну и разработке интерфейсов."
     },
     {
       "id": "greatlearning-design-app",

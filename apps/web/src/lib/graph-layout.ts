@@ -69,9 +69,9 @@ const BOARD_BAND_PADDING = 12;
 const BOARD_LABEL_WIDTH = 176;
 const BOARD_LABEL_GAP = 24;
 
-const NETWORK_CARD = { width: 190, height: 78 };
-const NETWORK_GAP = 26;
-const NETWORK_PADDING = 96;
+const NETWORK_CARD = { width: 216, height: 96 };
+const NETWORK_GAP = 44;
+const NETWORK_PADDING = 160;
 
 const PADDING = 64;
 const TWO_PI = Math.PI * 2;
@@ -217,28 +217,64 @@ function layoutNetwork(input: GraphNodeInput[]): GraphLayout {
   const positioned: Positioned[] = [];
   const foundation = gridPositions(byTier.foundation);
   positioned.push(...foundation);
-  const foundationHalfHeight = foundation.length
-    ? Math.max(...foundation.map((item) => Math.abs(item.y))) + NETWORK_CARD.height / 2
+
+  // Радиус кольца считаем от реального выступа центральной группы (а не только
+  // по высоте) — иначе кольцо наезжает на угловые карточки.
+  const foundationExtent = foundation.length
+    ? Math.max(
+        ...foundation.map((item) =>
+          Math.hypot(Math.abs(item.x) + NETWORK_CARD.width / 2, Math.abs(item.y) + NETWORK_CARD.height / 2),
+        ),
+      )
     : 0;
 
   let coreRadius = 0;
   if (byTier.core.length > 0) {
     coreRadius = ringRadius(
       byTier.core.length,
-      Math.max(300, foundationHalfHeight + NETWORK_CARD.width / 2 + NETWORK_GAP + 40),
+      Math.max(360, foundationExtent + NETWORK_CARD.width / 2 + NETWORK_GAP),
     );
     positioned.push(...ringPositions(byTier.core, coreRadius));
   }
 
   if (byTier.optional.length > 0) {
-    const base =
-      coreRadius > 0 ? coreRadius + NETWORK_CARD.height + 110 : Math.max(300, foundationHalfHeight + 190);
+    const ringStep = Math.hypot(NETWORK_CARD.width, NETWORK_CARD.height) + NETWORK_GAP;
+    const base = coreRadius > 0 ? coreRadius + ringStep : Math.max(360, foundationExtent + ringStep);
     const firstRing = byTier.optional.slice(0, 14);
     const secondRing = byTier.optional.slice(14);
     positioned.push(...ringPositions(firstRing, ringRadius(firstRing.length, base)));
     if (secondRing.length > 0) {
-      positioned.push(...ringPositions(secondRing, ringRadius(secondRing.length, base + 170)));
+      positioned.push(...ringPositions(secondRing, ringRadius(secondRing.length, base + ringStep)));
     }
+  }
+
+  // Детерминированное расталкивание: даже в плотной профессии карточки не
+  // должны перекрываться. Несколько проходов сдвигают пересекающиеся пары.
+  for (let pass = 0; pass < 80; pass += 1) {
+    let moved = false;
+    for (let i = 0; i < positioned.length; i += 1) {
+      for (let j = i + 1; j < positioned.length; j += 1) {
+        const a = positioned[i]!;
+        const b = positioned[j]!;
+        const dx = b.x - a.x;
+        const dy = b.y - a.y;
+        const minX = (NETWORK_CARD.width + NETWORK_GAP * 0.6) / 2;
+        const minY = (NETWORK_CARD.height + NETWORK_GAP * 0.6) / 2;
+        const overlapX = minX - Math.abs(dx);
+        const overlapY = minY - Math.abs(dy);
+        if (overlapX <= 0 || overlapY <= 0) continue;
+        moved = true;
+        const signX = dx === 0 ? (i % 2 === 0 ? 1 : -1) : Math.sign(dx);
+        const signY = dy === 0 ? (j % 2 === 0 ? 1 : -1) : Math.sign(dy);
+        const shiftX = (overlapX / 2 + 1) * signX;
+        const shiftY = (overlapY / 2 + 1) * signY;
+        a.x -= shiftX;
+        a.y -= shiftY;
+        b.x += shiftX;
+        b.y += shiftY;
+      }
+    }
+    if (!moved) break;
   }
 
   if (positioned.length === 0) {

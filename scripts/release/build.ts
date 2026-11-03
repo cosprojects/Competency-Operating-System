@@ -44,11 +44,6 @@ async function main(): Promise<void> {
   }
   if (allowDraft) {
     content.status = "draft";
-    for (const profession of content.professions) {
-      profession.coverage.percent = profession.coverage.total
-        ? Math.round((profession.coverage.published / profession.coverage.total) * 100)
-        : 0;
-    }
   }
 
   const file = await writePublicContent(root, content);

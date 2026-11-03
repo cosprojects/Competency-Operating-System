@@ -10,6 +10,9 @@ const contentSecurityPolicy = {
 };
 
 const nextConfig = {
+  // Можно увести артефакты сборки в отдельную папку (например, для проверки,
+  // пока в этом же workspace идёт другая сборка): NEXT_DIST_DIR=.next-verify
+  distDir: process.env.NEXT_DIST_DIR || ".next",
   reactStrictMode: true,
   poweredByHeader: false,
   serverExternalPackages: ["@prisma/client"],

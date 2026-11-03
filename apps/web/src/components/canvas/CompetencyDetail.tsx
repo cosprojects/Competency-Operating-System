@@ -175,13 +175,14 @@ export function CompetencyDetail({
         {competency.sources.length === 0 ? (
           <div className="notice">Для этой компетенции пока нет опубликованного материала.</div>
         ) : (
-          <div className="material-groups">
+          <>
             {viewer ? null : (
               <Link className="button secondary block materials-login" href={loginHref}>
-                Войти по почте и открыть учебные материалы
+                Войти и открыть учебные материалы
               </Link>
             )}
-            {materialGroups.map((group) => (
+            <div className="material-groups">
+              {materialGroups.map((group) => (
               <section className="material-group" key={group.id}>
                 <header className="material-group-head">
                   <h4>{group.title}</h4>
@@ -193,14 +194,17 @@ export function CompetencyDetail({
                       key={source.id}
                       source={source}
                       competencyId={competency.id}
+                      competencyTitle={competency.title}
                       canOpen={Boolean(viewer)}
+                      canReview={Boolean(viewer)}
                       returnTo={returnTo}
                     />
                   ))}
                 </div>
               </section>
-            ))}
-          </div>
+              ))}
+            </div>
+          </>
         )}
       </DetailBlock>
 

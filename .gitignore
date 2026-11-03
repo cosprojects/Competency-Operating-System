@@ -23,6 +23,8 @@ data/learning-sources/
 
 # Beta web app
 apps/web/.next/
+apps/web/.next-verify*/
+
 apps/web/src/content/generated/
 .env.*
 !.env.example
@@ -42,3 +44,8 @@ scripts/web/figma-parity/AXIONA\ _\ Web\ parity\ builder/code.ts
 
 # Локальные symlink-навыки DSH (внешние пути)
 .dsh/skills/
+
+# Снимки Figma: CONTEXT.md и nodes/*.json коммитим, изображения — нет
+docs/design/figma/**/images/
+.vercel
+.env*

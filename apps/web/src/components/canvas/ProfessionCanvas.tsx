@@ -41,6 +41,13 @@ export function ProfessionCanvas({
   initialView?: GraphMode;
 }) {
   const byId = useMemo(() => new Map(competencies.map((item) => [item.id, item])), [competencies]);
+  // Сквозная нумерация по профессии: 1..N в порядке разделов и приоритезации
+  // внутри раздела. Не зависит от «родного» order компетенции в реестре.
+  const displayOrder = useMemo(() => {
+    const map = new Map<string, number>();
+    competencies.forEach((item, index) => map.set(item.id, index + 1));
+    return map;
+  }, [competencies]);
   const [selectedId, setSelectedId] = useState<string | null>(
     initialCompetencyId && byId.has(initialCompetencyId) ? initialCompetencyId : null,
   );
@@ -59,7 +66,7 @@ export function ProfessionCanvas({
         id: item.id,
         title: item.title,
         tier: item.tier,
-        order: item.order,
+        order: displayOrder.get(item.id) ?? item.order,
         sectionId: item.sectionId,
         sectionTitle: item.sectionTitle,
         definition: item.definition,
@@ -68,7 +75,7 @@ export function ProfessionCanvas({
         sources: item.sources.length,
         prerequisites: item.prerequisites,
       })),
-    [competencies],
+    [competencies, displayOrder],
   );
 
   const matches = useMemo(() => {
@@ -156,7 +163,7 @@ export function ProfessionCanvas({
           <div className="summary-top">
             <span className="badge">Профессия</span>
             <span className="summary-count">
-              {profession.published} из {profession.total} компетенций
+              {countLabel(profession.published, ["компетенция", "компетенции", "компетенций"])}
             </span>
             {viewer ? (
               <SaveButton
@@ -225,7 +232,7 @@ export function ProfessionCanvas({
                     >
                       <span className="tile-head">
                         <span className={`badge ${competency.tier}`}>{TIER_LABEL[competency.tier]}</span>
-                        <span className="num-badge">{competency.order}</span>
+                        <span className="num-badge">{displayOrder.get(competency.id)}</span>
                       </span>
                       <h4>{competency.title}</h4>
                       <p>{competency.definition}</p>

@@ -1444,24 +1444,21 @@ svg {
 /* Если компетенций в разделе больше одной — следующая карточка видна краем,
    чтобы было понятно, что это карусель. */
 .competency-track.has-many .competency-tile {
-  flex: 0 0 calc(100% - 32px);
+  flex: 0 0 calc(100% - 44px);
 }
 
-/* Край следующей карточки мягко растворяется — видно, что есть продолжение. */
+/* За краем карточки видна рамка и скругление следующей — понятно, что есть
+   продолжение; текст следующей карточки мягко уходит в прозрачность. */
 .competency-track.has-many {
   -webkit-mask-image: linear-gradient(
     to right,
-    #000 0,
-    #000 calc(100% - 30px),
-    rgba(0, 0, 0, 0.35) calc(100% - 12px),
-    transparent 100%
+    #000 calc(100% - 32px),
+    transparent calc(100% - 13px)
   );
   mask-image: linear-gradient(
     to right,
-    #000 0,
-    #000 calc(100% - 30px),
-    rgba(0, 0, 0, 0.35) calc(100% - 12px),
-    transparent 100%
+    #000 calc(100% - 32px),
+    transparent calc(100% - 13px)
   );
 }
 
@@ -1473,7 +1470,7 @@ svg {
   transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease,
     transform 0.15s ease;
   padding: 16px;
-  border: 1px solid transparent;
+  border: 1px solid var(--line-soft);
   border-radius: var(--r-12);
   background: var(--card);
   box-shadow: 0 1px 2px rgba(19, 34, 56, 0.05);
@@ -1485,15 +1482,14 @@ svg {
 .competency-tile:hover,
 .competency-tile.is-active {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.14), 0 10px 22px rgba(19, 34, 56, 0.08);
+  box-shadow: inset 0 0 0 1px var(--accent), 0 10px 22px rgba(19, 34, 56, 0.08);
   background: var(--surface);
 }
 
 .competency-tile.is-hover {
   border-color: #a5b4fc;
-  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1), 0 8px 18px rgba(19, 34, 56, 0.07);
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.12), 0 8px 18px rgba(19, 34, 56, 0.07);
   background: var(--surface);
-  transform: translateY(-1px);
 }
 
 .competency-tile.is-dim {
@@ -2197,6 +2193,7 @@ html[data-consent="pending"] .canvas-toolbar {
   flex-direction: column;
   gap: 16px;
   padding: 16px;
+  border: 1px solid var(--line-card);
   border-radius: var(--r-12);
   background: var(--surface);
   overflow: hidden;
@@ -2217,6 +2214,7 @@ html[data-consent="pending"] .canvas-toolbar {
   left: 0;
   height: 200px;
   overflow: hidden;
+  border-radius: var(--r-12) var(--r-12) 0 0;
   pointer-events: none;
 }
 
@@ -2229,6 +2227,7 @@ html[data-consent="pending"] .canvas-toolbar {
   left: 0;
   aspect-ratio: 400 / 200;
   overflow: hidden;
+  border-radius: var(--r-12) var(--r-12) 0 0;
 }
 
 .material-bg-image img {
@@ -2238,6 +2237,8 @@ html[data-consent="pending"] .canvas-toolbar {
   width: 100%;
   height: 200.22%;
   max-width: none;
+  filter: blur(10px);
+  transform: scale(1.06);
   object-fit: cover;
   object-position: center top;
 }
@@ -2257,12 +2258,10 @@ html[data-consent="pending"] .canvas-toolbar {
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0.08) 0%,
-    rgba(255, 255, 255, 0.72) 46%,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0.74) 46%,
     #ffffff 76%
   );
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
 }
 
 .material-card > :not(.material-bg) {
@@ -2284,18 +2283,63 @@ html[data-consent="pending"] .canvas-toolbar {
   line-height: 17px;
 }
 
-.material-authority {
-  margin-left: auto;
-  padding: 5px 7px 4px;
-  border-radius: var(--r-16);
-  background: #fcfdff;
-  color: var(--muted);
+/* Бейдж неподтверждённого материала в углу карточки (COS-REL-009).
+   Подсказка показывается по наведению и фокусу, без JS-библиотек. */
+.material-confirm {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 4;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(79, 70, 229, 0.35);
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--accent);
+  font: inherit;
   font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.33px;
-  line-height: 17px;
-  text-transform: uppercase;
-  white-space: nowrap;
+  font-weight: 600;
+  line-height: 1.4;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+}
+
+.material-confirm:hover,
+.material-confirm:focus-visible {
+  background: #fff;
+  box-shadow: 0 6px 16px rgba(79, 70, 229, 0.18);
+  outline: none;
+}
+
+.material-confirm::after {
+  content: attr(data-hint);
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 5;
+  width: max-content;
+  max-width: 240px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: rgba(15, 23, 42, 0.92);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.35;
+  text-align: left;
+  opacity: 0;
+  transform: translateY(-4px);
+  pointer-events: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.material-confirm:hover::after,
+.material-confirm:focus-visible::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.material-card:has(.material-confirm) .material-badges {
+  padding-right: 104px;
 }
 
 .material-text {
@@ -2353,14 +2397,20 @@ html[data-consent="pending"] .canvas-toolbar {
 }
 
 .materials-login {
-  order: 99;
+  width: 100%;
   min-height: 44px;
+  border-color: var(--line-card);
   border-radius: var(--r-12);
-  font-size: 14px;
+  background: var(--surface);
+  color: var(--ink-strong);
+  font-size: 15px;
+  font-weight: 600;
 }
 
-.detail-rail.is-expanded .materials-login {
-  order: -1;
+.materials-login:hover {
+  border-color: #c7d2fe;
+  background: var(--accent-soft);
+  color: var(--accent-dark);
 }
 
 /* ------------------------------------------------------------------ */

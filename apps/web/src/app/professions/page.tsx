@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import type { SearchGroup } from "@/components/ProfessionSearch";
 import { ProfessionSearch } from "@/components/ProfessionSearch";
 import { getCurrentUser } from "@/lib/auth";
-import { competencySearchText, getProfessionGroups, normalizeQuery } from "@/lib/content";
+import { competencySearchText, countLabel, getProfessionGroups, normalizeQuery } from "@/lib/content";
 import { getDb } from "@/lib/db";
 
 export const metadata: Metadata = {
@@ -27,8 +27,11 @@ export default async function ProfessionsPage() {
       slug: profession.slug,
       title: profession.title,
       description: profession.description,
-      published: profession.coverage.published,
-      total: profession.coverage.total,
+      countText: countLabel(profession.coverage.published, [
+        "компетенция",
+        "компетенции",
+        "компетенций",
+      ]),
       percent: profession.coverage.percent,
       searchText: normalizeQuery(
         [

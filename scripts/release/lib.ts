@@ -853,7 +853,10 @@ export function buildPublicContent(
     const sections = buildSections(inputs, profession.id, profession.rows, publishedIds);
     const published = profession.rows.filter((row) => row.passed).length;
     const total = profession.includedLinks;
-    const percent = total > 0 ? Math.round((published / total) * 100) : 0;
+    // Покрытие считаем от полного набора связей профессии (опубликованные +
+    // исключённые), иначе в черновой сборке у всех профессий всегда 100%.
+    const fullTotal = total + profession.excludedLinks;
+    const percent = fullTotal > 0 ? Math.round((published / fullTotal) * 100) : 0;
     const view = inputs.views.get(profession.id) ?? null;
     return {
       id: profession.id,

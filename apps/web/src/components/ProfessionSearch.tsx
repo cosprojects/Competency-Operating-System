@@ -10,8 +10,7 @@ export interface SearchProfession {
   slug: string;
   title: string;
   description: string;
-  published: number;
-  total: number;
+  countText: string;
   percent: number;
   searchText: string;
 }
@@ -105,9 +104,7 @@ export function ProfessionSearch({
                   >
                     <div className="tile-top">
                       <span className="badge">Профессия</span>
-                      <span className="tile-count">
-                        {profession.published} из {profession.total} компетенций
-                      </span>
+                      <span className="tile-count">{profession.countText}</span>
                       <span
                         className="tile-action"
                         onClick={(event) => {

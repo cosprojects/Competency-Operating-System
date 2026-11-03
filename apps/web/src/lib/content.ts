@@ -69,12 +69,24 @@ export function sourceKindLabel(kind: string): string {
 export function accessLabel(access: string): string {
   const labels: Record<string, string> = {
     free: "Бесплатно",
-    freemium: "Есть бесплатная часть",
+    freemium: "Часть бесплатно",
     paid: "Платно",
-    mixed: "Смешанный доступ",
-    unknown: "Доступ не указан",
+    mixed: "Бесплатное и платное",
+    unknown: "Доступ не проверен",
   };
   return labels[access] ?? access;
+}
+
+/** Подсказка к метке доступа: что именно открыто. */
+export function accessHint(access: string): string {
+  const hints: Record<string, string> = {
+    free: "Доступно без оплаты",
+    freemium: "Часть материалов открыта, остальное — по подписке или платно",
+    mixed: "В источнике есть и бесплатные, и платные материалы",
+    paid: "Полный доступ платный; карточка показывает, что открыто",
+    unknown: "Не удалось проверить доступ — помоги уточнить",
+  };
+  return hints[access] ?? "Доступ не проверен";
 }
 
 export function authorityLabel(authority: string): string {
@@ -108,31 +120,49 @@ export interface ProfessionGroup {
 
 /**
  * Группы направлений на экране выбора профессии.
- * Сейчас в Beta опубликовано одно направление — дизайн; правило
- * оставлено расширяемым, чтобы новые направления не требовали правок UI.
+ *
+ * Сферы задаются здесь, потому что в модели пока одна сфера «IT», а на карте
+ * нужны читаемые группы. Арт-директор — дизайн (визуальные системы и бренд),
+ * UX-исследователь — исследования (методы, данные, выводы).
  */
-const GROUP_RULES: Array<{ id: string; title: string; test: (profession: ContentProfession) => boolean }> = [
+const PROFESSION_GROUPS: Array<{ id: string; title: string; slugs: string[] }> = [
   {
     id: "design",
     title: "Дизайн",
-    test: (profession) => /дизайн/i.test(profession.title),
+    slugs: [
+      "uxui",
+      "product",
+      "graphic",
+      "motion",
+      "3ddesigner",
+      "interior",
+      "webdesigner",
+      "presentation",
+      "appdesign",
+      "artdir",
+      "aidesigner",
+    ],
+  },
+  {
+    id: "research",
+    title: "Исследования",
+    slugs: ["uxresearch"],
   },
 ];
 
 export function getProfessionGroups(): ProfessionGroup[] {
   const groups: ProfessionGroup[] = [];
-  const rest: ContentProfession[] = [];
-  for (const profession of getProfessions()) {
-    const rule = GROUP_RULES.find((candidate) => candidate.test(profession));
-    if (!rule) {
-      rest.push(profession);
-      continue;
-    }
-    const group = groups.find((candidate) => candidate.id === rule.id);
-    if (group) group.professions.push(profession);
-    else groups.push({ id: rule.id, title: rule.title, professions: [profession] });
+  const placed = new Set<string>();
+  for (const definition of PROFESSION_GROUPS) {
+    const professions = definition.slugs
+      .map((slug) => getProfessions().find((profession) => profession.slug === slug))
+      .filter((profession): profession is ContentProfession => Boolean(profession));
+    if (professions.length === 0) continue;
+    for (const profession of professions) placed.add(profession.slug);
+    groups.push({ id: definition.id, title: definition.title, professions });
   }
-  if (rest.length > 0) groups.push({ id: "other", title: "Профессии", professions: rest });
+  const rest = getProfessions().filter((profession) => !placed.has(profession.slug));
+  if (rest.length > 0) groups.push({ id: "other", title: "Другие профессии", professions: rest });
   return groups;
 }
 

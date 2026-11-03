@@ -3925,3 +3925,19 @@ html[data-consent="pending"] .canvas-toolbar {
     gap: 24px;
   }
 }
+
+/* Поиск и нижний тулбар всегда по центру экрана, а не центру канваса:
+   при открытии/закрытии правого сайдбара они больше не прыгают. */
+@media (min-width: 1081px) {
+  .canvas-search {
+    position: fixed;
+    top: 48px;
+    left: 50%;
+  }
+
+  .canvas-toolbar {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+  }
+}

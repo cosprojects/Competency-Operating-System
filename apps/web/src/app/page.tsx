@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { formatChangelogDate, latestChangelog } from "@/content/changelog";
 import { IconCheckCircle } from "@/components/icons";
 import { SiteFooter } from "@/components/SiteFooter";
 
@@ -70,6 +71,7 @@ export default function HomePage() {
   return (
     <>
     <div className="home-screen">
+      <div className="home-layout">
       <div className="workspace">
         <section className="home-hero">
           <div className="home-hero-copy">
@@ -81,25 +83,6 @@ export default function HomePage() {
               увидеть, из чего складывается его профессия, оценить интересующие направления и найти
               материалы для обучения.
             </p>
-          </div>
-
-          <div className="home-aside">
-            <div className="hero-panel">
-              <h2>Что внутри</h2>
-              <ul className="checklist">
-                {FEATURES.map((feature) => (
-                  <li key={feature}>
-                    <span className="check" aria-hidden="true">
-                      ✓
-                    </span>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <Link className="button block" href="/professions">
-              Выбрать профессию
-            </Link>
           </div>
         </section>
 
@@ -161,6 +144,43 @@ export default function HomePage() {
             ))}
           </div>
         </section>
+      </div>
+
+      <aside className="home-rail" aria-label="О платформе и обновления">
+        <div className="home-about">
+          <div className="hero-panel">
+            <h2>Что внутри</h2>
+            <ul className="checklist">
+              {FEATURES.map((feature) => (
+                <li key={feature}>
+                  <span className="check" aria-hidden="true">
+                    ✓
+                  </span>
+                  {feature}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <Link className="button block" href="/professions">
+            Выбрать профессию
+          </Link>
+        </div>
+
+        <section className="home-log">
+          <h2>Лог обновлений</h2>
+          <div className="home-log-list">
+            {latestChangelog(3).map((entry) => (
+              <article className="home-log-item" key={`${entry.date}-${entry.title}`}>
+                <div className="home-log-head">
+                  <span className="home-log-date">{formatChangelogDate(entry.date)}</span>
+                  <span className="home-log-title">{entry.title}</span>
+                </div>
+                <p className="home-log-desc">{entry.description}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+      </aside>
       </div>
     </div>
     <SiteFooter />

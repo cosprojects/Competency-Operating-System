@@ -1743,6 +1743,196 @@
           "kind": "skill"
         }
       ]
+    },
+    {
+      "id": "interior-ergonomics-practice",
+      "canonicalId": "interior-ergonomics",
+      "title": "Эргономика: практика",
+      "titleEn": "Ergonomics practice",
+      "aliases": [
+        "Ergonomics practice"
+      ],
+      "definition": "Эргономические зоны, антропометрия и удобство пространства.",
+      "professionIds": [
+        "it.interior"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Эргономика пространства",
+          "definition": "Базовые эргономические требования к интерьеру.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Антропометрия",
+          "definition": "Размеры человека и эргономические зоны.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Расчёт эргономических зон",
+          "definition": "Практический расчёт зон движения и мебели.",
+          "kind": "skill"
+        },
+        {
+          "title": "Подбор мебели по эргономике",
+          "definition": "Выбор мебели под антропометрию и сценарии.",
+          "kind": "skill"
+        }
+      ]
+    },
+    {
+      "id": "interior-zoning-practice",
+      "canonicalId": "interior-zoning",
+      "title": "Зонирование: практика",
+      "titleEn": "Zoning practice",
+      "aliases": [
+        "Zoning practice"
+      ],
+      "definition": "Планировочные схемы, зоны и сценарии движения.",
+      "professionIds": [
+        "it.interior"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Принципы зонирования",
+          "definition": "Функциональное зонирование пространства.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Планировочные схемы",
+          "definition": "Разработка вариантов планировки.",
+          "kind": "skill"
+        },
+        {
+          "title": "Сценарии движения",
+          "definition": "Маршруты и сценарии использования пространства.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Функциональные связи",
+          "definition": "Связи между зонами и помещениями.",
+          "kind": "skill"
+        }
+      ]
+    },
+    {
+      "id": "interior-visualization-practice",
+      "canonicalId": "interior-visualization",
+      "title": "Визуализация интерьера: практика",
+      "titleEn": "Interior visualization practice",
+      "aliases": [
+        "Interior visualization practice"
+      ],
+      "definition": "3D-визуализация, материалы, свет и подача интерьера.",
+      "professionIds": [
+        "it.interior"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "3D-визуализация",
+          "definition": "Построение реалистичной визуализации интерьера.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Свет в визуализации",
+          "definition": "Постановка света для интерьерной сцены.",
+          "kind": "skill"
+        },
+        {
+          "title": "Материалы интерьера",
+          "definition": "Настройка материалов и текстур.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Финальный рендер",
+          "definition": "Рендер и постобработка интерьерной визуализации.",
+          "kind": "skill"
+        }
+      ]
+    },
+    {
+      "id": "interior-specs-practice",
+      "canonicalId": "interior-specs",
+      "title": "Спецификации и смета: практика",
+      "titleEn": "Specifications and estimate practice",
+      "aliases": [
+        "Specifications and estimate practice"
+      ],
+      "definition": "Ведомости, спецификации и расчёт бюджета проекта.",
+      "professionIds": [
+        "it.interior"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Спецификации",
+          "definition": "Составление спецификаций материалов и мебели.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Смета проекта",
+          "definition": "Расчёт бюджета и стоимости работ.",
+          "kind": "skill"
+        },
+        {
+          "title": "Ведомость отделки",
+          "definition": "Ведомости отделочных материалов.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Расчёт объёмов",
+          "definition": "Подсчёт объёмов и материалов.",
+          "kind": "skill"
+        }
+      ]
+    },
+    {
+      "id": "interior-project-management-practice",
+      "canonicalId": "interior-project-management",
+      "title": "Ведение проекта: практика",
+      "titleEn": "Interior project management practice",
+      "aliases": [
+        "Interior project management practice"
+      ],
+      "definition": "Авторский надзор, сроки и коммуникация с подрядчиками.",
+      "professionIds": [
+        "it.interior"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Авторский надзор",
+          "definition": "Контроль реализации проекта.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Календарный план",
+          "definition": "Планирование этапов и сроков.",
+          "kind": "skill"
+        },
+        {
+          "title": "Коммуникация с подрядчиками",
+          "definition": "Взаимодействие с исполнителями.",
+          "kind": "skill"
+        },
+        {
+          "title": "Приёмка работ",
+          "definition": "Проверка и приёмка результата.",
+          "kind": "knowledge"
+        }
+      ]
     }
   ]
 }

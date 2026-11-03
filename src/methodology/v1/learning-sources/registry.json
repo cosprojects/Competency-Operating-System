@@ -983,7 +983,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-26",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Яндекс Практикум — дизайнер интерьеров: учебный материал по дизайну интерьеров и пространственному проектированию."
     },
     {
       "id": "practicum-webdesigner",
@@ -1636,7 +1637,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-26",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Alna Design — Free Interior Design Courses: учебный материал по дизайну интерьеров и пространственному проектированию."
     },
     {
       "id": "alison-interior-design-practical",
@@ -1658,7 +1660,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-26",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Alison — Practical Guide to Interior Design: учебный материал по дизайну интерьеров и пространственному проектированию."
     },
     {
       "id": "classcentral-interior-design-essentials",
@@ -1682,7 +1685,8 @@
       "lastChecked": "2026-10-26",
       "httpStatus": 403,
       "discoveryOnly": true,
-      "notes": "HTTP 403 (Cloudflare) — только ссылка для человека, автоматический сбор не выполняется."
+      "notes": "HTTP 403 (Cloudflare) — только ссылка для человека, автоматический сбор не выполняется.",
+      "summary": "Class Central — Interior Design Essentials (LCI Education): учебный материал по дизайну интерьеров и пространственному проектированию."
     },
     {
       "id": "oxfordhomestudy-interior-design",
@@ -1704,7 +1708,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-26",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Oxford Home Study — Free Online Interior Design Courses: учебный материал по дизайну интерьеров и пространственному проектированию."
     },
     {
       "id": "greatlearning-interior-design-space-planning",
@@ -1726,7 +1731,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-26",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Great Learning — Interior Design and Space Planning (free): учебный материал по дизайну интерьеров и пространственному проектированию."
     },
     {
       "id": "coursera-blueprint-interior-design",
@@ -1749,7 +1755,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-26",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Coursera — Blueprint to Brilliance Through Interior Design: учебный материал по дизайну интерьеров и пространственному проектированию."
     },
     {
       "id": "udemy-interior-design-free",
@@ -1773,7 +1780,8 @@
       "lastChecked": "2026-10-26",
       "httpStatus": 403,
       "discoveryOnly": true,
-      "notes": "HTTP 403 (Cloudflare) — только ссылка для человека, автоматический сбор не выполняется."
+      "notes": "HTTP 403 (Cloudflare) — только ссылка для человека, автоматический сбор не выполняется.",
+      "summary": "Udemy — Free Interior Design courses: учебный материал по дизайну интерьеров и пространственному проектированию."
     },
     {
       "id": "alison-careers-art-director",

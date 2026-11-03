@@ -9,14 +9,14 @@
     "it.product",
     "it.motion",
     "it.graphic",
-    "it.3ddesigner"
+    "it.3ddesigner",
+    "it.interior"
   ],
   "excludedProfessionIds": [
     "it.presentation",
     "it.appdesign",
     "it.uxresearch",
     "it.artdir",
-    "it.interior",
     "it.webdesigner",
     "it.aidesigner"
   ],

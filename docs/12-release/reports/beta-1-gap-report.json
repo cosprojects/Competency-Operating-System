@@ -5,14 +5,14 @@
   "asOf": "2026-11-03",
   "strictSourceReview": false,
   "totals": {
-    "professions": 5,
-    "totalLinks": 170,
-    "includedLinks": 125,
-    "excludedLinks": 45,
-    "publishedLinks": 125,
-    "uniqueCompetencies": 62,
-    "uniquePublishedCompetencies": 62,
-    "uniqueSources": 35,
+    "professions": 6,
+    "totalLinks": 193,
+    "includedLinks": 139,
+    "excludedLinks": 54,
+    "publishedLinks": 139,
+    "uniqueCompetencies": 71,
+    "uniquePublishedCompetencies": 71,
+    "uniqueSources": 41,
     "gaps": 0,
     "blockingGaps": 0,
     "passed": true
@@ -65,6 +65,16 @@
       "includedLinks": 15,
       "excludedLinks": 9,
       "publishedLinks": 15,
+      "passed": true,
+      "gaps": []
+    },
+    {
+      "id": "it.interior",
+      "title": "Дизайнер интерьеров",
+      "totalLinks": 23,
+      "includedLinks": 14,
+      "excludedLinks": 9,
+      "publishedLinks": 14,
       "passed": true,
       "gaps": []
     }
@@ -292,6 +302,51 @@
     },
     {
       "professionId": "it.3ddesigner",
+      "competencyId": "ai-ethics-rights",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.interior",
+      "competencyId": "ai-model-landscape",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.interior",
+      "competencyId": "ai-prompting",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.interior",
+      "competencyId": "ai-research-synthesis",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.interior",
+      "competencyId": "ai-visual-generation",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.interior",
+      "competencyId": "ai-video-audio",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.interior",
+      "competencyId": "ai-copy-content",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.interior",
+      "competencyId": "ai-layout-docs",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.interior",
+      "competencyId": "ai-workflow-integration",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.interior",
       "competencyId": "ai-ethics-rights",
       "reason": "excluded-prefix:ai-"
     }

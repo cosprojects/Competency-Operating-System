@@ -1823,8 +1823,16 @@
           "professionIds": [
             "it.interior"
           ],
-          "sourceRefs": [],
-          "evidenceState": "needs_review",
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "interior-designer",
+              "url": "https://practicum.yandex.ru/interior-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
           "competencyLinks": [
             {
               "competencyId": "comp_dfa43121c434",
@@ -1833,7 +1841,7 @@
             }
           ],
           "materialIds": [],
-          "needsReview": true
+          "needsReview": false
         }
       ],
       "sourceRefs": [
@@ -3403,6 +3411,202 @@
       ]
     },
     {
+      "id": "comp_928a5ee43c21",
+      "slug": "vedenie-proekta-praktika",
+      "title": "Ведение проекта: практика",
+      "aliases": [
+        "Авторский надзор и управление сроками в интерьерном проекте"
+      ],
+      "definition": "Практика сопровождения интерьерного проекта от согласованного плана до приёмки результата: авторский надзор за реализацией, управление сроками и этапами, коммуникация с подрядчиками и проверка выполненных работ.",
+      "scope": "universal",
+      "canonicalIds": [
+        "interior-project-management"
+      ],
+      "professionIds": [
+        "it.interior"
+      ],
+      "components": [
+        {
+          "id": "vedenie-proekta-praktika.avtorskiy-nadzor-za-realizatsiey",
+          "slug": "avtorskiy-nadzor-za-realizatsiey",
+          "title": "Авторский надзор за реализацией",
+          "definition": "Контроль соответствия выполняемых работ проектным решениям на площадке.",
+          "order": 1,
+          "tagIds": [
+            "tag_40cd80b0f5a2"
+          ]
+        },
+        {
+          "id": "vedenie-proekta-praktika.planirovanie-srokov-i-etapov",
+          "slug": "planirovanie-srokov-i-etapov",
+          "title": "Планирование сроков и этапов",
+          "definition": "Составление и ведение графика работ по проекту.",
+          "order": 2,
+          "tagIds": [
+            "tag_48cb5edb665a"
+          ]
+        },
+        {
+          "id": "vedenie-proekta-praktika.kommunikatsiya-s-podryadchikami",
+          "slug": "kommunikatsiya-s-podryadchikami",
+          "title": "Коммуникация с подрядчиками",
+          "definition": "Организация взаимодействия с исполнителями и поставщиками в ходе реализации.",
+          "order": 3,
+          "tagIds": [
+            "tag_59c7a857ebe1"
+          ]
+        },
+        {
+          "id": "vedenie-proekta-praktika.priemka-rezultatov-rabot",
+          "slug": "priemka-rezultatov-rabot",
+          "title": "Приёмка результатов работ",
+          "definition": "Проверка выполненных работ и фиксация их приёмки.",
+          "order": 4,
+          "tagIds": [
+            "tag_964c03397c66"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_40cd80b0f5a2",
+          "slug": "avtorskiy-nadzor",
+          "title": "Авторский надзор",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Контроль реализации проекта.",
+          "professionIds": [
+            "it.interior"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "interior-designer",
+              "url": "https://practicum.yandex.ru/interior-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_928a5ee43c21",
+              "componentId": "vedenie-proekta-praktika.avtorskiy-nadzor-za-realizatsiey",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_48cb5edb665a",
+          "slug": "kalendarnyy-plan",
+          "title": "Календарный план",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Планирование этапов и сроков.",
+          "professionIds": [
+            "it.interior"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "interior-designer",
+              "url": "https://practicum.yandex.ru/interior-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_928a5ee43c21",
+              "componentId": "vedenie-proekta-praktika.planirovanie-srokov-i-etapov",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_59c7a857ebe1",
+          "slug": "kommunikatsiya-s-podryadchikami",
+          "title": "Коммуникация с подрядчиками",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Взаимодействие с исполнителями.",
+          "professionIds": [
+            "it.interior"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "interior-designer",
+              "url": "https://practicum.yandex.ru/interior-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_928a5ee43c21",
+              "componentId": "vedenie-proekta-praktika.kommunikatsiya-s-podryadchikami",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_964c03397c66",
+          "slug": "priemka-rabot",
+          "title": "Приёмка работ",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Проверка и приёмка результата.",
+          "professionIds": [
+            "it.interior"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "interior-designer",
+              "url": "https://practicum.yandex.ru/interior-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_928a5ee43c21",
+              "componentId": "vedenie-proekta-praktika.priemka-rezultatov-rabot",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_e9aa79aefbbc",
+        "costUsd": 0.0011697,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1492,
+          "outputTokens": 689
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
       "id": "comp_8984ce9da8c1",
       "slug": "vzaimodeystvie-s-inzhenerami-i-pravovye-osnovy",
       "title": "Взаимодействие с инженерами и правовые основы",
@@ -4022,6 +4226,203 @@
         "ui-data-visualization",
         "ux-metrics"
       ]
+    },
+    {
+      "id": "comp_f0911ea7e557",
+      "slug": "vizualizatsiya-interera-praktika",
+      "title": "Визуализация интерьера: практика",
+      "aliases": [
+        "Интерьерная 3D-визуализация",
+        "Практика визуализации интерьера"
+      ],
+      "definition": "Практическая 3D-визуализация интерьера: построение сцены, настройка материалов, постановка света и финальная подача изображения.",
+      "scope": "universal",
+      "canonicalIds": [
+        "interior-visualization"
+      ],
+      "professionIds": [
+        "it.interior"
+      ],
+      "components": [
+        {
+          "id": "vizualizatsiya-interera-praktika.postroenie-interernoy-vizualizatsii",
+          "slug": "postroenie-interernoy-vizualizatsii",
+          "title": "Построение интерьерной визуализации",
+          "definition": "Создание реалистичного изображения интерьера средствами 3D-визуализации.",
+          "order": 1,
+          "tagIds": [
+            "tag_8f87cc6e3b7e"
+          ]
+        },
+        {
+          "id": "vizualizatsiya-interera-praktika.materialy-interera",
+          "slug": "materialy-interera",
+          "title": "Материалы интерьера",
+          "definition": "Настройка материалов и текстур для интерьерной сцены.",
+          "order": 2,
+          "tagIds": [
+            "tag_fcdc82309267"
+          ]
+        },
+        {
+          "id": "vizualizatsiya-interera-praktika.svet-v-interernoy-stsene",
+          "slug": "svet-v-interernoy-stsene",
+          "title": "Свет в интерьерной сцене",
+          "definition": "Постановка освещения для интерьерной визуализации.",
+          "order": 3,
+          "tagIds": [
+            "tag_5ca33adf6019"
+          ]
+        },
+        {
+          "id": "vizualizatsiya-interera-praktika.finalnaya-podacha",
+          "slug": "finalnaya-podacha",
+          "title": "Финальная подача",
+          "definition": "Рендер и постобработка итогового изображения интерьера.",
+          "order": 4,
+          "tagIds": [
+            "tag_b50abcec8b42"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_8f87cc6e3b7e",
+          "slug": "3d-vizualizatsiya",
+          "title": "3D-визуализация",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Построение реалистичной визуализации интерьера.",
+          "professionIds": [
+            "it.interior"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "interior-designer",
+              "url": "https://practicum.yandex.ru/interior-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_f0911ea7e557",
+              "componentId": "vizualizatsiya-interera-praktika.postroenie-interernoy-vizualizatsii",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_fcdc82309267",
+          "slug": "materialy-interera",
+          "title": "Материалы интерьера",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Настройка материалов и текстур.",
+          "professionIds": [
+            "it.interior"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "interior-designer",
+              "url": "https://practicum.yandex.ru/interior-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_f0911ea7e557",
+              "componentId": "vizualizatsiya-interera-praktika.materialy-interera",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_5ca33adf6019",
+          "slug": "svet-v-vizualizatsii",
+          "title": "Свет в визуализации",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Постановка света для интерьерной сцены.",
+          "professionIds": [
+            "it.interior"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "interior-designer",
+              "url": "https://practicum.yandex.ru/interior-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_f0911ea7e557",
+              "componentId": "vizualizatsiya-interera-praktika.svet-v-interernoy-stsene",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_b50abcec8b42",
+          "slug": "finalnyy-render",
+          "title": "Финальный рендер",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Рендер и постобработка интерьерной визуализации.",
+          "professionIds": [
+            "it.interior"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "interior-designer",
+              "url": "https://practicum.yandex.ru/interior-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_f0911ea7e557",
+              "componentId": "vizualizatsiya-interera-praktika.finalnaya-podacha",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_58e9d952cb82",
+        "costUsd": 0.00103581,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1485,
+          "outputTokens": 569
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
     },
     {
       "id": "comp_2d2a9ebacafe",
@@ -6765,6 +7166,194 @@
           "cacheHitTokens": 128,
           "cacheMissTokens": 1187,
           "outputTokens": 535
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
+      "id": "comp_65b68282fe4d",
+      "slug": "zonirovanie-praktika",
+      "title": "Зонирование: практика",
+      "aliases": [
+        "Практика зонирования",
+        "Функциональное зонирование: практика"
+      ],
+      "definition": "Планировочные схемы, зоны и сценарии движения.",
+      "scope": "universal",
+      "canonicalIds": [
+        "interior-zoning"
+      ],
+      "professionIds": [
+        "it.interior"
+      ],
+      "components": [
+        {
+          "id": "zonirovanie-praktika.printsipy-funktsionalnogo-zonirovaniya",
+          "slug": "printsipy-funktsionalnogo-zonirovaniya",
+          "title": "Принципы функционального зонирования",
+          "definition": "Теоретические основы выделения функциональных зон в пространстве и их взаимосвязей.",
+          "order": 1,
+          "tagIds": [
+            "tag_850164efbd78",
+            "tag_2114bf3202c6"
+          ]
+        },
+        {
+          "id": "zonirovanie-praktika.planirovochnye-shemy",
+          "slug": "planirovochnye-shemy",
+          "title": "Планировочные схемы",
+          "definition": "Разработка и сравнение вариантов планировки на основе выделенных зон.",
+          "order": 2,
+          "tagIds": [
+            "tag_a596365be14f"
+          ]
+        },
+        {
+          "id": "zonirovanie-praktika.stsenarii-dvizheniya",
+          "slug": "stsenarii-dvizheniya",
+          "title": "Сценарии движения",
+          "definition": "Маршруты и сценарии использования пространства, влияющие на планировку.",
+          "order": 3,
+          "tagIds": [
+            "tag_8a13f1df509a"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_850164efbd78",
+          "slug": "printsipy-zonirovaniya",
+          "title": "Принципы зонирования",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Функциональное зонирование пространства.",
+          "professionIds": [
+            "it.interior"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "interior-designer",
+              "url": "https://practicum.yandex.ru/interior-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_65b68282fe4d",
+              "componentId": "zonirovanie-praktika.printsipy-funktsionalnogo-zonirovaniya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_2114bf3202c6",
+          "slug": "funktsionalnye-svyazi",
+          "title": "Функциональные связи",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Связи между зонами и помещениями.",
+          "professionIds": [
+            "it.interior"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "interior-designer",
+              "url": "https://practicum.yandex.ru/interior-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_65b68282fe4d",
+              "componentId": "zonirovanie-praktika.printsipy-funktsionalnogo-zonirovaniya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_a596365be14f",
+          "slug": "planirovochnye-shemy",
+          "title": "Планировочные схемы",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Разработка вариантов планировки.",
+          "professionIds": [
+            "it.interior"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "interior-designer",
+              "url": "https://practicum.yandex.ru/interior-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_65b68282fe4d",
+              "componentId": "zonirovanie-praktika.planirovochnye-shemy",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_8a13f1df509a",
+          "slug": "stsenarii-dvizheniya",
+          "title": "Сценарии движения",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Маршруты и сценарии использования пространства.",
+          "professionIds": [
+            "it.interior"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "interior-designer",
+              "url": "https://practicum.yandex.ru/interior-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_65b68282fe4d",
+              "componentId": "zonirovanie-praktika.stsenarii-dvizheniya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_60bc0a6215b6",
+        "costUsd": 0.00092871,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1455,
+          "outputTokens": 479
         }
       },
       "issues": [],
@@ -9916,8 +10505,16 @@
           "professionIds": [
             "it.interior"
           ],
-          "sourceRefs": [],
-          "evidenceState": "needs_review",
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "interior-designer",
+              "url": "https://practicum.yandex.ru/interior-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
           "competencyLinks": [
             {
               "competencyId": "comp_3fea057153a2",
@@ -9926,7 +10523,7 @@
             }
           ],
           "materialIds": [],
-          "needsReview": true
+          "needsReview": false
         },
         {
           "id": "tag_4b94a6d4954c",
@@ -10077,8 +10674,16 @@
           "professionIds": [
             "it.interior"
           ],
-          "sourceRefs": [],
-          "evidenceState": "needs_review",
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "interior-designer",
+              "url": "https://practicum.yandex.ru/interior-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
           "competencyLinks": [
             {
               "competencyId": "comp_a6e9c9d34d14",
@@ -10087,7 +10692,7 @@
             }
           ],
           "materialIds": [],
-          "needsReview": true
+          "needsReview": false
         },
         {
           "id": "tag_808809f1712c",
@@ -10099,8 +10704,16 @@
           "professionIds": [
             "it.interior"
           ],
-          "sourceRefs": [],
-          "evidenceState": "needs_review",
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "interior-designer",
+              "url": "https://practicum.yandex.ru/interior-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
           "competencyLinks": [
             {
               "competencyId": "comp_a6e9c9d34d14",
@@ -10109,7 +10722,7 @@
             }
           ],
           "materialIds": [],
-          "needsReview": true
+          "needsReview": false
         },
         {
           "id": "tag_72a772935719",
@@ -10151,8 +10764,16 @@
           "professionIds": [
             "it.interior"
           ],
-          "sourceRefs": [],
-          "evidenceState": "needs_review",
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "interior-designer",
+              "url": "https://practicum.yandex.ru/interior-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
           "competencyLinks": [
             {
               "competencyId": "comp_a6e9c9d34d14",
@@ -10161,7 +10782,7 @@
             }
           ],
           "materialIds": [],
-          "needsReview": true
+          "needsReview": false
         },
         {
           "id": "tag_9de9629a8e90",
@@ -10203,8 +10824,16 @@
           "professionIds": [
             "it.interior"
           ],
-          "sourceRefs": [],
-          "evidenceState": "needs_review",
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "interior-designer",
+              "url": "https://practicum.yandex.ru/interior-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
           "competencyLinks": [
             {
               "competencyId": "comp_a6e9c9d34d14",
@@ -10213,7 +10842,7 @@
             }
           ],
           "materialIds": [],
-          "needsReview": true
+          "needsReview": false
         }
       ],
       "sourceRefs": [
@@ -16013,6 +16642,184 @@
       "methodologyVersion": "0.1.0"
     },
     {
+      "id": "comp_7c13a4f900db",
+      "slug": "spetsifikatsii-i-smeta-praktika",
+      "title": "Спецификации и смета: практика",
+      "aliases": [
+        "Ведомости и сметы в интерьерном проекте"
+      ],
+      "definition": "Практика составления ведомостей, спецификаций материалов и мебели, расчёта объёмов и бюджета проекта.",
+      "scope": "universal",
+      "canonicalIds": [
+        "interior-specs"
+      ],
+      "professionIds": [
+        "it.interior"
+      ],
+      "components": [
+        {
+          "id": "spetsifikatsii-i-smeta-praktika.spetsifikatsii-i-vedomosti",
+          "slug": "spetsifikatsii-i-vedomosti",
+          "title": "Спецификации и ведомости",
+          "definition": "Документальное оформление состава материалов, мебели и отделки в проектной документации.",
+          "order": 1,
+          "tagIds": [
+            "tag_2c80a60948d2",
+            "tag_3f8352e741c9"
+          ]
+        },
+        {
+          "id": "spetsifikatsii-i-smeta-praktika.raschety-i-byudzhetirovanie",
+          "slug": "raschety-i-byudzhetirovanie",
+          "title": "Расчёты и бюджетирование",
+          "definition": "Количественные расчёты объёмов материалов и стоимости работ для формирования сметы.",
+          "order": 2,
+          "tagIds": [
+            "tag_b94aa2b26ba9",
+            "tag_b883f8df1590"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_2c80a60948d2",
+          "slug": "spetsifikatsii",
+          "title": "Спецификации",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Составление спецификаций материалов и мебели.",
+          "professionIds": [
+            "it.interior"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "interior-designer",
+              "url": "https://practicum.yandex.ru/interior-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_7c13a4f900db",
+              "componentId": "spetsifikatsii-i-smeta-praktika.spetsifikatsii-i-vedomosti",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_3f8352e741c9",
+          "slug": "vedomost-otdelki",
+          "title": "Ведомость отделки",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Ведомости отделочных материалов.",
+          "professionIds": [
+            "it.interior"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "interior-designer",
+              "url": "https://practicum.yandex.ru/interior-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_7c13a4f900db",
+              "componentId": "spetsifikatsii-i-smeta-praktika.spetsifikatsii-i-vedomosti",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_b94aa2b26ba9",
+          "slug": "raschet-obemov",
+          "title": "Расчёт объёмов",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Подсчёт объёмов и материалов.",
+          "professionIds": [
+            "it.interior"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "interior-designer",
+              "url": "https://practicum.yandex.ru/interior-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_7c13a4f900db",
+              "componentId": "spetsifikatsii-i-smeta-praktika.raschety-i-byudzhetirovanie",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_b883f8df1590",
+          "slug": "smeta-proekta",
+          "title": "Смета проекта",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Расчёт бюджета и стоимости работ.",
+          "professionIds": [
+            "it.interior"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "interior-designer",
+              "url": "https://practicum.yandex.ru/interior-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_7c13a4f900db",
+              "componentId": "spetsifikatsii-i-smeta-praktika.raschety-i-byudzhetirovanie",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_6cc8accf04fd",
+        "costUsd": 0.00092448,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1476,
+          "outputTokens": 470
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
       "id": "comp_8caddff279f4",
       "slug": "stili-i-tsvetovye-kontseptsii",
       "title": "Стили и цветовые концепции",
@@ -17196,8 +18003,16 @@
           "professionIds": [
             "it.interior"
           ],
-          "sourceRefs": [],
-          "evidenceState": "needs_review",
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "interior-designer",
+              "url": "https://practicum.yandex.ru/interior-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
           "competencyLinks": [
             {
               "competencyId": "comp_3f02632526e7",
@@ -17206,7 +18021,7 @@
             }
           ],
           "materialIds": [],
-          "needsReview": true
+          "needsReview": false
         },
         {
           "id": "tag_5aa822db0bf8",
@@ -17218,8 +18033,16 @@
           "professionIds": [
             "it.interior"
           ],
-          "sourceRefs": [],
-          "evidenceState": "needs_review",
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "interior-designer",
+              "url": "https://practicum.yandex.ru/interior-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
           "competencyLinks": [
             {
               "competencyId": "comp_3f02632526e7",
@@ -17228,7 +18051,7 @@
             }
           ],
           "materialIds": [],
-          "needsReview": true
+          "needsReview": false
         }
       ],
       "sourceRefs": [
@@ -17506,6 +18329,203 @@
           "cacheHitTokens": 256,
           "cacheMissTokens": 1011,
           "outputTokens": 588
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
+      "id": "comp_200e648d7136",
+      "slug": "ergonomika-praktika",
+      "title": "Эргономика: практика",
+      "aliases": [
+        "Практическая эргономика интерьера",
+        "Эргономика пространства"
+      ],
+      "definition": "Практическое применение эргономических требований, антропометрии и расчёта зон движения для создания удобного и функционального пространства интерьера.",
+      "scope": "universal",
+      "canonicalIds": [
+        "interior-ergonomics"
+      ],
+      "professionIds": [
+        "it.interior"
+      ],
+      "components": [
+        {
+          "id": "ergonomika-praktika.osnovy-ergonomiki-prostranstva",
+          "slug": "osnovy-ergonomiki-prostranstva",
+          "title": "Основы эргономики пространства",
+          "definition": "Базовые эргономические требования к организации интерьера и принципы удобства пространства.",
+          "order": 1,
+          "tagIds": [
+            "tag_89adde286f9c"
+          ]
+        },
+        {
+          "id": "ergonomika-praktika.antropometriya-i-ergonomicheskie-zony",
+          "slug": "antropometriya-i-ergonomicheskie-zony",
+          "title": "Антропометрия и эргономические зоны",
+          "definition": "Знание размеров человека и связанных с ними эргономических зон, необходимых для проектирования.",
+          "order": 2,
+          "tagIds": [
+            "tag_d091dd8ea18c"
+          ]
+        },
+        {
+          "id": "ergonomika-praktika.prakticheskiy-raschet-ergonomicheskih-zon",
+          "slug": "prakticheskiy-raschet-ergonomicheskih-zon",
+          "title": "Практический расчёт эргономических зон",
+          "definition": "Навыки расчёта зон движения и размещения мебели с учётом эргономических требований.",
+          "order": 3,
+          "tagIds": [
+            "tag_ec293bf00fb1"
+          ]
+        },
+        {
+          "id": "ergonomika-praktika.podbor-mebeli-po-ergonomike",
+          "slug": "podbor-mebeli-po-ergonomike",
+          "title": "Подбор мебели по эргономике",
+          "definition": "Выбор мебели с учётом антропометрических данных и сценариев использования пространства.",
+          "order": 4,
+          "tagIds": [
+            "tag_64af24405364"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_89adde286f9c",
+          "slug": "ergonomika-prostranstva",
+          "title": "Эргономика пространства",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Базовые эргономические требования к интерьеру.",
+          "professionIds": [
+            "it.interior"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "interior-designer",
+              "url": "https://practicum.yandex.ru/interior-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_200e648d7136",
+              "componentId": "ergonomika-praktika.osnovy-ergonomiki-prostranstva",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_d091dd8ea18c",
+          "slug": "antropometriya",
+          "title": "Антропометрия",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Размеры человека и эргономические зоны.",
+          "professionIds": [
+            "it.interior"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "interior-designer",
+              "url": "https://practicum.yandex.ru/interior-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_200e648d7136",
+              "componentId": "ergonomika-praktika.antropometriya-i-ergonomicheskie-zony",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_ec293bf00fb1",
+          "slug": "raschet-ergonomicheskih-zon",
+          "title": "Расчёт эргономических зон",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Практический расчёт зон движения и мебели.",
+          "professionIds": [
+            "it.interior"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "interior-designer",
+              "url": "https://practicum.yandex.ru/interior-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_200e648d7136",
+              "componentId": "ergonomika-praktika.prakticheskiy-raschet-ergonomicheskih-zon",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_64af24405364",
+          "slug": "podbor-mebeli-po-ergonomike",
+          "title": "Подбор мебели по эргономике",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Выбор мебели под антропометрию и сценарии.",
+          "professionIds": [
+            "it.interior"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "interior-designer",
+              "url": "https://practicum.yandex.ru/interior-designer/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_200e648d7136",
+              "componentId": "ergonomika-praktika.podbor-mebeli-po-ergonomike",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_feddc0789f50",
+        "costUsd": 0.0011247,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1472,
+          "outputTokens": 653
         }
       },
       "issues": [],
@@ -21438,6 +22458,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_8f87cc6e3b7e",
+      "slug": "3d-vizualizatsiya",
+      "title": "3D-визуализация",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Построение реалистичной визуализации интерьера.",
+      "professionIds": [
+        "it.interior"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_f0911ea7e557",
+          "componentId": "vizualizatsiya-interera-praktika.postroenie-interernoy-vizualizatsii",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_94dc9a243b9c",
       "slug": "3d-modelirovanie",
       "title": "3D-моделирование",
@@ -21561,6 +22603,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_40cd80b0f5a2",
+      "slug": "avtorskiy-nadzor",
+      "title": "Авторский надзор",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Контроль реализации проекта.",
+      "professionIds": [
+        "it.interior"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_928a5ee43c21",
+          "componentId": "vedenie-proekta-praktika.avtorskiy-nadzor-za-realizatsiey",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_9db07d7532ca",
@@ -22196,6 +23260,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_d091dd8ea18c",
+      "slug": "antropometriya",
+      "title": "Антропометрия",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Размеры человека и эргономические зоны.",
+      "professionIds": [
+        "it.interior"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_200e648d7136",
+          "componentId": "ergonomika-praktika.antropometriya-i-ergonomicheskie-zony",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_b1e6f8e4c8e4",
       "slug": "argumentatsiya-resheniy",
       "title": "Аргументация решений",
@@ -22706,6 +23792,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_3f8352e741c9",
+      "slug": "vedomost-otdelki",
+      "title": "Ведомость отделки",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Ведомости отделочных материалов.",
+      "professionIds": [
+        "it.interior"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_7c13a4f900db",
+          "componentId": "spetsifikatsii-i-smeta-praktika.spetsifikatsii-i-vedomosti",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_531e67c18e40",
@@ -23730,8 +24838,16 @@
       "professionIds": [
         "it.3ddesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_678347c07b8a",
@@ -23740,7 +24856,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_2e4d633a1c69",
@@ -24220,6 +25336,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_48cb5edb665a",
+      "slug": "kalendarnyy-plan",
+      "title": "Календарный план",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Планирование этапов и сроков.",
+      "professionIds": [
+        "it.interior"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_928a5ee43c21",
+          "componentId": "vedenie-proekta-praktika.planirovanie-srokov-i-etapov",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_a868e9716e27",
       "slug": "karty-normaley-i-sherohovatosti",
       "title": "Карты нормалей и шероховатости",
@@ -24229,8 +25367,16 @@
       "professionIds": [
         "it.3ddesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_d70ace963045",
@@ -24239,7 +25385,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_3a648abd994b",
@@ -24437,6 +25583,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_59c7a857ebe1",
+      "slug": "kommunikatsiya-s-podryadchikami",
+      "title": "Коммуникация с подрядчиками",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Взаимодействие с исполнителями.",
+      "professionIds": [
+        "it.interior"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_928a5ee43c21",
+          "componentId": "vedenie-proekta-praktika.kommunikatsiya-s-podryadchikami",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_bdc43d8e4655",
       "slug": "kompoziting",
       "title": "Композитинг",
@@ -24528,8 +25696,16 @@
       "professionIds": [
         "it.3ddesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_32e6af9bc49a",
@@ -24538,7 +25714,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_7c8af1186877",
@@ -24886,8 +26062,16 @@
       "professionIds": [
         "it.3ddesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_fa63814a288b",
@@ -24896,7 +26080,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_0b29a5fb2ef9",
@@ -24987,6 +26171,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_fcdc82309267",
+      "slug": "materialy-interera",
+      "title": "Материалы интерьера",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Настройка материалов и текстур.",
+      "professionIds": [
+        "it.interior"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_f0911ea7e557",
+          "componentId": "vizualizatsiya-interera-praktika.materialy-interera",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_cb59004aaa44",
@@ -25333,8 +26539,16 @@
       "professionIds": [
         "it.3ddesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_fa63814a288b",
@@ -25343,7 +26557,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_74c1c9193096",
@@ -25687,8 +26901,16 @@
       "professionIds": [
         "it.3ddesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_89c405c996e8",
@@ -25697,7 +26919,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_3435a5958887",
@@ -25739,8 +26961,16 @@
       "professionIds": [
         "it.3ddesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_d70ace963045",
@@ -25749,7 +26979,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_7452fdd10911",
@@ -25796,8 +27026,16 @@
       "professionIds": [
         "it.3ddesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_32e6af9bc49a",
@@ -25806,7 +27044,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_afef5a0bafa4",
@@ -25943,8 +27181,16 @@
       "professionIds": [
         "it.3ddesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_32e6af9bc49a",
@@ -25953,7 +27199,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_c28736c3b4cc",
@@ -25965,8 +27211,16 @@
       "professionIds": [
         "it.3ddesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_11dd239445c4",
@@ -25975,7 +27229,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_e05af078fea8",
@@ -25987,8 +27241,16 @@
       "professionIds": [
         "it.3ddesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_d70ace963045",
@@ -25997,7 +27259,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_01ee07d0315d",
@@ -26500,6 +27762,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_a596365be14f",
+      "slug": "planirovochnye-shemy",
+      "title": "Планировочные схемы",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Разработка вариантов планировки.",
+      "professionIds": [
+        "it.interior"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_65b68282fe4d",
+          "componentId": "zonirovanie-praktika.planirovochnye-shemy",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_1b0b80e74a87",
       "slug": "plany-pereplanirovki",
       "title": "Планы перепланировки",
@@ -26640,6 +27924,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_64af24405364",
+      "slug": "podbor-mebeli-po-ergonomike",
+      "title": "Подбор мебели по эргономике",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Выбор мебели под антропометрию и сценарии.",
+      "professionIds": [
+        "it.interior"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_200e648d7136",
+          "componentId": "ergonomika-praktika.podbor-mebeli-po-ergonomike",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_a07f20426dc7",
@@ -26861,8 +28167,16 @@
       "professionIds": [
         "it.3ddesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_d70ace963045",
@@ -26871,7 +28185,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_3c7835bf7918",
@@ -27103,8 +28417,16 @@
       "professionIds": [
         "it.3ddesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_678347c07b8a",
@@ -27113,7 +28435,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_ef34829ed9b7",
@@ -27125,8 +28447,16 @@
       "professionIds": [
         "it.3ddesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_bd276732bf44",
@@ -27135,7 +28465,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_84f5d6bdfc6d",
@@ -27358,6 +28688,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_964c03397c66",
+      "slug": "priemka-rabot",
+      "title": "Приёмка работ",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Проверка и приёмка результата.",
+      "professionIds": [
+        "it.interior"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_928a5ee43c21",
+          "componentId": "vedenie-proekta-praktika.priemka-rezultatov-rabot",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_af99ef2cd46b",
       "slug": "primenenie-person-v-proektnyh-resheniyah",
       "title": "Применение персон в проектных решениях",
@@ -27479,6 +28831,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_850164efbd78",
+      "slug": "printsipy-zonirovaniya",
+      "title": "Принципы зонирования",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Функциональное зонирование пространства.",
+      "professionIds": [
+        "it.interior"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_65b68282fe4d",
+          "componentId": "zonirovanie-praktika.printsipy-funktsionalnogo-zonirovaniya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_687d347cd754",
@@ -28372,8 +29746,16 @@
       "professionIds": [
         "it.3ddesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_d70ace963045",
@@ -28382,7 +29764,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_84a856e9dc92",
@@ -28734,8 +30116,16 @@
       "professionIds": [
         "it.3ddesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_678347c07b8a",
@@ -28744,7 +30134,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_91edfefe96b8",
@@ -28762,6 +30152,50 @@
         {
           "competencyId": "comp_425bd4dc7c7f",
           "componentId": "storibording-i-rezhissura-dvizheniya.raskadrovka-motion-stseny",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_b94aa2b26ba9",
+      "slug": "raschet-obemov",
+      "title": "Расчёт объёмов",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Подсчёт объёмов и материалов.",
+      "professionIds": [
+        "it.interior"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_7c13a4f900db",
+          "componentId": "spetsifikatsii-i-smeta-praktika.raschety-i-byudzhetirovanie",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_ec293bf00fb1",
+      "slug": "raschet-ergonomicheskih-zon",
+      "title": "Расчёт эргономических зон",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Практический расчёт зон движения и мебели.",
+      "professionIds": [
+        "it.interior"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_200e648d7136",
+          "componentId": "ergonomika-praktika.prakticheskiy-raschet-ergonomicheskih-zon",
           "role": "primary"
         }
       ],
@@ -29126,6 +30560,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_5ca33adf6019",
+      "slug": "svet-v-vizualizatsii",
+      "title": "Свет в визуализации",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Постановка света для интерьерной сцены.",
+      "professionIds": [
+        "it.interior"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_f0911ea7e557",
+          "componentId": "vizualizatsiya-interera-praktika.svet-v-interernoy-stsene",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_90294e662ca5",
       "slug": "svet-i-kompozitsiya",
       "title": "Свет и композиция",
@@ -29195,8 +30651,16 @@
       "professionIds": [
         "it.3ddesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_89c405c996e8",
@@ -29205,7 +30669,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_78139326f00f",
@@ -29499,6 +30963,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_b883f8df1590",
+      "slug": "smeta-proekta",
+      "title": "Смета проекта",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Расчёт бюджета и стоимости работ.",
+      "professionIds": [
+        "it.interior"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_7c13a4f900db",
+          "componentId": "spetsifikatsii-i-smeta-praktika.raschety-i-byudzhetirovanie",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_d8031cfa7a70",
@@ -29814,6 +31300,13 @@
       ],
       "sourceRefs": [
         {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        },
+        {
           "sourceId": "school-of-motion",
           "externalId": "school-of-motion:topic:kompoziting-i-vfx-sovmeschenie-3d-s-live-action",
           "url": "https://schoolofmotion.com/",
@@ -29821,7 +31314,7 @@
           "license": "Ссылка на программу/материал; используются названия тем и краткие формулировки."
         }
       ],
-      "evidenceState": "needs_review",
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_bd276732bf44",
@@ -29835,7 +31328,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_3bb20b01c633",
@@ -29980,8 +31473,16 @@
       "professionIds": [
         "it.3ddesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_d70ace963045",
@@ -29990,7 +31491,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_d5494c1b173e",
@@ -30008,6 +31509,28 @@
         {
           "competencyId": "comp_3fea057153a2",
           "componentId": "materialy-mebel-i-svet.mebel-i-predmetnoe-napolnenie",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_2c80a60948d2",
+      "slug": "spetsifikatsii",
+      "title": "Спецификации",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Составление спецификаций материалов и мебели.",
+      "professionIds": [
+        "it.interior"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_7c13a4f900db",
+          "componentId": "spetsifikatsii-i-smeta-praktika.spetsifikatsii-i-vedomosti",
           "role": "primary"
         }
       ],
@@ -30376,6 +31899,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_8a13f1df509a",
+      "slug": "stsenarii-dvizheniya",
+      "title": "Сценарии движения",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Маршруты и сценарии использования пространства.",
+      "professionIds": [
+        "it.interior"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_65b68282fe4d",
+          "componentId": "zonirovanie-praktika.stsenarii-dvizheniya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_80fe685a8ac8",
       "slug": "tablitsy-i-tipy-dannyh",
       "title": "Таблицы и типы данных",
@@ -30445,8 +31990,16 @@
       "professionIds": [
         "it.3ddesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_11dd239445c4",
@@ -30455,7 +32008,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_2f2d22f480c0",
@@ -30467,8 +32020,16 @@
       "professionIds": [
         "it.3ddesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_89c405c996e8",
@@ -30477,7 +32038,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_e4f049388c28",
@@ -30726,8 +32287,16 @@
       "professionIds": [
         "it.3ddesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_fa63814a288b",
@@ -30736,7 +32305,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_dba4607ade2f",
@@ -30808,8 +32377,16 @@
       "professionIds": [
         "it.3ddesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_89c405c996e8",
@@ -30818,7 +32395,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_c60933a9cee2",
@@ -30891,8 +32468,16 @@
       "professionIds": [
         "it.3ddesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_d70ace963045",
@@ -30901,7 +32486,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_4cbfe43921cd",
@@ -31033,13 +32618,27 @@
       "title": "Финальный рендер",
       "aliases": [],
       "kind": "skill",
-      "definition": "Подготовка и вывод финального изображения.",
+      "definition": "Рендер и постобработка интерьерной визуализации.",
       "professionIds": [
+        "it.interior",
         "it.3ddesigner"
       ],
-      "sourceRefs": [],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
       "evidenceState": "needs_review",
       "competencyLinks": [
+        {
+          "competencyId": "comp_f0911ea7e557",
+          "componentId": "vizualizatsiya-interera-praktika.finalnaya-podacha",
+          "role": "primary"
+        },
         {
           "competencyId": "comp_32e6af9bc49a",
           "componentId": "render-praktika.finalnyy-render",
@@ -31143,6 +32742,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_2114bf3202c6",
+      "slug": "funktsionalnye-svyazi",
+      "title": "Функциональные связи",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Связи между зонами и помещениями.",
+      "professionIds": [
+        "it.interior"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_65b68282fe4d",
+          "componentId": "zonirovanie-praktika.printsipy-funktsionalnogo-zonirovaniya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_73d29717fc59",
@@ -31731,8 +33352,16 @@
       "professionIds": [
         "it.3ddesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_fa63814a288b",
@@ -31741,7 +33370,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_f2f7abec80c4",
@@ -31753,12 +33382,42 @@
       "professionIds": [
         "it.3ddesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_d70ace963045",
           "componentId": "materialy-i-tekstury.podgotovka-assetov",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_89adde286f9c",
+      "slug": "ergonomika-prostranstva",
+      "title": "Эргономика пространства",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Базовые эргономические требования к интерьеру.",
+      "professionIds": [
+        "it.interior"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_200e648d7136",
+          "componentId": "ergonomika-praktika.osnovy-ergonomiki-prostranstva",
           "role": "primary"
         }
       ],
@@ -31995,8 +33654,16 @@
       "professionIds": [
         "it.3ddesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_678347c07b8a",
@@ -32005,7 +33672,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_62be7f7d044c",
@@ -32407,8 +34074,16 @@
       "professionIds": [
         "it.3ddesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_11dd239445c4",
@@ -32417,7 +34092,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_7530ecd3075b",
@@ -32585,8 +34260,16 @@
       "professionIds": [
         "it.3ddesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "3d-generalist",
+          "url": "https://practicum.yandex.ru/3d-generalist/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_11dd239445c4",
@@ -32595,7 +34278,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_b4fbba126326",

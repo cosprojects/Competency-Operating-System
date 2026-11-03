@@ -64,16 +64,6 @@ export function MaterialCard({
 
   return (
     <article className="material-card">
-      <SourceReviewBadge
-        sourceId={source.id}
-        sourceTitle={source.title}
-        competencyId={competencyId}
-        competencyTitle={competencyTitle}
-        initialStatus={source.reviewStatus}
-        canReview={canReview}
-        returnTo={returnTo}
-      />
-
       <div className="material-bg" aria-hidden="true">
         <div className="material-bg-image">
           {showImage ? (
@@ -100,6 +90,15 @@ export function MaterialCard({
             ? source.languages.map((language) => language.toUpperCase()).join(", ")
             : "язык не указан"}
         </span>
+        <SourceReviewBadge
+          sourceId={source.id}
+          sourceTitle={source.title}
+          competencyId={competencyId}
+          competencyTitle={competencyTitle}
+          initialStatus={source.reviewStatus}
+          canReview={canReview}
+          returnTo={returnTo}
+        />
       </div>
 
       <div className="material-text">

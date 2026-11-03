@@ -107,7 +107,6 @@ export function CompetencyDetail({
           <span className={`badge ${competency.tier}`}>{TIER_LABEL[competency.tier]}</span>
 
           <div className="detail-head-actions">
-            <span className="detail-source">{competency.titleEn ?? competency.sectionTitle}</span>
             {viewer ? (
               <SaveButton
                 variant="icon"

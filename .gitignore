@@ -21,6 +21,7 @@ data/competency/
 data/materials-agent/
 data/learning-sources/
 data/reviews/
+data/aggregation/
 
 # Beta web app
 apps/web/.next/
@@ -43,10 +44,19 @@ scripts/web/figma-parity/plugin/code.js
 scripts/web/figma-parity/AXIONA\ _\ Web\ parity\ builder/code.js
 scripts/web/figma-parity/AXIONA\ _\ Web\ parity\ builder/code.ts
 
-# Локальные symlink-навыки DSH (внешние пути)
-.dsh/skills/
+# Локальные symlink-навыки DSH (внешние пути); проектный /changelog коммитим
+.dsh/skills/*
+!.dsh/skills/changelog/
 
 # Снимки Figma: CONTEXT.md и nodes/*.json коммитим, изображения — нет
 docs/design/figma/**/images/
+
+# Лог обновлений: рабочие дайджесты и JSON-заготовки агента; state.json и changelog.ts — в git
+.changelog/digest-*
+.changelog/entry-*.json
+
+# Отчёты gate генерируются release:report в CI; в git не храним
+docs/12-release/reports/beta-1-gap-report.md
+docs/12-release/reports/beta-1-gap-report.json
 .vercel
 .env*

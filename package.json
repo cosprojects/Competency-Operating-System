@@ -7,6 +7,9 @@
   "scripts": {
     "typecheck": "tsc --noEmit",
     "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "changelog:collect": "node --experimental-strip-types scripts/changelog/collect.ts",
+    "changelog:apply": "node --experimental-strip-types scripts/changelog/apply.ts",
+    "changelog:check": "node --experimental-strip-types scripts/changelog/apply.ts -- --check",
     "agents:check": "sh scripts/check-agent-assets.sh",
     "figma:compare": "node scripts/web/figma-compare.mjs",
     "db:generate": "prisma generate",

@@ -8,13 +8,15 @@ AI-native платформа компетенций: карта професси
 
 ## Навыки агента
 
-Подключены из `~/Documents/dsh-skills` (симлинки в `.dsh/skills`):
+Глобальные навыки подключены из `~/Documents/dsh-skills` (симлинки в `.dsh/skills`), проектный
+`/changelog` лежит прямо в `.dsh/skills/changelog` и коммитится вместе с репозиторием:
 
 | Команда | Роль |
 |---|---|
 | `/ba-analyze`, `/ba-spec`, `/ba-docs-review` | бизнес-аналитик: анализ, спеки, аудит документации |
 | `/ux-copy`, `/ux-copy-review`, `/ux-voice`, `/ux-strings` | UX-писатель: тексты, ревью, голос, инвентаризация строк |
 | `/figma-context` | дизайн: снимок Figma в файлы репозитория и реализация по нему |
+| `/changelog` | лог обновлений: собрать дайджест рабочей сессии и обновить блок на главной |
 
 - Полная шпаргалка проекта (навыки + npm-скрипты): `.dsh/SKILLS.md`.
 - Реестр всех ролей и навыков: `~/Documents/dsh-skills/INDEX.md`.
@@ -59,6 +61,19 @@ AI-native платформа компетенций: карта професси
 точечные `get_metadata`/`get_design_context` при доступной квоте. При `Rate limit exceeded` MCP не использовать:
 пайплайн снимка идёт через REST API и квоту MCP не тратит.
 
+## Лог обновлений
+
+Блок «Лог обновлений» на главной — три последние записи из `apps/web/src/content/changelog.ts`.
+Ведёт его агент `/changelog`, контракт — `agents/AGENTS-changelog-session.md`.
+
+- Запускается **только по явной команде пользователя**; сам, по таймеру или после других задач не логирует.
+- Окно — с момента последнего логирования (`.changelog/state.json`) до текущего момента.
+- Запись = дата, общее название (до 60 символов) и описание ровно из 3 предложений (до 450).
+- `npm run changelog:collect` — дайджест из сессий DSH и git в `.changelog/digest-*.md`.
+- `npm run changelog:apply -- --entry <json> [--replace] [--until <ISO>]` — вставить или обновить запись.
+- `npm run changelog:check` — проверить контракт лога; `npm run typecheck` — сборку.
+- `state.json` обновляет `apply`; не правь его руками, иначе следующее окно начнётся раньше.
+
 ## Документация
 
 - Источник правды — `docs/` с нумерованными разделами `00-foundation` … `12-release`.
@@ -91,6 +106,7 @@ AI-native платформа компетенций: карта професси
 (полный проход: источники → реестр → связи → модель → review → gate). Подробности — `README.md` и
 `docs/09-research/COS-RES-028-Open-Materials-Discovery-and-Relevance.md`.
 Legacy-канвасы `web/*.html` и `web:canvases` удалены: контент и модель собираются через `release:build`.
+Полный промпт-контракт для новой сессии: `agents/AGENTS-aggregation-session.md`.
 
 ## Проверка перед «готово»
 

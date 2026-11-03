@@ -2,7 +2,7 @@
   "canonicalVersion": "0.1.0",
   "domain": "it",
   "professionId": "it.uxui",
-  "updatedOn": "2026-10-21",
+  "updatedOn": "2026-11-03",
   "status": "draft",
   "principles": [
     "Профессия делится на два больших блока: UX (пользовательский опыт) и UI (интерфейс).",
@@ -679,6 +679,10 @@
     {
       "blockId": "comp_158001e4c84f",
       "reason": "Дубль UX-интерактивных прототипов; объединён с ux-interactive-prototype."
+    },
+    {
+      "blockId": "comp_a6e9c9d34d14",
+      "reason": "Блок сквозного AI-слоя (COS-RES-024): вне canonical-карты UX/UI, публикуется только как ядро AI-дизайнера (ADR-015)."
     }
   ]
 }

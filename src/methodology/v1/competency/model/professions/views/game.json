@@ -1,0 +1,282 @@
+{
+  "viewVersion": "1.0.0",
+  "professionId": "it.game",
+  "sphereId": "it",
+  "title": "Гейм-дизайнер",
+  "titleEn": "Game designer",
+  "sections": [
+    {
+      "id": "game-player-research",
+      "title": "Игрок и исследование",
+      "definition": "Понимание игрока: сегменты аудитории, интервью, аналитика и метрики удержания.",
+      "competencies": [
+        {
+          "competencyId": "ux-design-thinking",
+          "tier": "foundation",
+          "order": 1
+        },
+        {
+          "competencyId": "ux-user-research",
+          "tier": "foundation",
+          "order": 2,
+          "prerequisites": [
+            "ux-design-thinking"
+          ]
+        },
+        {
+          "competencyId": "ux-personas",
+          "tier": "core",
+          "order": 3,
+          "prerequisites": [
+            "ux-user-research"
+          ]
+        },
+        {
+          "competencyId": "ux-interviews",
+          "tier": "core",
+          "order": 4,
+          "prerequisites": [
+            "ux-user-research"
+          ]
+        },
+        {
+          "competencyId": "ux-analytics",
+          "tier": "core",
+          "order": 5,
+          "prerequisites": [
+            "ux-user-research"
+          ]
+        },
+        {
+          "competencyId": "ux-metrics",
+          "tier": "core",
+          "order": 6,
+          "prerequisites": [
+            "ux-analytics"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "game-systems",
+      "title": "Игровые системы и правила",
+      "definition": "Модель ценности игры, игровые циклы, структура правил и документация механик.",
+      "competencies": [
+        {
+          "competencyId": "ux-product-thinking",
+          "tier": "core",
+          "order": 7,
+          "prerequisites": [
+            "ux-design-thinking"
+          ]
+        },
+        {
+          "competencyId": "ux-user-flows",
+          "tier": "core",
+          "order": 8,
+          "prerequisites": [
+            "ux-user-research"
+          ]
+        },
+        {
+          "competencyId": "ux-information-architecture",
+          "tier": "core",
+          "order": 9,
+          "prerequisites": [
+            "ux-user-flows"
+          ]
+        },
+        {
+          "competencyId": "ux-requirements",
+          "tier": "core",
+          "order": 10,
+          "prerequisites": [
+            "ux-user-flows"
+          ]
+        },
+        {
+          "competencyId": "ux-experiments",
+          "tier": "core",
+          "order": 11,
+          "prerequisites": [
+            "ux-metrics",
+            "ux-requirements"
+          ]
+        },
+        {
+          "competencyId": "ux-wireframes",
+          "tier": "core",
+          "order": 12,
+          "prerequisites": [
+            "ux-requirements"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "game-ui-feel",
+      "title": "Игровой интерфейс и отклик",
+      "definition": "HUD, раскладка, типографика и ощущение отклика: состояния, тайминги и доступность.",
+      "competencies": [
+        {
+          "competencyId": "ui-layout",
+          "tier": "foundation",
+          "order": 13,
+          "prerequisites": [
+            "ux-wireframes"
+          ]
+        },
+        {
+          "competencyId": "ui-visual-communication",
+          "tier": "core",
+          "order": 14,
+          "prerequisites": [
+            "ui-layout"
+          ]
+        },
+        {
+          "competencyId": "ui-typography",
+          "tier": "core",
+          "order": 15,
+          "prerequisites": [
+            "ui-layout"
+          ]
+        },
+        {
+          "competencyId": "ui-interaction-states",
+          "tier": "core",
+          "order": 16,
+          "prerequisites": [
+            "ui-layout"
+          ]
+        },
+        {
+          "competencyId": "ui-motion",
+          "tier": "core",
+          "order": 17,
+          "prerequisites": [
+            "ui-interaction-states"
+          ]
+        },
+        {
+          "competencyId": "motion-timing-easing",
+          "tier": "core",
+          "order": 18,
+          "prerequisites": [
+            "ui-motion"
+          ]
+        },
+        {
+          "competencyId": "ui-accessibility",
+          "tier": "core",
+          "order": 19,
+          "prerequisites": [
+            "ui-layout"
+          ]
+        },
+        {
+          "competencyId": "ui-design-systems",
+          "tier": "optional",
+          "order": 20,
+          "prerequisites": [
+            "ui-visual-communication"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "game-prototypes",
+      "title": "Прототипы и плейтесты",
+      "definition": "Быстрые прототипы механик и интерфейса, плейтесты и проверка гипотез на игроках.",
+      "competencies": [
+        {
+          "competencyId": "ux-lowfi-prototype",
+          "tier": "core",
+          "order": 21,
+          "prerequisites": [
+            "ux-wireframes"
+          ]
+        },
+        {
+          "competencyId": "ux-interactive-prototype",
+          "tier": "core",
+          "order": 22,
+          "prerequisites": [
+            "ux-lowfi-prototype"
+          ]
+        },
+        {
+          "competencyId": "ux-usability-testing",
+          "tier": "core",
+          "order": 23,
+          "prerequisites": [
+            "ux-interactive-prototype"
+          ]
+        },
+        {
+          "competencyId": "ui-figma",
+          "tier": "core",
+          "order": 24,
+          "prerequisites": [
+            "ui-layout"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "game-production",
+      "title": "Производство и ИИ",
+      "definition": "Передача в разработку, анимация и 3D-ассеты, ИИ-инструменты в производстве игр.",
+      "competencies": [
+        {
+          "competencyId": "ui-handoff",
+          "tier": "core",
+          "order": 25,
+          "prerequisites": [
+            "ui-visual-communication"
+          ]
+        },
+        {
+          "competencyId": "motion-animation-principles",
+          "tier": "optional",
+          "order": 26,
+          "prerequisites": [
+            "ui-motion"
+          ]
+        },
+        {
+          "competencyId": "3d-modeling",
+          "tier": "optional",
+          "order": 27,
+          "prerequisites": [
+            "ui-visual-communication"
+          ]
+        },
+        {
+          "competencyId": "ai-prompting",
+          "tier": "optional",
+          "order": 28,
+          "prerequisites": [
+            "ui-visual-communication"
+          ]
+        },
+        {
+          "competencyId": "ai-visual-generation",
+          "tier": "optional",
+          "order": 29,
+          "prerequisites": [
+            "ai-prompting"
+          ]
+        },
+        {
+          "competencyId": "ai-ethics-rights",
+          "tier": "optional",
+          "order": 30,
+          "prerequisites": [
+            "ai-prompting"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -131,6 +131,17 @@
       "catalogFile": "catalog/it.json",
       "priorityFile": "model/profession-competencies/aidesigner.json",
       "sourcesFile": "sources/professions/it.aidesigner.json"
+    },
+    {
+      "id": "it.game",
+      "sphereId": "it",
+      "title": "Гейм-дизайнер",
+      "titleEn": "Game designer",
+      "canonicalMapFile": "model/professions/views/game.json",
+      "viewFile": "model/professions/views/game.json",
+      "catalogFile": "catalog/it.json",
+      "priorityFile": "model/profession-competencies/game.json",
+      "sourcesFile": "sources/professions/it.game.json"
     }
   ]
 }

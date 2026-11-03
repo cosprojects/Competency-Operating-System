@@ -111,7 +111,7 @@ Magic link → console локально / РФ-провайдер → польз
 - теги только `evidenceState: supported`, `kind: knowledge|skill`;
 - источники только `status: active`, `authority: primary`, не `discoveryOnly`, с `summary`;
 - компетенция без 2 знаний/1 навыка/источника не попадает в публичный JSON;
-- AI-слой и `it.aidesigner` исключены манифестом;
+- AI-слой публикуется только в профессии-ядре (`publication.coreCompetencyPrefixes` + `publication.coreProfessionIds`); в Beta 1 это `it.aidesigner` (ADR-015), в остальных профессиях AI-компетенции исключены;
 - prerequisites фильтруются вместе с исключёнными.
 
 ## 6. Схема БД
@@ -236,7 +236,7 @@ model ConsentRecord {
 
 | Путь | Назначение | Доступ |
 |---|---|---|
-| `/` | Лендинг продукта, 4 профессии | Публичный |
+| `/` | Лендинг продукта, 12 профессий | Публичный |
 | `/professions` | Список профессий | Публичный |
 | `/professions/[slug]` | Карта профессии | Публичный |
 | `/competencies/[id]` | Компетенция: знания, навыки, материалы | Публичный; внешние ссылки — после входа |

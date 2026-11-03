@@ -3,6 +3,7 @@
 - Дата: 2026-11-03
 - Релиз: `beta-1` (manifest `draft`)
 - Источник данных: `registry.json`, `learning-source-links.json`, `competencies.json`, `catalog/it.json`, `data/learning-sources/open-sources-by-profession-2026-11-03.json`
+- Актуальная сводка после агрегации AI-дизайнера и гейм-дизайнера: [`aggregation-2026-11-03.md`](aggregation-2026-11-03.md)
 
 ## Итог
 

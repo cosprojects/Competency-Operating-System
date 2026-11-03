@@ -21,7 +21,7 @@ references:
 
 # COS-REL-002 — Контентная работа и приёмка Beta 1
 
-> **Статус 2026-10-28:** `release:validate` проходит: 54/54 компетенции, 110/110 связей, 0 пробелов. Нормализация AI-assisted; манифест остаётся `draft` до spot-check основателя. Результат — `reports/archive/beta-1-content-gate-closure.md`.
+> **Статус 2026-11-03:** `release:validate` проходит: 121/121 компетенция, 263/263 связи, 0 пробелов, 12 профессий (включая AI-дизайнера с AI-слоем). Нормализация AI-assisted; манифест остаётся `draft` до spot-check основателя. Отчёты — `reports/aggregation-2026-11-03.md` и `reports/archive/beta-1-content-gate-closure.md`.
 
 ## 1. Принцип
 

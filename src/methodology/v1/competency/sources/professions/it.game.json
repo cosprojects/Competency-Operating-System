@@ -1,0 +1,23 @@
+{
+  "professionId": "it.game",
+  "sphereId": "it",
+  "occupationSources": [
+    {
+      "sourceId": "esco",
+      "query": "digital games designer"
+    },
+    {
+      "sourceId": "onet",
+      "query": "15-1255.01, Video Game Designers"
+    }
+  ],
+  "materialSourceIds": [
+    "wikipedia",
+    "internet-archive",
+    "habr",
+    "medium"
+  ],
+  "blockedSourceIds": [
+    "hh-api"
+  ]
+}

@@ -3,7 +3,7 @@ import path from "node:path";
 import type { CompetenciesFile } from "../../src/methodology/v1/competency/model/types.ts";
 import type { ProfessionCompetencyFile } from "../../src/methodology/v1/competency/model/types.ts";
 import type { LearningSourceRegistry } from "../../src/methodology/v1/learning-sources/types.ts";
-import type { ReleaseManifest, SourceReviewFile } from "./lib.ts";
+import { exclusionReason, type ReleaseManifest, type SourceReviewFile } from "./lib.ts";
 
 async function readJson<T>(file: string): Promise<T> {
   return JSON.parse(await readFile(file, "utf8")) as T;
@@ -33,10 +33,7 @@ async function main(): Promise<void> {
     for (const professionCompetency of file.competencies) {
       const competency = compById.get(professionCompetency.competencyId);
       if (!competency) continue;
-      const excluded = (manifest.excludedCompetencyPrefixes ?? []).some((prefix) =>
-        competency.id.startsWith(prefix),
-      );
-      if (excluded) continue;
+      if (exclusionReason(manifest, professionId, competency.id)) continue;
       for (const sourceId of competency.learningSourceIds ?? []) {
         const key = `${competency.id}|${sourceId}`;
         const pair = pairs.get(key) ?? {

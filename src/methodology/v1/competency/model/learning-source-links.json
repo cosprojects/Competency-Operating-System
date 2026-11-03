@@ -60,7 +60,7 @@
         "coursera-graphic-fundamentals",
         "coursera-web-design-free"
       ],
-      "rationale": "Курсы и разбор кейса айдентики Motion Design School.; Visual design в курсе и программа Практикума.; Visual design в UX/UI-курсе.; Visual communication и основы дизайна в курсах.; совпадение с «Визуальная коммуникация», формат course-platform, score 0.37"
+      "rationale": "Курсы и разбор кейса айдентики Motion Design School.; Visual design в курсе и программа Практикума.; Visual design в UX/UI-курсе.; Visual communication и основы дизайна в курсах.; совпадение с «Визуальная коммуникация», формат course-platform, score 0.37; совпадение с «Визуальная коммуникация», формат course-platform, score 0.37, домен уже в реестре: specialist-ru-course-vizkom"
     },
     {
       "competencyId": "ui-handoff",
@@ -106,9 +106,10 @@
       "sourceIds": [
         "coursera-uxui-fundamentals",
         "greatlearning-uiux",
-        "coursera-microsoft-product-design"
+        "coursera-microsoft-product-design",
+        "sendsay-ru-blog-metod-person-kak-sozdat-portret-klienta"
       ],
-      "rationale": "Модули UX-исследований в курсах UX/UI.; Research-модули курса product design.; совпадение с «Персоны и сегментация», формат blog, score 0.41"
+      "rationale": "Модули UX-исследований в курсах UX/UI.; Research-модули курса product design.; совпадение с «Персоны и сегментация», формат blog, score 0.41; совпадение с «Персоны и сегментация», формат blog, score 0.41"
     },
     {
       "competencyId": "ux-interviews",
@@ -358,9 +359,10 @@
       "competencyId": "ux-analytics",
       "sourceIds": [
         "practicum-uxresearch",
-        "skillbox-ru-course-ai-audio-video"
+        "skillbox-ru-course-ai-audio-video",
+        "hse-ru-edu-courses-470898711"
       ],
-      "rationale": "Источник программы «UX-исследователь» покрывает тему в рамках курса.; совпадение с «Продуктовая аналитика», формат course-platform, score 0.54"
+      "rationale": "Источник программы «UX-исследователь» покрывает тему в рамках курса.; совпадение с «Продуктовая аналитика», формат course-platform, score 0.54; совпадение с «Продуктовая аналитика», формат course-platform, score 0.40, домен уже в реестре: hse-ru-edu-courses-470898711"
     },
     {
       "competencyId": "ux-metrics",
@@ -713,7 +715,8 @@
         "figma-blog-design-systems-ai",
         "elements-of-ai",
         "oxfordhomestudy-ai-free",
-        "greatlearning-ai-free"
+        "greatlearning-ai-free",
+        "practicum-ai-tools-for-designers"
       ],
       "rationale": "Программа содержит модуль/тему по ИИ, подтверждённую страницей курса."
     },
@@ -742,7 +745,9 @@
         "practicum-uxresearch",
         "elements-of-ai",
         "oxfordhomestudy-ai-free",
-        "greatlearning-ai-free"
+        "greatlearning-ai-free",
+        "practicum-ai-tools-for-designers",
+        "ideou-ai-design-resources"
       ],
       "rationale": "Программа содержит модуль/тему по ИИ, подтверждённую страницей курса."
     },
@@ -768,7 +773,6 @@
         "state-of-ai-design",
         "tgu-dpo-ai-tools-design",
         "extyl-top-ai-tools-design",
-        "sostav-ai-design-112390",
         "habr-ai-design-1096288",
         "anima-ai-design-ru"
       ],
@@ -837,8 +841,6 @@
         "figma-blog-design-systems-ai",
         "state-of-ai-design",
         "cambridge-ai-design-process",
-        "sostav-ai-design-112390",
-        "almcorp-ai-design",
         "kimvoronin-ai-design-guide"
       ],
       "rationale": "Курс Практикума по нейросетям покрывает тему в рамках программы."

@@ -141,6 +141,7 @@ const PROFESSION_GROUPS: Array<{ id: string; title: string; slugs: string[] }> =
       "appdesign",
       "artdir",
       "aidesigner",
+      "game",
     ],
   },
   {

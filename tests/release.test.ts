@@ -270,6 +270,37 @@ describe("release evaluation", () => {
     assert.ok(!evaluation.professions[0]!.rows.some((row) => row.competency.id === "ai-model-landscape"));
   });
 
+  it("публикует сквозной AI-слой только в профессии-ядре (coreCompetencyPrefixes)", () => {
+    const value = inputs();
+    value.manifest.excludedCompetencyPrefixes = [];
+    value.manifest.publication = {
+      coreCompetencyPrefixes: ["ai-"],
+      coreProfessionIds: ["it.core"],
+    };
+    value.professionFiles.get("it.test")!.competencies.push({
+      competencyId: "ai-model-landscape",
+      tier: "core",
+      order: 3,
+      prerequisites: [],
+    });
+    value.competencies.competencies.push(competency("ai-model-landscape", "AI"));
+    const outside = evaluateRelease(value, { asOf });
+    assert.ok(
+      outside.excluded.some(
+        (item) => item.competencyId === "ai-model-landscape" && item.reason.startsWith("excluded-scope:"),
+      ),
+    );
+    assert.ok(!outside.professions[0]!.rows.some((row) => row.competency.id === "ai-model-landscape"));
+
+    value.manifest.publication = {
+      coreCompetencyPrefixes: ["ai-"],
+      coreProfessionIds: ["it.test"],
+    };
+    const core = evaluateRelease(value, { asOf });
+    assert.ok(!core.excluded.some((item) => item.competencyId === "ai-model-landscape"));
+    assert.ok(core.professions[0]!.rows.some((row) => row.competency.id === "ai-model-landscape"));
+  });
+
   it("фильтрует непрошедшие компетенции при сборке публичного контента", () => {
     const value = inputs({ extraCompetency: true });
     value.catalog.blocks.push(

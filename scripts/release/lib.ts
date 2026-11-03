@@ -37,6 +37,10 @@ export interface ReleaseManifest {
     allowPartialProfessions?: boolean;
     showCoverage?: boolean;
     language?: string;
+    /** Префиксы компетенций сквозного слоя (AI), которые публикуются только в «ядерных» профессиях. */
+    coreCompetencyPrefixes?: string[];
+    /** Профессии, где сквозной слой (AI) является ядром и публикуется. */
+    coreProfessionIds?: string[];
   };
   notes?: string[];
 }
@@ -287,6 +291,32 @@ export async function loadReleaseInputs(root: string, manifestPath: string): Pro
   };
 }
 
+/**
+ * Причина исключения компетенции из публикации: глобальный префикс, сквозной слой вне
+ * «ядерной» профессии или явное исключение в манифесте. `null` — компетенция публикуется.
+ */
+export function exclusionReason(
+  manifest: ReleaseManifest,
+  professionId: string,
+  competencyId: string,
+): string | null {
+  const prefix = (manifest.excludedCompetencyPrefixes ?? []).find((item) =>
+    competencyId.startsWith(item),
+  );
+  if (prefix) return `excluded-prefix:${prefix}`;
+  const corePrefix = (manifest.publication?.coreCompetencyPrefixes ?? []).find((item) =>
+    competencyId.startsWith(item),
+  );
+  if (corePrefix) {
+    const coreProfessions = manifest.publication?.coreProfessionIds ?? [];
+    if (!coreProfessions.includes(professionId)) return `excluded-scope:${corePrefix}`;
+  }
+  const explicit = (manifest.excludedCompetencies ?? []).find(
+    (item) => item.professionId === professionId && item.competencyId === competencyId,
+  );
+  return explicit ? explicit.reason : null;
+}
+
 export function evaluateRelease(
   inputs: ReleaseInputs,
   options: { strictSourceReview?: boolean; asOf?: Date } = {},
@@ -321,16 +351,8 @@ export function evaluateRelease(
   const excluded: ExcludedCompetency[] = [];
   const professions: ProfessionEvaluation[] = [];
 
-  const isExcluded = (professionId: string, competencyId: string): string | null => {
-    const prefix = (inputs.manifest.excludedCompetencyPrefixes ?? []).find((item) =>
-      competencyId.startsWith(item),
-    );
-    if (prefix) return `excluded-prefix:${prefix}`;
-    const explicit = (inputs.manifest.excludedCompetencies ?? []).find(
-      (item) => item.professionId === professionId && item.competencyId === competencyId,
-    );
-    return explicit ? explicit.reason : null;
-  };
+  const isExcluded = (professionId: string, competencyId: string): string | null =>
+    exclusionReason(inputs.manifest, professionId, competencyId);
 
   for (const professionId of inputs.manifest.professionIds) {
     const professionRecord = inputs.professions.professions.find((item) => item.id === professionId);

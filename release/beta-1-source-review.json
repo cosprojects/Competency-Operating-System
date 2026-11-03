@@ -10252,6 +10252,1392 @@
       "reason": "Авто-расширение: совпадение с «Промпт-системы и библиотеки», формат course-platform, score 0.37",
       "reviewedBy": "sources-expand-v1",
       "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ux-design-thinking",
+      "sourceId": "tilda-education-courses-web-design-designthinking",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-model-landscape",
+      "sourceId": "practicum-presentation",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-model-landscape",
+      "sourceId": "practicum-appdesign",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-model-landscape",
+      "sourceId": "practicum-uxresearch",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-model-landscape",
+      "sourceId": "practicum-artdir",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-model-landscape",
+      "sourceId": "practicum-3ddesigner",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-model-landscape",
+      "sourceId": "practicum-interior",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-model-landscape",
+      "sourceId": "practicum-webdesigner",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-model-landscape",
+      "sourceId": "practicum-design-catalog",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-model-landscape",
+      "sourceId": "motiondesign-school-courses",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-model-landscape",
+      "sourceId": "practicum-ai-tools-for-designers",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-model-landscape",
+      "sourceId": "oxfordhomestudy-ai-free",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-model-landscape",
+      "sourceId": "elements-of-ai",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-model-landscape",
+      "sourceId": "greatlearning-ai-free",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-model-landscape",
+      "sourceId": "alison-ai-fundamentals",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-model-landscape",
+      "sourceId": "coursera-ai-free",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-model-landscape",
+      "sourceId": "ideou-ai-design-resources",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-tool-landscape",
+      "sourceId": "practicum-ai-tools-for-designers",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-tool-landscape",
+      "sourceId": "elements-of-ai",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-tool-landscape",
+      "sourceId": "simplilearn-genai-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-tool-landscape",
+      "sourceId": "state-of-ai-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-tool-landscape",
+      "sourceId": "tgu-dpo-ai-tools-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-tool-landscape",
+      "sourceId": "extyl-top-ai-tools-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-tool-landscape",
+      "sourceId": "habr-ai-design-1096288",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-tool-landscape",
+      "sourceId": "anima-ai-design-ru",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-prompting",
+      "sourceId": "practicum-presentation",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-prompting",
+      "sourceId": "practicum-appdesign",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-prompting",
+      "sourceId": "practicum-uxresearch",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-prompting",
+      "sourceId": "practicum-artdir",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-prompting",
+      "sourceId": "practicum-3ddesigner",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-prompting",
+      "sourceId": "practicum-interior",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-prompting",
+      "sourceId": "practicum-webdesigner",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-prompting",
+      "sourceId": "motiondesign-school-courses",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-prompting",
+      "sourceId": "practicum-ai-tools-for-designers",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-prompting",
+      "sourceId": "oxfordhomestudy-ai-free",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-prompting",
+      "sourceId": "elements-of-ai",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-prompting",
+      "sourceId": "greatlearning-ai-free",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-prompting",
+      "sourceId": "alison-ai-fundamentals",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-prompting",
+      "sourceId": "coursera-ai-free",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-prompting",
+      "sourceId": "simplilearn-genai-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-prompting",
+      "sourceId": "coursera-design-fundamentals-ai",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-prompt-systems",
+      "sourceId": "practicum-ai-tools-for-designers",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-prompt-systems",
+      "sourceId": "elements-of-ai",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-prompt-systems",
+      "sourceId": "learntube-ai-graphic-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-tool-evaluation",
+      "sourceId": "practicum-ai-tools-for-designers",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-tool-evaluation",
+      "sourceId": "simplilearn-ai-graphic-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-tool-evaluation",
+      "sourceId": "tgu-dpo-ai-tools-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-tool-evaluation",
+      "sourceId": "habr-ai-design-1065754",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-tool-evaluation",
+      "sourceId": "kimvoronin-ai-design-guide",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-ai-features",
+      "sourceId": "practicum-ai-tools-for-designers",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-ai-features",
+      "sourceId": "coursera-will-ai-replace-designers",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-ai-features",
+      "sourceId": "ideou-ai-design-resources",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-ai-features",
+      "sourceId": "figma-blog-design-systems-ai",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-ai-features",
+      "sourceId": "cambridge-ai-design-process",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-ai-features",
+      "sourceId": "coursera-design-fundamentals-ai",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ux-requirements",
+      "sourceId": "stepik-org-course-1128-promo",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ux-requirements",
+      "sourceId": "learn-rarus-ru-courses-15216",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-visual-generation",
+      "sourceId": "practicum-presentation",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-visual-generation",
+      "sourceId": "practicum-appdesign",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-visual-generation",
+      "sourceId": "practicum-artdir",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-visual-generation",
+      "sourceId": "practicum-3ddesigner",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-visual-generation",
+      "sourceId": "practicum-interior",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-visual-generation",
+      "sourceId": "practicum-webdesigner",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-visual-generation",
+      "sourceId": "practicum-design-catalog",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-visual-generation",
+      "sourceId": "motiondesign-school-courses",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-visual-generation",
+      "sourceId": "practicum-ai-tools-for-designers",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-visual-generation",
+      "sourceId": "practicum-ai-for-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-visual-generation",
+      "sourceId": "learntube-ai-graphic-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-visual-generation",
+      "sourceId": "elements-of-ai",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-visual-generation",
+      "sourceId": "oxfordhomestudy-ai-free",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-visual-generation",
+      "sourceId": "greatlearning-ai-free",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-visual-generation",
+      "sourceId": "practicum-ai-tools-for-designers",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-visual-generation",
+      "sourceId": "practicum-ai-for-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-visual-generation",
+      "sourceId": "learntube-ai-graphic-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-visual-generation",
+      "sourceId": "oxfordhomestudy-ai-graphics-designer",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-visual-generation",
+      "sourceId": "simplilearn-genai-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-visual-generation",
+      "sourceId": "extyl-top-ai-tools-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-visual-generation",
+      "sourceId": "coursera-design-fundamentals-ai",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-series-adaptation",
+      "sourceId": "practicum-ai-tools-for-designers",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-series-adaptation",
+      "sourceId": "practicum-ai-for-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-series-adaptation",
+      "sourceId": "oxfordhomestudy-ai-graphics-designer",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-video-audio",
+      "sourceId": "motiondesign-school-courses",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-video-audio",
+      "sourceId": "practicum-ai-tools-for-designers",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-video-audio",
+      "sourceId": "practicum-ai-for-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-video-audio",
+      "sourceId": "elements-of-ai",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-video-audio",
+      "sourceId": "oxfordhomestudy-ai-free",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-video-audio",
+      "sourceId": "greatlearning-ai-free",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-video-audio",
+      "sourceId": "skillbox-ru-course-ai-audio-video",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-video-audio",
+      "sourceId": "practicum-ai-tools-for-designers",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-video-audio",
+      "sourceId": "practicum-ai-for-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-video-audio",
+      "sourceId": "bangbangeducation-ru-course-motion",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-copy-content",
+      "sourceId": "practicum-presentation",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-copy-content",
+      "sourceId": "practicum-artdir",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-copy-content",
+      "sourceId": "practicum-design-catalog",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-copy-content",
+      "sourceId": "practicum-ai-tools-for-designers",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-copy-content",
+      "sourceId": "elements-of-ai",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-copy-content",
+      "sourceId": "oxfordhomestudy-ai-free",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-copy-content",
+      "sourceId": "greatlearning-ai-free",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-layout-docs",
+      "sourceId": "practicum-presentation",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-layout-docs",
+      "sourceId": "practicum-appdesign",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-layout-docs",
+      "sourceId": "practicum-webdesigner",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-layout-docs",
+      "sourceId": "figma-blog-design-systems-ai",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-layout-docs",
+      "sourceId": "elements-of-ai",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-layout-docs",
+      "sourceId": "oxfordhomestudy-ai-free",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-layout-docs",
+      "sourceId": "greatlearning-ai-free",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-automation",
+      "sourceId": "practicum-ai-tools-for-designers",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-automation",
+      "sourceId": "habr-ai-design-1065754",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-automation",
+      "sourceId": "anima-ai-design-ru",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-workflow-integration",
+      "sourceId": "practicum-presentation",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-workflow-integration",
+      "sourceId": "practicum-appdesign",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-workflow-integration",
+      "sourceId": "practicum-uxresearch",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-workflow-integration",
+      "sourceId": "practicum-artdir",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-workflow-integration",
+      "sourceId": "practicum-3ddesigner",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-workflow-integration",
+      "sourceId": "practicum-interior",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-workflow-integration",
+      "sourceId": "practicum-webdesigner",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-workflow-integration",
+      "sourceId": "practicum-design-catalog",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-workflow-integration",
+      "sourceId": "state-of-ai-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-workflow-integration",
+      "sourceId": "kimvoronin-ai-design-guide",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-workflow-integration",
+      "sourceId": "elements-of-ai",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-workflow-integration",
+      "sourceId": "oxfordhomestudy-ai-free",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-workflow-integration",
+      "sourceId": "greatlearning-ai-free",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-quality-eval",
+      "sourceId": "practicum-ai-tools-for-designers",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-quality-eval",
+      "sourceId": "practicum-ai-for-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-quality-eval",
+      "sourceId": "simplilearn-ai-graphic-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-quality-eval",
+      "sourceId": "cambridge-ai-design-process",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-quality-eval",
+      "sourceId": "habr-ai-design-1096288",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-research-synthesis",
+      "sourceId": "practicum-uxresearch",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-research-synthesis",
+      "sourceId": "elements-of-ai",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-research-synthesis",
+      "sourceId": "oxfordhomestudy-ai-free",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-research-synthesis",
+      "sourceId": "greatlearning-ai-free",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-ethics-rights",
+      "sourceId": "oxfordhomestudy-ai-free",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-ethics-rights",
+      "sourceId": "elements-of-ai",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-ethics-rights",
+      "sourceId": "greatlearning-ai-free",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-ethics-rights",
+      "sourceId": "alison-ai-fundamentals",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-ethics-rights",
+      "sourceId": "coursera-ai-free",
+      "decision": "excluded",
+      "reason": "Spot-check 2026-11-03: источник — каталог курсов или программа другой профессии; для AI-дизайнера есть профильные AI-источники. Снят из публикации, в модели остаётся.",
+      "reviewedBy": "spot-check-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-ethics-rights",
+      "sourceId": "spb-hse-ru-ius-civillaw-courses-944974338-html",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-integration",
+      "sourceId": "practicum-ai-tools-for-designers",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-integration",
+      "sourceId": "coursera-will-ai-replace-designers",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-integration",
+      "sourceId": "ideou-ai-design-resources",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-integration",
+      "sourceId": "figma-blog-design-systems-ai",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-integration",
+      "sourceId": "state-of-ai-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-integration",
+      "sourceId": "cambridge-ai-design-process",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-integration",
+      "sourceId": "kimvoronin-ai-design-guide",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "ux-personas",
+      "sourceId": "sendsay-ru-blog-metod-person-kak-sozdat-portret-klienta",
+      "decision": "accepted",
+      "reason": "Авто-расширение: совпадение с «Персоны и сегментация», формат blog, score 0.41",
+      "reviewedBy": "sources-expand-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.uxui",
+      "competencyId": "ux-personas",
+      "sourceId": "sendsay-ru-blog-metod-person-kak-sozdat-portret-klienta",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.uxui",
+      "competencyId": "ux-analytics",
+      "sourceId": "hse-ru-edu-courses-470898711",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.product",
+      "competencyId": "ux-personas",
+      "sourceId": "sendsay-ru-blog-metod-person-kak-sozdat-portret-klienta",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.product",
+      "competencyId": "ux-analytics",
+      "sourceId": "hse-ru-edu-courses-470898711",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.uxresearch",
+      "competencyId": "ux-personas",
+      "sourceId": "sendsay-ru-blog-metod-person-kak-sozdat-portret-klienta",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.uxresearch",
+      "competencyId": "ux-analytics",
+      "sourceId": "hse-ru-edu-courses-470898711",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.appdesign",
+      "competencyId": "ux-personas",
+      "sourceId": "sendsay-ru-blog-metod-person-kak-sozdat-portret-klienta",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-layout-docs",
+      "sourceId": "practicum-ai-tools-for-designers",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-research-synthesis",
+      "sourceId": "practicum-ai-tools-for-designers",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "ai-research-synthesis",
+      "sourceId": "ideou-ai-design-resources",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
     }
   ],
   "notes": [

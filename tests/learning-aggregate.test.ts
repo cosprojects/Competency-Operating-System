@@ -20,7 +20,8 @@ describe("open source aggregation", () => {
       professionCompetencies.push(await json<ProfessionCompetencyFile>(`competency/model/profession-competencies/${slug}.json`));
     }
     const result = buildOpenSourceAggregation({ registry, links: links.links, competencies, professions, professionCompetencies, generatedAt: "2026-11-03" });
-    assert.equal(result.professions.length, 12);
+    assert.equal(result.professions.length, 13);
+    assert.ok(result.professions.some((item) => item.professionId === "it.game"));
     assert.ok(result.professions.some((item) => item.openSources > 0));
     assert.ok(result.excluded.some((item) => item.reason.includes("blocked")));
     assert.ok(result.excluded.some((item) => item.reason.includes("access=paid")));

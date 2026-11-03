@@ -5,12 +5,16 @@ MVP — слой сборки компетенций и ресурсной ба�
 
 ## Beta 1 — карта компетенций дизайнера
 
-- Публикуется **11 профессий** (UX/UI, Product, Motion, Graphic, 3D, Интерьеры, Веб, Презентации,
-  UX-исследования, Арт-дирекшн, Приложения). AI-дизайнер и AI-слой — `deferred-post-beta`.
-- В модели **122 компетенции**, в публикации **102**, связей «профессия–компетенция» — **236**.
-- Ресурсная база: **160 источников** (127 active, 39 найдены автоматически), **39 материалов** в каталоге.
-- Content gate: 236/236 связей, 102/102 компетенции, 0 пробелов. `release:validate` — PASS.
-- Source review — AI-assisted (1 153 решения), нужен spot-check основателя. Манифест остаётся `draft`.
+- Публикуется **12 профессий** (UX/UI, Product, Motion, Graphic, 3D, Интерьеры, Веб, Презентации,
+  UX-исследования, Арт-дирекшн, Приложения, **AI-дизайнер**). AI-слой публикуется как ядро только в
+  AI-дизайнере (`publication.coreProfessionIds`, ADR-015); в остальных профессиях — `deferred-post-beta`.
+- Гейм-дизайнер `it.game` собран в модели (13-я профессия, 30 связей, 30/30 компетенций с активным
+  первичным источником), но в публикацию Beta 1 не входит до accepted-блоков и материалов.
+- В модели **122 компетенции**, в публикации **121**, связей «профессия–компетенция» — **263**.
+- Ресурсная база: **161 источник** (126 active, 40 найдены автоматически), **43 материала** в каталоге.
+- Content gate: 263/263 связей, 121/121 компетенция, 0 пробелов. `release:validate` — PASS.
+- Source review — AI-assisted (1 304 решения, из них 143 добавлены для AI-слоя), нужен spot-check
+  основателя. Манифест остаётся `draft`.
 
 ## Основной инструмент: агрегация по профессиям
 
@@ -108,8 +112,8 @@ SSRF-защита). Схема канваса считается детерми�
 - `src/methodology/v1/competency/model/competencies.json` — единый массив **122** компетенций.
 - `model/professions/views/<profession>.json` — разделы и приоритеты 12 profession view.
 - `model/learning-source-links.json` — связи «компетенция → источник», мержатся при `model:sync`.
-- `learning-sources/registry.json` — реестр источников; `catalog/it.json` — 117 блоков, 544 тега,
-  39 материалов.
+- `learning-sources/registry.json` — реестр источников; `catalog/it.json` — 125 блоков, 565 тегов,
+  43 материала.
 - Публичный контент — производный JSON (`apps/web/src/content/generated/beta-1.json`).
 
 Сборка модели и проверка:
@@ -130,6 +134,7 @@ npm run model:validate -- --domain it --profession product --all --require-block
   [`cleanup-2026-11-03.md`](docs/12-release/reports/cleanup-2026-11-03.md).
 - Стратегическая дорожная карта: [`COS-BP-005`](docs/08-business-plan/COS-BP-005-Product-Roadmap-AXIONA-COS.md).
 - Термины: [`docs/00-foundation/05-domain-glossary.md`](docs/00-foundation/05-domain-glossary.md).
+- Для новой сессии агрегации: [`agents/AGENTS-aggregation-session.md`](agents/AGENTS-aggregation-session.md) — промпт-контракт и порядок работы.
 
 ## Хостинг и статус
 

@@ -2,7 +2,7 @@
   "releaseVersion": "1.0.0",
   "releaseId": "beta-1",
   "title": "AXIONA Beta 1 — карта профессий дизайнера",
-  "status": "draft",
+  "status": "ready",
   "domain": "it",
   "professionIds": [
     "it.uxui",
@@ -15,15 +15,13 @@
     "it.presentation",
     "it.uxresearch",
     "it.artdir",
-    "it.appdesign"
-  ],
-  "excludedProfessionIds": [
+    "it.appdesign",
     "it.aidesigner"
   ],
-  "excludedCompetencyPrefixes": [
-    "ai-",
-    "aidesigner-"
+  "excludedProfessionIds": [
+    "it.game"
   ],
+  "excludedCompetencyPrefixes": [],
   "excludedCompetencies": [],
   "qualityBar": {
     "minKnowledge": 2,
@@ -38,11 +36,20 @@
   "publication": {
     "allowPartialProfessions": true,
     "showCoverage": true,
-    "language": "ru"
+    "language": "ru",
+    "coreCompetencyPrefixes": [
+      "ai-",
+      "aidesigner-"
+    ],
+    "coreProfessionIds": [
+      "it.aidesigner"
+    ]
   },
   "notes": [
     "Публикуются только компетенции, прошедшие quality bar; непрошедшие не показываются как пустые карточки.",
-    "AI-слой и AI-дизайнер исключены до post-Beta; причины — COS-REL-008 ADR-002.",
+    "Сквозной AI-слой и AI-дизайнер публикуются внутри профессии it.aidesigner (publication.coreCompetencyPrefixes / coreProfessionIds); в остальных профессиях AI-слой остаётся за рамками Beta до отдельного решения (ADR-015).",
+    "Spot-check 2026-11-03: техническая проверка AI-дизайнера проведена (docs/12-release/reports/spot-check-aidesigner-2026-11-03.md): 58 пар «компетенция–источник» исключены из публикации, источники и блоки AI-слоя выверены. Перед публичным запуском остаётся человеческое подтверждение основателя.",
+    "Гейм-дизайнер (it.game) собран в модели, но не входит в публикацию Beta 1 (excludedProfessionIds).",
     "Диагностика, кейсы, паспорт и платежи в Beta не входят — COS-REL-008 ADR-001.",
     "Источник истины контента — model/, catalog/ и learning-sources/; манифест задаёт только публичный набор."
   ]

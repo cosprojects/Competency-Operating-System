@@ -23,5 +23,6 @@
 - [`reports/beta-1-sources-expansion-2026-11-03.md`](reports/beta-1-sources-expansion-2026-11-03.md) — финальная сводка ресурсной базы по профессиям: авто-расширение Brave, покрытие, пробелы.
 - [`reports/cleanup-2026-11-03.md`](reports/cleanup-2026-11-03.md) — аудит документации и legacy-скриптов, что удалено/переименовано, что требует решения.
 - [`COS-REL-010-Daily-Materials-Automation.md`](COS-REL-010-Daily-Materials-Automation.md) — ежедневный добор материалов: алгоритм, корнер-кейсы, opt-in GitHub Actions.
+- [`reports/spot-check-aidesigner-expanded-2026-11-03.md`](reports/spot-check-aidesigner-expanded-2026-11-03.md) — spot-check AI-дизайнера после расширения до 56 компетенций.
 
 Текущий статус (2026-11-03): `release:validate` проходит (263/263 связей, 121/121 компетенция, 0 пробелов, 12 профессий, 112 источников в сборке); AI-дизайнер опубликован с полным AI-слоем (ADR-015), гейм-дизайнер собран в модели и не публикуется. Манифест остаётся `draft` до человеческого spot-check. Публичный запуск заблокирован до перевода в `ready`, РФ-хостинга и юридического sign-off.

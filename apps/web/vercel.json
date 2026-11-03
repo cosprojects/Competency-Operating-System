@@ -2,5 +2,5 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "nextjs",
   "installCommand": "npm install --include-workspace-root --no-audit --no-fund",
-  "buildCommand": "cd ../.. && npm run db:generate && npm run web:build:release"
+  "buildCommand": "cd ../.. && npm run db:generate && (if [ -n \"$DATABASE_URL\" ]; then npm run db:deploy; else echo 'DATABASE_URL не задан — миграция SourceReview пропущена'; fi) && npm run web:build:release"
 }

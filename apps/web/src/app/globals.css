@@ -2354,12 +2354,12 @@ html[data-consent="pending"] .canvas-toolbar {
   line-height: 17px;
 }
 
-/* Бейдж неподтверждённого материала в углу карточки (COS-REL-009).
+/* Кнопка подтверждения — в блоке бейджей карточки материала (COS-REL-009).
    Подсказка показывается по наведению и фокусу, без JS-библиотек. */
 .material-confirm {
   position: relative;
   flex: 0 0 auto;
-  margin-left: auto;
+  margin-left: 0;
   padding: 3px 9px;
   border: 1px solid rgba(79, 70, 229, 0.28);
   border-radius: 999px;

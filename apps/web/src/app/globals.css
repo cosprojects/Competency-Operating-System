@@ -1903,10 +1903,11 @@ html[data-consent="pending"] .canvas-toolbar {
   z-index: 30;
   max-width: none;
   padding: 8px 12px;
+  border: 1px solid var(--line-card);
   border-radius: var(--r-10);
-  background: var(--ink);
-  box-shadow: 0 8px 20px rgba(19, 34, 56, 0.18);
-  color: #fff;
+  background: var(--surface);
+  box-shadow: 0 8px 20px rgba(19, 34, 56, 0.12);
+  color: var(--ink);
   font-size: 12px;
   font-weight: 500;
   line-height: 16px;

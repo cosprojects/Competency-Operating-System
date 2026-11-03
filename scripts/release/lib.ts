@@ -104,6 +104,8 @@ export interface ReleaseInputs {
   sourceReviewFileFound: boolean;
   professionFiles: Map<string, ProfessionCompetencyFile>;
   views: Map<string, ProfessionView | null>;
+  /** Отдельный слой описаний профессий (включая UX/UI, у которого нет view-файла). */
+  professionDescriptions?: Map<string, string>;
   linksByCompetency: Map<string, LearningSourceLink>;
   /** Пользовательские блокировки из `reviews:export` (необязательно). */
   reviewExport?: ReviewExportFile;
@@ -273,6 +275,12 @@ export async function loadReleaseInputs(root: string, manifestPath: string): Pro
       await readOptionalJson<ProfessionView>(path.join(modelDir, "professions/views", `${slug}.json`)),
     );
   }
+  const professionDescriptions = new Map<string, string>();
+  const descriptionsFile = path.join(modelDir, "professions/descriptions.json");
+  const descriptionsPayload = await readOptionalJson<{ descriptions?: Record<string, string> }>(descriptionsFile);
+  for (const [professionId, description] of Object.entries(descriptionsPayload?.descriptions ?? {})) {
+    if (typeof description === "string" && description.trim()) professionDescriptions.set(professionId, description.trim());
+  }
 
   return {
     root,
@@ -286,6 +294,7 @@ export async function loadReleaseInputs(root: string, manifestPath: string): Pro
     sourceReviewFileFound: Boolean(await readOptionalJson(sourceReviewPath)),
     professionFiles,
     views,
+    professionDescriptions,
     linksByCompetency,
     ...(reviewExport ? { reviewExport } : {}),
   };
@@ -946,7 +955,10 @@ export function buildPublicContent(
       slug: profession.id.split(".").at(-1) ?? profession.id,
       title: view?.title ?? profession.title,
       ...(view?.titleEn ? { titleEn: view.titleEn } : {}),
-      description: `${view?.title ?? profession.title}: структура компетенций, знания, навыки и учебные материалы.`,
+      description:
+        inputs.professionDescriptions?.get(profession.id)?.trim() ??
+        view?.description?.trim() ??
+        `${view?.title ?? profession.title}: структура компетенций, знания, навыки и учебные материалы.`,
       coverage: {
         published,
         total,

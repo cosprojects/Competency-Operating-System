@@ -48,6 +48,7 @@ async function main(): Promise<void> {
   const write = argv.includes("--write");
   const fetchSources = argv.includes("--fetch");
   const noRelease = argv.includes("--no-release");
+  const noDescriptions = argv.includes("--no-descriptions");
 
   const viewsDir = path.join(root, "src/methodology/v1/competency/model/professions/views");
   const views = fs.readdirSync(viewsDir).filter((file) => file.endsWith(".json")).map((file) => file.replace(/\.json$/, ""));
@@ -89,12 +90,15 @@ async function main(): Promise<void> {
   }
 
   if (!write) {
-    console.log("\nplan: sources:repair → model:sync → reviews:decide → learning:map/aggregate → release:validate/build:draft");
+    console.log("\nplan: sources:repair → model:sync → descriptions:agent → reviews:decide → learning:map/aggregate → release:validate/build:draft");
     return;
   }
 
   run("npm", ["run", "sources:repair", "--", "--write"]);
   run("npm", ["run", "model:sync", "--", "--domain", domain, "--profession", "uxui", "--write"]);
+  if (!noDescriptions) {
+    run("npm", ["run", "descriptions:agent", "--", "--profession", scope === "all" ? "all" : professions.join(","), "--write", "--budget-usd", "0.5"]);
+  }
   run("npm", ["run", "reviews:decide", "--", "--release", release, "--write"]);
   run("npm", ["run", "learning:map"]);
   run("npm", ["run", "learning:aggregate"]);
@@ -120,6 +124,7 @@ async function main(): Promise<void> {
     links: links.links.reduce((sum: number, link: { sourceIds: string[] }) => sum + link.sourceIds.length, 0),
     release,
     releaseBuilt: !noRelease,
+    descriptions: !noDescriptions,
   };
   const outDir = path.join(root, "data/aggregation");
   fs.mkdirSync(outDir, { recursive: true });

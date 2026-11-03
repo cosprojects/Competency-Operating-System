@@ -67,7 +67,12 @@ npm run aggregate -- --profession <slug> --fetch --write  # заново схо�
    После прогона проверь `data/aggregation/aggregate-*.json`, `data/learning-sources/open-sources-by-profession-*.json`
    и `docs/12-release/reports/` — что добавилось, что осталось без открытого источника.
 
-4. **Материалы в каталог (если нужны карточки, а не только источники).**
+4. **Описания.** Агрегатор вызывает `descriptions:agent` после `model:sync`: он собирает описания
+   профессии, компетенций, знаний и навыков из контекста и источников. Отдельно:
+   `npm run descriptions:agent -- --profession <slug> --write`, проверка — `npm run descriptions:validate`.
+   Без валидных описаний профессия/компетенция не считается готовой.
+
+5. **Материалы в каталог (если нужны карточки, а не только источники).**
    Лимит 2–5 на формат (course/video/article/reference/case); меньше — допустимо, если после нескольких раундов
    не нашлось. Используй только официальные API и текущий контур:
    ```bash

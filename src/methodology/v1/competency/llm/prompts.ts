@@ -304,3 +304,70 @@ export function buildReconcilePrompt(params: {
   ].join("\n");
   return finish(`${PROMPT_VERSION}-reconcile`, RECONCILE_SYSTEM, user);
 }
+
+export const DESCRIPTION_PROMPT_VERSION = "descriptions-v1";
+
+const DESCRIPTION_SYSTEM = [
+  "<system_instructions>",
+  "Ты — редактор профессиональных описаний AXIONA COS. Ты пишешь короткие точные описания для карточек профессий, компетенций, знаний и навыков.",
+  "",
+  "ПРАВИЛА:",
+  "1. Используй только факты из переданного контекста: названия, определения, компоненты, источники. Не придумывай инструменты, стандарты, цифры, цитаты и факты.",
+  "2. Пиши по-русски, одна строка, 1–2 предложения, без markdown и без списков.",
+  "3. Для профессии: опиши фокус специалиста и его вклад в продукт, а не «структуру компетенций».",
+  "4. Для компетенции: что специалист способен понимать/делать, в каком контексте и с каким результатом.",
+  "5. Для знания: объясни суть понятия/принципа и зачем оно нужно в работе. Не начинай с «Понимание:» и не повторяй название.",
+  "6. Для навыка: действие + объект + критерий качества. Не начинай с «Умение:» и не повторяй название.",
+  "7. Не перечисляй стек инструментов; инструменты упоминай только если без них теряется смысл.",
+  "8. Не начинай описание с названия сущности и не повторяй его. Соблюдай длину: профессия 90–300 символов, компетенция 80–350, знание/навык 60–220.",
+  "9. Верни только валидный JSON без markdown.",
+  "",
+  "СХЕМА: {professionDescription?} или {competencyDefinition?, tags:[{id,definition}]}",
+  "</system_instructions>",
+].join("\n");
+
+export function buildProfessionDescriptionPrompt(params: {
+  profession: { id: string; title: string; titleEn?: string };
+  currentDescription?: string;
+  sections: Array<{ title: string; definition: string; competencies: Array<{ title: string; definition: string }> }>;
+  sourceTitles: string[];
+}): BuiltPrompt {
+  const payload = {
+    task: "profession_description",
+    profession: params.profession,
+    currentDescription: params.currentDescription ?? "",
+    sections: params.sections,
+    sourceTitles: params.sourceTitles.slice(0, 12),
+  };
+  return finish(
+    DESCRIPTION_PROMPT_VERSION,
+    DESCRIPTION_SYSTEM,
+    ["<context>", JSON.stringify(payload, null, 2), "</context>", "", "Напиши описание профессии по схеме. Верни только JSON."].join("\n"),
+  );
+}
+
+export function buildCompetencyDescriptionPrompt(params: {
+  profession: { id: string; title: string };
+  competency: { id: string; title: string; titleEn?: string; definition: string };
+  blocks: Array<{
+    title: string;
+    definition: string;
+    components: Array<{ title: string; definition: string }>;
+  }>;
+  tags: Array<{ id: string; title: string; kind: "knowledge" | "skill"; definition: string; blockTitle: string }>;
+  sourceTitles: string[];
+}): BuiltPrompt {
+  const payload = {
+    task: "competency_and_tags",
+    profession: params.profession,
+    competency: params.competency,
+    blocks: params.blocks,
+    tags: params.tags,
+    sourceTitles: params.sourceTitles.slice(0, 12),
+  };
+  return finish(
+    DESCRIPTION_PROMPT_VERSION,
+    DESCRIPTION_SYSTEM,
+    ["<context>", JSON.stringify(payload, null, 2), "</context>", "", "Напиши определение компетенции и описания знаний/навыков по схеме. Верни только JSON."].join("\n"),
+  );
+}

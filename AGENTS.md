@@ -107,6 +107,7 @@ AI-native платформа компетенций: карта професси
 `docs/09-research/COS-RES-028-Open-Materials-Discovery-and-Relevance.md`.
 Legacy-канвасы `web/*.html` и `web:canvases` удалены: контент и модель собираются через `release:build`.
 Полный промпт-контракт для новой сессии: `agents/AGENTS-aggregation-session.md`.
+Контракт субагента описаний: `agents/AGENTS-description-writer.md`.
 
 ## Проверка перед «готово»
 

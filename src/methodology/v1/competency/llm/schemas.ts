@@ -105,3 +105,19 @@ export const reconcileResponseSchema = z.object({
 });
 
 export type ReconcileResponse = z.infer<typeof reconcileResponseSchema>;
+
+/** Ответ субагента описаний: профессия, компетенция и знания/навыки. */
+export const descriptionResponseSchema = z.object({
+  professionDescription: z.string().min(20).max(600).optional(),
+  competencyDefinition: z.string().min(20).max(600).optional(),
+  tags: z
+    .array(
+      z.object({
+        id: z.string().min(1),
+        definition: z.string().min(20).max(500),
+      }),
+    )
+    .default([]),
+});
+
+export type DescriptionResponse = z.infer<typeof descriptionResponseSchema>;

@@ -55,7 +55,9 @@
     "sources:access": "node --experimental-strip-types src/methodology/v1/learning-sources/cli/access.ts",
     "sources:repair": "node --experimental-strip-types src/methodology/v1/learning-sources/cli/repair.ts",
     "aggregate": "node --experimental-strip-types scripts/aggregate/index.ts",
-    "materials:daily": "node --experimental-strip-types src/methodology/v1/materials-agent/cli/daily.ts"
+    "materials:daily": "node --experimental-strip-types src/methodology/v1/materials-agent/cli/daily.ts",
+    "descriptions:agent": "node --experimental-strip-types src/methodology/v1/competency/cli/descriptions-agent.ts",
+    "descriptions:validate": "node --experimental-strip-types src/methodology/v1/competency/cli/descriptions-validate.ts"
   },
   "dependencies": {
     "@prisma/client": "^6.4.0",

@@ -20,6 +20,8 @@ export interface ProfessionView {
   sphereId: string;
   title: string;
   titleEn?: string;
+  /** Осмысленное описание фокуса профессии для карточки и поиска. */
+  description?: string;
   sections: ProfessionViewSection[];
 }
 
@@ -52,6 +54,11 @@ export function validateProfessionView(view: ProfessionView, competencies: Globa
   const errors: string[] = [];
   if (view.viewVersion !== "1.0.0") errors.push(`view ${view.professionId}: неверная viewVersion`);
   if (!view.professionId || !view.sphereId || !view.title) errors.push(`view: нет professionId/sphereId/title`);
+  if (view.description !== undefined) {
+    if (typeof view.description !== "string" || view.description.trim().length < 40 || view.description.trim().length > 600) {
+      errors.push(`view ${view.professionId}: description должен быть строкой 40–600 символов`);
+    }
+  }
   const existing = new Set(competencies.map((item) => item.id));
   const orders = new Set<number>();
   const seen = new Set<string>();

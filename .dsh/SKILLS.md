@@ -72,6 +72,8 @@
 | `npm run sources:repair` | `node --experimental-strip-types src/methodology/v1/learning-sources/cli/repair.ts` |
 | `npm run aggregate` | `node --experimental-strip-types scripts/aggregate/index.ts` |
 | `npm run materials:daily` | `node --experimental-strip-types src/methodology/v1/materials-agent/cli/daily.ts` |
+| `npm run descriptions:agent` | `node --experimental-strip-types src/methodology/v1/competency/cli/descriptions-agent.ts` |
+| `npm run descriptions:validate` | `node --experimental-strip-types src/methodology/v1/competency/cli/descriptions-validate.ts` |
 
 ## Как пользоваться
 

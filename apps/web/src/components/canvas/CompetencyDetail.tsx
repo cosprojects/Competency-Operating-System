@@ -28,15 +28,17 @@ function DetailBlock({
   title,
   count,
   hint,
+  surface = "plain",
   children,
 }: {
   title: string;
   count: number;
   hint: string;
+  surface?: "plain" | "sunken";
   children: React.ReactNode;
 }) {
   return (
-    <section className="detail-block">
+    <section className={`detail-block${surface === "sunken" ? " is-sunken" : ""}`}>
       <div className="detail-block-head">
         <h3>{title}</h3>
         <span className="num-badge">{count}</span>
@@ -79,12 +81,9 @@ export function CompetencyDetail({
 }) {
   const returnTo = `/professions/${profession.slug}?competency=${competency.id}`;
   const loginHref = `/login?returnTo=${encodeURIComponent(returnTo)}`;
+  // Как в макете: профессия + две темы компетенции (без названия раздела).
   const shorten = (value: string) => (value.length > 24 ? `${value.slice(0, 23).trimEnd()}…` : value);
-  const tags = [
-    profession.title,
-    shorten(competency.sectionTitle),
-    ...competency.knowledge.slice(0, 2).map((item) => shorten(item.title)),
-  ];
+  const tags = [profession.title, ...competency.knowledge.slice(0, 2).map((item) => shorten(item.title))];
   const materialGroups = groupSources(competency.sources);
 
   return (
@@ -170,6 +169,7 @@ export function CompetencyDetail({
       <DetailBlock
         title="Материалы"
         count={competency.sources.length}
+        surface="sunken"
         hint="Курсы, статьи и другие источники. Ссылки открываются после входа; это позволяет сохранять материалы и возвращаться к ним."
       >
         {competency.sources.length === 0 ? (

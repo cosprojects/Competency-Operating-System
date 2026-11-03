@@ -35,20 +35,24 @@ export function CanvasToolbar({
           type="button"
           onClick={() => onViewChange("board")}
           aria-pressed={view === "board"}
-          title="Лентами по разделам"
         >
           <IconViewBoard />
-          <span className="sr-only">Лентами по разделам</span>
+          <span className="sr-only">Ленты по разделам</span>
+          <span className="view-switch-tooltip" aria-hidden="true">
+            Ленты по разделам: компетенции идут по темам
+          </span>
         </button>
         <button
           className={`view-switch-button${view === "network" ? " is-active" : ""}`}
           type="button"
           onClick={() => onViewChange("network")}
           aria-pressed={view === "network"}
-          title="Сетью связей"
         >
           <IconViewNetwork />
-          <span className="sr-only">Сетью связей</span>
+          <span className="sr-only">Сеть связей</span>
+          <span className="view-switch-tooltip" aria-hidden="true">
+            Сеть связей: видно, что изучать до и после
+          </span>
         </button>
       </div>
     </div>

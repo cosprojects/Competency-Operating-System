@@ -6,6 +6,7 @@ import { ViewEvent } from "@/components/ViewEvent";
 import { getCurrentUser } from "@/lib/auth";
 import { findCompetencies, getProfession } from "@/lib/content";
 import { getDb } from "@/lib/db";
+import { loadProfessionSourceReviews } from "@/lib/source-review-server";
 
 export const dynamic = "force-dynamic";
 
@@ -35,14 +36,17 @@ export default async function ProfessionCanvasPage({
   if (!profession) notFound();
 
   const user = await getCurrentUser();
+  const db = getDb();
   const competencyIds = profession.sections.flatMap((section) =>
     section.competencies.map((competency) => competency.id),
   );
+  // Подтверждения и блокировки материалов (COS-REL-009): статусы считаются на сервере,
+  // заблокированные карточки не доходят до клиента.
+  const reviewIndex = await loadProfessionSourceReviews(db, profession, user?.id ?? null);
 
   const states: CompetencyStates = {};
   let professionSaved = false;
   if (user) {
-    const db = getDb();
     const [favorites, studyStatuses] = await Promise.all([
       db.favorite.findMany({ where: { userId: user.id } }),
       db.studyStatus.findMany({ where: { userId: user.id } }),
@@ -75,7 +79,12 @@ export default async function ProfessionCanvasPage({
       prerequisites: competency.prerequisites,
       knowledge: competency.knowledge,
       skills: competency.skills,
-      sources: competency.sources,
+      sources: competency.sources
+        .filter((source) => !reviewIndex.hidden.has(`${competency.id}|${source.id}`))
+        .map((source) => {
+          const review = reviewIndex.byPair.get(`${competency.id}|${source.id}`);
+          return review ? { ...source, reviewStatus: review.status } : source;
+        }),
       occurrences: findCompetencies(competency.id).map((occurrence) => ({
         professionSlug: occurrence.profession.slug,
         professionTitle: occurrence.profession.title,

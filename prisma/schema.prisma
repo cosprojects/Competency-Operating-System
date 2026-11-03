@@ -38,6 +38,19 @@ enum FeedbackStatus {
   RESOLVED
 }
 
+enum SourceReviewAction {
+  CONFIRM
+  BLOCK
+}
+
+enum SourceReviewReason {
+  OFF_TOPIC
+  UNRELIABLE
+  BROKEN
+  LOCKED
+  OTHER
+}
+
 enum ConsentKind {
   TERMS
   PRIVACY
@@ -56,6 +69,7 @@ model User {
   favorites Favorite[]
   statuses  StudyStatus[]
   feedback  Feedback[]
+  sourceReviews SourceReview[]
   consents  ConsentRecord[]
   events    AnalyticsEvent[]
 
@@ -131,6 +145,28 @@ model Feedback {
   @@index([status, createdAt])
   @@index([type, createdAt])
   @@index([targetType, targetId])
+}
+
+model SourceReview {
+  id           String              @id @default(cuid())
+  sourceId     String
+  competencyId String
+  /** competency — голос за материал в контексте компетенции; source — сигнал на источник целиком. */
+  scope        String              @default("competency")
+  action       SourceReviewAction
+  reason       SourceReviewReason?
+  comment      String?
+  userId       String
+  user         User                @relation(fields: [userId], references: [id], onDelete: Cascade)
+  /** u:<userId> — один голос на пару «ресурс × компетенция». */
+  actorKey     String
+  pagePath     String
+  createdAt    DateTime            @default(now())
+  updatedAt    DateTime            @updatedAt
+
+  @@unique([sourceId, competencyId, actorKey])
+  @@index([sourceId, competencyId, action])
+  @@index([createdAt])
 }
 
 model AnalyticsEvent {

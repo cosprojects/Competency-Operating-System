@@ -193,6 +193,30 @@ Includes:
 
 ---
 
+## Learning Material Confirmation
+
+A community action that confirms a learning resource is on-topic and accessible, or blocks it as irrelevant or unreliable.
+
+Confirmations and blocks are stored in `SourceReview` and exported to the content pipeline, so community decisions survive rebuilds.
+
+---
+
+## Material Review (Pass E)
+
+An LLM pass that ranks a discovered learning material and returns a verdict `accept | confirm | reject` with confidence, usefulness, reason and `whyUseful`.
+
+The review may accept a material; structural decisions about competencies, levels and priorities remain human-owned.
+
+---
+
+## Coverage Target
+
+The target number of learning materials per competency and format: minimum 2, target 3 (foundation — 5), maximum 5.
+
+A gap is recorded as `insufficient` only after the search-round limit is exhausted, not silently.
+
+---
+
 # 🇷🇺 Русский
 
 ## Развитие (Development)
@@ -362,6 +386,30 @@ Learning Object поддерживает развитие, но не опред�
 Related Documents
 
 COS-DDD-004 Ubiquitous Language
+
+---
+
+## Подтверждение материала (Material Confirmation)
+
+Действие сообщества: подтвердить, что учебный ресурс по теме и доступен, или заблокировать его как нерелевантный или недостоверный.
+
+Голоса хранятся в `SourceReview` и выгружаются в пайплайн, чтобы решения переживали пересборку контента.
+
+---
+
+## Ревью материала (Material Review, Pass E)
+
+LLM-пасс, который ранжирует найденный материал и возвращает вердикт `accept | confirm | reject` с уверенностью, полезностью, причиной и `whyUseful`.
+
+Пасс может принять материал; структурные решения о компетенциях, уровнях и приоритетах остаются за человеком.
+
+---
+
+## Целевое покрытие формата (Coverage Target)
+
+Целевое число учебных материалов на компетенцию и формат: минимум 2, цель 3 (foundation — 5), максимум 5.
+
+Пробел фиксируется как `insufficient` только после исчерпания лимита раундов поиска, а не молча.
 
 ---
 

@@ -7,6 +7,8 @@
   "scripts": {
     "typecheck": "tsc --noEmit",
     "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "agents:check": "sh scripts/check-agent-assets.sh",
+    "figma:compare": "node scripts/web/figma-compare.mjs",
     "parse:candidates": "node --experimental-strip-types src/methodology/v1/candidate-parser/cli.ts",
     "profile:build": "node --experimental-strip-types src/methodology/v1/profile/cli.ts",
     "program:extract": "node --experimental-strip-types src/methodology/v1/profile/practicum-cli.ts",

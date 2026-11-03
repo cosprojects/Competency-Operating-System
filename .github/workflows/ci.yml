@@ -17,6 +17,7 @@ jobs:
       - run: npm install --no-audit --no-fund
       - run: npm run db:generate
       - run: npm run typecheck
+      - run: npm run agents:check
       - run: npm test
       - run: npm run release:report
       - run: npm run web:typecheck

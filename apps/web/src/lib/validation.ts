@@ -64,12 +64,34 @@ export const feedbackSchema = z
     path: ["comment"],
   });
 
+export const sourceReviewSchema = z
+  .object({
+    sourceId: z.string().trim().min(1).max(200),
+    competencyId: z.string().trim().min(1).max(200),
+    action: z.enum(["CONFIRM", "BLOCK"]),
+    reason: z.enum(["OFF_TOPIC", "UNRELIABLE", "BROKEN", "LOCKED", "OTHER"]).optional(),
+    comment: z
+      .string()
+      .trim()
+      .max(500, "Комментарий слишком длинный")
+      .optional()
+      .transform((value) => (value ? value : undefined)),
+    pagePath: z.string().trim().max(500).default("/"),
+    website: z.string().max(0, "Спам").optional(),
+  })
+  .refine((value) => value.action !== "BLOCK" || Boolean(value.reason), {
+    message: "Выбери, что не так с материалом",
+    path: ["reason"],
+  });
+
 export const EVENT_NAMES = [
   "page_view",
   "profession_view",
   "competency_view",
   "source_click",
   "source_gate_view",
+  "source_review_open",
+  "source_review_submit",
   "signup_start",
   "signup_complete",
   "favorite_add",
@@ -100,6 +122,8 @@ const EVENT_PROP_KEYS = new Set([
   "feedback_type",
   "has_rating",
   "has_comment",
+  "action",
+  "reason",
   "days_since_signup",
 ]);
 

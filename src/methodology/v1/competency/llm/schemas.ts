@@ -68,6 +68,31 @@ export const materialResponseSchema = z.object({
 
 export type MaterialResponse = z.infer<typeof materialResponseSchema>;
 
+export const materialReviewFlagSchema = z.enum([
+  "generic",
+  "no_practice",
+  "marketing",
+  "paywall",
+  "outdated",
+  "no_snippet",
+  "wrong_language",
+  "duplicate",
+  "off_topic",
+  "invalid_response",
+  "budget",
+]);
+
+export const materialReviewSchema = z.object({
+  verdict: z.enum(["accept", "confirm", "reject"]),
+  confidence: z.number().min(0).max(1),
+  usefulness: z.number().min(0).max(1),
+  whyUseful: z.string().min(3).max(300),
+  reason: z.string().min(3).max(800),
+  flags: z.array(materialReviewFlagSchema).max(12).default([]),
+});
+
+export type MaterialReviewResponse = z.infer<typeof materialReviewSchema>;
+
 export const reconcileGroupSchema = z.object({
   title: z.string().min(2).max(200),
   titleEn: z.string().min(2).max(200).optional(),

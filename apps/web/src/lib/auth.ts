@@ -36,10 +36,16 @@ export async function getCurrentUser() {
   const raw = store.get(SESSION_COOKIE)?.value;
   if (!raw) return null;
   const db = getDb();
-  const session = await db.session.findUnique({
-    where: { tokenHash: hashToken(raw) },
-    include: { user: true },
-  });
+  let session;
+  try {
+    session = await db.session.findUnique({
+      where: { tokenHash: hashToken(raw) },
+      include: { user: true },
+    });
+  } catch {
+    // Demo/preview без БД: анонимный просмотр остаётся доступным.
+    return null;
+  }
   if (!session) return null;
   if (session.expiresAt.getTime() <= Date.now()) return null;
   if (session.user.deletedAt) return null;

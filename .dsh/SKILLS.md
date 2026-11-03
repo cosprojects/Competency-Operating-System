@@ -10,6 +10,7 @@
 | `/ba-analyze` | Проанализировать проект или его часть как бизнес-аналитик — карта домена, сценарии, пробелы в требованиях, риски и вопросы; отчёт пишется в существующую структуру docs/ проекта. | Разбери docs/05-business-architecture и напиши, каких требований не хватает |
 | `/ba-docs-review` | Аудит документации проекта — полнота, противоречия, устаревшие ссылки, дубли, термины вне глоссария, несоответствие коду; отчёт с приоритетами и безопасные правки. | Проверь docs/ перед релизом: противоречия, устаревшие ссылки, термины |
 | `/ba-spec` | Написать спеку фичи как бизнес-аналитик — user stories, критерии приёмки Given/When/Then, функциональные и нефункциональные требования, edge cases, out of scope; файл пишется в docs/ проекта по его конвенциям. | Напиши спеку на онбординг новичка в продукт |
+| `/figma-context` | Основной пайплайн Figma → код: снимок дизайна в файлы репозитория через REST API по PAT, реализация и сверка по локальным файлам вместо живых вызовов официального MCP с его дневной квотой. | Сними контекст экрана онбординга из Figma в docs/design/figma и опиши структуру |
 | `/ux-copy` | Написать или переписать интерфейсный текст — подписи, кнопки, ошибки, пустые состояния, онбординг, прогресс, подтверждения — по голосу продукта, с тремя вариантами и обоснованием выбора. | Перепиши текст ошибки для экрана сохранения профиля |
 | `/ux-copy-review` | Отредактировать и оценить готовые тексты по рубрике — вердикт, 8 критериев, правки «до → после», без похвалы и без переписывания смысла. | Отревью 10 строк из FeedbackForm перед релизом |
 | `/ux-strings` | Инвентаризация пользовательских строк проекта — где живут, длины, дубли, расхождения терминов и нарушения анти-слоп; отчёт с приоритетами и планом правок. | Собери инвентаризацию строк в apps/web и покажи топ проблем |
@@ -21,6 +22,8 @@
 |---|---|
 | `npm run typecheck` | `tsc --noEmit` |
 | `npm run test` | `node --experimental-strip-types --test tests/*.test.ts` |
+| `npm run agents:check` | `sh scripts/check-agent-assets.sh` |
+| `npm run figma:compare` | `node scripts/web/figma-compare.mjs` |
 | `npm run parse:candidates` | `node --experimental-strip-types src/methodology/v1/candidate-parser/cli.ts` |
 | `npm run profile:build` | `node --experimental-strip-types src/methodology/v1/profile/cli.ts` |
 | `npm run program:extract` | `node --experimental-strip-types src/methodology/v1/profile/practicum-cli.ts` |
@@ -91,6 +94,10 @@
 | `npm run db:local:generate` | `prisma generate --schema prisma/schema.local.prisma` |
 | `npm run db:local` | `npm run db:local:prepare && npm run db:local:push && npm run db:local:generate` |
 | `npm run web:canvases` | `node --experimental-strip-types scripts/web/copy-canvases.ts` |
+| `npm run mapping:draft` | `node --experimental-strip-types src/methodology/v1/competency/cli/mapping-draft.ts` |
+| `npm run blocks:from-mapping` | `node --experimental-strip-types src/methodology/v1/competency/cli/blocks-from-mapping.ts` |
+| `npm run learning:aggregate` | `node --experimental-strip-types src/methodology/v1/learning-sources/cli/aggregate.ts` |
+| `npm run materials:accept` | `node --experimental-strip-types src/methodology/v1/materials-agent/cli/accept.ts` |
 
 ## Как пользоваться
 

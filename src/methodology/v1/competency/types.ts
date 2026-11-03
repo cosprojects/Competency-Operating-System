@@ -141,6 +141,8 @@ export interface Material {
   status: CandidateStatus;
   issues: string[];
   noMaterialState?: "no_material" | "source_unavailable" | "blocked";
+  /** Вердикт Pass E; появляется после `materials:verify`. */
+  review?: MaterialReview;
 }
 
 export interface MaterialLink {
@@ -150,6 +152,35 @@ export interface MaterialLink {
   relevance: number;
   reason: string;
   modelProposal: boolean;
+}
+
+export type MaterialReviewVerdict = "accept" | "confirm" | "reject";
+
+export type MaterialReviewFlag =
+  | "generic"
+  | "no_practice"
+  | "marketing"
+  | "paywall"
+  | "outdated"
+  | "no_snippet"
+  | "wrong_language"
+  | "duplicate"
+  | "off_topic"
+  | "invalid_response"
+  | "budget";
+
+/** Вердикт методолога-LLM (Pass E, COS-REL-009). */
+export interface MaterialReview {
+  verdict: MaterialReviewVerdict;
+  confidence: number;
+  usefulness: number;
+  whyUseful: string;
+  reason: string;
+  flags: MaterialReviewFlag[];
+  reviewedAt: string;
+  reviewer: "methodologist-v1";
+  /** Итог приёмки в каталог: accepted без бейджа / needs_confirmation с бейджем / rejected. */
+  status?: "accepted" | "needs_confirmation" | "rejected";
 }
 
 export interface LlmMeta {

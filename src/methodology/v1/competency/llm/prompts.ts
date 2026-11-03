@@ -53,6 +53,26 @@ const MATERIAL_SYSTEM = [
   "</system_instructions>",
 ].join("\n");
 
+export const MATERIAL_REVIEW_PROMPT_VERSION = "material-review-v1";
+
+const MATERIAL_REVIEW_SYSTEM = [
+  "<system_instructions>",
+  "Ты — методолог каталога компетенций AXIONA. Ты решаешь, стоит ли принимать найденный материал (курс, видео, статью) для освоения компетенции.",
+  "",
+  "ПРАВИЛА:",
+  "1. Суди только по переданным метаданным и короткому snippet. Не выдумывай содержание, цитаты, автора, цену и лицензию.",
+  "2. Оценивай пригодность для освоения компетенции: точность темы, практическую ценность, актуальность, формат. Не оценивай «научность» и уровень владения.",
+  "3. Агрегаторы, лендинги «купи курс», вакансии и карьерные страницы — reject с причиной.",
+  "4. Сомнительное — confirm, а не accept: лучше бейдж «Подтвердить», чем тихая ошибка.",
+  "5. Если snippet пустой или не относится к теме — confirm/reject, не accept.",
+  "6. whyUseful — одно короткое предложение для карточки, без маркетинга.",
+  "7. Не меняй и не придумывай URL, доступ, цену, язык. Верни только валидный JSON без markdown.",
+  "",
+  "СХЕМА: {verdict:accept|confirm|reject, confidence:0..1, usefulness:0..1, whyUseful, reason, flags:[]}",
+  "flags: generic, no_practice, marketing, paywall, outdated, no_snippet, wrong_language, duplicate, off_topic.",
+  "</system_instructions>",
+].join("\n");
+
 export interface BuiltPrompt {
   system: string;
   user: string;
@@ -160,6 +180,46 @@ export function buildMaterialPrompt(params: {
     "Сопоставь материалы с компетенцией/компонентами/тегами по схеме. Верни только JSON.",
   ].join("\n");
   return finish(PROMPT_VERSION, MATERIAL_SYSTEM, user);
+}
+
+export function buildMaterialReviewPrompt(params: {
+  competency: { id: string; title: string; definition: string };
+  components: CompetencyComponent[];
+  tags: TagRecord[];
+  material: Material;
+  format: string;
+  acceptedInFormat: number;
+  target: number;
+}): BuiltPrompt {
+  const payload = {
+    competency: params.competency,
+    components: params.components.map((component) => ({
+      id: component.id,
+      title: component.title,
+      definition: component.definition,
+    })),
+    tags: params.tags.map((tag) => ({ id: tag.id, title: tag.title, kind: tag.kind })),
+    material: {
+      title: params.material.title,
+      kind: params.material.kind,
+      provider: params.material.provider,
+      language: params.material.language,
+      access: params.material.access,
+      description: params.material.description,
+      snippet: params.material.snippet ?? "",
+      publishedAt: params.material.publishedAt ?? "",
+    },
+    format: params.format,
+    coverage: { accepted: params.acceptedInFormat, target: params.target },
+  };
+  const user = [
+    "<source_evidence>",
+    JSON.stringify(payload, null, 2),
+    "</source_evidence>",
+    "",
+    "Вынеси вердикт по материалу и верни только JSON.",
+  ].join("\n");
+  return finish(MATERIAL_REVIEW_PROMPT_VERSION, MATERIAL_REVIEW_SYSTEM, user);
 }
 
 const RECONCILE_SYSTEM = [

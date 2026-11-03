@@ -14,6 +14,7 @@ AI-native платформа компетенций: карта професси
 |---|---|
 | `/ba-analyze`, `/ba-spec`, `/ba-docs-review` | бизнес-аналитик: анализ, спеки, аудит документации |
 | `/ux-copy`, `/ux-copy-review`, `/ux-voice`, `/ux-strings` | UX-писатель: тексты, ревью, голос, инвентаризация строк |
+| `/figma-context` | дизайн: снимок Figma в файлы репозитория и реализация по нему |
 
 - Полная шпаргалка проекта (навыки + npm-скрипты): `.dsh/SKILLS.md`.
 - Реестр всех ролей и навыков: `~/Documents/dsh-skills/INDEX.md`.
@@ -23,6 +24,40 @@ AI-native платформа компетенций: карта професси
 
 `docs/06-communication/COS-COM-010-Voice-and-Tone.md` — обращение на «ты», дружеский наставник-навигатор,
 мотивация через аргументацию без давления. При расхождении с `COS-COM-008/009` (там «вы») действует COS-COM-010.
+
+## Figma → код (основной пайплайн)
+
+Любой запрос «сверстай / актуализируй элемент по макету» начинается со **снимка дизайна в репозиторий**, а не с живых вызовов MCP.
+
+```sh
+~/Documents/dsh-skills/tools/figma.sh \
+  "https://www.figma.com/design/<fileKey>/<name>?node-id=1-2" \
+  --out docs/design/figma
+```
+
+1. Снимок требует Figma PAT в macOS Keychain. Если токена нет — попроси пользователя выполнить
+   `~/Documents/dsh-skills/tools/figma-pat-set.sh`; не подменяй снимок вызовами MCP.
+2. Работай по файлам: `docs/design/figma/<fileKey>/CONTEXT.md`, `nodes/*.json`, `images/*`.
+3. Меняй только затрагиваемый элемент; сверяй токены с `apps/web/src/app/globals.css`
+   (`--ink`, `--muted`, `--soft`, `--accent`, `--accent-sky`, `--line-soft`, `--r-12/16/24`) и с существующими компонентами.
+4. Проверяй: `npm run typecheck`, затем визуальную сверку с макетом (Chrome с `--remote-debugging-port=9222`, dev-сервер на 3100):
+
+   ```sh
+   npm run figma:compare -- \
+     --url http://127.0.0.1:3100/professions/uxui \
+     --selector ".profession-summary" \
+     --design docs/design/figma/<fileKey>/images/<node>.png \
+     --out scripts/web/figma-parity/compare/<slug>
+   ```
+
+   Скрипт печатает `diffPercent` и `meanDelta` и кладёт `web.png`, `design.png`, `diff.png`, `side-by-side.png`, `report.json`.
+   `side-by-side.png` показывай в ответе — это и есть доказательство «до/после».
+5. Снапшот переиспользуй: при неизменном `lastModified` повторный снимок не нужен, `--force` — только при сомнении.
+6. `CONTEXT.md` и `nodes/*.json` можно коммитить; изображения — в `.gitignore`.
+
+Официальный Figma MCP — только fallback: Code Connect (`get_code_connect_map`), скриншот активного выделения,
+точечные `get_metadata`/`get_design_context` при доступной квоте. При `Rate limit exceeded` MCP не использовать:
+пайплайн снимка идёт через REST API и квоту MCP не тратит.
 
 ## Документация
 

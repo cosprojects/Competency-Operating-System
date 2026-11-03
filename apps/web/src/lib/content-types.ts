@@ -15,6 +15,14 @@ export interface ContentSource {
   url: string;
   lastChecked: string;
   rationale?: string;
+  /** Оценка методолога-LLM (0..1) — из пайплайна; до неё null. */
+  confidence?: number;
+  /** Релевантность материала компетенции (0..1). */
+  relevance?: number;
+  /** Короткое «почему полезно» из Pass E. */
+  whyUseful?: string;
+  /** Базовый статус подтверждения из пайплайна; комментарий — COS-REL-009. */
+  reviewStatus?: "auto_accepted" | "needs_confirmation" | "confirmed" | "disputed" | "blocked";
 }
 
 export interface ContentCompetency {

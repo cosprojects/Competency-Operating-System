@@ -1568,7 +1568,181 @@
         "breakdown"
       ],
       "excludeHints": [],
-      "maxTags": 8
+      "maxTags": 8,
+      "extraTags": [
+        {
+          "title": "Ракурсы и кадры",
+          "definition": "Выбор ракурсов для презентации 3D-работы.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Breakdown проекта",
+          "definition": "Показ этапов и технических решений.",
+          "kind": "skill"
+        },
+        {
+          "title": "Портфолио 3D",
+          "definition": "Структура портфолио 3D-дизайнера.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Защита проекта",
+          "definition": "Презентация и объяснение решений.",
+          "kind": "skill"
+        }
+      ]
+    },
+    {
+      "id": "3d-modeling-practice",
+      "canonicalId": "3d-modeling",
+      "title": "3D-моделирование: практика",
+      "titleEn": "3D modeling practice",
+      "aliases": [
+        "3D modeling practice"
+      ],
+      "definition": "Практическое моделирование объектов: топология, масштаб, подготовка ассетов.",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Топология 3D-модели",
+          "definition": "Чистая топология и подготовка сетки к анимации.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Масштаб и пропорции",
+          "definition": "Соблюдение масштаба и пропорций объекта.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Моделирование пропсов",
+          "definition": "Практика моделирования предметов и окружения.",
+          "kind": "skill"
+        },
+        {
+          "title": "Экспорт 3D-ассетов",
+          "definition": "Подготовка и экспорт модели в пайплайн.",
+          "kind": "skill"
+        }
+      ]
+    },
+    {
+      "id": "3d-texturing-practice",
+      "canonicalId": "3d-texturing",
+      "title": "Материалы и текстуры: практика",
+      "titleEn": "Texturing practice",
+      "aliases": [
+        "Texturing practice"
+      ],
+      "definition": "Практическая работа с PBR-материалами, UV и текстурами.",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "PBR-материалы",
+          "definition": "Создание физически корректных материалов.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "UV-развёртка",
+          "definition": "Развёртка и упаковка UV-островов.",
+          "kind": "skill"
+        },
+        {
+          "title": "Текстурные карты",
+          "definition": "Карты нормалей, шероховатости и металличности.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Оптимизация текстур",
+          "definition": "Подготовка текстур под реальный пайплайн.",
+          "kind": "skill"
+        }
+      ]
+    },
+    {
+      "id": "3d-lighting-practice",
+      "canonicalId": "3d-lighting",
+      "title": "Свет и тень: практика",
+      "titleEn": "Lighting practice",
+      "aliases": [
+        "Lighting practice"
+      ],
+      "definition": "Практическая постановка света в 3D-сцене.",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Трёхточечный свет",
+          "definition": "Базовые схемы постановки света.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Световые акценты",
+          "definition": "Акценты и атмосфера сцены.",
+          "kind": "skill"
+        },
+        {
+          "title": "Тени и контраст",
+          "definition": "Управление тенями и контрастом.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Настройка источника света",
+          "definition": "Практика настройки источников и экспозиции.",
+          "kind": "skill"
+        }
+      ]
+    },
+    {
+      "id": "3d-rendering-practice",
+      "canonicalId": "3d-rendering",
+      "title": "Рендер: практика",
+      "titleEn": "Rendering practice",
+      "aliases": [
+        "Rendering practice"
+      ],
+      "definition": "Практический рендер и оптимизация 3D-сцены.",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Настройки рендера",
+          "definition": "Качество, сэмплы и разрешение.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Оптимизация сцены",
+          "definition": "Снижение нагрузки без потери качества.",
+          "kind": "skill"
+        },
+        {
+          "title": "Композиция кадра",
+          "definition": "Камера, фокус и финальная композиция.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Финальный рендер",
+          "definition": "Подготовка и вывод финального изображения.",
+          "kind": "skill"
+        }
+      ]
     }
   ]
 }

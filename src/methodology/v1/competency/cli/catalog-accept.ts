@@ -68,23 +68,22 @@ async function main(): Promise<void> {
     // model may not be generated yet
   }
   const derivedCanonicalIds = canonicalIdsByBlock(map);
-  const byId = new Map<string, CompetencyBlock>();
+  const current = await loadCatalog(root, domain);
+  const byId = new Map<string, CompetencyBlock>(current.blocks.map((block) => [block.id, block]));
   for (const file of blockFiles) {
     const payload = await readJson<{ blocks: CompetencyBlock[] }>(path.resolve(root, file));
     for (const block of payload.blocks ?? []) {
       const hasCanonical = (block.canonicalIds ?? []).some((id) => canonicalIds.has(id));
       if (!mapped.has(block.id) && !hasCanonical) continue;
-      byId.set(block.id, {
-        ...withDerivedCanonicalIds(block, derivedCanonicalIds, canonicalIds),
-        status: "accepted",
-        issues: block.issues.filter((issue) => !issue.includes("уже есть")),
-      });
+      // Не перезаписываем уже принятый блок менее полным вариантом из старого data-файла.
+      if (!byId.has(block.id)) {
+        byId.set(block.id, {
+          ...withDerivedCanonicalIds(block, derivedCanonicalIds, canonicalIds),
+          status: "accepted",
+          issues: block.issues.filter((issue) => !issue.includes("уже есть")),
+        });
+      }
     }
-  }
-  const current = await loadCatalog(root, domain);
-  // Сохраняем уже принятые блоки, которых нет в новом наборе файлов.
-  for (const existing of current.blocks) {
-    if (!byId.has(existing.id)) byId.set(existing.id, existing);
   }
   const blocks = [...byId.values()].sort((a, b) => a.title.localeCompare(b.title));
   const catalog: CatalogFile = {

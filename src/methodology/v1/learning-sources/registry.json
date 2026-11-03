@@ -1032,7 +1032,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-26",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Alison: подборка бесплатных курсов по 3D-моделированию для старта в профессии."
     },
     {
       "id": "coursera-3d-modeling-intro",
@@ -1054,7 +1055,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-26",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Coursera: вводный курс по 3D-моделированию и базовым инструментам."
     },
     {
       "id": "classcentral-3d-modeling-fundamentals",
@@ -1078,7 +1080,8 @@
       "lastChecked": "2026-10-26",
       "httpStatus": 403,
       "discoveryOnly": true,
-      "notes": "HTTP 403 (Cloudflare) — только ссылка для человека, автоматический сбор не выполняется."
+      "notes": "HTTP 403 (Cloudflare) — только ссылка для человека, автоматический сбор не выполняется.",
+      "summary": "Class Central — 3D Modeling Fundamentals (LCI Education): открытый учебный материал по 3D-дизайну и смежным темам."
     },
     {
       "id": "greatlearning-blender-3d",
@@ -1101,7 +1104,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-26",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Great Learning: бесплатный вводный курс по Blender и 3D-дизайну."
     },
     {
       "id": "udemy-3d-modeling-free",
@@ -1125,7 +1129,8 @@
       "lastChecked": "2026-10-26",
       "httpStatus": 403,
       "discoveryOnly": true,
-      "notes": "HTTP 403 (Cloudflare) — только ссылка для человека, автоматический сбор не выполняется."
+      "notes": "HTTP 403 (Cloudflare) — только ссылка для человека, автоматический сбор не выполняется.",
+      "summary": "Udemy — Free 3D Modeling courses: открытый учебный материал по 3D-дизайну и смежным темам."
     },
     {
       "id": "mooc-list-3d-modeling",
@@ -1149,7 +1154,8 @@
       "lastChecked": "2026-10-26",
       "httpStatus": 403,
       "discoveryOnly": true,
-      "notes": "HTTP 403 (Cloudflare) — только ссылка для человека, автоматический сбор не выполняется."
+      "notes": "HTTP 403 (Cloudflare) — только ссылка для человека, автоматический сбор не выполняется.",
+      "summary": "MOOC List — 3D Modeling: открытый учебный материал по 3D-дизайну и смежным темам."
     },
     {
       "id": "coursera-3d-cad-fundamental",
@@ -1171,7 +1177,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-26",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Coursera: основы 3D CAD и моделирования для дизайнеров."
     },
     {
       "id": "tinkercad-learn-designs",
@@ -1193,7 +1200,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-26",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Tinkercad: практические уроки 3D-моделирования в браузере."
     },
     {
       "id": "instructables-3d-modeling-guide",
@@ -1214,7 +1222,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-26",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Instructables: практический гайд по 3D-моделированию для начинающих."
     },
     {
       "id": "mooc-list-presentation-design",
@@ -2221,7 +2230,8 @@
       "discoveredBy": "user",
       "lastChecked": "2026-10-28",
       "httpStatus": 429,
-      "notes": "HTTP 429 (rate limit) при аудите — перепроверить позже."
+      "notes": "HTTP 429 (rate limit) при аудите — перепроверить позже.",
+      "summary": "freeAcademy.ai — AI courses: открытый учебный материал по 3D-дизайну и смежным темам."
     },
     {
       "id": "oxfordhomestudy-ai-free",
@@ -2255,7 +2265,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-28",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Oxford Home Study — Free AI courses: открытый учебный материал по 3D-дизайну и смежным темам."
     },
     {
       "id": "classcentral-subject-ai",
@@ -2291,7 +2302,8 @@
       "lastChecked": "2026-10-28",
       "httpStatus": 403,
       "discoveryOnly": true,
-      "notes": "Недоступно для автоматического сбора; только ссылка для человека."
+      "notes": "Недоступно для автоматического сбора; только ссылка для человека.",
+      "summary": "Class Central — Artificial Intelligence subject: открытый учебный материал по 3D-дизайну и смежным темам."
     },
     {
       "id": "elements-of-ai",
@@ -2326,7 +2338,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-28",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Elements of AI — free online course: открытый учебный материал по 3D-дизайну и смежным темам."
     },
     {
       "id": "greatlearning-ai-free",
@@ -2360,7 +2373,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-28",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Great Learning — Free AI courses: открытый учебный материал по 3D-дизайну и смежным темам."
     },
     {
       "id": "alison-ai-fundamentals",
@@ -2394,7 +2408,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-28",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Alison — Diploma in Fundamentals of AI: открытый учебный материал по 3D-дизайну и смежным темам."
     },
     {
       "id": "coursera-ai-free",
@@ -2428,7 +2443,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-28",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Coursera — Free Artificial Intelligence courses: открытый учебный материал по 3D-дизайну и смежным темам."
     },
     {
       "id": "classcentral-elements-of-ai",
@@ -2464,7 +2480,8 @@
       "lastChecked": "2026-10-28",
       "httpStatus": 403,
       "discoveryOnly": true,
-      "notes": "Недоступно для автоматического сбора; только ссылка для человека."
+      "notes": "Недоступно для автоматического сбора; только ссылка для человека.",
+      "summary": "Class Central — Elements of AI course: открытый учебный материал по 3D-дизайну и смежным темам."
     },
     {
       "id": "learntube-ai-graphic-design",

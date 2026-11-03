@@ -1,7 +1,7 @@
 {
   "reviewVersion": "1.0.0",
   "releaseId": "beta-1",
-  "updatedAt": "2026-10-28",
+  "updatedAt": "2026-11-03",
   "reviewedBy": "deepseek-content-gate",
   "decisions": [
     {
@@ -1027,6 +1027,1104 @@
       "reason": "AI-assisted source relevance check: источник активен, не агрегатор; нужен spot-check основателя перед публичным запуском.",
       "reviewedBy": "deepseek-content-gate",
       "reviewedAt": "2026-10-28"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ux-design-thinking",
+      "sourceId": "school-of-motion",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ui-layout",
+      "sourceId": "practicum-design-catalog",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ui-layout",
+      "sourceId": "scrimba-ui-design-fundamentals",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ui-visual-communication",
+      "sourceId": "motiondesign-school-courses",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ui-visual-communication",
+      "sourceId": "petrick-mds-case",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "motion-timing-easing",
+      "sourceId": "motiondesign-school-courses",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "motion-timing-easing",
+      "sourceId": "school-of-motion",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ux-design-thinking",
+      "sourceId": "codecademy-intro-uiux",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ux-design-thinking",
+      "sourceId": "coursera-uxui-fundamentals",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ux-design-thinking",
+      "sourceId": "practicum-design-catalog",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ux-product-thinking",
+      "sourceId": "practicum-design-catalog",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ux-product-thinking",
+      "sourceId": "codecademy-intro-uiux",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ui-color",
+      "sourceId": "coursera-uxui-fundamentals",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ui-color",
+      "sourceId": "greatlearning-uiux",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ui-layout",
+      "sourceId": "coursera-uxui-fundamentals",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ui-layout",
+      "sourceId": "greatlearning-uiux",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ui-visual-communication",
+      "sourceId": "greatlearning-uiux",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ui-visual-communication",
+      "sourceId": "practicum-design-catalog",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ux-design-thinking",
+      "sourceId": "coursera-microsoft-product-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ux-product-thinking",
+      "sourceId": "udacity-product-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ux-product-thinking",
+      "sourceId": "coursera-microsoft-product-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ux-design-thinking",
+      "sourceId": "coursera-design-fundamentals-ai",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ux-design-thinking",
+      "sourceId": "uxdesigninstitute-free-ux-course",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ui-color",
+      "sourceId": "coursera-graphic-fundamentals",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ui-color",
+      "sourceId": "alison-graphic-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ui-layout",
+      "sourceId": "coursera-graphic-fundamentals",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ui-visual-communication",
+      "sourceId": "alison-graphic-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ui-visual-communication",
+      "sourceId": "coursera-graphic-fundamentals",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ui-visual-communication",
+      "sourceId": "coursera-web-design-free",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "motion-3d-animation",
+      "sourceId": "practicum-3ddesigner",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "3d-modeling",
+      "sourceId": "alison-3d-modeling-tag",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "3d-modeling",
+      "sourceId": "coursera-3d-modeling-intro",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "3d-modeling",
+      "sourceId": "greatlearning-blender-3d",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "3d-modeling",
+      "sourceId": "coursera-3d-cad-fundamental",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "3d-modeling",
+      "sourceId": "tinkercad-learn-designs",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "3d-modeling",
+      "sourceId": "instructables-3d-modeling-guide",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "3d-hard-surface",
+      "sourceId": "coursera-3d-modeling-intro",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "3d-hard-surface",
+      "sourceId": "coursera-3d-cad-fundamental",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "3d-texturing",
+      "sourceId": "greatlearning-blender-3d",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "3d-lighting",
+      "sourceId": "greatlearning-blender-3d",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "3d-rendering",
+      "sourceId": "greatlearning-blender-3d",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-model-landscape",
+      "sourceId": "practicum-presentation",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-model-landscape",
+      "sourceId": "practicum-appdesign",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-model-landscape",
+      "sourceId": "practicum-uxresearch",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-model-landscape",
+      "sourceId": "practicum-artdir",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-model-landscape",
+      "sourceId": "practicum-3ddesigner",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-model-landscape",
+      "sourceId": "practicum-interior",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-model-landscape",
+      "sourceId": "practicum-webdesigner",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-model-landscape",
+      "sourceId": "practicum-design-catalog",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-model-landscape",
+      "sourceId": "motiondesign-school-courses",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-model-landscape",
+      "sourceId": "practicum-ai-tools-for-designers",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-model-landscape",
+      "sourceId": "oxfordhomestudy-ai-free",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-model-landscape",
+      "sourceId": "elements-of-ai",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-model-landscape",
+      "sourceId": "greatlearning-ai-free",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-model-landscape",
+      "sourceId": "alison-ai-fundamentals",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-model-landscape",
+      "sourceId": "coursera-ai-free",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-model-landscape",
+      "sourceId": "ideou-ai-design-resources",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-prompting",
+      "sourceId": "practicum-presentation",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-prompting",
+      "sourceId": "practicum-appdesign",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-prompting",
+      "sourceId": "practicum-uxresearch",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-prompting",
+      "sourceId": "practicum-artdir",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-prompting",
+      "sourceId": "practicum-3ddesigner",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-prompting",
+      "sourceId": "practicum-interior",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-prompting",
+      "sourceId": "practicum-webdesigner",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-prompting",
+      "sourceId": "motiondesign-school-courses",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-prompting",
+      "sourceId": "practicum-ai-tools-for-designers",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-prompting",
+      "sourceId": "oxfordhomestudy-ai-free",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-prompting",
+      "sourceId": "elements-of-ai",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-prompting",
+      "sourceId": "greatlearning-ai-free",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-prompting",
+      "sourceId": "alison-ai-fundamentals",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-prompting",
+      "sourceId": "coursera-ai-free",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-prompting",
+      "sourceId": "simplilearn-genai-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-prompting",
+      "sourceId": "coursera-design-fundamentals-ai",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-copy-content",
+      "sourceId": "practicum-presentation",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-copy-content",
+      "sourceId": "practicum-artdir",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-copy-content",
+      "sourceId": "practicum-design-catalog",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-copy-content",
+      "sourceId": "practicum-ai-tools-for-designers",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-visual-generation",
+      "sourceId": "practicum-presentation",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-visual-generation",
+      "sourceId": "practicum-appdesign",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-visual-generation",
+      "sourceId": "practicum-artdir",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-visual-generation",
+      "sourceId": "practicum-3ddesigner",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-visual-generation",
+      "sourceId": "practicum-interior",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-visual-generation",
+      "sourceId": "practicum-webdesigner",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-visual-generation",
+      "sourceId": "practicum-design-catalog",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-visual-generation",
+      "sourceId": "motiondesign-school-courses",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-visual-generation",
+      "sourceId": "practicum-ai-tools-for-designers",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-visual-generation",
+      "sourceId": "practicum-ai-for-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-visual-generation",
+      "sourceId": "learntube-ai-graphic-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-layout-docs",
+      "sourceId": "practicum-presentation",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-layout-docs",
+      "sourceId": "practicum-appdesign",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-layout-docs",
+      "sourceId": "practicum-webdesigner",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-layout-docs",
+      "sourceId": "figma-blog-design-systems-ai",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-workflow-integration",
+      "sourceId": "practicum-presentation",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-workflow-integration",
+      "sourceId": "practicum-appdesign",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-workflow-integration",
+      "sourceId": "practicum-uxresearch",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-workflow-integration",
+      "sourceId": "practicum-artdir",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-workflow-integration",
+      "sourceId": "practicum-3ddesigner",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-workflow-integration",
+      "sourceId": "practicum-interior",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-workflow-integration",
+      "sourceId": "practicum-webdesigner",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-workflow-integration",
+      "sourceId": "practicum-design-catalog",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-workflow-integration",
+      "sourceId": "state-of-ai-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-workflow-integration",
+      "sourceId": "kimvoronin-ai-design-guide",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-research-synthesis",
+      "sourceId": "practicum-uxresearch",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-video-audio",
+      "sourceId": "motiondesign-school-courses",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-video-audio",
+      "sourceId": "practicum-ai-tools-for-designers",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-video-audio",
+      "sourceId": "practicum-ai-for-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-ethics-rights",
+      "sourceId": "oxfordhomestudy-ai-free",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-ethics-rights",
+      "sourceId": "elements-of-ai",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-ethics-rights",
+      "sourceId": "greatlearning-ai-free",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-ethics-rights",
+      "sourceId": "alison-ai-fundamentals",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-ethics-rights",
+      "sourceId": "coursera-ai-free",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "3d-rendering",
+      "sourceId": "practicum-3ddesigner",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "3d-compositing",
+      "sourceId": "practicum-3ddesigner",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "motion-3d-animation",
+      "sourceId": "motiondesign-school-courses",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "motion-3d-animation",
+      "sourceId": "school-of-motion",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "motion-3d-animation",
+      "sourceId": "practicum-design-catalog",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "3d-lighting",
+      "sourceId": "practicum-3ddesigner",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "3d-modeling",
+      "sourceId": "practicum-3ddesigner",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "3d-presentation",
+      "sourceId": "practicum-3ddesigner",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "3d-texturing",
+      "sourceId": "practicum-3ddesigner",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "3d-sculpting",
+      "sourceId": "practicum-3ddesigner",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "3d-hard-surface",
+      "sourceId": "practicum-3ddesigner",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
+      "reviewedBy": "deepseek-content-gate",
+      "reviewedAt": "2026-11-03"
     }
   ],
   "notes": [

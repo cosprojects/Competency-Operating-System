@@ -8,14 +8,14 @@
     "it.uxui",
     "it.product",
     "it.motion",
-    "it.graphic"
+    "it.graphic",
+    "it.3ddesigner"
   ],
   "excludedProfessionIds": [
     "it.presentation",
     "it.appdesign",
     "it.uxresearch",
     "it.artdir",
-    "it.3ddesigner",
     "it.interior",
     "it.webdesigner",
     "it.aidesigner"

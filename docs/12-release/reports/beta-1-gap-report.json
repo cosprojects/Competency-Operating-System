@@ -2,17 +2,17 @@
   "releaseId": "beta-1",
   "title": "AXIONA Beta 1 — карта профессий дизайнера",
   "status": "draft",
-  "asOf": "2026-10-28",
+  "asOf": "2026-11-03",
   "strictSourceReview": false,
   "totals": {
-    "professions": 4,
-    "totalLinks": 146,
-    "includedLinks": 110,
-    "excludedLinks": 36,
-    "publishedLinks": 110,
-    "uniqueCompetencies": 54,
-    "uniquePublishedCompetencies": 54,
-    "uniqueSources": 29,
+    "professions": 5,
+    "totalLinks": 170,
+    "includedLinks": 125,
+    "excludedLinks": 45,
+    "publishedLinks": 125,
+    "uniqueCompetencies": 62,
+    "uniquePublishedCompetencies": 62,
+    "uniqueSources": 35,
     "gaps": 0,
     "blockingGaps": 0,
     "passed": true
@@ -55,6 +55,16 @@
       "includedLinks": 18,
       "excludedLinks": 9,
       "publishedLinks": 18,
+      "passed": true,
+      "gaps": []
+    },
+    {
+      "id": "it.3ddesigner",
+      "title": "3D-дизайнер",
+      "totalLinks": 24,
+      "includedLinks": 15,
+      "excludedLinks": 9,
+      "publishedLinks": 15,
       "passed": true,
       "gaps": []
     }
@@ -237,6 +247,51 @@
     },
     {
       "professionId": "it.graphic",
+      "competencyId": "ai-ethics-rights",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-model-landscape",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-prompting",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-research-synthesis",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-visual-generation",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-video-audio",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-copy-content",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-layout-docs",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ai-workflow-integration",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.3ddesigner",
       "competencyId": "ai-ethics-rights",
       "reason": "excluded-prefix:ai-"
     }

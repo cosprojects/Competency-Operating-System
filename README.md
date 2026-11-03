@@ -142,4 +142,4 @@ npm run model:validate -- --domain it --profession product --all --require-block
 переезд на РФ-хостинг и публичный запуск — после готовности MVP и юридического sign-off.
 Vercel demo не является продакшн-контуром персональных данных: реальные регистрации там не открываются.
 
-🚧 Beta 1: контентный gate пройден, идёт финальный spot-check источников и подготовка `ready`-релиза.
+✅ Beta 1: контентный gate пройден, AI-дизайнер опубликован (12 профессий, 121 компетенция), spot-check AI-дизайнера проведён — манифест `beta-1` в статусе `ready`. Vercel собирает `web:build:release` (строгий `release:validate` в CI).

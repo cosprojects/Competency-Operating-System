@@ -14,10 +14,10 @@
     "it.webdesigner",
     "it.presentation",
     "it.uxresearch",
-    "it.artdir"
+    "it.artdir",
+    "it.appdesign"
   ],
   "excludedProfessionIds": [
-    "it.appdesign",
     "it.aidesigner"
   ],
   "excludedCompetencyPrefixes": [

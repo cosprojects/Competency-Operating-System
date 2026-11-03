@@ -5,14 +5,14 @@
   "asOf": "2026-11-03",
   "strictSourceReview": false,
   "totals": {
-    "professions": 10,
-    "totalLinks": 300,
-    "includedLinks": 210,
-    "excludedLinks": 90,
-    "publishedLinks": 210,
-    "uniqueCompetencies": 97,
-    "uniquePublishedCompetencies": 97,
-    "uniqueSources": 53,
+    "professions": 11,
+    "totalLinks": 335,
+    "includedLinks": 236,
+    "excludedLinks": 99,
+    "publishedLinks": 236,
+    "uniqueCompetencies": 102,
+    "uniquePublishedCompetencies": 102,
+    "uniqueSources": 54,
     "gaps": 0,
     "blockingGaps": 0,
     "passed": true
@@ -115,6 +115,16 @@
       "includedLinks": 16,
       "excludedLinks": 9,
       "publishedLinks": 16,
+      "passed": true,
+      "gaps": []
+    },
+    {
+      "id": "it.appdesign",
+      "title": "Дизайнер приложений",
+      "totalLinks": 35,
+      "includedLinks": 26,
+      "excludedLinks": 9,
+      "publishedLinks": 26,
       "passed": true,
       "gaps": []
     }
@@ -567,6 +577,51 @@
     },
     {
       "professionId": "it.artdir",
+      "competencyId": "ai-ethics-rights",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.appdesign",
+      "competencyId": "ai-model-landscape",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.appdesign",
+      "competencyId": "ai-prompting",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.appdesign",
+      "competencyId": "ai-research-synthesis",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.appdesign",
+      "competencyId": "ai-visual-generation",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.appdesign",
+      "competencyId": "ai-video-audio",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.appdesign",
+      "competencyId": "ai-copy-content",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.appdesign",
+      "competencyId": "ai-layout-docs",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.appdesign",
+      "competencyId": "ai-workflow-integration",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.appdesign",
       "competencyId": "ai-ethics-rights",
       "reason": "excluded-prefix:ai-"
     }

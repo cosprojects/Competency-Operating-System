@@ -7100,6 +7100,195 @@
       "methodologyVersion": "0.1.0"
     },
     {
+      "id": "comp_4b49810a5164",
+      "slug": "gaydlayny-ios-i-android-praktika",
+      "title": "Гайдлайны iOS и Android: практика",
+      "titleEn": "iOS and Android Guidelines: Practice",
+      "aliases": [
+        "Платформенные гайдлайны",
+        "iOS и Android: практика"
+      ],
+      "definition": "Практика проектирования мобильных интерфейсов с опорой на платформенные гайдлайны iOS и Android: навигация, системные компоненты и паттерны взаимодействия.",
+      "scope": "universal",
+      "canonicalIds": [
+        "app-platform-guidelines"
+      ],
+      "professionIds": [
+        "it.appdesign"
+      ],
+      "components": [
+        {
+          "id": "gaydlayny-ios-i-android-praktika.gaydlayny-ios",
+          "slug": "gaydlayny-ios",
+          "title": "Гайдлайны iOS",
+          "definition": "Принципы и компоненты платформы iOS, задающие навигацию и поведение интерфейса.",
+          "order": 1,
+          "tagIds": [
+            "tag_ef1f89aca62e"
+          ]
+        },
+        {
+          "id": "gaydlayny-ios-i-android-praktika.gaydlayny-android",
+          "slug": "gaydlayny-android",
+          "title": "Гайдлайны Android",
+          "definition": "Принципы и компоненты платформы Android, задающие навигацию и поведение интерфейса.",
+          "order": 2,
+          "tagIds": [
+            "tag_5b67a2a5423f"
+          ]
+        },
+        {
+          "id": "gaydlayny-ios-i-android-praktika.praktika-primeneniya-gaydlaynov",
+          "slug": "praktika-primeneniya-gaydlaynov",
+          "title": "Практика применения гайдлайнов",
+          "definition": "Применение платформенных гайдлайнов и системных компонентов в проектировании интерфейсов.",
+          "order": 3,
+          "tagIds": [
+            "tag_deee5f1023f9",
+            "tag_58e85f91ace4"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_ef1f89aca62e",
+          "slug": "human-interface-guidelines",
+          "title": "Human Interface Guidelines",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Принципы и компоненты iOS.",
+          "professionIds": [
+            "it.appdesign"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "mobile-app-design",
+              "url": "https://practicum.yandex.ru/mobile-app-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_4b49810a5164",
+              "componentId": "gaydlayny-ios-i-android-praktika.gaydlayny-ios",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_5b67a2a5423f",
+          "slug": "material-design",
+          "title": "Material Design",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Принципы и компоненты Android.",
+          "professionIds": [
+            "it.appdesign"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "mobile-app-design",
+              "url": "https://practicum.yandex.ru/mobile-app-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_4b49810a5164",
+              "componentId": "gaydlayny-ios-i-android-praktika.gaydlayny-android",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_deee5f1023f9",
+          "slug": "proektirovanie-po-gaydlaynam",
+          "title": "Проектирование по гайдлайнам",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Практика применения гайдлайнов.",
+          "professionIds": [
+            "it.appdesign"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "mobile-app-design",
+              "url": "https://practicum.yandex.ru/mobile-app-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_4b49810a5164",
+              "componentId": "gaydlayny-ios-i-android-praktika.praktika-primeneniya-gaydlaynov",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_58e85f91ace4",
+          "slug": "sistemnye-komponenty",
+          "title": "Системные компоненты",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Использование нативных контролов.",
+          "professionIds": [
+            "it.appdesign"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "mobile-app-design",
+              "url": "https://practicum.yandex.ru/mobile-app-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_4b49810a5164",
+              "componentId": "gaydlayny-ios-i-android-praktika.praktika-primeneniya-gaydlaynov",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_4da99cead3d0",
+        "costUsd": 0.00116229,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1819,
+          "outputTokens": 602
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
       "id": "comp_915efdd38c27",
       "slug": "dannye-i-faktcheking-praktika",
       "title": "Данные и фактчекинг: практика",
@@ -12985,6 +13174,194 @@
       "methodologyVersion": "0.1.0"
     },
     {
+      "id": "comp_5d09eb9186eb",
+      "slug": "metriki-mobilnyh-prilozheniy-praktika",
+      "title": "Метрики мобильных приложений: практика",
+      "aliases": [
+        "Продуктовая аналитика мобильных приложений",
+        "Метрики и аналитика экранов"
+      ],
+      "definition": "Практика работы с продуктовыми метриками и мобильной аналитикой для оценки экранов и обоснования дизайн-решений.",
+      "scope": "universal",
+      "canonicalIds": [
+        "app-metrics"
+      ],
+      "professionIds": [
+        "it.appdesign"
+      ],
+      "components": [
+        {
+          "id": "metriki-mobilnyh-prilozheniy-praktika.produktovye-metriki",
+          "slug": "produktovye-metriki",
+          "title": "Продуктовые метрики",
+          "definition": "Ключевые показатели продукта и их роль в оценке мобильного приложения.",
+          "order": 1,
+          "tagIds": [
+            "tag_661212e5323e"
+          ]
+        },
+        {
+          "id": "metriki-mobilnyh-prilozheniy-praktika.mobilnaya-analitika",
+          "slug": "mobilnaya-analitika",
+          "title": "Мобильная аналитика",
+          "definition": "Инструменты и подходы к сбору данных о поведении в приложении.",
+          "order": 2,
+          "tagIds": [
+            "tag_27aae76ab885"
+          ]
+        },
+        {
+          "id": "metriki-mobilnyh-prilozheniy-praktika.analiz-i-interpretatsiya-metrik",
+          "slug": "analiz-i-interpretatsiya-metrik",
+          "title": "Анализ и интерпретация метрик",
+          "definition": "Практические навыки чтения данных и их применения к оценке экранов.",
+          "order": 3,
+          "tagIds": [
+            "tag_5324dea7ddd0",
+            "tag_457455e7abe1"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_661212e5323e",
+          "slug": "produktovye-metriki",
+          "title": "Продуктовые метрики",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Retention, конверсия и вовлечённость.",
+          "professionIds": [
+            "it.appdesign"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "mobile-app-design",
+              "url": "https://practicum.yandex.ru/mobile-app-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_5d09eb9186eb",
+              "componentId": "metriki-mobilnyh-prilozheniy-praktika.produktovye-metriki",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_27aae76ab885",
+          "slug": "mobilnaya-analitika",
+          "title": "Мобильная аналитика",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "События и воронки в приложении.",
+          "professionIds": [
+            "it.appdesign"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "mobile-app-design",
+              "url": "https://practicum.yandex.ru/mobile-app-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_5d09eb9186eb",
+              "componentId": "metriki-mobilnyh-prilozheniy-praktika.mobilnaya-analitika",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_5324dea7ddd0",
+          "slug": "analiz-metrik",
+          "title": "Анализ метрик",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Практика чтения и интерпретации.",
+          "professionIds": [
+            "it.appdesign"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "mobile-app-design",
+              "url": "https://practicum.yandex.ru/mobile-app-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_5d09eb9186eb",
+              "componentId": "metriki-mobilnyh-prilozheniy-praktika.analiz-i-interpretatsiya-metrik",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_457455e7abe1",
+          "slug": "dizayn-resheniya-po-metrikam",
+          "title": "Дизайн-решения по метрикам",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Связь метрик и решений.",
+          "professionIds": [
+            "it.appdesign"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "mobile-app-design",
+              "url": "https://practicum.yandex.ru/mobile-app-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_5d09eb9186eb",
+              "componentId": "metriki-mobilnyh-prilozheniy-praktika.analiz-i-interpretatsiya-metrik",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_6350345b7f1a",
+        "costUsd": 0.00116276,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1890,
+          "outputTokens": 585
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
       "id": "comp_a6e9c9d34d14",
       "slug": "modeli-i-instrumenty-ii",
       "title": "Модели и инструменты ИИ",
@@ -13997,6 +14374,203 @@
       "methodologyVersion": "0.1.0"
     },
     {
+      "id": "comp_ef89b23c9b91",
+      "slug": "nativnye-i-krossplatformennye-prilozheniya-praktika",
+      "title": "Нативные и кроссплатформенные приложения: практика",
+      "aliases": [
+        "Кроссплатформенная разработка приложений: практика",
+        "Нативные и кроссплатформенные приложения"
+      ],
+      "definition": "Практика проектирования приложений с учётом различий платформ и ограничений кроссплатформенных решений.",
+      "scope": "universal",
+      "canonicalIds": [
+        "app-native-crossplatform"
+      ],
+      "professionIds": [
+        "it.appdesign"
+      ],
+      "components": [
+        {
+          "id": "nativnye-i-krossplatformennye-prilozheniya-praktika.platformennye-razlichiya-i-nativnye-vozmozhnosti",
+          "slug": "platformennye-razlichiya-i-nativnye-vozmozhnosti",
+          "title": "Платформенные различия и нативные возможности",
+          "definition": "Понимание того, чем нативные приложения отличаются на разных платформах и какие возможности и ограничения это создаёт.",
+          "order": 1,
+          "tagIds": [
+            "tag_e04800486796"
+          ]
+        },
+        {
+          "id": "nativnye-i-krossplatformennye-prilozheniya-praktika.krossplatformennye-podhody-i-ogranicheniya",
+          "slug": "krossplatformennye-podhody-i-ogranicheniya",
+          "title": "Кроссплатформенные подходы и ограничения",
+          "definition": "Знание общих и платформенных паттернов, а также ограничений, возникающих при кроссплатформенной разработке.",
+          "order": 2,
+          "tagIds": [
+            "tag_bda3d29c5630"
+          ]
+        },
+        {
+          "id": "nativnye-i-krossplatformennye-prilozheniya-praktika.adaptatsiya-dizayna-pod-platformy",
+          "slug": "adaptatsiya-dizayna-pod-platformy",
+          "title": "Адаптация дизайна под платформы",
+          "definition": "Практические навыки приведения дизайна в соответствие с особенностями конкретных платформ.",
+          "order": 3,
+          "tagIds": [
+            "tag_c5921d2456b8"
+          ]
+        },
+        {
+          "id": "nativnye-i-krossplatformennye-prilozheniya-praktika.vzaimodeystvie-s-razrabotkoy",
+          "slug": "vzaimodeystvie-s-razrabotkoy",
+          "title": "Взаимодействие с разработкой",
+          "definition": "Передача дизайнерских решений в разработку и обсуждение технических ограничений.",
+          "order": 4,
+          "tagIds": [
+            "tag_40c7403e0805"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_e04800486796",
+          "slug": "nativnaya-razrabotka",
+          "title": "Нативная разработка",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Ограничения и возможности нативных приложений.",
+          "professionIds": [
+            "it.appdesign"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "mobile-app-design",
+              "url": "https://practicum.yandex.ru/mobile-app-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_ef89b23c9b91",
+              "componentId": "nativnye-i-krossplatformennye-prilozheniya-praktika.platformennye-razlichiya-i-nativnye-vozmozhnosti",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_bda3d29c5630",
+          "slug": "krossplatformennost",
+          "title": "Кроссплатформенность",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Общие и платформенные паттерны.",
+          "professionIds": [
+            "it.appdesign"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "mobile-app-design",
+              "url": "https://practicum.yandex.ru/mobile-app-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_ef89b23c9b91",
+              "componentId": "nativnye-i-krossplatformennye-prilozheniya-praktika.krossplatformennye-podhody-i-ogranicheniya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_c5921d2456b8",
+          "slug": "adaptatsiya-pod-platformy",
+          "title": "Адаптация под платформы",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Практика адаптации дизайна.",
+          "professionIds": [
+            "it.appdesign"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "mobile-app-design",
+              "url": "https://practicum.yandex.ru/mobile-app-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_ef89b23c9b91",
+              "componentId": "nativnye-i-krossplatformennye-prilozheniya-praktika.adaptatsiya-dizayna-pod-platformy",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_40c7403e0805",
+          "slug": "soglasovanie-s-razrabotkoy",
+          "title": "Согласование с разработкой",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Передача и обсуждение ограничений.",
+          "professionIds": [
+            "it.appdesign"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "mobile-app-design",
+              "url": "https://practicum.yandex.ru/mobile-app-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_ef89b23c9b91",
+              "componentId": "nativnye-i-krossplatformennye-prilozheniya-praktika.vzaimodeystvie-s-razrabotkoy",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_83f5327547b6",
+        "costUsd": 0.0011917100000000001,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1875,
+          "outputTokens": 615
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
       "id": "comp_c9042039c71b",
       "slug": "nizkodetalizirovannye-prototipy",
       "title": "Низкодетализированные прототипы",
@@ -14559,6 +15133,203 @@
           "cacheHitTokens": 128,
           "cacheMissTokens": 1532,
           "outputTokens": 633
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
+      "id": "comp_2d29aef908c8",
+      "slug": "patterny-mobilnyh-prilozheniy-praktika",
+      "title": "Паттерны мобильных приложений: практика",
+      "aliases": [
+        "Мобильные паттерны: практика",
+        "Практика мобильных паттернов"
+      ],
+      "definition": "Практическое применение паттернов мобильных приложений: навигация, табы, списки и мобильные сценарии.",
+      "scope": "universal",
+      "canonicalIds": [
+        "app-mobile-patterns"
+      ],
+      "professionIds": [
+        "it.appdesign"
+      ],
+      "components": [
+        {
+          "id": "patterny-mobilnyh-prilozheniy-praktika.mobilnaya-navigatsiya",
+          "slug": "mobilnaya-navigatsiya",
+          "title": "Мобильная навигация",
+          "definition": "Структура и паттерны перемещения между экранами мобильного приложения.",
+          "order": 1,
+          "tagIds": [
+            "tag_9ce84c28c6c1"
+          ]
+        },
+        {
+          "id": "patterny-mobilnyh-prilozheniy-praktika.mobilnye-stsenarii",
+          "slug": "mobilnye-stsenarii",
+          "title": "Мобильные сценарии",
+          "definition": "Проектирование пользовательских сценариев с учётом мобильного контекста.",
+          "order": 2,
+          "tagIds": [
+            "tag_09234840b51d"
+          ]
+        },
+        {
+          "id": "patterny-mobilnyh-prilozheniy-praktika.patterny-spiskov",
+          "slug": "patterny-spiskov",
+          "title": "Паттерны списков",
+          "definition": "Практика представления наборов данных в мобильных интерфейсах.",
+          "order": 3,
+          "tagIds": [
+            "tag_881784b0a0a8"
+          ]
+        },
+        {
+          "id": "patterny-mobilnyh-prilozheniy-praktika.sborka-mobilnogo-ekrana",
+          "slug": "sborka-mobilnogo-ekrana",
+          "title": "Сборка мобильного экрана",
+          "definition": "Практическая сборка экранов мобильного приложения.",
+          "order": 4,
+          "tagIds": [
+            "tag_ab476b213b0e"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_9ce84c28c6c1",
+          "slug": "mobilnaya-navigatsiya",
+          "title": "Мобильная навигация",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Табы, стеки и модальные окна.",
+          "professionIds": [
+            "it.appdesign"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "mobile-app-design",
+              "url": "https://practicum.yandex.ru/mobile-app-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_2d29aef908c8",
+              "componentId": "patterny-mobilnyh-prilozheniy-praktika.mobilnaya-navigatsiya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_09234840b51d",
+          "slug": "mobilnye-stsenarii",
+          "title": "Мобильные сценарии",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Короткие и прерываемые сценарии.",
+          "professionIds": [
+            "it.appdesign"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "mobile-app-design",
+              "url": "https://practicum.yandex.ru/mobile-app-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_2d29aef908c8",
+              "componentId": "patterny-mobilnyh-prilozheniy-praktika.mobilnye-stsenarii",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_881784b0a0a8",
+          "slug": "patterny-spiskov",
+          "title": "Паттерны списков",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Списки, карточки и фильтры.",
+          "professionIds": [
+            "it.appdesign"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "mobile-app-design",
+              "url": "https://practicum.yandex.ru/mobile-app-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_2d29aef908c8",
+              "componentId": "patterny-mobilnyh-prilozheniy-praktika.patterny-spiskov",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_ab476b213b0e",
+          "slug": "sborka-mobilnogo-ekrana",
+          "title": "Сборка мобильного экрана",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Практика сборки экрана.",
+          "professionIds": [
+            "it.appdesign"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "mobile-app-design",
+              "url": "https://practicum.yandex.ru/mobile-app-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_2d29aef908c8",
+              "componentId": "patterny-mobilnyh-prilozheniy-praktika.sborka-mobilnogo-ekrana",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_c6e157c16de9",
+        "costUsd": 0.00116821,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1845,
+          "outputTokens": 601
         }
       },
       "issues": [],
@@ -16989,6 +17760,191 @@
           "cacheHitTokens": 128,
           "cacheMissTokens": 1244,
           "outputTokens": 498
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
+      "id": "comp_4e1fa37f2f5d",
+      "slug": "prodvinutoe-prototipirovanie-praktika",
+      "title": "Продвинутое прототипирование: практика",
+      "aliases": [],
+      "definition": "Интерактивные прототипы, состояния и анимация.",
+      "scope": "universal",
+      "canonicalIds": [
+        "app-prototyping"
+      ],
+      "professionIds": [
+        "it.appdesign"
+      ],
+      "components": [
+        {
+          "id": "prodvinutoe-prototipirovanie-praktika.sostoyaniya-interfeysa",
+          "slug": "sostoyaniya-interfeysa",
+          "title": "Состояния интерфейса",
+          "definition": "Проектирование и отображение различных состояний экрана в прототипе.",
+          "order": 1,
+          "tagIds": [
+            "tag_09fa15d8bd52"
+          ]
+        },
+        {
+          "id": "prodvinutoe-prototipirovanie-praktika.interaktivnost-i-perehody",
+          "slug": "interaktivnost-i-perehody",
+          "title": "Интерактивность и переходы",
+          "definition": "Анимация и переходы между экранами, обеспечивающие интерактивность прототипа.",
+          "order": 2,
+          "tagIds": [
+            "tag_ae17fd5cc95d"
+          ]
+        },
+        {
+          "id": "prodvinutoe-prototipirovanie-praktika.praktika-prototipirovaniya",
+          "slug": "praktika-prototipirovaniya",
+          "title": "Практика прототипирования",
+          "definition": "Сборка и тестирование интерактивного прототипа.",
+          "order": 3,
+          "tagIds": [
+            "tag_ff4d0f5a0df9",
+            "tag_97a8e5d5c80f"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_09fa15d8bd52",
+          "slug": "sostoyaniya-ekrana",
+          "title": "Состояния экрана",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Loading, empty, error и success.",
+          "professionIds": [
+            "it.appdesign"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "mobile-app-design",
+              "url": "https://practicum.yandex.ru/mobile-app-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_4e1fa37f2f5d",
+              "componentId": "prodvinutoe-prototipirovanie-praktika.sostoyaniya-interfeysa",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_ae17fd5cc95d",
+          "slug": "interaktivnye-perehody",
+          "title": "Интерактивные переходы",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Анимация и переходы между экранами.",
+          "professionIds": [
+            "it.appdesign"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "mobile-app-design",
+              "url": "https://practicum.yandex.ru/mobile-app-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_4e1fa37f2f5d",
+              "componentId": "prodvinutoe-prototipirovanie-praktika.interaktivnost-i-perehody",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_ff4d0f5a0df9",
+          "slug": "sborka-prototipa",
+          "title": "Сборка прототипа",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Практика сборки интерактивного прототипа.",
+          "professionIds": [
+            "it.appdesign"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "mobile-app-design",
+              "url": "https://practicum.yandex.ru/mobile-app-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_4e1fa37f2f5d",
+              "componentId": "prodvinutoe-prototipirovanie-praktika.praktika-prototipirovaniya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_97a8e5d5c80f",
+          "slug": "testirovanie-prototipa",
+          "title": "Тестирование прототипа",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Проверка сценариев на прототипе.",
+          "professionIds": [
+            "it.appdesign"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "mobile-app-design",
+              "url": "https://practicum.yandex.ru/mobile-app-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_4e1fa37f2f5d",
+              "componentId": "prodvinutoe-prototipirovanie-praktika.praktika-prototipirovaniya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_2e5d5b971229",
+        "costUsd": 0.00106471,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1865,
+          "outputTokens": 502
         }
       },
       "issues": [],
@@ -27123,6 +28079,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_c5921d2456b8",
+      "slug": "adaptatsiya-pod-platformy",
+      "title": "Адаптация под платформы",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Практика адаптации дизайна.",
+      "professionIds": [
+        "it.appdesign"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_ef89b23c9b91",
+          "componentId": "nativnye-i-krossplatformennye-prilozheniya-praktika.adaptatsiya-dizayna-pod-platformy",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_b49c75e5a2ff",
       "slug": "adaptatsiya-primerov",
       "title": "Адаптация примеров",
@@ -27491,6 +28469,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_5324dea7ddd0",
+      "slug": "analiz-metrik",
+      "title": "Анализ метрик",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Практика чтения и интерпретации.",
+      "professionIds": [
+        "it.appdesign"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_5d09eb9186eb",
+          "componentId": "metriki-mobilnyh-prilozheniy-praktika.analiz-i-interpretatsiya-metrik",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_e642005c8086",
@@ -28048,8 +29048,16 @@
       "professionIds": [
         "it.artdir"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "art-dir",
+          "url": "https://practicum.yandex.ru/art-dir/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_dd938a153c95",
@@ -28058,7 +29066,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_adb09f74c4e4",
@@ -28100,8 +29108,16 @@
       "professionIds": [
         "it.artdir"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "art-dir",
+          "url": "https://practicum.yandex.ru/art-dir/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_13bec1c06eee",
@@ -28110,7 +29126,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_45b538e02d52",
@@ -28212,8 +29228,16 @@
       "professionIds": [
         "it.artdir"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "art-dir",
+          "url": "https://practicum.yandex.ru/art-dir/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_413224e903d3",
@@ -28222,7 +29246,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_0e61d6ce8af0",
@@ -28367,6 +29391,13 @@
           "url": "https://www.coursera.org/learn/fundamentals-of-graphic-design",
           "retrievedAt": "2026-10-28",
           "license": "Ссылка на программу/материал; используются названия тем и краткие формулировки."
+        },
+        {
+          "sourceId": "practicum",
+          "externalId": "art-dir",
+          "url": "https://practicum.yandex.ru/art-dir/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
         }
       ],
       "evidenceState": "supported",
@@ -28395,8 +29426,16 @@
       "professionIds": [
         "it.artdir"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "art-dir",
+          "url": "https://practicum.yandex.ru/art-dir/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_413224e903d3",
@@ -28405,7 +29444,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_33eb03906cf3",
@@ -29065,8 +30104,16 @@
       "professionIds": [
         "it.artdir"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "art-dir",
+          "url": "https://practicum.yandex.ru/art-dir/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_499fbe21b438",
@@ -29075,7 +30122,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_0376f61aa177",
@@ -29743,6 +30790,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_457455e7abe1",
+      "slug": "dizayn-resheniya-po-metrikam",
+      "title": "Дизайн-решения по метрикам",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Связь метрик и решений.",
+      "professionIds": [
+        "it.appdesign"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_5d09eb9186eb",
+          "componentId": "metriki-mobilnyh-prilozheniy-praktika.analiz-i-interpretatsiya-metrik",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_46697d9b7436",
       "slug": "dokumentirovanie-komponentov-i-patternov",
       "title": "Документирование компонентов и паттернов",
@@ -30059,8 +31128,16 @@
       "professionIds": [
         "it.artdir"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "art-dir",
+          "url": "https://practicum.yandex.ru/art-dir/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_499fbe21b438",
@@ -30069,7 +31146,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_74321044997e",
@@ -30345,6 +31422,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_ae17fd5cc95d",
+      "slug": "interaktivnye-perehody",
+      "title": "Интерактивные переходы",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Анимация и переходы между экранами.",
+      "professionIds": [
+        "it.appdesign"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_4e1fa37f2f5d",
+          "componentId": "prodvinutoe-prototipirovanie-praktika.interaktivnost-i-perehody",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_07bf2ea1ee94",
@@ -31031,8 +32130,16 @@
       "professionIds": [
         "it.artdir"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "art-dir",
+          "url": "https://practicum.yandex.ru/art-dir/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_13bec1c06eee",
@@ -31041,7 +32148,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_59c7a857ebe1",
@@ -31432,6 +32539,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_bda3d29c5630",
+      "slug": "krossplatformennost",
+      "title": "Кроссплатформенность",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Общие и платформенные паттерны.",
+      "professionIds": [
+        "it.appdesign"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_ef89b23c9b91",
+          "componentId": "nativnye-i-krossplatformennye-prilozheniya-praktika.krossplatformennye-podhody-i-ogranicheniya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_5450cb50d8e7",
@@ -31914,6 +33043,72 @@
       "needsReview": false
     },
     {
+      "id": "tag_27aae76ab885",
+      "slug": "mobilnaya-analitika",
+      "title": "Мобильная аналитика",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "События и воронки в приложении.",
+      "professionIds": [
+        "it.appdesign"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_5d09eb9186eb",
+          "componentId": "metriki-mobilnyh-prilozheniy-praktika.mobilnaya-analitika",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_9ce84c28c6c1",
+      "slug": "mobilnaya-navigatsiya",
+      "title": "Мобильная навигация",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Табы, стеки и модальные окна.",
+      "professionIds": [
+        "it.appdesign"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_2d29aef908c8",
+          "componentId": "patterny-mobilnyh-prilozheniy-praktika.mobilnaya-navigatsiya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_09234840b51d",
+      "slug": "mobilnye-stsenarii",
+      "title": "Мобильные сценарии",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Короткие и прерываемые сценарии.",
+      "professionIds": [
+        "it.appdesign"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_2d29aef908c8",
+          "componentId": "patterny-mobilnyh-prilozheniy-praktika.mobilnye-stsenarii",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_7c84acba882e",
       "slug": "modelirovanie-igrovyh-lokatsiy-v-unreal-engine",
       "title": "Моделирование игровых локаций в Unreal Engine",
@@ -32288,8 +33483,16 @@
       "professionIds": [
         "it.artdir"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "art-dir",
+          "url": "https://practicum.yandex.ru/art-dir/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_1fa69ea68ac9",
@@ -32298,7 +33501,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_11a8501fd4a5",
@@ -32440,8 +33643,16 @@
       "professionIds": [
         "it.artdir"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "art-dir",
+          "url": "https://practicum.yandex.ru/art-dir/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_2d94c962c91b",
@@ -32450,7 +33661,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_0bf2d25508ad",
@@ -32788,6 +33999,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_e04800486796",
+      "slug": "nativnaya-razrabotka",
+      "title": "Нативная разработка",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Ограничения и возможности нативных приложений.",
+      "professionIds": [
+        "it.appdesign"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_ef89b23c9b91",
+          "componentId": "nativnye-i-krossplatformennye-prilozheniya-praktika.platformennye-razlichiya-i-nativnye-vozmozhnosti",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_afef5a0bafa4",
       "slug": "obespechenie-nahodimosti-informatsii",
       "title": "Обеспечение находимости информации",
@@ -32827,8 +34060,16 @@
       "professionIds": [
         "it.artdir"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "art-dir",
+          "url": "https://practicum.yandex.ru/art-dir/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_dd938a153c95",
@@ -32837,7 +34078,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_c518197173f2",
@@ -32849,8 +34090,16 @@
       "professionIds": [
         "it.artdir"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "art-dir",
+          "url": "https://practicum.yandex.ru/art-dir/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_1fa69ea68ac9",
@@ -32859,7 +34108,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_de896d20f2d0",
@@ -33352,8 +34601,16 @@
       "professionIds": [
         "it.artdir"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "art-dir",
+          "url": "https://practicum.yandex.ru/art-dir/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_2d94c962c91b",
@@ -33362,7 +34619,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_7ab9e6e0fd16",
@@ -33423,6 +34680,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_881784b0a0a8",
+      "slug": "patterny-spiskov",
+      "title": "Паттерны списков",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Списки, карточки и фильтры.",
+      "professionIds": [
+        "it.appdesign"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_2d29aef908c8",
+          "componentId": "patterny-mobilnyh-prilozheniy-praktika.patterny-spiskov",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_2152bbf4a605",
@@ -33594,8 +34873,16 @@
       "professionIds": [
         "it.artdir"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "art-dir",
+          "url": "https://practicum.yandex.ru/art-dir/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_2d94c962c91b",
@@ -33604,7 +34891,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_81312e728eb0",
@@ -33976,8 +35263,16 @@
       "professionIds": [
         "it.artdir"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "art-dir",
+          "url": "https://practicum.yandex.ru/art-dir/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_13bec1c06eee",
@@ -33986,7 +35281,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_ac3cb093224f",
@@ -34458,8 +35753,16 @@
       "professionIds": [
         "it.artdir"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "art-dir",
+          "url": "https://practicum.yandex.ru/art-dir/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_1fa69ea68ac9",
@@ -34468,7 +35771,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_ef34829ed9b7",
@@ -34700,8 +36003,16 @@
       "professionIds": [
         "it.artdir"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "art-dir",
+          "url": "https://practicum.yandex.ru/art-dir/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_0632835c45a5",
@@ -34710,7 +36021,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_d5376cf776f2",
@@ -34722,8 +36033,16 @@
       "professionIds": [
         "it.artdir"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "art-dir",
+          "url": "https://practicum.yandex.ru/art-dir/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_499fbe21b438",
@@ -34732,7 +36051,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_f10e3733a41a",
@@ -35053,6 +36372,13 @@
           "sourceId": "practicum",
           "externalId": "ux-research-for-designers",
           "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        },
+        {
+          "sourceId": "practicum",
+          "externalId": "art-dir",
+          "url": "https://practicum.yandex.ru/art-dir/",
           "retrievedAt": "2026-11-03",
           "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
         }
@@ -35439,6 +36765,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_661212e5323e",
+      "slug": "produktovye-metriki",
+      "title": "Продуктовые метрики",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Retention, конверсия и вовлечённость.",
+      "professionIds": [
+        "it.appdesign"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_5d09eb9186eb",
+          "componentId": "metriki-mobilnyh-prilozheniy-praktika.produktovye-metriki",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_c11f17963f98",
       "slug": "produktovye-metriki-i-tseli",
       "title": "Продуктовые метрики и цели",
@@ -35707,6 +37055,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_deee5f1023f9",
+      "slug": "proektirovanie-po-gaydlaynam",
+      "title": "Проектирование по гайдлайнам",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Практика применения гайдлайнов.",
+      "professionIds": [
+        "it.appdesign"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_4b49810a5164",
+          "componentId": "gaydlayny-ios-i-android-praktika.praktika-primeneniya-gaydlaynov",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_4b94a6d4954c",
@@ -36291,8 +37661,16 @@
       "professionIds": [
         "it.artdir"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "art-dir",
+          "url": "https://practicum.yandex.ru/art-dir/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_0632835c45a5",
@@ -36301,7 +37679,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_83db190c2bd4",
@@ -36978,6 +38356,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_ab476b213b0e",
+      "slug": "sborka-mobilnogo-ekrana",
+      "title": "Сборка мобильного экрана",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Практика сборки экрана.",
+      "professionIds": [
+        "it.appdesign"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_2d29aef908c8",
+          "componentId": "patterny-mobilnyh-prilozheniy-praktika.sborka-mobilnogo-ekrana",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_48f226d8f5f4",
       "slug": "sborka-platformy",
       "title": "Сборка платформы",
@@ -36987,12 +38387,42 @@
       "professionIds": [
         "it.artdir"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "art-dir",
+          "url": "https://practicum.yandex.ru/art-dir/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_0632835c45a5",
           "componentId": "brend-platforma-praktika.praktika-sborki-i-dokumentirovaniya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_ff4d0f5a0df9",
+      "slug": "sborka-prototipa",
+      "title": "Сборка прототипа",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Практика сборки интерактивного прототипа.",
+      "professionIds": [
+        "it.appdesign"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_4e1fa37f2f5d",
+          "componentId": "prodvinutoe-prototipirovanie-praktika.praktika-prototipirovaniya",
           "role": "primary"
         }
       ],
@@ -37546,6 +38976,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_58e85f91ace4",
+      "slug": "sistemnye-komponenty",
+      "title": "Системные компоненты",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Использование нативных контролов.",
+      "professionIds": [
+        "it.appdesign"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_4b49810a5164",
+          "componentId": "gaydlayny-ios-i-android-praktika.praktika-primeneniya-gaydlaynov",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_3e00b7d3b4be",
       "slug": "skrining",
       "title": "Скрининг",
@@ -37989,8 +39441,16 @@
       "professionIds": [
         "it.artdir"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "art-dir",
+          "url": "https://practicum.yandex.ru/art-dir/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_413224e903d3",
@@ -37999,7 +39459,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_3bb20b01c633",
@@ -38043,6 +39503,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_40c7403e0805",
+      "slug": "soglasovanie-s-razrabotkoy",
+      "title": "Согласование с разработкой",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Передача и обсуждение ограничений.",
+      "professionIds": [
+        "it.appdesign"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_ef89b23c9b91",
+          "componentId": "nativnye-i-krossplatformennye-prilozheniya-praktika.vzaimodeystvie-s-razrabotkoy",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_7c3e0b079c66",
@@ -38174,8 +39656,16 @@
       "professionIds": [
         "it.artdir"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "art-dir",
+          "url": "https://practicum.yandex.ru/art-dir/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_413224e903d3",
@@ -38184,7 +39674,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_0ece75845864",
@@ -38215,6 +39705,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_09fa15d8bd52",
+      "slug": "sostoyaniya-ekrana",
+      "title": "Состояния экрана",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Loading, empty, error и success.",
+      "professionIds": [
+        "it.appdesign"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_4e1fa37f2f5d",
+          "componentId": "prodvinutoe-prototipirovanie-praktika.sostoyaniya-interfeysa",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_d5494c1b173e",
@@ -38415,8 +39927,16 @@
       "professionIds": [
         "it.artdir"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "art-dir",
+          "url": "https://practicum.yandex.ru/art-dir/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_dd938a153c95",
@@ -38425,7 +39945,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_adc657378e2b",
@@ -38489,8 +40009,16 @@
       "professionIds": [
         "it.artdir"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "art-dir",
+          "url": "https://practicum.yandex.ru/art-dir/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_499fbe21b438",
@@ -38499,7 +40027,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_44bf7c1e15ce",
@@ -39062,6 +40590,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_97a8e5d5c80f",
+      "slug": "testirovanie-prototipa",
+      "title": "Тестирование прототипа",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Проверка сценариев на прототипе.",
+      "professionIds": [
+        "it.appdesign"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_4e1fa37f2f5d",
+          "componentId": "prodvinutoe-prototipirovanie-praktika.praktika-prototipirovaniya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_f75c97f110c1",
       "slug": "testirovanie-struktury-na-prototipah",
       "title": "Тестирование структуры на прототипах",
@@ -39477,8 +41027,16 @@
       "professionIds": [
         "it.artdir"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "art-dir",
+          "url": "https://practicum.yandex.ru/art-dir/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_1fa69ea68ac9",
@@ -39487,7 +41045,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_e7dc3f44a7b9",
@@ -39499,8 +41057,16 @@
       "professionIds": [
         "it.artdir"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "art-dir",
+          "url": "https://practicum.yandex.ru/art-dir/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_dd938a153c95",
@@ -39509,7 +41075,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_8694f1ef87c7",
@@ -39838,8 +41404,16 @@
       "professionIds": [
         "it.artdir"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "art-dir",
+          "url": "https://practicum.yandex.ru/art-dir/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_13bec1c06eee",
@@ -39848,7 +41422,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_ae68d146d7e6",
@@ -41261,6 +42835,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_ef1f89aca62e",
+      "slug": "human-interface-guidelines",
+      "title": "Human Interface Guidelines",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Принципы и компоненты iOS.",
+      "professionIds": [
+        "it.appdesign"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_4b49810a5164",
+          "componentId": "gaydlayny-ios-i-android-praktika.gaydlayny-ios",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_e8f7ef7cab90",
       "slug": "jtbd",
       "title": "JTBD",
@@ -41289,6 +42885,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_5b67a2a5423f",
+      "slug": "material-design",
+      "title": "Material Design",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Принципы и компоненты Android.",
+      "professionIds": [
+        "it.appdesign"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_4b49810a5164",
+          "componentId": "gaydlayny-ios-i-android-praktika.gaydlayny-android",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_311e6960a0e7",

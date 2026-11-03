@@ -2807,6 +2807,196 @@
           "kind": "skill"
         }
       ]
+    },
+    {
+      "id": "app-platform-guidelines-practice",
+      "canonicalId": "app-platform-guidelines",
+      "title": "Гайдлайны iOS и Android: практика",
+      "titleEn": "iOS and Android guidelines practice",
+      "aliases": [
+        "iOS and Android guidelines practice"
+      ],
+      "definition": "Платформенные гайдлайны, навигация и системные компоненты.",
+      "professionIds": [
+        "it.appdesign"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Human Interface Guidelines",
+          "definition": "Принципы и компоненты iOS.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Material Design",
+          "definition": "Принципы и компоненты Android.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Проектирование по гайдлайнам",
+          "definition": "Практика применения гайдлайнов.",
+          "kind": "skill"
+        },
+        {
+          "title": "Системные компоненты",
+          "definition": "Использование нативных контролов.",
+          "kind": "skill"
+        }
+      ]
+    },
+    {
+      "id": "app-mobile-patterns-practice",
+      "canonicalId": "app-mobile-patterns",
+      "title": "Паттерны мобильных приложений: практика",
+      "titleEn": "Mobile application patterns practice",
+      "aliases": [
+        "Mobile application patterns practice"
+      ],
+      "definition": "Навигация, табы, списки и мобильные сценарии.",
+      "professionIds": [
+        "it.appdesign"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Мобильная навигация",
+          "definition": "Табы, стеки и модальные окна.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Мобильные сценарии",
+          "definition": "Короткие и прерываемые сценарии.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Сборка мобильного экрана",
+          "definition": "Практика сборки экрана.",
+          "kind": "skill"
+        },
+        {
+          "title": "Паттерны списков",
+          "definition": "Списки, карточки и фильтры.",
+          "kind": "skill"
+        }
+      ]
+    },
+    {
+      "id": "app-prototyping-practice",
+      "canonicalId": "app-prototyping",
+      "title": "Продвинутое прототипирование: практика",
+      "titleEn": "Advanced app prototyping practice",
+      "aliases": [
+        "Advanced app prototyping practice"
+      ],
+      "definition": "Интерактивные прототипы, состояния и анимация.",
+      "professionIds": [
+        "it.appdesign"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Состояния экрана",
+          "definition": "Loading, empty, error и success.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Интерактивные переходы",
+          "definition": "Анимация и переходы между экранами.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Сборка прототипа",
+          "definition": "Практика сборки интерактивного прототипа.",
+          "kind": "skill"
+        },
+        {
+          "title": "Тестирование прототипа",
+          "definition": "Проверка сценариев на прототипе.",
+          "kind": "skill"
+        }
+      ]
+    },
+    {
+      "id": "app-native-crossplatform-practice",
+      "canonicalId": "app-native-crossplatform",
+      "title": "Нативные и кроссплатформенные приложения: практика",
+      "titleEn": "Native and cross-platform apps practice",
+      "aliases": [
+        "Native and cross-platform apps practice"
+      ],
+      "definition": "Различия платформ и кроссплатформенные ограничения.",
+      "professionIds": [
+        "it.appdesign"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Нативная разработка",
+          "definition": "Ограничения и возможности нативных приложений.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Кроссплатформенность",
+          "definition": "Общие и платформенные паттерны.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Адаптация под платформы",
+          "definition": "Практика адаптации дизайна.",
+          "kind": "skill"
+        },
+        {
+          "title": "Согласование с разработкой",
+          "definition": "Передача и обсуждение ограничений.",
+          "kind": "skill"
+        }
+      ]
+    },
+    {
+      "id": "app-metrics-practice",
+      "canonicalId": "app-metrics",
+      "title": "Метрики мобильных приложений: практика",
+      "titleEn": "Mobile app metrics practice",
+      "aliases": [
+        "Mobile app metrics practice"
+      ],
+      "definition": "Продуктовые метрики, аналитика и оценка экранов.",
+      "professionIds": [
+        "it.appdesign"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Продуктовые метрики",
+          "definition": "Retention, конверсия и вовлечённость.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Мобильная аналитика",
+          "definition": "События и воронки в приложении.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Анализ метрик",
+          "definition": "Практика чтения и интерпретации.",
+          "kind": "skill"
+        },
+        {
+          "title": "Дизайн-решения по метрикам",
+          "definition": "Связь метрик и решений.",
+          "kind": "skill"
+        }
+      ]
     }
   ]
 }

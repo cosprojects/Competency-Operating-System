@@ -37,6 +37,8 @@ export interface CanvasProfession {
   title: string;
   titleEn?: string;
   description: string;
+  /** Сфера деятельности: название для бейджа и цветовая кодировка. */
+  sphere: { title: string; color: string };
   published: number;
   total: number;
   percent: number;

@@ -4,7 +4,7 @@ import { ProfessionCanvas } from "@/components/canvas/ProfessionCanvas";
 import type { CanvasCompetency, CanvasProfession, CompetencyStates } from "@/components/canvas/types";
 import { ViewEvent } from "@/components/ViewEvent";
 import { getCurrentUser } from "@/lib/auth";
-import { findCompetencies, getProfession } from "@/lib/content";
+import { findCompetencies, getProfession, professionSphere } from "@/lib/content";
 import { getDb } from "@/lib/db";
 import { loadProfessionSourceReviews } from "@/lib/source-review-server";
 
@@ -93,9 +93,11 @@ export default async function ProfessionCanvasPage({
     })),
   );
 
+  const sphere = professionSphere(profession);
   const canvasProfession: CanvasProfession = {
     slug: profession.slug,
     title: profession.title,
+    sphere: { title: sphere.title, color: sphere.color },
     ...(profession.titleEn ? { titleEn: profession.titleEn } : {}),
     description: profession.description,
     published: profession.coverage.published,

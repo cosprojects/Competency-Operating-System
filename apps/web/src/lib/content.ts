@@ -7,6 +7,7 @@ import type {
   ContentSource,
   PublicContent,
 } from "./content-types";
+import { FALLBACK_SPHERE, SPHERES, sphereForSlug } from "./spheres";
 
 export const content = raw as unknown as PublicContent;
 
@@ -115,56 +116,40 @@ export function contentTypeSummary(competency: ContentCompetency): string {
 export interface ProfessionGroup {
   id: string;
   title: string;
+  color: string;
   professions: ContentProfession[];
 }
 
 /**
- * Группы направлений на экране выбора профессии.
- *
- * Сферы задаются здесь, потому что в модели пока одна сфера «IT», а на карте
- * нужны читаемые группы. Арт-директор — дизайн (визуальные системы и бренд),
- * UX-исследователь — исследования (методы, данные, выводы).
+ * Группы профессий на экране выбора строятся из реестра сфер (`lib/spheres`):
+ * сфера задаёт название группы и цветовую кодировку бейджа.
  */
-const PROFESSION_GROUPS: Array<{ id: string; title: string; slugs: string[] }> = [
-  {
-    id: "design",
-    title: "Дизайн",
-    slugs: [
-      "uxui",
-      "product",
-      "graphic",
-      "motion",
-      "3ddesigner",
-      "interior",
-      "webdesigner",
-      "presentation",
-      "appdesign",
-      "artdir",
-      "aidesigner",
-      "game",
-    ],
-  },
-  {
-    id: "research",
-    title: "Исследования",
-    slugs: ["uxresearch"],
-  },
-];
-
 export function getProfessionGroups(): ProfessionGroup[] {
   const groups: ProfessionGroup[] = [];
   const placed = new Set<string>();
-  for (const definition of PROFESSION_GROUPS) {
-    const professions = definition.slugs
+  for (const sphere of SPHERES) {
+    const professions = sphere.slugs
       .map((slug) => getProfessions().find((profession) => profession.slug === slug))
       .filter((profession): profession is ContentProfession => Boolean(profession));
     if (professions.length === 0) continue;
     for (const profession of professions) placed.add(profession.slug);
-    groups.push({ id: definition.id, title: definition.title, professions });
+    groups.push({ id: sphere.id, title: sphere.title, color: sphere.color, professions });
   }
   const rest = getProfessions().filter((profession) => !placed.has(profession.slug));
-  if (rest.length > 0) groups.push({ id: "other", title: "Другие профессии", professions: rest });
+  if (rest.length > 0) {
+    groups.push({
+      id: FALLBACK_SPHERE.id,
+      title: "Другие профессии",
+      color: FALLBACK_SPHERE.color,
+      professions: rest,
+    });
+  }
   return groups;
+}
+
+/** Сфера деятельности профессии: название и цвет для бейджа. */
+export function professionSphere(profession: ContentProfession) {
+  return sphereForSlug(profession.slug);
 }
 
 export interface ProfessionCompetency {

@@ -13,6 +13,8 @@ export interface SearchProfession {
   countText: string;
   percent: number;
   searchText: string;
+  sphereTitle: string;
+  sphereStyle: { color: string; backgroundColor: string };
 }
 
 export interface SearchGroup {
@@ -103,7 +105,9 @@ export function ProfessionSearch({
                     href={`/professions/${profession.slug}`}
                   >
                     <div className="tile-top">
-                      <span className="badge">Профессия</span>
+                      <span className="badge" style={profession.sphereStyle}>
+                        {profession.sphereTitle}
+                      </span>
                       <span className="tile-count">{profession.countText}</span>
                       <span
                         className="tile-action"

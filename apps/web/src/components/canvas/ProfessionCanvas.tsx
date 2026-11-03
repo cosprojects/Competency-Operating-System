@@ -15,6 +15,7 @@ import { FeedbackTrigger } from "@/components/feedback/FeedbackTrigger";
 import { IconCloseSquare, IconStar } from "@/components/icons";
 import { SaveButton } from "@/components/SaveButton";
 import { competencyMatches, competencyMeta, countLabel, normalizeQuery } from "@/lib/content";
+import { sphereBadgeStyle } from "@/lib/spheres";
 import type { GraphMode, GraphNodeInput } from "@/lib/graph-layout";
 
 const TIER_LABEL: Record<CanvasCompetency["tier"], string> = {
@@ -165,7 +166,9 @@ export function ProfessionCanvas({
 
           <section className="profession-summary">
           <div className="summary-top">
-            <span className="badge">Профессия</span>
+            <span className="badge" style={sphereBadgeStyle(profession.sphere.color)}>
+              {profession.sphere.title}
+            </span>
             <span className="summary-count">
               {countLabel(profession.published, ["компетенция", "компетенции", "компетенций"])}
             </span>

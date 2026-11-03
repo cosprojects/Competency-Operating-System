@@ -2,7 +2,8 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { SaveButton } from "@/components/SaveButton";
 import { getCurrentUser } from "@/lib/auth";
-import { findCompetency, findSource, getProfession, statusLabel } from "@/lib/content";
+import { findCompetency, findSource, getProfession, professionSphere, statusLabel } from "@/lib/content";
+import { sphereBadgeStyle } from "@/lib/spheres";
 import { getDb } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
@@ -71,7 +72,9 @@ export default async function SavedPage() {
               return (
                 <article className="card" key={item.favorite.id}>
                   <div className="meta" style={{ justifyContent: "space-between" }}>
-                    <span className="badge neutral">Профессия</span>
+                    <span className="badge" style={sphereBadgeStyle(professionSphere(item.profession).color)}>
+                      {professionSphere(item.profession).title}
+                    </span>
                     <span className="small muted">{item.profession.coverage.percent}% покрытие</span>
                   </div>
                   <h3 style={{ marginTop: 10 }}>

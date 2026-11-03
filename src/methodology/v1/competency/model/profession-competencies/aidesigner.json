@@ -7,283 +7,504 @@
       "tier": "foundation",
       "order": 1,
       "prerequisites": [],
-      "sectionId": "aidesigner-foundations",
-      "sectionTitle": "Основы AI-дизайна"
+      "sectionId": "aid-research",
+      "sectionTitle": "Research & Discovery"
     },
     {
-      "competencyId": "ai-model-landscape",
+      "competencyId": "ux-user-research",
       "tier": "foundation",
       "order": 2,
-      "prerequisites": [
-        "ux-design-thinking"
-      ],
-      "sectionId": "aidesigner-foundations",
-      "sectionTitle": "Основы AI-дизайна"
+      "prerequisites": [],
+      "sectionId": "aid-research",
+      "sectionTitle": "Research & Discovery"
     },
     {
-      "competencyId": "aidesigner-tool-landscape",
-      "tier": "foundation",
+      "competencyId": "ux-interviews",
+      "tier": "core",
       "order": 3,
       "prerequisites": [
-        "ai-model-landscape"
+        "ux-user-research"
       ],
-      "sectionId": "aidesigner-foundations",
-      "sectionTitle": "Основы AI-дизайна"
+      "sectionId": "aid-research",
+      "sectionTitle": "Research & Discovery"
     },
     {
-      "competencyId": "ai-prompting",
-      "tier": "foundation",
+      "competencyId": "ux-personas",
+      "tier": "core",
       "order": 4,
       "prerequisites": [
-        "ai-model-landscape"
+        "ux-user-research"
       ],
-      "sectionId": "aidesigner-foundations",
-      "sectionTitle": "Основы AI-дизайна"
+      "sectionId": "aid-research",
+      "sectionTitle": "Research & Discovery"
     },
     {
-      "competencyId": "aidesigner-prompt-systems",
+      "competencyId": "product-jtbd",
       "tier": "core",
       "order": 5,
       "prerequisites": [
-        "ai-prompting",
-        "aidesigner-tool-landscape"
+        "ux-user-research"
       ],
-      "sectionId": "aidesigner-foundations",
-      "sectionTitle": "Основы AI-дизайна"
+      "sectionId": "aid-research",
+      "sectionTitle": "Research & Discovery"
     },
     {
-      "competencyId": "aidesigner-tool-evaluation",
+      "competencyId": "ai-research-synthesis",
       "tier": "core",
       "order": 6,
       "prerequisites": [
-        "aidesigner-tool-landscape",
-        "aidesigner-prompt-systems"
+        "ux-user-research"
       ],
-      "sectionId": "aidesigner-foundations",
-      "sectionTitle": "Основы AI-дизайна"
+      "sectionId": "aid-research",
+      "sectionTitle": "Research & Discovery"
     },
     {
       "competencyId": "ux-product-thinking",
       "tier": "core",
       "order": 7,
-      "prerequisites": [
-        "ux-design-thinking"
-      ],
-      "sectionId": "aidesigner-design",
-      "sectionTitle": "AI-проектирование"
-    },
-    {
-      "competencyId": "ux-user-research",
-      "tier": "core",
-      "order": 8,
-      "prerequisites": [
-        "ux-design-thinking"
-      ],
-      "sectionId": "aidesigner-design",
-      "sectionTitle": "AI-проектирование"
-    },
-    {
-      "competencyId": "aidesigner-ai-features",
-      "tier": "core",
-      "order": 9,
-      "prerequisites": [
-        "ux-product-thinking",
-        "ux-user-research",
-        "ai-model-landscape"
-      ],
-      "sectionId": "aidesigner-design",
-      "sectionTitle": "AI-проектирование"
+      "prerequisites": [],
+      "sectionId": "aid-strategy",
+      "sectionTitle": "Product Strategy & Requirements"
     },
     {
       "competencyId": "ux-requirements",
       "tier": "core",
+      "order": 8,
+      "prerequisites": [
+        "ux-product-thinking"
+      ],
+      "sectionId": "aid-strategy",
+      "sectionTitle": "Product Strategy & Requirements"
+    },
+    {
+      "competencyId": "product-strategy",
+      "tier": "core",
+      "order": 9,
+      "prerequisites": [
+        "ux-product-thinking"
+      ],
+      "sectionId": "aid-strategy",
+      "sectionTitle": "Product Strategy & Requirements"
+    },
+    {
+      "competencyId": "aidesigner-ai-features",
+      "tier": "core",
       "order": 10,
       "prerequisites": [
-        "ux-user-research",
-        "aidesigner-ai-features"
+        "ux-requirements"
       ],
-      "sectionId": "aidesigner-design",
-      "sectionTitle": "AI-проектирование"
+      "sectionId": "aid-strategy",
+      "sectionTitle": "Product Strategy & Requirements"
+    },
+    {
+      "competencyId": "ux-information-architecture",
+      "tier": "core",
+      "order": 11,
+      "prerequisites": [],
+      "sectionId": "aid-ux-architecture",
+      "sectionTitle": "UX-архитектура и сценарии"
+    },
+    {
+      "competencyId": "ux-user-flows",
+      "tier": "core",
+      "order": 12,
+      "prerequisites": [
+        "ux-information-architecture"
+      ],
+      "sectionId": "aid-ux-architecture",
+      "sectionTitle": "UX-архитектура и сценарии"
+    },
+    {
+      "competencyId": "ux-wireframes",
+      "tier": "core",
+      "order": 13,
+      "prerequisites": [
+        "ux-user-flows"
+      ],
+      "sectionId": "aid-ux-architecture",
+      "sectionTitle": "UX-архитектура и сценарии"
+    },
+    {
+      "competencyId": "aidesigner-ai-scenarios",
+      "tier": "core",
+      "order": 14,
+      "prerequisites": [
+        "ux-user-flows"
+      ],
+      "sectionId": "aid-ux-architecture",
+      "sectionTitle": "UX-архитектура и сценарии"
     },
     {
       "competencyId": "ui-layout",
       "tier": "core",
-      "order": 11,
-      "prerequisites": [
-        "ux-design-thinking"
-      ],
-      "sectionId": "aidesigner-design",
-      "sectionTitle": "AI-проектирование"
+      "order": 15,
+      "prerequisites": [],
+      "sectionId": "aid-ui",
+      "sectionTitle": "UI и визуальный дизайн"
     },
     {
       "competencyId": "ui-visual-communication",
       "tier": "core",
-      "order": 12,
+      "order": 16,
       "prerequisites": [
         "ui-layout"
       ],
-      "sectionId": "aidesigner-design",
-      "sectionTitle": "AI-проектирование"
+      "sectionId": "aid-ui",
+      "sectionTitle": "UI и визуальный дизайн"
+    },
+    {
+      "competencyId": "ui-color",
+      "tier": "core",
+      "order": 17,
+      "prerequisites": [],
+      "sectionId": "aid-ui",
+      "sectionTitle": "UI и визуальный дизайн"
+    },
+    {
+      "competencyId": "ui-typography",
+      "tier": "core",
+      "order": 18,
+      "prerequisites": [],
+      "sectionId": "aid-ui",
+      "sectionTitle": "UI и визуальный дизайн"
+    },
+    {
+      "competencyId": "ui-responsive",
+      "tier": "core",
+      "order": 19,
+      "prerequisites": [
+        "ui-layout"
+      ],
+      "sectionId": "aid-ui",
+      "sectionTitle": "UI и визуальный дизайн"
     },
     {
       "competencyId": "ui-figma",
       "tier": "core",
-      "order": 13,
+      "order": 20,
+      "prerequisites": [],
+      "sectionId": "aid-ui",
+      "sectionTitle": "UI и визуальный дизайн"
+    },
+    {
+      "competencyId": "aidesigner-ai-ui-generation",
+      "tier": "core",
+      "order": 21,
       "prerequisites": [
         "ui-layout"
       ],
-      "sectionId": "aidesigner-design",
-      "sectionTitle": "AI-проектирование"
+      "sectionId": "aid-ui",
+      "sectionTitle": "UI и визуальный дизайн"
+    },
+    {
+      "competencyId": "ux-lowfi-prototype",
+      "tier": "core",
+      "order": 22,
+      "prerequisites": [],
+      "sectionId": "aid-prototyping",
+      "sectionTitle": "Прототипирование и интерактивность"
+    },
+    {
+      "competencyId": "ux-interactive-prototype",
+      "tier": "core",
+      "order": 23,
+      "prerequisites": [
+        "ux-lowfi-prototype"
+      ],
+      "sectionId": "aid-prototyping",
+      "sectionTitle": "Прототипирование и интерактивность"
+    },
+    {
+      "competencyId": "aidesigner-ai-prototyping",
+      "tier": "core",
+      "order": 24,
+      "prerequisites": [
+        "ux-interactive-prototype"
+      ],
+      "sectionId": "aid-prototyping",
+      "sectionTitle": "Прототипирование и интерактивность"
+    },
+    {
+      "competencyId": "ui-design-systems",
+      "tier": "core",
+      "order": 25,
+      "prerequisites": [],
+      "sectionId": "aid-design-systems",
+      "sectionTitle": "Дизайн-системы"
+    },
+    {
+      "competencyId": "ui-components",
+      "tier": "core",
+      "order": 26,
+      "prerequisites": [
+        "ui-design-systems"
+      ],
+      "sectionId": "aid-design-systems",
+      "sectionTitle": "Дизайн-системы"
+    },
+    {
+      "competencyId": "aidesigner-design-tokens",
+      "tier": "core",
+      "order": 27,
+      "prerequisites": [
+        "ui-design-systems"
+      ],
+      "sectionId": "aid-design-systems",
+      "sectionTitle": "Дизайн-системы"
+    },
+    {
+      "competencyId": "aidesigner-design-system-engineering",
+      "tier": "core",
+      "order": 28,
+      "prerequisites": [
+        "aidesigner-design-tokens"
+      ],
+      "sectionId": "aid-design-systems",
+      "sectionTitle": "Дизайн-системы"
+    },
+    {
+      "competencyId": "aidesigner-ai-development",
+      "tier": "core",
+      "order": 29,
+      "prerequisites": [
+        "ui-figma"
+      ],
+      "sectionId": "aid-ai-development",
+      "sectionTitle": "AI-assisted разработка"
+    },
+    {
+      "competencyId": "aidesigner-mcp-integration",
+      "tier": "core",
+      "order": 30,
+      "prerequisites": [
+        "aidesigner-ai-development"
+      ],
+      "sectionId": "aid-ai-development",
+      "sectionTitle": "AI-assisted разработка"
     },
     {
       "competencyId": "ai-visual-generation",
       "tier": "core",
-      "order": 14,
-      "prerequisites": [
-        "ai-prompting"
-      ],
-      "sectionId": "aidesigner-production",
-      "sectionTitle": "AI-продакшн"
+      "order": 31,
+      "prerequisites": [],
+      "sectionId": "aid-media",
+      "sectionTitle": "AI Media Production"
     },
     {
       "competencyId": "aidesigner-visual-generation",
       "tier": "core",
-      "order": 15,
+      "order": 32,
       "prerequisites": [
-        "ai-visual-generation",
-        "aidesigner-prompt-systems"
+        "ai-visual-generation"
       ],
-      "sectionId": "aidesigner-production",
-      "sectionTitle": "AI-продакшн"
+      "sectionId": "aid-media",
+      "sectionTitle": "AI Media Production"
     },
     {
       "competencyId": "aidesigner-series-adaptation",
       "tier": "core",
-      "order": 16,
+      "order": 33,
       "prerequisites": [
-        "aidesigner-visual-generation",
-        "ui-visual-communication"
+        "aidesigner-visual-generation"
       ],
-      "sectionId": "aidesigner-production",
-      "sectionTitle": "AI-продакшн"
+      "sectionId": "aid-media",
+      "sectionTitle": "AI Media Production"
     },
     {
       "competencyId": "ai-video-audio",
       "tier": "core",
-      "order": 17,
-      "prerequisites": [
-        "ai-prompting"
-      ],
-      "sectionId": "aidesigner-production",
-      "sectionTitle": "AI-продакшн"
+      "order": 34,
+      "prerequisites": [],
+      "sectionId": "aid-media",
+      "sectionTitle": "AI Media Production"
     },
     {
       "competencyId": "aidesigner-video-audio",
       "tier": "core",
-      "order": 18,
+      "order": 35,
       "prerequisites": [
-        "ai-video-audio",
-        "aidesigner-series-adaptation"
+        "ai-video-audio"
       ],
-      "sectionId": "aidesigner-production",
-      "sectionTitle": "AI-продакшн"
+      "sectionId": "aid-media",
+      "sectionTitle": "AI Media Production"
     },
     {
       "competencyId": "ai-copy-content",
       "tier": "core",
-      "order": 19,
-      "prerequisites": [
-        "ai-prompting"
-      ],
-      "sectionId": "aidesigner-production",
-      "sectionTitle": "AI-продакшн"
+      "order": 36,
+      "prerequisites": [],
+      "sectionId": "aid-media",
+      "sectionTitle": "AI Media Production"
     },
     {
-      "competencyId": "ai-layout-docs",
-      "tier": "optional",
-      "order": 20,
-      "prerequisites": [
-        "ai-prompting"
-      ],
-      "sectionId": "aidesigner-production",
-      "sectionTitle": "AI-продакшн"
+      "competencyId": "ui-motion",
+      "tier": "core",
+      "order": 37,
+      "prerequisites": [],
+      "sectionId": "aid-motion",
+      "sectionTitle": "Motion & Interaction"
+    },
+    {
+      "competencyId": "motion-animation-principles",
+      "tier": "core",
+      "order": 38,
+      "prerequisites": [],
+      "sectionId": "aid-motion",
+      "sectionTitle": "Motion & Interaction"
+    },
+    {
+      "competencyId": "motion-timing-easing",
+      "tier": "core",
+      "order": 39,
+      "prerequisites": [],
+      "sectionId": "aid-motion",
+      "sectionTitle": "Motion & Interaction"
     },
     {
       "competencyId": "aidesigner-automation",
       "tier": "core",
-      "order": 21,
-      "prerequisites": [
-        "aidesigner-tool-evaluation",
-        "aidesigner-series-adaptation"
-      ],
-      "sectionId": "aidesigner-production",
-      "sectionTitle": "AI-продакшн"
+      "order": 40,
+      "prerequisites": [],
+      "sectionId": "aid-automation",
+      "sectionTitle": "Автоматизация и оркестрация"
     },
     {
       "competencyId": "ai-workflow-integration",
       "tier": "core",
-      "order": 22,
+      "order": 41,
+      "prerequisites": [],
+      "sectionId": "aid-automation",
+      "sectionTitle": "Автоматизация и оркестрация"
+    },
+    {
+      "competencyId": "aidesigner-agent-orchestration",
+      "tier": "core",
+      "order": 42,
       "prerequisites": [
-        "ai-prompting",
-        "ai-model-landscape"
+        "aidesigner-automation"
       ],
-      "sectionId": "aidesigner-production",
-      "sectionTitle": "AI-продакшн"
+      "sectionId": "aid-automation",
+      "sectionTitle": "Автоматизация и оркестрация"
     },
     {
       "competencyId": "aidesigner-quality-eval",
       "tier": "core",
-      "order": 23,
+      "order": 43,
+      "prerequisites": [],
+      "sectionId": "aid-qa",
+      "sectionTitle": "Качество и валидация"
+    },
+    {
+      "competencyId": "aidesigner-visual-qa",
+      "tier": "core",
+      "order": 44,
       "prerequisites": [
-        "aidesigner-visual-generation",
-        "aidesigner-video-audio",
-        "ai-workflow-integration"
+        "aidesigner-quality-eval"
       ],
-      "sectionId": "aidesigner-production",
-      "sectionTitle": "AI-продакшн"
+      "sectionId": "aid-qa",
+      "sectionTitle": "Качество и валидация"
+    },
+    {
+      "competencyId": "ux-usability-testing",
+      "tier": "optional",
+      "order": 45,
+      "prerequisites": [],
+      "sectionId": "aid-qa",
+      "sectionTitle": "Качество и валидация"
+    },
+    {
+      "competencyId": "ux-metrics",
+      "tier": "optional",
+      "order": 46,
+      "prerequisites": [],
+      "sectionId": "aid-qa",
+      "sectionTitle": "Качество и валидация"
     },
     {
       "competencyId": "ui-handoff",
       "tier": "optional",
-      "order": 24,
-      "prerequisites": [
-        "ui-figma",
-        "aidesigner-quality-eval"
-      ],
-      "sectionId": "aidesigner-production",
-      "sectionTitle": "AI-продакшн"
+      "order": 47,
+      "prerequisites": [],
+      "sectionId": "aid-delivery",
+      "sectionTitle": "Документация и доставка"
     },
     {
-      "competencyId": "ai-research-synthesis",
+      "competencyId": "ai-layout-docs",
       "tier": "optional",
-      "order": 25,
-      "prerequisites": [
-        "ai-prompting"
-      ],
-      "sectionId": "aidesigner-governance",
-      "sectionTitle": "Этика и внедрение"
-    },
-    {
-      "competencyId": "ai-ethics-rights",
-      "tier": "core",
-      "order": 26,
-      "prerequisites": [
-        "ai-model-landscape"
-      ],
-      "sectionId": "aidesigner-governance",
-      "sectionTitle": "Этика и внедрение"
+      "order": 48,
+      "prerequisites": [],
+      "sectionId": "aid-delivery",
+      "sectionTitle": "Документация и доставка"
     },
     {
       "competencyId": "aidesigner-integration",
       "tier": "core",
-      "order": 27,
+      "order": 49,
+      "prerequisites": [],
+      "sectionId": "aid-delivery",
+      "sectionTitle": "Документация и доставка"
+    },
+    {
+      "competencyId": "ai-model-landscape",
+      "tier": "foundation",
+      "order": 50,
+      "prerequisites": [],
+      "sectionId": "aid-foundations",
+      "sectionTitle": "Сквозные компетенции"
+    },
+    {
+      "competencyId": "ai-prompting",
+      "tier": "foundation",
+      "order": 51,
       "prerequisites": [
-        "aidesigner-quality-eval",
-        "ai-workflow-integration",
-        "ai-ethics-rights"
+        "ai-model-landscape"
       ],
-      "sectionId": "aidesigner-governance",
-      "sectionTitle": "Этика и внедрение"
+      "sectionId": "aid-foundations",
+      "sectionTitle": "Сквозные компетенции"
+    },
+    {
+      "competencyId": "aidesigner-tool-landscape",
+      "tier": "foundation",
+      "order": 52,
+      "prerequisites": [],
+      "sectionId": "aid-foundations",
+      "sectionTitle": "Сквозные компетенции"
+    },
+    {
+      "competencyId": "aidesigner-prompt-systems",
+      "tier": "core",
+      "order": 53,
+      "prerequisites": [
+        "ai-prompting"
+      ],
+      "sectionId": "aid-foundations",
+      "sectionTitle": "Сквозные компетенции"
+    },
+    {
+      "competencyId": "aidesigner-tool-evaluation",
+      "tier": "core",
+      "order": 54,
+      "prerequisites": [
+        "aidesigner-tool-landscape"
+      ],
+      "sectionId": "aid-foundations",
+      "sectionTitle": "Сквозные компетенции"
+    },
+    {
+      "competencyId": "ai-ethics-rights",
+      "tier": "core",
+      "order": 55,
+      "prerequisites": [],
+      "sectionId": "aid-foundations",
+      "sectionTitle": "Сквозные компетенции"
+    },
+    {
+      "competencyId": "aidesigner-technical-literacy",
+      "tier": "foundation",
+      "order": 56,
+      "prerequisites": [],
+      "sectionId": "aid-foundations",
+      "sectionTitle": "Сквозные компетенции"
     }
   ]
 }

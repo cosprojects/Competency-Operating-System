@@ -15,7 +15,7 @@
         "uxdesigninstitute-free-ux-course",
         "tilda-education-courses-web-design-designthinking"
       ],
-      "rationale": "School of Motion: learning paths — рамка обучения моушн-дизайну.; Курсы вводят дизайн-процесс; программа Практикума задаёт рамку профессии.; Дизайн-процесс и product design в курсах.; Программа Практикума по графическому дизайну задаёт рамку профессии.; совпадение с «Дизайн-мышление», формат course-platform, score 0.40; совпадение с «Дизайн-мышление», формат course-platform, score 0.37, домен уже в реестре: specialist-ru-course-vizkom"
+      "rationale": "School of Motion: learning paths — рамка обучения моушн-дизайну.; Курсы вводят дизайн-процесс; программа Практикума задаёт рамку профессии.; Дизайн-процесс и product design в курсах.; Программа Практикума по графическому дизайну задаёт рамку профессии.; совпадение с «Дизайн-мышление», формат course-platform, score 0.40; совпадение с «Дизайн-мышление», формат course-platform, score 0.37, домен уже в реестре: specialist-ru-course-vizkom; совпадение с «Дизайн-мышление», формат course-platform, score 0.37, домен уже в реестре: specialist-ru-course-vizkom"
     },
     {
       "competencyId": "ui-layout",
@@ -25,9 +25,10 @@
         "coursera-uxui-fundamentals",
         "greatlearning-uiux",
         "coursera-graphic-fundamentals",
-        "lil-school-blog-osnovy-kompozicii-v-dizajne"
+        "lil-school-blog-osnovy-kompozicii-v-dizajne",
+        "aicodinglab-ru-infographics-lesson-6"
       ],
-      "rationale": "Программа Практикума по дизайну покрывает композицию и сетки в рамках курса.; Visual principles / visual design в курсах UX/UI.; Visual design в UX/UI-курсе.; Курс по основам графического дизайна: композиция.; совпадение с «Композиция, сетки и визуальная иерархия», формат school, score 0.32"
+      "rationale": "Программа Практикума по дизайну покрывает композицию и сетки в рамках курса.; Visual principles / visual design в курсах UX/UI.; Visual design в UX/UI-курсе.; Курс по основам графического дизайна: композиция.; совпадение с «Композиция, сетки и визуальная иерархия», формат school, score 0.32; совпадение с «Композиция, сетки и визуальная иерархия», формат course-platform, score 0.34"
     },
     {
       "competencyId": "ui-motion",
@@ -58,9 +59,10 @@
         "practicum-design-catalog",
         "alison-graphic-design",
         "coursera-graphic-fundamentals",
-        "coursera-web-design-free"
+        "coursera-web-design-free",
+        "hse-ru-edu-courses-470898711"
       ],
-      "rationale": "Курсы и разбор кейса айдентики Motion Design School.; Visual design в курсе и программа Практикума.; Visual design в UX/UI-курсе.; Visual communication и основы дизайна в курсах.; совпадение с «Визуальная коммуникация», формат course-platform, score 0.37; совпадение с «Визуальная коммуникация», формат course-platform, score 0.37, домен уже в реестре: specialist-ru-course-vizkom"
+      "rationale": "Курсы и разбор кейса айдентики Motion Design School.; Visual design в курсе и программа Практикума.; Visual design в UX/UI-курсе.; Visual communication и основы дизайна в курсах.; совпадение с «Визуальная коммуникация», формат course-platform, score 0.37; совпадение с «Визуальная коммуникация», формат course-platform, score 0.37, домен уже в реестре: specialist-ru-course-vizkom; совпадение с «Визуальная коммуникация», формат course-platform, score 0.37, домен уже в реестре: specialist-ru-course-vizkom; совпадение с «Визуальная коммуникация», формат course-platform, score 0.37, домен уже в реестре: hse-ru-edu-courses-470898711"
     },
     {
       "competencyId": "ui-handoff",
@@ -75,9 +77,10 @@
         "motiondesign-school-courses",
         "school-of-motion",
         "motiondesign-school-youtube",
-        "school-of-motion-free"
+        "school-of-motion-free",
+        "sunstrikestudios-com-ru-blog-timing-in-animation"
       ],
-      "rationale": "Первоисточники по таймингу и анимации."
+      "rationale": "Первоисточники по таймингу и анимации.; совпадение с «Тайминг и кривые ускорения», формат blog, score 0.31"
     },
     {
       "competencyId": "motion-3d-rendering",
@@ -368,9 +371,10 @@
       "competencyId": "ux-metrics",
       "sourceIds": [
         "practicum-uxresearch",
-        "hse-ru-edu-courses-470898711"
+        "hse-ru-edu-courses-470898711",
+        "productlab-ru-strategy"
       ],
-      "rationale": "Источник программы «UX-исследователь» покрывает тему в рамках курса.; совпадение с «Продуктовые метрики и бизнес-обоснование», формат course-platform, score 0.40"
+      "rationale": "Источник программы «UX-исследователь» покрывает тему в рамках курса.; совпадение с «Продуктовые метрики и бизнес-обоснование», формат course-platform, score 0.40; совпадение с «Продуктовые метрики и бизнес-обоснование», формат blog, score 0.40, домен уже в реестре: productlab-ru-strategy"
     },
     {
       "competencyId": "ui-figjam",
@@ -1058,6 +1062,93 @@
         "practicum-appdesign"
       ],
       "rationale": "совпадение с «Нативные и кросс-платформенные приложения», формат course-platform, score 0.31, домен уже в реестре: practicum-appdesign"
+    },
+    {
+      "competencyId": "aidesigner-agent-orchestration",
+      "sourceIds": [
+        "learn-microsoft-com-2c1fcb"
+      ],
+      "rationale": "совпадение с «Оркестрация AI-агентов», формат blog, score 0.49"
+    },
+    {
+      "competencyId": "aidesigner-ai-development",
+      "sourceIds": [
+        "ai-softuni-bg-courses-ai-assisted-development"
+      ],
+      "rationale": "совпадение с «AI-assisted разработка», формат course-platform, score 0.42; совпадение с «AI-assisted разработка», формат course-platform, score 0.37"
+    },
+    {
+      "competencyId": "aidesigner-ai-prototyping",
+      "sourceIds": [
+        "productdo-it-ai-prototyping",
+        "flane-ru-course-ot-ai-prototyping"
+      ],
+      "rationale": "совпадение с «AI-прототипирование», формат blog, score 0.34; совпадение с «AI-прототипирование», формат course-platform, score 0.37"
+    },
+    {
+      "competencyId": "aidesigner-design-tokens",
+      "sourceIds": [
+        "habr-ai-design-1096288"
+      ],
+      "rationale": "совпадение с «Дизайн-токены и темы», формат blog, score 0.35, домен уже в реестре: habr-ai-design-1096288"
+    },
+    {
+      "competencyId": "aidesigner-mcp-integration",
+      "sourceIds": [
+        "habr-ai-design-1096288"
+      ],
+      "rationale": "совпадение с «MCP и контекст для агентов», формат blog, score 0.46, домен уже в реестре: habr-ai-design-1096288"
+    },
+    {
+      "competencyId": "aidesigner-ai-scenarios",
+      "sourceIds": [
+        "figma-design-basics",
+        "codecademy-intro-uiux",
+        "practicum-ai-tools-for-designers"
+      ],
+      "rationale": "источники смежной компетенции ux-user-flows"
+    },
+    {
+      "competencyId": "aidesigner-ai-ui-generation",
+      "sourceIds": [
+        "practicum-design-catalog",
+        "scrimba-ui-design-fundamentals",
+        "coursera-uxui-fundamentals",
+        "greatlearning-uiux",
+        "coursera-graphic-fundamentals",
+        "aicodinglab-ru-infographics-lesson-6"
+      ],
+      "rationale": "источники смежной компетенции ui-layout"
+    },
+    {
+      "competencyId": "aidesigner-design-system-engineering",
+      "sourceIds": [
+        "figma-design-basics",
+        "greatlearning-uiux",
+        "bangbangeducation-ru-course-motion"
+      ],
+      "rationale": "источники смежной компетенции ui-design-systems"
+    },
+    {
+      "competencyId": "aidesigner-visual-qa",
+      "sourceIds": [
+        "practicum-ai-tools-for-designers",
+        "practicum-ai-for-design",
+        "simplilearn-ai-graphic-design",
+        "cambridge-ai-design-process",
+        "habr-ai-design-1096288"
+      ],
+      "rationale": "источники смежной компетенции aidesigner-quality-eval"
+    },
+    {
+      "competencyId": "aidesigner-technical-literacy",
+      "sourceIds": [
+        "practicum-webdesigner",
+        "alison-web-design-html",
+        "developer-mozilla-org-ru-docs-web",
+        "intuit-ru-studies-courses-611-467-info"
+      ],
+      "rationale": "источники смежной компетенции ui-web-technologies"
     }
   ]
 }

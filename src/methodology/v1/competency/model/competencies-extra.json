@@ -1183,6 +1183,116 @@
       "learningSourceIds": [
         "practicum-ai-tools-for-designers"
       ]
+    },
+    {
+      "id": "aidesigner-ai-scenarios",
+      "branchId": "aidesigner",
+      "branchTitle": "AI-дизайнер",
+      "sectionId": "aid-ux-architecture",
+      "sectionTitle": "UX-архитектура и сценарии",
+      "title": "AI-сценарии и проверка логики",
+      "titleEn": "AI-assisted scenarios",
+      "definition": "Проектирование и проверка пользовательских сценариев с помощью AI, включая альтернативные и ошибочные ветки.",
+      "priorityHint": "core"
+    },
+    {
+      "id": "aidesigner-ai-ui-generation",
+      "branchId": "aidesigner",
+      "branchTitle": "AI-дизайнер",
+      "sectionId": "aid-ui",
+      "sectionTitle": "UI и визуальный дизайн",
+      "title": "AI-генерация интерфейсов",
+      "titleEn": "AI UI generation",
+      "definition": "Генерация и доводка UI-концепций с помощью AI-инструментов с сохранением визуальной системы и качества.",
+      "priorityHint": "core"
+    },
+    {
+      "id": "aidesigner-ai-prototyping",
+      "branchId": "aidesigner",
+      "branchTitle": "AI-дизайнер",
+      "sectionId": "aid-prototyping",
+      "sectionTitle": "Прототипирование и интерактивность",
+      "title": "AI-прототипирование",
+      "titleEn": "AI prototyping",
+      "definition": "Создание работающих прототипов интерфейса с помощью AI-инструментов и проверка на них пользовательских сценариев.",
+      "priorityHint": "core"
+    },
+    {
+      "id": "aidesigner-design-tokens",
+      "branchId": "aidesigner",
+      "branchTitle": "AI-дизайнер",
+      "sectionId": "aid-design-systems",
+      "sectionTitle": "Дизайн-системы",
+      "title": "Дизайн-токены и темы",
+      "titleEn": "Design tokens and themes",
+      "definition": "Проектирование и поддержка системы токенов и тем: primitive, semantic и component-уровни, light/dark.",
+      "priorityHint": "core"
+    },
+    {
+      "id": "aidesigner-design-system-engineering",
+      "branchId": "aidesigner",
+      "branchTitle": "AI-дизайнер",
+      "sectionId": "aid-design-systems",
+      "sectionTitle": "Дизайн-системы",
+      "title": "Инженерия дизайн-системы",
+      "titleEn": "Design system engineering",
+      "definition": "Автоматизация создания, документирования и синхронизации дизайн-системы с кодом через Variables, MCP и инструменты документации.",
+      "priorityHint": "core"
+    },
+    {
+      "id": "aidesigner-ai-development",
+      "branchId": "aidesigner",
+      "branchTitle": "AI-дизайнер",
+      "sectionId": "aid-ai-development",
+      "sectionTitle": "AI-assisted разработка",
+      "title": "AI-assisted разработка",
+      "titleEn": "AI-assisted development",
+      "definition": "Реализация интерфейса с помощью AI coding agents без разрушения архитектуры продукта.",
+      "priorityHint": "core"
+    },
+    {
+      "id": "aidesigner-mcp-integration",
+      "branchId": "aidesigner",
+      "branchTitle": "AI-дизайнер",
+      "sectionId": "aid-ai-development",
+      "sectionTitle": "AI-assisted разработка",
+      "title": "MCP и контекст для агентов",
+      "titleEn": "MCP integration",
+      "definition": "Подключение AI-агентов к дизайн- и проектному контексту через MCP и Skills, с ограничением доступа и проверкой актуальности данных.",
+      "priorityHint": "core"
+    },
+    {
+      "id": "aidesigner-agent-orchestration",
+      "branchId": "aidesigner",
+      "branchTitle": "AI-дизайнер",
+      "sectionId": "aid-automation",
+      "sectionTitle": "Автоматизация и оркестрация",
+      "title": "Оркестрация AI-агентов",
+      "titleEn": "AI agent orchestration",
+      "definition": "Проектирование и управление последовательностью AI-агентов и инструментов для производственной задачи.",
+      "priorityHint": "core"
+    },
+    {
+      "id": "aidesigner-visual-qa",
+      "branchId": "aidesigner",
+      "branchTitle": "AI-дизайнер",
+      "sectionId": "aid-qa",
+      "sectionTitle": "Качество и валидация",
+      "title": "Визуальный QA и design-to-code проверка",
+      "titleEn": "Visual QA",
+      "definition": "Проверка соответствия реализации дизайну и требованиям с помощью AI и инструментов визуального тестирования.",
+      "priorityHint": "core"
+    },
+    {
+      "id": "aidesigner-technical-literacy",
+      "branchId": "aidesigner",
+      "branchTitle": "AI-дизайнер",
+      "sectionId": "aid-foundations",
+      "sectionTitle": "Сквозные компетенции",
+      "title": "Техническая грамотность",
+      "titleEn": "Technical literacy",
+      "definition": "Понимание технической архитектуры продукта, достаточное для постановки задач агентам и разработчикам и проверки результата.",
+      "priorityHint": "foundation"
     }
   ]
 }

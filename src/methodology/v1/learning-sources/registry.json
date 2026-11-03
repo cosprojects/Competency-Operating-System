@@ -56,7 +56,8 @@
         "it.uxui",
         "it.appdesign",
         "it.3ddesigner",
-        "it.game"
+        "it.game",
+        "it.aidesigner"
       ],
       "languages": [
         "en"
@@ -1718,7 +1719,8 @@
       "professionIds": [
         "it.webdesigner",
         "it.graphic",
-        "it.uxui"
+        "it.uxui",
+        "it.aidesigner"
       ],
       "languages": [
         "en"
@@ -3395,7 +3397,8 @@
         "it.uxui",
         "it.motion",
         "it.appdesign",
-        "it.webdesigner"
+        "it.webdesigner",
+        "it.aidesigner"
       ],
       "languages": [
         "en"
@@ -3517,7 +3520,8 @@
       "professionIds": [
         "it.motion",
         "it.3ddesigner",
-        "it.game"
+        "it.game",
+        "it.aidesigner"
       ],
       "languages": [
         "ru"
@@ -3680,7 +3684,8 @@
         "it.presentation",
         "it.product",
         "it.uxui",
-        "it.webdesigner"
+        "it.webdesigner",
+        "it.aidesigner"
       ],
       "languages": [
         "ru"
@@ -3739,7 +3744,8 @@
       "professionIds": [
         "it.motion",
         "it.uxui",
-        "it.game"
+        "it.game",
+        "it.aidesigner"
       ],
       "languages": [
         "ru"
@@ -3766,7 +3772,8 @@
         "it.motion",
         "it.appdesign",
         "it.uxui",
-        "it.webdesigner"
+        "it.webdesigner",
+        "it.aidesigner"
       ],
       "languages": [
         "ru"
@@ -3798,7 +3805,8 @@
         "it.product",
         "it.uxui",
         "it.webdesigner",
-        "it.game"
+        "it.game",
+        "it.aidesigner"
       ],
       "languages": [
         "ru"
@@ -3887,7 +3895,8 @@
         "it.product",
         "it.uxui",
         "it.webdesigner",
-        "it.game"
+        "it.game",
+        "it.aidesigner"
       ],
       "languages": [
         "ru"
@@ -3913,7 +3922,8 @@
       "professionIds": [
         "it.uxui",
         "it.graphic",
-        "it.webdesigner"
+        "it.webdesigner",
+        "it.aidesigner"
       ],
       "languages": [
         "ru"
@@ -3939,7 +3949,8 @@
       "professionIds": [
         "it.uxui",
         "it.graphic",
-        "it.webdesigner"
+        "it.webdesigner",
+        "it.aidesigner"
       ],
       "languages": [
         "ru"
@@ -3968,7 +3979,14 @@
         "it.product",
         "it.uxresearch",
         "it.presentation",
-        "it.game"
+        "it.game",
+        "it.3ddesigner",
+        "it.aidesigner",
+        "it.artdir",
+        "it.graphic",
+        "it.interior",
+        "it.motion",
+        "it.webdesigner"
       ],
       "languages": [
         "ru"
@@ -3995,7 +4013,8 @@
         "it.uxui",
         "it.appdesign",
         "it.product",
-        "it.game"
+        "it.game",
+        "it.aidesigner"
       ],
       "languages": [
         "ru"
@@ -4077,7 +4096,8 @@
         "it.uxui",
         "it.appdesign",
         "it.product",
-        "it.game"
+        "it.game",
+        "it.aidesigner"
       ],
       "languages": [
         "ru"
@@ -4105,7 +4125,8 @@
         "it.appdesign",
         "it.product",
         "it.webdesigner",
-        "it.game"
+        "it.game",
+        "it.aidesigner"
       ],
       "languages": [
         "ru"
@@ -4177,7 +4198,10 @@
       "kind": "course-platform",
       "professionIds": [
         "it.product",
-        "it.uxresearch"
+        "it.uxresearch",
+        "it.aidesigner",
+        "it.game",
+        "it.uxui"
       ],
       "languages": [
         "ru"
@@ -4494,7 +4518,8 @@
         "it.appdesign",
         "it.product",
         "it.uxresearch",
-        "it.uxui"
+        "it.uxui",
+        "it.aidesigner"
       ],
       "languages": [
         "ru"
@@ -4511,6 +4536,186 @@
       "notes": "Авто-расширение (brave-search); совпадение с «Персоны и сегментация», формат blog, score 0.41",
       "httpStatus": 200,
       "finalUrl": "https://sendsay.ru/"
+    },
+    {
+      "id": "learn-microsoft-com-2c1fcb",
+      "title": "Microsoft Learn: Build with answers in reach",
+      "url": "https://learn.microsoft.com/",
+      "kind": "blog",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "unknown",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Оркестрация AI-агентов курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-03",
+      "summary": "Microsoft Learn: Build with answers in reach",
+      "notes": "Авто-расширение (brave-search); совпадение с «Оркестрация AI-агентов», формат blog, score 0.49",
+      "httpStatus": 200,
+      "finalUrl": "https://learn.microsoft.com/en-us/"
+    },
+    {
+      "id": "datacamp-com-ru-courses-ai-assisted-coding-for-developers",
+      "title": "Just a moment...",
+      "url": "https://datacamp.com/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "unknown",
+      "authority": "secondary",
+      "status": "blocked",
+      "topics": [
+        "AI-assisted разработка курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-03",
+      "summary": "Just a moment...",
+      "notes": "Авто-расширение (brave-search); совпадение с «AI-assisted разработка», формат course-platform, score 0.42",
+      "httpStatus": 403,
+      "finalUrl": "https://www.datacamp.com/"
+    },
+    {
+      "id": "productdo-it-ai-prototyping",
+      "title": "ProductDo — обучение на Продакт Менеджера (Product Manager): курсы по управлению продуктом",
+      "url": "https://productdo.it/",
+      "kind": "blog",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "unknown",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "AI-прототипирование курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-03",
+      "summary": "ProductDo — обучение на Продакт Менеджера (Product Manager): курсы по управлению продуктом",
+      "notes": "Авто-расширение (brave-search); совпадение с «AI-прототипирование», формат blog, score 0.34",
+      "httpStatus": 200,
+      "finalUrl": "https://productdo.it/"
+    },
+    {
+      "id": "ai-softuni-bg-courses-ai-assisted-development",
+      "title": "Обучение и курсове по AI (изкуствен интелект) - SoftUni AI",
+      "url": "https://ai.softuni.bg/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "unknown",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "AI-assisted разработка курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-03",
+      "summary": "Обучение и курсове по AI (изкуствен интелект) - SoftUni AI",
+      "notes": "Авто-расширение (brave-search); совпадение с «AI-assisted разработка», формат course-platform, score 0.37",
+      "httpStatus": 200,
+      "finalUrl": "https://ai.softuni.bg/"
+    },
+    {
+      "id": "flane-ru-course-ot-ai-prototyping",
+      "title": "flane.ru — ot ai prototyping",
+      "url": "https://flane.ru/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "unknown",
+      "authority": "secondary",
+      "status": "planned",
+      "topics": [
+        "AI-прототипирование курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-03",
+      "summary": "Авто-подбор по теме «AI-прототипирование»: совпадение с «AI-прототипирование», формат course-platform, score 0.37",
+      "notes": "Авто-расширение (brave-search); совпадение с «AI-прототипирование», формат course-platform, score 0.37"
+    },
+    {
+      "id": "sunstrikestudios-com-ru-blog-timing-in-animation",
+      "title": "Video Game Art Outsourcing Studio | Concept Art, 2D &amp; 3D",
+      "url": "https://sunstrikestudios.com/",
+      "kind": "blog",
+      "professionIds": [
+        "it.aidesigner",
+        "it.3ddesigner",
+        "it.game",
+        "it.motion"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "unknown",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Тайминг и кривые ускорения курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-03",
+      "summary": "Video Game Art Outsourcing Studio | Concept Art, 2D &amp; 3D",
+      "notes": "Авто-расширение (brave-search); совпадение с «Тайминг и кривые ускорения», формат blog, score 0.31",
+      "httpStatus": 200,
+      "finalUrl": "https://sunstrikestudios.com/en/"
+    },
+    {
+      "id": "aicodinglab-ru-infographics-lesson-6",
+      "title": "AI Coding Lab — онлайн-курсы программирования с ИИ. 72 курса. | aicodinglab.ru",
+      "url": "https://aicodinglab.ru/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.aidesigner",
+        "it.3ddesigner",
+        "it.appdesign",
+        "it.artdir",
+        "it.game",
+        "it.graphic",
+        "it.interior",
+        "it.motion",
+        "it.presentation",
+        "it.product",
+        "it.uxui",
+        "it.webdesigner"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "unknown",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Композиция, сетки и визуальная иерархия курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-03",
+      "summary": "AI Coding Lab — онлайн-курсы программирования с ИИ. 72 курса. | aicodinglab.ru",
+      "notes": "Авто-расширение (brave-search); совпадение с «Композиция, сетки и визуальная иерархия», формат course-platform, score 0.34",
+      "httpStatus": 200,
+      "finalUrl": "https://aicodinglab.ru/"
     }
   ]
 }

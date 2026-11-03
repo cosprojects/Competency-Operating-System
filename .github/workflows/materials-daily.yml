@@ -1,0 +1,39 @@
+name: Materials daily
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  daily:
+    # Включается осознанно: Settings → Actions → Variables → MATERIALS_DAILY_ENABLED=true
+    if: vars.MATERIALS_DAILY_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm install --no-audit --no-fund
+      - run: npm run db:generate
+      - name: Daily material
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: npm run materials:daily -- --write
+      - name: Commit catalog and daily state
+        run: |
+          git config user.name "cos-materials-bot"
+          git config user.email "bot@axiona.local"
+          git add src/methodology/v1/competency/catalog/it.json
+          git add -f data/materials-agent/daily-state.json data/materials-agent/coverage-state.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "Нет изменений — коммит не нужен."
+            exit 0
+          fi
+          git commit -m "chore(materials): daily material $(date -u +%F)"
+          git push

@@ -71,6 +71,7 @@
 | `npm run sources:access` | `node --experimental-strip-types src/methodology/v1/learning-sources/cli/access.ts` |
 | `npm run sources:repair` | `node --experimental-strip-types src/methodology/v1/learning-sources/cli/repair.ts` |
 | `npm run aggregate` | `node --experimental-strip-types scripts/aggregate/index.ts` |
+| `npm run materials:daily` | `node --experimental-strip-types src/methodology/v1/materials-agent/cli/daily.ts` |
 
 ## Как пользоваться
 

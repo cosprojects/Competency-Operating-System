@@ -1046,6 +1046,203 @@
       "methodologyVersion": "0.1.0"
     },
     {
+      "id": "comp_c0e56934bd14",
+      "slug": "avtomatizatsiya-payplaynov-praktika",
+      "title": "Автоматизация пайплайнов: практика",
+      "aliases": [
+        "Мультимодальные пайплайны",
+        "Автоматизация производственных цепочек"
+      ],
+      "definition": "Практика построения и оркестрации связок инструментов для преобразования контента между форматами: текст → визуал → видео → документ, с контролем результата на каждом этапе.",
+      "scope": "universal",
+      "canonicalIds": [
+        "aidesigner-automation"
+      ],
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "components": [
+        {
+          "id": "avtomatizatsiya-payplaynov-praktika.multimodalnye-payplayny",
+          "slug": "multimodalnye-payplayny",
+          "title": "Мультимодальные пайплайны",
+          "definition": "Понимание того, как форматы контента связываются между собой в единую производственную цепочку.",
+          "order": 1,
+          "tagIds": [
+            "tag_b4396e9e3bcd"
+          ]
+        },
+        {
+          "id": "avtomatizatsiya-payplaynov-praktika.avtomatizatsiya-i-peredacha-dannyh",
+          "slug": "avtomatizatsiya-i-peredacha-dannyh",
+          "title": "Автоматизация и передача данных",
+          "definition": "Навыки настройки сценариев автоматизации и передачи данных между инструментами пайплайна.",
+          "order": 2,
+          "tagIds": [
+            "tag_8dc8ffa6d712"
+          ]
+        },
+        {
+          "id": "avtomatizatsiya-payplaynov-praktika.orkestratsiya-payplayna",
+          "slug": "orkestratsiya-payplayna",
+          "title": "Оркестрация пайплайна",
+          "definition": "Практика сборки и упорядочивания этапов пайплайна в рабочую последовательность.",
+          "order": 3,
+          "tagIds": [
+            "tag_2b65000095ba"
+          ]
+        },
+        {
+          "id": "avtomatizatsiya-payplaynov-praktika.kontrol-kachestva-rezultata",
+          "slug": "kontrol-kachestva-rezultata",
+          "title": "Контроль качества результата",
+          "definition": "Проверка корректности промежуточных и итоговых результатов на каждом этапе пайплайна.",
+          "order": 4,
+          "tagIds": [
+            "tag_7b2e29693d5c"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_b4396e9e3bcd",
+          "slug": "multimodalnyy-payplayn",
+          "title": "Мультимодальный пайплайн",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Связка инструментов и форматов.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-design",
+              "url": "https://practicum.yandex.ru/ai-for-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_c0e56934bd14",
+              "componentId": "avtomatizatsiya-payplaynov-praktika.multimodalnye-payplayny",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_8dc8ffa6d712",
+          "slug": "avtomatizatsiya",
+          "title": "Автоматизация",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Сценарии и передача данных.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-design",
+              "url": "https://practicum.yandex.ru/ai-for-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_c0e56934bd14",
+              "componentId": "avtomatizatsiya-payplaynov-praktika.avtomatizatsiya-i-peredacha-dannyh",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_2b65000095ba",
+          "slug": "orkestratsiya",
+          "title": "Оркестрация",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Практика сборки пайплайна.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-design",
+              "url": "https://practicum.yandex.ru/ai-for-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_c0e56934bd14",
+              "componentId": "avtomatizatsiya-payplaynov-praktika.orkestratsiya-payplayna",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_7b2e29693d5c",
+          "slug": "kontrol-rezultata",
+          "title": "Контроль результата",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Проверка на каждом этапе.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-design",
+              "url": "https://practicum.yandex.ru/ai-for-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_c0e56934bd14",
+              "componentId": "avtomatizatsiya-payplaynov-praktika.kontrol-kachestva-rezultata",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_10906b8624e5",
+        "costUsd": 0.0013500300000000001,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 2001,
+          "outputTokens": 728
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
       "id": "comp_b1ed4a6906f5",
       "slug": "adaptatsiya-pod-auditoriyu-praktika",
       "title": "Адаптация под аудиторию: практика",
@@ -6568,6 +6765,202 @@
       "methodologyVersion": "0.1.0"
     },
     {
+      "id": "comp_8829b9903f9c",
+      "slug": "vnedrenie-ai-praktika",
+      "title": "Внедрение AI: практика",
+      "aliases": [
+        "Внедрение искусственного интеллекта в дизайн-процессы"
+      ],
+      "definition": "Практика интеграции AI-инструментов в работу команды: регламенты использования, обучение сотрудников, выбор технологического стека и определение границ применимости с учётом рисков и ограничений.",
+      "scope": "universal",
+      "canonicalIds": [
+        "aidesigner-integration"
+      ],
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "components": [
+        {
+          "id": "vnedrenie-ai-praktika.reglamenty-ispolzovaniya-ai",
+          "slug": "reglamenty-ispolzovaniya-ai",
+          "title": "Регламенты использования AI",
+          "definition": "Правила и нормы применения AI-инструментов в команде и проектных процессах.",
+          "order": 1,
+          "tagIds": [
+            "tag_a6a051263ed1"
+          ]
+        },
+        {
+          "id": "vnedrenie-ai-praktika.obuchenie-i-razvitie-komandy",
+          "slug": "obuchenie-i-razvitie-komandy",
+          "title": "Обучение и развитие команды",
+          "definition": "Практика внедрения AI-инструментов через обучение сотрудников и формирование навыков работы с ними.",
+          "order": 2,
+          "tagIds": [
+            "tag_3a2d1832df1b"
+          ]
+        },
+        {
+          "id": "vnedrenie-ai-praktika.tehnologicheskiy-stek-ai",
+          "slug": "tehnologicheskiy-stek-ai",
+          "title": "Технологический стек AI",
+          "definition": "Подбор инструментов и технологий AI под задачи и процессы команды.",
+          "order": 3,
+          "tagIds": [
+            "tag_0a2885c7641d"
+          ]
+        },
+        {
+          "id": "vnedrenie-ai-praktika.granitsy-primenimosti-i-riski",
+          "slug": "granitsy-primenimosti-i-riski",
+          "title": "Границы применимости и риски",
+          "definition": "Понимание ограничений AI-инструментов и связанных с ними рисков при внедрении.",
+          "order": 4,
+          "tagIds": [
+            "tag_4462325da1d1"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_a6a051263ed1",
+          "slug": "reglamenty",
+          "title": "Регламенты",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Правила использования AI в команде.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-design",
+              "url": "https://practicum.yandex.ru/ai-for-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_8829b9903f9c",
+              "componentId": "vnedrenie-ai-praktika.reglamenty-ispolzovaniya-ai",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_3a2d1832df1b",
+          "slug": "obuchenie-komandy",
+          "title": "Обучение команды",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Практика внедрения и обучения.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-design",
+              "url": "https://practicum.yandex.ru/ai-for-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_8829b9903f9c",
+              "componentId": "vnedrenie-ai-praktika.obuchenie-i-razvitie-komandy",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_0a2885c7641d",
+          "slug": "vybor-steka",
+          "title": "Выбор стека",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Инструменты под процессы.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-design",
+              "url": "https://practicum.yandex.ru/ai-for-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_8829b9903f9c",
+              "componentId": "vnedrenie-ai-praktika.tehnologicheskiy-stek-ai",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_4462325da1d1",
+          "slug": "granitsy-primenimosti",
+          "title": "Границы применимости",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Риски и ограничения.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-design",
+              "url": "https://practicum.yandex.ru/ai-for-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_8829b9903f9c",
+              "componentId": "vnedrenie-ai-praktika.granitsy-primenimosti-i-riski",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_7c6abcb64198",
+        "costUsd": 0.0012397200000000004,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 2008,
+          "outputTokens": 626
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
       "id": "comp_9d2a4faffaa9",
       "slug": "vyborka-i-rekruting-praktika",
       "title": "Выборка и рекрутинг: практика",
@@ -7283,6 +7676,203 @@
           "cacheHitTokens": 128,
           "cacheMissTokens": 1819,
           "outputTokens": 602
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
+      "id": "comp_98f8b80e3d5f",
+      "slug": "generatsiya-vizuala-praktika",
+      "title": "Генерация визуала: практика",
+      "aliases": [
+        "Практика генерации визуала",
+        "AI-генерация изображений: практика"
+      ],
+      "definition": "Генерация, устранение артефактов, апскейл и стилизация.",
+      "scope": "universal",
+      "canonicalIds": [
+        "aidesigner-visual-generation"
+      ],
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "components": [
+        {
+          "id": "generatsiya-vizuala-praktika.generatsiya-izobrazheniy",
+          "slug": "generatsiya-izobrazheniy",
+          "title": "Генерация изображений",
+          "definition": "Постановка задачи генерации и управление параметрами модели для получения изображения.",
+          "order": 1,
+          "tagIds": [
+            "tag_a81b55da2143"
+          ]
+        },
+        {
+          "id": "generatsiya-vizuala-praktika.ustranenie-artefaktov",
+          "slug": "ustranenie-artefaktov",
+          "title": "Устранение артефактов",
+          "definition": "Распознавание типовых дефектов генерации и их исправление.",
+          "order": 2,
+          "tagIds": [
+            "tag_11df6890c324"
+          ]
+        },
+        {
+          "id": "generatsiya-vizuala-praktika.dovedenie-vizuala",
+          "slug": "dovedenie-vizuala",
+          "title": "Доведение визуала",
+          "definition": "Практическая доработка сгенерированного изображения до целевого качества, включая апскейл.",
+          "order": 3,
+          "tagIds": [
+            "tag_a92708c787cd"
+          ]
+        },
+        {
+          "id": "generatsiya-vizuala-praktika.stilizatsiya",
+          "slug": "stilizatsiya",
+          "title": "Стилизация",
+          "definition": "Управление визуальным стилем результата через референсы и стилевые приёмы.",
+          "order": 4,
+          "tagIds": [
+            "tag_38b872764f10"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_a81b55da2143",
+          "slug": "generatsiya-izobrazheniy",
+          "title": "Генерация изображений",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Промпты и параметры генерации.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-design",
+              "url": "https://practicum.yandex.ru/ai-for-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_98f8b80e3d5f",
+              "componentId": "generatsiya-vizuala-praktika.generatsiya-izobrazheniy",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_11df6890c324",
+          "slug": "artefakty",
+          "title": "Артефакты",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Типовые ошибки и их устранение.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-design",
+              "url": "https://practicum.yandex.ru/ai-for-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_98f8b80e3d5f",
+              "componentId": "generatsiya-vizuala-praktika.ustranenie-artefaktov",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_a92708c787cd",
+          "slug": "dovedenie-vizuala",
+          "title": "Доведение визуала",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Практика доработки и апскейла.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-design",
+              "url": "https://practicum.yandex.ru/ai-for-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_98f8b80e3d5f",
+              "componentId": "generatsiya-vizuala-praktika.dovedenie-vizuala",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_38b872764f10",
+          "slug": "stilizatsiya",
+          "title": "Стилизация",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Управление стилем и референсами.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-design",
+              "url": "https://practicum.yandex.ru/ai-for-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_98f8b80e3d5f",
+              "componentId": "generatsiya-vizuala-praktika.stilizatsiya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_467cde0e7645",
+        "costUsd": 0.0011371,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1962,
+          "outputTokens": 544
         }
       },
       "issues": [],
@@ -12061,6 +12651,493 @@
       "methodologyVersion": "0.1.0"
     },
     {
+      "id": "comp_6a82155c5fa1",
+      "slug": "kontrol-kachestva-ai-praktika",
+      "title": "Контроль качества AI: практика",
+      "aliases": [
+        "QA AI-результатов",
+        "Приёмка AI-контента"
+      ],
+      "definition": "Практика проверки и приёмки результатов, созданных с помощью AI: чек-листы качества, критический разбор, фактчекинг и соответствие брифу и стилю.",
+      "scope": "universal",
+      "canonicalIds": [
+        "aidesigner-quality-eval"
+      ],
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "components": [
+        {
+          "id": "kontrol-kachestva-ai-praktika.kriterii-i-chek-listy-priemki",
+          "slug": "kriterii-i-chek-listy-priemki",
+          "title": "Критерии и чек-листы приёмки",
+          "definition": "Формализация требований к AI-результату и построение проверочных списков для приёмки.",
+          "order": 1,
+          "tagIds": [
+            "tag_4401df00dc94",
+            "tag_4a9963f10f22"
+          ]
+        },
+        {
+          "id": "kontrol-kachestva-ai-praktika.kriticheskiy-razbor-rezultata",
+          "slug": "kriticheskiy-razbor-rezultata",
+          "title": "Критический разбор результата",
+          "definition": "Практика анализа AI-результата, выявления недостатков и внесения правок.",
+          "order": 2,
+          "tagIds": [
+            "tag_74a1173dc512"
+          ]
+        },
+        {
+          "id": "kontrol-kachestva-ai-praktika.proverka-faktov-i-istochnikov",
+          "slug": "proverka-faktov-i-istochnikov",
+          "title": "Проверка фактов и источников",
+          "definition": "Верификация фактических утверждений и ссылок в AI-результате.",
+          "order": 3,
+          "tagIds": [
+            "tag_83e9c16fa4be"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_4401df00dc94",
+          "slug": "chek-list-kachestva",
+          "title": "Чек-лист качества",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Критерии приёмки AI-результата.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-design",
+              "url": "https://practicum.yandex.ru/ai-for-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_6a82155c5fa1",
+              "componentId": "kontrol-kachestva-ai-praktika.kriterii-i-chek-listy-priemki",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_4a9963f10f22",
+          "slug": "sootvetstvie-brifu",
+          "title": "Соответствие брифу",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Стиль и требования задачи.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-design",
+              "url": "https://practicum.yandex.ru/ai-for-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_6a82155c5fa1",
+              "componentId": "kontrol-kachestva-ai-praktika.kriterii-i-chek-listy-priemki",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_74a1173dc512",
+          "slug": "kritika-rezultata",
+          "title": "Критика результата",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Практика разбора и правок.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-design",
+              "url": "https://practicum.yandex.ru/ai-for-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_6a82155c5fa1",
+              "componentId": "kontrol-kachestva-ai-praktika.kriticheskiy-razbor-rezultata",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_83e9c16fa4be",
+          "slug": "faktcheking",
+          "title": "Фактчекинг",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Проверка фактов и источников.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-design",
+              "url": "https://practicum.yandex.ru/ai-for-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_6a82155c5fa1",
+              "componentId": "kontrol-kachestva-ai-praktika.proverka-faktov-i-istochnikov",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_b8e9a9fb0a8e",
+        "costUsd": 0.0012781800000000003,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 2016,
+          "outputTokens": 659
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
+      "id": "comp_e02c5f4d39ea",
+      "slug": "landshaft-ai-instrumentov-praktika",
+      "title": "Ландшафт AI-инструментов: практика",
+      "aliases": [
+        "AI-инструменты в дизайне: практика",
+        "Практика работы с AI-инструментами"
+      ],
+      "definition": "Практическое ориентирование в инструментах искусственного интеллекта для работы с текстом, изображениями, аудио, видео и 3D, включая понимание их ограничений и выбор подходящего инструмента под задачу.",
+      "scope": "universal",
+      "canonicalIds": [
+        "aidesigner-tool-landscape"
+      ],
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "components": [
+        {
+          "id": "landshaft-ai-instrumentov-praktika.ai-instrumenty-dlya-teksta",
+          "slug": "ai-instrumenty-dlya-teksta",
+          "title": "AI-инструменты для текста",
+          "definition": "Инструменты генерации и редактирования текстового контента и практика их применения.",
+          "order": 1,
+          "tagIds": [
+            "tag_6486637b26e3"
+          ]
+        },
+        {
+          "id": "landshaft-ai-instrumentov-praktika.ai-instrumenty-dlya-vizuala",
+          "slug": "ai-instrumenty-dlya-vizuala",
+          "title": "AI-инструменты для визуала",
+          "definition": "Инструменты генерации и обработки изображений и практика их применения.",
+          "order": 2,
+          "tagIds": [
+            "tag_fc1c0c220899"
+          ]
+        },
+        {
+          "id": "landshaft-ai-instrumentov-praktika.ai-instrumenty-dlya-audio-video-i-3d",
+          "slug": "ai-instrumenty-dlya-audio-video-i-3d",
+          "title": "AI-инструменты для аудио, видео и 3D",
+          "definition": "Инструменты искусственного интеллекта для работы со звуком, видеоматериалами и трёхмерной графикой.",
+          "order": 3,
+          "tagIds": [
+            "tag_0c63474dbeb6",
+            "tag_367c15c8f9d5",
+            "tag_9e63a3d1d0a6"
+          ]
+        },
+        {
+          "id": "landshaft-ai-instrumentov-praktika.vybor-i-otsenka-instrumentov",
+          "slug": "vybor-i-otsenka-instrumentov",
+          "title": "Выбор и оценка инструментов",
+          "definition": "Практика сравнения AI-инструментов и выбора подходящего под конкретную задачу.",
+          "order": 4,
+          "tagIds": [
+            "tag_99dfd9a5347f"
+          ]
+        },
+        {
+          "id": "landshaft-ai-instrumentov-praktika.ogranicheniya-ai-instrumentov",
+          "slug": "ogranicheniya-ai-instrumentov",
+          "title": "Ограничения AI-инструментов",
+          "definition": "Понимание ограничений, стоимости и качества результатов работы AI-инструментов.",
+          "order": 5,
+          "tagIds": [
+            "tag_6b369477352b"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_6486637b26e3",
+          "slug": "ai-instrumenty-dlya-teksta",
+          "title": "AI-инструменты для текста",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Инструменты генерации и редактирования текста.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-design",
+              "url": "https://practicum.yandex.ru/ai-for-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_e02c5f4d39ea",
+              "componentId": "landshaft-ai-instrumentov-praktika.ai-instrumenty-dlya-teksta",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_fc1c0c220899",
+          "slug": "ai-instrumenty-dlya-vizuala",
+          "title": "AI-инструменты для визуала",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Генерация и обработка изображений.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-design",
+              "url": "https://practicum.yandex.ru/ai-for-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_e02c5f4d39ea",
+              "componentId": "landshaft-ai-instrumentov-praktika.ai-instrumenty-dlya-vizuala",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_0c63474dbeb6",
+          "slug": "ai-instrumenty-dlya-audio",
+          "title": "AI-инструменты для аудио",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Инструменты генерации и обработки звука и музыки с помощью искусственного интеллекта.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-design",
+              "url": "https://practicum.yandex.ru/ai-for-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_e02c5f4d39ea",
+              "componentId": "landshaft-ai-instrumentov-praktika.ai-instrumenty-dlya-audio-video-i-3d",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_367c15c8f9d5",
+          "slug": "ai-instrumenty-dlya-video",
+          "title": "AI-инструменты для видео",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Инструменты генерации и обработки видео с помощью искусственного интеллекта.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-design",
+              "url": "https://practicum.yandex.ru/ai-for-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_e02c5f4d39ea",
+              "componentId": "landshaft-ai-instrumentov-praktika.ai-instrumenty-dlya-audio-video-i-3d",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_9e63a3d1d0a6",
+          "slug": "ai-instrumenty-dlya-3d",
+          "title": "AI-инструменты для 3D",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Инструменты генерации и обработки трёхмерных моделей и сцен с помощью искусственного интеллекта.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-design",
+              "url": "https://practicum.yandex.ru/ai-for-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_e02c5f4d39ea",
+              "componentId": "landshaft-ai-instrumentov-praktika.ai-instrumenty-dlya-audio-video-i-3d",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_99dfd9a5347f",
+          "slug": "sravnenie-instrumentov",
+          "title": "Сравнение инструментов",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Практика выбора инструмента под задачу.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-design",
+              "url": "https://practicum.yandex.ru/ai-for-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_e02c5f4d39ea",
+              "componentId": "landshaft-ai-instrumentov-praktika.vybor-i-otsenka-instrumentov",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_6b369477352b",
+          "slug": "ogranicheniya-instrumentov",
+          "title": "Ограничения инструментов",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Ограничения, стоимость и качество.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-design",
+              "url": "https://practicum.yandex.ru/ai-for-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_e02c5f4d39ea",
+              "componentId": "landshaft-ai-instrumentov-praktika.ogranicheniya-ai-instrumentov",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_d00e550a6197",
+        "costUsd": 0.0015479100000000002,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1915,
+          "outputTokens": 929
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
       "id": "comp_bf36ffff1027",
       "slug": "lendingi-i-struktura-stranits",
       "title": "Лендинги и структура страниц",
@@ -15133,6 +16210,194 @@
           "cacheHitTokens": 128,
           "cacheMissTokens": 1532,
           "outputTokens": 633
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
+      "id": "comp_c41a7a0a4f14",
+      "slug": "otsenka-ai-instrumenta-praktika",
+      "title": "Оценка AI-инструмента: практика",
+      "aliases": [
+        "Сравнение AI-инструментов",
+        "Выбор AI-инструментов"
+      ],
+      "definition": "Сравнение инструментов по качеству, стоимости и скорости.",
+      "scope": "universal",
+      "canonicalIds": [
+        "aidesigner-tool-evaluation"
+      ],
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "components": [
+        {
+          "id": "otsenka-ai-instrumenta-praktika.kriterii-otsenki",
+          "slug": "kriterii-otsenki",
+          "title": "Критерии оценки",
+          "definition": "Система критериев, по которым сравниваются AI-инструменты.",
+          "order": 1,
+          "tagIds": [
+            "tag_b1818e1beaff"
+          ]
+        },
+        {
+          "id": "otsenka-ai-instrumenta-praktika.praktika-testirovaniya",
+          "slug": "praktika-testirovaniya",
+          "title": "Практика тестирования",
+          "definition": "Проведение тестов и сравнения инструментов на практике.",
+          "order": 2,
+          "tagIds": [
+            "tag_14172a65c810"
+          ]
+        },
+        {
+          "id": "otsenka-ai-instrumenta-praktika.vybor-i-fiksatsiya",
+          "slug": "vybor-i-fiksatsiya",
+          "title": "Выбор и фиксация",
+          "definition": "Выбор инструмента под задачу и документирование результата.",
+          "order": 3,
+          "tagIds": [
+            "tag_83ffbdf00325",
+            "tag_6fd736a60235"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_b1818e1beaff",
+          "slug": "kriterii-otsenki",
+          "title": "Критерии оценки",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Качество, стоимость, скорость.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-design",
+              "url": "https://practicum.yandex.ru/ai-for-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_c41a7a0a4f14",
+              "componentId": "otsenka-ai-instrumenta-praktika.kriterii-otsenki",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_14172a65c810",
+          "slug": "testirovanie-instrumenta",
+          "title": "Тестирование инструмента",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Практика тестов и сравнения.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-design",
+              "url": "https://practicum.yandex.ru/ai-for-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_c41a7a0a4f14",
+              "componentId": "otsenka-ai-instrumenta-praktika.praktika-testirovaniya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_83ffbdf00325",
+          "slug": "vybor-instrumenta",
+          "title": "Выбор инструмента",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Выбор под задачу и ограничения.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-design",
+              "url": "https://practicum.yandex.ru/ai-for-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_c41a7a0a4f14",
+              "componentId": "otsenka-ai-instrumenta-praktika.vybor-i-fiksatsiya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_6fd736a60235",
+          "slug": "dokumentirovanie-vybora",
+          "title": "Документирование выбора",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Фиксация критериев и результата.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-design",
+              "url": "https://practicum.yandex.ru/ai-for-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_c41a7a0a4f14",
+              "componentId": "otsenka-ai-instrumenta-praktika.vybor-i-fiksatsiya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_4cd32f349296",
+        "costUsd": 0.0010256800000000002,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1916,
+          "outputTokens": 454
         }
       },
       "issues": [],
@@ -18598,6 +19863,391 @@
       "methodologyVersion": "0.1.0"
     },
     {
+      "id": "comp_57ae2fab25db",
+      "slug": "proektirovanie-ai-fich-praktika",
+      "title": "Проектирование AI-фич: практика",
+      "aliases": [
+        "UX AI-продуктов",
+        "Дизайн AI-фич"
+      ],
+      "definition": "Практика проектирования пользовательских сценариев с участием AI-моделей: распределение ролей человека и модели, работа с неопределённостью и объяснимостью результатов.",
+      "scope": "universal",
+      "canonicalIds": [
+        "aidesigner-ai-features"
+      ],
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "components": [
+        {
+          "id": "proektirovanie-ai-fich-praktika.roli-cheloveka-i-modeli",
+          "slug": "roli-cheloveka-i-modeli",
+          "title": "Роли человека и модели",
+          "definition": "Разделы проектирования взаимодействия, где человек и AI-модель совместно решают задачу.",
+          "order": 1,
+          "tagIds": [
+            "tag_f0edee9bd9ef",
+            "tag_0d7a50d64353"
+          ]
+        },
+        {
+          "id": "proektirovanie-ai-fich-praktika.neopredelennost-modeley",
+          "slug": "neopredelennost-modeley",
+          "title": "Неопределённость моделей",
+          "definition": "Раздел о том, как учитывать ошибки, уверенность и ограничения AI-моделей в пользовательском сценарии.",
+          "order": 2,
+          "tagIds": [
+            "tag_aadc2bcf5e27"
+          ]
+        },
+        {
+          "id": "proektirovanie-ai-fich-praktika.obyasnimost-rezultata",
+          "slug": "obyasnimost-rezultata",
+          "title": "Объяснимость результата",
+          "definition": "Раздел о том, как сделать результат AI-модели понятным пользователю.",
+          "order": 3,
+          "tagIds": [
+            "tag_943d49dbc361"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_f0edee9bd9ef",
+          "slug": "human-in-the-loop",
+          "title": "Human-in-the-loop",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Роли человека и модели.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-design",
+              "url": "https://practicum.yandex.ru/ai-for-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_57ae2fab25db",
+              "componentId": "proektirovanie-ai-fich-praktika.roli-cheloveka-i-modeli",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_0d7a50d64353",
+          "slug": "proektirovanie-ai-fichi",
+          "title": "Проектирование AI-фичи",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Практика сценария AI-фичи.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-design",
+              "url": "https://practicum.yandex.ru/ai-for-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_57ae2fab25db",
+              "componentId": "proektirovanie-ai-fich-praktika.roli-cheloveka-i-modeli",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_aadc2bcf5e27",
+          "slug": "neopredelennost-modeley",
+          "title": "Неопределённость моделей",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Ошибки, confidence и ограничения.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-design",
+              "url": "https://practicum.yandex.ru/ai-for-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_57ae2fab25db",
+              "componentId": "proektirovanie-ai-fich-praktika.neopredelennost-modeley",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_943d49dbc361",
+          "slug": "obyasnimost",
+          "title": "Объяснимость",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Понятность результата для пользователя.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-design",
+              "url": "https://practicum.yandex.ru/ai-for-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_57ae2fab25db",
+              "componentId": "proektirovanie-ai-fich-praktika.obyasnimost-rezultata",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_18af58caa9a5",
+        "costUsd": 0.00117296,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1940,
+          "outputTokens": 582
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
+      "id": "comp_4f6c74ac9230",
+      "slug": "prompt-sistemy-praktika",
+      "title": "Промпт-системы: практика",
+      "aliases": [
+        "Промпт-инжиниринг: практика",
+        "Практика промпт-систем"
+      ],
+      "definition": "Переиспользуемые промпты, переменные и библиотеки: практика построения и применения промпт-систем для получения воспроизводимых результатов.",
+      "scope": "universal",
+      "canonicalIds": [
+        "aidesigner-prompt-systems"
+      ],
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "components": [
+        {
+          "id": "prompt-sistemy-praktika.struktura-prompta",
+          "slug": "struktura-prompta",
+          "title": "Структура промпта",
+          "definition": "Устройство промпта: ядро, переменные и ограничения, задающие рамки результата.",
+          "order": 1,
+          "tagIds": [
+            "tag_c5a4349a32ae"
+          ]
+        },
+        {
+          "id": "prompt-sistemy-praktika.biblioteki-promptov",
+          "slug": "biblioteki-promptov",
+          "title": "Библиотеки промптов",
+          "definition": "Организация промптов в переиспользуемые библиотеки и управление ими.",
+          "order": 2,
+          "tagIds": [
+            "tag_13e5bb336e72"
+          ]
+        },
+        {
+          "id": "prompt-sistemy-praktika.sborka-prompt-sistemy",
+          "slug": "sborka-prompt-sistemy",
+          "title": "Сборка промпт-системы",
+          "definition": "Практическая сборка промпт-системы из компонентов: ядра, переменных, ограничений и библиотеки.",
+          "order": 3,
+          "tagIds": [
+            "tag_976709fb151e"
+          ]
+        },
+        {
+          "id": "prompt-sistemy-praktika.vosproizvodimost-rezultatov",
+          "slug": "vosproizvodimost-rezultatov",
+          "title": "Воспроизводимость результатов",
+          "definition": "Обеспечение стабильности результата при работе с промпт-системами.",
+          "order": 4,
+          "tagIds": [
+            "tag_7d3e59d2fa94"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_c5a4349a32ae",
+          "slug": "struktura-prompta",
+          "title": "Структура промпта",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Ядро, переменные и ограничения.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-design",
+              "url": "https://practicum.yandex.ru/ai-for-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_4f6c74ac9230",
+              "componentId": "prompt-sistemy-praktika.struktura-prompta",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_13e5bb336e72",
+          "slug": "biblioteka-promptov",
+          "title": "Библиотека промптов",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Организация и переиспользование.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-design",
+              "url": "https://practicum.yandex.ru/ai-for-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_4f6c74ac9230",
+              "componentId": "prompt-sistemy-praktika.biblioteki-promptov",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_976709fb151e",
+          "slug": "sozdanie-prompt-sistemy",
+          "title": "Создание промпт-системы",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Практика сборки системы.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-design",
+              "url": "https://practicum.yandex.ru/ai-for-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_4f6c74ac9230",
+              "componentId": "prompt-sistemy-praktika.sborka-prompt-sistemy",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_7d3e59d2fa94",
+          "slug": "vosproizvodimost",
+          "title": "Воспроизводимость",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Стабильность результата.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-design",
+              "url": "https://practicum.yandex.ru/ai-for-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_4f6c74ac9230",
+              "componentId": "prompt-sistemy-praktika.vosproizvodimost-rezultatov",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_0f6d6ad092f7",
+        "costUsd": 0.0012357800000000001,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1916,
+          "outputTokens": 645
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
       "id": "comp_97cd897072ec",
       "slug": "redaktsionnyy-dizayn-i-verstka",
       "title": "Редакционный дизайн и вёрстка",
@@ -19863,6 +21513,193 @@
           "cacheHitTokens": 128,
           "cacheMissTokens": 1496,
           "outputTokens": 612
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
+      "id": "comp_38664dc08ab1",
+      "slug": "serii-vizualov-praktika",
+      "title": "Серии визуалов: практика",
+      "aliases": [
+        "Серийная визуальная графика: практика"
+      ],
+      "definition": "Практика построения серий визуалов на основе ядра и переменных с адаптацией под каналы и сохранением визуальной согласованности.",
+      "scope": "universal",
+      "canonicalIds": [
+        "aidesigner-series-adaptation"
+      ],
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "components": [
+        {
+          "id": "serii-vizualov-praktika.logika-serii",
+          "slug": "logika-serii",
+          "title": "Логика серии",
+          "definition": "Построение серии на основе ядра и переменных, обеспечивающее единство и вариативность.",
+          "order": 1,
+          "tagIds": [
+            "tag_641a9a0c5142",
+            "tag_20a985e67a41"
+          ]
+        },
+        {
+          "id": "serii-vizualov-praktika.vizualnaya-soglasovannost",
+          "slug": "vizualnaya-soglasovannost",
+          "title": "Визуальная согласованность",
+          "definition": "Обеспечение единого стиля серии при сохранении вариативности.",
+          "order": 2,
+          "tagIds": [
+            "tag_23318f95e8f5"
+          ]
+        },
+        {
+          "id": "serii-vizualov-praktika.adaptatsiya-pod-kanaly",
+          "slug": "adaptatsiya-pod-kanaly",
+          "title": "Адаптация под каналы",
+          "definition": "Приведение серии визуалов к форматам и требованиям различных каналов.",
+          "order": 3,
+          "tagIds": [
+            "tag_45c1efe3d3fc"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_641a9a0c5142",
+          "slug": "seriynost",
+          "title": "Серийность",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Ядро и переменные серии.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-design",
+              "url": "https://practicum.yandex.ru/ai-for-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_38664dc08ab1",
+              "componentId": "serii-vizualov-praktika.logika-serii",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_20a985e67a41",
+          "slug": "masshtabirovanie-serii",
+          "title": "Масштабирование серии",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Практика генерации серии.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-design",
+              "url": "https://practicum.yandex.ru/ai-for-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_38664dc08ab1",
+              "componentId": "serii-vizualov-praktika.logika-serii",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_23318f95e8f5",
+          "slug": "vizualnaya-soglasovannost",
+          "title": "Визуальная согласованность",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Единый стиль серии.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-design",
+              "url": "https://practicum.yandex.ru/ai-for-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_38664dc08ab1",
+              "componentId": "serii-vizualov-praktika.vizualnaya-soglasovannost",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_45c1efe3d3fc",
+          "slug": "adaptatsiya-pod-kanaly",
+          "title": "Адаптация под каналы",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Форматы и требования каналов.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-design",
+              "url": "https://practicum.yandex.ru/ai-for-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_38664dc08ab1",
+              "componentId": "serii-vizualov-praktika.adaptatsiya-pod-kanaly",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_7c5c11e2b062",
+        "costUsd": 0.0012044300000000003,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1971,
+          "outputTokens": 603
         }
       },
       "issues": [],
@@ -24562,6 +26399,202 @@
       "methodologyVersion": "0.1.0"
     },
     {
+      "id": "comp_a06b049442ac",
+      "slug": "ai-video-i-audio-praktika",
+      "title": "AI-видео и аудио: практика",
+      "aliases": [
+        "Генерация видео и аудио с ИИ: практика"
+      ],
+      "definition": "Практическая компетенция генерации видео и аудио с помощью инструментов искусственного интеллекта, включая анимацию, монтаж и озвучку.",
+      "scope": "universal",
+      "canonicalIds": [
+        "aidesigner-video-audio"
+      ],
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "components": [
+        {
+          "id": "ai-video-i-audio-praktika.generatsiya-video-s-ii",
+          "slug": "generatsiya-video-s-ii",
+          "title": "Генерация видео с ИИ",
+          "definition": "Создание видеоматериала средствами генеративных моделей: от постановки задачи до получения пригодного к монтажу результата.",
+          "order": 1,
+          "tagIds": [
+            "tag_4100d2062876"
+          ]
+        },
+        {
+          "id": "ai-video-i-audio-praktika.generatsiya-audio-s-ii",
+          "slug": "generatsiya-audio-s-ii",
+          "title": "Генерация аудио с ИИ",
+          "definition": "Создание озвучки, музыки и звукового сопровождения с помощью генеративных моделей.",
+          "order": 2,
+          "tagIds": [
+            "tag_bb2df6f3f5dc"
+          ]
+        },
+        {
+          "id": "ai-video-i-audio-praktika.sborka-i-montazh-rolika",
+          "slug": "sborka-i-montazh-rolika",
+          "title": "Сборка и монтаж ролика",
+          "definition": "Практическое соединение сгенерированных фрагментов в целостный видеоролик.",
+          "order": 3,
+          "tagIds": [
+            "tag_2820ef86609e"
+          ]
+        },
+        {
+          "id": "ai-video-i-audio-praktika.sinhronizatsiya-video-i-zvuka",
+          "slug": "sinhronizatsiya-video-i-zvuka",
+          "title": "Синхронизация видео и звука",
+          "definition": "Совмещение видеоряда и аудиодорожки в единое согласованное целое.",
+          "order": 4,
+          "tagIds": [
+            "tag_28399a52ac19"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_4100d2062876",
+          "slug": "ai-video",
+          "title": "AI-видео",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Генерация и монтаж видео.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-design",
+              "url": "https://practicum.yandex.ru/ai-for-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_a06b049442ac",
+              "componentId": "ai-video-i-audio-praktika.generatsiya-video-s-ii",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_bb2df6f3f5dc",
+          "slug": "ai-audio",
+          "title": "AI-аудио",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Озвучка, музыка и звук.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-design",
+              "url": "https://practicum.yandex.ru/ai-for-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_a06b049442ac",
+              "componentId": "ai-video-i-audio-praktika.generatsiya-audio-s-ii",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_2820ef86609e",
+          "slug": "sborka-rolika",
+          "title": "Сборка ролика",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Практика сборки AI-видео.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-design",
+              "url": "https://practicum.yandex.ru/ai-for-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_a06b049442ac",
+              "componentId": "ai-video-i-audio-praktika.sborka-i-montazh-rolika",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_28399a52ac19",
+          "slug": "sinhronizatsiya",
+          "title": "Синхронизация",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Совмещение видео и звука.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-design",
+              "url": "https://practicum.yandex.ru/ai-for-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_a06b049442ac",
+              "componentId": "ai-video-i-audio-praktika.sinhronizatsiya-video-i-zvuka",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_9ba1bd1cb9a0",
+        "costUsd": 0.00132452,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1988,
+          "outputTokens": 708
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
       "id": "comp_4f5be00710f6",
       "slug": "cms-i-konstruktory-praktika",
       "title": "CMS и конструкторы: практика",
@@ -28019,6 +30052,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_8dc8ffa6d712",
+      "slug": "avtomatizatsiya",
+      "title": "Автоматизация",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Сценарии и передача данных.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_c0e56934bd14",
+          "componentId": "avtomatizatsiya-payplaynov-praktika.avtomatizatsiya-i-peredacha-dannyh",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_6d23dcbda5b7",
       "slug": "avtomatizatsiya-protsessov-modelirovaniya",
       "title": "Автоматизация процессов моделирования",
@@ -28079,6 +30134,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_45c1efe3d3fc",
+      "slug": "adaptatsiya-pod-kanaly",
+      "title": "Адаптация под каналы",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Форматы и требования каналов.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_38664dc08ab1",
+          "componentId": "serii-vizualov-praktika.adaptatsiya-pod-kanaly",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_c5921d2456b8",
       "slug": "adaptatsiya-pod-platformy",
       "title": "Адаптация под платформы",
@@ -28088,8 +30165,16 @@
       "professionIds": [
         "it.appdesign"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "mobile-app-design",
+          "url": "https://practicum.yandex.ru/mobile-app-design/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_ef89b23c9b91",
@@ -28098,7 +30183,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_b49c75e5a2ff",
@@ -28480,8 +30565,16 @@
       "professionIds": [
         "it.appdesign"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "mobile-app-design",
+          "url": "https://practicum.yandex.ru/mobile-app-design/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_5d09eb9186eb",
@@ -28490,7 +30583,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_e642005c8086",
@@ -29099,6 +31192,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_11df6890c324",
+      "slug": "artefakty",
+      "title": "Артефакты",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Типовые ошибки и их устранение.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_98f8b80e3d5f",
+          "componentId": "generatsiya-vizuala-praktika.ustranenie-artefaktov",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_f2818005ef1d",
       "slug": "audit-brenda",
       "title": "Аудит бренда",
@@ -29187,6 +31302,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_13e5bb336e72",
+      "slug": "biblioteka-promptov",
+      "title": "Библиотека промптов",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Организация и переиспользование.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_4f6c74ac9230",
+          "componentId": "prompt-sistemy-praktika.biblioteki-promptov",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_2b04f073d881",
@@ -30125,6 +32262,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_23318f95e8f5",
+      "slug": "vizualnaya-soglasovannost",
+      "title": "Визуальная согласованность",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Единый стиль серии.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_38664dc08ab1",
+          "componentId": "serii-vizualov-praktika.vizualnaya-soglasovannost",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_0376f61aa177",
       "slug": "vizualnoe-edinstvo-kompozitsiya-i-stili",
       "title": "Визуальное единство: композиция и стили",
@@ -30305,6 +32464,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_7d3e59d2fa94",
+      "slug": "vosproizvodimost",
+      "title": "Воспроизводимость",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Стабильность результата.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_4f6c74ac9230",
+          "componentId": "prompt-sistemy-praktika.vosproizvodimost-rezultatov",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_deee490a2fe0",
       "slug": "vybor-vizualizatsii",
       "title": "Выбор визуализации",
@@ -30333,6 +32514,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_83ffbdf00325",
+      "slug": "vybor-instrumenta",
+      "title": "Выбор инструмента",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Выбор под задачу и ограничения.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_c41a7a0a4f14",
+          "componentId": "otsenka-ai-instrumenta-praktika.vybor-i-fiksatsiya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_347f7e5a9a87",
@@ -30393,6 +32596,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_0a2885c7641d",
+      "slug": "vybor-steka",
+      "title": "Выбор стека",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Инструменты под процессы.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_8829b9903f9c",
+          "componentId": "vnedrenie-ai-praktika.tehnologicheskiy-stek-ai",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_a7df84de79d3",
@@ -30513,6 +32738,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_a81b55da2143",
+      "slug": "generatsiya-izobrazheniy",
+      "title": "Генерация изображений",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Промпты и параметры генерации.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_98f8b80e3d5f",
+          "componentId": "generatsiya-vizuala-praktika.generatsiya-izobrazheniy",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_c0261b5e392d",
@@ -30665,6 +32912,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_4462325da1d1",
+      "slug": "granitsy-primenimosti",
+      "title": "Границы применимости",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Риски и ограничения.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_8829b9903f9c",
+          "componentId": "vnedrenie-ai-praktika.granitsy-primenimosti-i-riski",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_287ecec57c4a",
       "slug": "gruppirovka-i-markirovka-elementov",
       "title": "Группировка и маркировка элементов",
@@ -30799,12 +33068,64 @@
       "professionIds": [
         "it.appdesign"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "mobile-app-design",
+          "url": "https://practicum.yandex.ru/mobile-app-design/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_5d09eb9186eb",
           "componentId": "metriki-mobilnyh-prilozheniy-praktika.analiz-i-interpretatsiya-metrik",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_a92708c787cd",
+      "slug": "dovedenie-vizuala",
+      "title": "Доведение визуала",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Практика доработки и апскейла.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_98f8b80e3d5f",
+          "componentId": "generatsiya-vizuala-praktika.dovedenie-vizuala",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_6fd736a60235",
+      "slug": "dokumentirovanie-vybora",
+      "title": "Документирование выбора",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Фиксация критериев и результата.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_c41a7a0a4f14",
+          "componentId": "otsenka-ai-instrumenta-praktika.vybor-i-fiksatsiya",
           "role": "primary"
         }
       ],
@@ -31433,8 +33754,16 @@
       "professionIds": [
         "it.appdesign"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "mobile-app-design",
+          "url": "https://practicum.yandex.ru/mobile-app-design/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_4e1fa37f2f5d",
@@ -31443,7 +33772,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_07bf2ea1ee94",
@@ -32331,6 +34660,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_7b2e29693d5c",
+      "slug": "kontrol-rezultata",
+      "title": "Контроль результата",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Проверка на каждом этапе.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_c0e56934bd14",
+          "componentId": "avtomatizatsiya-payplaynov-praktika.kontrol-kachestva-rezultata",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_f1381d968290",
       "slug": "kontrolnye-tochki-breakpoints",
       "title": "Контрольные точки (breakpoints)",
@@ -32481,6 +34832,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_b1818e1beaff",
+      "slug": "kriterii-otsenki",
+      "title": "Критерии оценки",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Качество, стоимость, скорость.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_c41a7a0a4f14",
+          "componentId": "otsenka-ai-instrumenta-praktika.kriterii-otsenki",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_a1fe0470f15b",
       "slug": "kriterii-proverki",
       "title": "Критерии проверки",
@@ -32541,6 +34914,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_74a1173dc512",
+      "slug": "kritika-rezultata",
+      "title": "Критика результата",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Практика разбора и правок.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_6a82155c5fa1",
+          "componentId": "kontrol-kachestva-ai-praktika.kriticheskiy-razbor-rezultata",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_bda3d29c5630",
       "slug": "krossplatformennost",
       "title": "Кроссплатформенность",
@@ -32550,8 +34945,16 @@
       "professionIds": [
         "it.appdesign"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "mobile-app-design",
+          "url": "https://practicum.yandex.ru/mobile-app-design/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_ef89b23c9b91",
@@ -32560,7 +34963,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_5450cb50d8e7",
@@ -32741,6 +35144,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_20a985e67a41",
+      "slug": "masshtabirovanie-serii",
+      "title": "Масштабирование серии",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Практика генерации серии.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_38664dc08ab1",
+          "componentId": "serii-vizualov-praktika.logika-serii",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_0b29a5fb2ef9",
@@ -33052,8 +35477,16 @@
       "professionIds": [
         "it.appdesign"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "mobile-app-design",
+          "url": "https://practicum.yandex.ru/mobile-app-design/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_5d09eb9186eb",
@@ -33062,7 +35495,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_9ce84c28c6c1",
@@ -33074,8 +35507,16 @@
       "professionIds": [
         "it.appdesign"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "mobile-app-design",
+          "url": "https://practicum.yandex.ru/mobile-app-design/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_2d29aef908c8",
@@ -33084,7 +35525,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_09234840b51d",
@@ -33096,8 +35537,16 @@
       "professionIds": [
         "it.appdesign"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "mobile-app-design",
+          "url": "https://practicum.yandex.ru/mobile-app-design/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_2d29aef908c8",
@@ -33106,7 +35555,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_7c84acba882e",
@@ -33564,6 +36013,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_b4396e9e3bcd",
+      "slug": "multimodalnyy-payplayn",
+      "title": "Мультимодальный пайплайн",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Связка инструментов и форматов.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_c0e56934bd14",
+          "componentId": "avtomatizatsiya-payplaynov-praktika.multimodalnye-payplayny",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_214eb8ac4348",
       "slug": "na-chto-smotrit-polzovatel",
       "title": "На что смотрит пользователь",
@@ -34008,12 +36479,42 @@
       "professionIds": [
         "it.appdesign"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "mobile-app-design",
+          "url": "https://practicum.yandex.ru/mobile-app-design/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_ef89b23c9b91",
           "componentId": "nativnye-i-krossplatformennye-prilozheniya-praktika.platformennye-razlichiya-i-nativnye-vozmozhnosti",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_aadc2bcf5e27",
+      "slug": "neopredelennost-modeley",
+      "title": "Неопределённость моделей",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Ошибки, confidence и ограничения.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_57ae2fab25db",
+          "componentId": "proektirovanie-ai-fich-praktika.neopredelennost-modeley",
           "role": "primary"
         }
       ],
@@ -34182,6 +36683,72 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_3a2d1832df1b",
+      "slug": "obuchenie-komandy",
+      "title": "Обучение команды",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Практика внедрения и обучения.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_8829b9903f9c",
+          "componentId": "vnedrenie-ai-praktika.obuchenie-i-razvitie-komandy",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_943d49dbc361",
+      "slug": "obyasnimost",
+      "title": "Объяснимость",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Понятность результата для пользователя.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_57ae2fab25db",
+          "componentId": "proektirovanie-ai-fich-praktika.obyasnimost-rezultata",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_6b369477352b",
+      "slug": "ogranicheniya-instrumentov",
+      "title": "Ограничения инструментов",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Ограничения, стоимость и качество.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_e02c5f4d39ea",
+          "componentId": "landshaft-ai-instrumentov-praktika.ogranicheniya-ai-instrumentov",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_d7318e78e900",
@@ -34362,6 +36929,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_2b65000095ba",
+      "slug": "orkestratsiya",
+      "title": "Оркестрация",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Практика сборки пайплайна.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_c0e56934bd14",
+          "componentId": "avtomatizatsiya-payplaynov-praktika.orkestratsiya-payplayna",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_01ee07d0315d",
@@ -34691,8 +37280,16 @@
       "professionIds": [
         "it.appdesign"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "mobile-app-design",
+          "url": "https://practicum.yandex.ru/mobile-app-design/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_2d29aef908c8",
@@ -34701,7 +37298,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_2152bbf4a605",
@@ -36774,8 +39371,16 @@
       "professionIds": [
         "it.appdesign"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "mobile-app-design",
+          "url": "https://practicum.yandex.ru/mobile-app-design/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_5d09eb9186eb",
@@ -36784,7 +39389,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_c11f17963f98",
@@ -37066,8 +39671,16 @@
       "professionIds": [
         "it.appdesign"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "mobile-app-design",
+          "url": "https://practicum.yandex.ru/mobile-app-design/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_4b49810a5164",
@@ -37076,7 +39689,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_4b94a6d4954c",
@@ -37137,6 +39750,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_0d7a50d64353",
+      "slug": "proektirovanie-ai-fichi",
+      "title": "Проектирование AI-фичи",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Практика сценария AI-фичи.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_57ae2fab25db",
+          "componentId": "proektirovanie-ai-fich-praktika.roli-cheloveka-i-modeli",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_93997c33578c",
@@ -37914,6 +40549,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_a6a051263ed1",
+      "slug": "reglamenty",
+      "title": "Регламенты",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Правила использования AI в команде.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_8829b9903f9c",
+          "componentId": "vnedrenie-ai-praktika.reglamenty-ispolzovaniya-ai",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_6006c728a66d",
       "slug": "redaktura-struktury",
       "title": "Редактура структуры",
@@ -38365,8 +41022,16 @@
       "professionIds": [
         "it.appdesign"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "mobile-app-design",
+          "url": "https://practicum.yandex.ru/mobile-app-design/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_2d29aef908c8",
@@ -38375,7 +41040,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_48f226d8f5f4",
@@ -38417,12 +41082,42 @@
       "professionIds": [
         "it.appdesign"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "mobile-app-design",
+          "url": "https://practicum.yandex.ru/mobile-app-design/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_4e1fa37f2f5d",
           "componentId": "prodvinutoe-prototipirovanie-praktika.praktika-prototipirovaniya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_2820ef86609e",
+      "slug": "sborka-rolika",
+      "title": "Сборка ролика",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Практика сборки AI-видео.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_a06b049442ac",
+          "componentId": "ai-video-i-audio-praktika.sborka-i-montazh-rolika",
           "role": "primary"
         }
       ],
@@ -38796,6 +41491,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_641a9a0c5142",
+      "slug": "seriynost",
+      "title": "Серийность",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Ядро и переменные серии.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_38664dc08ab1",
+          "componentId": "serii-vizualov-praktika.logika-serii",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_db5fc5fa5b74",
       "slug": "setki-v-dizayne",
       "title": "Сетки в дизайне",
@@ -38884,6 +41601,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_28399a52ac19",
+      "slug": "sinhronizatsiya",
+      "title": "Синхронизация",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Совмещение видео и звука.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_a06b049442ac",
+          "componentId": "ai-video-i-audio-praktika.sinhronizatsiya-video-i-zvuka",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_fe05bd2e1af5",
@@ -38985,8 +41724,16 @@
       "professionIds": [
         "it.appdesign"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "mobile-app-design",
+          "url": "https://practicum.yandex.ru/mobile-app-design/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_4b49810a5164",
@@ -38995,7 +41742,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_3e00b7d3b4be",
@@ -39514,8 +42261,16 @@
       "professionIds": [
         "it.appdesign"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "mobile-app-design",
+          "url": "https://practicum.yandex.ru/mobile-app-design/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_ef89b23c9b91",
@@ -39524,7 +42279,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_7c3e0b079c66",
@@ -39617,6 +42372,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_976709fb151e",
+      "slug": "sozdanie-prompt-sistemy",
+      "title": "Создание промпт-системы",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Практика сборки системы.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_4f6c74ac9230",
+          "componentId": "prompt-sistemy-praktika.sborka-prompt-sistemy",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_f2f35ac9db8e",
       "slug": "sozdanie-uv-razvertki",
       "title": "Создание UV-развёртки",
@@ -39645,6 +42422,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_4a9963f10f22",
+      "slug": "sootvetstvie-brifu",
+      "title": "Соответствие брифу",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Стиль и требования задачи.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_6a82155c5fa1",
+          "componentId": "kontrol-kachestva-ai-praktika.kriterii-i-chek-listy-priemki",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_3cf9515172b7",
@@ -39716,8 +42515,16 @@
       "professionIds": [
         "it.appdesign"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "mobile-app-design",
+          "url": "https://practicum.yandex.ru/mobile-app-design/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_4e1fa37f2f5d",
@@ -39726,7 +42533,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_d5494c1b173e",
@@ -39854,6 +42661,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_99dfd9a5347f",
+      "slug": "sravnenie-instrumentov",
+      "title": "Сравнение инструментов",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Практика выбора инструмента под задачу.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_e02c5f4d39ea",
+          "componentId": "landshaft-ai-instrumentov-praktika.vybor-i-otsenka-instrumentov",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_10d0f6bcf152",
       "slug": "sroki-i-byudzhet",
       "title": "Сроки и бюджет",
@@ -39976,6 +42805,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_38b872764f10",
+      "slug": "stilizatsiya",
+      "title": "Стилизация",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Управление стилем и референсами.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_98f8b80e3d5f",
+          "componentId": "generatsiya-vizuala-praktika.stilizatsiya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_d6f699d7e3e6",
@@ -40178,6 +43029,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_c5a4349a32ae",
+      "slug": "struktura-prompta",
+      "title": "Структура промпта",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Ядро, переменные и ограничения.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_4f6c74ac9230",
+          "componentId": "prompt-sistemy-praktika.struktura-prompta",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_237f4fa77350",
@@ -40590,6 +43463,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_14172a65c810",
+      "slug": "testirovanie-instrumenta",
+      "title": "Тестирование инструмента",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Практика тестов и сравнения.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_c41a7a0a4f14",
+          "componentId": "otsenka-ai-instrumenta-praktika.praktika-testirovaniya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_97a8e5d5c80f",
       "slug": "testirovanie-prototipa",
       "title": "Тестирование прототипа",
@@ -40599,8 +43494,16 @@
       "professionIds": [
         "it.appdesign"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "mobile-app-design",
+          "url": "https://practicum.yandex.ru/mobile-app-design/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_4e1fa37f2f5d",
@@ -40609,7 +43512,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_f75c97f110c1",
@@ -41179,7 +44082,8 @@
       "kind": "skill",
       "definition": "Проверка утверждений и цитат.",
       "professionIds": [
-        "it.presentation"
+        "it.presentation",
+        "it.aidesigner"
       ],
       "sourceRefs": [
         {
@@ -41195,6 +44099,11 @@
         {
           "competencyId": "comp_915efdd38c27",
           "componentId": "dannye-i-faktcheking-praktika.faktcheking",
+          "role": "primary"
+        },
+        {
+          "competencyId": "comp_6a82155c5fa1",
+          "componentId": "kontrol-kachestva-ai-praktika.proverka-faktov-i-istochnikov",
           "role": "primary"
         }
       ],
@@ -41985,6 +44894,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_4401df00dc94",
+      "slug": "chek-list-kachestva",
+      "title": "Чек-лист качества",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Критерии приёмки AI-результата.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_6a82155c5fa1",
+          "componentId": "kontrol-kachestva-ai-praktika.kriterii-i-chek-listy-priemki",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_20bc64280106",
       "slug": "chertezhi-po-gostu",
       "title": "Чертежи по ГОСТу",
@@ -42313,6 +45244,160 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_bb2df6f3f5dc",
+      "slug": "ai-audio",
+      "title": "AI-аудио",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Озвучка, музыка и звук.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_a06b049442ac",
+          "componentId": "ai-video-i-audio-praktika.generatsiya-audio-s-ii",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_4100d2062876",
+      "slug": "ai-video",
+      "title": "AI-видео",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Генерация и монтаж видео.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_a06b049442ac",
+          "componentId": "ai-video-i-audio-praktika.generatsiya-video-s-ii",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_9e63a3d1d0a6",
+      "slug": "ai-instrumenty-dlya-3d",
+      "title": "AI-инструменты для 3D",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Инструменты генерации и обработки трёхмерных моделей и сцен с помощью искусственного интеллекта.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_e02c5f4d39ea",
+          "componentId": "landshaft-ai-instrumentov-praktika.ai-instrumenty-dlya-audio-video-i-3d",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_0c63474dbeb6",
+      "slug": "ai-instrumenty-dlya-audio",
+      "title": "AI-инструменты для аудио",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Инструменты генерации и обработки звука и музыки с помощью искусственного интеллекта.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_e02c5f4d39ea",
+          "componentId": "landshaft-ai-instrumentov-praktika.ai-instrumenty-dlya-audio-video-i-3d",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_367c15c8f9d5",
+      "slug": "ai-instrumenty-dlya-video",
+      "title": "AI-инструменты для видео",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Инструменты генерации и обработки видео с помощью искусственного интеллекта.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_e02c5f4d39ea",
+          "componentId": "landshaft-ai-instrumentov-praktika.ai-instrumenty-dlya-audio-video-i-3d",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_fc1c0c220899",
+      "slug": "ai-instrumenty-dlya-vizuala",
+      "title": "AI-инструменты для визуала",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Генерация и обработка изображений.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_e02c5f4d39ea",
+          "componentId": "landshaft-ai-instrumentov-praktika.ai-instrumenty-dlya-vizuala",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_6486637b26e3",
+      "slug": "ai-instrumenty-dlya-teksta",
+      "title": "AI-инструменты для текста",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Инструменты генерации и редактирования текста.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_e02c5f4d39ea",
+          "componentId": "landshaft-ai-instrumentov-praktika.ai-instrumenty-dlya-teksta",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_82965469f7ff",
@@ -42844,12 +45929,42 @@
       "professionIds": [
         "it.appdesign"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "mobile-app-design",
+          "url": "https://practicum.yandex.ru/mobile-app-design/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_4b49810a5164",
           "componentId": "gaydlayny-ios-i-android-praktika.gaydlayny-ios",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_f0edee9bd9ef",
+      "slug": "human-in-the-loop",
+      "title": "Human-in-the-loop",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Роли человека и модели.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_57ae2fab25db",
+          "componentId": "proektirovanie-ai-fich-praktika.roli-cheloveka-i-modeli",
           "role": "primary"
         }
       ],
@@ -42896,8 +46011,16 @@
       "professionIds": [
         "it.appdesign"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "mobile-app-design",
+          "url": "https://practicum.yandex.ru/mobile-app-design/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_4b49810a5164",
@@ -42906,7 +46029,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_311e6960a0e7",

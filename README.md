@@ -57,7 +57,7 @@ npm run web:dev
 
 ## Каноническая карта UX/UI
 
-`src/methodology/v1/competency/canonical/uxui.json` — два блока (UX/UI), 9 разделов и 34 компетенции со статусами `covered` / `partial` / `gap`. Сейчас: 34 covered / 0 partial / 0 gap; в каталоге 107 блоков, 502 тега. Проверка и coverage-отчёт:
+`src/methodology/v1/competency/canonical/uxui.json` — два блока (UX/UI), 9 разделов и 34 компетенции со статусами `covered` / `partial` / `gap`. Сейчас: 34 covered / 0 partial / 0 gap; в каталоге 117 блоков, 544 тега. Проверка и coverage-отчёт:
 
 ```bash
 npm run canonical:validate -- --domain it --profession uxui --source review --include-seed --report

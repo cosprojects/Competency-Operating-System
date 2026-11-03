@@ -2997,6 +2997,386 @@
           "kind": "skill"
         }
       ]
+    },
+    {
+      "id": "aidesigner-tool-landscape-practice",
+      "canonicalId": "aidesigner-tool-landscape",
+      "title": "Ландшафт AI-инструментов: практика",
+      "titleEn": "AI tool landscape practice",
+      "aliases": [
+        "AI tool landscape practice"
+      ],
+      "definition": "Инструменты для текста, изображений, аудио, видео и 3D; ограничения.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "AI-инструменты для текста",
+          "definition": "Инструменты генерации и редактирования текста.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "AI-инструменты для визуала",
+          "definition": "Генерация и обработка изображений.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Сравнение инструментов",
+          "definition": "Практика выбора инструмента под задачу.",
+          "kind": "skill"
+        },
+        {
+          "title": "Ограничения инструментов",
+          "definition": "Ограничения, стоимость и качество.",
+          "kind": "skill"
+        }
+      ]
+    },
+    {
+      "id": "aidesigner-prompt-systems-practice",
+      "canonicalId": "aidesigner-prompt-systems",
+      "title": "Промпт-системы: практика",
+      "titleEn": "Prompt systems practice",
+      "aliases": [
+        "Prompt systems practice"
+      ],
+      "definition": "Переиспользуемые промпты, переменные и библиотеки.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Структура промпта",
+          "definition": "Ядро, переменные и ограничения.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Библиотека промптов",
+          "definition": "Организация и переиспользование.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Создание промпт-системы",
+          "definition": "Практика сборки системы.",
+          "kind": "skill"
+        },
+        {
+          "title": "Воспроизводимость",
+          "definition": "Стабильность результата.",
+          "kind": "skill"
+        }
+      ]
+    },
+    {
+      "id": "aidesigner-tool-evaluation-practice",
+      "canonicalId": "aidesigner-tool-evaluation",
+      "title": "Оценка AI-инструмента: практика",
+      "titleEn": "AI tool evaluation practice",
+      "aliases": [
+        "AI tool evaluation practice"
+      ],
+      "definition": "Сравнение инструментов по качеству, стоимости и скорости.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Критерии оценки",
+          "definition": "Качество, стоимость, скорость.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Тестирование инструмента",
+          "definition": "Практика тестов и сравнения.",
+          "kind": "skill"
+        },
+        {
+          "title": "Выбор инструмента",
+          "definition": "Выбор под задачу и ограничения.",
+          "kind": "skill"
+        },
+        {
+          "title": "Документирование выбора",
+          "definition": "Фиксация критериев и результата.",
+          "kind": "knowledge"
+        }
+      ]
+    },
+    {
+      "id": "aidesigner-ai-features-practice",
+      "canonicalId": "aidesigner-ai-features",
+      "title": "Проектирование AI-фич: практика",
+      "titleEn": "AI feature design practice",
+      "aliases": [
+        "AI feature design practice"
+      ],
+      "definition": "UX AI-продуктов, human-in-the-loop, объяснимость.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Human-in-the-loop",
+          "definition": "Роли человека и модели.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Неопределённость моделей",
+          "definition": "Ошибки, confidence и ограничения.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Проектирование AI-фичи",
+          "definition": "Практика сценария AI-фичи.",
+          "kind": "skill"
+        },
+        {
+          "title": "Объяснимость",
+          "definition": "Понятность результата для пользователя.",
+          "kind": "skill"
+        }
+      ]
+    },
+    {
+      "id": "aidesigner-visual-generation-practice",
+      "canonicalId": "aidesigner-visual-generation",
+      "title": "Генерация визуала: практика",
+      "titleEn": "AI visual generation practice",
+      "aliases": [
+        "AI visual generation practice"
+      ],
+      "definition": "Генерация, устранение артефактов, апскейл и стилизация.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Генерация изображений",
+          "definition": "Промпты и параметры генерации.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Артефакты",
+          "definition": "Типовые ошибки и их устранение.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Доведение визуала",
+          "definition": "Практика доработки и апскейла.",
+          "kind": "skill"
+        },
+        {
+          "title": "Стилизация",
+          "definition": "Управление стилем и референсами.",
+          "kind": "skill"
+        }
+      ]
+    },
+    {
+      "id": "aidesigner-series-adaptation-practice",
+      "canonicalId": "aidesigner-series-adaptation",
+      "title": "Серии визуалов: практика",
+      "titleEn": "AI visual series practice",
+      "aliases": [
+        "AI visual series practice"
+      ],
+      "definition": "Серии на ядре и переменных, адаптация под каналы.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Серийность",
+          "definition": "Ядро и переменные серии.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Адаптация под каналы",
+          "definition": "Форматы и требования каналов.",
+          "kind": "skill"
+        },
+        {
+          "title": "Визуальная согласованность",
+          "definition": "Единый стиль серии.",
+          "kind": "skill"
+        },
+        {
+          "title": "Масштабирование серии",
+          "definition": "Практика генерации серии.",
+          "kind": "knowledge"
+        }
+      ]
+    },
+    {
+      "id": "aidesigner-video-audio-practice",
+      "canonicalId": "aidesigner-video-audio",
+      "title": "AI-видео и аудио: практика",
+      "titleEn": "AI video and audio practice",
+      "aliases": [
+        "AI video and audio practice"
+      ],
+      "definition": "Генерация видео/аудио, анимация, монтаж и озвучка.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "AI-видео",
+          "definition": "Генерация и монтаж видео.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "AI-аудио",
+          "definition": "Озвучка, музыка и звук.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Сборка ролика",
+          "definition": "Практика сборки AI-видео.",
+          "kind": "skill"
+        },
+        {
+          "title": "Синхронизация",
+          "definition": "Совмещение видео и звука.",
+          "kind": "skill"
+        }
+      ]
+    },
+    {
+      "id": "aidesigner-automation-practice",
+      "canonicalId": "aidesigner-automation",
+      "title": "Автоматизация пайплайнов: практика",
+      "titleEn": "AI automation practice",
+      "aliases": [
+        "AI automation practice"
+      ],
+      "definition": "Связки инструментов: текст → визуал → видео → документ.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Мультимодальный пайплайн",
+          "definition": "Связка инструментов и форматов.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Автоматизация",
+          "definition": "Сценарии и передача данных.",
+          "kind": "skill"
+        },
+        {
+          "title": "Оркестрация",
+          "definition": "Практика сборки пайплайна.",
+          "kind": "skill"
+        },
+        {
+          "title": "Контроль результата",
+          "definition": "Проверка на каждом этапе.",
+          "kind": "knowledge"
+        }
+      ]
+    },
+    {
+      "id": "aidesigner-quality-eval-practice",
+      "canonicalId": "aidesigner-quality-eval",
+      "title": "Контроль качества AI: практика",
+      "titleEn": "AI quality evaluation practice",
+      "aliases": [
+        "AI quality evaluation practice"
+      ],
+      "definition": "Чек-листы, критика, артефакты, фактчекинг и стиль.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Чек-лист качества",
+          "definition": "Критерии приёмки AI-результата.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Фактчекинг",
+          "definition": "Проверка фактов и источников.",
+          "kind": "skill"
+        },
+        {
+          "title": "Критика результата",
+          "definition": "Практика разбора и правок.",
+          "kind": "skill"
+        },
+        {
+          "title": "Соответствие брифу",
+          "definition": "Стиль и требования задачи.",
+          "kind": "knowledge"
+        }
+      ]
+    },
+    {
+      "id": "aidesigner-integration-practice",
+      "canonicalId": "aidesigner-integration",
+      "title": "Внедрение AI: практика",
+      "titleEn": "AI integration practice",
+      "aliases": [
+        "AI integration practice"
+      ],
+      "definition": "Регламенты, обучение, стек и границы применимости.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Регламенты",
+          "definition": "Правила использования AI в команде.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Обучение команды",
+          "definition": "Практика внедрения и обучения.",
+          "kind": "skill"
+        },
+        {
+          "title": "Выбор стека",
+          "definition": "Инструменты под процессы.",
+          "kind": "skill"
+        },
+        {
+          "title": "Границы применимости",
+          "definition": "Риски и ограничения.",
+          "kind": "knowledge"
+        }
+      ]
     }
   ]
 }

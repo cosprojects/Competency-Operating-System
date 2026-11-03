@@ -5,14 +5,14 @@
   "asOf": "2026-11-03",
   "strictSourceReview": false,
   "totals": {
-    "professions": 8,
-    "totalLinks": 248,
-    "includedLinks": 176,
-    "excludedLinks": 72,
-    "publishedLinks": 176,
-    "uniqueCompetencies": 82,
-    "uniquePublishedCompetencies": 82,
-    "uniqueSources": 48,
+    "professions": 9,
+    "totalLinks": 275,
+    "includedLinks": 194,
+    "excludedLinks": 81,
+    "publishedLinks": 194,
+    "uniqueCompetencies": 90,
+    "uniquePublishedCompetencies": 90,
+    "uniqueSources": 51,
     "gaps": 0,
     "blockingGaps": 0,
     "passed": true
@@ -95,6 +95,16 @@
       "includedLinks": 13,
       "excludedLinks": 9,
       "publishedLinks": 13,
+      "passed": true,
+      "gaps": []
+    },
+    {
+      "id": "it.uxresearch",
+      "title": "UX-исследователь",
+      "totalLinks": 27,
+      "includedLinks": 18,
+      "excludedLinks": 9,
+      "publishedLinks": 18,
       "passed": true,
       "gaps": []
     }
@@ -457,6 +467,51 @@
     },
     {
       "professionId": "it.presentation",
+      "competencyId": "ai-ethics-rights",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.uxresearch",
+      "competencyId": "ai-model-landscape",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.uxresearch",
+      "competencyId": "ai-prompting",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.uxresearch",
+      "competencyId": "ai-research-synthesis",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.uxresearch",
+      "competencyId": "ai-visual-generation",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.uxresearch",
+      "competencyId": "ai-video-audio",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.uxresearch",
+      "competencyId": "ai-copy-content",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.uxresearch",
+      "competencyId": "ai-layout-docs",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.uxresearch",
+      "competencyId": "ai-workflow-integration",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.uxresearch",
       "competencyId": "ai-ethics-rights",
       "reason": "excluded-prefix:ai-"
     }

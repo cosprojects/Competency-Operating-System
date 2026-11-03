@@ -2237,6 +2237,310 @@
           "kind": "knowledge"
         }
       ]
+    },
+    {
+      "id": "uxresearch-principles-practice",
+      "canonicalId": "uxresearch-principles",
+      "title": "Принципы и этапы исследований: практика",
+      "titleEn": "UX research principles practice",
+      "aliases": [
+        "UX research principles practice"
+      ],
+      "definition": "Планирование исследования, этапы и выбор подхода.",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Этапы исследования",
+          "definition": "Планирование и последовательность этапов.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Исследовательский план",
+          "definition": "План исследования и критерии успеха.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Планирование исследования",
+          "definition": "Практическое планирование исследования.",
+          "kind": "skill"
+        },
+        {
+          "title": "Выбор метода",
+          "definition": "Выбор метода под вопрос.",
+          "kind": "skill"
+        }
+      ]
+    },
+    {
+      "id": "uxresearch-questions-practice",
+      "canonicalId": "uxresearch-questions",
+      "title": "Исследовательские вопросы: практика",
+      "titleEn": "Research questions practice",
+      "aliases": [
+        "Research questions practice"
+      ],
+      "definition": "Вопросы, гипотезы и критерии проверки.",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Исследовательский вопрос",
+          "definition": "Формулировка вопроса исследования.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Гипотезы",
+          "definition": "Формулировка и проверка гипотез.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Формулировка гипотез",
+          "definition": "Практика формулировки гипотез.",
+          "kind": "skill"
+        },
+        {
+          "title": "Критерии проверки",
+          "definition": "Критерии подтверждения гипотез.",
+          "kind": "skill"
+        }
+      ]
+    },
+    {
+      "id": "uxresearch-ethics-practice",
+      "canonicalId": "uxresearch-ethics",
+      "title": "Этика и хранение данных: практика",
+      "titleEn": "Research ethics practice",
+      "aliases": [
+        "Research ethics practice"
+      ],
+      "definition": "Согласие, приватность и хранение данных.",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Информированное согласие",
+          "definition": "Согласие участников исследования.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Приватность данных",
+          "definition": "Обработка и хранение данных.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Сбор согласий",
+          "definition": "Практика получения согласий.",
+          "kind": "skill"
+        },
+        {
+          "title": "Анонимизация",
+          "definition": "Анонимизация исследовательских данных.",
+          "kind": "skill"
+        }
+      ]
+    },
+    {
+      "id": "uxresearch-qualitative-practice",
+      "canonicalId": "uxresearch-qualitative",
+      "title": "Качественные методы: практика",
+      "titleEn": "Qualitative methods practice",
+      "aliases": [
+        "Qualitative methods practice"
+      ],
+      "definition": "Интервью, наблюдение и анализ качественных данных.",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Глубинные интервью",
+          "definition": "Проведение глубинных интервью.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Наблюдение",
+          "definition": "Методы наблюдения и контекст.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Проведение интервью",
+          "definition": "Практика интервью и вопросов.",
+          "kind": "skill"
+        },
+        {
+          "title": "Анализ интервью",
+          "definition": "Кодирование и анализ.",
+          "kind": "skill"
+        }
+      ]
+    },
+    {
+      "id": "uxresearch-quantitative-practice",
+      "canonicalId": "uxresearch-quantitative",
+      "title": "Количественные методы: практика",
+      "titleEn": "Quantitative methods practice",
+      "aliases": [
+        "Quantitative methods practice"
+      ],
+      "definition": "Опросы, метрики и статистическая проверка.",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Опросы",
+          "definition": "Дизайн и проведение опросов.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Метрики",
+          "definition": "Выбор и интерпретация метрик.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Составление опроса",
+          "definition": "Практика составления вопросов.",
+          "kind": "skill"
+        },
+        {
+          "title": "Анализ данных",
+          "definition": "Базовая статистика и выводы.",
+          "kind": "skill"
+        }
+      ]
+    },
+    {
+      "id": "uxresearch-recruiting-practice",
+      "canonicalId": "uxresearch-recruiting",
+      "title": "Выборка и рекрутинг: практика",
+      "titleEn": "Research recruiting practice",
+      "aliases": [
+        "Research recruiting practice"
+      ],
+      "definition": "Выборка, скрининг и рекрутинг участников.",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Выборка",
+          "definition": "Типы выборки и репрезентативность.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Скрининг",
+          "definition": "Критерии отбора участников.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Рекрутинг",
+          "definition": "Практика поиска участников.",
+          "kind": "skill"
+        },
+        {
+          "title": "Скрининг-опросник",
+          "definition": "Составление скрининга.",
+          "kind": "skill"
+        }
+      ]
+    },
+    {
+      "id": "uxresearch-usability-practice",
+      "canonicalId": "uxresearch-usability",
+      "title": "Юзабилити-тестирование: практика",
+      "titleEn": "Usability testing practice",
+      "aliases": [
+        "Usability testing practice"
+      ],
+      "definition": "Модерация, задачи и анализ юзабилити-тестов.",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Юзабилити-тест",
+          "definition": "Сценарий и задачи теста.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Модерация",
+          "definition": "Модерация и нейтральные вопросы.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Проведение теста",
+          "definition": "Практика проведения теста.",
+          "kind": "skill"
+        },
+        {
+          "title": "Анализ результатов",
+          "definition": "Обработка наблюдений.",
+          "kind": "skill"
+        }
+      ]
+    },
+    {
+      "id": "uxresearch-synthesis-practice",
+      "canonicalId": "uxresearch-synthesis",
+      "title": "Синтез и отчёт: практика",
+      "titleEn": "Research synthesis practice",
+      "aliases": [
+        "Research synthesis practice"
+      ],
+      "definition": "Анализ данных, синтез и отчёт по исследованию.",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Синтез данных",
+          "definition": "Кластеризация и выводы.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Структура отчёта",
+          "definition": "Структура и подача отчёта.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Анализ данных",
+          "definition": "Практика анализа и кодирования.",
+          "kind": "skill"
+        },
+        {
+          "title": "Написание отчёта",
+          "definition": "Подготовка отчёта и рекомендаций.",
+          "kind": "skill"
+        }
+      ]
     }
   ]
 }

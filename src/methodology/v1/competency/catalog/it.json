@@ -6193,6 +6193,194 @@
       "methodologyVersion": "0.1.0"
     },
     {
+      "id": "comp_9d2a4faffaa9",
+      "slug": "vyborka-i-rekruting-praktika",
+      "title": "Выборка и рекрутинг: практика",
+      "aliases": [
+        "Рекрутинг участников исследований",
+        "Выборка и скрининг респондентов"
+      ],
+      "definition": "Практика формирования выборки, скрининга и рекрутинга участников исследований.",
+      "scope": "universal",
+      "canonicalIds": [
+        "uxresearch-recruiting"
+      ],
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "components": [
+        {
+          "id": "vyborka-i-rekruting-praktika.teoriya-vyborki",
+          "slug": "teoriya-vyborki",
+          "title": "Теория выборки",
+          "definition": "Понимание типов выборки и принципов репрезентативности при планировании исследования.",
+          "order": 1,
+          "tagIds": [
+            "tag_a7df84de79d3"
+          ]
+        },
+        {
+          "id": "vyborka-i-rekruting-praktika.skrining-uchastnikov",
+          "slug": "skrining-uchastnikov",
+          "title": "Скрининг участников",
+          "definition": "Разработка критериев отбора и инструментов скрининга для формирования целевой группы.",
+          "order": 2,
+          "tagIds": [
+            "tag_3e00b7d3b4be",
+            "tag_3cecdcc57731"
+          ]
+        },
+        {
+          "id": "vyborka-i-rekruting-praktika.rekruting-uchastnikov",
+          "slug": "rekruting-uchastnikov",
+          "title": "Рекрутинг участников",
+          "definition": "Практическая организация поиска и привлечения участников исследования.",
+          "order": 3,
+          "tagIds": [
+            "tag_ab075eae849a"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_a7df84de79d3",
+          "slug": "vyborka",
+          "title": "Выборка",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Типы выборки и репрезентативность.",
+          "professionIds": [
+            "it.uxresearch"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ux-research-for-designers",
+              "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_9d2a4faffaa9",
+              "componentId": "vyborka-i-rekruting-praktika.teoriya-vyborki",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_3e00b7d3b4be",
+          "slug": "skrining",
+          "title": "Скрининг",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Критерии отбора участников.",
+          "professionIds": [
+            "it.uxresearch"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ux-research-for-designers",
+              "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_9d2a4faffaa9",
+              "componentId": "vyborka-i-rekruting-praktika.skrining-uchastnikov",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_3cecdcc57731",
+          "slug": "skrining-oprosnik",
+          "title": "Скрининг-опросник",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Составление скрининга.",
+          "professionIds": [
+            "it.uxresearch"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ux-research-for-designers",
+              "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_9d2a4faffaa9",
+              "componentId": "vyborka-i-rekruting-praktika.skrining-uchastnikov",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_ab075eae849a",
+          "slug": "rekruting",
+          "title": "Рекрутинг",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Практика поиска участников.",
+          "professionIds": [
+            "it.uxresearch"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ux-research-for-designers",
+              "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_9d2a4faffaa9",
+              "componentId": "vyborka-i-rekruting-praktika.rekruting-uchastnikov",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_63679dc7351f",
+        "costUsd": 0.00099963,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1681,
+          "outputTokens": 488
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
       "id": "comp_f30be83c07b9",
       "slug": "vysokodetalizirovannye-prototipy",
       "title": "Высокодетализированные прототипы",
@@ -9468,6 +9656,380 @@
       "methodologyVersion": "0.1.0"
     },
     {
+      "id": "comp_97d00e5b8bf7",
+      "slug": "issledovatelskie-voprosy-praktika",
+      "title": "Исследовательские вопросы: практика",
+      "aliases": [
+        "Практика исследовательских вопросов и гипотез"
+      ],
+      "definition": "Практическая компетенция формулирования исследовательских вопросов, построения гипотез и определения критериев их проверки в пользовательских исследованиях.",
+      "scope": "universal",
+      "canonicalIds": [
+        "uxresearch-questions"
+      ],
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "components": [
+        {
+          "id": "issledovatelskie-voprosy-praktika.formulirovanie-issledovatelskogo-voprosa",
+          "slug": "formulirovanie-issledovatelskogo-voprosa",
+          "title": "Формулирование исследовательского вопроса",
+          "definition": "Раздел о том, как превращать исследовательскую задачу в ясный и проверяемый вопрос.",
+          "order": 1,
+          "tagIds": [
+            "tag_2dee23aefc43"
+          ]
+        },
+        {
+          "id": "issledovatelskie-voprosy-praktika.gipotezy-v-issledovanii",
+          "slug": "gipotezy-v-issledovanii",
+          "title": "Гипотезы в исследовании",
+          "definition": "Раздел о построении и практической формулировке гипотез на основе исследовательских вопросов.",
+          "order": 2,
+          "tagIds": [
+            "tag_485891f8eee3",
+            "tag_4a1111af6398"
+          ]
+        },
+        {
+          "id": "issledovatelskie-voprosy-praktika.kriterii-proverki",
+          "slug": "kriterii-proverki",
+          "title": "Критерии проверки",
+          "definition": "Раздел о том, как заранее определять условия подтверждения или опровержения гипотез.",
+          "order": 3,
+          "tagIds": [
+            "tag_a1fe0470f15b"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_2dee23aefc43",
+          "slug": "issledovatelskiy-vopros",
+          "title": "Исследовательский вопрос",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Формулировка вопроса исследования.",
+          "professionIds": [
+            "it.uxresearch"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ux-research-for-designers",
+              "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_97d00e5b8bf7",
+              "componentId": "issledovatelskie-voprosy-praktika.formulirovanie-issledovatelskogo-voprosa",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_485891f8eee3",
+          "slug": "gipotezy",
+          "title": "Гипотезы",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Формулировка и проверка гипотез.",
+          "professionIds": [
+            "it.uxresearch"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ux-research-for-designers",
+              "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_97d00e5b8bf7",
+              "componentId": "issledovatelskie-voprosy-praktika.gipotezy-v-issledovanii",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_4a1111af6398",
+          "slug": "formulirovka-gipotez",
+          "title": "Формулировка гипотез",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Практика формулировки гипотез.",
+          "professionIds": [
+            "it.uxresearch"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ux-research-for-designers",
+              "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_97d00e5b8bf7",
+              "componentId": "issledovatelskie-voprosy-praktika.gipotezy-v-issledovanii",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_a1fe0470f15b",
+          "slug": "kriterii-proverki",
+          "title": "Критерии проверки",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Критерии подтверждения гипотез.",
+          "professionIds": [
+            "it.uxresearch"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ux-research-for-designers",
+              "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_97d00e5b8bf7",
+              "componentId": "issledovatelskie-voprosy-praktika.kriterii-proverki",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_ed5428edecd4",
+        "costUsd": 0.00114368,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1636,
+          "outputTokens": 630
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
+      "id": "comp_7419ca8a5a94",
+      "slug": "kachestvennye-metody-praktika",
+      "title": "Качественные методы: практика",
+      "aliases": [
+        "Качественные исследования: практика"
+      ],
+      "definition": "Практическое применение качественных методов исследования — интервью, наблюдения и анализа качественных данных — для получения и интерпретации пользовательских инсайтов.",
+      "scope": "universal",
+      "canonicalIds": [
+        "uxresearch-qualitative"
+      ],
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "components": [
+        {
+          "id": "kachestvennye-metody-praktika.intervyu-kak-metod-sbora-dannyh",
+          "slug": "intervyu-kak-metod-sbora-dannyh",
+          "title": "Интервью как метод сбора данных",
+          "definition": "Подготовка и проведение глубинных интервью для выявления мотивов, опыта и потребностей респондентов.",
+          "order": 1,
+          "tagIds": [
+            "tag_f40fc8989968",
+            "tag_394f6aeaa213"
+          ]
+        },
+        {
+          "id": "kachestvennye-metody-praktika.nablyudenie-i-kontekst",
+          "slug": "nablyudenie-i-kontekst",
+          "title": "Наблюдение и контекст",
+          "definition": "Изучение пользователей в естественной среде через методы наблюдения для понимания контекста их действий.",
+          "order": 2,
+          "tagIds": [
+            "tag_68a053b9bdfc"
+          ]
+        },
+        {
+          "id": "kachestvennye-metody-praktika.analiz-kachestvennyh-dannyh",
+          "slug": "analiz-kachestvennyh-dannyh",
+          "title": "Анализ качественных данных",
+          "definition": "Обработка и интерпретация собранных качественных данных для выявления паттернов и инсайтов.",
+          "order": 3,
+          "tagIds": [
+            "tag_66e3d7154cb9"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_f40fc8989968",
+          "slug": "glubinnye-intervyu",
+          "title": "Глубинные интервью",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Проведение глубинных интервью.",
+          "professionIds": [
+            "it.uxresearch"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ux-research-for-designers",
+              "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_7419ca8a5a94",
+              "componentId": "kachestvennye-metody-praktika.intervyu-kak-metod-sbora-dannyh",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_394f6aeaa213",
+          "slug": "provedenie-intervyu",
+          "title": "Проведение интервью",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Практика интервью и вопросов.",
+          "professionIds": [
+            "it.uxresearch"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ux-research-for-designers",
+              "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_7419ca8a5a94",
+              "componentId": "kachestvennye-metody-praktika.intervyu-kak-metod-sbora-dannyh",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_68a053b9bdfc",
+          "slug": "nablyudenie",
+          "title": "Наблюдение",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Методы наблюдения и контекст.",
+          "professionIds": [
+            "it.uxresearch"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ux-research-for-designers",
+              "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_7419ca8a5a94",
+              "componentId": "kachestvennye-metody-praktika.nablyudenie-i-kontekst",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_66e3d7154cb9",
+          "slug": "analiz-intervyu",
+          "title": "Анализ интервью",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Кодирование и анализ.",
+          "professionIds": [
+            "it.uxresearch"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ux-research-for-designers",
+              "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_7419ca8a5a94",
+              "componentId": "kachestvennye-metody-praktika.analiz-kachestvennyh-dannyh",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_47e363ed37b4",
+        "costUsd": 0.0010880599999999999,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1650,
+          "outputTokens": 576
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
       "id": "comp_8d7a754b12c0",
       "slug": "klyuchevoe-soobschenie-praktika",
       "title": "Ключевое сообщение: практика",
@@ -9649,6 +10211,196 @@
           "cacheHitTokens": 128,
           "cacheMissTokens": 1559,
           "outputTokens": 544
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
+      "id": "comp_1b195278ab13",
+      "slug": "kolichestvennye-metody-praktika",
+      "title": "Количественные методы: практика",
+      "aliases": [],
+      "definition": "Опросы, метрики и статистическая проверка.",
+      "scope": "profession",
+      "canonicalIds": [
+        "uxresearch-quantitative"
+      ],
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "components": [
+        {
+          "id": "kolichestvennye-metody-praktika.oprosy-kak-metod-sbora-dannyh",
+          "slug": "oprosy-kak-metod-sbora-dannyh",
+          "title": "Опросы как метод сбора данных",
+          "definition": "Проектирование и проведение опросов для получения количественных данных.",
+          "order": 1,
+          "tagIds": [
+            "tag_d7318e78e900",
+            "tag_0ece75845864"
+          ]
+        },
+        {
+          "id": "kolichestvennye-metody-praktika.metriki",
+          "slug": "metriki",
+          "title": "Метрики",
+          "definition": "Выбор и интерпретация метрик для оценки продуктов и пользовательского опыта.",
+          "order": 2,
+          "tagIds": [
+            "tag_d8e42cd5e181"
+          ]
+        },
+        {
+          "id": "kolichestvennye-metody-praktika.analiz-dannyh-i-statisticheskaya-proverka",
+          "slug": "analiz-dannyh-i-statisticheskaya-proverka",
+          "title": "Анализ данных и статистическая проверка",
+          "definition": "Базовая статистическая обработка собранных данных и формулирование обоснованных выводов.",
+          "order": 3,
+          "tagIds": [
+            "tag_c236f4e1a076"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_d7318e78e900",
+          "slug": "oprosy",
+          "title": "Опросы",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Дизайн и проведение опросов.",
+          "professionIds": [
+            "it.uxresearch"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ux-research-for-designers",
+              "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_1b195278ab13",
+              "componentId": "kolichestvennye-metody-praktika.oprosy-kak-metod-sbora-dannyh",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_0ece75845864",
+          "slug": "sostavlenie-oprosa",
+          "title": "Составление опроса",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Практика составления вопросов.",
+          "professionIds": [
+            "it.uxresearch"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ux-research-for-designers",
+              "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_1b195278ab13",
+              "componentId": "kolichestvennye-metody-praktika.oprosy-kak-metod-sbora-dannyh",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_d8e42cd5e181",
+          "slug": "metriki",
+          "title": "Метрики",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Выбор и интерпретация метрик.",
+          "professionIds": [
+            "it.uxresearch"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ux-research-for-designers",
+              "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_1b195278ab13",
+              "componentId": "kolichestvennye-metody-praktika.metriki",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_c236f4e1a076",
+          "slug": "analiz-dannyh",
+          "title": "Анализ данных",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Базовая статистика и выводы.",
+          "professionIds": [
+            "it.uxresearch"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ux-research-for-designers",
+              "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_1b195278ab13",
+              "componentId": "kolichestvennye-metody-praktika.analiz-dannyh-i-statisticheskaya-proverka",
+              "role": "primary"
+            },
+            {
+              "competencyId": "comp_7381d9a9dca9",
+              "componentId": "sintez-i-otchet-praktika.analiz-dannyh-issledovaniya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_9a91017fc045",
+        "costUsd": 0.00100583,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1651,
+          "outputTokens": 501
         }
       },
       "issues": [],
@@ -14834,6 +15586,194 @@
       "methodologyVersion": "0.1.0"
     },
     {
+      "id": "comp_e4e961b9cca2",
+      "slug": "printsipy-i-etapy-issledovaniy-praktika",
+      "title": "Принципы и этапы исследований: практика",
+      "aliases": [
+        "Планирование UX-исследований",
+        "Практика исследовательского планирования"
+      ],
+      "definition": "Планирование исследования, последовательность этапов и выбор подхода под исследовательский вопрос.",
+      "scope": "universal",
+      "canonicalIds": [
+        "uxresearch-principles"
+      ],
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "components": [
+        {
+          "id": "printsipy-i-etapy-issledovaniy-praktika.planirovanie-issledovaniya",
+          "slug": "planirovanie-issledovaniya",
+          "title": "Планирование исследования",
+          "definition": "Постановка исследовательской задачи и разработка плана её решения.",
+          "order": 1,
+          "tagIds": [
+            "tag_fbed5cc5181b",
+            "tag_81312e728eb0"
+          ]
+        },
+        {
+          "id": "printsipy-i-etapy-issledovaniy-praktika.etapy-issledovaniya",
+          "slug": "etapy-issledovaniya",
+          "title": "Этапы исследования",
+          "definition": "Последовательность шагов исследования от постановки вопроса до выводов.",
+          "order": 2,
+          "tagIds": [
+            "tag_05cf945600a6"
+          ]
+        },
+        {
+          "id": "printsipy-i-etapy-issledovaniy-praktika.vybor-podhoda-i-metoda",
+          "slug": "vybor-podhoda-i-metoda",
+          "title": "Выбор подхода и метода",
+          "definition": "Соотнесение исследовательского вопроса с подходящим методом и подходом.",
+          "order": 3,
+          "tagIds": [
+            "tag_347f7e5a9a87"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_fbed5cc5181b",
+          "slug": "issledovatelskiy-plan",
+          "title": "Исследовательский план",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "План исследования и критерии успеха.",
+          "professionIds": [
+            "it.uxresearch"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ux-research-for-designers",
+              "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_e4e961b9cca2",
+              "componentId": "printsipy-i-etapy-issledovaniy-praktika.planirovanie-issledovaniya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_81312e728eb0",
+          "slug": "planirovanie-issledovaniya",
+          "title": "Планирование исследования",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Практическое планирование исследования.",
+          "professionIds": [
+            "it.uxresearch"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ux-research-for-designers",
+              "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_e4e961b9cca2",
+              "componentId": "printsipy-i-etapy-issledovaniy-praktika.planirovanie-issledovaniya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_05cf945600a6",
+          "slug": "etapy-issledovaniya",
+          "title": "Этапы исследования",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Планирование и последовательность этапов.",
+          "professionIds": [
+            "it.uxresearch"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ux-research-for-designers",
+              "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_e4e961b9cca2",
+              "componentId": "printsipy-i-etapy-issledovaniy-praktika.etapy-issledovaniya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_347f7e5a9a87",
+          "slug": "vybor-metoda",
+          "title": "Выбор метода",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Выбор метода под вопрос.",
+          "professionIds": [
+            "it.uxresearch"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ux-research-for-designers",
+              "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_e4e961b9cca2",
+              "componentId": "printsipy-i-etapy-issledovaniy-praktika.vybor-podhoda-i-metoda",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_fef4b5e62340",
+        "costUsd": 0.00107481,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1605,
+          "outputTokens": 575
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
       "id": "comp_4d33789a5be8",
       "slug": "prodakshn-i-payplayn",
       "title": "Продакшн и пайплайн",
@@ -17010,6 +17950,198 @@
           "cacheHitTokens": 128,
           "cacheMissTokens": 1496,
           "outputTokens": 612
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
+      "id": "comp_7381d9a9dca9",
+      "slug": "sintez-i-otchet-praktika",
+      "title": "Синтез и отчёт: практика",
+      "aliases": [
+        "Анализ данных, синтез и отчёт по исследованию"
+      ],
+      "definition": "Практика анализа данных исследования, синтеза результатов и подготовки отчёта с рекомендациями.",
+      "scope": "universal",
+      "canonicalIds": [
+        "uxresearch-synthesis"
+      ],
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "components": [
+        {
+          "id": "sintez-i-otchet-praktika.analiz-dannyh-issledovaniya",
+          "slug": "analiz-dannyh-issledovaniya",
+          "title": "Анализ данных исследования",
+          "definition": "Обработка собранных данных и получение обоснованных выводов.",
+          "order": 1,
+          "tagIds": [
+            "tag_c236f4e1a076"
+          ]
+        },
+        {
+          "id": "sintez-i-otchet-praktika.sintez-rezultatov",
+          "slug": "sintez-rezultatov",
+          "title": "Синтез результатов",
+          "definition": "Объединение разрозненных данных в целостную картину.",
+          "order": 2,
+          "tagIds": [
+            "tag_95c58e92a47b"
+          ]
+        },
+        {
+          "id": "sintez-i-otchet-praktika.otchet-i-rekomendatsii",
+          "slug": "otchet-i-rekomendatsii",
+          "title": "Отчёт и рекомендации",
+          "definition": "Оформление результатов исследования в отчёт и выработка рекомендаций.",
+          "order": 3,
+          "tagIds": [
+            "tag_ebc469578e1d",
+            "tag_21bce7b5467a"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_c236f4e1a076",
+          "slug": "analiz-dannyh",
+          "title": "Анализ данных",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Базовая статистика и выводы.",
+          "professionIds": [
+            "it.uxresearch"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ux-research-for-designers",
+              "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_1b195278ab13",
+              "componentId": "kolichestvennye-metody-praktika.analiz-dannyh-i-statisticheskaya-proverka",
+              "role": "primary"
+            },
+            {
+              "competencyId": "comp_7381d9a9dca9",
+              "componentId": "sintez-i-otchet-praktika.analiz-dannyh-issledovaniya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_95c58e92a47b",
+          "slug": "sintez-dannyh",
+          "title": "Синтез данных",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Кластеризация и выводы.",
+          "professionIds": [
+            "it.uxresearch"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ux-research-for-designers",
+              "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_7381d9a9dca9",
+              "componentId": "sintez-i-otchet-praktika.sintez-rezultatov",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_ebc469578e1d",
+          "slug": "struktura-otcheta",
+          "title": "Структура отчёта",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Структура и подача отчёта.",
+          "professionIds": [
+            "it.uxresearch"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ux-research-for-designers",
+              "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_7381d9a9dca9",
+              "componentId": "sintez-i-otchet-praktika.otchet-i-rekomendatsii",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_21bce7b5467a",
+          "slug": "napisanie-otcheta",
+          "title": "Написание отчёта",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Подготовка отчёта и рекомендаций.",
+          "professionIds": [
+            "it.uxresearch"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ux-research-for-designers",
+              "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_7381d9a9dca9",
+              "componentId": "sintez-i-otchet-praktika.otchet-i-rekomendatsii",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_149aa95cc9d9",
+        "costUsd": 0.0010278200000000003,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1708,
+          "outputTokens": 507
         }
       },
       "issues": [],
@@ -19957,6 +21089,193 @@
       "methodologyVersion": "0.1.0"
     },
     {
+      "id": "comp_939c88486e52",
+      "slug": "etika-i-hranenie-dannyh-praktika",
+      "title": "Этика и хранение данных: практика",
+      "aliases": [
+        "Этика исследований и работа с данными"
+      ],
+      "definition": "Практика соблюдения этических норм при проведении исследований: получение информированного согласия, обеспечение приватности, анонимизация и организация хранения исследовательских данных.",
+      "scope": "universal",
+      "canonicalIds": [
+        "uxresearch-ethics"
+      ],
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "components": [
+        {
+          "id": "etika-i-hranenie-dannyh-praktika.informirovannoe-soglasie",
+          "slug": "informirovannoe-soglasie",
+          "title": "Информированное согласие",
+          "definition": "Принципы и процедуры получения согласия участников исследования на обработку их данных.",
+          "order": 1,
+          "tagIds": [
+            "tag_e4174457fcb5",
+            "tag_337b86f8fb54"
+          ]
+        },
+        {
+          "id": "etika-i-hranenie-dannyh-praktika.privatnost-i-zaschita-dannyh",
+          "slug": "privatnost-i-zaschita-dannyh",
+          "title": "Приватность и защита данных",
+          "definition": "Обработка и хранение персональных данных участников с соблюдением требований приватности.",
+          "order": 2,
+          "tagIds": [
+            "tag_fb513f17177b"
+          ]
+        },
+        {
+          "id": "etika-i-hranenie-dannyh-praktika.anonimizatsiya-dannyh",
+          "slug": "anonimizatsiya-dannyh",
+          "title": "Анонимизация данных",
+          "definition": "Методы и практики обезличивания исследовательских данных для снижения рисков идентификации.",
+          "order": 3,
+          "tagIds": [
+            "tag_e06ae32125af"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_e4174457fcb5",
+          "slug": "informirovannoe-soglasie",
+          "title": "Информированное согласие",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Согласие участников исследования.",
+          "professionIds": [
+            "it.uxresearch"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ux-research-for-designers",
+              "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_939c88486e52",
+              "componentId": "etika-i-hranenie-dannyh-praktika.informirovannoe-soglasie",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_337b86f8fb54",
+          "slug": "sbor-soglasiy",
+          "title": "Сбор согласий",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Практика получения согласий.",
+          "professionIds": [
+            "it.uxresearch"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ux-research-for-designers",
+              "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_939c88486e52",
+              "componentId": "etika-i-hranenie-dannyh-praktika.informirovannoe-soglasie",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_fb513f17177b",
+          "slug": "privatnost-dannyh",
+          "title": "Приватность данных",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Обработка и хранение данных.",
+          "professionIds": [
+            "it.uxresearch"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ux-research-for-designers",
+              "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_939c88486e52",
+              "componentId": "etika-i-hranenie-dannyh-praktika.privatnost-i-zaschita-dannyh",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_e06ae32125af",
+          "slug": "anonimizatsiya",
+          "title": "Анонимизация",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Анонимизация исследовательских данных.",
+          "professionIds": [
+            "it.uxresearch"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ux-research-for-designers",
+              "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_939c88486e52",
+              "componentId": "etika-i-hranenie-dannyh-praktika.anonimizatsiya-dannyh",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_7273e0079b88",
+        "costUsd": 0.00103893,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1631,
+          "outputTokens": 536
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
       "id": "comp_c2cd7e56553d",
       "slug": "yuzabiliti-testirovanie",
       "title": "Юзабилити-тестирование",
@@ -20742,6 +22061,203 @@
           "cacheHitTokens": 512,
           "cacheMissTokens": 1459,
           "outputTokens": 1880
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
+      "id": "comp_a439e6707943",
+      "slug": "yuzabiliti-testirovanie-praktika",
+      "title": "Юзабилити-тестирование: практика",
+      "aliases": [
+        "Практика юзабилити-тестирования",
+        "Модерируемые юзабилити-тесты"
+      ],
+      "definition": "Практическая компетенция проведения модерации, постановки задач и анализа результатов юзабилити-тестов.",
+      "scope": "universal",
+      "canonicalIds": [
+        "uxresearch-usability"
+      ],
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "components": [
+        {
+          "id": "yuzabiliti-testirovanie-praktika.podgotovka-yuzabiliti-testa",
+          "slug": "podgotovka-yuzabiliti-testa",
+          "title": "Подготовка юзабилити-теста",
+          "definition": "Разработка сценария теста и постановка задач участникам.",
+          "order": 1,
+          "tagIds": [
+            "tag_781b01e55ed4"
+          ]
+        },
+        {
+          "id": "yuzabiliti-testirovanie-praktika.moderatsiya-testa",
+          "slug": "moderatsiya-testa",
+          "title": "Модерация теста",
+          "definition": "Ведение сессии с участником и формулирование нейтральных вопросов.",
+          "order": 2,
+          "tagIds": [
+            "tag_60e52d24d800"
+          ]
+        },
+        {
+          "id": "yuzabiliti-testirovanie-praktika.provedenie-testa",
+          "slug": "provedenie-testa",
+          "title": "Проведение теста",
+          "definition": "Практическое проведение юзабилити-сессии.",
+          "order": 3,
+          "tagIds": [
+            "tag_1930c1428e44"
+          ]
+        },
+        {
+          "id": "yuzabiliti-testirovanie-praktika.analiz-rezultatov",
+          "slug": "analiz-rezultatov",
+          "title": "Анализ результатов",
+          "definition": "Обработка наблюдений, полученных в ходе теста.",
+          "order": 4,
+          "tagIds": [
+            "tag_d608eb0cc214"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_781b01e55ed4",
+          "slug": "yuzabiliti-test",
+          "title": "Юзабилити-тест",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Сценарий и задачи теста.",
+          "professionIds": [
+            "it.uxresearch"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ux-research-for-designers",
+              "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_a439e6707943",
+              "componentId": "yuzabiliti-testirovanie-praktika.podgotovka-yuzabiliti-testa",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_60e52d24d800",
+          "slug": "moderatsiya",
+          "title": "Модерация",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Модерация и нейтральные вопросы.",
+          "professionIds": [
+            "it.uxresearch"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ux-research-for-designers",
+              "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_a439e6707943",
+              "componentId": "yuzabiliti-testirovanie-praktika.moderatsiya-testa",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_1930c1428e44",
+          "slug": "provedenie-testa",
+          "title": "Проведение теста",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Практика проведения теста.",
+          "professionIds": [
+            "it.uxresearch"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ux-research-for-designers",
+              "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_a439e6707943",
+              "componentId": "yuzabiliti-testirovanie-praktika.provedenie-testa",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_d608eb0cc214",
+          "slug": "analiz-rezultatov",
+          "title": "Анализ результатов",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Обработка наблюдений.",
+          "professionIds": [
+            "it.uxresearch"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ux-research-for-designers",
+              "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_a439e6707943",
+              "componentId": "yuzabiliti-testirovanie-praktika.analiz-rezultatov",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_fc9a8ba8c2a4",
+        "costUsd": 0.0010427799999999999,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1686,
+          "outputTokens": 526
         }
       },
       "issues": [],
@@ -24274,8 +25790,16 @@
       "professionIds": [
         "it.presentation"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ai-for-presentations",
+          "url": "https://practicum.yandex.ru/ai-for-presentations/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_b1ed4a6906f5",
@@ -24284,7 +25808,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_46be8c2373b2",
@@ -24296,8 +25820,16 @@
       "professionIds": [
         "it.presentation"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ai-for-presentations",
+          "url": "https://practicum.yandex.ru/ai-for-presentations/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_b1ed4a6906f5",
@@ -24306,7 +25838,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_9db07d7532ca",
@@ -24554,6 +26086,55 @@
       "needsReview": false
     },
     {
+      "id": "tag_c236f4e1a076",
+      "slug": "analiz-dannyh",
+      "title": "Анализ данных",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Базовая статистика и выводы.",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_1b195278ab13",
+          "componentId": "kolichestvennye-metody-praktika.analiz-dannyh-i-statisticheskaya-proverka",
+          "role": "primary"
+        },
+        {
+          "competencyId": "comp_7381d9a9dca9",
+          "componentId": "sintez-i-otchet-praktika.analiz-dannyh-issledovaniya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_66e3d7154cb9",
+      "slug": "analiz-intervyu",
+      "title": "Анализ интервью",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Кодирование и анализ.",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_7419ca8a5a94",
+          "componentId": "kachestvennye-metody-praktika.analiz-kachestvennyh-dannyh",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_e642005c8086",
       "slug": "analiz-onlayn-opyta-i-dannyh",
       "title": "Анализ онлайн-опыта и данных",
@@ -24613,6 +26194,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_d608eb0cc214",
+      "slug": "analiz-rezultatov",
+      "title": "Анализ результатов",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Обработка наблюдений.",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_a439e6707943",
+          "componentId": "yuzabiliti-testirovanie-praktika.analiz-rezultatov",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_823cf9186145",
@@ -24950,6 +26553,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_e06ae32125af",
+      "slug": "anonimizatsiya",
+      "title": "Анонимизация",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Анонимизация исследовательских данных.",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_939c88486e52",
+          "componentId": "etika-i-hranenie-dannyh-praktika.anonimizatsiya-dannyh",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_d091dd8ea18c",
       "slug": "antropometriya",
       "title": "Антропометрия",
@@ -24989,8 +26614,16 @@
       "professionIds": [
         "it.presentation"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ai-for-presentations",
+          "url": "https://practicum.yandex.ru/ai-for-presentations/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_8d7a754b12c0",
@@ -24999,7 +26632,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_b1e6f8e4c8e4",
@@ -25071,8 +26704,16 @@
       "professionIds": [
         "it.presentation"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ai-for-presentations",
+          "url": "https://practicum.yandex.ru/ai-for-presentations/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_b1ed4a6906f5",
@@ -25081,7 +26722,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_9de9629a8e90",
@@ -25866,8 +27507,16 @@
       "professionIds": [
         "it.presentation"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ai-for-presentations",
+          "url": "https://practicum.yandex.ru/ai-for-presentations/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_ca9302e30e3a",
@@ -25876,7 +27525,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_7997a07b7f10",
@@ -25888,8 +27537,16 @@
       "professionIds": [
         "it.presentation"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ai-for-presentations",
+          "url": "https://practicum.yandex.ru/ai-for-presentations/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_ca9302e30e3a",
@@ -25898,7 +27555,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_85a93e9585c6",
@@ -26120,12 +27777,42 @@
       "professionIds": [
         "it.presentation"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ai-for-presentations",
+          "url": "https://practicum.yandex.ru/ai-for-presentations/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_ca9302e30e3a",
           "componentId": "vizualizatsiya-i-format-slaydov-praktika.vizualizatsiya-dannyh",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_347f7e5a9a87",
+      "slug": "vybor-metoda",
+      "title": "Выбор метода",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Выбор метода под вопрос.",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_e4e961b9cca2",
+          "componentId": "printsipy-i-etapy-issledovaniy-praktika.vybor-podhoda-i-metoda",
           "role": "primary"
         }
       ],
@@ -26161,6 +27848,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_a7df84de79d3",
+      "slug": "vyborka",
+      "title": "Выборка",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Типы выборки и репрезентативность.",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_9d2a4faffaa9",
+          "componentId": "vyborka-i-rekruting-praktika.teoriya-vyborki",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_8068a2ba602c",
@@ -26311,6 +28020,50 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_485891f8eee3",
+      "slug": "gipotezy",
+      "title": "Гипотезы",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Формулировка и проверка гипотез.",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_97d00e5b8bf7",
+          "componentId": "issledovatelskie-voprosy-praktika.gipotezy-v-issledovanii",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_f40fc8989968",
+      "slug": "glubinnye-intervyu",
+      "title": "Глубинные интервью",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Проведение глубинных интервью.",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_7419ca8a5a94",
+          "componentId": "kachestvennye-metody-praktika.intervyu-kak-metod-sbora-dannyh",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_061a4a6d7164",
@@ -26537,8 +28290,16 @@
       "professionIds": [
         "it.presentation"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ai-for-presentations",
+          "url": "https://practicum.yandex.ru/ai-for-presentations/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_915efdd38c27",
@@ -26547,7 +28308,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_fd47fdaa944c",
@@ -26611,8 +28372,16 @@
       "professionIds": [
         "it.presentation"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ai-for-presentations",
+          "url": "https://practicum.yandex.ru/ai-for-presentations/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_437349d8954a",
@@ -26621,7 +28390,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_fe047e016362",
@@ -26738,8 +28507,16 @@
       "professionIds": [
         "it.presentation"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ai-for-presentations",
+          "url": "https://practicum.yandex.ru/ai-for-presentations/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_8d7a754b12c0",
@@ -26748,7 +28525,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_74321044997e",
@@ -26790,8 +28567,16 @@
       "professionIds": [
         "it.presentation"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ai-for-presentations",
+          "url": "https://practicum.yandex.ru/ai-for-presentations/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_4ae2f1d1866d",
@@ -26800,7 +28585,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_2e4d633a1c69",
@@ -27078,6 +28863,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_e4174457fcb5",
+      "slug": "informirovannoe-soglasie",
+      "title": "Информированное согласие",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Согласие участников исследования.",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_939c88486e52",
+          "componentId": "etika-i-hranenie-dannyh-praktika.informirovannoe-soglasie",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_8940d4fcde77",
       "slug": "ispolzovanie-addonov-dlya-uskoreniya-raboty-v-blender",
       "title": "Использование аддонов для ускорения работы в Blender",
@@ -27228,6 +29035,50 @@
       "needsReview": false
     },
     {
+      "id": "tag_2dee23aefc43",
+      "slug": "issledovatelskiy-vopros",
+      "title": "Исследовательский вопрос",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Формулировка вопроса исследования.",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_97d00e5b8bf7",
+          "componentId": "issledovatelskie-voprosy-praktika.formulirovanie-issledovatelskogo-voprosa",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_fbed5cc5181b",
+      "slug": "issledovatelskiy-plan",
+      "title": "Исследовательский план",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "План исследования и критерии успеха.",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_e4e961b9cca2",
+          "componentId": "printsipy-i-etapy-issledovaniy-praktika.planirovanie-issledovaniya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_cdb63100b912",
       "slug": "istochniki-i-ssylki",
       "title": "Источники и ссылки",
@@ -27237,8 +29088,16 @@
       "professionIds": [
         "it.presentation"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ai-for-presentations",
+          "url": "https://practicum.yandex.ru/ai-for-presentations/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_915efdd38c27",
@@ -27247,7 +29106,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_c84cb210b28e",
@@ -27469,8 +29328,16 @@
       "professionIds": [
         "it.presentation"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ai-for-presentations",
+          "url": "https://practicum.yandex.ru/ai-for-presentations/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_8d7a754b12c0",
@@ -27479,7 +29346,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_e28a8277535e",
@@ -27917,6 +29784,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_a1fe0470f15b",
+      "slug": "kriterii-proverki",
+      "title": "Критерии проверки",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Критерии подтверждения гипотез.",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_97d00e5b8bf7",
+          "componentId": "issledovatelskie-voprosy-praktika.kriterii-proverki",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_437a85b15712",
       "slug": "kriterii-segmentatsii-auditorii",
       "title": "Критерии сегментации аудитории",
@@ -28307,6 +30196,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_d8e42cd5e181",
+      "slug": "metriki",
+      "title": "Метрики",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Выбор и интерпретация метрик.",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_1b195278ab13",
+          "componentId": "kolichestvennye-metody-praktika.metriki",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_01d018c59eb9",
       "slug": "metriki-eksperimentov",
       "title": "Метрики экспериментов",
@@ -28672,6 +30583,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_60e52d24d800",
+      "slug": "moderatsiya",
+      "title": "Модерация",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Модерация и нейтральные вопросы.",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_a439e6707943",
+          "componentId": "yuzabiliti-testirovanie-praktika.moderatsiya-testa",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_3aef675e15d7",
       "slug": "modulnye-setki-i-kolonki",
       "title": "Модульные сетки и колонки",
@@ -28832,6 +30765,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_68a053b9bdfc",
+      "slug": "nablyudenie",
+      "title": "Наблюдение",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Методы наблюдения и контекст.",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_7419ca8a5a94",
+          "componentId": "kachestvennye-metody-praktika.nablyudenie-i-kontekst",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_0bf2d25508ad",
       "slug": "naznachenie-i-struktura-dizayn-sistemy",
       "title": "Назначение и структура дизайн-системы",
@@ -28860,6 +30815,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_21bce7b5467a",
+      "slug": "napisanie-otcheta",
+      "title": "Написание отчёта",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Подготовка отчёта и рекомендаций.",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_7381d9a9dca9",
+          "componentId": "sintez-i-otchet-praktika.otchet-i-rekomendatsii",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_289a8be0752c",
@@ -29238,6 +31215,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_d7318e78e900",
+      "slug": "oprosy",
+      "title": "Опросы",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Дизайн и проведение опросов.",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_1b195278ab13",
+          "componentId": "kolichestvennye-metody-praktika.oprosy-kak-metod-sbora-dannyh",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_378ad4a0ea46",
@@ -29838,6 +31837,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_81312e728eb0",
+      "slug": "planirovanie-issledovaniya",
+      "title": "Планирование исследования",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Практическое планирование исследования.",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_e4e961b9cca2",
+          "componentId": "printsipy-i-etapy-issledovaniy-praktika.planirovanie-issledovaniya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_23dbb4f42bd8",
       "slug": "planirovanie-a-b-eksperimentov",
       "title": "Планирование A/B-экспериментов",
@@ -29967,8 +31988,16 @@
       "professionIds": [
         "it.presentation"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ai-for-presentations",
+          "url": "https://practicum.yandex.ru/ai-for-presentations/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_4ae2f1d1866d",
@@ -29977,7 +32006,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_621afb44ef14",
@@ -30870,6 +32899,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_fb513f17177b",
+      "slug": "privatnost-dannyh",
+      "title": "Приватность данных",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Обработка и хранение данных.",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_939c88486e52",
+          "componentId": "etika-i-hranenie-dannyh-praktika.privatnost-i-zaschita-dannyh",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_964c03397c66",
       "slug": "priemka-rabot",
       "title": "Приёмка работ",
@@ -31113,6 +33164,28 @@
       "needsReview": true
     },
     {
+      "id": "tag_394f6aeaa213",
+      "slug": "provedenie-intervyu",
+      "title": "Проведение интервью",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Практика интервью и вопросов.",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_7419ca8a5a94",
+          "componentId": "kachestvennye-metody-praktika.intervyu-kak-metod-sbora-dannyh",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_0f634340c163",
       "slug": "provedenie-issledovaniy-i-proektirovanie-servisa",
       "title": "Проведение исследований и проектирование сервиса",
@@ -31171,6 +33244,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_1930c1428e44",
+      "slug": "provedenie-testa",
+      "title": "Проведение теста",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Практика проведения теста.",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_a439e6707943",
+          "componentId": "yuzabiliti-testirovanie-praktika.provedenie-testa",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_f4e5da2e9fb7",
@@ -32115,8 +34210,16 @@
       "professionIds": [
         "it.presentation"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ai-for-presentations",
+          "url": "https://practicum.yandex.ru/ai-for-presentations/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_4ae2f1d1866d",
@@ -32125,7 +34228,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_c41328ae691b",
@@ -32137,8 +34240,16 @@
       "professionIds": [
         "it.presentation"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ai-for-presentations",
+          "url": "https://practicum.yandex.ru/ai-for-presentations/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_915efdd38c27",
@@ -32147,7 +34258,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_57dd137cee98",
@@ -32516,8 +34627,16 @@
       "professionIds": [
         "it.presentation"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ai-for-presentations",
+          "url": "https://practicum.yandex.ru/ai-for-presentations/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_437349d8954a",
@@ -32526,7 +34645,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_b3666864fd50",
@@ -32574,6 +34693,28 @@
         {
           "competencyId": "comp_425bd4dc7c7f",
           "componentId": "storibording-i-rezhissura-dvizheniya.rezhissura-dinamicheskoy-stseny",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_ab075eae849a",
+      "slug": "rekruting",
+      "title": "Рекрутинг",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Практика поиска участников.",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_9d2a4faffaa9",
+          "componentId": "vyborka-i-rekruting-praktika.rekruting-uchastnikov",
           "role": "primary"
         }
       ],
@@ -32650,8 +34791,16 @@
       "professionIds": [
         "it.presentation"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ai-for-presentations",
+          "url": "https://practicum.yandex.ru/ai-for-presentations/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_4ae2f1d1866d",
@@ -32660,7 +34809,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_0d06862889bd",
@@ -32843,6 +34992,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_337b86f8fb54",
+      "slug": "sbor-soglasiy",
+      "title": "Сбор согласий",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Практика получения согласий.",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_939c88486e52",
+          "componentId": "etika-i-hranenie-dannyh-praktika.informirovannoe-soglasie",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_a3af675243ad",
       "slug": "sborka-kontseptsii-interera",
       "title": "Сборка концепции интерьера",
@@ -32947,8 +35118,16 @@
       "professionIds": [
         "it.presentation"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ai-for-presentations",
+          "url": "https://practicum.yandex.ru/ai-for-presentations/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_ca9302e30e3a",
@@ -32957,7 +35136,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_5ca33adf6019",
@@ -33291,6 +35470,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_95c58e92a47b",
+      "slug": "sintez-dannyh",
+      "title": "Синтез данных",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Кластеризация и выводы.",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_7381d9a9dca9",
+          "componentId": "sintez-i-otchet-praktika.sintez-rezultatov",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_fe05bd2e1af5",
       "slug": "sinhronizatsiya-zvuka",
       "title": "Синхронизация звука",
@@ -33379,6 +35580,50 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_3e00b7d3b4be",
+      "slug": "skrining",
+      "title": "Скрининг",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Критерии отбора участников.",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_9d2a4faffaa9",
+          "componentId": "vyborka-i-rekruting-praktika.skrining-uchastnikov",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_3cecdcc57731",
+      "slug": "skrining-oprosnik",
+      "title": "Скрининг-опросник",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Составление скрининга.",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_9d2a4faffaa9",
+          "componentId": "vyborka-i-rekruting-praktika.skrining-uchastnikov",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_b883f8df1590",
@@ -33918,6 +36163,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_0ece75845864",
+      "slug": "sostavlenie-oprosa",
+      "title": "Составление опроса",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Практика составления вопросов.",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_1b195278ab13",
+          "componentId": "kolichestvennye-metody-praktika.oprosy-kak-metod-sbora-dannyh",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_d5494c1b173e",
       "slug": "sochetaemost-materialov-i-predmetov",
       "title": "Сочетаемость материалов и предметов",
@@ -34279,6 +36546,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_ebc469578e1d",
+      "slug": "struktura-otcheta",
+      "title": "Структура отчёта",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Структура и подача отчёта.",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_7381d9a9dca9",
+          "componentId": "sintez-i-otchet-praktika.otchet-i-rekomendatsii",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_237f4fa77350",
       "slug": "struktura-sayta-v-cms",
       "title": "Структура сайта в CMS",
@@ -34318,8 +36607,16 @@
       "professionIds": [
         "it.presentation"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ai-for-presentations",
+          "url": "https://practicum.yandex.ru/ai-for-presentations/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_437349d8954a",
@@ -34328,7 +36625,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_f0603f094bac",
@@ -34430,8 +36727,16 @@
       "professionIds": [
         "it.presentation"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ai-for-presentations",
+          "url": "https://practicum.yandex.ru/ai-for-presentations/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_437349d8954a",
@@ -34440,7 +36745,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_80fe685a8ac8",
@@ -34512,8 +36817,16 @@
       "professionIds": [
         "it.presentation"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ai-for-presentations",
+          "url": "https://practicum.yandex.ru/ai-for-presentations/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_8d7a754b12c0",
@@ -34522,7 +36835,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_649ffafe15fc",
@@ -35080,8 +37393,16 @@
       "professionIds": [
         "it.presentation"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ai-for-presentations",
+          "url": "https://practicum.yandex.ru/ai-for-presentations/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_b1ed4a6906f5",
@@ -35090,7 +37411,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_4cbfe43921cd",
@@ -35166,8 +37487,16 @@
       "professionIds": [
         "it.presentation"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ai-for-presentations",
+          "url": "https://practicum.yandex.ru/ai-for-presentations/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_915efdd38c27",
@@ -35176,7 +37505,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_b8492e1aae77",
@@ -35340,6 +37669,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_4a1111af6398",
+      "slug": "formulirovka-gipotez",
+      "title": "Формулировка гипотез",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Практика формулировки гипотез.",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_97d00e5b8bf7",
+          "componentId": "issledovatelskie-voprosy-praktika.gipotezy-v-issledovanii",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_ae68d146d7e6",
@@ -36080,6 +38431,50 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_05cf945600a6",
+      "slug": "etapy-issledovaniya",
+      "title": "Этапы исследования",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Планирование и последовательность этапов.",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_e4e961b9cca2",
+          "componentId": "printsipy-i-etapy-issledovaniy-praktika.etapy-issledovaniya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_781b01e55ed4",
+      "slug": "yuzabiliti-test",
+      "title": "Юзабилити-тест",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Сценарий и задачи теста.",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_a439e6707943",
+          "componentId": "yuzabiliti-testirovanie-praktika.podgotovka-yuzabiliti-testa",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_33bd0e21d155",

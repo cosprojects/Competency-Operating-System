@@ -2003,7 +2003,8 @@
       "lastChecked": "2026-10-26",
       "httpStatus": 403,
       "discoveryOnly": true,
-      "notes": "HTTP 403 (Cloudflare) — только ссылка для человека, автоматический сбор не выполняется."
+      "notes": "HTTP 403 (Cloudflare) — только ссылка для человека, автоматический сбор не выполняется.",
+      "summary": "Class Central — UX Research subject: учебный материал по UX-исследованиям и методам работы с пользователями."
     },
     {
       "id": "uxwoman-free-ux-research",
@@ -2026,7 +2027,8 @@
       "discoveredBy": "user",
       "lastChecked": "2026-10-26",
       "httpStatus": 200,
-      "discoveryOnly": true
+      "discoveryOnly": true,
+      "summary": "UX Woman — Free UX Research courses: учебный материал по UX-исследованиям и методам работы с пользователями."
     },
     {
       "id": "alison-careers-ux-researcher",
@@ -2049,7 +2051,8 @@
       "discoveredBy": "user",
       "lastChecked": "2026-10-26",
       "httpStatus": 200,
-      "discoveryOnly": true
+      "discoveryOnly": true,
+      "summary": "Alison — UX Researcher career page: учебный материал по UX-исследованиям и методам работы с пользователями."
     },
     {
       "id": "mooc-list-ux-research",
@@ -2073,7 +2076,8 @@
       "lastChecked": "2026-10-26",
       "httpStatus": 403,
       "discoveryOnly": true,
-      "notes": "HTTP 403 (Cloudflare) — только ссылка для человека, автоматический сбор не выполняется."
+      "notes": "HTTP 403 (Cloudflare) — только ссылка для человека, автоматический сбор не выполняется.",
+      "summary": "MOOC List — UX Research: учебный материал по UX-исследованиям и методам работы с пользователями."
     },
     {
       "id": "uxrinstitute-free-ux-research",
@@ -2095,7 +2099,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-26",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "UXR Institute — Free UX Research courses: учебный материал по UX-исследованиям и методам работы с пользователями."
     },
     {
       "id": "medium-sergushkin-ux-research-courses",
@@ -2119,7 +2124,8 @@
       "lastChecked": "2026-10-26",
       "httpStatus": 403,
       "discoveryOnly": true,
-      "notes": "HTTP 403 (Cloudflare) — только ссылка для человека, автоматический сбор не выполняется."
+      "notes": "HTTP 403 (Cloudflare) — только ссылка для человека, автоматический сбор не выполняется.",
+      "summary": "Medium — 5 best free UX research courses: учебный материал по UX-исследованиям и методам работы с пользователями."
     },
     {
       "id": "coursera-ux-research-courses",
@@ -2141,7 +2147,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-26",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Coursera — UX Research courses: учебный материал по UX-исследованиям и методам работы с пользователями."
     },
     {
       "id": "fountaininstitute-free-ux-research",
@@ -2163,7 +2170,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-26",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Fountain Institute — Free UX Research short course: учебный материал по UX-исследованиям и методам работы с пользователями."
     },
     {
       "id": "practicum-ai-for-design",

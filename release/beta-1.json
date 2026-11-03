@@ -12,11 +12,11 @@
     "it.3ddesigner",
     "it.interior",
     "it.webdesigner",
-    "it.presentation"
+    "it.presentation",
+    "it.uxresearch"
   ],
   "excludedProfessionIds": [
     "it.appdesign",
-    "it.uxresearch",
     "it.artdir",
     "it.aidesigner"
   ],

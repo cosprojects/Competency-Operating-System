@@ -6,9 +6,9 @@ AI-native platform for competency maps, learning sources and professional develo
 
 Текущий этап — подготовка Beta карты профессий: база, на которой дальше может строиться диагностика. Публичная Beta запускается после готовности MVP, РФ-хостинга и юридического контура; сейчас — локальная разработка и Vercel demo. Диагностика, оценка уровня, кейсы и паспорт компетенций не отменены; они требуют нормально собранных компетенций, знаний/навыков и материалов и идут следующим слоем.
 
-- Продукт: 8 профессий (UX/UI, Product, Motion, Graphic, 3D, Интерьеры, Веб, Презентации), 176 связей «профессия–компетенция», 82 уникальные компетенции.
+- Продукт: 9 профессий (UX/UI, Product, Motion, Graphic, 3D, Интерьеры, Веб, Презентации, UX-исследования), 194 связи «профессия–компетенция», 90 уникальных компетенций.
 - AI-слой и AI-дизайнер исключены из публикации (`deferred-post-beta`).
-- Content gate: 176/176 связей, 82/82 компетенции, 0 пробелов; 3D, интерьеры, веб и презентации прошли gate 2026-11-03; source review AI-assisted, нужен spot-check основателя.
+- Content gate: 194/194 связи, 90/90 компетенций, 0 пробелов; 3D, интерьеры, веб, презентации и UX-исследования прошли gate 2026-11-03; source review AI-assisted, нужен spot-check основателя.
 - Приложение: `apps/web` (Next.js), контент — производный JSON из `model/`, локальные пользовательские данные — SQLite, публичный контур — PostgreSQL.
 - Стратегическая дорожная карта: [`COS-BP-005`](docs/08-business-plan/COS-BP-005-Product-Roadmap-AXIONA-COS.md).
 - Программа, quality bar, архитектура и runbook: [`docs/12-release/`](docs/12-release/).
@@ -57,7 +57,7 @@ npm run web:dev
 
 ## Каноническая карта UX/UI
 
-`src/methodology/v1/competency/canonical/uxui.json` — два блока (UX/UI), 9 разделов и 34 компетенции со статусами `covered` / `partial` / `gap`. Сейчас: 34 covered / 0 partial / 0 gap; в каталоге 87 блоков, 425 тегов. Проверка и coverage-отчёт:
+`src/methodology/v1/competency/canonical/uxui.json` — два блока (UX/UI), 9 разделов и 34 компетенции со статусами `covered` / `partial` / `gap`. Сейчас: 34 covered / 0 partial / 0 gap; в каталоге 95 блоков, 456 тегов. Проверка и coverage-отчёт:
 
 ```bash
 npm run canonical:validate -- --domain it --profession uxui --source review --include-seed --report

@@ -250,7 +250,7 @@ export function ProfessionCanvas({
         </div>
 
           <div className="sidebar-notice">
-            В Beta опубликованы не проверенные компетенции. Помогите проверить добавленные и вместе
+            В Beta опубликованы не проверенные компетенции и материалы. Помогите проверить добавленные и вместе
             мы сделаем сервис полезнее! Если вы не нашли нужную компетенцию, навык или знание —{" "}
             <FeedbackTrigger
               options={{ context: "competency", type: "MISSING_COMPETENCY", targetType: "COMPETENCY", targetId: selectedId ?? undefined }}

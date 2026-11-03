@@ -5,14 +5,14 @@
   "asOf": "2026-11-03",
   "strictSourceReview": false,
   "totals": {
-    "professions": 7,
-    "totalLinks": 226,
-    "includedLinks": 163,
-    "excludedLinks": 63,
-    "publishedLinks": 163,
-    "uniqueCompetencies": 76,
-    "uniquePublishedCompetencies": 76,
-    "uniqueSources": 44,
+    "professions": 8,
+    "totalLinks": 248,
+    "includedLinks": 176,
+    "excludedLinks": 72,
+    "publishedLinks": 176,
+    "uniqueCompetencies": 82,
+    "uniquePublishedCompetencies": 82,
+    "uniqueSources": 48,
     "gaps": 0,
     "blockingGaps": 0,
     "passed": true
@@ -85,6 +85,16 @@
       "includedLinks": 24,
       "excludedLinks": 9,
       "publishedLinks": 24,
+      "passed": true,
+      "gaps": []
+    },
+    {
+      "id": "it.presentation",
+      "title": "Дизайнер презентаций",
+      "totalLinks": 22,
+      "includedLinks": 13,
+      "excludedLinks": 9,
+      "publishedLinks": 13,
       "passed": true,
       "gaps": []
     }
@@ -402,6 +412,51 @@
     },
     {
       "professionId": "it.webdesigner",
+      "competencyId": "ai-ethics-rights",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.presentation",
+      "competencyId": "ai-model-landscape",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.presentation",
+      "competencyId": "ai-prompting",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.presentation",
+      "competencyId": "ai-research-synthesis",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.presentation",
+      "competencyId": "ai-visual-generation",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.presentation",
+      "competencyId": "ai-video-audio",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.presentation",
+      "competencyId": "ai-copy-content",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.presentation",
+      "competencyId": "ai-layout-docs",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.presentation",
+      "competencyId": "ai-workflow-integration",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.presentation",
       "competencyId": "ai-ethics-rights",
       "reason": "excluded-prefix:ai-"
     }

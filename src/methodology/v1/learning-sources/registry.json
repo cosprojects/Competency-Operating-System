@@ -1248,7 +1248,8 @@
       "lastChecked": "2026-10-26",
       "httpStatus": 403,
       "discoveryOnly": true,
-      "notes": "HTTP 403 (Cloudflare) — только ссылка для человека, автоматический сбор не выполняется."
+      "notes": "HTTP 403 (Cloudflare) — только ссылка для человека, автоматический сбор не выполняется.",
+      "summary": "MOOC List — Presentation Design: учебный материал по презентациям и визуальной коммуникации."
     },
     {
       "id": "coursera-presentation-design-canva",
@@ -1271,7 +1272,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-26",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Coursera — Presentation Design Mastery in Canva: учебный материал по презентациям и визуальной коммуникации."
     },
     {
       "id": "classcentral-presentation-design-report",
@@ -1295,7 +1297,8 @@
       "lastChecked": "2026-10-26",
       "httpStatus": 403,
       "discoveryOnly": true,
-      "notes": "HTTP 403 (Cloudflare) — только ссылка для человека, автоматический сбор не выполняется."
+      "notes": "HTTP 403 (Cloudflare) — только ссылка для человека, автоматический сбор не выполняется.",
+      "summary": "Class Central — Best Presentation Design Courses: учебный материал по презентациям и визуальной коммуникации."
     },
     {
       "id": "greatlearning-powerpoint-free",
@@ -1317,7 +1320,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-26",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Great Learning — Free PowerPoint courses: учебный материал по презентациям и визуальной коммуникации."
     },
     {
       "id": "learnfree-powerpoint-foundations",
@@ -1339,7 +1343,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-26",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "LearnFree — PowerPoint Foundations: учебный материал по презентациям и визуальной коммуникации."
     },
     {
       "id": "canva-design-school-presentations",
@@ -1363,7 +1368,8 @@
       "lastChecked": "2026-10-26",
       "httpStatus": 403,
       "discoveryOnly": true,
-      "notes": "HTTP 403 (Cloudflare) — только ссылка для человека, автоматический сбор не выполняется."
+      "notes": "HTTP 403 (Cloudflare) — только ссылка для человека, автоматический сбор не выполняется.",
+      "summary": "Canva Design School — Presentations to Impress: учебный материал по презентациям и визуальной коммуникации."
     },
     {
       "id": "autoppt-presentation-slide-design",
@@ -1385,7 +1391,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-26",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "AutoPPT — Master Presentation Slide Design: учебный материал по презентациям и визуальной коммуникации."
     },
     {
       "id": "coursera-web-design-free",

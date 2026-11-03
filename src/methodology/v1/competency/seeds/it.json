@@ -2009,6 +2009,234 @@
           "kind": "knowledge"
         }
       ]
+    },
+    {
+      "id": "presentation-structure-practice",
+      "canonicalId": "presentation-structure",
+      "title": "Структура и сценарий презентации: практика",
+      "titleEn": "Presentation structure practice",
+      "aliases": [
+        "Presentation structure practice"
+      ],
+      "definition": "Сценарий, логика и структура убедительной презентации.",
+      "professionIds": [
+        "it.presentation"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Драматургия презентации",
+          "definition": "Логика и сценарий выступления.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Структура слайдов",
+          "definition": "Последовательность и роль слайдов.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Сценарий выступления",
+          "definition": "Сборка сценария и переходов.",
+          "kind": "skill"
+        },
+        {
+          "title": "Редактура структуры",
+          "definition": "Упрощение и перестройка структуры.",
+          "kind": "skill"
+        }
+      ]
+    },
+    {
+      "id": "presentation-audience-practice",
+      "canonicalId": "presentation-audience",
+      "title": "Адаптация под аудиторию: практика",
+      "titleEn": "Presentation audience practice",
+      "aliases": [
+        "Presentation audience practice"
+      ],
+      "definition": "Подстройка сообщения, языка и глубины под аудиторию.",
+      "professionIds": [
+        "it.presentation"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Аудитория и контекст",
+          "definition": "Понимание аудитории и её целей.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Уровень детализации",
+          "definition": "Глубина материала под аудиторию.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Адаптация языка",
+          "definition": "Подстройка формулировок под слушателей.",
+          "kind": "skill"
+        },
+        {
+          "title": "Адаптация примеров",
+          "definition": "Подбор примеров и аргументов.",
+          "kind": "skill"
+        }
+      ]
+    },
+    {
+      "id": "presentation-message-practice",
+      "canonicalId": "presentation-message",
+      "title": "Ключевое сообщение: практика",
+      "titleEn": "Presentation message practice",
+      "aliases": [
+        "Presentation message practice"
+      ],
+      "definition": "Главное сообщение, тезисы и аргументация.",
+      "professionIds": [
+        "it.presentation"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Ключевое сообщение",
+          "definition": "Формулировка главного сообщения.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Аргументация",
+          "definition": "Структура аргументов и выводов.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Тезисы выступления",
+          "definition": "Формулировка тезисов и выводов.",
+          "kind": "skill"
+        },
+        {
+          "title": "Защита идеи",
+          "definition": "Ответы на возражения.",
+          "kind": "skill"
+        }
+      ]
+    },
+    {
+      "id": "presentation-data-practice",
+      "canonicalId": "presentation-data",
+      "title": "Данные и фактчекинг: практика",
+      "titleEn": "Presentation data practice",
+      "aliases": [
+        "Presentation data practice"
+      ],
+      "definition": "Достоверность данных, источники и фактчекинг.",
+      "professionIds": [
+        "it.presentation"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Достоверность данных",
+          "definition": "Проверка источников и цифр.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Фактчекинг",
+          "definition": "Проверка утверждений и цитат.",
+          "kind": "skill"
+        },
+        {
+          "title": "Источники и ссылки",
+          "definition": "Оформление источников в презентации.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Работа с данными",
+          "definition": "Подготовка данных для слайдов.",
+          "kind": "skill"
+        }
+      ]
+    },
+    {
+      "id": "presentation-visualization-practice",
+      "canonicalId": "presentation-visualization",
+      "title": "Визуализация и формат слайдов: практика",
+      "titleEn": "Presentation visualization practice",
+      "aliases": [
+        "Presentation visualization practice"
+      ],
+      "definition": "Визуализация данных, формат слайдов и визуальная иерархия.",
+      "professionIds": [
+        "it.presentation"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Выбор визуализации",
+          "definition": "Выбор графика под тип данных.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Визуальная иерархия слайда",
+          "definition": "Акценты и читаемость слайда.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Сборка слайда",
+          "definition": "Практическая сборка слайда.",
+          "kind": "skill"
+        },
+        {
+          "title": "Визуализация данных",
+          "definition": "Графики, диаграммы и схемы.",
+          "kind": "skill"
+        }
+      ]
+    },
+    {
+      "id": "presentation-delivery-practice",
+      "canonicalId": "presentation-delivery",
+      "title": "Защита и репетиция: практика",
+      "titleEn": "Presentation delivery practice",
+      "aliases": [
+        "Presentation delivery practice"
+      ],
+      "definition": "Репетиция, подача и защита презентации.",
+      "professionIds": [
+        "it.presentation"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Подача и голос",
+          "definition": "Управление темпом и интонацией.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Репетиция",
+          "definition": "Подготовка и прогон выступления.",
+          "kind": "skill"
+        },
+        {
+          "title": "Работа с вопросами",
+          "definition": "Ответы на вопросы аудитории.",
+          "kind": "skill"
+        },
+        {
+          "title": "Защита решения",
+          "definition": "Убедительная защита идей.",
+          "kind": "knowledge"
+        }
+      ]
     }
   ]
 }

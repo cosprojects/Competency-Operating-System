@@ -1046,6 +1046,193 @@
       "methodologyVersion": "0.1.0"
     },
     {
+      "id": "comp_b1ed4a6906f5",
+      "slug": "adaptatsiya-pod-auditoriyu-praktika",
+      "title": "Адаптация под аудиторию: практика",
+      "aliases": [
+        "Подстройка сообщения под аудиторию"
+      ],
+      "definition": "Подстройка сообщения, языка и глубины под аудиторию.",
+      "scope": "universal",
+      "canonicalIds": [
+        "presentation-audience"
+      ],
+      "professionIds": [
+        "it.presentation"
+      ],
+      "components": [
+        {
+          "id": "adaptatsiya-pod-auditoriyu-praktika.ponimanie-auditorii",
+          "slug": "ponimanie-auditorii",
+          "title": "Понимание аудитории",
+          "definition": "Анализ характеристик, целей и контекста слушателей как основа для адаптации сообщения.",
+          "order": 1,
+          "tagIds": [
+            "tag_45b538e02d52"
+          ]
+        },
+        {
+          "id": "adaptatsiya-pod-auditoriyu-praktika.adaptatsiya-soderzhaniya",
+          "slug": "adaptatsiya-soderzhaniya",
+          "title": "Адаптация содержания",
+          "definition": "Изменение глубины материала и подбор примеров в соответствии с аудиторией.",
+          "order": 2,
+          "tagIds": [
+            "tag_8694f1ef87c7",
+            "tag_b49c75e5a2ff"
+          ]
+        },
+        {
+          "id": "adaptatsiya-pod-auditoriyu-praktika.adaptatsiya-yazyka",
+          "slug": "adaptatsiya-yazyka",
+          "title": "Адаптация языка",
+          "definition": "Подстройка формулировок и терминологии под слушателей.",
+          "order": 3,
+          "tagIds": [
+            "tag_46be8c2373b2"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_45b538e02d52",
+          "slug": "auditoriya-i-kontekst",
+          "title": "Аудитория и контекст",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Понимание аудитории и её целей.",
+          "professionIds": [
+            "it.presentation"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-presentations",
+              "url": "https://practicum.yandex.ru/ai-for-presentations/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_b1ed4a6906f5",
+              "componentId": "adaptatsiya-pod-auditoriyu-praktika.ponimanie-auditorii",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_8694f1ef87c7",
+          "slug": "uroven-detalizatsii",
+          "title": "Уровень детализации",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Глубина материала под аудиторию.",
+          "professionIds": [
+            "it.presentation"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-presentations",
+              "url": "https://practicum.yandex.ru/ai-for-presentations/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_b1ed4a6906f5",
+              "componentId": "adaptatsiya-pod-auditoriyu-praktika.adaptatsiya-soderzhaniya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_b49c75e5a2ff",
+          "slug": "adaptatsiya-primerov",
+          "title": "Адаптация примеров",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Подбор примеров и аргументов.",
+          "professionIds": [
+            "it.presentation"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-presentations",
+              "url": "https://practicum.yandex.ru/ai-for-presentations/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_b1ed4a6906f5",
+              "componentId": "adaptatsiya-pod-auditoriyu-praktika.adaptatsiya-soderzhaniya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_46be8c2373b2",
+          "slug": "adaptatsiya-yazyka",
+          "title": "Адаптация языка",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Подстройка формулировок под слушателей.",
+          "professionIds": [
+            "it.presentation"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-presentations",
+              "url": "https://practicum.yandex.ru/ai-for-presentations/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_b1ed4a6906f5",
+              "componentId": "adaptatsiya-pod-auditoriyu-praktika.adaptatsiya-yazyka",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_41764712550b",
+        "costUsd": 0.00095598,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1556,
+          "outputTokens": 479
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
       "id": "comp_37507e0fc1a2",
       "slug": "adaptivnaya-verstka-i-setki",
       "title": "Адаптивная вёрстка и сетки",
@@ -4260,6 +4447,185 @@
       ]
     },
     {
+      "id": "comp_ca9302e30e3a",
+      "slug": "vizualizatsiya-i-format-slaydov-praktika",
+      "title": "Визуализация и формат слайдов: практика",
+      "aliases": [
+        "Визуализация данных и формат слайдов",
+        "Практика визуализации в презентациях"
+      ],
+      "definition": "Практика визуализации данных, выбора формата слайдов и построения визуальной иерархии для презентаций.",
+      "scope": "universal",
+      "canonicalIds": [
+        "presentation-visualization"
+      ],
+      "professionIds": [
+        "it.presentation"
+      ],
+      "components": [
+        {
+          "id": "vizualizatsiya-i-format-slaydov-praktika.vizualizatsiya-dannyh",
+          "slug": "vizualizatsiya-dannyh",
+          "title": "Визуализация данных",
+          "definition": "Выбор и построение графиков, диаграмм и схем под тип данных и задачу сообщения.",
+          "order": 1,
+          "tagIds": [
+            "tag_deee490a2fe0",
+            "tag_0bc323c562e4"
+          ]
+        },
+        {
+          "id": "vizualizatsiya-i-format-slaydov-praktika.format-i-komponovka-slayda",
+          "slug": "format-i-komponovka-slayda",
+          "title": "Формат и компоновка слайда",
+          "definition": "Практическая сборка слайда с учётом формата, акцентов и читаемости.",
+          "order": 2,
+          "tagIds": [
+            "tag_7997a07b7f10",
+            "tag_a965cee7ccab"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_deee490a2fe0",
+          "slug": "vybor-vizualizatsii",
+          "title": "Выбор визуализации",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Выбор графика под тип данных.",
+          "professionIds": [
+            "it.presentation"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-presentations",
+              "url": "https://practicum.yandex.ru/ai-for-presentations/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_ca9302e30e3a",
+              "componentId": "vizualizatsiya-i-format-slaydov-praktika.vizualizatsiya-dannyh",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_0bc323c562e4",
+          "slug": "vizualizatsiya-dannyh",
+          "title": "Визуализация данных",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Графики, диаграммы и схемы.",
+          "professionIds": [
+            "it.presentation"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-presentations",
+              "url": "https://practicum.yandex.ru/ai-for-presentations/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_ca9302e30e3a",
+              "componentId": "vizualizatsiya-i-format-slaydov-praktika.vizualizatsiya-dannyh",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_7997a07b7f10",
+          "slug": "vizualnaya-ierarhiya-slayda",
+          "title": "Визуальная иерархия слайда",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Акценты и читаемость слайда.",
+          "professionIds": [
+            "it.presentation"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-presentations",
+              "url": "https://practicum.yandex.ru/ai-for-presentations/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_ca9302e30e3a",
+              "componentId": "vizualizatsiya-i-format-slaydov-praktika.format-i-komponovka-slayda",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_a965cee7ccab",
+          "slug": "sborka-slayda",
+          "title": "Сборка слайда",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Практическая сборка слайда.",
+          "professionIds": [
+            "it.presentation"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-presentations",
+              "url": "https://practicum.yandex.ru/ai-for-presentations/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_ca9302e30e3a",
+              "componentId": "vizualizatsiya-i-format-slaydov-praktika.format-i-komponovka-slayda",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_d44cc08dcfee",
+        "costUsd": 0.00099835,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1607,
+          "outputTokens": 505
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
       "id": "comp_f0911ea7e557",
       "slug": "vizualizatsiya-interera-praktika",
       "title": "Визуализация интерьера: практика",
@@ -6171,6 +6537,202 @@
       "methodologyVersion": "0.1.0"
     },
     {
+      "id": "comp_915efdd38c27",
+      "slug": "dannye-i-faktcheking-praktika",
+      "title": "Данные и фактчекинг: практика",
+      "aliases": [
+        "Фактчекинг и работа с данными в презентациях"
+      ],
+      "definition": "Практика обеспечения достоверности данных в презентациях: проверка источников и цифр, фактчекинг утверждений и цитат, корректное оформление ссылок и подготовка данных для слайдов.",
+      "scope": "universal",
+      "canonicalIds": [
+        "presentation-data"
+      ],
+      "professionIds": [
+        "it.presentation"
+      ],
+      "components": [
+        {
+          "id": "dannye-i-faktcheking-praktika.dostovernost-dannyh",
+          "slug": "dostovernost-dannyh",
+          "title": "Достоверность данных",
+          "definition": "Проверка источников и цифр, используемых в презентации, и оценка их надёжности.",
+          "order": 1,
+          "tagIds": [
+            "tag_6bd3067dd92c"
+          ]
+        },
+        {
+          "id": "dannye-i-faktcheking-praktika.faktcheking",
+          "slug": "faktcheking",
+          "title": "Фактчекинг",
+          "definition": "Проверка утверждений и цитат, приводимых в презентации.",
+          "order": 2,
+          "tagIds": [
+            "tag_83e9c16fa4be"
+          ]
+        },
+        {
+          "id": "dannye-i-faktcheking-praktika.istochniki-i-ssylki",
+          "slug": "istochniki-i-ssylki",
+          "title": "Источники и ссылки",
+          "definition": "Оформление источников в презентации для подтверждения приведённых данных.",
+          "order": 3,
+          "tagIds": [
+            "tag_cdb63100b912"
+          ]
+        },
+        {
+          "id": "dannye-i-faktcheking-praktika.rabota-s-dannymi",
+          "slug": "rabota-s-dannymi",
+          "title": "Работа с данными",
+          "definition": "Подготовка данных для представления на слайдах.",
+          "order": 4,
+          "tagIds": [
+            "tag_c41328ae691b"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_6bd3067dd92c",
+          "slug": "dostovernost-dannyh",
+          "title": "Достоверность данных",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Проверка источников и цифр.",
+          "professionIds": [
+            "it.presentation"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-presentations",
+              "url": "https://practicum.yandex.ru/ai-for-presentations/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_915efdd38c27",
+              "componentId": "dannye-i-faktcheking-praktika.dostovernost-dannyh",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_83e9c16fa4be",
+          "slug": "faktcheking",
+          "title": "Фактчекинг",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Проверка утверждений и цитат.",
+          "professionIds": [
+            "it.presentation"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-presentations",
+              "url": "https://practicum.yandex.ru/ai-for-presentations/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_915efdd38c27",
+              "componentId": "dannye-i-faktcheking-praktika.faktcheking",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_cdb63100b912",
+          "slug": "istochniki-i-ssylki",
+          "title": "Источники и ссылки",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Оформление источников в презентации.",
+          "professionIds": [
+            "it.presentation"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-presentations",
+              "url": "https://practicum.yandex.ru/ai-for-presentations/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_915efdd38c27",
+              "componentId": "dannye-i-faktcheking-praktika.istochniki-i-ssylki",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_c41328ae691b",
+          "slug": "rabota-s-dannymi",
+          "title": "Работа с данными",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Подготовка данных для слайдов.",
+          "professionIds": [
+            "it.presentation"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-presentations",
+              "url": "https://practicum.yandex.ru/ai-for-presentations/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_915efdd38c27",
+              "componentId": "dannye-i-faktcheking-praktika.rabota-s-dannymi",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_6fa7fa711bff",
+        "costUsd": 0.0010436100000000002,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1575,
+          "outputTokens": 554
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
       "id": "comp_32d156df6c59",
       "slug": "dizayn-myshlenie",
       "title": "Дизайн-мышление",
@@ -6982,6 +7544,202 @@
           "cacheHitTokens": 512,
           "cacheMissTokens": 711,
           "outputTokens": 769
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
+      "id": "comp_4ae2f1d1866d",
+      "slug": "zaschita-i-repetitsiya-praktika",
+      "title": "Защита и репетиция: практика",
+      "aliases": [
+        "Подача и защита презентации"
+      ],
+      "definition": "Репетиция, подача и защита презентации: подготовка выступления, управление голосом и интонацией, ответы на вопросы аудитории и убедительная защита идей.",
+      "scope": "universal",
+      "canonicalIds": [
+        "presentation-delivery"
+      ],
+      "professionIds": [
+        "it.presentation"
+      ],
+      "components": [
+        {
+          "id": "zaschita-i-repetitsiya-praktika.podgotovka-i-repetitsiya",
+          "slug": "podgotovka-i-repetitsiya",
+          "title": "Подготовка и репетиция",
+          "definition": "Прогон выступления и подготовка к подаче материала.",
+          "order": 1,
+          "tagIds": [
+            "tag_d4b7903ec81b"
+          ]
+        },
+        {
+          "id": "zaschita-i-repetitsiya-praktika.podacha-i-golos",
+          "slug": "podacha-i-golos",
+          "title": "Подача и голос",
+          "definition": "Управление речью, темпом и интонацией во время выступления.",
+          "order": 2,
+          "tagIds": [
+            "tag_0c51d6177277"
+          ]
+        },
+        {
+          "id": "zaschita-i-repetitsiya-praktika.vzaimodeystvie-s-auditoriey",
+          "slug": "vzaimodeystvie-s-auditoriey",
+          "title": "Взаимодействие с аудиторией",
+          "definition": "Работа с вопросами и обратной связью во время защиты.",
+          "order": 3,
+          "tagIds": [
+            "tag_a605183340fd"
+          ]
+        },
+        {
+          "id": "zaschita-i-repetitsiya-praktika.zaschita-resheniya",
+          "slug": "zaschita-resheniya",
+          "title": "Защита решения",
+          "definition": "Аргументация и убедительное представление идей.",
+          "order": 4,
+          "tagIds": [
+            "tag_a5887e34cc69"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_d4b7903ec81b",
+          "slug": "repetitsiya",
+          "title": "Репетиция",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Подготовка и прогон выступления.",
+          "professionIds": [
+            "it.presentation"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-presentations",
+              "url": "https://practicum.yandex.ru/ai-for-presentations/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_4ae2f1d1866d",
+              "componentId": "zaschita-i-repetitsiya-praktika.podgotovka-i-repetitsiya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_0c51d6177277",
+          "slug": "podacha-i-golos",
+          "title": "Подача и голос",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Управление темпом и интонацией.",
+          "professionIds": [
+            "it.presentation"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-presentations",
+              "url": "https://practicum.yandex.ru/ai-for-presentations/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_4ae2f1d1866d",
+              "componentId": "zaschita-i-repetitsiya-praktika.podacha-i-golos",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_a605183340fd",
+          "slug": "rabota-s-voprosami",
+          "title": "Работа с вопросами",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Ответы на вопросы аудитории.",
+          "professionIds": [
+            "it.presentation"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-presentations",
+              "url": "https://practicum.yandex.ru/ai-for-presentations/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_4ae2f1d1866d",
+              "componentId": "zaschita-i-repetitsiya-praktika.vzaimodeystvie-s-auditoriey",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_a5887e34cc69",
+          "slug": "zaschita-resheniya",
+          "title": "Защита решения",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Убедительная защита идей.",
+          "professionIds": [
+            "it.presentation"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-presentations",
+              "url": "https://practicum.yandex.ru/ai-for-presentations/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_4ae2f1d1866d",
+              "componentId": "zaschita-i-repetitsiya-praktika.zaschita-resheniya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_6d9376f2ee1e",
+        "costUsd": 0.0010822800000000001,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1596,
+          "outputTokens": 584
         }
       },
       "issues": [],
@@ -8704,6 +9462,193 @@
           "cacheHitTokens": 512,
           "cacheMissTokens": 651,
           "outputTokens": 995
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
+      "id": "comp_8d7a754b12c0",
+      "slug": "klyuchevoe-soobschenie-praktika",
+      "title": "Ключевое сообщение: практика",
+      "aliases": [
+        "Главное сообщение презентации: практика"
+      ],
+      "definition": "Практика формулирования главного сообщения презентации, построения тезисов и аргументации, а также защиты идеи при ответах на возражения.",
+      "scope": "universal",
+      "canonicalIds": [
+        "presentation-message"
+      ],
+      "professionIds": [
+        "it.presentation"
+      ],
+      "components": [
+        {
+          "id": "klyuchevoe-soobschenie-praktika.formulirovka-glavnogo-soobscheniya",
+          "slug": "formulirovka-glavnogo-soobscheniya",
+          "title": "Формулировка главного сообщения",
+          "definition": "Раздел о том, как определить и сформулировать ключевое сообщение презентации.",
+          "order": 1,
+          "tagIds": [
+            "tag_a1d4dd4b6e1b"
+          ]
+        },
+        {
+          "id": "klyuchevoe-soobschenie-praktika.tezisy-i-argumentatsiya",
+          "slug": "tezisy-i-argumentatsiya",
+          "title": "Тезисы и аргументация",
+          "definition": "Раздел о построении системы тезисов и аргументов, поддерживающих главное сообщение.",
+          "order": 2,
+          "tagIds": [
+            "tag_550e9400c0f1",
+            "tag_6d52f57017ca"
+          ]
+        },
+        {
+          "id": "klyuchevoe-soobschenie-praktika.zaschita-idei",
+          "slug": "zaschita-idei",
+          "title": "Защита идеи",
+          "definition": "Раздел о представлении и защите главного сообщения перед аудиторией.",
+          "order": 3,
+          "tagIds": [
+            "tag_f395ba739f75"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_a1d4dd4b6e1b",
+          "slug": "klyuchevoe-soobschenie",
+          "title": "Ключевое сообщение",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Формулировка главного сообщения.",
+          "professionIds": [
+            "it.presentation"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-presentations",
+              "url": "https://practicum.yandex.ru/ai-for-presentations/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_8d7a754b12c0",
+              "componentId": "klyuchevoe-soobschenie-praktika.formulirovka-glavnogo-soobscheniya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_550e9400c0f1",
+          "slug": "tezisy-vystupleniya",
+          "title": "Тезисы выступления",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Формулировка тезисов и выводов.",
+          "professionIds": [
+            "it.presentation"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-presentations",
+              "url": "https://practicum.yandex.ru/ai-for-presentations/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_8d7a754b12c0",
+              "componentId": "klyuchevoe-soobschenie-praktika.tezisy-i-argumentatsiya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_6d52f57017ca",
+          "slug": "argumentatsiya",
+          "title": "Аргументация",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Структура аргументов и выводов.",
+          "professionIds": [
+            "it.presentation"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-presentations",
+              "url": "https://practicum.yandex.ru/ai-for-presentations/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_8d7a754b12c0",
+              "componentId": "klyuchevoe-soobschenie-praktika.tezisy-i-argumentatsiya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_f395ba739f75",
+          "slug": "zaschita-idei",
+          "title": "Защита идеи",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Ответы на возражения.",
+          "professionIds": [
+            "it.presentation"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-presentations",
+              "url": "https://practicum.yandex.ru/ai-for-presentations/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_8d7a754b12c0",
+              "componentId": "klyuchevoe-soobschenie-praktika.zaschita-idei",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_2854bbda3048",
+        "costUsd": 0.00102829,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1559,
+          "outputTokens": 544
         }
       },
       "issues": [],
@@ -17504,6 +18449,185 @@
       "methodologyVersion": "0.1.0"
     },
     {
+      "id": "comp_437349d8954a",
+      "slug": "struktura-i-stsenariy-prezentatsii-praktika",
+      "title": "Структура и сценарий презентации: практика",
+      "aliases": [
+        "Сценарий и структура презентации",
+        "Драматургия и структура слайдов"
+      ],
+      "definition": "Сценарий, логика и структура убедительной презентации.",
+      "scope": "universal",
+      "canonicalIds": [
+        "presentation-structure"
+      ],
+      "professionIds": [
+        "it.presentation"
+      ],
+      "components": [
+        {
+          "id": "struktura-i-stsenariy-prezentatsii-praktika.dramaturgiya-prezentatsii",
+          "slug": "dramaturgiya-prezentatsii",
+          "title": "Драматургия презентации",
+          "definition": "Логика и сценарий выступления, выстраивание повествования и переходов.",
+          "order": 1,
+          "tagIds": [
+            "tag_1e244d863646",
+            "tag_121007890e8d"
+          ]
+        },
+        {
+          "id": "struktura-i-stsenariy-prezentatsii-praktika.struktura-slaydov",
+          "slug": "struktura-slaydov",
+          "title": "Структура слайдов",
+          "definition": "Последовательность и роль слайдов, редактура и упрощение структуры.",
+          "order": 2,
+          "tagIds": [
+            "tag_1b1d37242bab",
+            "tag_6006c728a66d"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_1e244d863646",
+          "slug": "dramaturgiya-prezentatsii",
+          "title": "Драматургия презентации",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Логика и сценарий выступления.",
+          "professionIds": [
+            "it.presentation"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-presentations",
+              "url": "https://practicum.yandex.ru/ai-for-presentations/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_437349d8954a",
+              "componentId": "struktura-i-stsenariy-prezentatsii-praktika.dramaturgiya-prezentatsii",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_121007890e8d",
+          "slug": "stsenariy-vystupleniya",
+          "title": "Сценарий выступления",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Сборка сценария и переходов.",
+          "professionIds": [
+            "it.presentation"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-presentations",
+              "url": "https://practicum.yandex.ru/ai-for-presentations/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_437349d8954a",
+              "componentId": "struktura-i-stsenariy-prezentatsii-praktika.dramaturgiya-prezentatsii",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_1b1d37242bab",
+          "slug": "struktura-slaydov",
+          "title": "Структура слайдов",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Последовательность и роль слайдов.",
+          "professionIds": [
+            "it.presentation"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-presentations",
+              "url": "https://practicum.yandex.ru/ai-for-presentations/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_437349d8954a",
+              "componentId": "struktura-i-stsenariy-prezentatsii-praktika.struktura-slaydov",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_6006c728a66d",
+          "slug": "redaktura-struktury",
+          "title": "Редактура структуры",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Упрощение и перестройка структуры.",
+          "professionIds": [
+            "it.presentation"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "ai-for-presentations",
+              "url": "https://practicum.yandex.ru/ai-for-presentations/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_437349d8954a",
+              "componentId": "struktura-i-stsenariy-prezentatsii-praktika.struktura-slaydov",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_a17fc5b20c7f",
+        "costUsd": 0.00091071,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1535,
+          "outputTokens": 443
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
       "id": "comp_92e9921f59b8",
       "slug": "tayming-i-krivye-uskoreniya",
       "title": "Тайминг и кривые ускорения",
@@ -23141,6 +24265,50 @@
       "needsReview": false
     },
     {
+      "id": "tag_b49c75e5a2ff",
+      "slug": "adaptatsiya-primerov",
+      "title": "Адаптация примеров",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Подбор примеров и аргументов.",
+      "professionIds": [
+        "it.presentation"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_b1ed4a6906f5",
+          "componentId": "adaptatsiya-pod-auditoriyu-praktika.adaptatsiya-soderzhaniya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_46be8c2373b2",
+      "slug": "adaptatsiya-yazyka",
+      "title": "Адаптация языка",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Подстройка формулировок под слушателей.",
+      "professionIds": [
+        "it.presentation"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_b1ed4a6906f5",
+          "componentId": "adaptatsiya-pod-auditoriyu-praktika.adaptatsiya-yazyka",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_9db07d7532ca",
       "slug": "adaptivnaya-verstka-sayta-buhgalterskogo-agentstva",
       "title": "Адаптивная вёрстка сайта бухгалтерского агентства",
@@ -23180,8 +24348,16 @@
       "professionIds": [
         "it.webdesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "web-designer",
+          "url": "https://practicum.yandex.ru/web-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_eddfb147a6cc",
@@ -23190,7 +24366,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_5aa90c089ed9",
@@ -23804,6 +24980,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_6d52f57017ca",
+      "slug": "argumentatsiya",
+      "title": "Аргументация",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Структура аргументов и выводов.",
+      "professionIds": [
+        "it.presentation"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_8d7a754b12c0",
+          "componentId": "klyuchevoe-soobschenie-praktika.tezisy-i-argumentatsiya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_b1e6f8e4c8e4",
       "slug": "argumentatsiya-resheniy",
       "title": "Аргументация решений",
@@ -23862,6 +25060,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_45b538e02d52",
+      "slug": "auditoriya-i-kontekst",
+      "title": "Аудитория и контекст",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Понимание аудитории и её целей.",
+      "professionIds": [
+        "it.presentation"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_b1ed4a6906f5",
+          "componentId": "adaptatsiya-pod-auditoriyu-praktika.ponimanie-auditorii",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_9de9629a8e90",
@@ -23968,8 +25188,16 @@
       "professionIds": [
         "it.webdesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "web-designer",
+          "url": "https://practicum.yandex.ru/web-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_bf36ffff1027",
@@ -23978,7 +25206,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_5c6f87bf8505",
@@ -24175,8 +25403,16 @@
       "professionIds": [
         "it.webdesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "web-designer",
+          "url": "https://practicum.yandex.ru/web-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_eddfb147a6cc",
@@ -24185,7 +25421,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_a38301c45b7e",
@@ -24621,6 +25857,50 @@
       "needsReview": false
     },
     {
+      "id": "tag_0bc323c562e4",
+      "slug": "vizualizatsiya-dannyh",
+      "title": "Визуализация данных",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Графики, диаграммы и схемы.",
+      "professionIds": [
+        "it.presentation"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_ca9302e30e3a",
+          "componentId": "vizualizatsiya-i-format-slaydov-praktika.vizualizatsiya-dannyh",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_7997a07b7f10",
+      "slug": "vizualnaya-ierarhiya-slayda",
+      "title": "Визуальная иерархия слайда",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Акценты и читаемость слайда.",
+      "professionIds": [
+        "it.presentation"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_ca9302e30e3a",
+          "componentId": "vizualizatsiya-i-format-slaydov-praktika.format-i-komponovka-slayda",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_85a93e9585c6",
       "slug": "vizualnaya-kommunikatsiya",
       "title": "Визуальная коммуникация",
@@ -24831,6 +26111,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_deee490a2fe0",
+      "slug": "vybor-vizualizatsii",
+      "title": "Выбор визуализации",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Выбор графика под тип данных.",
+      "professionIds": [
+        "it.presentation"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_ca9302e30e3a",
+          "componentId": "vizualizatsiya-i-format-slaydov-praktika.vizualizatsiya-dannyh",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_e0eb83cc2907",
       "slug": "vybor-prioritetnyh-segmentov",
       "title": "Выбор приоритетных сегментов",
@@ -24960,8 +26262,16 @@
       "professionIds": [
         "it.webdesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "web-designer",
+          "url": "https://practicum.yandex.ru/web-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_37507e0fc1a2",
@@ -24970,7 +26280,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_92e384c81de4",
@@ -25218,6 +26528,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_6bd3067dd92c",
+      "slug": "dostovernost-dannyh",
+      "title": "Достоверность данных",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Проверка источников и цифр.",
+      "professionIds": [
+        "it.presentation"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_915efdd38c27",
+          "componentId": "dannye-i-faktcheking-praktika.dostovernost-dannyh",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_fd47fdaa944c",
       "slug": "dramaturgiya-dvizheniya",
       "title": "Драматургия движения",
@@ -25268,6 +26600,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_1e244d863646",
+      "slug": "dramaturgiya-prezentatsii",
+      "title": "Драматургия презентации",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Логика и сценарий выступления.",
+      "professionIds": [
+        "it.presentation"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_437349d8954a",
+          "componentId": "struktura-i-stsenariy-prezentatsii-praktika.dramaturgiya-prezentatsii",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_fe047e016362",
@@ -25375,6 +26729,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_f395ba739f75",
+      "slug": "zaschita-idei",
+      "title": "Защита идеи",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Ответы на возражения.",
+      "professionIds": [
+        "it.presentation"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_8d7a754b12c0",
+          "componentId": "klyuchevoe-soobschenie-praktika.zaschita-idei",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_74321044997e",
       "slug": "zaschita-proekta",
       "title": "Защита проекта",
@@ -25403,6 +26779,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_a5887e34cc69",
+      "slug": "zaschita-resheniya",
+      "title": "Защита решения",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Убедительная защита идей.",
+      "professionIds": [
+        "it.presentation"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_4ae2f1d1866d",
+          "componentId": "zaschita-i-repetitsiya-praktika.zaschita-resheniya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_2e4d633a1c69",
@@ -25830,6 +27228,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_cdb63100b912",
+      "slug": "istochniki-i-ssylki",
+      "title": "Источники и ссылки",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Оформление источников в презентации.",
+      "professionIds": [
+        "it.presentation"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_915efdd38c27",
+          "componentId": "dannye-i-faktcheking-praktika.istochniki-i-ssylki",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_c84cb210b28e",
       "slug": "kak-adaptirovat-interfeysy",
       "title": "Как адаптировать интерфейсы",
@@ -26040,6 +27460,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_a1d4dd4b6e1b",
+      "slug": "klyuchevoe-soobschenie",
+      "title": "Ключевое сообщение",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Формулировка главного сообщения.",
+      "professionIds": [
+        "it.presentation"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_8d7a754b12c0",
+          "componentId": "klyuchevoe-soobschenie-praktika.formulirovka-glavnogo-soobscheniya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_e28a8277535e",
       "slug": "klyuchevye-kadry",
       "title": "Ключевые кадры",
@@ -26244,8 +27686,16 @@
       "professionIds": [
         "it.webdesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "web-designer",
+          "url": "https://practicum.yandex.ru/web-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_eddfb147a6cc",
@@ -26254,7 +27704,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_331784908fa9",
@@ -26296,8 +27746,16 @@
       "professionIds": [
         "it.webdesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "web-designer",
+          "url": "https://practicum.yandex.ru/web-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_bf36ffff1027",
@@ -26306,7 +27764,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_f1381d968290",
@@ -26318,8 +27776,16 @@
       "professionIds": [
         "it.webdesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "web-designer",
+          "url": "https://practicum.yandex.ru/web-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_37507e0fc1a2",
@@ -26328,7 +27794,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_0fa35ae48d83",
@@ -27215,8 +28681,16 @@
       "professionIds": [
         "it.webdesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "web-designer",
+          "url": "https://practicum.yandex.ru/web-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_37507e0fc1a2",
@@ -27225,7 +28699,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_37288c3c1bd9",
@@ -27397,8 +28871,16 @@
       "professionIds": [
         "it.webdesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "web-designer",
+          "url": "https://practicum.yandex.ru/web-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_4f5be00710f6",
@@ -27407,7 +28889,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_de9f1047aac0",
@@ -27767,8 +29249,16 @@
       "professionIds": [
         "it.webdesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "web-designer",
+          "url": "https://practicum.yandex.ru/web-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_eddfb147a6cc",
@@ -27777,7 +29267,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_f228901a9bc9",
@@ -27789,8 +29279,16 @@
       "professionIds": [
         "it.webdesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "web-designer",
+          "url": "https://practicum.yandex.ru/web-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_a8804e73becd",
@@ -27799,7 +29297,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_564c6adc93c1",
@@ -28289,8 +29787,16 @@
       "professionIds": [
         "it.webdesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "web-designer",
+          "url": "https://practicum.yandex.ru/web-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_37507e0fc1a2",
@@ -28299,7 +29805,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_e607d644659f",
@@ -28452,6 +29958,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_0c51d6177277",
+      "slug": "podacha-i-golos",
+      "title": "Подача и голос",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Управление темпом и интонацией.",
+      "professionIds": [
+        "it.presentation"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_4ae2f1d1866d",
+          "componentId": "zaschita-i-repetitsiya-praktika.podacha-i-golos",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_621afb44ef14",
       "slug": "praktika-razdela-teoriya-tsveta",
       "title": "Подбирать цветовую схему под задачу",
@@ -28491,8 +30019,16 @@
       "professionIds": [
         "it.webdesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "web-designer",
+          "url": "https://practicum.yandex.ru/web-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_eddfb147a6cc",
@@ -28501,7 +30037,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_69805c7866cf",
@@ -30316,8 +31852,16 @@
       "professionIds": [
         "it.webdesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "web-designer",
+          "url": "https://practicum.yandex.ru/web-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_a8804e73becd",
@@ -30326,7 +31870,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_a921977422d1",
@@ -30560,6 +32104,50 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_a605183340fd",
+      "slug": "rabota-s-voprosami",
+      "title": "Работа с вопросами",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Ответы на вопросы аудитории.",
+      "professionIds": [
+        "it.presentation"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_4ae2f1d1866d",
+          "componentId": "zaschita-i-repetitsiya-praktika.vzaimodeystvie-s-auditoriey",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_c41328ae691b",
+      "slug": "rabota-s-dannymi",
+      "title": "Работа с данными",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Подготовка данных для слайдов.",
+      "professionIds": [
+        "it.presentation"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_915efdd38c27",
+          "componentId": "dannye-i-faktcheking-praktika.rabota-s-dannymi",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_57dd137cee98",
@@ -30919,6 +32507,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_6006c728a66d",
+      "slug": "redaktura-struktury",
+      "title": "Редактура структуры",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Упрощение и перестройка структуры.",
+      "professionIds": [
+        "it.presentation"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_437349d8954a",
+          "componentId": "struktura-i-stsenariy-prezentatsii-praktika.struktura-slaydov",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_b3666864fd50",
       "slug": "redaktsionnaya-setka",
       "title": "Редакционная сетка",
@@ -31029,6 +32639,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_d4b7903ec81b",
+      "slug": "repetitsiya",
+      "title": "Репетиция",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Подготовка и прогон выступления.",
+      "professionIds": [
+        "it.presentation"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_4ae2f1d1866d",
+          "componentId": "zaschita-i-repetitsiya-praktika.podgotovka-i-repetitsiya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_0d06862889bd",
@@ -31250,8 +32882,16 @@
       "professionIds": [
         "it.webdesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "web-designer",
+          "url": "https://practicum.yandex.ru/web-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_4f5be00710f6",
@@ -31260,7 +32900,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_bb185a8787e2",
@@ -31296,6 +32936,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_a965cee7ccab",
+      "slug": "sborka-slayda",
+      "title": "Сборка слайда",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Практическая сборка слайда.",
+      "professionIds": [
+        "it.presentation"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_ca9302e30e3a",
+          "componentId": "vizualizatsiya-i-format-slaydov-praktika.format-i-komponovka-slayda",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_5ca33adf6019",
@@ -31487,8 +33149,16 @@
       "professionIds": [
         "it.webdesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "web-designer",
+          "url": "https://practicum.yandex.ru/web-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_bf36ffff1027",
@@ -31497,7 +33167,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_ec5ea906c4df",
@@ -32618,12 +34288,42 @@
       "professionIds": [
         "it.webdesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "web-designer",
+          "url": "https://practicum.yandex.ru/web-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_4f5be00710f6",
           "componentId": "cms-i-konstruktory-praktika.struktura-sayta-v-cms",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_1b1d37242bab",
+      "slug": "struktura-slaydov",
+      "title": "Структура слайдов",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Последовательность и роль слайдов.",
+      "professionIds": [
+        "it.presentation"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_437349d8954a",
+          "componentId": "struktura-i-stsenariy-prezentatsii-praktika.struktura-slaydov",
           "role": "primary"
         }
       ],
@@ -32721,6 +34421,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_121007890e8d",
+      "slug": "stsenariy-vystupleniya",
+      "title": "Сценарий выступления",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Сборка сценария и переходов.",
+      "professionIds": [
+        "it.presentation"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_437349d8954a",
+          "componentId": "struktura-i-stsenariy-prezentatsii-praktika.dramaturgiya-prezentatsii",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_80fe685a8ac8",
       "slug": "tablitsy-i-tipy-dannyh",
       "title": "Таблицы и типы данных",
@@ -32779,6 +34501,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_550e9400c0f1",
+      "slug": "tezisy-vystupleniya",
+      "title": "Тезисы выступления",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Формулировка тезисов и выводов.",
+      "professionIds": [
+        "it.presentation"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_8d7a754b12c0",
+          "componentId": "klyuchevoe-soobschenie-praktika.tezisy-i-argumentatsiya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_649ffafe15fc",
@@ -32960,8 +34704,16 @@
       "professionIds": [
         "it.webdesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "web-designer",
+          "url": "https://practicum.yandex.ru/web-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_a8804e73becd",
@@ -32970,7 +34722,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_85c2b01ba82f",
@@ -33319,6 +35071,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_8694f1ef87c7",
+      "slug": "uroven-detalizatsii",
+      "title": "Уровень детализации",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Глубина материала под аудиторию.",
+      "professionIds": [
+        "it.presentation"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_b1ed4a6906f5",
+          "componentId": "adaptatsiya-pod-auditoriyu-praktika.adaptatsiya-soderzhaniya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_4cbfe43921cd",
       "slug": "uchet-standartov-dostupnosti",
       "title": "Учёт стандартов доступности",
@@ -33381,6 +35155,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_83e9c16fa4be",
+      "slug": "faktcheking",
+      "title": "Фактчекинг",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Проверка утверждений и цитат.",
+      "professionIds": [
+        "it.presentation"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_915efdd38c27",
+          "componentId": "dannye-i-faktcheking-praktika.faktcheking",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_b8492e1aae77",
@@ -33710,8 +35506,16 @@
       "professionIds": [
         "it.webdesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "web-designer",
+          "url": "https://practicum.yandex.ru/web-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_eddfb147a6cc",
@@ -33720,7 +35524,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_ba2bb296f85c",
@@ -34597,8 +36401,16 @@
       "professionIds": [
         "it.webdesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "web-designer",
+          "url": "https://practicum.yandex.ru/web-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_4f5be00710f6",
@@ -34607,7 +36419,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_94756e99f9a8",
@@ -34619,8 +36431,16 @@
       "professionIds": [
         "it.webdesigner"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "web-designer",
+          "url": "https://practicum.yandex.ru/web-designer/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_a8804e73becd",
@@ -34629,7 +36449,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_6d511eae1d8d",

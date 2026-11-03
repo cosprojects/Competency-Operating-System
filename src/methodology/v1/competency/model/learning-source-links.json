@@ -54,7 +54,9 @@
       "competencyId": "motion-timing-easing",
       "sourceIds": [
         "motiondesign-school-courses",
-        "school-of-motion"
+        "school-of-motion",
+        "motiondesign-school-youtube",
+        "school-of-motion-free"
       ],
       "rationale": "Первоисточники по таймингу и анимации."
     },
@@ -62,7 +64,9 @@
       "competencyId": "motion-3d-rendering",
       "sourceIds": [
         "motiondesign-school-courses",
-        "practicum-design-catalog"
+        "practicum-design-catalog",
+        "motiondesign-school-youtube",
+        "school-of-motion-free"
       ],
       "rationale": "Курсы по 3D/Blender/Cinema 4D и программа Практикума (3D-дизайнер)."
     },
@@ -497,7 +501,8 @@
     {
       "competencyId": "ui-responsive",
       "sourceIds": [
-        "practicum-appdesign"
+        "practicum-appdesign",
+        "framer-learn"
       ],
       "rationale": "Источник программы «Дизайнер приложений» покрывает тему в рамках курса."
     },
@@ -539,7 +544,10 @@
     {
       "competencyId": "motion-3d-animation",
       "sourceIds": [
-        "practicum-3ddesigner"
+        "practicum-3ddesigner",
+        "motiondesign-school-youtube",
+        "school-of-motion-free",
+        "motiondesign-school-vimeo"
       ],
       "rationale": "Источник программы «3D-дизайнер» покрывает тему в рамках курса."
     },
@@ -812,7 +820,10 @@
         "practicum-presentation",
         "practicum-artdir",
         "practicum-design-catalog",
-        "practicum-ai-tools-for-designers"
+        "practicum-ai-tools-for-designers",
+        "elements-of-ai",
+        "oxfordhomestudy-ai-free",
+        "greatlearning-ai-free"
       ],
       "rationale": "Программа содержит модуль/тему по ИИ, подтверждённую страницей курса."
     },
@@ -829,7 +840,10 @@
         "motiondesign-school-courses",
         "practicum-ai-tools-for-designers",
         "practicum-ai-for-design",
-        "learntube-ai-graphic-design"
+        "learntube-ai-graphic-design",
+        "elements-of-ai",
+        "oxfordhomestudy-ai-free",
+        "greatlearning-ai-free"
       ],
       "rationale": "Программа содержит модуль/тему по ИИ, подтверждённую страницей курса."
     },
@@ -839,7 +853,10 @@
         "practicum-presentation",
         "practicum-appdesign",
         "practicum-webdesigner",
-        "figma-blog-design-systems-ai"
+        "figma-blog-design-systems-ai",
+        "elements-of-ai",
+        "oxfordhomestudy-ai-free",
+        "greatlearning-ai-free"
       ],
       "rationale": "Программа содержит модуль/тему по ИИ, подтверждённую страницей курса."
     },
@@ -855,14 +872,20 @@
         "practicum-webdesigner",
         "practicum-design-catalog",
         "state-of-ai-design",
-        "kimvoronin-ai-design-guide"
+        "kimvoronin-ai-design-guide",
+        "elements-of-ai",
+        "oxfordhomestudy-ai-free",
+        "greatlearning-ai-free"
       ],
       "rationale": "Программа содержит модуль/тему по ИИ, подтверждённую страницей курса."
     },
     {
       "competencyId": "ai-research-synthesis",
       "sourceIds": [
-        "practicum-uxresearch"
+        "practicum-uxresearch",
+        "elements-of-ai",
+        "oxfordhomestudy-ai-free",
+        "greatlearning-ai-free"
       ],
       "rationale": "Программа содержит модуль/тему по ИИ, подтверждённую страницей курса."
     },
@@ -871,7 +894,10 @@
       "sourceIds": [
         "motiondesign-school-courses",
         "practicum-ai-tools-for-designers",
-        "practicum-ai-for-design"
+        "practicum-ai-for-design",
+        "elements-of-ai",
+        "oxfordhomestudy-ai-free",
+        "greatlearning-ai-free"
       ],
       "rationale": "Программа содержит модуль/тему по ИИ, подтверждённую страницей курса."
     },
@@ -1015,6 +1041,102 @@
         "reforge-blog"
       ],
       "rationale": "Reforge: продуктовый рост, удержание и метрики."
+    },
+    {
+      "competencyId": "motion-animation-principles",
+      "sourceIds": [
+        "motiondesign-school-youtube",
+        "school-of-motion-free"
+      ],
+      "rationale": "Открытые материалы MDS/School of Motion по принципам анимации."
+    },
+    {
+      "competencyId": "motion-styleframes",
+      "sourceIds": [
+        "motiondesign-school-youtube",
+        "motiondesign-school-vimeo"
+      ],
+      "rationale": "Style frames и разборы проектов в открытых материалах MDS."
+    },
+    {
+      "competencyId": "motion-editing",
+      "sourceIds": [
+        "motiondesign-school-youtube",
+        "school-of-motion-free"
+      ],
+      "rationale": "Открытые материалы по монтажу и ритму."
+    },
+    {
+      "competencyId": "motion-sound-design",
+      "sourceIds": [
+        "motiondesign-school-youtube",
+        "school-of-motion-free"
+      ],
+      "rationale": "Открытые материалы по звуку и синхронизации."
+    },
+    {
+      "competencyId": "motion-compositing",
+      "sourceIds": [
+        "motiondesign-school-youtube",
+        "school-of-motion-free"
+      ],
+      "rationale": "Композитинг в открытых материалах MDS/SOM."
+    },
+    {
+      "competencyId": "motion-brand-systems",
+      "sourceIds": [
+        "motiondesign-school-vimeo",
+        "petrick-mds-case"
+      ],
+      "rationale": "Motion-айдентика: открытые кейсы и разборы MDS."
+    },
+    {
+      "competencyId": "motion-toolchain",
+      "sourceIds": [
+        "motiondesign-school-youtube",
+        "school-of-motion-free"
+      ],
+      "rationale": "After Effects/3D-инструменты в открытых материалах MDS/SOM."
+    },
+    {
+      "competencyId": "motion-production",
+      "sourceIds": [
+        "motiondesign-school-youtube",
+        "school-of-motion-free"
+      ],
+      "rationale": "Продакшн и пайплайн в открытых материалах MDS/SOM."
+    },
+    {
+      "competencyId": "motion-showreel",
+      "sourceIds": [
+        "motiondesign-school-vimeo",
+        "motiondesign-school-youtube"
+      ],
+      "rationale": "Showreel и портфолио: открытые работы MDS."
+    },
+    {
+      "competencyId": "uxresearch-questions",
+      "sourceIds": [
+        "uxrinstitute-free-ux-research",
+        "fountaininstitute-free-ux-research"
+      ],
+      "rationale": "Открытые курсы UXR Institute/Fountain по исследовательским вопросам."
+    },
+    {
+      "competencyId": "uxresearch-recruiting",
+      "sourceIds": [
+        "uxrinstitute-free-ux-research",
+        "fountaininstitute-free-ux-research"
+      ],
+      "rationale": "Открытые материалы по выборке и рекрутингу."
+    },
+    {
+      "competencyId": "uxresearch-usability",
+      "sourceIds": [
+        "uxrinstitute-free-ux-research",
+        "fountaininstitute-free-ux-research"
+      ],
+      "rationale": "Открытые материалы по юзабилити-тестированию."
     }
   ]
 }

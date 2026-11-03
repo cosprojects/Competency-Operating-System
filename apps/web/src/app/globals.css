@@ -588,7 +588,7 @@ svg {
 .nav-rail {
   position: fixed;
   top: var(--page-gap);
-  bottom: var(--page-gap);
+  bottom: var(--rail-bottom-offset, var(--page-gap));
   left: var(--rail-left);
   z-index: 60;
   display: flex;
@@ -601,6 +601,8 @@ svg {
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
 .nav-rail.is-mini {
@@ -3272,7 +3274,7 @@ html[data-consent="pending"] .canvas-toolbar {
   }
 
   html[data-consent="pending"] .nav-rail {
-    bottom: var(--consent-offset, 150px);
+    bottom: max(var(--rail-bottom-offset, 40px), var(--consent-offset, 150px));
   }
 
   html[data-consent="pending"] .canvas-toolbar {
@@ -3948,4 +3950,21 @@ html[data-consent="pending"] .canvas-toolbar {
     bottom: 40px;
     left: 50%;
   }
+}
+
+/* Сжатый рейл у футера: меньше воздуха, чтобы нижние пункты не обрезались. */
+.nav-rail.is-compact {
+  padding: 10px;
+}
+
+.nav-rail.is-compact .rail-top {
+  gap: 16px;
+}
+
+.nav-rail.is-compact .rail-menu {
+  gap: 10px;
+}
+
+.nav-rail.is-compact .rail-bottom {
+  gap: 10px;
 }

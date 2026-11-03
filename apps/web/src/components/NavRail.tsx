@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useRef } from "react";
 import {
   IconHome,
   IconHomeAdd,
@@ -29,9 +30,51 @@ const ITEMS = [
 export function NavRail({ user }: { user: { email: string } | null }) {
   const pathname = usePathname();
   const expanded = pathname === "/";
+  const railRef = useRef<HTMLElement | null>(null);
+
+  // Нижняя часть рейла останавливается за 40px до футера и рейл сжимается,
+  // а не наезжает на тёмную подвал страницы.
+  useEffect(() => {
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const footer = document.querySelector<HTMLElement>(".site-footer");
+      const viewport = window.innerHeight;
+      let offset = 40;
+      if (footer) {
+        const rect = footer.getBoundingClientRect();
+        offset = Math.max(40, Math.round(viewport - rect.top + 40));
+      }
+      document.documentElement.style.setProperty("--rail-bottom-offset", `${offset}px`);
+      const rail = railRef.current;
+      if (rail) {
+        // Если рейл сжался сильнее, чем помещается контент — включаем компактный
+        // режим: меньше отступы, чтобы нижние пункты остались на виду.
+        const compressed = rail.scrollHeight > rail.clientHeight + 1;
+        rail.classList.toggle("is-compact", compressed);
+      }
+    };
+    const schedule = () => {
+      if (!frame) frame = window.requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
+    return () => {
+      window.removeEventListener("scroll", schedule);
+      window.removeEventListener("resize", schedule);
+      if (frame) window.cancelAnimationFrame(frame);
+      document.documentElement.style.removeProperty("--rail-bottom-offset");
+      railRef.current?.classList.remove("is-compact");
+    };
+  }, [pathname]);
 
   return (
-    <aside className={`nav-rail${expanded ? "" : " is-mini"}`} aria-label="Основная навигация">
+    <aside
+      className={`nav-rail${expanded ? "" : " is-mini"}`}
+      ref={railRef}
+      aria-label="Основная навигация"
+    >
       <div className="rail-top">
         <Link className="rail-brand" href="/" aria-label="AXIONA — на главную">
           <img className="brand-mark" src="/brand/logo-mark.svg" alt="" width={34} height={32} />

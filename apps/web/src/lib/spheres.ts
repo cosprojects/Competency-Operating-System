@@ -3,7 +3,7 @@
  *
  * Сфера — это надпрофессиональная группа: «Дизайн», «Исследования» и т.д.
  * Каждая сфера получает один базовый цвет: он используется для текста бейджа,
- * а фон бейджа — тот же цвет с прозрачностью 30%.
+ * а фон бейджа — тот же цвет с прозрачностью 80% (альфа 20%).
  *
  * Алгоритм присвоения:
  *  1. Профессия ищется в явном реестре сфер по slug (SPHERES[].slugs).
@@ -17,7 +17,7 @@
 export interface SphereDefinition {
   id: string;
   title: string;
-  /** Базовый цвет сферы: цвет текста бейджа; фон — этот же цвет с alpha 30%. */
+  /** Базовый цвет сферы: цвет текста бейджа; фон — этот же цвет с alpha 20%. */
   color: string;
   slugs: string[];
 }
@@ -98,7 +98,8 @@ export function sphereByTitle(title: string): SphereDefinition | null {
 }
 
 /**
- * Цвет бейджа: текст — базовый цвет сферы, фон — он же с прозрачностью 30%.
+ * Цвет бейджа: текст — базовый цвет сферы, фон — он же с прозрачностью 80%
+ * (альфа 20%): фон почти не спорит с текстом.
  * Работает с hex вида #rrggbb; иначе возвращает исходный цвет.
  */
 export function sphereBadgeStyle(color: string): { color: string; backgroundColor: string } {
@@ -108,5 +109,5 @@ export function sphereBadgeStyle(color: string): { color: string; backgroundColo
   const r = Number.parseInt(value.slice(0, 2), 16);
   const g = Number.parseInt(value.slice(2, 4), 16);
   const b = Number.parseInt(value.slice(4, 6), 16);
-  return { color, backgroundColor: `rgba(${r}, ${g}, ${b}, 0.3)` };
+  return { color, backgroundColor: `rgba(${r}, ${g}, ${b}, 0.2)` };
 }

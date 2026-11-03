@@ -16,6 +16,11 @@ references:
   - COS-RES-025
 ---
 
+> **Команды обновлены 2026-11-03.** Документ исторический: удалённые пайплайны заменены на актуальные
+> (`aggregate`, `sources:*`, `materials:*`, `model:sync`). Флаги старого пайплайна могли отличаться —
+> актуальный порядок в `README.md`.
+
+
 # COS-RES-026 — Readiness-аудит восьми профессий
 
 ## 1. Зачем
@@ -108,15 +113,15 @@ references:
 
 ```bash
 # сбор тегов
-npm run professions:collect -- --domain it --profession 3ddesigner
-npm run tags:collect -- --domain it --profession 3ddesigner
+npm run sources:expand -- --domain it --profession 3ddesigner
+npm run sources:expand -- --domain it --profession 3ddesigner
 
 # черновой mapping + проверка
-npm run mapping:draft -- --profession 3ddesigner
-npm run mapping:validate -- --domain it --profession 3ddesigner
+npm run model:sync -- --profession 3ddesigner
+npm run model:validate -- --domain it --profession 3ddesigner
 
 # pilot-блоки из mapping
-npm run blocks:from-mapping -- --profession 3ddesigner --budget-usd 0.03
+npm run model:sync -- --profession 3ddesigner --budget-usd 0.03
 
 # проверка release
 npm run release:report -- --release beta-1

@@ -13,6 +13,11 @@ references:
   - COS-ARCH-002
 ---
 
+> **Команды обновлены 2026-11-03.** Документ исторический: удалённые пайплайны заменены на актуальные
+> (`aggregate`, `sources:*`, `materials:*`, `model:sync`). Флаги старого пайплайна могли отличаться —
+> актуальный порядок в `README.md`.
+
+
 # COS-RES-016 — Каноническая карта компетенций UX/UI
 
 ## 1. Назначение
@@ -130,10 +135,10 @@ npm run canonical:validate -- --domain it --profession uxui --source catalog --r
 ## 6. Приёмка и приоритеты
 
 ```bash
-npm run catalog:accept -- --domain it --profession uxui --write
-npm run priority:canonical -- --domain it --profession uxui --write
+npm run materials:accept -- --domain it --profession uxui --write
+npm run model:sync -- --domain it --profession uxui --write
 npm run catalog:validate -- --domain it --require-priority
-npm run priority:validate -- --domain it --profession uxui --require-complete
+npm run model:validate -- --domain it --profession uxui --require-complete
 ```
 
 `catalog:accept` берёт блоки, классифицированные картой, и записывает accepted-каталог. `priority:canonical` создаёт черновые marks по `priorityHint`, затем `priority:confirm` фиксирует reviewer и `status: accepted`. Это техническая приёмка по инструкции; именной human sign-off можно заменить через `--reviewer`.
@@ -141,11 +146,11 @@ npm run priority:validate -- --domain it --profession uxui --require-complete
 ## 7. Как обновлять карту
 
 ```bash
-npm run competency:seed -- --domain it
-npm run competency:build -- --domain it --profession uxui \
+npm run model:sync -- --domain it
+npm run model:sync -- --domain it --profession uxui \
   --candidates-file data/competency/seeds/it.candidates.json \
   --tags-file data/competency/tags-it.json
-npm run canonical:apply -- --domain it --profession uxui \
+npm run canonical:validate -- --domain it --profession uxui \
   --blocks-file data/competency/blocks-it-uxui.json --write
 npm run canonical:validate -- --domain it --profession uxui \
   --source review --include-seed --report

@@ -13,6 +13,11 @@ references:
   - COS-RES-014
 ---
 
+> **Команды обновлены 2026-11-03.** Документ исторический: удалённые пайплайны заменены на актуальные
+> (`aggregate`, `sources:*`, `materials:*`, `model:sync`). Флаги старого пайплайна могли отличаться —
+> актуальный порядок в `README.md`.
+
+
 # COS-RES-013 — Сборка профиля профессии из свидетельств ESCO
 
 ## 1. Назначение
@@ -40,7 +45,7 @@ references:
 | Универсальная база | там же: `universalOccupations`, `universalSkills` | доменные занятия и записи ESCO для листьев `scope: universal` |
 | O\*NET | там же: `onet`; [Software Skills 31.0](https://www.onetcenter.org/dl_files/database/db_31_0_csv/software_skills.csv) | инструменты и их статус (Hot Technology, In Demand) для `15-1255.00`; лицензия CC BY 4.0 |
 | Guidance | там же: `guidanceSources`, `guidanceSkills` | публичные руководства с открытой лицензией; цитата обязана найтись на странице |
-| Модель COS | там же: `modelSkills`; [design-competency-graph.json](src/methodology/v1/design-competency-graph.json) | узел графа и дословная цитата якоря. Внутренний слой, не внешний источник |
+| Модель COS | там же: `modelSkills`; [design-competency-graph.json](../../src/methodology/v1/design-competency-graph.json) | узел графа и дословная цитата якоря. Внутренний слой, не внешний источник |
 | Программа | там же: `program`; [Яндекс Практикум — дизайн](https://practicum.yandex.ru/catalog/design/) | профессии дизайна, инструменты и темы уроков; только названия навыков и короткие цитаты |
 | Watchlist | там же: `watchlist` | листья без официальной записи; в требования не засчитываются |
 | Источник ESCO | ESCO API (`resource/occupation`, `resource/skill`), `v1.2.0` | записи навыков, описания, связи с занятиями |
@@ -64,7 +69,7 @@ references:
 11. Выполняется диагностика сопоставления с текущим графом методологом (`methodologist/decide.ts`). Это не запись требований.
 12. Пишутся журнал профиля, человекочитаемое дерево и очередь на проверку.
 
-Отдельно команда `npm run program:extract` собирает полный журнал программ: профессии дизайна, их теги, инструменты и темы уроков. Этот журнал — вход для проверки и материал для маппинга, а не требования.
+Отдельно команда `npm run sources:expand` собирает полный журнал программ: профессии дизайна, их теги, инструменты и темы уроков. Этот журнал — вход для проверки и материал для маппинга, а не требования.
 
 ## 5. Правила
 
@@ -84,10 +89,10 @@ references:
 ## 6. Что пишет код
 
 ```bash
-npm run profile:build -- --profession uxui
-npm run profile:build -- --profession uxui --refresh   # перечитать источники
-npm run profile:build -- --profession uxui --no-cache  # без кеша
-npm run program:extract                                # журнал программ Практикума
+npm run model:sync -- --profession uxui
+npm run model:sync -- --profession uxui --refresh   # перечитать источники
+npm run model:sync -- --profession uxui --no-cache  # без кеша
+npm run sources:expand                                # журнал программ Практикума
 ```
 
 | Файл | Содержимое |
@@ -145,5 +150,5 @@ npm run program:extract                                # журнал прогр
 | 1.0.0 | 2026-10-21 | Первая сборка профиля: эталонная таксономия UX/UI, курируемый маппинг ESCO, кеш, дерево, пробелы, диагностика графа. В граф не пишет |
 | 1.1.0 | 2026-10-21 | Добавлена универсальная база (`scope: universal`): доменные занятия `art director` и `desktop publisher`, записи `typography`, `design principles`, `determine colour shades`, `develop visual elements`, `determine image composition`. Закрыты листья Typography, Color theory, Layout & composition |
 | 1.2.0 | 2026-10-21 | Закрыты оставшиеся листья: O\*NET Software Skills (Figma), мульти-цель ESCO-прототипа (User Flows, High-Fidelity), GOV.UK guidance (Personas), якоря графа (Grids, Information Architecture), watchlist (FigJam, Framer). Введены статусы `supported`/`model_only`/`watchlist`/`no_evidence` и проверка цитат по каждому слою |
-| 1.3.0 | 2026-10-21 | Добавлен слой программы: извлечение 19 дизайнерских профессий Яндекс Практикума (`npm run program:extract`), 12 с навыками, 1026 тем. Из него подтверждены FigJam и Grids, усилены Personas/User Flows/User Testing/Components/Prototyping/универсальная база. Остались `model_only` (Information Architecture) и `watchlist` (Framer). 87 сопоставлений, 16/18 листьев supported |
+| 1.3.0 | 2026-10-21 | Добавлен слой программы: извлечение 19 дизайнерских профессий Яндекс Практикума (`npm run sources:expand`), 12 с навыками, 1026 тем. Из него подтверждены FigJam и Grids, усилены Personas/User Flows/User Testing/Components/Prototyping/универсальная база. Остались `model_only` (Information Architecture) и `watchlist` (Framer). 87 сопоставлений, 16/18 листьев supported |
 | 1.4.0 | 2026-10-21 | Добавлена ссылка на `COS-RES-014`: каталог компетенций, компонентов, тегов и материалов строится отдельным методом; профиль не меняется |

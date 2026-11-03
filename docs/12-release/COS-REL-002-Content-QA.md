@@ -14,9 +14,14 @@ references:
   - AGENTS-competency-methodologist
 ---
 
+> **Команды обновлены 2026-11-03.** Документ исторический: удалённые пайплайны заменены на актуальные
+> (`aggregate`, `sources:*`, `materials:*`, `model:sync`). Флаги старого пайплайна могли отличаться —
+> актуальный порядок в `README.md`.
+
+
 # COS-REL-002 — Контентная работа и приёмка Beta 1
 
-> **Статус 2026-10-28:** `release:validate` проходит: 54/54 компетенции, 110/110 связей, 0 пробелов. Нормализация AI-assisted; манифест остаётся `draft` до spot-check основателя. Результат — `reports/beta-1-content-gate-closure.md`.
+> **Статус 2026-10-28:** `release:validate` проходит: 54/54 компетенции, 110/110 связей, 0 пробелов. Нормализация AI-assisted; манифест остаётся `draft` до spot-check основателя. Результат — `reports/archive/beta-1-content-gate-closure.md`.
 
 ## 1. Принцип
 
@@ -78,7 +83,7 @@ references:
 ### Шаг 3. Принятие в каталог
 
 ```bash
-npm run catalog:accept -- --domain it --profession <profession> \
+npm run materials:accept -- --domain it --profession <profession> \
   --blocks-file <blocks.json> --write
 npm run model:sync -- --domain it --profession <profession> --write
 npm run model:views -- --domain it --write
@@ -96,7 +101,7 @@ npm run model:validate -- --domain it --profession <profession> --all --require-
 
 ```bash
 npm run release:report -- --release beta-1
-npm run release:checklist
+npm run release:report
 npm run release:validate -- --release beta-1
 npm run release:build -- --release beta-1
 ```

@@ -11,6 +11,11 @@ references:
   - COS-ARCH-002
 ---
 
+> **Команды обновлены 2026-11-03.** Документ исторический: удалённые пайплайны заменены на актуальные
+> (`aggregate`, `sources:*`, `materials:*`, `model:sync`). Флаги старого пайплайна могли отличаться —
+> актуальный порядок в `README.md`.
+
+
 # COS-RES-017 — Material Agent
 
 ## 1. Назначение
@@ -85,10 +90,10 @@ LLM Pass D: связь материала с компетенцией/компо
 
 ```bash
 # discovery без LLM
-npm run materials:agent -- --domain it --profession uxui --limit 2 --sources wikipedia,habr,medium
+npm run materials:agent:queue -- --domain it --profession uxui --limit 2 --sources wikipedia,habr,medium
 
 # discovery + classification
-npm run materials:agent -- --domain it --profession uxui --limit 2 \
+npm run materials:agent:queue -- --domain it --profession uxui --limit 2 \
   --sources wikipedia,habr,medium --classify --budget-usd 0.03 --max-calls 20
 ```
 
@@ -116,7 +121,7 @@ npm run materials:agent:queue -- --domain it --profession uxui \
 
 Журнал: `data/materials-agent/<domain>-<profession>-queue.json`.
 
-Review: `npm run materials:agent:review -- --domain it --profession product` — помимо материалов по блокам отчёт содержит таблицу **покрытия компетенций профессии** (компетенция → covering-блок → материалов → связей) и список компетенций без материалов. Это позволяет принимать решения на уровне view, а не отдельных блоков.
+Review: `npm run materials:agent:queue:review -- --domain it --profession product` — помимо материалов по блокам отчёт содержит таблицу **покрытия компетенций профессии** (компетенция → covering-блок → материалов → связей) и список компетенций без материалов. Это позволяет принимать решения на уровне view, а не отдельных блоков.
 
 Агрегатор компетенций не ждёт материалы; очередь можно запускать отдельным процессом/по расписанию.
 

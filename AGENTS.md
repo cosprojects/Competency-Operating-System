@@ -76,7 +76,6 @@ AI-native платформа компетенций: карта професси
 | Бренд, логотипы | `apps/web/public/brand/` | `<img src="/brand/logo-mark.svg" width={34} height={32} alt="" />` |
 | Шрифты | `apps/web/public/fonts/` | `@font-face { src: url("/fonts/...") }` в `globals.css` |
 | Растровые изображения, иллюстрации, og-картинки | `apps/web/public/images/` | `<img src="/images/..." />` или абсолютный URL |
-| Сгенерированные канвасы | `apps/web/public/canvas/` | генерируются `npm run web:canvases`, в `.gitignore` — не коммитить руками |
 | Снимки и референсы Figma | `docs/design/figma/<fileKey>/` | служебный артефакт, не ассет приложения; `images/` в `.gitignore` |
 
 Правила:
@@ -85,6 +84,13 @@ AI-native платформа компетенций: карта професси
 - Для новой иконки сначала проверь `icons.tsx`: возможно, она уже есть. Файлы в `apps/web/public/icons/` кодом сейчас не используются — не добавляй туда новых без причины.
 - Референс из Figma превращается в ассет только осознанным экспортом: иконка → компонент или `public/icons`, картинка → `public/images`. Снимок узла из пайплайна в `public/` не кладём.
 - Скриншоты для отчётов и документации — в `docs/…`, не в `public/`.
+
+## Агрегация ресурсной базы
+
+Основная точка входа — `npm run aggregate -- --profession all` (план) и `npm run aggregate -- --profession all --write`
+(полный проход: источники → реестр → связи → модель → review → gate). Подробности — `README.md` и
+`docs/09-research/COS-RES-028-Open-Materials-Discovery-and-Relevance.md`.
+Legacy-канвасы `web/*.html` и `web:canvases` удалены: контент и модель собираются через `release:build`.
 
 ## Проверка перед «готово»
 

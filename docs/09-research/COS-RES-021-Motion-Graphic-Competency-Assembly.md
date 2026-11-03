@@ -14,6 +14,11 @@ references:
   - COS-RES-020
 ---
 
+> **Команды обновлены 2026-11-03.** Документ исторический: удалённые пайплайны заменены на актуальные
+> (`aggregate`, `sources:*`, `materials:*`, `model:sync`). Флаги старого пайплайна могли отличаться —
+> актуальный порядок в `README.md`.
+
+
 # COS-RES-021 — Motion и Graphic: источники, mapping и связные графы
 
 Итерация продолжает схему Product (`COS-RES-020`) для двух оставшихся профессий. UX/UI-приоритеты (33 accepted mark) не менялись; новые блоки не принимались.
@@ -160,16 +165,16 @@ Review: `data/materials-agent/it-motion-review.md`, `data/materials-agent/it-gra
 ```bash
 npm run typecheck && npm test
 npm run model:validate -- --domain it --profession motion --all --require-blocks
-npm run mapping:validate -- --domain it --profession motion --report
-npm run mapping:validate -- --domain it --profession graphic --report
-npm run professions:collect -- --domain it --profession motion
-npm run tags:collect -- --domain it --profession motion
+npm run model:validate -- --domain it --profession motion --report
+npm run model:validate -- --domain it --profession graphic --report
+npm run sources:expand -- --domain it --profession motion
+npm run sources:expand -- --domain it --profession motion
 npm run materials:agent:queue -- --domain it --profession motion --per-competency 1 \
   --sources wikipedia,habr,medium --concurrency 3 --retry 2 --classify --budget-usd 0.10 --max-calls 80
-npm run materials:agent:review -- --domain it --profession motion
-npm run canvas:profession-network -- --profession motion
-npm run canvas:profession -- --profession motion
-npm run canvas:tabs
+npm run materials:agent:queue:review -- --domain it --profession motion
+npm run model:sync -- --profession motion
+npm run model:sync -- --profession motion
+npm run model:sync
 ```
 
 ## 8. Ограничения и открытые задачи

@@ -13,6 +13,11 @@ references:
   - COS-RES-021
 ---
 
+> **Команды обновлены 2026-11-03.** Документ исторический: удалённые пайплайны заменены на актуальные
+> (`aggregate`, `sources:*`, `materials:*`, `model:sync`). Флаги старого пайплайна могли отличаться —
+> актуальный порядок в `README.md`.
+
+
 # COS-RES-022 — Learning Sources Library
 
 ## 1. Зачем
@@ -150,7 +155,7 @@ src/methodology/v1/learning-sources/
 Команда:
 
 ```bash
-npm run learning:discover -- --profession motion --limit 10
+npm run sources:expand -- --profession motion --limit 10
 ```
 
 Что делает:

@@ -12,6 +12,11 @@ references:
   - COS-RES-027
 ---
 
+> **Команды обновлены 2026-11-03.** Документ исторический: удалённые пайплайны заменены на актуальные
+> (`aggregate`, `sources:*`, `materials:*`, `model:sync`). Флаги старого пайплайна могли отличаться —
+> актуальный порядок в `README.md`.
+
+
 # COS-RES-028 — поиск и релевантность открытых учебных материалов
 
 Аналитический разбор контура «открытые материалы для компетенций»: что сейчас реально работает,
@@ -19,6 +24,10 @@ references:
 Документ продолжает `COS-RES-027` (отчёт-агрегатор) и не заменяет его: `COS-RES-027` фиксирует
 *сколько* открытых источников есть, этот — *почему их мало и какие из них полезны*.
 Решения 2026-11-03 и реализация описаны в [`COS-REL-009`](../12-release/COS-REL-009-Materials-Review-and-Confirmation.md).
+
+> Историческая справка: команды `learning:discover`, `materials:agent` и `canvas:*`, встречающиеся ниже,
+> описывают состояние до 2026-11-03 и удалены из `package.json`. Актуальная точка входа —
+> `npm run aggregate` (см. README).
 
 ## 1. Контекст и вопрос
 
@@ -449,6 +458,9 @@ optional — 2), `max 5`. Поиск по формату — не больше 3
 
 ### Авто-расширение ресурсной базы (сделано 2026-11-03)
 
+Основная точка входа — `npm run aggregate -- --profession all --write` (план без флага `--write`):
+источники → реестр/связи → модель → review → gate/сборка. Детали — `README.md`, раздел «Основной инструмент».
+
 Результат первого полного прогона по 11 профессиям (Brave Search, ≈670 запросов free-тарифа):
 335 компетенций-участков, 2 010 хитов, 350 кандидатов, 236 accept / 105 confirm / 9 reject;
 после quality gate (confidence ≥ 0.75 + фильтр заголовков) записано 41 новый источник
@@ -488,7 +500,7 @@ npm run learning:aggregate      # отчёт по открытым источн�
 npm run learning:map            # покрытие компетенций активными источниками
 npm run learning:validate       # схема реестра
 npm run learning:audit -- --profession motion
-npm run materials:agent:review -- --domain it --profession motion
+npm run materials:agent:queue:review -- --domain it --profession motion
 npm run materials:accept -- --journal data/materials-agent/it-product-queue.json --min-relevance 0.7 --write
 npm run test                    # 164 теста
 ```

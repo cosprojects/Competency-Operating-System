@@ -53,7 +53,7 @@ Beta 1 включает четыре профессии:
 | Graphic | 18/18 | 18 | 0 | 18/18 |
 | **Итого** | **110/110** | **110** | **0** | **110/110** |
 
-Уникальных компетенций — 54; все проходят quality bar. Добавлены 3 источника, 26 summary, 128 решений source review; 34 общих тега заменены на конкретные, 16 дублей названий разведены. Историческая таблица «до gate» — в `reports/beta-1-content-backlog.md` (superseded).
+Уникальных компетенций — 54; все проходят quality bar. Добавлены 3 источника, 26 summary, 128 решений source review; 34 общих тега заменены на конкретные, 16 дублей названий разведены. Историческая таблица «до gate» — в `reports/archive/beta-1-content-backlog.md` (superseded).
 
 Оговорка: нормализация AI-assisted; `release/beta-1-source-review.json` подписан агентом, не человеком. Для публичного запуска нужен spot-check основателя и перевод манифеста в `status: ready`.
 
@@ -91,5 +91,5 @@ Beta 1 включает четыре профессии:
 
 - `release/beta-1.json` — human-owned манифест.
 - `release/beta-1-source-review.json` — решения по связям «компетенция–источник».
-- `docs/12-release/reports/beta-1-gap-report.md` — отчёт о пробелах.
+- `docs/12-release/reports/archive/beta-1-gap-report.md` — отчёт о пробелах.
 - `COS-REL-002` — процесс доведения и приёмки.

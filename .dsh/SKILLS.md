@@ -24,55 +24,18 @@
 | `npm run test` | `node --experimental-strip-types --test tests/*.test.ts` |
 | `npm run agents:check` | `sh scripts/check-agent-assets.sh` |
 | `npm run figma:compare` | `node scripts/web/figma-compare.mjs` |
-| `npm run parse:candidates` | `node --experimental-strip-types src/methodology/v1/candidate-parser/cli.ts` |
-| `npm run profile:build` | `node --experimental-strip-types src/methodology/v1/profile/cli.ts` |
-| `npm run program:extract` | `node --experimental-strip-types src/methodology/v1/profile/practicum-cli.ts` |
-| `npm run collect:requirements` | `node --experimental-strip-types src/methodology/v1/requirement-collection/cli.ts` |
-| `npm run match:identities` | `node --experimental-strip-types src/methodology/v1/requirement-collection/identity-cli.ts` |
-| `npm run methodologist:patch` | `node --experimental-strip-types src/methodology/v1/methodologist/cli.ts` |
-| `npm run pipeline` | `node --experimental-strip-types src/methodology/v1/pipeline-run.ts` |
 | `npm run db:generate` | `prisma generate` |
 | `npm run db:migrate` | `prisma migrate dev` |
-| `npm run sources:discover` | `node --experimental-strip-types src/methodology/v1/competency/cli/sources.ts` |
-| `npm run professions:collect` | `node --experimental-strip-types src/methodology/v1/competency/cli/professions.ts` |
-| `npm run tags:collect` | `node --experimental-strip-types src/methodology/v1/competency/cli/tags.ts` |
-| `npm run competency:candidates` | `node --experimental-strip-types src/methodology/v1/competency/cli/candidates.ts` |
-| `npm run competency:build` | `node --experimental-strip-types src/methodology/v1/competency/cli/blocks.ts` |
-| `npm run competency:review` | `node --experimental-strip-types src/methodology/v1/competency/cli/review.ts` |
 | `npm run catalog:validate` | `node --experimental-strip-types src/methodology/v1/competency/cli/catalog.ts` |
-| `npm run competency:compose` | `node --experimental-strip-types src/methodology/v1/competency/cli/compose.ts` |
-| `npm run materials:sources` | `node --experimental-strip-types src/methodology/v1/competency/cli/materials-sources.ts` |
-| `npm run materials:collect` | `node --experimental-strip-types src/methodology/v1/competency/cli/materials-collect.ts` |
-| `npm run materials:classify` | `node --experimental-strip-types src/methodology/v1/competency/cli/materials-classify.ts` |
-| `npm run materials:review` | `node --experimental-strip-types src/methodology/v1/competency/cli/materials-review.ts` |
-| `npm run materials:validate` | `node --experimental-strip-types src/methodology/v1/competency/cli/materials-validate.ts` |
-| `npm run materials:refresh` | `node --experimental-strip-types src/methodology/v1/competency/cli/materials-refresh.ts` |
-| `npm run competency:evaluate` | `node --experimental-strip-types src/methodology/v1/competency/cli/evaluate.ts` |
-| `npm run competency:reconcile` | `node --experimental-strip-types src/methodology/v1/competency/cli/reconcile.ts` |
-| `npm run competency:seed` | `node --experimental-strip-types src/methodology/v1/competency/cli/seed.ts` |
-| `npm run priority:template` | `node --experimental-strip-types src/methodology/v1/competency/cli/priority-template.ts` |
-| `npm run priority:validate` | `node --experimental-strip-types src/methodology/v1/competency/cli/priority-validate.ts` |
-| `npm run competency:canvas` | `node --experimental-strip-types src/methodology/v1/competency/cli/canvas.ts` |
-| `npm run canvas:page` | `node --experimental-strip-types src/methodology/v1/competency/cli/canvas-page.ts` |
 | `npm run canonical:validate` | `node --experimental-strip-types src/methodology/v1/competency/cli/canonical-validate.ts` |
 | `npm run canonical:report` | `node --experimental-strip-types src/methodology/v1/competency/cli/canonical-validate.ts -- --report` |
-| `npm run canonical:apply` | `node --experimental-strip-types src/methodology/v1/competency/cli/canonical-apply.ts` |
-| `npm run catalog:accept` | `node --experimental-strip-types src/methodology/v1/competency/cli/catalog-accept.ts` |
-| `npm run priority:canonical` | `node --experimental-strip-types src/methodology/v1/competency/cli/priority-canonical.ts` |
-| `npm run materials:agent` | `node --experimental-strip-types src/methodology/v1/materials-agent/cli/run.ts` |
-| `npm run priority:confirm` | `node --experimental-strip-types src/methodology/v1/competency/cli/priority-confirm.ts` |
 | `npm run materials:agent:queue` | `node --experimental-strip-types src/methodology/v1/materials-agent/cli/queue.ts` |
 | `npm run model:sync` | `node --experimental-strip-types src/methodology/v1/competency/model/cli/sync.ts` |
 | `npm run model:validate` | `node --experimental-strip-types src/methodology/v1/competency/model/cli/validate.ts` |
 | `npm run model:views` | `node --experimental-strip-types src/methodology/v1/competency/model/cli/views.ts` |
-| `npm run canvas:profession` | `node --experimental-strip-types src/methodology/v1/competency/cli/profession-page.ts` |
-| `npm run canvas:profession-network` | `node --experimental-strip-types src/methodology/v1/competency/cli/profession-network.ts` |
 | `npm run materials:agent:review` | `node --experimental-strip-types src/methodology/v1/materials-agent/cli/review.ts` |
-| `npm run canvas:tabs` | `node --experimental-strip-types src/methodology/v1/competency/cli/canvas-tabs.ts` |
-| `npm run mapping:validate` | `node --experimental-strip-types src/methodology/v1/competency/cli/mapping-validate.ts` |
 | `npm run learning:validate` | `node --experimental-strip-types src/methodology/v1/learning-sources/cli/validate.ts` |
 | `npm run learning:audit` | `node --experimental-strip-types src/methodology/v1/learning-sources/cli/audit.ts` |
-| `npm run learning:discover` | `node --experimental-strip-types src/methodology/v1/learning-sources/cli/discover.ts` |
 | `npm run learning:map` | `node --experimental-strip-types src/methodology/v1/learning-sources/cli/map.ts` |
 | `npm run learning:topics` | `node --experimental-strip-types src/methodology/v1/learning-sources/cli/topics.ts` |
 | `npm run release:report` | `node --experimental-strip-types scripts/release/validate.ts -- --release beta-1 --report --allow-draft` |
@@ -80,22 +43,18 @@
 | `npm run release:validate:draft` | `node --experimental-strip-types scripts/release/validate.ts -- --release beta-1 --allow-draft` |
 | `npm run release:build` | `node --experimental-strip-types scripts/release/build.ts -- --release beta-1` |
 | `npm run release:build:draft` | `node --experimental-strip-types scripts/release/build.ts -- --release beta-1 --allow-draft` |
-| `npm run web:dev` | `npm run web:canvases && npm --workspace apps/web run dev` |
-| `npm run web:build` | `npm run release:build:draft && npm run web:canvases && npm --workspace apps/web run build` |
-| `npm run web:build:release` | `npm run release:validate && npm run release:build && npm run web:canvases && npm --workspace apps/web run build` |
+| `npm run web:dev` | `npm --workspace apps/web run dev` |
+| `npm run web:build` | `npm run release:build:draft && npm --workspace apps/web run build` |
+| `npm run web:build:release` | `npm run release:validate && npm run release:build && npm --workspace apps/web run build` |
 | `npm run web:start` | `npm --workspace apps/web run start` |
 | `npm run web:typecheck` | `npm run release:build:draft && npm --workspace apps/web run typecheck` |
 | `npm run db:deploy` | `prisma migrate deploy` |
 | `npm run metrics:report` | `node --experimental-strip-types scripts/metrics/report.ts` |
 | `npm run finance:model` | `node --experimental-strip-types scripts/business-model/financial-model.ts` |
-| `npm run release:checklist` | `node --experimental-strip-types scripts/release/checklist.ts` |
 | `npm run db:local:prepare` | `node --experimental-strip-types scripts/dev/local-schema.ts` |
 | `npm run db:local:push` | `prisma db push --schema prisma/schema.local.prisma --skip-generate` |
 | `npm run db:local:generate` | `prisma generate --schema prisma/schema.local.prisma` |
 | `npm run db:local` | `npm run db:local:prepare && npm run db:local:push && npm run db:local:generate` |
-| `npm run web:canvases` | `node --experimental-strip-types scripts/web/copy-canvases.ts` |
-| `npm run mapping:draft` | `node --experimental-strip-types src/methodology/v1/competency/cli/mapping-draft.ts` |
-| `npm run blocks:from-mapping` | `node --experimental-strip-types src/methodology/v1/competency/cli/blocks-from-mapping.ts` |
 | `npm run learning:aggregate` | `node --experimental-strip-types src/methodology/v1/learning-sources/cli/aggregate.ts` |
 | `npm run sources:expand` | `node --experimental-strip-types src/methodology/v1/learning-sources/cli/expand.ts` |
 | `npm run sources:provider-test` | `node --experimental-strip-types src/methodology/v1/learning-sources/cli/provider-test.ts` |
@@ -107,6 +66,7 @@
 | `npm run sources:remove` | `node --experimental-strip-types src/methodology/v1/learning-sources/cli/remove.ts` |
 | `npm run sources:access` | `node --experimental-strip-types src/methodology/v1/learning-sources/cli/access.ts` |
 | `npm run sources:repair` | `node --experimental-strip-types src/methodology/v1/learning-sources/cli/repair.ts` |
+| `npm run aggregate` | `node --experimental-strip-types scripts/aggregate/index.ts` |
 
 ## Как пользоваться
 

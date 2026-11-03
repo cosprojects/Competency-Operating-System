@@ -16,10 +16,11 @@
 Стратегическая рамка: [`COS-BP-005`](../08-business-plan/COS-BP-005-Product-Roadmap-AXIONA-COS.md).
 
 Отчёты:
-- [`reports/beta-1-gap-report.md`](reports/beta-1-gap-report.md) — текущий release gate.
-- [`reports/beta-1-content-gate-closure.md`](reports/beta-1-content-gate-closure.md) — результат content gate.
-- [`reports/beta-1-content-backlog.md`](reports/beta-1-content-backlog.md) — исторический чек-лист до gate (superseded).
-- [`reports/beta-1-source-review-checklist.md`](reports/beta-1-source-review-checklist.md) — 125 уникальных пар «компетенция–источник» для source review.
+- [`reports/archive/beta-1-gap-report.md`](reports/archive/beta-1-gap-report.md) — исторический release gate (до расширения ресурсной базы).
+- [`reports/archive/beta-1-content-gate-closure.md`](reports/archive/beta-1-content-gate-closure.md) — исторический результат content gate.
+- [`reports/archive/beta-1-content-backlog.md`](reports/archive/beta-1-content-backlog.md) — исторический чек-лист до gate (superseded).
+- [`reports/archive/beta-1-source-review-checklist.md`](reports/archive/beta-1-source-review-checklist.md) — 125 уникальных пар «компетенция–источник» для source review.
 - [`reports/beta-1-sources-expansion-2026-11-03.md`](reports/beta-1-sources-expansion-2026-11-03.md) — финальная сводка ресурсной базы по профессиям: авто-расширение Brave, покрытие, пробелы.
+- [`reports/cleanup-2026-11-03.md`](reports/cleanup-2026-11-03.md) — аудит документации и legacy-скриптов, что удалено/переименовано, что требует решения.
 
 Текущий статус: `release:validate` проходит (236/335 связей, 102/102 компетенции, 0 пробелов, 89 источников в сборке); манифест остаётся `draft` до человеческого spot-check. Публичный запуск заблокирован до перевода в `ready`, РФ-хостинга и юридического sign-off.

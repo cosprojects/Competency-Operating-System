@@ -20,6 +20,11 @@ references:
   - COS-ARCH-002
 ---
 
+> **Команды обновлены 2026-11-03.** Документ исторический: удалённые пайплайны заменены на актуальные
+> (`aggregate`, `sources:*`, `materials:*`, `model:sync`). Флаги старого пайплайна могли отличаться —
+> актуальный порядок в `README.md`.
+
+
 # COS-RES-019 — Handoff: модуль компетенций и профессий
 
 Документ фиксирует состояние на **2026-10-26**, чтобы продолжить работу в новой сессии без восстановления контекста. Итерация Product описана отдельно в `COS-RES-020`, Motion/Graphic — в `COS-RES-021`, учебные источники — в `COS-RES-022`, дополнительные дизайнерские профессии — в `COS-RES-023`.
@@ -112,27 +117,27 @@ npm run model:views -- --domain it --write
 npm run model:validate -- --domain it --profession product --all --require-blocks
 
 # mapping тегов
-npm run mapping:validate -- --domain it --profession product --report
+npm run model:validate -- --domain it --profession product --report
 
 # источники и сбор
-npm run professions:collect -- --domain it --profession product
-npm run tags:collect -- --domain it --profession product
+npm run sources:expand -- --domain it --profession product
+npm run sources:expand -- --domain it --profession product
 
 # каталог / приоритеты
-npm run catalog:accept -- --domain it --profession uxui \
+npm run materials:accept -- --domain it --profession uxui \
   --blocks-file data/competency/blocks-it.json,data/competency/blocks-it-uxui.json,data/competency/blocks-it-motion.json,data/competency/blocks-it-product.json,data/competency/blocks-it-graphic.json --write
 npm run catalog:validate -- --domain it --require-priority
-npm run priority:validate -- --domain it --profession uxui --require-complete --require-accepted
+npm run model:validate -- --domain it --profession uxui --require-complete --require-accepted
 
 # канвасы
-npm run canvas:page -- --domain it --profession uxui --source catalog
-npm run canvas:profession -- --profession product
-npm run canvas:profession-network -- --profession product
-npm run canvas:tabs
+npm run model:sync -- --domain it --profession uxui --source catalog
+npm run model:sync -- --profession product
+npm run model:sync -- --profession product
+npm run model:sync
 
 # материалы
 npm run materials:agent:queue -- --domain it --profession product --classify --budget-usd 0.03
-npm run materials:agent:review -- --domain it --profession product
+npm run materials:agent:queue:review -- --domain it --profession product
 ```
 
 Открыть канвас:

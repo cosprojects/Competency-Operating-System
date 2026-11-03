@@ -358,7 +358,7 @@ LLM auto_accepted              -> auto_accepted (без бейджа)
 |---|---|---|
 | Роль и правила | `agents/AGENTS-competency-methodologist.md` | есть; Pass D (материалы) описан |
 | Pass D в коде | `competency/materials/classify.ts`, `llm/prompts.ts` (`buildMaterialPrompt`) | работает |
-| Отдельный CLI кандидатов | `npm run methodologist:patch` (`src/methodology/v1/methodologist/`) | работает, но это решения о компетенциях, не о материалах |
+| Отдельный CLI кандидатов | CLI удалён из `package.json` (legacy); модуль `src/methodology/v1/methodologist/` сохранён для истории и тестов | исторический пайплайн компетенций, не материалов |
 | Прогоны | `data/materials-agent/it-*-queue.json` (11 профессий, 11:21–11:25), кэш LLM 11:25 | собирал материалы |
 | Приёмка | `materials-agent/accept.ts` порог 0.7, `materials:accept` | механическая, 39 материалов |
 | Тесты | `tests/methodologist.test.ts`, `tests/materials*.test.ts` | 24/24 проходят; `typecheck` чист |

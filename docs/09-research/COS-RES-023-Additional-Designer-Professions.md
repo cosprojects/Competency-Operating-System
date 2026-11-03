@@ -14,6 +14,11 @@ references:
   - COS-RES-022
 ---
 
+> **Команды обновлены 2026-11-03.** Документ исторический: удалённые пайплайны заменены на актуальные
+> (`aggregate`, `sources:*`, `materials:*`, `model:sync`). Флаги старого пайплайна могли отличаться —
+> актуальный порядок в `README.md`.
+
+
 # COS-RES-023 — Дополнительные дизайнерские профессии: схемы
 
 Документ фиксирует **этап 1** работ по расширению COS за пределы четырёх базовых дизайнерских профессий: собраны схемы (profession view + компетенции + связи) для ещё семи профессий. Блоки, приоритеты и материалы для них — следующие этапы.
@@ -120,9 +125,9 @@ npm run learning:validate
 npm run learning:map
 
 # страницы новых профессий
-npm run canvas:profession -- --profession presentation      # также appdesign, uxresearch, artdir, 3ddesigner, interior, webdesigner
-npm run canvas:profession-network -- --profession presentation
-npm run canvas:tabs
+npm run model:sync -- --profession presentation      # также appdesign, uxresearch, artdir, 3ddesigner, interior, webdesigner
+npm run model:sync -- --profession presentation
+npm run model:sync
 ```
 
 ## 7. Следующие шаги

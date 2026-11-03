@@ -14,6 +14,11 @@ references:
   - COS-RES-019
 ---
 
+> **Команды обновлены 2026-11-03.** Документ исторический: удалённые пайплайны заменены на актуальные
+> (`aggregate`, `sources:*`, `materials:*`, `model:sync`). Флаги старого пайплайна могли отличаться —
+> актуальный порядок в `README.md`.
+
+
 # COS-RES-020 — Product-specific сборка компетенций
 
 Документ фиксирует итерацию по профессии `it.product`: исправление источников, сопоставление product-тегов с 30 компетенциями, пересборку связного графа и решение по слою priority/order. UX/UI-приоритеты (33 accepted mark) не менялись.
@@ -52,7 +57,7 @@ O*NET-занятия выбраны по локальной базе `occupation
 Файл: `src/methodology/v1/competency/mapping/it.product.json`. Проверка:
 
 ```bash
-npm run mapping:validate -- --domain it --profession product --report
+npm run model:validate -- --domain it --profession product --report
 ```
 
 Правила валидатора (`mapping/validate.ts`):
@@ -160,19 +165,19 @@ UX/UI при этом не затронут: `priority:validate --domain it --pr
 # проверки
 npm run typecheck && npm test
 npm run model:validate -- --domain it --profession product --all --require-blocks
-npm run mapping:validate -- --domain it --profession product --report
+npm run model:validate -- --domain it --profession product --report
 npm run catalog:validate -- --domain it --require-priority
-npm run priority:validate -- --domain it --profession uxui --require-complete --require-accepted
+npm run model:validate -- --domain it --profession uxui --require-complete --require-accepted
 
 # источники Product
-npm run professions:collect -- --domain it --profession product
-npm run tags:collect -- --domain it --profession product
+npm run sources:expand -- --domain it --profession product
+npm run sources:expand -- --domain it --profession product
 
 # граф и страницы
 npm run model:views -- --domain it --write
-npm run canvas:profession -- --profession product
-npm run canvas:profession-network -- --profession product
-npm run canvas:tabs
+npm run model:sync -- --profession product
+npm run model:sync -- --profession product
+npm run model:sync
 ```
 
 ## 8. Ограничения и открытые задачи

@@ -13,6 +13,11 @@ references:
   - COS-RES-023
 ---
 
+> **Команды обновлены 2026-11-03.** Документ исторический: удалённые пайплайны заменены на актуальные
+> (`aggregate`, `sources:*`, `materials:*`, `model:sync`). Флаги старого пайплайна могли отличаться —
+> актуальный порядок в `README.md`.
+
+
 # COS-RES-024 — Этап 2: ИИ-компетенции во всех профессиях
 
 Документ фиксирует **этап 2**: сквозной слой навыков работы с нейросетями добавлен во все 11 профессий (10 profession views + UX/UI через canonical-путь).
@@ -96,10 +101,10 @@ npm run model:views -- --domain it --write
 npm run model:validate -- --domain it --profession uxui --all
 npm run learning:map
 for p in product motion graphic presentation appdesign uxresearch artdir 3ddesigner interior webdesigner; do
-  npm run canvas:profession-network -- --profession $p
-  npm run canvas:profession -- --profession $p
+  npm run model:sync -- --profession $p
+  npm run model:sync -- --profession $p
 done
-npm run canvas:tabs
+npm run model:sync
 ```
 
 ## 7. Следующие шаги

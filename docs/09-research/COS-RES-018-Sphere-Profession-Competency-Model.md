@@ -16,6 +16,11 @@ references:
   - COS-RES-025
 ---
 
+> **Команды обновлены 2026-11-03.** Документ исторический: удалённые пайплайны заменены на актуальные
+> (`aggregate`, `sources:*`, `materials:*`, `model:sync`). Флаги старого пайплайна могли отличаться —
+> актуальный порядок в `README.md`.
+
+
 # COS-RES-018 — Сфера → профессия → компетенции и источники
 
 ## 1. Назначение
@@ -151,14 +156,14 @@ Prerequisites из view — источник истины для слоя order 
 npm run model:sync -- --domain it --profession uxui --write
 npm run model:views -- --domain it --write
 npm run model:validate -- --domain it --profession uxui --all --require-blocks
-npm run mapping:validate -- --domain it --profession product --report
-npm run canvas:profession -- --profession motion
-npm run canvas:profession -- --profession product
-npm run canvas:profession -- --profession graphic
-npm run canvas:profession-network -- --profession product
-npm run canvas:profession-network -- --profession motion
-npm run canvas:profession-network -- --profession graphic
-npm run canvas:tabs
+npm run model:validate -- --domain it --profession product --report
+npm run model:sync -- --profession motion
+npm run model:sync -- --profession product
+npm run model:sync -- --profession graphic
+npm run model:sync -- --profession product
+npm run model:sync -- --profession motion
+npm run model:sync -- --profession graphic
+npm run model:sync
 ```
 
 Human-review канвас: `web/competencies-review-canvas.html` — табы по профессиям (UX/UI, Product, Motion, Graphic) вместо tier-фильтров внутри страницы. Tier-легенда остаётся в карточках/деталях.

@@ -13,6 +13,11 @@ references:
   - COS-ARCH-002
 ---
 
+> **Команды обновлены 2026-11-03.** Документ исторический: удалённые пайплайны заменены на актуальные
+> (`aggregate`, `sources:*`, `materials:*`, `model:sync`). Флаги старого пайплайна могли отличаться —
+> актуальный порядок в `README.md`.
+
+
 # COS-RES-015 — Приоритизация компетенций и раскладка канваса
 
 ## 1. Назначение
@@ -89,7 +94,7 @@ Mark не содержит `verifiedLevel`, `confidencePercent` и текста 
 ## 5. Шаблон маркировки
 
 ```bash
-npm run priority:template -- --domain it --profession uxui --source review --include-seed
+npm run model:sync -- --domain it --profession uxui --source review --include-seed
 ```
 
 Источники:
@@ -108,7 +113,7 @@ npm run priority:template -- --domain it --profession uxui --source review --inc
 
 ## 6. Канвас
 
-`npm run competency:canvas -- --domain it --profession uxui --source review --include-seed --allow-partial`
+`npm run model:sync -- --domain it --profession uxui --source review --include-seed --allow-partial`
 
 Выход: `data/competency/canvas/it-uxui.json`, `writesToGraph: false`.
 
@@ -156,7 +161,7 @@ npm run priority:template -- --domain it --profession uxui --source review --inc
 ### 6.3. Standalone-страница
 
 ```bash
-npm run canvas:page -- --domain it --profession uxui --source review --include-seed
+npm run model:sync -- --domain it --profession uxui --source review --include-seed
 ```
 
 Генерирует `web/uxui-competency-canvas.html`: самодостаточную страницу без внешних зависимостей. По умолчанию страница собирается от **канонической карты** (`COS-RES-016`): 34 компетенции, 25 связей, tier-подсказки и coverage-подпись. На ней:

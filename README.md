@@ -1,186 +1,140 @@
 # Competency Operating System (COS)
 
-AI-native platform for competency maps, learning sources and professional development. MVP — базовый слой сборки компетенций; диагностика — следующий слой.
+AI-native платформа компетенций: карта профессий, компетенции, знания/навыки и учебные материалы.
+MVP — слой сборки компетенций и ресурсной базы; диагностика и ИИ в runtime — следующий слой.
 
 ## Beta 1 — карта компетенций дизайнера
 
-Текущий этап — подготовка Beta карты профессий: база, на которой дальше может строиться диагностика. Публичная Beta запускается после готовности MVP, РФ-хостинга и юридического контура; сейчас — локальная разработка и Vercel demo. Диагностика, оценка уровня, кейсы и паспорт компетенций не отменены; они требуют нормально собранных компетенций, знаний/навыков и материалов и идут следующим слоем.
+- Публикуется **11 профессий** (UX/UI, Product, Motion, Graphic, 3D, Интерьеры, Веб, Презентации,
+  UX-исследования, Арт-дирекшн, Приложения). AI-дизайнер и AI-слой — `deferred-post-beta`.
+- В модели **122 компетенции**, в публикации **102**, связей «профессия–компетенция» — **236**.
+- Ресурсная база: **160 источников** (127 active, 39 найдены автоматически), **39 материалов** в каталоге.
+- Content gate: 236/236 связей, 102/102 компетенции, 0 пробелов. `release:validate` — PASS.
+- Source review — AI-assisted (1 153 решения), нужен spot-check основателя. Манифест остаётся `draft`.
 
-- Продукт: 11 профессий (UX/UI, Product, Motion, Graphic, 3D, Интерьеры, Веб, Презентации, UX-исследования, Арт-дирекшн, Приложения), 236 связей «профессия–компетенция», 102 уникальные компетенции.
-- AI-слой и AI-дизайнер исключены из публикации (`deferred-post-beta`).
-- Content gate: 236/236 связей, 102/102 компетенции, 0 пробелов; 11 профессий прошли gate 2026-11-03; source review AI-assisted, нужен spot-check основателя.
-- Приложение: `apps/web` (Next.js), контент — производный JSON из `model/`, локальные пользовательские данные — SQLite, публичный контур — PostgreSQL.
-- Стратегическая дорожная карта: [`COS-BP-005`](docs/08-business-plan/COS-BP-005-Product-Roadmap-AXIONA-COS.md).
-- Программа, quality bar, архитектура и runbook: [`docs/12-release/`](docs/12-release/).
-- Решения, меняющие рамку: [`COS-REL-008`](docs/12-release/COS-REL-008-Decision-Log.md).
+## Основной инструмент: агрегация по профессиям
+
+`npm run aggregate` — единая точка входа, которая собирает ресурсную базу профессии и доводит её
+до проверенного релизного контента:
 
 ```bash
-# контентный gate: отчёт о пробелах
-npm run release:report -- --release beta-1
+# план без изменений
+npm run aggregate -- --profession all
 
-# строгая проверка и сборка публичного контента
-npm run release:validate -- --release beta-1
-npm run release:build -- --release beta-1
+# применить, используя сохранённые журналы прогона (Brave не тратится)
+npm run aggregate -- --profession all --write
 
-# локальный preview (черновой, не для публикации)
+# заново сходить в Brave и сразу записать
+npm run aggregate -- --profession motion,uxui --fetch --write
+
+# только источники для одной профессии, без release-сборки
+npm run aggregate -- --profession motion --write --no-release
+```
+
+Что происходит по шагам:
+
+1. `sources:expand` — официальные провайдеры (Brave Search, Wikipedia, GitHub; YouTube — API/RSS),
+   скоринг кандидатов, LLM-ревью (`accept`/`confirm`/`reject`) и запись в `learning-sources/registry.json`.
+2. `sources:repair` — blocked-источники отвязываются, `professionIds` расширяются по связям.
+3. `model:sync` — связи «компетенция–источник» мержатся в `competency/model/competencies.json`.
+4. `reviews:decide` — AI-assisted source review для публикационного gate.
+5. `learning:map` / `learning:aggregate` — покрытие и открытые источники по профессиям.
+6. `release:validate` / `release:build:draft` — gate и черновая сборка контента.
+
+Журналы прогонов: `data/learning-sources/expansion-<profession>-<date>.json`; отчёт агрегации —
+`data/aggregation/aggregate-<scope>-<date>.json`.
+
+### Quality gate источников
+
+- записываются только `accept` с `confidence ≥ 0.75`, заголовки-мусор (курсовые, дипломы, новости,
+  вакансии) отсекаются;
+- `--audit` проверяет HTTP-доступность; `planned`/`blocked` в публикацию не идут;
+- домен, уже бывший в реестре, не дублируется — новый материал связывается с компетенцией;
+- ручные операции: `sources:remove`, `sources:access`, `sources:provider-test`.
+
+### Материалы в каталоге
+
+Каталожные материалы (`catalog.materials`) проходят отдельный контур:
+
+```bash
+npm run materials:agent:queue -- --domain it --profession motion --per-competency 1 --classify
+npm run materials:agent:review -- --domain it --profession motion
+npm run materials:verify -- --domain it --profession motion --journal data/materials-agent/it-motion-queue.json
+npm run materials:accept -- --journal data/materials-agent/it-motion-verified.json --min-relevance 0.7 --write
+npm run materials:coverage -- --profession motion --report
+npm run reviews:export
+```
+
+Неподтверждённые материалы показываются с бейджем «Подтвердить»: залогиненный пользователь
+подтверждает или блокирует через модалку; пороги — доля от активных залогиненных (5% / 10%).
+Правила приёмки — [`COS-REL-009`](docs/12-release/COS-REL-009-Materials-Review-and-Confirmation.md).
+
+## Быстрый старт
+
+```bash
+npm install
 npm run db:local            # SQLite data/local.db + локальный Prisma client
 cp apps/web/.env.example apps/web/.env.local
 npm run release:build:draft
 npm run web:dev
 ```
 
-Пока MVP не готов, хостинг не покупается: разработка идёт локально, для показа используется Vercel demo (`apps/web/vercel.json`). Корпоративный сайт остаётся на `axiona.world`; переезд на `axiona.biz` и РФ-хостинг — после решения о публичном запуске. Vercel demo не открывает реальные регистрации: это не продакшн-контур персональных данных.
+Проверки перед «готово»:
+
+```bash
+npm run typecheck
+npm run test
+npm run release:validate -- --release beta-1   # строгий gate
+npm run web:build                              # то, что собирает Vercel
+```
 
 ## Web-интерфейс (Beta 1)
 
-Интерфейс собран по макетам `AXIONA — mvp` (Figma, project 6) и повторяет три состояния продукта:
+Собран по макетам `AXIONA — mvp` (Figma, project 6) и повторяет три состояния продукта:
 
-- `/` — главная: что внутри, как начать, дорожная карта развития.
-- `/professions` — выбор профессии: поиск по названию профессии и по навыкам, которые её составляют.
-- `/professions/<slug>` — канвас профессии: слева разделы и компетенции, в центре схема с поиском по навыкам и масштабом, справа — компетенция (знания, «в профессии», навыки, материалы).
+- `/` — главная: что внутри, как начать, дорожная карта развития;
+- `/professions` — выбор профессии: поиск по названию и по навыкам;
+- `/professions/<slug>` — канвас профессии: разделы/компетенции, схема с поиском и масштабом,
+  карточка компетенции (знания, «в профессии», навыки, материалы).
 
-Общие элементы: левое меню `nav-rail` (раскрыто на главной, свёрнуто в остальных состояниях), модалка обратной связи (отзыв сохраняется в БД и уходит письмом на `FEEDBACK_EMAIL`, по умолчанию `hi.axiona@protonmail.com`). Старые адреса `/canvas`, `/competencies/<id>`, `/feedback` редиректят в новые состояния.
+Общие элементы: `nav-rail`, модалка обратной связи (сохраняется в БД и уходит на `FEEDBACK_EMAIL`),
+редиректы со старых адресов `/canvas`, `/competencies/<id>`, `/feedback`. Материалы разбиты по форматам,
+карточки подтягивают обложку/аннотацию через `/api/link-preview` (og:image / og:description, кэш на сутки,
+SSRF-защита). Схема канваса считается детерминированно из разделов профессии (`apps/web/src/lib/graph-layout.ts`).
 
-Детали канваса профессии: левый сайдбар разделён на закреплённый блок профессии (название, покрытие, «Выбрать профессию») и прокручиваемый список разделов; правый сайдбар компетенции раскрывается на всю ширину кнопкой-стрелкой в шапке. Материалы разбиты по подразделам (курсы, видео, статьи, справочники, кейсы), карточки подтягивают обложку и аннотацию со страницы материала через `/api/link-preview` (og:image / og:description, кэш на сутки, SSRF-защита).
+## Данные и модель
 
-Данные и логика прежние: публичный JSON релиза (`apps/web/src/content/generated/beta-1.json`), сохранения, статусы изучения, доступ к материалам после входа, аналитика. Схема канваса считается детерминированно из разделов профессии (`apps/web/src/lib/graph-layout.ts`).
+- `src/methodology/v1/competency/canonical/uxui.json` — каноническая карта UX/UI.
+- `src/methodology/v1/competency/model/competencies.json` — единый массив **122** компетенций.
+- `model/professions/views/<profession>.json` — разделы и приоритеты 12 profession view.
+- `model/learning-source-links.json` — связи «компетенция → источник», мержатся при `model:sync`.
+- `learning-sources/registry.json` — реестр источников; `catalog/it.json` — 117 блоков, 544 тега,
+  39 материалов.
+- Публичный контент — производный JSON (`apps/web/src/content/generated/beta-1.json`).
 
-## Статус
-
-🚧 Beta 1 — контентный gate и продуктовый слой в работе.
-
-
-## Визуализация компетенций
-
-`npm run canvas:page -- --domain it --profession uxui --source review --include-seed` собирает `web/uxui-competency-canvas.html` — самодостаточную страницу-канвас с сетью UX/UI-компетенций.
-
-
-## Каноническая карта UX/UI
-
-`src/methodology/v1/competency/canonical/uxui.json` — два блока (UX/UI), 9 разделов и 34 компетенции со статусами `covered` / `partial` / `gap`. Сейчас: 34 covered / 0 partial / 0 gap; в каталоге 117 блоков, 544 тега. Проверка и coverage-отчёт:
+Сборка модели и проверка:
 
 ```bash
-npm run canonical:validate -- --domain it --profession uxui --source review --include-seed --report
-```
-
-
-## Material Agent
-
-Материалы вынесены в отдельный контур: `npm run materials:agent -- --domain it --profession uxui --limit 2 --sources wikipedia,habr,medium`. Журнал — `data/materials-agent/`; агент не меняет каталог и не пишет в граф.
-
-Очередь покрывает компетенции profession view (включая переиспользованные блоки через `canonicalIds`). Полные прогоны: UX/UI — 33 элемента / 65 материалов / 31 связь (34/34 компетенций); Product — 31 / 68 / 35 (30/30); Motion — 30 / 59 / 26 (28/28); Graphic — 20 / 39 / 22 (18/18). Принято **39 материалов** в `catalog.materials` (free/freemium, relevance ≥ 0.7, с привязкой к accepted-блоку). Материалы встроены в контент MVP как карточки. Команда приёмки:
-
-```bash
-npm run materials:agent:queue -- --domain it --profession product --per-competency 1 \
-  --sources wikipedia,habr,medium --concurrency 3 --retry 2 --classify --budget-usd 0.15 --max-calls 120
-npm run materials:agent:review -- --domain it --profession product
-npm run materials:accept -- --journal data/materials-agent/it-product-queue.json --min-relevance 0.7 --write
-```
-
-Приёмка по вердикту методолога (Pass E) и лимиты покрытия — [`COS-REL-009`](docs/12-release/COS-REL-009-Materials-Review-and-Confirmation.md):
-
-```bash
-# LLM-ревью: вердикт accept/confirm/reject с уверенностью и whyUseful
-npm run materials:verify -- --domain it --profession motion --journal data/materials-agent/it-motion-queue.json
-# приёмка по вердикту: accept → без бейджа, confirm → с бейджем «Подтвердить»
-npm run materials:accept -- --journal data/materials-agent/it-motion-verified.json --min-relevance 0.7 --write
-# отчёт «компетенция × формат» против лимитов 2–5; --mark-attempt отмечает раунд поиска
-npm run materials:coverage -- --profession motion --report
-# агрегаты пользовательских подтверждений/блокировок для пайплайна
-npm run reviews:export
-```
-
-Неподтверждённые материалы показываются с бейджем «Подтвердить»: залогиненный пользователь
-подтверждает или блокирует через модалку, пороги — доля от активных залогиненных (5%/10%).
-
-## Авто-расширение ресурсной базы
-
-Реестр учебных источников можно пополнять автоматически, а не только руками. `sources:expand` опрашивает
-**официальные API** (Wikipedia extlinks, GitHub Search, Brave Search; YouTube Data API — при ключах; Google CSE — только по списку сайтов), нормализует и скорит кандидатов, дедупит с реестром и (опционально) отдаёт их методологу-LLM:
-
-Перед первым прогоном проверь провайдеров (доступность API, ключи, квоты, отсутствие бот-проверок):
-
-```bash
-npm run sources:provider-test -- --provider all
-# проверить конкретный канал по RSS без ключа:
-npm run sources:provider-test -- --provider youtube --channel-id UC...
-```
-
-Полезные команды обслуживания реестра:
-
-```bash
-npm run sources:access -- --proposal data/learning-sources/access-proposal-2026-11-03.json --write  # метки доступа
-npm run sources:remove -- --domains site1.ru,site2.ru --write   # удалить источники + связи + решения review
-npm run reviews:decide -- --release beta-1 --write              # добрать AI-assisted source review для gate
-```
-
-```bash
-# dry-run: показать кандидатов, реестр не меняется
-npm run sources:expand -- --profession motion --per-competency 2
-# с LLM-ревью (accept/confirm/reject) и записью в реестр + HTTP-аудит
-npm run sources:expand -- --profession motion --classify --write --audit --review-decisions
-# затем пересобрать модель и проверить релиз
-npm run model:sync -- --domain it --profession motion --write
-npm run release:validate -- --release beta-1
-```
-
-Домен, который уже есть в реестре, не дублируется: найденный материал связывается с компетенцией
-через `learning-source-links.json`. Новые источники получают `status: planned`, после `--audit` —
-`active`/`blocked`; `--review-decisions` добавляет AI-assisted решения source review, чтобы они
-могли попасть в публикацию. Подключение ключей — в `.env.example`; без ключей работают Wikipedia, GitHub и YouTube RSS.
-Для веб-поиска используется **Brave Search API** (независимый индекс; free ≈1 000 запросов/мес — $5 бесплатных кредитов, дальше $5/1000);
-Google CSE подходит только для поиска по курируемому списку сайтов — режим «весь интернет» отключён в 2026.
-YouTube не скрейпим: только официальный Data API и публичные RSS-ленты каналов.
-
-
-## Модель сфера → профессия → компетенции
-
-`npm run model:sync -- --domain it --profession uxui --write` собирает `model/spheres.json`, `model/professions.json`, `model/competencies.json` и `model/profession-competencies/uxui.json`. Компетенции хранятся один раз в едином массиве; профессия ссылается на них с tier/order. Источники — `sources/spheres/it.json` и `sources/professions/it.uxui.json`.
-
-
-## Профессиональные view
-
-`model/professions/views/<profession>.json` задают разделы и приоритеты для разных профессий, переиспользуя единый массив компетенций. `model:views --write` генерирует `model/profession-competencies/*.json` и source-файлы профессий. Схемы собраны для 12 профессий: UX/UI, product, motion, graphic + presentation, appdesign, uxresearch, artdir, 3ddesigner, interior, webdesigner ([COS-RES-023](docs/09-research/COS-RES-023-Additional-Designer-Professions.md)) + aidesigner ([COS-RES-025](docs/09-research/COS-RES-025-AI-Designer-Profession.md)).
-
-
-## Карты профессий
-
-`npm run canvas:profession -- --profession motion` (также `product`, `graphic`) собирает HTML-карту профессии из profession view и единого массива компетенций.
-
-
-Сборка по профессии: `npm run professions:collect -- --domain it --profession motion`, затем `npm run tags:collect -- --domain it --profession motion`. Запросы берутся из `sources/professions/<profession>.json`.
-
-
-Единый массив компетенций: **122** (34 базовых + 69 профессио-специфичных + 9 сквозных AI-компетенций + 10 компетенций AI-дизайнера; [COS-RES-024](docs/09-research/COS-RES-024-AI-Skills-Layer.md), [COS-RES-025](docs/09-research/COS-RES-025-AI-Designer-Profession.md)); 12 profession views: uxui 43, product 39, motion 37, graphic 27, presentation 22, appdesign 35, uxresearch 27, artdir 25, 3ddesigner 24, interior 23, webdesigner 33, aidesigner 27; каталог: 54 блока, 237 тегов (у всех accepted-блоков заполнены `canonicalIds`).
-
-Priority/order профессии хранится в `model/professions/views/<profession>.json` и материализуется в `model/profession-competencies/<profession>.json` вместе с prerequisites. Отдельный `priority/product.json` не вводится: `priority/uxui.json` — block-level accepted marks UX/UI, а Product работает на уровне канонических компетенций. Проверка:
-
-```bash
+npm run model:sync -- --domain it --profession uxui --write
 npm run model:validate -- --domain it --profession product --all --require-blocks
 ```
 
+## Документация
 
-Сетевые канвасы профессий: `npm run canvas:profession-network -- --profession product` (также `motion`, `graphic`). Все три графа связные, с единственным корнем `ux-design-thinking`: Product 30 узлов / 41 связь, Motion 28 / 42, Graphic 18 / 33.
+- Источник правды — `docs/` с разделами `00-foundation` … `12-release`.
+- Программа Beta 1, quality bar, runbook: [`docs/12-release/`](docs/12-release/).
+- Решения, меняющие рамку: [`COS-REL-008`](docs/12-release/COS-REL-008-Decision-Log.md).
+- Финальная сводка ресурсной базы:
+  [`beta-1-sources-expansion-2026-11-03.md`](docs/12-release/reports/beta-1-sources-expansion-2026-11-03.md).
+- Аудит документации и legacy-скриптов:
+  [`cleanup-2026-11-03.md`](docs/12-release/reports/cleanup-2026-11-03.md).
+- Стратегическая дорожная карта: [`COS-BP-005`](docs/08-business-plan/COS-BP-005-Product-Roadmap-AXIONA-COS.md).
+- Термины: [`docs/00-foundation/05-domain-glossary.md`](docs/00-foundation/05-domain-glossary.md).
 
+## Хостинг и статус
 
-Сопоставление тегов компетенциям: `mapping/it.<profession>.json` + `npm run mapping:validate -- --domain it --profession <profession> --report`. Product 30/30 (direct 11 / adjacent 15 / none 4), Motion 28/28 (12/11/5), Graphic 18/18 (11/6/1). Подробнее — [COS-RES-020](docs/09-research/COS-RES-020-Product-Competency-Assembly.md) и [COS-RES-021](docs/09-research/COS-RES-021-Motion-Graphic-Competency-Assembly.md). Practicum подключён как источник для всех четырёх профессий; теги курсов проходят санитайзер.
+Локальная разработка и Vercel demo (`apps/web/vercel.json`). Корпоративный сайт — `axiona.world`;
+переезд на РФ-хостинг и публичный запуск — после готовности MVP и юридического sign-off.
+Vercel demo не является продакшн-контуром персональных данных: реальные регистрации там не открываются.
 
-
-Материалы новых профессий: `npm run materials:agent:review -- --domain it --profession motion` (также `product`, `graphic`). Review показывает покрытие компетенций профессии; это review-артефакты, не accepted-материалы.
-
-
-Evidence-backed блоки: в `seeds/it.json` заполнены `tagHints` для 11 профессио-специфичных компетенций; `competency:seed --domain it --profession product --tags-file data/competency/tags-it-product.json`, затем `competency:build` дают предложения блоков с реальными sourceRefs (`data/competency/proposed-blocks-*.json`, не приняты).
-
-Human-review канвас: `npm run canvas:tabs`, затем открыть `web/competencies-review-canvas.html` — переключение 12 профессий в одном окне (UX/UI, Product, Motion, Graphic, Презентации, Приложения, UX-исследования, Арт-дирекшн, 3D, Интерьеры, Веб-дизайн, AI-дизайнер).
-
-
-Handoff для продолжения: [COS-RES-019](docs/09-research/COS-RES-019-Competency-Module-Session-Handoff.md).
-
-
-Библиотека учебных источников: [COS-RES-022](docs/09-research/COS-RES-022-Learning-Sources-Library.md). Связи «компетенция → источник» ведутся в `model/learning-source-links.json` и мержатся при `model:sync`; реестр — 118 источников (89 active), покрытие: UX/UI 41/43, Product 37/39, Motion 36/37, Graphic 27/27, остальные профессии — 100%. Команды: `npm run learning:validate`, `npm run learning:audit`, `npm run learning:map -- --report`, `npm run learning:topics -- --profession motion --report` (robots-safe извлечение тем, без копирования текста), `npm run learning:discover`.
-
-
-Аудит восьми дополнительных профессий: [COS-RES-026](docs/09-research/COS-RES-026-Additional-Designers-Readiness-Audit.md).
-
-
-Агрегация открытых источников по профессиям: [COS-RES-027](docs/09-research/COS-RES-027-Open-Learning-Sources-Aggregation.md), `npm run learning:aggregate`.
+🚧 Beta 1: контентный gate пройден, идёт финальный spot-check источников и подготовка `ready`-релиза.

@@ -24,15 +24,17 @@ export function AppShell({
       <NavRail user={user} />
       <main className="app-main">
         {isPlain ? (
-          <div className="page-plain">
-            {children}
+          <>
+            <div className="page-plain">{children}</div>
             <SiteFooter />
-          </div>
+          </>
         ) : isSecondary ? (
-          <div className="page-screen">
-            <div className="page-surface">{children}</div>
+          <>
+            <div className="page-screen">
+              <div className="page-surface">{children}</div>
+            </div>
             <SiteFooter />
-          </div>
+          </>
         ) : (
           children
         )}

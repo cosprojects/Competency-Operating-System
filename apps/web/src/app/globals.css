@@ -3287,6 +3287,7 @@ html[data-consent="pending"] .canvas-toolbar {
 .site-footer {
   position: relative;
   width: 100%;
+  margin-top: 40px;
   overflow: hidden;
   background: #111827;
   color: #94a3b8;

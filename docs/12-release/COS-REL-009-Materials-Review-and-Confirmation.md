@@ -324,9 +324,11 @@ LLM auto_accepted              -> auto_accepted (без бейджа)
 
 - **Сейчас**: SSR-страница профессии подмешивает актуальные статусы из БД к статическому контенту;
   скрытые ресурсы не рендерятся; бейджи считаются на сервере.
-- **Пайплайн**: `npm run reviews:export -- --out data/reviews/source-reviews.json` выгружает решения;
-  `materials:accept --reviews <file>` не принимает заблокированные и помечает подтверждённые;
-  `release:build` учитывает итоговый `reviewStatus`.
+- **Пайплайн**: `npm run reviews:export` выгружает решения; `materials:accept --reviews <file>`
+  не принимает заблокированные материалы; `release:build` читает `data/reviews/source-reviews.json`
+  и не публикует заблокированные источники/материалы (`source_blocked`, не блокирующий gap).
+- **Админка**: `/admin/reviews` — очередь спорных, принудительный блок и снятие админ-блока
+  (`/api/admin/source-reviews`).
 - **Аналитика**: события `source_review_open`, `source_review_submit` (`action`, `reason`).
 
 ### 7.5. Метки доступа
@@ -447,9 +449,11 @@ model SourceReview {
 
 ## 11. Реализация: минимум изменений
 
-Состояние на 2026-11-03: **этапы 1–2 реализованы** (метки доступа, бейдж, модалка, БД, API,
-SSR-мерж, аналитика, тесты логики порогов). Этап 3 (Pass E и лимиты в пайплайне) и этап 4
-(админка, перепроверка, `reviews:export`) — следующие.
+Состояние на 2026-11-03: **этапы 1–4 реализованы**. Готово: метки доступа, бейдж, модалка,
+БД `SourceReview`, API, SSR-мерж, аналитика, Pass E `materials:verify`, приёмка по вердикту,
+`materials:coverage` с лимитами, `reviews:export`, админка `/admin/reviews`, фильтрация
+заблокированного в `materials:accept` и `release:build`. Перепроверка по событиям
+(`materials:recheck`) остаётся следующим шагом — см. §12.
 
 Этап 1 — метки и бейдж без БД (0,5 дня):
 
@@ -497,6 +501,34 @@ SSR-мерж, аналитика, тесты логики порогов). Эт�
 - `apps/web/src/app/globals.css` — стили бейджа;
 - `tests/source-review.test.ts` — пороги, статусы, тексты.
 
+Фактические файлы этапа 3:
+
+- `src/methodology/v1/materials-agent/limits.ts` — лимиты 2–5, раунды, cooldown, `acceptanceOf`;
+- `src/methodology/v1/materials-agent/verdict.ts` — Pass E: вердикт, уверенность, `whyUseful`, флаги;
+- `src/methodology/v1/competency/llm/schemas.ts`, `llm/prompts.ts` — схема и промпт ревью;
+- `src/methodology/v1/materials-agent/accept.ts` — приёмка по вердикту (accept/confirm/reject);
+- `src/methodology/v1/materials-agent/coverage.ts` + `cli/coverage.ts` — отчёт «компетенция × формат»;
+- `src/methodology/v1/materials-agent/cli/verify.ts` — команда `materials:verify`;
+- `src/methodology/v1/materials-agent/cli/accept.ts` — `--reviews` для фильтра блокировок;
+- `scripts/reviews/export.ts` — `reviews:export` (агрегаты голосов для пайплайна);
+- `scripts/release/lib.ts` — `confidence`, `relevance`, `whyUseful`, `reviewStatus` в публичном контенте;
+- `tests/material-review.test.ts`, `tests/coverage.test.ts`, `tests/release.test.ts` (блокировка);
+- `apps/web/src/app/admin/reviews/page.tsx`, `apps/web/src/components/admin/AdminReviewActions.tsx`,
+  `apps/web/src/app/api/admin/source-reviews/route.ts`.
+
+Команды:
+
+```bash
+npm run materials:verify  -- --domain it --profession motion --journal data/materials-agent/it-motion-queue.json
+npm run materials:accept  -- --journal data/materials-agent/it-motion-verified.json --min-relevance 0.7 --write
+npm run materials:coverage -- --profession motion --report
+npm run materials:coverage -- --profession motion --mark-attempt   # отметить раунд поиска
+npm run reviews:export
+npm run materials:accept -- --reviews data/reviews/source-reviews.json --journal data/materials-agent/it-motion-verified.json --write
+```
+
+Админка: `/admin/reviews` (очередь блокировок, принудительный блок/снятие).
+
 ## 12. Out of scope
 
 - персональные рекомендации и уровни (следующий слой ADE);
@@ -542,3 +574,5 @@ SSR-мерж, аналитика, тесты логики порогов). Эт�
 | 1.0.0 | 2026-11-03 | Первая версия: лимиты 2–5 на формат, Pass E, бейдж/модалка, аппрув, метки доступа |
 | 1.1.0 | 2026-11-03 | Решения: голосуют залогиненные, порог — доля от активных залогиненных (5%/10% с min/max), показываем все доступы, правило №7 методолога уточнено и Pass E добавлен в файл роли |
 | 1.2.0 | 2026-11-03 | Реализованы этапы 1–2: метки доступа, бейдж «Подтвердить», модалка, модель `SourceReview`, API, SSR-мерж, тесты логики; web build и 175 тестов проходят |
+| 1.3.0 | 2026-11-03 | Реализован этап 3: Pass E (`materials:verify`), приёмка по вердикту, лимиты и отчёт `materials:coverage`, `reviews:export`, поля `confidence`/`reviewStatus` в контенте; 190 тестов |
+| 1.4.0 | 2026-11-03 | Реализован этап 4: админка `/admin/reviews` с блокировкой/снятием, фильтрация заблокированного в `materials:accept` и `release:build`; 191 тест |

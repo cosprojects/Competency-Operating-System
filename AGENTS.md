@@ -66,6 +66,26 @@ AI-native платформа компетенций: карта професси
 - Термины: `docs/00-foundation/05-domain-glossary.md`. Решения, меняющие рамку: `docs/12-release/COS-REL-008-Decision-Log.md`.
 - Роли проекта описаны в `agents/AGENTS-*.md` — читай их перед работой в соответствующей области.
 
+## Ассеты и изображения
+
+Статика приложения — это `apps/web/public/` (Next.js отдаёт её по абсолютным путям от корня: `/brand/logo-mark.svg`).
+
+| Что | Куда | Как подключать |
+|---|---|---|
+| Иконки интерфейса | `apps/web/src/components/icons.tsx` (inline SVG) | `import { IconStar }` — предпочтительный путь: цвет через `currentColor`, размер через CSS |
+| Бренд, логотипы | `apps/web/public/brand/` | `<img src="/brand/logo-mark.svg" width={34} height={32} alt="" />` |
+| Шрифты | `apps/web/public/fonts/` | `@font-face { src: url("/fonts/...") }` в `globals.css` |
+| Растровые изображения, иллюстрации, og-картинки | `apps/web/public/images/` | `<img src="/images/..." />` или абсолютный URL |
+| Сгенерированные канвасы | `apps/web/public/canvas/` | генерируются `npm run web:canvases`, в `.gitignore` — не коммитить руками |
+| Снимки и референсы Figma | `docs/design/figma/<fileKey>/` | служебный артефакт, не ассет приложения; `images/` в `.gitignore` |
+
+Правила:
+
+- Имя файла — kebab-case, без пробелов и кириллицы; SVG экспортировать с `viewBox` и без фиксированных `width/height` в корне.
+- Для новой иконки сначала проверь `icons.tsx`: возможно, она уже есть. Файлы в `apps/web/public/icons/` кодом сейчас не используются — не добавляй туда новых без причины.
+- Референс из Figma превращается в ассет только осознанным экспортом: иконка → компонент или `public/icons`, картинка → `public/images`. Снимок узла из пайплайна в `public/` не кладём.
+- Скриншоты для отчётов и документации — в `docs/…`, не в `public/`.
+
 ## Проверка перед «готово»
 
 ```sh

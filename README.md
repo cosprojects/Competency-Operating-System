@@ -77,6 +77,61 @@ npm run materials:agent:review -- --domain it --profession product
 npm run materials:accept -- --journal data/materials-agent/it-product-queue.json --min-relevance 0.7 --write
 ```
 
+Приёмка по вердикту методолога (Pass E) и лимиты покрытия — [`COS-REL-009`](docs/12-release/COS-REL-009-Materials-Review-and-Confirmation.md):
+
+```bash
+# LLM-ревью: вердикт accept/confirm/reject с уверенностью и whyUseful
+npm run materials:verify -- --domain it --profession motion --journal data/materials-agent/it-motion-queue.json
+# приёмка по вердикту: accept → без бейджа, confirm → с бейджем «Подтвердить»
+npm run materials:accept -- --journal data/materials-agent/it-motion-verified.json --min-relevance 0.7 --write
+# отчёт «компетенция × формат» против лимитов 2–5; --mark-attempt отмечает раунд поиска
+npm run materials:coverage -- --profession motion --report
+# агрегаты пользовательских подтверждений/блокировок для пайплайна
+npm run reviews:export
+```
+
+Неподтверждённые материалы показываются с бейджем «Подтвердить»: залогиненный пользователь
+подтверждает или блокирует через модалку, пороги — доля от активных залогиненных (5%/10%).
+
+## Авто-расширение ресурсной базы
+
+Реестр учебных источников можно пополнять автоматически, а не только руками. `sources:expand` опрашивает
+**официальные API** (Wikipedia extlinks, GitHub Search, Brave Search; YouTube Data API — при ключах; Google CSE — только по списку сайтов), нормализует и скорит кандидатов, дедупит с реестром и (опционально) отдаёт их методологу-LLM:
+
+Перед первым прогоном проверь провайдеров (доступность API, ключи, квоты, отсутствие бот-проверок):
+
+```bash
+npm run sources:provider-test -- --provider all
+# проверить конкретный канал по RSS без ключа:
+npm run sources:provider-test -- --provider youtube --channel-id UC...
+```
+
+Полезные команды обслуживания реестра:
+
+```bash
+npm run sources:access -- --proposal data/learning-sources/access-proposal-2026-11-03.json --write  # метки доступа
+npm run sources:remove -- --domains site1.ru,site2.ru --write   # удалить источники + связи + решения review
+npm run reviews:decide -- --release beta-1 --write              # добрать AI-assisted source review для gate
+```
+
+```bash
+# dry-run: показать кандидатов, реестр не меняется
+npm run sources:expand -- --profession motion --per-competency 2
+# с LLM-ревью (accept/confirm/reject) и записью в реестр + HTTP-аудит
+npm run sources:expand -- --profession motion --classify --write --audit --review-decisions
+# затем пересобрать модель и проверить релиз
+npm run model:sync -- --domain it --profession motion --write
+npm run release:validate -- --release beta-1
+```
+
+Домен, который уже есть в реестре, не дублируется: найденный материал связывается с компетенцией
+через `learning-source-links.json`. Новые источники получают `status: planned`, после `--audit` —
+`active`/`blocked`; `--review-decisions` добавляет AI-assisted решения source review, чтобы они
+могли попасть в публикацию. Подключение ключей — в `.env.example`; без ключей работают Wikipedia, GitHub и YouTube RSS.
+Для веб-поиска используется **Brave Search API** (независимый индекс; free ≈1 000 запросов/мес — $5 бесплатных кредитов, дальше $5/1000);
+Google CSE подходит только для поиска по курируемому списку сайтов — режим «весь интернет» отключён в 2026.
+YouTube не скрейпим: только официальный Data API и публичные RSS-ленты каналов.
+
 
 ## Модель сфера → профессия → компетенции
 

@@ -97,7 +97,16 @@
 | `npm run mapping:draft` | `node --experimental-strip-types src/methodology/v1/competency/cli/mapping-draft.ts` |
 | `npm run blocks:from-mapping` | `node --experimental-strip-types src/methodology/v1/competency/cli/blocks-from-mapping.ts` |
 | `npm run learning:aggregate` | `node --experimental-strip-types src/methodology/v1/learning-sources/cli/aggregate.ts` |
+| `npm run sources:expand` | `node --experimental-strip-types src/methodology/v1/learning-sources/cli/expand.ts` |
+| `npm run sources:provider-test` | `node --experimental-strip-types src/methodology/v1/learning-sources/cli/provider-test.ts` |
 | `npm run materials:accept` | `node --experimental-strip-types src/methodology/v1/materials-agent/cli/accept.ts` |
+| `npm run materials:verify` | `node --experimental-strip-types src/methodology/v1/materials-agent/cli/verify.ts` |
+| `npm run materials:coverage` | `node --experimental-strip-types src/methodology/v1/materials-agent/cli/coverage.ts` |
+| `npm run reviews:export` | `node --experimental-strip-types scripts/reviews/export.ts` |
+| `npm run reviews:decide` | `node --experimental-strip-types scripts/reviews/decide.ts` |
+| `npm run sources:remove` | `node --experimental-strip-types src/methodology/v1/learning-sources/cli/remove.ts` |
+| `npm run sources:access` | `node --experimental-strip-types src/methodology/v1/learning-sources/cli/access.ts` |
+| `npm run sources:repair` | `node --experimental-strip-types src/methodology/v1/learning-sources/cli/repair.ts` |
 
 ## Как пользоваться
 

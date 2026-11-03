@@ -72,6 +72,22 @@ interface LearningSourceLinksFile {
   links: LearningSourceLink[];
 }
 
+/** Экспорт `reviews:export`: пользовательские подтверждения и блокировки. */
+export interface ReviewExportPair {
+  sourceId: string;
+  competencyId: string;
+  confirms: number;
+  blocks: number;
+  status: string;
+}
+
+export interface ReviewExportFile {
+  generatedAt: string;
+  activeUsers: number;
+  blockedSourceIds?: string[];
+  pairs?: ReviewExportPair[];
+}
+
 export interface ReleaseInputs {
   root: string;
   manifestPath: string;
@@ -85,6 +101,8 @@ export interface ReleaseInputs {
   professionFiles: Map<string, ProfessionCompetencyFile>;
   views: Map<string, ProfessionView | null>;
   linksByCompetency: Map<string, LearningSourceLink>;
+  /** Пользовательские блокировки из `reviews:export` (необязательно). */
+  reviewExport?: ReviewExportFile;
 }
 
 export type GapType =
@@ -101,6 +119,7 @@ export type GapType =
   | "source_date_invalid"
   | "source_review_missing"
   | "source_review_incomplete"
+  | "source_blocked"
   | "prerequisite_missing"
   | "prerequisite_order";
 
@@ -231,6 +250,9 @@ export async function loadReleaseInputs(root: string, manifestPath: string): Pro
   );
   const linksByCompetency = new Map<string, LearningSourceLink>();
   for (const link of linksFile?.links ?? []) linksByCompetency.set(link.competencyId, link);
+  const reviewExport = await readOptionalJson<ReviewExportFile>(
+    path.join(root, "data/reviews/source-reviews.json"),
+  );
 
   const professionFiles = new Map<string, ProfessionCompetencyFile>();
   const views = new Map<string, ProfessionView | null>();
@@ -261,6 +283,7 @@ export async function loadReleaseInputs(root: string, manifestPath: string): Pro
     professionFiles,
     views,
     linksByCompetency,
+    ...(reviewExport ? { reviewExport } : {}),
   };
 }
 
@@ -281,6 +304,14 @@ export function evaluateRelease(
     }
   }
   const sourceById = new Map(inputs.registry.sources.map((source) => [source.id, source]));
+  const blockedSourceIds = new Set(inputs.reviewExport?.blockedSourceIds ?? []);
+  const blockedPairs = new Set(
+    (inputs.reviewExport?.pairs ?? [])
+      .filter((pair) => pair.status === "blocked")
+      .map((pair) => `${pair.competencyId}|${pair.sourceId}`),
+  );
+  const isBlocked = (competencyId: string, sourceId: string): boolean =>
+    blockedSourceIds.has(sourceId) || blockedPairs.has(`${competencyId}|${sourceId}`);
   const reviewByKey = new Map(
     inputs.sourceReview.decisions.map((decision) => [
       sourceReviewKey(decision.professionId ?? "*", decision.competencyId, decision.sourceId),
@@ -444,6 +475,17 @@ export function evaluateRelease(
         }
         if (seenEffective.has(effectiveId)) continue;
         seenEffective.add(effectiveId);
+        if (isBlocked(competency.id, effectiveId)) {
+          rowGaps.push({
+            professionId,
+            competencyId: competency.id,
+            type: "source_blocked",
+            detail: `Источник ${effectiveId} заблокирован пользователями (reviews:export)`,
+            sourceId: effectiveId,
+            blocking: false,
+          });
+          continue;
+        }
         const source = sourceById.get(effectiveId);
         if (!source) {
           rowGaps.push({
@@ -562,8 +604,11 @@ export function evaluateRelease(
         knowledge,
         skills,
         sources,
-        materials: inputs.catalog.materials.filter((material) =>
-          material.status === "accepted" && material.links.some((link) => blocks.some((block) => block.id === link.competencyId)),
+        materials: inputs.catalog.materials.filter(
+          (material) =>
+            material.status === "accepted" &&
+            material.links.some((link) => blocks.some((block) => block.id === link.competencyId)) &&
+            !isBlocked(competency.id, material.id),
         ),
         gaps: rowGaps,
         passed: !rowGaps.some((gap) => gap.blocking),
@@ -662,6 +707,11 @@ export interface PublicSource {
   url: string;
   lastChecked: string;
   rationale?: string;
+  /** Оценка методолога-LLM (0..1) и статус подтверждения — COS-REL-009. */
+  confidence?: number;
+  relevance?: number;
+  whyUseful?: string;
+  reviewStatus?: "auto_accepted" | "needs_confirmation" | "confirmed" | "disputed" | "blocked";
 }
 
 export interface PublicCompetency {
@@ -804,7 +854,7 @@ function toPublicCompetency(row: CompetencyEvaluation, publishedIds: Set<string>
   const sources = [...new Map(row.sources.map((item) => [item.sourceId, item])).values()]
     .map(toPublicSource)
     .sort((a, b) => a.title.localeCompare(b.title, "ru"));
-  const materialSources = row.materials.map((material) => {
+  const materialSources: PublicSource[] = row.materials.map((material) => {
     const link = material.links.find((item) => row.blocks.some((block) => block.id === item.competencyId));
     return {
       id: material.id,
@@ -817,6 +867,17 @@ function toPublicCompetency(row: CompetencyEvaluation, publishedIds: Set<string>
       url: material.url,
       lastChecked: material.retrievedAt,
       ...(link?.reason ? { rationale: link.reason } : {}),
+      ...(typeof link?.relevance === "number" ? { relevance: link.relevance } : {}),
+      ...(material.review
+        ? {
+            confidence: material.review.confidence,
+            whyUseful: material.review.whyUseful,
+            reviewStatus:
+              material.review.status === "needs_confirmation"
+                ? ("needs_confirmation" as const)
+                : ("auto_accepted" as const),
+          }
+        : { reviewStatus: "needs_confirmation" as const }),
     };
   });
   const sourceIds = new Set(sources.map((source) => source.id));

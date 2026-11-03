@@ -1,4 +1,4 @@
-import type { MaterialKind } from "../competency/types.ts";
+import type { MaterialKind, MaterialReview } from "../competency/types.ts";
 
 /**
  * Лимиты покрытия материалов (COS-REL-009 §7.1).
@@ -105,9 +105,12 @@ export function resolveFormatCoverage(input: FormatCoverageInput): FormatCoverag
   const max = COVERAGE_LIMITS.maxPerFormat;
   if (input.accepted >= target) return { target, min, max, status: "ok" };
   if (input.accepted >= min) return { target, min, max, status: "ok" };
-  if (input.attempts <= 0) return { target, min, max, status: "not_started" };
+  if (input.attempts <= 0) {
+    return { target, min, max, status: input.accepted > 0 ? "below_min" : "not_started" };
+  }
   if (input.attempts >= COVERAGE_LIMITS.maxFormatRounds) {
-    return { target, min, max, status: "insufficient", ...(nextAttempt(input.lastAttemptAt, input.now) ? { nextAttemptAt: nextAttempt(input.lastAttemptAt, input.now) } : {}) };
+    const next = nextAttempt(input.lastAttemptAt, input.now);
+    return { target, min, max, status: "insufficient", ...(next ? { nextAttemptAt: next } : {}) };
   }
   return { target, min, max, status: "below_min" };
 }
@@ -130,3 +133,20 @@ export type CoverageState = Record<
   string,
   Partial<Record<MaterialFormat, CoverageStateEntry>>
 >;
+
+/** Итог приёмки по вердикту LLM и релевантности связи с компетенцией. */
+export function acceptanceOf(
+  review: Pick<MaterialReview, "verdict" | "confidence">,
+  relevance: number,
+): "accepted" | "needs_confirmation" | "rejected" {
+  if (review.verdict === "reject") return "rejected";
+  if (relevance < REVIEW_LIMITS.confirmRelevance) return "rejected";
+  if (
+    review.verdict === "accept" &&
+    review.confidence >= REVIEW_LIMITS.acceptConfidence &&
+    relevance >= REVIEW_LIMITS.acceptRelevance
+  ) {
+    return "accepted";
+  }
+  return "needs_confirmation";
+}

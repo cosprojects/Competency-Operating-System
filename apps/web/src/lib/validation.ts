@@ -26,6 +26,11 @@ export const adminFeedbackStatusSchema = z.object({
   status: z.enum(["NEW", "TRIAGED", "RESOLVED"]),
 });
 
+export const adminSourceReviewSchema = z.object({
+  sourceId: z.string().trim().min(1).max(200),
+  action: z.enum(["BLOCK", "UNBLOCK"]),
+});
+
 export const feedbackTypeSchema = z.enum([
   "CONTENT_ERROR",
   "MISSING_COMPETENCY",

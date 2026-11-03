@@ -283,4 +283,17 @@ describe("release evaluation", () => {
     assert.equal(content.professions[0]!.sections[0]!.competencies.length, 1);
     assert.equal(content.professions[0]!.sections[0]!.competencies[0]!.id, "test-one");
   });
+
+  it("не публикует источник, заблокированный пользователями", () => {
+    const value = inputs();
+    value.reviewExport = {
+      generatedAt: "2026-11-03",
+      activeUsers: 1,
+      blockedSourceIds: ["source-1"],
+    };
+    const evaluation = evaluateRelease(value, { asOf });
+    assert.equal(evaluation.totals.passed, false);
+    assert.ok(evaluation.gaps.some((gap) => gap.type === "source_blocked" && !gap.blocking));
+    assert.equal(evaluation.totals.publishedLinks, 0);
+  });
 });

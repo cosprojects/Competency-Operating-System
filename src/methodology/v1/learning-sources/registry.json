@@ -1,6 +1,6 @@
 {
   "registryVersion": "1.0.0",
-  "updatedAt": "2026-10-28",
+  "updatedAt": "2026-11-03",
   "sources": [
     {
       "id": "motiondesign-school-courses",
@@ -8,7 +8,18 @@
       "url": "https://motiondesign.school/courses/",
       "kind": "school",
       "professionIds": [
-        "it.motion"
+        "it.motion",
+        "it.uxui",
+        "it.3ddesigner",
+        "it.aidesigner",
+        "it.artdir",
+        "it.graphic",
+        "it.interior",
+        "it.presentation",
+        "it.product",
+        "it.webdesigner",
+        "it.appdesign",
+        "it.uxresearch"
       ],
       "languages": [
         "en",
@@ -40,7 +51,10 @@
       "url": "https://www.youtube.com/@motiondesignschool",
       "kind": "video-channel",
       "professionIds": [
-        "it.motion"
+        "it.motion",
+        "it.uxui",
+        "it.appdesign",
+        "it.3ddesigner"
       ],
       "languages": [
         "en"
@@ -65,7 +79,16 @@
       "url": "https://www.petrick.co/projects/mds-what-is-motion-design-school",
       "kind": "portfolio-case",
       "professionIds": [
-        "it.motion"
+        "it.motion",
+        "it.3ddesigner",
+        "it.aidesigner",
+        "it.artdir",
+        "it.graphic",
+        "it.interior",
+        "it.presentation",
+        "it.product",
+        "it.uxui",
+        "it.webdesigner"
       ],
       "languages": [
         "en"
@@ -90,7 +113,18 @@
       "url": "https://schoolofmotion.com/",
       "kind": "school",
       "professionIds": [
-        "it.motion"
+        "it.motion",
+        "it.3ddesigner",
+        "it.aidesigner",
+        "it.appdesign",
+        "it.artdir",
+        "it.graphic",
+        "it.interior",
+        "it.presentation",
+        "it.product",
+        "it.uxresearch",
+        "it.uxui",
+        "it.webdesigner"
       ],
       "languages": [
         "en"
@@ -116,7 +150,8 @@
       "url": "https://vimeo.com/motiondesignschool",
       "kind": "video-channel",
       "professionIds": [
-        "it.motion"
+        "it.motion",
+        "it.3ddesigner"
       ],
       "languages": [
         "en"
@@ -195,7 +230,15 @@
         "it.motion",
         "it.uxui",
         "it.product",
-        "it.graphic"
+        "it.graphic",
+        "it.3ddesigner",
+        "it.aidesigner",
+        "it.appdesign",
+        "it.artdir",
+        "it.interior",
+        "it.presentation",
+        "it.uxresearch",
+        "it.webdesigner"
       ],
       "languages": [
         "ru"
@@ -223,7 +266,13 @@
       "url": "https://schoolofmotion.com/free",
       "kind": "school",
       "professionIds": [
-        "it.motion"
+        "it.motion",
+        "it.aidesigner",
+        "it.appdesign",
+        "it.graphic",
+        "it.uxui",
+        "it.webdesigner",
+        "it.3ddesigner"
       ],
       "languages": [
         "en"
@@ -274,7 +323,17 @@
       "kind": "course-platform",
       "professionIds": [
         "it.uxui",
-        "it.product"
+        "it.product",
+        "it.3ddesigner",
+        "it.aidesigner",
+        "it.appdesign",
+        "it.artdir",
+        "it.graphic",
+        "it.interior",
+        "it.motion",
+        "it.presentation",
+        "it.webdesigner",
+        "it.uxresearch"
       ],
       "languages": [
         "en"
@@ -299,7 +358,18 @@
       "url": "https://www.coursera.org/learn/uxui-design-fundamentals-usability-and-visual-principles",
       "kind": "course-platform",
       "professionIds": [
-        "it.uxui"
+        "it.uxui",
+        "it.3ddesigner",
+        "it.aidesigner",
+        "it.appdesign",
+        "it.artdir",
+        "it.graphic",
+        "it.interior",
+        "it.motion",
+        "it.presentation",
+        "it.product",
+        "it.uxresearch",
+        "it.webdesigner"
       ],
       "languages": [
         "en"
@@ -325,7 +395,16 @@
       "kind": "reference",
       "professionIds": [
         "it.uxui",
-        "it.product"
+        "it.product",
+        "it.appdesign",
+        "it.motion",
+        "it.uxresearch",
+        "it.webdesigner",
+        "it.artdir",
+        "it.graphic",
+        "it.aidesigner",
+        "it.interior",
+        "it.presentation"
       ],
       "languages": [
         "en"
@@ -374,7 +453,17 @@
       "kind": "course-platform",
       "professionIds": [
         "it.uxui",
-        "it.product"
+        "it.product",
+        "it.3ddesigner",
+        "it.aidesigner",
+        "it.appdesign",
+        "it.artdir",
+        "it.graphic",
+        "it.interior",
+        "it.motion",
+        "it.presentation",
+        "it.uxresearch",
+        "it.webdesigner"
       ],
       "languages": [
         "en"
@@ -451,7 +540,18 @@
       "url": "https://www.coursera.org/learn/microsoft-product-design-and-ux-ui-fundamentals",
       "kind": "course-platform",
       "professionIds": [
-        "it.product"
+        "it.product",
+        "it.3ddesigner",
+        "it.aidesigner",
+        "it.appdesign",
+        "it.artdir",
+        "it.graphic",
+        "it.interior",
+        "it.motion",
+        "it.presentation",
+        "it.uxresearch",
+        "it.uxui",
+        "it.webdesigner"
       ],
       "languages": [
         "en"
@@ -547,7 +647,15 @@
       "url": "https://www.udacity.com/course/product-design--ud509",
       "kind": "course-platform",
       "professionIds": [
-        "it.product"
+        "it.product",
+        "it.aidesigner",
+        "it.appdesign",
+        "it.uxui",
+        "it.webdesigner",
+        "it.3ddesigner",
+        "it.artdir",
+        "it.graphic",
+        "it.uxresearch"
       ],
       "languages": [
         "en"
@@ -596,7 +704,17 @@
       "url": "https://www.coursera.org/learn/fundamentals-of-graphic-design",
       "kind": "course-platform",
       "professionIds": [
-        "it.graphic"
+        "it.graphic",
+        "it.3ddesigner",
+        "it.aidesigner",
+        "it.appdesign",
+        "it.artdir",
+        "it.interior",
+        "it.motion",
+        "it.presentation",
+        "it.product",
+        "it.uxui",
+        "it.webdesigner"
       ],
       "languages": [
         "en"
@@ -621,7 +739,17 @@
       "url": "https://alison.com/course/graphic-design",
       "kind": "course-platform",
       "professionIds": [
-        "it.graphic"
+        "it.graphic",
+        "it.3ddesigner",
+        "it.aidesigner",
+        "it.artdir",
+        "it.interior",
+        "it.motion",
+        "it.presentation",
+        "it.product",
+        "it.uxui",
+        "it.webdesigner",
+        "it.appdesign"
       ],
       "languages": [
         "en"
@@ -669,7 +797,9 @@
       "url": "https://www.mygreatlearning.com/academy/learn-for-free/courses/intro-to-graphic-design-with-photoshop",
       "kind": "course-platform",
       "professionIds": [
-        "it.graphic"
+        "it.graphic",
+        "it.uxui",
+        "it.webdesigner"
       ],
       "languages": [
         "en"
@@ -833,7 +963,18 @@
       "url": "https://practicum.yandex.ru/ai-for-presentations/",
       "kind": "course-platform",
       "professionIds": [
-        "it.presentation"
+        "it.presentation",
+        "it.graphic",
+        "it.motion",
+        "it.product",
+        "it.uxresearch",
+        "it.uxui",
+        "it.3ddesigner",
+        "it.aidesigner",
+        "it.appdesign",
+        "it.artdir",
+        "it.interior",
+        "it.webdesigner"
       ],
       "languages": [
         "ru"
@@ -858,7 +999,18 @@
       "url": "https://practicum.yandex.ru/mobile-app-design/",
       "kind": "course-platform",
       "professionIds": [
-        "it.appdesign"
+        "it.appdesign",
+        "it.motion",
+        "it.uxui",
+        "it.webdesigner",
+        "it.graphic",
+        "it.product",
+        "it.3ddesigner",
+        "it.aidesigner",
+        "it.artdir",
+        "it.interior",
+        "it.presentation",
+        "it.uxresearch"
       ],
       "languages": [
         "ru"
@@ -884,7 +1036,18 @@
       "url": "https://practicum.yandex.ru/ux-research-for-designers/",
       "kind": "course-platform",
       "professionIds": [
-        "it.uxresearch"
+        "it.uxresearch",
+        "it.product",
+        "it.uxui",
+        "it.graphic",
+        "it.motion",
+        "it.3ddesigner",
+        "it.aidesigner",
+        "it.appdesign",
+        "it.artdir",
+        "it.interior",
+        "it.presentation",
+        "it.webdesigner"
       ],
       "languages": [
         "ru"
@@ -911,7 +1074,18 @@
       "url": "https://practicum.yandex.ru/art-dir/",
       "kind": "course-platform",
       "professionIds": [
-        "it.artdir"
+        "it.artdir",
+        "it.3ddesigner",
+        "it.aidesigner",
+        "it.appdesign",
+        "it.graphic",
+        "it.interior",
+        "it.motion",
+        "it.presentation",
+        "it.product",
+        "it.uxresearch",
+        "it.uxui",
+        "it.webdesigner"
       ],
       "languages": [
         "ru"
@@ -937,7 +1111,18 @@
       "url": "https://practicum.yandex.ru/3d-generalist/",
       "kind": "course-platform",
       "professionIds": [
-        "it.3ddesigner"
+        "it.3ddesigner",
+        "it.motion",
+        "it.aidesigner",
+        "it.appdesign",
+        "it.artdir",
+        "it.graphic",
+        "it.interior",
+        "it.presentation",
+        "it.product",
+        "it.uxresearch",
+        "it.uxui",
+        "it.webdesigner"
       ],
       "languages": [
         "ru"
@@ -965,7 +1150,18 @@
       "url": "https://practicum.yandex.ru/interior-designer/",
       "kind": "course-platform",
       "professionIds": [
-        "it.interior"
+        "it.interior",
+        "it.3ddesigner",
+        "it.aidesigner",
+        "it.appdesign",
+        "it.artdir",
+        "it.graphic",
+        "it.motion",
+        "it.presentation",
+        "it.product",
+        "it.uxresearch",
+        "it.uxui",
+        "it.webdesigner"
       ],
       "languages": [
         "ru"
@@ -993,7 +1189,18 @@
       "url": "https://practicum.yandex.ru/web-designer/",
       "kind": "course-platform",
       "professionIds": [
-        "it.webdesigner"
+        "it.webdesigner",
+        "it.graphic",
+        "it.uxui",
+        "it.3ddesigner",
+        "it.aidesigner",
+        "it.appdesign",
+        "it.artdir",
+        "it.interior",
+        "it.motion",
+        "it.presentation",
+        "it.product",
+        "it.uxresearch"
       ],
       "languages": [
         "ru"
@@ -1401,7 +1608,16 @@
       "url": "https://www.coursera.org/courses?query=free&skills=Web%20Design",
       "kind": "course-platform",
       "professionIds": [
-        "it.webdesigner"
+        "it.webdesigner",
+        "it.3ddesigner",
+        "it.aidesigner",
+        "it.artdir",
+        "it.graphic",
+        "it.interior",
+        "it.motion",
+        "it.presentation",
+        "it.product",
+        "it.uxui"
       ],
       "languages": [
         "en"
@@ -1472,7 +1688,9 @@
       "url": "https://alison.com/course/web-design-with-html",
       "kind": "course-platform",
       "professionIds": [
-        "it.webdesigner"
+        "it.webdesigner",
+        "it.graphic",
+        "it.uxui"
       ],
       "languages": [
         "en"
@@ -1566,7 +1784,17 @@
       "kind": "course-platform",
       "professionIds": [
         "it.appdesign",
-        "it.aidesigner"
+        "it.aidesigner",
+        "it.3ddesigner",
+        "it.artdir",
+        "it.graphic",
+        "it.interior",
+        "it.motion",
+        "it.presentation",
+        "it.product",
+        "it.uxresearch",
+        "it.uxui",
+        "it.webdesigner"
       ],
       "languages": [
         "en"
@@ -1589,7 +1817,18 @@
       "url": "https://www.uxdesigninstitute.com/courses/free-ux-design-course",
       "kind": "course-platform",
       "professionIds": [
-        "it.appdesign"
+        "it.appdesign",
+        "it.3ddesigner",
+        "it.aidesigner",
+        "it.artdir",
+        "it.graphic",
+        "it.interior",
+        "it.motion",
+        "it.presentation",
+        "it.product",
+        "it.uxresearch",
+        "it.uxui",
+        "it.webdesigner"
       ],
       "languages": [
         "en"
@@ -1612,7 +1851,17 @@
       "url": "https://scrimba.com/intro-to-ui-design-fundamentals-c0q",
       "kind": "course-platform",
       "professionIds": [
-        "it.appdesign"
+        "it.appdesign",
+        "it.3ddesigner",
+        "it.aidesigner",
+        "it.artdir",
+        "it.graphic",
+        "it.interior",
+        "it.motion",
+        "it.presentation",
+        "it.product",
+        "it.uxui",
+        "it.webdesigner"
       ],
       "languages": [
         "en"
@@ -2189,7 +2438,18 @@
       "url": "https://practicum.yandex.ru/ai-for-design/",
       "kind": "course-platform",
       "professionIds": [
-        "it.aidesigner"
+        "it.aidesigner",
+        "it.3ddesigner",
+        "it.appdesign",
+        "it.artdir",
+        "it.graphic",
+        "it.interior",
+        "it.motion",
+        "it.presentation",
+        "it.product",
+        "it.uxresearch",
+        "it.uxui",
+        "it.webdesigner"
       ],
       "languages": [
         "ru"
@@ -2214,7 +2474,18 @@
       "url": "https://practicum.yandex.ru/ai-tools-for-designers/",
       "kind": "course-platform",
       "professionIds": [
-        "it.aidesigner"
+        "it.aidesigner",
+        "it.appdesign",
+        "it.product",
+        "it.uxui",
+        "it.webdesigner",
+        "it.3ddesigner",
+        "it.artdir",
+        "it.graphic",
+        "it.interior",
+        "it.motion",
+        "it.presentation",
+        "it.uxresearch"
       ],
       "languages": [
         "ru"
@@ -2231,8 +2502,10 @@
         "tool evaluation"
       ],
       "discoveredBy": "user",
-      "lastChecked": "2026-10-26",
-      "httpStatus": 200
+      "lastChecked": "2026-11-03",
+      "httpStatus": 200,
+      "summary": "Курс «Нейросети для дизайна»: онлайн-обучение работе с ИИ для дизайнеров",
+      "finalUrl": "https://practicum.yandex.ru/ai-tools-for-designers/"
     },
     {
       "id": "freeacademy-ai",
@@ -2526,7 +2799,18 @@
       "url": "https://learntube.ai/learn/course/ai-for-graphic-design",
       "kind": "course-platform",
       "professionIds": [
-        "it.aidesigner"
+        "it.aidesigner",
+        "it.3ddesigner",
+        "it.appdesign",
+        "it.artdir",
+        "it.graphic",
+        "it.interior",
+        "it.motion",
+        "it.presentation",
+        "it.product",
+        "it.uxresearch",
+        "it.uxui",
+        "it.webdesigner"
       ],
       "languages": [
         "ru",
@@ -2572,7 +2856,18 @@
       "url": "https://www.simplilearn.com/free-generative-ai-design-course-skillup",
       "kind": "course-platform",
       "professionIds": [
-        "it.aidesigner"
+        "it.aidesigner",
+        "it.3ddesigner",
+        "it.appdesign",
+        "it.artdir",
+        "it.graphic",
+        "it.interior",
+        "it.motion",
+        "it.presentation",
+        "it.product",
+        "it.uxresearch",
+        "it.uxui",
+        "it.webdesigner"
       ],
       "languages": [
         "ru",
@@ -2641,7 +2936,18 @@
       "url": "https://www.ideou.com/blogs/inspiration/best-ai-x-design-thinking-resources-books-articles-courses-more",
       "kind": "blog",
       "professionIds": [
-        "it.aidesigner"
+        "it.aidesigner",
+        "it.3ddesigner",
+        "it.appdesign",
+        "it.artdir",
+        "it.graphic",
+        "it.interior",
+        "it.motion",
+        "it.presentation",
+        "it.product",
+        "it.uxresearch",
+        "it.uxui",
+        "it.webdesigner"
       ],
       "languages": [
         "ru",
@@ -2664,7 +2970,18 @@
       "url": "https://www.figma.com/blog/5-shifts-redefining-design-systems-in-the-ai-era/",
       "kind": "blog",
       "professionIds": [
-        "it.aidesigner"
+        "it.aidesigner",
+        "it.3ddesigner",
+        "it.appdesign",
+        "it.artdir",
+        "it.graphic",
+        "it.interior",
+        "it.motion",
+        "it.presentation",
+        "it.product",
+        "it.uxresearch",
+        "it.uxui",
+        "it.webdesigner"
       ],
       "languages": [
         "ru",
@@ -2687,7 +3004,18 @@
       "url": "https://stateofaidesign.com/",
       "kind": "reference",
       "professionIds": [
-        "it.aidesigner"
+        "it.aidesigner",
+        "it.3ddesigner",
+        "it.appdesign",
+        "it.artdir",
+        "it.graphic",
+        "it.interior",
+        "it.motion",
+        "it.presentation",
+        "it.product",
+        "it.uxresearch",
+        "it.uxui",
+        "it.webdesigner"
       ],
       "languages": [
         "ru",
@@ -2826,7 +3154,8 @@
       "url": "https://habr.com/ru/articles/1096288/",
       "kind": "blog",
       "professionIds": [
-        "it.aidesigner"
+        "it.aidesigner",
+        "it.product"
       ],
       "languages": [
         "ru",
@@ -2840,8 +3169,10 @@
         "practice"
       ],
       "discoveredBy": "user",
-      "lastChecked": "2026-10-28",
-      "httpStatus": 200
+      "lastChecked": "2026-11-03",
+      "httpStatus": 200,
+      "summary": "ИИ-дизайнер в 2026: чему учат на курсах и что умеет делать за вас AI &#x2F; Хабр",
+      "finalUrl": "https://habr.com/ru/articles/1096288/"
     },
     {
       "id": "reddit-ux-ai-workflows-2026",
@@ -2920,7 +3251,18 @@
       "url": "https://kimvoronin.com/neyroseti-dlya-dizayna-v-2026-gayd-po-vyboru-i-vnedreniyu-ii-kim-voronin",
       "kind": "blog",
       "professionIds": [
-        "it.aidesigner"
+        "it.aidesigner",
+        "it.3ddesigner",
+        "it.appdesign",
+        "it.artdir",
+        "it.graphic",
+        "it.interior",
+        "it.motion",
+        "it.presentation",
+        "it.product",
+        "it.uxresearch",
+        "it.uxui",
+        "it.webdesigner"
       ],
       "languages": [
         "ru",
@@ -2994,7 +3336,9 @@
       "kind": "course-platform",
       "professionIds": [
         "it.uxui",
-        "it.motion"
+        "it.motion",
+        "it.appdesign",
+        "it.webdesigner"
       ],
       "languages": [
         "en"
@@ -3035,6 +3379,1038 @@
       "discoveredBy": "manual",
       "lastChecked": "2026-10-28",
       "summary": "Статьи Reforge о продуктовой стратегии, росте, удержании и метриках продуктовых решений."
+    },
+    {
+      "id": "spb-hse-ru-ius-civillaw-courses-944974338-html",
+      "title": "НИУ ВШЭ в Санкт-Петербурге – Национальный исследовательский университет «Высшая школа экономики»",
+      "url": "https://spb.hse.ru/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.motion",
+        "it.3ddesigner",
+        "it.aidesigner",
+        "it.appdesign",
+        "it.artdir",
+        "it.graphic",
+        "it.interior",
+        "it.presentation",
+        "it.product",
+        "it.uxresearch",
+        "it.uxui",
+        "it.webdesigner"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "mixed",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Этика, авторские права и данные курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-03",
+      "summary": "НИУ ВШЭ в Санкт-Петербурге – Национальный исследовательский университет «Высшая школа экономики»",
+      "notes": "Авто-расширение (brave-search); совпадение с «Этика, авторские права и данные», формат course-platform, score 0.31; access: у ВШЭ есть бесплатные и платные курсы",
+      "httpStatus": 200,
+      "finalUrl": "https://spb.hse.ru/"
+    },
+    {
+      "id": "skillbox-ru-course-ai-audio-video",
+      "title": "Skillbox – образовательная платформа с онлайн-курсами.",
+      "url": "https://skillbox.ru/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.motion",
+        "it.product",
+        "it.uxresearch",
+        "it.uxui",
+        "it.3ddesigner",
+        "it.interior",
+        "it.aidesigner",
+        "it.appdesign",
+        "it.artdir",
+        "it.graphic",
+        "it.presentation",
+        "it.webdesigner"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "paid",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "ИИ в видео, монтаже и аудио курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-03",
+      "summary": "Skillbox – образовательная платформа с онлайн-курсами.",
+      "notes": "Авто-расширение (brave-search); совпадение с «ИИ в видео, монтаже и аудио», формат course-platform, score 0.39; access: платные программы Skillbox",
+      "httpStatus": 200,
+      "finalUrl": "https://skillbox.ru/"
+    },
+    {
+      "id": "animationschool-ru-courses-categories-3d-animacija",
+      "title": "Animation School - онлайн курсы по обучению анимации",
+      "url": "https://animationschool.ru/",
+      "kind": "school",
+      "professionIds": [
+        "it.motion",
+        "it.3ddesigner"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "paid",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "3D-анимация и риггинг курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-03",
+      "summary": "Animation School - онлайн курсы по обучению анимации",
+      "notes": "Авто-расширение (brave-search); совпадение с «3D-анимация и риггинг», формат school, score 0.32; access: платные курсы Animation School",
+      "httpStatus": 200,
+      "finalUrl": "https://animationschool.ru/"
+    },
+    {
+      "id": "online-vfx-ru-course-and-masters",
+      "title": "Online VFX: школа визуальных эффектов для кино и рекламы",
+      "url": "https://online-vfx.ru/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.motion"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "paid",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Композитинг и VFX курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-03",
+      "summary": "Online VFX: школа визуальных эффектов для кино и рекламы",
+      "notes": "Авто-расширение (brave-search); совпадение с «Композитинг и VFX», формат course-platform, score 0.36; access: платные курсы Online VFX",
+      "httpStatus": 200,
+      "finalUrl": "https://online-vfx.ru/"
+    },
+    {
+      "id": "profileschool-ru-438fa2",
+      "title": "Виртуальная школа Profile",
+      "url": "https://profileschool.ru/",
+      "kind": "school",
+      "professionIds": [
+        "it.motion"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "paid",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Композитинг и VFX курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-03",
+      "summary": "Виртуальная школа Profile",
+      "notes": "Авто-расширение (brave-search); совпадение с «Композитинг и VFX», формат school, score 0.30; access: платные программы Profile School",
+      "httpStatus": 200,
+      "finalUrl": "https://www.profileschool.ru/"
+    },
+    {
+      "id": "tochkazvuka-com-course-video-sound-design-html",
+      "title": "tochkazvuka.com — video sound design",
+      "url": "https://tochkazvuka.com/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.motion"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "paid",
+      "authority": "secondary",
+      "status": "planned",
+      "topics": [
+        "Звуковой дизайн и синхронизация курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-03",
+      "summary": "Авто-подбор по теме «Звуковой дизайн и синхронизация»: совпадение с «Звуковой дизайн и синхронизация», формат course-platform, score 0.51",
+      "notes": "Авто-расширение (brave-search); совпадение с «Звуковой дизайн и синхронизация», формат course-platform, score 0.51; access: платный курс по саунд-дизайну"
+    },
+    {
+      "id": "britishdesign-ru-courses-art-direktor-v-brendinge",
+      "title": "Британская высшая школа дизайна (БВШД)",
+      "url": "https://britishdesign.ru/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.motion",
+        "it.artdir",
+        "it.graphic",
+        "it.interior"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "paid",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Style frames и арт-дирекшн курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-03",
+      "summary": "Британская высшая школа дизайна (БВШД)",
+      "notes": "Авто-расширение (brave-search); совпадение с «Style frames и арт-дирекшн», формат course-platform, score 0.40; access: платные программы БВШД",
+      "httpStatus": 200,
+      "finalUrl": "https://britishdesign.ru/"
+    },
+    {
+      "id": "bangbangeducation-ru-course-motion",
+      "title": "Bang Bang Education — школа дизайна и технологий",
+      "url": "https://bangbangeducation.ru/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.motion",
+        "it.uxui",
+        "it.appdesign",
+        "it.artdir",
+        "it.graphic",
+        "it.presentation",
+        "it.product",
+        "it.webdesigner",
+        "it.aidesigner"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "paid",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Моушн-инструментарий курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-03",
+      "summary": "Bang Bang Education — школа дизайна и технологий",
+      "notes": "Авто-расширение (brave-search); совпадение с «Моушн-инструментарий», формат course-platform, score 0.33; access: платные программы Bang Bang Education",
+      "httpStatus": 200,
+      "finalUrl": "https://bangbangeducation.ru/"
+    },
+    {
+      "id": "hudozhnik-online-colorsciense",
+      "title": "Художник Oнлайн. Художественная школа онлайн. Онлайн курсы, обучение рисованию взрослых",
+      "url": "https://hudozhnik.online/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.motion",
+        "it.3ddesigner",
+        "it.appdesign",
+        "it.artdir",
+        "it.graphic",
+        "it.interior",
+        "it.presentation",
+        "it.product",
+        "it.uxui",
+        "it.webdesigner"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "paid",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Теория цвета и колористика курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-03",
+      "summary": "Художник Oнлайн. Художественная школа онлайн. Онлайн курсы, обучение рисованию взрослых",
+      "notes": "Авто-расширение (brave-search); совпадение с «Теория цвета и колористика», формат course-platform, score 0.31; access: платные курсы Художник Online",
+      "httpStatus": 200,
+      "finalUrl": "https://hudozhnik.online/"
+    },
+    {
+      "id": "lil-school-blog-osnovy-kompozicii-v-dizajne",
+      "title": "lil.school — osnovy kompozicii v dizajne",
+      "url": "https://lil.school/",
+      "kind": "school",
+      "professionIds": [
+        "it.motion",
+        "it.3ddesigner",
+        "it.aidesigner",
+        "it.appdesign",
+        "it.artdir",
+        "it.graphic",
+        "it.interior",
+        "it.presentation",
+        "it.product",
+        "it.uxui",
+        "it.webdesigner"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "unknown",
+      "authority": "secondary",
+      "status": "planned",
+      "topics": [
+        "Композиция, сетки и визуальная иерархия курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-03",
+      "summary": "Авто-подбор по теме «Композиция, сетки и визуальная иерархия»: совпадение с «Композиция, сетки и визуальная иерархия», формат school, score 0.32",
+      "notes": "Авто-расширение (brave-search); совпадение с «Композиция, сетки и визуальная иерархия», формат school, score 0.32"
+    },
+    {
+      "id": "cloud-itstep-org-ru-course-motion-design",
+      "title": "Онлайн навчання IT спеціальностям | IT курси онлайн | IT STEP",
+      "url": "https://cloud.itstep.org/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.motion",
+        "it.uxui"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "paid",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Анимация и motion design курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-03",
+      "summary": "Онлайн навчання IT спеціальностям | IT курси онлайн | IT STEP",
+      "notes": "Авто-расширение (brave-search); совпадение с «Анимация и motion design», формат course-platform, score 0.37; access: платные курсы IT STEP",
+      "httpStatus": 200,
+      "finalUrl": "https://cloud.itstep.org/"
+    },
+    {
+      "id": "itproger-com-course-responsible",
+      "title": "Сообщество программистов и онлайн-школа IT профессий itProger",
+      "url": "https://itproger.com/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.motion",
+        "it.appdesign",
+        "it.uxui",
+        "it.webdesigner"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "paid",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Адаптивность и responsive UI курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-03",
+      "summary": "Сообщество программистов и онлайн-школа IT профессий itProger",
+      "notes": "Авто-расширение (brave-search); совпадение с «Адаптивность и responsive UI», формат course-platform, score 0.37; access: часть курсов платная",
+      "httpStatus": 200,
+      "finalUrl": "https://itproger.com/"
+    },
+    {
+      "id": "bureau-ru-courses-typography",
+      "title": "Бюро Горбунова",
+      "url": "https://bureau.ru/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.motion",
+        "it.appdesign",
+        "it.artdir",
+        "it.graphic",
+        "it.presentation",
+        "it.product",
+        "it.uxui",
+        "it.webdesigner"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "paid",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Типографика курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-03",
+      "summary": "Бюро Горбунова",
+      "notes": "Авто-расширение (brave-search); совпадение с «Типографика», формат course-platform, score 0.31; access: платные курсы Бюро Горбунова",
+      "httpStatus": 200,
+      "finalUrl": "https://bureau.ru/"
+    },
+    {
+      "id": "specialist-ru-course-vizkom",
+      "title": "Ошибка 500",
+      "url": "https://specialist.ru/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.motion"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "unknown",
+      "authority": "secondary",
+      "status": "blocked",
+      "topics": [
+        "Визуальная коммуникация курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-03",
+      "summary": "Ошибка 500",
+      "notes": "Авто-расширение (brave-search); совпадение с «Визуальная коммуникация», формат course-platform, score 0.37",
+      "httpStatus": 500,
+      "finalUrl": "https://www.specialist.ru/Page/Error?aspxerrorpath=/"
+    },
+    {
+      "id": "tilda-education-courses-web-design-designthinking",
+      "title": "Tilda Education",
+      "url": "https://tilda.education/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.motion",
+        "it.3ddesigner",
+        "it.aidesigner",
+        "it.appdesign",
+        "it.artdir",
+        "it.graphic",
+        "it.interior",
+        "it.presentation",
+        "it.product",
+        "it.uxresearch",
+        "it.uxui",
+        "it.webdesigner"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "freemium",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Дизайн-мышление курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-03",
+      "summary": "Tilda Education",
+      "notes": "Авто-расширение (brave-search); совпадение с «Дизайн-мышление», формат course-platform, score 0.40; access: бесплатные курсы Tilda Education",
+      "httpStatus": 200,
+      "finalUrl": "https://tilda.education/"
+    },
+    {
+      "id": "contented-ru-courses-prototipirovanie",
+      "title": "Онлайн-школа дизайна, курсы дизайна с помощью в трудоустройстве",
+      "url": "https://contented.ru/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.motion",
+        "it.appdesign",
+        "it.product",
+        "it.uxui",
+        "it.webdesigner"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "paid",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Интерактивные прототипы курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-03",
+      "summary": "Онлайн-школа дизайна, курсы дизайна с помощью в трудоустройстве",
+      "notes": "Авто-расширение (brave-search); совпадение с «Интерактивные прототипы», формат course-platform, score 0.31; access: платные курсы Contented",
+      "httpStatus": 200,
+      "finalUrl": "https://contented.ru/"
+    },
+    {
+      "id": "developer-mozilla-org-ru-docs-web",
+      "title": "Веб-технологии для разработчиков | MDN",
+      "url": "https://developer.mozilla.org/ru/docs/Web",
+      "kind": "reference",
+      "professionIds": [
+        "it.uxui",
+        "it.graphic",
+        "it.webdesigner"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Веб-технологии и ограничения реализации курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-03",
+      "summary": "Веб-технологии для разработчиков | MDN",
+      "notes": "Авто-расширение (brave-search); совпадение с «Веб-технологии и ограничения реализации», формат reference, score 0.64; access: документация MDN, открытый доступ",
+      "httpStatus": 200,
+      "finalUrl": "https://developer.mozilla.org/ru/docs/Web"
+    },
+    {
+      "id": "intuit-ru-studies-courses-611-467-info",
+      "title": "Бесплатное образование - НОУ «ИНТУИТ»",
+      "url": "https://intuit.ru/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.uxui",
+        "it.graphic",
+        "it.webdesigner"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "freemium",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Веб-технологии и ограничения реализации курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-03",
+      "summary": "Бесплатное образование - НОУ «ИНТУИТ»",
+      "notes": "Авто-расширение (brave-search); совпадение с «Веб-технологии и ограничения реализации», формат course-platform, score 0.37; access: ИНТУИТ: часть курсов бесплатна, часть платная",
+      "httpStatus": 200,
+      "finalUrl": "https://intuit.ru/"
+    },
+    {
+      "id": "hse-ru-edu-courses-470898711",
+      "title": "HSE University",
+      "url": "https://hse.ru/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.uxui",
+        "it.appdesign",
+        "it.product",
+        "it.uxresearch",
+        "it.presentation"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "mixed",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Интервью и наблюдение курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-03",
+      "summary": "HSE University",
+      "notes": "Авто-расширение (brave-search); совпадение с «Интервью и наблюдение», формат course-platform, score 0.31; access: у ВШЭ есть бесплатные и платные курсы",
+      "httpStatus": 200,
+      "finalUrl": "https://www.hse.ru/en/"
+    },
+    {
+      "id": "netology-ru-courses-osnovy-prototipirovanniya",
+      "title": "Онлайн обучение на образовательной платформе Нетология. IT курсы, обучение с трудоустройством.",
+      "url": "https://netology.ru/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.uxui",
+        "it.appdesign",
+        "it.product"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "paid",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Низкодетализированные прототипы курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-03",
+      "summary": "Онлайн обучение на образовательной платформе Нетология. IT курсы, обучение с трудоустройством.",
+      "notes": "Авто-расширение (brave-search); совпадение с «Низкодетализированные прототипы», формат course-platform, score 0.37; access: платные программы Нетологии",
+      "httpStatus": 200,
+      "finalUrl": "https://netology.ru/"
+    },
+    {
+      "id": "stepik-org-course-1128-promo",
+      "title": "Онлайн-курсы - Stepik",
+      "url": "https://stepik.org/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.uxui",
+        "it.aidesigner",
+        "it.product",
+        "it.uxresearch"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "freemium",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Анализ требований и постановка задач курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-03",
+      "summary": "Онлайн-курсы - Stepik",
+      "notes": "Авто-расширение (brave-search); совпадение с «Анализ требований и постановка задач», формат course-platform, score 0.49; access: часть курсов бесплатна, часть платная",
+      "httpStatus": 200,
+      "finalUrl": "https://stepik.org/"
+    },
+    {
+      "id": "learn-rarus-ru-courses-15216",
+      "title": "learn.rarus.ru — 1С-Рарус:Центр онлайн-обучения",
+      "url": "https://learn.rarus.ru/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.uxui",
+        "it.aidesigner",
+        "it.product"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "unknown",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Анализ требований и постановка задач курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-03",
+      "summary": "learn.rarus.ru — 1С-Рарус:Центр онлайн-обучения",
+      "notes": "Авто-расширение (brave-search); совпадение с «Анализ требований и постановка задач», формат course-platform, score 0.40",
+      "httpStatus": 200,
+      "finalUrl": "https://learn.rarus.ru/"
+    },
+    {
+      "id": "online-spbu-ru-16ff04",
+      "title": "Центр развития электронных образовательных ресурсов",
+      "url": "https://online.spbu.ru/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.uxui",
+        "it.appdesign",
+        "it.product"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "unknown",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Юзабилити-тестирование курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-03",
+      "summary": "Центр развития электронных образовательных ресурсов",
+      "notes": "Авто-расширение (brave-search); совпадение с «Юзабилити-тестирование», формат course-platform, score 0.37",
+      "httpStatus": 200,
+      "finalUrl": "https://online.spbu.ru/"
+    },
+    {
+      "id": "school-usabilitylab-ru-a8b157",
+      "title": "school.usabilitylab.ru — polzovatelskie stsenarii proektirovanie user flow",
+      "url": "https://school.usabilitylab.ru/",
+      "kind": "school",
+      "professionIds": [
+        "it.uxui",
+        "it.appdesign",
+        "it.product",
+        "it.webdesigner"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "paid",
+      "authority": "secondary",
+      "status": "planned",
+      "topics": [
+        "Пользовательские сценарии и флоу курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-03",
+      "summary": "Авто-подбор по теме «Пользовательские сценарии и флоу»: совпадение с «Пользовательские сценарии и флоу», формат school, score 0.38",
+      "notes": "Авто-расширение (brave-search); совпадение с «Пользовательские сценарии и флоу», формат school, score 0.38; access: платные курсы UsabilityLab"
+    },
+    {
+      "id": "uplab-ru-blog-customer-journey-map",
+      "title": "Uplab — разработка цифровых сервисов",
+      "url": "https://uplab.ru/",
+      "kind": "blog",
+      "professionIds": [
+        "it.product"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "unknown",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Customer Journey Map курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-03",
+      "summary": "Uplab — разработка цифровых сервисов",
+      "notes": "Авто-расширение (brave-search); совпадение с «Customer Journey Map», формат blog, score 0.53",
+      "httpStatus": 200,
+      "finalUrl": "https://www.uplab.ru/"
+    },
+    {
+      "id": "obrazum-com-96c2ff",
+      "title": "Obrazum — Открытые знания, Сертифицированные знания - Obrazum",
+      "url": "https://obrazum.com/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.product",
+        "it.interior"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "unknown",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Customer Journey Map курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-03",
+      "summary": "Obrazum — Открытые знания, Сертифицированные знания - Obrazum",
+      "notes": "Авто-расширение (brave-search); совпадение с «Customer Journey Map», формат course-platform, score 0.45",
+      "httpStatus": 200,
+      "finalUrl": "https://obrazum.com/"
+    },
+    {
+      "id": "productlab-ru-strategy",
+      "title": "Бизнес-тренинги и консалтинг: обучение компаний и команд, курсы, семинары, воркшопы",
+      "url": "https://productlab.ru/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.product",
+        "it.uxresearch"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "paid",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Продуктовая стратегия курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-03",
+      "summary": "Бизнес-тренинги и консалтинг: обучение компаний и команд, курсы, семинары, воркшопы",
+      "notes": "Авто-расширение (brave-search); совпадение с «Продуктовая стратегия», формат course-platform, score 0.42; access: платные программы ProductLab",
+      "httpStatus": 200,
+      "finalUrl": "https://productlab.ru/"
+    },
+    {
+      "id": "prjctr-com-ru-course-editorial-design",
+      "title": "Projector — Creative &amp; Tech Online Institute",
+      "url": "https://prjctr.com/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.graphic",
+        "it.appdesign"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "paid",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Редакционный дизайн и вёрстка курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-03",
+      "summary": "Projector — Creative &amp; Tech Online Institute",
+      "notes": "Авто-расширение (brave-search); совпадение с «Редакционный дизайн и вёрстка», формат course-platform, score 0.46; access: платные программы Projector",
+      "httpStatus": 200,
+      "finalUrl": "https://prjctr.com/"
+    },
+    {
+      "id": "3d-itmo-ru-courses-plain-online-hard-surface-modeling-maya",
+      "title": "3D 2026 - ТРЕХМЕРНОЕ МОДЕЛИРОВАНИЕ И 3D-ВИЗУАЛИЗАЦИЯ",
+      "url": "https://3d.itmo.ru/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "mixed",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Hard-surface моделирование курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-03",
+      "summary": "3D 2026 - ТРЕХМЕРНОЕ МОДЕЛИРОВАНИЕ И 3D-ВИЗУАЛИЗАЦИЯ",
+      "notes": "Авто-расширение (brave-search); совпадение с «Hard-surface моделирование», формат course-platform, score 0.49; access: курсы ИТМО, часть бесплатна",
+      "httpStatus": 200,
+      "finalUrl": "https://3d.itmo.ru/"
+    },
+    {
+      "id": "smirnov-school-course-3d-portrait",
+      "title": "BLACKFRIDAY26 - Smirnov.School",
+      "url": "https://smirnov.school/",
+      "kind": "school",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "paid",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Скульптинг и органика курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-03",
+      "summary": "BLACKFRIDAY26 - Smirnov.School",
+      "notes": "Авто-расширение (brave-search); совпадение с «Скульптинг и органика», формат school, score 0.32; access: платные курсы Smirnov School",
+      "httpStatus": 200,
+      "finalUrl": "https://smirnov.school/promo/blackfriday26/"
+    },
+    {
+      "id": "dev-epicgames-com-8792b9",
+      "title": "dev.epicgames.com — unreal engine 5 5 4",
+      "url": "https://dev.epicgames.com/documentation/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.3ddesigner"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Материалы и текстуры курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-03",
+      "summary": "Epic Games Product Documentation | Epic Developer Community",
+      "notes": "Авто-расширение (brave-search); совпадение с «Материалы и текстуры», формат course-platform, score 0.37; access: официальная документация Unreal Engine, открытый доступ",
+      "httpStatus": 200,
+      "finalUrl": "https://dev.epicgames.com/documentation/"
+    },
+    {
+      "id": "synergy-ru-a0f976",
+      "title": "Университет СИНЕРГИЯ",
+      "url": "https://synergy.ru/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.interior"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "paid",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Ведение проекта и авторский надзор курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-03",
+      "summary": "Университет СИНЕРГИЯ",
+      "notes": "Авто-расширение (brave-search); совпадение с «Ведение проекта и авторский надзор», формат course-platform, score 0.42; access: платные программы Университета Синергия",
+      "httpStatus": 200,
+      "finalUrl": "https://synergy.ru/"
+    },
+    {
+      "id": "designschool-ru-d46474",
+      "title": "Школа дизайна в Москве — обучение дизайну интерьера и ландшафта в Международной школе дизайна (IDS)",
+      "url": "https://designschool.ru/",
+      "kind": "school",
+      "professionIds": [
+        "it.interior"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "paid",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Стили и цветовые концепции курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-03",
+      "summary": "Школа дизайна в Москве — обучение дизайну интерьера и ландшафта в Международной школе дизайна (IDS)",
+      "notes": "Авто-расширение (brave-search); совпадение с «Стили и цветовые концепции», формат school, score 0.31; access: платные курсы Design School",
+      "httpStatus": 200,
+      "finalUrl": "https://designschool.ru/"
+    },
+    {
+      "id": "cbsd-ru-courses-elektronnye-kursy-onlayn-kurs-argumentatsiya",
+      "title": "CBSD - ведущая компания по обучению и развитию лидерства.",
+      "url": "https://cbsd.ru/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.presentation"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "paid",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Ключевое сообщение и аргументация курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-03",
+      "summary": "CBSD - ведущая компания по обучению и развитию лидерства.",
+      "notes": "Авто-расширение (brave-search); совпадение с «Ключевое сообщение и аргументация», формат course-platform, score 0.31; access: платные тренинги CBSD",
+      "httpStatus": 200,
+      "finalUrl": "https://cbsd.ru/"
+    },
+    {
+      "id": "openedu-ru-course-hse-qualsoc",
+      "title": "Главная страница - Открытое образование",
+      "url": "https://openedu.ru/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Качественные методы курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-03",
+      "summary": "Главная страница - Открытое образование",
+      "notes": "Авто-расширение (brave-search); совпадение с «Качественные методы», формат course-platform, score 0.42; access: открытые онлайн-курсы, бесплатный доступ",
+      "httpStatus": 200,
+      "finalUrl": "https://openedu.ru/"
+    },
+    {
+      "id": "freeuniversity-education-ea1ef2",
+      "title": "Свободный Университет - Libenter ac liberaliter",
+      "url": "https://freeuniversity.education/",
+      "kind": "school",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Количественные методы курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-03",
+      "summary": "Свободный Университет - Libenter ac liberaliter",
+      "notes": "Авто-расширение (brave-search); совпадение с «Количественные методы», формат school, score 0.38; access: по названию и профилю — открытые курсы, требует проверки",
+      "httpStatus": 200,
+      "finalUrl": "https://freeuniversity.education/"
+    },
+    {
+      "id": "privet-marketing-5d9ac1",
+      "title": "Привет, маркетинг! – учебные курсы по маркетингу и исследованиям – онлайн-школа Надежды Шеиной",
+      "url": "https://privet.marketing/",
+      "kind": "blog",
+      "professionIds": [
+        "it.uxresearch"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "paid",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Выборка и рекрутинг респондентов курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-03",
+      "summary": "Привет, маркетинг! – учебные курсы по маркетингу и исследованиям – онлайн-школа Надежды Шеиной",
+      "notes": "Авто-расширение (brave-search); совпадение с «Выборка и рекрутинг респондентов», формат blog, score 0.32; access: платные курсы школы «Привет, маркетинг»",
+      "httpStatus": 200,
+      "finalUrl": "https://privet.marketing/"
+    },
+    {
+      "id": "setters-education-courses-pitch-ideas",
+      "title": "SETTERS EDUCATION — усиливаем экспертизу специалистов",
+      "url": "https://setters.education/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.artdir"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "paid",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Презентация и защита идей курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-03",
+      "summary": "SETTERS EDUCATION — усиливаем экспертизу специалистов",
+      "notes": "Авто-расширение (brave-search); совпадение с «Презентация и защита идей», формат course-platform, score 0.31; access: платные программы Setters Education",
+      "httpStatus": 200,
+      "finalUrl": "https://setters.education/"
+    },
+    {
+      "id": "aistudio-yandex-ru-ru-ai-academy-courses-prompting",
+      "title": "Yandex AI Studio — ИИ-технологии Яндекса для задач бизнеса",
+      "url": "https://aistudio.yandex.ru/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "unknown",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Промпт-системы и библиотеки курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-03",
+      "summary": "Yandex AI Studio — ИИ-технологии Яндекса для задач бизнеса",
+      "notes": "Авто-расширение (brave-search); совпадение с «Промпт-системы и библиотеки», формат course-platform, score 0.37",
+      "httpStatus": 200,
+      "finalUrl": "https://aistudio.yandex.ru/"
     }
   ]
 }

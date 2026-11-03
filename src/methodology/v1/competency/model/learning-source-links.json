@@ -1,47 +1,66 @@
 {
   "linksVersion": "1.0.0",
-  "updatedAt": "2026-10-28",
+  "updatedAt": "2026-11-03",
   "description": "Ручной слой связей «компетенция → учебные источники». Источник истины для learning:map; при model:sync мержится в competencies.json. Источник — место, где учиться компетенции, а не автоматическое доказательство её содержания.",
   "links": [
     {
       "competencyId": "ux-design-thinking",
       "sourceIds": [
-        "school-of-motion"
+        "school-of-motion",
+        "codecademy-intro-uiux",
+        "coursera-uxui-fundamentals",
+        "practicum-design-catalog",
+        "coursera-microsoft-product-design",
+        "coursera-design-fundamentals-ai",
+        "uxdesigninstitute-free-ux-course",
+        "tilda-education-courses-web-design-designthinking"
       ],
-      "rationale": "School of Motion: learning paths — рамка обучения моушн-дизайну."
+      "rationale": "School of Motion: learning paths — рамка обучения моушн-дизайну.; Курсы вводят дизайн-процесс; программа Практикума задаёт рамку профессии.; Дизайн-процесс и product design в курсах.; Программа Практикума по графическому дизайну задаёт рамку профессии.; совпадение с «Дизайн-мышление», формат course-platform, score 0.40; совпадение с «Дизайн-мышление», формат course-platform, score 0.37, домен уже в реестре: specialist-ru-course-vizkom"
     },
     {
       "competencyId": "ui-layout",
       "sourceIds": [
         "practicum-design-catalog",
-        "scrimba-ui-design-fundamentals"
+        "scrimba-ui-design-fundamentals",
+        "coursera-uxui-fundamentals",
+        "greatlearning-uiux",
+        "coursera-graphic-fundamentals",
+        "lil-school-blog-osnovy-kompozicii-v-dizajne"
       ],
-      "rationale": "Программа Практикума по дизайну покрывает композицию и сетки в рамках курса."
+      "rationale": "Программа Практикума по дизайну покрывает композицию и сетки в рамках курса.; Visual principles / visual design в курсах UX/UI.; Visual design в UX/UI-курсе.; Курс по основам графического дизайна: композиция.; совпадение с «Композиция, сетки и визуальная иерархия», формат school, score 0.32"
     },
     {
       "competencyId": "ui-motion",
       "sourceIds": [
         "motiondesign-school-courses",
         "school-of-motion",
-        "motiondesign-school-youtube"
+        "motiondesign-school-youtube",
+        "cloud-itstep-org-ru-course-motion-design",
+        "bangbangeducation-ru-course-motion"
       ],
-      "rationale": "Первоисточники Motion Design School и School of Motion по motion design и After Effects."
+      "rationale": "Первоисточники Motion Design School и School of Motion по motion design и After Effects.; совпадение с «Анимация и motion design», формат course-platform, score 0.37; совпадение с «Анимация и motion design», формат course-platform, score 0.31"
     },
     {
       "competencyId": "ui-interaction-states",
       "sourceIds": [
         "motiondesign-school-youtube",
-        "school-of-motion"
+        "school-of-motion",
+        "figma-design-basics"
       ],
-      "rationale": "Туториалы и learning paths по анимации взаимодействий."
+      "rationale": "Туториалы и learning paths по анимации взаимодействий.; Прототипирование состояний в Figma-курсе."
     },
     {
       "competencyId": "ui-visual-communication",
       "sourceIds": [
         "motiondesign-school-courses",
-        "petrick-mds-case"
+        "petrick-mds-case",
+        "greatlearning-uiux",
+        "practicum-design-catalog",
+        "alison-graphic-design",
+        "coursera-graphic-fundamentals",
+        "coursera-web-design-free"
       ],
-      "rationale": "Курсы и разбор кейса айдентики Motion Design School."
+      "rationale": "Курсы и разбор кейса айдентики Motion Design School.; Visual design в курсе и программа Практикума.; Visual design в UX/UI-курсе.; Visual communication и основы дизайна в курсах.; совпадение с «Визуальная коммуникация», формат course-platform, score 0.37"
     },
     {
       "competencyId": "ui-handoff",
@@ -71,38 +90,35 @@
       "rationale": "Курсы по 3D/Blender/Cinema 4D и программа Практикума (3D-дизайнер)."
     },
     {
-      "competencyId": "ux-design-thinking",
-      "sourceIds": [
-        "codecademy-intro-uiux",
-        "coursera-uxui-fundamentals",
-        "practicum-design-catalog"
-      ],
-      "rationale": "Курсы вводят дизайн-процесс; программа Практикума задаёт рамку профессии."
-    },
-    {
       "competencyId": "ux-user-research",
       "sourceIds": [
         "coursera-uxui-fundamentals",
         "greatlearning-uiux",
-        "practicum-design-catalog"
+        "practicum-design-catalog",
+        "coursera-microsoft-product-design",
+        "udacity-product-design",
+        "uxdesigninstitute-free-ux-course"
       ],
-      "rationale": "Курсы по UX/UI с модулями исследований; программа Практикума по UX/UI."
+      "rationale": "Курсы по UX/UI с модулями исследований; программа Практикума по UX/UI.; Research-модули курсов и программа Практикума."
     },
     {
       "competencyId": "ux-personas",
       "sourceIds": [
         "coursera-uxui-fundamentals",
-        "greatlearning-uiux"
+        "greatlearning-uiux",
+        "coursera-microsoft-product-design"
       ],
-      "rationale": "Модули UX-исследований в курсах UX/UI."
+      "rationale": "Модули UX-исследований в курсах UX/UI.; Research-модули курса product design.; совпадение с «Персоны и сегментация», формат blog, score 0.41"
     },
     {
       "competencyId": "ux-interviews",
       "sourceIds": [
         "coursera-uxui-fundamentals",
-        "practicum-design-catalog"
+        "practicum-design-catalog",
+        "coursera-microsoft-product-design",
+        "hse-ru-edu-courses-470898711"
       ],
-      "rationale": "Исследовательские модули курсов и программ Практикума."
+      "rationale": "Исследовательские модули курсов и программ Практикума.; Research-модули курса product design.; совпадение с «Интервью и наблюдение», формат course-platform, score 0.31"
     },
     {
       "competencyId": "ux-information-architecture",
@@ -110,38 +126,46 @@
         "figma-design-basics",
         "coursera-uxui-fundamentals"
       ],
-      "rationale": "Figma Design Basics и UX/UI-курсы покрывают структуру и навигацию."
+      "rationale": "Figma Design Basics и UX/UI-курсы покрывают структуру и навигацию.; Figma Design Basics: структура и навигация."
     },
     {
       "competencyId": "ux-user-flows",
       "sourceIds": [
         "figma-design-basics",
-        "codecademy-intro-uiux"
+        "codecademy-intro-uiux",
+        "practicum-ai-tools-for-designers",
+        "school-usabilitylab-ru-a8b157"
       ],
-      "rationale": "Прототипирование и дизайн-процесс в курсах."
+      "rationale": "Прототипирование и дизайн-процесс в курсах.; Figma Design Basics: сценарии и прототипы.; совпадение с «Пользовательские сценарии и флоу», формат blog, score 0.38, домен уже в реестре: practicum-ai-tools-for-designers; совпадение с «Пользовательские сценарии и флоу», формат school, score 0.38"
     },
     {
       "competencyId": "ux-requirements",
       "sourceIds": [
         "codecademy-intro-uiux",
-        "practicum-design-catalog"
+        "practicum-design-catalog",
+        "udacity-product-design",
+        "stepik-org-course-1128-promo",
+        "learn-rarus-ru-courses-15216"
       ],
-      "rationale": "Дизайн-процесс и постановка задач в программе Практикума."
+      "rationale": "Дизайн-процесс и постановка задач в программе Практикума.; Дизайн-процесс и product design.; совпадение с «Анализ требований и постановка задач», формат course-platform, score 0.49; совпадение с «Анализ требований и постановка задач», формат course-platform, score 0.40"
     },
     {
       "competencyId": "ux-wireframes",
       "sourceIds": [
-        "figma-design-basics"
+        "figma-design-basics",
+        "codecademy-intro-uiux"
       ],
-      "rationale": "Figma Design Basics: wireframes и структура экранов."
+      "rationale": "Figma Design Basics: wireframes и структура экранов.; Wireframes в Figma-курсе и дизайн-процесс."
     },
     {
       "competencyId": "ux-lowfi-prototype",
       "sourceIds": [
         "figma-design-basics",
-        "coursera-uxui-fundamentals"
+        "coursera-uxui-fundamentals",
+        "coursera-microsoft-product-design",
+        "netology-ru-courses-osnovy-prototipirovanniya"
       ],
-      "rationale": "Прототипирование в курсах UX/UI."
+      "rationale": "Прототипирование в курсах UX/UI.; Прототипирование в курсах.; совпадение с «Низкодетализированные прототипы», формат course-platform, score 0.37"
     },
     {
       "competencyId": "ux-hifi-prototype",
@@ -149,93 +173,86 @@
         "figma-design-basics",
         "greatlearning-uiux"
       ],
-      "rationale": "Прототипирование и visual design в курсах."
+      "rationale": "Прототипирование и visual design в курсах.; Прототипирование и visual design."
     },
     {
       "competencyId": "ux-interactive-prototype",
       "sourceIds": [
         "figma-design-basics",
-        "codecademy-intro-uiux"
+        "codecademy-intro-uiux",
+        "coursera-microsoft-product-design",
+        "contented-ru-courses-prototipirovanie"
       ],
-      "rationale": "Прототипирование и интерактив в курсах."
+      "rationale": "Прототипирование и интерактив в курсах.; Прототипирование в курсах.; совпадение с «Интерактивные прототипы», формат course-platform, score 0.31"
     },
     {
       "competencyId": "ux-usability-testing",
       "sourceIds": [
         "coursera-uxui-fundamentals",
-        "greatlearning-uiux"
+        "greatlearning-uiux",
+        "coursera-microsoft-product-design",
+        "practicum-ai-tools-for-designers",
+        "online-spbu-ru-16ff04"
       ],
-      "rationale": "Модули usability в курсах UX/UI."
+      "rationale": "Модули usability в курсах UX/UI.; Usability и research в курсах.; совпадение с «Юзабилити-тестирование», формат blog, score 0.38, домен уже в реестре: practicum-ai-tools-for-designers; совпадение с «Юзабилити-тестирование», формат course-platform, score 0.37"
     },
     {
       "competencyId": "ux-product-thinking",
       "sourceIds": [
         "practicum-design-catalog",
-        "codecademy-intro-uiux"
+        "codecademy-intro-uiux",
+        "udacity-product-design",
+        "coursera-microsoft-product-design"
       ],
-      "rationale": "Программа Практикума и дизайн-процесс в курсах."
+      "rationale": "Программа Практикума и дизайн-процесс в курсах.; Product strategy и product design в курсах."
     },
     {
       "competencyId": "ui-color",
       "sourceIds": [
         "coursera-uxui-fundamentals",
-        "greatlearning-uiux"
+        "greatlearning-uiux",
+        "coursera-graphic-fundamentals",
+        "alison-graphic-design",
+        "hudozhnik-online-colorsciense"
       ],
-      "rationale": "Visual principles / visual design в курсах UX/UI."
+      "rationale": "Visual principles / visual design в курсах UX/UI.; Visual design в UX/UI-курсе.; Курсы по основам графического дизайна: цвет.; совпадение с «Теория цвета и колористика», формат course-platform, score 0.31"
     },
     {
       "competencyId": "ui-typography",
       "sourceIds": [
         "coursera-uxui-fundamentals",
-        "greatlearning-uiux"
+        "greatlearning-uiux",
+        "coursera-graphic-fundamentals",
+        "bangbangeducation-ru-course-motion",
+        "bureau-ru-courses-typography"
       ],
-      "rationale": "Visual principles / visual design в курсах UX/UI."
-    },
-    {
-      "competencyId": "ui-layout",
-      "sourceIds": [
-        "coursera-uxui-fundamentals",
-        "greatlearning-uiux"
-      ],
-      "rationale": "Visual principles / visual design в курсах UX/UI."
+      "rationale": "Visual principles / visual design в курсах UX/UI.; Курс по основам графического дизайна: типографика.; совпадение с «Типографика», формат course-platform, score 0.31; совпадение с «Типографика», формат course-platform, score 0.31"
     },
     {
       "competencyId": "ui-visual-elements",
       "sourceIds": [
         "greatlearning-uiux",
-        "practicum-design-catalog"
+        "practicum-design-catalog",
+        "alison-graphic-design",
+        "greatlearning-photoshop-graphic"
       ],
-      "rationale": "Visual design в курсе и программа Практикума."
-    },
-    {
-      "competencyId": "ui-visual-communication",
-      "sourceIds": [
-        "greatlearning-uiux",
-        "practicum-design-catalog"
-      ],
-      "rationale": "Visual design в курсе и программа Практикума."
+      "rationale": "Visual design в курсе и программа Практикума.; Visual design в UX/UI-курсе.; Визуальные элементы и инструменты в курсах."
     },
     {
       "competencyId": "ui-design-systems",
       "sourceIds": [
         "figma-design-basics",
-        "greatlearning-uiux"
+        "greatlearning-uiux",
+        "bangbangeducation-ru-course-motion"
       ],
-      "rationale": "Компоненты и дизайн-принципы в Figma-курсе и UX/UI-курсе."
+      "rationale": "Компоненты и дизайн-принципы в Figma-курсе и UX/UI-курсе.; Компоненты и дизайн-принципы в Figma-курсе.; совпадение с «Дизайн-системы и токены», формат course-platform, score 0.54"
     },
     {
       "competencyId": "ui-components",
       "sourceIds": [
         "figma-design-basics"
       ],
-      "rationale": "Figma Design Basics: компоненты."
-    },
-    {
-      "competencyId": "ui-interaction-states",
-      "sourceIds": [
-        "figma-design-basics"
-      ],
-      "rationale": "Прототипирование состояний в Figma-курсе."
+      "rationale": "Figma Design Basics: компоненты.; Компоненты в Figma-курсе."
     },
     {
       "competencyId": "ui-figma",
@@ -243,22 +260,6 @@
         "figma-design-basics"
       ],
       "rationale": "Figma Design Basics — первичный источник по Figma."
-    },
-    {
-      "competencyId": "ux-design-thinking",
-      "sourceIds": [
-        "codecademy-intro-uiux",
-        "coursera-microsoft-product-design"
-      ],
-      "rationale": "Дизайн-процесс и product design в курсах."
-    },
-    {
-      "competencyId": "ux-product-thinking",
-      "sourceIds": [
-        "udacity-product-design",
-        "coursera-microsoft-product-design"
-      ],
-      "rationale": "Product strategy и product design в курсах."
     },
     {
       "competencyId": "product-jtbd",
@@ -269,148 +270,24 @@
       "rationale": "Research и product strategy в курсах."
     },
     {
-      "competencyId": "ux-user-research",
-      "sourceIds": [
-        "coursera-microsoft-product-design",
-        "udacity-product-design",
-        "practicum-design-catalog",
-        "uxdesigninstitute-free-ux-course"
-      ],
-      "rationale": "Research-модули курсов и программа Практикума."
-    },
-    {
-      "competencyId": "ux-interviews",
-      "sourceIds": [
-        "coursera-microsoft-product-design"
-      ],
-      "rationale": "Research-модули курса product design."
-    },
-    {
-      "competencyId": "ux-personas",
-      "sourceIds": [
-        "coursera-microsoft-product-design"
-      ],
-      "rationale": "Research-модули курса product design."
-    },
-    {
       "competencyId": "product-cjm",
       "sourceIds": [
         "udacity-product-design",
-        "coursera-microsoft-product-design"
+        "coursera-microsoft-product-design",
+        "uplab-ru-blog-customer-journey-map",
+        "obrazum-com-96c2ff"
       ],
-      "rationale": "Research и product design в курсах."
-    },
-    {
-      "competencyId": "ux-information-architecture",
-      "sourceIds": [
-        "figma-design-basics"
-      ],
-      "rationale": "Figma Design Basics: структура и навигация."
-    },
-    {
-      "competencyId": "ux-user-flows",
-      "sourceIds": [
-        "figma-design-basics"
-      ],
-      "rationale": "Figma Design Basics: сценарии и прототипы."
-    },
-    {
-      "competencyId": "ux-wireframes",
-      "sourceIds": [
-        "figma-design-basics",
-        "codecademy-intro-uiux"
-      ],
-      "rationale": "Wireframes в Figma-курсе и дизайн-процесс."
-    },
-    {
-      "competencyId": "ux-requirements",
-      "sourceIds": [
-        "codecademy-intro-uiux",
-        "udacity-product-design"
-      ],
-      "rationale": "Дизайн-процесс и product design."
-    },
-    {
-      "competencyId": "ux-lowfi-prototype",
-      "sourceIds": [
-        "figma-design-basics",
-        "coursera-microsoft-product-design"
-      ],
-      "rationale": "Прототипирование в курсах."
-    },
-    {
-      "competencyId": "ux-hifi-prototype",
-      "sourceIds": [
-        "figma-design-basics",
-        "greatlearning-uiux"
-      ],
-      "rationale": "Прототипирование и visual design."
-    },
-    {
-      "competencyId": "ux-interactive-prototype",
-      "sourceIds": [
-        "figma-design-basics",
-        "coursera-microsoft-product-design"
-      ],
-      "rationale": "Прототипирование в курсах."
-    },
-    {
-      "competencyId": "ux-usability-testing",
-      "sourceIds": [
-        "greatlearning-uiux",
-        "coursera-microsoft-product-design"
-      ],
-      "rationale": "Usability и research в курсах."
-    },
-    {
-      "competencyId": "ui-color",
-      "sourceIds": [
-        "greatlearning-uiux"
-      ],
-      "rationale": "Visual design в UX/UI-курсе."
-    },
-    {
-      "competencyId": "ui-layout",
-      "sourceIds": [
-        "greatlearning-uiux"
-      ],
-      "rationale": "Visual design в UX/UI-курсе."
-    },
-    {
-      "competencyId": "ui-visual-elements",
-      "sourceIds": [
-        "greatlearning-uiux"
-      ],
-      "rationale": "Visual design в UX/UI-курсе."
-    },
-    {
-      "competencyId": "ui-visual-communication",
-      "sourceIds": [
-        "greatlearning-uiux"
-      ],
-      "rationale": "Visual design в UX/UI-курсе."
-    },
-    {
-      "competencyId": "ui-design-systems",
-      "sourceIds": [
-        "figma-design-basics"
-      ],
-      "rationale": "Компоненты и дизайн-принципы в Figma-курсе."
-    },
-    {
-      "competencyId": "ui-components",
-      "sourceIds": [
-        "figma-design-basics"
-      ],
-      "rationale": "Компоненты в Figma-курсе."
+      "rationale": "Research и product design в курсах.; совпадение с «Customer Journey Map», формат blog, score 0.53; совпадение с «Customer Journey Map», формат course-platform, score 0.45"
     },
     {
       "competencyId": "product-strategy",
       "sourceIds": [
         "udacity-product-design",
-        "coursera-microsoft-product-design"
+        "coursera-microsoft-product-design",
+        "hse-ru-edu-courses-470898711",
+        "productlab-ru-strategy"
       ],
-      "rationale": "Product strategy в курсах product design."
+      "rationale": "Product strategy в курсах product design.; совпадение с «Продуктовая стратегия», формат course-platform, score 0.49; совпадение с «Продуктовая стратегия», формат course-platform, score 0.42"
     },
     {
       "competencyId": "product-experimentation",
@@ -421,60 +298,14 @@
       "rationale": "Research и product design в курсах."
     },
     {
-      "competencyId": "ux-design-thinking",
-      "sourceIds": [
-        "practicum-design-catalog",
-        "coursera-design-fundamentals-ai",
-        "uxdesigninstitute-free-ux-course"
-      ],
-      "rationale": "Программа Практикума по графическому дизайну задаёт рамку профессии."
-    },
-    {
-      "competencyId": "ui-color",
-      "sourceIds": [
-        "coursera-graphic-fundamentals",
-        "alison-graphic-design"
-      ],
-      "rationale": "Курсы по основам графического дизайна: цвет."
-    },
-    {
-      "competencyId": "ui-typography",
-      "sourceIds": [
-        "coursera-graphic-fundamentals"
-      ],
-      "rationale": "Курс по основам графического дизайна: типографика."
-    },
-    {
-      "competencyId": "ui-layout",
-      "sourceIds": [
-        "coursera-graphic-fundamentals"
-      ],
-      "rationale": "Курс по основам графического дизайна: композиция."
-    },
-    {
-      "competencyId": "ui-visual-elements",
-      "sourceIds": [
-        "alison-graphic-design",
-        "greatlearning-photoshop-graphic"
-      ],
-      "rationale": "Визуальные элементы и инструменты в курсах."
-    },
-    {
-      "competencyId": "ui-visual-communication",
-      "sourceIds": [
-        "alison-graphic-design",
-        "coursera-graphic-fundamentals",
-        "coursera-web-design-free"
-      ],
-      "rationale": "Visual communication и основы дизайна в курсах."
-    },
-    {
       "competencyId": "graphic-brand-identity",
       "sourceIds": [
         "alison-graphic-design",
-        "practicum-design-catalog"
+        "practicum-design-catalog",
+        "britishdesign-ru-courses-art-direktor-v-brendinge",
+        "bangbangeducation-ru-course-motion"
       ],
-      "rationale": "Айдентика в курсе и программе Практикума."
+      "rationale": "Айдентика в курсе и программе Практикума.; совпадение с «Бренд-айдентика», формат course-platform, score 0.34; совпадение с «Бренд-айдентика», формат course-platform, score 0.31"
     },
     {
       "competencyId": "graphic-print-production",
@@ -487,9 +318,11 @@
       "competencyId": "graphic-editorial-layout",
       "sourceIds": [
         "coursera-graphic-fundamentals",
-        "practicum-design-catalog"
+        "practicum-design-catalog",
+        "prjctr-com-ru-course-editorial-design",
+        "bureau-ru-courses-typography"
       ],
-      "rationale": "Типографика/композиция в курсе и программа Практикума."
+      "rationale": "Типографика/композиция в курсе и программа Практикума.; совпадение с «Редакционный дизайн и вёрстка», формат course-platform, score 0.46; совпадение с «Редакционный дизайн и вёрстка», формат course-platform, score 0.37"
     },
     {
       "competencyId": "ui-data-visualization",
@@ -502,9 +335,10 @@
       "competencyId": "ui-responsive",
       "sourceIds": [
         "practicum-appdesign",
-        "framer-learn"
+        "framer-learn",
+        "itproger-com-course-responsible"
       ],
-      "rationale": "Источник программы «Дизайнер приложений» покрывает тему в рамках курса."
+      "rationale": "Источник программы «Дизайнер приложений» покрывает тему в рамках курса.; совпадение с «Адаптивность и responsive UI», формат course-platform, score 0.37"
     },
     {
       "competencyId": "ui-accessibility",
@@ -523,16 +357,18 @@
     {
       "competencyId": "ux-analytics",
       "sourceIds": [
-        "practicum-uxresearch"
+        "practicum-uxresearch",
+        "skillbox-ru-course-ai-audio-video"
       ],
-      "rationale": "Источник программы «UX-исследователь» покрывает тему в рамках курса."
+      "rationale": "Источник программы «UX-исследователь» покрывает тему в рамках курса.; совпадение с «Продуктовая аналитика», формат course-platform, score 0.54"
     },
     {
       "competencyId": "ux-metrics",
       "sourceIds": [
-        "practicum-uxresearch"
+        "practicum-uxresearch",
+        "hse-ru-edu-courses-470898711"
       ],
-      "rationale": "Источник программы «UX-исследователь» покрывает тему в рамках курса."
+      "rationale": "Источник программы «UX-исследователь» покрывает тему в рамках курса.; совпадение с «Продуктовые метрики и бизнес-обоснование», формат course-platform, score 0.40"
     },
     {
       "competencyId": "ui-figjam",
@@ -547,17 +383,20 @@
         "practicum-3ddesigner",
         "motiondesign-school-youtube",
         "school-of-motion-free",
-        "motiondesign-school-vimeo"
+        "motiondesign-school-vimeo",
+        "animationschool-ru-courses-categories-3d-animacija"
       ],
-      "rationale": "Источник программы «3D-дизайнер» покрывает тему в рамках курса."
+      "rationale": "Источник программы «3D-дизайнер» покрывает тему в рамках курса.; совпадение с «3D-анимация и риггинг», формат school, score 0.32"
     },
     {
       "competencyId": "ui-web-technologies",
       "sourceIds": [
         "practicum-webdesigner",
-        "alison-web-design-html"
+        "alison-web-design-html",
+        "developer-mozilla-org-ru-docs-web",
+        "intuit-ru-studies-courses-611-467-info"
       ],
-      "rationale": "Источник программы «Веб-дизайнер» покрывает тему в рамках курса."
+      "rationale": "Источник программы «Веб-дизайнер» покрывает тему в рамках курса.; совпадение с «Веб-технологии и ограничения реализации», формат reference, score 0.64; совпадение с «Веб-технологии и ограничения реализации», формат course-platform, score 0.37"
     },
     {
       "competencyId": "3d-modeling",
@@ -567,24 +406,27 @@
         "greatlearning-blender-3d",
         "coursera-3d-cad-fundamental",
         "tinkercad-learn-designs",
-        "instructables-3d-modeling-guide"
+        "instructables-3d-modeling-guide",
+        "skillbox-ru-course-ai-audio-video"
       ],
-      "rationale": "Источник программы it.3ddesigner покрывает тему в рамках курса."
+      "rationale": "Источник программы it.3ddesigner покрывает тему в рамках курса.; совпадение с «3D-моделирование», формат course-platform, score 0.32"
     },
     {
       "competencyId": "3d-hard-surface",
       "sourceIds": [
         "coursera-3d-modeling-intro",
-        "coursera-3d-cad-fundamental"
+        "coursera-3d-cad-fundamental",
+        "3d-itmo-ru-courses-plain-online-hard-surface-modeling-maya"
       ],
-      "rationale": "Источник программы it.3ddesigner покрывает тему в рамках курса."
+      "rationale": "Источник программы it.3ddesigner покрывает тему в рамках курса.; совпадение с «Hard-surface моделирование», формат course-platform, score 0.49"
     },
     {
       "competencyId": "3d-texturing",
       "sourceIds": [
-        "greatlearning-blender-3d"
+        "greatlearning-blender-3d",
+        "dev-epicgames-com-8792b9"
       ],
-      "rationale": "Источник программы it.3ddesigner покрывает тему в рамках курса."
+      "rationale": "Источник программы it.3ddesigner покрывает тему в рамках курса.; совпадение с «Материалы и текстуры», формат course-platform, score 0.37"
     },
     {
       "competencyId": "3d-lighting",
@@ -627,9 +469,10 @@
     {
       "competencyId": "presentation-message",
       "sourceIds": [
-        "autoppt-presentation-slide-design"
+        "autoppt-presentation-slide-design",
+        "cbsd-ru-courses-elektronnye-kursy-onlayn-kurs-argumentatsiya"
       ],
-      "rationale": "Источник программы it.presentation покрывает тему в рамках курса."
+      "rationale": "Источник программы it.presentation покрывает тему в рамках курса.; совпадение с «Ключевое сообщение и аргументация», формат course-platform, score 0.31"
     },
     {
       "competencyId": "web-landing",
@@ -637,9 +480,10 @@
         "coursera-web-design-free",
         "greatlearning-web-design-free",
         "alison-web-design-html",
-        "simplilearn-web-designing-free"
+        "simplilearn-web-designing-free",
+        "tilda-education-courses-web-design-designthinking"
       ],
-      "rationale": "Источник программы it.webdesigner покрывает тему в рамках курса."
+      "rationale": "Источник программы it.webdesigner покрывает тему в рамках курса.; совпадение с «Лендинги и структура страниц», формат course-platform, score 0.40"
     },
     {
       "competencyId": "web-adaptive",
@@ -659,9 +503,10 @@
     {
       "competencyId": "app-mobile-patterns",
       "sourceIds": [
-        "greatlearning-design-app"
+        "greatlearning-design-app",
+        "prjctr-com-ru-course-editorial-design"
       ],
-      "rationale": "Источник программы it.appdesign покрывает тему в рамках курса."
+      "rationale": "Источник программы it.appdesign покрывает тему в рамках курса.; совпадение с «Паттерны мобильных приложений», формат course-platform, score 0.46"
     },
     {
       "competencyId": "app-prototyping",
@@ -676,17 +521,20 @@
       "sourceIds": [
         "alna-free-interior-courses",
         "alison-interior-design-practical",
-        "oxfordhomestudy-interior-design"
+        "oxfordhomestudy-interior-design",
+        "designschool-ru-d46474"
       ],
-      "rationale": "Источник программы it.interior покрывает тему в рамках курса."
+      "rationale": "Источник программы it.interior покрывает тему в рамках курса.; совпадение с «Стили и цветовые концепции», формат school, score 0.31"
     },
     {
       "competencyId": "interior-materials",
       "sourceIds": [
         "alna-free-interior-courses",
-        "alison-interior-design-practical"
+        "alison-interior-design-practical",
+        "skillbox-ru-course-ai-audio-video",
+        "britishdesign-ru-courses-art-direktor-v-brendinge"
       ],
-      "rationale": "Источник программы it.interior покрывает тему в рамках курса."
+      "rationale": "Источник программы it.interior покрывает тему в рамках курса.; совпадение с «Материалы, мебель и свет», формат course-platform, score 0.36; совпадение с «Материалы, мебель и свет», формат course-platform, score 0.34"
     },
     {
       "competencyId": "interior-space-analysis",
@@ -698,16 +546,18 @@
     {
       "competencyId": "interior-zoning",
       "sourceIds": [
-        "greatlearning-interior-design-space-planning"
+        "greatlearning-interior-design-space-planning",
+        "designschool-ru-d46474"
       ],
-      "rationale": "Источник программы it.interior покрывает тему в рамках курса."
+      "rationale": "Источник программы it.interior покрывает тему в рамках курса.; совпадение с «Зонирование и планировка», формат school, score 0.32"
     },
     {
       "competencyId": "interior-visualization",
       "sourceIds": [
-        "coursera-blueprint-interior-design"
+        "coursera-blueprint-interior-design",
+        "skillbox-ru-course-ai-audio-video"
       ],
-      "rationale": "Источник программы it.interior покрывает тему в рамках курса."
+      "rationale": "Источник программы it.interior покрывает тему в рамках курса.; совпадение с «3D-визуализация интерьера», формат course-platform, score 0.34"
     },
     {
       "competencyId": "interior-drawings",
@@ -721,46 +571,53 @@
       "sourceIds": [
         "learntube-art-direction"
       ],
-      "rationale": "Источник программы it.artdir покрывает тему в рамках курса."
+      "rationale": "Источник программы it.artdir покрывает тему в рамках курса.; совпадение с «Цели бренда и коммуникационная стратегия», формат blog, score 0.59; совпадение с «Цели бренда и коммуникационная стратегия», формат blog, score 0.58"
     },
     {
       "competencyId": "artdir-brand-platform",
       "sourceIds": [
-        "learntube-art-direction"
+        "learntube-art-direction",
+        "britishdesign-ru-courses-art-direktor-v-brendinge"
       ],
-      "rationale": "Источник программы it.artdir покрывает тему в рамках курса."
+      "rationale": "Источник программы it.artdir покрывает тему в рамках курса.; совпадение с «Бренд-платформа и система дизайна», формат course-platform, score 0.40"
     },
     {
       "competencyId": "artdir-presentation",
       "sourceIds": [
-        "learntube-art-direction"
+        "learntube-art-direction",
+        "setters-education-courses-pitch-ideas"
       ],
-      "rationale": "Источник программы it.artdir покрывает тему в рамках курса."
+      "rationale": "Источник программы it.artdir покрывает тему в рамках курса.; совпадение с «Презентация и защита идей», формат course-platform, score 0.31"
     },
     {
       "competencyId": "uxresearch-principles",
       "sourceIds": [
         "uxrinstitute-free-ux-research",
         "coursera-ux-research-courses",
-        "fountaininstitute-free-ux-research"
+        "fountaininstitute-free-ux-research",
+        "stepik-org-course-1128-promo"
       ],
-      "rationale": "Источник программы it.uxresearch покрывает тему в рамках курса."
+      "rationale": "Источник программы it.uxresearch покрывает тему в рамках курса.; совпадение с «Принципы и этапы исследований», формат course-platform, score 0.57"
     },
     {
       "competencyId": "uxresearch-qualitative",
       "sourceIds": [
         "uxrinstitute-free-ux-research",
-        "coursera-ux-research-courses"
+        "coursera-ux-research-courses",
+        "openedu-ru-course-hse-qualsoc",
+        "hse-ru-edu-courses-470898711"
       ],
-      "rationale": "Источник программы it.uxresearch покрывает тему в рамках курса."
+      "rationale": "Источник программы it.uxresearch покрывает тему в рамках курса.; совпадение с «Качественные методы», формат course-platform, score 0.42; совпадение с «Качественные методы», формат course-platform, score 0.40"
     },
     {
       "competencyId": "uxresearch-quantitative",
       "sourceIds": [
         "uxrinstitute-free-ux-research",
-        "coursera-ux-research-courses"
+        "coursera-ux-research-courses",
+        "hse-ru-edu-courses-470898711",
+        "freeuniversity-education-ea1ef2"
       ],
-      "rationale": "Источник программы it.uxresearch покрывает тему в рамках курса."
+      "rationale": "Источник программы it.uxresearch покрывает тему в рамках курса.; совпадение с «Количественные методы», формат course-platform, score 0.40; совпадение с «Количественные методы», формат school, score 0.38"
     },
     {
       "competencyId": "uxresearch-synthesis",
@@ -897,9 +754,10 @@
         "practicum-ai-for-design",
         "elements-of-ai",
         "oxfordhomestudy-ai-free",
-        "greatlearning-ai-free"
+        "greatlearning-ai-free",
+        "skillbox-ru-course-ai-audio-video"
       ],
-      "rationale": "Программа содержит модуль/тему по ИИ, подтверждённую страницей курса."
+      "rationale": "Программа содержит модуль/тему по ИИ, подтверждённую страницей курса.; совпадение с «ИИ в видео, монтаже и аудио», формат course-platform, score 0.39"
     },
     {
       "competencyId": "aidesigner-tool-landscape",
@@ -921,9 +779,10 @@
       "sourceIds": [
         "practicum-ai-tools-for-designers",
         "elements-of-ai",
-        "learntube-ai-graphic-design"
+        "learntube-ai-graphic-design",
+        "aistudio-yandex-ru-ru-ai-academy-courses-prompting"
       ],
-      "rationale": "Курс Практикума по нейросетям покрывает тему в рамках программы."
+      "rationale": "Курс Практикума по нейросетям покрывает тему в рамках программы.; совпадение с «Промпт-системы и библиотеки», формат course-platform, score 0.37"
     },
     {
       "competencyId": "aidesigner-tool-evaluation",
@@ -953,9 +812,10 @@
       "competencyId": "aidesigner-video-audio",
       "sourceIds": [
         "practicum-ai-tools-for-designers",
-        "practicum-ai-for-design"
+        "practicum-ai-for-design",
+        "bangbangeducation-ru-course-motion"
       ],
-      "rationale": "Курс Практикума по нейросетям покрывает тему в рамках программы."
+      "rationale": "Курс Практикума по нейросетям покрывает тему в рамках программы.; совпадение с «AI-видео, анимация и аудио», формат course-platform, score 0.31, домен уже в реестре: bangbangeducation-ru-course-motion"
     },
     {
       "competencyId": "aidesigner-quality-eval",
@@ -998,9 +858,10 @@
         "elements-of-ai",
         "greatlearning-ai-free",
         "alison-ai-fundamentals",
-        "coursera-ai-free"
+        "coursera-ai-free",
+        "spb-hse-ru-ius-civillaw-courses-944974338-html"
       ],
-      "rationale": "Курс по основам ИИ покрывает тему в рамках программы."
+      "rationale": "Курс по основам ИИ покрывает тему в рамках программы.; совпадение с «Этика, авторские права и данные», формат course-platform, score 0.31"
     },
     {
       "competencyId": "aidesigner-ai-features",
@@ -1033,30 +894,35 @@
       "sourceIds": [
         "framer-learn"
       ],
-      "rationale": "Framer Learn: официальные материалы по интерактивным прототипам."
+      "rationale": "Framer Learn: официальные материалы по интерактивным прототипам.; совпадение с «Framer: интерактивные прототипы», формат course-platform, score 0.49, домен уже в реестре: udemy-interior-design-free"
     },
     {
       "competencyId": "product-growth",
       "sourceIds": [
-        "reforge-blog"
+        "reforge-blog",
+        "habr-ai-design-1096288"
       ],
-      "rationale": "Reforge: продуктовый рост, удержание и метрики."
+      "rationale": "Reforge: продуктовый рост, удержание и метрики.; совпадение с «Рост, воронки и удержание», формат blog, score 0.53, домен уже в реестре: habr-ai-design-1096288"
     },
     {
       "competencyId": "motion-animation-principles",
       "sourceIds": [
         "motiondesign-school-youtube",
-        "school-of-motion-free"
+        "school-of-motion-free",
+        "animationschool-ru-courses-categories-3d-animacija",
+        "practicum-ai-tools-for-designers"
       ],
-      "rationale": "Открытые материалы MDS/School of Motion по принципам анимации."
+      "rationale": "Открытые материалы MDS/School of Motion по принципам анимации.; совпадение с «Принципы анимации», формат school, score 0.32; совпадение с «Принципы анимации», формат blog, score 0.32, домен уже в реестре: practicum-ai-tools-for-designers"
     },
     {
       "competencyId": "motion-styleframes",
       "sourceIds": [
         "motiondesign-school-youtube",
-        "motiondesign-school-vimeo"
+        "motiondesign-school-vimeo",
+        "britishdesign-ru-courses-art-direktor-v-brendinge",
+        "practicum-ai-tools-for-designers"
       ],
-      "rationale": "Style frames и разборы проектов в открытых материалах MDS."
+      "rationale": "Style frames и разборы проектов в открытых материалах MDS.; совпадение с «Style frames и арт-дирекшн», формат course-platform, score 0.40; совпадение с «Style frames и арт-дирекшн», формат blog, score 0.31, домен уже в реестре: practicum-ai-tools-for-designers"
     },
     {
       "competencyId": "motion-editing",
@@ -1070,17 +936,21 @@
       "competencyId": "motion-sound-design",
       "sourceIds": [
         "motiondesign-school-youtube",
-        "school-of-motion-free"
+        "school-of-motion-free",
+        "tochkazvuka-com-course-video-sound-design-html",
+        "skillbox-ru-course-ai-audio-video"
       ],
-      "rationale": "Открытые материалы по звуку и синхронизации."
+      "rationale": "Открытые материалы по звуку и синхронизации.; совпадение с «Звуковой дизайн и синхронизация», формат course-platform, score 0.51; совпадение с «Звуковой дизайн и синхронизация», формат course-platform, score 0.37"
     },
     {
       "competencyId": "motion-compositing",
       "sourceIds": [
         "motiondesign-school-youtube",
-        "school-of-motion-free"
+        "school-of-motion-free",
+        "online-vfx-ru-course-and-masters",
+        "profileschool-ru-438fa2"
       ],
-      "rationale": "Композитинг в открытых материалах MDS/SOM."
+      "rationale": "Композитинг в открытых материалах MDS/SOM.; совпадение с «Композитинг и VFX», формат course-platform, score 0.36; совпадение с «Композитинг и VFX», формат school, score 0.30"
     },
     {
       "competencyId": "motion-brand-systems",
@@ -1094,9 +964,11 @@
       "competencyId": "motion-toolchain",
       "sourceIds": [
         "motiondesign-school-youtube",
-        "school-of-motion-free"
+        "school-of-motion-free",
+        "britishdesign-ru-courses-art-direktor-v-brendinge",
+        "bangbangeducation-ru-course-motion"
       ],
-      "rationale": "After Effects/3D-инструменты в открытых материалах MDS/SOM."
+      "rationale": "After Effects/3D-инструменты в открытых материалах MDS/SOM.; совпадение с «Моушн-инструментарий», формат course-platform, score 0.34; совпадение с «Моушн-инструментарий», формат course-platform, score 0.33"
     },
     {
       "competencyId": "motion-production",
@@ -1110,9 +982,10 @@
       "competencyId": "motion-showreel",
       "sourceIds": [
         "motiondesign-school-vimeo",
-        "motiondesign-school-youtube"
+        "motiondesign-school-youtube",
+        "practicum-ai-tools-for-designers"
       ],
-      "rationale": "Showreel и портфолио: открытые работы MDS."
+      "rationale": "Showreel и портфолио: открытые работы MDS.; совпадение с «Showreel и портфолио», формат blog, score 0.44, домен уже в реестре: practicum-ai-tools-for-designers"
     },
     {
       "competencyId": "uxresearch-questions",
@@ -1126,17 +999,63 @@
       "competencyId": "uxresearch-recruiting",
       "sourceIds": [
         "uxrinstitute-free-ux-research",
-        "fountaininstitute-free-ux-research"
+        "fountaininstitute-free-ux-research",
+        "productlab-ru-strategy",
+        "privet-marketing-5d9ac1"
       ],
-      "rationale": "Открытые материалы по выборке и рекрутингу."
+      "rationale": "Открытые материалы по выборке и рекрутингу.; совпадение с «Выборка и рекрутинг респондентов», формат blog, score 0.34; совпадение с «Выборка и рекрутинг респондентов», формат blog, score 0.32"
     },
     {
       "competencyId": "uxresearch-usability",
       "sourceIds": [
         "uxrinstitute-free-ux-research",
-        "fountaininstitute-free-ux-research"
+        "fountaininstitute-free-ux-research",
+        "stepik-org-course-1128-promo",
+        "hse-ru-edu-courses-470898711"
       ],
-      "rationale": "Открытые материалы по юзабилити-тестированию."
+      "rationale": "Открытые материалы по юзабилити-тестированию.; совпадение с «Юзабилити-тестирование и модерация», формат course-platform, score 0.49; совпадение с «Юзабилити-тестирование и модерация», формат course-platform, score 0.38"
+    },
+    {
+      "competencyId": "3d-sculpting",
+      "sourceIds": [
+        "smirnov-school-course-3d-portrait"
+      ],
+      "rationale": "совпадение с «Скульптинг и органика», формат school, score 0.32"
+    },
+    {
+      "competencyId": "interior-ergonomics",
+      "sourceIds": [
+        "obrazum-com-96c2ff"
+      ],
+      "rationale": "совпадение с «Эргономика», формат course-platform, score 0.31"
+    },
+    {
+      "competencyId": "interior-project-management",
+      "sourceIds": [
+        "synergy-ru-a0f976"
+      ],
+      "rationale": "совпадение с «Ведение проекта и авторский надзор», формат course-platform, score 0.42"
+    },
+    {
+      "competencyId": "web-visual",
+      "sourceIds": [
+        "bangbangeducation-ru-course-motion"
+      ],
+      "rationale": "совпадение с «Визуальный дизайн для веба», формат course-platform, score 0.41; совпадение с «Визуальный дизайн для веба», формат course-platform, score 0.40"
+    },
+    {
+      "competencyId": "presentation-data",
+      "sourceIds": [
+        "hse-ru-edu-courses-470898711"
+      ],
+      "rationale": "совпадение с «Достоверность данных и фактчекинг», формат course-platform, score 0.34"
+    },
+    {
+      "competencyId": "app-native-crossplatform",
+      "sourceIds": [
+        "practicum-appdesign"
+      ],
+      "rationale": "совпадение с «Нативные и кросс-платформенные приложения», формат course-platform, score 0.31, домен уже в реестре: practicum-appdesign"
     }
   ]
 }

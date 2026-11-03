@@ -8632,6 +8632,1626 @@
       "reason": "AI-assisted source relevance check: источник активен и не агрегатор; нужен spot-check основателя перед публичным запуском.",
       "reviewedBy": "deepseek-content-gate",
       "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.motion",
+      "competencyId": "ai-ethics-rights",
+      "sourceId": "spb-hse-ru-ius-civillaw-courses-944974338-html",
+      "decision": "accepted",
+      "reason": "Авто-расширение: совпадение с «Этика, авторские права и данные», формат course-platform, score 0.31",
+      "reviewedBy": "sources-expand-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.motion",
+      "competencyId": "ai-video-audio",
+      "sourceId": "skillbox-ru-course-ai-audio-video",
+      "decision": "accepted",
+      "reason": "Авто-расширение: совпадение с «ИИ в видео, монтаже и аудио», формат course-platform, score 0.39",
+      "reviewedBy": "sources-expand-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.motion",
+      "competencyId": "motion-3d-animation",
+      "sourceId": "animationschool-ru-courses-categories-3d-animacija",
+      "decision": "accepted",
+      "reason": "Авто-расширение: совпадение с «3D-анимация и риггинг», формат school, score 0.32",
+      "reviewedBy": "sources-expand-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.motion",
+      "competencyId": "motion-animation-principles",
+      "sourceId": "animationschool-ru-courses-categories-3d-animacija",
+      "decision": "accepted",
+      "reason": "Авто-расширение: совпадение с «Принципы анимации», формат school, score 0.32",
+      "reviewedBy": "sources-expand-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.motion",
+      "competencyId": "motion-compositing",
+      "sourceId": "online-vfx-ru-course-and-masters",
+      "decision": "accepted",
+      "reason": "Авто-расширение: совпадение с «Композитинг и VFX», формат course-platform, score 0.36",
+      "reviewedBy": "sources-expand-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.motion",
+      "competencyId": "motion-compositing",
+      "sourceId": "profileschool-ru-438fa2",
+      "decision": "accepted",
+      "reason": "Авто-расширение: совпадение с «Композитинг и VFX», формат school, score 0.30",
+      "reviewedBy": "sources-expand-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.motion",
+      "competencyId": "motion-sound-design",
+      "sourceId": "skillbox-ru-course-ai-audio-video",
+      "decision": "accepted",
+      "reason": "Авто-расширение: совпадение с «Звуковой дизайн и синхронизация», формат course-platform, score 0.37",
+      "reviewedBy": "sources-expand-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.motion",
+      "competencyId": "motion-styleframes",
+      "sourceId": "britishdesign-ru-courses-art-direktor-v-brendinge",
+      "decision": "accepted",
+      "reason": "Авто-расширение: совпадение с «Style frames и арт-дирекшн», формат course-platform, score 0.40",
+      "reviewedBy": "sources-expand-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.motion",
+      "competencyId": "motion-toolchain",
+      "sourceId": "britishdesign-ru-courses-art-direktor-v-brendinge",
+      "decision": "accepted",
+      "reason": "Авто-расширение: совпадение с «Моушн-инструментарий», формат course-platform, score 0.34",
+      "reviewedBy": "sources-expand-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.motion",
+      "competencyId": "motion-toolchain",
+      "sourceId": "bangbangeducation-ru-course-motion",
+      "decision": "accepted",
+      "reason": "Авто-расширение: совпадение с «Моушн-инструментарий», формат course-platform, score 0.33",
+      "reviewedBy": "sources-expand-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.motion",
+      "competencyId": "ui-color",
+      "sourceId": "hudozhnik-online-colorsciense",
+      "decision": "accepted",
+      "reason": "Авто-расширение: совпадение с «Теория цвета и колористика», формат course-platform, score 0.31",
+      "reviewedBy": "sources-expand-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.motion",
+      "competencyId": "ui-design-systems",
+      "sourceId": "bangbangeducation-ru-course-motion",
+      "decision": "accepted",
+      "reason": "Авто-расширение: совпадение с «Дизайн-системы и токены», формат course-platform, score 0.54",
+      "reviewedBy": "sources-expand-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.motion",
+      "competencyId": "ui-motion",
+      "sourceId": "cloud-itstep-org-ru-course-motion-design",
+      "decision": "accepted",
+      "reason": "Авто-расширение: совпадение с «Анимация и motion design», формат course-platform, score 0.37",
+      "reviewedBy": "sources-expand-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.motion",
+      "competencyId": "ui-motion",
+      "sourceId": "bangbangeducation-ru-course-motion",
+      "decision": "accepted",
+      "reason": "Авто-расширение: совпадение с «Анимация и motion design», формат course-platform, score 0.31",
+      "reviewedBy": "sources-expand-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.motion",
+      "competencyId": "ui-responsive",
+      "sourceId": "itproger-com-course-responsible",
+      "decision": "accepted",
+      "reason": "Авто-расширение: совпадение с «Адаптивность и responsive UI», формат course-platform, score 0.37",
+      "reviewedBy": "sources-expand-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.motion",
+      "competencyId": "ui-typography",
+      "sourceId": "bangbangeducation-ru-course-motion",
+      "decision": "accepted",
+      "reason": "Авто-расширение: совпадение с «Типографика», формат course-platform, score 0.31",
+      "reviewedBy": "sources-expand-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.motion",
+      "competencyId": "ui-typography",
+      "sourceId": "bureau-ru-courses-typography",
+      "decision": "accepted",
+      "reason": "Авто-расширение: совпадение с «Типографика», формат course-platform, score 0.31",
+      "reviewedBy": "sources-expand-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.motion",
+      "competencyId": "ux-design-thinking",
+      "sourceId": "tilda-education-courses-web-design-designthinking",
+      "decision": "accepted",
+      "reason": "Авто-расширение: совпадение с «Дизайн-мышление», формат course-platform, score 0.40",
+      "reviewedBy": "sources-expand-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.motion",
+      "competencyId": "ux-interactive-prototype",
+      "sourceId": "contented-ru-courses-prototipirovanie",
+      "decision": "accepted",
+      "reason": "Авто-расширение: совпадение с «Интерактивные прототипы», формат course-platform, score 0.31",
+      "reviewedBy": "sources-expand-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.uxui",
+      "competencyId": "ui-web-technologies",
+      "sourceId": "developer-mozilla-org-ru-docs-web",
+      "decision": "accepted",
+      "reason": "Авто-расширение: совпадение с «Веб-технологии и ограничения реализации», формат reference, score 0.64",
+      "reviewedBy": "sources-expand-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.uxui",
+      "competencyId": "ui-web-technologies",
+      "sourceId": "intuit-ru-studies-courses-611-467-info",
+      "decision": "accepted",
+      "reason": "Авто-расширение: совпадение с «Веб-технологии и ограничения реализации», формат course-platform, score 0.37",
+      "reviewedBy": "sources-expand-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.uxui",
+      "competencyId": "ux-interviews",
+      "sourceId": "hse-ru-edu-courses-470898711",
+      "decision": "accepted",
+      "reason": "Авто-расширение: совпадение с «Интервью и наблюдение», формат course-platform, score 0.31",
+      "reviewedBy": "sources-expand-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.uxui",
+      "competencyId": "ux-lowfi-prototype",
+      "sourceId": "netology-ru-courses-osnovy-prototipirovanniya",
+      "decision": "accepted",
+      "reason": "Авто-расширение: совпадение с «Низкодетализированные прототипы», формат course-platform, score 0.37",
+      "reviewedBy": "sources-expand-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.uxui",
+      "competencyId": "ux-metrics",
+      "sourceId": "hse-ru-edu-courses-470898711",
+      "decision": "accepted",
+      "reason": "Авто-расширение: совпадение с «Продуктовые метрики и бизнес-обоснование», формат course-platform, score 0.40",
+      "reviewedBy": "sources-expand-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.uxui",
+      "competencyId": "ux-requirements",
+      "sourceId": "stepik-org-course-1128-promo",
+      "decision": "accepted",
+      "reason": "Авто-расширение: совпадение с «Анализ требований и постановка задач», формат course-platform, score 0.49",
+      "reviewedBy": "sources-expand-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.uxui",
+      "competencyId": "ux-requirements",
+      "sourceId": "learn-rarus-ru-courses-15216",
+      "decision": "accepted",
+      "reason": "Авто-расширение: совпадение с «Анализ требований и постановка задач», формат course-platform, score 0.40",
+      "reviewedBy": "sources-expand-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.uxui",
+      "competencyId": "ux-usability-testing",
+      "sourceId": "online-spbu-ru-16ff04",
+      "decision": "accepted",
+      "reason": "Авто-расширение: совпадение с «Юзабилити-тестирование», формат course-platform, score 0.37",
+      "reviewedBy": "sources-expand-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.product",
+      "competencyId": "product-cjm",
+      "sourceId": "uplab-ru-blog-customer-journey-map",
+      "decision": "accepted",
+      "reason": "Авто-расширение: совпадение с «Customer Journey Map», формат blog, score 0.53",
+      "reviewedBy": "sources-expand-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.product",
+      "competencyId": "product-cjm",
+      "sourceId": "obrazum-com-96c2ff",
+      "decision": "accepted",
+      "reason": "Авто-расширение: совпадение с «Customer Journey Map», формат course-platform, score 0.45",
+      "reviewedBy": "sources-expand-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.product",
+      "competencyId": "product-strategy",
+      "sourceId": "productlab-ru-strategy",
+      "decision": "accepted",
+      "reason": "Авто-расширение: совпадение с «Продуктовая стратегия», формат course-platform, score 0.42",
+      "reviewedBy": "sources-expand-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.uxui",
+      "competencyId": "ux-design-thinking",
+      "sourceId": "tilda-education-courses-web-design-designthinking",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.uxui",
+      "competencyId": "ux-user-flows",
+      "sourceId": "practicum-ai-tools-for-designers",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.uxui",
+      "competencyId": "ux-interactive-prototype",
+      "sourceId": "contented-ru-courses-prototipirovanie",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.uxui",
+      "competencyId": "ux-usability-testing",
+      "sourceId": "practicum-ai-tools-for-designers",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.uxui",
+      "competencyId": "ux-analytics",
+      "sourceId": "skillbox-ru-course-ai-audio-video",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.uxui",
+      "competencyId": "ui-color",
+      "sourceId": "hudozhnik-online-colorsciense",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.uxui",
+      "competencyId": "ui-typography",
+      "sourceId": "bangbangeducation-ru-course-motion",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.uxui",
+      "competencyId": "ui-typography",
+      "sourceId": "bureau-ru-courses-typography",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.uxui",
+      "competencyId": "ui-design-systems",
+      "sourceId": "bangbangeducation-ru-course-motion",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.uxui",
+      "competencyId": "ui-responsive",
+      "sourceId": "framer-learn",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.uxui",
+      "competencyId": "ui-responsive",
+      "sourceId": "itproger-com-course-responsible",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.uxui",
+      "competencyId": "ui-motion",
+      "sourceId": "cloud-itstep-org-ru-course-motion-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.uxui",
+      "competencyId": "ui-motion",
+      "sourceId": "bangbangeducation-ru-course-motion",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.product",
+      "competencyId": "ux-design-thinking",
+      "sourceId": "tilda-education-courses-web-design-designthinking",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.product",
+      "competencyId": "ux-interviews",
+      "sourceId": "hse-ru-edu-courses-470898711",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.product",
+      "competencyId": "ux-user-flows",
+      "sourceId": "practicum-ai-tools-for-designers",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.product",
+      "competencyId": "ux-requirements",
+      "sourceId": "stepik-org-course-1128-promo",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.product",
+      "competencyId": "ux-requirements",
+      "sourceId": "learn-rarus-ru-courses-15216",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.product",
+      "competencyId": "ux-lowfi-prototype",
+      "sourceId": "netology-ru-courses-osnovy-prototipirovanniya",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.product",
+      "competencyId": "ux-interactive-prototype",
+      "sourceId": "contented-ru-courses-prototipirovanie",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.product",
+      "competencyId": "ux-usability-testing",
+      "sourceId": "practicum-ai-tools-for-designers",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.product",
+      "competencyId": "ux-usability-testing",
+      "sourceId": "online-spbu-ru-16ff04",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.product",
+      "competencyId": "ux-metrics",
+      "sourceId": "hse-ru-edu-courses-470898711",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.product",
+      "competencyId": "ux-analytics",
+      "sourceId": "skillbox-ru-course-ai-audio-video",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.product",
+      "competencyId": "ui-color",
+      "sourceId": "hudozhnik-online-colorsciense",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.product",
+      "competencyId": "ui-typography",
+      "sourceId": "bangbangeducation-ru-course-motion",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.product",
+      "competencyId": "ui-typography",
+      "sourceId": "bureau-ru-courses-typography",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.product",
+      "competencyId": "ui-design-systems",
+      "sourceId": "bangbangeducation-ru-course-motion",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.product",
+      "competencyId": "product-strategy",
+      "sourceId": "hse-ru-edu-courses-470898711",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.product",
+      "competencyId": "product-growth",
+      "sourceId": "habr-ai-design-1096288",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.motion",
+      "competencyId": "motion-animation-principles",
+      "sourceId": "motiondesign-school-youtube",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.motion",
+      "competencyId": "motion-animation-principles",
+      "sourceId": "school-of-motion-free",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.motion",
+      "competencyId": "motion-animation-principles",
+      "sourceId": "practicum-ai-tools-for-designers",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.motion",
+      "competencyId": "motion-timing-easing",
+      "sourceId": "motiondesign-school-youtube",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.motion",
+      "competencyId": "motion-timing-easing",
+      "sourceId": "school-of-motion-free",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.motion",
+      "competencyId": "motion-styleframes",
+      "sourceId": "motiondesign-school-youtube",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.motion",
+      "competencyId": "motion-styleframes",
+      "sourceId": "motiondesign-school-vimeo",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.motion",
+      "competencyId": "motion-styleframes",
+      "sourceId": "practicum-ai-tools-for-designers",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.motion",
+      "competencyId": "motion-editing",
+      "sourceId": "motiondesign-school-youtube",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.motion",
+      "competencyId": "motion-editing",
+      "sourceId": "school-of-motion-free",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.motion",
+      "competencyId": "motion-sound-design",
+      "sourceId": "motiondesign-school-youtube",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.motion",
+      "competencyId": "motion-sound-design",
+      "sourceId": "school-of-motion-free",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.motion",
+      "competencyId": "motion-3d-animation",
+      "sourceId": "motiondesign-school-youtube",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.motion",
+      "competencyId": "motion-3d-animation",
+      "sourceId": "school-of-motion-free",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.motion",
+      "competencyId": "motion-3d-animation",
+      "sourceId": "motiondesign-school-vimeo",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.motion",
+      "competencyId": "motion-3d-rendering",
+      "sourceId": "motiondesign-school-youtube",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.motion",
+      "competencyId": "motion-3d-rendering",
+      "sourceId": "school-of-motion-free",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.motion",
+      "competencyId": "motion-compositing",
+      "sourceId": "motiondesign-school-youtube",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.motion",
+      "competencyId": "motion-compositing",
+      "sourceId": "school-of-motion-free",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.motion",
+      "competencyId": "motion-brand-systems",
+      "sourceId": "motiondesign-school-vimeo",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.motion",
+      "competencyId": "motion-brand-systems",
+      "sourceId": "petrick-mds-case",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.motion",
+      "competencyId": "motion-toolchain",
+      "sourceId": "motiondesign-school-youtube",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.motion",
+      "competencyId": "motion-toolchain",
+      "sourceId": "school-of-motion-free",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.motion",
+      "competencyId": "motion-production",
+      "sourceId": "motiondesign-school-youtube",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.motion",
+      "competencyId": "motion-showreel",
+      "sourceId": "practicum-ai-tools-for-designers",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.motion",
+      "competencyId": "ui-responsive",
+      "sourceId": "framer-learn",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.graphic",
+      "competencyId": "ux-design-thinking",
+      "sourceId": "tilda-education-courses-web-design-designthinking",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.graphic",
+      "competencyId": "ui-color",
+      "sourceId": "hudozhnik-online-colorsciense",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.graphic",
+      "competencyId": "ui-typography",
+      "sourceId": "bangbangeducation-ru-course-motion",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.graphic",
+      "competencyId": "ui-typography",
+      "sourceId": "bureau-ru-courses-typography",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.graphic",
+      "competencyId": "ui-web-technologies",
+      "sourceId": "developer-mozilla-org-ru-docs-web",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.graphic",
+      "competencyId": "ui-web-technologies",
+      "sourceId": "intuit-ru-studies-courses-611-467-info",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.graphic",
+      "competencyId": "ui-design-systems",
+      "sourceId": "bangbangeducation-ru-course-motion",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ux-design-thinking",
+      "sourceId": "tilda-education-courses-web-design-designthinking",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "ui-color",
+      "sourceId": "hudozhnik-online-colorsciense",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "motion-3d-animation",
+      "sourceId": "motiondesign-school-youtube",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "motion-3d-animation",
+      "sourceId": "school-of-motion-free",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "motion-3d-animation",
+      "sourceId": "motiondesign-school-vimeo",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "motion-3d-animation",
+      "sourceId": "animationschool-ru-courses-categories-3d-animacija",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "motion-timing-easing",
+      "sourceId": "motiondesign-school-youtube",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "motion-timing-easing",
+      "sourceId": "school-of-motion-free",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.interior",
+      "competencyId": "ux-design-thinking",
+      "sourceId": "tilda-education-courses-web-design-designthinking",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.interior",
+      "competencyId": "ui-color",
+      "sourceId": "hudozhnik-online-colorsciense",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.webdesigner",
+      "competencyId": "ux-design-thinking",
+      "sourceId": "tilda-education-courses-web-design-designthinking",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.webdesigner",
+      "competencyId": "ui-color",
+      "sourceId": "hudozhnik-online-colorsciense",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.webdesigner",
+      "competencyId": "ui-typography",
+      "sourceId": "bangbangeducation-ru-course-motion",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.webdesigner",
+      "competencyId": "ui-typography",
+      "sourceId": "bureau-ru-courses-typography",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.webdesigner",
+      "competencyId": "ux-user-flows",
+      "sourceId": "practicum-ai-tools-for-designers",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.webdesigner",
+      "competencyId": "ux-interactive-prototype",
+      "sourceId": "contented-ru-courses-prototipirovanie",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.webdesigner",
+      "competencyId": "ui-design-systems",
+      "sourceId": "bangbangeducation-ru-course-motion",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.webdesigner",
+      "competencyId": "ui-responsive",
+      "sourceId": "framer-learn",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.webdesigner",
+      "competencyId": "ui-responsive",
+      "sourceId": "itproger-com-course-responsible",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.webdesigner",
+      "competencyId": "ui-web-technologies",
+      "sourceId": "developer-mozilla-org-ru-docs-web",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.webdesigner",
+      "competencyId": "ui-web-technologies",
+      "sourceId": "intuit-ru-studies-courses-611-467-info",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.presentation",
+      "competencyId": "ux-design-thinking",
+      "sourceId": "tilda-education-courses-web-design-designthinking",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.presentation",
+      "competencyId": "ui-typography",
+      "sourceId": "bangbangeducation-ru-course-motion",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.presentation",
+      "competencyId": "ui-typography",
+      "sourceId": "bureau-ru-courses-typography",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.presentation",
+      "competencyId": "ui-color",
+      "sourceId": "hudozhnik-online-colorsciense",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.uxresearch",
+      "competencyId": "ux-design-thinking",
+      "sourceId": "tilda-education-courses-web-design-designthinking",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.uxresearch",
+      "competencyId": "uxresearch-questions",
+      "sourceId": "uxrinstitute-free-ux-research",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.uxresearch",
+      "competencyId": "uxresearch-questions",
+      "sourceId": "fountaininstitute-free-ux-research",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.uxresearch",
+      "competencyId": "uxresearch-recruiting",
+      "sourceId": "uxrinstitute-free-ux-research",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.uxresearch",
+      "competencyId": "uxresearch-recruiting",
+      "sourceId": "fountaininstitute-free-ux-research",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.uxresearch",
+      "competencyId": "ux-interviews",
+      "sourceId": "hse-ru-edu-courses-470898711",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.uxresearch",
+      "competencyId": "uxresearch-usability",
+      "sourceId": "uxrinstitute-free-ux-research",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.uxresearch",
+      "competencyId": "uxresearch-usability",
+      "sourceId": "fountaininstitute-free-ux-research",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.uxresearch",
+      "competencyId": "ux-analytics",
+      "sourceId": "skillbox-ru-course-ai-audio-video",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.uxresearch",
+      "competencyId": "ux-metrics",
+      "sourceId": "hse-ru-edu-courses-470898711",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.artdir",
+      "competencyId": "ux-design-thinking",
+      "sourceId": "tilda-education-courses-web-design-designthinking",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.artdir",
+      "competencyId": "ui-color",
+      "sourceId": "hudozhnik-online-colorsciense",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.artdir",
+      "competencyId": "ui-typography",
+      "sourceId": "bangbangeducation-ru-course-motion",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.artdir",
+      "competencyId": "ui-typography",
+      "sourceId": "bureau-ru-courses-typography",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.artdir",
+      "competencyId": "ui-design-systems",
+      "sourceId": "bangbangeducation-ru-course-motion",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.appdesign",
+      "competencyId": "ux-design-thinking",
+      "sourceId": "tilda-education-courses-web-design-designthinking",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.appdesign",
+      "competencyId": "ui-color",
+      "sourceId": "hudozhnik-online-colorsciense",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.appdesign",
+      "competencyId": "ui-typography",
+      "sourceId": "bangbangeducation-ru-course-motion",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.appdesign",
+      "competencyId": "ui-typography",
+      "sourceId": "bureau-ru-courses-typography",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.appdesign",
+      "competencyId": "ux-interviews",
+      "sourceId": "hse-ru-edu-courses-470898711",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.appdesign",
+      "competencyId": "ux-user-flows",
+      "sourceId": "practicum-ai-tools-for-designers",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.appdesign",
+      "competencyId": "ux-lowfi-prototype",
+      "sourceId": "netology-ru-courses-osnovy-prototipirovanniya",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.appdesign",
+      "competencyId": "ux-interactive-prototype",
+      "sourceId": "contented-ru-courses-prototipirovanie",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.appdesign",
+      "competencyId": "ui-design-systems",
+      "sourceId": "bangbangeducation-ru-course-motion",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.appdesign",
+      "competencyId": "ui-responsive",
+      "sourceId": "framer-learn",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.appdesign",
+      "competencyId": "ui-responsive",
+      "sourceId": "itproger-com-course-responsible",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.appdesign",
+      "competencyId": "ux-usability-testing",
+      "sourceId": "practicum-ai-tools-for-designers",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.appdesign",
+      "competencyId": "ux-usability-testing",
+      "sourceId": "online-spbu-ru-16ff04",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.graphic",
+      "competencyId": "graphic-editorial-layout",
+      "sourceId": "prjctr-com-ru-course-editorial-design",
+      "decision": "accepted",
+      "reason": "Авто-расширение: совпадение с «Редакционный дизайн и вёрстка», формат course-platform, score 0.46",
+      "reviewedBy": "sources-expand-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "3d-hard-surface",
+      "sourceId": "3d-itmo-ru-courses-plain-online-hard-surface-modeling-maya",
+      "decision": "accepted",
+      "reason": "Авто-расширение: совпадение с «Hard-surface моделирование», формат course-platform, score 0.49",
+      "reviewedBy": "sources-expand-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "3d-sculpting",
+      "sourceId": "smirnov-school-course-3d-portrait",
+      "decision": "accepted",
+      "reason": "Авто-расширение: совпадение с «Скульптинг и органика», формат school, score 0.32",
+      "reviewedBy": "sources-expand-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.interior",
+      "competencyId": "interior-project-management",
+      "sourceId": "synergy-ru-a0f976",
+      "decision": "accepted",
+      "reason": "Авто-расширение: совпадение с «Ведение проекта и авторский надзор», формат course-platform, score 0.42",
+      "reviewedBy": "sources-expand-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.interior",
+      "competencyId": "interior-styles",
+      "sourceId": "designschool-ru-d46474",
+      "decision": "accepted",
+      "reason": "Авто-расширение: совпадение с «Стили и цветовые концепции», формат school, score 0.31",
+      "reviewedBy": "sources-expand-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.interior",
+      "competencyId": "interior-zoning",
+      "sourceId": "designschool-ru-d46474",
+      "decision": "accepted",
+      "reason": "Авто-расширение: совпадение с «Зонирование и планировка», формат school, score 0.32",
+      "reviewedBy": "sources-expand-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.presentation",
+      "competencyId": "presentation-message",
+      "sourceId": "cbsd-ru-courses-elektronnye-kursy-onlayn-kurs-argumentatsiya",
+      "decision": "accepted",
+      "reason": "Авто-расширение: совпадение с «Ключевое сообщение и аргументация», формат course-platform, score 0.31",
+      "reviewedBy": "sources-expand-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.uxresearch",
+      "competencyId": "uxresearch-qualitative",
+      "sourceId": "openedu-ru-course-hse-qualsoc",
+      "decision": "accepted",
+      "reason": "Авто-расширение: совпадение с «Качественные методы», формат course-platform, score 0.42",
+      "reviewedBy": "sources-expand-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.uxresearch",
+      "competencyId": "uxresearch-quantitative",
+      "sourceId": "freeuniversity-education-ea1ef2",
+      "decision": "accepted",
+      "reason": "Авто-расширение: совпадение с «Количественные методы», формат school, score 0.38",
+      "reviewedBy": "sources-expand-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.uxresearch",
+      "competencyId": "uxresearch-recruiting",
+      "sourceId": "privet-marketing-5d9ac1",
+      "decision": "accepted",
+      "reason": "Авто-расширение: совпадение с «Выборка и рекрутинг респондентов», формат blog, score 0.32",
+      "reviewedBy": "sources-expand-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.artdir",
+      "competencyId": "artdir-presentation",
+      "sourceId": "setters-education-courses-pitch-ideas",
+      "decision": "accepted",
+      "reason": "Авто-расширение: совпадение с «Презентация и защита идей», формат course-platform, score 0.31",
+      "reviewedBy": "sources-expand-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.graphic",
+      "competencyId": "graphic-brand-identity",
+      "sourceId": "britishdesign-ru-courses-art-direktor-v-brendinge",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.graphic",
+      "competencyId": "graphic-brand-identity",
+      "sourceId": "bangbangeducation-ru-course-motion",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.graphic",
+      "competencyId": "graphic-editorial-layout",
+      "sourceId": "bureau-ru-courses-typography",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "3d-modeling",
+      "sourceId": "skillbox-ru-course-ai-audio-video",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.interior",
+      "competencyId": "interior-ergonomics",
+      "sourceId": "obrazum-com-96c2ff",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.interior",
+      "competencyId": "interior-materials",
+      "sourceId": "skillbox-ru-course-ai-audio-video",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.interior",
+      "competencyId": "interior-materials",
+      "sourceId": "britishdesign-ru-courses-art-direktor-v-brendinge",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.interior",
+      "competencyId": "interior-visualization",
+      "sourceId": "skillbox-ru-course-ai-audio-video",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.webdesigner",
+      "competencyId": "web-landing",
+      "sourceId": "tilda-education-courses-web-design-designthinking",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.webdesigner",
+      "competencyId": "web-visual",
+      "sourceId": "bangbangeducation-ru-course-motion",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.presentation",
+      "competencyId": "presentation-data",
+      "sourceId": "hse-ru-edu-courses-470898711",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.uxresearch",
+      "competencyId": "uxresearch-principles",
+      "sourceId": "stepik-org-course-1128-promo",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.uxresearch",
+      "competencyId": "uxresearch-qualitative",
+      "sourceId": "hse-ru-edu-courses-470898711",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.uxresearch",
+      "competencyId": "uxresearch-quantitative",
+      "sourceId": "hse-ru-edu-courses-470898711",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.uxresearch",
+      "competencyId": "uxresearch-recruiting",
+      "sourceId": "productlab-ru-strategy",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.uxresearch",
+      "competencyId": "uxresearch-usability",
+      "sourceId": "stepik-org-course-1128-promo",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.uxresearch",
+      "competencyId": "uxresearch-usability",
+      "sourceId": "hse-ru-edu-courses-470898711",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.artdir",
+      "competencyId": "graphic-brand-identity",
+      "sourceId": "britishdesign-ru-courses-art-direktor-v-brendinge",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.artdir",
+      "competencyId": "graphic-brand-identity",
+      "sourceId": "bangbangeducation-ru-course-motion",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.artdir",
+      "competencyId": "artdir-brand-platform",
+      "sourceId": "britishdesign-ru-courses-art-direktor-v-brendinge",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.appdesign",
+      "competencyId": "app-mobile-patterns",
+      "sourceId": "prjctr-com-ru-course-editorial-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.3ddesigner",
+      "competencyId": "3d-texturing",
+      "sourceId": "dev-epicgames-com-8792b9",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.aidesigner",
+      "competencyId": "aidesigner-prompt-systems",
+      "sourceId": "aistudio-yandex-ru-ru-ai-academy-courses-prompting",
+      "decision": "accepted",
+      "reason": "Авто-расширение: совпадение с «Промпт-системы и библиотеки», формат course-platform, score 0.37",
+      "reviewedBy": "sources-expand-v1",
+      "reviewedAt": "2026-11-03"
     }
   ],
   "notes": [

@@ -20,5 +20,6 @@
 - [`reports/beta-1-content-gate-closure.md`](reports/beta-1-content-gate-closure.md) — результат content gate.
 - [`reports/beta-1-content-backlog.md`](reports/beta-1-content-backlog.md) — исторический чек-лист до gate (superseded).
 - [`reports/beta-1-source-review-checklist.md`](reports/beta-1-source-review-checklist.md) — 125 уникальных пар «компетенция–источник» для source review.
+- [`reports/beta-1-sources-expansion-2026-11-03.md`](reports/beta-1-sources-expansion-2026-11-03.md) — финальная сводка ресурсной базы по профессиям: авто-расширение Brave, покрытие, пробелы.
 
-Текущий статус: `release:validate` проходит (110/110 связей, 54/54 компетенции, 0 пробелов); манифест остаётся `draft` до человеческого spot-check. Публичный запуск заблокирован до перевода в `ready`, РФ-хостинга и юридического sign-off.
+Текущий статус: `release:validate` проходит (236/335 связей, 102/102 компетенции, 0 пробелов, 89 источников в сборке); манифест остаётся `draft` до человеческого spot-check. Публичный запуск заблокирован до перевода в `ready`, РФ-хостинга и юридического sign-off.

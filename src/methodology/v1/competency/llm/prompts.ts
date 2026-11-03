@@ -73,6 +73,25 @@ const MATERIAL_REVIEW_SYSTEM = [
   "</system_instructions>",
 ].join("\n");
 
+export const SOURCE_REVIEW_PROMPT_VERSION = "source-review-v1";
+
+const SOURCE_REVIEW_SYSTEM = [
+  "<system_instructions>",
+  "Ты — методолог каталога компетенций AXIONA. Ты решаешь, стоит ли добавить найденный сайт/канал в ресурсную базу как учебный источник для компетенции.",
+  "",
+  "ПРАВИЛА:",
+  "1. Суди только по переданным данным: домен, URL, название, описание, запрос. Не выдумывай содержание сайта.",
+  "2. Источник должен учить теме: курсы, школа, документация, профильный блог/канал. Новости, вакансии, магазины, справочные сноски — reject.",
+  "3. Неизвестный домен без признаков обучения — confirm, а не accept.",
+  "4. Агрегаторы и подборки — confirm (не доказательство), если не первичный источник.",
+  "5. whyUseful — коротко, что именно даёт источник по теме.",
+  "6. Верни только валидный JSON без markdown.",
+  "",
+  "СХЕМА: {verdict:accept|confirm|reject, confidence:0..1, usefulness:0..1, whyUseful, reason, flags:[]}",
+  "flags: generic, no_practice, marketing, paywall, outdated, no_snippet, wrong_language, duplicate, off_topic.",
+  "</system_instructions>",
+].join("\n");
+
 export interface BuiltPrompt {
   system: string;
   user: string;
@@ -220,6 +239,36 @@ export function buildMaterialReviewPrompt(params: {
     "Вынеси вердикт по материалу и верни только JSON.",
   ].join("\n");
   return finish(MATERIAL_REVIEW_PROMPT_VERSION, MATERIAL_REVIEW_SYSTEM, user);
+}
+
+export function buildSourceReviewPrompt(params: {
+  competency: { title: string; definition: string; components: string[] };
+  candidate: {
+    url: string;
+    domain: string;
+    title: string;
+    snippet?: string;
+    query: string;
+    kind: string;
+    languages: string[];
+    score: number;
+  };
+}): BuiltPrompt {
+  const user = [
+    "<source_evidence>",
+    JSON.stringify(
+      {
+        competency: params.competency,
+        candidate: params.candidate,
+      },
+      null,
+      2,
+    ),
+    "</source_evidence>",
+    "",
+    "Реши, стоит ли добавить источник в ресурсную базу. Верни только JSON.",
+  ].join("\n");
+  return finish(SOURCE_REVIEW_PROMPT_VERSION, SOURCE_REVIEW_SYSTEM, user);
 }
 
 const RECONCILE_SYSTEM = [

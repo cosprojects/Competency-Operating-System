@@ -18,7 +18,8 @@
         "practicum-design-catalog",
         "coursera-microsoft-product-design",
         "coursera-design-fundamentals-ai",
-        "uxdesigninstitute-free-ux-course"
+        "uxdesigninstitute-free-ux-course",
+        "tilda-education-courses-web-design-designthinking"
       ]
     },
     {
@@ -87,7 +88,8 @@
       "learningSourceIds": [
         "coursera-uxui-fundamentals",
         "practicum-design-catalog",
-        "coursera-microsoft-product-design"
+        "coursera-microsoft-product-design",
+        "hse-ru-edu-courses-470898711"
       ]
     },
     {
@@ -133,7 +135,9 @@
       },
       "learningSourceIds": [
         "figma-design-basics",
-        "codecademy-intro-uiux"
+        "codecademy-intro-uiux",
+        "practicum-ai-tools-for-designers",
+        "school-usabilitylab-ru-a8b157"
       ]
     },
     {
@@ -149,7 +153,9 @@
       "learningSourceIds": [
         "codecademy-intro-uiux",
         "practicum-design-catalog",
-        "udacity-product-design"
+        "udacity-product-design",
+        "stepik-org-course-1128-promo",
+        "learn-rarus-ru-courses-15216"
       ]
     },
     {
@@ -190,7 +196,8 @@
       "learningSourceIds": [
         "figma-design-basics",
         "coursera-uxui-fundamentals",
-        "coursera-microsoft-product-design"
+        "coursera-microsoft-product-design",
+        "netology-ru-courses-osnovy-prototipirovanniya"
       ]
     },
     {
@@ -231,7 +238,8 @@
       "learningSourceIds": [
         "figma-design-basics",
         "codecademy-intro-uiux",
-        "coursera-microsoft-product-design"
+        "coursera-microsoft-product-design",
+        "contented-ru-courses-prototipirovanie"
       ]
     },
     {
@@ -252,7 +260,9 @@
       "learningSourceIds": [
         "coursera-uxui-fundamentals",
         "greatlearning-uiux",
-        "coursera-microsoft-product-design"
+        "coursera-microsoft-product-design",
+        "practicum-ai-tools-for-designers",
+        "online-spbu-ru-16ff04"
       ]
     },
     {
@@ -297,7 +307,8 @@
       "definition": "Связь дизайн-решений с метриками, юнит-экономикой и бизнес-результатом.",
       "priorityHint": "core",
       "learningSourceIds": [
-        "practicum-uxresearch"
+        "practicum-uxresearch",
+        "hse-ru-edu-courses-470898711"
       ]
     },
     {
@@ -330,7 +341,8 @@
         ]
       },
       "learningSourceIds": [
-        "practicum-uxresearch"
+        "practicum-uxresearch",
+        "skillbox-ru-course-ai-audio-video"
       ]
     },
     {
@@ -355,7 +367,8 @@
         "coursera-uxui-fundamentals",
         "greatlearning-uiux",
         "coursera-graphic-fundamentals",
-        "alison-graphic-design"
+        "alison-graphic-design",
+        "hudozhnik-online-colorsciense"
       ]
     },
     {
@@ -376,7 +389,9 @@
       "learningSourceIds": [
         "coursera-uxui-fundamentals",
         "greatlearning-uiux",
-        "coursera-graphic-fundamentals"
+        "coursera-graphic-fundamentals",
+        "bangbangeducation-ru-course-motion",
+        "bureau-ru-courses-typography"
       ]
     },
     {
@@ -400,7 +415,8 @@
         "scrimba-ui-design-fundamentals",
         "coursera-uxui-fundamentals",
         "greatlearning-uiux",
-        "coursera-graphic-fundamentals"
+        "coursera-graphic-fundamentals",
+        "lil-school-blog-osnovy-kompozicii-v-dizajne"
       ]
     },
     {
@@ -460,7 +476,8 @@
       },
       "learningSourceIds": [
         "figma-design-basics",
-        "greatlearning-uiux"
+        "greatlearning-uiux",
+        "bangbangeducation-ru-course-motion"
       ]
     },
     {
@@ -498,7 +515,9 @@
         ]
       },
       "learningSourceIds": [
-        "practicum-appdesign"
+        "practicum-appdesign",
+        "framer-learn",
+        "itproger-com-course-responsible"
       ]
     },
     {
@@ -549,7 +568,9 @@
       "learningSourceIds": [
         "motiondesign-school-courses",
         "school-of-motion",
-        "motiondesign-school-youtube"
+        "motiondesign-school-youtube",
+        "cloud-itstep-org-ru-course-motion-design",
+        "bangbangeducation-ru-course-motion"
       ]
     },
     {
@@ -635,7 +656,9 @@
       "priorityHint": "optional",
       "learningSourceIds": [
         "practicum-webdesigner",
-        "alison-web-design-html"
+        "alison-web-design-html",
+        "developer-mozilla-org-ru-docs-web",
+        "intuit-ru-studies-courses-611-467-info"
       ]
     },
     {
@@ -664,7 +687,9 @@
       "priorityHint": "foundation",
       "learningSourceIds": [
         "motiondesign-school-courses",
-        "school-of-motion"
+        "school-of-motion",
+        "motiondesign-school-youtube",
+        "school-of-motion-free"
       ]
     },
     {
@@ -690,7 +715,9 @@
       "priorityHint": "core",
       "learningSourceIds": [
         "motiondesign-school-courses",
-        "practicum-design-catalog"
+        "practicum-design-catalog",
+        "motiondesign-school-youtube",
+        "school-of-motion-free"
       ]
     },
     {
@@ -705,7 +732,9 @@
       "priorityHint": "foundation",
       "learningSourceIds": [
         "udacity-product-design",
-        "coursera-microsoft-product-design"
+        "coursera-microsoft-product-design",
+        "hse-ru-edu-courses-470898711",
+        "productlab-ru-strategy"
       ]
     },
     {
@@ -719,7 +748,8 @@
       "definition": "Работа с воронкой, активацией, удержанием и продуктовыми циклами роста.",
       "priorityHint": "core",
       "learningSourceIds": [
-        "reforge-blog"
+        "reforge-blog",
+        "habr-ai-design-1096288"
       ]
     },
     {
@@ -749,7 +779,9 @@
       "priorityHint": "foundation",
       "learningSourceIds": [
         "alison-graphic-design",
-        "practicum-design-catalog"
+        "practicum-design-catalog",
+        "britishdesign-ru-courses-art-direktor-v-brendinge",
+        "bangbangeducation-ru-course-motion"
       ]
     },
     {
@@ -778,7 +810,9 @@
       "priorityHint": "core",
       "learningSourceIds": [
         "coursera-graphic-fundamentals",
-        "practicum-design-catalog"
+        "practicum-design-catalog",
+        "prjctr-com-ru-course-editorial-design",
+        "bureau-ru-courses-typography"
       ]
     },
     {
@@ -808,7 +842,9 @@
       "priorityHint": "core",
       "learningSourceIds": [
         "udacity-product-design",
-        "coursera-microsoft-product-design"
+        "coursera-microsoft-product-design",
+        "uplab-ru-blog-customer-journey-map",
+        "obrazum-com-96c2ff"
       ]
     },
     {
@@ -823,7 +859,11 @@
       "priorityHint": "foundation",
       "learningSourceIds": [
         "motiondesign-school-courses",
-        "school-of-motion"
+        "school-of-motion",
+        "motiondesign-school-youtube",
+        "school-of-motion-free",
+        "animationschool-ru-courses-categories-3d-animacija",
+        "practicum-ai-tools-for-designers"
       ]
     },
     {
@@ -838,7 +878,11 @@
       "priorityHint": "foundation",
       "learningSourceIds": [
         "motiondesign-school-courses",
-        "school-of-motion"
+        "school-of-motion",
+        "motiondesign-school-youtube",
+        "motiondesign-school-vimeo",
+        "britishdesign-ru-courses-art-direktor-v-brendinge",
+        "practicum-ai-tools-for-designers"
       ]
     },
     {
@@ -853,7 +897,11 @@
       "priorityHint": "core",
       "learningSourceIds": [
         "motiondesign-school-courses",
-        "school-of-motion"
+        "school-of-motion",
+        "motiondesign-school-youtube",
+        "school-of-motion-free",
+        "tochkazvuka-com-course-video-sound-design-html",
+        "skillbox-ru-course-ai-audio-video"
       ]
     },
     {
@@ -868,7 +916,11 @@
       "priorityHint": "core",
       "learningSourceIds": [
         "motiondesign-school-courses",
-        "school-of-motion"
+        "school-of-motion",
+        "motiondesign-school-youtube",
+        "school-of-motion-free",
+        "online-vfx-ru-course-and-masters",
+        "profileschool-ru-438fa2"
       ]
     },
     {
@@ -883,7 +935,9 @@
       "priorityHint": "core",
       "learningSourceIds": [
         "practicum-design-catalog",
-        "school-of-motion"
+        "school-of-motion",
+        "motiondesign-school-youtube",
+        "school-of-motion-free"
       ]
     },
     {
@@ -900,7 +954,11 @@
         "motiondesign-school-courses",
         "school-of-motion",
         "practicum-design-catalog",
-        "practicum-3ddesigner"
+        "practicum-3ddesigner",
+        "motiondesign-school-youtube",
+        "school-of-motion-free",
+        "motiondesign-school-vimeo",
+        "animationschool-ru-courses-categories-3d-animacija"
       ]
     },
     {
@@ -915,7 +973,9 @@
       "priorityHint": "core",
       "learningSourceIds": [
         "motiondesign-school-courses",
-        "school-of-motion"
+        "school-of-motion",
+        "motiondesign-school-vimeo",
+        "petrick-mds-case"
       ]
     },
     {
@@ -930,7 +990,11 @@
       "priorityHint": "core",
       "learningSourceIds": [
         "motiondesign-school-courses",
-        "school-of-motion"
+        "school-of-motion",
+        "motiondesign-school-youtube",
+        "school-of-motion-free",
+        "britishdesign-ru-courses-art-direktor-v-brendinge",
+        "bangbangeducation-ru-course-motion"
       ]
     },
     {
@@ -945,7 +1009,8 @@
       "priorityHint": "core",
       "learningSourceIds": [
         "school-of-motion-free",
-        "practicum-design-catalog"
+        "practicum-design-catalog",
+        "motiondesign-school-youtube"
       ]
     },
     {
@@ -960,7 +1025,8 @@
       "priorityHint": "optional",
       "learningSourceIds": [
         "motiondesign-school-vimeo",
-        "motiondesign-school-youtube"
+        "motiondesign-school-youtube",
+        "practicum-ai-tools-for-designers"
       ]
     },
     {
@@ -1004,7 +1070,8 @@
       "priorityHint": "core",
       "learningSourceIds": [
         "practicum-presentation",
-        "autoppt-presentation-slide-design"
+        "autoppt-presentation-slide-design",
+        "cbsd-ru-courses-elektronnye-kursy-onlayn-kurs-argumentatsiya"
       ]
     },
     {
@@ -1018,7 +1085,8 @@
       "definition": "Поиск достоверных данных, проверка фактов и корректная интерпретация источников.",
       "priorityHint": "core",
       "learningSourceIds": [
-        "practicum-presentation"
+        "practicum-presentation",
+        "hse-ru-edu-courses-470898711"
       ]
     },
     {
@@ -1080,7 +1148,8 @@
       "priorityHint": "core",
       "learningSourceIds": [
         "practicum-appdesign",
-        "greatlearning-design-app"
+        "greatlearning-design-app",
+        "prjctr-com-ru-course-editorial-design"
       ]
     },
     {
@@ -1141,7 +1210,8 @@
         "practicum-uxresearch",
         "uxrinstitute-free-ux-research",
         "coursera-ux-research-courses",
-        "fountaininstitute-free-ux-research"
+        "fountaininstitute-free-ux-research",
+        "stepik-org-course-1128-promo"
       ]
     },
     {
@@ -1155,7 +1225,9 @@
       "definition": "Формулировка исследовательских вопросов и гипотез.",
       "priorityHint": "core",
       "learningSourceIds": [
-        "practicum-uxresearch"
+        "practicum-uxresearch",
+        "uxrinstitute-free-ux-research",
+        "fountaininstitute-free-ux-research"
       ]
     },
     {
@@ -1185,7 +1257,9 @@
       "learningSourceIds": [
         "practicum-uxresearch",
         "uxrinstitute-free-ux-research",
-        "coursera-ux-research-courses"
+        "coursera-ux-research-courses",
+        "openedu-ru-course-hse-qualsoc",
+        "hse-ru-edu-courses-470898711"
       ]
     },
     {
@@ -1201,7 +1275,9 @@
       "learningSourceIds": [
         "practicum-uxresearch",
         "uxrinstitute-free-ux-research",
-        "coursera-ux-research-courses"
+        "coursera-ux-research-courses",
+        "hse-ru-edu-courses-470898711",
+        "freeuniversity-education-ea1ef2"
       ]
     },
     {
@@ -1215,7 +1291,11 @@
       "definition": "Формирование выборки и рекрутинг респондентов.",
       "priorityHint": "core",
       "learningSourceIds": [
-        "practicum-uxresearch"
+        "practicum-uxresearch",
+        "uxrinstitute-free-ux-research",
+        "fountaininstitute-free-ux-research",
+        "productlab-ru-strategy",
+        "privet-marketing-5d9ac1"
       ]
     },
     {
@@ -1229,7 +1309,11 @@
       "definition": "Подготовка и модерация юзабилити-тестов, анализ результатов.",
       "priorityHint": "core",
       "learningSourceIds": [
-        "practicum-uxresearch"
+        "practicum-uxresearch",
+        "uxrinstitute-free-ux-research",
+        "fountaininstitute-free-ux-research",
+        "stepik-org-course-1128-promo",
+        "hse-ru-edu-courses-470898711"
       ]
     },
     {
@@ -1275,7 +1359,8 @@
       "priorityHint": "core",
       "learningSourceIds": [
         "practicum-artdir",
-        "learntube-art-direction"
+        "learntube-art-direction",
+        "britishdesign-ru-courses-art-direktor-v-brendinge"
       ]
     },
     {
@@ -1318,7 +1403,8 @@
       "priorityHint": "core",
       "learningSourceIds": [
         "practicum-artdir",
-        "learntube-art-direction"
+        "learntube-art-direction",
+        "setters-education-courses-pitch-ideas"
       ]
     },
     {
@@ -1366,7 +1452,8 @@
         "greatlearning-blender-3d",
         "coursera-3d-cad-fundamental",
         "tinkercad-learn-designs",
-        "instructables-3d-modeling-guide"
+        "instructables-3d-modeling-guide",
+        "skillbox-ru-course-ai-audio-video"
       ]
     },
     {
@@ -1382,7 +1469,8 @@
       "learningSourceIds": [
         "practicum-3ddesigner",
         "coursera-3d-modeling-intro",
-        "coursera-3d-cad-fundamental"
+        "coursera-3d-cad-fundamental",
+        "3d-itmo-ru-courses-plain-online-hard-surface-modeling-maya"
       ]
     },
     {
@@ -1396,7 +1484,8 @@
       "definition": "Скульптинг, органические формы, ретопология и груминг.",
       "priorityHint": "core",
       "learningSourceIds": [
-        "practicum-3ddesigner"
+        "practicum-3ddesigner",
+        "smirnov-school-course-3d-portrait"
       ]
     },
     {
@@ -1411,7 +1500,8 @@
       "priorityHint": "core",
       "learningSourceIds": [
         "practicum-3ddesigner",
-        "greatlearning-blender-3d"
+        "greatlearning-blender-3d",
+        "dev-epicgames-com-8792b9"
       ]
     },
     {
@@ -1498,7 +1588,8 @@
       "definition": "Эргономика и удобство пространства.",
       "priorityHint": "core",
       "learningSourceIds": [
-        "practicum-interior"
+        "practicum-interior",
+        "obrazum-com-96c2ff"
       ]
     },
     {
@@ -1513,7 +1604,8 @@
       "priorityHint": "core",
       "learningSourceIds": [
         "practicum-interior",
-        "greatlearning-interior-design-space-planning"
+        "greatlearning-interior-design-space-planning",
+        "designschool-ru-d46474"
       ]
     },
     {
@@ -1530,7 +1622,8 @@
         "practicum-interior",
         "alna-free-interior-courses",
         "alison-interior-design-practical",
-        "oxfordhomestudy-interior-design"
+        "oxfordhomestudy-interior-design",
+        "designschool-ru-d46474"
       ]
     },
     {
@@ -1546,7 +1639,9 @@
       "learningSourceIds": [
         "practicum-interior",
         "alna-free-interior-courses",
-        "alison-interior-design-practical"
+        "alison-interior-design-practical",
+        "skillbox-ru-course-ai-audio-video",
+        "britishdesign-ru-courses-art-direktor-v-brendinge"
       ]
     },
     {
@@ -1561,7 +1656,8 @@
       "priorityHint": "core",
       "learningSourceIds": [
         "practicum-interior",
-        "coursera-blueprint-interior-design"
+        "coursera-blueprint-interior-design",
+        "skillbox-ru-course-ai-audio-video"
       ]
     },
     {
@@ -1604,7 +1700,8 @@
       "definition": "Ведение проекта от первого контакта до фотосъёмки и авторский надзор.",
       "priorityHint": "core",
       "learningSourceIds": [
-        "practicum-interior"
+        "practicum-interior",
+        "synergy-ru-a0f976"
       ]
     },
     {
@@ -1622,7 +1719,8 @@
         "coursera-web-design-free",
         "greatlearning-web-design-free",
         "alison-web-design-html",
-        "simplilearn-web-designing-free"
+        "simplilearn-web-designing-free",
+        "tilda-education-courses-web-design-designthinking"
       ]
     },
     {
@@ -1667,7 +1765,8 @@
       "definition": "Графика, изображения и визуальные элементы для веб-страниц.",
       "priorityHint": "core",
       "learningSourceIds": [
-        "practicum-webdesigner"
+        "practicum-webdesigner",
+        "bangbangeducation-ru-course-motion"
       ]
     },
     {
@@ -1753,7 +1852,10 @@
       "definition": "Ускорение ресёрча: подготовка гайдов, обработка интервью, синтез данных и проверка выводов модели.",
       "priorityHint": "core",
       "learningSourceIds": [
-        "practicum-uxresearch"
+        "practicum-uxresearch",
+        "elements-of-ai",
+        "oxfordhomestudy-ai-free",
+        "greatlearning-ai-free"
       ]
     },
     {
@@ -1777,7 +1879,10 @@
         "motiondesign-school-courses",
         "practicum-ai-tools-for-designers",
         "practicum-ai-for-design",
-        "learntube-ai-graphic-design"
+        "learntube-ai-graphic-design",
+        "elements-of-ai",
+        "oxfordhomestudy-ai-free",
+        "greatlearning-ai-free"
       ]
     },
     {
@@ -1793,7 +1898,11 @@
       "learningSourceIds": [
         "motiondesign-school-courses",
         "practicum-ai-tools-for-designers",
-        "practicum-ai-for-design"
+        "practicum-ai-for-design",
+        "elements-of-ai",
+        "oxfordhomestudy-ai-free",
+        "greatlearning-ai-free",
+        "skillbox-ru-course-ai-audio-video"
       ]
     },
     {
@@ -1810,7 +1919,10 @@
         "practicum-presentation",
         "practicum-artdir",
         "practicum-design-catalog",
-        "practicum-ai-tools-for-designers"
+        "practicum-ai-tools-for-designers",
+        "elements-of-ai",
+        "oxfordhomestudy-ai-free",
+        "greatlearning-ai-free"
       ]
     },
     {
@@ -1827,7 +1939,10 @@
         "practicum-presentation",
         "practicum-appdesign",
         "practicum-webdesigner",
-        "figma-blog-design-systems-ai"
+        "figma-blog-design-systems-ai",
+        "elements-of-ai",
+        "oxfordhomestudy-ai-free",
+        "greatlearning-ai-free"
       ]
     },
     {
@@ -1850,7 +1965,10 @@
         "practicum-webdesigner",
         "practicum-design-catalog",
         "state-of-ai-design",
-        "kimvoronin-ai-design-guide"
+        "kimvoronin-ai-design-guide",
+        "elements-of-ai",
+        "oxfordhomestudy-ai-free",
+        "greatlearning-ai-free"
       ]
     },
     {
@@ -1868,7 +1986,8 @@
         "elements-of-ai",
         "greatlearning-ai-free",
         "alison-ai-fundamentals",
-        "coursera-ai-free"
+        "coursera-ai-free",
+        "spb-hse-ru-ius-civillaw-courses-944974338-html"
       ]
     },
     {
@@ -1906,7 +2025,8 @@
       "learningSourceIds": [
         "practicum-ai-tools-for-designers",
         "elements-of-ai",
-        "learntube-ai-graphic-design"
+        "learntube-ai-graphic-design",
+        "aistudio-yandex-ru-ru-ai-academy-courses-prompting"
       ]
     },
     {
@@ -1975,7 +2095,8 @@
       "priorityHint": "core",
       "learningSourceIds": [
         "practicum-ai-tools-for-designers",
-        "practicum-ai-for-design"
+        "practicum-ai-for-design",
+        "bangbangeducation-ru-course-motion"
       ]
     },
     {

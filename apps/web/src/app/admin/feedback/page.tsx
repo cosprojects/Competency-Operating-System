@@ -54,6 +54,9 @@ export default async function AdminFeedbackPage({
           <Link className="button secondary small" href="/admin/feedback/export">
             Скачать CSV
           </Link>
+          <Link className="button secondary small" href="/admin/reviews">
+            Спорные материалы
+          </Link>
           <Link className="button secondary small" href="/admin/metrics">
             Метрики
           </Link>

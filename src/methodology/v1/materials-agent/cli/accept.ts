@@ -13,7 +13,22 @@ async function main(): Promise<void> {
   const minRelevance = Number(flagValue(argv, "--min-relevance") ?? 0.7);
   const payload = JSON.parse(await readFile(journal, "utf8")) as { materials: Material[] };
   const catalog = await loadCatalog(root, domain);
-  const result = acceptMaterials(catalog, payload.materials ?? [], { minRelevance });
+  const reviewsPath = flagValue(argv, "--reviews");
+  let blockedSourceIds: Set<string> | undefined;
+  if (reviewsPath) {
+    const reviewsFile = JSON.parse(await readFile(path.resolve(root, reviewsPath), "utf8")) as {
+      blockedSourceIds?: string[];
+      pairs?: Array<{ sourceId: string; status: string }>;
+    };
+    blockedSourceIds = new Set([
+      ...(reviewsFile.blockedSourceIds ?? []),
+      ...(reviewsFile.pairs ?? []).filter((pair) => pair.status === "blocked").map((pair) => pair.sourceId),
+    ]);
+  }
+  const result = acceptMaterials(catalog, payload.materials ?? [], {
+    minRelevance,
+    ...(blockedSourceIds ? { blockedSourceIds } : {}),
+  });
   const updated: CatalogFile = {
     ...catalog,
     materials: [...catalog.materials, ...result.accepted],

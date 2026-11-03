@@ -125,3 +125,6 @@ Handoff для продолжения: [COS-RES-019](docs/09-research/COS-RES-01
 
 
 Аудит восьми дополнительных профессий: [COS-RES-026](docs/09-research/COS-RES-026-Additional-Designers-Readiness-Audit.md).
+
+
+Агрегация открытых источников по профессиям: [COS-RES-027](docs/09-research/COS-RES-027-Open-Learning-Sources-Aggregation.md), `npm run learning:aggregate`.

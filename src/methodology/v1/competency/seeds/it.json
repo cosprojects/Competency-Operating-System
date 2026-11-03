@@ -2541,6 +2541,272 @@
           "kind": "skill"
         }
       ]
+    },
+    {
+      "id": "artdir-brand-strategy-practice",
+      "canonicalId": "artdir-brand-strategy",
+      "title": "Цели бренда и стратегия: практика",
+      "titleEn": "Brand strategy practice",
+      "aliases": [
+        "Brand strategy practice"
+      ],
+      "definition": "Цели бренда, позиционирование и коммуникационная стратегия.",
+      "professionIds": [
+        "it.artdir"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Позиционирование бренда",
+          "definition": "Выбор позиции и отстройки бренда.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Коммуникационная стратегия",
+          "definition": "Стратегия сообщений и каналов.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Формулировка стратегии",
+          "definition": "Практика описания стратегии.",
+          "kind": "skill"
+        },
+        {
+          "title": "Аудит бренда",
+          "definition": "Анализ текущего бренда и конкурентов.",
+          "kind": "skill"
+        }
+      ]
+    },
+    {
+      "id": "artdir-brand-platform-practice",
+      "canonicalId": "artdir-brand-platform",
+      "title": "Бренд-платформа: практика",
+      "titleEn": "Brand platform practice",
+      "aliases": [
+        "Brand platform practice"
+      ],
+      "definition": "Платформа бренда, система дизайна и правила.",
+      "professionIds": [
+        "it.artdir"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Бренд-платформа",
+          "definition": "Смыслы, ценности и тон бренда.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Правила системы",
+          "definition": "Дизайн-система и гайдлайны.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Сборка платформы",
+          "definition": "Практика сборки бренд-платформы.",
+          "kind": "skill"
+        },
+        {
+          "title": "Разработка гайдлайна",
+          "definition": "Создание правил использования.",
+          "kind": "skill"
+        }
+      ]
+    },
+    {
+      "id": "artdir-brief-practice",
+      "canonicalId": "artdir-brief",
+      "title": "Бриф и бизнес: практика",
+      "titleEn": "Creative brief practice",
+      "aliases": [
+        "Creative brief practice"
+      ],
+      "definition": "Бриф, бизнес-контекст и критерии успеха.",
+      "professionIds": [
+        "it.artdir"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Бриф",
+          "definition": "Структура и содержание брифа.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Бизнес-контекст",
+          "definition": "Цели бизнеса и ограничения.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Составление брифа",
+          "definition": "Практика составления брифа.",
+          "kind": "skill"
+        },
+        {
+          "title": "Согласование критериев",
+          "definition": "Критерии успеха с заказчиком.",
+          "kind": "skill"
+        }
+      ]
+    },
+    {
+      "id": "artdir-communication-practice",
+      "canonicalId": "artdir-communication",
+      "title": "Коммуникация со стейкхолдерами: практика",
+      "titleEn": "Stakeholder communication practice",
+      "aliases": [
+        "Stakeholder communication practice"
+      ],
+      "definition": "Коммуникация, аргументация и управление ожиданиями.",
+      "professionIds": [
+        "it.artdir"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Стейкхолдеры",
+          "definition": "Карта стейкхолдеров и интересов.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Аргументация решений",
+          "definition": "Защита решений перед бизнесом.",
+          "kind": "skill"
+        },
+        {
+          "title": "Управление ожиданиями",
+          "definition": "Согласование ожиданий и границ.",
+          "kind": "skill"
+        },
+        {
+          "title": "Обратная связь",
+          "definition": "Сбор и обработка обратной связи.",
+          "kind": "knowledge"
+        }
+      ]
+    },
+    {
+      "id": "artdir-presentation-practice",
+      "canonicalId": "artdir-presentation",
+      "title": "Презентация идей: практика",
+      "titleEn": "Creative presentation practice",
+      "aliases": [
+        "Creative presentation practice"
+      ],
+      "definition": "Презентация концепций, защита идей и сторителлинг.",
+      "professionIds": [
+        "it.artdir"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Презентация концепции",
+          "definition": "Структура подачи идеи.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Сторителлинг",
+          "definition": "История и убедительность подачи.",
+          "kind": "skill"
+        },
+        {
+          "title": "Защита идей",
+          "definition": "Ответы на возражения.",
+          "kind": "skill"
+        },
+        {
+          "title": "Визуальная подача",
+          "definition": "Оформление презентации концепции.",
+          "kind": "knowledge"
+        }
+      ]
+    },
+    {
+      "id": "artdir-team-practice",
+      "canonicalId": "artdir-team",
+      "title": "Управление дизайн-отделом: практика",
+      "titleEn": "Design team management practice",
+      "aliases": [
+        "Design team management practice"
+      ],
+      "definition": "Команда, процессы, мотивация и развитие.",
+      "professionIds": [
+        "it.artdir"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Управление командой",
+          "definition": "Роли, процессы и ответственность.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Мотивация",
+          "definition": "Мотивация и вовлечённость дизайнеров.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Постановка задач",
+          "definition": "Практика постановки задач команде.",
+          "kind": "skill"
+        },
+        {
+          "title": "Обратная связь команде",
+          "definition": "Регулярная обратная связь.",
+          "kind": "skill"
+        }
+      ]
+    },
+    {
+      "id": "artdir-hiring-practice",
+      "canonicalId": "artdir-hiring",
+      "title": "Наём и развитие: практика",
+      "titleEn": "Design hiring practice",
+      "aliases": [
+        "Design hiring practice"
+      ],
+      "definition": "Наём, оценка и развитие дизайнеров.",
+      "professionIds": [
+        "it.artdir"
+      ],
+      "tagHints": [],
+      "excludeHints": [],
+      "maxTags": 12,
+      "extraTags": [
+        {
+          "title": "Наём дизайнеров",
+          "definition": "Процесс найма и критерии отбора.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Оценка компетенций",
+          "definition": "Оценка и развитие сотрудников.",
+          "kind": "knowledge"
+        },
+        {
+          "title": "Проведение интервью",
+          "definition": "Практика интервью и оценки.",
+          "kind": "skill"
+        },
+        {
+          "title": "План развития",
+          "definition": "Индивидуальный план развития.",
+          "kind": "skill"
+        }
+      ]
     }
   ]
 }

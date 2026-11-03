@@ -13,11 +13,11 @@
     "it.interior",
     "it.webdesigner",
     "it.presentation",
-    "it.uxresearch"
+    "it.uxresearch",
+    "it.artdir"
   ],
   "excludedProfessionIds": [
     "it.appdesign",
-    "it.artdir",
     "it.aidesigner"
   ],
   "excludedCompetencyPrefixes": [

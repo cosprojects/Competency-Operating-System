@@ -928,7 +928,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-26",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "Яндекс Практикум — арт-дирекшн: учебный материал по арт-дирекшену, брендингу и креативному лидерству."
     },
     {
       "id": "practicum-3ddesigner",
@@ -1815,7 +1816,8 @@
       "discoveredBy": "user",
       "lastChecked": "2026-10-26",
       "httpStatus": 200,
-      "discoveryOnly": true
+      "discoveryOnly": true,
+      "summary": "Alison — Art Director career page: учебный материал по арт-дирекшену, брендингу и креативному лидерству."
     },
     {
       "id": "classcentral-subject-art-direction",
@@ -1839,7 +1841,8 @@
       "lastChecked": "2026-10-26",
       "httpStatus": 403,
       "discoveryOnly": true,
-      "notes": "HTTP 403 (Cloudflare) — только ссылка для человека, автоматический сбор не выполняется."
+      "notes": "HTTP 403 (Cloudflare) — только ссылка для человека, автоматический сбор не выполняется.",
+      "summary": "Class Central — Art Direction subject: учебный материал по арт-дирекшену, брендингу и креативному лидерству."
     },
     {
       "id": "learntube-art-direction",
@@ -1862,7 +1865,8 @@
       ],
       "discoveredBy": "user",
       "lastChecked": "2026-10-26",
-      "httpStatus": 200
+      "httpStatus": 200,
+      "summary": "LearnTube — Art Direction course: учебный материал по арт-дирекшену, брендингу и креативному лидерству."
     },
     {
       "id": "classcentral-udemy-art-direction",
@@ -1886,7 +1890,8 @@
       "lastChecked": "2026-10-26",
       "httpStatus": 403,
       "discoveryOnly": true,
-      "notes": "HTTP 403 (Cloudflare) — только ссылка для человека, автоматический сбор не выполняется."
+      "notes": "HTTP 403 (Cloudflare) — только ссылка для человека, автоматический сбор не выполняется.",
+      "summary": "Class Central — Advertising Art Direction (Udemy): учебный материал по арт-дирекшену, брендингу и креативному лидерству."
     },
     {
       "id": "substack-free-creative-courses",
@@ -1909,7 +1914,8 @@
       "discoveredBy": "user",
       "lastChecked": "2026-10-26",
       "httpStatus": 200,
-      "discoveryOnly": true
+      "discoveryOnly": true,
+      "summary": "Sarah Rae — 15 free online courses for creatives: учебный материал по арт-дирекшену, брендингу и креативному лидерству."
     },
     {
       "id": "skillshare-art-direction-web",
@@ -1933,7 +1939,8 @@
       "lastChecked": "2026-10-26",
       "httpStatus": 403,
       "discoveryOnly": true,
-      "notes": "HTTP 403 (Cloudflare) — только ссылка для человека, автоматический сбор не выполняется."
+      "notes": "HTTP 403 (Cloudflare) — только ссылка для человека, автоматический сбор не выполняется.",
+      "summary": "Skillshare — Art Direction for the Web: учебный материал по арт-дирекшену, брендингу и креативному лидерству."
     },
     {
       "id": "creativeboom-free-creative-courses",
@@ -1956,7 +1963,8 @@
       "discoveredBy": "user",
       "lastChecked": "2026-10-26",
       "httpStatus": 200,
-      "discoveryOnly": true
+      "discoveryOnly": true,
+      "summary": "Creative Boom — 50 free online courses for creatives: учебный материал по арт-дирекшену, брендингу и креативному лидерству."
     },
     {
       "id": "coursera-creative-courses",
@@ -1979,7 +1987,8 @@
       "discoveredBy": "user",
       "lastChecked": "2026-10-26",
       "httpStatus": 200,
-      "discoveryOnly": true
+      "discoveryOnly": true,
+      "summary": "Coursera — Creative courses: учебный материал по арт-дирекшену, брендингу и креативному лидерству."
     },
     {
       "id": "classcentral-subject-ux-research",

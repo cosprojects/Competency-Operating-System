@@ -2747,6 +2747,381 @@
       "methodologyVersion": "0.1.0"
     },
     {
+      "id": "comp_0632835c45a5",
+      "slug": "brend-platforma-praktika",
+      "title": "Бренд-платформа: практика",
+      "aliases": [
+        "Практика бренд-платформы",
+        "Сборка бренд-платформы"
+      ],
+      "definition": "Практическая работа с платформой бренда: смыслы и ценности, система дизайна, правила и гайдлайны, их сборка и документирование.",
+      "scope": "universal",
+      "canonicalIds": [
+        "artdir-brand-platform"
+      ],
+      "professionIds": [
+        "it.artdir"
+      ],
+      "components": [
+        {
+          "id": "brend-platforma-praktika.smyslovaya-osnova-brenda",
+          "slug": "smyslovaya-osnova-brenda",
+          "title": "Смысловая основа бренда",
+          "definition": "Смыслы, ценности и тон бренда как фундамент платформы.",
+          "order": 1,
+          "tagIds": [
+            "tag_818f8a205eaf"
+          ]
+        },
+        {
+          "id": "brend-platforma-praktika.sistema-dizayna-i-pravila",
+          "slug": "sistema-dizayna-i-pravila",
+          "title": "Система дизайна и правила",
+          "definition": "Дизайн-система и гайдлайны как нормативная часть платформы.",
+          "order": 2,
+          "tagIds": [
+            "tag_c011a12ee46a"
+          ]
+        },
+        {
+          "id": "brend-platforma-praktika.praktika-sborki-i-dokumentirovaniya",
+          "slug": "praktika-sborki-i-dokumentirovaniya",
+          "title": "Практика сборки и документирования",
+          "definition": "Сборка бренд-платформы и разработка гайдлайнов на практике.",
+          "order": 3,
+          "tagIds": [
+            "tag_48f226d8f5f4",
+            "tag_81748622e1f5"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_818f8a205eaf",
+          "slug": "brend-platforma",
+          "title": "Бренд-платформа",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Смыслы, ценности и тон бренда.",
+          "professionIds": [
+            "it.artdir"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "art-dir",
+              "url": "https://practicum.yandex.ru/art-dir/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_0632835c45a5",
+              "componentId": "brend-platforma-praktika.smyslovaya-osnova-brenda",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_c011a12ee46a",
+          "slug": "pravila-sistemy",
+          "title": "Правила системы",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Дизайн-система и гайдлайны.",
+          "professionIds": [
+            "it.artdir"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "art-dir",
+              "url": "https://practicum.yandex.ru/art-dir/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_0632835c45a5",
+              "componentId": "brend-platforma-praktika.sistema-dizayna-i-pravila",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_48f226d8f5f4",
+          "slug": "sborka-platformy",
+          "title": "Сборка платформы",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Практика сборки бренд-платформы.",
+          "professionIds": [
+            "it.artdir"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "art-dir",
+              "url": "https://practicum.yandex.ru/art-dir/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_0632835c45a5",
+              "componentId": "brend-platforma-praktika.praktika-sborki-i-dokumentirovaniya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_81748622e1f5",
+          "slug": "razrabotka-gaydlayna",
+          "title": "Разработка гайдлайна",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Создание правил использования.",
+          "professionIds": [
+            "it.artdir"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "art-dir",
+              "url": "https://practicum.yandex.ru/art-dir/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_0632835c45a5",
+              "componentId": "brend-platforma-praktika.praktika-sborki-i-dokumentirovaniya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_8a02bd42a5c0",
+        "costUsd": 0.00112249,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1749,
+          "outputTokens": 583
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
+      "id": "comp_413224e903d3",
+      "slug": "brif-i-biznes-praktika",
+      "title": "Бриф и бизнес: практика",
+      "aliases": [
+        "Работа с брифом и бизнес-контекстом"
+      ],
+      "definition": "Практика работы с брифом, понимания бизнес-контекста и согласования критериев успеха проекта с заказчиком.",
+      "scope": "universal",
+      "canonicalIds": [
+        "artdir-brief"
+      ],
+      "professionIds": [
+        "it.artdir"
+      ],
+      "components": [
+        {
+          "id": "brif-i-biznes-praktika.brif-kak-instrument-proekta",
+          "slug": "brif-kak-instrument-proekta",
+          "title": "Бриф как инструмент проекта",
+          "definition": "Структура, содержание и практика составления брифа для дизайн-проекта.",
+          "order": 1,
+          "tagIds": [
+            "tag_6cddf1b38129",
+            "tag_3cf9515172b7"
+          ]
+        },
+        {
+          "id": "brif-i-biznes-praktika.biznes-kontekst-proekta",
+          "slug": "biznes-kontekst-proekta",
+          "title": "Бизнес-контекст проекта",
+          "definition": "Понимание целей бизнеса и ограничений, в рамках которых выполняется дизайн-проект.",
+          "order": 2,
+          "tagIds": [
+            "tag_bffebb351f28"
+          ]
+        },
+        {
+          "id": "brif-i-biznes-praktika.kriterii-uspeha-i-soglasovanie",
+          "slug": "kriterii-uspeha-i-soglasovanie",
+          "title": "Критерии успеха и согласование",
+          "definition": "Практика определения и согласования критериев успеха проекта с заказчиком.",
+          "order": 3,
+          "tagIds": [
+            "tag_d242eb523388"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_6cddf1b38129",
+          "slug": "brif",
+          "title": "Бриф",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Структура и содержание брифа.",
+          "professionIds": [
+            "it.artdir"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "art-dir",
+              "url": "https://practicum.yandex.ru/art-dir/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_413224e903d3",
+              "componentId": "brif-i-biznes-praktika.brif-kak-instrument-proekta",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_3cf9515172b7",
+          "slug": "sostavlenie-brifa",
+          "title": "Составление брифа",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Практика составления брифа.",
+          "professionIds": [
+            "it.artdir"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "art-dir",
+              "url": "https://practicum.yandex.ru/art-dir/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_413224e903d3",
+              "componentId": "brif-i-biznes-praktika.brif-kak-instrument-proekta",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_bffebb351f28",
+          "slug": "biznes-kontekst",
+          "title": "Бизнес-контекст",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Цели бизнеса и ограничения.",
+          "professionIds": [
+            "it.artdir"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "art-dir",
+              "url": "https://practicum.yandex.ru/art-dir/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_413224e903d3",
+              "componentId": "brif-i-biznes-praktika.biznes-kontekst-proekta",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_d242eb523388",
+          "slug": "soglasovanie-kriteriev",
+          "title": "Согласование критериев",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Критерии успеха с заказчиком.",
+          "professionIds": [
+            "it.artdir"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "art-dir",
+              "url": "https://practicum.yandex.ru/art-dir/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_413224e903d3",
+              "componentId": "brif-i-biznes-praktika.kriterii-uspeha-i-soglasovanie",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_5205169a9769",
+        "costUsd": 0.00102355,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1737,
+          "outputTokens": 496
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
       "id": "comp_281fdd473ddf",
       "slug": "vayrfreymy-i-struktura-ekranov",
       "title": "Вайрфреймы и структура экранов",
@@ -10407,6 +10782,203 @@
       "methodologyVersion": "0.1.0"
     },
     {
+      "id": "comp_dd938a153c95",
+      "slug": "kommunikatsiya-so-steykholderami-praktika",
+      "title": "Коммуникация со стейкхолдерами: практика",
+      "aliases": [
+        "Коммуникация со стейкхолдерами",
+        "Работа со стейкхолдерами"
+      ],
+      "definition": "Коммуникация, аргументация и управление ожиданиями при взаимодействии с заинтересованными сторонами проекта.",
+      "scope": "universal",
+      "canonicalIds": [
+        "artdir-communication"
+      ],
+      "professionIds": [
+        "it.artdir"
+      ],
+      "components": [
+        {
+          "id": "kommunikatsiya-so-steykholderami-praktika.analiz-steykholderov",
+          "slug": "analiz-steykholderov",
+          "title": "Анализ стейкхолдеров",
+          "definition": "Выявление и понимание заинтересованных сторон проекта и их интересов.",
+          "order": 1,
+          "tagIds": [
+            "tag_cc121d8f6eff"
+          ]
+        },
+        {
+          "id": "kommunikatsiya-so-steykholderami-praktika.argumentatsiya-resheniy",
+          "slug": "argumentatsiya-resheniy",
+          "title": "Аргументация решений",
+          "definition": "Обоснование и защита проектных решений перед бизнесом.",
+          "order": 2,
+          "tagIds": [
+            "tag_0c868fdf9df7"
+          ]
+        },
+        {
+          "id": "kommunikatsiya-so-steykholderami-praktika.upravlenie-ozhidaniyami",
+          "slug": "upravlenie-ozhidaniyami",
+          "title": "Управление ожиданиями",
+          "definition": "Согласование ожиданий и границ взаимодействия со стейкхолдерами.",
+          "order": 3,
+          "tagIds": [
+            "tag_e7dc3f44a7b9"
+          ]
+        },
+        {
+          "id": "kommunikatsiya-so-steykholderami-praktika.obratnaya-svyaz",
+          "slug": "obratnaya-svyaz",
+          "title": "Обратная связь",
+          "definition": "Сбор и обработка обратной связи от стейкхолдеров.",
+          "order": 4,
+          "tagIds": [
+            "tag_dff43d970a6c"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_cc121d8f6eff",
+          "slug": "steykholdery",
+          "title": "Стейкхолдеры",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Карта стейкхолдеров и интересов.",
+          "professionIds": [
+            "it.artdir"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "art-dir",
+              "url": "https://practicum.yandex.ru/art-dir/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_dd938a153c95",
+              "componentId": "kommunikatsiya-so-steykholderami-praktika.analiz-steykholderov",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_0c868fdf9df7",
+          "slug": "argumentatsiya-resheniy",
+          "title": "Аргументация решений",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Защита решений перед бизнесом.",
+          "professionIds": [
+            "it.artdir"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "art-dir",
+              "url": "https://practicum.yandex.ru/art-dir/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_dd938a153c95",
+              "componentId": "kommunikatsiya-so-steykholderami-praktika.argumentatsiya-resheniy",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_e7dc3f44a7b9",
+          "slug": "upravlenie-ozhidaniyami",
+          "title": "Управление ожиданиями",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Согласование ожиданий и границ.",
+          "professionIds": [
+            "it.artdir"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "art-dir",
+              "url": "https://practicum.yandex.ru/art-dir/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_dd938a153c95",
+              "componentId": "kommunikatsiya-so-steykholderami-praktika.upravlenie-ozhidaniyami",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_dff43d970a6c",
+          "slug": "obratnaya-svyaz",
+          "title": "Обратная связь",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Сбор и обработка обратной связи.",
+          "professionIds": [
+            "it.artdir"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "art-dir",
+              "url": "https://practicum.yandex.ru/art-dir/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_dd938a153c95",
+              "componentId": "kommunikatsiya-so-steykholderami-praktika.obratnaya-svyaz",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_f08c104c1280",
+        "costUsd": 0.0011375,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1772,
+          "outputTokens": 591
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
       "id": "comp_bd276732bf44",
       "slug": "kompoziting-3d",
       "title": "Композитинг 3D",
@@ -13238,6 +13810,193 @@
       "methodologyVersion": "0.1.0"
     },
     {
+      "id": "comp_2d94c962c91b",
+      "slug": "naem-i-razvitie-praktika",
+      "title": "Наём и развитие: практика",
+      "aliases": [
+        "Наём, оценка и развитие дизайнеров"
+      ],
+      "definition": "Практика найма, оценки компетенций и построения индивидуального развития дизайнеров.",
+      "scope": "universal",
+      "canonicalIds": [
+        "artdir-hiring"
+      ],
+      "professionIds": [
+        "it.artdir"
+      ],
+      "components": [
+        {
+          "id": "naem-i-razvitie-praktika.naem-dizaynerov",
+          "slug": "naem-dizaynerov",
+          "title": "Наём дизайнеров",
+          "definition": "Процесс подбора и отбора дизайнеров, включая критерии и этапы найма.",
+          "order": 1,
+          "tagIds": [
+            "tag_29470d85e109"
+          ]
+        },
+        {
+          "id": "naem-i-razvitie-praktika.otsenka-kompetentsiy",
+          "slug": "otsenka-kompetentsiy",
+          "title": "Оценка компетенций",
+          "definition": "Методы и практики оценки профессиональных компетенций дизайнеров.",
+          "order": 2,
+          "tagIds": [
+            "tag_f60998b80405",
+            "tag_394f6aeaa213"
+          ]
+        },
+        {
+          "id": "naem-i-razvitie-praktika.razvitie-dizaynerov",
+          "slug": "razvitie-dizaynerov",
+          "title": "Развитие дизайнеров",
+          "definition": "Планирование и сопровождение профессионального роста дизайнеров.",
+          "order": 3,
+          "tagIds": [
+            "tag_baa7b878feba"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_29470d85e109",
+          "slug": "naem-dizaynerov",
+          "title": "Наём дизайнеров",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Процесс найма и критерии отбора.",
+          "professionIds": [
+            "it.artdir"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "art-dir",
+              "url": "https://practicum.yandex.ru/art-dir/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_2d94c962c91b",
+              "componentId": "naem-i-razvitie-praktika.naem-dizaynerov",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_f60998b80405",
+          "slug": "otsenka-kompetentsiy",
+          "title": "Оценка компетенций",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Оценка и развитие сотрудников.",
+          "professionIds": [
+            "it.artdir"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "art-dir",
+              "url": "https://practicum.yandex.ru/art-dir/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_2d94c962c91b",
+              "componentId": "naem-i-razvitie-praktika.otsenka-kompetentsiy",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_394f6aeaa213",
+          "slug": "provedenie-intervyu",
+          "title": "Проведение интервью",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Практика интервью и оценки.",
+          "professionIds": [
+            "it.artdir"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "art-dir",
+              "url": "https://practicum.yandex.ru/art-dir/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_2d94c962c91b",
+              "componentId": "naem-i-razvitie-praktika.otsenka-kompetentsiy",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_baa7b878feba",
+          "slug": "plan-razvitiya",
+          "title": "План развития",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Индивидуальный план развития.",
+          "professionIds": [
+            "it.artdir"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "art-dir",
+              "url": "https://practicum.yandex.ru/art-dir/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_2d94c962c91b",
+              "componentId": "naem-i-razvitie-praktika.razvitie-dizaynerov",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_6c2f435b0d89",
+        "costUsd": 0.001045,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1792,
+          "outputTokens": 502
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
       "id": "comp_c9042039c71b",
       "slug": "nizkodetalizirovannye-prototipy",
       "title": "Низкодетализированные прототипы",
@@ -15315,6 +16074,204 @@
           "cacheHitTokens": 128,
           "cacheMissTokens": 1539,
           "outputTokens": 570
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
+      "id": "comp_499fbe21b438",
+      "slug": "prezentatsiya-idey-praktika",
+      "title": "Презентация идей: практика",
+      "titleEn": "Idea Presentation: Practice",
+      "aliases": [
+        "Презентация концепций",
+        "Защита идей и сторителлинг"
+      ],
+      "definition": "Практика представления концепций, защиты идей и сторителлинга: построение подачи, убедительная история, ответы на возражения и визуальное оформление презентации.",
+      "scope": "universal",
+      "canonicalIds": [
+        "artdir-presentation"
+      ],
+      "professionIds": [
+        "it.artdir"
+      ],
+      "components": [
+        {
+          "id": "prezentatsiya-idey-praktika.struktura-podachi-kontseptsii",
+          "slug": "struktura-podachi-kontseptsii",
+          "title": "Структура подачи концепции",
+          "definition": "Построение презентации идеи: логика изложения, порядок аргументов и форма представления концепции.",
+          "order": 1,
+          "tagIds": [
+            "tag_d5376cf776f2"
+          ]
+        },
+        {
+          "id": "prezentatsiya-idey-praktika.storitelling-i-ubeditelnost",
+          "slug": "storitelling-i-ubeditelnost",
+          "title": "Сторителлинг и убедительность",
+          "definition": "Создание истории вокруг идеи и приёмы убедительной подачи для аудитории.",
+          "order": 2,
+          "tagIds": [
+            "tag_b2181f737ea6"
+          ]
+        },
+        {
+          "id": "prezentatsiya-idey-praktika.zaschita-idey",
+          "slug": "zaschita-idey",
+          "title": "Защита идей",
+          "definition": "Практика отстаивания концепции перед аудиторией, включая работу с вопросами и возражениями.",
+          "order": 3,
+          "tagIds": [
+            "tag_acd1f7b77f3e"
+          ]
+        },
+        {
+          "id": "prezentatsiya-idey-praktika.vizualnaya-podacha",
+          "slug": "vizualnaya-podacha",
+          "title": "Визуальная подача",
+          "definition": "Оформление презентации концепции: визуальные средства представления идеи.",
+          "order": 4,
+          "tagIds": [
+            "tag_572134bce77b"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_d5376cf776f2",
+          "slug": "prezentatsiya-kontseptsii",
+          "title": "Презентация концепции",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Структура подачи идеи.",
+          "professionIds": [
+            "it.artdir"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "art-dir",
+              "url": "https://practicum.yandex.ru/art-dir/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_499fbe21b438",
+              "componentId": "prezentatsiya-idey-praktika.struktura-podachi-kontseptsii",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_b2181f737ea6",
+          "slug": "storitelling",
+          "title": "Сторителлинг",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "История и убедительность подачи.",
+          "professionIds": [
+            "it.artdir"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "art-dir",
+              "url": "https://practicum.yandex.ru/art-dir/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_499fbe21b438",
+              "componentId": "prezentatsiya-idey-praktika.storitelling-i-ubeditelnost",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_acd1f7b77f3e",
+          "slug": "zaschita-idey",
+          "title": "Защита идей",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Ответы на возражения.",
+          "professionIds": [
+            "it.artdir"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "art-dir",
+              "url": "https://practicum.yandex.ru/art-dir/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_499fbe21b438",
+              "componentId": "prezentatsiya-idey-praktika.zaschita-idey",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_572134bce77b",
+          "slug": "vizualnaya-podacha",
+          "title": "Визуальная подача",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Оформление презентации концепции.",
+          "professionIds": [
+            "it.artdir"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "art-dir",
+              "url": "https://practicum.yandex.ru/art-dir/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_499fbe21b438",
+              "componentId": "prezentatsiya-idey-praktika.vizualnaya-podacha",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_36319ae9bf92",
+        "costUsd": 0.0011900300000000001,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1771,
+          "outputTokens": 639
         }
       },
       "issues": [],
@@ -20394,6 +21351,391 @@
           "cacheHitTokens": 512,
           "cacheMissTokens": 791,
           "outputTokens": 1193
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
+      "id": "comp_1fa69ea68ac9",
+      "slug": "upravlenie-dizayn-otdelom-praktika",
+      "title": "Управление дизайн-отделом: практика",
+      "aliases": [
+        "Менеджмент дизайн-команды",
+        "Руководство дизайн-отделом"
+      ],
+      "definition": "Практика руководства дизайн-командой: организация ролей и процессов, постановка задач, обратная связь и поддержание мотивации дизайнеров.",
+      "scope": "universal",
+      "canonicalIds": [
+        "artdir-team"
+      ],
+      "professionIds": [
+        "it.artdir"
+      ],
+      "components": [
+        {
+          "id": "upravlenie-dizayn-otdelom-praktika.organizatsiya-komandy-i-protsessov",
+          "slug": "organizatsiya-komandy-i-protsessov",
+          "title": "Организация команды и процессов",
+          "definition": "Структура ролей, распределение ответственности и рабочие процессы дизайн-отдела.",
+          "order": 1,
+          "tagIds": [
+            "tag_4f59a5f317f8"
+          ]
+        },
+        {
+          "id": "upravlenie-dizayn-otdelom-praktika.postanovka-zadach-i-obratnaya-svyaz",
+          "slug": "postanovka-zadach-i-obratnaya-svyaz",
+          "title": "Постановка задач и обратная связь",
+          "definition": "Практические навыки формулирования задач команде и регулярной обратной связи по результатам работы.",
+          "order": 2,
+          "tagIds": [
+            "tag_e3f6653f0217",
+            "tag_c518197173f2"
+          ]
+        },
+        {
+          "id": "upravlenie-dizayn-otdelom-praktika.motivatsiya-i-vovlechennost",
+          "slug": "motivatsiya-i-vovlechennost",
+          "title": "Мотивация и вовлечённость",
+          "definition": "Поддержание мотивации и вовлечённости дизайнеров в работу отдела.",
+          "order": 3,
+          "tagIds": [
+            "tag_c1b2a499fd8c"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_4f59a5f317f8",
+          "slug": "upravlenie-komandoy",
+          "title": "Управление командой",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Роли, процессы и ответственность.",
+          "professionIds": [
+            "it.artdir"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "art-dir",
+              "url": "https://practicum.yandex.ru/art-dir/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_1fa69ea68ac9",
+              "componentId": "upravlenie-dizayn-otdelom-praktika.organizatsiya-komandy-i-protsessov",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_e3f6653f0217",
+          "slug": "postanovka-zadach",
+          "title": "Постановка задач",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Практика постановки задач команде.",
+          "professionIds": [
+            "it.artdir"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "art-dir",
+              "url": "https://practicum.yandex.ru/art-dir/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_1fa69ea68ac9",
+              "componentId": "upravlenie-dizayn-otdelom-praktika.postanovka-zadach-i-obratnaya-svyaz",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_c518197173f2",
+          "slug": "obratnaya-svyaz-komande",
+          "title": "Обратная связь команде",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Регулярная обратная связь.",
+          "professionIds": [
+            "it.artdir"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "art-dir",
+              "url": "https://practicum.yandex.ru/art-dir/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_1fa69ea68ac9",
+              "componentId": "upravlenie-dizayn-otdelom-praktika.postanovka-zadach-i-obratnaya-svyaz",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_c1b2a499fd8c",
+          "slug": "motivatsiya",
+          "title": "Мотивация",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Мотивация и вовлечённость дизайнеров.",
+          "professionIds": [
+            "it.artdir"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "art-dir",
+              "url": "https://practicum.yandex.ru/art-dir/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_1fa69ea68ac9",
+              "componentId": "upravlenie-dizayn-otdelom-praktika.motivatsiya-i-vovlechennost",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_791837c75d89",
+        "costUsd": 0.00118553,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1791,
+          "outputTokens": 630
+        }
+      },
+      "issues": [],
+      "methodologyVersion": "0.1.0"
+    },
+    {
+      "id": "comp_13bec1c06eee",
+      "slug": "tseli-brenda-i-strategiya-praktika",
+      "title": "Цели бренда и стратегия: практика",
+      "aliases": [
+        "Бренд-стратегия: практика",
+        "Практика целей бренда и стратегии"
+      ],
+      "definition": "Практическое применение целей бренда, позиционирования и коммуникационной стратегии: аудит текущего бренда и конкурентов, выбор позиции и отстройки, формулировка стратегии сообщений и каналов.",
+      "scope": "universal",
+      "canonicalIds": [
+        "artdir-brand-strategy"
+      ],
+      "professionIds": [
+        "it.artdir"
+      ],
+      "components": [
+        {
+          "id": "tseli-brenda-i-strategiya-praktika.audit-i-analiz-brenda",
+          "slug": "audit-i-analiz-brenda",
+          "title": "Аудит и анализ бренда",
+          "definition": "Исследование текущего состояния бренда и конкурентного окружения как основа для стратегических решений.",
+          "order": 1,
+          "tagIds": [
+            "tag_f2818005ef1d"
+          ]
+        },
+        {
+          "id": "tseli-brenda-i-strategiya-praktika.pozitsionirovanie-brenda",
+          "slug": "pozitsionirovanie-brenda",
+          "title": "Позиционирование бренда",
+          "definition": "Определение места бренда в сознании аудитории и его отличия от конкурентов.",
+          "order": 2,
+          "tagIds": [
+            "tag_90956082183e"
+          ]
+        },
+        {
+          "id": "tseli-brenda-i-strategiya-praktika.kommunikatsionnaya-strategiya",
+          "slug": "kommunikatsionnaya-strategiya",
+          "title": "Коммуникационная стратегия",
+          "definition": "Планирование сообщений бренда и каналов их доставки аудитории.",
+          "order": 3,
+          "tagIds": [
+            "tag_58ea80475d4b"
+          ]
+        },
+        {
+          "id": "tseli-brenda-i-strategiya-praktika.formulirovka-i-oformlenie-strategii",
+          "slug": "formulirovka-i-oformlenie-strategii",
+          "title": "Формулировка и оформление стратегии",
+          "definition": "Практическое описание и документирование бренд-стратегии.",
+          "order": 4,
+          "tagIds": [
+            "tag_afa0c50d83aa"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_f2818005ef1d",
+          "slug": "audit-brenda",
+          "title": "Аудит бренда",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Анализ текущего бренда и конкурентов.",
+          "professionIds": [
+            "it.artdir"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "art-dir",
+              "url": "https://practicum.yandex.ru/art-dir/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_13bec1c06eee",
+              "componentId": "tseli-brenda-i-strategiya-praktika.audit-i-analiz-brenda",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_90956082183e",
+          "slug": "pozitsionirovanie-brenda",
+          "title": "Позиционирование бренда",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Выбор позиции и отстройки бренда.",
+          "professionIds": [
+            "it.artdir"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "art-dir",
+              "url": "https://practicum.yandex.ru/art-dir/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_13bec1c06eee",
+              "componentId": "tseli-brenda-i-strategiya-praktika.pozitsionirovanie-brenda",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_58ea80475d4b",
+          "slug": "kommunikatsionnaya-strategiya",
+          "title": "Коммуникационная стратегия",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Стратегия сообщений и каналов.",
+          "professionIds": [
+            "it.artdir"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "art-dir",
+              "url": "https://practicum.yandex.ru/art-dir/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_13bec1c06eee",
+              "componentId": "tseli-brenda-i-strategiya-praktika.kommunikatsionnaya-strategiya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_afa0c50d83aa",
+          "slug": "formulirovka-strategii",
+          "title": "Формулировка стратегии",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Практика описания стратегии.",
+          "professionIds": [
+            "it.artdir"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum",
+              "externalId": "art-dir",
+              "url": "https://practicum.yandex.ru/art-dir/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_13bec1c06eee",
+              "componentId": "tseli-brenda-i-strategiya-praktika.formulirovka-i-oformlenie-strategii",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "deepseek-flash",
+        "inputHash": "llm_122631886c61",
+        "costUsd": 0.0011756800000000001,
+        "tokens": {
+          "cacheHitTokens": 128,
+          "cacheMissTokens": 1726,
+          "outputTokens": 637
         }
       },
       "issues": [],
@@ -26095,8 +27437,16 @@
       "professionIds": [
         "it.uxresearch"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ux-research-for-designers",
+          "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_1b195278ab13",
@@ -26110,7 +27460,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_66e3d7154cb9",
@@ -26122,8 +27472,16 @@
       "professionIds": [
         "it.uxresearch"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ux-research-for-designers",
+          "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_7419ca8a5a94",
@@ -26132,7 +27490,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_e642005c8086",
@@ -26205,8 +27563,16 @@
       "professionIds": [
         "it.uxresearch"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ux-research-for-designers",
+          "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_a439e6707943",
@@ -26215,7 +27581,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_823cf9186145",
@@ -26562,8 +27928,16 @@
       "professionIds": [
         "it.uxresearch"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ux-research-for-designers",
+          "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_939c88486e52",
@@ -26572,7 +27946,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_d091dd8ea18c",
@@ -26665,6 +28039,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_0c868fdf9df7",
+      "slug": "argumentatsiya-resheniy",
+      "title": "Аргументация решений",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Защита решений перед бизнесом.",
+      "professionIds": [
+        "it.artdir"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_dd938a153c95",
+          "componentId": "kommunikatsiya-so-steykholderami-praktika.argumentatsiya-resheniy",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_adb09f74c4e4",
       "slug": "art-direkshn",
       "title": "Арт-дирекшн",
@@ -26693,6 +28089,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_f2818005ef1d",
+      "slug": "audit-brenda",
+      "title": "Аудит бренда",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Анализ текущего бренда и конкурентов.",
+      "professionIds": [
+        "it.artdir"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_13bec1c06eee",
+          "componentId": "tseli-brenda-i-strategiya-praktika.audit-i-analiz-brenda",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_45b538e02d52",
@@ -26783,6 +28201,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_bffebb351f28",
+      "slug": "biznes-kontekst",
+      "title": "Бизнес-контекст",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Цели бизнеса и ограничения.",
+      "professionIds": [
+        "it.artdir"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_413224e903d3",
+          "componentId": "brif-i-biznes-praktika.biznes-kontekst-proekta",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_0e61d6ce8af0",
@@ -26917,7 +28357,8 @@
       "kind": "knowledge",
       "definition": "Смысловая и визуальная платформа бренда.",
       "professionIds": [
-        "it.graphic"
+        "it.graphic",
+        "it.artdir"
       ],
       "sourceRefs": [
         {
@@ -26934,10 +28375,37 @@
           "competencyId": "comp_287b573c505e",
           "componentId": "brend-aydentika.smyslovaya-osnova-brenda",
           "role": "primary"
+        },
+        {
+          "competencyId": "comp_0632835c45a5",
+          "componentId": "brend-platforma-praktika.smyslovaya-osnova-brenda",
+          "role": "primary"
         }
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_6cddf1b38129",
+      "slug": "brif",
+      "title": "Бриф",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Структура и содержание брифа.",
+      "professionIds": [
+        "it.artdir"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_413224e903d3",
+          "componentId": "brif-i-biznes-praktika.brif-kak-instrument-proekta",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_33eb03906cf3",
@@ -27588,6 +29056,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_572134bce77b",
+      "slug": "vizualnaya-podacha",
+      "title": "Визуальная подача",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Оформление презентации концепции.",
+      "professionIds": [
+        "it.artdir"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_499fbe21b438",
+          "componentId": "prezentatsiya-idey-praktika.vizualnaya-podacha",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_0376f61aa177",
       "slug": "vizualnoe-edinstvo-kompozitsiya-i-stili",
       "title": "Визуальное единство: композиция и стили",
@@ -27807,8 +29297,16 @@
       "professionIds": [
         "it.uxresearch"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ux-research-for-designers",
+          "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_e4e961b9cca2",
@@ -27817,7 +29315,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_e0eb83cc2907",
@@ -27859,8 +29357,16 @@
       "professionIds": [
         "it.uxresearch"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ux-research-for-designers",
+          "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_9d2a4faffaa9",
@@ -27869,7 +29375,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_8068a2ba602c",
@@ -28031,8 +29537,16 @@
       "professionIds": [
         "it.uxresearch"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ux-research-for-designers",
+          "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_97d00e5b8bf7",
@@ -28041,7 +29555,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_f40fc8989968",
@@ -28053,8 +29567,16 @@
       "professionIds": [
         "it.uxresearch"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ux-research-for-designers",
+          "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_7419ca8a5a94",
@@ -28063,7 +29585,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_061a4a6d7164",
@@ -28528,6 +30050,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_acd1f7b77f3e",
+      "slug": "zaschita-idey",
+      "title": "Защита идей",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Ответы на возражения.",
+      "professionIds": [
+        "it.artdir"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_499fbe21b438",
+          "componentId": "prezentatsiya-idey-praktika.zaschita-idey",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_74321044997e",
       "slug": "zaschita-proekta",
       "title": "Защита проекта",
@@ -28872,8 +30416,16 @@
       "professionIds": [
         "it.uxresearch"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ux-research-for-designers",
+          "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_939c88486e52",
@@ -28882,7 +30434,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_8940d4fcde77",
@@ -29044,8 +30596,16 @@
       "professionIds": [
         "it.uxresearch"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ux-research-for-designers",
+          "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_97d00e5b8bf7",
@@ -29054,7 +30614,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_fbed5cc5181b",
@@ -29066,8 +30626,16 @@
       "professionIds": [
         "it.uxresearch"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ux-research-for-designers",
+          "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_e4e961b9cca2",
@@ -29076,7 +30644,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_cdb63100b912",
@@ -29454,6 +31022,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_58ea80475d4b",
+      "slug": "kommunikatsionnaya-strategiya",
+      "title": "Коммуникационная стратегия",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Стратегия сообщений и каналов.",
+      "professionIds": [
+        "it.artdir"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_13bec1c06eee",
+          "componentId": "tseli-brenda-i-strategiya-praktika.kommunikatsionnaya-strategiya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_59c7a857ebe1",
       "slug": "kommunikatsiya-s-podryadchikami",
       "title": "Коммуникация с подрядчиками",
@@ -29793,8 +31383,16 @@
       "professionIds": [
         "it.uxresearch"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ux-research-for-designers",
+          "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_97d00e5b8bf7",
@@ -29803,7 +31401,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_437a85b15712",
@@ -30205,8 +31803,16 @@
       "professionIds": [
         "it.uxresearch"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ux-research-for-designers",
+          "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_1b195278ab13",
@@ -30215,7 +31821,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_01d018c59eb9",
@@ -30592,8 +32198,16 @@
       "professionIds": [
         "it.uxresearch"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ux-research-for-designers",
+          "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_a439e6707943",
@@ -30602,7 +32216,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_3aef675e15d7",
@@ -30663,6 +32277,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_c1b2a499fd8c",
+      "slug": "motivatsiya",
+      "title": "Мотивация",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Мотивация и вовлечённость дизайнеров.",
+      "professionIds": [
+        "it.artdir"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_1fa69ea68ac9",
+          "componentId": "upravlenie-dizayn-otdelom-praktika.motivatsiya-i-vovlechennost",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_11a8501fd4a5",
@@ -30774,12 +32410,42 @@
       "professionIds": [
         "it.uxresearch"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ux-research-for-designers",
+          "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_7419ca8a5a94",
           "componentId": "kachestvennye-metody-praktika.nablyudenie-i-kontekst",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_29470d85e109",
+      "slug": "naem-dizaynerov",
+      "title": "Наём дизайнеров",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Процесс найма и критерии отбора.",
+      "professionIds": [
+        "it.artdir"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_2d94c962c91b",
+          "componentId": "naem-i-razvitie-praktika.naem-dizaynerov",
           "role": "primary"
         }
       ],
@@ -30826,8 +32492,16 @@
       "professionIds": [
         "it.uxresearch"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ux-research-for-designers",
+          "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_7381d9a9dca9",
@@ -30836,7 +32510,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_289a8be0752c",
@@ -31144,6 +32818,50 @@
       "needsReview": false
     },
     {
+      "id": "tag_dff43d970a6c",
+      "slug": "obratnaya-svyaz",
+      "title": "Обратная связь",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Сбор и обработка обратной связи.",
+      "professionIds": [
+        "it.artdir"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_dd938a153c95",
+          "componentId": "kommunikatsiya-so-steykholderami-praktika.obratnaya-svyaz",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_c518197173f2",
+      "slug": "obratnaya-svyaz-komande",
+      "title": "Обратная связь команде",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Регулярная обратная связь.",
+      "professionIds": [
+        "it.artdir"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_1fa69ea68ac9",
+          "componentId": "upravlenie-dizayn-otdelom-praktika.postanovka-zadach-i-obratnaya-svyaz",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_de896d20f2d0",
       "slug": "obratnaya-svyaz-na-deystviya-polzovatelya",
       "title": "Обратная связь на действия пользователя",
@@ -31226,8 +32944,16 @@
       "professionIds": [
         "it.uxresearch"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ux-research-for-designers",
+          "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_1b195278ab13",
@@ -31236,7 +32962,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_378ad4a0ea46",
@@ -31617,6 +33343,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_f60998b80405",
+      "slug": "otsenka-kompetentsiy",
+      "title": "Оценка компетенций",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Оценка и развитие сотрудников.",
+      "professionIds": [
+        "it.artdir"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_2d94c962c91b",
+          "componentId": "naem-i-razvitie-praktika.otsenka-kompetentsiy",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_7ab9e6e0fd16",
       "slug": "oshibochnye-sostoyaniya-i-vosstanovlenie",
       "title": "Ошибочные состояния и восстановление",
@@ -31837,6 +33585,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_baa7b878feba",
+      "slug": "plan-razvitiya",
+      "title": "План развития",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Индивидуальный план развития.",
+      "professionIds": [
+        "it.artdir"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_2d94c962c91b",
+          "componentId": "naem-i-razvitie-praktika.razvitie-dizaynerov",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_81312e728eb0",
       "slug": "planirovanie-issledovaniya",
       "title": "Планирование исследования",
@@ -31846,8 +33616,16 @@
       "professionIds": [
         "it.uxresearch"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ux-research-for-designers",
+          "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_e4e961b9cca2",
@@ -31856,7 +33634,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_23dbb4f42bd8",
@@ -32187,6 +33965,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_90956082183e",
+      "slug": "pozitsionirovanie-brenda",
+      "title": "Позиционирование бренда",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Выбор позиции и отстройки бренда.",
+      "professionIds": [
+        "it.artdir"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_13bec1c06eee",
+          "componentId": "tseli-brenda-i-strategiya-praktika.pozitsionirovanie-brenda",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_ac3cb093224f",
@@ -32649,6 +34449,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_e3f6653f0217",
+      "slug": "postanovka-zadach",
+      "title": "Постановка задач",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Практика постановки задач команде.",
+      "professionIds": [
+        "it.artdir"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_1fa69ea68ac9",
+          "componentId": "upravlenie-dizayn-otdelom-praktika.postanovka-zadach-i-obratnaya-svyaz",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_ef34829ed9b7",
       "slug": "postobrabotka-3d-izobrazheniya",
       "title": "Постобработка 3D-изображения",
@@ -32869,6 +34691,50 @@
       "needsReview": false
     },
     {
+      "id": "tag_c011a12ee46a",
+      "slug": "pravila-sistemy",
+      "title": "Правила системы",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Дизайн-система и гайдлайны.",
+      "professionIds": [
+        "it.artdir"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_0632835c45a5",
+          "componentId": "brend-platforma-praktika.sistema-dizayna-i-pravila",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_d5376cf776f2",
+      "slug": "prezentatsiya-kontseptsii",
+      "title": "Презентация концепции",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Структура подачи идеи.",
+      "professionIds": [
+        "it.artdir"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_499fbe21b438",
+          "componentId": "prezentatsiya-idey-praktika.struktura-podachi-kontseptsii",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_f10e3733a41a",
       "slug": "prezentatsiya-rabot",
       "title": "Презентация работ",
@@ -32908,8 +34774,16 @@
       "professionIds": [
         "it.uxresearch"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ux-research-for-designers",
+          "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_939c88486e52",
@@ -32918,7 +34792,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_964c03397c66",
@@ -33171,19 +35045,33 @@
       "kind": "skill",
       "definition": "Практика интервью и вопросов.",
       "professionIds": [
-        "it.uxresearch"
+        "it.uxresearch",
+        "it.artdir"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ux-research-for-designers",
+          "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_7419ca8a5a94",
           "componentId": "kachestvennye-metody-praktika.intervyu-kak-metod-sbora-dannyh",
           "role": "primary"
+        },
+        {
+          "competencyId": "comp_2d94c962c91b",
+          "componentId": "naem-i-razvitie-praktika.otsenka-kompetentsiy",
+          "role": "primary"
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_0f634340c163",
@@ -33255,8 +35143,16 @@
       "professionIds": [
         "it.uxresearch"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ux-research-for-designers",
+          "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_a439e6707943",
@@ -33265,7 +35161,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_f4e5da2e9fb7",
@@ -34386,6 +36282,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_81748622e1f5",
+      "slug": "razrabotka-gaydlayna",
+      "title": "Разработка гайдлайна",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Создание правил использования.",
+      "professionIds": [
+        "it.artdir"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_0632835c45a5",
+          "componentId": "brend-platforma-praktika.praktika-sborki-i-dokumentirovaniya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_83db190c2bd4",
       "slug": "razrabotka-dizayn-sistem-i-ui-kitov",
       "title": "Разработка дизайн-систем и UI-китов",
@@ -34709,8 +36627,16 @@
       "professionIds": [
         "it.uxresearch"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ux-research-for-designers",
+          "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_9d2a4faffaa9",
@@ -34719,7 +36645,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_038f7146d364",
@@ -35001,8 +36927,16 @@
       "professionIds": [
         "it.uxresearch"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ux-research-for-designers",
+          "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_939c88486e52",
@@ -35011,7 +36945,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_a3af675243ad",
@@ -35042,6 +36976,28 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_48f226d8f5f4",
+      "slug": "sborka-platformy",
+      "title": "Сборка платформы",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Практика сборки бренд-платформы.",
+      "professionIds": [
+        "it.artdir"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_0632835c45a5",
+          "componentId": "brend-platforma-praktika.praktika-sborki-i-dokumentirovaniya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
     },
     {
       "id": "tag_28738ec710fd",
@@ -35479,8 +37435,16 @@
       "professionIds": [
         "it.uxresearch"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ux-research-for-designers",
+          "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_7381d9a9dca9",
@@ -35489,7 +37453,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_fe05bd2e1af5",
@@ -35591,8 +37555,16 @@
       "professionIds": [
         "it.uxresearch"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ux-research-for-designers",
+          "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_9d2a4faffaa9",
@@ -35601,7 +37573,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_3cecdcc57731",
@@ -35613,8 +37585,16 @@
       "professionIds": [
         "it.uxresearch"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ux-research-for-designers",
+          "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_9d2a4faffaa9",
@@ -35623,7 +37603,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_b883f8df1590",
@@ -36000,6 +37980,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_d242eb523388",
+      "slug": "soglasovanie-kriteriev",
+      "title": "Согласование критериев",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Критерии успеха с заказчиком.",
+      "professionIds": [
+        "it.artdir"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_413224e903d3",
+          "componentId": "brif-i-biznes-praktika.kriterii-uspeha-i-soglasovanie",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_3bb20b01c633",
       "slug": "soglasovanie-ponimaniya-s-inzhenerami",
       "title": "Согласование понимания с инженерами",
@@ -36163,6 +38165,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_3cf9515172b7",
+      "slug": "sostavlenie-brifa",
+      "title": "Составление брифа",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Практика составления брифа.",
+      "professionIds": [
+        "it.artdir"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_413224e903d3",
+          "componentId": "brif-i-biznes-praktika.brif-kak-instrument-proekta",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_0ece75845864",
       "slug": "sostavlenie-oprosa",
       "title": "Составление опроса",
@@ -36172,8 +38196,16 @@
       "professionIds": [
         "it.uxresearch"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ux-research-for-designers",
+          "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_1b195278ab13",
@@ -36182,7 +38214,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_d5494c1b173e",
@@ -36374,6 +38406,28 @@
       "needsReview": false
     },
     {
+      "id": "tag_cc121d8f6eff",
+      "slug": "steykholdery",
+      "title": "Стейкхолдеры",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Карта стейкхолдеров и интересов.",
+      "professionIds": [
+        "it.artdir"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_dd938a153c95",
+          "componentId": "kommunikatsiya-so-steykholderami-praktika.analiz-steykholderov",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_adc657378e2b",
       "slug": "stili-interera",
       "title": "Стили интерьера",
@@ -36419,6 +38473,28 @@
         {
           "competencyId": "comp_425bd4dc7c7f",
           "componentId": "storibording-i-rezhissura-dvizheniya.raskadrovka-motion-stseny",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_b2181f737ea6",
+      "slug": "storitelling",
+      "title": "Сторителлинг",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "История и убедительность подачи.",
+      "professionIds": [
+        "it.artdir"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_499fbe21b438",
+          "componentId": "prezentatsiya-idey-praktika.storitelling-i-ubeditelnost",
           "role": "primary"
         }
       ],
@@ -36555,8 +38631,16 @@
       "professionIds": [
         "it.uxresearch"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ux-research-for-designers",
+          "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_7381d9a9dca9",
@@ -36565,7 +38649,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_237f4fa77350",
@@ -37384,6 +39468,50 @@
       "needsReview": false
     },
     {
+      "id": "tag_4f59a5f317f8",
+      "slug": "upravlenie-komandoy",
+      "title": "Управление командой",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Роли, процессы и ответственность.",
+      "professionIds": [
+        "it.artdir"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_1fa69ea68ac9",
+          "componentId": "upravlenie-dizayn-otdelom-praktika.organizatsiya-komandy-i-protsessov",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
+      "id": "tag_e7dc3f44a7b9",
+      "slug": "upravlenie-ozhidaniyami",
+      "title": "Управление ожиданиями",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Согласование ожиданий и границ.",
+      "professionIds": [
+        "it.artdir"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_dd938a153c95",
+          "componentId": "kommunikatsiya-so-steykholderami-praktika.upravlenie-ozhidaniyami",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": true
+    },
+    {
       "id": "tag_8694f1ef87c7",
       "slug": "uroven-detalizatsii",
       "title": "Уровень детализации",
@@ -37680,12 +39808,42 @@
       "professionIds": [
         "it.uxresearch"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ux-research-for-designers",
+          "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_97d00e5b8bf7",
           "componentId": "issledovatelskie-voprosy-praktika.gipotezy-v-issledovanii",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_afa0c50d83aa",
+      "slug": "formulirovka-strategii",
+      "title": "Формулировка стратегии",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Практика описания стратегии.",
+      "professionIds": [
+        "it.artdir"
+      ],
+      "sourceRefs": [],
+      "evidenceState": "needs_review",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_13bec1c06eee",
+          "componentId": "tseli-brenda-i-strategiya-praktika.formulirovka-i-oformlenie-strategii",
           "role": "primary"
         }
       ],
@@ -38442,8 +40600,16 @@
       "professionIds": [
         "it.uxresearch"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ux-research-for-designers",
+          "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_e4e961b9cca2",
@@ -38452,7 +40618,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_781b01e55ed4",
@@ -38464,8 +40630,16 @@
       "professionIds": [
         "it.uxresearch"
       ],
-      "sourceRefs": [],
-      "evidenceState": "needs_review",
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "ux-research-for-designers",
+          "url": "https://practicum.yandex.ru/ux-research-for-designers/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
       "competencyLinks": [
         {
           "competencyId": "comp_a439e6707943",
@@ -38474,7 +40648,7 @@
         }
       ],
       "materialIds": [],
-      "needsReview": true
+      "needsReview": false
     },
     {
       "id": "tag_33bd0e21d155",

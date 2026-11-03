@@ -5,14 +5,14 @@
   "asOf": "2026-11-03",
   "strictSourceReview": false,
   "totals": {
-    "professions": 9,
-    "totalLinks": 275,
-    "includedLinks": 194,
-    "excludedLinks": 81,
-    "publishedLinks": 194,
-    "uniqueCompetencies": 90,
-    "uniquePublishedCompetencies": 90,
-    "uniqueSources": 51,
+    "professions": 10,
+    "totalLinks": 300,
+    "includedLinks": 210,
+    "excludedLinks": 90,
+    "publishedLinks": 210,
+    "uniqueCompetencies": 97,
+    "uniquePublishedCompetencies": 97,
+    "uniqueSources": 53,
     "gaps": 0,
     "blockingGaps": 0,
     "passed": true
@@ -105,6 +105,16 @@
       "includedLinks": 18,
       "excludedLinks": 9,
       "publishedLinks": 18,
+      "passed": true,
+      "gaps": []
+    },
+    {
+      "id": "it.artdir",
+      "title": "Арт-директор",
+      "totalLinks": 25,
+      "includedLinks": 16,
+      "excludedLinks": 9,
+      "publishedLinks": 16,
       "passed": true,
       "gaps": []
     }
@@ -512,6 +522,51 @@
     },
     {
       "professionId": "it.uxresearch",
+      "competencyId": "ai-ethics-rights",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.artdir",
+      "competencyId": "ai-model-landscape",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.artdir",
+      "competencyId": "ai-prompting",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.artdir",
+      "competencyId": "ai-research-synthesis",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.artdir",
+      "competencyId": "ai-visual-generation",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.artdir",
+      "competencyId": "ai-video-audio",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.artdir",
+      "competencyId": "ai-copy-content",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.artdir",
+      "competencyId": "ai-layout-docs",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.artdir",
+      "competencyId": "ai-workflow-integration",
+      "reason": "excluded-prefix:ai-"
+    },
+    {
+      "professionId": "it.artdir",
       "competencyId": "ai-ethics-rights",
       "reason": "excluded-prefix:ai-"
     }

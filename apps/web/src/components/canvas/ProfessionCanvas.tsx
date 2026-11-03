@@ -159,6 +159,10 @@ export function ProfessionCanvas({
     <div className={`canvas-screen${selected ? " has-detail" : ""}${expanded ? " is-expanded" : ""}`}>
       <div className="canvas-rail">
         <div className="rail-pinned">
+          <Link className="rail-choose" href="/professions">
+            Выбрать профессию
+          </Link>
+
           <section className="profession-summary">
           <div className="summary-top">
             <span className="badge">Профессия</span>
@@ -196,9 +200,6 @@ export function ProfessionCanvas({
           </div>
         </section>
 
-          <Link className="rail-choose" href="/professions">
-            Выбрать профессию
-          </Link>
         </div>
 
         <div className="rail-scroll">

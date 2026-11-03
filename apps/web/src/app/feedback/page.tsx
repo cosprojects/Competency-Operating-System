@@ -1,5 +1,9 @@
-import { redirect } from "next/navigation";
+import { FeedbackPageForm } from "@/components/feedback/FeedbackPageForm";
+
+export const metadata = {
+  title: "Обратная связь — AXIONA",
+};
 
 export default function FeedbackPage() {
-  redirect("/");
+  return <FeedbackPageForm />;
 }

@@ -1,0 +1,82 @@
+{
+  "document": {
+    "id": "250:37555",
+    "name": "big-logo-footer",
+    "type": "VECTOR",
+    "scrollBehavior": "SCROLLS",
+    "blendMode": "PASS_THROUGH",
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.9960784316062927,
+          "g": 0.9960784316062927,
+          "b": 0.9960784316062927,
+          "a": 1
+        }
+      }
+    ],
+    "fillOverrideTable": {
+      "1": null,
+      "2": {
+        "fills": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.30980393290519714,
+              "g": 0.27450981736183167,
+              "b": 0.8980392217636108,
+              "a": 1
+            },
+            "boundVariables": {
+              "color": {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:db7489e049682c5c7394ea87d4e2f538a59b1d0a/420:40"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "strokes": [],
+    "strokeWeight": 9.765586853027344,
+    "strokeAlign": "INSIDE",
+    "absoluteBoundingBox": {
+      "x": 5671,
+      "y": 3262,
+      "width": 1073,
+      "height": 165
+    },
+    "absoluteRenderBounds": {
+      "x": 5671,
+      "y": 3262,
+      "width": 1073,
+      "height": 165
+    },
+    "constraints": {
+      "vertical": "BOTTOM",
+      "horizontal": "CENTER"
+    },
+    "exportSettings": [
+      {
+        "suffix": "",
+        "format": "SVG",
+        "constraint": {
+          "type": "SCALE",
+          "value": 1
+        }
+      }
+    ],
+    "effects": [],
+    "interactions": [],
+    "complexStrokeProperties": {
+      "strokeType": "BASIC"
+    }
+  },
+  "components": {},
+  "componentSets": {},
+  "schemaVersion": 0,
+  "styles": {}
+}

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { FeedbackTrigger } from "@/components/feedback/FeedbackTrigger";
 import { IconCheckCircle } from "@/components/icons";
+import { SiteFooter } from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "AXIONA — карта компетенций, которая объясняет профессию",
@@ -68,6 +68,7 @@ const ROADMAP = [
 
 export default function HomePage() {
   return (
+    <>
     <div className="home-screen">
       <div className="workspace">
         <section className="home-hero">
@@ -112,9 +113,9 @@ export default function HomePage() {
             хватает? Поделитесь своим мнением. Ваш опыт поможет нам сделать систему точнее,
             полезнее и ближе к реальным потребностям людей.
           </p>
-          <FeedbackTrigger className="button" options={{ context: "general" }}>
+          <Link className="button invite-button" href="/feedback">
             Поделитесь своим мнением
-          </FeedbackTrigger>
+          </Link>
         </section>
 
         <section className="home-section">
@@ -152,10 +153,8 @@ export default function HomePage() {
                   <IconCheckCircle />
                 </span>
                 <div className="roadmap-text">
-                  <p className="roadmap-title">
-                    <span>{item.stage}</span>
-                    <span>{item.title}</span>
-                  </p>
+                  <p className="roadmap-stage-label">{item.stage}</p>
+                  <p className="roadmap-title">{item.title}</p>
                   <p className="roadmap-desc">{item.text}</p>
                 </div>
               </article>
@@ -164,5 +163,7 @@ export default function HomePage() {
         </section>
       </div>
     </div>
+    <SiteFooter />
+    </>
   );
 }

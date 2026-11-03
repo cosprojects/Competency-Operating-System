@@ -9,7 +9,6 @@ import {
   IconStarCircle,
   IconStructure,
 } from "@/components/icons";
-import { FeedbackTrigger } from "@/components/feedback/FeedbackTrigger";
 
 const ITEMS = [
   { href: "/", label: "Главная", icon: IconHome, match: (pathname: string) => pathname === "/" },
@@ -66,10 +65,10 @@ export function NavRail({ user }: { user: { email: string } | null }) {
       </div>
 
       <div className="rail-bottom">
-        <FeedbackTrigger className="rail-item" options={{ context: "general" }} title="Ваш фидбек">
+        <Link className="rail-item" href="/feedback" title="Ваш фидбек">
           <IconPlaster />
           <span className="rail-label">Ваш фидбек</span>
-        </FeedbackTrigger>
+        </Link>
 
         {user ? (
           <Link className="rail-cta" href="/account" title={`Аккаунт ${user.email}`}>

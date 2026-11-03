@@ -2905,23 +2905,9 @@ html[data-consent="pending"] .canvas-toolbar {
   margin: 0;
 }
 
-.footer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 16px;
-  width: 100%;
-  max-width: 1100px;
-  margin-inline: auto;
-  color: var(--muted);
-  font-size: 13px;
-}
 
-.footer-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-}
+
+
 
 /* ------------------------------------------------------------------ */
 /* Cookie-баннер                                                      */
@@ -3292,4 +3278,568 @@ html[data-consent="pending"] .canvas-toolbar {
 .canvas-screen.is-expanded .detail-rail .detail-block.is-sunken {
   border-color: transparent;
   background: var(--bg-sunken);
+}
+
+/* ------------------------------------------------------------------ */
+/* Подвал сайта (Footer/ru, 2:10328)                                  */
+/* ------------------------------------------------------------------ */
+
+.site-footer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #111827;
+  color: #94a3b8;
+}
+
+.site-footer-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: start;
+  gap: 24px;
+  width: 100%;
+  max-width: 1512px;
+  margin-inline: auto;
+  padding: 51px 80px 0;
+}
+
+.site-footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 13px;
+  line-height: 18.2px;
+}
+
+.site-footer-left p {
+  margin: 0;
+}
+
+.site-footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.site-footer-legal a,
+.site-footer-nav a,
+.site-footer-mail {
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.site-footer-legal a:hover,
+.site-footer-nav a:hover,
+.site-footer-mail:hover {
+  color: #e2e8f0;
+}
+
+.site-footer-mark {
+  display: flex;
+  justify-content: center;
+}
+
+.site-footer-mark img {
+  display: block;
+  width: 162px;
+  height: 154px;
+}
+
+.site-footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  font-size: 13px;
+  line-height: 18.2px;
+}
+
+.site-footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 12px 32px;
+}
+
+.site-footer-wordmark {
+  display: block;
+  width: 1073px;
+  max-width: calc(100% - 160px);
+  height: auto;
+  margin: 70px auto 0;
+}
+
+/* Плоская страница без «поверхности»: вход и обратная связь */
+.page-plain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  min-height: 100vh;
+  padding: var(--page-gap) var(--shell-right) 0 var(--shell-left);
+}
+
+.page-plain > :first-child {
+  margin-bottom: auto;
+}
+
+@media (max-width: 1080px) {
+  .site-footer-inner {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    padding: 40px 24px 0;
+    text-align: center;
+  }
+
+  .site-footer-left,
+  .site-footer-right {
+    align-items: center;
+    text-align: center;
+  }
+
+  .site-footer-nav {
+    justify-content: center;
+  }
+
+  .site-footer-mark {
+    order: -1;
+  }
+
+  .site-footer-wordmark {
+    max-width: calc(100% - 48px);
+    margin-top: 32px;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Итерация "новые макеты": главная с футером, вход, обратная связь,   */
+/* кнопка выбора профессии над карточкой                              */
+/* ------------------------------------------------------------------ */
+
+/* Главная (112-4040) */
+.home-screen {
+  padding-bottom: 0;
+}
+
+.workspace {
+  background: #ffffff;
+}
+
+.home-hero h1 {
+  font-size: 50px;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+.home-hero-copy .eyebrow {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.66px;
+  line-height: 17px;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.home-lead {
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+.hero-panel {
+  border: 1px solid var(--line-card);
+  background: var(--surface);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.hero-panel h2 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.checklist li {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.feedback-invite {
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: var(--r-12);
+  background: #eff6ff;
+}
+
+.feedback-invite .invite-title {
+  margin: 0;
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18.2px;
+}
+
+.feedback-invite p {
+  color: #1e3a8a;
+  font-size: 13px;
+  line-height: 20.1px;
+}
+
+.feedback-invite .invite-button {
+  min-height: 44px;
+  padding: 10px 18px;
+  border: 1px solid var(--line-card);
+  border-radius: var(--r-12);
+  background: var(--surface);
+  color: #3730a3;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21.7px;
+}
+
+.feedback-invite .invite-button:hover {
+  background: var(--surface);
+  border-color: #c7d2fe;
+}
+
+.home-section h2 {
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.12;
+}
+
+.start-grid {
+  gap: 18px;
+}
+
+.start-card {
+  min-height: 147px;
+  padding: 16px;
+  border: 1px solid var(--line-card);
+  border-radius: var(--r-12);
+  background: var(--surface);
+}
+
+.start-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.start-card p {
+  font-size: 13px;
+  line-height: 20.1px;
+}
+
+.start-num {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #eef2ff;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.home-paragraph {
+  font-size: 16px;
+  line-height: 24.8px;
+}
+
+.roadmap-stage {
+  min-height: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--r-10);
+  background: var(--surface);
+  box-shadow: none;
+}
+
+.roadmap-stage.is-current {
+  border-color: #e2e8f0;
+  background: #eef2ff;
+}
+
+.roadmap-icon {
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #eef2ff;
+  color: var(--accent);
+}
+
+.roadmap-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.roadmap-stage:not(.is-current) .roadmap-icon {
+  background: #f9fafb;
+  color: var(--soft);
+}
+
+.roadmap-stage-label {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.33px;
+  line-height: 17px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.roadmap-stage.is-current .roadmap-stage-label {
+  color: var(--accent);
+}
+
+.roadmap-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.roadmap-desc {
+  margin: 0;
+  font-size: 13px;
+  line-height: 20.1px;
+}
+
+/* Кнопка «Выбрать профессию» над карточкой профессии (247-35889) */
+.rail-choose {
+  order: -1;
+  border: 1px solid var(--line-card);
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.rail-choose:hover {
+  border-color: #c7d2fe;
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+}
+
+/* Заголовки профессии и компетенции — один размер (28/600) */
+.summary-title {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.28px;
+  line-height: 1.2;
+}
+
+.detail-head h2,
+.canvas-screen.is-expanded .detail-head h2 {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.28px;
+  line-height: 1.2;
+}
+
+/* Вход (252-38155) */
+.auth-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  width: 100%;
+  max-width: 1045px;
+  margin-inline: auto;
+}
+
+.auth-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 1045px;
+  text-align: center;
+}
+
+.auth-hero h1 {
+  margin: 0;
+  color: #3730a3;
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -0.36px;
+  line-height: 1;
+}
+
+.auth-hero p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 27.9px;
+}
+
+.auth-card {
+  width: min(100%, 520px);
+  margin: 0 auto;
+  padding: 24px;
+  border: 1px solid var(--line-card);
+  border-radius: var(--r-16);
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+}
+
+.auth-form,
+.auth-sent {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.auth-form h1,
+.auth-sent h1 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  line-height: 1.12;
+}
+
+.auth-desc {
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 24.8px;
+}
+
+.auth-form .field > label {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 20.1px;
+}
+
+.auth-form .input {
+  height: 46px;
+  border-color: var(--line-card);
+  border-radius: var(--r-12);
+}
+
+.auth-politics {
+  margin: 0;
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 20.1px;
+}
+
+.auth-politics a {
+  color: #3730a3;
+  text-decoration: none;
+}
+
+.auth-politics a:hover {
+  text-decoration: underline;
+}
+
+.auth-submit {
+  min-height: 48px;
+  border-radius: var(--r-12);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* Обратная связь (151-20275) */
+.feedback-page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 728px;
+  margin-inline: auto;
+  padding: 32px;
+  border-radius: var(--r-16);
+  background: var(--surface);
+}
+
+.feedback-page-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.feedback-page-top .eyebrow {
+  margin: 0;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.66px;
+  line-height: 17px;
+  text-transform: uppercase;
+}
+
+.feedback-page-title {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -0.36px;
+  line-height: 1;
+}
+
+.feedback-page-lead {
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 24.8px;
+}
+
+.feedback-page .feedback-form-card {
+  border-color: var(--line-card);
+}
+
+.feedback-page-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+
+.feedback-page-actions .button {
+  min-width: 200px;
+  min-height: 48px;
+  border-radius: var(--r-12);
+}
+
+@media (max-width: 1080px) {
+  .home-hero {
+    flex-direction: column;
+  }
+
+  .home-aside {
+    width: 100%;
+    flex: 1 1 auto;
+  }
+
+  .start-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .home-hero h1 {
+    font-size: 40px;
+  }
+
+  .feedback-page {
+    padding: 24px;
+  }
+
+  .auth-hero h1 {
+    font-size: 30px;
+  }
+}
+
+
+.page-plain {
+  padding-top: 40px;
+}
+
+.page-plain > .auth-page,
+.page-plain > .feedback-page {
+  min-height: calc(100vh - 40px);
+}
+
+.auth-page {
+  padding-top: 27px;
 }

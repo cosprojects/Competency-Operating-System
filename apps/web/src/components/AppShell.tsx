@@ -2,8 +2,8 @@
 
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
-import { Footer } from "@/components/Footer";
 import { NavRail } from "@/components/NavRail";
+import { SiteFooter } from "@/components/SiteFooter";
 
 export function AppShell({
   user,
@@ -16,16 +16,22 @@ export function AppShell({
   const isHome = pathname === "/";
   const isSearch = pathname === "/professions";
   const isCanvas = /^\/professions\/[^/]+$/.test(pathname);
-  const isSecondary = !isHome && !isSearch && !isCanvas;
+  const isPlain = pathname === "/login" || pathname === "/feedback";
+  const isSecondary = !isHome && !isSearch && !isCanvas && !isPlain;
 
   return (
     <>
       <NavRail user={user} />
       <main className="app-main">
-        {isSecondary ? (
+        {isPlain ? (
+          <div className="page-plain">
+            {children}
+            <SiteFooter />
+          </div>
+        ) : isSecondary ? (
           <div className="page-screen">
             <div className="page-surface">{children}</div>
-            <Footer />
+            <SiteFooter />
           </div>
         ) : (
           children

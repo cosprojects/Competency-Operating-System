@@ -6,7 +6,6 @@ import { trackClient } from "@/lib/client-analytics";
 
 export function LoginForm({ returnTo }: { returnTo: string }) {
   const [email, setEmail] = useState("");
-  const [accepted, setAccepted] = useState(false);
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [error, setError] = useState<string | null>(null);
 
@@ -19,7 +18,7 @@ export function LoginForm({ returnTo }: { returnTo: string }) {
       const response = await fetch("/api/auth/request", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ email, returnTo, acceptTerms: accepted }),
+        body: JSON.stringify({ email, returnTo, acceptTerms: true }),
       });
       if (!response.ok) {
         const data = (await response.json()) as { error?: string };
@@ -34,9 +33,9 @@ export function LoginForm({ returnTo }: { returnTo: string }) {
 
   if (status === "sent") {
     return (
-      <div>
+      <div className="auth-sent">
         <h1>Проверьте почту</h1>
-        <p className="muted">
+        <p className="auth-desc">
           Если адрес <strong>{email}</strong> может получать письма, мы отправили ссылку для входа.
           Она действует 15 минут и работает один раз.
         </p>
@@ -52,14 +51,13 @@ export function LoginForm({ returnTo }: { returnTo: string }) {
   }
 
   return (
-    <form className="forms" onSubmit={submit}>
-      <div>
-        <h1>Вход в AXIONA</h1>
-        <p className="muted">
-          Введите email — пришлём ссылку для входа. Пароль не нужен. Регистрация происходит при
-          первом входе.
-        </p>
-      </div>
+    <form className="auth-form" onSubmit={submit}>
+      <h1>Войдите в AXIONA</h1>
+      <p className="auth-desc">
+        Введите email — пришлём ссылку для входа. Без паролей и доступов. Регистрация происходит при
+        первом входе.
+      </p>
+
       <div className="field">
         <label htmlFor="email">Email</label>
         <input
@@ -74,24 +72,18 @@ export function LoginForm({ returnTo }: { returnTo: string }) {
           placeholder="you@example.com"
         />
       </div>
-      <label className="small" style={{ display: "flex", gap: 8, alignItems: "flex-start" }}>
-        <input
-          type="checkbox"
-          checked={accepted}
-          onChange={(event) => setAccepted(event.target.checked)}
-          required
-          style={{ marginTop: 3 }}
-        />
-        <span>
-          Я принимаю <Link href="/legal/terms">условия использования</Link> и{" "}
-          <Link href="/legal/privacy">политику конфиденциальности</Link>. Мне 18 лет или больше.
-        </span>
-      </label>
-      {error ? <div className="notice error">{error}</div> : null}
-      <button className="button" type="submit" disabled={status === "sending" || !accepted}>
-        {status === "sending" ? "Отправляем…" : "Получить ссылку"}
-      </button>
 
+      <p className="auth-politics">
+        Нажимая «Войти» вы принимаете{" "}
+        <Link href="/legal/terms">Условия использования</Link> и{" "}
+        <Link href="/legal/privacy">Политику конфиденциальности</Link>
+      </p>
+
+      {error ? <div className="notice error">{error}</div> : null}
+
+      <button className="button block auth-submit" type="submit" disabled={status === "sending"}>
+        {status === "sending" ? "Отправляем…" : "Получить ссылку для входа"}
+      </button>
     </form>
   );
 }

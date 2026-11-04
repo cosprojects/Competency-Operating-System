@@ -47,20 +47,23 @@ async function writeTasks(file: TaskFile): Promise<void> {
   await writeFile(path.join(process.cwd(), TASKS_FILE), `${JSON.stringify(file, null, 2)}\n`, "utf8");
 }
 
-async function loadTasksEnv(): Promise<void> {
+async function loadTasksEnv(): Promise<string> {
+  const envPath = path.join(process.cwd(), TASKS_ENV_FILE);
   try {
-    const raw = await readFile(path.join(process.cwd(), TASKS_ENV_FILE), "utf8");
+    const raw = await readFile(envPath, "utf8");
     for (const line of raw.split("\n")) {
       const trimmed = line.trim();
       if (!trimmed || trimmed.startsWith("#")) continue;
-      const index = trimmed.indexOf("=");
+      const withoutExport = trimmed.startsWith("export ") ? trimmed.slice("export ".length).trim() : trimmed;
+      const index = withoutExport.indexOf("=");
       if (index === -1) continue;
-      const key = trimmed.slice(0, index).trim();
-      const value = trimmed.slice(index + 1).trim().replace(/^["']|["']$/g, "");
+      const key = withoutExport.slice(0, index).trim();
+      const value = withoutExport.slice(index + 1).trim().replace(/^["']|["']$/g, "");
       if (key && !process.env[key]) process.env[key] = value;
     }
+    return envPath;
   } catch {
-    // файла может не быть — это нормально
+    return `${envPath} (не найден)`;
   }
 }
 
@@ -68,10 +71,11 @@ function token(): string {
   const value = process.env.GH_TOKEN ?? process.env.GITHUB_TOKEN;
   if (!value) {
     throw new Error(
-      "Нужен GH_TOKEN или GITHUB_TOKEN с доступом к Issues (read/write). " +
+      `Нужен GH_TOKEN или GITHUB_TOKEN с доступом к Issues (read/write). ` +
+        `Проверены process.env и ${process.cwd()}/tasks/.env.local. ` +
         "Fine-grained token: Issues read/write + доступ к репозиторию. " +
         "Для Projects v2, если включаете sync полей: Projects read/write. " +
-        "Токен не коммитить; положить в env или macOS Keychain.",
+        "Токен не коммитить.",
     );
   }
   return value;
@@ -242,16 +246,17 @@ async function sync(dryRun: boolean, updateExisting: boolean, versionFilter?: st
 }
 
 async function doctor(): Promise<void> {
-  await loadTasksEnv();
+  const envPath = await loadTasksEnv();
   const file = await readTasks();
-  const tokenValue = token();
+  console.log(`env file: ${envPath}`);
+  token();
   const user = await github<{ login: string }>("/user");
   const [owner, repo] = file.project.repository.split("/");
   if (!owner || !repo) throw new Error(`Плохой repository «${file.project.repository}»`);
   const repository = await github<{ full_name: string; private: boolean; permissions?: { push?: boolean } }>(
     `/repos/${owner}/${repo}`,
   );
-  console.log(`token: ${tokenValue.slice(0, 4)}…${tokenValue.slice(-4)} (не печатаю целиком)`);
+  console.log("token: найден");
   console.log(`user: ${user.login}`);
   console.log(`repo: ${repository.full_name}; private=${repository.private}; push=${repository.permissions?.push ?? "unknown"}`);
   console.log(`project: ${file.project.owner}/${file.project.title}`);

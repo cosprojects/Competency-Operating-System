@@ -78,6 +78,8 @@
 | `npm run tasks:add` | `node --experimental-strip-types scripts/tasks/cli.ts add` |
 | `npm run tasks:sync` | `node --experimental-strip-types scripts/tasks/cli.ts sync` |
 | `npm run tasks:doctor` | `node --experimental-strip-types scripts/tasks/cli.ts doctor` |
+| `npm run contracts:validate` | `node --experimental-strip-types src/methodology/v1/contracts/cli/validate.ts` |
+| `npm run run:cli` | `node --experimental-strip-types src/methodology/v1/workflow/cli/run.ts` |
 
 ## Как пользоваться
 

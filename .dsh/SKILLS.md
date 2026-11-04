@@ -77,6 +77,7 @@
 | `npm run tasks:list` | `node --experimental-strip-types scripts/tasks/cli.ts list` |
 | `npm run tasks:add` | `node --experimental-strip-types scripts/tasks/cli.ts add` |
 | `npm run tasks:sync` | `node --experimental-strip-types scripts/tasks/cli.ts sync` |
+| `npm run tasks:doctor` | `node --experimental-strip-types scripts/tasks/cli.ts doctor` |
 
 ## Как пользоваться
 

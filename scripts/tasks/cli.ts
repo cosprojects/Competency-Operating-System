@@ -241,6 +241,24 @@ async function sync(dryRun: boolean, updateExisting: boolean, versionFilter?: st
   );
 }
 
+async function doctor(): Promise<void> {
+  await loadTasksEnv();
+  const file = await readTasks();
+  const tokenValue = token();
+  const user = await github<{ login: string }>("/user");
+  const [owner, repo] = file.project.repository.split("/");
+  if (!owner || !repo) throw new Error(`Плохой repository «${file.project.repository}»`);
+  const repository = await github<{ full_name: string; private: boolean; permissions?: { push?: boolean } }>(
+    `/repos/${owner}/${repo}`,
+  );
+  console.log(`token: ${tokenValue.slice(0, 4)}…${tokenValue.slice(-4)} (не печатаю целиком)`);
+  console.log(`user: ${user.login}`);
+  console.log(`repo: ${repository.full_name}; private=${repository.private}; push=${repository.permissions?.push ?? "unknown"}`);
+  console.log(`project: ${file.project.owner}/${file.project.title}`);
+  console.log(`versions: ${file.versions.length}; tasks: ${file.tasks.length}`);
+  console.log(`project number env: ${process.env.GITHUB_PROJECT_NUMBER ?? "не задан (нужен для GraphQL-полей)"}`);
+}
+
 async function add(argv: string[]): Promise<void> {
   const title = flag(argv, "--title");
   const description = flag(argv, "--description");
@@ -288,6 +306,10 @@ async function main(): Promise<void> {
     else console.log(renderTaskTable(tasks));
     return;
   }
+  if (command === "doctor") {
+    await doctor();
+    return;
+  }
   if (command === "add") {
     await add(argv);
     return;
@@ -296,7 +318,7 @@ async function main(): Promise<void> {
     await sync(has(argv, "--dry-run"), has(argv, "--update"), flag(argv, "--version"));
     return;
   }
-  throw new Error(`Неизвестная команда «${command}». Доступно: list, add, sync.`);
+  throw new Error(`Неизвестная команда «${command}». Доступно: list, add, sync, doctor.`);
 }
 
 try {

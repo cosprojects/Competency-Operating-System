@@ -46,6 +46,7 @@ export GH_TOKEN=github_pat_...
 ## Команды
 
 ```bash
+npm run tasks:doctor               # проверить токен и доступ к repo
 npm run tasks:list
 npm run tasks:add -- \
   --title "Проверить content gate" \

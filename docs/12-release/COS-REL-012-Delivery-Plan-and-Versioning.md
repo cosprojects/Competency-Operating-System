@@ -188,8 +188,8 @@ npm run tasks:sync -- --update
 2. **Item added to project** → Status = `Backlog`.
 3. **Pull request linked to issue** → Status = `In Progress`.
 4. **Pull request merged** и **Item closed** → Status = `Done`.
-5. Поля Project (один раз): `Status` (Backlog/Ready/In Progress/Review/Done), `Priority` (P0–P3), `Area`, `Stage`, `Release`.
-6. Пока поля Project не синхронизируются скриптом: labels `priority:*`, `area:*`, `stage:*`, `release:*` уже создаются; поля можно заполнять вручную или добавить GraphQL-синхронизацию следующим шагом.
+5. Поля Project: `Status`, `Priority`, `Area`, `Stage`, `Release` — созданы и заполняются `scripts/tasks/project.ts` для активных задач.
+6. `Status` в Project: `Backlog`, `Ready`, `In progress`, `In review`, `Done`; маппинг из статусов манифеста выполняется скриптом.
 
 ### 9.3. Push / коммит
 

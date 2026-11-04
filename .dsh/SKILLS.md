@@ -80,6 +80,8 @@
 | `npm run tasks:doctor` | `node --experimental-strip-types scripts/tasks/cli.ts doctor` |
 | `npm run contracts:validate` | `node --experimental-strip-types src/methodology/v1/contracts/cli/validate.ts` |
 | `npm run run:cli` | `node --experimental-strip-types src/methodology/v1/workflow/cli/run.ts` |
+| `npm run review:shadow` | `node --experimental-strip-types src/methodology/v1/review/cli/shadow.ts` |
+| `npm run tasks:project` | `node --experimental-strip-types scripts/tasks/project.ts` |
 
 ## Как пользоваться
 

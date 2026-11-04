@@ -117,7 +117,7 @@ T-005 legal → T-006 hosting → T-007 domain/email → T-008 deploy → T-009 
 2. Я обновляю `tasks/tasks.json` и запускаю `tasks:sync -- --update`.
 3. Issues получают контекст, зависимости, deliverable, out-of-scope и acceptance.
 4. Milestones/labels обновляются; новые issues не создаются, если не согласовано разбиение T-002.
-5. Project: добавляем существующие issues и поля (нужен classic PAT с `project`).
+5. Project: 12 активных issues добавлены, поля заполнены, deferred удалены (classic PAT с `project`).
 
 ## 8. Classic PAT
 
@@ -148,6 +148,7 @@ PROJECT_TOKEN=ghp_...
 - `tasks:sync --update`: обновлены 37 issues; 25 закрыты как deferred; 12 активных открыты.
 - Новые issues не создавались.
 - В issue body появились контекст, зависимости, результат, out-of-scope и acceptance.
+- Project `AXIONA Launch`: 12 активных items; созданы поля `Area`, `Stage`, `Release`; 25 deferred items удалены с доски; `Status`/`Priority`/`Area`/`Stage`/`Release` заполнены.
 
 ### Как вернуть отложенную задачу
 

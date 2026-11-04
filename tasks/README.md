@@ -59,6 +59,10 @@ npm run tasks:sync -- --dry-run              # показать, что буде
 npm run tasks:sync -- --version v0.2.0       # только задачи версии
 npm run tasks:sync                           # все задачи
 npm run tasks:sync -- --update                # обновить существующие issues
+
+# Project: нужен PROJECT_TOKEN (classic PAT, scope project)
+node --experimental-strip-types scripts/tasks/project.ts --dry-run
+node --experimental-strip-types scripts/tasks/project.ts --prune
 ```
 
 Задачи с `deferred: true` показываются в `tasks:list` со звёздочкой и не попадают в активный канбан. Вернуть задачу: убрать `deferred`, поставить `Backlog`/`Ready`, выполнить `tasks:sync -- --version <version> --update`.

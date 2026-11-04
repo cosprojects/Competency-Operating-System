@@ -266,6 +266,7 @@ async function doctor(): Promise<void> {
   console.log(`project: ${file.project.owner}/${file.project.title}`);
   console.log(`versions: ${file.versions.length}; tasks: ${file.tasks.length}`);
   console.log(`project number env: ${process.env.GITHUB_PROJECT_NUMBER ?? "не задан (нужен для GraphQL-полей)"}`);
+  console.log(`project token: ${process.env.PROJECT_TOKEN ? "найден" : "не задан (нужен classic PAT с project)"}`);
 }
 
 async function add(argv: string[]): Promise<void> {

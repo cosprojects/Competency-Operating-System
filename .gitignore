@@ -65,3 +65,7 @@ docs/12-release/reports/beta-1-gap-report.json
 # Task sync token (never commit)
 tasks/.env.local
 !tasks/.env.example
+# артефакты прогонов воспроизводимы и не коммитятся
+data/workflow/
+# артефакты публикаций генерируются прогоном (в проде — объектное хранилище)
+release/publications/

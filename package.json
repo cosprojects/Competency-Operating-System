@@ -61,7 +61,14 @@
     "tasks:list": "node --experimental-strip-types scripts/tasks/cli.ts list",
     "tasks:add": "node --experimental-strip-types scripts/tasks/cli.ts add",
     "tasks:sync": "node --experimental-strip-types scripts/tasks/cli.ts sync",
-    "tasks:doctor": "node --experimental-strip-types scripts/tasks/cli.ts doctor"
+    "tasks:doctor": "node --experimental-strip-types scripts/tasks/cli.ts doctor",
+    "contracts:validate": "node --experimental-strip-types src/methodology/v1/contracts/cli/validate.ts",
+    "run:cli": "node --experimental-strip-types src/methodology/v1/workflow/cli/run.ts",
+    "review:shadow": "node --experimental-strip-types src/methodology/v1/review/cli/shadow.ts",
+    "tasks:project": "node --experimental-strip-types scripts/tasks/project.ts",
+    "materials:import-ledger": "node --experimental-strip-types scripts/materials/import-ledger.ts",
+    "release:promote": "node --experimental-strip-types scripts/release/promote.ts",
+    "release:publications": "node --experimental-strip-types scripts/release/publications.ts"
   },
   "dependencies": {
     "@prisma/client": "^6.4.0",

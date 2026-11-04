@@ -59,32 +59,32 @@ enum ConsentKind {
 }
 
 model User {
-  id        String    @id @default(cuid())
-  email     String    @unique
-  createdAt DateTime  @default(now())
+  id         String    @id @default(cuid())
+  email      String    @unique
+  createdAt  DateTime  @default(now())
   lastSeenAt DateTime?
-  deletedAt DateTime?
+  deletedAt  DateTime?
 
-  sessions  Session[]
-  favorites Favorite[]
-  statuses  StudyStatus[]
-  feedback  Feedback[]
+  sessions      Session[]
+  favorites     Favorite[]
+  statuses      StudyStatus[]
+  feedback      Feedback[]
   sourceReviews SourceReview[]
-  consents  ConsentRecord[]
-  events    AnalyticsEvent[]
+  consents      ConsentRecord[]
+  events        AnalyticsEvent[]
 
   @@index([createdAt])
 }
 
 model LoginToken {
-  id        String    @id @default(cuid())
-  email     String
+  id             String    @id @default(cuid())
+  email          String
   tokenHash      String    @unique
   returnTo       String?
   consentVersion String?
   expiresAt      DateTime
-  usedAt    DateTime?
-  createdAt DateTime  @default(now())
+  usedAt         DateTime?
+  createdAt      DateTime  @default(now())
 
   @@index([email, createdAt])
   @@index([expiresAt])
@@ -138,7 +138,7 @@ model Feedback {
   comment      String?
   contactEmail String?
   pagePath     String
-  status       FeedbackStatus @default(NEW)
+  status       FeedbackStatus  @default(NEW)
   createdAt    DateTime        @default(now())
   resolvedAt   DateTime?
 
@@ -151,14 +151,18 @@ model SourceReview {
   id           String              @id @default(cuid())
   sourceId     String
   competencyId String
-  /** competency — голос за материал в контексте компетенции; source — сигнал на источник целиком. */
+  /**
+   * competency — голос за материал в контексте компетенции; source — сигнал на источник целиком.
+   */
   scope        String              @default("competency")
   action       SourceReviewAction
   reason       SourceReviewReason?
   comment      String?
   userId       String
   user         User                @relation(fields: [userId], references: [id], onDelete: Cascade)
-  /** u:<userId> — один голос на пару «ресурс × компетенция». */
+  /**
+   * u:<userId> — один голос на пару «ресурс × компетенция».
+   */
   actorKey     String
   pagePath     String
   createdAt    DateTime            @default(now())
@@ -195,4 +199,141 @@ model ConsentRecord {
 
   @@unique([userId, kind, version])
   @@index([userId, kind, grantedAt])
+}
+
+// ---- COS-ARCH-170: рантайм конвейера онтологии ---------------------------------
+// Контент и онтология остаются в JSON-модели; в БД живёт только состояние прогонов.
+
+enum WorkflowRunStatus {
+  CREATED
+  RUNNING
+  AWAITING_REVIEW
+  SUCCEEDED
+  PARTIALLY_SUCCEEDED
+  FAILED
+  CANCELLED
+}
+
+enum WorkflowStepStatus {
+  PENDING
+  RUNNING
+  AWAITING_REVIEW
+  SUCCEEDED
+  FAILED
+  SKIPPED
+  BLOCKED
+}
+
+model WorkflowArtifact {
+  id          String   @id
+  kind        String
+  uri         String
+  sha256      String   @unique
+  bytes       Int
+  contentType String?
+  createdAt   DateTime @default(now())
+
+  inputs  WorkflowStep[] @relation("StepInput")
+  outputs WorkflowStep[] @relation("StepOutput")
+}
+
+model WorkflowRun {
+  id              String            @id
+  pipelineId      String
+  pipelineVersion String
+  status          WorkflowRunStatus
+  paramsJson      String            @default("{}")
+  maxCostUsd      Float?
+  spentUsd        Float             @default(0)
+  createdAt       DateTime          @default(now())
+  startedAt       DateTime?
+  finishedAt      DateTime?
+  steps           WorkflowStep[]
+
+  @@index([createdAt])
+  @@index([status, createdAt])
+}
+
+model WorkflowStep {
+  id              String             @id
+  runId           String
+  run             WorkflowRun        @relation(fields: [runId], references: [id], onDelete: Cascade)
+  stage           String
+  agent           String
+  status          WorkflowStepStatus
+  attempt         Int                @default(1)
+  position        Int
+  idempotencyKey  String
+  contractVersion String
+  inputRefId      String?
+  inputRef        WorkflowArtifact?  @relation("StepInput", fields: [inputRefId], references: [id])
+  outputRefId     String?
+  outputRef       WorkflowArtifact?  @relation("StepOutput", fields: [outputRefId], references: [id])
+  startedAt       DateTime?
+  finishedAt      DateTime?
+  tokens          Int?
+  costUsd         Float?
+  latencyMs       Int?
+  errorCode       String?
+  errorMessage    String?
+  errorRetryable  Boolean?
+
+  @@unique([runId, stage, attempt])
+  @@index([idempotencyKey])
+  @@index([runId, position])
+}
+
+// ---- COS-ARCH-172/173: материалы, привязки и решения приёмки --------------
+
+enum ReviewOutcome {
+  AUTO_ACCEPT
+  BADGE
+  QUARANTINE
+  QUEUE
+  AUTO_REJECT
+}
+
+/// Канонический ресурс: один URL — один материал, id = material_<sha1(canonicalUrl)>.
+model Material {
+  id           String         @id
+  canonicalUrl String         @unique
+  url          String
+  title        String
+  provider     String?
+  createdAt    DateTime       @default(now())
+  links        MaterialLink[]
+
+  @@index([createdAt])
+}
+
+/// Привязка материала к компетенции. Уникальность пары — защита от дублей связей.
+model MaterialLink {
+  id         String   @id @default(cuid())
+  materialId String
+  material   Material @relation(fields: [materialId], references: [id], onDelete: Cascade)
+  nodeId     String
+  createdAt  DateTime @default(now())
+
+  @@unique([materialId, nodeId])
+  @@index([nodeId])
+}
+
+/// Решение политики приёмки по материалу — журнал для аудита и калибровки порогов.
+model ReviewDecision {
+  id            String        @id @default(cuid())
+  runId         String
+  stepId        String
+  materialUrl   String
+  title         String?
+  competencyId  String?
+  outcome       ReviewOutcome
+  decision      String
+  reason        String
+  policyVersion String
+  signalsJson   String?
+  createdAt     DateTime      @default(now())
+
+  @@index([runId])
+  @@index([outcome, createdAt])
+  @@index([materialUrl])
 }

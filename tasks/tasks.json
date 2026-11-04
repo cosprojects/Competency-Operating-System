@@ -80,11 +80,21 @@
       "labels": [],
       "acceptance": [
         "Проверены 4 страницы профессий",
-        "Проверены 3 новых источника",
-        "Проверены 5–10 заменённых тегов"
+        "Проверены 10 компетенций из разных разделов",
+        "Проверены 3 новых источника (NN/g, Framer, Reforge)",
+        "Проверены 5–10 заменённых тегов",
+        "Решение зафиксировано в COS-REL-012 / COS-REL-008"
       ],
       "issueNumber": 1,
-      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/1"
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/1",
+      "context": "Content gate прошёл AI-assisted нормализацию: 54/54 компетенции, 110/110 связей, 29 источников. До публичной Beta нужен человеческий spot-check и решение: готово или список исправлений.",
+      "deliverable": "Подписанный чек-лист spot-check и решение ready / список исправлений.",
+      "outOfScope": [
+        "Переписывание всех 54 компетенций",
+        "Новые источники сверх текущего реестра"
+      ],
+      "dependsOn": [],
+      "deferred": false
     },
     {
       "id": "T-002",
@@ -97,12 +107,21 @@
       "status": "In Progress",
       "labels": [],
       "acceptance": [
-        "Макеты ключевых экранов готовы",
-        "Компоненты обновлены в apps/web",
-        "Проверена мобильная версия"
+        "Токены и компоненты сведены в globals.css/components",
+        "Обновлены главная, профессия, компетенция, saved, auth, feedback",
+        "Мобильная версия 360–1280px проверена",
+        "typecheck и build зелёные"
       ],
       "issueNumber": 2,
-      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/2"
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/2",
+      "context": "Готовятся новые дизайны; текущий UI собран на CSS без единой системы. Нужно обновить интерфейс, не меняя продуктовую логику.",
+      "deliverable": "Обновлённые экраны и компоненты, визуальная сверка с макетами.",
+      "outOfScope": [
+        "Новые продуктовые функции",
+        "Изменение модели данных"
+      ],
+      "dependsOn": [],
+      "deferred": false
     },
     {
       "id": "T-003",
@@ -115,12 +134,23 @@
       "status": "Review",
       "labels": [],
       "acceptance": [
-        "Открыты 4 профессии и 54 компетенции",
-        "Проверены сохранения и вход на тестовом аккаунте",
-        "Зафиксированы blockers"
+        "Проверены 4 профессии и 54 компетенции",
+        "Зафиксировано, работает ли вход/сохранение на demo",
+        "Решено, отключать ли SSO для demo",
+        "Список blockers"
       ],
       "issueNumber": 3,
-      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/3"
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/3",
+      "context": "Vercel demo собирается, но preview закрыт Vercel SSO; вход и сохранения требуют БД. Нужно понять, что можно показывать.",
+      "deliverable": "Отчёт demo: доступные сценарии, ограничения, blockers.",
+      "outOfScope": [
+        "Публичный запуск",
+        "Настройка РФ-хостинга"
+      ],
+      "dependsOn": [
+        "T-002"
+      ],
+      "deferred": false
     },
     {
       "id": "T-004",
@@ -134,9 +164,16 @@
       "labels": [],
       "acceptance": [
         "COS-BP-005 добавлен",
-        "Старый COS-BP-004 помечен Historical",
-        "Ссылки в README и docs/12-release обновлены"
-      ]
+        "COS-BP-004 помечен Historical",
+        "Ссылки обновлены"
+      ],
+      "context": "Roadmap и release-документация синхронизированы.",
+      "deliverable": "COS-BP-005, COS-REL-012, ссылки в README и реестре.",
+      "outOfScope": [
+        "Новые версии roadmap"
+      ],
+      "dependsOn": [],
+      "deferred": false
     },
     {
       "id": "T-005",
@@ -149,12 +186,22 @@
       "status": "Backlog",
       "labels": [],
       "acceptance": [
+        "Реквизиты ИП заполнены",
         "Документы проверены юристом",
-        "Реквизиты заполнены",
-        "Уведомление РКН подано"
+        "Cookie/consent синхронизированы с приложением",
+        "Уведомление РКН подано",
+        "Ссылки в футере и логине работают"
       ],
       "issueNumber": 4,
-      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/4"
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/4",
+      "context": "Beta требует оператора ПДн, политики, условий, cookie и уведомления РКН; текущие документы — черновики.",
+      "deliverable": "Опубликованные legal-документы и подтверждение РКН.",
+      "outOfScope": [
+        "Договоры с корпоративными клиентами",
+        "Монетизация"
+      ],
+      "dependsOn": [],
+      "deferred": false
     },
     {
       "id": "T-006",
@@ -167,12 +214,23 @@
       "status": "Backlog",
       "labels": [],
       "acceptance": [
-        "Приложение доступно на РФ-хосте",
-        "Миграции применены",
-        "Восстановление из бэкапа проверено"
+        "Приложение и БД в РФ",
+        "prisma migrate deploy выполнен",
+        "Ночной бэкап и восстановление проверены",
+        "health check 200"
       ],
       "issueNumber": 5,
-      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/5"
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/5",
+      "context": "Публичная Beta с реальными пользователями не может работать на Vercel/SQLite из-за ПДн и устойчивости.",
+      "deliverable": "РФ-хостинг, PostgreSQL, миграции и бэкап.",
+      "outOfScope": [
+        "Корпоративный сайт",
+        "Масштабирование"
+      ],
+      "dependsOn": [
+        "T-005"
+      ],
+      "deferred": false
     },
     {
       "id": "T-007",
@@ -185,12 +243,22 @@
       "status": "Backlog",
       "labels": [],
       "acceptance": [
-        "HTTPS работает",
-        "Письма доходят в Gmail/Яндекс/Mail.ru",
-        "Домен и DNS задокументированы"
+        "HTTPS/HSTS",
+        "SPF/DKIM/DMARC настроены",
+        "Gmail/Яндекс/Mail.ru получают письмо",
+        "support@ и privacy@ работают"
       ],
       "issueNumber": 6,
-      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/6"
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/6",
+      "context": "Magic link должен приходить с домена и не попадать в спам.",
+      "deliverable": "Домен, HTTPS, SPF/DKIM/DMARC и тестовая доставка.",
+      "outOfScope": [
+        "Маркетинговые рассылки"
+      ],
+      "dependsOn": [
+        "T-006"
+      ],
+      "deferred": false
     },
     {
       "id": "T-008",
@@ -203,12 +271,24 @@
       "status": "Backlog",
       "labels": [],
       "acceptance": [
-        "release:build собирает ready-контент",
-        "Health check 200",
-        "Мониторинг и алерты включены"
+        "release:validate PASS",
+        "release:build выполнен",
+        "Миграции применены",
+        "health 200",
+        "Логи/мониторинг включены"
       ],
       "issueNumber": 7,
-      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/7"
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/7",
+      "context": "Публичная сборка должна собираться из ready-контента и применять миграции.",
+      "deliverable": "Production deploy и release notes.",
+      "outOfScope": [
+        "Новые функции"
+      ],
+      "dependsOn": [
+        "T-006",
+        "T-007"
+      ],
+      "deferred": false
     },
     {
       "id": "T-009",
@@ -221,12 +301,24 @@
       "status": "Backlog",
       "labels": [],
       "acceptance": [
-        "Пройден P0 checklist",
-        "Нет блокирующих дефектов",
-        "Проверены 360/768/1280px"
+        "Регистрация/вход",
+        "Сохранения и статусы",
+        "Отзывы",
+        "Аналитика/consent",
+        "Мобильные и доступность",
+        "Юридические страницы"
       ],
       "issueNumber": 8,
-      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/8"
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/8",
+      "context": "Перед приглашением людей нужно проверить основные сценарии.",
+      "deliverable": "P0 checklist и отчёт QA.",
+      "outOfScope": [
+        "Полная E2E-автоматизация"
+      ],
+      "dependsOn": [
+        "T-008"
+      ],
+      "deferred": false
     },
     {
       "id": "T-010",
@@ -239,12 +331,21 @@
       "status": "Backlog",
       "labels": [],
       "acceptance": [
-        "События пишутся после согласия",
+        "События пишутся после consent",
         "Отказ не ломает продукт",
         "Метрики совпадают с ручной проверкой"
       ],
       "issueNumber": 9,
-      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/9"
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/9",
+      "context": "Нужны данные для решения после Beta.",
+      "deliverable": "Проверенные события и отчёт по метрикам.",
+      "outOfScope": [
+        "Внешние трекеры"
+      ],
+      "dependsOn": [
+        "T-008"
+      ],
+      "deferred": false
     },
     {
       "id": "T-011",
@@ -258,11 +359,21 @@
       "labels": [],
       "acceptance": [
         "Назначен ответственный",
-        "CSV и админка используются",
-        "Есть шаблон ответа"
+        "CSV/админка используются",
+        "Статусы NEW/TRIAGED/RESOLVED",
+        "Есть еженедельный обзор"
       ],
       "issueNumber": 10,
-      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/10"
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/10",
+      "context": "Отзывы должны не только собираться, но и обрабатываться.",
+      "deliverable": "Регламент триажа и шаблон ответа.",
+      "outOfScope": [
+        "CRM-система"
+      ],
+      "dependsOn": [
+        "T-008"
+      ],
+      "deferred": false
     },
     {
       "id": "T-012",
@@ -277,10 +388,21 @@
       "acceptance": [
         "Приглашены участники",
         "Собран consent",
-        "Получены первые 5 отзывов"
+        "Получены первые 5 отзывов",
+        "Есть сценарий тестирования"
       ],
       "issueNumber": 11,
-      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/11"
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/11",
+      "context": "Нужны первые реальные пользователи и сценарий тестирования.",
+      "deliverable": "15–25 участников и первые отзывы.",
+      "outOfScope": [
+        "Платный трафик"
+      ],
+      "dependsOn": [
+        "T-005",
+        "T-009"
+      ],
+      "deferred": false
     },
     {
       "id": "T-013",
@@ -293,12 +415,33 @@
       "status": "Backlog",
       "labels": [],
       "acceptance": [
+        "Все P0 Done",
         "release:validate PASS",
         "release:build выполнен",
-        "Тег v0.2.0 создан"
+        "Тег v0.2.0 создан",
+        "Release notes опубликованы"
       ],
       "issueNumber": 12,
-      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/12"
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/12",
+      "context": "Версия считается выпущенной, когда P0 закрыты и контент ready.",
+      "deliverable": "v0.2.0: ready-манифест, release notes и тег.",
+      "outOfScope": [
+        "Перенос P1/P2"
+      ],
+      "dependsOn": [
+        "T-001",
+        "T-002",
+        "T-003",
+        "T-005",
+        "T-006",
+        "T-007",
+        "T-008",
+        "T-009",
+        "T-010",
+        "T-011",
+        "T-012"
+      ],
+      "deferred": false
     },
     {
       "id": "T-014",
@@ -316,7 +459,16 @@
         "Принято решение continue/narrow/pivot"
       ],
       "issueNumber": 13,
-      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/13"
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/13",
+      "context": "Beta завершена; нужно свести данные и решить следующий цикл.",
+      "deliverable": "Отчёт Beta и решение.",
+      "outOfScope": [
+        "Детализация до начала версии"
+      ],
+      "dependsOn": [
+        "T-012"
+      ],
+      "deferred": true
     },
     {
       "id": "T-015",
@@ -334,7 +486,16 @@
         "Повторный release:validate PASS"
       ],
       "issueNumber": 14,
-      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/14"
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/14",
+      "context": "По итогам Beta выявлены ошибки и пробелы контента.",
+      "deliverable": "Список исправлений и обновлённый quality gate.",
+      "outOfScope": [
+        "Детализация до начала версии"
+      ],
+      "dependsOn": [
+        "T-014"
+      ],
+      "deferred": true
     },
     {
       "id": "T-016",
@@ -352,7 +513,16 @@
         "Есть пустые состояния"
       ],
       "issueNumber": 15,
-      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/15"
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/15",
+      "context": "Пользователи возвращаются к сохранённому; нужен более удобный личный контур.",
+      "deliverable": "История, прогресс и группировка сохранённого.",
+      "outOfScope": [
+        "Детализация до начала версии"
+      ],
+      "dependsOn": [
+        "T-014"
+      ],
+      "deferred": true
     },
     {
       "id": "T-017",
@@ -370,7 +540,16 @@
         "Проверена визуальная регрессия"
       ],
       "issueNumber": 16,
-      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/16"
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/16",
+      "context": "После обновления дизайна нужно свести компоненты и токены.",
+      "deliverable": "Консолидированная дизайн-система.",
+      "outOfScope": [
+        "Детализация до начала версии"
+      ],
+      "dependsOn": [
+        "T-002"
+      ],
+      "deferred": true
     },
     {
       "id": "T-018",
@@ -388,7 +567,16 @@
         "Есть метрики качества"
       ],
       "issueNumber": 17,
-      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/17"
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/17",
+      "context": "Нужно описать текущий процесс источников до автоматизации.",
+      "deliverable": "Схема процесса, ручные этапы и метрики.",
+      "outOfScope": [
+        "Детализация до начала версии"
+      ],
+      "dependsOn": [
+        "T-014"
+      ],
+      "deferred": true
     },
     {
       "id": "T-019",
@@ -406,7 +594,16 @@
         "Обновлён source review"
       ],
       "issueNumber": 18,
-      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/18"
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/18",
+      "context": "После описания процесса можно улучшать релевантность.",
+      "deliverable": "Улучшенный discovery и привязка материалов.",
+      "outOfScope": [
+        "Детализация до начала версии"
+      ],
+      "dependsOn": [
+        "T-018"
+      ],
+      "deferred": true
     },
     {
       "id": "T-020",
@@ -424,7 +621,16 @@
         "Есть владелец исправления"
       ],
       "issueNumber": 19,
-      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/19"
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/19",
+      "context": "Ссылки устаревают; нужен регулярный health-check.",
+      "deliverable": "Автоматический аудит источников.",
+      "outOfScope": [
+        "Детализация до начала версии"
+      ],
+      "dependsOn": [
+        "T-018"
+      ],
+      "deferred": true
     },
     {
       "id": "T-021",
@@ -442,7 +648,16 @@
         "Решение зафиксировано"
       ],
       "issueNumber": 20,
-      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/20"
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/20",
+      "context": "После Beta нужно выбрать следующую группу профессий.",
+      "deliverable": "Критерии и решение по профессиям.",
+      "outOfScope": [
+        "Детализация до начала версии"
+      ],
+      "dependsOn": [
+        "T-014"
+      ],
+      "deferred": true
     },
     {
       "id": "T-022",
@@ -460,7 +675,16 @@
         "Материалы привязаны"
       ],
       "issueNumber": 21,
-      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/21"
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/21",
+      "context": "Выбранные профессии требуют моделей компетенций.",
+      "deliverable": "Новые модели, прошедшие quality gate.",
+      "outOfScope": [
+        "Детализация до начала версии"
+      ],
+      "dependsOn": [
+        "T-021"
+      ],
+      "deferred": true
     },
     {
       "id": "T-023",
@@ -478,7 +702,16 @@
         "Есть критерии решения"
       ],
       "issueNumber": 22,
-      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/22"
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/22",
+      "context": "Нужно проверить коммерческие гипотезы.",
+      "deliverable": "Интервью и критерии решения.",
+      "outOfScope": [
+        "Детализация до начала версии"
+      ],
+      "dependsOn": [
+        "T-014"
+      ],
+      "deferred": true
     },
     {
       "id": "T-024",
@@ -496,7 +729,16 @@
         "Есть список контактов"
       ],
       "issueNumber": 23,
-      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/23"
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/23",
+      "context": "Нужны предложения для сообществ и компаний.",
+      "deliverable": "Партнёрский one-pager и условия пилота.",
+      "outOfScope": [
+        "Детализация до начала версии"
+      ],
+      "dependsOn": [
+        "T-023"
+      ],
+      "deferred": true
     },
     {
       "id": "T-025",
@@ -514,7 +756,16 @@
         "Есть границы приватности"
       ],
       "issueNumber": 24,
-      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/24"
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/24",
+      "context": "Следующий слой — цифровой профиль.",
+      "deliverable": "Спецификация профиля и evidence.",
+      "outOfScope": [
+        "Детализация до начала версии"
+      ],
+      "dependsOn": [
+        "T-022"
+      ],
+      "deferred": true
     },
     {
       "id": "T-026",
@@ -532,7 +783,16 @@
         "Определены права пользователя"
       ],
       "issueNumber": 25,
-      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/25"
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/25",
+      "context": "Нужно определить, как фиксируются и подтверждаются знания/навыки.",
+      "deliverable": "Модель evidence и правила confidence.",
+      "outOfScope": [
+        "Детализация до начала версии"
+      ],
+      "dependsOn": [
+        "T-025"
+      ],
+      "deferred": true
     },
     {
       "id": "T-027",
@@ -550,7 +810,17 @@
         "Есть удаление и экспорт"
       ],
       "issueNumber": 26,
-      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/26"
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/26",
+      "context": "Профиль нужно показать пользователю.",
+      "deliverable": "API и UI профиля.",
+      "outOfScope": [
+        "Детализация до начала версии"
+      ],
+      "dependsOn": [
+        "T-025",
+        "T-026"
+      ],
+      "deferred": true
     },
     {
       "id": "T-028",
@@ -568,7 +838,16 @@
         "Определены ограничения"
       ],
       "issueNumber": 27,
-      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/27"
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/27",
+      "context": "Нужны цели и целевое состояние.",
+      "deliverable": "Модель цели и целевого профиля.",
+      "outOfScope": [
+        "Детализация до начала версии"
+      ],
+      "dependsOn": [
+        "T-027"
+      ],
+      "deferred": true
     },
     {
       "id": "T-029",
@@ -586,7 +865,16 @@
         "Есть понятный следующий шаг"
       ],
       "issueNumber": 28,
-      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/28"
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/28",
+      "context": "Нужно строить маршрут от текущего к целевому.",
+      "deliverable": "Gap analysis и маршрут.",
+      "outOfScope": [
+        "Детализация до начала версии"
+      ],
+      "dependsOn": [
+        "T-028"
+      ],
+      "deferred": true
     },
     {
       "id": "T-030",
@@ -604,7 +892,16 @@
         "Нет ложных гарантий"
       ],
       "issueNumber": 29,
-      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/29"
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/29",
+      "context": "Рекомендации должны быть объяснимы.",
+      "deliverable": "Объяснение выбора и следующий шаг.",
+      "outOfScope": [
+        "Детализация до начала версии"
+      ],
+      "dependsOn": [
+        "T-029"
+      ],
+      "deferred": true
     },
     {
       "id": "T-031",
@@ -622,7 +919,16 @@
         "Учтены ограничения"
       ],
       "issueNumber": 30,
-      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/30"
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/30",
+      "context": "Оценка требует критериев и рубрик.",
+      "deliverable": "Критерии и рубрики.",
+      "outOfScope": [
+        "Детализация до начала версии"
+      ],
+      "dependsOn": [
+        "T-022"
+      ],
+      "deferred": true
     },
     {
       "id": "T-032",
@@ -640,7 +946,16 @@
         "Есть обратная связь"
       ],
       "issueNumber": 31,
-      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/31"
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/31",
+      "context": "Нужны практические задания и проверка.",
+      "deliverable": "Задания и механизм проверки.",
+      "outOfScope": [
+        "Детализация до начала версии"
+      ],
+      "dependsOn": [
+        "T-031"
+      ],
+      "deferred": true
     },
     {
       "id": "T-033",
@@ -658,7 +973,17 @@
         "Есть история"
       ],
       "issueNumber": 32,
-      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/32"
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/32",
+      "context": "Результаты оценки должны попадать в профиль.",
+      "deliverable": "Интеграция оценки в профиль и маршрут.",
+      "outOfScope": [
+        "Детализация до начала версии"
+      ],
+      "dependsOn": [
+        "T-027",
+        "T-032"
+      ],
+      "deferred": true
     },
     {
       "id": "T-034",
@@ -676,7 +1001,16 @@
         "Учтена приватность сотрудников"
       ],
       "issueNumber": 33,
-      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/33"
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/33",
+      "context": "Следующий контур — организации.",
+      "deliverable": "Модель организации и ролей.",
+      "outOfScope": [
+        "Детализация до начала версии"
+      ],
+      "dependsOn": [
+        "T-033"
+      ],
+      "deferred": true
     },
     {
       "id": "T-035",
@@ -694,7 +1028,16 @@
         "Есть план развития"
       ],
       "issueNumber": 34,
-      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/34"
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/34",
+      "context": "Нужны модели ролей и команд.",
+      "deliverable": "Роли, gap-анализ, план развития.",
+      "outOfScope": [
+        "Детализация до начала версии"
+      ],
+      "dependsOn": [
+        "T-034"
+      ],
+      "deferred": true
     },
     {
       "id": "T-036",
@@ -712,7 +1055,16 @@
         "Принято решение"
       ],
       "issueNumber": 35,
-      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/35"
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/35",
+      "context": "Нужен организационный пилот.",
+      "deliverable": "Пилот, метрики и решение.",
+      "outOfScope": [
+        "Детализация до начала версии"
+      ],
+      "dependsOn": [
+        "T-035"
+      ],
+      "deferred": true
     },
     {
       "id": "T-037",
@@ -730,7 +1082,16 @@
         "Есть unit-экономика"
       ],
       "issueNumber": 36,
-      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/36"
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/36",
+      "context": "Нужно проверить монетизацию.",
+      "deliverable": "Гипотезы, цены и unit-экономика.",
+      "outOfScope": [
+        "Детализация до начала версии"
+      ],
+      "dependsOn": [
+        "T-036"
+      ],
+      "deferred": true
     },
     {
       "id": "T-038",
@@ -748,7 +1109,16 @@
         "Есть метрики ценности"
       ],
       "issueNumber": 37,
-      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/37"
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/37",
+      "context": "Нужна партнёрская экосистема.",
+      "deliverable": "Интеграции, правила и метрики.",
+      "outOfScope": [
+        "Детализация до начала версии"
+      ],
+      "dependsOn": [
+        "T-037"
+      ],
+      "deferred": true
     }
   ]
 }

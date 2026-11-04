@@ -61,11 +61,14 @@ npm run tasks:sync                           # все задачи
 npm run tasks:sync -- --update                # обновить существующие issues
 ```
 
+Задачи с `deferred: true` показываются в `tasks:list` со звёздочкой и не попадают в активный канбан. Вернуть задачу: убрать `deferred`, поставить `Backlog`/`Ready`, выполнить `tasks:sync -- --version <version> --update`.
+
 `tasks:sync`:
 - создаёт issue с маркером `<!-- axiona-task:T-001 -->`;
 - создаёт milestone версии `vX.Y.Z` с целью из `versions`;
 - сохраняет `issueNumber`/`issueUrl` в `tasks/tasks.json`;
 - создаёт labels `task`, `release:*`, `priority:*`, `area:*`, `stage:*`;
+- задачи с `deferred: true` не создаёт, а при `--update` закрывает issue;
 - не перезаписывает issue без `--update`.
 
 После sync закоммить `tasks/tasks.json` — это фиксирует связь задачи с issue.
@@ -99,6 +102,7 @@ npm run tasks:sync -- --update                # обновить существ�
   "area": "Content",
   "stage": "I",
   "status": "Backlog",
+  "deferred": false,
   "labels": [],
   "issueNumber": 123
 }

@@ -180,7 +180,7 @@ async function updateIssue(repository: string, task: TaskRecord, milestone: numb
       body: renderIssueBody(task),
       labels: labelNames(task),
       milestone,
-      ...(task.status === "Done" ? { state: "closed" } : { state: "open" }),
+      ...(task.deferred || task.status === "Done" ? { state: "closed" } : { state: "open" }),
     }),
   });
 }
@@ -196,6 +196,10 @@ async function sync(dryRun: boolean, updateExisting: boolean, versionFilter?: st
 
   const selected = versionFilter ? file.tasks.filter((task) => task.version === versionFilter) : file.tasks;
   for (const task of selected) {
+    if (task.deferred && !task.issueNumber) {
+      skipped += 1;
+      continue;
+    }
     if (task.status === "Done" && !task.issueNumber) {
       skipped += 1;
       continue;
@@ -270,6 +274,9 @@ async function add(argv: string[]): Promise<void> {
   if (!title || !description) throw new Error("Нужны --title и --description");
   const acceptance = flags(argv, "--acceptance");
   if (acceptance.length === 0) throw new Error("Нужен хотя бы один --acceptance");
+  const context = flag(argv, "--context");
+  const deliverable = flag(argv, "--deliverable");
+  if (!context || !deliverable) throw new Error("Нужны --context и --deliverable");
   const priority = (flag(argv, "--priority") ?? "P2") as TaskPriority;
   const status = (flag(argv, "--status") ?? "Backlog") as TaskStatus;
   const area = flag(argv, "--area") ?? "General";
@@ -285,12 +292,17 @@ async function add(argv: string[]): Promise<void> {
     version,
     title: title.trim(),
     description: description.trim(),
+    context: context.trim(),
+    deliverable: deliverable.trim(),
+    outOfScope: flags(argv, "--out-of-scope"),
+    dependsOn: flags(argv, "--depends-on"),
     acceptance,
     priority,
     area,
     stage,
     status,
     labels: flags(argv, "--label"),
+    deferred: has(argv, "--deferred"),
   };
   file.tasks.push(task);
   validateTaskFile(file);

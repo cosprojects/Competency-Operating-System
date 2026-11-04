@@ -13,6 +13,11 @@ export interface TaskRecord {
   version: string;
   title: string;
   description: string;
+  context: string;
+  deliverable: string;
+  outOfScope: string[];
+  dependsOn: string[];
+  deferred?: boolean;
   acceptance: string[];
   priority: TaskPriority;
   area: string;
@@ -65,12 +70,26 @@ export function validateTaskFile(value: unknown): TaskFile {
     if (!versionIds.has(task.version)) throw new Error(`tasks.json: ${task.id}: неизвестная версия «${task.version}»`);
     if (!task.title?.trim()) throw new Error(`tasks.json: ${task.id}: пустой title`);
     if (!task.description?.trim()) throw new Error(`tasks.json: ${task.id}: пустой description`);
+    if (!task.context?.trim()) throw new Error(`tasks.json: ${task.id}: пустой context`);
+    if (!task.deliverable?.trim()) throw new Error(`tasks.json: ${task.id}: пустой deliverable`);
+    if (!Array.isArray(task.outOfScope)) throw new Error(`tasks.json: ${task.id}: outOfScope должен быть массивом`);
+    if (!Array.isArray(task.dependsOn)) throw new Error(`tasks.json: ${task.id}: dependsOn должен быть массивом`);
+    if (task.deferred !== undefined && typeof task.deferred !== "boolean") {
+      throw new Error(`tasks.json: ${task.id}: deferred должен быть boolean`);
+    }
     if (!PRIORITIES.has(task.priority)) throw new Error(`tasks.json: ${task.id}: плохой priority`);
     if (!STATUSES.has(task.status)) throw new Error(`tasks.json: ${task.id}: плохой status`);
     if (!task.area?.trim()) throw new Error(`tasks.json: ${task.id}: пустой area`);
     if (!task.stage?.trim()) throw new Error(`tasks.json: ${task.id}: пустой stage`);
     if (!Array.isArray(task.acceptance) || task.acceptance.length === 0) {
       throw new Error(`tasks.json: ${task.id}: нужен хотя бы один acceptance`);
+    }
+  }
+  const taskIds = new Set((file.tasks as TaskRecord[]).map((task) => task.id));
+  for (const task of file.tasks as TaskRecord[]) {
+    for (const dependency of task.dependsOn) {
+      if (!taskIds.has(dependency)) throw new Error(`tasks.json: ${task.id}: неизвестная зависимость «${dependency}»`);
+      if (dependency === task.id) throw new Error(`tasks.json: ${task.id}: задача зависит от себя`);
     }
   }
   return file as TaskFile;
@@ -101,6 +120,7 @@ export function labelNames(task: TaskRecord): string[] {
     `priority:${task.priority.toLowerCase()}`,
     `area:${slug(task.area)}`,
     `stage:${slug(task.stage)}`,
+    ...(task.deferred ? ["deferred"] : []),
     ...task.labels,
   ]
     .map((label) => label.trim())
@@ -120,17 +140,34 @@ export function renderIssueBody(task: TaskRecord): string {
     "",
     task.description,
     "",
+    "## Контекст",
+    "",
+    task.context,
+    "",
+    "## Зависимости",
+    "",
+    task.dependsOn.length > 0 ? task.dependsOn.map((id) => `- ${id}`).join("\n") : "Нет.",
+    "",
+    "## Результат",
+    "",
+    task.deliverable,
+    "",
+    "## Вне scope",
+    "",
+    task.outOfScope.length > 0 ? task.outOfScope.map((item) => `- ${item}`).join("\n") : "Не определено.",
+    "",
     "## Критерии готовности",
     "",
     acceptance,
     "",
-    "## Контекст",
+    "## Метаданные",
     "",
     `- Версия: ${task.version}`,
     `- Приоритет: ${task.priority}`,
     `- Область: ${task.area}`,
     `- Этап roadmap: ${task.stage}`,
     `- Task ID: ${task.id}`,
+    `- Deferred: ${task.deferred ? "да" : "нет"}`,
     "",
     "_Задача создана из `tasks/tasks.json` через локальный sync._",
   ].join("\n");
@@ -143,7 +180,7 @@ export function renderTaskTable(tasks: TaskRecord[]): string {
   const lines = ["| ID | Версия | Приоритет | Область | Этап | Статус | Issue | Название |", "|---|---|---|---|---|---|---|---|"];
   for (const task of tasks) {
     lines.push(
-      `| ${task.id} | ${task.version} | ${task.priority} | ${task.area} | ${task.stage} | ${task.status} | ${task.issueNumber ? `#${task.issueNumber}` : "—"} | ${task.title} |`,
+      `| ${task.id}${task.deferred ? "*" : ""} | ${task.version} | ${task.priority} | ${task.area} | ${task.stage} | ${task.status} | ${task.issueNumber ? `#${task.issueNumber}` : "—"} | ${task.title} |`,
     );
   }
   return lines.join("\n");

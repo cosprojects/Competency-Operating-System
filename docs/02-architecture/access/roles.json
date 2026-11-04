@@ -1,0 +1,191 @@
+{
+  "version": "1.0.0",
+  "status": "approved",
+  "lastUpdated": "2026-10-28",
+  "source": "docs/02-architecture/COS-ARCH-173-Access-Control-and-Roles.md",
+  "decisions": {
+    "ownerEmailBootstrap": true,
+    "supportActivation": "after_first_release",
+    "contentReviewerRole": false,
+    "contentAgentAsServiceActor": true,
+    "organizationRoles": "paper_only",
+    "exportBeforeAccountDelete": false,
+    "accountDeleteModal": true,
+    "profileAndAccountSeparated": true
+  },
+  "roles": {
+    "OWNER": {
+      "kind": "platform",
+      "scope": "global",
+      "status": "active",
+      "description": "Супер-админ: все capabilities, роли, публикация, audit."
+    },
+    "SUPPORT": {
+      "kind": "platform",
+      "scope": "global",
+      "status": "planned",
+      "activation": "after_first_release",
+      "description": "Поддержка: читает отзывы, метрики и ограниченные данные пользователей, меняет статус отзыва. Не меняет роли, контент и публикацию."
+    },
+    "USER": {
+      "kind": "baseline",
+      "scope": "self",
+      "status": "active",
+      "description": "Обычный пользователь: свои сохранения, статусы, профиль, отзывы."
+    },
+    "ORG_ADMIN": {
+      "kind": "organization",
+      "scope": "own_organization",
+      "status": "paper_only",
+      "description": "Администратор команды: управляет только своей организацией."
+    },
+    "ORG_METHODOLOGIST": {
+      "kind": "organization",
+      "scope": "own_organization",
+      "status": "paper_only",
+      "description": "Методолог компании: маршруты развития внутри своей организации."
+    },
+    "ORG_MEMBER": {
+      "kind": "organization",
+      "scope": "own_organization",
+      "status": "paper_only",
+      "description": "Сотрудник организации: свои данные и прогресс."
+    }
+  },
+  "serviceActors": {
+    "AGENT": {
+      "kind": "service",
+      "status": "planned",
+      "description": "Контентный/методологический агент. Не пользователь и не UserRole; без PII; готовит контент и релиз, публикует только OWNER.",
+      "capabilities": ["content:assemble", "source-review:automate", "release:prepare"]
+    }
+  },
+  "capabilities": {
+    "account:self": "Свой профиль, сохранения, статусы, удаление.",
+    "feedback:create": "Отправить отзыв.",
+    "feedback:read": "Читать очередь отзывов.",
+    "feedback:write": "Менять статус отзыва и отвечать.",
+    "metrics:read": "Читать агрегированные метрики.",
+    "users:read": "Читать список пользователей без лишнего PII.",
+    "users:manage": "Менять роли и статусы пользователей.",
+    "source-review:moderate": "Вручную подтверждать и блокировать материалы.",
+    "source-review:automate": "Автоматически обрабатывать сигналы по источникам.",
+    "content:assemble": "Собирать и обновлять контент и источники.",
+    "content:publish": "Публиковать контент и релиз.",
+    "release:prepare": "Готовить релиз без публикации.",
+    "roles:manage": "Выдавать платформенные роли.",
+    "org:manage": "Управлять своей организацией.",
+    "org:view": "Видеть прогресс своей организации.",
+    "audit:read": "Читать журнал админ-действий."
+  },
+  "accessMatrix": {
+    "OWNER": {
+      "account:self": true,
+      "feedback:create": true,
+      "feedback:read": true,
+      "feedback:write": true,
+      "metrics:read": true,
+      "users:read": true,
+      "users:manage": true,
+      "source-review:moderate": true,
+      "content:assemble": true,
+      "content:publish": true,
+      "roles:manage": true,
+      "org:manage": true,
+      "org:view": true,
+      "audit:read": true
+    },
+    "SUPPORT": {
+      "account:self": true,
+      "feedback:create": true,
+      "feedback:read": true,
+      "feedback:write": true,
+      "metrics:read": "aggregate",
+      "users:read": "limited",
+      "users:manage": false,
+      "source-review:moderate": false,
+      "content:assemble": false,
+      "content:publish": false,
+      "roles:manage": false,
+      "org:manage": false,
+      "org:view": false,
+      "audit:read": false
+    },
+    "USER": {
+      "account:self": true,
+      "feedback:create": true,
+      "feedback:read": false,
+      "feedback:write": false,
+      "metrics:read": false,
+      "users:read": false,
+      "users:manage": false,
+      "source-review:moderate": false,
+      "content:assemble": false,
+      "content:publish": false,
+      "roles:manage": false,
+      "org:manage": false,
+      "org:view": false,
+      "audit:read": false
+    },
+    "ORG_ADMIN": {
+      "account:self": true,
+      "feedback:create": true,
+      "feedback:read": false,
+      "feedback:write": false,
+      "metrics:read": "own_org_aggregate",
+      "users:read": "own_org",
+      "users:manage": false,
+      "source-review:moderate": false,
+      "content:assemble": false,
+      "content:publish": false,
+      "roles:manage": false,
+      "org:manage": "own_org",
+      "org:view": "own_org",
+      "audit:read": false
+    },
+    "AGENT": {
+      "account:self": false,
+      "feedback:create": false,
+      "feedback:read": false,
+      "feedback:write": false,
+      "metrics:read": false,
+      "users:read": false,
+      "users:manage": false,
+      "source-review:moderate": false,
+      "source-review:automate": true,
+      "content:assemble": true,
+      "content:publish": false,
+      "release:prepare": true,
+      "roles:manage": false,
+      "org:manage": false,
+      "org:view": false,
+      "audit:read": false
+    }
+  },
+  "visibility": {
+    "publicContent": ["GUEST", "USER", "SUPPORT", "ORG_ADMIN", "OWNER"],
+    "ownProfileAndSaves": ["USER", "SUPPORT", "ORG_ADMIN", "OWNER"],
+    "feedbackContact": ["OWNER", "SUPPORT"],
+    "feedbackText": ["OWNER", "SUPPORT"],
+    "userEmail": ["OWNER", "SUPPORT:if_needed", "ORG_ADMIN:own_org"],
+    "analytics": ["OWNER", "SUPPORT:aggregate", "ORG_ADMIN:own_org_aggregate"],
+    "sourceReviews": ["OWNER", "AGENT:content_signals"],
+    "rolesAndAudit": ["OWNER"]
+  },
+  "phases": {
+    "now": {
+      "owner": "OWNER_EMAILS/ADMIN_EMAILS",
+      "userRoleTable": false,
+      "adminAudit": true,
+      "capabilityLayer": true
+    },
+    "afterFirstRelease": {
+      "support": true,
+      "userRoleTable": true
+    },
+    "corporateContour": {
+      "organizations": true,
+      "orgRoles": ["ORG_ADMIN", "ORG_METHODOLOGIST", "ORG_MEMBER"]
+    }
+  }
+}

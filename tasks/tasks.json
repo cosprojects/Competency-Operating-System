@@ -439,7 +439,9 @@
         "T-009",
         "T-010",
         "T-011",
-        "T-012"
+        "T-012",
+        "T-039",
+        "T-040"
       ],
       "deferred": false
     },
@@ -1119,6 +1121,70 @@
         "T-037"
       ],
       "deferred": true
+    },
+    {
+      "id": "T-039",
+      "version": "v0.1.0",
+      "title": "Профиль пользователя и удаление аккаунта",
+      "description": "Сделать приватную страницу профиля и отдельный аккаунт с безопасным удалением доступа.",
+      "context": "Пользователь должен видеть свои действия в системе отдельно от служебных настроек. Сейчас /account смешивает данные аккаунта и будущий профиль, а удаление использует window.confirm.",
+      "deliverable": "Страница /profile с сохранениями/статусами/прогрессом/последними действиями; /account с данными, сессией и удалением через модалку.",
+      "outOfScope": [
+        "Публичный профиль",
+        "Аватар и загрузка файлов",
+        "Экспорт данных перед удалением",
+        "Редактирование профиля"
+      ],
+      "dependsOn": [
+        "T-002"
+      ],
+      "acceptance": [
+        "/profile показывает сохранения, статусы и прогресс",
+        "/account отделён от профиля",
+        "Удаление подтверждается модалкой с перечнем данных",
+        "После удаления сессия и cookie очищены, пользователь выходит",
+        "Нет публичного URL профиля",
+        "Проверены мобильные и доступность"
+      ],
+      "priority": "P1",
+      "area": "Web",
+      "stage": "I",
+      "status": "Backlog",
+      "labels": [],
+      "deferred": false,
+      "issueNumber": 38,
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/38"
+    },
+    {
+      "id": "T-040",
+      "version": "v0.2.0",
+      "title": "Phase 0: capabilities, audit и защита админки",
+      "description": "Ввести единый слой проверки прав и журнал админ-действий без таблицы UserRole.",
+      "context": "Сейчас админ определяется через ADMIN_EMAILS в разных местах. Для Beta достаточно email-владельца, но проверки нужно централизовать и получить audit до публичного запуска.",
+      "deliverable": "lib/access.ts с can/requireCapability, AdminAudit в Prisma, capability-проверки на /admin/* и /api/admin/*, audit для feedback/source-review.",
+      "outOfScope": [
+        "UserRole и выдача ролей",
+        "SUPPORT как активная роль",
+        "Организации и ORG_ADMIN",
+        "Отдельный admin-поддомен"
+      ],
+      "dependsOn": [],
+      "acceptance": [
+        "OWNER_EMAILS/ADMIN_EMAILS работают как bootstrap",
+        "can/requireCapability покрывают admin-страницы и API",
+        "AdminAudit пишет actor/action/target/time",
+        "Статус отзыва и блокировка материала логируются",
+        "Пользователь без capability получает 401/redirect",
+        "Тесты на доступ и audit"
+      ],
+      "priority": "P0",
+      "area": "Infra",
+      "stage": "I",
+      "status": "Ready",
+      "labels": [],
+      "deferred": false,
+      "issueNumber": 39,
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/39"
     }
   ]
 }

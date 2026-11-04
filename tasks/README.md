@@ -103,3 +103,10 @@ npm run tasks:sync -- --update                # обновить существ�
   "issueNumber": 123
 }
 ```
+
+## Troubleshooting
+
+- **`Нужен GH_TOKEN`** — проверь, что файл лежит именно в `tasks/.env.local`, а не в `.env.example`, корне `.env.local` или `apps/web/.env.local`. CLI читает только `tasks/.env.local` и env процесса.
+- **`tasks:doctor` показывает `user`, но Project API возвращает `FORBIDDEN`** — fine-grained-токену не дали доступ к Projects (для user-owned Projects его может не быть). Это не мешает создавать issues; для синхронизации полей/добавления существующих issues нужен classic PAT со scope `project`.
+- **Issues созданы, но Project пустой** — встроенный workflow Auto-add срабатывает на новые items. Существующие issues добавь через Project → Add item (фильтр `label:task`) или classic PAT-скриптом.
+- **Токен случайно попал в `.env.example`** — перенеси в `tasks/.env.local`, верни пример к пустому виду и не коммить секрет. Если токен уже был в коммите — отзови и создай новый.

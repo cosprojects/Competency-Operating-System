@@ -82,7 +82,9 @@
         "Проверены 4 страницы профессий",
         "Проверены 3 новых источника",
         "Проверены 5–10 заменённых тегов"
-      ]
+      ],
+      "issueNumber": 1,
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/1"
     },
     {
       "id": "T-002",
@@ -98,7 +100,9 @@
         "Макеты ключевых экранов готовы",
         "Компоненты обновлены в apps/web",
         "Проверена мобильная версия"
-      ]
+      ],
+      "issueNumber": 2,
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/2"
     },
     {
       "id": "T-003",
@@ -114,7 +118,9 @@
         "Открыты 4 профессии и 54 компетенции",
         "Проверены сохранения и вход на тестовом аккаунте",
         "Зафиксированы blockers"
-      ]
+      ],
+      "issueNumber": 3,
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/3"
     },
     {
       "id": "T-004",
@@ -146,7 +152,9 @@
         "Документы проверены юристом",
         "Реквизиты заполнены",
         "Уведомление РКН подано"
-      ]
+      ],
+      "issueNumber": 4,
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/4"
     },
     {
       "id": "T-006",
@@ -162,7 +170,9 @@
         "Приложение доступно на РФ-хосте",
         "Миграции применены",
         "Восстановление из бэкапа проверено"
-      ]
+      ],
+      "issueNumber": 5,
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/5"
     },
     {
       "id": "T-007",
@@ -178,7 +188,9 @@
         "HTTPS работает",
         "Письма доходят в Gmail/Яндекс/Mail.ru",
         "Домен и DNS задокументированы"
-      ]
+      ],
+      "issueNumber": 6,
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/6"
     },
     {
       "id": "T-008",
@@ -194,7 +206,9 @@
         "release:build собирает ready-контент",
         "Health check 200",
         "Мониторинг и алерты включены"
-      ]
+      ],
+      "issueNumber": 7,
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/7"
     },
     {
       "id": "T-009",
@@ -210,7 +224,9 @@
         "Пройден P0 checklist",
         "Нет блокирующих дефектов",
         "Проверены 360/768/1280px"
-      ]
+      ],
+      "issueNumber": 8,
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/8"
     },
     {
       "id": "T-010",
@@ -226,7 +242,9 @@
         "События пишутся после согласия",
         "Отказ не ломает продукт",
         "Метрики совпадают с ручной проверкой"
-      ]
+      ],
+      "issueNumber": 9,
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/9"
     },
     {
       "id": "T-011",
@@ -242,7 +260,9 @@
         "Назначен ответственный",
         "CSV и админка используются",
         "Есть шаблон ответа"
-      ]
+      ],
+      "issueNumber": 10,
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/10"
     },
     {
       "id": "T-012",
@@ -258,7 +278,9 @@
         "Приглашены участники",
         "Собран consent",
         "Получены первые 5 отзывов"
-      ]
+      ],
+      "issueNumber": 11,
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/11"
     },
     {
       "id": "T-013",
@@ -274,7 +296,9 @@
         "release:validate PASS",
         "release:build выполнен",
         "Тег v0.2.0 создан"
-      ]
+      ],
+      "issueNumber": 12,
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/12"
     },
     {
       "id": "T-014",
@@ -290,7 +314,9 @@
         "Указан размер выборки",
         "Есть воронка и темы",
         "Принято решение continue/narrow/pivot"
-      ]
+      ],
+      "issueNumber": 13,
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/13"
     },
     {
       "id": "T-015",
@@ -306,7 +332,9 @@
         "Обработаны топ-10 отзывов",
         "Обновлён quality gate",
         "Повторный release:validate PASS"
-      ]
+      ],
+      "issueNumber": 14,
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/14"
     },
     {
       "id": "T-016",
@@ -322,7 +350,9 @@
         "История отображается",
         "Прогресс по областям виден",
         "Есть пустые состояния"
-      ]
+      ],
+      "issueNumber": 15,
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/15"
     },
     {
       "id": "T-017",
@@ -338,7 +368,9 @@
         "Токены совпадают с globals.css",
         "Нет дублей компонентов",
         "Проверена визуальная регрессия"
-      ]
+      ],
+      "issueNumber": 16,
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/16"
     },
     {
       "id": "T-018",
@@ -354,7 +386,9 @@
         "Схема процесса описана",
         "Ручные этапы перечислены",
         "Есть метрики качества"
-      ]
+      ],
+      "issueNumber": 17,
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/17"
     },
     {
       "id": "T-019",
@@ -370,7 +404,9 @@
         "Есть precision/recall проверка",
         "Снижены ложные привязки",
         "Обновлён source review"
-      ]
+      ],
+      "issueNumber": 18,
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/18"
     },
     {
       "id": "T-020",
@@ -386,7 +422,9 @@
         "Есть scheduled audit",
         "Битые ссылки попадают в отчёт",
         "Есть владелец исправления"
-      ]
+      ],
+      "issueNumber": 19,
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/19"
     },
     {
       "id": "T-021",
@@ -402,7 +440,9 @@
         "Есть критерии выбора",
         "Проведены интервью",
         "Решение зафиксировано"
-      ]
+      ],
+      "issueNumber": 20,
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/20"
     },
     {
       "id": "T-022",
@@ -418,7 +458,9 @@
         "Модели проходят quality gate",
         "Есть expert review",
         "Материалы привязаны"
-      ]
+      ],
+      "issueNumber": 21,
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/21"
     },
     {
       "id": "T-023",
@@ -434,7 +476,9 @@
         "Есть 10+ интервью",
         "Сформулированы гипотезы",
         "Есть критерии решения"
-      ]
+      ],
+      "issueNumber": 22,
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/22"
     },
     {
       "id": "T-024",
@@ -450,7 +494,9 @@
         "Есть one-pager",
         "Определены условия пилота",
         "Есть список контактов"
-      ]
+      ],
+      "issueNumber": 23,
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/23"
     },
     {
       "id": "T-025",
@@ -466,7 +512,9 @@
         "Схема данных описана",
         "Определены источники evidence",
         "Есть границы приватности"
-      ]
+      ],
+      "issueNumber": 24,
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/24"
     },
     {
       "id": "T-026",
@@ -482,7 +530,9 @@
         "Модель evidence описана",
         "Есть правила confidence",
         "Определены права пользователя"
-      ]
+      ],
+      "issueNumber": 25,
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/25"
     },
     {
       "id": "T-027",
@@ -498,7 +548,9 @@
         "Профиль доступен пользователю",
         "Данные сохраняются",
         "Есть удаление и экспорт"
-      ]
+      ],
+      "issueNumber": 26,
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/26"
     },
     {
       "id": "T-028",
@@ -514,7 +566,9 @@
         "Модель цели описана",
         "Есть связь с профессией",
         "Определены ограничения"
-      ]
+      ],
+      "issueNumber": 27,
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/27"
     },
     {
       "id": "T-029",
@@ -530,7 +584,9 @@
         "Маршрут строится",
         "Учитываются prerequisites",
         "Есть понятный следующий шаг"
-      ]
+      ],
+      "issueNumber": 28,
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/28"
     },
     {
       "id": "T-030",
@@ -546,7 +602,9 @@
         "Есть объяснение",
         "Пользователь может оспорить",
         "Нет ложных гарантий"
-      ]
+      ],
+      "issueNumber": 29,
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/29"
     },
     {
       "id": "T-031",
@@ -562,7 +620,9 @@
         "Критерии валидированы",
         "Есть рубрики",
         "Учтены ограничения"
-      ]
+      ],
+      "issueNumber": 30,
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/30"
     },
     {
       "id": "T-032",
@@ -578,7 +638,9 @@
         "Задания связаны с компетенциями",
         "Есть проверка",
         "Есть обратная связь"
-      ]
+      ],
+      "issueNumber": 31,
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/31"
     },
     {
       "id": "T-033",
@@ -594,7 +656,9 @@
         "Результаты видны в профиле",
         "Маршрут учитывает оценку",
         "Есть история"
-      ]
+      ],
+      "issueNumber": 32,
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/32"
     },
     {
       "id": "T-034",
@@ -610,7 +674,9 @@
         "Модель организации описана",
         "Определены роли",
         "Учтена приватность сотрудников"
-      ]
+      ],
+      "issueNumber": 33,
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/33"
     },
     {
       "id": "T-035",
@@ -626,7 +692,9 @@
         "Есть модели ролей",
         "Есть gap-анализ",
         "Есть план развития"
-      ]
+      ],
+      "issueNumber": 34,
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/34"
     },
     {
       "id": "T-036",
@@ -642,7 +710,9 @@
         "Есть пилот",
         "Собраны метрики",
         "Принято решение"
-      ]
+      ],
+      "issueNumber": 35,
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/35"
     },
     {
       "id": "T-037",
@@ -658,7 +728,9 @@
         "Есть гипотезы и цены",
         "Есть первые оплаты/пилоты",
         "Есть unit-экономика"
-      ]
+      ],
+      "issueNumber": 36,
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/36"
     },
     {
       "id": "T-038",
@@ -674,7 +746,9 @@
         "Есть партнёрские интеграции",
         "Есть правила экосистемы",
         "Есть метрики ценности"
-      ]
+      ],
+      "issueNumber": 37,
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/37"
     }
   ]
 }

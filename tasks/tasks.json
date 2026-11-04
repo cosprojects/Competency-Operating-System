@@ -1,0 +1,24 @@
+{
+  "version": "1.0.0",
+  "project": {
+    "owner": "cosprojects",
+    "title": "AXIONA Launch",
+    "repository": "cosprojects/Competency-Operating-System"
+  },
+  "tasks": [
+    {
+      "id": "T-001",
+      "title": "Проверить content gate",
+      "description": "Сделать spot-check 54 компетенций и 29 источников перед публичной Beta.",
+      "acceptance": [
+        "Проверены 4 страницы профессий",
+        "Проверены 3 новых источника"
+      ],
+      "priority": "P0",
+      "area": "Content",
+      "stage": "I",
+      "status": "Backlog",
+      "labels": []
+    }
+  ]
+}

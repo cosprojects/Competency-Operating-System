@@ -145,6 +145,19 @@ npm run model:sync -- --domain it --profession uxui --write
 npm run model:validate -- --domain it --profession product --all --require-blocks
 ```
 
+## Планирование задач
+
+Задачи ведутся в [`tasks/tasks.json`](tasks/tasks.json), синхронизируются в GitHub Issues и Project «AXIONA Launch»:
+
+```bash
+npm run tasks:list
+npm run tasks:add -- --title "..." --description "..." --priority P1 --area Web --stage I --acceptance "..."
+npm run tasks:sync -- --dry-run
+npm run tasks:sync
+```
+
+Подробно — [`tasks/README.md`](tasks/README.md). Для sync нужен `GH_TOKEN`; commit/push с изменением `tasks/tasks.json` может запускать GitHub Action.
+
 ## Документация
 
 - Источник правды — `docs/` с разделами `00-foundation` … `12-release`.

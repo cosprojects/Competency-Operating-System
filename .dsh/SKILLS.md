@@ -74,6 +74,9 @@
 | `npm run materials:daily` | `node --experimental-strip-types src/methodology/v1/materials-agent/cli/daily.ts` |
 | `npm run descriptions:agent` | `node --experimental-strip-types src/methodology/v1/competency/cli/descriptions-agent.ts` |
 | `npm run descriptions:validate` | `node --experimental-strip-types src/methodology/v1/competency/cli/descriptions-validate.ts` |
+| `npm run tasks:list` | `node --experimental-strip-types scripts/tasks/cli.ts list` |
+| `npm run tasks:add` | `node --experimental-strip-types scripts/tasks/cli.ts add` |
+| `npm run tasks:sync` | `node --experimental-strip-types scripts/tasks/cli.ts sync` |
 
 ## Как пользоваться
 

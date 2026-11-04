@@ -1,0 +1,49 @@
+name: Sync tasks to GitHub
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "tasks/tasks.json"
+  workflow_dispatch:
+
+concurrency:
+  group: tasks-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    if: ${{ github.event_name == 'workflow_dispatch' || !contains(github.event.head_commit.message, '[skip tasks-sync]') }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      HAS_PROJECT_TOKEN: ${{ secrets.PROJECT_TOKEN != '' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Show plan
+        run: node --experimental-strip-types scripts/tasks/cli.ts list
+      - name: Sync issues
+        if: env.HAS_PROJECT_TOKEN == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.PROJECT_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: node --experimental-strip-types scripts/tasks/cli.ts sync
+      - name: Commit issue numbers
+        if: env.HAS_PROJECT_TOKEN == 'true'
+        run: |
+          if git diff --quiet tasks/tasks.json; then
+            echo "tasks/tasks.json unchanged"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tasks/tasks.json
+          git commit -m "chore(tasks): sync issue numbers [skip tasks-sync]"
+          git push
+      - name: Skip without token
+        if: env.HAS_PROJECT_TOKEN != 'true'
+        run: echo "PROJECT_TOKEN is not set; issue sync skipped."

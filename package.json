@@ -57,7 +57,10 @@
     "aggregate": "node --experimental-strip-types scripts/aggregate/index.ts",
     "materials:daily": "node --experimental-strip-types src/methodology/v1/materials-agent/cli/daily.ts",
     "descriptions:agent": "node --experimental-strip-types src/methodology/v1/competency/cli/descriptions-agent.ts",
-    "descriptions:validate": "node --experimental-strip-types src/methodology/v1/competency/cli/descriptions-validate.ts"
+    "descriptions:validate": "node --experimental-strip-types src/methodology/v1/competency/cli/descriptions-validate.ts",
+    "tasks:list": "node --experimental-strip-types scripts/tasks/cli.ts list",
+    "tasks:add": "node --experimental-strip-types scripts/tasks/cli.ts add",
+    "tasks:sync": "node --experimental-strip-types scripts/tasks/cli.ts sync"
   },
   "dependencies": {
     "@prisma/client": "^6.4.0",

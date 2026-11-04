@@ -61,3 +61,7 @@ docs/12-release/reports/beta-1-gap-report.md
 docs/12-release/reports/beta-1-gap-report.json
 .vercel
 .env*
+
+# Task sync token (never commit)
+tasks/.env.local
+!tasks/.env.example

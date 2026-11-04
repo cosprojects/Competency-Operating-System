@@ -5,20 +5,676 @@
     "title": "AXIONA Launch",
     "repository": "cosprojects/Competency-Operating-System"
   },
+  "versions": [
+    {
+      "id": "v0.1.0",
+      "title": "Beta 1 foundation",
+      "stage": "I",
+      "goal": "Доказать ценность карты компетенций и собрать демо-версию продукта."
+    },
+    {
+      "id": "v0.2.0",
+      "title": "Public Beta readiness",
+      "stage": "I",
+      "goal": "Открыть публичную Beta с реальными пользователями, юридическим контуром и РФ-хостингом."
+    },
+    {
+      "id": "v0.3.0",
+      "title": "Beta learning & quality",
+      "stage": "II / IV",
+      "goal": "Исправить качество контента и личное пространство по данным первой Beta."
+    },
+    {
+      "id": "v0.4.0",
+      "title": "Source automation",
+      "stage": "III",
+      "goal": "Сделать поиск, проверку и обновление образовательных источников масштабируемыми."
+    },
+    {
+      "id": "v0.5.0",
+      "title": "Expansion & commercial validation",
+      "stage": "V / VI",
+      "goal": "Проверить коммерческие гипотезы и расширить профессиональные направления."
+    },
+    {
+      "id": "v0.6.0",
+      "title": "Digital Competency Profile",
+      "stage": "VII",
+      "goal": "Связать пользователя с профессиональной моделью через цифровой профиль."
+    },
+    {
+      "id": "v0.7.0",
+      "title": "Personal development routes",
+      "stage": "VIII",
+      "goal": "Строить объяснимые персональные маршруты развития."
+    },
+    {
+      "id": "v0.8.0",
+      "title": "Competency assessment",
+      "stage": "IX",
+      "goal": "Добавить диагностику и подтверждение фактического уровня компетенций."
+    },
+    {
+      "id": "v0.9.0",
+      "title": "Organization space",
+      "stage": "X",
+      "goal": "Поддержать управление компетенциями на уровне команд и организаций."
+    },
+    {
+      "id": "v1.0.0",
+      "title": "Commercial ecosystem",
+      "stage": "XI / XII",
+      "goal": "Сформировать устойчивую коммерческую модель и экосистему COS."
+    }
+  ],
   "tasks": [
     {
       "id": "T-001",
+      "version": "v0.1.0",
       "title": "Проверить content gate",
-      "description": "Сделать spot-check 54 компетенций и 29 источников перед публичной Beta.",
-      "acceptance": [
-        "Проверены 4 страницы профессий",
-        "Проверены 3 новых источника"
-      ],
+      "description": "Сделать человеческий spot-check 54 компетенций и 29 источников перед публичной Beta.",
       "priority": "P0",
       "area": "Content",
       "stage": "I",
+      "status": "Ready",
+      "labels": [],
+      "acceptance": [
+        "Проверены 4 страницы профессий",
+        "Проверены 3 новых источника",
+        "Проверены 5–10 заменённых тегов"
+      ]
+    },
+    {
+      "id": "T-002",
+      "version": "v0.1.0",
+      "title": "Обновить дизайн и интерфейс по макетам",
+      "description": "Подготовить дизайны, обновить компоненты и тексты интерфейса по новой визуальной системе.",
+      "priority": "P1",
+      "area": "Design",
+      "stage": "I",
+      "status": "In Progress",
+      "labels": [],
+      "acceptance": [
+        "Макеты ключевых экранов готовы",
+        "Компоненты обновлены в apps/web",
+        "Проверена мобильная версия"
+      ]
+    },
+    {
+      "id": "T-003",
+      "version": "v0.1.0",
+      "title": "Проверить Vercel demo",
+      "description": "Проверить demo-сборку, доступ к preview, навигацию и отсутствие критических ошибок.",
+      "priority": "P1",
+      "area": "Web",
+      "stage": "I",
+      "status": "Review",
+      "labels": [],
+      "acceptance": [
+        "Открыты 4 профессии и 54 компетенции",
+        "Проверены сохранения и вход на тестовом аккаунте",
+        "Зафиксированы blockers"
+      ]
+    },
+    {
+      "id": "T-004",
+      "version": "v0.1.0",
+      "title": "Синхронизировать roadmap и release-документацию",
+      "description": "Связать новую дорожную карту с Beta-программой, реестром документов и decision log.",
+      "priority": "P2",
+      "area": "Docs",
+      "stage": "I",
+      "status": "Done",
+      "labels": [],
+      "acceptance": [
+        "COS-BP-005 добавлен",
+        "Старый COS-BP-004 помечен Historical",
+        "Ссылки в README и docs/12-release обновлены"
+      ]
+    },
+    {
+      "id": "T-005",
+      "version": "v0.2.0",
+      "title": "Завершить юридический контур",
+      "description": "Подготовить политику, условия, cookie notice, согласия, реквизиты ИП и уведомление РКН.",
+      "priority": "P0",
+      "area": "Legal",
+      "stage": "I",
       "status": "Backlog",
-      "labels": []
+      "labels": [],
+      "acceptance": [
+        "Документы проверены юристом",
+        "Реквизиты заполнены",
+        "Уведомление РКН подано"
+      ]
+    },
+    {
+      "id": "T-006",
+      "version": "v0.2.0",
+      "title": "Поднять РФ-хостинг и PostgreSQL",
+      "description": "Развернуть приложение и БД в РФ, настроить миграции и резервное копирование.",
+      "priority": "P0",
+      "area": "Infra",
+      "stage": "I",
+      "status": "Backlog",
+      "labels": [],
+      "acceptance": [
+        "Приложение доступно на РФ-хосте",
+        "Миграции применены",
+        "Восстановление из бэкапа проверено"
+      ]
+    },
+    {
+      "id": "T-007",
+      "version": "v0.2.0",
+      "title": "Настроить домен и email",
+      "description": "Подключить домен, HTTPS, SPF/DKIM/DMARC и проверить доставку magic link.",
+      "priority": "P0",
+      "area": "Infra",
+      "stage": "I",
+      "status": "Backlog",
+      "labels": [],
+      "acceptance": [
+        "HTTPS работает",
+        "Письма доходят в Gmail/Яндекс/Mail.ru",
+        "Домен и DNS задокументированы"
+      ]
+    },
+    {
+      "id": "T-008",
+      "version": "v0.2.0",
+      "title": "Выпустить production deploy",
+      "description": "Собрать публичную версию, применить миграции и проверить health/monitoring.",
+      "priority": "P0",
+      "area": "Infra",
+      "stage": "I",
+      "status": "Backlog",
+      "labels": [],
+      "acceptance": [
+        "release:build собирает ready-контент",
+        "Health check 200",
+        "Мониторинг и алерты включены"
+      ]
+    },
+    {
+      "id": "T-009",
+      "version": "v0.2.0",
+      "title": "Пройти public Beta QA",
+      "description": "Проверить мобильные, доступность, безопасность, регистрацию, сохранения, отзывы и аналитику.",
+      "priority": "P0",
+      "area": "QA",
+      "stage": "I",
+      "status": "Backlog",
+      "labels": [],
+      "acceptance": [
+        "Пройден P0 checklist",
+        "Нет блокирующих дефектов",
+        "Проверены 360/768/1280px"
+      ]
+    },
+    {
+      "id": "T-010",
+      "version": "v0.2.0",
+      "title": "Проверить аналитику и consent",
+      "description": "Проверить события, отказ от аналитики и отчёт по метрикам.",
+      "priority": "P1",
+      "area": "Analytics",
+      "stage": "I",
+      "status": "Backlog",
+      "labels": [],
+      "acceptance": [
+        "События пишутся после согласия",
+        "Отказ не ломает продукт",
+        "Метрики совпадают с ручной проверкой"
+      ]
+    },
+    {
+      "id": "T-011",
+      "version": "v0.2.0",
+      "title": "Настроить триаж обратной связи",
+      "description": "Описать еженедельный разбор отзывов и статусы NEW/TRIAGED/RESOLVED.",
+      "priority": "P1",
+      "area": "Product",
+      "stage": "I",
+      "status": "Backlog",
+      "labels": [],
+      "acceptance": [
+        "Назначен ответственный",
+        "CSV и админка используются",
+        "Есть шаблон ответа"
+      ]
+    },
+    {
+      "id": "T-012",
+      "version": "v0.2.0",
+      "title": "Пригласить дизайнеров в Beta",
+      "description": "Собрать 15–25 участников и провести первый сценарий тестирования.",
+      "priority": "P1",
+      "area": "Research",
+      "stage": "I",
+      "status": "Backlog",
+      "labels": [],
+      "acceptance": [
+        "Приглашены участники",
+        "Собран consent",
+        "Получены первые 5 отзывов"
+      ]
+    },
+    {
+      "id": "T-013",
+      "version": "v0.2.0",
+      "title": "Выпустить v0.2.0",
+      "description": "Зафиксировать ready-манифест, release notes и тег версии.",
+      "priority": "P0",
+      "area": "Release",
+      "stage": "I",
+      "status": "Backlog",
+      "labels": [],
+      "acceptance": [
+        "release:validate PASS",
+        "release:build выполнен",
+        "Тег v0.2.0 создан"
+      ]
+    },
+    {
+      "id": "T-014",
+      "version": "v0.3.0",
+      "title": "Собрать отчёт Beta",
+      "description": "Свести аналитику, отзывы, ошибки контента и решение о следующем цикле.",
+      "priority": "P0",
+      "area": "Research",
+      "stage": "II",
+      "status": "Backlog",
+      "labels": [],
+      "acceptance": [
+        "Указан размер выборки",
+        "Есть воронка и темы",
+        "Принято решение continue/narrow/pivot"
+      ]
+    },
+    {
+      "id": "T-015",
+      "version": "v0.3.0",
+      "title": "Исправить топ проблем контента",
+      "description": "Устранить подтверждённые ошибки и пробелы по итогам Beta.",
+      "priority": "P1",
+      "area": "Content",
+      "stage": "II",
+      "status": "Backlog",
+      "labels": [],
+      "acceptance": [
+        "Обработаны топ-10 отзывов",
+        "Обновлён quality gate",
+        "Повторный release:validate PASS"
+      ]
+    },
+    {
+      "id": "T-016",
+      "version": "v0.3.0",
+      "title": "Развить личное пространство",
+      "description": "Добавить историю, прогресс и группировку сохранённого.",
+      "priority": "P1",
+      "area": "Web",
+      "stage": "IV",
+      "status": "Backlog",
+      "labels": [],
+      "acceptance": [
+        "История отображается",
+        "Прогресс по областям виден",
+        "Есть пустые состояния"
+      ]
+    },
+    {
+      "id": "T-017",
+      "version": "v0.3.0",
+      "title": "Консолидировать дизайн-систему",
+      "description": "Свести компоненты и токены после обновления дизайна.",
+      "priority": "P2",
+      "area": "Design",
+      "stage": "IV",
+      "status": "Backlog",
+      "labels": [],
+      "acceptance": [
+        "Токены совпадают с globals.css",
+        "Нет дублей компонентов",
+        "Проверена визуальная регрессия"
+      ]
+    },
+    {
+      "id": "T-018",
+      "version": "v0.4.0",
+      "title": "Описать процесс источников",
+      "description": "Зафиксировать путь от поиска источника до публикации материала и ручные этапы.",
+      "priority": "P1",
+      "area": "Content",
+      "stage": "III",
+      "status": "Backlog",
+      "labels": [],
+      "acceptance": [
+        "Схема процесса описана",
+        "Ручные этапы перечислены",
+        "Есть метрики качества"
+      ]
+    },
+    {
+      "id": "T-019",
+      "version": "v0.4.0",
+      "title": "Улучшить discovery и релевантность",
+      "description": "Повысить точность поиска и привязки материалов к компетенциям.",
+      "priority": "P1",
+      "area": "Content",
+      "stage": "III",
+      "status": "Backlog",
+      "labels": [],
+      "acceptance": [
+        "Есть precision/recall проверка",
+        "Снижены ложные привязки",
+        "Обновлён source review"
+      ]
+    },
+    {
+      "id": "T-020",
+      "version": "v0.4.0",
+      "title": "Автоматизировать health источников",
+      "description": "Регулярно проверять доступность, цену и устаревание ссылок.",
+      "priority": "P2",
+      "area": "Infra",
+      "stage": "III",
+      "status": "Backlog",
+      "labels": [],
+      "acceptance": [
+        "Есть scheduled audit",
+        "Битые ссылки попадают в отчёт",
+        "Есть владелец исправления"
+      ]
+    },
+    {
+      "id": "T-021",
+      "version": "v0.5.0",
+      "title": "Выбрать следующие профессии",
+      "description": "Определить следующую группу направлений по данным интереса.",
+      "priority": "P1",
+      "area": "Research",
+      "stage": "VI",
+      "status": "Backlog",
+      "labels": [],
+      "acceptance": [
+        "Есть критерии выбора",
+        "Проведены интервью",
+        "Решение зафиксировано"
+      ]
+    },
+    {
+      "id": "T-022",
+      "version": "v0.5.0",
+      "title": "Собрать новые профессиональные модели",
+      "description": "Собрать компетенции, знания, навыки и материалы для выбранных профессий.",
+      "priority": "P2",
+      "area": "Content",
+      "stage": "VI",
+      "status": "Backlog",
+      "labels": [],
+      "acceptance": [
+        "Модели проходят quality gate",
+        "Есть expert review",
+        "Материалы привязаны"
+      ]
+    },
+    {
+      "id": "T-023",
+      "version": "v0.5.0",
+      "title": "Проверить коммерческие гипотезы",
+      "description": "Провести интервью и проверить готовность платить/пилотировать.",
+      "priority": "P1",
+      "area": "Business",
+      "stage": "V",
+      "status": "Backlog",
+      "labels": [],
+      "acceptance": [
+        "Есть 10+ интервью",
+        "Сформулированы гипотезы",
+        "Есть критерии решения"
+      ]
+    },
+    {
+      "id": "T-024",
+      "version": "v0.5.0",
+      "title": "Подготовить партнёрские предложения",
+      "description": "Собрать предложения для сообществ, школ и компаний.",
+      "priority": "P2",
+      "area": "Business",
+      "stage": "V",
+      "status": "Backlog",
+      "labels": [],
+      "acceptance": [
+        "Есть one-pager",
+        "Определены условия пилота",
+        "Есть список контактов"
+      ]
+    },
+    {
+      "id": "T-025",
+      "version": "v0.6.0",
+      "title": "Спроектировать Digital Competency Profile",
+      "description": "Определить структуру профиля и связь с моделями компетенций.",
+      "priority": "P1",
+      "area": "Architecture",
+      "stage": "VII",
+      "status": "Backlog",
+      "labels": [],
+      "acceptance": [
+        "Схема данных описана",
+        "Определены источники evidence",
+        "Есть границы приватности"
+      ]
+    },
+    {
+      "id": "T-026",
+      "version": "v0.6.0",
+      "title": "Смоделировать evidence и подтверждение",
+      "description": "Определить, как фиксируются знания, навыки, опыт и подтверждения.",
+      "priority": "P1",
+      "area": "Architecture",
+      "stage": "VII",
+      "status": "Backlog",
+      "labels": [],
+      "acceptance": [
+        "Модель evidence описана",
+        "Есть правила confidence",
+        "Определены права пользователя"
+      ]
+    },
+    {
+      "id": "T-027",
+      "version": "v0.6.0",
+      "title": "Реализовать профиль в продукте",
+      "description": "Добавить API и интерфейс профиля на основе согласованной модели.",
+      "priority": "P2",
+      "area": "Web",
+      "stage": "VII",
+      "status": "Backlog",
+      "labels": [],
+      "acceptance": [
+        "Профиль доступен пользователю",
+        "Данные сохраняются",
+        "Есть удаление и экспорт"
+      ]
+    },
+    {
+      "id": "T-028",
+      "version": "v0.7.0",
+      "title": "Смоделировать цели и целевое состояние",
+      "description": "Определить профессиональные цели и целевой профиль.",
+      "priority": "P1",
+      "area": "Architecture",
+      "stage": "VIII",
+      "status": "Backlog",
+      "labels": [],
+      "acceptance": [
+        "Модель цели описана",
+        "Есть связь с профессией",
+        "Определены ограничения"
+      ]
+    },
+    {
+      "id": "T-029",
+      "version": "v0.7.0",
+      "title": "Реализовать gap analysis и маршрут",
+      "description": "Сопоставить текущий профиль с целевым и построить последовательность.",
+      "priority": "P2",
+      "area": "Product",
+      "stage": "VIII",
+      "status": "Backlog",
+      "labels": [],
+      "acceptance": [
+        "Маршрут строится",
+        "Учитываются prerequisites",
+        "Есть понятный следующий шаг"
+      ]
+    },
+    {
+      "id": "T-030",
+      "version": "v0.7.0",
+      "title": "Сделать рекомендации объяснимыми",
+      "description": "Показать, почему рекомендация выбрана и на каких данных основана.",
+      "priority": "P2",
+      "area": "Product",
+      "stage": "VIII",
+      "status": "Backlog",
+      "labels": [],
+      "acceptance": [
+        "Есть объяснение",
+        "Пользователь может оспорить",
+        "Нет ложных гарантий"
+      ]
+    },
+    {
+      "id": "T-031",
+      "version": "v0.8.0",
+      "title": "Определить критерии оценки",
+      "description": "Разработать критерии и рубрики оценки компетенций.",
+      "priority": "P1",
+      "area": "Research",
+      "stage": "IX",
+      "status": "Backlog",
+      "labels": [],
+      "acceptance": [
+        "Критерии валидированы",
+        "Есть рубрики",
+        "Учтены ограничения"
+      ]
+    },
+    {
+      "id": "T-032",
+      "version": "v0.8.0",
+      "title": "Реализовать практические задания",
+      "description": "Добавить задания и механизм проверки результатов.",
+      "priority": "P2",
+      "area": "Product",
+      "stage": "IX",
+      "status": "Backlog",
+      "labels": [],
+      "acceptance": [
+        "Задания связаны с компетенциями",
+        "Есть проверка",
+        "Есть обратная связь"
+      ]
+    },
+    {
+      "id": "T-033",
+      "version": "v0.8.0",
+      "title": "Интегрировать оценку в профиль",
+      "description": "Связать результаты оценки с Digital Competency Profile и маршрутами.",
+      "priority": "P2",
+      "area": "Web",
+      "stage": "IX",
+      "status": "Backlog",
+      "labels": [],
+      "acceptance": [
+        "Результаты видны в профиле",
+        "Маршрут учитывает оценку",
+        "Есть история"
+      ]
+    },
+    {
+      "id": "T-034",
+      "version": "v0.9.0",
+      "title": "Спроектировать организационное пространство",
+      "description": "Определить цели, роли и модели компетенций для команд.",
+      "priority": "P2",
+      "area": "Architecture",
+      "stage": "X",
+      "status": "Backlog",
+      "labels": [],
+      "acceptance": [
+        "Модель организации описана",
+        "Определены роли",
+        "Учтена приватность сотрудников"
+      ]
+    },
+    {
+      "id": "T-035",
+      "version": "v0.9.0",
+      "title": "Собрать модели ролей и команд",
+      "description": "Сопоставить требования организации с компетенциями сотрудников.",
+      "priority": "P2",
+      "area": "Product",
+      "stage": "X",
+      "status": "Backlog",
+      "labels": [],
+      "acceptance": [
+        "Есть модели ролей",
+        "Есть gap-анализ",
+        "Есть план развития"
+      ]
+    },
+    {
+      "id": "T-036",
+      "version": "v0.9.0",
+      "title": "Провести организационный пилот",
+      "description": "Проверить сценарий с одной командой или компанией.",
+      "priority": "P2",
+      "area": "Business",
+      "stage": "X",
+      "status": "Backlog",
+      "labels": [],
+      "acceptance": [
+        "Есть пилот",
+        "Собраны метрики",
+        "Принято решение"
+      ]
+    },
+    {
+      "id": "T-037",
+      "version": "v1.0.0",
+      "title": "Проверить монетизацию",
+      "description": "Проверить платные сценарии для пользователей и организаций.",
+      "priority": "P2",
+      "area": "Business",
+      "stage": "XI",
+      "status": "Backlog",
+      "labels": [],
+      "acceptance": [
+        "Есть гипотезы и цены",
+        "Есть первые оплаты/пилоты",
+        "Есть unit-экономика"
+      ]
+    },
+    {
+      "id": "T-038",
+      "version": "v1.0.0",
+      "title": "Развить партнёрскую экосистему",
+      "description": "Подключить образовательные и профессиональные сервисы.",
+      "priority": "P2",
+      "area": "Business",
+      "stage": "XII",
+      "status": "Backlog",
+      "labels": [],
+      "acceptance": [
+        "Есть партнёрские интеграции",
+        "Есть правила экосистемы",
+        "Есть метрики ценности"
+      ]
     }
   ]
 }

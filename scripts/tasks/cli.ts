@@ -11,9 +11,11 @@ import {
   type TaskPriority,
   type TaskRecord,
   type TaskStatus,
+  type TaskVersion,
 } from "./lib.ts";
 
 const TASKS_FILE = "tasks/tasks.json";
+const TASKS_ENV_FILE = "tasks/.env.local";
 
 function flag(argv: string[], name: string): string | undefined {
   const index = argv.indexOf(name);
@@ -43,6 +45,23 @@ async function readTasks(): Promise<TaskFile> {
 
 async function writeTasks(file: TaskFile): Promise<void> {
   await writeFile(path.join(process.cwd(), TASKS_FILE), `${JSON.stringify(file, null, 2)}\n`, "utf8");
+}
+
+async function loadTasksEnv(): Promise<void> {
+  try {
+    const raw = await readFile(path.join(process.cwd(), TASKS_ENV_FILE), "utf8");
+    for (const line of raw.split("\n")) {
+      const trimmed = line.trim();
+      if (!trimmed || trimmed.startsWith("#")) continue;
+      const index = trimmed.indexOf("=");
+      if (index === -1) continue;
+      const key = trimmed.slice(0, index).trim();
+      const value = trimmed.slice(index + 1).trim().replace(/^["']|["']$/g, "");
+      if (key && !process.env[key]) process.env[key] = value;
+    }
+  } catch {
+    // файла может не быть — это нормально
+  }
 }
 
 function token(): string {
@@ -82,6 +101,25 @@ interface IssueResponse {
   node_id: string;
 }
 
+async function ensureMilestone(repository: string, version: TaskVersion): Promise<number> {
+  const [owner, repo] = repository.split("/");
+  if (!owner || !repo) throw new Error(`Плохой repository «${repository}»`);
+  const milestones = await github<Array<{ number: number; title: string }>>(
+    `/repos/${owner}/${repo}/milestones?state=all&per_page=100`,
+  );
+  const existing = milestones.find((item) => item.title === version.id);
+  if (existing) return existing.number;
+  const created = await github<{ number: number }>(`/repos/${owner}/${repo}/milestones`, {
+    method: "POST",
+    body: JSON.stringify({
+      title: version.id,
+      description: `${version.title} (этап ${version.stage}): ${version.goal}`,
+      state: "open",
+    }),
+  });
+  return created.number;
+}
+
 async function ensureLabel(repository: string, name: string): Promise<void> {
   const [owner, repo] = repository.split("/");
   if (!owner || !repo) throw new Error(`Плохой repository «${repository}»`);
@@ -111,7 +149,7 @@ async function findIssueByMarker(repository: string, taskId: string): Promise<Is
   return result.items[0] ?? null;
 }
 
-async function createIssue(repository: string, task: TaskRecord): Promise<IssueResponse> {
+async function createIssue(repository: string, task: TaskRecord, milestone: number): Promise<IssueResponse> {
   const [owner, repo] = repository.split("/");
   if (!owner || !repo) throw new Error(`Плохой repository «${repository}»`);
   for (const label of labelNames(task)) await ensureLabel(repository, label);
@@ -121,11 +159,12 @@ async function createIssue(repository: string, task: TaskRecord): Promise<IssueR
       title: `${task.id}: ${task.title}`,
       body: renderIssueBody(task),
       labels: labelNames(task),
+      milestone,
     }),
   });
 }
 
-async function updateIssue(repository: string, task: TaskRecord): Promise<void> {
+async function updateIssue(repository: string, task: TaskRecord, milestone: number): Promise<void> {
   if (!task.issueNumber) return;
   const [owner, repo] = repository.split("/");
   if (!owner || !repo) throw new Error(`Плохой repository «${repository}»`);
@@ -136,18 +175,30 @@ async function updateIssue(repository: string, task: TaskRecord): Promise<void> 
       title: `${task.id}: ${task.title}`,
       body: renderIssueBody(task),
       labels: labelNames(task),
+      milestone,
+      ...(task.status === "Done" ? { state: "closed" } : { state: "open" }),
     }),
   });
 }
 
-async function sync(dryRun: boolean, updateExisting: boolean): Promise<void> {
+async function sync(dryRun: boolean, updateExisting: boolean, versionFilter?: string): Promise<void> {
+  await loadTasksEnv();
   const file = await readTasks();
   const repository = process.env.GITHUB_REPOSITORY ?? file.project.repository;
   let created = 0;
   let updated = 0;
   let skipped = 0;
+  const versionById = new Map(file.versions.map((version) => [version.id, version]));
 
-  for (const task of file.tasks) {
+  const selected = versionFilter ? file.tasks.filter((task) => task.version === versionFilter) : file.tasks;
+  for (const task of selected) {
+    if (task.status === "Done" && !task.issueNumber) {
+      skipped += 1;
+      continue;
+    }
+    const version = versionById.get(task.version);
+    if (!version) throw new Error(`${task.id}: неизвестная версия «${task.version}»`);
+    const milestone = dryRun ? 0 : await ensureMilestone(repository, version);
     if (!task.issueNumber) {
       const found = dryRun ? null : await findIssueByMarker(repository, task.id);
       if (found) {
@@ -158,11 +209,11 @@ async function sync(dryRun: boolean, updateExisting: boolean): Promise<void> {
         continue;
       }
       if (dryRun) {
-        console.log(`${task.id}: будет создан issue (${task.priority}, ${task.area}, ${task.stage})`);
+        console.log(`${task.id}: будет создан issue (${task.version}, ${task.priority}, ${task.area}, ${task.stage})`);
         created += 1;
         continue;
       }
-      const issue = await createIssue(repository, task);
+      const issue = await createIssue(repository, task, milestone);
       task.issueNumber = issue.number;
       task.issueUrl = issue.html_url;
       created += 1;
@@ -174,7 +225,7 @@ async function sync(dryRun: boolean, updateExisting: boolean): Promise<void> {
       if (dryRun) {
         console.log(`${task.id}: будет обновлён issue #${task.issueNumber}`);
       } else {
-        await updateIssue(repository, task);
+        await updateIssue(repository, task, milestone);
         console.log(`${task.id}: обновлён issue #${task.issueNumber}`);
       }
       updated += 1;
@@ -185,7 +236,7 @@ async function sync(dryRun: boolean, updateExisting: boolean): Promise<void> {
 
   if (!dryRun) await writeTasks(file);
   console.log(
-    `tasks:sync: created ${created}; updated ${updated}; skipped ${skipped}; total ${file.tasks.length}` +
+    `tasks:sync: created ${created}; updated ${updated}; skipped ${skipped}; total ${selected.length}` +
       (dryRun ? " (dry-run)" : ""),
   );
 }
@@ -201,8 +252,14 @@ async function add(argv: string[]): Promise<void> {
   const area = flag(argv, "--area") ?? "General";
   const stage = flag(argv, "--stage") ?? "I";
   const file = await readTasks();
+  const version = flag(argv, "--version") ?? file.versions[0]?.id;
+  if (!version) throw new Error("Нужен --version (например v0.2.0)");
+  if (!file.versions.some((item) => item.id === version)) {
+    throw new Error(`Неизвестная версия «${version}». Доступны: ${file.versions.map((item) => item.id).join(", ")}`);
+  }
   const task: TaskRecord = {
     id: nextTaskId(file.tasks),
+    version,
     title: title.trim(),
     description: description.trim(),
     acceptance,
@@ -225,8 +282,10 @@ async function main(): Promise<void> {
   const command = argv[0] ?? "list";
   if (command === "list") {
     const file = await readTasks();
+    const versionFilter = flag(argv, "--version");
+    const tasks = versionFilter ? file.tasks.filter((task) => task.version === versionFilter) : file.tasks;
     if (has(argv, "--json")) console.log(JSON.stringify(file, null, 2));
-    else console.log(renderTaskTable(file.tasks));
+    else console.log(renderTaskTable(tasks));
     return;
   }
   if (command === "add") {
@@ -234,7 +293,7 @@ async function main(): Promise<void> {
     return;
   }
   if (command === "sync") {
-    await sync(has(argv, "--dry-run"), has(argv, "--update"));
+    await sync(has(argv, "--dry-run"), has(argv, "--update"), flag(argv, "--version"));
     return;
   }
   throw new Error(`Неизвестная команда «${command}». Доступно: list, add, sync.`);

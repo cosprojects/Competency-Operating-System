@@ -12,6 +12,7 @@ import {
 function task(overrides: Partial<TaskRecord> = {}): TaskRecord {
   return {
     id: "T-001",
+    version: "v0.1.0",
     title: "Проверить контент",
     description: "Сделать spot-check.",
     acceptance: ["Проверены страницы"],
@@ -32,6 +33,9 @@ function file(tasks: TaskRecord[] = [task()]): TaskFile {
       title: "AXIONA Launch",
       repository: "cosprojects/Competency-Operating-System",
     },
+    versions: [
+      { id: "v0.1.0", title: "Beta 1 foundation", stage: "I", goal: "Проверить базу." },
+    ],
     tasks,
   };
 }
@@ -58,7 +62,7 @@ describe("task manifest", () => {
 
   it("собирает labels без дублей", () => {
     const labels = labelNames(task({ labels: ["task", "frontend"] }));
-    assert.deepEqual(labels, ["task", "priority:p0", "area:content", "stage:i", "frontend"]);
+    assert.deepEqual(labels, ["task", "release:v0.1.0", "priority:p0", "area:content", "stage:i", "frontend"]);
   });
 
   it("рендерит маркер и чек-лист", () => {

@@ -14,6 +14,7 @@ references:
   - COS-REL-006
   - COS-REL-007
   - COS-REL-008
+  - COS-REL-012
   - COS-BP-005
   - COS-BP-004
   - COS-EAR-009

@@ -151,7 +151,7 @@ npm run model:validate -- --domain it --profession product --all --require-block
 
 ```bash
 npm run tasks:list
-npm run tasks:add -- --title "..." --description "..." --priority P1 --area Web --stage I --acceptance "..."
+npm run tasks:add -- --title "..." --description "..." --version v0.2.0 --priority P1 --area Web --stage I --acceptance "..."
 npm run tasks:sync -- --dry-run
 npm run tasks:sync
 ```

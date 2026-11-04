@@ -1,8 +1,16 @@
 export type TaskPriority = "P0" | "P1" | "P2" | "P3";
 export type TaskStatus = "Backlog" | "Ready" | "In Progress" | "Review" | "Done";
 
+export interface TaskVersion {
+  id: string;
+  title: string;
+  stage: string;
+  goal: string;
+}
+
 export interface TaskRecord {
   id: string;
+  version: string;
   title: string;
   description: string;
   acceptance: string[];
@@ -22,6 +30,7 @@ export interface TaskFile {
     title: string;
     repository: string;
   };
+  versions: TaskVersion[];
   tasks: TaskRecord[];
 }
 
@@ -35,12 +44,25 @@ export function validateTaskFile(value: unknown): TaskFile {
   if (!file.project?.owner || !file.project?.title || !file.project?.repository) {
     throw new Error("tasks.json: project.owner/title/repository обязательны");
   }
+  if (!Array.isArray(file.versions) || file.versions.length === 0) {
+    throw new Error("tasks.json: versions должен быть непустым массивом");
+  }
+  const versionIds = new Set<string>();
+  for (const version of file.versions) {
+    if (!/^v\d+\.\d+\.\d+$/.test(version.id)) throw new Error(`tasks.json: плохая версия «${version.id}»`);
+    if (versionIds.has(version.id)) throw new Error(`tasks.json: повтор версии «${version.id}»`);
+    versionIds.add(version.id);
+    if (!version.title?.trim() || !version.stage?.trim() || !version.goal?.trim()) {
+      throw new Error(`tasks.json: ${version.id}: нужны title/stage/goal`);
+    }
+  }
   if (!Array.isArray(file.tasks)) throw new Error("tasks.json: tasks должен быть массивом");
   const ids = new Set<string>();
   for (const task of file.tasks) {
     if (!/^T-\d{3,}$/.test(task.id)) throw new Error(`tasks.json: плохой id «${task.id}»`);
     if (ids.has(task.id)) throw new Error(`tasks.json: повтор id «${task.id}»`);
     ids.add(task.id);
+    if (!versionIds.has(task.version)) throw new Error(`tasks.json: ${task.id}: неизвестная версия «${task.version}»`);
     if (!task.title?.trim()) throw new Error(`tasks.json: ${task.id}: пустой title`);
     if (!task.description?.trim()) throw new Error(`tasks.json: ${task.id}: пустой description`);
     if (!PRIORITIES.has(task.priority)) throw new Error(`tasks.json: ${task.id}: плохой priority`);
@@ -75,6 +97,7 @@ export function slug(value: string): string {
 export function labelNames(task: TaskRecord): string[] {
   return [
     "task",
+    `release:${task.version}`,
     `priority:${task.priority.toLowerCase()}`,
     `area:${slug(task.area)}`,
     `stage:${slug(task.stage)}`,
@@ -103,6 +126,7 @@ export function renderIssueBody(task: TaskRecord): string {
     "",
     "## Контекст",
     "",
+    `- Версия: ${task.version}`,
     `- Приоритет: ${task.priority}`,
     `- Область: ${task.area}`,
     `- Этап roadmap: ${task.stage}`,
@@ -116,10 +140,10 @@ export function renderTaskTable(tasks: TaskRecord[]): string {
   if (tasks.length === 0) {
     return "Задач нет. Добавьте: npm run tasks:add -- --title \"...\" --description \"...\"";
   }
-  const lines = ["| ID | Приоритет | Область | Этап | Статус | Issue | Название |", "|---|---|---|---|---|---|---|"];
+  const lines = ["| ID | Версия | Приоритет | Область | Этап | Статус | Issue | Название |", "|---|---|---|---|---|---|---|---|"];
   for (const task of tasks) {
     lines.push(
-      `| ${task.id} | ${task.priority} | ${task.area} | ${task.stage} | ${task.status} | ${task.issueNumber ? `#${task.issueNumber}` : "—"} | ${task.title} |`,
+      `| ${task.id} | ${task.version} | ${task.priority} | ${task.area} | ${task.stage} | ${task.status} | ${task.issueNumber ? `#${task.issueNumber}` : "—"} | ${task.title} |`,
     );
   }
   return lines.join("\n");

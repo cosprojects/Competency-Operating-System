@@ -69,6 +69,7 @@ references:
 | `docs/10-legal/COS-LEG-002-Privacy-Policy.md` | Политика ПДн | Актуален для Beta 1 (draft) | Beta data flow | Terms, Cookie | Заполнить реквизиты, проверить юристом, подать уведомление РКН | До Beta |
 | `docs/11-scenarios/*` | Сценарии диагностики | Будущий этап | RES-005 | EAR-009 | Не менять; не публиковать как текущий продукт | Стратегический |
 | `docs/10-legal/COS-LEG-003-Cookie-Notice.md` | Cookie и аналитика | Актуален для Beta 1 (draft) | Privacy | Terms | Проверить юристом; синхронизировать с consent-баннером | До Beta |
+| `docs/12-release/COS-REL-012-Delivery-Plan-and-Versioning.md` | План реализации, версии, канбан | Актуален (draft) | COS-BP-005, REL-000/001/002 | tasks/, Project | Поддерживать бэклог и версии; синхронизировать с Project | До Beta |
 | `README.md` | Вход в репозиторий | Актуален для Beta 1 | Beta scope | Все | Поддерживать статус и команды | До Beta |
 
 ## 3. Документы Beta 1

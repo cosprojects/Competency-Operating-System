@@ -1,5 +1,7 @@
 # AXIONA task manager
 
+Версии, канбан-правила и Definition of Ready/Done — [`COS-REL-012`](../docs/12-release/COS-REL-012-Delivery-Plan-and-Versioning.md).
+
 `tasks/tasks.json` — источник задач в git. GitHub Issues — рабочее представление, GitHub Project «AXIONA Launch» — доска.
 
 ```text
@@ -19,13 +21,19 @@
    - Issues: Read and write;
    - Projects: Read and write (если позже понадобится ставить поля проекта);
    - Metadata: Read.
-2. Положи токен в окружение, не в репозиторий:
+2. Положи токен в `tasks/.env.local` (файл в `.gitignore`) или в окружение:
+
+```bash
+# tasks/.env.local
+GH_TOKEN=github_pat_...
+GITHUB_PROJECT_NUMBER=1   # опционально, если нужен GraphQL-доступ к полям
+```
+
+Или:
 
 ```bash
 export GH_TOKEN=github_pat_...
 ```
-
-Или в macOS Keychain и экспортируй перед запуском.
 
 3. В GitHub Project `AXIONA Launch` включи встроенный workflow **Auto-add to project**:
    - filter: `is:issue is:open label:task`
@@ -42,19 +50,21 @@ npm run tasks:list
 npm run tasks:add -- \
   --title "Проверить content gate" \
   --description "Сделать spot-check 54 компетенций и 29 источников." \
-  --priority P0 --area Content --stage I \
+  --version v0.1.0 --priority P0 --area Content --stage I \
   --acceptance "Проверены 4 страницы профессий" \
   --acceptance "Проверены 3 новых источника"
 
-npm run tasks:sync -- --dry-run   # показать, что будет создано
-npm run tasks:sync                # создать/найти issues
-npm run tasks:sync -- --update    # обновить title/body/labels существующих issues
+npm run tasks:sync -- --dry-run              # показать, что будет создано
+npm run tasks:sync -- --version v0.2.0       # только задачи версии
+npm run tasks:sync                           # все задачи
+npm run tasks:sync -- --update                # обновить существующие issues
 ```
 
 `tasks:sync`:
 - создаёт issue с маркером `<!-- axiona-task:T-001 -->`;
+- создаёт milestone версии `vX.Y.Z` с целью из `versions`;
 - сохраняет `issueNumber`/`issueUrl` в `tasks/tasks.json`;
-- создаёт labels `task`, `priority:*`, `area:*`, `stage:*`;
+- создаёт labels `task`, `release:*`, `priority:*`, `area:*`, `stage:*`;
 - не перезаписывает issue без `--update`.
 
 После sync закоммить `tasks/tasks.json` — это фиксирует связь задачи с issue.
@@ -80,6 +90,7 @@ npm run tasks:sync -- --update    # обновить title/body/labels суще�
 ```json
 {
   "id": "T-001",
+  "version": "v0.1.0",
   "title": "Проверить content gate",
   "description": "Сделать spot-check 54 компетенций и 29 источников.",
   "acceptance": ["Проверены 4 страницы профессий"],
@@ -87,6 +98,7 @@ npm run tasks:sync -- --update    # обновить title/body/labels суще�
   "area": "Content",
   "stage": "I",
   "status": "Backlog",
-  "labels": []
+  "labels": [],
+  "issueNumber": 123
 }
 ```

@@ -11,6 +11,7 @@
 | [COS-REL-006](COS-REL-006-Beta-Report.md) | Шаблон отчёта Beta |
 | [COS-REL-007](COS-REL-007-Documentation-Register.md) | Реестр документации |
 | [COS-REL-008](COS-REL-008-Decision-Log.md) | Decision log |
+| [COS-REL-012](COS-REL-012-Delivery-Plan-and-Versioning.md) | План реализации, версионность и канбан |
 | [COS-REL-009](COS-REL-009-Materials-Review-and-Confirmation.md) | Материалы: лимиты покрытия, LLM-приёмка, подтверждение ресурсов |
 
 Стратегическая рамка: [`COS-BP-005`](../08-business-plan/COS-BP-005-Product-Roadmap-AXIONA-COS.md).

@@ -71,27 +71,28 @@
     {
       "id": "T-001",
       "version": "v0.1.0",
-      "title": "Проверить content gate",
-      "description": "Сделать человеческий spot-check 54 компетенций и 29 источников перед публичной Beta.",
+      "title": "Провести человеческую приёмку контента Beta 1",
+      "description": "Провести человеческий spot-check 12 профессий, 131 опубликованной компетенции и 292 связей перед публичной Beta.",
       "priority": "P0",
       "area": "Content",
       "stage": "I",
       "status": "Ready",
       "labels": [],
       "acceptance": [
-        "Проверены 4 страницы профессий",
-        "Проверены 10 компетенций из разных разделов",
-        "Проверены 3 новых источника (NN/g, Framer, Reforge)",
-        "Проверены 5–10 заменённых тегов",
-        "Решение зафиксировано в COS-REL-012 / COS-REL-008"
+        "Проверены все 12 профессий",
+        "Проверены 20–30 компетенций из разных профессий",
+        "Проверены 10–15 новых/спорных источников",
+        "Проверены заменённые теги и описания",
+        "Зафиксирован человеческий sign-off в source-review или отдельном отчёте",
+        "Решение ready/draft внесено в манифест и COS-REL-014"
       ],
       "issueNumber": 1,
       "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/1",
-      "context": "Content gate прошёл AI-assisted нормализацию: 54/54 компетенции, 110/110 связей, 29 источников. До публичной Beta нужен человеческий spot-check и решение: готово или список исправлений.",
-      "deliverable": "Подписанный чек-лист spot-check и решение ready / список исправлений.",
+      "context": "Content gate прошёл AI-assisted нормализацию: 12 профессий, 131/131 компетенция, 292 опубликованные связи, 0 пробелов. Source review (1 387 решений) подписан агентом; человеческий sign-off основателя не закрыт, хотя манифест уже ready.",
+      "deliverable": "Подписанный чек-лист человеческой приёмки и решение: ready или список исправлений.",
       "outOfScope": [
-        "Переписывание всех 54 компетенций",
-        "Новые источники сверх текущего реестра"
+        "Переписывание всех 131 компетенции",
+        "Новые источники сверх реестра"
       ],
       "dependsOn": [],
       "deferred": false
@@ -134,14 +135,14 @@
       "status": "Review",
       "labels": [],
       "acceptance": [
-        "Проверены 4 профессии и 54 компетенции",
-        "Зафиксировано, работает ли вход/сохранение на demo",
+        "Проверены 12 профессий и 131 компетенция",
+        "Проверены сохранения, вход и удаление на тестовом аккаунте",
         "Решено, отключать ли SSO для demo",
-        "Список blockers"
+        "Зафиксированы blockers и версия сборки"
       ],
       "issueNumber": 3,
       "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/3",
-      "context": "Vercel demo собирается, но preview закрыт Vercel SSO; вход и сохранения требуют БД. Нужно понять, что можно показывать.",
+      "context": "Vercel demo уже собирается из release-контура; preview закрыт SSO. Нужно проверить актуальный commit, а не старый demo.",
       "deliverable": "Отчёт demo: доступные сценарии, ограничения, blockers.",
       "outOfScope": [
         "Публичный запуск",
@@ -194,7 +195,7 @@
       ],
       "issueNumber": 4,
       "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/4",
-      "context": "Beta требует оператора ПДн, политики, условий, cookie и уведомления РКН; текущие документы — черновики.",
+      "context": "Два контура ADR-023: РФ-тест оператора-самозанятого и СНГ-релиз. Для РФ-теста нужны политика/уведомление РКН; для релиза — юридическая проверка выбранной юрисдикции. Текущие документы — черновики.",
       "deliverable": "Опубликованные legal-документы и подтверждение РКН.",
       "outOfScope": [
         "Договоры с корпоративными клиентами",
@@ -206,7 +207,7 @@
     {
       "id": "T-006",
       "version": "v0.2.0",
-      "title": "Поднять РФ-хостинг и PostgreSQL",
+      "title": "Поднять РФ-тест: VPS и PostgreSQL",
       "description": "Развернуть приложение и БД в РФ, настроить миграции и резервное копирование.",
       "priority": "P0",
       "area": "Infra",
@@ -221,8 +222,8 @@
       ],
       "issueNumber": 5,
       "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/5",
-      "context": "Публичная Beta с реальными пользователями не может работать на Vercel/SQLite из-за ПДн и устойчивости.",
-      "deliverable": "РФ-хостинг, PostgreSQL, миграции и бэкап.",
+      "context": "Публичный релиз планируется в СНГ; РФ-контур — тестовый на отдельном домене (ADR-023). Нужен VPS в РФ, PostgreSQL, миграции и бэкап для обкатки MVP.",
+      "deliverable": "РФ-тест на отдельном домене: PostgreSQL, миграции, бэкап и health check.",
       "outOfScope": [
         "Корпоративный сайт",
         "Масштабирование"
@@ -250,7 +251,7 @@
       ],
       "issueNumber": 6,
       "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/6",
-      "context": "Magic link должен приходить с домена и не попадать в спам.",
+      "context": "Для РФ-теста и СНГ-релиза нужны домены, HTTPS и email-провайдер; magic link не должен уходить в спам.",
       "deliverable": "Домен, HTTPS, SPF/DKIM/DMARC и тестовая доставка.",
       "outOfScope": [
         "Маркетинговые рассылки"
@@ -263,7 +264,7 @@
     {
       "id": "T-008",
       "version": "v0.2.0",
-      "title": "Выпустить production deploy",
+      "title": "Выпустить production deploy контура",
       "description": "Собрать публичную версию, применить миграции и проверить health/monitoring.",
       "priority": "P0",
       "area": "Infra",
@@ -279,7 +280,7 @@
       ],
       "issueNumber": 7,
       "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/7",
-      "context": "Публичная сборка должна собираться из ready-контента и применять миграции.",
+      "context": "Публичная сборка должна собираться из ready-контента и применять миграции; контур выбирается по ADR-023 (РФ-тест или СНГ-релиз).",
       "deliverable": "Production deploy и release notes.",
       "outOfScope": [
         "Новые функции"
@@ -333,11 +334,13 @@
       "acceptance": [
         "События пишутся после consent",
         "Отказ не ломает продукт",
+        "Добавлены competency_view и return_visit или они убраны из ожиданий",
+        "Убран дубль study_status_change",
         "Метрики совпадают с ручной проверкой"
       ],
       "issueNumber": 9,
       "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/9",
-      "context": "Нужны данные для решения после Beta.",
+      "context": "Нужны данные для решения после Beta; в COS-EAR-014 зафиксированы пробелы: competency_view не отправляется, return_visit нет, study_status_change дублируется.",
       "deliverable": "Проверенные события и отчёт по метрикам.",
       "outOfScope": [
         "Внешние трекеры"
@@ -423,7 +426,7 @@
       ],
       "issueNumber": 12,
       "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/12",
-      "context": "Версия считается выпущенной, когда P0 закрыты и контент ready.",
+      "context": "Версия считается выпущенной, когда P0 закрыты, контент принят человеком, release-документация синхронизирована, а WIP закоммичен и проверен.",
       "deliverable": "v0.2.0: ready-манифест, release notes и тег.",
       "outOfScope": [
         "Перенос P1/P2"
@@ -441,7 +444,9 @@
         "T-011",
         "T-012",
         "T-039",
-        "T-040"
+        "T-040",
+        "T-041",
+        "T-042"
       ],
       "deferred": false
     },
@@ -1127,8 +1132,8 @@
       "version": "v0.1.0",
       "title": "Профиль пользователя и удаление аккаунта",
       "description": "Сделать приватную страницу профиля и отдельный аккаунт с безопасным удалением доступа.",
-      "context": "Пользователь должен видеть свои действия в системе отдельно от служебных настроек. Сейчас /account смешивает данные аккаунта и будущий профиль, а удаление использует window.confirm.",
-      "deliverable": "Страница /profile с сохранениями/статусами/прогрессом/последними действиями; /account с данными, сессией и удалением через модалку.",
+      "context": "Аккаунт-модалка и удаление уже реализованы в WIP; страница /account осталась старой, /profile отсутствует. Нужно довести профиль и разделить аккаунт.",
+      "deliverable": "/profile с сохранениями/прогрессом; /account только данные, сессия и удаление через модалку.",
       "outOfScope": [
         "Публичный профиль",
         "Аватар и загрузка файлов",
@@ -1149,7 +1154,7 @@
       "priority": "P1",
       "area": "Web",
       "stage": "I",
-      "status": "Backlog",
+      "status": "In Progress",
       "labels": [],
       "deferred": false,
       "issueNumber": 38,
@@ -1160,7 +1165,7 @@
       "version": "v0.2.0",
       "title": "Phase 0: capabilities, audit и защита админки",
       "description": "Ввести единый слой проверки прав и журнал админ-действий без таблицы UserRole.",
-      "context": "Сейчас админ определяется через ADMIN_EMAILS в разных местах. Для Beta достаточно email-владельца, но проверки нужно централизовать и получить audit до публичного запуска.",
+      "context": "Capability-слой и AdminAudit реализованы в WIP: access.ts, audit.ts, admin layout, users/materials. Нужны проверки, коммит и подтверждение acceptance.",
       "deliverable": "lib/access.ts с can/requireCapability, AdminAudit в Prisma, capability-проверки на /admin/* и /api/admin/*, audit для feedback/source-review.",
       "outOfScope": [
         "UserRole и выдача ролей",
@@ -1180,11 +1185,155 @@
       "priority": "P0",
       "area": "Infra",
       "stage": "I",
-      "status": "Ready",
+      "status": "Review",
       "labels": [],
       "deferred": false,
       "issueNumber": 39,
       "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/39"
+    },
+    {
+      "id": "T-041",
+      "version": "v0.1.0",
+      "title": "Синхронизировать release-документацию с фактическим состоянием",
+      "description": "Привести активные release-документы и README к текущим 12 профессиям, 131 компетенции, 292 связям и решению по статусу манифеста.",
+      "context": "COS-REL-000/001/002/005, release README и README содержат 263/121 или 54/110; часть документов говорит draft, манифест — ready. Это вводит в заблуждение при публичной коммуникации.",
+      "deliverable": "Обновлённые REL-000/001/002/005, release README, README и запись в decision log.",
+      "outOfScope": [
+        "Переписывание Foundation Book",
+        "Исторические отчёты"
+      ],
+      "dependsOn": [
+        "T-001"
+      ],
+      "acceptance": [
+        "Все активные release-документы используют 12/131/292",
+        "Статус ready/draft совпадает во всех документах",
+        "README не содержит 121/168 источников",
+        "Обновлён реестр COS-REL-007"
+      ],
+      "priority": "P0",
+      "area": "Docs",
+      "stage": "I",
+      "status": "Ready",
+      "labels": [],
+      "deferred": false,
+      "issueNumber": 40,
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/40"
+    },
+    {
+      "id": "T-042",
+      "version": "v0.1.0",
+      "title": "Стабилизировать WIP и выпустить demo-сборку",
+      "description": "Закоммитить текущие изменения, прогнать CI и собрать demo из актуального commit.",
+      "context": "91 файл изменений не закоммичен; Vercel собирает 924be76, а не текущий код с регистрацией, аккаунтом, админкой и access/audit.",
+      "deliverable": "Чистый commit, зелёный CI, demo-сборка из актуального commit.",
+      "outOfScope": [
+        "Публичный запуск",
+        "Новые функции сверх WIP"
+      ],
+      "dependsOn": [],
+      "acceptance": [
+        "WIP разбит на reviewable commits",
+        "typecheck/test/build зелёные",
+        "Demo задеплоен из актуального commit",
+        "Зафиксирован список известных ограничений demo"
+      ],
+      "priority": "P0",
+      "area": "Release",
+      "stage": "I",
+      "status": "Ready",
+      "labels": [],
+      "deferred": false,
+      "issueNumber": 41,
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/41"
+    },
+    {
+      "id": "T-043",
+      "version": "v0.2.0",
+      "title": "Обновить бизнес-план и Beta-addendum",
+      "description": "Синхронизировать BP-003/BP-006/BP-007/BP-009 с текущим продуктом, двумя контурами и фактическими метриками.",
+      "context": "Бизнес-документы описывают 4 профессии/54 компетенции и диагностический продукт; текущий MVP — карта 12 профессий, 131 компетенция, 292 связи, публичная Beta ещё не запущена.",
+      "deliverable": "Обновлённые бизнес-план, Beta-addendum, readiness-аудит и первый год.",
+      "outOfScope": [
+        "Инвестиционные обещания без данных",
+        "Финансовая модель без пересборки"
+      ],
+      "dependsOn": [
+        "T-013"
+      ],
+      "acceptance": [
+        "Все бизнес-документы используют текущие цифры",
+        "Разделены текущий MVP и следующий слой",
+        "Зафиксированы два контура ADR-023",
+        "Нет неподтверждённых claims"
+      ],
+      "priority": "P1",
+      "area": "Product",
+      "stage": "I",
+      "status": "Backlog",
+      "labels": [],
+      "deferred": false,
+      "issueNumber": 42,
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/42"
+    },
+    {
+      "id": "T-044",
+      "version": "v0.2.0",
+      "title": "Собрать pitch deck и презентацию",
+      "description": "Собрать инвестиционный deck и файл презентации на основе обновлённого бизнес-плана и фактических данных продукта.",
+      "context": "COS-WEB-004 — только markdown-структура; файла .pptx/.pdf нет. В deck должны быть текущий продукт, рынок, модель, команда и честные ограничения.",
+      "deliverable": "Pitch deck (PPTX/PDF) и сценарий презентации.",
+      "outOfScope": [
+        "Финансовые гарантии",
+        "Неподтверждённые метрики"
+      ],
+      "dependsOn": [
+        "T-043"
+      ],
+      "acceptance": [
+        "Deck собран из актуальных фактов",
+        "Есть слайды продукта, рынка, модели и команды",
+        "Ограничения и следующий слой названы честно",
+        "Файл готов к показу"
+      ],
+      "priority": "P1",
+      "area": "Product",
+      "stage": "I",
+      "status": "Backlog",
+      "labels": [],
+      "deferred": false,
+      "issueNumber": 43,
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/43"
+    },
+    {
+      "id": "T-045",
+      "version": "v0.2.0",
+      "title": "Обновить корпоративный сайт axiona.biz",
+      "description": "Обновить блоки и тексты корпоративного сайта под текущее состояние продукта и бизнес-документацию.",
+      "context": "COS-WEB-001/002/004 описывают vision и старый продукт; сайт не синхронизирован с 12 профессиями, Beta и текущими claims.",
+      "deliverable": "Обновлённые блоки/тексты axiona.biz и список изменений.",
+      "outOfScope": [
+        "Перенос продукта на axiona.world",
+        "Новый бренд"
+      ],
+      "dependsOn": [
+        "T-043",
+        "T-044"
+      ],
+      "acceptance": [
+        "Тексты соответствуют текущему продукту",
+        "Убраны pre-development/неподтверждённые claims",
+        "Обновлены CTA и ссылки на продукт",
+        "Проверены мобильные и SEO"
+      ],
+      "priority": "P1",
+      "area": "Web",
+      "stage": "I",
+      "status": "Backlog",
+      "labels": [],
+      "deferred": false,
+      "issueNumber": 44,
+      "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/44"
     }
   ]
 }

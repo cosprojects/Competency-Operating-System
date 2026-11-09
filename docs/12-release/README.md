@@ -13,6 +13,7 @@
 | [COS-REL-008](COS-REL-008-Decision-Log.md) | Decision log |
 | [COS-REL-012](COS-REL-012-Delivery-Plan-and-Versioning.md) | План реализации, версионность и канбан |
 | [COS-REL-013](COS-REL-013-Beta-Backlog-Review.md) | Детализация backlog и решения по зависимостям |
+| [COS-REL-014](COS-REL-014-Project-Audit-2026-11-09.md) | Аудит состояния проекта и документации |
 | [COS-REL-009](COS-REL-009-Materials-Review-and-Confirmation.md) | Материалы: лимиты покрытия, LLM-приёмка, подтверждение ресурсов |
 
 Стратегическая рамка: [`COS-BP-005`](../08-business-plan/COS-BP-005-Product-Roadmap-AXIONA-COS.md).

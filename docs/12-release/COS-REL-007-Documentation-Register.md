@@ -1,10 +1,10 @@
 ---
 id: COS-REL-007
 title: Реестр документации перед Beta 1
-version: 1.1.0
+version: 1.3.0
 status: Draft
 owner: Product Team
-last_updated: 2026-10-28
+last_updated: 2026-11-05
 references:
   - COS-REL-000
   - COS-REL-008
@@ -21,6 +21,9 @@ references:
   - COS-COM-001
   - COS-LEG-001
   - COS-LEG-002
+  - COS-EAR-013
+  - COS-EAR-014
+  - COS-EAR-015
 ---
 
 # COS-REL-007 — Реестр документации перед Beta 1
@@ -50,6 +53,9 @@ references:
 | `docs/04-experience-architecture/COS-EAR-001…011` (кроме `COS-EAR-009`) | Целевая архитектура опыта | Будущий этап | `COS-EAR-012` | Design, Engineering | **Сделано 2026-10-28:** в каждом документе есть раздел «Состояние и место в дорожной карте» с границей Beta 1, этапами `COS-BP-005` и планом года 1 `COS-BP-009`; не переписывать до этапов VII–IX | После Beta |
 | `docs/04-experience-architecture/COS-EAR-009-User-Scenarios-Design-MVP.md` | Сценарий диагностики — следующий слой | Будущий этап | `COS-RES-005`, `COS-RES-008` | Legal, Communication | Не менять как target; **сделано 2026-10-28:** раздел 1.1 отделяет поток S0–S4 от Beta 1 и ссылается на `COS-EAR-012` | До Beta |
 | `docs/04-experience-architecture/COS-EAR-012-Implemented-User-Flows-Beta-1.md` | Реализованные сценарии Beta 1 | Актуален | `COS-REL-000`, `COS-REL-001`, `COS-REL-003`, `COS-REL-004`, `COS-EAR-009` | Design, Engineering | Обновлять при каждом изменении продукта; §13 связывает сценарии с этапами `COS-BP-005`, шагами `COS-BP-007` §7.1 и месяцами `COS-BP-009` | До Beta |
+| `docs/04-experience-architecture/COS-EAR-013-Account-Modal-Cabinet-and-Material-States.md` | Спека аккаунт-модалки, кабинета и состояний материалов | Draft-спека (актуальна) | `COS-ARCH-173`, `COS-COM-010`, `COS-REL-009`, `COS-EAR-012` | Design, Web | Дизайн и реализация по решениям §11 спеки; Figma `UfuaPpLJA31DeBSObX5xNJ` | До Beta |
+| `docs/04-experience-architecture/COS-EAR-014-Owner-Console.md` | Спека кабинета владельца: материалы, метрики, email-база | Draft-спека (актуальна) | `COS-ARCH-173`, `COS-REL-004`, `COS-REL-009`, `T-040` | Design, Infra, Web | Предусловие — `T-040`; дизайн-концепт «Аудит приёмки» в Figma | До Beta |
+| `docs/04-experience-architecture/COS-EAR-015-Registration-by-Email.md` | Спека публичной регистрации по email: экраны, согласие, состояния, критерии | Draft-спека (актуальна) | `COS-EAR-012`, `COS-REL-008`, `COS-COM-010`, `COS-LEG-001/002` | Design, Web | Реализация по `COS-EAR-015` и ADR-022; публичное открытие — за gate ADR-004 | До Beta |
 | `docs/02-architecture/COS-ARCH-000-Enterprise-Architecture-Overview.md` | Архитектурный обзор | Уточнить | Foundation, DDD | ADE, Experience | Добавить current-state note: Beta использует JSON-модель + тонкое приложение | До Beta |
 | `docs/02-architecture/COS-ARCH-001-Development-Workflow.md` | Процесс развития | Уточнить | Foundation | Engineering Standard | Разделить архитектурную стадию и Beta release track; последовательность не менять | После Beta |
 | `docs/01-ddd/COS-DDD-SUMMARY-Domain-Driven-Design-Summary.md` | Сводка домена | Уточнить | DDD-001…010 | Model, Architecture | Добавить таблицу текущих объектов Beta (Profession, Competency, LearningSource, Favorite, StudyStatus, Feedback); не вводить новые bounded contexts | После Beta |
@@ -72,6 +78,7 @@ references:
 | `docs/12-release/COS-REL-012-Delivery-Plan-and-Versioning.md` | План реализации, версии, канбан | Актуален (draft) | COS-BP-005, REL-000/001/002 | tasks/, Project | Поддерживать бэклог и версии; синхронизировать с Project | До Beta |
 | `docs/02-architecture/access/roles.json` | Machine-readable роли, capabilities, видимость | Approved | ARCH-173 | Auth, Admin, Org | Источник правды для реализации; менять вместе с ARCH-173 и кодом | До Beta |
 | `docs/02-architecture/COS-ARCH-173-Access-Control-and-Roles.md` | Роли, capabilities и видимость данных | Approved | ARCH-100/120, REL-003/004 | Auth, Admin, Org | Поддерживать матрицу при добавлении функций; не вводить роли без capability | До Beta |
+| `docs/12-release/COS-REL-014-Project-Audit-2026-11-09.md` | Аудит состояния проекта и документации | Draft | REL-000/001/002/005/012/013 | Все | Пересматривать перед публичным запуском; обновлять после закрытия P0 | До Beta |
 | `docs/12-release/COS-REL-013-Beta-Backlog-Review.md` | Детализация Beta-backlog на апрув | Approved | REL-012, BP-005 | tasks/ | Поддерживать решения и зависимости; обновлять при изменении scope | До Beta |
 | `README.md` | Вход в репозиторий | Актуален для Beta 1 | Beta scope | Все | Поддерживать статус и команды | До Beta |
 
@@ -105,3 +112,5 @@ references:
 |---|---|---|
 | 1.0.0 | 2026-10-28 | Первая редакция: состояния документов, приоритеты, порядок правок |
 | 1.1.0 | 2026-10-28 | Синхронизация с актуализацией `04-experience-architecture`: добавлены `COS-EAR-012` и группа `COS-EAR-001…011`; обновлены строки `COS-EAR-002`, `COS-EAR-009` и книги (`COS-EAR-000`); добавлены ссылки на `COS-BP-005` и `COS-BP-007` |
+| 1.2.0 | 2026-11-05 | Добавлены спеки `COS-EAR-013` и `COS-EAR-014`; актуализирован `COS-EAR-012` (дополнение 1.1) |
+| 1.3.0 | 2026-11-05 | Добавлена спека `COS-EAR-015` (публичная регистрация по email) и ссылка на ADR-022 |

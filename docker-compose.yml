@@ -8,6 +8,16 @@ services:
       POSTGRES_USER: ${POSTGRES_USER:-axiona}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD}
       POSTGRES_DB: ${POSTGRES_DB:-axiona}
+    command:
+      - postgres
+      - -c
+      - shared_buffers=128MB
+      - -c
+      - work_mem=8MB
+      - -c
+      - max_connections=20
+      - -c
+      - effective_cache_size=512MB
     volumes:
       - pgdata:/var/lib/postgresql/data
     healthcheck:

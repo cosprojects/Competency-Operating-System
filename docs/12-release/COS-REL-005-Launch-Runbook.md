@@ -90,8 +90,8 @@ AUTH_REGISTRATION_DISABLED=0
 
 ### 3.1. VDS в Москве
 
-1. Купить VDS с московским IP и статическим адресом (Yandex Cloud / Selectel / Timeweb), Ubuntu LTS; открыть 22/80/443, SSH по ключу.
-2. Установить Docker и Compose; скопировать репозиторий в `/srv/axiona`.
+1. Купить VDS с московским IP и статическим адресом (Yandex Cloud / Selectel / Timeweb), Ubuntu LTS; открыть 22/80/443, SSH по ключу. Текущий план — 1 CPU / 2 ГБ RAM / 300 ГБ SSD; для 2 ГБ включить swap 2 ГБ и лимиты PostgreSQL.
+2. Установить Docker и Compose; скопировать репозиторий в `/srv/axiona`; `sudo scripts/deploy/setup-swap.sh`.
 3. Заполнить `.env.production`: `APP_URL=https://app.axiona.world`, `DATABASE_URL`, `EMAIL_*`, `OWNER_EMAILS`, `LEGAL_VERSION`, на старте `AUTH_REGISTRATION_DISABLED=1`.
 4. Caddy: `app.axiona.world` → приложение; TLS автоматически. PostgreSQL 16 — в compose, порт БД не публиковать.
 5. `docker compose --env-file .env.production up -d --build`; `scripts/deploy/migrate.sh`; `GET /api/health`.

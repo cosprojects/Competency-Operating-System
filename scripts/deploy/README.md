@@ -3,6 +3,9 @@
 Контур: `app.axiona.world` на VDS в Москве (ADR-025). Корпоративный `axiona.world` остаётся на Vercel.
 
 ```bash
+# на VDS с 2 ГБ RAM — до запуска контейнеров
+sudo scripts/deploy/setup-swap.sh
+
 cp .env.production.example .env.production
 # заполнить секреты; .env.production gitignored
 docker compose --env-file .env.production up -d --build

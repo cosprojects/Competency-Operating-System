@@ -213,11 +213,12 @@
       "priority": "P0",
       "area": "Infra",
       "stage": "I",
-      "status": "Backlog",
+      "status": "In Progress",
       "labels": [],
       "acceptance": [
         "VDS со статическим IP и Ubuntu LTS",
         "PostgreSQL 16 в контуре, порт БД не публикуется",
+        "swap 2 ГБ и лимиты PostgreSQL для 2 ГБ RAM",
         "DNS app.axiona.world → VDS, TLS работает",
         "health check 200",
         "Nightly pg_dump и restore проверены",
@@ -225,7 +226,7 @@
       ],
       "issueNumber": 5,
       "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/5",
-      "context": "Принят ADR-025: продукт целиком на VDS в Москве, корпоративный сайт остаётся на Vercel. Нужны VDS, PostgreSQL 16, Caddy/TLS, бэкапы и мониторинг; Vercel-фронт + VDS-БД не разделяем.",
+      "context": "Принят ADR-025. Фактический VDS: 1 CPU / 2 ГБ RAM / 300 ГБ SSD, Ubuntu 24.04, app.axiona.world. Для 2 ГБ нужны swap 2 ГБ и лимиты PostgreSQL; публичный запуск — после апгрейда до 4 ГБ или подтверждения нагрузки.",
       "deliverable": "VDS в Москве с PostgreSQL 16, Caddy/TLS, health-check, nightly backup и restore test; DNS app.axiona.world.",
       "outOfScope": [
         "Корпоративный сайт",

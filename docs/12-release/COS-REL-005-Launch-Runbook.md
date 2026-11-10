@@ -1,7 +1,7 @@
 ---
 id: COS-REL-005
 title: Launch runbook Beta 1
-version: 1.2.0
+version: 1.3.0
 status: Draft
 owner: Engineering
 last_updated: 2026-11-09
@@ -17,18 +17,17 @@ references:
 
 ## 0. Контуры и текущий этап
 
-Деплой идёт двумя независимыми контурами на одном коде (`ADR-023`): РФ-тест и СНГ-релиз. Vercel остаётся для корпоративного сайта и demo без реальных ПДн.
+Принят **ADR-025**: продукт целиком на VDS в Москве, корпоративный сайт остаётся на Vercel. Прежняя схема ADR-023 (РФ-тест + СНГ-релиз) — историческая рамка, не текущий план запуска.
 
 | Контур | Домен | Хостинг | Назначение |
 |---|---|---|---|
 | Локально | `localhost:3000` | машина разработчика, SQLite | разработка и QA |
-| Vercel demo | preview / `app.axiona.world` | Vercel, временная БД | показ; только тестовые аккаунты, без публичной регистрации |
-| РФ-тест | отдельный домен (например, `axiona-test.ru`) | VPS в РФ, PostgreSQL 16, Caddy | обкатка MVP на инвайтах и тестовых данных |
-| СНГ-релиз | `axiona.world` (позже) | VPS вне РФ, PostgreSQL 16 | публичный выпуск, legal выбранной юрисдикции |
+| Vercel demo | preview | Vercel, без production-БД | показ без реальных ПДн; регистрация закрыта |
+| Продукт | `app.axiona.world` | VDS в Москве: Next.js + PostgreSQL 16 + Caddy | Beta на инвайтах, затем публичный запуск |
+| Корпоративный сайт | `axiona.world` | Vercel | сайт компании; остаётся на месте до отдельного решения |
+| `axiona.biz` | — | позже | регистратор/американский номер; не блокирует Beta |
 
-Разделы 3–6 выполняются для выбранного контура: команды одни и те же, отличаются `APP_URL`, `DATABASE_URL`, `EMAIL_*` и DNS. Для РФ-теста `axiona.world` не используется.
-
-> **Принято ADR-025 (2026-11-09).** Продукт целиком на VDS в Москве: `app.axiona.world` → VDS, корпоративный сайт остаётся на `axiona.world` (Vercel). Это сохраняет один origin для SSR/auth/cookie/Prisma и убирает межконтурные запросы. Vercel demo не является production-контуром ПДн.
+Vercel demo не является production-контуром ПДн. Продукт, БД и бэкапы — в РФ; один origin для SSR/auth/cookie/Prisma.
 
 ### Локально
 
@@ -55,7 +54,7 @@ npm run web:dev
 
 - `release:validate` — 0 ошибок; `release:build` собирает контент.
 - `npm run typecheck && npm test` — зелёные; `apps/web` build — зелёный.
-- Подписаны политика, условия, cookie notice; реквизиты оператора заполнены. Для РФ-теста достаточно самозанятого (НПД), ИП не требуется; для релиза оператор определяется отдельно.
+- Подписаны политика, условия, cookie notice; реквизиты оператора заполнены. Для Beta допустим самозанятый (НПД); структура для публичного релиза определяется отдельно.
 - Для контура с реальными ПДн в РФ — уведомление Роскомнадзора и политика (обязанности оператора не зависят от того, самозанятый это или ИП); для СНГ-контура — юридическая проверка выбранной юрисдикции (включая требования к ПДн граждан РФ).
 - Есть хостинг выбранного контура (VPS в РФ для теста / вне РФ для релиза), домен и DNS, email-провайдер.
 - Есть доступ к репозиторию корпоративного сайта.
@@ -65,8 +64,8 @@ npm run web:dev
 ## 2. Переменные окружения
 
 ```text
-# APP_URL — адрес контура: тестовый домен для РФ-теста, https://axiona.world для СНГ-релиза
-APP_URL=https://axiona.world
+# APP_URL продукта: https://app.axiona.world
+APP_URL=https://app.axiona.world
 LEGAL_VERSION=1.0.0
 DATABASE_URL=postgresql://...
 SESSION_SECRET=<32+ bytes>
@@ -81,7 +80,7 @@ ANALYTICS_HASH_SALT=...
 AUTH_REGISTRATION_DISABLED=0
 ```
 
-Набор переменных одинаков для обоих контуров, отличаются значения: `APP_URL`, `DATABASE_URL`, `EMAIL_*`, адреса в `EMAIL_FROM`/`SUPPORT_EMAIL` должны соответствовать домену контура. `axiona.world` в РФ-тесте не подставляется.
+Набор переменных один для продукта: `APP_URL`, `DATABASE_URL`, `EMAIL_*`; `EMAIL_FROM`/`SUPPORT_EMAIL` — на домене `app.axiona.world`. `axiona.world` остаётся корпоративным сайтом.
 
 `DEEPSEEK_API_KEY` нужен только контентному pipeline, не приложению. В production env приложения его быть не должно.
 
@@ -89,39 +88,36 @@ AUTH_REGISTRATION_DISABLED=0
 
 ## 3. Хостинг
 
-### 3.1. РФ-тест
+### 3.1. VDS в Москве
 
-1. Купить отдельный домен (не `axiona.world`) и VPS в РФ (Yandex Cloud / Selectel / Timeweb), Ubuntu LTS; открыть 80/443, SSH по ключу. Оформление — на физлицо/самозанятого, ИП не требуется; счета и чеки сохранять.
+1. Купить VDS с московским IP и статическим адресом (Yandex Cloud / Selectel / Timeweb), Ubuntu LTS; открыть 22/80/443, SSH по ключу.
 2. Установить Docker и Compose; скопировать репозиторий в `/srv/axiona`.
-3. Заполнить `.env.production` по §2: `APP_URL=https://<тестовый-домен>`, `DATABASE_URL`, `EMAIL_*` РФ-провайдера, на старте `AUTH_REGISTRATION_DISABLED=1`.
-4. Настроить Caddy: `<тестовый-домен>` и `www` → приложение; TLS автоматически.
-5. `docker compose up -d --build`; применить `npm run db:deploy`; проверить `GET /api/health`.
-6. Впускать тестеров по инвайтам; публичную регистрацию открыть после юридической проверки (уведомление РКН/политика — по ADR-023, оператор-самозанятый).
-7. Nightly `pg_dump` + проверка restore в отдельную БД; данные тестового контура в релиз не переносятся.
+3. Заполнить `.env.production`: `APP_URL=https://app.axiona.world`, `DATABASE_URL`, `EMAIL_*`, `OWNER_EMAILS`, `LEGAL_VERSION`, на старте `AUTH_REGISTRATION_DISABLED=1`.
+4. Caddy: `app.axiona.world` → приложение; TLS автоматически. PostgreSQL 16 — в compose, порт БД не публиковать.
+5. `docker compose up -d --build`; `npm run db:deploy`; `GET /api/health`.
+6. Впускать тестеров по инвайтам; публичную регистрацию открыть после legal/QA.
+7. Nightly `pg_dump` + проверка restore в отдельную БД; мониторинг health/5xx.
+8. `axiona.world` не направлять на VDS: это корпоративный сайт на Vercel.
 
-### 3.2. СНГ-релиз
+### 3.2. Позже
 
-1. VPS вне РФ (Hetzner / DigitalOcean / Selectel KZ) + домен релиза (`axiona.world` или `app.axiona.world`, `ADR-023`); открыть 80/443.
-2. Тот же compose и шаги: `APP_URL=https://axiona.world`, PostgreSQL 16 и бэкапы в контуре релиза, email-провайдер с глобальной доставкой.
-3. Legal-документы и уведомления выбранной юрисдикции до открытия регистрации; отдельно проверить требования к ПДн граждан РФ.
-4. `npm run db:deploy`, `GET /api/health`, nightly `pg_dump` и мониторинг.
+`axiona.biz`, отдельный СНГ-контур и смена корневого домена — отдельные решения. Они не блокируют Beta на `app.axiona.world`.
 
 ## 4. DNS
 
 | Домен | Контур | Назначение | Записи |
 |---|---|---|---|
-| `<тестовый-домен>` | РФ-тест | MVP на VPS в РФ | A/AAAA → VPS теста; `www` CNAME → apex |
-| `axiona.world` | Vercel / СНГ-релиз | сейчас корпоративный сайт на Vercel; позже продукт релиза | пока — по инструкции Vercel; при релизе A/AAAA → VM релиза |
-| `axiona.biz` | Корпоративный сайт | отдельный сайт (позже) | по инструкции Vercel/хостинга |
-| `mail.<домен контура>` | Email | Отправка писем контура | MX, SPF, DKIM, DMARC у регистратора домена контура |
+| `app.axiona.world` | Продукт | VDS в Москве | A → IP VDS; TLS Caddy |
+| `axiona.world` | Vercel | Корпоративный сайт | по инструкции Vercel; не менять до решения |
+| `axiona.biz` | Позже | Корпоративный сайт/алиас | решается отдельно; регистратор требует US phone |
+| `mail.app.axiona.world` | Email | Отправка писем продукта | MX, SPF, DKIM, DMARC |
 
-- `axiona.world` не направляем на РФ-VPS: тест живёт на отдельном домене (`ADR-023`).
-- Понизить TTL за 24 часа до переключения; после переключения проверить `dig`, `curl -I`, HSTS, редиректы.
-- `axiona.biz` проверить и зарегистрировать/делегировать до переезда сайта.
+- Понизить TTL за 24 часа до переключения; после — `dig`, `curl -I`, HSTS.
+- Порт PostgreSQL наружу не открывать.
 
 ## 5. Email
 
-1. Для РФ-теста — РФ-провайдер (Yandex 360/Unisender); для СНГ-релиза — провайдер с глобальной доставкой. Адаптер один: `EMAIL_API_URL`, меняется только конфиг контура.
+1. Для продукта на `app.axiona.world` — РФ-провайдер (Yandex 360/Unisender). Адаптер один: `EMAIL_API_URL`.
 2. Создать `no-reply@`, `support@`, `privacy@` на домене контура.
 3. Настроить SPF (`v=spf1 include:... ~all`), DKIM, DMARC (`p=quarantine`) для домена контура.
 4. Отправить тестовые magic link на Gmail, Яндекс, Mail.ru; проверить папку спама.
@@ -140,13 +136,13 @@ npm run release:build -- --release beta-1
 npm run web:build
 RELEASE_BUILD=release:build docker compose up -d --build
 npm run db:deploy   # или отдельный job с DATABASE_URL; в runtime-образе Prisma CLI нет
-curl -fsS https://<домен контура>/api/health
+curl -fsS https://app.axiona.world/api/health
 ```
 
 - Деплой только из тега/коммита, прошедшего CI.
 - Не запускать `release:build` на проде без `release:validate`.
 - Сохранить предыдущий образ для rollback.
-- Для РФ-теста `<домен контура>` — тестовый домен; для релиза — `axiona.world`.
+- `<домен контура>` — `app.axiona.world`; `axiona.world` — корпоративный сайт.
 
 ## 7. Pre-launch проверки
 
@@ -189,20 +185,11 @@ curl -fsS https://<домен контура>/api/health
 - Ссылки в футере, логине, форме отзыва.
 - Cookie-баннер не блокирует продукт; отказ работает.
 
-## 8. Переезд корпоративного сайта
+## 8. Корпоративный сайт
 
-Относится к контуру релиза (`axiona.world`); РФ-тест на отдельном домене в этом переезде не участвует.
+Сейчас `axiona.world` — корпоративный сайт на Vercel. Продукт живёт на `app.axiona.world` (VDS). Сайт компании не переносим и не меняем корневой домен до отдельного решения после Beta.
 
-1. Задеплоить корпоративный сайт на `axiona.biz`.
-2. Настроить 301:
-   - `axiona.world/ru/*` → `axiona.biz/ru/*`
-   - `axiona.world/en/*` → `axiona.biz/en/*`
-   - `/docs/*`, `/investors`, `/team`, `/whitepaper` — сохранить пути.
-3. Не редиректить продуктовые маршруты (`/`, `/professions`, `/competencies`, `/saved`, `/login`, `/legal`).
-4. Обновить canonical, sitemap, OG, внешние ссылки, подписи, презентации.
-5. Проверить старые URL и отсутствие циклов.
-6. Аудит claims: «pre-development», 128 компетенций, 36 проектов, 247 подтверждённых, ISO/IEC 27001, контакты. Подтвердить или убрать.
-7. Добавить ссылку на продукт `https://axiona.world` и юридические документы.
+`axiona.biz` куплен, но регистратор требует американский номер; это не блокирует Beta. Когда домен будет доступен, решаем: оставить сайт на `axiona.world`, перенести на `axiona.biz` или сделать `axiona.biz` алиасом. Все переходы — с 301 и проверкой canonical/sitemap/OG.
 
 ## 9. Rollback
 
@@ -225,3 +212,4 @@ curl -fsS https://<домен контура>/api/health
 |---|---|---|
 | 1.0.0 | 2026-10-28 | Первая редакция: предусловия, хостинг, DNS, email, деплой, pre-launch проверки, rollback |
 | 1.1.0 | 2026-11-05 | Два контура (`ADR-023`): РФ-тест на отдельном домене и СНГ-релиз; разделы хостинга, DNS и email параметризованы по контуру; регистрация по email (`COS-EAR-015`) в pre-launch проверках |
+| 1.3.0 | 2026-11-09 | ADR-025: продукт на VDS в Москве (`app.axiona.world`), корпоративный сайт на Vercel; обновлены хостинг, DNS, email и раздел сайта |

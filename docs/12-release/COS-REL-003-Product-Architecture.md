@@ -1,10 +1,10 @@
 ---
 id: COS-REL-003
 title: Архитектура продукта Beta 1
-version: 1.0.0
+version: 1.1.0
 status: Draft
 owner: Engineering
-last_updated: 2026-10-28
+last_updated: 2026-11-09
 references:
   - COS-REL-000
   - COS-REL-001
@@ -63,7 +63,7 @@ prisma/
 docs/12-release/
 ```
 
-`web/` остаётся каталогом сгенерированных HTML-канвасов; публичная Beta их не использует.
+Legacy-канвасы `web/*.html` удалены; профессия рендерится динамически из разделов модели. Старые URL `/canvas` и `/competencies/[id]` — редиректы.
 
 ## 4. Data flow
 
@@ -241,20 +241,25 @@ model ConsentRecord {
 | `/professions/[slug]` | Карта профессии | Публичный |
 | `/competencies/[id]` | Компетенция: знания, навыки, материалы | Публичный; внешние ссылки — после входа |
 | `/saved` | Избранное | Пользователь |
-| `/account` | Аккаунт, согласия, удаление | Пользователь |
-| `/login`, `/login/check-email` | Вход | Публичный |
+| `/register` | Создание аккаунта по email | Публичный (за ops-gate) |
+| `/login` | Вход по ссылке | Публичный |
 | `/auth/verify` | GET подтверждение, POST вход | Публичный |
+| `/auth/email-change` | Подтверждение смены email | Публичный |
+| `/auth/link-invalid` | Недействительная ссылка | Публичный |
+| `/account` | Аккаунт: данные, сессия, удаление | Пользователь |
+| `/profile` | Приватный профессиональный профиль | Пользователь, в разработке |
 | `/feedback` | Общий отзыв | Публичный |
 | `/legal/privacy`, `/legal/terms`, `/legal/cookies` | Документы | Публичный |
-| `/admin/feedback`, `/admin/metrics` | Админка | Админ |
-| `POST /api/auth/request` | Запрос ссылки | Публичный, rate limit |
-| `POST /api/auth/logout` | Выход | Пользователь |
+| `/admin/materials`, `/admin/users`, `/admin/metrics`, `/admin/feedback` | Owner console | OWNER |
+| `POST /api/auth/request`, `/api/auth/verify`, `/api/auth/email-change` | Auth | Публичный |
+| `POST /api/account/email-change`, `/api/account/delete` | Аккаунт | Пользователь |
+| `POST /api/admin/feedback/status`, `/api/admin/materials`, `/api/admin/users` | Админ-мутации | OWNER |
 | `POST/DELETE /api/favorites` | Избранное | Пользователь |
-| `POST /api/study-status` | Статус | Пользователь |
+| `POST /api/source-views` | Отметка просмотра | Пользователь |
+| `POST /api/source-reviews` | Голос за материал | Пользователь |
 | `POST /api/feedback` | Отзыв | Публичный/пользователь |
 | `POST /api/events` | Событие | Публичный, allowlist |
 | `GET /api/health` | Health | Публичный |
-| `GET /admin/feedback/export` | Экспорт | Админ |
 
 ## 8. Аутентификация
 

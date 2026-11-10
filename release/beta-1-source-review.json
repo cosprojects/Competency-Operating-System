@@ -1,7 +1,7 @@
 {
   "reviewVersion": "1.0.0",
   "releaseId": "beta-1",
-  "updatedAt": "2026-11-03",
+  "updatedAt": "2026-11-09",
   "reviewedBy": "deepseek-content-gate",
   "decisions": [
     {
@@ -12340,6 +12340,24 @@
       "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
       "reviewedBy": "sources-gate-v1",
       "reviewedAt": "2026-11-03"
+    },
+    {
+      "professionId": "it.artdir",
+      "competencyId": "artdir-brand-strategy",
+      "sourceId": "scan-interfax-ru-34c993",
+      "decision": "accepted",
+      "reason": "Авто-расширение: совпадение с «Цели бренда и коммуникационная стратегия», формат blog, score 0.59",
+      "reviewedBy": "sources-expand-v1",
+      "reviewedAt": "2026-11-09"
+    },
+    {
+      "professionId": "it.artdir",
+      "competencyId": "artdir-brand-strategy",
+      "sourceId": "sidorinlab-ru-4d5286",
+      "decision": "accepted",
+      "reason": "Авто-расширение: совпадение с «Цели бренда и коммуникационная стратегия», формат blog, score 0.58",
+      "reviewedBy": "sources-expand-v1",
+      "reviewedAt": "2026-11-09"
     }
   ],
   "notes": [

@@ -1,6 +1,6 @@
 {
   "registryVersion": "1.0.0",
-  "updatedAt": "2026-11-03",
+  "updatedAt": "2026-11-09",
   "sources": [
     {
       "id": "motiondesign-school-courses",
@@ -4716,6 +4716,54 @@
       "notes": "Авто-расширение (brave-search); совпадение с «Композиция, сетки и визуальная иерархия», формат course-platform, score 0.34",
       "httpStatus": 200,
       "finalUrl": "https://aicodinglab.ru/"
+    },
+    {
+      "id": "scan-interfax-ru-34c993",
+      "title": "Мониторинг СМИ и соцмедиа | СКАН-Интерфакс",
+      "url": "https://scan-interfax.ru/",
+      "kind": "blog",
+      "professionIds": [
+        "it.artdir"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "unknown",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Цели бренда и коммуникационная стратегия курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-09",
+      "summary": "Мониторинг СМИ и соцмедиа | СКАН-Интерфакс",
+      "notes": "Авто-расширение (brave-search); совпадение с «Цели бренда и коммуникационная стратегия», формат blog, score 0.59",
+      "httpStatus": 200,
+      "finalUrl": "https://scan-interfax.ru/"
+    },
+    {
+      "id": "sidorinlab-ru-4d5286",
+      "title": "SidorinLab - Агентство по управлению репутацией в Москве - SERM, ORM, PR",
+      "url": "https://sidorinlab.ru/",
+      "kind": "blog",
+      "professionIds": [
+        "it.artdir"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "unknown",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Цели бренда и коммуникационная стратегия курс"
+      ],
+      "discoveredBy": "search",
+      "lastChecked": "2026-11-09",
+      "summary": "SidorinLab - Агентство по управлению репутацией в Москве - SERM, ORM, PR",
+      "notes": "Авто-расширение (brave-search); совпадение с «Цели бренда и коммуникационная стратегия», формат blog, score 0.58",
+      "httpStatus": 200,
+      "finalUrl": "https://sidorinlab.ru/"
     }
   ]
 }

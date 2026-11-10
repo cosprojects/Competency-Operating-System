@@ -1,6 +1,6 @@
 {
   "linksVersion": "1.0.0",
-  "updatedAt": "2026-11-03",
+  "updatedAt": "2026-11-09",
   "description": "Ручной слой связей «компетенция → учебные источники». Источник истины для learning:map; при model:sync мержится в competencies.json. Источник — место, где учиться компетенции, а не автоматическое доказательство её содержания.",
   "links": [
     {
@@ -13,9 +13,10 @@
         "coursera-microsoft-product-design",
         "coursera-design-fundamentals-ai",
         "uxdesigninstitute-free-ux-course",
-        "tilda-education-courses-web-design-designthinking"
+        "tilda-education-courses-web-design-designthinking",
+        "specialist-ru-course-vizkom"
       ],
-      "rationale": "School of Motion: learning paths — рамка обучения моушн-дизайну.; Курсы вводят дизайн-процесс; программа Практикума задаёт рамку профессии.; Дизайн-процесс и product design в курсах.; Программа Практикума по графическому дизайну задаёт рамку профессии.; совпадение с «Дизайн-мышление», формат course-platform, score 0.40; совпадение с «Дизайн-мышление», формат course-platform, score 0.37, домен уже в реестре: specialist-ru-course-vizkom; совпадение с «Дизайн-мышление», формат course-platform, score 0.37, домен уже в реестре: specialist-ru-course-vizkom"
+      "rationale": "School of Motion: learning paths — рамка обучения моушн-дизайну.; Курсы вводят дизайн-процесс; программа Практикума задаёт рамку профессии.; Дизайн-процесс и product design в курсах.; Программа Практикума по графическому дизайну задаёт рамку профессии.; совпадение с «Дизайн-мышление», формат course-platform, score 0.40; совпадение с «Дизайн-мышление», формат course-platform, score 0.37, домен уже в реестре: specialist-ru-course-vizkom; совпадение с «Дизайн-мышление», формат course-platform, score 0.37, домен уже в реестре: specialist-ru-course-vizkom; совпадение с «Дизайн-мышление», формат course-platform, score 0.37, домен уже в реестре: specialist-ru-course-vizkom; совпадение с «Дизайн-мышление», формат course-platform, score 0.37, домен уже в реестре: specialist-ru-course-vizkom; совпадение с «Дизайн-мышление», формат course-platform, score 0.37, домен уже в реестре: specialist-ru-course-vizkom; совпадение с «Дизайн-мышление», формат course-platform, score 0.37, домен уже в реестре: specialist-ru-course-vizkom; совпадение с «Дизайн-мышление», формат course-platform, score 0.37, домен уже в реестре: specialist-ru-course-vizkom"
     },
     {
       "competencyId": "ui-layout",
@@ -60,9 +61,10 @@
         "alison-graphic-design",
         "coursera-graphic-fundamentals",
         "coursera-web-design-free",
-        "hse-ru-edu-courses-470898711"
+        "hse-ru-edu-courses-470898711",
+        "specialist-ru-course-vizkom"
       ],
-      "rationale": "Курсы и разбор кейса айдентики Motion Design School.; Visual design в курсе и программа Практикума.; Visual design в UX/UI-курсе.; Visual communication и основы дизайна в курсах.; совпадение с «Визуальная коммуникация», формат course-platform, score 0.37; совпадение с «Визуальная коммуникация», формат course-platform, score 0.37, домен уже в реестре: specialist-ru-course-vizkom; совпадение с «Визуальная коммуникация», формат course-platform, score 0.37, домен уже в реестре: specialist-ru-course-vizkom; совпадение с «Визуальная коммуникация», формат course-platform, score 0.37, домен уже в реестре: hse-ru-edu-courses-470898711"
+      "rationale": "Курсы и разбор кейса айдентики Motion Design School.; Visual design в курсе и программа Практикума.; Visual design в UX/UI-курсе.; Visual communication и основы дизайна в курсах.; совпадение с «Визуальная коммуникация», формат course-platform, score 0.37; совпадение с «Визуальная коммуникация», формат course-platform, score 0.37, домен уже в реестре: specialist-ru-course-vizkom; совпадение с «Визуальная коммуникация», формат course-platform, score 0.37, домен уже в реестре: specialist-ru-course-vizkom; совпадение с «Визуальная коммуникация», формат course-platform, score 0.37, домен уже в реестре: hse-ru-edu-courses-470898711; совпадение с «Визуальная коммуникация», формат course-platform, score 0.37; совпадение с «Визуальная коммуникация», формат course-platform, score 0.37; совпадение с «Визуальная коммуникация», формат course-platform, score 0.37; совпадение с «Визуальная коммуникация», формат course-platform, score 0.37; совпадение с «Визуальная коммуникация», формат course-platform, score 0.37"
     },
     {
       "competencyId": "ui-handoff",
@@ -575,9 +577,11 @@
     {
       "competencyId": "artdir-brand-strategy",
       "sourceIds": [
-        "learntube-art-direction"
+        "learntube-art-direction",
+        "scan-interfax-ru-34c993",
+        "sidorinlab-ru-4d5286"
       ],
-      "rationale": "Источник программы it.artdir покрывает тему в рамках курса.; совпадение с «Цели бренда и коммуникационная стратегия», формат blog, score 0.59; совпадение с «Цели бренда и коммуникационная стратегия», формат blog, score 0.58"
+      "rationale": "Источник программы it.artdir покрывает тему в рамках курса.; совпадение с «Цели бренда и коммуникационная стратегия», формат blog, score 0.59; совпадение с «Цели бренда и коммуникационная стратегия», формат blog, score 0.58; совпадение с «Цели бренда и коммуникационная стратегия», формат blog, score 0.59; совпадение с «Цели бренда и коммуникационная стратегия», формат blog, score 0.58"
     },
     {
       "competencyId": "artdir-brand-platform",
@@ -898,9 +902,10 @@
     {
       "competencyId": "ui-framer",
       "sourceIds": [
-        "framer-learn"
+        "framer-learn",
+        "udemy-interior-design-free"
       ],
-      "rationale": "Framer Learn: официальные материалы по интерактивным прототипам.; совпадение с «Framer: интерактивные прототипы», формат course-platform, score 0.49, домен уже в реестре: udemy-interior-design-free"
+      "rationale": "Framer Learn: официальные материалы по интерактивным прототипам.; совпадение с «Framer: интерактивные прототипы», формат course-platform, score 0.49, домен уже в реестре: udemy-interior-design-free; совпадение с «Framer: интерактивные прототипы», формат course-platform, score 0.49, домен уже в реестре: udemy-interior-design-free; совпадение с «Framer: интерактивные прототипы», формат course-platform, score 0.49, домен уже в реестре: udemy-interior-design-free; совпадение с «Framer: интерактивные прототипы», формат course-platform, score 0.49, домен уже в реестре: udemy-interior-design-free; совпадение с «Framer: интерактивные прототипы», формат course-platform, score 0.49, домен уже в реестре: udemy-interior-design-free; совпадение с «Framer: интерактивные прототипы», формат course-platform, score 0.49, домен уже в реестре: udemy-interior-design-free"
     },
     {
       "competencyId": "product-growth",
@@ -1047,7 +1052,7 @@
       "sourceIds": [
         "bangbangeducation-ru-course-motion"
       ],
-      "rationale": "совпадение с «Визуальный дизайн для веба», формат course-platform, score 0.41; совпадение с «Визуальный дизайн для веба», формат course-platform, score 0.40"
+      "rationale": "совпадение с «Визуальный дизайн для веба», формат course-platform, score 0.41; совпадение с «Визуальный дизайн для веба», формат course-platform, score 0.40; совпадение с «Визуальный дизайн для веба», формат course-platform, score 0.40; совпадение с «Визуальный дизайн для веба», формат course-platform, score 0.40; совпадение с «Визуальный дизайн для веба», формат course-platform, score 0.40; совпадение с «Визуальный дизайн для веба», формат course-platform, score 0.40"
     },
     {
       "competencyId": "presentation-data",
@@ -1073,9 +1078,10 @@
     {
       "competencyId": "aidesigner-ai-development",
       "sourceIds": [
-        "ai-softuni-bg-courses-ai-assisted-development"
+        "ai-softuni-bg-courses-ai-assisted-development",
+        "datacamp-com-ru-courses-ai-assisted-coding-for-developers"
       ],
-      "rationale": "совпадение с «AI-assisted разработка», формат course-platform, score 0.42; совпадение с «AI-assisted разработка», формат course-platform, score 0.37"
+      "rationale": "совпадение с «AI-assisted разработка», формат course-platform, score 0.42; совпадение с «AI-assisted разработка», формат course-platform, score 0.37; совпадение с «AI-assisted разработка», формат course-platform, score 0.42; совпадение с «AI-assisted разработка», формат course-platform, score 0.42; совпадение с «AI-assisted разработка», формат course-platform, score 0.42; совпадение с «AI-assisted разработка», формат course-platform, score 0.42; совпадение с «AI-assisted разработка», формат course-platform, score 0.42"
     },
     {
       "competencyId": "aidesigner-ai-prototyping",
@@ -1149,6 +1155,13 @@
         "intuit-ru-studies-courses-611-467-info"
       ],
       "rationale": "источники смежной компетенции ui-web-technologies"
+    },
+    {
+      "competencyId": "3d-presentation",
+      "sourceIds": [
+        "specialist-ru-course-vizkom"
+      ],
+      "rationale": "совпадение с «Презентация 3D-проекта», формат course-platform, score 0.37"
     }
   ]
 }

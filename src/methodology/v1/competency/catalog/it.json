@@ -1,7 +1,7 @@
 {
   "catalogVersion": "0.1.0",
   "domain": "it",
-  "updatedOn": "2026-11-03",
+  "updatedOn": "2026-11-09",
   "blocks": [
     {
       "id": "comp_3b5bab068e42",
@@ -57940,6 +57940,169 @@
           "wrong_language"
         ],
         "reviewedAt": "2026-11-03",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_2d2eb065a64e",
+      "slug": "mat_b9e18bf90d9e",
+      "kind": "article",
+      "title": "Интервью",
+      "provider": "Wikipedia",
+      "url": "https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B2%D1%8C%D1%8E",
+      "canonicalUrl": "https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B2%D1%8C%D1%8E",
+      "language": "ru",
+      "access": "free",
+      "description": "интервью . Интервью почти всегда подразумевает устную беседу между двумя или более сторонами. Интервью могут быть неструктурированными, свободными и открытыми",
+      "snippet": "интервью . Интервью почти всегда подразумевает устную беседу между двумя или более сторонами. Интервью могут быть неструктурированными, свободными и открытыми",
+      "license": "CC BY-SA 4.0",
+      "sourceRef": {
+        "sourceId": "wikipedia",
+        "externalId": "3440791",
+        "url": "https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B2%D1%8C%D1%8E",
+        "retrievedAt": "2026-11-09",
+        "license": "CC BY-SA 4.0"
+      },
+      "retrievedAt": "2026-11-09",
+      "links": [
+        {
+          "competencyId": "comp_209c850b7e37",
+          "componentId": "intervyu-i-nablyudenie.osnovy-kachestvennyh-issledovaniy",
+          "relevance": 0.6,
+          "reason": "Статья описывает интервью как метод устной беседы и его виды (неструктурированные, свободные, открытые), что относится к пониманию места интервью среди методов исследования и его ограничений.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_209c850b7e37"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.78,
+        "usefulness": 0.25,
+        "whyUseful": "Даёт общее определение интервью, но не раскрывает специфику UX-интервью, наблюдения и анализа качественных данных.",
+        "reason": "Материал представляет собой обзорную статью Wikipedia об интервью в целом; по snippet нет подтверждения фокуса на глубинных исследовательских интервью, подготовке, проведении и анализе данных для понимания пользователей. Тема частично связана с компетенцией, но практическая ценность и точность соответствия неочевидны.",
+        "flags": [
+          "generic",
+          "no_practice"
+        ],
+        "reviewedAt": "2026-11-09",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_2cb809ea8133",
+      "slug": "mat_a803904d5de5",
+      "kind": "article",
+      "title": "User Story ≠ User Scenario: Toplantılarda Kafa Karıştıran Farkı Netleştirelim",
+      "provider": "Medium",
+      "url": "https://medium.com/@cgtygncy_1989/user-story-user-scenario-toplant%C4%B1larda-kafa-kar%C4%B1%C5%9Ft%C4%B1ran-fark%C4%B1-netle%C5%9Ftirelim-05b191209eb8",
+      "canonicalUrl": "https://medium.com/@cgtygncy_1989/user-story-user-scenario-toplant%C4%B1larda-kafa-kar%C4%B1%C5%9Ft%C4%B1ran-fark%C4%B1-netle%C5%9Ftirelim-05b191209eb8",
+      "language": "en",
+      "access": "freemium",
+      "description": "&#x130;&#x15F; analistlerinin en s&#x131;k birbirine ge&#xE7;irdi&#x11F;i iki kavram &#x2014; ve asl&#x131;nda bir &#xFC;&#xE7;&#xFC;nc&#xFC;s&#xFC; Continue reading on Medium »",
+      "snippet": "&#x130;&#x15F; analistlerinin en s&#x131;k birbirine ge&#xE7;irdi&#x11F;i iki kavram &#x2014; ve asl&#x131;nda bir &#xFC;&#xE7;&#xFC;nc&#xFC;s&#xFC; Continue reading on Medium »",
+      "license": "Medium ToS; авторские права автора",
+      "sourceRef": {
+        "sourceId": "medium",
+        "externalId": "https://medium.com/@cgtygncy_1989/user-story-user-scenario-toplant%C4%B1larda-kafa-kar%C4%B1%C5%9Ft%C4%B1ran-fark%C4%B1-netle%C5%9Ftirelim-05b191209eb8",
+        "url": "https://medium.com/@cgtygncy_1989/user-story-user-scenario-toplant%C4%B1larda-kafa-kar%C4%B1%C5%9Ft%C4%B1ran-fark%C4%B1-netle%C5%9Ftirelim-05b191209eb8",
+        "retrievedAt": "2026-11-09",
+        "license": "Medium ToS"
+      },
+      "retrievedAt": "2026-11-09",
+      "links": [
+        {
+          "competencyId": "comp_e4f2ab2892c2",
+          "componentId": "polzovatelskie-stsenarii-i-flou.naznachenie-i-rol-stsenariev",
+          "tagId": "tag_2ec2ac0348f8",
+          "relevance": 0.62,
+          "reason": "Заголовок материала посвящён разграничению user story и user scenario, то есть уточнению сути и роли пользовательского сценария — это соотносится с компонентом о назначении и роли сценариев и тегом «Зачем пользователю сценарий». Однако snippet обрывочный (превью Medium) и не подтверждает содержание, поэтому связь предложена моделью.",
+          "modelProposal": true
+        }
+      ],
+      "discoveredFor": [
+        "comp_e4f2ab2892c2"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.55,
+        "usefulness": 0.3,
+        "whyUseful": "Разграничивает user story и пользовательский сценарий, что помогает точнее формулировать сценарии в обсуждениях с командой.",
+        "reason": "Snippet содержит только заглушку Medium «Continue reading on Medium» без содержания, поэтому судить о полноте и практической ценности нельзя. Тема касается лишь терминологического различения story/scenario и не покрывает моделирование флоу, ветвлений и ошибок. Заголовок на турецком при указанном языке en — языковое соответствие не подтверждено. Материал за пейволом Medium (freemium).",
+        "flags": [
+          "no_snippet",
+          "wrong_language",
+          "paywall",
+          "off_topic"
+        ],
+        "reviewedAt": "2026-11-09",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_1796d48618d3",
+      "slug": "mat_619c42a52d32",
+      "kind": "video",
+      "title": "BSides DC 2016 -A Hacker’s Guide to Usability Testing",
+      "provider": "Internet Archive",
+      "url": "https://archive.org/details/BSidesDC2016-AHackersGuideToUsabilityTesting",
+      "canonicalUrl": "https://archive.org/details/BSidesDC2016-AHackersGuideToUsabilityTesting",
+      "language": "en",
+      "access": "free",
+      "description": "A Hacker’s Guide to Usability TestingTor. PGP. OTR. We have privacy enhancing technologies (PETs), but when was the last time you used privacy software that “just worked’’? Just like security cannot be an afterthought bolted on after the software is written, neither can usability. In this talk, we will discuss why usa…",
+      "snippet": "A Hacker’s Guide to Usability TestingTor. PGP. OTR. We have privacy enhancing technologies (PETs), but when was the last time you used privacy software that “just worked’’? Just like security cannot be an afterthought bolted on after the software is written, neither can usability. In this talk, we will discuss why usa…",
+      "license": "http://creativecommons.org/licenses/by/3.0/",
+      "sourceRef": {
+        "sourceId": "internet-archive",
+        "externalId": "BSidesDC2016-AHackersGuideToUsabilityTesting",
+        "url": "https://archive.org/details/BSidesDC2016-AHackersGuideToUsabilityTesting",
+        "retrievedAt": "2026-11-09",
+        "license": "http://creativecommons.org/licenses/by/3.0/"
+      },
+      "retrievedAt": "2026-11-09",
+      "links": [
+        {
+          "competencyId": "comp_c2cd7e56553d",
+          "componentId": "yuzabiliti-testirovanie.osnovy-yuzabiliti-i-mesto-testirovaniya-v-issledovaniyah",
+          "tagId": "tag_3ff7e35ce2e6",
+          "relevance": 0.55,
+          "reason": "Видео посвящено юзабилити-тестированию и важности юзабилити в разработке ПО, что соответствует основам юзабилити и месту тестирования в исследованиях.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_c2cd7e56553d",
+          "componentId": "yuzabiliti-testirovanie.osnovy-yuzabiliti-i-mesto-testirovaniya-v-issledovaniyah",
+          "tagId": "tag_f4e5da2e9fb7",
+          "relevance": 0.5,
+          "reason": "Название и описание прямо указывают на проведение юзабилити-тестирования, но фрагмент не раскрывает методику сессий.",
+          "modelProposal": true
+        }
+      ],
+      "discoveredFor": [
+        "comp_c2cd7e56553d"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.62,
+        "usefulness": 0.42,
+        "whyUseful": "Доклад объясняет, зачем нужно юзабилити-тестирование и как встраивать его в разработку приватностных продуктов.",
+        "reason": "Тема совпадает с компетенцией, но материал — запись конференции 2016 года по безопасности и privacy-инструментам: покрывает в основном вводную часть (ценность юзабилити), без системной методики сценариев, проведения сессий и приоритизации. Формат видео без практики, язык английский, snippet обрывается — достаточно для подтверждения, но не для уверенного accept.",
+        "flags": [
+          "no_practice",
+          "wrong_language",
+          "outdated"
+        ],
+        "reviewedAt": "2026-11-09",
         "reviewer": "methodologist-v1",
         "status": "needs_confirmation"
       }

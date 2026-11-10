@@ -1,10 +1,10 @@
 ---
 id: COS-REL-007
 title: Реестр документации перед Beta 1
-version: 1.3.0
+version: 1.4.0
 status: Draft
 owner: Product Team
-last_updated: 2026-11-05
+last_updated: 2026-11-09
 references:
   - COS-REL-000
   - COS-REL-008

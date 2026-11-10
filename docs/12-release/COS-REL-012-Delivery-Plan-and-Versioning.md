@@ -4,7 +4,7 @@ title: План реализации, версионность и канбан
 version: 1.0.0
 status: Draft
 owner: Product Team
-last_updated: 2026-10-28
+last_updated: 2026-11-09
 references:
   - COS-BP-005
   - COS-REL-000

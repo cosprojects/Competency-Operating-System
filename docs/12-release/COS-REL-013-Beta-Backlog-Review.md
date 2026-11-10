@@ -4,7 +4,7 @@ title: Beta backlog — детализация и зависимости на а
 version: 1.0.0
 status: Approved
 owner: Product Team
-last_updated: 2026-10-28
+last_updated: 2026-11-09
 references:
   - COS-REL-012
   - COS-BP-005

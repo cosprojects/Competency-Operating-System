@@ -76,6 +76,7 @@ references:
 | `docs/11-scenarios/*` | Сценарии диагностики | Будущий этап | RES-005 | EAR-009 | Не менять; не публиковать как текущий продукт | Стратегический |
 | `docs/10-legal/COS-LEG-003-Cookie-Notice.md` | Cookie и аналитика | Актуален для Beta 1 (draft) | Privacy | Terms | Проверить юристом; синхронизировать с consent-баннером | До Beta |
 | `docs/12-release/COS-REL-012-Delivery-Plan-and-Versioning.md` | План реализации, версии, канбан | Актуален (draft) | COS-BP-005, REL-000/001/002 | tasks/, Project | Поддерживать бэклог и версии; синхронизировать с Project | До Beta |
+| `docs/12-release/COS-REL-015-Production-QA-Checklist.md` | Production QA checklist Public Beta (T-009) | Актуален | `COS-REL-005`, `COS-REL-014`, `COS-LEG-001/002/003` | `reports/production-qa-*` | Поддерживать при изменении сценариев и перед каждым релизом | До Beta |
 | `docs/02-architecture/access/roles.json` | Machine-readable роли, capabilities, видимость | Approved | ARCH-173 | Auth, Admin, Org | Источник правды для реализации; менять вместе с ARCH-173 и кодом | До Beta |
 | `docs/02-architecture/COS-ARCH-173-Access-Control-and-Roles.md` | Роли, capabilities и видимость данных | Approved | ARCH-100/120, REL-003/004 | Auth, Admin, Org | Поддерживать матрицу при добавлении функций; не вводить роли без capability | До Beta |
 | `docs/12-release/reports/vds-2026-11-10.md` | VDS-контур app.axiona.world | Approved | REL-005/014 | Engineering | Обновлять при изменении сервера/деплоя | До Beta |

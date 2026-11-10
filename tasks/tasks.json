@@ -185,7 +185,7 @@
       "priority": "P0",
       "area": "Legal",
       "stage": "I",
-      "status": "Backlog",
+      "status": "In Progress",
       "labels": [],
       "acceptance": [
         "Реквизиты ИП заполнены",
@@ -196,7 +196,7 @@
       ],
       "issueNumber": 4,
       "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/4",
-      "context": "Два контура ADR-023: РФ-тест оператора-самозанятого и СНГ-релиз. Для РФ-теста нужны политика/уведомление РКН; для релиза — юридическая проверка выбранной юрисдикции. Текущие документы — черновики.",
+      "context": "Контур один (ADR-025): продукт на VDS в Москве; историческая рамка ADR-023 (РФ-тест + СНГ-релиз) не действует. Нужны политика/уведомление РКН и юридическая проверка. Текущие документы — черновики. 2026-11-10: подготовлен список недостающих legal-данных — reports/legal-gaps-2026-11-10.md (ОПФ, реквизиты, email-контур/Resend, согласия, уведомление РКН). Требуется решение основателя по ОПФ и реквизитам, затем проверка юристом.",
       "deliverable": "Опубликованные legal-документы и подтверждение РКН.",
       "outOfScope": [
         "Договоры с корпоративными клиентами",
@@ -303,7 +303,7 @@
       "priority": "P0",
       "area": "QA",
       "stage": "I",
-      "status": "Backlog",
+      "status": "In Progress",
       "labels": [],
       "acceptance": [
         "Регистрация/вход",
@@ -315,8 +315,8 @@
       ],
       "issueNumber": 8,
       "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/8",
-      "context": "Перед приглашением людей нужно проверить основные сценарии.",
-      "deliverable": "P0 checklist и отчёт QA.",
+      "context": "Перед приглашением людей нужно проверить основные сценарии. QA baseline 2026-11-10 на app.axiona.world: смоук 79 проверок и браузерный axe-прогон; отчёт reports/production-qa-2026-11-10.md, чек-лист COS-REL-015. Блокеры: P0 вход/выход редиректят на localhost:3000; P1 sitemap/robots на axiona.world, hydration/вложенные <a> и отсутствие H1 на /professions.",
+      "deliverable": "P0 checklist (COS-REL-015) и отчёт QA (reports/production-qa-2026-11-10.md).",
       "outOfScope": [
         "Полная E2E-автоматизация"
       ],

@@ -7,6 +7,8 @@
   "scripts": {
     "typecheck": "tsc --noEmit",
     "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "qa:smoke": "node scripts/qa/production-smoke.mjs",
+    "qa:browser": "node scripts/qa/browser-a11y.mjs",
     "changelog:collect": "node --experimental-strip-types scripts/changelog/collect.ts",
     "changelog:apply": "node --experimental-strip-types scripts/changelog/apply.ts",
     "changelog:check": "node --experimental-strip-types scripts/changelog/apply.ts -- --check",

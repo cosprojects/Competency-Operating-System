@@ -1,0 +1,455 @@
+{
+  "base": "https://app.axiona.world",
+  "generatedAt": "2026-11-10T13:45:45.229Z",
+  "chrome": "Chrome/157.0.8103.39",
+  "summary": [
+    {
+      "viewport": "mobile",
+      "page": "home",
+      "url": "https://app.axiona.world/",
+      "title": "AXIONA — карта компетенций, которая объясняет профессию",
+      "h1": "Карта компетенций, которая объясняет профессию",
+      "overflow": false,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "imagesWithoutAlt": 0,
+      "buttonsWithoutName": 0,
+      "nestedAnchors": 0,
+      "lang": "ru",
+      "consoleErrors": [],
+      "exceptions": [],
+      "logErrors": [
+        "network: Failed to load resource: the server responded with a status of 404 ()"
+      ],
+      "httpErrors": [
+        "404 https://app.axiona.world/favicon.ico"
+      ],
+      "failedRequests": [],
+      "axe": [],
+      "seriousViolations": 0,
+      "screenshot": "docs/12-release/reports/screenshots/production-qa-2026-11-10/mobile-home.png",
+      "consent": {
+        "mode": "necessary",
+        "before": {
+          "banner": true,
+          "text": "Мы используем необходимые cookie для входа и, с вашего согласия, обезличенную аналитику. Подробнее — в описании cookie.\nТолько необходимое\nПринять аналитику",
+          "cookie": ""
+        },
+        "eventsBefore": 0,
+        "clicked": true,
+        "after": {
+          "banner": false,
+          "cookie": "axiona_consent=necessary",
+          "events": 0
+        }
+      }
+    },
+    {
+      "viewport": "mobile",
+      "page": "professions",
+      "url": "https://app.axiona.world/professions",
+      "title": "Профессии — AXIONA",
+      "h1": null,
+      "overflow": false,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "imagesWithoutAlt": 0,
+      "buttonsWithoutName": 0,
+      "nestedAnchors": 12,
+      "lang": "ru",
+      "consoleErrors": [],
+      "exceptions": [
+        "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at rD (https://app.axiona.world/_next/static/chunks/87c73c54-24122e7b92478d00.js:1:35056)\n    at oq (https://app.axiona.world/_next/static/chunks/87c73c54-24122e7b92478d00.js:1:84560)\n    at ik (https://app.axiona.world/_next/static/chunks/87c73c54-24122e7b92478d00.js:1:114676)\n    at https://app.axiona.world/_next/static/chunks/87c73c54-24122e7b92478d00.js:1:110724\n    at iu (https://app.axiona.world/_next/static/chunks/87c73c54-24122e7b92478d00.js:1:110825)\n    at iX (https://app.axiona.world/_next/static/chunks/87c73c54-24122e7b92478d00.js:1:132928)\n    at MessagePort.w (https://app.axiona.world/_next/static/chunks/18-8a0e9dadb94224f5.js:1:141430)"
+      ],
+      "logErrors": [],
+      "httpErrors": [],
+      "failedRequests": [],
+      "axe": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 25,
+          "targets": [
+            "a[href$=\"uxui\"] > .coverage > .coverage-text > span:nth-child(1)",
+            "a[href$=\"uxui\"] > .coverage > .coverage-text > span:nth-child(2)",
+            "a[href$=\"product\"] > .coverage > .coverage-text > span:nth-child(1)"
+          ]
+        }
+      ],
+      "seriousViolations": 1,
+      "screenshot": "docs/12-release/reports/screenshots/production-qa-2026-11-10/mobile-professions.png",
+      "consent": null
+    },
+    {
+      "viewport": "mobile",
+      "page": "profession-uxui",
+      "url": "https://app.axiona.world/professions/uxui",
+      "title": "UX/UI-дизайнер — карта компетенций AXIONA",
+      "h1": "UX/UI-дизайнер",
+      "overflow": false,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "imagesWithoutAlt": 0,
+      "buttonsWithoutName": 0,
+      "nestedAnchors": 0,
+      "lang": "ru",
+      "consoleErrors": [],
+      "exceptions": [],
+      "logErrors": [],
+      "httpErrors": [],
+      "failedRequests": [],
+      "axe": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 27,
+          "targets": [
+            ".coverage-text > span:nth-child(1)",
+            ".coverage-text > span:nth-child(2)",
+            ".section-panel:nth-child(1) > .section-count"
+          ]
+        }
+      ],
+      "seriousViolations": 1,
+      "screenshot": "docs/12-release/reports/screenshots/production-qa-2026-11-10/mobile-profession-uxui.png",
+      "consent": null
+    },
+    {
+      "viewport": "mobile",
+      "page": "login",
+      "url": "https://app.axiona.world/login",
+      "title": "Вход — AXIONA",
+      "h1": "Карта компетенций, которая объясняет профессию",
+      "overflow": false,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "imagesWithoutAlt": 0,
+      "buttonsWithoutName": 0,
+      "nestedAnchors": 0,
+      "lang": "ru",
+      "consoleErrors": [],
+      "exceptions": [],
+      "logErrors": [],
+      "httpErrors": [],
+      "failedRequests": [],
+      "axe": [],
+      "seriousViolations": 0,
+      "screenshot": "docs/12-release/reports/screenshots/production-qa-2026-11-10/mobile-login.png",
+      "consent": null
+    },
+    {
+      "viewport": "mobile",
+      "page": "register",
+      "url": "https://app.axiona.world/register",
+      "title": "Создать аккаунт — AXIONA",
+      "h1": "Создай аккаунт в AXIONA",
+      "overflow": false,
+      "innerWidth": 360,
+      "scrollWidth": 360,
+      "imagesWithoutAlt": 0,
+      "buttonsWithoutName": 0,
+      "nestedAnchors": 0,
+      "lang": "ru",
+      "consoleErrors": [],
+      "exceptions": [],
+      "logErrors": [],
+      "httpErrors": [],
+      "failedRequests": [],
+      "axe": [
+        {
+          "id": "link-in-text-block",
+          "impact": "serious",
+          "help": "Links must be distinguishable without relying on color",
+          "nodes": 1,
+          "targets": [
+            "a[href=\"/login?returnTo=%2Fsaved\"]"
+          ]
+        }
+      ],
+      "seriousViolations": 1,
+      "screenshot": "docs/12-release/reports/screenshots/production-qa-2026-11-10/mobile-register.png",
+      "consent": null
+    },
+    {
+      "viewport": "mobile",
+      "page": "legal-privacy",
+      "url": "https://app.axiona.world/legal/privacy",
+      "title": "Правовая информация — AXIONA",
+      "h1": "Политика конфиденциальности AXIONA",
+      "overflow": false,
+      "innerWidth": 377,
+      "scrollWidth": 377,
+      "imagesWithoutAlt": 0,
+      "buttonsWithoutName": 0,
+      "nestedAnchors": 0,
+      "lang": "ru",
+      "consoleErrors": [],
+      "exceptions": [],
+      "logErrors": [],
+      "httpErrors": [],
+      "failedRequests": [],
+      "axe": [],
+      "seriousViolations": 0,
+      "screenshot": "docs/12-release/reports/screenshots/production-qa-2026-11-10/mobile-legal-privacy.png",
+      "consent": null
+    },
+    {
+      "viewport": "mobile",
+      "page": "feedback",
+      "url": "https://app.axiona.world/feedback",
+      "title": "Обратная связь — AXIONA",
+      "h1": "Что стоит исправить или добавить",
+      "overflow": false,
+      "innerWidth": 364,
+      "scrollWidth": 364,
+      "imagesWithoutAlt": 0,
+      "buttonsWithoutName": 0,
+      "nestedAnchors": 0,
+      "lang": "ru",
+      "consoleErrors": [],
+      "exceptions": [],
+      "logErrors": [],
+      "httpErrors": [],
+      "failedRequests": [],
+      "axe": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 2,
+          "targets": [
+            ".field:nth-child(3) > small",
+            ".field:nth-child(4) > small"
+          ]
+        }
+      ],
+      "seriousViolations": 1,
+      "screenshot": "docs/12-release/reports/screenshots/production-qa-2026-11-10/mobile-feedback.png",
+      "consent": null
+    },
+    {
+      "viewport": "desktop",
+      "page": "home",
+      "url": "https://app.axiona.world/",
+      "title": "AXIONA — карта компетенций, которая объясняет профессию",
+      "h1": "Карта компетенций, которая объясняет профессию",
+      "overflow": false,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "imagesWithoutAlt": 0,
+      "buttonsWithoutName": 0,
+      "nestedAnchors": 0,
+      "lang": "ru",
+      "consoleErrors": [],
+      "exceptions": [],
+      "logErrors": [],
+      "httpErrors": [],
+      "failedRequests": [],
+      "axe": [],
+      "seriousViolations": 0,
+      "screenshot": "docs/12-release/reports/screenshots/production-qa-2026-11-10/desktop-home.png",
+      "consent": {
+        "mode": "all",
+        "before": {
+          "banner": true,
+          "text": "Мы используем необходимые cookie для входа и, с вашего согласия, обезличенную аналитику. Подробнее — в описании cookie.\nТолько необходимое\nПринять аналитику",
+          "cookie": ""
+        },
+        "eventsBefore": 0,
+        "clicked": true,
+        "after": {
+          "banner": false,
+          "cookie": "axiona_consent=all",
+          "events": 1
+        }
+      }
+    },
+    {
+      "viewport": "desktop",
+      "page": "professions",
+      "url": "https://app.axiona.world/professions",
+      "title": "Профессии — AXIONA",
+      "h1": null,
+      "overflow": false,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "imagesWithoutAlt": 0,
+      "buttonsWithoutName": 0,
+      "nestedAnchors": 12,
+      "lang": "ru",
+      "consoleErrors": [],
+      "exceptions": [
+        "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at rD (https://app.axiona.world/_next/static/chunks/87c73c54-24122e7b92478d00.js:1:35056)\n    at oq (https://app.axiona.world/_next/static/chunks/87c73c54-24122e7b92478d00.js:1:84560)\n    at ik (https://app.axiona.world/_next/static/chunks/87c73c54-24122e7b92478d00.js:1:114676)\n    at https://app.axiona.world/_next/static/chunks/87c73c54-24122e7b92478d00.js:1:110724\n    at iu (https://app.axiona.world/_next/static/chunks/87c73c54-24122e7b92478d00.js:1:110825)\n    at iX (https://app.axiona.world/_next/static/chunks/87c73c54-24122e7b92478d00.js:1:132928)\n    at MessagePort.w (https://app.axiona.world/_next/static/chunks/18-8a0e9dadb94224f5.js:1:141430)"
+      ],
+      "logErrors": [],
+      "httpErrors": [],
+      "failedRequests": [],
+      "axe": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 25,
+          "targets": [
+            "a[href$=\"uxui\"] > .coverage > .coverage-text > span:nth-child(1)",
+            "a[href$=\"uxui\"] > .coverage > .coverage-text > span:nth-child(2)",
+            "a[href$=\"product\"] > .coverage > .coverage-text > span:nth-child(1)"
+          ]
+        }
+      ],
+      "seriousViolations": 1,
+      "screenshot": "docs/12-release/reports/screenshots/production-qa-2026-11-10/desktop-professions.png",
+      "consent": null
+    },
+    {
+      "viewport": "desktop",
+      "page": "profession-uxui",
+      "url": "https://app.axiona.world/professions/uxui",
+      "title": "UX/UI-дизайнер — карта компетенций AXIONA",
+      "h1": "UX/UI-дизайнер",
+      "overflow": false,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "imagesWithoutAlt": 0,
+      "buttonsWithoutName": 0,
+      "nestedAnchors": 0,
+      "lang": "ru",
+      "consoleErrors": [],
+      "exceptions": [],
+      "logErrors": [],
+      "httpErrors": [],
+      "failedRequests": [],
+      "axe": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 33,
+          "targets": [
+            ".coverage-text > span:nth-child(1)",
+            ".coverage-text > span:nth-child(2)",
+            ".section-panel:nth-child(1) > .section-count"
+          ]
+        }
+      ],
+      "seriousViolations": 1,
+      "screenshot": "docs/12-release/reports/screenshots/production-qa-2026-11-10/desktop-profession-uxui.png",
+      "consent": null
+    },
+    {
+      "viewport": "desktop",
+      "page": "login",
+      "url": "https://app.axiona.world/login",
+      "title": "Вход — AXIONA",
+      "h1": "Карта компетенций, которая объясняет профессию",
+      "overflow": false,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "imagesWithoutAlt": 0,
+      "buttonsWithoutName": 0,
+      "nestedAnchors": 0,
+      "lang": "ru",
+      "consoleErrors": [],
+      "exceptions": [],
+      "logErrors": [],
+      "httpErrors": [],
+      "failedRequests": [],
+      "axe": [],
+      "seriousViolations": 0,
+      "screenshot": "docs/12-release/reports/screenshots/production-qa-2026-11-10/desktop-login.png",
+      "consent": null
+    },
+    {
+      "viewport": "desktop",
+      "page": "register",
+      "url": "https://app.axiona.world/register",
+      "title": "Создать аккаунт — AXIONA",
+      "h1": "Создай аккаунт в AXIONA",
+      "overflow": false,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "imagesWithoutAlt": 0,
+      "buttonsWithoutName": 0,
+      "nestedAnchors": 0,
+      "lang": "ru",
+      "consoleErrors": [],
+      "exceptions": [],
+      "logErrors": [],
+      "httpErrors": [],
+      "failedRequests": [],
+      "axe": [
+        {
+          "id": "link-in-text-block",
+          "impact": "serious",
+          "help": "Links must be distinguishable without relying on color",
+          "nodes": 1,
+          "targets": [
+            "a[href=\"/login?returnTo=%2Fsaved\"]"
+          ]
+        }
+      ],
+      "seriousViolations": 1,
+      "screenshot": "docs/12-release/reports/screenshots/production-qa-2026-11-10/desktop-register.png",
+      "consent": null
+    },
+    {
+      "viewport": "desktop",
+      "page": "legal-privacy",
+      "url": "https://app.axiona.world/legal/privacy",
+      "title": "Правовая информация — AXIONA",
+      "h1": "Политика конфиденциальности AXIONA",
+      "overflow": false,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "imagesWithoutAlt": 0,
+      "buttonsWithoutName": 0,
+      "nestedAnchors": 0,
+      "lang": "ru",
+      "consoleErrors": [],
+      "exceptions": [],
+      "logErrors": [],
+      "httpErrors": [],
+      "failedRequests": [],
+      "axe": [],
+      "seriousViolations": 0,
+      "screenshot": "docs/12-release/reports/screenshots/production-qa-2026-11-10/desktop-legal-privacy.png",
+      "consent": null
+    },
+    {
+      "viewport": "desktop",
+      "page": "feedback",
+      "url": "https://app.axiona.world/feedback",
+      "title": "Обратная связь — AXIONA",
+      "h1": "Что стоит исправить или добавить",
+      "overflow": false,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "imagesWithoutAlt": 0,
+      "buttonsWithoutName": 0,
+      "nestedAnchors": 0,
+      "lang": "ru",
+      "consoleErrors": [],
+      "exceptions": [],
+      "logErrors": [],
+      "httpErrors": [],
+      "failedRequests": [],
+      "axe": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 2,
+          "targets": [
+            ".field:nth-child(3) > small",
+            ".field:nth-child(4) > small"
+          ]
+        }
+      ],
+      "seriousViolations": 1,
+      "screenshot": "docs/12-release/reports/screenshots/production-qa-2026-11-10/desktop-feedback.png",
+      "consent": null
+    }
+  ]
+}

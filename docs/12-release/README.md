@@ -14,6 +14,7 @@
 | [COS-REL-012](COS-REL-012-Delivery-Plan-and-Versioning.md) | План реализации, версионность и канбан |
 | [COS-REL-013](COS-REL-013-Beta-Backlog-Review.md) | Детализация backlog и решения по зависимостям |
 | [COS-REL-014](COS-REL-014-Project-Audit-2026-11-09.md) | Аудит состояния проекта и документации |
+| [COS-REL-015](COS-REL-015-Production-QA-Checklist.md) | Production QA checklist Public Beta (T-009) |
 | [COS-REL-009](COS-REL-009-Materials-Review-and-Confirmation.md) | Материалы: лимиты покрытия, LLM-приёмка, подтверждение ресурсов |
 
 Стратегическая рамка: [`COS-BP-005`](../08-business-plan/COS-BP-005-Product-Roadmap-AXIONA-COS.md).
@@ -31,5 +32,7 @@
 - [`reports/demo-2026-11-09.md`](reports/demo-2026-11-09.md) — demo-сборка: commit, CI, Vercel и ограничения.
 - [`reports/qa-2026-11-10.md`](reports/qa-2026-11-10.md) — QA локального контура: профиль, аккаунт, admin, audit.
 - [`reports/vds-2026-11-10.md`](reports/vds-2026-11-10.md) — VDS-контур app.axiona.world: сервер, TLS, health, backup.
+- [`reports/production-qa-2026-11-10.md`](reports/production-qa-2026-11-10.md) — production QA: смоук, мобильные, доступность, consent, дефекты и блокеры T-009.
+- [`reports/legal-gaps-2026-11-10.md`](reports/legal-gaps-2026-11-10.md) — недостающие legal-данные T-005: ОПФ, реквизиты, email-контур, согласия, уведомление РКН.
 
-Текущий статус (2026-11-09): `release:validate` проходит (292/391 связей опубликовано, 131/131 компетенция, 0 пробелов, 12 профессий, 116 источников в сборке); AI-дизайнер опубликован с полным AI-слоем (ADR-015), гейм-дизайнер собран в модели и не публикуется. Манифест — `ready`; человеческий spot-check основателя проведён, остались некритичные расхождения. Публичный запуск заблокирован до production-контура, QA и юридического sign-off.
+Текущий статус (2026-11-10): production-контур `app.axiona.world` развёрнут (T-006/T-007/T-008), `release:validate` проходит: 12 профессий, 131/131 компетенция, 292/391 связей, 116 источников, манифест `ready`. Первый production QA-прогон проведён (смоук + браузер/axe, `reports/production-qa-2026-11-10.md`): T-009 заблокирован P0 — вход по magic link редиректит на `localhost:3000`, плюс P1 по sitemap/robots, hydration и H1. Закрытая Beta на инвайтах заблокирована до фикса QA-дефектов и legal sign-off T-005 (`reports/legal-gaps-2026-11-10.md`).

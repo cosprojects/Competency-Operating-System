@@ -23,6 +23,8 @@
 |---|---|
 | `npm run typecheck` | `tsc --noEmit` |
 | `npm run test` | `node --experimental-strip-types --test tests/*.test.ts` |
+| `npm run qa:smoke` | `node scripts/qa/production-smoke.mjs` |
+| `npm run qa:browser` | `node scripts/qa/browser-a11y.mjs` |
 | `npm run changelog:collect` | `node --experimental-strip-types scripts/changelog/collect.ts` |
 | `npm run changelog:apply` | `node --experimental-strip-types scripts/changelog/apply.ts` |
 | `npm run changelog:check` | `node --experimental-strip-types scripts/changelog/apply.ts -- --check` |

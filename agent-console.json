@@ -1,0 +1,720 @@
+{
+  "version": 1,
+  "project": "AXIONA COS",
+  "description": "Агенты AXIONA Competency Operating System: сборка ресурсной базы, методология каталога, материалы, описания, релизный gate и лог обновлений.",
+  "agents": [
+    {
+      "id": "aggregation",
+      "name": "Агент агрегации",
+      "role": "aggregation · сбор данных",
+      "summary": "Собирает профессии, компетенции, источники и материалы: источники → реестр → связи → модель → review → gate. Единственная точка входа — npm run aggregate.",
+      "kind": "session",
+      "contract": "agents/AGENTS-aggregation-session.md",
+      "tags": [
+        "aggregation",
+        "sources",
+        "materials"
+      ],
+      "inputs": [
+        {
+          "path": "data/requirement-collection",
+          "label": "сбор требований"
+        },
+        {
+          "path": "docs/09-research",
+          "label": "исследования"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "data/learning-sources",
+          "label": "источники"
+        },
+        {
+          "path": "data/aggregation",
+          "label": "реестр агрегации"
+        },
+        {
+          "path": "data/competency",
+          "label": "компетенции"
+        },
+        {
+          "path": "data/competency-candidates",
+          "label": "кандидаты"
+        },
+        {
+          "path": "data/workflow",
+          "label": "артефакты контура"
+        }
+      ],
+      "commands": [
+        {
+          "id": "plan",
+          "label": "План агрегации",
+          "hint": "Без записи: что будет собрано",
+          "argv": [
+            "npm",
+            "run",
+            "aggregate",
+            "--",
+            "--profession",
+            "all"
+          ]
+        },
+        {
+          "id": "write",
+          "label": "Полный проход",
+          "hint": "Источники → реестр → связи → модель → review → gate",
+          "argv": [
+            "npm",
+            "run",
+            "aggregate",
+            "--",
+            "--profession",
+            "all",
+            "--write"
+          ],
+          "timeoutMs": 3600000,
+          "requiresEnv": [
+            "DEEPSEEK_API_KEY"
+          ]
+        },
+        {
+          "id": "write-fetch",
+          "label": "Полный проход с поиском (Brave)",
+          "hint": "Заново сходить в Brave и записать журналы источников",
+          "argv": [
+            "npm",
+            "run",
+            "aggregate",
+            "--",
+            "--profession",
+            "all",
+            "--fetch",
+            "--write"
+          ],
+          "timeoutMs": 5400000,
+          "requiresEnv": [
+            "DEEPSEEK_API_KEY",
+            "BRAVE_API_KEY"
+          ]
+        },
+        {
+          "id": "catalog",
+          "label": "Проверить каталог",
+          "argv": [
+            "npm",
+            "run",
+            "catalog:validate"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "methodologist",
+      "name": "LLM-методолог",
+      "role": "methodology · структура компетенций",
+      "summary": "Предлагает структуру компетенций и знаний, принимает материалы по Pass E. Блоки компетенций и граф не меняет.",
+      "kind": "session",
+      "contract": "agents/AGENTS-competency-methodologist.md",
+      "tags": [
+        "methodology",
+        "competency"
+      ],
+      "inputs": [
+        {
+          "path": "data/competency-candidates",
+          "label": "кандидаты тегов"
+        },
+        {
+          "path": "data/learning-sources",
+          "label": "источники"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "data/competency",
+          "label": "каталог компетенций"
+        }
+      ],
+      "dependsOn": [
+        "aggregation"
+      ],
+      "commands": [
+        {
+          "id": "catalog",
+          "label": "Проверить каталог",
+          "argv": [
+            "npm",
+            "run",
+            "catalog:validate"
+          ]
+        },
+        {
+          "id": "canonical",
+          "label": "Канонический отчёт",
+          "argv": [
+            "npm",
+            "run",
+            "canonical:report"
+          ]
+        },
+        {
+          "id": "model",
+          "label": "Собрать модель",
+          "argv": [
+            "npm",
+            "run",
+            "model:sync"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "description-writer",
+      "name": "Субагент описаний",
+      "role": "writing · описания сущностей",
+      "summary": "Пишет короткие описания профессий, компетенций, знаний и навыков строго по переданному контексту.",
+      "kind": "session",
+      "contract": "agents/AGENTS-description-writer.md",
+      "tags": [
+        "writing",
+        "descriptions"
+      ],
+      "inputs": [
+        {
+          "path": "data/competency",
+          "label": "каталог"
+        },
+        {
+          "path": "data/profile",
+          "label": "профили"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "data/descriptions",
+          "label": "описания"
+        }
+      ],
+      "dependsOn": [
+        "methodologist"
+      ],
+      "commands": [
+        {
+          "id": "generate",
+          "label": "Сгенерировать описания",
+          "argv": [
+            "npm",
+            "run",
+            "descriptions:agent"
+          ],
+          "timeoutMs": 1800000,
+          "requiresEnv": [
+            "DEEPSEEK_API_KEY"
+          ]
+        },
+        {
+          "id": "validate",
+          "label": "Проверить описания",
+          "argv": [
+            "npm",
+            "run",
+            "descriptions:validate"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "materials-agent",
+      "name": "Material Agent",
+      "role": "materials · учебные материалы",
+      "summary": "Наполняет accepted-компетенции материалами: метаданные, сниппеты, лицензии и цены. Не меняет каталог и не принимает материалы.",
+      "kind": "session",
+      "contract": "agents/AGENTS-material-agent.md",
+      "tags": [
+        "materials",
+        "aggregation"
+      ],
+      "inputs": [
+        {
+          "path": "data/competency",
+          "label": "accepted-компетенции"
+        },
+        {
+          "path": "data/learning-sources",
+          "label": "источники"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "data/materials-agent",
+          "label": "журнал материалов"
+        },
+        {
+          "path": "data/reviews",
+          "label": "review-очередь"
+        }
+      ],
+      "dependsOn": [
+        "aggregation"
+      ],
+      "commands": [
+        {
+          "id": "queue",
+          "label": "Материалы: очередь",
+          "argv": [
+            "npm",
+            "run",
+            "materials:agent:queue",
+            "--",
+            "--domain",
+            "it",
+            "--profession",
+            "uxui",
+            "--per-competency",
+            "1",
+            "--classify"
+          ],
+          "hint": "Кандидаты по accepted-компетенциям профессии (по умолчанию uxui)",
+          "timeoutMs": 3600000,
+          "requiresEnv": [
+            "DEEPSEEK_API_KEY"
+          ]
+        },
+        {
+          "id": "review",
+          "label": "Материалы: ревью",
+          "argv": [
+            "npm",
+            "run",
+            "materials:agent:review",
+            "--",
+            "--domain",
+            "it",
+            "--profession",
+            "uxui"
+          ],
+          "timeoutMs": 1800000,
+          "requiresEnv": [
+            "DEEPSEEK_API_KEY"
+          ]
+        },
+        {
+          "id": "verify",
+          "label": "Материалы: верификация",
+          "argv": [
+            "npm",
+            "run",
+            "materials:verify",
+            "--",
+            "--domain",
+            "it",
+            "--profession",
+            "uxui"
+          ],
+          "timeoutMs": 1800000
+        },
+        {
+          "id": "accept",
+          "label": "Материалы: приёмка в каталог",
+          "hint": "Только принятые после verify материалы",
+          "argv": [
+            "npm",
+            "run",
+            "materials:accept",
+            "--",
+            "--journal",
+            "data/materials-agent/it-uxui-verified.json",
+            "--min-relevance",
+            "0.7",
+            "--write"
+          ],
+          "timeoutMs": 600000
+        },
+        {
+          "id": "coverage",
+          "label": "Покрытие материалами",
+          "argv": [
+            "npm",
+            "run",
+            "materials:coverage",
+            "--",
+            "--profession",
+            "uxui",
+            "--report"
+          ]
+        },
+        {
+          "id": "daily",
+          "label": "Дневной добор (один материал)",
+          "hint": "Сам выбирает слот «профессия × компетенция × формат»",
+          "argv": [
+            "npm",
+            "run",
+            "materials:daily",
+            "--",
+            "--write"
+          ],
+          "timeoutMs": 1800000,
+          "requiresEnv": [
+            "DEEPSEEK_API_KEY"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "release-gate",
+      "name": "Релизный gate",
+      "role": "release · приёмка и публикация",
+      "summary": "Проводит контент через приёмку: отчёт по релизу, валидация, сборка публикации и подготовка публикаций Beta 1.",
+      "kind": "command",
+      "contract": "",
+      "tags": [
+        "release",
+        "quality-gate"
+      ],
+      "inputs": [
+        {
+          "path": "data/descriptions",
+          "label": "описания"
+        },
+        {
+          "path": "data/materials-agent",
+          "label": "материалы"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "release",
+          "label": "релизные артефакты"
+        }
+      ],
+      "dependsOn": [
+        "materials-agent",
+        "description-writer"
+      ],
+      "commands": [
+        {
+          "id": "report",
+          "label": "Отчёт по релизу",
+          "argv": [
+            "npm",
+            "run",
+            "release:report"
+          ]
+        },
+        {
+          "id": "validate",
+          "label": "Валидация релиза",
+          "argv": [
+            "npm",
+            "run",
+            "release:validate:draft"
+          ]
+        },
+        {
+          "id": "build",
+          "label": "Собрать релиз",
+          "hint": "Полная сборка Beta 1",
+          "argv": [
+            "npm",
+            "run",
+            "release:build:draft"
+          ],
+          "timeoutMs": 3600000
+        },
+        {
+          "id": "promote",
+          "label": "Публикация в продукт",
+          "hint": "Пересобирает публичный контент и штампует метаданные публикации",
+          "argv": [
+            "npm",
+            "run",
+            "release:promote",
+            "--",
+            "--release",
+            "beta-1"
+          ],
+          "timeoutMs": 1800000
+        },
+        {
+          "id": "promote-dry-run",
+          "label": "Проверить публикацию (dry-run)",
+          "hint": "Прогоняет gate и сборку контента без записи файлов",
+          "argv": [
+            "npm",
+            "run",
+            "release:promote",
+            "--",
+            "--release",
+            "beta-1",
+            "--dry-run"
+          ],
+          "timeoutMs": 600000
+        },
+        {
+          "id": "publications",
+          "label": "Список публикаций",
+          "argv": [
+            "npm",
+            "run",
+            "release:publications"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "changelog",
+      "name": "Агент лога обновлений",
+      "role": "changelog · коммуникация",
+      "summary": "Собирает дайджест рабочей сессии из DSH и git и обновляет блок «Лог обновлений» на главной. Запускается только по явной команде.",
+      "kind": "session",
+      "contract": "agents/AGENTS-changelog-session.md",
+      "tags": [
+        "changelog",
+        "web"
+      ],
+      "inputs": [
+        {
+          "path": ".changelog",
+          "label": "состояние лога"
+        },
+        {
+          "path": "apps/web/src/content",
+          "label": "контент главной"
+        }
+      ],
+      "outputs": [
+        {
+          "path": ".changelog",
+          "label": "дайджесты и state"
+        },
+        {
+          "path": "apps/web/src/content/changelog.ts",
+          "label": "лента на главной"
+        }
+      ],
+      "commands": [
+        {
+          "id": "collect",
+          "label": "Собрать дайджест",
+          "argv": [
+            "npm",
+            "run",
+            "changelog:collect"
+          ]
+        },
+        {
+          "id": "check",
+          "label": "Проверить лог",
+          "argv": [
+            "npm",
+            "run",
+            "changelog:check"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "workflow",
+      "name": "Контур агентов",
+      "role": "workflow · оркестрация",
+      "summary": "Контур выполнения стадий: артефакты, приёмка материалов и руки-офф между агентами. CLI — точка входа для прогонов.",
+      "kind": "command",
+      "contract": "src/methodology/v1/workflow/index.ts",
+      "tags": [
+        "workflow",
+        "orchestration"
+      ],
+      "inputs": [
+        {
+          "path": "data/workflow/attached-materials.json",
+          "label": "прикреплённые материалы"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "data/workflow/artifacts",
+          "label": "артефакты стадий"
+        }
+      ],
+      "dependsOn": [
+        "aggregation"
+      ],
+      "commands": [
+        {
+          "id": "run",
+          "label": "Прогон контура",
+          "argv": [
+            "npm",
+            "run",
+            "run:cli"
+          ],
+          "timeoutMs": 3600000
+        },
+        {
+          "id": "shadow",
+          "label": "Shadow review",
+          "argv": [
+            "npm",
+            "run",
+            "review:shadow"
+          ]
+        }
+      ]
+    }
+  ],
+  "pipeline": {
+    "title": "Полный цикл: источники → материалы → релиз",
+    "description": "Один прогон от сбора источников до материалов в каталоге и релизного gate: агрегация контента, затем добор, проверка и приёмка материалов, затем отчёт по релизу. Поиск в Brave и публикация — отдельные шаги «по кнопке».",
+    "stopOnFailure": true,
+    "stages": [
+      {
+        "id": "aggregate",
+        "title": "Агрегация и сборка контента",
+        "what": "Берёт сохранённые журналы источников и доводит базу до проверенного контента: ремонт связей → модель → описания → review источников → покрытие → release gate → черновая сборка. Без журналов шаг источников пропускается — тогда сначала нужен прогон с поиском.",
+        "agent": "aggregation",
+        "command": "write",
+        "alternate": {
+          "label": "С поиском в Brave",
+          "command": "write-fetch"
+        },
+        "substeps": [
+          "sources:expand",
+          "sources:repair",
+          "model:sync",
+          "descriptions:agent",
+          "reviews:decide",
+          "learning:map",
+          "learning:aggregate",
+          "release:validate",
+          "release:build"
+        ],
+        "produces": [
+          {
+            "path": "data/learning-sources",
+            "label": "реестр источников"
+          },
+          {
+            "path": "data/aggregation",
+            "label": "отчёт агрегации"
+          },
+          {
+            "path": "data/competency",
+            "label": "каталог компетенций"
+          },
+          {
+            "path": "data/descriptions",
+            "label": "описания"
+          }
+        ]
+      },
+      {
+        "id": "materials-queue",
+        "title": "Материалы: очередь кандидатов",
+        "what": "Собирает кандидатов-материалы по accepted-компетенциям профессии из реестра источников. Домен и профессия заданы в команде (agent-console.json → materials-agent → queue).",
+        "agent": "materials-agent",
+        "command": "queue",
+        "substeps": [
+          "select accepted competencies",
+          "search sources",
+          "classify candidates"
+        ],
+        "produces": [
+          {
+            "path": "data/materials-agent",
+            "label": "журнал очереди"
+          }
+        ]
+      },
+      {
+        "id": "materials-review",
+        "title": "Материалы: ревью кандидатов",
+        "what": "Оценивает полезность кандидатов для освоения компетенции: relevance, формат, актуальность. Спорное уходит в rejected с причиной.",
+        "agent": "materials-agent",
+        "command": "review",
+        "produces": [
+          {
+            "path": "data/materials-agent",
+            "label": "журнал ревью"
+          }
+        ]
+      },
+      {
+        "id": "materials-verify",
+        "title": "Материалы: верификация ссылок",
+        "what": "Проверяет доступность ссылок и метаданные без LLM. Результат — verified-журнал для приёмки.",
+        "agent": "materials-agent",
+        "command": "verify",
+        "produces": [
+          {
+            "path": "data/materials-agent/it-uxui-verified.json",
+            "label": "verified-журнал"
+          }
+        ]
+      },
+      {
+        "id": "materials-accept",
+        "title": "Материалы: приёмка в каталог",
+        "what": "Принимает материалы с relevance ≥ 0.7 в каталог. Это и есть «добавление материалов» в продукт.",
+        "agent": "materials-agent",
+        "command": "accept",
+        "produces": [
+          {
+            "path": "data/materials-agent",
+            "label": "каталог материалов"
+          }
+        ]
+      },
+      {
+        "id": "materials-coverage",
+        "title": "Покрытие материалами",
+        "what": "Считает дефицит форматов по компетенциям — план для следующих доборов.",
+        "agent": "materials-agent",
+        "command": "coverage",
+        "produces": [
+          {
+            "path": "data/materials-agent",
+            "label": "coverage-state"
+          }
+        ]
+      },
+      {
+        "id": "release-report",
+        "title": "Релизный отчёт и gate",
+        "what": "Собирает отчёт по релизу beta-1: пробелы, связи, компетенции и материалы. Показывает, готов ли контент к публикации.",
+        "agent": "release-gate",
+        "command": "report",
+        "produces": [
+          {
+            "path": "release",
+            "label": "релизные артефакты"
+          }
+        ]
+      },
+      {
+        "id": "publish",
+        "title": "Публикация в продукт",
+        "what": "Пересобирает публичный контент и штампует метаданные публикации. Шаг локальный: пишет apps/web/src/content/generated и release/publications — git-коммит и деплой на Vercel остаются отдельным ручным шагом.",
+        "agent": "release-gate",
+        "command": "promote",
+        "optional": true,
+        "produces": [
+          {
+            "path": "apps/web/src/content/generated",
+            "label": "контент сайта"
+          },
+          {
+            "path": "release/publications",
+            "label": "публикации"
+          }
+        ],
+        "alternate": {
+          "label": "Проверить (dry-run)",
+          "command": "promote-dry-run"
+        }
+      }
+    ]
+  }
+}

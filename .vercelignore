@@ -1,0 +1,7 @@
+.tmp
+node_modules
+data
+docs/design
+.git
+.changelog
+apps/web/.next

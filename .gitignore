@@ -69,3 +69,6 @@ tasks/.env.local
 data/workflow/
 # артефакты публикаций генерируются прогоном (в проде — объектное хранилище)
 release/publications/
+
+# Журнал запусков Agent Console: рабочее состояние, не контент
+.agent-console/

@@ -7,6 +7,7 @@ WORKDIR /app
 ENV NEXT_TELEMETRY_DISABLED=1
 COPY package.json ./
 COPY apps/web/package.json apps/web/package.json
+RUN apt-get update && apt-get install -y --no-install-recommends openssl && rm -rf /var/lib/apt/lists/*
 RUN npm install --no-audit --no-fund
 COPY . .
 RUN npm run db:generate
@@ -15,6 +16,7 @@ RUN npm run ${RELEASE_BUILD}
 RUN npm --workspace apps/web run build
 
 FROM node:24-bookworm-slim AS runner
+RUN apt-get update && apt-get install -y --no-install-recommends openssl && rm -rf /var/lib/apt/lists/*
 WORKDIR /app/apps/web
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1

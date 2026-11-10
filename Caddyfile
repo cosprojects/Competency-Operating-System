@@ -1,3 +1,8 @@
+{
+	email avertinoave@gmail.com
+	acme_ca https://acme-v02.api.letsencrypt.org/directory
+}
+
 app.axiona.world {
 	encode zstd gzip
 

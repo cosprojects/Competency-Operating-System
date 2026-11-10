@@ -1168,7 +1168,7 @@
       "version": "v0.2.0",
       "title": "Phase 0: capabilities, audit и защита админки",
       "description": "Ввести единый слой проверки прав и журнал админ-действий без таблицы UserRole.",
-      "context": "Capability-слой и AdminAudit реализованы: access.ts, access-core.ts, audit.ts, admin layout, users/materials. Добавлены unit-тесты access-core; осталось проверить audit на реальной БД и подтвердить acceptance.",
+      "context": "Capability-слой и AdminAudit реализованы и проверены на локальном SQLite-контуре 2026-11-10: owner/user redirects, admin pages 200, feedback.status.update попал в AdminAudit.",
       "deliverable": "lib/access.ts с can/requireCapability, AdminAudit в Prisma, capability-проверки на /admin/* и /api/admin/*, audit для feedback/source-review.",
       "outOfScope": [
         "UserRole и выдача ролей",
@@ -1188,7 +1188,7 @@
       "priority": "P0",
       "area": "Infra",
       "stage": "I",
-      "status": "Review",
+      "status": "Done",
       "labels": [],
       "deferred": false,
       "issueNumber": 39,

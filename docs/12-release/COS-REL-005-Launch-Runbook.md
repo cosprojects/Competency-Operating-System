@@ -117,7 +117,7 @@ AUTH_REGISTRATION_DISABLED=0
 
 ## 5. Email
 
-1. Для продукта на `app.axiona.world` — РФ-провайдер (Yandex 360/Unisender). Адаптер один: `EMAIL_API_URL`.
+1. Для продукта на `app.axiona.world` выбран Resend: `EMAIL_API_URL=https://api.resend.com/emails`, `EMAIL_API_TOKEN` (Sending access), `EMAIL_FROM=AXIONA <no-reply@app.axiona.world>`. Домен `app.axiona.world` Verified в Resend; magic link доставлен 2026-11-10.
 2. Создать `no-reply@`, `support@`, `privacy@` на домене контура.
 3. Настроить SPF (`v=spf1 include:... ~all`), DKIM, DMARC (`p=quarantine`) для домена контура.
 4. Отправить тестовые magic link на Gmail, Яндекс, Mail.ru; проверить папку спама.

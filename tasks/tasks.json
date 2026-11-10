@@ -245,7 +245,7 @@
       "priority": "P0",
       "area": "Infra",
       "stage": "I",
-      "status": "In Progress",
+      "status": "Done",
       "labels": [],
       "acceptance": [
         "HTTPS/HSTS",
@@ -255,7 +255,7 @@
       ],
       "issueNumber": 6,
       "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/6",
-      "context": "DNS app.axiona.world → VDS и production TLS уже работают. Осталось настроить email-провайдера и проверить magic link.",
+      "context": "app.axiona.world: DNS A, production TLS, Resend domain Verified, EMAIL_API_URL/TOKEN/FROM настроены; magic link доставлен, владелец вошёл, /admin доступен; регистрация снова закрыта.",
       "deliverable": "HTTPS app.axiona.world, SPF/DKIM/DMARC и доставка magic link.",
       "outOfScope": [
         "Маркетинговые рассылки"
@@ -273,7 +273,7 @@
       "priority": "P0",
       "area": "Infra",
       "stage": "I",
-      "status": "Backlog",
+      "status": "Done",
       "labels": [],
       "acceptance": [
         "release:validate PASS",
@@ -284,7 +284,7 @@
       ],
       "issueNumber": 7,
       "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/7",
-      "context": "Продукт собирается из ready-контента и разворачивается на VDS в Москве (ADR-025); Vercel остаётся для корпоративного сайта и demo без ПДн.",
+      "context": "Production deploy на VDS app.axiona.world: Docker-образ с public assets, PostgreSQL 16, миграции, Caddy/TLS, health 200, логи; публичные страницы и /admin работают.",
       "deliverable": "Production deploy на app.axiona.world: миграции, health, мониторинг.",
       "outOfScope": [
         "Новые функции"

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { useRouter } from "next/navigation";
@@ -160,6 +161,9 @@ export function AccountDialog({
               </button>
             </div>
 
+            <Link className="button secondary block account-action" href="/profile" onClick={onClose}>
+              Открыть профиль
+            </Link>
             <form action="/api/auth/logout" method="post">
               <button className="button secondary block account-action" type="submit">
                 Выйти из аккаунта

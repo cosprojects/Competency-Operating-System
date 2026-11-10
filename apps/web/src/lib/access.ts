@@ -1,39 +1,15 @@
 import { redirect } from "next/navigation";
 import { getCurrentUser, isAdminEmail } from "./auth";
+import { capabilitiesForOwner, type Capability } from "./access-core";
+
+export type { Capability };
 
 /**
  * Capability-слой доступа (COS-ARCH-173, T-040, фаза 0).
- * Роль не проверяется напрямую: решение принимает capability.
+ * Чистые правила — в `access-core.ts`; здесь текущий пользователь и redirect.
  */
-export type Capability =
-  | "account:self"
-  | "feedback:create"
-  | "feedback:read"
-  | "feedback:write"
-  | "metrics:read"
-  | "users:read"
-  | "users:manage"
-  | "source-review:moderate"
-  | "audit:read";
-
-const OWNER_CAPABILITIES: Capability[] = [
-  "account:self",
-  "feedback:create",
-  "feedback:read",
-  "feedback:write",
-  "metrics:read",
-  "users:read",
-  "users:manage",
-  "source-review:moderate",
-  "audit:read",
-];
-
-const USER_CAPABILITIES: Capability[] = ["account:self", "feedback:create"];
-
 export function capabilitiesFor(email: string | null | undefined): Capability[] {
-  if (!email) return [];
-  if (isAdminEmail(email)) return OWNER_CAPABILITIES;
-  return USER_CAPABILITIES;
+  return capabilitiesForOwner(Boolean(email && isAdminEmail(email)));
 }
 
 export function can(

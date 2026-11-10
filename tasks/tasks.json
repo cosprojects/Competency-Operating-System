@@ -1135,7 +1135,7 @@
       "version": "v0.1.0",
       "title": "Профиль пользователя и удаление аккаунта",
       "description": "Сделать приватную страницу профиля и отдельный аккаунт с безопасным удалением доступа.",
-      "context": "Аккаунт-модалка и удаление уже реализованы в WIP; страница /account осталась старой, /profile отсутствует. Нужно довести профиль и разделить аккаунт.",
+      "context": "Аккаунт-модалка и удаление через модалку реализованы; добавлен /profile с сохранениями, статусами, просмотрами и отзывами; /account отделён. Осталось визуально проверить по макету и на мобильных.",
       "deliverable": "/profile с сохранениями/прогрессом; /account только данные, сессия и удаление через модалку.",
       "outOfScope": [
         "Публичный профиль",
@@ -1147,7 +1147,7 @@
         "T-002"
       ],
       "acceptance": [
-        "/profile показывает сохранения, статусы и прогресс",
+        "/profile показывает сохранения, статусы, просмотры и последние действия",
         "/account отделён от профиля",
         "Удаление подтверждается модалкой с перечнем данных",
         "После удаления сессия и cookie очищены, пользователь выходит",
@@ -1157,7 +1157,7 @@
       "priority": "P1",
       "area": "Web",
       "stage": "I",
-      "status": "In Progress",
+      "status": "Review",
       "labels": [],
       "deferred": false,
       "issueNumber": 38,
@@ -1168,7 +1168,7 @@
       "version": "v0.2.0",
       "title": "Phase 0: capabilities, audit и защита админки",
       "description": "Ввести единый слой проверки прав и журнал админ-действий без таблицы UserRole.",
-      "context": "Capability-слой и AdminAudit реализованы в WIP: access.ts, audit.ts, admin layout, users/materials. Нужны проверки, коммит и подтверждение acceptance.",
+      "context": "Capability-слой и AdminAudit реализованы: access.ts, access-core.ts, audit.ts, admin layout, users/materials. Добавлены unit-тесты access-core; осталось проверить audit на реальной БД и подтвердить acceptance.",
       "deliverable": "lib/access.ts с can/requireCapability, AdminAudit в Prisma, capability-проверки на /admin/* и /api/admin/*, audit для feedback/source-review.",
       "outOfScope": [
         "UserRole и выдача ролей",
@@ -1183,7 +1183,7 @@
         "AdminAudit пишет actor/action/target/time",
         "Статус отзыва и блокировка материала логируются",
         "Пользователь без capability получает 401/redirect",
-        "Тесты на доступ и audit"
+        "Тесты access-core покрывают owner/user"
       ],
       "priority": "P0",
       "area": "Infra",

@@ -28,6 +28,9 @@ export default async function AccountPage() {
         <div className="eyebrow">Аккаунт</div>
         <h1>{user.email}</h1>
         <p>Аккаунт создан {user.createdAt.toISOString().slice(0, 10)}. Пароля нет: вход по ссылке из письма.</p>
+        <div className="actions" style={{ marginTop: 14 }}>
+          <Link className="button secondary small" href="/profile">Открыть профиль</Link>
+        </div>
       </div>
 
       <div className="two-col">

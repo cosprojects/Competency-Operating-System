@@ -1,8 +1,11 @@
-axiona.world {
-  encode zstd gzip
-  reverse_proxy app:3000
-}
+app.axiona.world {
+	encode zstd gzip
 
-www.axiona.world {
-  redir https://axiona.world{uri} permanent
+	header {
+		Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "strict-origin-when-cross-origin"
+	}
+
+	reverse_proxy app:3000
 }

@@ -94,7 +94,7 @@ AUTH_REGISTRATION_DISABLED=0
 2. Установить Docker и Compose; скопировать репозиторий в `/srv/axiona`; `sudo scripts/deploy/setup-swap.sh`.
 3. Заполнить `.env.production`: `APP_URL=https://app.axiona.world`, `DATABASE_URL`, `EMAIL_*`, `OWNER_EMAILS`, `LEGAL_VERSION`, на старте `AUTH_REGISTRATION_DISABLED=1`.
 4. Caddy: `app.axiona.world` → приложение; TLS автоматически. PostgreSQL 16 — в compose, порт БД не публиковать.
-5. `docker compose --env-file .env.production up -d --build`; `scripts/deploy/migrate.sh`; `GET /api/health`.
+5. `docker compose --env-file .env.production up -d --build` (APP_URL из `.env.production` передаётся и в build-arg: robots/sitemap генерируются на сборке); `scripts/deploy/migrate.sh`; `GET /api/health`.
 6. Впускать тестеров по инвайтам; публичную регистрацию открыть после legal/QA.
 7. Nightly `pg_dump` + проверка restore в отдельную БД; мониторинг health/5xx.
 8. `axiona.world` не направлять на VDS: это корпоративный сайт на Vercel.

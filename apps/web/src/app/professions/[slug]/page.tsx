@@ -102,6 +102,7 @@ export default async function ProfessionCanvasPage({
 
   const sphere = professionSphere(profession);
   const canvasProfession: CanvasProfession = {
+    id: profession.id,
     slug: profession.slug,
     title: profession.title,
     sphere: { title: sphere.title, color: sphere.color },
@@ -124,6 +125,12 @@ export default async function ProfessionCanvasPage({
   return (
     <>
       <ViewEvent name="profession_view" props={{ profession_id: profession.id }} />
+      {initialCompetencyId ? (
+        <ViewEvent
+          name="competency_view"
+          props={{ profession_id: profession.id, competency_id: initialCompetencyId }}
+        />
+      ) : null}
       <ProfessionCanvas
         profession={canvasProfession}
         competencies={competencies}

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { trackClient } from "@/lib/client-analytics";
 
 const STATUSES = ["NOT_STARTED", "LEARNING", "LEARNED"] as const;
 type Status = (typeof STATUSES)[number];
@@ -36,7 +35,6 @@ export function StatusSelect({
         body: JSON.stringify({ competencyId, status: next }),
       });
       if (!response.ok) throw new Error("Не удалось сохранить статус");
-      trackClient("study_status_change", { competency_id: competencyId, from: previous, to: next });
     } catch {
       setStatus(previous);
       setError("Не удалось сохранить статус. Попробуйте ещё раз.");

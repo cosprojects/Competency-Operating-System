@@ -1,10 +1,10 @@
 ---
 id: COS-REL-004
 title: Аналитика и обратная связь Beta 1
-version: 1.1.0
+version: 1.1.1
 status: Draft
 owner: Product Team
-last_updated: 2026-11-05
+last_updated: 2026-11-10
 references:
   - COS-REL-000
   - COS-REL-003
@@ -25,7 +25,7 @@ references:
 
 | Событие | Момент | Параметры | Назначение |
 |---|---|---|---|
-| `page_view` | Загрузка страницы | `path`, `locale`, `referrer_type` | Входящий интерес |
+| `page_view` | Загрузка страницы | `path`, `locale`, `referrer_type`, `utm_*`, `referrer_host`, `landing_variant` | Входящий интерес и атрибуция |
 | `profession_view` | Открытие профессии | `profession_id` | Востребованные направления |
 | `competency_view` | Открытие компетенции | `profession_id`, `competency_id` | Интерес к составу |
 | `source_click` | Переход к материалу | `competency_id`, `source_id`, `source_kind`, `access` | Интерес к материалам |
@@ -36,12 +36,14 @@ references:
 | `study_status_change` | Смена статуса | `competency_id`, `from`, `to` | Использование развития |
 | `feedback_open` | Открытие формы | `context`, `target_type?` | Активность обратной связи |
 | `feedback_submit` | Отправка | `feedback_type`, `target_type?`, `has_rating`, `has_comment` | Объём и типы |
-| `return_visit` | Повторная сессия | `days_since_signup` | Удержание |
+| `return_visit` | Повторная сессия | `days_since_signup` | Удержание; событие зарезервировано, 7-дневный возврат считается по событиям + `User.createdAt` |
+| `cta_click` | Клик по CTA на лендинге/оффере | `cta_id`, `cta_target`, `landing_variant`, `page` | Проверка оффера и лендинга |
 
 Правила:
 - `path` — без query-параметров и email.
-- `referrer_type` — `internal` / `external` / `none`; не сохраняем полный referrer.
+- `referrer_type` — `internal` / `external` / `none`; не сохраняем полный referrer. `referrer_host` — только домен.
 - `source_id` — ID реестра, не URL с query.
+- `utm_*` и `landing_variant` — обезличенные метки, без email; `path` — без query.
 - `props` валидируется allowlist; неизвестные поля отбрасываются.
 - Событие без согласия не пишется; серверные security-логи не являются аналитикой.
 - `signup_start` — только осознанный старт регистрации с `/register`; повторный вход через `/login` его не пишет.
@@ -57,7 +59,9 @@ references:
 | Открыли компетенцию | Уникальные `anonId/userId` с `competency_view` | Посетители | Один пользователь считается один раз |
 | Открыли материал | Уникальные `userId` с `source_click` | Зарегистрированные | Материал за гейтом |
 | Сохранили | Уникальные `userId` с `favorite_add` | Зарегистрированные | Хотя бы одно сохранение |
-| 7-дневный возврат | Зарегистрированные с активностью на 7–14 день | Зарегистрированные ≥7 дней назад | Малая выборка |
+| 7-дневный возврат | Пользователи с событием через ≥7 дней после регистрации | Зарегистрированные ≥7 дней назад | Малая выборка; считается из событий |
+| CTA-клик | Уникальные `anonId/userId` с `cta_click` | Посетители | Вариант лендинга виден в `props.landing_variant` |
+| Атрибуция | `page_view` с `utm_source/medium` и `landing_variant` | — | Только согласившиеся; первый визит |
 | Обратная связь | Количество и типы `feedback_submit` | — | Смотреть тексты, не только числа |
 
 Отчёт: `npm run metrics:report -- --days 30 --write` или админ-страница `/admin/metrics`. В отчёте всегда указывать размер выборки и период.

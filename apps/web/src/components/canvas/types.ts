@@ -33,6 +33,7 @@ export interface CanvasCompetency {
 }
 
 export interface CanvasProfession {
+  id: string;
   slug: string;
   title: string;
   titleEn?: string;

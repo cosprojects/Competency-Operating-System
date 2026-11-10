@@ -137,6 +137,7 @@ export const EVENT_NAMES = [
   "return_visit",
   "source_view_submit",
   "account_email_change",
+  "cta_click",
 ] as const;
 
 export type EventName = (typeof EVENT_NAMES)[number];
@@ -162,6 +163,16 @@ const EVENT_PROP_KEYS = new Set([
   "action",
   "reason",
   "days_since_signup",
+  "utm_source",
+  "utm_medium",
+  "utm_campaign",
+  "utm_content",
+  "utm_term",
+  "referrer_host",
+  "landing_variant",
+  "cta_id",
+  "cta_target",
+  "page",
 ]);
 
 export const eventSchema = z.object({

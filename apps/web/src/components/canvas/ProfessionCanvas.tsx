@@ -15,6 +15,7 @@ import { FeedbackTrigger } from "@/components/feedback/FeedbackTrigger";
 import { IconCloseSquare, IconStar } from "@/components/icons";
 import { SaveButton } from "@/components/SaveButton";
 import { competencyMatches, competencyMeta, countLabel, normalizeQuery } from "@/lib/content";
+import { trackClient } from "@/lib/client-analytics";
 import { sphereBadgeStyle } from "@/lib/spheres";
 import type { GraphMode, GraphNodeInput } from "@/lib/graph-layout";
 
@@ -97,6 +98,10 @@ export function ProfessionCanvas({
   const select = useCallback(
     (id: string, options: { scroll?: boolean; focusGraph?: boolean } = {}) => {
       setSelectedId(id);
+      trackClient("competency_view", {
+        profession_id: profession.id,
+        competency_id: id,
+      });
       if (options.scroll) scrollTileIntoView(id);
       if (options.focusGraph) graphRef.current?.focus(id);
       // На узких экранах сайдбар компетенции идёт ниже канваса — подводим к нему.
@@ -110,7 +115,7 @@ export function ProfessionCanvas({
       url.searchParams.set("competency", id);
       window.history.replaceState(null, "", url);
     },
-    [scrollTileIntoView],
+    [profession.id, scrollTileIntoView],
   );
 
   const closeDetail = useCallback(() => {

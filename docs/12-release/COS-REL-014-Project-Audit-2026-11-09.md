@@ -44,7 +44,7 @@ references:
 | `npm run web:build` | PASS |
 | `npm run web:typecheck` | PASS |
 | `npm run agents:check` | PASS |
-| `npm run catalog:validate` | 135 блоков, 658 тегов, 43 материала |
+| `npm run catalog:validate` | 135 блоков, 658 тегов, 46 материалов |
 | `npm run learning:validate` | 170 источников, 133 active, 0 ошибок |
 | `npm run descriptions:validate` | 13 профессий, 132 компетенции, 658 тегов, 0 ошибок |
 | `npm run model:validate --all` | 13 профессий, 132 компетенции, 0 ошибок |
@@ -168,7 +168,7 @@ references:
 ### Готово
 
 - 12 профессий, 131 опубликованная компетенция, 292 связи; gate PASS.
-- 135 блоков, 658 тегов, 43 материала; 170 источников, 133 active.
+- 135 блоков, 658 тегов, 46 материалов; 170 источников, 133 active.
 - Приложение: профессии, компетенции, материалы, сохранения, feedback, auth, admin, registration (WIP).
 - Тесты и сборка зелёные; CI на `924be76` — success.
 

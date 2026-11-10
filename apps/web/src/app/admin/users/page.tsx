@@ -59,6 +59,10 @@ export default async function AdminUsersPage({
           Только подтверждённые адреса: аккаунт появляется после перехода по ссылке из письма.
           Удаление полное — данные не хранятся.
         </p>
+        <p className="small muted">
+          <a href="/admin/users/consents/export">Выгрузить согласия (CSV)</a> — доказательства для
+          запросов субъектов ПДн и РКН.
+        </p>
       </div>
 
       <UserInviteForm />

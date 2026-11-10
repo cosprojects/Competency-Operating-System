@@ -7,6 +7,7 @@ import {
   rateLimit,
   requestIpHash,
   safeReturnTo,
+  loginLinkTtlText,
   publicOrigin,
   sameOrigin,
   shouldSendLink,
@@ -74,7 +75,7 @@ export async function POST(request: Request) {
   const appUrl = publicOrigin(request);
   const link = new URL(`/auth/verify?token=${encodeURIComponent(raw)}`, appUrl).toString();
   try {
-    await sendMagicLink({ to: email, url: link });
+    await sendMagicLink({ to: email, url: link, expiresText: loginLinkTtlText() });
   } catch (error) {
     console.error("auth: не удалось отправить magic link", error instanceof Error ? error.message : error);
     return NextResponse.json({ error: "Не удалось отправить письмо. Попробуйте позже." }, { status: 503 });

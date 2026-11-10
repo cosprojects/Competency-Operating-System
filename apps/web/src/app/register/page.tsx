@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { LoginForm } from "@/components/LoginForm";
-import { safeReturnTo } from "@/lib/auth";
+import { loginLinkTtlText, safeReturnTo } from "@/lib/auth";
 
 export const metadata = {
   title: "Создать аккаунт — AXIONA",
@@ -43,7 +43,7 @@ export default async function RegisterPage({
           </>
         ) : (
           <>
-            <LoginForm returnTo={safeReturn} mode="register" />
+            <LoginForm returnTo={safeReturn} mode="register" linkTtlText={loginLinkTtlText()} />
             <p className="small muted" style={{ marginTop: 16 }}>
               Уже есть аккаунт?{" "}
               <Link href={`/login?returnTo=${encodeURIComponent(safeReturn)}`}>Войти</Link>

@@ -6,30 +6,47 @@ import { trackClient } from "@/lib/client-analytics";
 
 type Mode = "login" | "register";
 
-const COPY: Record<
-  Mode,
-  { title: string; description: string; submit: string; sending: string; consentVerb: string }
-> = {
-  login: {
+interface Copy {
+  title: string;
+  description: string;
+  sentNote: string;
+  submit: string;
+  sending: string;
+  consentVerb: string;
+}
+
+function copyFor(mode: Mode, ttlText: string): Copy {
+  if (mode === "register") {
+    return {
+      title: "Создай аккаунт",
+      description:
+        "Введи email — пришлём ссылку. Аккаунт создаётся при первом входе и бесплатный: без пароля и лишних анкет.",
+      sentNote: `Ссылка действует ${ttlText} и работает один раз.`,
+      submit: "Создать аккаунт",
+      sending: "Отправляем…",
+      consentVerb: "Создать аккаунт",
+    };
+  }
+  return {
     title: "Войди в AXIONA",
-    description:
-      "Введи email — пришлём ссылку для входа. Без пароля: ссылка действует 15 минут и работает один раз.",
+    description: `Введи email — пришлём ссылку для входа. Без пароля: ссылка действует ${ttlText} и работает один раз.`,
+    sentNote: `Ссылка действует ${ttlText} и работает один раз.`,
     submit: "Получить ссылку для входа",
     sending: "Отправляем…",
     consentVerb: "Войти",
-  },
-  register: {
-    title: "Создай аккаунт",
-    description:
-      "Введи email — пришлём ссылку. Аккаунт создаётся при первом входе и бесплатный: без пароля и лишних анкет.",
-    submit: "Создать аккаунт",
-    sending: "Отправляем…",
-    consentVerb: "Создать аккаунт",
-  },
-};
+  };
+}
 
-export function LoginForm({ returnTo, mode = "login" }: { returnTo: string; mode?: Mode }) {
-  const copy = COPY[mode];
+export function LoginForm({
+  returnTo,
+  mode = "login",
+  linkTtlText = "15 минут",
+}: {
+  returnTo: string;
+  mode?: Mode;
+  linkTtlText?: string;
+}) {
+  const copy = copyFor(mode, linkTtlText);
   const [email, setEmail] = useState("");
   const [website, setWebsite] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
@@ -63,8 +80,8 @@ export function LoginForm({ returnTo, mode = "login" }: { returnTo: string; mode
       <div className="auth-sent">
         <h1>Проверь почту</h1>
         <p className="auth-desc">
-          Если адрес <strong>{email}</strong> может получать письма, мы отправили ссылку. Она
-          действует 15 минут и работает один раз.
+          Если адрес <strong>{email}</strong> может получать письма, мы отправили ссылку.{" "}
+          {copy.sentNote}
         </p>
         <div className="notice info">
           Не пришло письмо? Проверь папку «Спам» или{" "}

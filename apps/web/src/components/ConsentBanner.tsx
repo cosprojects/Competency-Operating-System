@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { setAnalyticsConsent, trackClient } from "@/lib/client-analytics";
+import { getAttributionProps } from "@/lib/attribution";
 
 export function ConsentBanner() {
   const [visible, setVisible] = useState(false);
@@ -42,6 +43,26 @@ export function ConsentBanner() {
 
   if (!visible) return null;
 
+  function decide(decision: "all" | "necessary") {
+    // Cookie для UI; параллельно решение фиксируется на сервере (ConsentRecord у вошедших).
+    setAnalyticsConsent(decision);
+    void fetch("/api/consent", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ decision }),
+      keepalive: true,
+    }).catch(() => undefined);
+    if (decision === "all") {
+      trackClient("page_view", {
+        path: window.location.pathname,
+        locale: "ru",
+        referrer_type: document.referrer ? "external" : "none",
+        ...getAttributionProps(),
+      });
+    }
+    setVisible(false);
+  }
+
   return (
     <div
       className="consent-banner"
@@ -54,29 +75,10 @@ export function ConsentBanner() {
         Подробнее — <Link href="/legal/cookies">в описании cookie</Link>.
       </div>
       <div className="actions">
-        <button
-          className="button secondary small"
-          type="button"
-          onClick={() => {
-            setAnalyticsConsent("necessary");
-            setVisible(false);
-          }}
-        >
+        <button className="button secondary small" type="button" onClick={() => decide("necessary")}>
           Только необходимое
         </button>
-        <button
-          className="button small"
-          type="button"
-          onClick={() => {
-            setAnalyticsConsent("all");
-            trackClient("page_view", {
-              path: window.location.pathname,
-              locale: "ru",
-              referrer_type: document.referrer ? "external" : "none",
-            });
-            setVisible(false);
-          }}
-        >
+        <button className="button small" type="button" onClick={() => decide("all")}>
           Принять аналитику
         </button>
       </div>

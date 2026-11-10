@@ -1,7 +1,9 @@
+import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
-import { consumeLoginToken, publicOrigin, sameOrigin, setSessionCookie } from "@/lib/auth";
+import { consumeLoginToken, publicOrigin, recordAnalyticsConsent, sameOrigin, setSessionCookie } from "@/lib/auth";
 import { trackServerEvent } from "@/lib/analytics";
 import { sendWelcomeEmail } from "@/lib/email";
+import { CONSENT_COOKIE } from "@/lib/validation";
 
 function redirectTo(request: Request, path: string) {
   return NextResponse.redirect(new URL(path, publicOrigin(request)), 303);
@@ -28,6 +30,12 @@ export async function POST(request: Request) {
   }
 
   await setSessionCookie(result.sessionToken);
+
+  // Решение по аналитике, принятое до входа, переносим в аккаунт: доказательство согласия.
+  const consentDecision = (await cookies()).get(CONSENT_COOKIE)?.value;
+  if (consentDecision === "all" || consentDecision === "necessary") {
+    await recordAnalyticsConsent(result.userId, consentDecision);
+  }
 
   if (result.isNewUser) {
     // Письмо и событие не должны ломать вход: регистрация уже состоялась.

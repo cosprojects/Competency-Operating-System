@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { peekLoginToken } from "@/lib/auth";
+import { loginLinkTtlText, peekLoginToken } from "@/lib/auth";
 
 export const dynamic = "force-dynamic";
 
@@ -28,7 +28,7 @@ export default async function VerifyPage({
   }
 
   let invalid = false;
-  let expiresText = "15 минут";
+  let expiresText = loginLinkTtlText();
   try {
     const info = await peekLoginToken(token);
     if (!info || info.usedAt || info.expiresAt.getTime() <= Date.now() || info.purpose === "email_change") {

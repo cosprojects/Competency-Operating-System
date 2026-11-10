@@ -4,6 +4,7 @@ import {
   DEFAULT_LEGAL_VERSION,
   SESSION_TTL_DAYS,
   INVITE_TTL_DAYS,
+  LOGIN_TTL_DEFAULT_MINUTES,
   TOKEN_TTL_MINUTES,
   hashToken,
   newToken,
@@ -21,6 +22,7 @@ export {
   DEFAULT_LEGAL_VERSION,
   SESSION_TTL_DAYS,
   INVITE_TTL_DAYS,
+  LOGIN_TTL_DEFAULT_MINUTES,
   TOKEN_TTL_MINUTES,
   hashToken,
   newToken,
@@ -39,6 +41,62 @@ export function legalVersion(): string {
 
 export function sessionCookieName(): string {
   return SESSION_COOKIE;
+}
+
+/** Срок ссылки для входа: по умолчанию 30 дней, переопределяется LOGIN_LINK_TTL_MINUTES. */
+export function loginLinkTtlMinutes(): number {
+  const configured = Number(process.env.LOGIN_LINK_TTL_MINUTES);
+  return Number.isFinite(configured) && configured > 0 ? Math.floor(configured) : LOGIN_TTL_DEFAULT_MINUTES;
+}
+
+function plural(count: number, one: string, few: string, many: string): string {
+  const mod10 = count % 10;
+  const mod100 = count % 100;
+  if (mod10 === 1 && mod100 !== 11) return one;
+  if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return few;
+  return many;
+}
+
+/** Человеческий текст срока ссылки для писем и интерфейса. */
+export function loginLinkTtlText(): string {
+  const minutes = loginLinkTtlMinutes();
+  if (minutes >= 1440 && minutes % 1440 === 0) {
+    const days = minutes / 1440;
+    return `${days} ${plural(days, "день", "дня", "дней")}`;
+  }
+  if (minutes >= 60 && minutes % 60 === 0) {
+    const hours = minutes / 60;
+    return `${hours} ${plural(hours, "час", "часа", "часов")}`;
+  }
+  return `${minutes} ${plural(minutes, "минута", "минуты", "минут")}`;
+}
+
+/**
+ * Фиксация решения по аналитике в ConsentRecord (доказательство согласия, ч. 3 ст. 9 152-ФЗ).
+ * Вызывается из /api/consent и при входе (решение из cookie переносится в аккаунт).
+ */
+export async function recordAnalyticsConsent(
+  userId: string,
+  decision: "all" | "necessary",
+): Promise<void> {
+  const db = getDb();
+  const version = legalVersion();
+  try {
+    if (decision === "all") {
+      await db.consentRecord.upsert({
+        where: { userId_kind_version: { userId, kind: "ANALYTICS", version } },
+        update: { revokedAt: null },
+        create: { userId, kind: "ANALYTICS", version },
+      });
+      return;
+    }
+    await db.consentRecord.updateMany({
+      where: { userId, kind: "ANALYTICS", revokedAt: null },
+      data: { revokedAt: new Date() },
+    });
+  } catch (error) {
+    console.error("consent: не удалось записать решение по аналитике", error instanceof Error ? error.message : error);
+  }
 }
 
 /**
@@ -128,20 +186,32 @@ export async function createLoginToken(
 ): Promise<string> {
   const db = getDb();
   const raw = newToken();
+  const purpose = options?.purpose ?? "login";
+  const normalizedEmail = normalizeEmail(email);
   // Просроченные ссылки никому не нужны: чистим перед выпуском новой.
   await db.loginToken.deleteMany({ where: { expiresAt: { lt: new Date() } } });
+  // Новая ссылка для входа отменяет предыдущие невыбранные: старое письмо перестаёт работать.
+  if (purpose === "login") {
+    await db.loginToken.updateMany({
+      where: { email: normalizedEmail, purpose: "login", usedAt: null },
+      data: { usedAt: new Date() },
+    });
+  }
+  const ttlMs =
+    purpose === "invite"
+      ? INVITE_TTL_DAYS * 86_400_000
+      : purpose === "email_change"
+        ? TOKEN_TTL_MINUTES * 60_000
+        : loginLinkTtlMinutes() * 60_000;
   await db.loginToken.create({
     data: {
-      email: normalizeEmail(email),
+      email: normalizedEmail,
       tokenHash: hashToken(raw),
-      purpose: options?.purpose ?? "login",
+      purpose,
       ...(options?.newEmail ? { newEmail: options.newEmail } : {}),
       returnTo: returnTo ?? null,
       consentVersion: consentVersion ?? null,
-      expiresAt: new Date(
-        Date.now() +
-          (options?.purpose === "invite" ? INVITE_TTL_DAYS * 86_400_000 : TOKEN_TTL_MINUTES * 60_000),
-      ),
+      expiresAt: new Date(Date.now() + ttlMs),
     },
   });
   return raw;

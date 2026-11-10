@@ -208,7 +208,7 @@
     {
       "id": "T-006",
       "version": "v0.2.0",
-      "title": "Поднять РФ-тест: VPS и PostgreSQL",
+      "title": "Поднять VDS в Москве: app.axiona.world и PostgreSQL",
       "description": "Развернуть приложение и БД в РФ, настроить миграции и резервное копирование.",
       "priority": "P0",
       "area": "Infra",
@@ -216,15 +216,17 @@
       "status": "Backlog",
       "labels": [],
       "acceptance": [
-        "Приложение и БД в РФ",
-        "prisma migrate deploy выполнен",
-        "Ночной бэкап и восстановление проверены",
-        "health check 200"
+        "VDS со статическим IP и Ubuntu LTS",
+        "PostgreSQL 16 в контуре, порт БД не публикуется",
+        "DNS app.axiona.world → VDS, TLS работает",
+        "health check 200",
+        "Nightly pg_dump и restore проверены",
+        "Vercel demo не используется как production ПДн"
       ],
       "issueNumber": 5,
       "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/5",
-      "context": "Публичный релиз планируется в СНГ; РФ-контур — тестовый на отдельном домене (ADR-023). Нужен VPS в РФ, PostgreSQL, миграции и бэкап для обкатки MVP.",
-      "deliverable": "РФ-тест на отдельном домене: PostgreSQL, миграции, бэкап и health check.",
+      "context": "Принят ADR-025: продукт целиком на VDS в Москве, корпоративный сайт остаётся на Vercel. Нужны VDS, PostgreSQL 16, Caddy/TLS, бэкапы и мониторинг; Vercel-фронт + VDS-БД не разделяем.",
+      "deliverable": "VDS в Москве с PostgreSQL 16, Caddy/TLS, health-check, nightly backup и restore test; DNS app.axiona.world.",
       "outOfScope": [
         "Корпоративный сайт",
         "Масштабирование"
@@ -237,7 +239,7 @@
     {
       "id": "T-007",
       "version": "v0.2.0",
-      "title": "Настроить домен и email",
+      "title": "Настроить app.axiona.world и email",
       "description": "Подключить домен, HTTPS, SPF/DKIM/DMARC и проверить доставку magic link.",
       "priority": "P0",
       "area": "Infra",
@@ -252,8 +254,8 @@
       ],
       "issueNumber": 6,
       "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/6",
-      "context": "Для РФ-теста и СНГ-релиза нужны домены, HTTPS и email-провайдер; magic link не должен уходить в спам.",
-      "deliverable": "Домен, HTTPS, SPF/DKIM/DMARC и тестовая доставка.",
+      "context": "Для продукта нужен поддомен app.axiona.world на VDS; корпоративный axiona.world остаётся на Vercel. Magic link должен уходить с домена контура и не попадать в спам.",
+      "deliverable": "HTTPS app.axiona.world, SPF/DKIM/DMARC и доставка magic link.",
       "outOfScope": [
         "Маркетинговые рассылки"
       ],
@@ -265,7 +267,7 @@
     {
       "id": "T-008",
       "version": "v0.2.0",
-      "title": "Выпустить production deploy контура",
+      "title": "Запустить production deploy продукта на VDS",
       "description": "Собрать публичную версию, применить миграции и проверить health/monitoring.",
       "priority": "P0",
       "area": "Infra",
@@ -281,8 +283,8 @@
       ],
       "issueNumber": 7,
       "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/7",
-      "context": "Публичная сборка должна собираться из ready-контента и применять миграции; контур выбирается по ADR-023 (РФ-тест или СНГ-релиз).",
-      "deliverable": "Production deploy и release notes.",
+      "context": "Продукт собирается из ready-контента и разворачивается на VDS в Москве (ADR-025); Vercel остаётся для корпоративного сайта и demo без ПДн.",
+      "deliverable": "Production deploy на app.axiona.world: миграции, health, мониторинг.",
       "outOfScope": [
         "Новые функции"
       ],
@@ -1309,13 +1311,13 @@
     {
       "id": "T-045",
       "version": "v0.2.0",
-      "title": "Обновить корпоративный сайт axiona.biz",
+      "title": "Обновить корпоративный сайт: axiona.world сейчас, axiona.biz позже",
       "description": "Обновить блоки и тексты корпоративного сайта под текущее состояние продукта и бизнес-документацию.",
-      "context": "COS-WEB-001/002/004 описывают vision и старый продукт; сайт не синхронизирован с 12 профессиями, Beta и текущими claims.",
-      "deliverable": "Обновлённые блоки/тексты axiona.biz и список изменений.",
+      "context": "Корпоративный сайт сейчас на axiona.world (Vercel), продукт будет на app.axiona.world. axiona.biz куплен, но регистратор требует американский номер; перенос/делегирование решаем отдельно, поэтому обновляем текущий сайт.",
+      "deliverable": "Обновлённые блоки/тексты корпоративного сайта на axiona.world и список изменений; axiona.biz — отдельное решение.",
       "outOfScope": [
-        "Перенос продукта на axiona.world",
-        "Новый бренд"
+        "Перенос продукта на корень axiona.world",
+        "Смена регистратора axiona.biz"
       ],
       "dependsOn": [
         "T-043",
@@ -1324,8 +1326,9 @@
       "acceptance": [
         "Тексты соответствуют текущему продукту",
         "Убраны pre-development/неподтверждённые claims",
-        "Обновлены CTA и ссылки на продукт",
-        "Проверены мобильные и SEO"
+        "Обновлены CTA и ссылки на app.axiona.world",
+        "Проверены мобильные и SEO",
+        "axiona.biz не блокирует запуск"
       ],
       "priority": "P1",
       "area": "Web",

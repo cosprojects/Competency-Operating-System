@@ -1,7 +1,7 @@
 ---
 id: COS-REL-008
 title: Decision Log — AXIONA Beta 1
-version: 1.6.0
+version: 1.7.0
 status: Approved
 owner: Product Team
 last_updated: 2026-11-09
@@ -312,3 +312,22 @@ references:
 - Публичная коммуникация не должна называть AI-assisted source review «независимой экспертизой»; это owner-approved Beta-контент.
 - Расхождения фиксируются в задачах/отчётах; при критическом расхождении манифест возвращается в `draft`.
 - Фундаментальные документы (Foundation, DDD, целевая архитектура) не переписываются под Beta; обновляются release/current-state документы и фактические цифры.
+
+## ADR-025 — Продукт целиком на VDS в Москве; корпоративный сайт на Vercel
+
+**Контекст.** Продукт — SSR-монолит Next.js с Prisma/PostgreSQL, auth-cookie и server components. Вариант «Vercel-фронт + VDS-БД/вычисления» требует либо публичного доступа Vercel-функций к БД, либо отдельного API/reverse-proxy и переписывания части приложения. Для Beta это лишний риск. Владелец подтвердил: фронт продукта переезжает на VDS, сайт компании остаётся на Vercel.
+
+**Решение.**
+- `axiona.world` остаётся корпоративным сайтом на Vercel.
+- `app.axiona.world` — продуктовый контур: Next.js, PostgreSQL 16 и Caddy на VDS в Москве.
+- Vercel не используется как runtime продукта; demo на Vercel остаётся только для показа без реальных ПДн.
+- `axiona.biz` не блокирует запуск: поддомен `app.axiona.world` даёт единый домен; `axiona.biz` решается отдельно (регистратор/американский номер).
+- Разделение фронта и API/БД — возможный поздний шаг после product-market fit, не часть MVP.
+
+**Следствия.**
+- Один origin для SSR, auth-cookie, API, Prisma и БД: без CORS и межконтурных запросов.
+- Данные и вычисления в РФ; проще legal/РКН для тестового контура.
+- Нужны VDS, статический IP, PostgreSQL, Caddy, TLS, firewall, nightly backup + restore test, мониторинг.
+- `APP_URL=https://app.axiona.world`; на старте `AUTH_REGISTRATION_DISABLED=1`, доступ по инвайтам.
+- Vercel demo не считается production-контуром ПДн.
+- Позже можно поменять местами корень и `company.`/`axiona.biz`; это отдельное решение с 301.

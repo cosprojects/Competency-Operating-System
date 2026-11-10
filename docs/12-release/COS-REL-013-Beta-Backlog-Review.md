@@ -71,9 +71,9 @@ references:
 | ID | Задача | Зависит от | Результат | Ключевые acceptance |
 |---|---|---|---|---|
 | T-005 | Юридический контур | — | Опубликованные документы, реквизиты, РКН | Юрист, реквизиты ИП, consent, РКН, ссылки |
-| T-006 | РФ-хостинг и PostgreSQL | T-005 | Приложение + БД + миграции + бэкап | РФ-контур, migrate deploy, restore, health |
-| T-007 | Домен и email | T-006 | HTTPS, SPF/DKIM/DMARC, доставка | Gmail/Яндекс/Mail.ru, support@/privacy@ |
-| T-008 | Production deploy | T-006, T-007 | Публичная сборка и release notes | release:validate/build, миграции, health, логи |
+| T-006 | VDS в Москве и PostgreSQL | T-005 | VDS + PostgreSQL + Caddy + бэкап; app.axiona.world | migrate deploy, restore, health, DNS/TLS |
+| T-007 | app.axiona.world и email | T-006 | HTTPS, SPF/DKIM/DMARC, доставка | Gmail/Яндекс/Mail.ru, support@/privacy@ |
+| T-008 | Production deploy на VDS | T-006, T-007 | Публичная сборка и release notes | release:validate/build, миграции, health, логи |
 | T-009 | Public Beta QA | T-008 | P0 checklist и отчёт | вход, сохранения, статусы, отзывы, аналитика, мобильные, legal |
 | T-010 | Аналитика и consent | T-008 | Проверенные события и отчёт | события после consent, отказ, сверка метрик |
 | T-011 | Триаж обратной связи | T-008 | Регламент и шаблон ответа | ответственный, CSV/админка, статусы, еженедельный обзор |
@@ -81,7 +81,7 @@ references:
 | T-040 | Phase 0: capabilities, audit и защита админки | — | `lib/access.ts`, `AdminAudit`, capability-проверки | OWNER по email, audit, admin routes защищены |
 | T-043 | Обновить бизнес-план и Beta-addendum | T-013 | BP-003/006/007/009 под текущий продукт | Цифры и два контура согласованы |
 | T-044 | Собрать pitch deck и презентацию | T-043 | PPTX/PDF deck и сценарий | Факты и ограничения честные |
-| T-045 | Обновить корпоративный сайт axiona.biz | T-043, T-044 | Блоки и тексты сайта | Нет старых claims |
+| T-045 | Обновить корпоративный сайт (axiona.world сейчас, axiona.biz позже) | T-043, T-044 | Блоки и тексты на axiona.world | Нет старых claims; axiona.biz не блокирует |
 | T-013 | Выпустить v0.2.0 | T-001, T-002, T-003, T-005–T-012, T-039, T-040, T-041, T-042 | ready-манифест, release notes, тег | P0 Done, validate/build, тег, notes |
 
 ## 5. Граф зависимостей

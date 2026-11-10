@@ -1,7 +1,7 @@
 ---
 id: COS-ARCH-173
 title: Access control, роли и видимость данных
-version: 1.0.0
+version: 1.0.1
 status: Approved
 owner: Architecture Team
 last_updated: 2026-10-28
@@ -160,6 +160,8 @@ Capabilities — атомарные проверки. Роли собирают�
 5. Все мутации админа пишут audit.
 
 Почему так: email-подход уже есть; мы не ломаем его, но убираем разброс проверок и получаем журнал действий.
+
+**Статус 2026-11-05:** фаза 0 реализована частично — есть `apps/web/src/lib/access.ts` (`can`, `requireCapability`, `requireApiCapability`), `AdminAudit` и проверки на `/admin/*` и `/api/admin/*`; `OWNER_EMAILS` работает с fallback на `ADMIN_EMAILS`. Таблица `UserRole` по-прежнему не вводится.
 
 ### Фаза 1 — поддержка/второй админ
 

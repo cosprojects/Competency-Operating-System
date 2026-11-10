@@ -126,6 +126,45 @@ async function readLimited(response: Response): Promise<string> {
   return result;
 }
 
+const PREVIEW_HEADERS = {
+  accept: "text/html,application/xhtml+xml",
+  "accept-language": "ru,en;q=0.8",
+  "user-agent": "Mozilla/5.0 (compatible; AXIONA preview bot; +https://axiona.world)",
+};
+const MAX_REDIRECTS = 3;
+
+/**
+ * Забирает HTML, проверяя каждый редирект: `redirect: "follow"` позволил бы
+ * публичному URL увести запрос на приватный адрес (SSRF).
+ */
+async function fetchHtmlFollowingSafeRedirects(url: URL): Promise<{ response: Response; finalUrl: URL } | null> {
+  let current = url;
+  for (let hop = 0; hop <= MAX_REDIRECTS; hop += 1) {
+    const response = await fetch(current.href, {
+      redirect: "manual",
+      signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
+      headers: PREVIEW_HEADERS,
+    });
+    if ([301, 302, 303, 307, 308].includes(response.status)) {
+      const location = response.headers.get("location");
+      await response.body?.cancel().catch(() => undefined);
+      if (!location) return null;
+      let next: URL;
+      try {
+        next = new URL(location, current);
+      } catch {
+        return null;
+      }
+      const validated = normalizeUrl(next.href);
+      if (!validated) return null;
+      current = validated;
+      continue;
+    }
+    return { response, finalUrl: current };
+  }
+  return null;
+}
+
 export async function fetchLinkPreview(rawUrl: string): Promise<LinkPreview> {
   const empty: LinkPreview = { url: rawUrl };
   const url = normalizeUrl(rawUrl);
@@ -135,15 +174,12 @@ export async function fetchLinkPreview(rawUrl: string): Promise<LinkPreview> {
   if (cached && cached.expiresAt > Date.now()) return cached.preview;
 
   try {
-    const response = await fetch(url.href, {
-      redirect: "follow",
-      signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
-      headers: {
-        accept: "text/html,application/xhtml+xml",
-        "accept-language": "ru,en;q=0.8",
-        "user-agent": "Mozilla/5.0 (compatible; AXIONA preview bot; +https://axiona.world)",
-      },
-    });
+    const fetched = await fetchHtmlFollowingSafeRedirects(url);
+    if (!fetched) {
+      cache.set(url.href, { preview: empty, expiresAt: Date.now() + CACHE_TTL_MS });
+      return empty;
+    }
+    const { response, finalUrl } = fetched;
     const contentType = response.headers.get("content-type") ?? "";
     if (!response.ok || !contentType.includes("text/html")) {
       cache.set(url.href, { preview: empty, expiresAt: Date.now() + CACHE_TTL_MS });
@@ -151,7 +187,7 @@ export async function fetchLinkPreview(rawUrl: string): Promise<LinkPreview> {
     }
 
     const html = await readLimited(response);
-    const base = response.url || url.href;
+    const base = finalUrl.href;
     const meta = extractMetaTags(html);
 
     const title =

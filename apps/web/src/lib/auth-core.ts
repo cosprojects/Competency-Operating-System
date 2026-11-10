@@ -8,6 +8,8 @@ import { createHash, randomBytes } from "node:crypto";
 
 export const SESSION_TTL_DAYS = 30;
 export const TOKEN_TTL_MINUTES = 15;
+/** Приглашение живёт дольше magic link: его открывают не сразу. */
+export const INVITE_TTL_DAYS = 7;
 export const DEFAULT_LEGAL_VERSION = "1.0.0";
 
 /** Адрес приводится к нижнему регистру: «User@Example.COM» и «user@example.com» — один аккаунт. */

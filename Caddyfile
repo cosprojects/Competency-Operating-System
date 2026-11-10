@@ -6,10 +6,10 @@
 app.axiona.world {
 	encode zstd gzip
 
+	# HSTS — на уровне TLS-терминатора; XCTO/Referrer/CSP ставит Next.
 	header {
 		Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
-		X-Content-Type-Options "nosniff"
-		Referrer-Policy "strict-origin-when-cross-origin"
+		-X-Powered-By
 	}
 
 	reverse_proxy app:3000

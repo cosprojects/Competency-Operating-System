@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { requireApiCapability } from "@/lib/access";
-import { createLoginToken, normalizeEmail, sameOrigin } from "@/lib/auth";
+import { createLoginToken, normalizeEmail, publicOrigin, sameOrigin } from "@/lib/auth";
 import { getDb } from "@/lib/db";
 import { sendMagicLink } from "@/lib/email";
 import { adminUserActionSchema } from "@/lib/validation";
@@ -34,10 +34,10 @@ export async function POST(request: Request) {
     // Повторное приглашение отзывает предыдущее.
     await db.loginToken.deleteMany({ where: { email, purpose: "invite" } });
     const raw = await createLoginToken(email, "/", process.env.LEGAL_VERSION ?? "1.0.0", { purpose: "invite" });
-    const appUrl = process.env.APP_URL ?? new URL(request.url).origin;
+    const appUrl = publicOrigin(request);
     const link = new URL(`/auth/verify?token=${encodeURIComponent(raw)}`, appUrl).toString();
     try {
-      await sendMagicLink({ to: email, url: link });
+      await sendMagicLink({ to: email, url: link, expiresText: "7 дней" });
     } catch {
       return NextResponse.json({ error: "Письмо не ушло. Попробуй ещё раз" }, { status: 503 });
     }

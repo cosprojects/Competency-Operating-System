@@ -3,6 +3,7 @@ import { getDb } from "./db";
 import {
   DEFAULT_LEGAL_VERSION,
   SESSION_TTL_DAYS,
+  INVITE_TTL_DAYS,
   TOKEN_TTL_MINUTES,
   hashToken,
   newToken,
@@ -19,6 +20,7 @@ import {
 export {
   DEFAULT_LEGAL_VERSION,
   SESSION_TTL_DAYS,
+  INVITE_TTL_DAYS,
   TOKEN_TTL_MINUTES,
   hashToken,
   newToken,
@@ -37,6 +39,42 @@ export function legalVersion(): string {
 
 export function sessionCookieName(): string {
   return SESSION_COOKIE;
+}
+
+/**
+ * Публичный origin контура для абсолютных редиректов и ссылок в письмах.
+ *
+ * `request.url` в Next 15 за reverse-proxy может содержать внутренний адрес
+ * (`http://localhost:3000`), поэтому сначала берём APP_URL, затем заголовки Caddy,
+ * и только в конце — request.url. См. T-009 / F-01.
+ */
+export function publicOrigin(request: Request): string {
+  const configured = process.env.APP_URL;
+  if (configured) {
+    try {
+      return new URL(configured).origin;
+    } catch {
+      // некорректный APP_URL — пробуем заголовки ниже
+    }
+  }
+  const host = request.headers.get("x-forwarded-host") ?? request.headers.get("host");
+  if (host) {
+    const forwardedProto = request.headers.get("x-forwarded-proto");
+    let protocol = forwardedProto;
+    if (protocol !== "http" && protocol !== "https") {
+      try {
+        protocol = new URL(request.url).protocol === "https:" ? "https" : "http";
+      } catch {
+        protocol = "https";
+      }
+    }
+    return `${protocol}://${host}`;
+  }
+  try {
+    return new URL(request.url).origin;
+  } catch {
+    return "https://app.axiona.world";
+  }
 }
 
 /** OWNER_EMAILS (новый список) с fallback на ADMIN_EMAILS — этап Beta. */
@@ -100,7 +138,10 @@ export async function createLoginToken(
       ...(options?.newEmail ? { newEmail: options.newEmail } : {}),
       returnTo: returnTo ?? null,
       consentVersion: consentVersion ?? null,
-      expiresAt: new Date(Date.now() + TOKEN_TTL_MINUTES * 60_000),
+      expiresAt: new Date(
+        Date.now() +
+          (options?.purpose === "invite" ? INVITE_TTL_DAYS * 86_400_000 : TOKEN_TTL_MINUTES * 60_000),
+      ),
     },
   });
   return raw;

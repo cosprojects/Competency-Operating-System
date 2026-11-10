@@ -12,6 +12,9 @@ RUN npm install --no-audit --no-fund
 COPY . .
 RUN npm run db:generate
 ARG RELEASE_BUILD=release:build:draft
+# APP_URL нужен на этапе сборки: robots/sitemap статически генерируются с доменом контура.
+ARG APP_URL=https://app.axiona.world
+ENV APP_URL=${APP_URL}
 RUN npm run ${RELEASE_BUILD}
 RUN npm --workspace apps/web run build
 

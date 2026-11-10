@@ -16,7 +16,7 @@
   --ink: #132238;
   --ink-strong: #111827;
   --muted: #5f6f85;
-  --soft: #8a99ad;
+  --soft: #5f6f85; /* ≥4.5:1 на светлых фонах; было #8a99ad (2.9:1) */
   --placeholder: #94a3b8;
 
   --bg: #f8fafc;
@@ -1130,6 +1130,7 @@ svg {
 }
 
 .profession-tile {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -1152,7 +1153,14 @@ svg {
   transform: translateY(0) scale(0.995);
 }
 
-.profession-tile:focus-visible {
+.tile-hit {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+}
+
+.profession-tile:has(.tile-hit:focus-visible) {
   outline: 3px solid rgba(79, 70, 229, 0.25);
   outline-offset: 2px;
 }
@@ -1164,6 +1172,8 @@ svg {
 }
 
 .tile-top .tile-action {
+  position: relative;
+  z-index: 2;
   display: inline-flex;
   margin-left: auto;
 }
@@ -3737,7 +3747,8 @@ html[data-consent="pending"] .canvas-toolbar {
 
 .auth-politics a {
   color: #3730a3;
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .auth-politics a:hover {

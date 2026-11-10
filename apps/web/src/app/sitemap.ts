@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { getAllCompetencies, getProfessions } from "@/lib/content";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = process.env.APP_URL ?? "https://axiona.world";
+  const base = process.env.APP_URL ?? "https://app.axiona.world";
   const now = new Date();
   const professions = getProfessions().map((profession) => ({
     url: `${base}/professions/${profession.slug}`,

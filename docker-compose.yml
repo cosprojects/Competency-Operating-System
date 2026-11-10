@@ -31,6 +31,7 @@ services:
       context: .
       args:
         RELEASE_BUILD: ${RELEASE_BUILD:-release:build:draft}
+        APP_URL: ${APP_URL:-https://app.axiona.world}
     restart: unless-stopped
     env_file:
       - .env.production

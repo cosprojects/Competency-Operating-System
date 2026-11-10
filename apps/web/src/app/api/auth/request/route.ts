@@ -7,6 +7,7 @@ import {
   rateLimit,
   requestIpHash,
   safeReturnTo,
+  publicOrigin,
   sameOrigin,
   shouldSendLink,
 } from "@/lib/auth";
@@ -70,7 +71,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Не удалось отправить письмо. Попробуйте позже." }, { status: 503 });
   }
 
-  const appUrl = process.env.APP_URL ?? new URL(request.url).origin;
+  const appUrl = publicOrigin(request);
   const link = new URL(`/auth/verify?token=${encodeURIComponent(raw)}`, appUrl).toString();
   try {
     await sendMagicLink({ to: email, url: link });

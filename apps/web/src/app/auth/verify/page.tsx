@@ -28,10 +28,13 @@ export default async function VerifyPage({
   }
 
   let invalid = false;
+  let expiresText = "15 минут";
   try {
     const info = await peekLoginToken(token);
     if (!info || info.usedAt || info.expiresAt.getTime() <= Date.now() || info.purpose === "email_change") {
       invalid = true;
+    } else if (info.purpose === "invite") {
+      expiresText = "7 дней";
     }
   } catch {
     // Без БД (demo/preview): показываем форму, POST завершится экраном недействительной ссылки.
@@ -44,7 +47,7 @@ export default async function VerifyPage({
     <div className="auth-card">
       <h1>Подтверди вход</h1>
       <p className="muted">
-        Нажми кнопку, чтобы войти в AXIONA. Ссылка одноразовая и действует 15 минут.
+        Нажми кнопку, чтобы войти в AXIONA. Ссылка одноразовая и действует {expiresText}.
       </p>
       <form action="/api/auth/verify" method="post">
         <input type="hidden" name="token" value={token} />

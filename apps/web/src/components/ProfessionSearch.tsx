@@ -63,6 +63,7 @@ export function ProfessionSearch({
 
   return (
     <div className="search-screen">
+      <h1 className="sr-only">Профессии дизайнера</h1>
       <form className="search-bar" role="search" onSubmit={submit}>
         <input
           type="search"
@@ -99,23 +100,18 @@ export function ProfessionSearch({
               <h2 className="group-title">{group.title}</h2>
               <div className="profession-grid">
                 {group.professions.map((profession) => (
-                  <Link
-                    className="profession-tile"
-                    key={profession.slug}
-                    href={`/professions/${profession.slug}`}
-                  >
+                  <div className="profession-tile" key={profession.slug}>
+                    <Link
+                      className="tile-hit"
+                      href={`/professions/${profession.slug}`}
+                      aria-label={`Открыть профессию «${profession.title}»`}
+                    />
                     <div className="tile-top">
                       <span className="badge" style={profession.sphereStyle}>
                         {profession.sphereTitle}
                       </span>
                       <span className="tile-count">{profession.countText}</span>
-                      <span
-                        className="tile-action"
-                        onClick={(event) => {
-                          event.preventDefault();
-                          event.stopPropagation();
-                        }}
-                      >
+                      <span className="tile-action">
                         {viewer ? (
                           <SaveButton
                             variant="icon"
@@ -146,7 +142,7 @@ export function ProfessionSearch({
                         <span>{profession.percent}%</span>
                       </div>
                     </div>
-                  </Link>
+                  </div>
                 ))}
               </div>
             </section>

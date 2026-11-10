@@ -1,9 +1,11 @@
 export interface MagicLinkEmail {
   to: string;
   url: string;
+  /** Срок жизни ссылки в тексте письма: 15 минут для входа, 7 дней для приглашения. */
+  expiresText?: string;
 }
 
-export async function sendMagicLink({ to, url }: MagicLinkEmail): Promise<void> {
+export async function sendMagicLink({ to, url, expiresText = "15 минут" }: MagicLinkEmail): Promise<void> {
   const subject = "Ссылка для входа в AXIONA";
   const text = [
     "Привет!",
@@ -11,18 +13,18 @@ export async function sendMagicLink({ to, url }: MagicLinkEmail): Promise<void> 
     "Это ссылка для входа в AXIONA. Открой её:",
     url,
     "",
-    "Ссылка действует 15 минут и работает один раз.",
+    `Ссылка действует ${expiresText} и работает один раз.`,
     "Если ты не запрашивал вход — просто проигнорируй письмо.",
     "",
     "AXIONA — карта компетенций дизайнера.",
   ].join("\n");
-  const html = `<p>Привет!</p><p>Это ссылка для входа в AXIONA. Открой её:</p><p><a href="${escapeHtml(url)}">Войти в AXIONA</a></p><p>Ссылка действует 15 минут и работает один раз. Если ты не запрашивал вход — просто проигнорируй письмо.</p>`;
+  const html = `<p>Привет!</p><p>Это ссылка для входа в AXIONA. Открой её:</p><p><a href="${escapeHtml(url)}">Войти в AXIONA</a></p><p>Ссылка действует ${expiresText} и работает один раз. Если ты не запрашивал вход — просто проигнорируй письмо.</p>`;
   await sendTransactionalEmail({ to, subject, text, html });
 }
 
 /** Приветствие после создания аккаунта. Best-effort: сбой письма не ломает вход. */
 export async function sendWelcomeEmail({ to }: { to: string }): Promise<void> {
-  const appUrl = process.env.APP_URL ?? "https://axiona.world";
+  const appUrl = process.env.APP_URL ?? "https://app.axiona.world";
   const text = [
     "Привет!",
     "",

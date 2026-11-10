@@ -1,10 +1,10 @@
 import { NextResponse } from "next/server";
-import { consumeLoginToken, sameOrigin, setSessionCookie } from "@/lib/auth";
+import { consumeLoginToken, publicOrigin, sameOrigin, setSessionCookie } from "@/lib/auth";
 import { trackServerEvent } from "@/lib/analytics";
 import { sendWelcomeEmail } from "@/lib/email";
 
 function redirectTo(request: Request, path: string) {
-  return NextResponse.redirect(new URL(path, request.url), 303);
+  return NextResponse.redirect(new URL(path, publicOrigin(request)), 303);
 }
 
 export async function POST(request: Request) {

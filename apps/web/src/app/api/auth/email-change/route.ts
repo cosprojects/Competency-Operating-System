@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { hashToken, sameOrigin } from "@/lib/auth";
+import { hashToken, publicOrigin, sameOrigin } from "@/lib/auth";
 import { getDb } from "@/lib/db";
 import { trackServerEvent } from "@/lib/analytics";
 import { sendEmailChangedNotice } from "@/lib/email";
@@ -7,11 +7,11 @@ import { sendEmailChangedNotice } from "@/lib/email";
 /** Применение смены email по одноразовой ссылке. Все сессии отзываются. */
 export async function POST(request: Request) {
   if (!sameOrigin(request)) {
-    return NextResponse.redirect(new URL("/auth/link-invalid", request.url), 303);
+    return NextResponse.redirect(new URL("/auth/link-invalid", publicOrigin(request)), 303);
   }
   const form = await request.formData();
   const raw = String(form.get("token") ?? "");
-  const invalid = () => NextResponse.redirect(new URL("/auth/link-invalid", request.url), 303);
+  const invalid = () => NextResponse.redirect(new URL("/auth/link-invalid", publicOrigin(request)), 303);
   if (!raw) return invalid();
 
   const db = getDb();
@@ -48,5 +48,5 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error("email-change: не удалось уведомить старый адрес", error instanceof Error ? error.message : error);
   }
-  return NextResponse.redirect(new URL("/login?emailChanged=1", request.url), 303);
+  return NextResponse.redirect(new URL("/login?emailChanged=1", publicOrigin(request)), 303);
 }

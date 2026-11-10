@@ -67,6 +67,8 @@ npm run web:dev
 # APP_URL продукта: https://app.axiona.world
 APP_URL=https://app.axiona.world
 LEGAL_VERSION=1.0.0
+# Срок ссылки для входа: 43200 минут = 30 дней (по умолчанию в коде)
+LOGIN_LINK_TTL_MINUTES=43200
 DATABASE_URL=postgresql://...
 SESSION_SECRET=<32+ bytes>
 EMAIL_API_URL=https://provider.example/send

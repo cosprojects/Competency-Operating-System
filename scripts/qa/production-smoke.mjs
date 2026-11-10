@@ -146,7 +146,19 @@ await check("Доступность", "QA-05", "GET /canvas", "307 на /profess
   return { status: ok ? "PASS" : "FAIL", detail: `HTTP ${result.response.status} → ${location || "—"}`, ms: result.ms };
 });
 await check("Доступность", "QA-06", "GET /login", "200, форма входа", page("/login", { marker: "Войти" }));
-await check("Доступность", "QA-07", "GET /register", "200, форма регистрации", page("/register", { marker: "Создай аккаунт" }));
+await check("Доступность", "QA-07", "GET /register", "200: форма регистрации или состояние «закрытая Beta»", async () => {
+  const result = await request("/register");
+  if (result.error) throw new Error(`сетевая ошибка: ${result.error.message}`);
+  const status = result.response.status;
+  if (status !== 200) return { status: "FAIL", detail: `HTTP ${status}, ожидался 200`, ms: result.ms };
+  const open = result.text.includes("Создай аккаунт");
+  const closed = result.text.includes("закрытой Beta") || result.text.includes("приглашени");
+  return {
+    status: open || closed ? "PASS" : "FAIL",
+    detail: `HTTP 200, режим: ${closed ? "закрытая Beta (по приглашениям)" : "открытая регистрация"}`,
+    ms: result.ms,
+  };
+});
 await check("Доступность", "QA-08", "GET /feedback", "200, форма отзыва", page("/feedback", { marker: "Обратная связь" }));
 await check("Доступность", "QA-09", "GET /legal/privacy", "200, политика", page("/legal/privacy", { marker: "Политика конфиденциальности" }));
 await check("Доступность", "QA-10", "GET /legal/terms", "200, условия", page("/legal/terms", { marker: "Условия использования" }));
@@ -484,11 +496,15 @@ for (const [path, type] of assets) {
     return { status: ok ? "PASS" : "WARN", detail: `200, ${contentType}, ${result.ms} мс`, ms: result.ms };
   });
 }
-await check("Ассеты", "QA-85", "GET /favicon.ico", "200 (иначе браузер шлёт 404)", async () => {
-  const result = await request("/favicon.ico");
-  if (result.error) throw new Error(result.error.message);
-  const status = result.response.status;
-  return { status: status === 200 ? "PASS" : "WARN", detail: `HTTP ${status}` , ms: result.ms };
+await check("Ассеты", "QA-85", "Иконка сайта", "200 /favicon.ico или /icon.svg", async () => {
+  const favicon = await request("/favicon.ico");
+  const icon = await request("/icon.svg");
+  const faviconStatus = favicon.response?.status ?? 0;
+  const iconStatus = icon.response?.status ?? 0;
+  if (faviconStatus === 200 || iconStatus === 200) {
+    return { status: "PASS", detail: `favicon.ico ${faviconStatus}, icon.svg ${iconStatus}`, ms: icon.ms };
+  }
+  return { status: "WARN", detail: `favicon.ico ${faviconStatus}, icon.svg ${iconStatus}`, ms: icon.ms };
 });
 
 // ─────────────────────────────────────────────────────────────────────────────

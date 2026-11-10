@@ -315,7 +315,7 @@
       ],
       "issueNumber": 8,
       "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/8",
-      "context": "Перед приглашением людей нужно проверить основные сценарии. QA baseline 2026-11-10 на app.axiona.world: смоук 79 проверок и браузерный axe-прогон; отчёт reports/production-qa-2026-11-10.md, чек-лист COS-REL-015. Блокеры: P0 вход/выход редиректят на localhost:3000; P1 sitemap/robots на axiona.world, hydration/вложенные <a> и отсутствие H1 на /professions.",
+      "context": "Перед приглашением людей нужно проверить основные сценарии. QA baseline 2026-11-10 на app.axiona.world: смоук 79 проверок и браузерный axe-прогон; отчёт reports/production-qa-2026-11-10.md, чек-лист COS-REL-015. Блокеры: P0 вход/выход редиректят на localhost:3000; P1 sitemap/robots на axiona.world, hydration/вложенные <a> и отсутствие H1 на /professions. 2026-11-10 18:45 MSK: фиксы P0/P1 задеплоены на app.axiona.world, повторный прогон — смоук 77 PASS / 2 WARN / 0 FAIL, браузер 14/14 без critical/serious. Осталось: ручной вход по magic link и сессионные сценарии, F-11–F-14, legal sign-off T-005.",
       "deliverable": "P0 checklist (COS-REL-015) и отчёт QA (reports/production-qa-2026-11-10.md).",
       "outOfScope": [
         "Полная E2E-автоматизация"

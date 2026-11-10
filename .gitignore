@@ -72,3 +72,12 @@ release/publications/
 
 # Журнал запусков Agent Console: рабочее состояние, не контент
 .agent-console/
+
+# Неиспользуемые Figma-экспорты в public/icons: иконки интерфейса живут в icons.tsx.
+/apps/web/public/icons/09 */
+/apps/web/public/icons/Competency card/
+/apps/web/public/icons/Linear/Business, Statistic/
+/apps/web/public/icons/Linear/Essentional, UI/
+/apps/web/public/icons/Linear/Notes/
+/apps/web/public/icons/Linear/Users/
+/apps/web/public/brand/Footer/logo 1.svg

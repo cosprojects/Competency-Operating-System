@@ -3,7 +3,7 @@ import { AppShell } from "@/components/AppShell";
 import { ConsentBanner } from "@/components/ConsentBanner";
 import { PageViewTracker } from "@/components/PageViewTracker";
 import { FeedbackProvider } from "@/components/feedback/FeedbackProvider";
-import { getCurrentUser } from "@/lib/auth";
+import { getCurrentUser, isAdminEmail } from "@/lib/auth";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -27,7 +27,19 @@ export default async function RootLayout({
     <html lang="ru">
       <body>
         <FeedbackProvider>
-          <AppShell user={user ? { email: user.email } : null}>{children}</AppShell>
+          <AppShell
+            user={
+              user
+                ? {
+                    email: user.email,
+                    createdAt: user.createdAt.toISOString().slice(0, 10),
+                    isAdmin: isAdminEmail(user.email),
+                  }
+                : null
+            }
+          >
+            {children}
+          </AppShell>
           <ConsentBanner />
           <PageViewTracker />
         </FeedbackProvider>

@@ -1,9 +1,11 @@
 import Link from "next/link";
+import { redirect } from "next/navigation";
+import { peekLoginToken } from "@/lib/auth";
 
 export const dynamic = "force-dynamic";
 
 export const metadata = {
-  title: "Вход — AXIONA",
+  title: "Подтверждение входа — AXIONA",
 };
 
 export default async function VerifyPage({
@@ -17,7 +19,7 @@ export default async function VerifyPage({
     return (
       <div className="auth-card">
         <h1>Ссылка неполная</h1>
-        <p className="muted">В ссылке нет токена. Запросите новое письмо.</p>
+        <p className="muted">В ссылке нет токена. Запроси новое письмо.</p>
         <Link className="button" href="/login">
           Запросить ссылку
         </Link>
@@ -25,11 +27,24 @@ export default async function VerifyPage({
     );
   }
 
+  let invalid = false;
+  try {
+    const info = await peekLoginToken(token);
+    if (!info || info.usedAt || info.expiresAt.getTime() <= Date.now() || info.purpose === "email_change") {
+      invalid = true;
+    }
+  } catch {
+    // Без БД (demo/preview): показываем форму, POST завершится экраном недействительной ссылки.
+    invalid = false;
+  }
+
+  if (invalid) redirect("/auth/link-invalid");
+
   return (
     <div className="auth-card">
-      <h1>Подтвердите вход</h1>
+      <h1>Подтверди вход</h1>
       <p className="muted">
-        Нажмите кнопку, чтобы войти в AXIONA. Ссылка одноразовая и действует 15 минут.
+        Нажми кнопку, чтобы войти в AXIONA. Ссылка одноразовая и действует 15 минут.
       </p>
       <form action="/api/auth/verify" method="post">
         <input type="hidden" name="token" value={token} />
@@ -38,7 +53,7 @@ export default async function VerifyPage({
         </button>
       </form>
       <p className="small muted" style={{ marginTop: 14 }}>
-        Если вы не запрашивали вход, закройте страницу.
+        Если ты не запрашивал вход, закрой страницу.
       </p>
     </div>
   );

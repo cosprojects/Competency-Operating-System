@@ -11,7 +11,7 @@ import {
 } from "@/lib/source-review";
 import { getActiveLoggedInUsers } from "@/lib/source-review-server";
 import { trackServerEvent } from "@/lib/analytics";
-import { sourceReviewSchema } from "@/lib/validation";
+import { sourceReviewSchema, sourceReviewTargetSchema } from "@/lib/validation";
 
 /**
  * Подтверждение или блокировка материала (COS-REL-009).
@@ -120,4 +120,31 @@ export async function POST(request: Request) {
   });
 
   return NextResponse.json({ ok: true, status, confirms, blocks });
+}
+
+/** Снять свой голос (COS-EAR-013: «Вернуть» после отклонения). */
+export async function DELETE(request: Request) {
+  if (!sameOrigin(request)) {
+    return NextResponse.json({ error: "Некорректный источник запроса" }, { status: 403 });
+  }
+  const user = await getCurrentUser();
+  if (!user) return NextResponse.json({ error: "Нужен вход" }, { status: 401 });
+
+  let payload: unknown;
+  try {
+    payload = await request.json();
+  } catch {
+    return NextResponse.json({ error: "Некорректный запрос" }, { status: 400 });
+  }
+  const parsed = sourceReviewTargetSchema.safeParse(payload);
+  if (!parsed.success) return NextResponse.json({ error: "Некорректный материал" }, { status: 400 });
+
+  await getDb().sourceReview.deleteMany({
+    where: {
+      sourceId: parsed.data.sourceId,
+      competencyId: parsed.data.competencyId,
+      actorKey: `u:${user.id}`,
+    },
+  });
+  return NextResponse.json({ ok: true });
 }

@@ -1,8 +1,9 @@
 import { NextResponse } from "next/server";
-import { getAdminOrNull } from "@/lib/admin";
+import { requireApiCapability } from "@/lib/access";
 import { sameOrigin } from "@/lib/auth";
 import { getDb } from "@/lib/db";
 import { adminSourceReviewSchema } from "@/lib/validation";
+import { recordAdminAction } from "@/lib/audit";
 
 /**
  * Принудительная блокировка/разблокировка материала админом (COS-REL-009 §7.4).
@@ -12,7 +13,7 @@ export async function POST(request: Request) {
   if (!sameOrigin(request)) {
     return NextResponse.json({ error: "Некорректный источник запроса" }, { status: 403 });
   }
-  const admin = await getAdminOrNull();
+  const admin = await requireApiCapability("source-review:moderate");
   if (!admin) return NextResponse.json({ error: "Нет доступа" }, { status: 401 });
 
   const parsed = adminSourceReviewSchema.safeParse(await request.json());
@@ -24,6 +25,13 @@ export async function POST(request: Request) {
   if (action === "UNBLOCK") {
     const removed = await db.sourceReview.deleteMany({
       where: { sourceId, action: "BLOCK", actorKey: { startsWith: "admin:" } },
+    });
+    await recordAdminAction({
+      actorId: admin.id,
+      actorEmail: admin.email,
+      action: "source-review.unblock",
+      targetType: "Source",
+      targetId: sourceId,
     });
     return NextResponse.json({ ok: true, removed: removed.count });
   }
@@ -44,6 +52,13 @@ export async function POST(request: Request) {
       pagePath: "/admin/reviews",
     },
     update: { scope: "source", action: "BLOCK", reason: "OTHER" },
+  });
+  await recordAdminAction({
+    actorId: admin.id,
+    actorEmail: admin.email,
+    action: "source-review.block",
+    targetType: "Source",
+    targetId: sourceId,
   });
   return NextResponse.json({ ok: true });
 }

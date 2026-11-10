@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { IconCheckCircle, IconCloseCircle } from "@/components/icons";
 import { trackClient } from "@/lib/client-analytics";
+import { showToast } from "@/components/ui/Toast";
 import {
   sourceReviewBadge,
   type SourceReviewReason,
@@ -18,6 +19,8 @@ const REASONS: Array<[SourceReviewReason, string]> = [
   ["OTHER", "Другое"],
 ];
 
+type ReviewAction = "CONFIRM" | "BLOCK";
+
 interface ReviewResponse {
   ok?: boolean;
   status?: SourceReviewStatus;
@@ -27,8 +30,9 @@ interface ReviewResponse {
 }
 
 /**
- * Кнопка «Подтвердить» в блоке бейджей карточки материала и модалка подтверждения/блокировки.
- * Голосовать могут только залогиненные: гость уходит на вход с возвратом к материалу.
+ * Бейдж «Подтвердить» в карточке материала и модалка подтверждения/блокировки.
+ * Голосуют только залогиненные: гость уходит на вход с возвратом к материалу.
+ * После действия показываем алерт внизу экрана с благодарностью и отменой (COS-EAR-013).
  */
 export function SourceReviewBadge({
   sourceId,
@@ -38,6 +42,8 @@ export function SourceReviewBadge({
   initialStatus,
   canReview,
   returnTo,
+  myReviewAction,
+  onDecided,
 }: {
   sourceId: string;
   sourceTitle: string;
@@ -46,6 +52,8 @@ export function SourceReviewBadge({
   initialStatus?: SourceReviewStatus;
   canReview: boolean;
   returnTo: string;
+  myReviewAction?: ReviewAction | null;
+  onDecided?: (action: ReviewAction | null) => void;
 }) {
   const router = useRouter();
   const closeRef = useRef<HTMLButtonElement>(null);
@@ -56,6 +64,7 @@ export function SourceReviewBadge({
   const [comment, setComment] = useState("");
   const [submitState, setStatus2] = useState<"idle" | "sending" | "error">("idle");
   const [error, setError] = useState<string | null>(null);
+  const [decided, setDecided] = useState<ReviewAction | null>(null);
 
   useEffect(() => {
     if (!open) return;
@@ -73,7 +82,7 @@ export function SourceReviewBadge({
   }, [open]);
 
   const badge = status ? sourceReviewBadge(status) : null;
-  if (!badge) return null;
+  if (!badge || decided || myReviewAction) return null;
 
   function start() {
     trackClient("source_review_open", { source_id: sourceId, competency_id: competencyId });
@@ -89,7 +98,24 @@ export function SourceReviewBadge({
     setOpen(true);
   }
 
-  async function submit(action: "CONFIRM" | "BLOCK") {
+  async function undo(action: ReviewAction) {
+    try {
+      const response = await fetch("/api/source-reviews", {
+        method: "DELETE",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ sourceId, competencyId }),
+      });
+      if (!response.ok) throw new Error("fail");
+      setDecided(null);
+      onDecided?.(null);
+      router.refresh();
+    } catch {
+      // Отмена не удалась — оставляем голос.
+    }
+    void action;
+  }
+
+  async function submit(action: ReviewAction) {
     setStatus2("sending");
     setError(null);
     try {
@@ -119,9 +145,33 @@ export function SourceReviewBadge({
         action,
         ...(action === "BLOCK" && reason ? { reason } : {}),
       });
-      if (data.status) setStatus(data.status);
+      if (data.status) {
+        setStatus(data.status);
+      }
       setStatus2("idle");
-      setMode("done");
+      setDecided(action);
+      setOpen(false);
+      onDecided?.(action);
+
+      const gratitude =
+        "Спасибо, что проверил материал на достоверность. Твой голос делает карту точнее.";
+      if (action === "CONFIRM") {
+        showToast({
+          title: "Материал подтверждён",
+          text: `${gratitude} Бейдж исчезнет, когда подтвердят другие.`,
+          actionLabel: "Отменить",
+          duration: 5000,
+          onAction: () => void undo("CONFIRM"),
+        });
+      } else {
+        showToast({
+          title: "Материал опровергнут",
+          text: gratitude,
+          actionLabel: "Отменить удаление",
+          duration: 5000,
+          onAction: () => void undo("BLOCK"),
+        });
+      }
     } catch (caught) {
       setStatus2("error");
       setError(caught instanceof Error ? caught.message : "Не получилось отправить");
@@ -173,13 +223,6 @@ export function SourceReviewBadge({
                   <IconCheckCircle />
                 </span>
                 <h3 id="source-review-title">Спасибо, учли</h3>
-                <p>
-                  {status === "confirmed"
-                    ? "Материал подтверждён — бейдж больше не показывается."
-                    : status === "blocked"
-                      ? "Материал скрыт из выдачи, пока его не проверят заново."
-                      : "Твой голос учтён. Если материал подтвердят другие, бейдж исчезнет."}
-                </p>
                 <button className="button" type="button" onClick={() => setOpen(false)}>
                   Закрыть
                 </button>
@@ -198,7 +241,7 @@ export function SourceReviewBadge({
                       className="button"
                       type="button"
                       disabled={submitState === "sending"}
-                      onClick={() => submit("CONFIRM")}
+                      onClick={() => void submit("CONFIRM")}
                     >
                       {submitState === "sending" ? "Отправляем…" : "Да, подходит"}
                     </button>
@@ -216,7 +259,7 @@ export function SourceReviewBadge({
                     className="feedback-form-card"
                     onSubmit={(event) => {
                       event.preventDefault();
-                      if (reason) submit("BLOCK");
+                      if (reason) void submit("BLOCK");
                     }}
                   >
                     <fieldset className="field">

@@ -212,3 +212,124 @@ export function IconArrowSquareRight({ className }: { className?: string }) {
   );
 }
 
+
+export function IconAdmin({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.7"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M12 3l7 3v5c0 4.2-2.8 7.6-7 9-4.2-1.4-7-4.8-7-9V6l7-3z" />
+      <path d="M9.5 12l1.8 1.8 3.4-3.6" />
+    </svg>
+  );
+}
+
+export function IconEye({ className }: { className?: string }) {
+  return (
+    <svg className={className} width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6z" />
+      <circle cx="12" cy="12" r="2.6" />
+    </svg>
+  );
+}
+
+export function IconQuestion({ className }: { className?: string }) {
+  return (
+    <svg className={className} width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="9" />
+      <path d="M9.6 9.2a2.5 2.5 0 1 1 3.8 2.2c-.9.6-1.4 1.1-1.4 2.1" />
+      <path d="M12 17h.01" />
+    </svg>
+  );
+}
+
+export function IconMail({ className }: { className?: string }) {
+  return (
+    <svg className={className} width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="3" y="5" width="18" height="14" rx="3" />
+      <path d="M3.5 7.5 12 13l8.5-5.5" />
+    </svg>
+  );
+}
+
+export function IconLink({ className }: { className?: string }) {
+  return (
+    <svg className={className} width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M10 13.5a3.5 3.5 0 0 0 5 .4l2.5-2.5a3.5 3.5 0 0 0-5-5L11 8" />
+      <path d="M14 10.5a3.5 3.5 0 0 0-5-.4l-2.5 2.5a3.5 3.5 0 0 0 5 5l1.5-1.6" />
+    </svg>
+  );
+}
+
+export function IconBox({ className }: { className?: string }) {
+  return (
+    <svg className={className} width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M3.5 7.5 12 3l8.5 4.5v9L12 21l-8.5-4.5v-9z" />
+      <path d="M3.5 7.5 12 12l8.5-4.5M12 12v9" />
+    </svg>
+  );
+}
+
+export function IconChart({ className }: { className?: string }) {
+  return (
+    <svg className={className} width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M4 20V4" />
+      <path d="M4 20h16" />
+      <path d="M8 16v-4M12.5 16V8M17 16v-6" />
+    </svg>
+  );
+}
+
+export function IconUsers({ className }: { className?: string }) {
+  return (
+    <svg className={className} width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="9" cy="9" r="3" />
+      <path d="M3.5 19c.6-3 2.8-4.8 5.5-4.8S14 16 14.6 19" />
+      <circle cx="17" cy="10" r="2.2" />
+      <path d="M15.5 14.6c2.4-.2 4.3 1.3 4.9 4.4" />
+    </svg>
+  );
+}
+
+export function IconExpandDiag({ className }: { className?: string }) {
+  return (
+    <svg className={className} width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M14 4h6v6" />
+      <path d="M20 4l-7 7" />
+      <path d="M10 20H4v-6" />
+      <path d="M4 20l7-7" />
+    </svg>
+  );
+}
+
+export function IconCollapseDiag({ className }: { className?: string }) {
+  return (
+    <svg className={className} width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M20 10h-6V4" />
+      <path d="M14 10l6-6" />
+      <path d="M4 14h6v6" />
+      <path d="M10 14l-6 6" />
+    </svg>
+  );
+}
+
+
+export function IconStarFilled({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className={className}>
+      <path
+        d="M6.67589 7.62805L6.03954 7.77203C3.57986 8.32856 2.35002 8.60682 2.05742 9.54773C1.76482 10.4886 2.60325 11.4691 4.2801 13.4299L4.71392 13.9372C5.19043 14.4944 5.42868 14.773 5.53586 15.1177C5.64305 15.4624 5.60703 15.8341 5.53498 16.5776L5.4694 17.2544C5.21588 19.8706 5.08912 21.1787 5.85515 21.7602C6.62118 22.3417 7.77268 21.8115 10.0757 20.7512L10.6715 20.4768C11.3259 20.1755 11.6531 20.0248 12 20.0248C12.3469 20.0248 12.6741 20.1755 13.3285 20.4768L13.9243 20.7512C16.2273 21.8115 17.3788 22.3417 18.1449 21.7602C18.9109 21.1787 18.7841 19.8706 18.5306 17.2544L18.465 16.5776C18.393 15.8341 18.357 15.4624 18.4641 15.1177C18.5713 14.773 18.8096 14.4944 19.2861 13.9372L19.7199 13.4299C21.3968 11.4691 22.2352 10.4886 21.9426 9.54773C21.65 8.60682 20.4201 8.32856 17.9605 7.77203L17.3241 7.62805C16.6251 7.4699 16.2757 7.39083 15.9951 7.17781C15.7144 6.96479 15.5345 6.64193 15.1745 5.99623L14.8468 5.40837C13.5802 3.13612 12.9469 2 12 2C11.0531 2 10.4198 3.13613 9.15316 5.40838L8.82547 5.99623C8.46553 6.64194 8.28555 6.96479 8.00494 7.17781C7.72433 7.39083 7.37485 7.4699 6.67589 7.62805Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}

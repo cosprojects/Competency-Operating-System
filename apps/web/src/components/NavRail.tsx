@@ -2,14 +2,21 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
+  IconBox,
+  IconChart,
   IconHome,
   IconHomeAdd,
   IconPlaster,
+  IconQuestion,
   IconStarCircle,
   IconStructure,
+  IconUsers,
 } from "@/components/icons";
+import { AccountDialog } from "@/components/account/AccountDialog";
+import { WhyDialog } from "@/components/WhyDialog";
+import type { ShellUser } from "@/components/AppShell";
 
 const ITEMS = [
   { href: "/", label: "Главная", icon: IconHome, match: (pathname: string) => pathname === "/" },
@@ -21,19 +28,43 @@ const ITEMS = [
   },
   {
     href: "/saved",
-    label: "Избранное",
+    label: "Сохранённое",
     icon: IconStarCircle,
     match: (pathname: string) => pathname === "/saved" || pathname.startsWith("/saved/"),
   },
 ];
 
-export function NavRail({ user }: { user: { email: string } | null }) {
-  const pathname = usePathname();
-  const expanded = pathname === "/";
-  const railRef = useRef<HTMLElement | null>(null);
+const ADMIN_ITEMS = [
+  {
+    href: "/admin/materials",
+    label: "Материалы",
+    icon: IconBox,
+    match: (pathname: string) => pathname.startsWith("/admin/materials") || pathname === "/admin",
+  },
+  {
+    href: "/admin/metrics",
+    label: "Аналитика",
+    icon: IconChart,
+    match: (pathname: string) => pathname.startsWith("/admin/metrics"),
+  },
+  {
+    href: "/admin/users",
+    label: "Пользователи",
+    icon: IconUsers,
+    match: (pathname: string) => pathname.startsWith("/admin/users"),
+  },
+];
 
-  // Нижняя часть рейла останавливается за 40px до футера и рейл сжимается,
-  // а не наезжает на тёмную подвал страницы.
+export function NavRail({ user }: { user: ShellUser | null }) {
+  const pathname = usePathname();
+  const isCanvas = /^\/professions\/[^/]+$/.test(pathname);
+  const expanded = !isCanvas;
+  const railRef = useRef<HTMLElement | null>(null);
+  const [accountOpen, setAccountOpen] = useState(false);
+  const [whyOpen, setWhyOpen] = useState(false);
+
+  // Нижняя часть рейла останавливается за 40px до футера: при скролле меню
+  // не заходит на подвал, а сжимается по высоте.
   useEffect(() => {
     let frame = 0;
     const update = () => {
@@ -48,8 +79,6 @@ export function NavRail({ user }: { user: { email: string } | null }) {
       document.documentElement.style.setProperty("--rail-bottom-offset", `${offset}px`);
       const rail = railRef.current;
       if (rail) {
-        // Если рейл сжался сильнее, чем помещается контент — включаем компактный
-        // режим: меньше отступы, чтобы нижние пункты остались на виду.
         const compressed = rail.scrollHeight > rail.clientHeight + 1;
         rail.classList.toggle("is-compact", compressed);
       }
@@ -104,20 +133,48 @@ export function NavRail({ user }: { user: { email: string } | null }) {
               </Link>
             );
           })}
+          {user?.isAdmin
+            ? ADMIN_ITEMS.map((item) => {
+                const Icon = item.icon;
+                const active = item.match(pathname);
+                return (
+                  <Link
+                    key={item.href}
+                    className={`rail-item rail-item--admin${active ? " is-active" : ""}`}
+                    href={item.href}
+                    aria-current={active ? "page" : undefined}
+                    title={item.label}
+                  >
+                    <Icon />
+                    <span className="rail-label">{item.label}</span>
+                  </Link>
+                );
+              })
+            : null}
         </nav>
       </div>
 
       <div className="rail-bottom">
+        <button className="rail-item rail-item--why" type="button" title="Зачем это?" onClick={() => setWhyOpen(true)}>
+          <IconQuestion />
+          <span className="rail-label">Зачем это?</span>
+        </button>
+
         <Link className="rail-item" href="/feedback" title="Ваш фидбек">
           <IconPlaster />
           <span className="rail-label">Ваш фидбек</span>
         </Link>
 
         {user ? (
-          <Link className="rail-cta" href="/account" title={`Аккаунт ${user.email}`}>
+          <button
+            className="rail-cta"
+            type="button"
+            title={`Аккаунт ${user.email}`}
+            onClick={() => setAccountOpen(true)}
+          >
             <IconHomeAdd />
             <span className="rail-label">Аккаунт</span>
-          </Link>
+          </button>
         ) : (
           <Link className="rail-cta" href="/login" title="Войти">
             <IconHomeAdd />
@@ -125,6 +182,11 @@ export function NavRail({ user }: { user: { email: string } | null }) {
           </Link>
         )}
       </div>
+
+      {user ? (
+        <AccountDialog open={accountOpen} onClose={() => setAccountOpen(false)} email={user.email} />
+      ) : null}
+      <WhyDialog open={whyOpen} onClose={() => setWhyOpen(false)} />
     </aside>
   );
 }

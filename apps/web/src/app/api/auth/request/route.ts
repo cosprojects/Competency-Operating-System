@@ -2,14 +2,22 @@ import { NextResponse } from "next/server";
 import {
   countRecentLoginTokens,
   createLoginToken,
+  legalVersion,
   normalizeEmail,
   rateLimit,
   requestIpHash,
   safeReturnTo,
   sameOrigin,
+  shouldSendLink,
 } from "@/lib/auth";
+import { getDb } from "@/lib/db";
 import { sendMagicLink } from "@/lib/email";
 import { loginRequestSchema } from "@/lib/validation";
+
+/** Одинаковый ответ на любой запрос: не раскрываем, существует ли аккаунт. */
+function uniformOk() {
+  return NextResponse.json({ ok: true });
+}
 
 export async function POST(request: Request) {
   if (!sameOrigin(request)) {
@@ -23,6 +31,12 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Некорректный запрос" }, { status: 400 });
   }
 
+  // Honeypot: скрытое поле заполняют только боты — тихо делаем вид, что письмо ушло.
+  if (payload && typeof payload === "object" && !Array.isArray(payload)) {
+    const website = (payload as { website?: unknown }).website;
+    if (typeof website === "string" && website.trim() !== "") return uniformOk();
+  }
+
   const parsed = loginRequestSchema.safeParse(payload);
   if (!parsed.success) {
     return NextResponse.json({ error: "Проверьте email" }, { status: 400 });
@@ -31,19 +45,31 @@ export async function POST(request: Request) {
   const email = normalizeEmail(parsed.data.email);
   const ipHash = requestIpHash(request);
   if (!rateLimit(`auth:${email}`, 5, 60 * 60_000) || !rateLimit(`auth-ip:${ipHash}`, 20, 60 * 60_000)) {
-    return NextResponse.json({ ok: true });
+    return uniformOk();
+  }
+
+  // Аварийный стоп публичной регистрации: письма уходят только существующим аккаунтам.
+  const registrationDisabled = process.env.AUTH_REGISTRATION_DISABLED === "1";
+  if (registrationDisabled) {
+    const user = await getDb()
+      .user.findUnique({ where: { email }, select: { id: true } })
+      .catch(() => null);
+    if (!shouldSendLink({ registrationDisabled, userExists: Boolean(user) })) return uniformOk();
   }
 
   const recent = await countRecentLoginTokens(email);
   if (recent >= 5) {
-    return NextResponse.json({ ok: true });
+    return uniformOk();
   }
 
-  const raw = await createLoginToken(
-    email,
-    safeReturnTo(parsed.data.returnTo),
-    process.env.LEGAL_VERSION ?? "1.0.0",
-  );
+  let raw: string;
+  try {
+    raw = await createLoginToken(email, safeReturnTo(parsed.data.returnTo), legalVersion());
+  } catch (error) {
+    console.error("auth: не удалось создать токен", error instanceof Error ? error.message : error);
+    return NextResponse.json({ error: "Не удалось отправить письмо. Попробуйте позже." }, { status: 503 });
+  }
+
   const appUrl = process.env.APP_URL ?? new URL(request.url).origin;
   const link = new URL(`/auth/verify?token=${encodeURIComponent(raw)}`, appUrl).toString();
   try {
@@ -53,6 +79,5 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Не удалось отправить письмо. Попробуйте позже." }, { status: 503 });
   }
 
-  // Всегда одинаковый ответ: не раскрываем, существует ли аккаунт.
-  return NextResponse.json({ ok: true });
+  return uniformOk();
 }

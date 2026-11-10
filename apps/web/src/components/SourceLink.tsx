@@ -12,6 +12,7 @@ export function SourceLink({
   className,
   openLabel = "Открыть материал",
   gatedLabel = "Войти и открыть",
+  onOpen,
 }: {
   source: ContentSource;
   competencyId: string;
@@ -20,12 +21,13 @@ export function SourceLink({
   className?: string;
   openLabel?: string;
   gatedLabel?: string;
+  onOpen?: () => void;
 }) {
   if (!canOpen) {
     return (
       <Link
         className={className ?? "button secondary small"}
-        href={`/login?returnTo=${encodeURIComponent(returnTo)}`}
+        href={`/register?returnTo=${encodeURIComponent(returnTo)}`}
         onClick={() =>
           trackClient("source_gate_view", {
             competency_id: competencyId,
@@ -44,14 +46,15 @@ export function SourceLink({
       href={source.url}
       target="_blank"
       rel="noopener noreferrer"
-      onClick={() =>
+      onClick={() => {
         trackClient("source_click", {
           competency_id: competencyId,
           source_id: source.id,
           source_kind: source.kind,
           access: source.access,
-        })
-      }
+        });
+        onOpen?.();
+      }}
     >
       {openLabel}
     </a>

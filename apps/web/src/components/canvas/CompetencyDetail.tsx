@@ -81,6 +81,8 @@ export function CompetencyDetail({
 }) {
   const returnTo = `/professions/${profession.slug}?competency=${competency.id}`;
   const loginHref = `/login?returnTo=${encodeURIComponent(returnTo)}`;
+  // Материалы — основная причина создать аккаунт: ведём в регистрацию, а не в вход.
+  const gateHref = `/register?returnTo=${encodeURIComponent(returnTo)}`;
   // Как в макете: профессия + две темы компетенции (без названия раздела).
   const shorten = (value: string) => (value.length > 24 ? `${value.slice(0, 23).trimEnd()}…` : value);
   const tags = [profession.title, ...competency.knowledge.slice(0, 2).map((item) => shorten(item.title))];
@@ -113,6 +115,7 @@ export function CompetencyDetail({
                 targetType="COMPETENCY"
                 targetId={competency.id}
                 initialSaved={state.saved}
+                contextProfession={profession.slug}
               />
             ) : (
               <Link
@@ -176,7 +179,7 @@ export function CompetencyDetail({
         ) : (
           <>
             {viewer ? null : (
-              <Link className="button secondary block materials-login" href={loginHref}>
+              <Link className="button secondary block materials-login" href={gateHref}>
                 Войти и открыть учебные материалы
               </Link>
             )}

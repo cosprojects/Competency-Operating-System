@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getAdminOrNull } from "@/lib/admin";
+import { requireApiCapability } from "@/lib/access";
 import { getDb } from "@/lib/db";
 
 function csvCell(value: string | number | null | undefined): string {
@@ -10,7 +10,7 @@ function csvCell(value: string | number | null | undefined): string {
 }
 
 export async function GET() {
-  const admin = await getAdminOrNull();
+  const admin = await requireApiCapability("feedback:read");
   if (!admin) return NextResponse.json({ error: "Нет доступа" }, { status: 401 });
 
   const db = getDb();

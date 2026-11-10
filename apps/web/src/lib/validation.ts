@@ -5,16 +5,46 @@ export const ANON_COOKIE = "axiona_aid";
 
 export const emailSchema = z.string().trim().toLowerCase().email("Некорректный email").max(254);
 
+/**
+ * Запрос ссылки для входа. Согласие здесь не проверяется: на форме стоит
+ * пассивная строка «Нажимая …» (как в макете), а записи ConsentRecord
+ * фиксируются при погашении ссылки — там, где создаётся аккаунт.
+ */
 export const loginRequestSchema = z.object({
   email: emailSchema,
   returnTo: z.string().max(300).optional(),
-  acceptTerms: z.literal(true),
 });
 
 export const favoriteSchema = z.object({
   targetType: z.enum(["COMPETENCY", "SOURCE", "PROFESSION"]),
   targetId: z.string().trim().min(1).max(200),
+  /** Контекст профессии, из которой сохраняют компетенцию (COS-EAR-013). */
+  professionSlug: z.string().trim().max(100).optional(),
 });
+
+export const sourceReviewTargetSchema = z.object({
+  sourceId: z.string().trim().min(1).max(200),
+  competencyId: z.string().trim().min(1).max(200),
+});
+
+export const sourceViewSchema = z.object({
+  sourceId: z.string().trim().min(1).max(200),
+});
+
+export const emailChangeSchema = z.object({
+  newEmail: emailSchema,
+});
+
+export const adminMaterialDecisionSchema = z.object({
+  sourceId: z.string().trim().min(1).max(200),
+  action: z.enum(["APPROVE", "BLOCK", "RESET"]),
+  reason: z.string().trim().max(300).optional(),
+});
+
+export const adminUserActionSchema = z.union([
+  z.object({ action: z.literal("invite"), email: emailSchema }),
+  z.object({ action: z.literal("delete"), userId: z.string().trim().min(1).max(100) }),
+]);
 
 export const studyStatusSchema = z.object({
   competencyId: z.string().trim().min(1).max(200),
@@ -105,6 +135,8 @@ export const EVENT_NAMES = [
   "feedback_open",
   "feedback_submit",
   "return_visit",
+  "source_view_submit",
+  "account_email_change",
 ] as const;
 
 export type EventName = (typeof EVENT_NAMES)[number];

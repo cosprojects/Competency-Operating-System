@@ -46,11 +46,14 @@ export default async function ProfessionCanvasPage({
 
   const states: CompetencyStates = {};
   let professionSaved = false;
+  const viewedSourceIds = new Set<string>();
   if (user) {
-    const [favorites, studyStatuses] = await Promise.all([
+    const [favorites, studyStatuses, views] = await Promise.all([
       db.favorite.findMany({ where: { userId: user.id } }),
       db.studyStatus.findMany({ where: { userId: user.id } }),
+      db.sourceView.findMany({ where: { userId: user.id }, select: { sourceId: true } }),
     ]);
+    for (const view of views) viewedSourceIds.add(view.sourceId);
     const savedIds = new Set(
       favorites.filter((favorite) => favorite.targetType === "COMPETENCY").map((favorite) => favorite.targetId),
     );
@@ -83,7 +86,11 @@ export default async function ProfessionCanvasPage({
         .filter((source) => !reviewIndex.hidden.has(`${competency.id}|${source.id}`))
         .map((source) => {
           const review = reviewIndex.byPair.get(`${competency.id}|${source.id}`);
-          return review ? { ...source, reviewStatus: review.status } : source;
+          return {
+            ...source,
+            ...(review ? { reviewStatus: review.status, myReviewAction: review.myAction } : {}),
+            ...(viewedSourceIds.has(source.id) ? { viewed: true } : {}),
+          };
         }),
       occurrences: findCompetencies(competency.id).map((occurrence) => ({
         professionSlug: occurrence.profession.slug,

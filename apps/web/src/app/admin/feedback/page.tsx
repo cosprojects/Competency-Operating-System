@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Prisma } from "@prisma/client";
 import { FeedbackStatusSelect } from "@/components/FeedbackStatusSelect";
-import { requireAdmin } from "@/lib/admin";
+import { requireCapability } from "@/lib/access";
 import { getDb } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
@@ -25,7 +25,7 @@ export default async function AdminFeedbackPage({
 }: {
   searchParams: Promise<{ status?: string; type?: string }>;
 }) {
-  await requireAdmin();
+  await requireCapability("feedback:read", "/admin/feedback");
   const { status, type } = await searchParams;
   const where: Prisma.FeedbackWhereInput = {};
   if (status && STATUSES.includes(status as (typeof STATUSES)[number])) {

@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { getCurrentUser, sameOrigin } from "@/lib/auth";
-import { findCompetency, findSource, getProfession } from "@/lib/content";
+import { findCompetencies, findCompetency, findSource, getProfession } from "@/lib/content";
 import { getDb } from "@/lib/db";
 import { trackServerEvent } from "@/lib/analytics";
 import { favoriteSchema } from "@/lib/validation";
@@ -44,6 +44,32 @@ export async function POST(request: Request) {
       targetId: payload.targetId,
     },
   });
+
+  // Связка «компетенция ↔ профессия» (COS-EAR-013): сохранил компетенцию —
+  // профессия тоже попадает в сохранённое.
+  if (payload.targetType === "COMPETENCY") {
+    const occurrences = findCompetencies(payload.targetId);
+    const context = payload.professionSlug
+      ? occurrences.find((occurrence) => occurrence.profession.slug === payload.professionSlug)
+      : occurrences[0];
+    if (context) {
+      await db.favorite.upsert({
+        where: {
+          userId_targetType_targetId: {
+            userId: user.id,
+            targetType: "PROFESSION",
+            targetId: context.profession.slug,
+          },
+        },
+        update: {},
+        create: {
+          userId: user.id,
+          targetType: "PROFESSION",
+          targetId: context.profession.slug,
+        },
+      });
+    }
+  }
   await trackServerEvent({
     name: "favorite_add",
     userId: user.id,
@@ -65,6 +91,23 @@ export async function DELETE(request: Request) {
   await db.favorite.deleteMany({
     where: { userId: user.id, targetType: payload.targetType, targetId: payload.targetId },
   });
+
+  // Снял профессию — снимаются и её компетенции из сохранённого.
+  if (payload.targetType === "PROFESSION") {
+    const profession = getProfession(payload.targetId);
+    if (profession) {
+      const competencyIds = profession.sections.flatMap((section) =>
+        section.competencies.map((competency) => competency.id),
+      );
+      await db.favorite.deleteMany({
+        where: {
+          userId: user.id,
+          targetType: "COMPETENCY",
+          targetId: { in: competencyIds },
+        },
+      });
+    }
+  }
   await trackServerEvent({
     name: "favorite_remove",
     userId: user.id,

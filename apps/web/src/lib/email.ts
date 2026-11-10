@@ -4,30 +4,66 @@ export interface MagicLinkEmail {
 }
 
 export async function sendMagicLink({ to, url }: MagicLinkEmail): Promise<void> {
-  const subject = "Вход в AXIONA";
+  const subject = "Ссылка для входа в AXIONA";
   const text = [
-    "Здравствуйте!",
+    "Привет!",
     "",
-    "Чтобы войти в AXIONA, откройте ссылку:",
+    "Это ссылка для входа в AXIONA. Открой её:",
     url,
     "",
     "Ссылка действует 15 минут и работает один раз.",
-    "Если вы не запрашивали вход, просто проигнорируйте письмо.",
+    "Если ты не запрашивал вход — просто проигнорируй письмо.",
     "",
     "AXIONA — карта компетенций дизайнера.",
   ].join("\n");
-  const html = `<p>Здравствуйте!</p><p>Чтобы войти в AXIONA, откройте ссылку:</p><p><a href="${escapeHtml(url)}">Войти в AXIONA</a></p><p>Ссылка действует 15 минут и работает один раз. Если вы не запрашивали вход, просто проигнорируйте письмо.</p>`;
+  const html = `<p>Привет!</p><p>Это ссылка для входа в AXIONA. Открой её:</p><p><a href="${escapeHtml(url)}">Войти в AXIONA</a></p><p>Ссылка действует 15 минут и работает один раз. Если ты не запрашивал вход — просто проигнорируй письмо.</p>`;
+  await sendTransactionalEmail({ to, subject, text, html });
+}
 
+/** Приветствие после создания аккаунта. Best-effort: сбой письма не ломает вход. */
+export async function sendWelcomeEmail({ to }: { to: string }): Promise<void> {
+  const appUrl = process.env.APP_URL ?? "https://axiona.world";
+  const text = [
+    "Привет!",
+    "",
+    "Аккаунт в AXIONA создан. Теперь можно сохранять компетенции и материалы и возвращаться к ним с любого устройства.",
+    "",
+    `Профессии: ${appUrl}/professions`,
+    `Сохранённое: ${appUrl}/saved`,
+    "",
+    "Если что-то не работает или есть идея — напиши в поддержку: support@axiona.world.",
+  ].join("\n");
+  const html = `<p>Привет!</p><p>Аккаунт в AXIONA создан. Теперь можно сохранять компетенции и материалы и возвращаться к ним с любого устройства.</p><p><a href="${escapeHtml(appUrl)}/professions">Профессии</a><br/><a href="${escapeHtml(appUrl)}/saved">Сохранённое</a></p><p>Если что-то не работает или есть идея — напиши в поддержку: support@axiona.world.</p>`;
+  await sendTransactionalEmail({ to, subject: "Добро пожаловать в AXIONA", text, html });
+}
+
+function escapeHtml(value: string): string {
+  return value
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+}
+
+interface TransactionalEmail {
+  to: string;
+  subject: string;
+  text: string;
+  html: string;
+}
+
+/** Общая отправка письма: console локально, HTTP-провайдер в production. */
+async function sendTransactionalEmail({ to, subject, text, html }: TransactionalEmail): Promise<void> {
   const apiUrl = process.env.EMAIL_API_URL;
   const token = process.env.EMAIL_API_TOKEN;
   if (!apiUrl) {
     if (process.env.NODE_ENV === "production") {
-      throw new Error("EMAIL_API_URL не настроен: production не может отправлять magic link.");
+      throw new Error("EMAIL_API_URL не настроен: production не может отправлять письма.");
     }
-    console.log(`[axiona:email] to=${to} magic link=${url}`);
+    console.log(`[axiona:email] to=${to} subject=${subject}\n${text}`);
     return;
   }
-
   const response = await fetch(apiUrl, {
     method: "POST",
     headers: {
@@ -42,18 +78,34 @@ export async function sendMagicLink({ to, url }: MagicLinkEmail): Promise<void> 
       from: process.env.EMAIL_FROM ?? "no-reply@axiona.world",
     }),
   });
-  if (!response.ok) {
-    throw new Error(`Email provider error: ${response.status}`);
-  }
+  if (!response.ok) throw new Error(`Email provider error: ${response.status}`);
 }
 
-function escapeHtml(value: string): string {
-  return value
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#39;");
+/** Подтверждение смены email: уходит на НОВЫЙ адрес (COS-EAR-013). */
+export async function sendEmailChangeLink({ to, url }: MagicLinkEmail): Promise<void> {
+  const text = [
+    "Привет!",
+    "",
+    "Чтобы сменить почту в AXIONA на этот адрес, открой ссылку:",
+    url,
+    "",
+    "Ссылка действует 15 минут и работает один раз. Если ты не запрашивал смену, просто проигнорируй письмо.",
+  ].join("\n");
+  const html = `<p>Привет!</p><p>Чтобы сменить почту в AXIONA на этот адрес, открой ссылку:</p><p><a href="${escapeHtml(url)}">Подтвердить новый адрес</a></p><p>Ссылка действует 15 минут и работает один раз.</p>`;
+  await sendTransactionalEmail({ to, subject: "Подтверждение нового адреса в AXIONA", text, html });
+}
+
+/** Уведомление на старый email после смены адреса (COS-EAR-013). Не хранит старый адрес. */
+export async function sendEmailChangedNotice({ to, newEmail }: { to: string; newEmail: string }): Promise<void> {
+  const text = [
+    "Адрес изменён.",
+    "",
+    `Этот email больше не привязан к аккаунту AXIONA. Новый адрес: ${newEmail}.`,
+    "",
+    "Если это сделал не ты — напиши в поддержку: hi.axiona@protonmail.com.",
+  ].join("\n");
+  const html = `<p>Адрес изменён.</p><p>Этот email больше не привязан к аккаунту AXIONA. Новый адрес: ${escapeHtml(newEmail)}.</p><p>Если это сделал не ты — напиши в поддержку: hi.axiona@protonmail.com.</p>`;
+  await sendTransactionalEmail({ to, subject: "Адрес в AXIONA изменён", text, html });
 }
 
 export interface FeedbackNotification {

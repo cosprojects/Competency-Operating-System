@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { SaveButton } from "@/components/SaveButton";
+import { SavedProfessionCard, SavedSkillCard } from "@/components/saved/SavedCards";
+import type { SavedProfessionView, SavedSkillView } from "@/components/saved/SavedCards";
+import { WelcomeNotice } from "@/components/account/WelcomeNotice";
 import { getCurrentUser } from "@/lib/auth";
-import { findCompetency, findSource, getProfession, professionSphere, statusLabel } from "@/lib/content";
-import { sphereBadgeStyle } from "@/lib/spheres";
+import { contentTypeSummary, findCompetencies, getProfessions, tierLabel } from "@/lib/content";
 import { getDb } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
@@ -12,163 +13,163 @@ export const metadata = {
   title: "Сохранённое — AXIONA",
 };
 
-export default async function SavedPage() {
+export default async function SavedPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ q?: string; welcome?: string }>;
+}) {
+  const { q, welcome } = await searchParams;
+  const query = (q ?? "").trim().toLowerCase();
   const user = await getCurrentUser();
   if (!user) redirect(`/login?returnTo=${encodeURIComponent("/saved")}`);
 
   const db = getDb();
-  const [favorites, statuses] = await Promise.all([
-    db.favorite.findMany({ where: { userId: user.id }, orderBy: { createdAt: "desc" } }),
-    db.studyStatus.findMany({ where: { userId: user.id } }),
-  ]);
-  const statusByCompetency = new Map(statuses.map((item) => [item.competencyId, item.status]));
+  const favorites = await db.favorite.findMany({
+    where: { userId: user.id, targetType: { in: ["PROFESSION", "COMPETENCY"] } },
+    orderBy: { createdAt: "desc" },
+  });
+  const savedProfessionSlugs = new Set(
+    favorites.filter((item) => item.targetType === "PROFESSION").map((item) => item.targetId),
+  );
+  const savedCompetencyIds = new Set(
+    favorites.filter((item) => item.targetType === "COMPETENCY").map((item) => item.targetId),
+  );
 
-  const professionItems = favorites
-    .filter((item) => item.targetType === "PROFESSION")
-    .map((item) => ({ favorite: item, profession: getProfession(item.targetId) }))
-    .filter((item) => Boolean(item.profession));
+  const professions: SavedProfessionView[] = [];
+  const seenProfessions = new Set<string>();
+  for (const profession of getProfessions()) {
+    if (!savedProfessionSlugs.has(profession.slug)) continue;
+    seenProfessions.add(profession.slug);
+    professions.push({
+      slug: profession.slug,
+      title: profession.title,
+      description: profession.description,
+      published: profession.coverage.published,
+      total: profession.coverage.total,
+      percent: profession.coverage.percent,
+    });
+  }
 
-  const competencyItems = favorites
-    .filter((item) => item.targetType === "COMPETENCY")
-    .map((item) => ({ favorite: item, competency: findCompetency(item.targetId) }))
-    .filter((item) => Boolean(item.competency));
-  const sourceItems = favorites
-    .filter((item) => item.targetType === "SOURCE")
-    .map((item) => ({ favorite: item, source: findSource(item.targetId) }))
-    .filter((item) => Boolean(item.source));
+  const skills: SavedSkillView[] = [];
+  const seenSkills = new Set<string>();
+  for (const profession of getProfessions()) {
+    for (const competency of profession.sections.flatMap((section) => section.competencies)) {
+      if (!savedCompetencyIds.has(competency.id) || seenSkills.has(competency.id)) continue;
+      seenSkills.add(competency.id);
+      skills.push({
+        id: competency.id,
+        title: competency.title,
+        definition: competency.definition,
+        tierLabel: tierLabel(competency.tier),
+        tierClass: competency.tier,
+        summary: contentTypeSummary(competency),
+        professionSlug: profession.slug,
+      });
+    }
+  }
+  // Данные до связки: профессия для сохранённой компетенции может быть не сохранена явно.
+  for (const competencyId of savedCompetencyIds) {
+    if (seenProfessions.size > 0) break;
+    const occurrence = findCompetencies(competencyId)[0];
+    if (!occurrence) continue;
+    seenProfessions.add(occurrence.profession.slug);
+    professions.push({
+      slug: occurrence.profession.slug,
+      title: occurrence.profession.title,
+      description: occurrence.profession.description,
+      published: occurrence.profession.coverage.published,
+      total: occurrence.profession.coverage.total,
+      percent: occurrence.profession.coverage.percent,
+    });
+  }
+
+  const visibleProfessions = query
+    ? professions.filter(
+        (profession) =>
+          profession.title.toLowerCase().includes(query) ||
+          profession.description.toLowerCase().includes(query),
+      )
+    : professions;
+  const visibleSkills = query
+    ? skills.filter(
+        (skill) =>
+          skill.title.toLowerCase().includes(query) || skill.definition.toLowerCase().includes(query),
+      )
+    : skills;
+
+  const empty = visibleProfessions.length === 0 && visibleSkills.length === 0;
 
   return (
     <>
       <div className="page-head">
-        <div className="eyebrow">Личное</div>
+        <div className="eyebrow">Профиль</div>
         <h1>Сохранённое</h1>
-        <p>
-          Компетенции и материалы, к которым вы хотите вернуться. Статусы изучения — ваша
-          самоотметка, а не подтверждение уровня.
-        </p>
+        <p>Профессии и компетенции, к которым вы хотите вернуться.</p>
+        <form className="saved-search" method="get" role="search">
+          <input
+            className="input"
+            type="search"
+            name="q"
+            defaultValue={q ?? ""}
+            placeholder="Введите название профессии или навыка"
+            aria-label="Поиск по сохранённому"
+          />
+        </form>
       </div>
 
-      {professionItems.length === 0 && competencyItems.length === 0 && sourceItems.length === 0 ? (
+      {welcome === "1" ? <WelcomeNotice /> : null}
+
+      {empty ? (
         <div className="empty">
-          <h2>Пока пусто</h2>
-          <p>Откройте профессию, найдите компетенцию и сохраните её или материал.</p>
+          <h2>{query ? "Ничего не найдено" : "Пока пусто"}</h2>
+          <p>
+            {query
+              ? "Проверьте запрос или сохраните новые профессии и компетенции."
+              : "Откройте профессию и сохраните её или компетенцию — они появятся здесь."}
+          </p>
           <Link className="button" href="/professions">
-            Перейти к профессиям
+            Выбрать профессию
           </Link>
         </div>
-      ) : null}
-
-      {professionItems.length > 0 ? (
-        <section className="section">
-          <div className="section-head">
-            <div>
+      ) : (
+        <>
+          {visibleProfessions.length > 0 ? (
+            <section className="saved-section">
               <h2>Профессии</h2>
-              <p>{professionItems.length} сохранённых</p>
-            </div>
-          </div>
-          <div className="card-grid">
-            {professionItems.map((item) => {
-              if (!item.profession) return null;
-              return (
-                <article className="card" key={item.favorite.id}>
-                  <div className="meta" style={{ justifyContent: "space-between" }}>
-                    <span className="badge" style={sphereBadgeStyle(professionSphere(item.profession).color)}>
-                      {professionSphere(item.profession).title}
-                    </span>
-                    <span className="small muted">{item.profession.coverage.percent}% покрытие</span>
-                  </div>
-                  <h3 style={{ marginTop: 10 }}>
-                    <Link href={`/professions/${item.profession.slug}`}>{item.profession.title}</Link>
-                  </h3>
-                  <p>{item.profession.description}</p>
-                  <div style={{ marginTop: 14 }}>
-                    <SaveButton
-                      targetType="PROFESSION"
-                      targetId={item.profession.slug}
-                      initialSaved
-                    />
-                  </div>
-                </article>
-              );
-            })}
-          </div>
-        </section>
-      ) : null}
+              <div className="saved-section-box saved-professions">
+                {visibleProfessions.map((profession) => (
+                  <SavedProfessionCard key={profession.slug} profession={profession} />
+                ))}
+              </div>
+            </section>
+          ) : null}
 
-      {competencyItems.length > 0 ? (
-        <section className="section">
-          <div className="section-head">
-            <div>
-              <h2>Компетенции</h2>
-              <p>{competencyItems.length} сохранённых</p>
-            </div>
-          </div>
-          <div className="card-grid">
-            {competencyItems.map((item) => {
-              if (!item.competency) return null;
-              const status = statusByCompetency.get(item.competency.competency.id) ?? "NOT_STARTED";
-              return (
-                <article className="card" key={item.favorite.id}>
-                  <div className="meta" style={{ justifyContent: "space-between" }}>
-                    <span className="badge neutral">{item.competency.profession.title}</span>
-                    <span className="small muted">{statusLabel(status)}</span>
-                  </div>
-                  <h3 style={{ marginTop: 10 }}>
-                    <Link href={`/competencies/${item.competency.competency.id}`}>
-                      {item.competency.competency.title}
-                    </Link>
-                  </h3>
-                  <p>{item.competency.competency.definition}</p>
-                  <div style={{ marginTop: 14 }}>
-                    <SaveButton
-                      targetType="COMPETENCY"
-                      targetId={item.competency.competency.id}
-                      initialSaved
-                    />
-                  </div>
-                </article>
-              );
-            })}
-          </div>
-        </section>
-      ) : null}
+          {visibleSkills.length > 0 ? (
+            <section className="saved-section">
+              <h2>Навыки и знания</h2>
+              <div className="saved-section-box">
+                <div className="saved-skills">
+                  {visibleSkills.map((skill) => (
+                    <SavedSkillCard key={skill.id} skill={skill} />
+                  ))}
+                </div>
+              </div>
+            </section>
+          ) : null}
 
-      {sourceItems.length > 0 ? (
-        <section className="section">
-          <div className="section-head">
-            <div>
-              <h2>Материалы</h2>
-              <p>{sourceItems.length} сохранённых</p>
-            </div>
-          </div>
-          <div className="source-list">
-            {sourceItems.map((item) => {
-              if (!item.source) return null;
-              return (
-                <article className="source-card" key={item.favorite.id}>
-                  <h3>{item.source.title}</h3>
-                  <p>{item.source.summary}</p>
-                  <div className="source-actions">
-                    <a
-                      className="button small"
-                      href={item.source.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Открыть материал
-                    </a>
-                    <SaveButton targetType="SOURCE" targetId={item.source.id} initialSaved />
-                  </div>
-                </article>
-              );
-            })}
-          </div>
-        </section>
-      ) : null}
-
-      <div className="notice info" style={{ marginTop: 22 }}>
-        Сохранения привязаны к аккаунту и доступны после входа с того же email.
-      </div>
+          <aside className="saved-notice">
+            <div className="saved-notice-title">Помогите нам сделать систему полезнее</div>
+            <p>
+              Мы хотим, чтобы эти карты действительно помогали людям ориентироваться в профессии,
+              находить новые направления для развития и понимать, какие знания могут быть полезны в
+              работе. Поделитесь своим мнением — ваш опыт поможет сделать систему точнее и полезнее.
+            </p>
+            <Link className="saved-notice-button" href="/feedback">
+              Поделитесь своим мнением
+            </Link>
+          </aside>
+        </>
+      )}
     </>
   );
 }

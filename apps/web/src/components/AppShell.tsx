@@ -4,41 +4,55 @@ import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
 import { NavRail } from "@/components/NavRail";
 import { SiteFooter } from "@/components/SiteFooter";
+import { ToastHost } from "@/components/ui/Toast";
+
+export interface ShellUser {
+  email: string;
+  createdAt: string;
+  isAdmin: boolean;
+}
 
 export function AppShell({
   user,
   children,
 }: {
-  user: { email: string } | null;
+  user: ShellUser | null;
   children: ReactNode;
 }) {
   const pathname = usePathname();
   const isHome = pathname === "/";
   const isSearch = pathname === "/professions";
   const isCanvas = /^\/professions\/[^/]+$/.test(pathname);
-  const isPlain = pathname === "/login" || pathname === "/feedback";
-  const isSecondary = !isHome && !isSearch && !isCanvas && !isPlain;
+  const isPlain =
+    pathname === "/login" ||
+    pathname === "/register" ||
+    pathname === "/feedback" ||
+    pathname.startsWith("/auth/");
+  const isWorkspace = pathname === "/saved" || pathname.startsWith("/admin");
+  const isSecondary = !isHome && !isSearch && !isCanvas && !isPlain && !isWorkspace;
 
   return (
     <>
       <NavRail user={user} />
       <main className="app-main">
-        {isPlain ? (
-          <>
+        <div className="app-viewport">
+          {isPlain ? (
             <div className="page-plain">{children}</div>
-            <SiteFooter />
-          </>
-        ) : isSecondary ? (
-          <>
+          ) : isWorkspace ? (
+            <div className="workspace-page">
+              <div className="workspace-glass">{children}</div>
+            </div>
+          ) : isSecondary ? (
             <div className="page-screen">
               <div className="page-surface">{children}</div>
             </div>
-            <SiteFooter />
-          </>
-        ) : (
-          children
-        )}
+          ) : (
+            children
+          )}
+        </div>
+        {isHome ? null : <SiteFooter />}
       </main>
+      <ToastHost />
     </>
   );
 }

@@ -6,6 +6,7 @@ import {
   type SourceReviewAction,
   type SourceReviewStatus,
 } from "./source-review";
+import { loadMaterialDecisions } from "./material-decisions";
 
 /**
  * Серверная часть подтверждений материалов: считает активную базу, собирает голоса
@@ -89,8 +90,9 @@ export async function loadProfessionSourceReviews(
 
   let reviews;
   let activeUsers;
+  let decisions;
   try {
-    [reviews, activeUsers] = await Promise.all([
+    [reviews, activeUsers, decisions] = await Promise.all([
     db.sourceReview.findMany({
       where: { sourceId: { in: [...sourceIds] } },
       select: {
@@ -103,6 +105,7 @@ export async function loadProfessionSourceReviews(
       },
     }),
       getActiveLoggedInUsers(db),
+      loadMaterialDecisions(db, [...sourceIds]),
     ]);
   } catch {
     // Demo/preview без БД: публичные страницы должны работать без review-статусов.
@@ -133,7 +136,13 @@ export async function loadProfessionSourceReviews(
     const own = pairCounts.get(pairKey) ?? emptyCounts();
     const wide = sourceCounts.get(sourceId) ?? emptyCounts();
     const counts = { confirms: own.confirms, blocks: own.blocks + wide.blocks };
-    const status = resolveSourceReviewStatus({ baseStatus, counts, activeUsers });
+    const decision = decisions?.get(sourceId);
+    const status: SourceReviewStatus =
+      decision === "APPROVE"
+        ? "confirmed"
+        : decision === "BLOCK"
+          ? "blocked"
+          : resolveSourceReviewStatus({ baseStatus, counts, activeUsers });
     byPair.set(pairKey, {
       status,
       confirms: counts.confirms,

@@ -65,13 +65,15 @@ model User {
   lastSeenAt DateTime?
   deletedAt  DateTime?
 
-  sessions      Session[]
-  favorites     Favorite[]
-  statuses      StudyStatus[]
-  feedback      Feedback[]
-  sourceReviews SourceReview[]
-  consents      ConsentRecord[]
-  events        AnalyticsEvent[]
+  sessions          Session[]
+  favorites         Favorite[]
+  statuses          StudyStatus[]
+  feedback          Feedback[]
+  sourceReviews     SourceReview[]
+  sourceViews       SourceView[]
+  materialDecisions MaterialDecision[]
+  consents          ConsentRecord[]
+  events            AnalyticsEvent[]
 
   @@index([createdAt])
 }
@@ -80,6 +82,10 @@ model LoginToken {
   id             String    @id @default(cuid())
   email          String
   tokenHash      String    @unique
+  /// login | email_change | invite
+  purpose        String    @default("login")
+  /// Новый адрес для email_change
+  newEmail       String?
   returnTo       String?
   consentVersion String?
   expiresAt      DateTime
@@ -171,6 +177,55 @@ model SourceReview {
   @@unique([sourceId, competencyId, actorKey])
   @@index([sourceId, competencyId, action])
   @@index([createdAt])
+}
+
+/// Просмотр материала пользователем (COS-EAR-013): отмечается при переходе к источнику.
+model SourceView {
+  id            String   @id @default(cuid())
+  userId        String
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  sourceId      String
+  firstViewedAt DateTime @default(now())
+  lastViewedAt  DateTime @default(now())
+
+  @@unique([userId, sourceId])
+  @@index([sourceId])
+  @@index([userId, lastViewedAt])
+}
+
+enum MaterialDecisionAction {
+  APPROVE
+  BLOCK
+}
+
+/// Финальное решение владельца по материалу (COS-EAR-014).
+model MaterialDecision {
+  id         String                 @id @default(cuid())
+  sourceId   String
+  action     MaterialDecisionAction
+  reason     String?
+  actorId    String?
+  actor      User?                  @relation(fields: [actorId], references: [id], onDelete: SetNull)
+  createdAt  DateTime               @default(now())
+  revokedAt  DateTime?
+
+  @@index([sourceId, createdAt])
+  @@index([action, createdAt])
+}
+
+/// Журнал админ-действий (COS-ARCH-173, T-040).
+model AdminAudit {
+  id         String   @id @default(cuid())
+  actorId    String?
+  actorEmail String
+  action     String
+  targetType String
+  targetId   String?
+  meta       Json?
+  createdAt  DateTime @default(now())
+
+  @@index([action, createdAt])
+  @@index([actorId, createdAt])
 }
 
 model AnalyticsEvent {

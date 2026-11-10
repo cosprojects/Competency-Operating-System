@@ -23,6 +23,10 @@ export interface ContentSource {
   whyUseful?: string;
   /** Базовый статус подтверждения из пайплайна; комментарий — COS-REL-009. */
   reviewStatus?: "auto_accepted" | "needs_confirmation" | "confirmed" | "disputed" | "blocked";
+  /** Голос текущего пользователя по этому материалу (COS-EAR-013). */
+  myReviewAction?: "CONFIRM" | "BLOCK" | null;
+  /** Материал уже открывался текущим пользователем (COS-EAR-013). */
+  viewed?: boolean;
 }
 
 export interface ContentCompetency {

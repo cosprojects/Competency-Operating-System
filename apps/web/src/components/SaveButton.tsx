@@ -1,18 +1,21 @@
 "use client";
 
 import { useState } from "react";
-import { IconStar } from "@/components/icons";
+import { IconStar, IconStarFilled } from "@/components/icons";
+
 
 export function SaveButton({
   targetType,
   targetId,
   initialSaved,
   variant = "default",
+  contextProfession,
 }: {
   targetType: "COMPETENCY" | "SOURCE" | "PROFESSION";
   targetId: string;
   initialSaved: boolean;
   variant?: "default" | "icon";
+  contextProfession?: string;
 }) {
   const [saved, setSaved] = useState(initialSaved);
   const [busy, setBusy] = useState(false);
@@ -25,7 +28,7 @@ export function SaveButton({
       const response = await fetch("/api/favorites", {
         method: saved ? "DELETE" : "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ targetType, targetId }),
+        body: JSON.stringify({ targetType, targetId, ...(contextProfession ? { professionSlug: contextProfession } : {}) }),
       });
       if (!response.ok) throw new Error("Не удалось сохранить");
       const data = (await response.json()) as { saved: boolean };
@@ -48,7 +51,11 @@ export function SaveButton({
         aria-label={saved ? "Убрать из избранного" : "Сохранить в избранное"}
         title={saved ? "Убрать из избранного" : "Сохранить в избранное"}
       >
-        <IconStar />
+        {saved ? (
+          <IconStarFilled />
+        ) : (
+          <IconStar />
+        )}
         {error ? <span className="sr-only">{error}</span> : null}
       </button>
     );

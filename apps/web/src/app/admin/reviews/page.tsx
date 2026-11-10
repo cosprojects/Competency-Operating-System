@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { AdminReviewActions } from "@/components/admin/AdminReviewActions";
-import { requireAdmin } from "@/lib/admin";
+import { requireCapability } from "@/lib/access";
 import { findCompetency, findSource } from "@/lib/content";
 import { getDb } from "@/lib/db";
 import { resolveSourceReviewStatus, sourceReviewBadge } from "@/lib/source-review";
@@ -21,7 +21,7 @@ interface Counts {
 
 /** Очередь спорных материалов: блокировки пользователей и админ-решения (COS-REL-009). */
 export default async function AdminReviewsPage() {
-  await requireAdmin("/admin/reviews");
+  await requireCapability("source-review:moderate", "/admin/reviews");
   const db = getDb();
   const [grouped, wide, adminRows, comments, activeUsers] = await Promise.all([
     db.sourceReview.groupBy({

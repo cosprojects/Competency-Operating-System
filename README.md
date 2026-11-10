@@ -177,3 +177,5 @@ npm run tasks:sync
 Vercel demo не является продакшн-контуром персональных данных: реальные регистрации там не открываются.
 
 ✅ Beta 1: контентный gate пройден, AI-дизайнер опубликован (12 профессий, 131 компетенция, 292 связи), spot-check основателя проведён — манифест `beta-1` в статусе `ready`. Vercel собирает `web:build:release` (строгий `release:validate` в CI).
+
+✅ `app.axiona.world`: VDS в Москве, PostgreSQL 16, production TLS, health `db: ok`, nightly backup + restore test. Email-провайдер и вход по magic link — T-007; регистрация закрыта.

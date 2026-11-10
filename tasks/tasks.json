@@ -213,7 +213,7 @@
       "priority": "P0",
       "area": "Infra",
       "stage": "I",
-      "status": "In Progress",
+      "status": "Done",
       "labels": [],
       "acceptance": [
         "VDS со статическим IP и Ubuntu LTS",
@@ -226,7 +226,7 @@
       ],
       "issueNumber": 5,
       "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/5",
-      "context": "Принят ADR-025. Фактический VDS: 1 CPU / 2 ГБ RAM / 300 ГБ SSD, Ubuntu 24.04, app.axiona.world. Для 2 ГБ нужны swap 2 ГБ и лимиты PostgreSQL; публичный запуск — после апгрейда до 4 ГБ или подтверждения нагрузки.",
+      "context": "VDS 141.133.187.3 (Москва, Ubuntu 24.04, 1 CPU/2 ГБ RAM/300 ГБ SSD): Docker, PostgreSQL 16, Caddy/TLS app.axiona.world, health 200, nightly backup + restore test. 2 ГБ — тестовый контур; для public Beta желателен апгрейд.",
       "deliverable": "VDS в Москве с PostgreSQL 16, Caddy/TLS, health-check, nightly backup и restore test; DNS app.axiona.world.",
       "outOfScope": [
         "Корпоративный сайт",
@@ -245,7 +245,7 @@
       "priority": "P0",
       "area": "Infra",
       "stage": "I",
-      "status": "Backlog",
+      "status": "In Progress",
       "labels": [],
       "acceptance": [
         "HTTPS/HSTS",
@@ -255,7 +255,7 @@
       ],
       "issueNumber": 6,
       "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/6",
-      "context": "Для продукта нужен поддомен app.axiona.world на VDS; корпоративный axiona.world остаётся на Vercel. Magic link должен уходить с домена контура и не попадать в спам.",
+      "context": "DNS app.axiona.world → VDS и production TLS уже работают. Осталось настроить email-провайдера и проверить magic link.",
       "deliverable": "HTTPS app.axiona.world, SPF/DKIM/DMARC и доставка magic link.",
       "outOfScope": [
         "Маркетинговые рассылки"

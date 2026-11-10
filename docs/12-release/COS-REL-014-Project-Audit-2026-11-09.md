@@ -136,7 +136,7 @@ references:
 
 ### P1. Задачи не отражают факт
 
-- 45 задач: 20 активных, 25 deferred; 15 открытых issues, 29 закрытых. 19 items в Project (T-001, T-040, T-041 и T-042 остаются на доске в Done).
+- 45 задач: 20 активных, 25 deferred; 14 открытых issues, 30 закрытых. 19 items в Project (T-001, T-004, T-006, T-040, T-041 и T-042 в Done).
 - T-001 закрыта: human spot-check проведён; расхождения некритичные.
 - T-039 (профиль) — `Review`: `/profile` и модалка удаления реализованы; нужна визуальная/QA-проверка.
 - T-040 (access/audit) — `Done`: проверено на локальном SQLite-контуре 2026-11-10 (`reports/qa-2026-11-10.md`).
@@ -198,6 +198,17 @@ references:
 7. **Собрать pitch deck/презентацию.**
 8. **Обновить корпоративный сайт** и claims.
 
+
+
+## 11. Обновление 2026-11-10 — VDS live
+
+- `app.axiona.world` развёрнут на VDS `141.133.187.3`: Ubuntu 24.04, Docker, PostgreSQL 16, Caddy, production TLS.
+- `/api/health` → `db: ok`; публичные страницы 200; `/profile` и `/admin` без сессии — 307.
+- Миграции применены; nightly backup и restore-test (`axiona_restore`) прошли.
+- T-006 закрыт. T-007 остаётся `In Progress`: DNS/TLS готовы, email-провайдер и magic link — нет.
+- Регистрация закрыта (`AUTH_REGISTRATION_DISABLED=1`); реальные ПДн не собираются.
+- Ограничение: 2 ГБ RAM — тестовый контур; для публичной Beta желателен апгрейд до 4 ГБ.
+- Подробности — [`reports/vds-2026-11-10.md`](reports/vds-2026-11-10.md).
 
 ## 8. Ответы владельца (2026-11-09)
 

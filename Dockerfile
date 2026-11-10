@@ -12,7 +12,7 @@ COPY . .
 RUN npm run db:generate
 ARG RELEASE_BUILD=release:build:draft
 RUN npm run ${RELEASE_BUILD}
-RUN npm run web:build
+RUN npm --workspace apps/web run build
 
 FROM node:24-bookworm-slim AS runner
 WORKDIR /app/apps/web

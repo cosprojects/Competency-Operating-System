@@ -83,3 +83,6 @@ release/publications/
 /apps/web/public/icons/Linear/Notes/
 /apps/web/public/icons/Linear/Users/
 /apps/web/public/brand/Footer/logo 1.svg
+
+# Локальный deploy-ключ (не коммитить)
+.deploy/

@@ -25,5 +25,6 @@ COPY --from=builder /app/node_modules /app/node_modules
 COPY --from=builder /app/package.json /app/package.json
 COPY --from=builder /app/apps/web/package.json ./package.json
 COPY --from=builder /app/apps/web/.next ./.next
+COPY --from=builder /app/apps/web/public ./public
 EXPOSE 3000
 CMD ["node", "/app/node_modules/next/dist/bin/next", "start", "-p", "3000"]

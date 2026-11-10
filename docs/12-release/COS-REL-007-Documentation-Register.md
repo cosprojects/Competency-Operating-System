@@ -78,6 +78,7 @@ references:
 | `docs/12-release/COS-REL-012-Delivery-Plan-and-Versioning.md` | План реализации, версии, канбан | Актуален (draft) | COS-BP-005, REL-000/001/002 | tasks/, Project | Поддерживать бэклог и версии; синхронизировать с Project | До Beta |
 | `docs/02-architecture/access/roles.json` | Machine-readable роли, capabilities, видимость | Approved | ARCH-173 | Auth, Admin, Org | Источник правды для реализации; менять вместе с ARCH-173 и кодом | До Beta |
 | `docs/02-architecture/COS-ARCH-173-Access-Control-and-Roles.md` | Роли, capabilities и видимость данных | Approved | ARCH-100/120, REL-003/004 | Auth, Admin, Org | Поддерживать матрицу при добавлении функций; не вводить роли без capability | До Beta |
+| `docs/12-release/reports/demo-2026-11-09.md` | Demo-сборка и ограничения | Approved | REL-014, REL-005 | Engineering | Поддерживать при каждом demo-релизе | До Beta |
 | `docs/12-release/COS-REL-014-Project-Audit-2026-11-09.md` | Аудит состояния проекта и документации | Draft | REL-000/001/002/005/012/013 | Все | Пересматривать перед публичным запуском; обновлять после закрытия P0 | До Beta |
 | `docs/12-release/COS-REL-013-Beta-Backlog-Review.md` | Детализация Beta-backlog на апрув | Approved | REL-012, BP-005 | tasks/ | Поддерживать решения и зависимости; обновлять при изменении scope | До Beta |
 | `README.md` | Вход в репозиторий | Актуален для Beta 1 | Beta scope | Все | Поддерживать статус и команды | До Beta |

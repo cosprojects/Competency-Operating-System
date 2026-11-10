@@ -1226,8 +1226,8 @@
       "version": "v0.1.0",
       "title": "Стабилизировать WIP и выпустить demo-сборку",
       "description": "Закоммитить текущие изменения, прогнать CI и собрать demo из актуального commit.",
-      "context": "91 файл изменений не закоммичен; Vercel собирает 924be76, а не текущий код с регистрацией, аккаунтом, админкой и access/audit.",
-      "deliverable": "Чистый commit, зелёный CI, demo-сборка из актуального commit.",
+      "context": "91 файл WIP разложен на 5 коммитов; CI и Vercel deployment успешны. Demo собрано из commit b046aef. Ограничения demo зафиксированы в docs/12-release/reports/demo-2026-11-09.md.",
+      "deliverable": "Commit b046aef, зелёный CI, Vercel deployment 9CbGGm7Gr2sJ3RbmrKQ6Gqr6kzAP и отчёт об ограничениях demo.",
       "outOfScope": [
         "Публичный запуск",
         "Новые функции сверх WIP"
@@ -1242,7 +1242,7 @@
       "priority": "P0",
       "area": "Release",
       "stage": "I",
-      "status": "Ready",
+      "status": "Done",
       "labels": [],
       "deferred": false,
       "issueNumber": 41,

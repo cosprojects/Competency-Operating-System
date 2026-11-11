@@ -100,7 +100,7 @@ Handoff — 2 (Cursor, Locofy), плюс 1 материал про промпт�
 
 ## 4. Мониторинг
 
-- В реестре 48 источников (`<tool>` и `<tool>-docs`), `authority: primary`, `status: active`, `discoveryOnly: true` —
+- В реестре 48 источников (`<tool>` и `<tool>-docs`), `authority: secondary`, `status: active`, `discoveryOnly: true` —
   это мониторинговые записи, а не доказательства компетенций; поэтому они не создают предупреждений `learning:map`.
 - Периодичность: раз в квартал проверять доступность и актуальность URL; при смене URL или закрытии доступа —
   `sources:access` / `sources:repair`, при устаревании — правка `summary` и материала.

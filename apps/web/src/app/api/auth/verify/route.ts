@@ -47,7 +47,6 @@ export async function POST(request: Request) {
     await trackServerEvent({ name: "signup_complete", userId: result.userId });
   }
 
-  const target =
-    result.isNewUser && result.returnTo === "/saved" ? "/saved?welcome=1" : result.returnTo;
+  const target = result.isNewUser ? "/?welcome=1" : result.returnTo;
   return redirectTo(request, target);
 }

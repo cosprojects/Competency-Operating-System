@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { WelcomeToast } from "@/components/account/WelcomeToast";
 import { formatChangelogDate, latestChangelog } from "@/content/changelog";
 import { IconCheckCircle } from "@/components/icons";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -62,7 +63,12 @@ const ROADMAP = [
   },
 ];
 
-export default function HomePage() {
+export default async function HomePage({
+  searchParams,
+}: {
+  searchParams: Promise<{ welcome?: string }>;
+}) {
+  const { welcome } = await searchParams;
   return (
     <>
     <div className="home-screen">
@@ -97,7 +103,7 @@ export default function HomePage() {
         </section>
 
         <section className="home-section">
-          <p className="eyebrow">Профессии</p>
+          <p className="eyebrow">Направления</p>
           <h2>С чего начать</h2>
           <div className="start-grid">
             {START_STEPS.map((step, index) => (
@@ -157,7 +163,7 @@ export default function HomePage() {
             </ul>
           </div>
           <Link className="button block" href="/professions">
-            Выбрать профессию
+            Выбрать направление
           </Link>
         </div>
 
@@ -179,6 +185,7 @@ export default function HomePage() {
       </div>
     </div>
     <SiteFooter />
+    {welcome === "1" ? <WelcomeToast /> : null}
     </>
   );
 }

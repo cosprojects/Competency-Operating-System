@@ -166,7 +166,7 @@ export function ProfessionCanvas({
       <div className="canvas-rail">
         <div className="rail-pinned">
           <Link className="rail-choose" href="/professions">
-            Выбрать профессию
+            Выбрать направление
           </Link>
 
           <section className="profession-summary">

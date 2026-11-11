@@ -128,14 +128,14 @@ export default async function SavedPage({
               : "Откройте профессию и сохраните её или компетенцию — они появятся здесь."}
           </p>
           <Link className="button" href="/professions">
-            Выбрать профессию
+            Выбрать направление
           </Link>
         </div>
       ) : (
         <>
           {visibleProfessions.length > 0 ? (
             <section className="saved-section">
-              <h2>Профессии</h2>
+              <h2>Направления</h2>
               <div className="saved-section-box saved-professions">
                 {visibleProfessions.map((profession) => (
                   <SavedProfessionCard key={profession.slug} profession={profession} />

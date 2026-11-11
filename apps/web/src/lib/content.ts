@@ -133,7 +133,11 @@ export function getProfessionGroups(): ProfessionGroup[] {
       .filter((profession): profession is ContentProfession => Boolean(profession));
     if (professions.length === 0) continue;
     for (const profession of professions) placed.add(profession.slug);
-    groups.push({ id: sphere.id, title: sphere.title, color: sphere.color, professions });
+    // Последние обновлённые профессии — первыми в категории.
+    const sorted = [...professions].sort((a, b) =>
+      (b.updatedAt ?? "").localeCompare(a.updatedAt ?? ""),
+    );
+    groups.push({ id: sphere.id, title: sphere.title, color: sphere.color, professions: sorted });
   }
   const rest = getProfessions().filter((profession) => !placed.has(profession.slug));
   if (rest.length > 0) {

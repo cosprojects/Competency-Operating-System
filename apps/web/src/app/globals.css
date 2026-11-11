@@ -57,10 +57,10 @@
   --shadow-soft: 0 4px 12px rgba(15, 23, 42, 0.04);
 
   --rail-left: 40px;
-  --rail-w: 80px;
-  --rail-w-expanded: 188px;
+  --rail-w: 84px;
+  --rail-w-expanded: 200px;
   --page-gap: 40px;
-  --shell-left: 136px;
+  --shell-left: 140px;
   --shell-right: 40px;
   --rail-side: 400px;
 }
@@ -594,10 +594,10 @@ svg {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 188px;
-  padding: 20px;
+  width: var(--rail-w-expanded);
+  padding: 20px 2px;
   border: 1px solid #fff;
-  border-radius: var(--r-24);
+  border-radius: var(--r-12);
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
@@ -607,8 +607,13 @@ svg {
 
 .nav-rail.is-mini {
   align-items: center;
-  width: 80px;
+  width: var(--rail-w);
   padding: 20px 16px;
+  border-radius: var(--r-24);
+}
+
+.nav-rail.is-mini .rail-brand {
+  padding-inline: 0;
 }
 
 .rail-top {
@@ -622,6 +627,7 @@ svg {
   display: inline-flex;
   align-items: center;
   gap: 4px;
+  padding-inline: 24px;
   color: inherit;
   text-decoration: none;
 }
@@ -643,18 +649,21 @@ svg {
 .rail-menu {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  width: 100%;
+  gap: 8px;
 }
 
 .nav-rail.is-mini .rail-menu {
-  gap: 20px;
+  width: auto;
+  gap: 10px;
 }
 
 .rail-item {
   display: flex;
   align-items: center;
+  width: 100%;
   gap: 10px;
-  padding: 4px;
+  padding: 10px 24px;
   border: 0;
   border-radius: var(--r-10);
   background: none;
@@ -693,15 +702,18 @@ svg {
 }
 
 .nav-rail.is-mini .rail-item {
+  width: 48px;
+  padding: 10px 0;
   justify-content: center;
 }
 
 .rail-bottom {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  align-items: flex-start;
+  gap: 10px;
+  align-items: stretch;
   min-width: 0;
+  width: 100%;
 }
 
 .nav-rail.is-mini .rail-bottom {
@@ -709,11 +721,12 @@ svg {
 }
 
 .rail-cta {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 10px;
-  width: 148px;
-  padding: 10px 14px;
+  width: 100%;
+  margin-top: 14px;
+  padding: 10px 24px;
   border: 0;
   border-radius: var(--r-10);
   background: var(--grey-100);
@@ -743,7 +756,8 @@ svg {
 
 .nav-rail.is-mini .rail-cta {
   justify-content: center;
-  width: auto;
+  width: 52px;
+  margin-top: 14px;
   padding: 10px 14px;
 }
 
@@ -3694,9 +3708,12 @@ html[data-consent="pending"] .canvas-toolbar {
 }
 
 .auth-card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
   width: min(100%, 520px);
   margin: 0 auto;
-  padding: 24px;
+  padding: 32px 24px;
   border: 1px solid var(--line-card);
   border-radius: var(--r-16);
   background: var(--surface);
@@ -5877,5 +5894,88 @@ button.rail-item {
 /* Звезда сохранения в карточке профессии — всегда у правого края. */
 .summary-top > .icon-button,
 .summary-top > .summary-star {
+  margin-left: auto;
+}
+
+
+/* Шапка админ-страницы: h1 и экспорт по разным сторонам */
+.page-head-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.page-head-row h1 {
+  margin: 0;
+}
+
+.export-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;
+}
+
+/* Растянутая ссылка: вся карточка кликабельна, кнопки избранного — поверх. */
+.stretched-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.saved-profession-card .stretched-link::after,
+.saved-skill-card .stretched-link::after {
+  z-index: 1;
+}
+
+.saved-profession-card .saved-profession-top,
+.saved-skill-card .saved-skill-top {
+  position: relative;
+  z-index: 2;
+}
+
+.saved-profession-card:hover,
+.saved-skill-card:hover {
+  border-color: #c7d2fe;
+  box-shadow: 0 12px 28px rgba(19, 34, 56, 0.1);
+}
+
+/* Приветственный алерт после первого входа */
+.welcome-toast {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 70;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  width: min(440px, calc(100vw - 32px));
+  padding: 20px;
+  border: 1px solid var(--line-card);
+  border-radius: var(--r-16);
+  background: var(--surface);
+  box-shadow: 0 24px 60px rgba(19, 34, 56, 0.18);
+  animation: detail-in 0.28s ease both;
+}
+
+.welcome-toast p {
+  margin: 0;
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.welcome-toast .welcome-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.welcome-toast .icon-button {
   margin-left: auto;
 }

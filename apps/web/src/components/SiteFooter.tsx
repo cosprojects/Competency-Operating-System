@@ -24,7 +24,7 @@ export function SiteFooter() {
         <div className="site-footer-right">
           <div className="site-footer-nav">
             <Link href="/">Главная</Link>
-            <Link href="/professions">Профессии</Link>
+            <Link href="/professions">Направления</Link>
             <Link href="/feedback">Ваш фидбек</Link>
             <Link href="/login">Войти</Link>
           </div>

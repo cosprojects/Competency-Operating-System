@@ -55,6 +55,8 @@ export interface ContentProfession {
   title: string;
   titleEn?: string;
   description: string;
+  /** Дата последнего содержательного обновления профессии (YYYY-MM-DD). */
+  updatedAt?: string;
   coverage: {
     published: number;
     total: number;

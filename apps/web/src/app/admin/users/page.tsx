@@ -54,14 +54,27 @@ export default async function AdminUsersPage({
     <>
       <div className="page-head">
         <div className="eyebrow">Админка</div>
-        <h1>Пользователи</h1>
+        <div className="page-head-row">
+          <h1>Пользователи</h1>
+          <div className="export-actions">
+            <a className="button secondary small" href="/admin/users/export?format=csv">
+              Выгрузить CSV
+            </a>
+            <a className="button secondary small" href="/admin/users/export?format=pdf">
+              Выгрузить PDF
+            </a>
+            <a
+              className="button ghost small"
+              href="/admin/users/consents/export"
+              title="Доказательства согласий для запросов субъектов ПДн и РКН"
+            >
+              Согласия CSV
+            </a>
+          </div>
+        </div>
         <p>
           Только подтверждённые адреса: аккаунт появляется после перехода по ссылке из письма.
           Удаление полное — данные не хранятся.
-        </p>
-        <p className="small muted">
-          <a href="/admin/users/consents/export">Выгрузить согласия (CSV)</a> — доказательства для
-          запросов субъектов ПДн и РКН.
         </p>
       </div>
 

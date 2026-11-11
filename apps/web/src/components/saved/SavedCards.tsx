@@ -34,7 +34,9 @@ export function SavedProfessionCard({ profession }: { profession: SavedProfessio
         <SaveButton targetType="PROFESSION" targetId={profession.slug} initialSaved variant="icon" />
       </div>
       <h3>
-        <Link href={`/professions/${profession.slug}`}>{profession.title}</Link>
+        <Link className="stretched-link" href={`/professions/${profession.slug}`}>
+          {profession.title}
+        </Link>
       </h3>
       <p>{profession.description}</p>
       <div className="coverage">
@@ -65,7 +67,12 @@ export function SavedSkillCard({ skill }: { skill: SavedSkillView }) {
         />
       </div>
       <h3>
-        <Link href={`/professions/${skill.professionSlug}?competency=${skill.id}`}>{skill.title}</Link>
+        <Link
+          className="stretched-link"
+          href={`/professions/${skill.professionSlug}?competency=${skill.id}`}
+        >
+          {skill.title}
+        </Link>
       </h3>
       <p>{skill.definition}</p>
       <div className="saved-skill-meta">{skill.summary}</div>

@@ -77,7 +77,17 @@ export default async function AdminMetricsPage({
     <>
       <div className="page-head">
         <div className="eyebrow">Админка</div>
-        <h1>Аналитика</h1>
+        <div className="page-head-row">
+          <h1>Аналитика</h1>
+          <div className="export-actions">
+            <a className="button secondary small" href={`/admin/metrics/export?format=csv&days=${period}`}>
+              Выгрузить CSV
+            </a>
+            <a className="button secondary small" href={`/admin/metrics/export?format=pdf&days=${period}`}>
+              Выгрузить PDF
+            </a>
+          </div>
+        </div>
         <p>
           Только first-party события. На малой выборке это ориентиры, а не доказательство спроса:
           смотри период и знаменатель.

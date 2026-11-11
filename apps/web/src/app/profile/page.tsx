@@ -72,7 +72,7 @@ export default async function ProfilePage() {
         {saved.length === 0 ? (
           <div className="empty">
             <p>Пока пусто. Сохрани профессию, компетенцию или материал — здесь появятся последние действия.</p>
-            <Link className="button" href="/professions">Выбрать профессию</Link>
+            <Link className="button" href="/professions">Выбрать направление</Link>
           </div>
         ) : (
           <div className="saved-section-box">

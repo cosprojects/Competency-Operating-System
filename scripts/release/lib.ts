@@ -771,6 +771,8 @@ export interface PublicProfession {
   title: string;
   titleEn?: string;
   description: string;
+  /** Дата последнего содержательного обновления профессии (YYYY-MM-DD). */
+  updatedAt?: string;
   coverage: {
     published: number;
     total: number;
@@ -950,11 +952,14 @@ export function buildPublicContent(
     const fullTotal = total + profession.excludedLinks;
     const percent = fullTotal > 0 ? Math.round((published / fullTotal) * 100) : 0;
     const view = inputs.views.get(profession.id) ?? null;
+    const meta = inputs.professions.professions.find((item) => item.id === profession.id) ?? null;
+    const updatedAt = view?.updatedAt ?? meta?.updatedAt;
     return {
       id: profession.id,
       slug: profession.id.split(".").at(-1) ?? profession.id,
       title: view?.title ?? profession.title,
       ...(view?.titleEn ? { titleEn: view.titleEn } : {}),
+      ...(updatedAt ? { updatedAt } : {}),
       description:
         inputs.professionDescriptions?.get(profession.id)?.trim() ??
         view?.description?.trim() ??

@@ -22,7 +22,7 @@ const ITEMS = [
   { href: "/", label: "Главная", icon: IconHome, match: (pathname: string) => pathname === "/" },
   {
     href: "/professions",
-    label: "Профессии",
+    label: "Направления",
     icon: IconStructure,
     match: (pathname: string) => pathname === "/professions" || pathname.startsWith("/professions/"),
   },

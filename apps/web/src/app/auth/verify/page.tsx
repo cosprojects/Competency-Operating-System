@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import { AutoVerify } from "@/components/auth/AutoVerify";
 import { loginLinkTtlText, peekLoginToken } from "@/lib/auth";
 
 export const dynamic = "force-dynamic";
@@ -43,21 +44,6 @@ export default async function VerifyPage({
 
   if (invalid) redirect("/auth/link-invalid");
 
-  return (
-    <div className="auth-card">
-      <h1>Подтверди вход</h1>
-      <p className="muted">
-        Нажми кнопку, чтобы войти в AXIONA. Ссылка одноразовая и действует {expiresText}.
-      </p>
-      <form action="/api/auth/verify" method="post">
-        <input type="hidden" name="token" value={token} />
-        <button className="button" type="submit">
-          Войти
-        </button>
-      </form>
-      <p className="small muted" style={{ marginTop: 14 }}>
-        Если ты не запрашивал вход, закрой страницу.
-      </p>
-    </div>
-  );
+  // Ссылка валидна: подтверждаем автоматически, без промежуточного экрана.
+  return <AutoVerify token={token} />;
 }

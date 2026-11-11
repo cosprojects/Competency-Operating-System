@@ -22,6 +22,8 @@ export interface ProfessionView {
   titleEn?: string;
   /** Осмысленное описание фокуса профессии для карточки и поиска. */
   description?: string;
+  /** Дата последнего содержательного обновления профессии (YYYY-MM-DD). */
+  updatedAt?: string;
   sections: ProfessionViewSection[];
 }
 

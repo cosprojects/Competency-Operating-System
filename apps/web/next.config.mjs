@@ -13,6 +13,11 @@ const nextConfig = {
   // Можно увести артефакты сборки в отдельную папку (например, для проверки,
   // пока в этом же workspace идёт другая сборка): NEXT_DIST_DIR=.next-verify
   distDir: process.env.NEXT_DIST_DIR || ".next",
+  // PDF-выгрузки встраивают Geist из public/fonts — включаем шрифт в бандл функций.
+  outputFileTracingIncludes: {
+    "/admin/users/export": ["./public/fonts/**"],
+    "/admin/metrics/export": ["./public/fonts/**"],
+  },
   reactStrictMode: true,
   poweredByHeader: false,
   serverExternalPackages: ["@prisma/client"],

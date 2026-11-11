@@ -7,7 +7,7 @@ import { sphereBadgeStyle } from "@/lib/spheres";
 import { getDb } from "@/lib/db";
 
 export const metadata: Metadata = {
-  title: "Профессии — AXIONA",
+  title: "Направления — AXIONA",
   description:
     "Выбор профессии дизайнера: поиск по названию профессии и навыкам, которые её составляют.",
 };

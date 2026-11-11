@@ -10,6 +10,8 @@ export interface ProfessionModelRecord {
   sphereId: string;
   title: string;
   titleEn?: string;
+  /** Дата последнего содержательного обновления профессии (YYYY-MM-DD). */
+  updatedAt?: string;
   canonicalMapFile: string;
   viewFile?: string;
   catalogFile: string;

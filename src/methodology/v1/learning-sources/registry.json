@@ -1,6 +1,6 @@
 {
   "registryVersion": "1.0.0",
-  "updatedAt": "2026-11-09",
+  "updatedAt": "2026-11-11",
   "sources": [
     {
       "id": "motiondesign-school-courses",
@@ -4764,6 +4764,1256 @@
       "notes": "Авто-расширение (brave-search); совпадение с «Цели бренда и коммуникационная стратегия», формат blog, score 0.58",
       "httpStatus": 200,
       "finalUrl": "https://sidorinlab.ru/"
+    },
+    {
+      "id": "perplexity",
+      "title": "Perplexity — официальный сайт",
+      "url": "https://www.perplexity.ai/",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "research",
+        "perplexity"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 200,
+      "summary": "Поисковый ИИ для ресёрча: отвечает на вопрос со ссылками на источники и помогает быстро собрать факты по задаче.",
+      "notes": "Официальный сайт Perplexity; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "perplexity-docs",
+      "title": "Perplexity — официальная документация",
+      "url": "https://www.perplexity.ai/help-center",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "research",
+        "perplexity"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 200,
+      "summary": "Поисковый ИИ для ресёрча: отвечает на вопрос со ссылками на источники и помогает быстро собрать факты по задаче.",
+      "notes": "Официальная документация Perplexity; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "claude",
+      "title": "Claude — официальный сайт",
+      "url": "https://claude.ai/",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "research",
+        "claude"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 200,
+      "summary": "Ассистент для анализа материалов, черновиков и длинных документов: помогает разобрать интервью и собрать выводы.",
+      "notes": "Официальный сайт Claude; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "claude-docs",
+      "title": "Claude — официальная документация",
+      "url": "https://support.anthropic.com/",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "research",
+        "claude"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 200,
+      "summary": "Ассистент для анализа материалов, черновиков и длинных документов: помогает разобрать интервью и собрать выводы.",
+      "notes": "Официальная документация Claude; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "dovetail",
+      "title": "Dovetail — официальный сайт",
+      "url": "https://dovetail.com/",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "research",
+        "dovetail"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 200,
+      "summary": "Платформа для анализа пользовательских исследований: теги, кластеры, поиск по интервью и синтез выводов.",
+      "notes": "Официальный сайт Dovetail; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "dovetail-docs",
+      "title": "Dovetail — официальная документация",
+      "url": "https://docs.dovetail.com/",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "research",
+        "dovetail"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 200,
+      "summary": "Платформа для анализа пользовательских исследований: теги, кластеры, поиск по интервью и синтез выводов.",
+      "notes": "Официальная документация Dovetail; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "notebooklm",
+      "title": "NotebookLM — официальный сайт",
+      "url": "https://notebooklm.google/",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "research",
+        "notebooklm"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 200,
+      "summary": "ИИ-блокнот по загруженным источникам: отвечает на вопросы по документам и делает конспекты со ссылками на фрагменты.",
+      "notes": "Официальный сайт NotebookLM; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "notebooklm-docs",
+      "title": "NotebookLM — официальная документация",
+      "url": "https://support.google.com/notebooklm?hl=ru",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "research",
+        "notebooklm"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 200,
+      "summary": "ИИ-блокнот по загруженным источникам: отвечает на вопросы по документам и делает конспекты со ссылками на фрагменты.",
+      "notes": "Официальная документация NotebookLM; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "chatgpt",
+      "title": "ChatGPT — официальный сайт",
+      "url": "https://chatgpt.com/",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "ideate",
+        "chatgpt"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 200,
+      "summary": "Ассистент для поиска идей и черновиков: помогает развернуть концепцию, собрать сценарии и переписать формулировки.",
+      "notes": "Официальный сайт ChatGPT; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "chatgpt-docs",
+      "title": "ChatGPT — официальная документация",
+      "url": "https://help.openai.com/",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "ideate",
+        "chatgpt"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 200,
+      "summary": "Ассистент для поиска идей и черновиков: помогает развернуть концепцию, собрать сценарии и переписать формулировки.",
+      "notes": "Официальная документация ChatGPT; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "figjam-ai",
+      "title": "FigJam AI — официальный сайт",
+      "url": "https://www.figma.com/figjam/ai/",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "paid",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "ideate",
+        "figjam ai"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 200,
+      "summary": "ИИ в FigJam для быстрой сборки досок, схем и диаграмм из промпта; доступен на платных тарифах Figma.",
+      "notes": "Официальный сайт FigJam AI; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "figjam-ai-docs",
+      "title": "FigJam AI — официальная документация",
+      "url": "https://help.figma.com/hc/en-us/articles/18706554628119-Make-boards-and-diagrams-with-FigJam-AI",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "paid",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "ideate",
+        "figjam ai"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 200,
+      "summary": "ИИ в FigJam для быстрой сборки досок, схем и диаграмм из промпта; доступен на платных тарифах Figma.",
+      "notes": "Официальная документация FigJam AI; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "miro-ai",
+      "title": "Miro AI — официальный сайт",
+      "url": "https://miro.com/ai/",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "ideate",
+        "miro ai"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 403,
+      "summary": "ИИ-помощник на доске Miro: суммирует стикеры, генерирует кластеры и превращает обсуждение в структуру.",
+      "notes": "Официальный сайт Miro AI; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "miro-ai-docs",
+      "title": "Miro AI — официальная документация",
+      "url": "https://help.miro.com/hc/en-us",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "ideate",
+        "miro ai"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 403,
+      "summary": "ИИ-помощник на доске Miro: суммирует стикеры, генерирует кластеры и превращает обсуждение в структуру.",
+      "notes": "Официальная документация Miro AI; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "whimsical-ai",
+      "title": "Whimsical AI — официальный сайт",
+      "url": "https://whimsical.com/ai",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "ideate",
+        "whimsical ai"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 200,
+      "summary": "Генерация схем, флоу и вайрфреймов из текстового описания прямо в визуальном рабочем пространстве Whimsical.",
+      "notes": "Официальный сайт Whimsical AI; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "whimsical-ai-docs",
+      "title": "Whimsical AI — официальная документация",
+      "url": "https://help.whimsical.com/",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "ideate",
+        "whimsical ai"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 200,
+      "summary": "Генерация схем, флоу и вайрфреймов из текстового описания прямо в визуальном рабочем пространстве Whimsical.",
+      "notes": "Официальная документация Whimsical AI; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "relume",
+      "title": "Relume — официальный сайт",
+      "url": "https://www.relume.io/",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "wireframe",
+        "relume"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 200,
+      "summary": "ИИ-конструктор сайтов и вайрфреймов: по брифу собирает структуру страниц и компоненты для передачи в Figma.",
+      "notes": "Официальный сайт Relume; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "relume-docs",
+      "title": "Relume — официальная документация",
+      "url": "https://resources.relume.io/resources/docs/essential-tools-to-get-started",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "wireframe",
+        "relume"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 200,
+      "summary": "ИИ-конструктор сайтов и вайрфреймов: по брифу собирает структуру страниц и компоненты для передачи в Figma.",
+      "notes": "Официальная документация Relume; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "uizard",
+      "title": "Uizard — официальный сайт",
+      "url": "https://uizard.io/",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "wireframe",
+        "uizard"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 200,
+      "summary": "Быстрые вайрфреймы и прототипы из текста или скетча: ИИ превращает описание в экраны для проверки идеи.",
+      "notes": "Официальный сайт Uizard; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "uizard-docs",
+      "title": "Uizard — официальная документация",
+      "url": "https://support.uizard.io/en/",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "wireframe",
+        "uizard"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 200,
+      "summary": "Быстрые вайрфреймы и прототипы из текста или скетча: ИИ превращает описание в экраны для проверки идеи.",
+      "notes": "Официальная документация Uizard; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "visily",
+      "title": "Visily — официальный сайт",
+      "url": "https://www.visily.ai/",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "wireframe",
+        "visily"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 200,
+      "summary": "ИИ-инструмент для вайрфреймов: помогает собрать экраны из шаблонов, скриншотов и текстового описания.",
+      "notes": "Официальный сайт Visily; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "visily-docs",
+      "title": "Visily — официальная документация",
+      "url": "https://support.visily.ai/portal/en/kb",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "wireframe",
+        "visily"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 200,
+      "summary": "ИИ-инструмент для вайрфреймов: помогает собрать экраны из шаблонов, скриншотов и текстового описания.",
+      "notes": "Официальная документация Visily; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "figma-ai",
+      "title": "Figma AI — официальный сайт",
+      "url": "https://www.figma.com/ai/",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "paid",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "ui-design",
+        "figma ai"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 200,
+      "summary": "ИИ-функции Figma: First Draft по промпту, переименование слоёв и генерация контента; доступны на платных планах.",
+      "notes": "Официальный сайт Figma AI; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "figma-ai-docs",
+      "title": "Figma AI — официальная документация",
+      "url": "https://help.figma.com/hc/en-us/articles/23955143044247-Use-First-Draft-with-Figma-AI",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "paid",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "ui-design",
+        "figma ai"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 200,
+      "summary": "ИИ-функции Figma: First Draft по промпту, переименование слоёв и генерация контента; доступны на платных планах.",
+      "notes": "Официальная документация Figma AI; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "google-stitch",
+      "title": "Stitch — официальный сайт",
+      "url": "https://stitch.withgoogle.com/",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "ui-design",
+        "stitch"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 200,
+      "summary": "Экспериментальный ИИ-генератор интерфейсов от Google: из промпта или референса собирает UI и экспортирует во Figma.",
+      "notes": "Официальный сайт Stitch; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "google-stitch-docs",
+      "title": "Stitch — официальная документация",
+      "url": "https://stitch.withgoogle.com/",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "ui-design",
+        "stitch"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 200,
+      "summary": "Экспериментальный ИИ-генератор интерфейсов от Google: из промпта или референса собирает UI и экспортирует во Figma.",
+      "notes": "Официальная документация Stitch; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "adobe-firefly",
+      "title": "Adobe Firefly — официальный сайт",
+      "url": "https://www.adobe.com/products/firefly.html",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "ui-design",
+        "adobe firefly"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 403,
+      "summary": "Генеративные изображения и заливки для визуала: понимает стиль бренда и встроен в рабочие инструменты Adobe.",
+      "notes": "Официальный сайт Adobe Firefly; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "adobe-firefly-docs",
+      "title": "Adobe Firefly — официальная документация",
+      "url": "https://helpx.adobe.com/firefly.html",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "ui-design",
+        "adobe firefly"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 403,
+      "summary": "Генеративные изображения и заливки для визуала: понимает стиль бренда и встроен в рабочие инструменты Adobe.",
+      "notes": "Официальная документация Adobe Firefly; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "figma-make",
+      "title": "Figma Make — официальный сайт",
+      "url": "https://www.figma.com/make/",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "prototype",
+        "figma make"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 200,
+      "summary": "Сборка интерактивных прототипов и приложений из промпта и макетов Figma; работает на бесплатном тарифе Starter.",
+      "notes": "Официальный сайт Figma Make; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "figma-make-docs",
+      "title": "Figma Make — официальная документация",
+      "url": "https://help.figma.com/hc/en-us/articles/31722591905559-Figma-Make-FAQs",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "prototype",
+        "figma make"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 200,
+      "summary": "Сборка интерактивных прототипов и приложений из промпта и макетов Figma; работает на бесплатном тарифе Starter.",
+      "notes": "Официальная документация Figma Make; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "lovable",
+      "title": "Lovable — официальный сайт",
+      "url": "https://lovable.dev/",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "prototype",
+        "lovable"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 200,
+      "summary": "Генерация работающих веб-приложений из описания: подходит для быстрых прототипов продуктов, а не только макетов.",
+      "notes": "Официальный сайт Lovable; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "lovable-docs",
+      "title": "Lovable — официальная документация",
+      "url": "https://docs.lovable.dev/",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "prototype",
+        "lovable"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 200,
+      "summary": "Генерация работающих веб-приложений из описания: подходит для быстрых прототипов продуктов, а не только макетов.",
+      "notes": "Официальная документация Lovable; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "v0",
+      "title": "v0 — официальный сайт",
+      "url": "https://v0.dev/",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "prototype",
+        "v0"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 200,
+      "summary": "Генерация UI-компонентов и страниц по промпту от Vercel: прототип интерфейса с кодом для передачи в разработку.",
+      "notes": "Официальный сайт v0; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "v0-docs",
+      "title": "v0 — официальная документация",
+      "url": "https://v0.dev/docs",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "prototype",
+        "v0"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 200,
+      "summary": "Генерация UI-компонентов и страниц по промпту от Vercel: прототип интерфейса с кодом для передачи в разработку.",
+      "notes": "Официальная документация v0; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "maze",
+      "title": "Maze — официальный сайт",
+      "url": "https://maze.co/",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "test",
+        "maze"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 200,
+      "summary": "Платформа для тестирования прототипов и интерфейсов: сбор и анализ метрик, наблюдение за прохождением задач.",
+      "notes": "Официальный сайт Maze; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "maze-docs",
+      "title": "Maze — официальная документация",
+      "url": "https://help.maze.co/",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "test",
+        "maze"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 200,
+      "summary": "Платформа для тестирования прототипов и интерфейсов: сбор и анализ метрик, наблюдение за прохождением задач.",
+      "notes": "Официальная документация Maze; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "attention-insight",
+      "title": "Attention Insight — официальный сайт",
+      "url": "https://attentioninsight.com/",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "test",
+        "attention insight"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 200,
+      "summary": "ИИ-предсказание внимания на макете: тепловые карты до запуска, оценка зон внимания и читаемости интерфейса.",
+      "notes": "Официальный сайт Attention Insight; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "attention-insight-docs",
+      "title": "Attention Insight — официальная документация",
+      "url": "https://attentioninsight.com/knowledgebase/",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "test",
+        "attention insight"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 200,
+      "summary": "ИИ-предсказание внимания на макете: тепловые карты до запуска, оценка зон внимания и читаемости интерфейса.",
+      "notes": "Официальная документация Attention Insight; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "lyssna",
+      "title": "Lyssna — официальный сайт",
+      "url": "https://www.lyssna.com/",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "test",
+        "lyssna"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 200,
+      "summary": "Платформа для интервью и юзабилити-тестов: респонденты, сценарии и отчёты в одном месте.",
+      "notes": "Официальный сайт Lyssna; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "lyssna-docs",
+      "title": "Lyssna — официальная документация",
+      "url": "https://help.lyssna.com/",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "test",
+        "lyssna"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 200,
+      "summary": "Платформа для интервью и юзабилити-тестов: респонденты, сценарии и отчёты в одном месте.",
+      "notes": "Официальная документация Lyssna; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "figma-dev-mode",
+      "title": "Figma Dev Mode — официальный сайт",
+      "url": "https://www.figma.com/dev-mode/",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "paid",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "handoff",
+        "figma dev mode"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 200,
+      "summary": "Режим передачи макета в разработку: спецификации, свойства и код; платная функция планов Figma.",
+      "notes": "Официальный сайт Figma Dev Mode; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "figma-dev-mode-docs",
+      "title": "Figma Dev Mode — официальная документация",
+      "url": "https://help.figma.com/hc/en-us/articles/15023124644247",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "paid",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "handoff",
+        "figma dev mode"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 200,
+      "summary": "Режим передачи макета в разработку: спецификации, свойства и код; платная функция планов Figma.",
+      "notes": "Официальная документация Figma Dev Mode; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "claude-code",
+      "title": "Claude Code — официальный сайт",
+      "url": "https://www.anthropic.com/claude-code",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "paid",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "handoff",
+        "claude code"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 200,
+      "summary": "Терминальный агент Claude для задач в кодовой базе: помогает с передачей макетов в разработку и правками прототипов.",
+      "notes": "Официальный сайт Claude Code; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "claude-code-docs",
+      "title": "Claude Code — официальная документация",
+      "url": "https://docs.anthropic.com/en/docs/claude-code",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "paid",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "handoff",
+        "claude code"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 200,
+      "summary": "Терминальный агент Claude для задач в кодовой базе: помогает с передачей макетов в разработку и правками прототипов.",
+      "notes": "Официальная документация Claude Code; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "cursor",
+      "title": "Cursor — официальный сайт",
+      "url": "https://cursor.com/",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "handoff",
+        "cursor"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 200,
+      "summary": "Редактор кода с ИИ-агентом: ускоряет перенос макетов в вёрстку и правки прототипов по описанию.",
+      "notes": "Официальный сайт Cursor; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "cursor-docs",
+      "title": "Cursor — официальная документация",
+      "url": "https://docs.cursor.com/",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "handoff",
+        "cursor"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 200,
+      "summary": "Редактор кода с ИИ-агентом: ускоряет перенос макетов в вёрстку и правки прототипов по описанию.",
+      "notes": "Официальная документация Cursor; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "locofy",
+      "title": "Locofy — официальный сайт",
+      "url": "https://www.locofy.ai/",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "handoff",
+        "locofy"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 200,
+      "summary": "Конвертация Figma-макетов в код: ИИ собирает вёрстку и компоненты для передачи в разработку.",
+      "notes": "Официальный сайт Locofy; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "locofy-docs",
+      "title": "Locofy — официальная документация",
+      "url": "https://www.locofy.ai/docs/",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "ai design tools",
+        "handoff",
+        "locofy"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-11",
+      "httpStatus": 200,
+      "summary": "Конвертация Figma-макетов в код: ИИ собирает вёрстку и компоненты для передачи в разработку.",
+      "notes": "Официальная документация Locofy; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03.",
+      "discoveryOnly": true
     }
   ]
 }

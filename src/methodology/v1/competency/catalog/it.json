@@ -1,7 +1,7 @@
 {
   "catalogVersion": "0.1.0",
   "domain": "it",
-  "updatedOn": "2026-11-09",
+  "updatedOn": "2026-11-11",
   "blocks": [
     {
       "id": "comp_3b5bab068e42",
@@ -58103,6 +58103,989 @@
           "outdated"
         ],
         "reviewedAt": "2026-11-09",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_ceafa61f2142",
+      "slug": "mat_03598734f0ab",
+      "kind": "docs",
+      "title": "Perplexity — документация и справка",
+      "titleEn": "Perplexity documentation",
+      "provider": "Perplexity AI",
+      "url": "https://www.perplexity.ai/help-center",
+      "canonicalUrl": "https://www.perplexity.ai/help-center",
+      "language": "en",
+      "access": "freemium",
+      "description": "Поисковый ИИ для ресёрча: отвечает на вопрос со ссылками на источники и помогает быстро собрать факты по задаче.",
+      "license": "© Perplexity AI; ссылка на официальную документацию, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "perplexity-docs",
+        "externalId": "perplexity-docs",
+        "url": "https://www.perplexity.ai/help-center",
+        "retrievedAt": "2026-11-11",
+        "license": "© Perplexity AI; ссылка на официальную документацию."
+      },
+      "retrievedAt": "2026-11-11",
+      "links": [
+        {
+          "competencyId": "comp_6b778dd309d3",
+          "relevance": 0.85,
+          "reason": "Поисковый ИИ для сбора фактов и источников — практика ресёрча с ИИ.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_6b778dd309d3"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "snippet": "Find clear guidance for getting started, choosing a plan, managing your account, and using Perplexity products.",
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.78,
+        "usefulness": 0.27,
+        "whyUseful": "Справка по Perplexity может помочь освоить поисковый ИИ со ссылками на источники, но не покрывает методику исследования и синтез данных.",
+        "reason": "Официальная документация инструмента релевантна теме ИИ в исследованиях, однако переданный snippet описывает только начало работы, тарифы и управление аккаунтом. Нет подтверждения практики подготовки гайдов, обработки интервью, синтеза данных или проверки выводов модели.",
+        "flags": [
+          "generic",
+          "no_practice"
+        ],
+        "reviewedAt": "2026-11-11",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_741412875b00",
+      "slug": "mat_2870d92f2b49",
+      "kind": "docs",
+      "title": "Claude — документация и справка",
+      "titleEn": "Claude documentation",
+      "provider": "Anthropic",
+      "url": "https://support.anthropic.com/",
+      "canonicalUrl": "https://support.anthropic.com/",
+      "language": "en",
+      "access": "freemium",
+      "description": "Ассистент для анализа материалов, черновиков и длинных документов: помогает разобрать интервью и собрать выводы.",
+      "license": "© Anthropic; ссылка на официальную документацию, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "claude-docs",
+        "externalId": "claude-docs",
+        "url": "https://support.anthropic.com/",
+        "retrievedAt": "2026-11-11",
+        "license": "© Anthropic; ссылка на официальную документацию."
+      },
+      "retrievedAt": "2026-11-11",
+      "links": [
+        {
+          "competencyId": "comp_9423ebb7b294",
+          "relevance": 0.8,
+          "reason": "Справка по работе с ассистентом: контекст, уточнения и переработка результата.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_6b778dd309d3",
+          "relevance": 0.75,
+          "reason": "Помогает разбирать длинные материалы и интервью при синтезе исследования.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_6b778dd309d3",
+        "comp_9423ebb7b294"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.78,
+        "usefulness": 0.3,
+        "whyUseful": "Официальная справка по Claude может пригодиться при работе с длинными материалами, но не даёт практики исследований.",
+        "reason": "Это документация инструмента, а не материал по практике ИИ в исследованиях: snippet пустой, описание общее, нет методики подготовки гайдов, синтеза интервью или проверки выводов.",
+        "flags": [
+          "generic",
+          "no_snippet",
+          "no_practice"
+        ],
+        "reviewedAt": "2026-11-11",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_3699772b9884",
+      "slug": "mat_7c7196d98fd8",
+      "kind": "docs",
+      "title": "Dovetail — документация и справка",
+      "titleEn": "Dovetail documentation",
+      "provider": "Dovetail",
+      "url": "https://docs.dovetail.com/",
+      "canonicalUrl": "https://docs.dovetail.com/",
+      "language": "en",
+      "access": "freemium",
+      "description": "Платформа для анализа пользовательских исследований: теги, кластеры, поиск по интервью и синтез выводов.",
+      "license": "© Dovetail; ссылка на официальную документацию, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "dovetail-docs",
+        "externalId": "dovetail-docs",
+        "url": "https://docs.dovetail.com/",
+        "retrievedAt": "2026-11-11",
+        "license": "© Dovetail; ссылка на официальную документацию."
+      },
+      "retrievedAt": "2026-11-11",
+      "links": [
+        {
+          "competencyId": "comp_6b778dd309d3",
+          "relevance": 0.85,
+          "reason": "Платформа анализа исследований: разметка, кластеры и синтез интервью.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_6b778dd309d3"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "snippet": "Guides and answers for Dovetail, from connecting your data through to acting on what customers say.",
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.58,
+        "usefulness": 0.35,
+        "whyUseful": "Справочник по платформе синтеза пользовательских исследований: теги, кластеры и поиск по интервью могут пригодиться как инструментальная опора при обработке данных.",
+        "reason": "Это документация/справка продукта Dovetail, а не учебный материал по практике применения ИИ в исследованиях. Snippet общий и не подтверждает наличие ИИ-функций, работы с гайдами, проверки выводов модели или учёта ограничений данных. Материал релевантен лишь частично — как инструментальная справка по синтезу интервью, поэтому требуется подтверждение, а не приём.",
+        "flags": [
+          "generic"
+        ],
+        "reviewedAt": "2026-11-11",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_03ad476663a7",
+      "slug": "mat_ae67de74364b",
+      "kind": "docs",
+      "title": "NotebookLM — документация и справка",
+      "titleEn": "NotebookLM documentation",
+      "provider": "Google",
+      "url": "https://support.google.com/notebooklm?hl=ru",
+      "canonicalUrl": "https://support.google.com/notebooklm?hl=ru",
+      "language": "ru",
+      "access": "freemium",
+      "description": "ИИ-блокнот по загруженным источникам: отвечает на вопросы по документам и делает конспекты со ссылками на фрагменты.",
+      "license": "© Google; ссылка на официальную документацию, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "notebooklm-docs",
+        "externalId": "notebooklm-docs",
+        "url": "https://support.google.com/notebooklm?hl=ru",
+        "retrievedAt": "2026-11-11",
+        "license": "© Google; ссылка на официальную документацию."
+      },
+      "retrievedAt": "2026-11-11",
+      "links": [
+        {
+          "competencyId": "comp_6b778dd309d3",
+          "relevance": 0.85,
+          "reason": "ИИ-блокнот по источникам: конспекты и ответы со ссылками на фрагменты.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_6b778dd309d3"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "snippet": "Официальный справочный центр , где можно найти советы и руководства по использованию продукта, а также ответы на часто задаваемые вопросы.",
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.65,
+        "usefulness": 0.55,
+        "whyUseful": "Официальная справка NotebookLM поможет разобраться в загрузке источников и получении ответов со ссылками на фрагменты для синтеза материалов исследования.",
+        "reason": "Материал релевантен: NotebookLM используется для работы с загруженными источниками, конспектирования и проверки ответов по ссылкам на фрагменты. Однако это официальная справочная документация продукта, а snippet слишком общий и не подтверждает наличие практических руководств именно по исследовательскому синтезу и проверке выводов. Поэтому материал стоит подтвердить, а не принимать автоматически.",
+        "flags": [
+          "generic"
+        ],
+        "reviewedAt": "2026-11-11",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_bdfdc3d8fdda",
+      "slug": "mat_70776d82a639",
+      "kind": "docs",
+      "title": "ChatGPT — документация и справка",
+      "titleEn": "ChatGPT documentation",
+      "provider": "OpenAI",
+      "url": "https://help.openai.com/",
+      "canonicalUrl": "https://help.openai.com/",
+      "language": "en",
+      "access": "freemium",
+      "description": "Ассистент для поиска идей и черновиков: помогает развернуть концепцию, собрать сценарии и переписать формулировки.",
+      "license": "© OpenAI; ссылка на официальную документацию, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "chatgpt-docs",
+        "externalId": "chatgpt-docs",
+        "url": "https://help.openai.com/",
+        "retrievedAt": "2026-11-11",
+        "license": "© OpenAI; ссылка на официальную документацию."
+      },
+      "retrievedAt": "2026-11-11",
+      "links": [
+        {
+          "competencyId": "comp_9423ebb7b294",
+          "relevance": 0.85,
+          "reason": "Справка по ассистенту: как формулировать запрос, уточнять и переписывать результат.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_9423ebb7b294"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.6,
+        "usefulness": 0.35,
+        "whyUseful": "Официальная справка OpenAI по ChatGPT может служить справочным материалом по формулировке запросов, но не покрывает структуру промпта и работу с параметрами визуала.",
+        "reason": "Материал — справочная документация провайдера модели, формат reference уместен. Однако snippet пустой, а описание носит общий продуктовый характер («ассистент для поиска идей и черновиков») и не подтверждает охват заявленных компонентов: структуры промпта с параметрами кадра, итеративной доработки и контроля результата. Пригодность для практики не подтверждена, поэтому требуется проверка, а не приём.",
+        "flags": [
+          "no_snippet",
+          "generic"
+        ],
+        "reviewedAt": "2026-11-11",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_fcd36f87e822",
+      "slug": "mat_899891f2e1be",
+      "kind": "docs",
+      "title": "Whimsical AI — документация и справка",
+      "titleEn": "Whimsical AI documentation",
+      "provider": "Whimsical",
+      "url": "https://help.whimsical.com/",
+      "canonicalUrl": "https://help.whimsical.com/",
+      "language": "en",
+      "access": "freemium",
+      "description": "Генерация схем, флоу и вайрфреймов из текстового описания прямо в визуальном рабочем пространстве Whimsical.",
+      "license": "© Whimsical; ссылка на официальную документацию, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "whimsical-ai-docs",
+        "externalId": "whimsical-ai-docs",
+        "url": "https://help.whimsical.com/",
+        "retrievedAt": "2026-11-11",
+        "license": "© Whimsical; ссылка на официальную документацию."
+      },
+      "retrievedAt": "2026-11-11",
+      "links": [
+        {
+          "competencyId": "comp_caba3b40c787",
+          "relevance": 0.78,
+          "reason": "Генерация схем и флоу из текста — ИИ-сценарии и структура.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_caba3b40c787"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "snippet": "Guides, tutorials and answers for getting the most out of Whimsical — boards, docs, AI, integrations and more.",
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.72,
+        "usefulness": 0.25,
+        "whyUseful": "Справка Whimsical AI описывает генерацию флоу и схем из текста, но не даёт метода проверки альтернативных и ошибочных веток.",
+        "reason": "Это справочный раздел вендорской документации визуального инструмента: snippet общий и не подтверждает охват темы «AI-сценарии и проверка логики», включая error/edge cases и Interaction Specification. Тема частично релевантна (генерация флоу), поэтому материал требует подтверждения, а не отклонения.",
+        "flags": [
+          "generic",
+          "no_practice",
+          "no_snippet"
+        ],
+        "reviewedAt": "2026-11-11",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_abccbc3a9b78",
+      "slug": "mat_2610093d3dbe",
+      "kind": "docs",
+      "title": "Relume — документация и справка",
+      "titleEn": "Relume documentation",
+      "provider": "Relume",
+      "url": "https://resources.relume.io/resources/docs/essential-tools-to-get-started",
+      "canonicalUrl": "https://resources.relume.io/resources/docs/essential-tools-to-get-started",
+      "language": "en",
+      "access": "freemium",
+      "description": "ИИ-конструктор сайтов и вайрфреймов: по брифу собирает структуру страниц и компоненты для передачи в Figma.",
+      "license": "© Relume; ссылка на официальную документацию, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "relume-docs",
+        "externalId": "relume-docs",
+        "url": "https://resources.relume.io/resources/docs/essential-tools-to-get-started",
+        "retrievedAt": "2026-11-11",
+        "license": "© Relume; ссылка на официальную документацию."
+      },
+      "retrievedAt": "2026-11-11",
+      "links": [
+        {
+          "competencyId": "comp_281fdd473ddf",
+          "relevance": 0.82,
+          "reason": "ИИ-сборка структуры страниц и компонентов — вайрфреймы по брифу.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_c39fe2df0c9d",
+          "relevance": 0.72,
+          "reason": "Помощь в сборке макетов и документации по брифу.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_281fdd473ddf",
+        "comp_c39fe2df0c9d"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "snippet": "All of the essential tools to get started building effectively with the Relume Site Builder.",
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.65,
+        "usefulness": 0.45,
+        "whyUseful": "Документация Relume может помочь освоить сборку структуры страниц и вайрфреймов в этом инструменте.",
+        "reason": "Материал относится к вайрфреймингу и структуре страниц, но представляет собой документацию конкретного продукта, а snippet слишком общий для уверенного принятия.",
+        "flags": [
+          "generic"
+        ],
+        "reviewedAt": "2026-11-11",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_d97bd2945bb0",
+      "slug": "mat_540f42eb5aca",
+      "kind": "docs",
+      "title": "Uizard — документация и справка",
+      "titleEn": "Uizard documentation",
+      "provider": "Uizard",
+      "url": "https://support.uizard.io/en/",
+      "canonicalUrl": "https://support.uizard.io/en/",
+      "language": "en",
+      "access": "freemium",
+      "description": "Быстрые вайрфреймы и прототипы из текста или скетча: ИИ превращает описание в экраны для проверки идеи.",
+      "license": "© Uizard; ссылка на официальную документацию, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "uizard-docs",
+        "externalId": "uizard-docs",
+        "url": "https://support.uizard.io/en/",
+        "retrievedAt": "2026-11-11",
+        "license": "© Uizard; ссылка на официальную документацию."
+      },
+      "retrievedAt": "2026-11-11",
+      "links": [
+        {
+          "competencyId": "comp_281fdd473ddf",
+          "relevance": 0.85,
+          "reason": "Вайрфреймы из описания или скетча: ИИ превращает идею в экраны.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_281fdd473ddf"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.7,
+        "usefulness": 0.45,
+        "whyUseful": "Справка Uizard может помочь создавать быстрые вайрфреймы и прототипы, но это документация конкретного инструмента.",
+        "reason": "Материал относится к прототипированию на основе вайрфреймов, однако является документацией продукта Uizard и не покрывает основы вайрфрейминга и структуру экранов системно. Snippet пустой, поэтому пригодность нужно подтвердить.",
+        "flags": [
+          "no_snippet"
+        ],
+        "reviewedAt": "2026-11-11",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_a73aaa119826",
+      "slug": "mat_949691a98b68",
+      "kind": "docs",
+      "title": "Visily — документация и справка",
+      "titleEn": "Visily documentation",
+      "provider": "Visily",
+      "url": "https://support.visily.ai/portal/en/kb",
+      "canonicalUrl": "https://support.visily.ai/portal/en/kb",
+      "language": "en",
+      "access": "freemium",
+      "description": "ИИ-инструмент для вайрфреймов: помогает собрать экраны из шаблонов, скриншотов и текстового описания.",
+      "license": "© Visily; ссылка на официальную документацию, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "visily-docs",
+        "externalId": "visily-docs",
+        "url": "https://support.visily.ai/portal/en/kb",
+        "retrievedAt": "2026-11-11",
+        "license": "© Visily; ссылка на официальную документацию."
+      },
+      "retrievedAt": "2026-11-11",
+      "links": [
+        {
+          "competencyId": "comp_281fdd473ddf",
+          "relevance": 0.82,
+          "reason": "Сборка вайрфреймов из шаблонов и текстового описания.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_281fdd473ddf"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.55,
+        "usefulness": 0.35,
+        "whyUseful": "Справка по инструменту Visily для сборки экранов-вайрфреймов из шаблонов, скриншотов и текстового описания.",
+        "reason": "Это документация конкретного продукта (vendor docs), а не материал по методологии вайрфрейминга: покрывает работу в Visily, лишь косвенно — основы и структуру экранов. Snippet пустой, язык английский, доступ freemium (часть функций платная), поэтому нельзя подтвердить ни содержание, ни применимость к компонентам компетенции. Целевое покрытие уже набрано (3/3), так что материал не критичен — требуется проверка перед принятием.",
+        "flags": [
+          "no_snippet",
+          "wrong_language",
+          "paywall"
+        ],
+        "reviewedAt": "2026-11-11",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_cc2d76a4b296",
+      "slug": "mat_39c7703c865e",
+      "kind": "docs",
+      "title": "Stitch — документация и справка",
+      "titleEn": "Stitch documentation",
+      "provider": "Google",
+      "url": "https://stitch.withgoogle.com/",
+      "canonicalUrl": "https://stitch.withgoogle.com/",
+      "language": "en",
+      "access": "free",
+      "description": "Экспериментальный ИИ-генератор интерфейсов от Google: из промпта или референса собирает UI и экспортирует во Figma.",
+      "license": "© Google; ссылка на официальную документацию, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "google-stitch-docs",
+        "externalId": "google-stitch-docs",
+        "url": "https://stitch.withgoogle.com/",
+        "retrievedAt": "2026-11-11",
+        "license": "© Google; ссылка на официальную документацию."
+      },
+      "retrievedAt": "2026-11-11",
+      "links": [
+        {
+          "competencyId": "comp_3a5ca09699ff",
+          "relevance": 0.82,
+          "reason": "Генерация интерфейса из промпта — AI-генерация UI и проверка результата.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_3a5ca09699ff"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "snippet": "Stitch generates UIs for mobile and web applications, making design ideation fast and easy.",
+      "review": {
+        "verdict": "accept",
+        "confidence": 0.88,
+        "usefulness": 0.8,
+        "whyUseful": "Официальная справка по Stitch: генерация UI из промпта или референса и экспорт результата в Figma.",
+        "reason": "Официальная документация Google по инструменту из целевого стека компетенции (Stitch): покрывает prompt-to-UI и перенос макета в Figma, доступна бесплатно, тема совпадает со snippet и описанием. Формат справочника даёт меньше практики, чем туториал, но это первоисточник по возможностям и ограничениям инструмента.",
+        "flags": [
+          "no_practice"
+        ],
+        "reviewedAt": "2026-11-11",
+        "reviewer": "methodologist-v1",
+        "status": "accepted"
+      }
+    },
+    {
+      "id": "material_a7bdc0dcd231",
+      "slug": "mat_42a95d38689d",
+      "kind": "docs",
+      "title": "Adobe Firefly — документация и справка",
+      "titleEn": "Adobe Firefly documentation",
+      "provider": "Adobe",
+      "url": "https://helpx.adobe.com/firefly.html",
+      "canonicalUrl": "https://helpx.adobe.com/firefly.html",
+      "language": "en",
+      "access": "freemium",
+      "description": "Генеративные изображения и заливки для визуала: понимает стиль бренда и встроен в рабочие инструменты Adobe.",
+      "license": "© Adobe; ссылка на официальную документацию, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "adobe-firefly-docs",
+        "externalId": "adobe-firefly-docs",
+        "url": "https://helpx.adobe.com/firefly.html",
+        "retrievedAt": "2026-11-11",
+        "license": "© Adobe; ссылка на официальную документацию."
+      },
+      "retrievedAt": "2026-11-11",
+      "links": [
+        {
+          "competencyId": "comp_98f8b80e3d5f",
+          "relevance": 0.85,
+          "reason": "Генерация и доведение визуала: стиль, референсы, рабочее качество.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_bc4de5f33fa7",
+          "relevance": 0.78,
+          "reason": "ИИ в обработке изображений: генерация и доработка визуала.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_98f8b80e3d5f",
+        "comp_bc4de5f33fa7"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.55,
+        "usefulness": 0.4,
+        "whyUseful": "Официальная справка Adobe Firefly по генерации изображений и стилизации — справочник по параметрам, без практики устранения артефактов и апскейла.",
+        "reason": "Официальная документация инструмента генерации изображений: тематически близка к компонентам «Генерация изображений» и «Стилизация», но это справочный формат, а не практика. Snippet пустой, поэтому содержание и охват компонентов «Устранение артефактов» и «Доведение визуала» не подтверждены; материал на английском. Требует подтверждения.",
+        "flags": [
+          "no_snippet",
+          "no_practice",
+          "wrong_language"
+        ],
+        "reviewedAt": "2026-11-11",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_690ec5c1298a",
+      "slug": "mat_3432e918055a",
+      "kind": "docs",
+      "title": "Figma Make — документация и справка",
+      "titleEn": "Figma Make documentation",
+      "provider": "Figma",
+      "url": "https://help.figma.com/hc/en-us/articles/31722591905559-Figma-Make-FAQs",
+      "canonicalUrl": "https://help.figma.com/hc/en-us/articles/31722591905559-Figma-Make-FAQs",
+      "language": "en",
+      "access": "freemium",
+      "description": "Сборка интерактивных прототипов и приложений из промпта и макетов Figma; работает на бесплатном тарифе Starter.",
+      "license": "© Figma; ссылка на официальную документацию, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "figma-make-docs",
+        "externalId": "figma-make-docs",
+        "url": "https://help.figma.com/hc/en-us/articles/31722591905559-Figma-Make-FAQs",
+        "retrievedAt": "2026-11-11",
+        "license": "© Figma; ссылка на официальную документацию."
+      },
+      "retrievedAt": "2026-11-11",
+      "links": [
+        {
+          "competencyId": "comp_92f7d1ca21f5",
+          "relevance": 0.85,
+          "reason": "Сборка интерактивных прототипов из промпта и макетов.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_fa6b64a98d04",
+          "relevance": 0.72,
+          "reason": "Интерактивный прототип как результат AI-сборки.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_92f7d1ca21f5",
+        "comp_fa6b64a98d04"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "snippet": "Before you start Who can use this feature Starter, Professional, Education (not K-12), Organization, Government, and Enterprise plans ...",
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.72,
+        "usefulness": 0.78,
+        "whyUseful": "Официальная документация Figma Make по сборке интерактивных прототипов из промпта и макетов.",
+        "reason": "Материал относится к AI-прототипированию и может помочь в сборке работающих прототипов, но snippet описывает только доступ по тарифам и не подтверждает практическую глубину — нужна проверка содержания.",
+        "flags": [
+          "no_snippet"
+        ],
+        "reviewedAt": "2026-11-11",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_8787147d4c86",
+      "slug": "mat_7b5b4b98603a",
+      "kind": "docs",
+      "title": "Lovable — документация и справка",
+      "titleEn": "Lovable documentation",
+      "provider": "Lovable",
+      "url": "https://docs.lovable.dev/",
+      "canonicalUrl": "https://docs.lovable.dev/",
+      "language": "en",
+      "access": "freemium",
+      "description": "Генерация работающих веб-приложений из описания: подходит для быстрых прототипов продуктов, а не только макетов.",
+      "license": "© Lovable; ссылка на официальную документацию, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "lovable-docs",
+        "externalId": "lovable-docs",
+        "url": "https://docs.lovable.dev/",
+        "retrievedAt": "2026-11-11",
+        "license": "© Lovable; ссылка на официальную документацию."
+      },
+      "retrievedAt": "2026-11-11",
+      "links": [
+        {
+          "competencyId": "comp_92f7d1ca21f5",
+          "relevance": 0.85,
+          "reason": "Генерация работающего прототипа приложения из описания.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_fa6b64a98d04",
+          "relevance": 0.72,
+          "reason": "Интерактивный прототип и его проверка.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_92f7d1ca21f5",
+        "comp_fa6b64a98d04"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "snippet": "Lovable is a full-stack AI development platform for building, iterating on, and deploying web applications using natural language, with real code, security, and enterprise governance.",
+      "review": {
+        "verdict": "accept",
+        "confidence": 0.9,
+        "usefulness": 0.82,
+        "whyUseful": "Официальная документация Lovable показывает, как собрать работающее веб-приложение из описания и итерировать прототип на реальном коде.",
+        "reason": "Материал релевантен компетенции AI-прототипирования: это документация профильного AI-инструмента для сборки и доработки работающих прототипов. Она не покрывает методику проверки пользовательских сценариев, но полезна для практических навыков и понимания generated code.",
+        "flags": [],
+        "reviewedAt": "2026-11-11",
+        "reviewer": "methodologist-v1",
+        "status": "accepted"
+      }
+    },
+    {
+      "id": "material_a1107916b7a5",
+      "slug": "mat_3839b07f2787",
+      "kind": "docs",
+      "title": "v0 — документация и справка",
+      "titleEn": "v0 documentation",
+      "provider": "Vercel",
+      "url": "https://v0.dev/docs",
+      "canonicalUrl": "https://v0.dev/docs",
+      "language": "en",
+      "access": "freemium",
+      "description": "Генерация UI-компонентов и страниц по промпту от Vercel: прототип интерфейса с кодом для передачи в разработку.",
+      "license": "© Vercel; ссылка на официальную документацию, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "v0-docs",
+        "externalId": "v0-docs",
+        "url": "https://v0.dev/docs",
+        "retrievedAt": "2026-11-11",
+        "license": "© Vercel; ссылка на официальную документацию."
+      },
+      "retrievedAt": "2026-11-11",
+      "links": [
+        {
+          "competencyId": "comp_92f7d1ca21f5",
+          "relevance": 0.85,
+          "reason": "Генерация UI-компонентов и страниц по промпту — прототип интерфейса.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_92f7d1ca21f5"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "snippet": "v0 is an AI agent that helps anyone create real code and full-stack apps and agents.",
+      "review": {
+        "verdict": "accept",
+        "confidence": 0.84,
+        "usefulness": 0.72,
+        "whyUseful": "Официальная документация v0 помогает освоить генерацию UI-компонентов и кода для работающего прототипа и передачи в разработку.",
+        "reason": "Материал релевантен AI-прототипированию: это официальная справка инструмента, который по промпту генерирует интерфейс и код. Основное ограничение — документация не содержит практики проверки пользовательских сценариев.",
+        "flags": [
+          "no_practice"
+        ],
+        "reviewedAt": "2026-11-11",
+        "reviewer": "methodologist-v1",
+        "status": "accepted"
+      }
+    },
+    {
+      "id": "material_ec2d089e9900",
+      "slug": "mat_ab0477d92c46",
+      "kind": "docs",
+      "title": "Maze — документация и справка",
+      "titleEn": "Maze documentation",
+      "provider": "Maze",
+      "url": "https://help.maze.co/",
+      "canonicalUrl": "https://help.maze.co/",
+      "language": "en",
+      "access": "freemium",
+      "description": "Платформа для тестирования прототипов и интерфейсов: сбор и анализ метрик, наблюдение за прохождением задач.",
+      "license": "© Maze; ссылка на официальную документацию, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "maze-docs",
+        "externalId": "maze-docs",
+        "url": "https://help.maze.co/",
+        "retrievedAt": "2026-11-11",
+        "license": "© Maze; ссылка на официальную документацию."
+      },
+      "retrievedAt": "2026-11-11",
+      "links": [
+        {
+          "competencyId": "comp_c2cd7e56553d",
+          "relevance": 0.85,
+          "reason": "Тестирование прототипов: метрики, сценарии и наблюдение за прохождением задач.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_c2cd7e56553d"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.55,
+        "usefulness": 0.4,
+        "whyUseful": "Справка по платформе Maze для запуска тестов прототипов и сбора метрик прохождения задач.",
+        "reason": "Документация инструмента юзабилити-тестирования, тематически релевантна компетенции, но покрывает работу в конкретной платформе, а не методологию подготовки, проведения и анализа тестов; snippet пустой, поэтому содержание и полнота разделов не подтверждены. Язык материала — английский.",
+        "flags": [
+          "no_snippet",
+          "wrong_language"
+        ],
+        "reviewedAt": "2026-11-11",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_640ce4156c3c",
+      "slug": "mat_f76102ca58bc",
+      "kind": "docs",
+      "title": "Attention Insight — документация и справка",
+      "titleEn": "Attention Insight documentation",
+      "provider": "Attention Insight",
+      "url": "https://attentioninsight.com/knowledgebase/",
+      "canonicalUrl": "https://attentioninsight.com/knowledgebase/",
+      "language": "en",
+      "access": "freemium",
+      "description": "ИИ-предсказание внимания на макете: тепловые карты до запуска, оценка зон внимания и читаемости интерфейса.",
+      "license": "© Attention Insight; ссылка на официальную документацию, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "attention-insight-docs",
+        "externalId": "attention-insight-docs",
+        "url": "https://attentioninsight.com/knowledgebase/",
+        "retrievedAt": "2026-11-11",
+        "license": "© Attention Insight; ссылка на официальную документацию."
+      },
+      "retrievedAt": "2026-11-11",
+      "links": [
+        {
+          "competencyId": "comp_2df1ae0af3f6",
+          "relevance": 0.8,
+          "reason": "Карты внимания проверяют визуальную иерархию и читаемость результата.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_2d2a9ebacafe",
+          "relevance": 0.72,
+          "reason": "Оценка визуальной коммуникации по зонам внимания.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_2d2a9ebacafe",
+        "comp_2df1ae0af3f6"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "snippet": "Find step-by-step guides and tutorials for Attention Insight — AI heatmaps, Figma plugin, AOI analysis, reports, integrations, and account settings.",
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.62,
+        "usefulness": 0.35,
+        "whyUseful": "Справка по сервису ИИ-тепловых карт внимания: позволяет до запуска проверить зоны внимания и читаемость макета.",
+        "reason": "Это документация вендорского инструмента предиктивной оценки внимания. Она может быть вспомогательной для проверки визуальной иерархии и читаемости, но не teaches визуальную коммуникацию, композицию и стилистику или анимацию; покрытие темы частичное и одностороннее, поэтому материал скорее подтверждается, чем принимается как учебный ресурс по компетенции.",
+        "flags": [
+          "generic"
+        ],
+        "reviewedAt": "2026-11-11",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_575cc34afdcb",
+      "slug": "mat_054eb129b181",
+      "kind": "docs",
+      "title": "Lyssna — документация и справка",
+      "titleEn": "Lyssna documentation",
+      "provider": "Lyssna",
+      "url": "https://help.lyssna.com/",
+      "canonicalUrl": "https://help.lyssna.com/",
+      "language": "en",
+      "access": "freemium",
+      "description": "Платформа для интервью и юзабилити-тестов: респонденты, сценарии и отчёты помогают собрать данные исследования и подготовить синтез выводов.",
+      "license": "© Lyssna; ссылка на официальную документацию, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "lyssna-docs",
+        "externalId": "lyssna-docs",
+        "url": "https://help.lyssna.com/",
+        "retrievedAt": "2026-11-11",
+        "license": "© Lyssna; ссылка на официальную документацию."
+      },
+      "retrievedAt": "2026-11-11",
+      "links": [
+        {
+          "competencyId": "comp_c2cd7e56553d",
+          "relevance": 0.82,
+          "reason": "Интервью и юзабилити-тесты: респонденты, сценарии и отчёты.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_c2cd7e56553d"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.45,
+        "usefulness": 0.35,
+        "whyUseful": "Справка платформы Lyssna описывает организацию интервью и юзабилити-тестов с респондентами и сбор результатов в отчётах.",
+        "reason": "Snippet пустой, поэтому пригодность по содержимому не проверяется. Формально это документация/справка вендорской платформы, а не учебный материал по методологии юзабилити-тестирования: она может закрыть отдельные компоненты (проведение сессий, фиксация результатов), но не даёт системного освоения компетенции и привязана к конкретному инструменту. Материал на английском языке, доступ freemium — часть функциональности за платой. Нужна ручная проверка перед приёмом.",
+        "flags": [
+          "no_snippet",
+          "wrong_language",
+          "paywall"
+        ],
+        "reviewedAt": "2026-11-11",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_83df9e1d1244",
+      "slug": "mat_78318e72be2a",
+      "kind": "docs",
+      "title": "Cursor — документация и справка",
+      "titleEn": "Cursor documentation",
+      "provider": "Anysphere",
+      "url": "https://docs.cursor.com/",
+      "canonicalUrl": "https://docs.cursor.com/",
+      "language": "en",
+      "access": "freemium",
+      "description": "Редактор кода с ИИ-агентом: ускоряет перенос макетов в вёрстку и правки прототипов по описанию.",
+      "license": "© Anysphere; ссылка на официальную документацию, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "cursor-docs",
+        "externalId": "cursor-docs",
+        "url": "https://docs.cursor.com/",
+        "retrievedAt": "2026-11-11",
+        "license": "© Anysphere; ссылка на официальную документацию."
+      },
+      "retrievedAt": "2026-11-11",
+      "links": [
+        {
+          "competencyId": "comp_42c60aead559",
+          "relevance": 0.82,
+          "reason": "ИИ-агент в кодовой базе: перенос макета в вёрстку и правки по описанию.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_42c60aead559"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "snippet": "Official Cursor documentation. Covers Agent mode, Rules, Skills, MCP servers, CLI, models, and Teams & Enterprise setup. Start building in minutes.",
+      "review": {
+        "verdict": "accept",
+        "confidence": 0.85,
+        "usefulness": 0.72,
+        "whyUseful": "Официальная документация Cursor описывает Agent mode, Rules и MCP — справочник по настройке AI-агента для генерации и правки кода в проекте.",
+        "reason": "Первоисточник от разработчика инструмента, напрямую покрывает работу с AI coding agent (постановка задач, правила, интеграции), что соответствует знаниям и навыкам компетенции; это справочник, а не лендинг или агрегатор.",
+        "flags": [
+          "no_practice"
+        ],
+        "reviewedAt": "2026-11-11",
+        "reviewer": "methodologist-v1",
+        "status": "accepted"
+      }
+    },
+    {
+      "id": "material_cb939c48f526",
+      "slug": "mat_2b99a478d74c",
+      "kind": "docs",
+      "title": "Locofy — документация и справка",
+      "titleEn": "Locofy documentation",
+      "provider": "Locofy",
+      "url": "https://www.locofy.ai/docs/",
+      "canonicalUrl": "https://www.locofy.ai/docs/",
+      "language": "en",
+      "access": "freemium",
+      "description": "Конвертация Figma-макетов в код: ИИ собирает вёрстку и компоненты для передачи в разработку.",
+      "license": "© Locofy; ссылка на официальную документацию, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "locofy-docs",
+        "externalId": "locofy-docs",
+        "url": "https://www.locofy.ai/docs/",
+        "retrievedAt": "2026-11-11",
+        "license": "© Locofy; ссылка на официальную документацию."
+      },
+      "retrievedAt": "2026-11-11",
+      "links": [
+        {
+          "competencyId": "comp_42c60aead559",
+          "relevance": 0.8,
+          "reason": "Конвертация Figma-макета в код: AI-разработка и передача результата в разработку.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_8984ce9da8c1",
+          "relevance": 0.72,
+          "reason": "Документация показывает, какие артефакты макета нужны для передачи в разработку.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_42c60aead559",
+        "comp_8984ce9da8c1"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.55,
+        "usefulness": 0.4,
+        "whyUseful": "Документация Locofy описывает генерацию UI-компонентов из Figma-макетов и может быть полезна как справочник по AI-ассистированной сборке интерфейса.",
+        "reason": "Тема частично связана с AI-генерацией интерфейсного кода и компонентной архитектурой, но пустой snippet не позволяет проверить содержание. Материал не покрывает работу с репозиторием, постановку задач агенту и отладку в объёме компетенции.",
+        "flags": [
+          "no_snippet"
+        ],
+        "reviewedAt": "2026-11-11",
         "reviewer": "methodologist-v1",
         "status": "needs_confirmation"
       }

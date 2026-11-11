@@ -11,7 +11,7 @@ MVP — слой сборки компетенций и ресурсной ба�
 - Гейм-дизайнер `it.game` собран в модели (13-я профессия, 30 связей, 30/30 компетенций с активным
   первичным источником), но в публикацию Beta 1 не входит до accepted-блоков и материалов.
 - В модели **132 компетенции**, в публикации **131**, связей «профессия–компетенция» — **292**.
-- Ресурсная база: **170 источников** (133 active), **46 материалов** в каталоге; в публичной сборке — 116 источников.
+- Ресурсная база: **218 источников** (181 active; из них 48 — мониторинговые ссылки на AI-инструменты), **65 материалов** в каталоге; в публичной сборке — 116 источников.
 - Content gate: 292/391 связей опубликовано, 131/131 компетенция, 0 пробелов. `release:validate` — PASS. AI-дизайнер — 13 секций, 56 компетенций.
 - Source review — AI-assisted (1 387 решений); человеческий spot-check основателя проведён 2026-11-09, остались некритичные расхождения. Манифест — `ready`.
 
@@ -130,11 +130,11 @@ SSRF-защита). Схема канваса считается детерми�
 ## Данные и модель
 
 - `src/methodology/v1/competency/canonical/uxui.json` — каноническая карта UX/UI.
-- `src/methodology/v1/competency/model/competencies.json` — единый массив **122** компетенций.
+- `src/methodology/v1/competency/model/competencies.json` — единый массив **132** компетенций.
 - `model/professions/views/<profession>.json` — разделы и приоритеты 12 profession view.
 - `model/learning-source-links.json` — связи «компетенция → источник», мержатся при `model:sync`.
-- `learning-sources/registry.json` — реестр источников; `catalog/it.json` — 125 блоков, 565 тегов,
-  46 материалов.
+- `learning-sources/registry.json` — реестр источников; `catalog/it.json` — 135 блоков, 658 тегов,
+  65 материалов.
 - Публичный контент — производный JSON (`apps/web/src/content/generated/beta-1.json`).
 
 Сборка модели и проверка:
@@ -169,6 +169,7 @@ npm run tasks:sync
 - Стратегическая дорожная карта: [`COS-BP-005`](docs/08-business-plan/COS-BP-005-Product-Roadmap-AXIONA-COS.md).
 - Термины: [`docs/00-foundation/05-domain-glossary.md`](docs/00-foundation/05-domain-glossary.md).
 - Для новой сессии агрегации: [`agents/AGENTS-aggregation-session.md`](agents/AGENTS-aggregation-session.md) — промпт-контракт и порядок работы.
+- Ландшафт AI-инструментов по этапам UX и материалы: [`COS-RES-029`](docs/09-research/COS-RES-029-AI-Designer-Tool-Landscape.md).
 
 ## Хостинг и статус
 

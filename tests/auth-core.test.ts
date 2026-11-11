@@ -32,7 +32,7 @@ describe("auth-core: email и токены", () => {
   });
 
   it("держит версию legal по умолчанию", () => {
-    assert.equal(DEFAULT_LEGAL_VERSION, "1.0.0");
+    assert.equal(DEFAULT_LEGAL_VERSION, "1.1.0");
   });
 });
 

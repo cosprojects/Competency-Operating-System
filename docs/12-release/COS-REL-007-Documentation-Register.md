@@ -1,10 +1,10 @@
 ---
 id: COS-REL-007
 title: Реестр документации перед Beta 1
-version: 1.4.0
+version: 1.5.0
 status: Draft
 owner: Product Team
-last_updated: 2026-11-09
+last_updated: 2026-11-11
 references:
   - COS-REL-000
   - COS-REL-008
@@ -75,10 +75,11 @@ references:
 | `docs/08-business-plan/COS-BP-010-Business-Validation.md` | Бизнес-валидация: рынок, ICP, цена, GTM, воронка | Draft (desk) | BP-007/008/009 | BP-003, WEB-001/002, deck | Завершить полевую часть (интервью/опрос/лендинг/пилот) и обновить выводы | До Beta |
 | `docs/09-research/COS-RES-005-User-Assessment-Scenario.md` | Сценарий диагностики | Будущий этап | RES-008 | EAR-009, Legal | Оставить как следующий слой; не использовать в коммуникации текущего MVP | До Beta |
 | `docs/09-research/COS-RES-008-Design-Competency-Graph-and-MVP-Blueprint.md` | Блюпринт диагностики | Будущий этап | RES-005 | BP-004, Legal | Сохранить как следующий слой; не выдавать за текущий MVP | До Beta |
-| `docs/10-legal/COS-LEG-001-Terms-of-Service.md` | Условия | Актуален для Beta 1 (draft) | Beta scope | Privacy, Consent | Заполнить реквизиты ИП и проверить юристом | До Beta |
-| `docs/10-legal/COS-LEG-002-Privacy-Policy.md` | Политика ПДн | Актуален для Beta 1 (draft) | Beta data flow | Terms, Cookie | Заполнить реквизиты, проверить юристом, подать уведомление РКН | До Beta |
+| `docs/10-legal/COS-LEG-001-Terms-of-Service.md` | Условия | Актуален для Beta 1 (draft 1.1.0) | Beta scope | Privacy, Consent | Реквизиты НПД/адрес/телефон/email внесены; проверить юристом, затем `draft: false` | До Beta |
+| `docs/10-legal/COS-LEG-002-Privacy-Policy.md` | Политика ПДн | Актуален для Beta 1 (draft 1.1.0) | Beta data flow | Terms, Cookie, LEG-005 | Реквизиты и Resend/Proton раскрыты; проверить юристом, подать уведомление РКН и трансграничное | До Beta |
 | `docs/11-scenarios/*` | Сценарии диагностики | Будущий этап | RES-005 | EAR-009 | Не менять; не публиковать как текущий продукт | Стратегический |
-| `docs/10-legal/COS-LEG-003-Cookie-Notice.md` | Cookie и аналитика | Актуален для Beta 1 (draft) | Privacy | Terms | Проверить юристом; синхронизировать с consent-баннером | До Beta |
+| `docs/10-legal/COS-LEG-003-Cookie-Notice.md` | Cookie и аналитика | Актуален для Beta 1 (draft 1.1.0) | Privacy | Terms | Проверить юристом; синхронизировать с consent-баннером | До Beta |
+| `docs/10-legal/COS-LEG-005-RKN-Notification-Draft.md` | Черновик уведомления РКН: оператор, цели, данные, обработчики, трансграничная передача | Draft | `COS-LEG-001/002`, `COS-LEG-004`, ADR-026/027 | `COS-REL-005`, T-005 | Заполнить индекс/паспорт/СНИЛС в форме, проверить юристом, подать через ЕСИА | До Beta |
 | `docs/10-legal/COS-LEG-004-Consent-Evidence.md` | Согласия: фиксация, отзыв и предоставление доказательств | Актуален (draft) | `COS-LEG-002/003`, `COS-REL-005`, T-005 | `reports/legal-gaps-*` | Держать в синхроне с кодом (`/api/consent`, выгрузка CSV); проверить у юриста сроки хранения | До Beta |
 | `docs/12-release/COS-REL-012-Delivery-Plan-and-Versioning.md` | План реализации, версии, канбан | Актуален (draft) | COS-BP-005, REL-000/001/002 | tasks/, Project | Поддерживать бэклог и версии; синхронизировать с Project | До Beta |
 | `docs/12-release/COS-REL-015-Production-QA-Checklist.md` | Production QA checklist Public Beta (T-009) | Актуален | `COS-REL-005`, `COS-REL-014`, `COS-LEG-001/002/003` | `reports/production-qa-*` | Поддерживать при изменении сценариев и перед каждым релизом | До Beta |
@@ -123,3 +124,4 @@ references:
 | 1.1.0 | 2026-10-28 | Синхронизация с актуализацией `04-experience-architecture`: добавлены `COS-EAR-012` и группа `COS-EAR-001…011`; обновлены строки `COS-EAR-002`, `COS-EAR-009` и книги (`COS-EAR-000`); добавлены ссылки на `COS-BP-005` и `COS-BP-007` |
 | 1.2.0 | 2026-11-05 | Добавлены спеки `COS-EAR-013` и `COS-EAR-014`; актуализирован `COS-EAR-012` (дополнение 1.1) |
 | 1.3.0 | 2026-11-05 | Добавлена спека `COS-EAR-015` (публичная регистрация по email) и ссылка на ADR-022 |
+| 1.5.0 | 2026-11-11 | Legal 1.1.0: реквизиты НПД, Resend/Proton, `COS-LEG-005` (РКН), VDS/Resend отчёты |

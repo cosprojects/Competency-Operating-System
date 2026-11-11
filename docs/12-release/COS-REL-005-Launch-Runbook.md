@@ -1,16 +1,17 @@
 ---
 id: COS-REL-005
 title: Launch runbook Beta 1
-version: 1.3.0
+version: 1.4.0
 status: Draft
 owner: Engineering
-last_updated: 2026-11-09
+last_updated: 2026-11-11
 references:
   - COS-REL-000
   - COS-REL-003
   - COS-REL-004
   - COS-REL-008
   - COS-EAR-015
+  - COS-LEG-005
 ---
 
 # COS-REL-005 — Launch runbook Beta 1
@@ -119,13 +120,15 @@ AUTH_REGISTRATION_DISABLED=0
 
 ## 5. Email
 
-1. Для продукта на `app.axiona.world` выбран Resend: `EMAIL_API_URL=https://api.resend.com/emails`, `EMAIL_API_TOKEN` (Sending access), `EMAIL_FROM=AXIONA <no-reply@app.axiona.world>`. Домен `app.axiona.world` Verified в Resend; magic link доставлен 2026-11-10.
-2. Создать `no-reply@`, `support@`, `privacy@` на домене контура.
-3. Настроить SPF (`v=spf1 include:... ~all`), DKIM, DMARC (`p=quarantine`) для домена контура.
+1. Для продукта на `app.axiona.world` выбран Resend: `EMAIL_API_URL=https://api.resend.com/emails`, `EMAIL_API_TOKEN` (Sending access), `EMAIL_FROM=AXIONA <no-reply@app.axiona.world>`. Домен `app.axiona.world` Verified в Resend; magic link доставлен 2026-11-10. Регион Resend — Ирландия/ЕС; передача email и текста письма раскрыта в политике.
+2. Официальный контакт — `hi.axiona@protonmail.com`; `support@`/`privacy@` на домене пока не используются. Если появятся — обновить политику, футер и уведомление РКН.
+3. SPF/DKIM/DMARC настроены Resend и Verified; DMARC (`p=none`) добавить/проверить до публичного запуска.
 4. Отправить тестовые magic link на Gmail, Яндекс, Mail.ru; проверить папку спама.
 5. Проверить, что ссылка ведёт на `/auth/verify` домена этого контура (`APP_URL`), а не на localhost и не на чужой контур.
 6. Проверить доставку welcome-письма после первого входа (`COS-EAR-015`); в production без `EMAIL_API_URL` регистрация отвечает 503.
-7. Пройти регистрацию с нового адреса: `/register` → письмо → подтверждение → `/saved?welcome=1`; повторить вход существующим адресом — письмо и вход без сюрпризов, согласие фиксируется по факту подтверждения.
+7. Пройти регистрацию с нового адреса: `/register` → письмо → подтверждение → `/saved?welcome=1`; повторить вход существующим адресом — письмо и вход без сюрпризов, согласие фиксируется по факту подтверждения. Публичная регистрация остаётся закрытой (`AUTH_REGISTRATION_DISABLED=1`) до уведомления РКН и юридической проверки.
+
+**Gate.** До реальных инвайтов подать уведомление РКН об обработке ПДн и отдельное уведомление о трансграничной передаче (Resend IE/US, Proton CH) по `COS-LEG-005`.
 
 ## 6. Деплой
 

@@ -12,7 +12,7 @@ export const TOKEN_TTL_MINUTES = 15;
 export const LOGIN_TTL_DEFAULT_MINUTES = 30 * 24 * 60;
 /** Приглашение живёт дольше magic link: его открывают не сразу. */
 export const INVITE_TTL_DAYS = 7;
-export const DEFAULT_LEGAL_VERSION = "1.0.0";
+export const DEFAULT_LEGAL_VERSION = "1.1.0";
 
 /** Адрес приводится к нижнему регистру: «User@Example.COM» и «user@example.com» — один аккаунт. */
 export function normalizeEmail(email: string): string {

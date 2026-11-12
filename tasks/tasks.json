@@ -196,7 +196,7 @@
       ],
       "issueNumber": 4,
       "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/4",
-      "context": "ADR-025: продукт на VDS в Москве. ADR-026: оператор — Невзоров Кирилл Игоревич, самозанятый (НПД), ИНН 480708141554; адрес: Воронеж, пер. Солдатский, 27; телефон +7 906 588-41-17; email hi.axiona@protonmail.com. ADR-027: Resend/Proton раскрыты, трансграничное уведомление — gate. 2026-11-12: основное уведомление РКН подано, № 100495783, статус «принято в обработке»; ожидается реестр. Legal 1.1.0 обновлён (COS-LEG-001/002/003, legal.ts, COS-LEG-005), но остаётся Draft. Осталось: юрист, реестр, уведомление о трансграничной передаче, DPA Resend/хостинга, снятие draft.",
+      "context": "ADR-025: продукт на VDS в Москве. ADR-026: оператор — Невзоров Кирилл Игоревич, самозанятый (НПД), ИНН 480708141554; адрес: Воронеж, пер. Солдатский, 27; телефон +7 906 588-41-17; email hi.axiona@protonmail.com. ADR-027: Resend/Proton раскрыты, трансграничное уведомление — gate. 2026-11-12: основное уведомление РКН подано, № 100495783, статус «принято в обработке»; ожидается реестр. Legal 1.1.0 обновлён (COS-LEG-001/002/003, legal.ts, COS-LEG-005), но остаётся Draft. Осталось: юрист, реестр, уведомление о трансграничной передаче, DPA Resend/хостинга, снятие draft. 2026-11-12: создан COS-LEG-006 — черновик уведомления о трансграничной передаче; подготовлены запросы DPA к Resend/Proton. Трансграничное уведомление не подано: нужны DPA, проверка перечня стран и юрист.",
       "deliverable": "Опубликованные legal-документы и подтверждение РКН.",
       "outOfScope": [
         "Договоры с корпоративными клиентами",
@@ -315,7 +315,7 @@
       ],
       "issueNumber": 8,
       "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/8",
-      "context": "Перед приглашением людей нужно проверить основные сценарии. QA baseline 2026-11-10 на app.axiona.world: смоук 79 проверок и браузерный axe-прогон; отчёт reports/production-qa-2026-11-10.md, чек-лист COS-REL-015. Блокеры: P0 вход/выход редиректят на localhost:3000; P1 sitemap/robots на axiona.world, hydration/вложенные <a> и отсутствие H1 на /professions. 2026-11-10 18:45 MSK: фиксы P0/P1 задеплоены на app.axiona.world, повторный прогон — смоук 77 PASS / 2 WARN / 0 FAIL, браузер 14/14 без critical/serious. Осталось: ручной вход по magic link и сессионные сценарии, F-11–F-14, legal sign-off T-005. Статус Review: автоматические пункты чек-листа проходят на production; для Done нужны ручные проверки COS-REL-015 §4 и legal sign-off T-005.",
+      "context": "Production QA 2026-11-12: смоук 79 (77 PASS/2 WARN/0 FAIL), браузер/a11y 14/14 без critical; повторный прогон на app.axiona.world. Ручные проверки: удаление аккаунта (QA-P04) и смена email (QA-A10) — PASS; magic link/админка — подтверждены владельцем 2026-11-11; бэкап/restore — PASS. Осталось: инвайт через /admin/users, статусы отзывов/аудит, реальные iOS/Android/Safari/Firefox; legal draft остаётся до T-005.",
       "deliverable": "P0 checklist (COS-REL-015) и отчёт QA (reports/production-qa-2026-11-10.md).",
       "outOfScope": [
         "Полная E2E-автоматизация"

@@ -439,18 +439,19 @@ await check("Legal", "QA-70", "Политика: плашка «Черновик
     ? { status: "WARN", detail: "на странице политики видна плашка «Черновик Beta 1» — до T-005 публиковать нельзя" }
     : { status: "PASS", detail: "плашки черновика нет" };
 });
-await check("Legal", "QA-71", "Политика: контакты и реквизиты", "есть privacy@axiona.world, реквизиты — плейсхолдер", async () => {
+await check("Legal", "QA-71", "Политика: контакты и реквизиты", "есть hi.axiona@protonmail.com, ИНН и адрес", async () => {
   const result = await request("/legal/privacy");
-  const hasEmail = result.text.includes("privacy@axiona.world");
-  const placeholder = result.text.includes("ИП [наименование");
+  const hasEmail = result.text.includes("hi.axiona@protonmail.com");
+  const hasInn = result.text.includes("480708141554");
+  const hasAddress = result.text.includes("Солдатский");
   return {
-    status: hasEmail && placeholder ? "WARN" : hasEmail ? "PASS" : "FAIL",
-    detail: `privacy@: ${hasEmail ? "есть" : "нет"}; плейсхолдер реквизитов: ${placeholder ? "есть (блокер T-005)" : "нет"}`,
+    status: hasEmail && hasInn ? "PASS" : "FAIL",
+    detail: `email: ${hasEmail ? "есть" : "нет"}; ИНН: ${hasInn ? "есть" : "нет"}; адрес: ${hasAddress ? "есть" : "нет"}`,
   };
 });
-await check("Legal", "QA-72", "Условия: контакт support@axiona.world", "есть", async () => {
+await check("Legal", "QA-72", "Условия: контакт hi.axiona@protonmail.com", "есть", async () => {
   const result = await request("/legal/terms");
-  return { status: result.text.includes("support@axiona.world") ? "PASS" : "FAIL", detail: result.text.includes("support@axiona.world") ? "найден" : "контакт не найден" };
+  return { status: result.text.includes("hi.axiona@protonmail.com") ? "PASS" : "FAIL", detail: result.text.includes("hi.axiona@protonmail.com") ? "найден" : "контакт не найден" };
 });
 await check("Legal", "QA-73", "Cookie-описание: axiona_aid и сроки", "есть", async () => {
   const result = await request("/legal/cookies");

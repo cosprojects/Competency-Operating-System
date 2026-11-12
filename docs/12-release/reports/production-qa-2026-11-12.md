@@ -39,6 +39,15 @@ references:
 - реальные iOS/Android/Safari/Firefox;
 - legal-страницы остаются `draft: true` до T-005 sign-off.
 
+## 3.1. Ручные проверки 2026-11-12
+
+- **Удаление аккаунта (QA-P04):** тестовый пользователь создан через БД, сессия установлена; `/profile` → 200; `POST /api/account/delete` → `{"ok":true}`; после удаления `/profile` → 307, пользователь удалён из БД. ✅
+- **Смена email (QA-A10):** тестовый `email_change`-токен погашен через `/api/auth/email-change`; HTTP 303 на `/login?emailChanged=1`, email в БД изменён на новый. ✅
+- **Магический вход и админка:** подтверждены владельцем 2026-11-11; Resend доставил письмо, `/admin` открылся. ✅
+- **Бэкап/restore:** подтверждены на VDS (T-006). ✅
+
+Осталось: инвайт через `/admin/users`, смена статусов отзывов/аудит, реальные iOS/Android/Safari/Firefox.
+
 ## 4. Артефакты
 
 - `docs/12-release/reports/screenshots/production-qa-2026-11-12/`

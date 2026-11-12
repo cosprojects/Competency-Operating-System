@@ -15,6 +15,9 @@ export function SiteFooter() {
           </div>
           <p>Операционная система человеческого развития</p>
           <p>© 2026 Все права защищены.</p>
+          <p className="site-footer-operator">
+            Оператор: Невзоров Кирилл Игоревич, самозанятый (НПД), ИНН 480708141554
+          </p>
         </div>
 
         <div className="site-footer-mark">

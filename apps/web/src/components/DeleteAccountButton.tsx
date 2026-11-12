@@ -19,7 +19,7 @@ export function DeleteAccountButton() {
       router.push("/");
       router.refresh();
     } catch {
-      setError("Не удалось удалить аккаунт. Напишите в support@axiona.world.");
+      setError("Не удалось удалить аккаунт. Напишите в hi.axiona@protonmail.com.");
       setBusy(false);
     }
   }

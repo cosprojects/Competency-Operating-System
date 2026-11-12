@@ -1,10 +1,10 @@
 ---
 id: COS-REL-007
 title: Реестр документации перед Beta 1
-version: 1.5.0
+version: 1.5.1
 status: Draft
 owner: Product Team
-last_updated: 2026-11-11
+last_updated: 2026-11-12
 references:
   - COS-REL-000
   - COS-REL-008
@@ -63,6 +63,7 @@ references:
 | `docs/04-experience-architecture/COS-EAR-000-Experience-Architecture-Summary.md` | Целевой опыт (сводная книга) | Будущий этап | `COS-EAR-001`…`COS-EAR-012` | Communication | **Сделано 2026-10-28:** присвоен `COS-EAR-000`, добавлены граница Beta 1, место в дорожной карте и ссылка на `COS-EAR-012`; содержание книги не переписывалось | После Beta |
 | `docs/05-business-architecture/COS-BUS-Business-Book.md` | Бизнес-модель | Уточнить | Business Foundation | BP-003 | Добавить Beta-addendum: гипотезы map-продукта, диагностика post-Beta | После Beta |
 | `docs/06-communication/COS-COM-001-Product-Communication.md` | Публичные сообщения | Синхронизировать | Foundation, Beta scope | Website docs | Привести описание к map-продукту; убрать diagnostics-first обещания | До Beta |
+| `docs/06-communication/COS-COM-011-Audiovisual-Prompt-Kit.md` | Ролик AXIONA: визуальный язык, сценарий, промпты кадров и видео | Draft (рабочий) | `COS-COM-006`, `COS-COM-010`, `globals.css`, `public/brand` | Landing, соцсети, презентации | Использовать как единый источник промптов; обновлять при изменении токенов, голоса или UI Beta | До Beta |
 | `docs/07-website/COS-WEB-000-Website-Book.md` | Архитектура сайта | Уточнить | COM-001 | Landing, Investors | Добавить продукт `axiona.world` и корпоративный `axiona.biz`; обновить roles | До Beta |
 | `docs/07-website/COS-WEB-001-Landing-page.md` | Контент лендинга | Синхронизировать | COM-001 | Website Book | Убрать pre-development и неподтверждённые показатели; добавить CTA в Beta | До Beta |
 | `docs/07-website/COS-WEB-002-For-Investors.md` | Инвесторский контент | Синхронизировать | BP-003, Beta data | Pitch Deck | Не обещать диагностику как текущую функцию; обновить после Beta | После Beta |
@@ -79,6 +80,7 @@ references:
 | `docs/10-legal/COS-LEG-002-Privacy-Policy.md` | Политика ПДн | Актуален для Beta 1 (draft 1.1.0) | Beta data flow | Terms, Cookie, LEG-005 | Реквизиты и Resend/Proton раскрыты; проверить юристом, подать уведомление РКН и трансграничное | До Beta |
 | `docs/11-scenarios/*` | Сценарии диагностики | Будущий этап | RES-005 | EAR-009 | Не менять; не публиковать как текущий продукт | Стратегический |
 | `docs/10-legal/COS-LEG-003-Cookie-Notice.md` | Cookie и аналитика | Актуален для Beta 1 (draft 1.1.0) | Privacy | Terms | Проверить юристом; синхронизировать с consent-баннером | До Beta |
+| `docs/10-legal/COS-LEG-006-Transborder-Notification-Draft.md` | Черновик уведомления о трансграничной передаче (Resend/Proton) | Draft | `COS-LEG-002/005`, ADR-027 | `COS-REL-005`, T-005 | Получить DPA, проверить страны, подать после реестра основного уведомления | До Beta |
 | `docs/10-legal/COS-LEG-005-RKN-Notification-Draft.md` | Черновик уведомления РКН: оператор, цели, данные, обработчики, трансграничная передача | Draft | `COS-LEG-001/002`, `COS-LEG-004`, ADR-026/027 | `COS-REL-005`, T-005 | Заполнить индекс/паспорт/СНИЛС в форме, проверить юристом, подать через ЕСИА | До Beta |
 | `docs/10-legal/COS-LEG-004-Consent-Evidence.md` | Согласия: фиксация, отзыв и предоставление доказательств | Актуален (draft) | `COS-LEG-002/003`, `COS-REL-005`, T-005 | `reports/legal-gaps-*` | Держать в синхроне с кодом (`/api/consent`, выгрузка CSV); проверить у юриста сроки хранения | До Beta |
 | `docs/12-release/COS-REL-012-Delivery-Plan-and-Versioning.md` | План реализации, версии, канбан | Актуален (draft) | COS-BP-005, REL-000/001/002 | tasks/, Project | Поддерживать бэклог и версии; синхронизировать с Project | До Beta |
@@ -125,3 +127,4 @@ references:
 | 1.2.0 | 2026-11-05 | Добавлены спеки `COS-EAR-013` и `COS-EAR-014`; актуализирован `COS-EAR-012` (дополнение 1.1) |
 | 1.3.0 | 2026-11-05 | Добавлена спека `COS-EAR-015` (публичная регистрация по email) и ссылка на ADR-022 |
 | 1.5.0 | 2026-11-11 | Legal 1.1.0: реквизиты НПД, Resend/Proton, `COS-LEG-005` (РКН), VDS/Resend отчёты |
+| 1.5.1 | 2026-11-12 | Добавлен `COS-COM-011` — промпт-кит ролика (визуальный язык, сценарий, раскадровка, видео-промпты) |

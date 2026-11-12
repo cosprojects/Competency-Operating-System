@@ -89,7 +89,7 @@ export default async function AccountPage() {
           <ConsentControls />
           <p className="small muted" style={{ marginTop: 12 }}>
             Подробнее — в <Link href="/legal/privacy">политике конфиденциальности</Link>. Запросить копию
-            согласий или отозвать их можно через <a href="mailto:privacy@axiona.world">privacy@axiona.world</a>.
+            согласий или отозвать их можно через <a href="mailto:hi.axiona@protonmail.com">hi.axiona@protonmail.com</a>.
           </p>
         </section>
 

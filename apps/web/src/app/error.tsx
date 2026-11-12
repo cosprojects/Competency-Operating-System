@@ -17,7 +17,7 @@ export default function ErrorPage({
   return (
     <div className="empty" style={{ marginTop: 40 }}>
       <h2>Что-то пошло не так</h2>
-      <p>Попробуйте обновить страницу. Если ошибка повторяется — напишите в support@axiona.world.</p>
+      <p>Попробуйте обновить страницу. Если ошибка повторяется — напишите в hi.axiona@protonmail.com.</p>
       <div className="actions" style={{ justifyContent: "center" }}>
         <button className="button" type="button" onClick={reset}>
           Повторить

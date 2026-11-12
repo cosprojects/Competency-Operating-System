@@ -3349,6 +3349,14 @@ html[data-consent="pending"] .canvas-toolbar {
   margin: 0;
 }
 
+.site-footer-operator {
+  max-width: 360px;
+  margin-top: 10px;
+  font-size: 12px;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.64);
+}
+
 .site-footer-legal {
   display: flex;
   flex-wrap: wrap;

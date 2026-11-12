@@ -33,9 +33,9 @@ export async function sendWelcomeEmail({ to }: { to: string }): Promise<void> {
     `Профессии: ${appUrl}/professions`,
     `Сохранённое: ${appUrl}/saved`,
     "",
-    "Если что-то не работает или есть идея — напиши в поддержку: support@axiona.world.",
+    "Если что-то не работает или есть идея — напиши в поддержку: hi.axiona@protonmail.com.",
   ].join("\n");
-  const html = `<p>Привет!</p><p>Аккаунт в AXIONA создан. Теперь можно сохранять компетенции и материалы и возвращаться к ним с любого устройства.</p><p><a href="${escapeHtml(appUrl)}/professions">Профессии</a><br/><a href="${escapeHtml(appUrl)}/saved">Сохранённое</a></p><p>Если что-то не работает или есть идея — напиши в поддержку: support@axiona.world.</p>`;
+  const html = `<p>Привет!</p><p>Аккаунт в AXIONA создан. Теперь можно сохранять компетенции и материалы и возвращаться к ним с любого устройства.</p><p><a href="${escapeHtml(appUrl)}/professions">Профессии</a><br/><a href="${escapeHtml(appUrl)}/saved">Сохранённое</a></p><p>Если что-то не работает или есть идея — напиши в поддержку: hi.axiona@protonmail.com.</p>`;
   await sendTransactionalEmail({ to, subject: "Добро пожаловать в AXIONA", text, html });
 }
 

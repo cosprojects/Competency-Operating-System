@@ -1,10 +1,10 @@
 ---
 id: COS-REL-007
 title: Реестр документации перед Beta 1
-version: 1.5.1
+version: 1.5.2
 status: Draft
 owner: Product Team
-last_updated: 2026-11-12
+last_updated: 2026-11-13
 references:
   - COS-REL-000
   - COS-REL-008
@@ -74,6 +74,7 @@ references:
 | `docs/08-business-plan/COS-BP-008-Financial-Model-24-Months.md` | Финансовая модель 24 мес. | Draft (предварительно) | BP-007, BP-010 | BP-009, investors | Пересобрать после данных `COS-BP-010`; до этого не использовать как обещание | После Beta |
 | `docs/08-business-plan/COS-BP-009-First-Year-Plan.md` | План первого года | Draft (актуализируется) | BP-005, BP-010 | BP-007/008 | Синхронизировать календарь/ворота после `COS-BP-010` | До Beta |
 | `docs/08-business-plan/COS-BP-010-Business-Validation.md` | Бизнес-валидация: рынок, ICP, цена, GTM, воронка | Draft (desk) | BP-007/008/009 | BP-003, WEB-001/002, deck | Завершить полевую часть (интервью/опрос/лендинг/пилот) и обновить выводы | До Beta |
+| `docs/08-business-plan/COS-BP-011-Multi-Vertical-Expansion-Strategy.md` | Стратегия расширения профессий и прогноз 36 мес. | Draft | BP-005/009/010 | BP-007/008, deck | Утвердить первую волну IT-профессий и learning MVP; обновить прогноз после пилота | До Beta |
 | `docs/09-research/COS-RES-005-User-Assessment-Scenario.md` | Сценарий диагностики | Будущий этап | RES-008 | EAR-009, Legal | Оставить как следующий слой; не использовать в коммуникации текущего MVP | До Beta |
 | `docs/09-research/COS-RES-008-Design-Competency-Graph-and-MVP-Blueprint.md` | Блюпринт диагностики | Будущий этап | RES-005 | BP-004, Legal | Сохранить как следующий слой; не выдавать за текущий MVP | До Beta |
 | `docs/10-legal/COS-LEG-001-Terms-of-Service.md` | Условия | Актуален для Beta 1 (draft 1.1.0) | Beta scope | Privacy, Consent | Реквизиты НПД/адрес/телефон/email внесены; проверить юристом, затем `draft: false` | До Beta |

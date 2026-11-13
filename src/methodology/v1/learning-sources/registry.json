@@ -1,6 +1,6 @@
 {
   "registryVersion": "1.0.0",
-  "updatedAt": "2026-11-11",
+  "updatedAt": "2026-11-13",
   "sources": [
     {
       "id": "motiondesign-school-courses",
@@ -6014,6 +6014,781 @@
       "summary": "Конвертация Figma-макетов в код: ИИ собирает вёрстку и компоненты для передачи в разработку.",
       "notes": "Официальная документация Locofy; добавлен по подборке AI-инструментов по этапам UX (vamshi.work), мониторинг 2026-11-03. Мониторинговая запись: не используется как доказательство компетенции.",
       "discoveryOnly": true
+    },
+    {
+      "id": "replit",
+      "title": "Replit — официальный сайт",
+      "url": "https://replit.com/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "vibe coding",
+        "ai design tools"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Replit — облачная среда для сборки и запуска веб-приложений с AI-агентом.",
+      "discoveryOnly": true,
+      "notes": "Вайб-кодинг для дизайнеров (vamshi.work roadmap, 30 дней): мониторинговая запись, не доказательство компетенции."
+    },
+    {
+      "id": "replit-docs",
+      "title": "Replit — документация",
+      "url": "https://docs.replit.com/",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "vibe coding",
+        "ai design tools"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Документация Replit: проекты, среда, деплой и работа с AI-агентом.",
+      "discoveryOnly": true,
+      "notes": "Вайб-кодинг для дизайнеров (vamshi.work roadmap, 30 дней): мониторинговая запись, не доказательство компетенции."
+    },
+    {
+      "id": "github",
+      "title": "GitHub — официальный сайт",
+      "url": "https://github.com/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "vibe coding",
+        "ai design tools"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "GitHub — хостинг кода и совместная работа; контроль версий для AI-разработки.",
+      "discoveryOnly": true,
+      "notes": "Вайб-кодинг для дизайнеров (vamshi.work roadmap, 30 дней): мониторинговая запись, не доказательство компетенции."
+    },
+    {
+      "id": "github-docs",
+      "title": "GitHub Docs",
+      "url": "https://docs.github.com/en",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "vibe coding",
+        "ai design tools"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Документация GitHub: репозитории, ветки, коммиты и откат версий.",
+      "discoveryOnly": true,
+      "notes": "Вайб-кодинг для дизайнеров (vamshi.work roadmap, 30 дней): мониторинговая запись, не доказательство компетенции."
+    },
+    {
+      "id": "github-skills-learn",
+      "title": "GitHub Skills",
+      "url": "https://skills.github.com/",
+      "kind": "school",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "vibe coding",
+        "ai design tools"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "GitHub Skills — практические курсы по работе с Git и GitHub.",
+      "discoveryOnly": true,
+      "notes": "Вайб-кодинг для дизайнеров (vamshi.work roadmap, 30 дней): мониторинговая запись, не доказательство компетенции."
+    },
+    {
+      "id": "vercel",
+      "title": "Vercel — официальный сайт",
+      "url": "https://vercel.com/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "vibe coding",
+        "ai design tools"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Vercel — деплой фронтенда и AI-приложений с публичной ссылкой.",
+      "discoveryOnly": true,
+      "notes": "Вайб-кодинг для дизайнеров (vamshi.work roadmap, 30 дней): мониторинговая запись, не доказательство компетенции."
+    },
+    {
+      "id": "vercel-docs",
+      "title": "Vercel Documentation",
+      "url": "https://vercel.com/docs",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "vibe coding",
+        "ai design tools"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Документация Vercel: деплой, домены, окружения и проверка сборки.",
+      "discoveryOnly": true,
+      "notes": "Вайб-кодинг для дизайнеров (vamshi.work roadmap, 30 дней): мониторинговая запись, не доказательство компетенции."
+    },
+    {
+      "id": "mdn-learn-webdev",
+      "title": "MDN — Learn web development",
+      "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "vibe coding",
+        "ai design tools"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "MDN: основы веб-разработки — HTML, CSS, JavaScript и устройство веба.",
+      "discoveryOnly": true,
+      "notes": "Вайб-кодинг для дизайнеров (vamshi.work roadmap, 30 дней): мониторинговая запись, не доказательство компетенции."
+    },
+    {
+      "id": "webdev-html",
+      "title": "web.dev — Learn HTML",
+      "url": "https://web.dev/learn/html",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "vibe coding",
+        "ai design tools"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Курс web.dev по HTML: структура страницы и семантика.",
+      "discoveryOnly": true,
+      "notes": "Вайб-кодинг для дизайнеров (vamshi.work roadmap, 30 дней): мониторинговая запись, не доказательство компетенции."
+    },
+    {
+      "id": "webdev-css",
+      "title": "web.dev — Learn CSS",
+      "url": "https://web.dev/learn/css",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "vibe coding",
+        "ai design tools"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Курс web.dev по CSS: стили, раскладка и адаптивность.",
+      "discoveryOnly": true,
+      "notes": "Вайб-кодинг для дизайнеров (vamshi.work roadmap, 30 дней): мониторинговая запись, не доказательство компетенции."
+    },
+    {
+      "id": "webdev-accessibility",
+      "title": "web.dev — Learn Accessibility",
+      "url": "https://web.dev/learn/accessibility",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "vibe coding",
+        "ai design tools"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Курс web.dev по доступности интерфейсов: требования и практики WCAG.",
+      "discoveryOnly": true,
+      "notes": "Вайб-кодинг для дизайнеров (vamshi.work roadmap, 30 дней): мониторинговая запись, не доказательство компетенции."
+    },
+    {
+      "id": "webdev-forms",
+      "title": "web.dev — Learn Forms",
+      "url": "https://web.dev/learn/forms",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "vibe coding",
+        "ai design tools"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Курс web.dev по формам: сбор и валидация пользовательского ввода.",
+      "discoveryOnly": true,
+      "notes": "Вайб-кодинг для дизайнеров (vamshi.work roadmap, 30 дней): мониторинговая запись, не доказательство компетенции."
+    },
+    {
+      "id": "javascript-info",
+      "title": "javascript.info — The Modern JavaScript Tutorial",
+      "url": "https://javascript.info/",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "vibe coding",
+        "ai design tools"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Современный учебник JavaScript: логика, события и взаимодействия.",
+      "discoveryOnly": true,
+      "notes": "Вайб-кодинг для дизайнеров (vamshi.work roadmap, 30 дней): мониторинговая запись, не доказательство компетенции."
+    },
+    {
+      "id": "mdn-web-apis",
+      "title": "MDN — Introduction to web APIs",
+      "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Client-side_APIs/Introduction",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "vibe coding",
+        "ai design tools"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "MDN: что такое веб-API и как приложения обмениваются данными.",
+      "discoveryOnly": true,
+      "notes": "Вайб-кодинг для дизайнеров (vamshi.work roadmap, 30 дней): мониторинговая запись, не доказательство компетенции."
+    },
+    {
+      "id": "react-learn",
+      "title": "React — Learn",
+      "url": "https://react.dev/learn",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "vibe coding",
+        "ai design tools"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "React Learn: компоненты, состояние и сборка интерфейсов из переиспользуемых частей.",
+      "discoveryOnly": true,
+      "notes": "Вайб-кодинг для дизайнеров (vamshi.work roadmap, 30 дней): мониторинговая запись, не доказательство компетенции."
+    },
+    {
+      "id": "nextjs-docs",
+      "title": "Next.js Docs",
+      "url": "https://nextjs.org/docs",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "vibe coding",
+        "ai design tools"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Документация Next.js: страницы, маршруты, формы и серверные действия.",
+      "discoveryOnly": true,
+      "notes": "Вайб-кодинг для дизайнеров (vamshi.work roadmap, 30 дней): мониторинговая запись, не доказательство компетенции."
+    },
+    {
+      "id": "supabase-docs",
+      "title": "Supabase Docs",
+      "url": "https://supabase.com/docs",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "vibe coding",
+        "ai design tools"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Документация Supabase: база данных, аутентификация и API.",
+      "discoveryOnly": true,
+      "notes": "Вайб-кодинг для дизайнеров (vamshi.work roadmap, 30 дней): мониторинговая запись, не доказательство компетенции."
+    },
+    {
+      "id": "authjs-docs",
+      "title": "Auth.js — документация",
+      "url": "https://authjs.dev/",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "vibe coding",
+        "ai design tools"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Auth.js: аутентификация и вход в веб-приложение.",
+      "discoveryOnly": true,
+      "notes": "Вайб-кодинг для дизайнеров (vamshi.work roadmap, 30 дней): мониторинговая запись, не доказательство компетенции."
+    },
+    {
+      "id": "chrome-devtools",
+      "title": "Chrome DevTools",
+      "url": "https://developer.chrome.com/docs/devtools",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "vibe coding",
+        "ai design tools"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Chrome DevTools: консоль, инспектор и отладка интерфейса.",
+      "discoveryOnly": true,
+      "notes": "Вайб-кодинг для дизайнеров (vamshi.work roadmap, 30 дней): мониторинговая запись, не доказательство компетенции."
+    },
+    {
+      "id": "lighthouse-docs",
+      "title": "Chrome — Introduction to Lighthouse",
+      "url": "https://developer.chrome.com/docs/lighthouse/overview",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "vibe coding",
+        "ai design tools"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Lighthouse: аудит производительности, доступности и лучших практик.",
+      "discoveryOnly": true,
+      "notes": "Вайб-кодинг для дизайнеров (vamshi.work roadmap, 30 дней): мониторинговая запись, не доказательство компетенции."
+    },
+    {
+      "id": "wcag-quickref",
+      "title": "W3C — How to Meet WCAG (Quickref)",
+      "url": "https://www.w3.org/WAI/WCAG21/quickref/",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "vibe coding",
+        "ai design tools"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Краткий справочник WCAG: критерии доступности и способы их выполнения.",
+      "discoveryOnly": true,
+      "notes": "Вайб-кодинг для дизайнеров (vamshi.work roadmap, 30 дней): мониторинговая запись, не доказательство компетенции."
+    },
+    {
+      "id": "freecodecamp-responsive-web-design",
+      "title": "freeCodeCamp — Responsive Web Design",
+      "url": "https://www.freecodecamp.org/learn/2022/responsive-web-design/",
+      "kind": "school",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "vibe coding",
+        "ai design tools"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Практический курс freeCodeCamp по адаптивной вёрстке.",
+      "discoveryOnly": true,
+      "notes": "Вайб-кодинг для дизайнеров (vamshi.work roadmap, 30 дней): мониторинговая запись, не доказательство компетенции."
+    },
+    {
+      "id": "lovable-prompting-guide",
+      "title": "Lovable — Prompting best practices",
+      "url": "https://docs.lovable.dev/prompting/prompting-one",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "vibe coding",
+        "ai design tools"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Гайд Lovable: как формулировать требования и контекст, чтобы AI-сборка давала нужный результат.",
+      "discoveryOnly": true,
+      "notes": "Вайб-кодинг для дизайнеров (vamshi.work roadmap, 30 дней): мониторинговая запись, не доказательство компетенции."
+    },
+    {
+      "id": "lovable-prompt-library",
+      "title": "Lovable — Prompt library",
+      "url": "https://docs.lovable.dev/prompting/prompting-library",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "vibe coding",
+        "ai design tools"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Библиотека промптов Lovable: шаблоны запросов под типовые задачи сборки.",
+      "discoveryOnly": true,
+      "notes": "Вайб-кодинг для дизайнеров (vamshi.work roadmap, 30 дней): мониторинговая запись, не доказательство компетенции."
+    },
+    {
+      "id": "v0-quickstart",
+      "title": "v0 Docs — Quickstart",
+      "url": "https://v0.dev/docs/quickstart",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "vibe coding",
+        "ai design tools"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Быстрый старт v0: генерация интерфейса и приложения по описанию.",
+      "discoveryOnly": true,
+      "notes": "Вайб-кодинг для дизайнеров (vamshi.work roadmap, 30 дней): мониторинговая запись, не доказательство компетенции."
+    },
+    {
+      "id": "cursor-learn",
+      "title": "Learn Cursor",
+      "url": "https://cursor.com/learn",
+      "kind": "school",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "vibe coding",
+        "ai design tools"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Официальные уроки Cursor: агент, правила, контекст и рабочий процесс.",
+      "discoveryOnly": true,
+      "notes": "Вайб-кодинг для дизайнеров (vamshi.work roadmap, 30 дней): мониторинговая запись, не доказательство компетенции."
+    },
+    {
+      "id": "cursor-rules",
+      "title": "Cursor Docs — Rules",
+      "url": "https://docs.cursor.com/context/rules",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "vibe coding",
+        "ai design tools"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Документация Cursor по правилам: как задавать агенту контекст и ограничения проекта.",
+      "discoveryOnly": true,
+      "notes": "Вайб-кодинг для дизайнеров (vamshi.work roadmap, 30 дней): мониторинговая запись, не доказательство компетенции."
+    },
+    {
+      "id": "figma-variables-guide",
+      "title": "Figma — Guide to variables",
+      "url": "https://help.figma.com/hc/en-us/articles/15339657135383-Guide-to-variables-in-Figma",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "vibe coding",
+        "ai design tools"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Гайд Figma по переменным: токены, темы и синхронизация с кодом.",
+      "discoveryOnly": true,
+      "notes": "Вайб-кодинг для дизайнеров (vamshi.work roadmap, 30 дней): мониторинговая запись, не доказательство компетенции."
+    },
+    {
+      "id": "figma-dev-mode-handoff",
+      "title": "Figma — Guide to developer handoff",
+      "url": "https://www.figma.com/best-practices/guide-to-developer-handoff/",
+      "kind": "reference",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "vibe coding",
+        "ai design tools"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Гайд Figma по передаче макетов в разработку: спецификации и контракты компонентов.",
+      "discoveryOnly": true,
+      "notes": "Вайб-кодинг для дизайнеров (vamshi.work roadmap, 30 дней): мониторинговая запись, не доказательство компетенции."
+    },
+    {
+      "id": "simon-willison-vibe-coding",
+      "title": "Simon Willison — Not all AI-assisted programming is vibe coding",
+      "url": "https://simonwillison.net/2025/Mar/19/vibe-coding/",
+      "kind": "blog",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "vibe coding",
+        "ai design tools"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Разбор термина «vibe coding»: чем он отличается от обычной AI-assisted разработки.",
+      "discoveryOnly": true,
+      "notes": "Вайб-кодинг для дизайнеров (vamshi.work roadmap, 30 дней): мониторинговая запись, не доказательство компетенции."
+    },
+    {
+      "id": "karpathy-vibe-coding",
+      "title": "Andrej Karpathy — про vibe coding",
+      "url": "https://x.com/karpathy/status/1886192184808149383",
+      "kind": "blog",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "vibe coding",
+        "ai design tools"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Исходный пост Карпаты о vibe coding: генерация кода по естественно-языковым инструкциям.",
+      "discoveryOnly": true,
+      "notes": "Вайб-кодинг для дизайнеров (vamshi.work roadmap, 30 дней): мониторинговая запись, не доказательство компетенции."
     }
   ]
 }

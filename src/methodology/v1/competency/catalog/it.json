@@ -1,7 +1,7 @@
 {
   "catalogVersion": "0.1.0",
   "domain": "it",
-  "updatedOn": "2026-11-11",
+  "updatedOn": "2026-11-13",
   "blocks": [
     {
       "id": "comp_3b5bab068e42",
@@ -59086,6 +59086,1240 @@
           "no_snippet"
         ],
         "reviewedAt": "2026-11-11",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_3d916d1ba905",
+      "slug": "mat_07520a211b2b",
+      "kind": "docs",
+      "title": "Replit — документация",
+      "provider": "Replit",
+      "url": "https://docs.replit.com/",
+      "canonicalUrl": "https://docs.replit.com/",
+      "language": "en",
+      "access": "freemium",
+      "description": "Документация Replit: проекты, среда, деплой и работа с AI-агентом.",
+      "license": "© Replit; ссылка на материал, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "replit-docs",
+        "externalId": "replit-docs",
+        "url": "https://docs.replit.com/",
+        "retrievedAt": "2026-11-13",
+        "license": "© Replit; ссылка."
+      },
+      "retrievedAt": "2026-11-13",
+      "links": [
+        {
+          "competencyId": "comp_92f7d1ca21f5",
+          "relevance": 0.78,
+          "reason": "Среда и деплой прототипа: собрать и проверить работающий результат.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_92f7d1ca21f5"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.5,
+        "usefulness": 0.5,
+        "whyUseful": "Официальная документация Replit по среде, деплою и AI-агенту — справочник для сборки работающего прототипа.",
+        "reason": "Официальная документация инструмента, который может использоваться для сборки прототипов с помощью AI-агента, но snippet пустой: конкретное покрытие темы (fidelity, состояния и переходы, передача в разработку) не подтверждено. По правилу о пустом snippet — confirm, а не accept. Целевое покрытие уже набрано (3/3), поэтому подтверждение достаточно.",
+        "flags": [
+          "no_snippet"
+        ],
+        "reviewedAt": "2026-11-13",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_2ce5629255cf",
+      "slug": "mat_bb5d8bf4d003",
+      "kind": "docs",
+      "title": "GitHub Docs",
+      "provider": "GitHub",
+      "url": "https://docs.github.com/en",
+      "canonicalUrl": "https://docs.github.com/en",
+      "language": "en",
+      "access": "free",
+      "description": "Документация GitHub: репозитории, ветки, коммиты и откат версий.",
+      "license": "© GitHub; ссылка на материал, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "github-docs",
+        "externalId": "github-docs",
+        "url": "https://docs.github.com/en",
+        "retrievedAt": "2026-11-13",
+        "license": "© GitHub; ссылка."
+      },
+      "retrievedAt": "2026-11-13",
+      "links": [
+        {
+          "competencyId": "comp_42c60aead559",
+          "relevance": 0.8,
+          "reason": "Контроль версий и откат изменений при AI-разработке.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_42c60aead559"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.62,
+        "usefulness": 0.5,
+        "whyUseful": "Официальная документация GitHub по репозиториям, веткам, коммитам и откату версий — опора для базовых операций с репозиторием при работе с AI-агентом.",
+        "reason": "Официальная документация провайдера, тема совпадает с тегами «Git» и «Работать с репозиторием», но покрывает лишь часть компетенции (нет постановки задач агенту, генерации кода, проверки сборки и типов). Snippet пустой, поэтому содержание страницы не подтверждено — материал отправлен на подтверждение, а не принят.",
+        "flags": [
+          "no_snippet",
+          "generic"
+        ],
+        "reviewedAt": "2026-11-13",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_4676600ee3f2",
+      "slug": "mat_a226a4e7187b",
+      "kind": "course",
+      "title": "GitHub Skills",
+      "provider": "GitHub",
+      "url": "https://skills.github.com/",
+      "canonicalUrl": "https://skills.github.com/",
+      "language": "en",
+      "access": "free",
+      "description": "GitHub Skills — практические курсы по работе с Git и GitHub.",
+      "license": "© GitHub; ссылка на материал, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "github-skills-learn",
+        "externalId": "github-skills-learn",
+        "url": "https://skills.github.com/",
+        "retrievedAt": "2026-11-13",
+        "license": "© GitHub; ссылка."
+      },
+      "retrievedAt": "2026-11-13",
+      "links": [
+        {
+          "competencyId": "comp_42c60aead559",
+          "relevance": 0.82,
+          "reason": "Практика Git и GitHub — база управляемой AI-разработки.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_42c60aead559"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.7,
+        "usefulness": 0.2,
+        "whyUseful": "Практические курсы GitHub по Git и GitHub могут закрыть базовый навык работы с репозиторием.",
+        "reason": "Материал относится только к части компетенции — Git и работе с репозиторием, но не покрывает AI-assisted разработку и работу с coding agents. Snippet пустой, поэтому приёмка требует подтверждения.",
+        "flags": [
+          "no_snippet",
+          "generic"
+        ],
+        "reviewedAt": "2026-11-13",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_0ecf8688cce4",
+      "slug": "mat_c7bd315bec25",
+      "kind": "docs",
+      "title": "Vercel Documentation",
+      "provider": "Vercel",
+      "url": "https://vercel.com/docs",
+      "canonicalUrl": "https://vercel.com/docs",
+      "language": "en",
+      "access": "freemium",
+      "description": "Документация Vercel: деплой, домены, окружения и проверка сборки.",
+      "license": "© Vercel; ссылка на материал, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "vercel-docs",
+        "externalId": "vercel-docs",
+        "url": "https://vercel.com/docs",
+        "retrievedAt": "2026-11-13",
+        "license": "© Vercel; ссылка."
+      },
+      "retrievedAt": "2026-11-13",
+      "links": [
+        {
+          "competencyId": "comp_42c60aead559",
+          "relevance": 0.75,
+          "reason": "Деплой собранного интерфейса и проверка публичной сборки.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_42c60aead559"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.55,
+        "usefulness": 0.25,
+        "whyUseful": "Официальная справка по деплою и проверке сборки на Vercel, может пригодиться как справочник при верификации результата работы агента.",
+        "reason": "Официальная документация платформы, не агрегатор и не лендинг, но тема лишь косвенно пересекается с компетенцией: материал про деплой, домены и окружения Vercel, а не про работу с AI coding agents и архитектуру интерфейса. Snippet пустой, поэтому принять нельзя — только подтвердить после проверки содержимого.",
+        "flags": [
+          "no_snippet",
+          "off_topic"
+        ],
+        "reviewedAt": "2026-11-13",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_34f106269eb3",
+      "slug": "mat_c263ab1af7d5",
+      "kind": "docs",
+      "title": "MDN — Learn web development",
+      "provider": "MDN",
+      "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development",
+      "canonicalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development",
+      "language": "en",
+      "access": "free",
+      "description": "MDN: основы веб-разработки — HTML, CSS, JavaScript и устройство веба.",
+      "license": "© MDN; ссылка на материал, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "mdn-learn-webdev",
+        "externalId": "mdn-learn-webdev",
+        "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development",
+        "retrievedAt": "2026-11-13",
+        "license": "© MDN; ссылка."
+      },
+      "retrievedAt": "2026-11-13",
+      "links": [
+        {
+          "competencyId": "comp_74e9d09d4150",
+          "relevance": 0.85,
+          "reason": "База устройства веба, чтобы ставить задачи агентам и проверять результат.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_74e9d09d4150"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.62,
+        "usefulness": 0.55,
+        "whyUseful": "Даёт базовое понимание устройства веба, роли браузера и клиент-серверного взаимодействия, на которое можно опираться при постановке задач разработчикам.",
+        "reason": "Официальная документация MDN, бесплатная и авторитетная, покрывает основы веба и browser/runtime, но snippet пуст, а темы API, баз данных, Git и деплоя в описании не заявлены — материал лишь частично закрывает компетенцию и требует проверки перед принятием.",
+        "flags": [
+          "no_snippet"
+        ],
+        "reviewedAt": "2026-11-13",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_23ea8c7dcfd5",
+      "slug": "mat_e623d66ea8eb",
+      "kind": "docs",
+      "title": "web.dev — Learn HTML",
+      "provider": "Google web.dev",
+      "url": "https://web.dev/learn/html",
+      "canonicalUrl": "https://web.dev/learn/html",
+      "language": "en",
+      "access": "free",
+      "description": "Курс web.dev по HTML: структура страницы и семантика.",
+      "license": "© Google web.dev; ссылка на материал, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "webdev-html",
+        "externalId": "webdev-html",
+        "url": "https://web.dev/learn/html",
+        "retrievedAt": "2026-11-13",
+        "license": "© Google web.dev; ссылка."
+      },
+      "retrievedAt": "2026-11-13",
+      "links": [
+        {
+          "competencyId": "comp_74e9d09d4150",
+          "relevance": 0.82,
+          "reason": "Структура страницы: HTML как основа проверки результата генерации.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_74e9d09d4150"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.6,
+        "usefulness": 0.2,
+        "whyUseful": "Даёт базовое понимание структуры HTML-страницы, полезное для чтения фронтенд-архитектуры.",
+        "reason": "Материал относится к базовому уровню browser/runtime, но покрывает только HTML и не затрагивает архитектуру, API, БД, Git или деплой. Snippet пуст, поэтому содержание нельзя подтвердить по переданным данным — материал требует подтверждения.",
+        "flags": [
+          "no_snippet",
+          "no_practice"
+        ],
+        "reviewedAt": "2026-11-13",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_b9d70a3510d1",
+      "slug": "mat_91890fabc9b4",
+      "kind": "docs",
+      "title": "web.dev — Learn CSS",
+      "provider": "Google web.dev",
+      "url": "https://web.dev/learn/css",
+      "canonicalUrl": "https://web.dev/learn/css",
+      "language": "en",
+      "access": "free",
+      "description": "Курс web.dev по CSS: стили, раскладка и адаптивность.",
+      "license": "© Google web.dev; ссылка на материал, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "webdev-css",
+        "externalId": "webdev-css",
+        "url": "https://web.dev/learn/css",
+        "retrievedAt": "2026-11-13",
+        "license": "© Google web.dev; ссылка."
+      },
+      "retrievedAt": "2026-11-13",
+      "links": [
+        {
+          "competencyId": "comp_74e9d09d4150",
+          "relevance": 0.78,
+          "reason": "Стили и раскладка: понимание ограничений вёрстки.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_f394a15b1499",
+          "relevance": 0.7,
+          "reason": "Адаптивность: как раскладка ведёт себя на разных экранах.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_74e9d09d4150",
+        "comp_f394a15b1499"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.6,
+        "usefulness": 0.3,
+        "whyUseful": "Поможет понимать ограничения фронтенд-вёрстки и проверять реализацию интерфейса.",
+        "reason": "Материал относится лишь к части тега browser/runtime; пустой snippet не позволяет оценить содержание и практическую пользу для технической грамотности в целом.",
+        "flags": [
+          "no_snippet"
+        ],
+        "reviewedAt": "2026-11-13",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_e3b1ec3b02a5",
+      "slug": "mat_4ad0157c9661",
+      "kind": "docs",
+      "title": "web.dev — Learn Forms",
+      "provider": "Google web.dev",
+      "url": "https://web.dev/learn/forms",
+      "canonicalUrl": "https://web.dev/learn/forms",
+      "language": "en",
+      "access": "free",
+      "description": "Курс web.dev по формам: сбор и валидация пользовательского ввода.",
+      "license": "© Google web.dev; ссылка на материал, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "webdev-forms",
+        "externalId": "webdev-forms",
+        "url": "https://web.dev/learn/forms",
+        "retrievedAt": "2026-11-13",
+        "license": "© Google web.dev; ссылка."
+      },
+      "retrievedAt": "2026-11-13",
+      "links": [
+        {
+          "competencyId": "comp_74e9d09d4150",
+          "relevance": 0.75,
+          "reason": "Формы и валидация ввода — техническая часть проверки прототипа.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_74e9d09d4150"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.55,
+        "usefulness": 0.4,
+        "whyUseful": "Разбирает устройство HTML-форм и валидацию ввода — базовый слой понимания браузерного рантайма при постановке задач фронтенду.",
+        "reason": "Официальный бесплатный материал web.dev по формам и валидации пользовательского ввода относится к тегу browser/runtime, но покрывает лишь узкую часть компетенции «Техническая грамотность» (нет архитектуры продукта, API, БД, Git, деплоя). Snippet пустой, поэтому глубину и практическую применимость по метаданным подтвердить нельзя — отправляю на подтверждение, а не в accept.",
+        "flags": [
+          "no_snippet"
+        ],
+        "reviewedAt": "2026-11-13",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_4a30d4f2c720",
+      "slug": "mat_acb36593d596",
+      "kind": "docs",
+      "title": "javascript.info — The Modern JavaScript Tutorial",
+      "provider": "javascript.info",
+      "url": "https://javascript.info/",
+      "canonicalUrl": "https://javascript.info/",
+      "language": "en",
+      "access": "free",
+      "description": "Современный учебник JavaScript: логика, события и взаимодействия.",
+      "license": "© javascript.info; ссылка на материал, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "javascript-info",
+        "externalId": "javascript-info",
+        "url": "https://javascript.info/",
+        "retrievedAt": "2026-11-13",
+        "license": "© javascript.info; ссылка."
+      },
+      "retrievedAt": "2026-11-13",
+      "links": [
+        {
+          "competencyId": "comp_74e9d09d4150",
+          "relevance": 0.85,
+          "reason": "Логика и интерактивность: что именно проверять в сгенерированном коде.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_74e9d09d4150"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.6,
+        "usefulness": 0.4,
+        "whyUseful": "Даёт базовое понимание JavaScript и браузерного рантайма, что помогает читать фронтенд-часть архитектуры и ставить задачи разработчикам.",
+        "reason": "Материал релевантен части компетенции (Browser/runtime, Web architecture) как фундамент по языку, но это общий учебник по JavaScript, а не про архитектуру продукта, API, БД или деплой; snippet пустой, поэтому подтвердить соответствие конкретным тегам нельзя.",
+        "flags": [
+          "no_snippet",
+          "generic"
+        ],
+        "reviewedAt": "2026-11-13",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_ba155b93051b",
+      "slug": "mat_4bb3fb4b239b",
+      "kind": "docs",
+      "title": "MDN — Introduction to web APIs",
+      "provider": "MDN",
+      "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Client-side_APIs/Introduction",
+      "canonicalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Client-side_APIs/Introduction",
+      "language": "en",
+      "access": "free",
+      "description": "MDN: что такое веб-API и как приложения обмениваются данными.",
+      "license": "© MDN; ссылка на материал, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "mdn-web-apis",
+        "externalId": "mdn-web-apis",
+        "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Client-side_APIs/Introduction",
+        "retrievedAt": "2026-11-13",
+        "license": "© MDN; ссылка."
+      },
+      "retrievedAt": "2026-11-13",
+      "links": [
+        {
+          "competencyId": "comp_74e9d09d4150",
+          "relevance": 0.78,
+          "reason": "Обмен данными между приложением и сервисами — техническая грамотность для проверки прототипа.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_74e9d09d4150"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.72,
+        "usefulness": 0.74,
+        "whyUseful": "Краткий справочник MDN по веб-API помогает понять, как приложения обмениваются данными и какие технические ограничения учитывать.",
+        "reason": "Материал релевантен компетенции и тегам API/web architecture, источник — профильная документация MDN, доступ бесплатный. Snippet пустой, поэтому нельзя подтвердить содержание и практическую ценность; вердикт confirm, а не accept.",
+        "flags": [
+          "no_snippet"
+        ],
+        "reviewedAt": "2026-11-13",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_895c886a9d8f",
+      "slug": "mat_2c18de22e94b",
+      "kind": "docs",
+      "title": "React — Learn",
+      "provider": "Meta",
+      "url": "https://react.dev/learn",
+      "canonicalUrl": "https://react.dev/learn",
+      "language": "en",
+      "access": "free",
+      "description": "React Learn: компоненты, состояние и сборка интерфейсов из переиспользуемых частей.",
+      "license": "© Meta; ссылка на материал, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "react-learn",
+        "externalId": "react-learn",
+        "url": "https://react.dev/learn",
+        "retrievedAt": "2026-11-13",
+        "license": "© Meta; ссылка."
+      },
+      "retrievedAt": "2026-11-13",
+      "links": [
+        {
+          "competencyId": "comp_42c60aead559",
+          "relevance": 0.8,
+          "reason": "Компонентная модель React — архитектурная база AI-разработки.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_42c60aead559"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.7,
+        "usefulness": 0.55,
+        "whyUseful": "Официальная документация React по компонентам и состоянию помогает укрепить базу для архитектуры интерфейса.",
+        "reason": "Материал релевантен компонентной архитектуре React из тегов компетенции, но snippet пуст и содержание не подтверждает связь именно с AI-assisted разработкой.",
+        "flags": [
+          "no_snippet"
+        ],
+        "reviewedAt": "2026-11-13",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_ad492028b8cf",
+      "slug": "mat_54ffe49f03f2",
+      "kind": "docs",
+      "title": "Next.js Docs",
+      "provider": "Vercel",
+      "url": "https://nextjs.org/docs",
+      "canonicalUrl": "https://nextjs.org/docs",
+      "language": "en",
+      "access": "free",
+      "description": "Документация Next.js: страницы, маршруты, формы и серверные действия.",
+      "license": "© Vercel; ссылка на материал, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "nextjs-docs",
+        "externalId": "nextjs-docs",
+        "url": "https://nextjs.org/docs",
+        "retrievedAt": "2026-11-13",
+        "license": "© Vercel; ссылка."
+      },
+      "retrievedAt": "2026-11-13",
+      "links": [
+        {
+          "competencyId": "comp_42c60aead559",
+          "relevance": 0.82,
+          "reason": "Next.js: маршруты и серверные действия для сборки продукта.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_42c60aead559"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.55,
+        "usefulness": 0.45,
+        "whyUseful": "Официальная документация Next.js — справочник по маршрутам, формам и серверным действиям, нужный при постановке задач AI-агенту в React/TypeScript-проекте.",
+        "reason": "Первоисточник от Vercel, бесплатный, формат reference — полезен как справочная база по фреймворку, смежному с компетенцией (React и TypeScript, component architecture). Однако snippet пустой, а тема материала — сам Next.js, а не практика AI-assisted разработки: нет свидетельств о постановке задач агенту, работе с репозиторием, проверке сборки и типов. Поэтому не accept, а confirm для ручной проверки релевантности.",
+        "flags": [
+          "no_snippet",
+          "off_topic"
+        ],
+        "reviewedAt": "2026-11-13",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_1b2a54823800",
+      "slug": "mat_66b723c8374b",
+      "kind": "docs",
+      "title": "Supabase Docs",
+      "provider": "Supabase",
+      "url": "https://supabase.com/docs",
+      "canonicalUrl": "https://supabase.com/docs",
+      "language": "en",
+      "access": "freemium",
+      "description": "Документация Supabase: база данных, аутентификация и API.",
+      "license": "© Supabase; ссылка на материал, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "supabase-docs",
+        "externalId": "supabase-docs",
+        "url": "https://supabase.com/docs",
+        "retrievedAt": "2026-11-13",
+        "license": "© Supabase; ссылка."
+      },
+      "retrievedAt": "2026-11-13",
+      "links": [
+        {
+          "competencyId": "comp_42c60aead559",
+          "relevance": 0.78,
+          "reason": "База данных и аутентификация: функциональность за пределами макета.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_42c60aead559"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.7,
+        "usefulness": 0.2,
+        "whyUseful": "Справочник по API и аутентификации Supabase для задач интеграции.",
+        "reason": "Официальная документация Supabase может быть полезна для части тегов (API), но не посвящена AI-assisted разработке интерфейса и не содержит snippet для оценки релевантности; требуется ручная проверка.",
+        "flags": [
+          "no_snippet",
+          "no_practice"
+        ],
+        "reviewedAt": "2026-11-13",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_e79c9a00486e",
+      "slug": "mat_4dc9c3f832d0",
+      "kind": "docs",
+      "title": "Auth.js — документация",
+      "provider": "Auth.js",
+      "url": "https://authjs.dev/",
+      "canonicalUrl": "https://authjs.dev/",
+      "language": "en",
+      "access": "free",
+      "description": "Auth.js: аутентификация и вход в веб-приложение.",
+      "license": "© Auth.js; ссылка на материал, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "authjs-docs",
+        "externalId": "authjs-docs",
+        "url": "https://authjs.dev/",
+        "retrievedAt": "2026-11-13",
+        "license": "© Auth.js; ссылка."
+      },
+      "retrievedAt": "2026-11-13",
+      "links": [
+        {
+          "competencyId": "comp_74e9d09d4150",
+          "relevance": 0.72,
+          "reason": "Аутентификация и сессии — типовой технический объём прототипа.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_74e9d09d4150"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.55,
+        "usefulness": 0.55,
+        "whyUseful": "Официальная документация Auth.js помогает разобраться с аутентификацией как частью архитектуры веб-приложения.",
+        "reason": "Материал относится к официальной документации по аутентификации в веб-приложениях и может быть полезен для тем Web architecture и API, но пустой snippet не позволяет проверить содержание, глубину и практическую применимость.",
+        "flags": [
+          "no_snippet"
+        ],
+        "reviewedAt": "2026-11-13",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_4817298ff8a4",
+      "slug": "mat_6234243b8094",
+      "kind": "docs",
+      "title": "Chrome DevTools",
+      "provider": "Google Chrome",
+      "url": "https://developer.chrome.com/docs/devtools",
+      "canonicalUrl": "https://developer.chrome.com/docs/devtools",
+      "language": "en",
+      "access": "free",
+      "description": "Chrome DevTools: консоль, инспектор и отладка интерфейса.",
+      "license": "© Google Chrome; ссылка на материал, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "chrome-devtools",
+        "externalId": "chrome-devtools",
+        "url": "https://developer.chrome.com/docs/devtools",
+        "retrievedAt": "2026-11-13",
+        "license": "© Google Chrome; ссылка."
+      },
+      "retrievedAt": "2026-11-13",
+      "links": [
+        {
+          "competencyId": "comp_2df1ae0af3f6",
+          "relevance": 0.8,
+          "reason": "Отладка и проверка интерфейса в браузере.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_6a82155c5fa1",
+          "relevance": 0.75,
+          "reason": "Проверка результата по фактическому поведению.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_2df1ae0af3f6",
+        "comp_6a82155c5fa1"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.55,
+        "usefulness": 0.45,
+        "whyUseful": "Справочник по DevTools помогает инспектировать стили, размеры и адаптивные состояния прямо в браузере при сверке с дизайном.",
+        "reason": "Официальная документация Chrome DevTools — релевантный инструмент для части задач визуального QA (инспекция CSS, эмуляция устройств, отладка вёрстки), но материал не покрывает visual regression, сравнение Figma и браузера, design tokens и оформление дефектов. Snippet пустой, поэтому пригодность подтверждаем, а не принимаем.",
+        "flags": [
+          "no_snippet"
+        ],
+        "reviewedAt": "2026-11-13",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_e56444dfcef5",
+      "slug": "mat_997cd172693c",
+      "kind": "docs",
+      "title": "Chrome — Introduction to Lighthouse",
+      "provider": "Google Chrome",
+      "url": "https://developer.chrome.com/docs/lighthouse/overview",
+      "canonicalUrl": "https://developer.chrome.com/docs/lighthouse/overview",
+      "language": "en",
+      "access": "free",
+      "description": "Lighthouse: аудит производительности, доступности и лучших практик.",
+      "license": "© Google Chrome; ссылка на материал, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "lighthouse-docs",
+        "externalId": "lighthouse-docs",
+        "url": "https://developer.chrome.com/docs/lighthouse/overview",
+        "retrievedAt": "2026-11-13",
+        "license": "© Google Chrome; ссылка."
+      },
+      "retrievedAt": "2026-11-13",
+      "links": [
+        {
+          "competencyId": "comp_2df1ae0af3f6",
+          "relevance": 0.82,
+          "reason": "Аудит адаптивности и доступности реализованного интерфейса.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_2df1ae0af3f6"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.42,
+        "usefulness": 0.25,
+        "whyUseful": "Официальная документация Lighthouse помогает автоматизировать аудит доступности и лучших практик, что дополняет визуальную проверку, но не покрывает сравнение с дизайном.",
+        "reason": "Материал — официальная справка Chrome по Lighthouse (аудит производительности, доступности, лучших практик). Это смежная с QA тема, но в описании нет визуальной регрессии, сравнения Figma и браузера, design tokens или проверки состояний/адаптивности; snippet пустой, поэтому содержание не подтверждено. Пригоден лишь как вспомогательный источник по доступности.",
+        "flags": [
+          "no_snippet",
+          "off_topic"
+        ],
+        "reviewedAt": "2026-11-13",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_36bd64fd9e47",
+      "slug": "mat_a5daab997f46",
+      "kind": "course",
+      "title": "freeCodeCamp — Responsive Web Design",
+      "provider": "freeCodeCamp",
+      "url": "https://www.freecodecamp.org/learn/2022/responsive-web-design/",
+      "canonicalUrl": "https://www.freecodecamp.org/learn/2022/responsive-web-design/",
+      "language": "en",
+      "access": "free",
+      "description": "Практический курс freeCodeCamp по адаптивной вёрстке.",
+      "license": "© freeCodeCamp; ссылка на материал, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "freecodecamp-responsive-web-design",
+        "externalId": "freecodecamp-responsive-web-design",
+        "url": "https://www.freecodecamp.org/learn/2022/responsive-web-design/",
+        "retrievedAt": "2026-11-13",
+        "license": "© freeCodeCamp; ссылка."
+      },
+      "retrievedAt": "2026-11-13",
+      "links": [
+        {
+          "competencyId": "comp_74e9d09d4150",
+          "relevance": 0.8,
+          "reason": "Практика вёрстки: базовые навыки для проверки AI-результата.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_74e9d09d4150"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.7,
+        "usefulness": 0.25,
+        "whyUseful": "Даёт базовое практическое знакомство с браузерной вёрсткой, но не покрывает архитектуру продукта, API, базы данных, Git и деплой.",
+        "reason": "Курс по адаптивной вёрстке лишь частично касается тега browser/runtime и не соответствует основной компетенции — пониманию технической архитектуры для постановки задач и проверки реализации. Snippet пустой, поэтому содержание нельзя подтвердить по метаданным.",
+        "flags": [
+          "no_snippet",
+          "off_topic"
+        ],
+        "reviewedAt": "2026-11-13",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_5c01c64e259b",
+      "slug": "mat_52f88cbf122e",
+      "kind": "docs",
+      "title": "Lovable — Prompting best practices",
+      "provider": "Lovable",
+      "url": "https://docs.lovable.dev/prompting/prompting-one",
+      "canonicalUrl": "https://docs.lovable.dev/prompting/prompting-one",
+      "language": "en",
+      "access": "freemium",
+      "description": "Гайд Lovable: как формулировать требования и контекст, чтобы AI-сборка давала нужный результат.",
+      "license": "© Lovable; ссылка на материал, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "lovable-prompting-guide",
+        "externalId": "lovable-prompting-guide",
+        "url": "https://docs.lovable.dev/prompting/prompting-one",
+        "retrievedAt": "2026-11-13",
+        "license": "© Lovable; ссылка."
+      },
+      "retrievedAt": "2026-11-13",
+      "links": [
+        {
+          "competencyId": "comp_9423ebb7b294",
+          "relevance": 0.8,
+          "reason": "Требования и контекст в промпте — управление результатом генерации.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_92f7d1ca21f5",
+          "relevance": 0.75,
+          "reason": "Промптинг под сборку прототипа: как получить рабочий интерфейс.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_92f7d1ca21f5",
+        "comp_9423ebb7b294"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.6,
+        "usefulness": 0.5,
+        "whyUseful": "Вендорный гайд по формулировке требований и контекста для AI-сборки прототипов в Lovable.",
+        "reason": "Тема совпадает с компетенцией: работа с AI-инструментом сборки прототипов и формулировка требований. Однако snippet пуст, а описание общее — нельзя подтвердить конкретное содержание, глубину и практическую применимость, поэтому материал отправлен на подтверждение, а не принят. Формат docs (не лендинг), доступ freemium, английский язык; признаков маркетинга или вакансии нет.",
+        "flags": [
+          "no_snippet"
+        ],
+        "reviewedAt": "2026-11-13",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_184ba84340c1",
+      "slug": "mat_36ea4a4cddb3",
+      "kind": "docs",
+      "title": "Lovable — Prompt library",
+      "provider": "Lovable",
+      "url": "https://docs.lovable.dev/prompting/prompting-library",
+      "canonicalUrl": "https://docs.lovable.dev/prompting/prompting-library",
+      "language": "en",
+      "access": "freemium",
+      "description": "Библиотека промптов Lovable: шаблоны запросов под типовые задачи сборки.",
+      "license": "© Lovable; ссылка на материал, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "lovable-prompt-library",
+        "externalId": "lovable-prompt-library",
+        "url": "https://docs.lovable.dev/prompting/prompting-library",
+        "retrievedAt": "2026-11-13",
+        "license": "© Lovable; ссылка."
+      },
+      "retrievedAt": "2026-11-13",
+      "links": [
+        {
+          "competencyId": "comp_4f6c74ac9230",
+          "relevance": 0.8,
+          "reason": "Библиотека шаблонов промптов для повторяемых задач.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_4f6c74ac9230"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.62,
+        "usefulness": 0.45,
+        "whyUseful": "Содержит шаблоны промптов для типовых задач сборки, которые можно использовать как пример организации библиотеки.",
+        "reason": "Тематически относится к библиотекам промптов, но snippet пуст, а материал привязан к продукту Lovable, поэтому пригодность требует проверки.",
+        "flags": [
+          "no_snippet"
+        ],
+        "reviewedAt": "2026-11-13",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_8180461a69dc",
+      "slug": "mat_40a64192e72b",
+      "kind": "docs",
+      "title": "v0 Docs — Quickstart",
+      "provider": "Vercel",
+      "url": "https://v0.dev/docs/quickstart",
+      "canonicalUrl": "https://v0.dev/docs/quickstart",
+      "language": "en",
+      "access": "freemium",
+      "description": "Быстрый старт v0: генерация интерфейса и приложения по описанию.",
+      "license": "© Vercel; ссылка на материал, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "v0-quickstart",
+        "externalId": "v0-quickstart",
+        "url": "https://v0.dev/docs/quickstart",
+        "retrievedAt": "2026-11-13",
+        "license": "© Vercel; ссылка."
+      },
+      "retrievedAt": "2026-11-13",
+      "links": [
+        {
+          "competencyId": "comp_92f7d1ca21f5",
+          "relevance": 0.82,
+          "reason": "Генерация интерфейса и приложения по описанию — прототип с кодом.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_92f7d1ca21f5"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.78,
+        "usefulness": 0.8,
+        "whyUseful": "Официальный quickstart по v0 показывает генерацию интерфейса по описанию, что помогает собирать AI-прототипы.",
+        "reason": "Материал релевантен теме AI-прототипирования и является официальной документацией инструмента, но пустой snippet не позволяет подтвердить содержание и практическую пригодность без проверки.",
+        "flags": [
+          "no_snippet"
+        ],
+        "reviewedAt": "2026-11-13",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_38889a3bb8b8",
+      "slug": "mat_f949828f0111",
+      "kind": "course",
+      "title": "Learn Cursor",
+      "provider": "Cursor",
+      "url": "https://cursor.com/learn",
+      "canonicalUrl": "https://cursor.com/learn",
+      "language": "en",
+      "access": "free",
+      "description": "Официальные уроки Cursor: агент, правила, контекст и рабочий процесс.",
+      "license": "© Cursor; ссылка на материал, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "cursor-learn",
+        "externalId": "cursor-learn",
+        "url": "https://cursor.com/learn",
+        "retrievedAt": "2026-11-13",
+        "license": "© Cursor; ссылка."
+      },
+      "retrievedAt": "2026-11-13",
+      "links": [
+        {
+          "competencyId": "comp_42c60aead559",
+          "relevance": 0.82,
+          "reason": "Официальные уроки по работе с AI-агентом в кодовой базе.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_dc0927613fb1",
+          "relevance": 0.75,
+          "reason": "Агент в рабочем процессе: шаги и контроль результата.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_42c60aead559",
+        "comp_dc0927613fb1"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.75,
+        "usefulness": 0.8,
+        "whyUseful": "Официальные уроки Cursor по агенту, правилам и контексту помогают освоить рабочий процесс AI-assisted разработки.",
+        "reason": "Материал напрямую относится к AI coding agents и официально покрывает агент, правила, контекст и workflow. Однако snippet пустой, поэтому нельзя подтвердить практическую глубину и покрытие архитектуры, отладки, сборки и типов — нужна проверка.",
+        "flags": [
+          "no_snippet"
+        ],
+        "reviewedAt": "2026-11-13",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_806f2727f3ba",
+      "slug": "mat_1dd84b1d6f82",
+      "kind": "docs",
+      "title": "Cursor Docs — Rules",
+      "provider": "Cursor",
+      "url": "https://docs.cursor.com/context/rules",
+      "canonicalUrl": "https://docs.cursor.com/context/rules",
+      "language": "en",
+      "access": "freemium",
+      "description": "Документация Cursor по правилам: как задавать агенту контекст и ограничения проекта.",
+      "license": "© Cursor; ссылка на материал, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "cursor-rules",
+        "externalId": "cursor-rules",
+        "url": "https://docs.cursor.com/context/rules",
+        "retrievedAt": "2026-11-13",
+        "license": "© Cursor; ссылка."
+      },
+      "retrievedAt": "2026-11-13",
+      "links": [
+        {
+          "competencyId": "comp_2dfb1e47d19d",
+          "relevance": 0.8,
+          "reason": "Правила и контекст проекта для агента — ограничение доступа и опора на проект.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_2dfb1e47d19d"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.72,
+        "usefulness": 0.5,
+        "whyUseful": "Официальная документация Cursor по правилам проекта помогает задавать агенту контекст и ограничения.",
+        "reason": "Материал релевантен теме передачи проектного контекста и ограничений агенту, но snippet пустой, а связь с MCP, Skills и проверкой актуальности данных по метаданным не подтверждена. Нужна ручная проверка.",
+        "flags": [
+          "no_snippet"
+        ],
+        "reviewedAt": "2026-11-13",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_f967c6caf8ac",
+      "slug": "mat_9615b11b4915",
+      "kind": "docs",
+      "title": "Figma — Guide to variables",
+      "provider": "Figma",
+      "url": "https://help.figma.com/hc/en-us/articles/15339657135383-Guide-to-variables-in-Figma",
+      "canonicalUrl": "https://help.figma.com/hc/en-us/articles/15339657135383-Guide-to-variables-in-Figma",
+      "language": "en",
+      "access": "freemium",
+      "description": "Гайд Figma по переменным: токены, темы и синхронизация с кодом.",
+      "license": "© Figma; ссылка на материал, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "figma-variables-guide",
+        "externalId": "figma-variables-guide",
+        "url": "https://help.figma.com/hc/en-us/articles/15339657135383-Guide-to-variables-in-Figma",
+        "retrievedAt": "2026-11-13",
+        "license": "© Figma; ссылка."
+      },
+      "retrievedAt": "2026-11-13",
+      "links": [
+        {
+          "competencyId": "comp_d2750b393ebd",
+          "relevance": 0.85,
+          "reason": "Токены и темы на уровне переменных Figma.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_9a71b8071561",
+          "relevance": 0.78,
+          "reason": "Синхронизация дизайн-системы с кодом.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_9a71b8071561",
+        "comp_d2750b393ebd"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.62,
+        "usefulness": 0.7,
+        "whyUseful": "Официальная справка Figma объясняет переменные, темы и связь токенов с кодом.",
+        "reason": "Метаданные прямо соответствуют теме токенов и синхронизации с кодом, но snippet пустой, поэтому содержание нельзя проверить; материал является справочником по конкретному инструменту, а не полноценным курсом по архитектуре дизайн-систем.",
+        "flags": [
+          "no_snippet"
+        ],
+        "reviewedAt": "2026-11-13",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_3b014e9b1215",
+      "slug": "mat_65617cc25211",
+      "kind": "docs",
+      "title": "Figma — Guide to developer handoff",
+      "provider": "Figma",
+      "url": "https://www.figma.com/best-practices/guide-to-developer-handoff/",
+      "canonicalUrl": "https://www.figma.com/best-practices/guide-to-developer-handoff/",
+      "language": "en",
+      "access": "freemium",
+      "description": "Гайд Figma по передаче макетов в разработку: спецификации и контракты компонентов.",
+      "license": "© Figma; ссылка на материал, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "figma-dev-mode-handoff",
+        "externalId": "figma-dev-mode-handoff",
+        "url": "https://www.figma.com/best-practices/guide-to-developer-handoff/",
+        "retrievedAt": "2026-11-13",
+        "license": "© Figma; ссылка."
+      },
+      "retrievedAt": "2026-11-13",
+      "links": [
+        {
+          "competencyId": "comp_8984ce9da8c1",
+          "relevance": 0.82,
+          "reason": "Спецификации и контракты компонентов при передаче в разработку.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_2df1ae0af3f6",
+          "relevance": 0.75,
+          "reason": "Сверка реализации с макетом по спецификациям.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_2df1ae0af3f6",
+        "comp_8984ce9da8c1"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.62,
+        "usefulness": 0.5,
+        "whyUseful": "Официальный гайд Figma помогает понять передачу макетов и спецификаций в разработку, что полезно для design-to-code проверки.",
+        "reason": "Материал релевантен теме design-to-code и визуальному QA, но snippet пустой, поэтому содержание и практическую применимость нельзя проверить по переданным данным. Это скорее справочный материал, чем практика визуального тестирования.",
+        "flags": [
+          "no_snippet"
+        ],
+        "reviewedAt": "2026-11-13",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_9486491fbae8",
+      "slug": "mat_eb0cec3aa203",
+      "kind": "article",
+      "title": "Simon Willison — Not all AI-assisted programming is vibe coding",
+      "provider": "Simon Willison",
+      "url": "https://simonwillison.net/2025/Mar/19/vibe-coding/",
+      "canonicalUrl": "https://simonwillison.net/2025/Mar/19/vibe-coding/",
+      "language": "en",
+      "access": "free",
+      "description": "Разбор термина «vibe coding»: чем он отличается от обычной AI-assisted разработки.",
+      "license": "© Simon Willison; ссылка на материал, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "simon-willison-vibe-coding",
+        "externalId": "simon-willison-vibe-coding",
+        "url": "https://simonwillison.net/2025/Mar/19/vibe-coding/",
+        "retrievedAt": "2026-11-13",
+        "license": "© Simon Willison; ссылка."
+      },
+      "retrievedAt": "2026-11-13",
+      "links": [
+        {
+          "competencyId": "comp_42c60aead559",
+          "relevance": 0.75,
+          "reason": "Границы vibe coding: когда AI-разработка требует контроля.",
+          "modelProposal": false
+        },
+        {
+          "competencyId": "comp_e02c5f4d39ea",
+          "relevance": 0.72,
+          "reason": "Ориентирование в инструментах AI-разработки.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_42c60aead559",
+        "comp_e02c5f4d39ea"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.72,
+        "usefulness": 0.32,
+        "whyUseful": "Помогает различать обычную AI-assisted разработку и «vibe coding», что полезно для осознанных границ применения агентов.",
+        "reason": "Тема связана с компетенцией, но материал концептуальный, без snippet и без подтверждённой практики по интерфейсу, архитектуре и проверке сборки; нужна ручная проверка.",
+        "flags": [
+          "no_snippet",
+          "no_practice"
+        ],
+        "reviewedAt": "2026-11-13",
         "reviewer": "methodologist-v1",
         "status": "needs_confirmation"
       }

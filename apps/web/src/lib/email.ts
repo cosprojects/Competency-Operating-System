@@ -57,9 +57,9 @@ interface TransactionalEmail {
   html: string;
 }
 
-let smtpTransporter: nodemailer.Transporter | null = null;
+let smtpTransporter: ReturnType<typeof nodemailer.createTransport> | null = null;
 
-function getSmtpTransporter(): nodemailer.Transporter {
+function getSmtpTransporter(): ReturnType<typeof nodemailer.createTransport> {
   if (smtpTransporter) return smtpTransporter;
   const host = process.env.EMAIL_SMTP_HOST;
   const user = process.env.EMAIL_SMTP_USER;

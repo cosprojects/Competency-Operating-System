@@ -1,11 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FeedbackTrigger } from "@/components/feedback/FeedbackTrigger";
+import { SaveButton } from "@/components/SaveButton";
 import { SourceLink } from "@/components/SourceLink";
 import { SourceReviewBadge } from "@/components/source-review/SourceReviewBadge";
-import { IconArrowRight, IconEye } from "@/components/icons";
+import { IconArrowRight, IconEye, IconStar } from "@/components/icons";
 import { accessHint, accessLabel, sourceKindLabel } from "@/lib/content";
 import type { ContentSource } from "@/lib/content-types";
 
@@ -29,6 +31,7 @@ export function MaterialCard({
   competencyTitle,
   canOpen,
   canReview,
+  canSave,
   returnTo,
 }: {
   source: ContentSource;
@@ -36,6 +39,7 @@ export function MaterialCard({
   competencyTitle: string;
   canOpen: boolean;
   canReview: boolean;
+  canSave: boolean;
   returnTo: string;
 }) {
   const router = useRouter();
@@ -148,6 +152,23 @@ export function MaterialCard({
                 onDecided={(action) => setReviewAction(action)}
               />
             ) : null}
+            {canSave ? (
+              <SaveButton
+                targetType="SOURCE"
+                targetId={source.id}
+                initialSaved={Boolean(source.saved)}
+                variant="icon"
+              />
+            ) : (
+              <Link
+                className="icon-button material-save-guest"
+                href={`/register?returnTo=${encodeURIComponent(returnTo)}`}
+                aria-label="Войти, чтобы сохранить материал"
+                title="Войти, чтобы сохранить материал"
+              >
+                <IconStar />
+              </Link>
+            )}
           </span>
         </div>
       </div>

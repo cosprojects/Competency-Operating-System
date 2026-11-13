@@ -4407,6 +4407,27 @@ html[data-consent="pending"] .canvas-toolbar {
   margin-left: auto;
 }
 
+/* Сохранение материала — звезда в блоке бейджей, как на карточках профессии и компетенции. */
+.material-badge-slot .icon-button {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #4b5563;
+  backdrop-filter: blur(6px);
+}
+
+.material-badge-slot .icon-button svg {
+  width: 20px;
+  height: 20px;
+}
+
+.material-badge-slot .icon-button:hover,
+.material-badge-slot .icon-button.is-saved {
+  background: #ffffff;
+  color: var(--accent);
+}
+
 .material-confirm {
   padding: 7px 14px;
   border: 0;
@@ -5733,13 +5754,15 @@ button.rail-item {
   -webkit-line-clamp: 3;
 }
 
-.saved-skills {
+.saved-skills,
+.saved-materials {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
 }
 
-.saved-skill-card {
+.saved-skill-card,
+.saved-material-card {
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -5759,7 +5782,8 @@ button.rail-item {
   gap: 8px;
 }
 
-.saved-skill-card h3 {
+.saved-skill-card h3,
+.saved-material-card h3 {
   margin: 0;
   color: #132238;
   font-size: 16px;
@@ -5767,12 +5791,14 @@ button.rail-item {
   line-height: 1.3;
 }
 
-.saved-skill-card h3 a {
+.saved-skill-card h3 a,
+.saved-material-card h3 a {
   color: #132238;
   text-decoration: none;
 }
 
-.saved-skill-card p {
+.saved-skill-card p,
+.saved-material-card p {
   display: -webkit-box;
   margin: 0;
   overflow: hidden;
@@ -5948,12 +5974,14 @@ button.rail-item {
 }
 
 .saved-profession-card .stretched-link::after,
-.saved-skill-card .stretched-link::after {
+.saved-skill-card .stretched-link::after,
+.saved-material-card .stretched-link::after {
   z-index: 1;
 }
 
 .saved-profession-card .saved-profession-top,
-.saved-skill-card .saved-skill-top {
+.saved-skill-card .saved-skill-top,
+.saved-material-card .saved-skill-top {
   position: relative;
   z-index: 2;
 }

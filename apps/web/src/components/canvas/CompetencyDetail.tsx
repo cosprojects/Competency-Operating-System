@@ -199,6 +199,7 @@ export function CompetencyDetail({
                       competencyTitle={competency.title}
                       canOpen={Boolean(viewer)}
                       canReview={Boolean(viewer)}
+                      canSave={Boolean(viewer)}
                       returnTo={returnTo}
                     />
                   ))}

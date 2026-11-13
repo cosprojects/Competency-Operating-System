@@ -1,10 +1,22 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { SavedProfessionCard, SavedSkillCard } from "@/components/saved/SavedCards";
-import type { SavedProfessionView, SavedSkillView } from "@/components/saved/SavedCards";
+import {
+  SavedMaterialCard,
+  SavedProfessionCard,
+  SavedSkillCard,
+} from "@/components/saved/SavedCards";
+import type { SavedMaterialView, SavedProfessionView, SavedSkillView } from "@/components/saved/SavedCards";
 import { WelcomeNotice } from "@/components/account/WelcomeNotice";
 import { getCurrentUser } from "@/lib/auth";
-import { contentTypeSummary, findCompetencies, getProfessions, tierLabel } from "@/lib/content";
+import {
+  accessLabel,
+  contentTypeSummary,
+  findCompetencies,
+  findSource,
+  getProfessions,
+  sourceKindLabel,
+  tierLabel,
+} from "@/lib/content";
 import { getDb } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
@@ -25,7 +37,7 @@ export default async function SavedPage({
 
   const db = getDb();
   const favorites = await db.favorite.findMany({
-    where: { userId: user.id, targetType: { in: ["PROFESSION", "COMPETENCY"] } },
+    where: { userId: user.id, targetType: { in: ["PROFESSION", "COMPETENCY", "SOURCE"] } },
     orderBy: { createdAt: "desc" },
   });
   const savedProfessionSlugs = new Set(
@@ -34,6 +46,9 @@ export default async function SavedPage({
   const savedCompetencyIds = new Set(
     favorites.filter((item) => item.targetType === "COMPETENCY").map((item) => item.targetId),
   );
+  const savedSourceIds = favorites
+    .filter((item) => item.targetType === "SOURCE")
+    .map((item) => item.targetId);
 
   const professions: SavedProfessionView[] = [];
   const seenProfessions = new Set<string>();
@@ -83,6 +98,33 @@ export default async function SavedPage({
     });
   }
 
+  // Материалы — сохранённые источники (карточки «Материалы» на канвасе).
+  const materials: SavedMaterialView[] = [];
+  const seenMaterials = new Set<string>();
+  for (const sourceId of savedSourceIds) {
+    if (seenMaterials.has(sourceId)) continue;
+    const source = findSource(sourceId);
+    if (!source) continue;
+    seenMaterials.add(sourceId);
+    materials.push({
+      id: source.id,
+      title: source.title,
+      kindLabel: sourceKindLabel(source.kind),
+      accessLabel: accessLabel(source.access),
+      summary: source.summary,
+      languages: source.languages,
+      url: source.url,
+      lastChecked: source.lastChecked,
+    });
+  }
+
+  const visibleMaterials = query
+    ? materials.filter(
+        (material) =>
+          material.title.toLowerCase().includes(query) ||
+          material.summary.toLowerCase().includes(query),
+      )
+    : materials;
   const visibleProfessions = query
     ? professions.filter(
         (profession) =>
@@ -97,21 +139,22 @@ export default async function SavedPage({
       )
     : skills;
 
-  const empty = visibleProfessions.length === 0 && visibleSkills.length === 0;
+  const empty =
+    visibleMaterials.length === 0 && visibleProfessions.length === 0 && visibleSkills.length === 0;
 
   return (
     <>
       <div className="page-head">
         <div className="eyebrow">Профиль</div>
         <h1>Сохранённое</h1>
-        <p>Профессии и компетенции, к которым вы хотите вернуться.</p>
+        <p>Материалы, компетенции и профессии, к которым вы хотите вернуться.</p>
         <form className="saved-search" method="get" role="search">
           <input
             className="input"
             type="search"
             name="q"
             defaultValue={q ?? ""}
-            placeholder="Введите название профессии или навыка"
+            placeholder="Введите название материала, профессии или навыка"
             aria-label="Поиск по сохранённому"
           />
         </form>
@@ -124,8 +167,8 @@ export default async function SavedPage({
           <h2>{query ? "Ничего не найдено" : "Пока пусто"}</h2>
           <p>
             {query
-              ? "Проверьте запрос или сохраните новые профессии и компетенции."
-              : "Откройте профессию и сохраните её или компетенцию — они появятся здесь."}
+              ? "Проверьте запрос или сохраните новые материалы, профессии и компетенции."
+              : "Откройте профессию, сохраните материал или компетенцию — они появятся здесь."}
           </p>
           <Link className="button" href="/professions">
             Выбрать направление
@@ -133,26 +176,39 @@ export default async function SavedPage({
         </div>
       ) : (
         <>
-          {visibleProfessions.length > 0 ? (
+          {visibleMaterials.length > 0 ? (
             <section className="saved-section">
-              <h2>Направления</h2>
-              <div className="saved-section-box saved-professions">
-                {visibleProfessions.map((profession) => (
-                  <SavedProfessionCard key={profession.slug} profession={profession} />
-                ))}
+              <h2>Материалы</h2>
+              <div className="saved-section-box">
+                <div className="saved-materials">
+                  {visibleMaterials.map((material) => (
+                    <SavedMaterialCard key={material.id} material={material} />
+                  ))}
+                </div>
               </div>
             </section>
           ) : null}
 
           {visibleSkills.length > 0 ? (
             <section className="saved-section">
-              <h2>Навыки и знания</h2>
+              <h2>Компетенции</h2>
               <div className="saved-section-box">
                 <div className="saved-skills">
                   {visibleSkills.map((skill) => (
                     <SavedSkillCard key={skill.id} skill={skill} />
                   ))}
                 </div>
+              </div>
+            </section>
+          ) : null}
+
+          {visibleProfessions.length > 0 ? (
+            <section className="saved-section">
+              <h2>Профессии</h2>
+              <div className="saved-section-box saved-professions">
+                {visibleProfessions.map((profession) => (
+                  <SavedProfessionCard key={profession.slug} profession={profession} />
+                ))}
               </div>
             </section>
           ) : null}

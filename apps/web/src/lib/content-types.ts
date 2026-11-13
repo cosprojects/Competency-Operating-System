@@ -27,6 +27,8 @@ export interface ContentSource {
   myReviewAction?: "CONFIRM" | "BLOCK" | null;
   /** Материал уже открывался текущим пользователем (COS-EAR-013). */
   viewed?: boolean;
+  /** Материал сохранён текущим пользователем (избранное). */
+  saved?: boolean;
 }
 
 export interface ContentCompetency {

@@ -1,22 +1,18 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import {
-  SavedMaterialCard,
-  SavedProfessionCard,
-  SavedSkillCard,
-} from "@/components/saved/SavedCards";
-import type { SavedMaterialView, SavedProfessionView, SavedSkillView } from "@/components/saved/SavedCards";
+import { MaterialCard } from "@/components/canvas/MaterialCard";
+import { SavedProfessionCard, SavedSkillCard } from "@/components/saved/SavedCards";
+import type { SavedProfessionView, SavedSkillView } from "@/components/saved/SavedCards";
 import { WelcomeNotice } from "@/components/account/WelcomeNotice";
 import { getCurrentUser } from "@/lib/auth";
 import {
-  accessLabel,
   contentTypeSummary,
   findCompetencies,
-  findSource,
+  findSourceContext,
   getProfessions,
-  sourceKindLabel,
   tierLabel,
 } from "@/lib/content";
+import type { ContentSource } from "@/lib/content-types";
 import { getDb } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
@@ -98,31 +94,31 @@ export default async function SavedPage({
     });
   }
 
-  // Материалы — сохранённые источники (карточки «Материалы» на канвасе).
-  const materials: SavedMaterialView[] = [];
+  // Материалы — сохранённые источники; на странице показываем полноценную
+  // карточку материала с обложкой и кнопкой перехода, как на канвасе профессии.
+  const materials: Array<{
+    source: ContentSource;
+    competencyId: string;
+    competencyTitle: string;
+  }> = [];
   const seenMaterials = new Set<string>();
   for (const sourceId of savedSourceIds) {
     if (seenMaterials.has(sourceId)) continue;
-    const source = findSource(sourceId);
-    if (!source) continue;
+    const context = findSourceContext(sourceId);
+    if (!context) continue;
     seenMaterials.add(sourceId);
     materials.push({
-      id: source.id,
-      title: source.title,
-      kindLabel: sourceKindLabel(source.kind),
-      accessLabel: accessLabel(source.access),
-      summary: source.summary,
-      languages: source.languages,
-      url: source.url,
-      lastChecked: source.lastChecked,
+      source: { ...context.source, saved: true },
+      competencyId: context.competency.id,
+      competencyTitle: context.competency.title,
     });
   }
 
   const visibleMaterials = query
     ? materials.filter(
         (material) =>
-          material.title.toLowerCase().includes(query) ||
-          material.summary.toLowerCase().includes(query),
+          material.source.title.toLowerCase().includes(query) ||
+          material.source.summary.toLowerCase().includes(query),
       )
     : materials;
   const visibleProfessions = query
@@ -182,7 +178,16 @@ export default async function SavedPage({
               <div className="saved-section-box">
                 <div className="saved-materials">
                   {visibleMaterials.map((material) => (
-                    <SavedMaterialCard key={material.id} material={material} />
+                    <MaterialCard
+                      key={material.source.id}
+                      source={material.source}
+                      competencyId={material.competencyId}
+                      competencyTitle={material.competencyTitle}
+                      canOpen
+                      canReview={false}
+                      canSave
+                      returnTo="/saved"
+                    />
                   ))}
                 </div>
               </div>

@@ -47,6 +47,17 @@ export function findSource(id: string): ContentSource | undefined {
   return undefined;
 }
 
+/** Источник вместе с контекстом компетенции и профессии — для полноценной карточки материала. */
+export function findSourceContext(
+  id: string,
+): { source: ContentSource; competency: ContentCompetency; profession: ContentProfession } | undefined {
+  for (const item of getAllCompetencies()) {
+    const source = item.competency.sources.find((candidate) => candidate.id === id);
+    if (source) return { source, competency: item.competency, profession: item.profession };
+  }
+  return undefined;
+}
+
 export function tierLabel(tier: ContentCompetency["tier"]): string {
   if (tier === "foundation") return "Фундаментальная";
   if (tier === "core") return "Основная";

@@ -12,17 +12,6 @@ export interface SavedProfessionView {
   percent: number;
 }
 
-export interface SavedMaterialView {
-  id: string;
-  title: string;
-  kindLabel: string;
-  accessLabel: string;
-  summary: string;
-  languages: string[];
-  url: string;
-  lastChecked: string;
-}
-
 export interface SavedSkillView {
   id: string;
   title: string;
@@ -59,32 +48,6 @@ export function SavedProfessionCard({ profession }: { profession: SavedProfessio
           <span>{profession.percent}%</span>
         </div>
       </div>
-    </article>
-  );
-}
-
-/** Карточка сохранённого материала (в секции «Материалы»). */
-export function SavedMaterialCard({ material }: { material: SavedMaterialView }) {
-  const meta = [
-    material.accessLabel,
-    material.languages.length > 0
-      ? material.languages.map((language) => language.toUpperCase()).join(", ")
-      : "язык не указан",
-    `проверен ${material.lastChecked}`,
-  ];
-  return (
-    <article className="saved-skill-card saved-material-card">
-      <div className="saved-skill-top">
-        <span className="badge neutral">{material.kindLabel}</span>
-        <SaveButton targetType="SOURCE" targetId={material.id} initialSaved variant="icon" />
-      </div>
-      <h3>
-        <a className="stretched-link" href={material.url} target="_blank" rel="noreferrer">
-          {material.title}
-        </a>
-      </h3>
-      <p>{material.summary}</p>
-      <div className="saved-skill-meta">{meta.join(" · ")}</div>
     </article>
   );
 }

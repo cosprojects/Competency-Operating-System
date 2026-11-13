@@ -73,7 +73,8 @@ export function splitSentences(text: string): string[] {
   const normalized = text.replace(/\s+/gu, " ").trim();
   if (!normalized) return [];
   const protectedText = normalized
-    .replace(/([А-ЯЁA-Z])\.(?=\s+[А-ЯЁA-Z][а-яёa-z]|\s+[А-ЯЁA-Z]\.)/gu, `$1${INITIALS_PLACEHOLDER}`)
+    // Инициалы — одиночная заглавная после пробела/начала, не аббревиатура вроде «PDF.».
+    .replace(/(^|[^А-ЯЁA-Z])([А-ЯЁA-Z])\.(?=\s+[А-ЯЁA-Z][а-яёa-z]|\s+[А-ЯЁA-Z]\.)/gu, `$1$2${INITIALS_PLACEHOLDER}`)
     .replace(ABBREVIATION_PATTERN, (match) => match.replace(/\./gu, DOT_PLACEHOLDER));
   return protectedText
     .split(/(?<=[.!?…])\s+/u)

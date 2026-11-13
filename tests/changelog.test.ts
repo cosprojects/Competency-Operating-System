@@ -193,6 +193,8 @@ describe("changelog file", () => {
     // Сокращение в середине предложения не создаёт границу.
     assert.equal(splitSentences("Сделали раз, два и т. д. и поехали дальше. Потом ещё. Готово.").length, 3);
     assert.equal(splitSentences("Проверил А. С. Пушкина. Всё.").length, 2);
+    // Аббревиатура в конце предложения — не инициал: граница сохраняется.
+    assert.equal(splitSentences("Сделали выгрузку в CSV и PDF. Потом проверили.").length, 2);
     assert.deepEqual(splitSentences(""), []);
   });
 

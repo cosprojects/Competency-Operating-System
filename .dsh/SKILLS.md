@@ -57,6 +57,7 @@
 | `npm run db:deploy` | `prisma migrate deploy` |
 | `npm run metrics:report` | `node --experimental-strip-types scripts/metrics/report.ts` |
 | `npm run finance:model` | `node --experimental-strip-types scripts/business-model/financial-model.ts` |
+| `npm run finance:expansion` | `node --experimental-strip-types scripts/business-model/expansion-model.ts` |
 | `npm run db:local:prepare` | `node --experimental-strip-types scripts/dev/local-schema.ts` |
 | `npm run db:local:push` | `prisma db push --schema prisma/schema.local.prisma --skip-generate` |
 | `npm run db:local:generate` | `prisma generate --schema prisma/schema.local.prisma` |

@@ -616,6 +616,19 @@ svg {
   padding-inline: 0;
 }
 
+/* Свёрнутый рейл: логотип по центру колонки, как иконки меню.
+   Раньше бренд растягивался на ширину пункта (48px) и прижимался влево — сдвиг 7px. */
+@media (min-width: 761px) {
+  .nav-rail.is-mini .rail-top {
+    align-items: center;
+  }
+
+  .nav-rail.is-mini .rail-brand {
+    justify-content: center;
+    width: 48px;
+  }
+}
+
 .rail-top {
   display: flex;
   flex-direction: column;

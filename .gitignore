@@ -86,3 +86,6 @@ release/publications/
 
 # Локальный deploy-ключ (не коммитить)
 .deploy/
+
+# npm cache для песочницы
+.npm-cache/

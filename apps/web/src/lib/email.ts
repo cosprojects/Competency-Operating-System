@@ -1,3 +1,5 @@
+import nodemailer from "nodemailer";
+
 export interface MagicLinkEmail {
   to: string;
   url: string;
@@ -55,13 +57,41 @@ interface TransactionalEmail {
   html: string;
 }
 
-/** Общая отправка письма: console локально, HTTP-провайдер в production. */
+let smtpTransporter: nodemailer.Transporter | null = null;
+
+function getSmtpTransporter(): nodemailer.Transporter {
+  if (smtpTransporter) return smtpTransporter;
+  const host = process.env.EMAIL_SMTP_HOST;
+  const user = process.env.EMAIL_SMTP_USER;
+  const pass = process.env.EMAIL_SMTP_PASSWORD;
+  if (!host || !user || !pass) {
+    throw new Error("EMAIL_SMTP_HOST/USER/PASSWORD не настроены.");
+  }
+  smtpTransporter = nodemailer.createTransport({
+    host,
+    port: Number(process.env.EMAIL_SMTP_PORT ?? 465),
+    secure: process.env.EMAIL_SMTP_SECURE !== "false",
+    auth: { user, pass },
+  });
+  return smtpTransporter;
+}
+
+/**
+ * Общая отправка письма.
+ * Приоритет: SMTP (например, Yandex) → HTTP API (Resend) → console в dev.
+ */
 async function sendTransactionalEmail({ to, subject, text, html }: TransactionalEmail): Promise<void> {
+  const from = process.env.EMAIL_FROM ?? "no-reply@axiona.world";
+  if (process.env.EMAIL_SMTP_HOST) {
+    await getSmtpTransporter().sendMail({ from, to, subject, text, html });
+    return;
+  }
+
   const apiUrl = process.env.EMAIL_API_URL;
   const token = process.env.EMAIL_API_TOKEN;
   if (!apiUrl) {
     if (process.env.NODE_ENV === "production") {
-      throw new Error("EMAIL_API_URL не настроен: production не может отправлять письма.");
+      throw new Error("EMAIL_API_URL/EMAIL_SMTP_HOST не настроены: production не может отправлять письма.");
     }
     console.log(`[axiona:email] to=${to} subject=${subject}\n${text}`);
     return;
@@ -72,13 +102,7 @@ async function sendTransactionalEmail({ to, subject, text, html }: Transactional
       "content-type": "application/json",
       ...(token ? { authorization: `Bearer ${token}` } : {}),
     },
-    body: JSON.stringify({
-      to,
-      subject,
-      text,
-      html,
-      from: process.env.EMAIL_FROM ?? "no-reply@axiona.world",
-    }),
+    body: JSON.stringify({ to, subject, text, html, from }),
   });
   if (!response.ok) throw new Error(`Email provider error: ${response.status}`);
 }
@@ -136,25 +160,5 @@ export async function sendFeedbackNotification(feedback: FeedbackNotification): 
   ].filter(Boolean);
   const text = lines.join("\n");
   const html = lines.map((line) => `<p>${escapeHtml(line)}</p>`).join("");
-  const apiUrl = process.env.EMAIL_API_URL;
-  const token = process.env.EMAIL_API_TOKEN;
-  if (!apiUrl) {
-    console.log(`[axiona:email] feedback to=${to}\n${text}`);
-    return;
-  }
-  const response = await fetch(apiUrl, {
-    method: "POST",
-    headers: {
-      "content-type": "application/json",
-      ...(token ? { authorization: `Bearer ${token}` } : {}),
-    },
-    body: JSON.stringify({
-      to,
-      subject: "AXIONA: новый отзыв",
-      text,
-      html,
-      from: process.env.EMAIL_FROM ?? "no-reply@axiona.world",
-    }),
-  });
-  if (!response.ok) throw new Error(`Email provider error: ${response.status}`);
+  await sendTransactionalEmail({ to, subject: "AXIONA: новый отзыв", text, html });
 }

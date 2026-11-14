@@ -1,6 +1,6 @@
 {
   "registryVersion": "1.0.0",
-  "updatedAt": "2026-11-13",
+  "updatedAt": "2026-11-14",
   "sources": [
     {
       "id": "motiondesign-school-courses",
@@ -6789,6 +6789,328 @@
       "summary": "Исходный пост Карпаты о vibe coding: генерация кода по естественно-языковым инструкциям.",
       "discoveryOnly": true,
       "notes": "Вайб-кодинг для дизайнеров (vamshi.work roadmap, 30 дней): мониторинговая запись, не доказательство компетенции."
+    },
+    {
+      "id": "gamedeveloper",
+      "title": "Game Developer — статьи и разборы",
+      "url": "https://www.gamedeveloper.com/",
+      "kind": "blog",
+      "professionIds": [
+        "it.game"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "game design"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Game Developer — отраслевое издание о дизайне, производстве и анализе игр.",
+      "notes": "Гейм-дизайн: источник для игрового слоя компетенций (COS-RES-031)."
+    },
+    {
+      "id": "gdcvault",
+      "title": "GDC Vault — доклады конференции разработчиков игр",
+      "url": "https://gdcvault.com/",
+      "kind": "reference",
+      "professionIds": [
+        "it.game"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "game design"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "GDC Vault — архив докладов GDC по гейм-дизайну, продакшену и исследованиям.",
+      "notes": "Гейм-дизайн: источник для игрового слоя компетенций (COS-RES-031)."
+    },
+    {
+      "id": "gmtk-site",
+      "title": "Game Maker's Toolkit",
+      "url": "https://gamemakerstoolkit.com/",
+      "kind": "blog",
+      "professionIds": [
+        "it.game"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "game design"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Game Maker's Toolkit — разборы механик и дизайна игр (видео и статьи).",
+      "notes": "Гейм-дизайн: источник для игрового слоя компетенций (COS-RES-031)."
+    },
+    {
+      "id": "gmtk-youtube",
+      "title": "Game Maker's Toolkit — YouTube",
+      "url": "https://www.youtube.com/@GMTK",
+      "kind": "blog",
+      "professionIds": [
+        "it.game"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "game design"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Видеоразборы игрового дизайна: механики, обучение, гейм-фил.",
+      "notes": "Гейм-дизайн: источник для игрового слоя компетенций (COS-RES-031)."
+    },
+    {
+      "id": "leveldesignbook",
+      "title": "The Level Design Book",
+      "url": "https://book.leveldesignbook.com/",
+      "kind": "reference",
+      "professionIds": [
+        "it.game"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "game design"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Открытая книга по левел-дизайну: блок-аут, маршруты, ритм и гейтинг.",
+      "notes": "Гейм-дизайн: источник для игрового слоя компетенций (COS-RES-031)."
+    },
+    {
+      "id": "gameaccessibilityguidelines",
+      "title": "Game Accessibility Guidelines",
+      "url": "https://gameaccessibilityguidelines.com/",
+      "kind": "reference",
+      "professionIds": [
+        "it.game"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "game design"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Справочник по доступности игр: требования и практики для разных возможностей игроков.",
+      "notes": "Гейм-дизайн: источник для игрового слоя компетенций (COS-RES-031)."
+    },
+    {
+      "id": "xbox-a11y",
+      "title": "Xbox Accessibility Guidelines",
+      "url": "https://learn.microsoft.com/en-us/gaming/accessibility/guidelines",
+      "kind": "reference",
+      "professionIds": [
+        "it.game"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "game design"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Официальные гайдлайны доступности Xbox для игрового интерфейса и управления.",
+      "notes": "Гейм-дизайн: источник для игрового слоя компетенций (COS-RES-031)."
+    },
+    {
+      "id": "unity-learn",
+      "title": "Unity Learn",
+      "url": "https://learn.unity.com/",
+      "kind": "school",
+      "professionIds": [
+        "it.game"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "game design"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Учебные курсы и туториалы Unity по игровому прототипированию.",
+      "notes": "Гейм-дизайн: источник для игрового слоя компетенций (COS-RES-031)."
+    },
+    {
+      "id": "godot-docs",
+      "title": "Godot Engine — документация",
+      "url": "https://docs.godotengine.org/en/stable/",
+      "kind": "reference",
+      "professionIds": [
+        "it.game"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "game design"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Документация Godot: сцены, ноды, физика и сборка прототипа игры.",
+      "notes": "Гейм-дизайн: источник для игрового слоя компетенций (COS-RES-031)."
+    },
+    {
+      "id": "machinations",
+      "title": "Machinations",
+      "url": "https://machinations.io/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.game"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "game design"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Инструмент и обучающие материалы по моделированию игровой экономики и баланса.",
+      "notes": "Гейм-дизайн: источник для игрового слоя компетенций (COS-RES-031)."
+    },
+    {
+      "id": "steamworks",
+      "title": "Steamworks — документация",
+      "url": "https://partner.steamgames.com/doc/home",
+      "kind": "reference",
+      "professionIds": [
+        "it.game"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "game design"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Документация Steamworks: релиз, витрина, монетизация и live-ops.",
+      "notes": "Гейм-дизайн: источник для игрового слоя компетенций (COS-RES-031)."
+    },
+    {
+      "id": "igda",
+      "title": "IGDA — International Game Developers Association",
+      "url": "https://igda.org/",
+      "kind": "reference",
+      "professionIds": [
+        "it.game"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "game design"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Сообщество геймдизайнеров: ресурсы по плейтестам, карьере и практике.",
+      "notes": "Гейм-дизайн: источник для игрового слоя компетенций (COS-RES-031)."
+    },
+    {
+      "id": "extracredits",
+      "title": "Extra Credits — YouTube",
+      "url": "https://www.youtube.com/@ExtraCredits",
+      "kind": "blog",
+      "professionIds": [
+        "it.game"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "game design"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Видеоразборы психологии игрока, нарратива и дизайна игр.",
+      "notes": "Гейм-дизайн: источник для игрового слоя компетенций (COS-RES-031)."
+    },
+    {
+      "id": "gameuxsummit",
+      "title": "Game UX Summit",
+      "url": "https://gameuxsummit.com/",
+      "kind": "reference",
+      "professionIds": [
+        "it.game"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "game design"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Профессиональное сообщество UX в играх: доклады о HUD, онбординге и исследованиях.",
+      "notes": "Гейм-дизайн: источник для игрового слоя компетенций (COS-RES-031)."
     }
   ]
 }

@@ -19,7 +19,8 @@
         "coursera-microsoft-product-design",
         "coursera-design-fundamentals-ai",
         "uxdesigninstitute-free-ux-course",
-        "tilda-education-courses-web-design-designthinking"
+        "tilda-education-courses-web-design-designthinking",
+        "specialist-ru-course-vizkom"
       ]
     },
     {
@@ -458,7 +459,8 @@
         "alison-graphic-design",
         "coursera-graphic-fundamentals",
         "coursera-web-design-free",
-        "hse-ru-edu-courses-470898711"
+        "hse-ru-edu-courses-470898711",
+        "specialist-ru-course-vizkom"
       ]
     },
     {
@@ -632,7 +634,8 @@
         ]
       },
       "learningSourceIds": [
-        "framer-learn"
+        "framer-learn",
+        "udemy-interior-design-free"
       ]
     },
     {
@@ -1567,7 +1570,8 @@
       "definition": "Выстраивать подачу и защиту 3D-проекта так, чтобы показать ракурсы, этапы работы и технические решения и аргументировать принятые решения перед аудиторией.",
       "priorityHint": "core",
       "learningSourceIds": [
-        "practicum-3ddesigner"
+        "practicum-3ddesigner",
+        "specialist-ru-course-vizkom"
       ]
     },
     {
@@ -2273,7 +2277,8 @@
       "definition": "Реализовывать интерфейс с помощью AI coding agents, сохраняя архитектурную целостность продукта, проверяемость кода и предсказуемость результата за счёт локальных изменений и контроля версий.",
       "priorityHint": "core",
       "learningSourceIds": [
-        "ai-softuni-bg-courses-ai-assisted-development"
+        "ai-softuni-bg-courses-ai-assisted-development",
+        "datacamp-com-ru-courses-ai-assisted-coding-for-developers"
       ]
     },
     {
@@ -2337,6 +2342,215 @@
         "alison-web-design-html",
         "developer-mozilla-org-ru-docs-web",
         "intuit-ru-studies-courses-611-467-info"
+      ]
+    },
+    {
+      "id": "game-mechanics-systems",
+      "branchId": "game",
+      "branchTitle": "Гейм-дизайн",
+      "sectionId": "game-systems",
+      "sectionTitle": "game-systems",
+      "title": "Механики и системное ядро",
+      "titleEn": "Game mechanics and systems",
+      "definition": "Проектирует игровое ядро: механики, правила и циклы взаимодействия, из которых складывается опыт игрока, проверяя, что система понятна и даёт осмысленные выборы.",
+      "priorityHint": "foundation",
+      "learningSourceIds": [
+        "gmtk-site",
+        "gdcvault",
+        "gamedeveloper"
+      ]
+    },
+    {
+      "id": "game-economy-balance",
+      "branchId": "game",
+      "branchTitle": "Гейм-дизайн",
+      "sectionId": "game-systems",
+      "sectionTitle": "game-systems",
+      "title": "Экономика и баланс игры",
+      "titleEn": "Game economy and balance",
+      "definition": "Настраивает экономику и баланс: источники и стоки ресурсов, кривые сложности и прогресса, чтобы вызовы и награды оставались в зоне интереса игрока.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "machinations",
+        "gdcvault",
+        "gamedeveloper"
+      ]
+    },
+    {
+      "id": "game-progression-rewards",
+      "branchId": "game",
+      "branchTitle": "Гейм-дизайн",
+      "sectionId": "game-systems",
+      "sectionTitle": "game-systems",
+      "title": "Прогрессия и награды",
+      "titleEn": "Progression and rewards",
+      "definition": "Проектирует прогрессию и награды: что открывается и меняется для игрока и как это поддерживает мотивацию на длинной дистанции.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "gmtk-site",
+        "gamedeveloper",
+        "gdcvault"
+      ]
+    },
+    {
+      "id": "game-level-design",
+      "branchId": "game",
+      "branchTitle": "Гейм-дизайн",
+      "sectionId": "game-systems",
+      "sectionTitle": "game-systems",
+      "title": "Левел-дизайн и пространство",
+      "titleEn": "Level design",
+      "definition": "Проектирует уровни и пространство: маршруты, точки интереса и ритм вызовов, чтобы игрок учился и исследовал без лишних барьеров.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "leveldesignbook",
+        "gdcvault",
+        "gmtk-site"
+      ]
+    },
+    {
+      "id": "game-player-psychology",
+      "branchId": "game",
+      "branchTitle": "Гейм-дизайн",
+      "sectionId": "game-player-research",
+      "sectionTitle": "game-player-research",
+      "title": "Психология игрока и мотивация",
+      "titleEn": "Player psychology and motivation",
+      "definition": "Опирается на мотивацию и восприятие игрока: подбирает механики и награды под типы игроков, учитывает когнитивную нагрузку и эмоциональные циклы.",
+      "priorityHint": "foundation",
+      "learningSourceIds": [
+        "extracredits",
+        "gmtk-site",
+        "gameuxsummit"
+      ]
+    },
+    {
+      "id": "game-narrative-lore",
+      "branchId": "game",
+      "branchTitle": "Гейм-дизайн",
+      "sectionId": "game-production",
+      "sectionTitle": "game-production",
+      "title": "Нарратив и мир игры",
+      "titleEn": "Narrative and worldbuilding",
+      "definition": "Выстраивает нарратив и мир игры: сюжет, лор и их связь с механиками, чтобы история поддерживала решения игрока, а не мешала им.",
+      "priorityHint": "optional",
+      "learningSourceIds": [
+        "extracredits",
+        "gdcvault",
+        "gamedeveloper"
+      ]
+    },
+    {
+      "id": "game-onboarding-tutorials",
+      "branchId": "game",
+      "branchTitle": "Гейм-дизайн",
+      "sectionId": "game-ui-feel",
+      "sectionTitle": "game-ui-feel",
+      "title": "Онбординг и обучение игрока",
+      "titleEn": "Onboarding and tutorials",
+      "definition": "Проектирует онбординг и обучение игрока: первые минуты, обучение через игру и постепенное раскрытие систем, чтобы игрок освоился без стены текста.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "gameuxsummit",
+        "gmtk-site",
+        "gamedeveloper"
+      ]
+    },
+    {
+      "id": "game-feel-juice",
+      "branchId": "game",
+      "branchTitle": "Гейм-дизайн",
+      "sectionId": "game-ui-feel",
+      "sectionTitle": "game-ui-feel",
+      "title": "Гейм-фил и джус",
+      "titleEn": "Game feel and juice",
+      "definition": "Доводит ощущение от управления: отклик, тайминги, анимации и звук вместе создают ощущение веса и точности действий игрока.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "gmtk-site",
+        "gamedeveloper",
+        "gdcvault"
+      ]
+    },
+    {
+      "id": "game-ui-hud",
+      "branchId": "game",
+      "branchTitle": "Гейм-дизайн",
+      "sectionId": "game-ui-feel",
+      "sectionTitle": "game-ui-feel",
+      "title": "Игровой интерфейс и HUD",
+      "titleEn": "Game UI and HUD",
+      "definition": "Проектирует игровой интерфейс и HUD: информацию в нужный момент, управление и состояния, не отвлекая от игрового процесса.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "gameuxsummit",
+        "gdcvault",
+        "gameaccessibilityguidelines",
+        "xbox-a11y"
+      ]
+    },
+    {
+      "id": "game-playtesting",
+      "branchId": "game",
+      "branchTitle": "Гейм-дизайн",
+      "sectionId": "game-prototypes",
+      "sectionTitle": "game-prototypes",
+      "title": "Плейтестинг и валидация опыта",
+      "titleEn": "Playtesting and validation",
+      "definition": "Планирует и проводит плейтесты: гипотезы, наблюдение, метрики и выводы, чтобы решения опирались на реальный опыт игроков.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "igda",
+        "gdcvault",
+        "gamedeveloper"
+      ]
+    },
+    {
+      "id": "game-engines-prototyping",
+      "branchId": "game",
+      "branchTitle": "Гейм-дизайн",
+      "sectionId": "game-prototypes",
+      "sectionTitle": "game-prototypes",
+      "title": "Движки и прототипирование",
+      "titleEn": "Engines and prototyping",
+      "definition": "Собирает прототипы в игровых движках: быстро проверяет механики до продакшна, понимая ограничения Unity, Unreal и Godot.",
+      "priorityHint": "foundation",
+      "learningSourceIds": [
+        "unity-learn",
+        "godot-docs",
+        "gdcvault"
+      ]
+    },
+    {
+      "id": "game-liveops-monetization",
+      "branchId": "game",
+      "branchTitle": "Гейм-дизайн",
+      "sectionId": "game-production",
+      "sectionTitle": "game-production",
+      "title": "Live-ops и монетизация",
+      "titleEn": "Live-ops and monetization",
+      "definition": "Проектирует live-ops и монетизацию: ивенты, обновления и платные предложения, которые поддерживают игру без ущерба для доверия игроков.",
+      "priorityHint": "optional",
+      "learningSourceIds": [
+        "steamworks",
+        "gamedeveloper",
+        "gdcvault"
+      ]
+    },
+    {
+      "id": "game-ai-gamedev",
+      "branchId": "game",
+      "branchTitle": "Гейм-дизайн",
+      "sectionId": "game-production",
+      "sectionTitle": "game-production",
+      "title": "ИИ в геймдеве",
+      "titleEn": "AI in game development",
+      "definition": "Применяет ИИ в геймдеве: генерация контента, ассистирование в дизайне и инструменты, с проверкой качества и соблюдением прав.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "gamedeveloper",
+        "gdcvault",
+        "gmtk-site"
       ]
     }
   ]

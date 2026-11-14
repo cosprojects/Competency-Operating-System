@@ -1293,6 +1293,149 @@
       "titleEn": "Technical literacy",
       "definition": "Способность ориентироваться в устройстве продукта и технических ограничениях, чтобы ставить задачи агентам и разработчикам и проверять результат.",
       "priorityHint": "foundation"
+    },
+    {
+      "id": "game-mechanics-systems",
+      "branchId": "game",
+      "branchTitle": "Гейм-дизайн",
+      "sectionId": "game-systems",
+      "sectionTitle": "game-systems",
+      "title": "Механики и системное ядро",
+      "titleEn": "Game mechanics and systems",
+      "definition": "Проектирует игровое ядро: механики, правила и циклы взаимодействия, из которых складывается опыт игрока, проверяя, что система понятна и даёт осмысленные выборы.",
+      "priorityHint": "foundation"
+    },
+    {
+      "id": "game-economy-balance",
+      "branchId": "game",
+      "branchTitle": "Гейм-дизайн",
+      "sectionId": "game-systems",
+      "sectionTitle": "game-systems",
+      "title": "Экономика и баланс игры",
+      "titleEn": "Game economy and balance",
+      "definition": "Настраивает экономику и баланс: источники и стоки ресурсов, кривые сложности и прогресса, чтобы вызовы и награды оставались в зоне интереса игрока.",
+      "priorityHint": "core"
+    },
+    {
+      "id": "game-progression-rewards",
+      "branchId": "game",
+      "branchTitle": "Гейм-дизайн",
+      "sectionId": "game-systems",
+      "sectionTitle": "game-systems",
+      "title": "Прогрессия и награды",
+      "titleEn": "Progression and rewards",
+      "definition": "Проектирует прогрессию и награды: что открывается и меняется для игрока и как это поддерживает мотивацию на длинной дистанции.",
+      "priorityHint": "core"
+    },
+    {
+      "id": "game-level-design",
+      "branchId": "game",
+      "branchTitle": "Гейм-дизайн",
+      "sectionId": "game-systems",
+      "sectionTitle": "game-systems",
+      "title": "Левел-дизайн и пространство",
+      "titleEn": "Level design",
+      "definition": "Проектирует уровни и пространство: маршруты, точки интереса и ритм вызовов, чтобы игрок учился и исследовал без лишних барьеров.",
+      "priorityHint": "core"
+    },
+    {
+      "id": "game-player-psychology",
+      "branchId": "game",
+      "branchTitle": "Гейм-дизайн",
+      "sectionId": "game-player-research",
+      "sectionTitle": "game-player-research",
+      "title": "Психология игрока и мотивация",
+      "titleEn": "Player psychology and motivation",
+      "definition": "Опирается на мотивацию и восприятие игрока: подбирает механики и награды под типы игроков, учитывает когнитивную нагрузку и эмоциональные циклы.",
+      "priorityHint": "foundation"
+    },
+    {
+      "id": "game-narrative-lore",
+      "branchId": "game",
+      "branchTitle": "Гейм-дизайн",
+      "sectionId": "game-production",
+      "sectionTitle": "game-production",
+      "title": "Нарратив и мир игры",
+      "titleEn": "Narrative and worldbuilding",
+      "definition": "Выстраивает нарратив и мир игры: сюжет, лор и их связь с механиками, чтобы история поддерживала решения игрока, а не мешала им.",
+      "priorityHint": "optional"
+    },
+    {
+      "id": "game-onboarding-tutorials",
+      "branchId": "game",
+      "branchTitle": "Гейм-дизайн",
+      "sectionId": "game-ui-feel",
+      "sectionTitle": "game-ui-feel",
+      "title": "Онбординг и обучение игрока",
+      "titleEn": "Onboarding and tutorials",
+      "definition": "Проектирует онбординг и обучение игрока: первые минуты, обучение через игру и постепенное раскрытие систем, чтобы игрок освоился без стены текста.",
+      "priorityHint": "core"
+    },
+    {
+      "id": "game-feel-juice",
+      "branchId": "game",
+      "branchTitle": "Гейм-дизайн",
+      "sectionId": "game-ui-feel",
+      "sectionTitle": "game-ui-feel",
+      "title": "Гейм-фил и джус",
+      "titleEn": "Game feel and juice",
+      "definition": "Доводит ощущение от управления: отклик, тайминги, анимации и звук вместе создают ощущение веса и точности действий игрока.",
+      "priorityHint": "core"
+    },
+    {
+      "id": "game-ui-hud",
+      "branchId": "game",
+      "branchTitle": "Гейм-дизайн",
+      "sectionId": "game-ui-feel",
+      "sectionTitle": "game-ui-feel",
+      "title": "Игровой интерфейс и HUD",
+      "titleEn": "Game UI and HUD",
+      "definition": "Проектирует игровой интерфейс и HUD: информацию в нужный момент, управление и состояния, не отвлекая от игрового процесса.",
+      "priorityHint": "core"
+    },
+    {
+      "id": "game-playtesting",
+      "branchId": "game",
+      "branchTitle": "Гейм-дизайн",
+      "sectionId": "game-prototypes",
+      "sectionTitle": "game-prototypes",
+      "title": "Плейтестинг и валидация опыта",
+      "titleEn": "Playtesting and validation",
+      "definition": "Планирует и проводит плейтесты: гипотезы, наблюдение, метрики и выводы, чтобы решения опирались на реальный опыт игроков.",
+      "priorityHint": "core"
+    },
+    {
+      "id": "game-engines-prototyping",
+      "branchId": "game",
+      "branchTitle": "Гейм-дизайн",
+      "sectionId": "game-prototypes",
+      "sectionTitle": "game-prototypes",
+      "title": "Движки и прототипирование",
+      "titleEn": "Engines and prototyping",
+      "definition": "Собирает прототипы в игровых движках: быстро проверяет механики до продакшна, понимая ограничения Unity, Unreal и Godot.",
+      "priorityHint": "foundation"
+    },
+    {
+      "id": "game-liveops-monetization",
+      "branchId": "game",
+      "branchTitle": "Гейм-дизайн",
+      "sectionId": "game-production",
+      "sectionTitle": "game-production",
+      "title": "Live-ops и монетизация",
+      "titleEn": "Live-ops and monetization",
+      "definition": "Проектирует live-ops и монетизацию: ивенты, обновления и платные предложения, которые поддерживают игру без ущерба для доверия игроков.",
+      "priorityHint": "optional"
+    },
+    {
+      "id": "game-ai-gamedev",
+      "branchId": "game",
+      "branchTitle": "Гейм-дизайн",
+      "sectionId": "game-production",
+      "sectionTitle": "game-production",
+      "title": "ИИ в геймдеве",
+      "titleEn": "AI in game development",
+      "definition": "Применяет ИИ в геймдеве: генерация контента, ассистирование в дизайне и инструменты, с проверкой качества и соблюдением прав.",
+      "priorityHint": "core"
     }
   ]
 }

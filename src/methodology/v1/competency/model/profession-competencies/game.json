@@ -61,6 +61,14 @@
       "sectionTitle": "Игрок и исследование"
     },
     {
+      "competencyId": "game-player-psychology",
+      "tier": "foundation",
+      "order": 35,
+      "prerequisites": [],
+      "sectionId": "game-player-research",
+      "sectionTitle": "Игрок и исследование"
+    },
+    {
       "competencyId": "ux-product-thinking",
       "tier": "core",
       "order": 7,
@@ -118,6 +126,38 @@
       "prerequisites": [
         "ux-requirements"
       ],
+      "sectionId": "game-systems",
+      "sectionTitle": "Игровые системы и правила"
+    },
+    {
+      "competencyId": "game-mechanics-systems",
+      "tier": "foundation",
+      "order": 31,
+      "prerequisites": [],
+      "sectionId": "game-systems",
+      "sectionTitle": "Игровые системы и правила"
+    },
+    {
+      "competencyId": "game-economy-balance",
+      "tier": "core",
+      "order": 32,
+      "prerequisites": [],
+      "sectionId": "game-systems",
+      "sectionTitle": "Игровые системы и правила"
+    },
+    {
+      "competencyId": "game-progression-rewards",
+      "tier": "core",
+      "order": 33,
+      "prerequisites": [],
+      "sectionId": "game-systems",
+      "sectionTitle": "Игровые системы и правила"
+    },
+    {
+      "competencyId": "game-level-design",
+      "tier": "core",
+      "order": 34,
+      "prerequisites": [],
       "sectionId": "game-systems",
       "sectionTitle": "Игровые системы и правила"
     },
@@ -202,6 +242,30 @@
       "sectionTitle": "Игровой интерфейс и отклик"
     },
     {
+      "competencyId": "game-onboarding-tutorials",
+      "tier": "core",
+      "order": 37,
+      "prerequisites": [],
+      "sectionId": "game-ui-feel",
+      "sectionTitle": "Игровой интерфейс и отклик"
+    },
+    {
+      "competencyId": "game-feel-juice",
+      "tier": "core",
+      "order": 38,
+      "prerequisites": [],
+      "sectionId": "game-ui-feel",
+      "sectionTitle": "Игровой интерфейс и отклик"
+    },
+    {
+      "competencyId": "game-ui-hud",
+      "tier": "core",
+      "order": 39,
+      "prerequisites": [],
+      "sectionId": "game-ui-feel",
+      "sectionTitle": "Игровой интерфейс и отклик"
+    },
+    {
       "competencyId": "ux-lowfi-prototype",
       "tier": "core",
       "order": 21,
@@ -238,6 +302,22 @@
       "prerequisites": [
         "ui-layout"
       ],
+      "sectionId": "game-prototypes",
+      "sectionTitle": "Прототипы и плейтесты"
+    },
+    {
+      "competencyId": "game-playtesting",
+      "tier": "core",
+      "order": 40,
+      "prerequisites": [],
+      "sectionId": "game-prototypes",
+      "sectionTitle": "Прототипы и плейтесты"
+    },
+    {
+      "competencyId": "game-engines-prototyping",
+      "tier": "foundation",
+      "order": 41,
+      "prerequisites": [],
       "sectionId": "game-prototypes",
       "sectionTitle": "Прототипы и плейтесты"
     },
@@ -298,6 +378,30 @@
       "prerequisites": [
         "ai-prompting"
       ],
+      "sectionId": "game-production",
+      "sectionTitle": "Производство и ИИ"
+    },
+    {
+      "competencyId": "game-narrative-lore",
+      "tier": "optional",
+      "order": 36,
+      "prerequisites": [],
+      "sectionId": "game-production",
+      "sectionTitle": "Производство и ИИ"
+    },
+    {
+      "competencyId": "game-liveops-monetization",
+      "tier": "optional",
+      "order": 42,
+      "prerequisites": [],
+      "sectionId": "game-production",
+      "sectionTitle": "Производство и ИИ"
+    },
+    {
+      "competencyId": "game-ai-gamedev",
+      "tier": "core",
+      "order": 43,
+      "prerequisites": [],
       "sectionId": "game-production",
       "sectionTitle": "Производство и ИИ"
     }

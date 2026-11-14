@@ -1,7 +1,7 @@
 {
   "reviewVersion": "1.0.0",
   "releaseId": "beta-1",
-  "updatedAt": "2026-11-09",
+  "updatedAt": "2026-11-14",
   "reviewedBy": "deepseek-content-gate",
   "decisions": [
     {
@@ -12358,6 +12358,681 @@
       "reason": "Авто-расширение: совпадение с «Цели бренда и коммуникационная стратегия», формат blog, score 0.58",
       "reviewedBy": "sources-expand-v1",
       "reviewedAt": "2026-11-09"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "ux-design-thinking",
+      "sourceId": "tilda-education-courses-web-design-designthinking",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "ux-interviews",
+      "sourceId": "hse-ru-edu-courses-470898711",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "ux-analytics",
+      "sourceId": "skillbox-ru-course-ai-audio-video",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "ux-analytics",
+      "sourceId": "hse-ru-edu-courses-470898711",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "ux-metrics",
+      "sourceId": "hse-ru-edu-courses-470898711",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "ux-metrics",
+      "sourceId": "productlab-ru-strategy",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "game-player-psychology",
+      "sourceId": "extracredits",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "game-player-psychology",
+      "sourceId": "gmtk-site",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "game-player-psychology",
+      "sourceId": "gameuxsummit",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "ux-user-flows",
+      "sourceId": "practicum-ai-tools-for-designers",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "ux-requirements",
+      "sourceId": "stepik-org-course-1128-promo",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "ux-requirements",
+      "sourceId": "learn-rarus-ru-courses-15216",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "game-mechanics-systems",
+      "sourceId": "gmtk-site",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "game-mechanics-systems",
+      "sourceId": "gdcvault",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "game-mechanics-systems",
+      "sourceId": "gamedeveloper",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "game-economy-balance",
+      "sourceId": "machinations",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "game-economy-balance",
+      "sourceId": "gdcvault",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "game-economy-balance",
+      "sourceId": "gamedeveloper",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "game-progression-rewards",
+      "sourceId": "gmtk-site",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "game-progression-rewards",
+      "sourceId": "gamedeveloper",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "game-progression-rewards",
+      "sourceId": "gdcvault",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "game-level-design",
+      "sourceId": "leveldesignbook",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "game-level-design",
+      "sourceId": "gdcvault",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "game-level-design",
+      "sourceId": "gmtk-site",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "ui-layout",
+      "sourceId": "aicodinglab-ru-infographics-lesson-6",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "ui-visual-communication",
+      "sourceId": "hse-ru-edu-courses-470898711",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "ui-typography",
+      "sourceId": "bangbangeducation-ru-course-motion",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "ui-typography",
+      "sourceId": "bureau-ru-courses-typography",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "ui-motion",
+      "sourceId": "cloud-itstep-org-ru-course-motion-design",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "ui-motion",
+      "sourceId": "bangbangeducation-ru-course-motion",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "motion-timing-easing",
+      "sourceId": "motiondesign-school-youtube",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "motion-timing-easing",
+      "sourceId": "school-of-motion-free",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "motion-timing-easing",
+      "sourceId": "sunstrikestudios-com-ru-blog-timing-in-animation",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "ui-design-systems",
+      "sourceId": "bangbangeducation-ru-course-motion",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "game-onboarding-tutorials",
+      "sourceId": "gameuxsummit",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "game-onboarding-tutorials",
+      "sourceId": "gmtk-site",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "game-onboarding-tutorials",
+      "sourceId": "gamedeveloper",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "game-feel-juice",
+      "sourceId": "gmtk-site",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "game-feel-juice",
+      "sourceId": "gamedeveloper",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "game-feel-juice",
+      "sourceId": "gdcvault",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "game-ui-hud",
+      "sourceId": "gameuxsummit",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "game-ui-hud",
+      "sourceId": "gdcvault",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "game-ui-hud",
+      "sourceId": "gameaccessibilityguidelines",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "game-ui-hud",
+      "sourceId": "xbox-a11y",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "ux-lowfi-prototype",
+      "sourceId": "netology-ru-courses-osnovy-prototipirovanniya",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "ux-interactive-prototype",
+      "sourceId": "contented-ru-courses-prototipirovanie",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "ux-usability-testing",
+      "sourceId": "practicum-ai-tools-for-designers",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "ux-usability-testing",
+      "sourceId": "online-spbu-ru-16ff04",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "game-playtesting",
+      "sourceId": "igda",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "game-playtesting",
+      "sourceId": "gdcvault",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "game-playtesting",
+      "sourceId": "gamedeveloper",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "game-engines-prototyping",
+      "sourceId": "unity-learn",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "game-engines-prototyping",
+      "sourceId": "godot-docs",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "game-engines-prototyping",
+      "sourceId": "gdcvault",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "motion-animation-principles",
+      "sourceId": "motiondesign-school-youtube",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "motion-animation-principles",
+      "sourceId": "school-of-motion-free",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "motion-animation-principles",
+      "sourceId": "animationschool-ru-courses-categories-3d-animacija",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "motion-animation-principles",
+      "sourceId": "practicum-ai-tools-for-designers",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "3d-modeling",
+      "sourceId": "practicum-3ddesigner",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "3d-modeling",
+      "sourceId": "alison-3d-modeling-tag",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "3d-modeling",
+      "sourceId": "coursera-3d-modeling-intro",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "3d-modeling",
+      "sourceId": "greatlearning-blender-3d",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "3d-modeling",
+      "sourceId": "coursera-3d-cad-fundamental",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "3d-modeling",
+      "sourceId": "tinkercad-learn-designs",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "3d-modeling",
+      "sourceId": "instructables-3d-modeling-guide",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "3d-modeling",
+      "sourceId": "skillbox-ru-course-ai-audio-video",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "game-narrative-lore",
+      "sourceId": "extracredits",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "game-narrative-lore",
+      "sourceId": "gdcvault",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "game-narrative-lore",
+      "sourceId": "gamedeveloper",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "game-liveops-monetization",
+      "sourceId": "steamworks",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "game-liveops-monetization",
+      "sourceId": "gamedeveloper",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "game-liveops-monetization",
+      "sourceId": "gdcvault",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "game-ai-gamedev",
+      "sourceId": "gamedeveloper",
+      "decision": "accepted",
+      "reason": "Manual game-layer review (COS-RES-031): Отраслевое издание системно освещает применение ИИ в разработке игр.",
+      "reviewedBy": "game-layer-review-v1",
+      "reviewedAt": "2026-11-13"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "game-ai-gamedev",
+      "sourceId": "gdcvault",
+      "decision": "accepted",
+      "reason": "Manual game-layer review (COS-RES-031): Доклады GDC содержат материалы по ИИ в геймдеве.",
+      "reviewedBy": "game-layer-review-v1",
+      "reviewedAt": "2026-11-13"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "game-ai-gamedev",
+      "sourceId": "gmtk-site",
+      "decision": "accepted",
+      "reason": "Manual game-layer review (COS-RES-031): Разборы GMTK касаются ИИ-инструментов и их влияния на дизайн игр.",
+      "reviewedBy": "game-layer-review-v1",
+      "reviewedAt": "2026-11-13"
     }
   ],
   "notes": [

@@ -5,22 +5,21 @@
   "status": "ready",
   "domain": "it",
   "professionIds": [
-    "it.uxui",
-    "it.product",
-    "it.motion",
-    "it.graphic",
     "it.3ddesigner",
-    "it.interior",
-    "it.webdesigner",
-    "it.presentation",
-    "it.uxresearch",
-    "it.artdir",
+    "it.aidesigner",
     "it.appdesign",
-    "it.aidesigner"
+    "it.artdir",
+    "it.game",
+    "it.graphic",
+    "it.interior",
+    "it.motion",
+    "it.presentation",
+    "it.product",
+    "it.uxresearch",
+    "it.uxui",
+    "it.webdesigner"
   ],
-  "excludedProfessionIds": [
-    "it.game"
-  ],
+  "excludedProfessionIds": [],
   "excludedCompetencyPrefixes": [],
   "excludedCompetencies": [],
   "qualityBar": {
@@ -45,12 +44,5 @@
       "it.aidesigner"
     ]
   },
-  "notes": [
-    "Публикуются только компетенции, прошедшие quality bar; непрошедшие не показываются как пустые карточки.",
-    "Сквозной AI-слой и AI-дизайнер публикуются внутри профессии it.aidesigner (publication.coreCompetencyPrefixes / coreProfessionIds); в остальных профессиях AI-слой остаётся за рамками Beta до отдельного решения (ADR-015).",
-    "Spot-check 2026-11-03: техническая проверка AI-дизайнера проведена (docs/12-release/reports/spot-check-aidesigner-2026-11-03.md): 58 пар «компетенция–источник» исключены из публикации, источники и блоки AI-слоя выверены. Перед публичным запуском остаётся человеческое подтверждение основателя.",
-    "Гейм-дизайнер (it.game) собран в модели, но не входит в публикацию Beta 1 (excludedProfessionIds).",
-    "Диагностика, кейсы, паспорт и платежи в Beta не входят — COS-REL-008 ADR-001.",
-    "Источник истины контента — model/, catalog/ и learning-sources/; манифест задаёт только публичный набор."
-  ]
+  "notes": "Beta 1: 13 профессий; AI-слой — ядро только в AI-дизайнере (ADR-015); гейм-дизайнер собран с игровым слоем компетенций и материалами (COS-RES-031); source review — AI-assisted, spot-check основателя проведён."
 }

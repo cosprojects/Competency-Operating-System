@@ -54,6 +54,11 @@
           "prerequisites": [
             "ux-analytics"
           ]
+        },
+        {
+          "competencyId": "game-player-psychology",
+          "tier": "foundation",
+          "order": 35
         }
       ]
     },
@@ -110,6 +115,26 @@
           "prerequisites": [
             "ux-requirements"
           ]
+        },
+        {
+          "competencyId": "game-mechanics-systems",
+          "tier": "foundation",
+          "order": 31
+        },
+        {
+          "competencyId": "game-economy-balance",
+          "tier": "core",
+          "order": 32
+        },
+        {
+          "competencyId": "game-progression-rewards",
+          "tier": "core",
+          "order": 33
+        },
+        {
+          "competencyId": "game-level-design",
+          "tier": "core",
+          "order": 34
         }
       ]
     },
@@ -181,6 +206,21 @@
           "prerequisites": [
             "ui-visual-communication"
           ]
+        },
+        {
+          "competencyId": "game-onboarding-tutorials",
+          "tier": "core",
+          "order": 37
+        },
+        {
+          "competencyId": "game-feel-juice",
+          "tier": "core",
+          "order": 38
+        },
+        {
+          "competencyId": "game-ui-hud",
+          "tier": "core",
+          "order": 39
         }
       ]
     },
@@ -220,6 +260,16 @@
           "prerequisites": [
             "ui-layout"
           ]
+        },
+        {
+          "competencyId": "game-playtesting",
+          "tier": "core",
+          "order": 40
+        },
+        {
+          "competencyId": "game-engines-prototyping",
+          "tier": "foundation",
+          "order": 41
         }
       ]
     },
@@ -275,6 +325,21 @@
           "prerequisites": [
             "ai-prompting"
           ]
+        },
+        {
+          "competencyId": "game-narrative-lore",
+          "tier": "optional",
+          "order": 36
+        },
+        {
+          "competencyId": "game-liveops-monetization",
+          "tier": "optional",
+          "order": 42
+        },
+        {
+          "competencyId": "game-ai-gamedev",
+          "tier": "core",
+          "order": 43
         }
       ]
     }

@@ -1,6 +1,6 @@
 {
   "linksVersion": "1.0.0",
-  "updatedAt": "2026-11-09",
+  "updatedAt": "2026-11-13",
   "description": "Ручной слой связей «компетенция → учебные источники». Источник истины для learning:map; при model:sync мержится в competencies.json. Источник — место, где учиться компетенции, а не автоматическое доказательство её содержания.",
   "links": [
     {
@@ -1162,6 +1162,124 @@
         "specialist-ru-course-vizkom"
       ],
       "rationale": "совпадение с «Презентация 3D-проекта», формат course-platform, score 0.37"
+    },
+    {
+      "competencyId": "game-mechanics-systems",
+      "sourceIds": [
+        "gmtk-site",
+        "gdcvault",
+        "gamedeveloper"
+      ],
+      "rationale": "Игровой слой: источники по гейм-дизайну (COS-RES-031)."
+    },
+    {
+      "competencyId": "game-economy-balance",
+      "sourceIds": [
+        "machinations",
+        "gdcvault",
+        "gamedeveloper"
+      ],
+      "rationale": "Игровой слой: источники по гейм-дизайну (COS-RES-031)."
+    },
+    {
+      "competencyId": "game-progression-rewards",
+      "sourceIds": [
+        "gmtk-site",
+        "gamedeveloper",
+        "gdcvault"
+      ],
+      "rationale": "Игровой слой: источники по гейм-дизайну (COS-RES-031)."
+    },
+    {
+      "competencyId": "game-level-design",
+      "sourceIds": [
+        "leveldesignbook",
+        "gdcvault",
+        "gmtk-site"
+      ],
+      "rationale": "Игровой слой: источники по гейм-дизайну (COS-RES-031)."
+    },
+    {
+      "competencyId": "game-player-psychology",
+      "sourceIds": [
+        "extracredits",
+        "gmtk-site",
+        "gameuxsummit"
+      ],
+      "rationale": "Игровой слой: источники по гейм-дизайну (COS-RES-031)."
+    },
+    {
+      "competencyId": "game-narrative-lore",
+      "sourceIds": [
+        "extracredits",
+        "gdcvault",
+        "gamedeveloper"
+      ],
+      "rationale": "Игровой слой: источники по гейм-дизайну (COS-RES-031)."
+    },
+    {
+      "competencyId": "game-onboarding-tutorials",
+      "sourceIds": [
+        "gameuxsummit",
+        "gmtk-site",
+        "gamedeveloper"
+      ],
+      "rationale": "Игровой слой: источники по гейм-дизайну (COS-RES-031)."
+    },
+    {
+      "competencyId": "game-feel-juice",
+      "sourceIds": [
+        "gmtk-site",
+        "gamedeveloper",
+        "gdcvault"
+      ],
+      "rationale": "Игровой слой: источники по гейм-дизайну (COS-RES-031)."
+    },
+    {
+      "competencyId": "game-ui-hud",
+      "sourceIds": [
+        "gameuxsummit",
+        "gdcvault",
+        "gameaccessibilityguidelines",
+        "xbox-a11y"
+      ],
+      "rationale": "Игровой слой: источники по гейм-дизайну (COS-RES-031)."
+    },
+    {
+      "competencyId": "game-playtesting",
+      "sourceIds": [
+        "igda",
+        "gdcvault",
+        "gamedeveloper"
+      ],
+      "rationale": "Игровой слой: источники по гейм-дизайну (COS-RES-031)."
+    },
+    {
+      "competencyId": "game-engines-prototyping",
+      "sourceIds": [
+        "unity-learn",
+        "godot-docs",
+        "gdcvault"
+      ],
+      "rationale": "Игровой слой: источники по гейм-дизайну (COS-RES-031)."
+    },
+    {
+      "competencyId": "game-liveops-monetization",
+      "sourceIds": [
+        "steamworks",
+        "gamedeveloper",
+        "gdcvault"
+      ],
+      "rationale": "Игровой слой: источники по гейм-дизайну (COS-RES-031)."
+    },
+    {
+      "competencyId": "game-ai-gamedev",
+      "sourceIds": [
+        "gamedeveloper",
+        "gdcvault",
+        "gmtk-site"
+      ],
+      "rationale": "Игровой слой: источники по гейм-дизайну (COS-RES-031)."
     }
   ]
 }

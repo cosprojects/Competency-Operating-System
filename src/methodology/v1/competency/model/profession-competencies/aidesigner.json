@@ -421,6 +421,17 @@
       "sectionTitle": "Качество и валидация"
     },
     {
+      "competencyId": "ui-accessibility",
+      "tier": "core",
+      "order": 57,
+      "prerequisites": [
+        "aidesigner-quality-eval",
+        "aidesigner-visual-qa"
+      ],
+      "sectionId": "aid-qa",
+      "sectionTitle": "Качество и валидация"
+    },
+    {
       "competencyId": "ui-handoff",
       "tier": "optional",
       "order": 47,

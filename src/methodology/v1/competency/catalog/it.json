@@ -1,7 +1,7 @@
 {
   "catalogVersion": "0.1.0",
   "domain": "it",
-  "updatedOn": "2026-11-13",
+  "updatedOn": "2026-11-14",
   "blocks": [
     {
       "id": "comp_3b5bab068e42",
@@ -3616,7 +3616,9 @@
           "order": 1,
           "tagIds": [
             "tag_7530ecd3075b",
-            "tag_de0dee07bb4b"
+            "tag_de0dee07bb4b",
+            "tag_503d3df9af10",
+            "tag_79bfd93f5293"
           ]
         },
         {
@@ -3626,7 +3628,9 @@
           "definition": "Понимание программных средств, преобразующих элементы экрана в речь или шрифт Брайля для пользователей с нарушениями зрения.",
           "order": 2,
           "tagIds": [
-            "tag_7b70efab5211"
+            "tag_7b70efab5211",
+            "tag_a9a066fe3013",
+            "tag_301affeafdbb"
           ]
         }
       ],
@@ -3724,6 +3728,154 @@
             {
               "competencyId": "comp_5ef66a02628b",
               "componentId": "veb-stili-i-dostupnost-interfeysov.stilevye-yazyki-opisaniya-predstavleniya-dokumentov",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_503d3df9af10",
+          "slug": "k-a11y-503d3d",
+          "title": "WCAG и уровни соответствия",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Критерии WCAG задают проверяемые требования доступности, поэтому их используют как чек-лист приёмки интерфейса.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "webdev-accessibility",
+              "externalId": "webdev-accessibility",
+              "url": "https://web.dev/learn/accessibility",
+              "retrievedAt": "2026-11-13",
+              "license": "© webdev-accessibility; ссылка."
+            },
+            {
+              "sourceId": "wcag-quickref",
+              "externalId": "wcag-quickref",
+              "url": "https://www.w3.org/WAI/WCAG21/quickref/",
+              "retrievedAt": "2026-11-13",
+              "license": "© wcag-quickref; ссылка."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_5ef66a02628b",
+              "componentId": "veb-stili-i-dostupnost-interfeysov.stilevye-yazyki-opisaniya-predstavleniya-dokumentov",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_79bfd93f5293",
+          "slug": "k-a11y-79bfd9",
+          "title": "Структура страницы и семантика",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Семантическая структура страницы определяет, как вспомогательные технологии читают интерфейс, поэтому её проверяют в реализации.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "mdn-learn-webdev",
+              "externalId": "mdn-learn-webdev",
+              "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development",
+              "retrievedAt": "2026-11-13",
+              "license": "© mdn-learn-webdev; ссылка."
+            },
+            {
+              "sourceId": "webdev-accessibility",
+              "externalId": "webdev-accessibility",
+              "url": "https://web.dev/learn/accessibility",
+              "retrievedAt": "2026-11-13",
+              "license": "© webdev-accessibility; ссылка."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_5ef66a02628b",
+              "componentId": "veb-stili-i-dostupnost-interfeysov.stilevye-yazyki-opisaniya-predstavleniya-dokumentov",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_a9a066fe3013",
+          "slug": "s-a11y-a9a066",
+          "title": "Проверять доступность по чек-листу",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Проходить интерфейс по критериям WCAG (контраст, подписи, порядок фокуса), чтобы подтвердить доступность результата.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "wcag-quickref",
+              "externalId": "wcag-quickref",
+              "url": "https://www.w3.org/WAI/WCAG21/quickref/",
+              "retrievedAt": "2026-11-13",
+              "license": "© wcag-quickref; ссылка."
+            },
+            {
+              "sourceId": "lighthouse-docs",
+              "externalId": "lighthouse-docs",
+              "url": "https://developer.chrome.com/docs/lighthouse/overview",
+              "retrievedAt": "2026-11-13",
+              "license": "© lighthouse-docs; ссылка."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_5ef66a02628b",
+              "componentId": "veb-stili-i-dostupnost-interfeysov.vspomogatelnye-tehnologii-ekrannogo-dostupa",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_301affeafdbb",
+          "slug": "s-a11y-301aff",
+          "title": "Проверять интерфейс клавиатурой и скринридером",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Проходить ключевые сценарии без мыши и с экранным диктором, чтобы находить барьеры до релиза.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "webdev-accessibility",
+              "externalId": "webdev-accessibility",
+              "url": "https://web.dev/learn/accessibility",
+              "retrievedAt": "2026-11-13",
+              "license": "© webdev-accessibility; ссылка."
+            },
+            {
+              "sourceId": "mdn-learn-webdev",
+              "externalId": "mdn-learn-webdev",
+              "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development",
+              "retrievedAt": "2026-11-13",
+              "license": "© mdn-learn-webdev; ссылка."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_5ef66a02628b",
+              "componentId": "veb-stili-i-dostupnost-interfeysov.vspomogatelnye-tehnologii-ekrannogo-dostupa",
               "role": "primary"
             }
           ],
@@ -33278,7 +33430,9 @@
             "tag_8b50546e45c2",
             "tag_9da43bc825b0",
             "tag_81107c1cb072",
-            "tag_63e50ff6b637"
+            "tag_63e50ff6b637",
+            "tag_974e0f7be102",
+            "tag_bfa2f300a3ef"
           ]
         },
         {
@@ -33292,7 +33446,9 @@
             "tag_10840a99ca11",
             "tag_d6b2b930bbb0",
             "tag_8acb1512ed42",
-            "tag_6c08e8150204"
+            "tag_6c08e8150204",
+            "tag_ad2b5a18d2e4",
+            "tag_e9b1b0503392"
           ]
         }
       ],
@@ -33596,6 +33752,175 @@
           ],
           "materialIds": [],
           "needsReview": false
+        },
+        {
+          "id": "tag_974e0f7be102",
+          "slug": "k-root-cause-и-минимальный-фикс-974e0f",
+          "title": "Root cause и минимальный фикс",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Локализация причины ошибки и минимальное изменение снижают риск регрессий при правках AI-кодом.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "ai-softuni-bg-courses-ai-assisted-development",
+              "externalId": "ai-softuni-bg-courses-ai-assisted-development",
+              "url": "https://ai.softuni.bg/",
+              "retrievedAt": "2026-11-13",
+              "license": "© ai-softuni-bg-courses-ai-assisted-development; ссылка на источник, тексты не копируются."
+            },
+            {
+              "sourceId": "chrome-devtools",
+              "externalId": "chrome-devtools",
+              "url": "https://developer.chrome.com/docs/devtools",
+              "retrievedAt": "2026-11-13",
+              "license": "© chrome-devtools; ссылка на источник, тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_42c60aead559",
+              "componentId": "ai-razrabotka-praktika.znaniya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_bfa2f300a3ef",
+          "slug": "k-сборка-и-окружения-bfa2f3",
+          "title": "Сборка и окружения",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Сборка, проверка типов и деплой показывают, что результат доходит до публичной среды без сюрпризов.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "ai-softuni-bg-courses-ai-assisted-development",
+              "externalId": "ai-softuni-bg-courses-ai-assisted-development",
+              "url": "https://ai.softuni.bg/",
+              "retrievedAt": "2026-11-13",
+              "license": "© ai-softuni-bg-courses-ai-assisted-development; ссылка на источник, тексты не копируются."
+            },
+            {
+              "sourceId": "vercel-docs",
+              "externalId": "vercel-docs",
+              "url": "https://vercel.com/docs",
+              "retrievedAt": "2026-11-13",
+              "license": "© vercel-docs; ссылка на источник, тексты не копируются."
+            },
+            {
+              "sourceId": "github-docs",
+              "externalId": "github-docs",
+              "url": "https://docs.github.com/en",
+              "retrievedAt": "2026-11-13",
+              "license": "© github-docs; ссылка на источник, тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_42c60aead559",
+              "componentId": "ai-razrabotka-praktika.znaniya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_ad2b5a18d2e4",
+          "slug": "s-разбирать-ошибку-с-агентом-ad2b5a",
+          "title": "Разбирать ошибку с агентом",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Читать консоль, формулировать ошибку для агента и просить минимальный фикс, проверяя изменения до принятия.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "ai-softuni-bg-courses-ai-assisted-development",
+              "externalId": "ai-softuni-bg-courses-ai-assisted-development",
+              "url": "https://ai.softuni.bg/",
+              "retrievedAt": "2026-11-13",
+              "license": "© ai-softuni-bg-courses-ai-assisted-development; ссылка на источник, тексты не копируются."
+            },
+            {
+              "sourceId": "cursor-docs",
+              "externalId": "cursor-docs",
+              "url": "https://docs.cursor.com/",
+              "retrievedAt": "2026-11-13",
+              "license": "© cursor-docs; ссылка на источник, тексты не копируются."
+            },
+            {
+              "sourceId": "chrome-devtools",
+              "externalId": "chrome-devtools",
+              "url": "https://developer.chrome.com/docs/devtools",
+              "retrievedAt": "2026-11-13",
+              "license": "© chrome-devtools; ссылка на источник, тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_42c60aead559",
+              "componentId": "ai-razrabotka-praktika.navyki",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_e9b1b0503392",
+          "slug": "s-доводить-прототип-до-публичной-ссылки-e9b1b0",
+          "title": "Доводить прототип до публичной ссылки",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Собирать, деплоить и проверять прототип по публичной ссылке, фиксируя версию в Git.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "ai-softuni-bg-courses-ai-assisted-development",
+              "externalId": "ai-softuni-bg-courses-ai-assisted-development",
+              "url": "https://ai.softuni.bg/",
+              "retrievedAt": "2026-11-13",
+              "license": "© ai-softuni-bg-courses-ai-assisted-development; ссылка на источник, тексты не копируются."
+            },
+            {
+              "sourceId": "vercel-docs",
+              "externalId": "vercel-docs",
+              "url": "https://vercel.com/docs",
+              "retrievedAt": "2026-11-13",
+              "license": "© vercel-docs; ссылка на источник, тексты не копируются."
+            },
+            {
+              "sourceId": "github-docs",
+              "externalId": "github-docs",
+              "url": "https://docs.github.com/en",
+              "retrievedAt": "2026-11-13",
+              "license": "© github-docs; ссылка на источник, тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_42c60aead559",
+              "componentId": "ai-razrabotka-praktika.navyki",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
         }
       ],
       "sourceRefs": [
@@ -33605,6 +33930,34 @@
           "url": "https://ai.softuni.bg/",
           "retrievedAt": "2026-11-03",
           "license": "© Обучение и курсове по AI (изкуствен интелект) - SoftUni AI. Извлекаются названия и короткие цитаты; полные тексты не копируются."
+        },
+        {
+          "sourceId": "chrome-devtools",
+          "externalId": "chrome-devtools",
+          "url": "https://developer.chrome.com/docs/devtools",
+          "retrievedAt": "2026-11-13",
+          "license": "© chrome-devtools; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "vercel-docs",
+          "externalId": "vercel-docs",
+          "url": "https://vercel.com/docs",
+          "retrievedAt": "2026-11-13",
+          "license": "© vercel-docs; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "github-docs",
+          "externalId": "github-docs",
+          "url": "https://docs.github.com/en",
+          "retrievedAt": "2026-11-13",
+          "license": "© github-docs; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "cursor-docs",
+          "externalId": "cursor-docs",
+          "url": "https://docs.cursor.com/",
+          "retrievedAt": "2026-11-13",
+          "license": "© cursor-docs; ссылка на источник, тексты не копируются."
         }
       ],
       "evidenceState": "supported",
@@ -34774,7 +35127,10 @@
             "tag_0c9ef09470a9",
             "tag_6eb60cc15cbc",
             "tag_932ad6e8a472",
-            "tag_928ae4c0ccac"
+            "tag_928ae4c0ccac",
+            "tag_83bb6af91a42",
+            "tag_392d5a4671e2",
+            "tag_51a744a9d965"
           ]
         },
         {
@@ -34788,7 +35144,9 @@
             "tag_97696ebf7516",
             "tag_e3c763e6aad8",
             "tag_1a3362ccf506",
-            "tag_c82a026fa371"
+            "tag_c82a026fa371",
+            "tag_4ab61502fc24",
+            "tag_714991fe5492"
           ]
         }
       ],
@@ -35199,6 +35557,268 @@
           ],
           "materialIds": [],
           "needsReview": false
+        },
+        {
+          "id": "tag_83bb6af91a42",
+          "slug": "k-state-интерфейса-83bb6a",
+          "title": "State интерфейса",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Состояния экрана (пусто, загрузка, ошибка, успех) задают проверяемое поведение, поэтому их фиксируют в задаче агенту и проверяют в прототипе.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum-webdesigner",
+              "externalId": "practicum-webdesigner",
+              "url": "https://practicum.yandex.ru/web-designer/",
+              "retrievedAt": "2026-11-13",
+              "license": "© practicum-webdesigner; ссылка на источник, тексты не копируются."
+            },
+            {
+              "sourceId": "alison-web-design-html",
+              "externalId": "alison-web-design-html",
+              "url": "https://alison.com/course/web-design-with-html",
+              "retrievedAt": "2026-11-13",
+              "license": "© alison-web-design-html; ссылка на источник, тексты не копируются."
+            },
+            {
+              "sourceId": "developer-mozilla-org-ru-docs-web",
+              "externalId": "developer-mozilla-org-ru-docs-web",
+              "url": "https://developer.mozilla.org/ru/docs/Web",
+              "retrievedAt": "2026-11-13",
+              "license": "© developer-mozilla-org-ru-docs-web; ссылка на источник, тексты не копируются."
+            },
+            {
+              "sourceId": "mdn-learn-webdev",
+              "externalId": "mdn-learn-webdev",
+              "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development",
+              "retrievedAt": "2026-11-13",
+              "license": "© mdn-learn-webdev; ссылка на источник, тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_74e9d09d4150",
+              "componentId": "tehnicheskaya-gramotnost-praktika.znaniya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_392d5a4671e2",
+          "slug": "k-формы-и-валидация-392d5a",
+          "title": "Формы и валидация",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Правила ввода и валидации определяют корректность данных, поэтому их проверяют до передачи результата.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum-webdesigner",
+              "externalId": "practicum-webdesigner",
+              "url": "https://practicum.yandex.ru/web-designer/",
+              "retrievedAt": "2026-11-13",
+              "license": "© practicum-webdesigner; ссылка на источник, тексты не копируются."
+            },
+            {
+              "sourceId": "alison-web-design-html",
+              "externalId": "alison-web-design-html",
+              "url": "https://alison.com/course/web-design-with-html",
+              "retrievedAt": "2026-11-13",
+              "license": "© alison-web-design-html; ссылка на источник, тексты не копируются."
+            },
+            {
+              "sourceId": "developer-mozilla-org-ru-docs-web",
+              "externalId": "developer-mozilla-org-ru-docs-web",
+              "url": "https://developer.mozilla.org/ru/docs/Web",
+              "retrievedAt": "2026-11-13",
+              "license": "© developer-mozilla-org-ru-docs-web; ссылка на источник, тексты не копируются."
+            },
+            {
+              "sourceId": "webdev-forms",
+              "externalId": "webdev-forms",
+              "url": "https://web.dev/learn/forms",
+              "retrievedAt": "2026-11-13",
+              "license": "© webdev-forms; ссылка на источник, тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_74e9d09d4150",
+              "componentId": "tehnicheskaya-gramotnost-praktika.znaniya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_51a744a9d965",
+          "slug": "k-аутентификация-и-сессии-51a744",
+          "title": "Аутентификация и сессии",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Способы входа и хранения сессии влияют на сценарии доступа, поэтому их учитывают при проверке прототипа.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum-webdesigner",
+              "externalId": "practicum-webdesigner",
+              "url": "https://practicum.yandex.ru/web-designer/",
+              "retrievedAt": "2026-11-13",
+              "license": "© practicum-webdesigner; ссылка на источник, тексты не копируются."
+            },
+            {
+              "sourceId": "alison-web-design-html",
+              "externalId": "alison-web-design-html",
+              "url": "https://alison.com/course/web-design-with-html",
+              "retrievedAt": "2026-11-13",
+              "license": "© alison-web-design-html; ссылка на источник, тексты не копируются."
+            },
+            {
+              "sourceId": "developer-mozilla-org-ru-docs-web",
+              "externalId": "developer-mozilla-org-ru-docs-web",
+              "url": "https://developer.mozilla.org/ru/docs/Web",
+              "retrievedAt": "2026-11-13",
+              "license": "© developer-mozilla-org-ru-docs-web; ссылка на источник, тексты не копируются."
+            },
+            {
+              "sourceId": "authjs-docs",
+              "externalId": "authjs-docs",
+              "url": "https://authjs.dev/",
+              "retrievedAt": "2026-11-13",
+              "license": "© authjs-docs; ссылка на источник, тексты не копируются."
+            },
+            {
+              "sourceId": "supabase-docs",
+              "externalId": "supabase-docs",
+              "url": "https://supabase.com/docs",
+              "retrievedAt": "2026-11-13",
+              "license": "© supabase-docs; ссылка на источник, тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_74e9d09d4150",
+              "componentId": "tehnicheskaya-gramotnost-praktika.znaniya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_4ab61502fc24",
+          "slug": "s-проверять-состояния-экрана-4ab615",
+          "title": "Проверять состояния экрана",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Проходить сценарии с пустыми, загружаемыми и ошибочными состояниями, чтобы подтвердить предсказуемое поведение прототипа.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum-webdesigner",
+              "externalId": "practicum-webdesigner",
+              "url": "https://practicum.yandex.ru/web-designer/",
+              "retrievedAt": "2026-11-13",
+              "license": "© practicum-webdesigner; ссылка на источник, тексты не копируются."
+            },
+            {
+              "sourceId": "alison-web-design-html",
+              "externalId": "alison-web-design-html",
+              "url": "https://alison.com/course/web-design-with-html",
+              "retrievedAt": "2026-11-13",
+              "license": "© alison-web-design-html; ссылка на источник, тексты не копируются."
+            },
+            {
+              "sourceId": "developer-mozilla-org-ru-docs-web",
+              "externalId": "developer-mozilla-org-ru-docs-web",
+              "url": "https://developer.mozilla.org/ru/docs/Web",
+              "retrievedAt": "2026-11-13",
+              "license": "© developer-mozilla-org-ru-docs-web; ссылка на источник, тексты не копируются."
+            },
+            {
+              "sourceId": "mdn-learn-webdev",
+              "externalId": "mdn-learn-webdev",
+              "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development",
+              "retrievedAt": "2026-11-13",
+              "license": "© mdn-learn-webdev; ссылка на источник, тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_74e9d09d4150",
+              "componentId": "tehnicheskaya-gramotnost-praktika.navyki",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_714991fe5492",
+          "slug": "s-описывать-данные-и-доступ-в-задаче-714991",
+          "title": "Описывать данные и доступ в задаче",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Формулировать в задаче агенту, какие данные и права доступа нужны, чтобы не расширять объём лишним функционалом.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum-webdesigner",
+              "externalId": "practicum-webdesigner",
+              "url": "https://practicum.yandex.ru/web-designer/",
+              "retrievedAt": "2026-11-13",
+              "license": "© practicum-webdesigner; ссылка на источник, тексты не копируются."
+            },
+            {
+              "sourceId": "alison-web-design-html",
+              "externalId": "alison-web-design-html",
+              "url": "https://alison.com/course/web-design-with-html",
+              "retrievedAt": "2026-11-13",
+              "license": "© alison-web-design-html; ссылка на источник, тексты не копируются."
+            },
+            {
+              "sourceId": "developer-mozilla-org-ru-docs-web",
+              "externalId": "developer-mozilla-org-ru-docs-web",
+              "url": "https://developer.mozilla.org/ru/docs/Web",
+              "retrievedAt": "2026-11-13",
+              "license": "© developer-mozilla-org-ru-docs-web; ссылка на источник, тексты не копируются."
+            },
+            {
+              "sourceId": "authjs-docs",
+              "externalId": "authjs-docs",
+              "url": "https://authjs.dev/",
+              "retrievedAt": "2026-11-13",
+              "license": "© authjs-docs; ссылка на источник, тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_74e9d09d4150",
+              "componentId": "tehnicheskaya-gramotnost-praktika.navyki",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
         }
       ],
       "sourceRefs": [
@@ -35222,6 +35842,34 @@
           "url": "https://developer.mozilla.org/ru/docs/Web",
           "retrievedAt": "2026-11-03",
           "license": "© Веб-технологии для разработчиков | MDN. Извлекаются названия и короткие цитаты; полные тексты не копируются."
+        },
+        {
+          "sourceId": "mdn-learn-webdev",
+          "externalId": "mdn-learn-webdev",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development",
+          "retrievedAt": "2026-11-13",
+          "license": "© mdn-learn-webdev; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "webdev-forms",
+          "externalId": "webdev-forms",
+          "url": "https://web.dev/learn/forms",
+          "retrievedAt": "2026-11-13",
+          "license": "© webdev-forms; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "authjs-docs",
+          "externalId": "authjs-docs",
+          "url": "https://authjs.dev/",
+          "retrievedAt": "2026-11-13",
+          "license": "© authjs-docs; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "supabase-docs",
+          "externalId": "supabase-docs",
+          "url": "https://supabase.com/docs",
+          "retrievedAt": "2026-11-13",
+          "license": "© supabase-docs; ссылка на источник, тексты не копируются."
         }
       ],
       "evidenceState": "supported",
@@ -56011,6 +56659,585 @@
       ],
       "materialIds": [],
       "needsReview": false
+    },
+    {
+      "id": "tag_83bb6af91a42",
+      "slug": "k-state-интерфейса-83bb6a",
+      "title": "State интерфейса",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Состояния экрана (пусто, загрузка, ошибка, успех) задают проверяемое поведение, поэтому их фиксируют в задаче агенту и проверяют в прототипе.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum-webdesigner",
+          "externalId": "practicum-webdesigner",
+          "url": "https://practicum.yandex.ru/web-designer/",
+          "retrievedAt": "2026-11-13",
+          "license": "© practicum-webdesigner; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "alison-web-design-html",
+          "externalId": "alison-web-design-html",
+          "url": "https://alison.com/course/web-design-with-html",
+          "retrievedAt": "2026-11-13",
+          "license": "© alison-web-design-html; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "developer-mozilla-org-ru-docs-web",
+          "externalId": "developer-mozilla-org-ru-docs-web",
+          "url": "https://developer.mozilla.org/ru/docs/Web",
+          "retrievedAt": "2026-11-13",
+          "license": "© developer-mozilla-org-ru-docs-web; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "mdn-learn-webdev",
+          "externalId": "mdn-learn-webdev",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development",
+          "retrievedAt": "2026-11-13",
+          "license": "© mdn-learn-webdev; ссылка на источник, тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_74e9d09d4150",
+          "componentId": "tehnicheskaya-gramotnost-praktika.znaniya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_392d5a4671e2",
+      "slug": "k-формы-и-валидация-392d5a",
+      "title": "Формы и валидация",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Правила ввода и валидации определяют корректность данных, поэтому их проверяют до передачи результата.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum-webdesigner",
+          "externalId": "practicum-webdesigner",
+          "url": "https://practicum.yandex.ru/web-designer/",
+          "retrievedAt": "2026-11-13",
+          "license": "© practicum-webdesigner; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "alison-web-design-html",
+          "externalId": "alison-web-design-html",
+          "url": "https://alison.com/course/web-design-with-html",
+          "retrievedAt": "2026-11-13",
+          "license": "© alison-web-design-html; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "developer-mozilla-org-ru-docs-web",
+          "externalId": "developer-mozilla-org-ru-docs-web",
+          "url": "https://developer.mozilla.org/ru/docs/Web",
+          "retrievedAt": "2026-11-13",
+          "license": "© developer-mozilla-org-ru-docs-web; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "webdev-forms",
+          "externalId": "webdev-forms",
+          "url": "https://web.dev/learn/forms",
+          "retrievedAt": "2026-11-13",
+          "license": "© webdev-forms; ссылка на источник, тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_74e9d09d4150",
+          "componentId": "tehnicheskaya-gramotnost-praktika.znaniya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_51a744a9d965",
+      "slug": "k-аутентификация-и-сессии-51a744",
+      "title": "Аутентификация и сессии",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Способы входа и хранения сессии влияют на сценарии доступа, поэтому их учитывают при проверке прототипа.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum-webdesigner",
+          "externalId": "practicum-webdesigner",
+          "url": "https://practicum.yandex.ru/web-designer/",
+          "retrievedAt": "2026-11-13",
+          "license": "© practicum-webdesigner; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "alison-web-design-html",
+          "externalId": "alison-web-design-html",
+          "url": "https://alison.com/course/web-design-with-html",
+          "retrievedAt": "2026-11-13",
+          "license": "© alison-web-design-html; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "developer-mozilla-org-ru-docs-web",
+          "externalId": "developer-mozilla-org-ru-docs-web",
+          "url": "https://developer.mozilla.org/ru/docs/Web",
+          "retrievedAt": "2026-11-13",
+          "license": "© developer-mozilla-org-ru-docs-web; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "authjs-docs",
+          "externalId": "authjs-docs",
+          "url": "https://authjs.dev/",
+          "retrievedAt": "2026-11-13",
+          "license": "© authjs-docs; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "supabase-docs",
+          "externalId": "supabase-docs",
+          "url": "https://supabase.com/docs",
+          "retrievedAt": "2026-11-13",
+          "license": "© supabase-docs; ссылка на источник, тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_74e9d09d4150",
+          "componentId": "tehnicheskaya-gramotnost-praktika.znaniya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_4ab61502fc24",
+      "slug": "s-проверять-состояния-экрана-4ab615",
+      "title": "Проверять состояния экрана",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Проходить сценарии с пустыми, загружаемыми и ошибочными состояниями, чтобы подтвердить предсказуемое поведение прототипа.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum-webdesigner",
+          "externalId": "practicum-webdesigner",
+          "url": "https://practicum.yandex.ru/web-designer/",
+          "retrievedAt": "2026-11-13",
+          "license": "© practicum-webdesigner; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "alison-web-design-html",
+          "externalId": "alison-web-design-html",
+          "url": "https://alison.com/course/web-design-with-html",
+          "retrievedAt": "2026-11-13",
+          "license": "© alison-web-design-html; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "developer-mozilla-org-ru-docs-web",
+          "externalId": "developer-mozilla-org-ru-docs-web",
+          "url": "https://developer.mozilla.org/ru/docs/Web",
+          "retrievedAt": "2026-11-13",
+          "license": "© developer-mozilla-org-ru-docs-web; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "mdn-learn-webdev",
+          "externalId": "mdn-learn-webdev",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development",
+          "retrievedAt": "2026-11-13",
+          "license": "© mdn-learn-webdev; ссылка на источник, тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_74e9d09d4150",
+          "componentId": "tehnicheskaya-gramotnost-praktika.navyki",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_714991fe5492",
+      "slug": "s-описывать-данные-и-доступ-в-задаче-714991",
+      "title": "Описывать данные и доступ в задаче",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Формулировать в задаче агенту, какие данные и права доступа нужны, чтобы не расширять объём лишним функционалом.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum-webdesigner",
+          "externalId": "practicum-webdesigner",
+          "url": "https://practicum.yandex.ru/web-designer/",
+          "retrievedAt": "2026-11-13",
+          "license": "© practicum-webdesigner; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "alison-web-design-html",
+          "externalId": "alison-web-design-html",
+          "url": "https://alison.com/course/web-design-with-html",
+          "retrievedAt": "2026-11-13",
+          "license": "© alison-web-design-html; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "developer-mozilla-org-ru-docs-web",
+          "externalId": "developer-mozilla-org-ru-docs-web",
+          "url": "https://developer.mozilla.org/ru/docs/Web",
+          "retrievedAt": "2026-11-13",
+          "license": "© developer-mozilla-org-ru-docs-web; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "authjs-docs",
+          "externalId": "authjs-docs",
+          "url": "https://authjs.dev/",
+          "retrievedAt": "2026-11-13",
+          "license": "© authjs-docs; ссылка на источник, тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_74e9d09d4150",
+          "componentId": "tehnicheskaya-gramotnost-praktika.navyki",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_974e0f7be102",
+      "slug": "k-root-cause-и-минимальный-фикс-974e0f",
+      "title": "Root cause и минимальный фикс",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Локализация причины ошибки и минимальное изменение снижают риск регрессий при правках AI-кодом.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "ai-softuni-bg-courses-ai-assisted-development",
+          "externalId": "ai-softuni-bg-courses-ai-assisted-development",
+          "url": "https://ai.softuni.bg/",
+          "retrievedAt": "2026-11-13",
+          "license": "© ai-softuni-bg-courses-ai-assisted-development; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "chrome-devtools",
+          "externalId": "chrome-devtools",
+          "url": "https://developer.chrome.com/docs/devtools",
+          "retrievedAt": "2026-11-13",
+          "license": "© chrome-devtools; ссылка на источник, тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_42c60aead559",
+          "componentId": "ai-razrabotka-praktika.znaniya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_bfa2f300a3ef",
+      "slug": "k-сборка-и-окружения-bfa2f3",
+      "title": "Сборка и окружения",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Сборка, проверка типов и деплой показывают, что результат доходит до публичной среды без сюрпризов.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "ai-softuni-bg-courses-ai-assisted-development",
+          "externalId": "ai-softuni-bg-courses-ai-assisted-development",
+          "url": "https://ai.softuni.bg/",
+          "retrievedAt": "2026-11-13",
+          "license": "© ai-softuni-bg-courses-ai-assisted-development; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "vercel-docs",
+          "externalId": "vercel-docs",
+          "url": "https://vercel.com/docs",
+          "retrievedAt": "2026-11-13",
+          "license": "© vercel-docs; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "github-docs",
+          "externalId": "github-docs",
+          "url": "https://docs.github.com/en",
+          "retrievedAt": "2026-11-13",
+          "license": "© github-docs; ссылка на источник, тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_42c60aead559",
+          "componentId": "ai-razrabotka-praktika.znaniya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_ad2b5a18d2e4",
+      "slug": "s-разбирать-ошибку-с-агентом-ad2b5a",
+      "title": "Разбирать ошибку с агентом",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Читать консоль, формулировать ошибку для агента и просить минимальный фикс, проверяя изменения до принятия.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "ai-softuni-bg-courses-ai-assisted-development",
+          "externalId": "ai-softuni-bg-courses-ai-assisted-development",
+          "url": "https://ai.softuni.bg/",
+          "retrievedAt": "2026-11-13",
+          "license": "© ai-softuni-bg-courses-ai-assisted-development; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "cursor-docs",
+          "externalId": "cursor-docs",
+          "url": "https://docs.cursor.com/",
+          "retrievedAt": "2026-11-13",
+          "license": "© cursor-docs; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "chrome-devtools",
+          "externalId": "chrome-devtools",
+          "url": "https://developer.chrome.com/docs/devtools",
+          "retrievedAt": "2026-11-13",
+          "license": "© chrome-devtools; ссылка на источник, тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_42c60aead559",
+          "componentId": "ai-razrabotka-praktika.navyki",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_e9b1b0503392",
+      "slug": "s-доводить-прототип-до-публичной-ссылки-e9b1b0",
+      "title": "Доводить прототип до публичной ссылки",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Собирать, деплоить и проверять прототип по публичной ссылке, фиксируя версию в Git.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "ai-softuni-bg-courses-ai-assisted-development",
+          "externalId": "ai-softuni-bg-courses-ai-assisted-development",
+          "url": "https://ai.softuni.bg/",
+          "retrievedAt": "2026-11-13",
+          "license": "© ai-softuni-bg-courses-ai-assisted-development; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "vercel-docs",
+          "externalId": "vercel-docs",
+          "url": "https://vercel.com/docs",
+          "retrievedAt": "2026-11-13",
+          "license": "© vercel-docs; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "github-docs",
+          "externalId": "github-docs",
+          "url": "https://docs.github.com/en",
+          "retrievedAt": "2026-11-13",
+          "license": "© github-docs; ссылка на источник, тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_42c60aead559",
+          "componentId": "ai-razrabotka-praktika.navyki",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_503d3df9af10",
+      "slug": "k-a11y-503d3d",
+      "title": "WCAG и уровни соответствия",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Критерии WCAG задают проверяемые требования доступности, поэтому их используют как чек-лист приёмки интерфейса.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "webdev-accessibility",
+          "externalId": "webdev-accessibility",
+          "url": "https://web.dev/learn/accessibility",
+          "retrievedAt": "2026-11-13",
+          "license": "© webdev-accessibility; ссылка."
+        },
+        {
+          "sourceId": "wcag-quickref",
+          "externalId": "wcag-quickref",
+          "url": "https://www.w3.org/WAI/WCAG21/quickref/",
+          "retrievedAt": "2026-11-13",
+          "license": "© wcag-quickref; ссылка."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_5ef66a02628b",
+          "componentId": "veb-stili-i-dostupnost-interfeysov.stilevye-yazyki-opisaniya-predstavleniya-dokumentov",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_79bfd93f5293",
+      "slug": "k-a11y-79bfd9",
+      "title": "Структура страницы и семантика",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Семантическая структура страницы определяет, как вспомогательные технологии читают интерфейс, поэтому её проверяют в реализации.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "mdn-learn-webdev",
+          "externalId": "mdn-learn-webdev",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development",
+          "retrievedAt": "2026-11-13",
+          "license": "© mdn-learn-webdev; ссылка."
+        },
+        {
+          "sourceId": "webdev-accessibility",
+          "externalId": "webdev-accessibility",
+          "url": "https://web.dev/learn/accessibility",
+          "retrievedAt": "2026-11-13",
+          "license": "© webdev-accessibility; ссылка."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_5ef66a02628b",
+          "componentId": "veb-stili-i-dostupnost-interfeysov.stilevye-yazyki-opisaniya-predstavleniya-dokumentov",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_a9a066fe3013",
+      "slug": "s-a11y-a9a066",
+      "title": "Проверять доступность по чек-листу",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Проходить интерфейс по критериям WCAG (контраст, подписи, порядок фокуса), чтобы подтвердить доступность результата.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "wcag-quickref",
+          "externalId": "wcag-quickref",
+          "url": "https://www.w3.org/WAI/WCAG21/quickref/",
+          "retrievedAt": "2026-11-13",
+          "license": "© wcag-quickref; ссылка."
+        },
+        {
+          "sourceId": "lighthouse-docs",
+          "externalId": "lighthouse-docs",
+          "url": "https://developer.chrome.com/docs/lighthouse/overview",
+          "retrievedAt": "2026-11-13",
+          "license": "© lighthouse-docs; ссылка."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_5ef66a02628b",
+          "componentId": "veb-stili-i-dostupnost-interfeysov.vspomogatelnye-tehnologii-ekrannogo-dostupa",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_301affeafdbb",
+      "slug": "s-a11y-301aff",
+      "title": "Проверять интерфейс клавиатурой и скринридером",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Проходить ключевые сценарии без мыши и с экранным диктором, чтобы находить барьеры до релиза.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "webdev-accessibility",
+          "externalId": "webdev-accessibility",
+          "url": "https://web.dev/learn/accessibility",
+          "retrievedAt": "2026-11-13",
+          "license": "© webdev-accessibility; ссылка."
+        },
+        {
+          "sourceId": "mdn-learn-webdev",
+          "externalId": "mdn-learn-webdev",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development",
+          "retrievedAt": "2026-11-13",
+          "license": "© mdn-learn-webdev; ссылка."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_5ef66a02628b",
+          "componentId": "veb-stili-i-dostupnost-interfeysov.vspomogatelnye-tehnologii-ekrannogo-dostupa",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
     }
   ],
   "materials": [
@@ -60320,6 +61547,100 @@
           "no_practice"
         ],
         "reviewedAt": "2026-11-13",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_058ad6e0cda0",
+      "slug": "mat_82f3d318ff15",
+      "kind": "docs",
+      "title": "web.dev — Learn Accessibility",
+      "provider": "Google web.dev",
+      "url": "https://web.dev/learn/accessibility",
+      "canonicalUrl": "https://web.dev/learn/accessibility",
+      "language": "en",
+      "access": "free",
+      "description": "Курс web.dev по доступности интерфейсов: требования и практики WCAG.",
+      "license": "© Google web.dev; ссылка на материал, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "webdev-accessibility",
+        "externalId": "webdev-accessibility",
+        "url": "https://web.dev/learn/accessibility",
+        "retrievedAt": "2026-11-13",
+        "license": "© Google web.dev; ссылка."
+      },
+      "retrievedAt": "2026-11-13",
+      "links": [
+        {
+          "competencyId": "comp_5ef66a02628b",
+          "relevance": 0.82,
+          "reason": "Критерии доступности интерфейса: что проверять в реализации и на приёмке.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_5ef66a02628b"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.7,
+        "usefulness": 0.8,
+        "whyUseful": "Материал охватывает практики доступности интерфейсов и WCAG, что связано с экранным доступом и проверкой доступности вёрстки.",
+        "reason": "Источник и тема релевантны компетенции, но snippet пустой, поэтому нельзя подтвердить содержание и полноту покрытия стилевых языков и экранных технологий.",
+        "flags": [
+          "no_snippet"
+        ],
+        "reviewedAt": "2026-11-14",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_4b3afd854005",
+      "slug": "mat_366daed71738",
+      "kind": "docs",
+      "title": "W3C — How to Meet WCAG (Quickref)",
+      "provider": "W3C",
+      "url": "https://www.w3.org/WAI/WCAG21/quickref/",
+      "canonicalUrl": "https://www.w3.org/WAI/WCAG21/quickref/",
+      "language": "en",
+      "access": "free",
+      "description": "Краткий справочник WCAG: критерии доступности и способы их выполнения.",
+      "license": "© W3C; ссылка на материал, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "wcag-quickref",
+        "externalId": "wcag-quickref",
+        "url": "https://www.w3.org/WAI/WCAG21/quickref/",
+        "retrievedAt": "2026-11-13",
+        "license": "© W3C; ссылка."
+      },
+      "retrievedAt": "2026-11-13",
+      "links": [
+        {
+          "competencyId": "comp_5ef66a02628b",
+          "relevance": 0.82,
+          "reason": "Критерии доступности интерфейса: что проверять в реализации и на приёмке.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_5ef66a02628b"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.62,
+        "usefulness": 0.55,
+        "whyUseful": "Официальный справочник W3C по критериям WCAG помогает разобраться в требованиях доступности интерфейсов и способах их выполнения.",
+        "reason": "Источник — официальная документация W3C, релевантная компоненту «Вспомогательные технологии экранного доступа» и проверке доступности. Однако snippet пуст, поэтому содержание и практическую применимость нельзя подтвердить; связь со стилевыми языками (CSS/Sass) не выражена — материал про критерии доступности, а не про стилизацию. Нужна ручная проверка.",
+        "flags": [
+          "no_snippet"
+        ],
+        "reviewedAt": "2026-11-14",
         "reviewer": "methodologist-v1",
         "status": "needs_confirmation"
       }

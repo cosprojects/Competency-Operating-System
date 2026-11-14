@@ -384,6 +384,15 @@
           "competencyId": "ux-metrics",
           "tier": "optional",
           "order": 46
+        },
+        {
+          "competencyId": "ui-accessibility",
+          "tier": "core",
+          "order": 57,
+          "prerequisites": [
+            "aidesigner-quality-eval",
+            "aidesigner-visual-qa"
+          ]
         }
       ]
     },

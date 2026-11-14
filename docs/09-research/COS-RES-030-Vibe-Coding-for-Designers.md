@@ -1,7 +1,7 @@
 ---
 id: COS-RES-030
 title: Вайб-кодинг для дизайнера — воркфлоу, компетенции и интеграция в AI-дизайнера
-version: 1.0.0
+version: 1.1.0
 status: Draft
 owner: Research Team
 last_updated: 2026-11-13
@@ -50,9 +50,9 @@ references:
 | Build | `aidesigner-ai-prototyping`, `aidesigner-ai-ui-generation`, `aidesigner-ai-development` | полное, но с разными границами (см. §4) |
 | Build: агенты и контекст | `aidesigner-mcp-integration`, `aidesigner-agent-orchestration` | полное для контекста и цепочек агентов |
 | Выбор инструмента | `aidesigner-tool-landscape`, `aidesigner-tool-evaluation` | полное: ландшафт и критерии выбора |
-| Test / Debug | `aidesigner-quality-eval`, `aidesigner-visual-qa`, `ux-usability-testing` | частичное: качество AI-результата и сверка с макетом есть, «отладка кода с агентом» — только косвенно |
-| Ship | `ui-handoff`, `aidesigner-ai-development`, `aidesigner-integration` | частичное: передача в разработку есть, деплой и публичная ссылка — нет как отдельного знания |
-| Сквозное | `aidesigner-technical-literacy`, `aidesigner-automation`, `ai-workflow-integration` | частичное: техническая грамотность есть, но без явной функциональной части (state/forms/auth/DB/API) |
+| Test / Debug | `aidesigner-quality-eval`, `aidesigner-visual-qa`, `ux-usability-testing` | полное: качество AI-результата, сверка с макетом; «отладка кода с агентом» добавлена в `aidesigner-ai-development` (2026-11-13) |
+| Ship | `ui-handoff`, `aidesigner-ai-development`, `aidesigner-integration` | полное: передача в разработку плюс «Сборка и окружения» / «Доводить прототип до публичной ссылки» в `aidesigner-ai-development` (2026-11-13) |
+| Сквозное | `aidesigner-technical-literacy`, `aidesigner-automation`, `ai-workflow-integration` | полное: функциональная часть (state/forms/auth/DB/API) добавлена в `aidesigner-technical-literacy` (2026-11-13) |
 
 ## 4. Соответствия, дубли и границы
 
@@ -74,24 +74,27 @@ references:
    Figma-макета (Dev Mode/Cursor). В модели это две разные компетенции (`aidesigner-ai-ui-generation` и
    `aidesigner-visual-qa`/`ui-handoff`), и обе легитимны — материалы не выбирают «единственно правильный» путь.
 
-## 5. Пробелы (требуют решения)
+## 5. Пробелы — закрыты (решение основателя 2026-11-13)
 
-| Пробел | Где в модели ближайшее | Варианты |
-|---|---|---|
-| **Функциональность прототипа**: состояние, формы, аутентификация, БД, API | `aidesigner-technical-literacy`, `aidesigner-ai-development` | (a) расширить `aidesigner-technical-literacy` знаниями о состоянии/данных/аутентификации; (b) добавить компетенцию «Функциональная архитектура прототипа» |
-| **Отладка AI-кода**: консоль, root cause, минимальный фикс, версии | `aidesigner-ai-development`, `aidesigner-visual-qa` | (a) добавить знания/навыки в `aidesigner-ai-development`; (b) отдельная компетенция не обязательна |
-| **Деплой и публичная ссылка** | `ui-handoff`, `aidesigner-ai-development` | (a) знание «сборка и деплой прототипа» в `aidesigner-ai-development`; (b) отдельная компетенция |
-| **Доступность как критерий приёмки** | в профессии нет `ui-accessibility` | (a) добавить `ui-accessibility` в view; (b) оставить критерием качества в `aidesigner-quality-eval` |
+Основатель одобрил закрытие пробелов расширением существующих компетенций и добавлением `ui-accessibility`.
 
-До решения основателя эти пробелы закрыты материалами (обучение) и не меняют состав профессии.
+| Пробел | Что сделано |
+|---|---|
+| **Функциональность прототипа**: состояние, формы, аутентификация, БД, API | `aidesigner-technical-literacy`: +3 знания (State интерфейса, Формы и валидация, Аутентификация и сессии) и +2 навыка (Проверять состояния экрана, Описывать данные и доступ в задаче) |
+| **Отладка AI-кода**: консоль, root cause, минимальный фикс | `aidesigner-ai-development`: +1 знание (Root cause и минимальный фикс) и +1 навык (Разбирать ошибку с агентом) |
+| **Деплой и публичная ссылка** | `aidesigner-ai-development`: +1 знание (Сборка и окружения) и +1 навык (Доводить прототип до публичной ссылки) |
+| **Доступность как критерий приёмки** | `ui-accessibility` добавлена в профессию (секция «Качество и валидация», core), в её блок добавлены 2 знания (WCAG и уровни соответствия; Структура страницы и семантика) и 2 навыка (Проверять доступность по чек-листу; Проверять интерфейс клавиатурой и скринридером) |
+
+Итог по AI-дизайнеру: **57 компетенций**, 13 секций; gate PASS (293/392 связей, 131/131 опубликованных компетенций, 0 пробелов).
 
 ## 6. Интеграция: что добавлено
 
 - **31 источник** в `learning-sources/registry.json` (`discoveryOnly`, authority secondary): инструменты
   (Replit, GitHub, Vercel) и обучающие материалы (MDN, web.dev, javascript.info, React, Next.js, Supabase,
   Auth.js, Chrome DevTools, Lighthouse, WCAG, GitHub Skills, freeCodeCamp, Lovable/v0/Cursor docs, Figma-гайды).
-- **25 материалов** в каталоге после Pass E (`materials:verify`): 25 «Подтвердить», 2 отклонены
-  (курс по доступности и WCAG-справочник не соответствуют заявленным компетенциям в текущей формулировке).
+- **27 материалов** в каталоге после Pass E (`materials:verify`): 25 из трека + 2 по доступности
+  (`web.dev — Learn Accessibility`, `W3C — How to Meet WCAG`) после добавления `ui-accessibility`;
+  все приняты с бейджем «Подтвердить».
 - Материалы разложены по компетенциям: `aidesigner-technical-literacy` (основы веба), `aidesigner-ai-development`
   (React, Next.js, Supabase, Auth.js, Git, деплой), `aidesigner-mcp-integration` (правила и контекст агента),
   `aidesigner-ai-prototyping` (v0, Replit, Lovable prompting), `ai-prompting` и `aidesigner-prompt-systems`
@@ -129,3 +132,4 @@ Next.js Docs, Supabase Docs, Auth.js, Chrome DevTools, Lighthouse, WCAG Quickref
 | Версия | Дата | Что изменилось |
 |---|---|---|
 | 1.0.0 | 2026-11-13 | Разобран гайд «Vibe coding · 30-day roadmap»: воркфлоу по 9 этапам, маппинг на 56 компетенций AI-дизайнера, дубли/границы, 4 пробела; добавлены 31 источник и 25 материалов |
+| 1.1.0 | 2026-11-13 | Пробелы закрыты: расширены `aidesigner-technical-literacy` и `aidesigner-ai-development`, добавлена `ui-accessibility` (57 компетенций); +2 материала по доступности (всего 27) |

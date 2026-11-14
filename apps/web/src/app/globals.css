@@ -795,7 +795,7 @@ svg {
 .home-layout {
   display: grid;
   grid-template-columns: minmax(0, 808px) 352px;
-  align-items: start;
+  align-items: stretch;
   gap: 40px;
   width: 100%;
   max-width: 1200px;
@@ -2374,7 +2374,7 @@ html[data-consent="pending"] .canvas-toolbar {
   );
 }
 
-.material-card > :not(.material-bg) {
+.material-card > :not(.material-bg):not(.material-badges) {
   position: relative;
   z-index: 1;
 }
@@ -3919,24 +3919,31 @@ html[data-consent="pending"] .canvas-toolbar {
   flex-direction: column;
   gap: 40px;
   min-width: 0;
+  min-height: 0;
 }
 
 .home-about {
   display: flex;
   flex-direction: column;
+  flex: 0 0 auto;
   gap: 16px;
 }
 
+/* Лог занимает остаток высоты основной секции и скроллится внутри. */
 .home-log {
   display: flex;
+  flex: 1 1 auto;
   flex-direction: column;
   gap: 16px;
+  min-height: 0;
+  overflow: hidden;
   padding: 23px;
   border-radius: var(--r-12);
   background: var(--surface);
 }
 
 .home-log h2 {
+  flex: 0 0 auto;
   margin: 0;
   font-size: 18px;
   font-weight: 700;
@@ -3945,8 +3952,28 @@ html[data-consent="pending"] .canvas-toolbar {
 
 .home-log-list {
   display: flex;
+  flex: 1 1 auto;
   flex-direction: column;
   gap: 10px;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-right: 4px;
+  scrollbar-color: var(--line-soft) transparent;
+  scrollbar-width: thin;
+}
+
+.home-log-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.home-log-list::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: var(--line-soft);
+}
+
+.home-log-list::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 .home-log-item {
@@ -3971,9 +3998,7 @@ html[data-consent="pending"] .canvas-toolbar {
 
 .home-log-title {
   min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  overflow-wrap: anywhere;
 }
 
 .home-log-desc {
@@ -3985,12 +4010,21 @@ html[data-consent="pending"] .canvas-toolbar {
 
 @media (max-width: 1180px) {
   .home-layout {
+    align-items: start;
     grid-template-columns: minmax(0, 1fr);
     gap: 32px;
   }
 
   .home-rail {
     gap: 24px;
+  }
+
+  .home-log {
+    flex: 0 0 auto;
+  }
+
+  .home-log-list {
+    max-height: 70vh;
   }
 }
 
@@ -4320,7 +4354,7 @@ html[data-consent="pending"] .canvas-toolbar {
   flex-direction: column;
   gap: 0;
   padding: 0;
-  overflow: hidden;
+  overflow: visible;
   border: 1px solid var(--line-card);
   border-radius: var(--r-24);
   background: var(--surface);
@@ -4336,6 +4370,7 @@ html[data-consent="pending"] .canvas-toolbar {
   position: relative;
   height: 178px;
   overflow: hidden;
+  border-radius: 12px 12px 0 0;
   background: linear-gradient(180deg, #eef2ff 0%, #f8fafc 100%);
 }
 
@@ -4370,6 +4405,7 @@ html[data-consent="pending"] .canvas-toolbar {
   content: "";
   position: absolute;
   inset: 0;
+  border-radius: inherit;
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0.04) 0%,
@@ -6033,4 +6069,11 @@ button.rail-item {
 
 .welcome-toast .icon-button {
   margin-left: auto;
+}
+
+
+/* Подсказка бейджа «Подтвердить» должна быть поверх соседних карточек. */
+.material-card:hover,
+.material-card:focus-within {
+  z-index: 20;
 }

@@ -82,6 +82,7 @@ Game Developer.
   Игровая компетенция «ИИ в геймдеве» получила id `game-ai-gamedev`, чтобы не попадать под AI-слой.
 - Source review: +72 автоматических accepted-решения для игровых пар, +3 ручных для «ИИ в геймдеве»
   (`reviewedBy: game-layer-review-v1`), требуется spot-check основателя.
+- Прод: https://app.axiona.world/professions/game · скриншот `docs/12-release/reports/screenshots/game-profession-2026-11-14.png`.
 
 ## 6. Что дальше
 

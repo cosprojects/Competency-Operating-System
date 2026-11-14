@@ -3976,6 +3976,11 @@ html[data-consent="pending"] .canvas-toolbar {
   background: transparent;
 }
 
+.home-log-list:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
 .home-log-item {
   display: flex;
   flex-direction: column;

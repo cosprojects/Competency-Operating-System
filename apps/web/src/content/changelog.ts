@@ -91,6 +91,11 @@ export function latestChangelog(limit = 3): ChangelogEntry[] {
   return [...ENTRIES].sort((a, b) => b.date.localeCompare(a.date)).slice(0, limit);
 }
 
+/** Весь лог, новые сверху — для блока с внутренним скроллом. */
+export function allChangelog(): ChangelogEntry[] {
+  return [...ENTRIES].sort((a, b) => b.date.localeCompare(a.date));
+}
+
 /** `2026-11-03` → `03.11.26` (как в макете). */
 export function formatChangelogDate(date: string): string {
   const [year, month, day] = date.split("-");

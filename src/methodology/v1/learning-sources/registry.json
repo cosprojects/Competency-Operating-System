@@ -7111,6 +7111,213 @@
       "httpStatus": 200,
       "summary": "Профессиональное сообщество UX в играх: доклады о HUD, онбординге и исследованиях.",
       "notes": "Гейм-дизайн: источник для игрового слоя компетенций (COS-RES-031)."
+    },
+    {
+      "id": "twine",
+      "title": "Twine — открытый инструмент интерактивных историй",
+      "url": "https://twinery.org/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.game"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "game design"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Twine — открытый инструмент для интерактивных нелинейных историй и прототипов нарратива.",
+      "notes": "Гейм-дизайн, жанровый слой (COS-RES-031 v1.1)."
+    },
+    {
+      "id": "twine-cookbook",
+      "title": "Twine Cookbook — документация",
+      "url": "https://twinery.org/cookbook/",
+      "kind": "reference",
+      "professionIds": [
+        "it.game"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "game design"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Twine Cookbook: рецепты и практики построения интерактивных сценариев.",
+      "notes": "Гейм-дизайн, жанровый слой (COS-RES-031 v1.1)."
+    },
+    {
+      "id": "ink-official",
+      "title": "ink — нарративный скриптовый язык inkle",
+      "url": "https://www.inklestudios.com/ink/",
+      "kind": "reference",
+      "professionIds": [
+        "it.game"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "game design"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "ink — скриптовый язык интерактивного нарратива с ветвлением и переменными.",
+      "notes": "Гейм-дизайн, жанровый слой (COS-RES-031 v1.1)."
+    },
+    {
+      "id": "ink-github",
+      "title": "inkle/ink — открытый исходный код и документация",
+      "url": "https://github.com/inkle/ink",
+      "kind": "reference",
+      "professionIds": [
+        "it.game"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "game design"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Репозиторий ink: язык, примеры и интеграции для интерактивного сценария.",
+      "notes": "Гейм-дизайн, жанровый слой (COS-RES-031 v1.1)."
+    },
+    {
+      "id": "gameanalytics-docs",
+      "title": "GameAnalytics — документация",
+      "url": "https://docs.gameanalytics.com/",
+      "kind": "reference",
+      "professionIds": [
+        "it.game"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "game design"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Документация GameAnalytics: события, воронки и метрики игрового поведения.",
+      "notes": "Гейм-дизайн, жанровый слой (COS-RES-031 v1.1)."
+    },
+    {
+      "id": "unity-analytics",
+      "title": "Unity Analytics — документация",
+      "url": "https://docs.unity.com/en-us/analytics",
+      "kind": "reference",
+      "professionIds": [
+        "it.game"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "freemium",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "game design"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Документация Unity Analytics: события, сегменты и дашборды игровой аналитики.",
+      "notes": "Гейм-дизайн, жанровый слой (COS-RES-031 v1.1)."
+    },
+    {
+      "id": "gd-playtesting-article",
+      "title": "Game Developer — 6 шагов к успешному плейтесту",
+      "url": "https://www.gamedeveloper.com/programming/6-steps-to-a-successful-playtesting-process-for-an-indie-developer",
+      "kind": "blog",
+      "professionIds": [
+        "it.game"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "game design"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Практическая статья о процессе плейтеста в инди-разработке.",
+      "notes": "Гейм-дизайн, жанровый слой (COS-RES-031 v1.1)."
+    },
+    {
+      "id": "strayspark-level-article",
+      "title": "StraySpark — основы левел-дизайна: блок-аут и визуальные ориентиры",
+      "url": "https://www.strayspark.studio/blog/level-design-fundamentals-blockout-flow",
+      "kind": "blog",
+      "professionIds": [
+        "it.game"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "game design"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Статья о блок-ауте, потоке и визуальной навигации в уровне на примере UE5.",
+      "notes": "Гейм-дизайн, жанровый слой (COS-RES-031 v1.1)."
+    },
+    {
+      "id": "epic-greyboxing",
+      "title": "Epic — Greyboxing (документация)",
+      "url": "https://dev.epicgames.com/documentation/fortnite/greyboxing-in-unreal-editor-for-fortnite",
+      "kind": "reference",
+      "professionIds": [
+        "it.game"
+      ],
+      "languages": [
+        "en"
+      ],
+      "access": "free",
+      "authority": "primary",
+      "status": "active",
+      "topics": [
+        "game design"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-13",
+      "httpStatus": 200,
+      "summary": "Документация Epic о грейбоксинге — черновой геометрии уровня для проверки пространства.",
+      "notes": "Гейм-дизайн, жанровый слой (COS-RES-031 v1.1)."
     }
   ]
 }

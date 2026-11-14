@@ -162,6 +162,14 @@
       "sectionTitle": "Игровые системы и правила"
     },
     {
+      "competencyId": "game-multiplayer-social",
+      "tier": "core",
+      "order": 44,
+      "prerequisites": [],
+      "sectionId": "game-systems",
+      "sectionTitle": "Игровые системы и правила"
+    },
+    {
       "competencyId": "ui-layout",
       "tier": "foundation",
       "order": 13,
@@ -401,6 +409,22 @@
       "competencyId": "game-ai-gamedev",
       "tier": "core",
       "order": 43,
+      "prerequisites": [],
+      "sectionId": "game-production",
+      "sectionTitle": "Производство и ИИ"
+    },
+    {
+      "competencyId": "game-narrative-tools",
+      "tier": "core",
+      "order": 45,
+      "prerequisites": [],
+      "sectionId": "game-production",
+      "sectionTitle": "Производство и ИИ"
+    },
+    {
+      "competencyId": "game-analytics",
+      "tier": "core",
+      "order": 46,
       "prerequisites": [],
       "sectionId": "game-production",
       "sectionTitle": "Производство и ИИ"

@@ -11113,6 +11113,332 @@
       "methodologyVersion": "0.1.0"
     },
     {
+      "id": "comp_41f8a136b45b",
+      "slug": "game-analytics",
+      "title": "Игровая аналитика и метрики",
+      "titleEn": "Game analytics and metrics",
+      "aliases": [],
+      "definition": "Собирает и интерпретирует игровые метрики: события, воронки, удержание и сегменты, чтобы решения о дизайне опирались на поведение игроков, а не на догадки.",
+      "scope": "profession",
+      "canonicalIds": [
+        "game-analytics"
+      ],
+      "professionIds": [
+        "it.game"
+      ],
+      "components": [
+        {
+          "id": "game-analytics.znaniya-1",
+          "slug": "znaniya-1",
+          "title": "Знания",
+          "definition": "Понятия и принципы, которые нужны для компетенции.",
+          "order": 1,
+          "tagIds": [
+            "tag_407a898bbd3e"
+          ]
+        },
+        {
+          "id": "game-analytics.znaniya-2",
+          "slug": "znaniya-2",
+          "title": "Знания",
+          "definition": "Понятия и принципы, которые нужны для компетенции.",
+          "order": 2,
+          "tagIds": [
+            "tag_d13c2bde79e2"
+          ]
+        },
+        {
+          "id": "game-analytics.znaniya-3",
+          "slug": "znaniya-3",
+          "title": "Знания",
+          "definition": "Понятия и принципы, которые нужны для компетенции.",
+          "order": 3,
+          "tagIds": [
+            "tag_547727f2cd2b"
+          ]
+        },
+        {
+          "id": "game-analytics.navyki-1",
+          "slug": "navyki-1",
+          "title": "Навыки",
+          "definition": "Практические действия, которые выполняет специалист.",
+          "order": 4,
+          "tagIds": [
+            "tag_61887877655b"
+          ]
+        },
+        {
+          "id": "game-analytics.navyki-2",
+          "slug": "navyki-2",
+          "title": "Навыки",
+          "definition": "Практические действия, которые выполняет специалист.",
+          "order": 5,
+          "tagIds": [
+            "tag_f273e67437fc"
+          ]
+        },
+        {
+          "id": "game-analytics.navyki-3",
+          "slug": "navyki-3",
+          "title": "Навыки",
+          "definition": "Практические действия, которые выполняет специалист.",
+          "order": 6,
+          "tagIds": [
+            "tag_4d8824d60535"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_407a898bbd3e",
+          "slug": "k-game-analytics-1",
+          "title": "События и воронки",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Правильная схема событий определяет, что вообще можно измерить в игре.",
+          "professionIds": [
+            "it.game"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "gameanalytics-docs",
+              "externalId": "gameanalytics-docs",
+              "url": "https://docs.gameanalytics.com/",
+              "retrievedAt": "2026-11-13",
+              "license": "© gameanalytics-docs; ссылка на источник, тексты не копируются."
+            },
+            {
+              "sourceId": "unity-analytics",
+              "externalId": "unity-analytics",
+              "url": "https://docs.unity.com/en-us/analytics",
+              "retrievedAt": "2026-11-13",
+              "license": "© unity-analytics; ссылка на источник, тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_41f8a136b45b",
+              "componentId": "game-analytics.znaniya-1",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_d13c2bde79e2",
+          "slug": "k-game-analytics-2",
+          "title": "Удержание и вовлечение",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Метрики возврата и вовлечения показывают, работает ли игровой цикл.",
+          "professionIds": [
+            "it.game"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "gameanalytics-docs",
+              "externalId": "gameanalytics-docs",
+              "url": "https://docs.gameanalytics.com/",
+              "retrievedAt": "2026-11-13",
+              "license": "© gameanalytics-docs; ссылка на источник, тексты не копируются."
+            },
+            {
+              "sourceId": "unity-analytics",
+              "externalId": "unity-analytics",
+              "url": "https://docs.unity.com/en-us/analytics",
+              "retrievedAt": "2026-11-13",
+              "license": "© unity-analytics; ссылка на источник, тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_41f8a136b45b",
+              "componentId": "game-analytics.znaniya-2",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_547727f2cd2b",
+          "slug": "k-game-analytics-3",
+          "title": "Этика данных и приватность",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Сбор данных требует прозрачности и ограничений, чтобы не подрывать доверие игроков.",
+          "professionIds": [
+            "it.game"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "gameanalytics-docs",
+              "externalId": "gameanalytics-docs",
+              "url": "https://docs.gameanalytics.com/",
+              "retrievedAt": "2026-11-13",
+              "license": "© gameanalytics-docs; ссылка на источник, тексты не копируются."
+            },
+            {
+              "sourceId": "unity-analytics",
+              "externalId": "unity-analytics",
+              "url": "https://docs.unity.com/en-us/analytics",
+              "retrievedAt": "2026-11-13",
+              "license": "© unity-analytics; ссылка на источник, тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_41f8a136b45b",
+              "componentId": "game-analytics.znaniya-3",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_61887877655b",
+          "slug": "s-game-analytics-1",
+          "title": "Проектировать события",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Описывать события и параметры так, чтобы отвечать на вопросы о поведении игроков.",
+          "professionIds": [
+            "it.game"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "gameanalytics-docs",
+              "externalId": "gameanalytics-docs",
+              "url": "https://docs.gameanalytics.com/",
+              "retrievedAt": "2026-11-13",
+              "license": "© gameanalytics-docs; ссылка на источник, тексты не копируются."
+            },
+            {
+              "sourceId": "unity-analytics",
+              "externalId": "unity-analytics",
+              "url": "https://docs.unity.com/en-us/analytics",
+              "retrievedAt": "2026-11-13",
+              "license": "© unity-analytics; ссылка на источник, тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_41f8a136b45b",
+              "componentId": "game-analytics.navyki-1",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_f273e67437fc",
+          "slug": "s-game-analytics-2",
+          "title": "Читать воронки и удержание",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Интерпретировать метрики и находить, где опыт теряет игроков.",
+          "professionIds": [
+            "it.game"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "gameanalytics-docs",
+              "externalId": "gameanalytics-docs",
+              "url": "https://docs.gameanalytics.com/",
+              "retrievedAt": "2026-11-13",
+              "license": "© gameanalytics-docs; ссылка на источник, тексты не копируются."
+            },
+            {
+              "sourceId": "unity-analytics",
+              "externalId": "unity-analytics",
+              "url": "https://docs.unity.com/en-us/analytics",
+              "retrievedAt": "2026-11-13",
+              "license": "© unity-analytics; ссылка на источник, тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_41f8a136b45b",
+              "componentId": "game-analytics.navyki-2",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_4d8824d60535",
+          "slug": "s-game-analytics-3",
+          "title": "Проверять гипотезы по данным",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Связывать изменения в дизайне с данными и проверять эффект, а не верить догадкам.",
+          "professionIds": [
+            "it.game"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "gameanalytics-docs",
+              "externalId": "gameanalytics-docs",
+              "url": "https://docs.gameanalytics.com/",
+              "retrievedAt": "2026-11-13",
+              "license": "© gameanalytics-docs; ссылка на источник, тексты не копируются."
+            },
+            {
+              "sourceId": "unity-analytics",
+              "externalId": "unity-analytics",
+              "url": "https://docs.unity.com/en-us/analytics",
+              "retrievedAt": "2026-11-13",
+              "license": "© unity-analytics; ссылка на источник, тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_41f8a136b45b",
+              "componentId": "game-analytics.navyki-3",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "gameanalytics-docs",
+          "externalId": "gameanalytics-docs",
+          "url": "https://docs.gameanalytics.com/",
+          "retrievedAt": "2026-11-13",
+          "license": "© gameanalytics-docs; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "unity-analytics",
+          "externalId": "unity-analytics",
+          "url": "https://docs.unity.com/en-us/analytics",
+          "retrievedAt": "2026-11-13",
+          "license": "© unity-analytics; ссылка на источник, тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "manual",
+        "inputHash": "ca5d7b53ad70"
+      },
+      "issues": [],
+      "methodologyVersion": "1.0.0"
+    },
+    {
       "id": "comp_5c5967e0b6dd",
       "slug": "game-ui-hud",
       "title": "Игровой интерфейс и HUD",
@@ -19674,6 +20000,332 @@
       "methodologyVersion": "0.1.0"
     },
     {
+      "id": "comp_18543373a837",
+      "slug": "game-multiplayer-social",
+      "title": "Мультиплеер и социальные механики",
+      "titleEn": "Multiplayer and social mechanics",
+      "aliases": [],
+      "definition": "Проектирует мультиплеер и социальные механики: роли игроков, взаимодействие и социальные циклы, чтобы совместная игра давала понятные роли и причины возвращаться.",
+      "scope": "profession",
+      "canonicalIds": [
+        "game-multiplayer-social"
+      ],
+      "professionIds": [
+        "it.game"
+      ],
+      "components": [
+        {
+          "id": "game-multiplayer-social.znaniya-1",
+          "slug": "znaniya-1",
+          "title": "Знания",
+          "definition": "Понятия и принципы, которые нужны для компетенции.",
+          "order": 1,
+          "tagIds": [
+            "tag_69c84e206bfc"
+          ]
+        },
+        {
+          "id": "game-multiplayer-social.znaniya-2",
+          "slug": "znaniya-2",
+          "title": "Знания",
+          "definition": "Понятия и принципы, которые нужны для компетенции.",
+          "order": 2,
+          "tagIds": [
+            "tag_a4a5985335e8"
+          ]
+        },
+        {
+          "id": "game-multiplayer-social.znaniya-3",
+          "slug": "znaniya-3",
+          "title": "Знания",
+          "definition": "Понятия и принципы, которые нужны для компетенции.",
+          "order": 3,
+          "tagIds": [
+            "tag_0e23d5803c96"
+          ]
+        },
+        {
+          "id": "game-multiplayer-social.navyki-1",
+          "slug": "navyki-1",
+          "title": "Навыки",
+          "definition": "Практические действия, которые выполняет специалист.",
+          "order": 4,
+          "tagIds": [
+            "tag_6b017d2109ad"
+          ]
+        },
+        {
+          "id": "game-multiplayer-social.navyki-2",
+          "slug": "navyki-2",
+          "title": "Навыки",
+          "definition": "Практические действия, которые выполняет специалист.",
+          "order": 5,
+          "tagIds": [
+            "tag_3045286cf735"
+          ]
+        },
+        {
+          "id": "game-multiplayer-social.navyki-3",
+          "slug": "navyki-3",
+          "title": "Навыки",
+          "definition": "Практические действия, которые выполняет специалист.",
+          "order": 6,
+          "tagIds": [
+            "tag_56fe34ab1fa6"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_69c84e206bfc",
+          "slug": "k-game-multiplayer-social-1",
+          "title": "Роли игроков в мультиплеере",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Распределение ролей задаёт, будет ли взаимодействие сотрудничеством или соперничеством, и помогает игроку понять свой вклад в общую игру.",
+          "professionIds": [
+            "it.game"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "gdcvault",
+              "externalId": "gdcvault",
+              "url": "https://gdcvault.com/",
+              "retrievedAt": "2026-11-13",
+              "license": "© gdcvault; ссылка на источник, тексты не копируются."
+            },
+            {
+              "sourceId": "gamedeveloper",
+              "externalId": "gamedeveloper",
+              "url": "https://www.gamedeveloper.com/",
+              "retrievedAt": "2026-11-13",
+              "license": "© gamedeveloper; ссылка на источник, тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_18543373a837",
+              "componentId": "game-multiplayer-social.znaniya-1",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_a4a5985335e8",
+          "slug": "k-game-multiplayer-social-2",
+          "title": "Социальные циклы и возврат",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Связи между игроками и общие цели удерживают внимание, поэтому такие циклы проектируют заранее, а не оставляют на волю случая.",
+          "professionIds": [
+            "it.game"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "gdcvault",
+              "externalId": "gdcvault",
+              "url": "https://gdcvault.com/",
+              "retrievedAt": "2026-11-13",
+              "license": "© gdcvault; ссылка на источник, тексты не копируются."
+            },
+            {
+              "sourceId": "gamedeveloper",
+              "externalId": "gamedeveloper",
+              "url": "https://www.gamedeveloper.com/",
+              "retrievedAt": "2026-11-13",
+              "license": "© gamedeveloper; ссылка на источник, тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_18543373a837",
+              "componentId": "game-multiplayer-social.znaniya-2",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_0e23d5803c96",
+          "slug": "k-game-multiplayer-social-3",
+          "title": "Баланс сил в мультиплеере",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Неравенство возможностей снижает интерес, поэтому силы команд и ролей проверяют отдельно, чтобы совместная игра оставалась осмысленной.",
+          "professionIds": [
+            "it.game"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "gdcvault",
+              "externalId": "gdcvault",
+              "url": "https://gdcvault.com/",
+              "retrievedAt": "2026-11-13",
+              "license": "© gdcvault; ссылка на источник, тексты не копируются."
+            },
+            {
+              "sourceId": "gamedeveloper",
+              "externalId": "gamedeveloper",
+              "url": "https://www.gamedeveloper.com/",
+              "retrievedAt": "2026-11-13",
+              "license": "© gamedeveloper; ссылка на источник, тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_18543373a837",
+              "componentId": "game-multiplayer-social.znaniya-3",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_6b017d2109ad",
+          "slug": "s-game-multiplayer-social-1",
+          "title": "Описывать роли и взаимодействие",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Формулирует для каждого игрока его действия и влияние на других так, чтобы роли были понятны, а взаимодействие читалось в совместной игре.",
+          "professionIds": [
+            "it.game"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "gdcvault",
+              "externalId": "gdcvault",
+              "url": "https://gdcvault.com/",
+              "retrievedAt": "2026-11-13",
+              "license": "© gdcvault; ссылка на источник, тексты не копируются."
+            },
+            {
+              "sourceId": "gamedeveloper",
+              "externalId": "gamedeveloper",
+              "url": "https://www.gamedeveloper.com/",
+              "retrievedAt": "2026-11-13",
+              "license": "© gamedeveloper; ссылка на источник, тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_18543373a837",
+              "componentId": "game-multiplayer-social.navyki-1",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_3045286cf735",
+          "slug": "s-game-multiplayer-social-2",
+          "title": "Проектировать социальные циклы",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Задаёт общие цели и события, которые создают причины возвращаться, и проверяет, что социальные связи работают в интересах совместной игры.",
+          "professionIds": [
+            "it.game"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "gdcvault",
+              "externalId": "gdcvault",
+              "url": "https://gdcvault.com/",
+              "retrievedAt": "2026-11-13",
+              "license": "© gdcvault; ссылка на источник, тексты не копируются."
+            },
+            {
+              "sourceId": "gamedeveloper",
+              "externalId": "gamedeveloper",
+              "url": "https://www.gamedeveloper.com/",
+              "retrievedAt": "2026-11-13",
+              "license": "© gamedeveloper; ссылка на источник, тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_18543373a837",
+              "componentId": "game-multiplayer-social.navyki-2",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_56fe34ab1fa6",
+          "slug": "s-game-multiplayer-social-3",
+          "title": "Проверять баланс мультиплеера",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Наблюдает за перекосом сил на плейтестах и правит правила ролей, чтобы неравенство возможностей не разрушало интерес к совместной игре.",
+          "professionIds": [
+            "it.game"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "gdcvault",
+              "externalId": "gdcvault",
+              "url": "https://gdcvault.com/",
+              "retrievedAt": "2026-11-13",
+              "license": "© gdcvault; ссылка на источник, тексты не копируются."
+            },
+            {
+              "sourceId": "gamedeveloper",
+              "externalId": "gamedeveloper",
+              "url": "https://www.gamedeveloper.com/",
+              "retrievedAt": "2026-11-13",
+              "license": "© gamedeveloper; ссылка на источник, тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_18543373a837",
+              "componentId": "game-multiplayer-social.navyki-3",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "gdcvault",
+          "externalId": "gdcvault",
+          "url": "https://gdcvault.com/",
+          "retrievedAt": "2026-11-13",
+          "license": "© gdcvault; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "gamedeveloper",
+          "externalId": "gamedeveloper",
+          "url": "https://www.gamedeveloper.com/",
+          "retrievedAt": "2026-11-13",
+          "license": "© gamedeveloper; ссылка на источник, тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "manual",
+        "inputHash": "bf429d08f289"
+      },
+      "issues": [],
+      "methodologyVersion": "1.0.0"
+    },
+    {
       "id": "comp_2d94c962c91b",
       "slug": "naem-i-razvitie-praktika",
       "title": "Наём и развитие: практика",
@@ -20189,6 +20841,332 @@
         "promptVersion": "competency-v1",
         "model": "manual",
         "inputHash": "a38c4dca9a60"
+      },
+      "issues": [],
+      "methodologyVersion": "1.0.0"
+    },
+    {
+      "id": "comp_46c6af924175",
+      "slug": "game-narrative-tools",
+      "title": "Нарративные инструменты и интерактивный сценарий",
+      "titleEn": "Narrative tools and interactive script",
+      "aliases": [],
+      "definition": "Работает с инструментами интерактивного нарратива (Twine, ink): пишет ветвящийся сценарий, управляет переменными и проверяет, что история сходится при разных выборах игрока.",
+      "scope": "profession",
+      "canonicalIds": [
+        "game-narrative-tools"
+      ],
+      "professionIds": [
+        "it.game"
+      ],
+      "components": [
+        {
+          "id": "game-narrative-tools.znaniya-1",
+          "slug": "znaniya-1",
+          "title": "Знания",
+          "definition": "Понятия и принципы, которые нужны для компетенции.",
+          "order": 1,
+          "tagIds": [
+            "tag_735aa5b19298"
+          ]
+        },
+        {
+          "id": "game-narrative-tools.znaniya-2",
+          "slug": "znaniya-2",
+          "title": "Знания",
+          "definition": "Понятия и принципы, которые нужны для компетенции.",
+          "order": 2,
+          "tagIds": [
+            "tag_19f97ea053eb"
+          ]
+        },
+        {
+          "id": "game-narrative-tools.znaniya-3",
+          "slug": "znaniya-3",
+          "title": "Знания",
+          "definition": "Понятия и принципы, которые нужны для компетенции.",
+          "order": 3,
+          "tagIds": [
+            "tag_10a4b9d11c09"
+          ]
+        },
+        {
+          "id": "game-narrative-tools.navyki-1",
+          "slug": "navyki-1",
+          "title": "Навыки",
+          "definition": "Практические действия, которые выполняет специалист.",
+          "order": 4,
+          "tagIds": [
+            "tag_398d8c4c2c40"
+          ]
+        },
+        {
+          "id": "game-narrative-tools.navyki-2",
+          "slug": "navyki-2",
+          "title": "Навыки",
+          "definition": "Практические действия, которые выполняет специалист.",
+          "order": 5,
+          "tagIds": [
+            "tag_4e8adde4023e"
+          ]
+        },
+        {
+          "id": "game-narrative-tools.navyki-3",
+          "slug": "navyki-3",
+          "title": "Навыки",
+          "definition": "Практические действия, которые выполняет специалист.",
+          "order": 6,
+          "tagIds": [
+            "tag_2cd63b8668a0"
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "id": "tag_735aa5b19298",
+          "slug": "k-game-narrative-tools-1",
+          "title": "Ветвление и структура сценария",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Структура ветвлений определяет, какие выборы видит игрок и как они сходятся.",
+          "professionIds": [
+            "it.game"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "twine-cookbook",
+              "externalId": "twine-cookbook",
+              "url": "https://twinery.org/cookbook/",
+              "retrievedAt": "2026-11-13",
+              "license": "© twine-cookbook; ссылка на источник, тексты не копируются."
+            },
+            {
+              "sourceId": "ink-github",
+              "externalId": "ink-github",
+              "url": "https://github.com/inkle/ink",
+              "retrievedAt": "2026-11-13",
+              "license": "© ink-github; ссылка на источник, тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_46c6af924175",
+              "componentId": "game-narrative-tools.znaniya-1",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_19f97ea053eb",
+          "slug": "k-game-narrative-tools-2",
+          "title": "Переменные и состояние истории",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Состояние мира и героя должно сохраняться между сценами, иначе выбор игрока теряет смысл.",
+          "professionIds": [
+            "it.game"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "twine-cookbook",
+              "externalId": "twine-cookbook",
+              "url": "https://twinery.org/cookbook/",
+              "retrievedAt": "2026-11-13",
+              "license": "© twine-cookbook; ссылка на источник, тексты не копируются."
+            },
+            {
+              "sourceId": "ink-github",
+              "externalId": "ink-github",
+              "url": "https://github.com/inkle/ink",
+              "retrievedAt": "2026-11-13",
+              "license": "© ink-github; ссылка на источник, тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_46c6af924175",
+              "componentId": "game-narrative-tools.znaniya-2",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_10a4b9d11c09",
+          "slug": "k-game-narrative-tools-3",
+          "title": "Инструменты интерактивного нарратива",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Twine и ink дают разные форматы работы: прототип и продакшн-сценарий.",
+          "professionIds": [
+            "it.game"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "twine-cookbook",
+              "externalId": "twine-cookbook",
+              "url": "https://twinery.org/cookbook/",
+              "retrievedAt": "2026-11-13",
+              "license": "© twine-cookbook; ссылка на источник, тексты не копируются."
+            },
+            {
+              "sourceId": "ink-github",
+              "externalId": "ink-github",
+              "url": "https://github.com/inkle/ink",
+              "retrievedAt": "2026-11-13",
+              "license": "© ink-github; ссылка на источник, тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_46c6af924175",
+              "componentId": "game-narrative-tools.znaniya-3",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_398d8c4c2c40",
+          "slug": "s-game-narrative-tools-1",
+          "title": "Писать ветвящийся сценарий",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Собирать нелинейный сценарий с понятными развилками и последствиями.",
+          "professionIds": [
+            "it.game"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "twine-cookbook",
+              "externalId": "twine-cookbook",
+              "url": "https://twinery.org/cookbook/",
+              "retrievedAt": "2026-11-13",
+              "license": "© twine-cookbook; ссылка на источник, тексты не копируются."
+            },
+            {
+              "sourceId": "ink-github",
+              "externalId": "ink-github",
+              "url": "https://github.com/inkle/ink",
+              "retrievedAt": "2026-11-13",
+              "license": "© ink-github; ссылка на источник, тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_46c6af924175",
+              "componentId": "game-narrative-tools.navyki-1",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_4e8adde4023e",
+          "slug": "s-game-narrative-tools-2",
+          "title": "Управлять переменными истории",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Связывать выборы и состояние, чтобы история оставалась согласованной.",
+          "professionIds": [
+            "it.game"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "twine-cookbook",
+              "externalId": "twine-cookbook",
+              "url": "https://twinery.org/cookbook/",
+              "retrievedAt": "2026-11-13",
+              "license": "© twine-cookbook; ссылка на источник, тексты не копируются."
+            },
+            {
+              "sourceId": "ink-github",
+              "externalId": "ink-github",
+              "url": "https://github.com/inkle/ink",
+              "retrievedAt": "2026-11-13",
+              "license": "© ink-github; ссылка на источник, тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_46c6af924175",
+              "componentId": "game-narrative-tools.navyki-2",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_2cd63b8668a0",
+          "slug": "s-game-narrative-tools-3",
+          "title": "Проверять сходимость веток",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Проходить разные пути и проверять, что история не ломается и сохраняет смысл.",
+          "professionIds": [
+            "it.game"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "twine-cookbook",
+              "externalId": "twine-cookbook",
+              "url": "https://twinery.org/cookbook/",
+              "retrievedAt": "2026-11-13",
+              "license": "© twine-cookbook; ссылка на источник, тексты не копируются."
+            },
+            {
+              "sourceId": "ink-github",
+              "externalId": "ink-github",
+              "url": "https://github.com/inkle/ink",
+              "retrievedAt": "2026-11-13",
+              "license": "© ink-github; ссылка на источник, тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_46c6af924175",
+              "componentId": "game-narrative-tools.navyki-3",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        }
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "twine-cookbook",
+          "externalId": "twine-cookbook",
+          "url": "https://twinery.org/cookbook/",
+          "retrievedAt": "2026-11-13",
+          "license": "© twine-cookbook; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "ink-github",
+          "externalId": "ink-github",
+          "url": "https://github.com/inkle/ink",
+          "retrievedAt": "2026-11-13",
+          "license": "© ink-github; ссылка на источник, тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "status": "accepted",
+      "llmMeta": {
+        "promptVersion": "competency-v1",
+        "model": "manual",
+        "inputHash": "afea50ee8e1f"
       },
       "issues": [],
       "methodologyVersion": "1.0.0"
@@ -41804,6 +42782,43 @@
       "needsReview": false
     },
     {
+      "id": "tag_0e23d5803c96",
+      "slug": "k-game-multiplayer-social-3",
+      "title": "Баланс сил в мультиплеере",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Неравенство возможностей разрушает интерес, поэтому баланс команд и ролей проверяют отдельно.",
+      "professionIds": [
+        "it.game"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "gdcvault",
+          "externalId": "gdcvault",
+          "url": "https://gdcvault.com/",
+          "retrievedAt": "2026-11-13",
+          "license": "© gdcvault; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "gamedeveloper",
+          "externalId": "gamedeveloper",
+          "url": "https://www.gamedeveloper.com/",
+          "retrievedAt": "2026-11-13",
+          "license": "© gamedeveloper; ссылка на источник, тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_18543373a837",
+          "componentId": "game-multiplayer-social.znaniya-3",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
       "id": "tag_860c65fc0b7c",
       "slug": "k-game-economy-balance-3",
       "title": "Балансные метрики",
@@ -42592,6 +43607,43 @@
         {
           "competencyId": "comp_afc0ed77e337",
           "componentId": "ai-in-gamedev.navyki-2",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_735aa5b19298",
+      "slug": "k-game-narrative-tools-1",
+      "title": "Ветвление и структура сценария",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Структура ветвлений определяет, какие выборы видит игрок и как они сходятся.",
+      "professionIds": [
+        "it.game"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "twine-cookbook",
+          "externalId": "twine-cookbook",
+          "url": "https://twinery.org/cookbook/",
+          "retrievedAt": "2026-11-13",
+          "license": "© twine-cookbook; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "ink-github",
+          "externalId": "ink-github",
+          "url": "https://github.com/inkle/ink",
+          "retrievedAt": "2026-11-13",
+          "license": "© ink-github; ссылка на источник, тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_46c6af924175",
+          "componentId": "game-narrative-tools.znaniya-1",
           "role": "primary"
         }
       ],
@@ -45415,6 +46467,43 @@
         {
           "competencyId": "comp_3f02632526e7",
           "componentId": "chertezhi-i-pereplanirovka.razvertki-i-inzhenernye-shemy",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_10a4b9d11c09",
+      "slug": "k-game-narrative-tools-3",
+      "title": "Инструменты интерактивного нарратива",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Twine и ink дают разные форматы работы: прототип и продакшн-сценарий.",
+      "professionIds": [
+        "it.game"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "twine-cookbook",
+          "externalId": "twine-cookbook",
+          "url": "https://twinery.org/cookbook/",
+          "retrievedAt": "2026-11-13",
+          "license": "© twine-cookbook; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "ink-github",
+          "externalId": "ink-github",
+          "url": "https://github.com/inkle/ink",
+          "retrievedAt": "2026-11-13",
+          "license": "© ink-github; ссылка на источник, тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_46c6af924175",
+          "componentId": "game-narrative-tools.znaniya-3",
           "role": "primary"
         }
       ],
@@ -49559,6 +50648,43 @@
       "needsReview": false
     },
     {
+      "id": "tag_6b017d2109ad",
+      "slug": "s-game-multiplayer-social-1",
+      "title": "Описывать роли и взаимодействие",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Формулировать, что делает каждый игрок и как его действия влияют на других.",
+      "professionIds": [
+        "it.game"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "gdcvault",
+          "externalId": "gdcvault",
+          "url": "https://gdcvault.com/",
+          "retrievedAt": "2026-11-13",
+          "license": "© gdcvault; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "gamedeveloper",
+          "externalId": "gamedeveloper",
+          "url": "https://www.gamedeveloper.com/",
+          "retrievedAt": "2026-11-13",
+          "license": "© gamedeveloper; ссылка на источник, тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_18543373a837",
+          "componentId": "game-multiplayer-social.navyki-1",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
       "id": "tag_43125ac941a0",
       "slug": "s-orkestratsiya-agentov-d7480c82c547",
       "title": "Определять инструменты и контекст",
@@ -50519,6 +51645,43 @@
       "needsReview": false
     },
     {
+      "id": "tag_19f97ea053eb",
+      "slug": "k-game-narrative-tools-2",
+      "title": "Переменные и состояние истории",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Состояние мира и героя должно сохраняться между сценами, иначе выбор игрока теряет смысл.",
+      "professionIds": [
+        "it.game"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "twine-cookbook",
+          "externalId": "twine-cookbook",
+          "url": "https://twinery.org/cookbook/",
+          "retrievedAt": "2026-11-13",
+          "license": "© twine-cookbook; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "ink-github",
+          "externalId": "ink-github",
+          "url": "https://github.com/inkle/ink",
+          "retrievedAt": "2026-11-13",
+          "license": "© ink-github; ссылка на источник, тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_46c6af924175",
+          "componentId": "game-narrative-tools.znaniya-2",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
       "id": "tag_77b50acdf662",
       "slug": "peremennye-i-temy-vnutri-maketov",
       "title": "Переменные и темы внутри макетов",
@@ -50649,6 +51812,43 @@
         {
           "competencyId": "comp_481dccaaa75f",
           "componentId": "montazh-i-ritm.perehody-i-skleyki",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_398d8c4c2c40",
+      "slug": "s-game-narrative-tools-1",
+      "title": "Писать ветвящийся сценарий",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Собирать нелинейный сценарий с понятными развилками и последствиями.",
+      "professionIds": [
+        "it.game"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "twine-cookbook",
+          "externalId": "twine-cookbook",
+          "url": "https://twinery.org/cookbook/",
+          "retrievedAt": "2026-11-13",
+          "license": "© twine-cookbook; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "ink-github",
+          "externalId": "ink-github",
+          "url": "https://github.com/inkle/ink",
+          "retrievedAt": "2026-11-13",
+          "license": "© ink-github; ссылка на источник, тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_46c6af924175",
+          "componentId": "game-narrative-tools.navyki-1",
           "role": "primary"
         }
       ],
@@ -52876,6 +54076,43 @@
       "needsReview": false
     },
     {
+      "id": "tag_56fe34ab1fa6",
+      "slug": "s-game-multiplayer-social-3",
+      "title": "Проверять баланс мультиплеера",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Наблюдать за перекосом сил и править правила ролей по результатам плейтестов.",
+      "professionIds": [
+        "it.game"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "gdcvault",
+          "externalId": "gdcvault",
+          "url": "https://gdcvault.com/",
+          "retrievedAt": "2026-11-13",
+          "license": "© gdcvault; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "gamedeveloper",
+          "externalId": "gamedeveloper",
+          "url": "https://www.gamedeveloper.com/",
+          "retrievedAt": "2026-11-13",
+          "license": "© gamedeveloper; ссылка на источник, тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_18543373a837",
+          "componentId": "game-multiplayer-social.navyki-3",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
       "id": "tag_5c7867895bcd",
       "slug": "s-game-economy-balance-3",
       "title": "Проверять баланс на данных",
@@ -52943,6 +54180,43 @@
         {
           "competencyId": "comp_0cb44fed484e",
           "componentId": "game-liveops-monetization.navyki-3",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_4d8824d60535",
+      "slug": "s-game-analytics-3",
+      "title": "Проверять гипотезы по данным",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Связывать изменения в дизайне с данными и проверять эффект, а не верить догадкам.",
+      "professionIds": [
+        "it.game"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "gameanalytics-docs",
+          "externalId": "gameanalytics-docs",
+          "url": "https://docs.gameanalytics.com/",
+          "retrievedAt": "2026-11-13",
+          "license": "© gameanalytics-docs; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "unity-analytics",
+          "externalId": "unity-analytics",
+          "url": "https://docs.unity.com/en-us/analytics",
+          "retrievedAt": "2026-11-13",
+          "license": "© unity-analytics; ссылка на источник, тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_41f8a136b45b",
+          "componentId": "game-analytics.navyki-3",
           "role": "primary"
         }
       ],
@@ -53454,6 +54728,43 @@
         {
           "competencyId": "comp_74e9d09d4150",
           "componentId": "tehnicheskaya-gramotnost-praktika.navyki",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_2cd63b8668a0",
+      "slug": "s-game-narrative-tools-3",
+      "title": "Проверять сходимость веток",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Проходить разные пути и проверять, что история не ломается и сохраняет смысл.",
+      "professionIds": [
+        "it.game"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "twine-cookbook",
+          "externalId": "twine-cookbook",
+          "url": "https://twinery.org/cookbook/",
+          "retrievedAt": "2026-11-13",
+          "license": "© twine-cookbook; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "ink-github",
+          "externalId": "ink-github",
+          "url": "https://github.com/inkle/ink",
+          "retrievedAt": "2026-11-13",
+          "license": "© ink-github; ссылка на источник, тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_46c6af924175",
+          "componentId": "game-narrative-tools.navyki-3",
           "role": "primary"
         }
       ],
@@ -54427,6 +55738,80 @@
         {
           "competencyId": "comp_bbbcddc677c6",
           "componentId": "game-mechanics-systems.navyki-2",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_61887877655b",
+      "slug": "s-game-analytics-1",
+      "title": "Проектировать события",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Описывать события и параметры так, чтобы отвечать на вопросы о поведении игроков.",
+      "professionIds": [
+        "it.game"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "gameanalytics-docs",
+          "externalId": "gameanalytics-docs",
+          "url": "https://docs.gameanalytics.com/",
+          "retrievedAt": "2026-11-13",
+          "license": "© gameanalytics-docs; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "unity-analytics",
+          "externalId": "unity-analytics",
+          "url": "https://docs.unity.com/en-us/analytics",
+          "retrievedAt": "2026-11-13",
+          "license": "© unity-analytics; ссылка на источник, тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_41f8a136b45b",
+          "componentId": "game-analytics.navyki-1",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_3045286cf735",
+      "slug": "s-game-multiplayer-social-2",
+      "title": "Проектировать социальные циклы",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Задавать общие цели, события и причины возвращаться в игру.",
+      "professionIds": [
+        "it.game"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "gdcvault",
+          "externalId": "gdcvault",
+          "url": "https://gdcvault.com/",
+          "retrievedAt": "2026-11-13",
+          "license": "© gdcvault; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "gamedeveloper",
+          "externalId": "gamedeveloper",
+          "url": "https://www.gamedeveloper.com/",
+          "retrievedAt": "2026-11-13",
+          "license": "© gamedeveloper; ссылка на источник, тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_18543373a837",
+          "componentId": "game-multiplayer-social.navyki-2",
           "role": "primary"
         }
       ],
@@ -55947,6 +57332,43 @@
       "needsReview": false
     },
     {
+      "id": "tag_69c84e206bfc",
+      "slug": "k-game-multiplayer-social-1",
+      "title": "Роли игроков в мультиплеере",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Понимание ролей и взаимодействия задаёт, каким будет сотрудничество или соперничество.",
+      "professionIds": [
+        "it.game"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "gdcvault",
+          "externalId": "gdcvault",
+          "url": "https://gdcvault.com/",
+          "retrievedAt": "2026-11-13",
+          "license": "© gdcvault; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "gamedeveloper",
+          "externalId": "gamedeveloper",
+          "url": "https://www.gamedeveloper.com/",
+          "retrievedAt": "2026-11-13",
+          "license": "© gamedeveloper; ссылка на источник, тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_18543373a837",
+          "componentId": "game-multiplayer-social.znaniya-1",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
       "id": "tag_6012cd9520a7",
       "slug": "rol-stsenariev-v-informatsionnoy-arhitekture",
       "title": "Роль сценариев в информационной архитектуре",
@@ -57435,6 +58857,43 @@
       "needsReview": false
     },
     {
+      "id": "tag_407a898bbd3e",
+      "slug": "k-game-analytics-1",
+      "title": "События и воронки",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Правильная схема событий определяет, что вообще можно измерить в игре.",
+      "professionIds": [
+        "it.game"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "gameanalytics-docs",
+          "externalId": "gameanalytics-docs",
+          "url": "https://docs.gameanalytics.com/",
+          "retrievedAt": "2026-11-13",
+          "license": "© gameanalytics-docs; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "unity-analytics",
+          "externalId": "unity-analytics",
+          "url": "https://docs.unity.com/en-us/analytics",
+          "retrievedAt": "2026-11-13",
+          "license": "© unity-analytics; ссылка на источник, тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_41f8a136b45b",
+          "componentId": "game-analytics.znaniya-1",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
       "id": "tag_bb22f7f61068",
       "slug": "osnovy-razdela-analiz-onlayn-dannyh-i-povedeniya-polzovateley",
       "title": "События и метрики продукта",
@@ -58016,6 +59475,43 @@
         {
           "competencyId": "comp_4e1fa37f2f5d",
           "componentId": "prodvinutoe-prototipirovanie-praktika.sostoyaniya-interfeysa",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_a4a5985335e8",
+      "slug": "k-game-multiplayer-social-2",
+      "title": "Социальные циклы и возврат",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Социальные связи и общие цели удерживают игроков, поэтому их проектируют, а не оставляют на волю случая.",
+      "professionIds": [
+        "it.game"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "gdcvault",
+          "externalId": "gdcvault",
+          "url": "https://gdcvault.com/",
+          "retrievedAt": "2026-11-13",
+          "license": "© gdcvault; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "gamedeveloper",
+          "externalId": "gamedeveloper",
+          "url": "https://www.gamedeveloper.com/",
+          "retrievedAt": "2026-11-13",
+          "license": "© gamedeveloper; ссылка на источник, тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_18543373a837",
+          "componentId": "game-multiplayer-social.znaniya-2",
           "role": "primary"
         }
       ],
@@ -59729,6 +61225,43 @@
       "needsReview": false
     },
     {
+      "id": "tag_d13c2bde79e2",
+      "slug": "k-game-analytics-2",
+      "title": "Удержание и вовлечение",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Метрики возврата и вовлечения показывают, работает ли игровой цикл.",
+      "professionIds": [
+        "it.game"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "gameanalytics-docs",
+          "externalId": "gameanalytics-docs",
+          "url": "https://docs.gameanalytics.com/",
+          "retrievedAt": "2026-11-13",
+          "license": "© gameanalytics-docs; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "unity-analytics",
+          "externalId": "unity-analytics",
+          "url": "https://docs.unity.com/en-us/analytics",
+          "retrievedAt": "2026-11-13",
+          "license": "© unity-analytics; ссылка на источник, тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_41f8a136b45b",
+          "componentId": "game-analytics.znaniya-2",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
       "id": "tag_5039b089315b",
       "slug": "universalnyy-cikl",
       "title": "Универсальный цикл работы с ИИ",
@@ -59879,6 +61412,43 @@
         {
           "competencyId": "comp_dd938a153c95",
           "componentId": "kommunikatsiya-so-steykholderami-praktika.upravlenie-ozhidaniyami",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_4e8adde4023e",
+      "slug": "s-game-narrative-tools-2",
+      "title": "Управлять переменными истории",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Связывать выборы и состояние, чтобы история оставалась согласованной.",
+      "professionIds": [
+        "it.game"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "twine-cookbook",
+          "externalId": "twine-cookbook",
+          "url": "https://twinery.org/cookbook/",
+          "retrievedAt": "2026-11-13",
+          "license": "© twine-cookbook; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "ink-github",
+          "externalId": "ink-github",
+          "url": "https://github.com/inkle/ink",
+          "retrievedAt": "2026-11-13",
+          "license": "© ink-github; ссылка на источник, тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_46c6af924175",
+          "componentId": "game-narrative-tools.navyki-2",
           "role": "primary"
         }
       ],
@@ -61125,6 +62695,43 @@
       "needsReview": false
     },
     {
+      "id": "tag_f273e67437fc",
+      "slug": "s-game-analytics-2",
+      "title": "Читать воронки и удержание",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Интерпретировать метрики и находить, где опыт теряет игроков.",
+      "professionIds": [
+        "it.game"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "gameanalytics-docs",
+          "externalId": "gameanalytics-docs",
+          "url": "https://docs.gameanalytics.com/",
+          "retrievedAt": "2026-11-13",
+          "license": "© gameanalytics-docs; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "unity-analytics",
+          "externalId": "unity-analytics",
+          "url": "https://docs.unity.com/en-us/analytics",
+          "retrievedAt": "2026-11-13",
+          "license": "© unity-analytics; ссылка на источник, тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_41f8a136b45b",
+          "componentId": "game-analytics.navyki-2",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
       "id": "tag_8f1cb4f2eba6",
       "slug": "k-game-level-design-1",
       "title": "Чтение уровня",
@@ -61402,6 +63009,43 @@
         {
           "competencyId": "comp_e4e961b9cca2",
           "componentId": "printsipy-i-etapy-issledovaniy-praktika.etapy-issledovaniya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_547727f2cd2b",
+      "slug": "k-game-analytics-3",
+      "title": "Этика данных и приватность",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Сбор данных требует прозрачности и ограничений, чтобы не подрывать доверие игроков.",
+      "professionIds": [
+        "it.game"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "gameanalytics-docs",
+          "externalId": "gameanalytics-docs",
+          "url": "https://docs.gameanalytics.com/",
+          "retrievedAt": "2026-11-13",
+          "license": "© gameanalytics-docs; ссылка на источник, тексты не копируются."
+        },
+        {
+          "sourceId": "unity-analytics",
+          "externalId": "unity-analytics",
+          "url": "https://docs.unity.com/en-us/analytics",
+          "retrievedAt": "2026-11-13",
+          "license": "© unity-analytics; ссылка на источник, тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_41f8a136b45b",
+          "componentId": "game-analytics.znaniya-3",
           "role": "primary"
         }
       ],
@@ -69380,6 +71024,430 @@
         "flags": [
           "no_snippet",
           "generic"
+        ],
+        "reviewedAt": "2026-11-14",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_d99002ec224e",
+      "slug": "mat_d99002ec224e",
+      "kind": "article",
+      "title": "Game Developer — 6 шагов к успешному плейтесту",
+      "provider": "gd-playtesting-article",
+      "url": "https://www.gamedeveloper.com/programming/6-steps-to-a-successful-playtesting-process-for-an-indie-developer",
+      "canonicalUrl": "https://www.gamedeveloper.com/programming/6-steps-to-a-successful-playtesting-process-for-an-indie-developer",
+      "language": "en",
+      "access": "free",
+      "description": "Практическая статья о процессе плейтеста в инди-разработке.",
+      "license": "© gd-playtesting-article; ссылка на источник, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "gd-playtesting-article",
+        "externalId": "gd-playtesting-article",
+        "url": "https://www.gamedeveloper.com/programming/6-steps-to-a-successful-playtesting-process-for-an-indie-developer",
+        "retrievedAt": "2026-11-13",
+        "license": "© gd-playtesting-article; ссылка."
+      },
+      "retrievedAt": "2026-11-13",
+      "links": [
+        {
+          "competencyId": "comp_fe7e39432f8e",
+          "relevance": 0.85,
+          "reason": "Практический процесс плейтеста: подготовка, сессии и выводы.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_fe7e39432f8e"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.62,
+        "usefulness": 0.7,
+        "whyUseful": "Практическая статья с пошаговым описанием процесса плейтеста в инди-разработке.",
+        "reason": "Тема по названию и описанию соответствует компетенции, но snippet пустой, поэтому содержание и точность нельзя проверить по переданным данным.",
+        "flags": [
+          "no_snippet"
+        ],
+        "reviewedAt": "2026-11-14",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_43a50ec7b0e2",
+      "slug": "mat_43a50ec7b0e2",
+      "kind": "article",
+      "title": "StraySpark — основы левел-дизайна: блок-аут, поток и визуальные ориентиры",
+      "provider": "strayspark-level-article",
+      "url": "https://www.strayspark.studio/blog/level-design-fundamentals-blockout-flow",
+      "canonicalUrl": "https://www.strayspark.studio/blog/level-design-fundamentals-blockout-flow",
+      "language": "en",
+      "access": "free",
+      "description": "Статья о блок-ауте, потоке и визуальной навигации в уровне на примере UE5.",
+      "license": "© strayspark-level-article; ссылка на источник, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "strayspark-level-article",
+        "externalId": "strayspark-level-article",
+        "url": "https://www.strayspark.studio/blog/level-design-fundamentals-blockout-flow",
+        "retrievedAt": "2026-11-13",
+        "license": "© strayspark-level-article; ссылка."
+      },
+      "retrievedAt": "2026-11-13",
+      "links": [
+        {
+          "competencyId": "comp_37b0db64560e",
+          "relevance": 0.82,
+          "reason": "Блок-аут и визуальная навигация уровня на практике.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_37b0db64560e"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.55,
+        "usefulness": 0.6,
+        "whyUseful": "Статья обещает разбор блок-аута, потока и визуальных ориентиров — ядро проектирования пространства уровня.",
+        "reason": "Тема по заголовку и описанию точно соответствует компетенции (блок-аут, поток, визуальная навигация), но snippet пуст, поэтому содержание и практическую ценность проверить нельзя. Материал на английском, что может быть барьером для русскоязычного каталога. Требуется подтверждение первоисточника.",
+        "flags": [
+          "no_snippet",
+          "wrong_language"
+        ],
+        "reviewedAt": "2026-11-14",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_a75db58200c3",
+      "slug": "mat_a75db58200c3",
+      "kind": "docs",
+      "title": "Epic — Greyboxing: черновая геометрия уровня",
+      "provider": "epic-greyboxing",
+      "url": "https://dev.epicgames.com/documentation/fortnite/greyboxing-in-unreal-editor-for-fortnite",
+      "canonicalUrl": "https://dev.epicgames.com/documentation/fortnite/greyboxing-in-unreal-editor-for-fortnite",
+      "language": "en",
+      "access": "free",
+      "description": "Документация Epic о грейбоксинге — черновой геометрии уровня для проверки пространства.",
+      "license": "© epic-greyboxing; ссылка на источник, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "epic-greyboxing",
+        "externalId": "epic-greyboxing",
+        "url": "https://dev.epicgames.com/documentation/fortnite/greyboxing-in-unreal-editor-for-fortnite",
+        "retrievedAt": "2026-11-13",
+        "license": "© epic-greyboxing; ссылка."
+      },
+      "retrievedAt": "2026-11-13",
+      "links": [
+        {
+          "competencyId": "comp_37b0db64560e",
+          "relevance": 0.82,
+          "reason": "Документация о грейбоксинге для проверки пространства и масштаба.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_37b0db64560e"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.55,
+        "usefulness": 0.6,
+        "whyUseful": "Документация по грейбоксингу помогает освоить черновую блокировку пространства уровня до детализации.",
+        "reason": "Тема прямо соответствует навыку блок-аута уровня, формат справочника и бесплатный доступ подходят. Однако snippet пуст: содержание, объём и применимость проверить нельзя, поэтому материал требует подтверждения, а не тихого приёма.",
+        "flags": [
+          "no_snippet"
+        ],
+        "reviewedAt": "2026-11-14",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_6dae4321cc69",
+      "slug": "mat_6dae4321cc69",
+      "kind": "docs",
+      "title": "Twine Cookbook — рецепты интерактивных историй",
+      "provider": "twine-cookbook",
+      "url": "https://twinery.org/cookbook/",
+      "canonicalUrl": "https://twinery.org/cookbook/",
+      "language": "en",
+      "access": "free",
+      "description": "Twine Cookbook: рецепты и практики построения интерактивных сценариев.",
+      "license": "© twine-cookbook; ссылка на источник, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "twine-cookbook",
+        "externalId": "twine-cookbook",
+        "url": "https://twinery.org/cookbook/",
+        "retrievedAt": "2026-11-13",
+        "license": "© twine-cookbook; ссылка."
+      },
+      "retrievedAt": "2026-11-13",
+      "links": [
+        {
+          "competencyId": "comp_46c6af924175",
+          "relevance": 0.85,
+          "reason": "Практические рецепты ветвящегося сценария в Twine.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_46c6af924175"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.6,
+        "usefulness": 0.65,
+        "whyUseful": "Сборник практических рецептов по Twine для построения ветвящихся интерактивных сценариев.",
+        "reason": "Метаданные прямо соответствуют компетенции: документация-справочник с рецептами по Twine, бесплатный доступ, формат reference подходит для освоения инструмента и практик ветвления. Однако snippet пуст, поэтому содержание рецептов и их покрытие (переменные, проверка сходимости веток) не подтверждено — материал отправлен на подтверждение, а не принят.",
+        "flags": [
+          "no_snippet"
+        ],
+        "reviewedAt": "2026-11-14",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_6c161c401fd4",
+      "slug": "mat_6c161c401fd4",
+      "kind": "docs",
+      "title": "Twine — инструмент интерактивного нарратива",
+      "provider": "twine",
+      "url": "https://twinery.org/",
+      "canonicalUrl": "https://twinery.org/",
+      "language": "en",
+      "access": "free",
+      "description": "Twine — открытый инструмент для интерактивных нелинейных историй и прототипов нарратива.",
+      "license": "© twine; ссылка на источник, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "twine",
+        "externalId": "twine",
+        "url": "https://twinery.org/",
+        "retrievedAt": "2026-11-13",
+        "license": "© twine; ссылка."
+      },
+      "retrievedAt": "2026-11-13",
+      "links": [
+        {
+          "competencyId": "comp_46c6af924175",
+          "relevance": 0.8,
+          "reason": "Открытый инструмент для прототипов нелинейной истории.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_46c6af924175"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.68,
+        "usefulness": 0.72,
+        "whyUseful": "Материал посвящён Twine — инструменту для создания ветвящихся интерактивных историй.",
+        "reason": "Тема напрямую связана с компетенцией, но snippet пустой, поэтому содержание и практическую ценность нельзя проверить по переданным метаданным.",
+        "flags": [
+          "no_snippet"
+        ],
+        "reviewedAt": "2026-11-14",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_b07ec59de5f0",
+      "slug": "mat_b07ec59de5f0",
+      "kind": "docs",
+      "title": "inkle/ink — язык интерактивного нарратива",
+      "provider": "ink-github",
+      "url": "https://github.com/inkle/ink",
+      "canonicalUrl": "https://github.com/inkle/ink",
+      "language": "en",
+      "access": "free",
+      "description": "Репозиторий ink: язык, примеры и интеграции для интерактивного сценария.",
+      "license": "© ink-github; ссылка на источник, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "ink-github",
+        "externalId": "ink-github",
+        "url": "https://github.com/inkle/ink",
+        "retrievedAt": "2026-11-13",
+        "license": "© ink-github; ссылка."
+      },
+      "retrievedAt": "2026-11-13",
+      "links": [
+        {
+          "competencyId": "comp_46c6af924175",
+          "relevance": 0.85,
+          "reason": "Репозиторий и документация ink для ветвящегося сценария.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_46c6af924175"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.72,
+        "usefulness": 0.85,
+        "whyUseful": "Официальный репозиторий и документация языка ink с примерами для написания ветвящегося сценария и работы с переменными.",
+        "reason": "Материал является первоисточником по одному из двух названных в компетенции инструментов (ink) и напрямую покрывает темы ветвления и состояния истории. Однако snippet пуст, поэтому конкретное содержание, наличие обучающих примеров и актуальность версии не проверены — нужна ручная проверка перед принятием. Формат reference-документации даёт теорию, но практику проверки сходимости веток придётся закрывать другим материалом.",
+        "flags": [
+          "no_snippet"
+        ],
+        "reviewedAt": "2026-11-14",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_da07cf5e96f7",
+      "slug": "mat_da07cf5e96f7",
+      "kind": "docs",
+      "title": "ink — нарративный скриптовый язык",
+      "provider": "ink-official",
+      "url": "https://www.inklestudios.com/ink/",
+      "canonicalUrl": "https://www.inklestudios.com/ink/",
+      "language": "en",
+      "access": "free",
+      "description": "ink — скриптовый язык интерактивного нарратива с ветвлением и переменными.",
+      "license": "© ink-official; ссылка на источник, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "ink-official",
+        "externalId": "ink-official",
+        "url": "https://www.inklestudios.com/ink/",
+        "retrievedAt": "2026-11-13",
+        "license": "© ink-official; ссылка."
+      },
+      "retrievedAt": "2026-11-13",
+      "links": [
+        {
+          "competencyId": "comp_46c6af924175",
+          "relevance": 0.8,
+          "reason": "Официальный сайт ink: синтаксис, примеры и интеграции.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_46c6af924175"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.72,
+        "usefulness": 0.86,
+        "whyUseful": "Официальная документация по ink покрывает ветвление и переменные интерактивного сценария.",
+        "reason": "Материал напрямую относится к инструментам интерактивного нарратива (ink), но пустой snippet не позволяет подтвердить содержание и достаточную практическую ценность без проверки.",
+        "flags": [
+          "no_snippet"
+        ],
+        "reviewedAt": "2026-11-14",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_ab5b48f72491",
+      "slug": "mat_ab5b48f72491",
+      "kind": "docs",
+      "title": "GameAnalytics — документация",
+      "provider": "gameanalytics-docs",
+      "url": "https://docs.gameanalytics.com/",
+      "canonicalUrl": "https://docs.gameanalytics.com/",
+      "language": "en",
+      "access": "free",
+      "description": "Документация GameAnalytics: события, воронки и метрики игрового поведения.",
+      "license": "© gameanalytics-docs; ссылка на источник, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "gameanalytics-docs",
+        "externalId": "gameanalytics-docs",
+        "url": "https://docs.gameanalytics.com/",
+        "retrievedAt": "2026-11-13",
+        "license": "© gameanalytics-docs; ссылка."
+      },
+      "retrievedAt": "2026-11-13",
+      "links": [
+        {
+          "competencyId": "comp_41f8a136b45b",
+          "relevance": 0.85,
+          "reason": "События, воронки и метрики игрового поведения.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_41f8a136b45b"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.55,
+        "usefulness": 0.6,
+        "whyUseful": "Справочник по событиям, воронкам и метрикам игрового поведения от вендора игровой аналитики.",
+        "reason": "Материал по теме компетенции: документация провайдера игровой аналитики охватывает события, воронки и метрики поведения. Однако snippet пустой, поэтому релевантность и практическая применимость не подтверждены по содержанию; кроме того, это инструментальная документация конкретного сервиса, а не общий материал по методологии метрик. Возможен английский язык изложения. Требуется подтверждение.",
+        "flags": [
+          "no_snippet"
+        ],
+        "reviewedAt": "2026-11-14",
+        "reviewer": "methodologist-v1",
+        "status": "needs_confirmation"
+      }
+    },
+    {
+      "id": "material_daad6743242d",
+      "slug": "mat_daad6743242d",
+      "kind": "docs",
+      "title": "Unity Analytics — документация",
+      "provider": "unity-analytics",
+      "url": "https://docs.unity.com/en-us/analytics",
+      "canonicalUrl": "https://docs.unity.com/en-us/analytics",
+      "language": "en",
+      "access": "freemium",
+      "description": "Документация Unity Analytics: события, сегменты и дашборды игровой аналитики.",
+      "license": "© unity-analytics; ссылка на источник, тексты не копируются.",
+      "sourceRef": {
+        "sourceId": "unity-analytics",
+        "externalId": "unity-analytics",
+        "url": "https://docs.unity.com/en-us/analytics",
+        "retrievedAt": "2026-11-13",
+        "license": "© unity-analytics; ссылка."
+      },
+      "retrievedAt": "2026-11-13",
+      "links": [
+        {
+          "competencyId": "comp_41f8a136b45b",
+          "relevance": 0.85,
+          "reason": "События, сегменты и дашборды игровой аналитики.",
+          "modelProposal": false
+        }
+      ],
+      "discoveredFor": [
+        "comp_41f8a136b45b"
+      ],
+      "status": "accepted",
+      "issues": [],
+      "review": {
+        "verdict": "confirm",
+        "confidence": 0.62,
+        "usefulness": 0.6,
+        "whyUseful": "Официальная документация по событиям, сегментам и дашбордам Unity Analytics поможет освоить игровые метрики.",
+        "reason": "Материал тематически релевантен компетенции, но snippet пустой, поэтому нельзя подтвердить содержание и практическую ценность без дополнительной проверки.",
+        "flags": [
+          "no_snippet"
         ],
         "reviewedAt": "2026-11-14",
         "reviewer": "methodologist-v1",

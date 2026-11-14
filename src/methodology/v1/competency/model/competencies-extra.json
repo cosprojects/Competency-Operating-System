@@ -1436,6 +1436,39 @@
       "titleEn": "AI in game development",
       "definition": "Применяет ИИ в геймдеве: генерация контента, ассистирование в дизайне и инструменты, с проверкой качества и соблюдением прав.",
       "priorityHint": "core"
+    },
+    {
+      "id": "game-multiplayer-social",
+      "branchId": "game",
+      "branchTitle": "Гейм-дизайн",
+      "sectionId": "game-systems",
+      "sectionTitle": "game-systems",
+      "title": "Мультиплеер и социальные механики",
+      "titleEn": "Multiplayer and social mechanics",
+      "definition": "Проектирует совместную игру так, чтобы у участников были понятные роли и взаимодействие, а социальные циклы и общие цели давали причины возвращаться; баланс команд и ролей проверяется отдельно.",
+      "priorityHint": "core"
+    },
+    {
+      "id": "game-narrative-tools",
+      "branchId": "game",
+      "branchTitle": "Гейм-дизайн",
+      "sectionId": "game-production",
+      "sectionTitle": "game-production",
+      "title": "Нарративные инструменты и интерактивный сценарий",
+      "titleEn": "Narrative tools and interactive script",
+      "definition": "Работает с инструментами интерактивного нарратива (Twine, ink): пишет ветвящийся сценарий, управляет переменными и проверяет, что история сходится при разных выборах игрока.",
+      "priorityHint": "core"
+    },
+    {
+      "id": "game-analytics",
+      "branchId": "game",
+      "branchTitle": "Гейм-дизайн",
+      "sectionId": "game-production",
+      "sectionTitle": "game-production",
+      "title": "Игровая аналитика и метрики",
+      "titleEn": "Game analytics and metrics",
+      "definition": "Собирает и интерпретирует игровые метрики: события, воронки, удержание и сегменты, чтобы решения о дизайне опирались на поведение игроков, а не на догадки.",
+      "priorityHint": "core"
     }
   ]
 }

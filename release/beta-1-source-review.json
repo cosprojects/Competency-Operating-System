@@ -13033,6 +13033,60 @@
       "reason": "Manual game-layer review (COS-RES-031): Разборы GMTK касаются ИИ-инструментов и их влияния на дизайн игр.",
       "reviewedBy": "game-layer-review-v1",
       "reviewedAt": "2026-11-13"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "game-multiplayer-social",
+      "sourceId": "gdcvault",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "game-multiplayer-social",
+      "sourceId": "gamedeveloper",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "game-narrative-tools",
+      "sourceId": "twine-cookbook",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "game-narrative-tools",
+      "sourceId": "ink-github",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "game-analytics",
+      "sourceId": "gameanalytics-docs",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.game",
+      "competencyId": "game-analytics",
+      "sourceId": "unity-analytics",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-14"
     }
   ],
   "notes": [

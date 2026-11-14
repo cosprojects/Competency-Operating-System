@@ -1,6 +1,6 @@
 {
   "linksVersion": "1.0.0",
-  "updatedAt": "2026-11-13",
+  "updatedAt": "2026-11-14",
   "description": "Ручной слой связей «компетенция → учебные источники». Источник истины для learning:map; при model:sync мержится в competencies.json. Источник — место, где учиться компетенции, а не автоматическое доказательство её содержания.",
   "links": [
     {
@@ -13,8 +13,7 @@
         "coursera-microsoft-product-design",
         "coursera-design-fundamentals-ai",
         "uxdesigninstitute-free-ux-course",
-        "tilda-education-courses-web-design-designthinking",
-        "specialist-ru-course-vizkom"
+        "tilda-education-courses-web-design-designthinking"
       ],
       "rationale": "School of Motion: learning paths — рамка обучения моушн-дизайну.; Курсы вводят дизайн-процесс; программа Практикума задаёт рамку профессии.; Дизайн-процесс и product design в курсах.; Программа Практикума по графическому дизайну задаёт рамку профессии.; совпадение с «Дизайн-мышление», формат course-platform, score 0.40; совпадение с «Дизайн-мышление», формат course-platform, score 0.37, домен уже в реестре: specialist-ru-course-vizkom; совпадение с «Дизайн-мышление», формат course-platform, score 0.37, домен уже в реестре: specialist-ru-course-vizkom; совпадение с «Дизайн-мышление», формат course-platform, score 0.37, домен уже в реестре: specialist-ru-course-vizkom; совпадение с «Дизайн-мышление», формат course-platform, score 0.37, домен уже в реестре: specialist-ru-course-vizkom; совпадение с «Дизайн-мышление», формат course-platform, score 0.37, домен уже в реестре: specialist-ru-course-vizkom; совпадение с «Дизайн-мышление», формат course-platform, score 0.37, домен уже в реестре: specialist-ru-course-vizkom; совпадение с «Дизайн-мышление», формат course-platform, score 0.37, домен уже в реестре: specialist-ru-course-vizkom"
     },
@@ -61,8 +60,7 @@
         "alison-graphic-design",
         "coursera-graphic-fundamentals",
         "coursera-web-design-free",
-        "hse-ru-edu-courses-470898711",
-        "specialist-ru-course-vizkom"
+        "hse-ru-edu-courses-470898711"
       ],
       "rationale": "Курсы и разбор кейса айдентики Motion Design School.; Visual design в курсе и программа Практикума.; Visual design в UX/UI-курсе.; Visual communication и основы дизайна в курсах.; совпадение с «Визуальная коммуникация», формат course-platform, score 0.37; совпадение с «Визуальная коммуникация», формат course-platform, score 0.37, домен уже в реестре: specialist-ru-course-vizkom; совпадение с «Визуальная коммуникация», формат course-platform, score 0.37, домен уже в реестре: specialist-ru-course-vizkom; совпадение с «Визуальная коммуникация», формат course-platform, score 0.37, домен уже в реестре: hse-ru-edu-courses-470898711; совпадение с «Визуальная коммуникация», формат course-platform, score 0.37; совпадение с «Визуальная коммуникация», формат course-platform, score 0.37; совпадение с «Визуальная коммуникация», формат course-platform, score 0.37; совпадение с «Визуальная коммуникация», формат course-platform, score 0.37; совпадение с «Визуальная коммуникация», формат course-platform, score 0.37"
     },
@@ -902,8 +900,7 @@
     {
       "competencyId": "ui-framer",
       "sourceIds": [
-        "framer-learn",
-        "udemy-interior-design-free"
+        "framer-learn"
       ],
       "rationale": "Framer Learn: официальные материалы по интерактивным прототипам.; совпадение с «Framer: интерактивные прототипы», формат course-platform, score 0.49, домен уже в реестре: udemy-interior-design-free; совпадение с «Framer: интерактивные прототипы», формат course-platform, score 0.49, домен уже в реестре: udemy-interior-design-free; совпадение с «Framer: интерактивные прототипы», формат course-platform, score 0.49, домен уже в реестре: udemy-interior-design-free; совпадение с «Framer: интерактивные прототипы», формат course-platform, score 0.49, домен уже в реестре: udemy-interior-design-free; совпадение с «Framer: интерактивные прототипы», формат course-platform, score 0.49, домен уже в реестре: udemy-interior-design-free; совпадение с «Framer: интерактивные прототипы», формат course-platform, score 0.49, домен уже в реестре: udemy-interior-design-free"
     },
@@ -1078,8 +1075,7 @@
     {
       "competencyId": "aidesigner-ai-development",
       "sourceIds": [
-        "ai-softuni-bg-courses-ai-assisted-development",
-        "datacamp-com-ru-courses-ai-assisted-coding-for-developers"
+        "ai-softuni-bg-courses-ai-assisted-development"
       ],
       "rationale": "совпадение с «AI-assisted разработка», формат course-platform, score 0.42; совпадение с «AI-assisted разработка», формат course-platform, score 0.37; совпадение с «AI-assisted разработка», формат course-platform, score 0.42; совпадение с «AI-assisted разработка», формат course-platform, score 0.42; совпадение с «AI-assisted разработка», формат course-platform, score 0.42; совпадение с «AI-assisted разработка», формат course-platform, score 0.42; совпадение с «AI-assisted разработка», формат course-platform, score 0.42"
     },
@@ -1155,13 +1151,6 @@
         "intuit-ru-studies-courses-611-467-info"
       ],
       "rationale": "источники смежной компетенции ui-web-technologies"
-    },
-    {
-      "competencyId": "3d-presentation",
-      "sourceIds": [
-        "specialist-ru-course-vizkom"
-      ],
-      "rationale": "совпадение с «Презентация 3D-проекта», формат course-platform, score 0.37"
     },
     {
       "competencyId": "game-mechanics-systems",
@@ -1280,6 +1269,30 @@
         "gmtk-site"
       ],
       "rationale": "Игровой слой: источники по гейм-дизайну (COS-RES-031)."
+    },
+    {
+      "competencyId": "game-multiplayer-social",
+      "sourceIds": [
+        "gdcvault",
+        "gamedeveloper"
+      ],
+      "rationale": "Жанровый слой гейм-дизайна (COS-RES-031 v1.1)."
+    },
+    {
+      "competencyId": "game-narrative-tools",
+      "sourceIds": [
+        "twine-cookbook",
+        "ink-github"
+      ],
+      "rationale": "Жанровый слой гейм-дизайна (COS-RES-031 v1.1)."
+    },
+    {
+      "competencyId": "game-analytics",
+      "sourceIds": [
+        "gameanalytics-docs",
+        "unity-analytics"
+      ],
+      "rationale": "Жанровый слой гейм-дизайна (COS-RES-031 v1.1)."
     }
   ]
 }

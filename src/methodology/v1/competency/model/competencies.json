@@ -19,8 +19,7 @@
         "coursera-microsoft-product-design",
         "coursera-design-fundamentals-ai",
         "uxdesigninstitute-free-ux-course",
-        "tilda-education-courses-web-design-designthinking",
-        "specialist-ru-course-vizkom"
+        "tilda-education-courses-web-design-designthinking"
       ]
     },
     {
@@ -459,8 +458,7 @@
         "alison-graphic-design",
         "coursera-graphic-fundamentals",
         "coursera-web-design-free",
-        "hse-ru-edu-courses-470898711",
-        "specialist-ru-course-vizkom"
+        "hse-ru-edu-courses-470898711"
       ]
     },
     {
@@ -634,8 +632,7 @@
         ]
       },
       "learningSourceIds": [
-        "framer-learn",
-        "udemy-interior-design-free"
+        "framer-learn"
       ]
     },
     {
@@ -1570,8 +1567,7 @@
       "definition": "Выстраивать подачу и защиту 3D-проекта так, чтобы показать ракурсы, этапы работы и технические решения и аргументировать принятые решения перед аудиторией.",
       "priorityHint": "core",
       "learningSourceIds": [
-        "practicum-3ddesigner",
-        "specialist-ru-course-vizkom"
+        "practicum-3ddesigner"
       ]
     },
     {
@@ -2277,8 +2273,7 @@
       "definition": "Реализовывать интерфейс с помощью AI coding agents, сохраняя архитектурную целостность продукта, проверяемость кода и предсказуемость результата за счёт локальных изменений и контроля версий.",
       "priorityHint": "core",
       "learningSourceIds": [
-        "ai-softuni-bg-courses-ai-assisted-development",
-        "datacamp-com-ru-courses-ai-assisted-coding-for-developers"
+        "ai-softuni-bg-courses-ai-assisted-development"
       ]
     },
     {
@@ -2551,6 +2546,51 @@
         "gamedeveloper",
         "gdcvault",
         "gmtk-site"
+      ]
+    },
+    {
+      "id": "game-multiplayer-social",
+      "branchId": "game",
+      "branchTitle": "Гейм-дизайн",
+      "sectionId": "game-systems",
+      "sectionTitle": "game-systems",
+      "title": "Мультиплеер и социальные механики",
+      "titleEn": "Multiplayer and social mechanics",
+      "definition": "Проектирует мультиплеер и социальные механики: роли игроков, взаимодействие и социальные циклы, чтобы совместная игра давала понятные роли и причины возвращаться.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "gdcvault",
+        "gamedeveloper"
+      ]
+    },
+    {
+      "id": "game-narrative-tools",
+      "branchId": "game",
+      "branchTitle": "Гейм-дизайн",
+      "sectionId": "game-production",
+      "sectionTitle": "game-production",
+      "title": "Нарративные инструменты и интерактивный сценарий",
+      "titleEn": "Narrative tools and interactive script",
+      "definition": "Работает с инструментами интерактивного нарратива (Twine, ink): пишет ветвящийся сценарий, управляет переменными и проверяет, что история сходится при разных выборах игрока.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "twine-cookbook",
+        "ink-github"
+      ]
+    },
+    {
+      "id": "game-analytics",
+      "branchId": "game",
+      "branchTitle": "Гейм-дизайн",
+      "sectionId": "game-production",
+      "sectionTitle": "game-production",
+      "title": "Игровая аналитика и метрики",
+      "titleEn": "Game analytics and metrics",
+      "definition": "Собирает и интерпретирует игровые метрики: события, воронки, удержание и сегменты, чтобы решения о дизайне опирались на поведение игроков, а не на догадки.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "gameanalytics-docs",
+        "unity-analytics"
       ]
     }
   ]

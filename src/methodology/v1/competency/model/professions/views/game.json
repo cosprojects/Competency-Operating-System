@@ -135,6 +135,11 @@
           "competencyId": "game-level-design",
           "tier": "core",
           "order": 34
+        },
+        {
+          "competencyId": "game-multiplayer-social",
+          "tier": "core",
+          "order": 44
         }
       ]
     },
@@ -340,6 +345,16 @@
           "competencyId": "game-ai-gamedev",
           "tier": "core",
           "order": 43
+        },
+        {
+          "competencyId": "game-narrative-tools",
+          "tier": "core",
+          "order": 45
+        },
+        {
+          "competencyId": "game-analytics",
+          "tier": "core",
+          "order": 46
         }
       ]
     }

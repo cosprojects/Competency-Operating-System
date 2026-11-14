@@ -123,56 +123,56 @@ export function MaterialCard({
             <span className="material-bg-fallback" />
           )}
         </div>
+        <div className="material-badges">
+          <span className="material-pill">{sourceKindLabel(source.kind)}</span>
+          <span className="material-pill" title={accessHint(source.access)}>
+            {accessLabel(source.access)}
+          </span>
+          <span className="material-pill">
+            {source.languages.length > 0
+              ? source.languages.map((language) => language.toUpperCase()).join(", ")
+              : "язык не указан"}
+          </span>
+          <span className="material-badge-slot">
+            {viewed ? (
+              <span className="material-viewed-icon" title="Просмотрен" aria-label="Просмотрен">
+                <IconEye />
+              </span>
+            ) : null}
+            {!reviewAction ? (
+              <SourceReviewBadge
+                sourceId={source.id}
+                sourceTitle={source.title}
+                competencyId={competencyId}
+                competencyTitle={competencyTitle}
+                initialStatus={source.reviewStatus}
+                canReview={canReview}
+                returnTo={returnTo}
+                myReviewAction={reviewAction}
+                onDecided={(action) => setReviewAction(action)}
+              />
+            ) : null}
+            {canSave ? (
+              <SaveButton
+                targetType="SOURCE"
+                targetId={source.id}
+                initialSaved={Boolean(source.saved)}
+                variant="icon"
+              />
+            ) : (
+              <Link
+                className="icon-button material-save-guest"
+                href={`/register?returnTo=${encodeURIComponent(returnTo)}`}
+                aria-label="Войти, чтобы сохранить материал"
+                title="Войти, чтобы сохранить материал"
+              >
+                <IconStar />
+              </Link>
+            )}
+          </span>
+        </div>
       </div>
 
-      <div className="material-badges">
-        <span className="material-pill">{sourceKindLabel(source.kind)}</span>
-        <span className="material-pill" title={accessHint(source.access)}>
-          {accessLabel(source.access)}
-        </span>
-        <span className="material-pill">
-          {source.languages.length > 0
-            ? source.languages.map((language) => language.toUpperCase()).join(", ")
-            : "язык не указан"}
-        </span>
-        <span className="material-badge-slot">
-          {viewed ? (
-            <span className="material-viewed-icon" title="Просмотрен" aria-label="Просмотрен">
-              <IconEye />
-            </span>
-          ) : null}
-          {!reviewAction ? (
-            <SourceReviewBadge
-              sourceId={source.id}
-              sourceTitle={source.title}
-              competencyId={competencyId}
-              competencyTitle={competencyTitle}
-              initialStatus={source.reviewStatus}
-              canReview={canReview}
-              returnTo={returnTo}
-              myReviewAction={reviewAction}
-              onDecided={(action) => setReviewAction(action)}
-            />
-          ) : null}
-          {canSave ? (
-            <SaveButton
-              targetType="SOURCE"
-              targetId={source.id}
-              initialSaved={Boolean(source.saved)}
-              variant="icon"
-            />
-          ) : (
-            <Link
-              className="icon-button material-save-guest"
-              href={`/register?returnTo=${encodeURIComponent(returnTo)}`}
-              aria-label="Войти, чтобы сохранить материал"
-              title="Войти, чтобы сохранить материал"
-            >
-              <IconStar />
-            </Link>
-          )}
-        </span>
-      </div>
       <div className="material-body">
         <h4 className="material-title">{title}</h4>
         <p className="material-desc">{description}</p>

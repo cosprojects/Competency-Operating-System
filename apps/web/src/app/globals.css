@@ -795,7 +795,7 @@ svg {
 .home-layout {
   display: grid;
   grid-template-columns: minmax(0, 808px) 352px;
-  align-items: stretch;
+  align-items: start;
   gap: 40px;
   width: 100%;
   max-width: 1200px;
@@ -2374,7 +2374,7 @@ html[data-consent="pending"] .canvas-toolbar {
   );
 }
 
-.material-card > :not(.material-bg):not(.material-badges) {
+.material-card > :not(.material-bg) {
   position: relative;
   z-index: 1;
 }
@@ -2421,12 +2421,9 @@ html[data-consent="pending"] .canvas-toolbar {
   outline: none;
 }
 
-.material-confirm::after {
-  content: attr(data-hint);
-  position: absolute;
-  right: 0;
-  bottom: calc(100% + 8px);
-  z-index: 30;
+.material-confirm-tooltip {
+  position: fixed;
+  z-index: 80;
   width: max-content;
   max-width: 240px;
   padding: 8px 12px;
@@ -2440,16 +2437,9 @@ html[data-consent="pending"] .canvas-toolbar {
   line-height: 16px;
   text-align: left;
   white-space: normal;
-  opacity: 0;
-  transform: translateY(4px);
   pointer-events: none;
-  transition: opacity 0.15s ease, transform 0.15s ease;
-}
-
-.material-confirm:hover::after,
-.material-confirm:focus-visible::after {
-  opacity: 1;
-  transform: translateY(0);
+  transform: translate(-100%, -100%);
+  animation: toast-in 0.15s ease both;
 }
 
 .material-text {
@@ -3919,31 +3909,24 @@ html[data-consent="pending"] .canvas-toolbar {
   flex-direction: column;
   gap: 40px;
   min-width: 0;
-  min-height: 0;
 }
 
 .home-about {
   display: flex;
   flex-direction: column;
-  flex: 0 0 auto;
   gap: 16px;
 }
 
-/* Лог занимает остаток высоты основной секции и скроллится внутри. */
 .home-log {
   display: flex;
-  flex: 1 1 auto;
   flex-direction: column;
   gap: 16px;
-  min-height: 0;
-  overflow: hidden;
   padding: 23px;
   border-radius: var(--r-12);
   background: var(--surface);
 }
 
 .home-log h2 {
-  flex: 0 0 auto;
   margin: 0;
   font-size: 18px;
   font-weight: 700;
@@ -3952,33 +3935,8 @@ html[data-consent="pending"] .canvas-toolbar {
 
 .home-log-list {
   display: flex;
-  flex: 1 1 auto;
   flex-direction: column;
   gap: 10px;
-  min-height: 0;
-  overflow-y: auto;
-  overscroll-behavior: contain;
-  padding-right: 4px;
-  scrollbar-color: var(--line-soft) transparent;
-  scrollbar-width: thin;
-}
-
-.home-log-list::-webkit-scrollbar {
-  width: 6px;
-}
-
-.home-log-list::-webkit-scrollbar-thumb {
-  border-radius: 999px;
-  background: var(--line-soft);
-}
-
-.home-log-list::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.home-log-list:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
 }
 
 .home-log-item {
@@ -4003,7 +3961,9 @@ html[data-consent="pending"] .canvas-toolbar {
 
 .home-log-title {
   min-width: 0;
-  overflow-wrap: anywhere;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .home-log-desc {
@@ -4015,21 +3975,12 @@ html[data-consent="pending"] .canvas-toolbar {
 
 @media (max-width: 1180px) {
   .home-layout {
-    align-items: start;
     grid-template-columns: minmax(0, 1fr);
     gap: 32px;
   }
 
   .home-rail {
     gap: 24px;
-  }
-
-  .home-log {
-    flex: 0 0 auto;
-  }
-
-  .home-log-list {
-    max-height: 70vh;
   }
 }
 
@@ -4359,7 +4310,7 @@ html[data-consent="pending"] .canvas-toolbar {
   flex-direction: column;
   gap: 0;
   padding: 0;
-  overflow: visible;
+  overflow: hidden;
   border: 1px solid var(--line-card);
   border-radius: var(--r-24);
   background: var(--surface);
@@ -4375,7 +4326,6 @@ html[data-consent="pending"] .canvas-toolbar {
   position: relative;
   height: 178px;
   overflow: hidden;
-  border-radius: 12px 12px 0 0;
   background: linear-gradient(180deg, #eef2ff 0%, #f8fafc 100%);
 }
 
@@ -4410,7 +4360,6 @@ html[data-consent="pending"] .canvas-toolbar {
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: inherit;
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0.04) 0%,
@@ -6074,11 +6023,4 @@ button.rail-item {
 
 .welcome-toast .icon-button {
   margin-left: auto;
-}
-
-
-/* Подсказка бейджа «Подтвердить» должна быть поверх соседних карточек. */
-.material-card:hover,
-.material-card:focus-within {
-  z-index: 20;
 }

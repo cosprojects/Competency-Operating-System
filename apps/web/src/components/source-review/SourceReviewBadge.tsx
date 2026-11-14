@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { IconCheckCircle, IconCloseCircle } from "@/components/icons";
 import { trackClient } from "@/lib/client-analytics";
 import { showToast } from "@/components/ui/Toast";
@@ -57,6 +58,7 @@ export function SourceReviewBadge({
 }) {
   const router = useRouter();
   const closeRef = useRef<HTMLButtonElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
   const [status, setStatus] = useState<SourceReviewStatus | undefined>(initialStatus);
   const [open, setOpen] = useState(false);
   const [mode, setMode] = useState<"choice" | "block" | "done">("choice");
@@ -65,6 +67,12 @@ export function SourceReviewBadge({
   const [submitState, setStatus2] = useState<"idle" | "sending" | "error">("idle");
   const [error, setError] = useState<string | null>(null);
   const [decided, setDecided] = useState<ReviewAction | null>(null);
+  // Подсказка рендерится порталом поверх страницы, чтобы её не обрезала карточка.
+  const [hint, setHint] = useState<{ open: boolean; top: number; left: number }>({
+    open: false,
+    top: 0,
+    left: 0,
+  });
 
   useEffect(() => {
     if (!open) return;
@@ -84,7 +92,25 @@ export function SourceReviewBadge({
   const badge = status ? sourceReviewBadge(status) : null;
   if (!badge || decided || myReviewAction) return null;
 
+  function showHint() {
+    const element = buttonRef.current;
+    if (!element) return;
+    const rect = element.getBoundingClientRect();
+    // Держим правый край подсказки у кнопки, но не даём уйти за левый край экрана.
+    const estimatedWidth = 240;
+    setHint({
+      open: true,
+      top: rect.top - 8,
+      left: Math.min(Math.max(rect.right, estimatedWidth + 8), window.innerWidth - 8),
+    });
+  }
+
+  function hideHint() {
+    setHint((current) => (current.open ? { ...current, open: false } : current));
+  }
+
   function start() {
+    setHint((current) => ({ ...current, open: false }));
     trackClient("source_review_open", { source_id: sourceId, competency_id: competencyId });
     if (!canReview) {
       router.push(`/login?returnTo=${encodeURIComponent(returnTo)}`);
@@ -183,21 +209,42 @@ export function SourceReviewBadge({
       <button
         type="button"
         className="material-confirm"
+        ref={buttonRef}
         data-hint={badge.hint}
         aria-label={`${badge.label}. ${badge.hint}`}
+        aria-describedby={hint.open ? "source-review-hint" : undefined}
+        onMouseEnter={showHint}
+        onMouseLeave={hideHint}
+        onFocus={showHint}
+        onBlur={hideHint}
         onClick={start}
       >
         {badge.label}
       </button>
 
-      {open ? (
-        <div
-          className="modal-backdrop"
-          role="presentation"
-          onMouseDown={(event) => {
-            if (event.target === event.currentTarget) setOpen(false);
-          }}
-        >
+      {hint.open
+        ? createPortal(
+            <span
+              className="material-confirm-tooltip"
+              role="tooltip"
+              id="source-review-hint"
+              style={{ top: hint.top, left: hint.left }}
+            >
+              {badge.hint}
+            </span>,
+            document.body,
+          )
+        : null}
+
+      {open
+        ? createPortal(
+            <div
+              className="modal-backdrop"
+              role="presentation"
+              onMouseDown={(event) => {
+                if (event.target === event.currentTarget) setOpen(false);
+              }}
+            >
           <section
             className="feedback-dialog"
             role="dialog"
@@ -313,9 +360,11 @@ export function SourceReviewBadge({
                 )}
               </>
             )}
-          </section>
-        </div>
-      ) : null}
+              </section>
+            </div>,
+            document.body,
+          )
+        : null}
     </>
   );
 }

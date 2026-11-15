@@ -97,6 +97,11 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Точечная бумага больше не рисуется на body: её держит отдельный слой
+   `.paper-layer` (раздел «Движение и глубина» в конце файла), который слегка
+   уходит за курсором, а карточки над ним — нет. Две сетки дали бы грязное
+   двоение, поэтому фон остался только у слоя. Слой рендерится сервером, так
+   что картинка не зависит от JS. */
 body {
   margin: 0;
   min-height: 100vh;
@@ -105,11 +110,6 @@ body {
   font-size: 16px;
   line-height: 1.55;
   background-color: var(--bg);
-  background-image:
-    radial-gradient(circle at 2px 2px, #eff2f6 2px, transparent 2px),
-    radial-gradient(circle at 18px 34px, #eff2f6 2px, transparent 2px);
-  background-size: 32px 64px;
-  background-attachment: fixed;
 }
 
 h1,
@@ -5597,6 +5597,10 @@ button.rail-item {
   display: flex;
   flex-direction: column;
   min-height: 100svh;
+  /* Контент выше слоя бумаги. Без собственного z-index позиционированный
+     `.paper-layer` (z-index: 0) перекрыл бы статичные карточки. */
+  position: relative;
+  z-index: 1;
 }
 
 .app-viewport > .page-screen {
@@ -6087,4 +6091,620 @@ button.rail-item {
   flex: 0 0 16px;
   width: 16px;
   height: 16px;
+}
+
+/* ================================================================== */
+/* Движение и глубина (COS-EAR-016)                                   */
+/*                                                                    */
+/* Язык движения: COS-COM-007 §4–5 (движение объясняет изменение,      */
+/* сила отклика пропорциональна значимости) и COS-COM-011 §2.5         */
+/* (ease-out, без overshoot/bounce/spring, без частиц и свечения).     */
+/*                                                                    */
+/* Правила раздела:                                                   */
+/* 1. Анимируются только transform и opacity.                         */
+/* 2. Параллакс включается атрибутом data-depth и живёт в CSS-         */
+/*    переменных, которые пишет lib/motion/pointer.ts — React в        */
+/*    движении не участвует.                                          */
+/* 3. Всё выключается атрибутом data-motion="off" (reduced motion) и   */
+/*    переменными --pointer-* = 0.                                    */
+/* 4. Один выразительный акцент — .cta-primary (PrimaryCta); остальное */
+/*    движение сдержанное.                                            */
+/* ================================================================== */
+
+:root {
+  --dur-75: 75ms;
+  --dur-140: 140ms;
+  --dur-200: 200ms;
+  --dur-280: 280ms;
+  --dur-560: 560ms;
+  --ease-out-soft: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-out-structure: cubic-bezier(0.33, 1, 0.68, 1);
+  --ease-in-exit: cubic-bezier(0.4, 0, 1, 1);
+  --parallax-max: 6px;
+  --depth-far: 0.25;
+  --depth-mid: 0.55;
+  --depth-near: 1;
+}
+
+/* Точечная бумага: тот же рисунок, что был на body. Слой вынесен отдельно,
+   чтобы он мог слегка уходить за курсором, пока карточки над ним стоят. */
+.paper-layer {
+  position: fixed;
+  inset: -16px;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 2px 2px, #eff2f6 2px, transparent 2px),
+    radial-gradient(circle at 18px 34px, #eff2f6 2px, transparent 2px);
+  background-size: 32px 64px;
+  transform: translate3d(
+    calc(var(--pointer-nx, 0) * -6px),
+    calc(var(--pointer-ny, 0) * -6px),
+    0
+  );
+}
+
+/* Глубина: элемент тем сильнее отстаёт от курсора, чем он ближе к зрителю.
+   Отрицательный знак — курсор «толкает» слой, карточка уходит в сторону. */
+[data-depth] {
+  transform: translate3d(
+    calc(var(--pointer-nx, 0) * var(--parallax-max) * var(--depth, 0) * -1),
+    calc(var(--pointer-ny, 0) * var(--parallax-max) * var(--depth, 0) * -1),
+    0
+  );
+}
+
+[data-depth="far"] {
+  --depth: var(--depth-far);
+}
+
+[data-depth="mid"] {
+  --depth: var(--depth-mid);
+}
+
+[data-depth="near"] {
+  --depth: var(--depth-near);
+}
+
+/* Появление на первом кадре. Работает без JS: анимация стартует, как только
+   элемент отрисован, поэтому контент не может «застрять» невидимым.
+   Анимируется отдельное свойство `translate`, а не `transform`: иначе
+   fill-mode: both навсегда перебил бы transform у :hover и у [data-depth]. */
+@keyframes enter-rise {
+  from {
+    opacity: 0;
+    translate: 0 6px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+[data-enter] {
+  animation: enter-rise var(--dur-560) var(--ease-out-soft) both;
+}
+
+/* Стаггер задаётся значением атрибута, чтобы серверные компоненты не
+   протаскивали inline-стили с кастомными переменными. Потолок — 180ms. */
+[data-enter="1"] {
+  animation-delay: 60ms;
+}
+
+[data-enter="2"] {
+  animation-delay: 120ms;
+}
+
+[data-enter="3"] {
+  animation-delay: 180ms;
+}
+
+/* Появление секций ниже первого экрана. Стартовое состояние ставит JS
+   (`lib/motion/reveal.ts`), поэтому без JS и до гидрации ничего не спрятано. */
+@keyframes reveal-rise {
+  from {
+    opacity: 0;
+    translate: 0 10px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+[data-motion="on"] [data-reveal="out"] {
+  opacity: 0;
+  translate: 0 10px;
+}
+
+[data-motion="on"] [data-reveal="in"] {
+  animation: reveal-rise var(--dur-560) var(--ease-out-soft) both;
+}
+
+/* Полоса покрытия: рост слева направо вместо мгновенной готовой ширины. */
+@keyframes coverage-in {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.coverage-bar span {
+  transform-origin: left center;
+  animation: coverage-in var(--dur-560) var(--ease-out-soft) both;
+}
+
+/* Кнопка «очистить» появляется вместе с первым символом запроса: короткий
+   отклик, чтобы элемент не «выскакивал» из раскладки. */
+@keyframes fade-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.search-clear {
+  animation: fade-pop var(--dur-140) var(--ease-out-soft) both;
+}
+
+/* Нить графа растёт от начала к концу: `pathLength={1}` нормализует длину,
+   поэтому дефолтный dash-offset одинаков для всех рёбер. Задержку задаёт
+   компонент через inline animation-delay. */
+@keyframes edge-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.graph-edge.is-drawing {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: edge-draw var(--dur-560) var(--ease-out-structure) both;
+}
+
+/* Рёбер больше, чем разумно рисовать по одному: слой проявляется целиком. */
+@keyframes edges-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.graph-edges.is-fading {
+  animation: edges-fade var(--dur-200) var(--ease-out-soft) both;
+}
+
+/* Узел графа приподнимается на 1px — отклик на наведение, без изменения
+   геометрии раскладки и без will-change (иначе текст мылится при зуме). */
+@media (hover: hover) {
+  .graph-node {
+    transition: border-color var(--dur-140) var(--ease-out-soft),
+      box-shadow var(--dur-140) var(--ease-out-soft),
+      transform var(--dur-140) var(--ease-out-soft),
+      opacity var(--dur-140) var(--ease-out-soft);
+  }
+
+  .graph-node:hover,
+  .graph-node.is-hover {
+    transform: translateY(-1px);
+  }
+}
+
+/* Сохранение в избранное: короткий отклик на действие. Единственный
+   микро-overshoot (1.12) — это фидбек, а не декор: COS-COM-007 §4. */
+@keyframes star-pop {
+  0% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1.12);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.icon-button.is-popping svg {
+  animation: star-pop 240ms var(--ease-out-soft);
+}
+
+/* Тост: вход, выход и тонкая полоса времени. Выход — 140ms, после него
+   ToastHost снимает карточку из DOM. */
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    translate: 0 10px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes toast-out {
+  from {
+    opacity: 1;
+    translate: 0 0;
+  }
+  to {
+    opacity: 0;
+    translate: 0 6px;
+  }
+}
+
+.toast-host .toast-card {
+  position: relative;
+  overflow: hidden;
+  animation: toast-in var(--dur-200) var(--ease-out-soft) both;
+}
+
+.toast-host[data-state="out"] .toast-card {
+  animation: toast-out var(--dur-140) var(--ease-in-exit) both;
+}
+
+.toast-progress {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 2px;
+  background: var(--accent);
+  opacity: 0.55;
+  transform-origin: left center;
+  animation: toast-progress var(--toast-duration, 5000ms) linear both;
+}
+
+@keyframes toast-progress {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+
+/* Модалки: вход общий для всех диалогов (у .feedback-dialog он был лишь у
+   одного). Выход не анимируем осознанно: мгновенное закрытие читается как
+   отзывчивость и не требует таймеров в пяти компонентах. */
+.modal-backdrop > * {
+  animation: modal-in var(--dur-200) var(--ease-out-soft) both;
+}
+
+/* Баннер согласия поднимается снизу один раз при появлении. */
+@keyframes consent-in {
+  from {
+    opacity: 0;
+    translate: 0 8px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+.consent-banner {
+  animation: consent-in var(--dur-280) var(--ease-out-soft) both;
+}
+
+/* ------------------------------------------------------------------ */
+/* Единственный выразительный акцент: главная CTA                     */
+/*                                                                    */
+/* Идея Liquid Carve Button сохранена (жидкость следует за курсором),  */
+/* но приведена к языку COS: без goo-фильтра, без вычитающей маски,    */
+/* без spring и отскока, индиго вместо акцентного красного. Подсветка  */
+/* лежит ПОД текстом, поэтому контраст надписи не меняется.            */
+/* ------------------------------------------------------------------ */
+
+.cta-primary {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  touch-action: manipulation;
+}
+
+/* Слой подсветки лежит над фоном кнопки, но под подписью. Геометрия ровно по
+   кнопке (`inset: 0`): проценты от курсора тогда совпадают с её шириной. */
+.cta-primary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle 110px at var(--cta-x, 50%) var(--cta-y, 50%),
+    rgba(23, 20, 84, 0.62) 0,
+    rgba(23, 20, 84, 0.26) 55%,
+    transparent 100%
+  );
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--dur-200) var(--ease-out-soft);
+}
+
+.cta-primary-label {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cta-primary:hover::before {
+  opacity: 1;
+}
+
+.cta-primary:active::before {
+  opacity: 0.8;
+}
+
+/* ------------------------------------------------------------------ */
+/* Отключение движения                                                */
+/* ------------------------------------------------------------------ */
+
+[data-motion="off"] .paper-layer,
+[data-motion="off"] [data-depth] {
+  transform: none;
+}
+
+[data-motion="off"] [data-enter],
+[data-motion="off"] [data-reveal],
+[data-motion="off"] .coverage-bar span,
+[data-motion="off"] .search-clear,
+[data-motion="off"] .graph-edge.is-drawing,
+[data-motion="off"] .icon-button.is-popping svg,
+[data-motion="off"] .modal-backdrop > *,
+[data-motion="off"] .consent-banner,
+[data-motion="off"] .toast-host .toast-card {
+  animation: none;
+}
+
+[data-motion="off"] .toast-progress {
+  display: none;
+}
+
+/* Без анимации нити должны быть видны: базовое состояние `.is-drawing` —
+   невидимая (dashoffset: 1), поэтому снимаем его явно. */
+[data-motion="off"] .graph-edge.is-drawing {
+  stroke-dashoffset: 0;
+}
+
+[data-motion="off"] .graph-edges.is-fading {
+  animation: none;
+}
+
+[data-motion="off"] .cta-primary::before {
+  transition: none;
+}
+
+
+
+/* ------------------------------------------------------------------ */
+/* Главная по макету 369-14582: кнопка в hero, notice после шагов,     */
+/* дорожная карта отдельными карточками, спокойный правый рейл         */
+/* ------------------------------------------------------------------ */
+
+.home-hero-copy .eyebrow {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  line-height: 17px;
+}
+
+.home-hero h1 {
+  line-height: 1.1;
+}
+
+.home-hero-cta {
+  align-self: flex-start;
+  min-height: 48px;
+  margin-top: 0;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+.home-section {
+  gap: 16px;
+}
+
+.home-section h2 {
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: -1.19px;
+  line-height: 38px;
+}
+
+.home-section .section-subtitle {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.start-card {
+  border-color: transparent;
+  background: #f9fafb;
+}
+
+/* Дорожная карта: отдельные карточки без общего контейнера */
+.roadmap-card {
+  gap: 16px;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.roadmap-stage {
+  gap: 16px;
+  min-height: 0;
+  padding: 16px;
+  border: 1px solid var(--line-card);
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.roadmap-stage.is-current {
+  border-color: transparent;
+  background: #eef2ff;
+}
+
+.roadmap-icon {
+  flex: 0 0 36px;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #f2f4f7;
+  color: var(--accent);
+}
+
+.roadmap-stage.is-current .roadmap-icon {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.roadmap-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Плашка обратной связи — спокойный голубой блок после шагов */
+.feedback-invite {
+  gap: 16px;
+  padding: 24px;
+  border-radius: 12px;
+  background: #eff6ff;
+}
+
+.feedback-invite .invite-title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20.8px;
+  color: #4338ca;
+}
+
+.feedback-invite p {
+  font-size: 16px;
+  line-height: 24px;
+  color: #0f172a;
+}
+
+.feedback-invite .invite-button {
+  min-height: 44px;
+  padding: 10px 18px;
+  border-color: transparent;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #3730a3;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.feedback-invite .invite-button:hover {
+  background: #ffffff;
+  border-color: #c7d2fe;
+}
+
+/* Правый рейл: карточка «Что внутри» и лог обновлений без скролла */
+.home-rail {
+  gap: 24px;
+}
+
+.hero-panel {
+  gap: 24px;
+  padding: 24px;
+  border: 0;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.hero-panel h2 {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+.checklist {
+  gap: 16px;
+}
+
+.checklist li {
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.home-log {
+  flex: 0 0 auto;
+  gap: 16px;
+  padding: 24px;
+  overflow: visible;
+  border-radius: 16px;
+  background: #ffffff;
+}
+
+.home-log h2 {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+.home-log-list {
+  gap: 16px;
+  max-height: none;
+  overflow: visible;
+  padding-right: 0;
+}
+
+.home-log-item {
+  gap: 12px;
+}
+
+.home-log-head {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  color: inherit;
+  font-weight: 400;
+}
+
+.home-log-date {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.home-log-title {
+  color: var(--ink-strong);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+}
+
+.home-log-desc {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 21px;
+}
+
+/* Подвал по макету 369-14582: без центрального знака */
+.site-footer-inner {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+
+/* Подвал: словоформ по макету 369-14582 — 962px, отступ от главной 111px */
+.home-screen + .site-footer {
+  margin-top: 111px;
+}
+
+.site-footer-wordmark {
+  width: 962px;
+  height: auto;
 }

@@ -20,10 +20,6 @@ export function SiteFooter() {
           </p>
         </div>
 
-        <div className="site-footer-mark">
-          <img src="/brand/logo-mark-white.svg" alt="" width={162} height={154} />
-        </div>
-
         <div className="site-footer-right">
           <div className="site-footer-nav">
             <Link href="/">Главная</Link>
@@ -48,7 +44,7 @@ export function SiteFooter() {
 
       <img
         className="site-footer-wordmark"
-        src="/brand/Footer/big-logo-footer.svg"
+        src="/brand/Footer/logo-3.svg"
         alt=""
         aria-hidden="true"
       />

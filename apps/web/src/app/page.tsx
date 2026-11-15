@@ -1,9 +1,9 @@
-import Link from "next/link";
 import type { Metadata } from "next";
 import { WelcomeToast } from "@/components/account/WelcomeToast";
-import { allChangelog, formatChangelogDate } from "@/content/changelog";
+import { formatChangelogDate, latestChangelog } from "@/content/changelog";
 import { IconCheckCircle } from "@/components/icons";
 import { SiteFooter } from "@/components/SiteFooter";
+import { PrimaryCta } from "@/components/ui/PrimaryCta";
 
 export const metadata: Metadata = {
   title: "AXIONA — карта компетенций, которая объясняет профессию",
@@ -75,7 +75,7 @@ export default async function HomePage({
       <div className="home-layout">
       <div className="workspace">
         <section className="home-hero">
-          <div className="home-hero-copy">
+          <div className="home-hero-copy" data-enter>
             <p className="eyebrow">Beta 1</p>
             <h1>Карта компетенций, которая объясняет профессию</h1>
             <p className="home-lead">
@@ -84,25 +84,13 @@ export default async function HomePage({
               увидеть, из чего складывается его профессия, оценить интересующие направления и найти
               материалы для обучения.
             </p>
+            <PrimaryCta className="button home-hero-cta" href="/professions">
+              Выбрать направление
+            </PrimaryCta>
           </div>
         </section>
 
-        <section className="feedback-invite">
-          <p className="invite-title">Помогите нам сделать систему полезнее</p>
-          <p>
-            Мы хотим, чтобы эти карты действительно помогали людям ориентироваться в профессии,
-            находить новые направления для развития и понимать, какие знания могут быть полезны в
-            работе. Попробуйте изучить карту своей профессии. Насколько полно она отражает реальные
-            требования к специалисту? Всё ли понятно? Каких компетенций, знаний или навыков не
-            хватает? Поделитесь своим мнением. Ваш опыт поможет нам сделать систему точнее,
-            полезнее и ближе к реальным потребностям людей.
-          </p>
-          <Link className="button invite-button" href="/feedback">
-            Поделитесь своим мнением
-          </Link>
-        </section>
-
-        <section className="home-section">
+        <section className="home-section" data-reveal>
           <p className="eyebrow">Направления</p>
           <h2>С чего начать</h2>
           <div className="start-grid">
@@ -126,8 +114,22 @@ export default async function HomePage({
           </p>
         </section>
 
-        <section className="home-section">
-          <p className="eyebrow">Платформа</p>
+        <section className="feedback-invite" data-enter="1">
+          <p className="invite-title">Помогите нам сделать систему полезнее</p>
+          <p>
+            Мы хотим, чтобы эти карты действительно помогали людям ориентироваться в профессии,
+            находить новые направления для развития и понимать, какие знания могут быть полезны в
+            работе. Попробуйте изучить карту своей профессии. Насколько полно она отражает реальные
+            требования к специалисту? Всё ли понятно? Каких компетенций, знаний или навыков не
+            хватает? Поделитесь своим мнением. Ваш опыт поможет нам сделать систему точнее,
+            полезнее и ближе к реальным потребностям людей.
+          </p>
+          <PrimaryCta className="button invite-button" href="/feedback">
+            Поделитесь своим мнением
+          </PrimaryCta>
+        </section>
+
+        <section className="home-section" data-reveal>
           <h2>Дорожная карта развития</h2>
           <p className="section-subtitle">Последовательность этапов развития платформы компетенций.</p>
           <div className="roadmap-card">
@@ -149,7 +151,7 @@ export default async function HomePage({
 
       <aside className="home-rail" aria-label="О платформе и обновления">
         <div className="home-about">
-          <div className="hero-panel">
+          <div className="hero-panel" data-depth="near" data-enter="1">
             <h2>Что внутри</h2>
             <ul className="checklist">
               {FEATURES.map((feature) => (
@@ -162,15 +164,17 @@ export default async function HomePage({
               ))}
             </ul>
           </div>
-          <Link className="button block" href="/professions">
-            Выбрать направление
-          </Link>
         </div>
 
-        <section className="home-log" aria-labelledby="home-log-title">
+        <section
+          className="home-log"
+          aria-labelledby="home-log-title"
+          data-depth="mid"
+          data-enter="2"
+        >
           <h2 id="home-log-title">Лог обновлений</h2>
           <div className="home-log-list" tabIndex={0} aria-label="Записи лога обновлений">
-            {allChangelog().map((entry) => (
+            {latestChangelog(3).map((entry) => (
               <article className="home-log-item" key={`${entry.date}-${entry.title}`}>
                 <div className="home-log-head">
                   <span className="home-log-date">{formatChangelogDate(entry.date)}</span>

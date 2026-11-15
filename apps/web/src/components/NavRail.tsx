@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import {
   IconBox,
+  IconCat,
   IconChart,
   IconHome,
   IconHomeAdd,
@@ -172,7 +173,7 @@ export function NavRail({ user }: { user: ShellUser | null }) {
             title={`Аккаунт ${user.email}`}
             onClick={() => setAccountOpen(true)}
           >
-            <IconHomeAdd />
+            <IconCat />
             <span className="rail-label">Аккаунт</span>
           </button>
         ) : (

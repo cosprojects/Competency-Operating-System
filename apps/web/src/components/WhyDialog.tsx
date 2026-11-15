@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
-import { IconCloseCircle } from "@/components/icons";
+import { IconArrowRight, IconCloseCircle } from "@/components/icons";
 
 /** Модалка «Зачем мы это делаем» (rail: «Зачем это?»). */
 export function WhyDialog({ open, onClose }: { open: boolean; onClose: () => void }) {
@@ -56,7 +56,7 @@ export function WhyDialog({ open, onClose }: { open: boolean; onClose: () => voi
         </p>
         <div className="why-actions">
           <a className="button" href="mailto:hi.axiona@protonmail.com">
-            Написать мне →
+            Написать мне <IconArrowRight />
           </a>
           <a className="button secondary" href="https://t.me/myaxiona" target="_blank" rel="noopener noreferrer">
             Канал в Telegram

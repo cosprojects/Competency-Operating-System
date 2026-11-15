@@ -186,14 +186,53 @@ export function IconPanelCollapse({ className }: { className?: string }) {
   );
 }
 
+// Источник: public/icons/Linear/Arrows/Arrow Right.svg
 export function IconArrowRight({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className={className}>
-      <path d="M4 12h16" strokeWidth="1.5" strokeLinecap="round" stroke="currentColor" />
-      <path d="m14 6 6 6-6 6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" stroke="currentColor" />
+      <path d="M4 12h16m-6 6 6-6-6-6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" stroke="currentColor" />
     </svg>
   );
 }
+
+// Источники: public/icons/Linear/Arrows/Alt Arrow Down.svg (и Left/Right)
+export function IconChevronDown({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className={className}>
+      <path d="M19 9 12 15 5 9" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" stroke="currentColor" />
+    </svg>
+  );
+}
+
+export function IconChevronLeft({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className={className}>
+      <path d="M15 5 9 12l6 7" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" stroke="currentColor" />
+    </svg>
+  );
+}
+
+export function IconChevronRight({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className={className}>
+      <path d="M9 5l6 7-6 7" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" stroke="currentColor" />
+    </svg>
+  );
+}
+
+// Источник: public/icons/Linear/Essentional, UI/Cat.svg (иконка аккаунта в рейле)
+export function IconCat({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className={className}>
+      <path d="M18.384 10c.285.209.521.43.715.66 1.112 1.314.881 2.921.881 4.34 0 3.906-5.267 5-7.98 5s-7.98-1.094-7.98-5c0-1.419-.231-3.026.881-4.34M19.099 10.66c.7.403.879-1.105.881-1.598V7.188C19.98 5.563 18.863 5 17.905 5S15.032 6.563 14.394 6.563c-.766 0-.914-.157-2.394-.157s-1.628.157-2.394.157C8.968 6.563 7.052 5 6.095 5S4.02 5.563 4.02 7.187V9.06c.002.493.18 2.001.881 1.599M4.9 10.66c.195-.23.431-.45.716-.66" strokeWidth="1.5" strokeLinecap="round" stroke="currentColor" />
+      <path d="M12.826 16c0 .173-.361.313-.807.313s-.806-.14-.806-.313.361-.312.806-.312.807.14.807.312Z" strokeWidth="1.5" stroke="currentColor" />
+      <path d="M15.5 13.594c0 .431-.217.781-.484.781s-.484-.35-.484-.781.217-.782.484-.782.484.35.484.782Z" strokeWidth="1.5" stroke="currentColor" />
+      <path d="M9.5 13.594c0 .431-.217.781-.484.781s-.484-.35-.484-.781.217-.782.484-.782.484.35.484.782Z" strokeWidth="1.5" stroke="currentColor" />
+      <path d="M22 15.469c-.484-.313-2.58-1.094-3.387-1.094M20.387 17.969c-.484-.313-1.613-1.094-2.419-1.094M2 15.469c.484-.313 2.58-1.094 3.387-1.094M3.613 17.969c.484-.313 1.613-1.094 2.42-1.094" strokeWidth="1.5" strokeLinecap="round" stroke="currentColor" />
+    </svg>
+  );
+}
+// Источник: public/icons/Linear/Arrows/Square Arrow Left.svg
 export function IconArrowSquareLeft({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className={className}>
@@ -203,6 +242,7 @@ export function IconArrowSquareLeft({ className }: { className?: string }) {
   );
 }
 
+// Источник: public/icons/Linear/Arrows/Square Arrow Right.svg
 export function IconArrowSquareRight({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className={className}>

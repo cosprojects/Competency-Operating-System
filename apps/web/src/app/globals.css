@@ -704,9 +704,9 @@ svg {
 }
 
 .rail-item svg {
-  flex: 0 0 24px;
-  width: 24px;
-  height: 24px;
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
 }
 
 .rail-item:focus-visible {
@@ -762,9 +762,9 @@ svg {
 }
 
 .rail-cta svg {
-  flex: 0 0 24px;
-  width: 24px;
-  height: 24px;
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
 }
 
 .nav-rail.is-mini .rail-cta {
@@ -6062,4 +6062,29 @@ button.rail-item {
 
 .welcome-toast .icon-button {
   margin-left: auto;
+}
+
+
+/* Шеврон выпадающих списков — из библиотеки public/icons (Linear/Arrows). */
+.select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 40px;
+  background-image: url("/icons/Linear/Arrows/Alt Arrow Down.svg");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 20px 20px;
+}
+
+/* Стрелка в текстовой кнопке — компонент IconArrowRight */
+.why-actions .button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.why-actions .button svg {
+  flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { WelcomeToast } from "@/components/account/WelcomeToast";
+import { HomeRailSync } from "@/components/home/HomeRailSync";
 import { allChangelog, formatChangelogDate } from "@/content/changelog";
 import { IconCheckCircle } from "@/components/icons";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -150,6 +151,7 @@ export default async function HomePage({
       </div>
 
       <aside className="home-rail" aria-label="О платформе и обновления">
+        <HomeRailSync />
         <div className="home-about">
           <div className="hero-panel" data-depth="near" data-enter="1">
             <h2>Что внутри</h2>

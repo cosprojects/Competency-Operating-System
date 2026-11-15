@@ -6414,7 +6414,9 @@ button.rail-item {
 }
 
 /* Слой подсветки лежит над фоном кнопки, но под подписью. Геометрия ровно по
-   кнопке (`inset: 0`): проценты от курсора тогда совпадают с её шириной. */
+   кнопке (`inset: 0`): проценты от курсора тогда совпадают с её шириной.
+   Тон выбирает компонент по фактическому фону (`data-tone`): на индиго —
+   затемнение, на белой кнопке — лёгкая подсветка, чтобы не затенять подпись. */
 .cta-primary::before {
   content: "";
   position: absolute;
@@ -6430,6 +6432,26 @@ button.rail-item {
   opacity: 0;
   pointer-events: none;
   transition: opacity var(--dur-200) var(--ease-out-soft);
+}
+
+/* Светлая кнопка: подсветка почти прозрачная и с индиговым, а не тёмным
+   уклоном — текст остаётся читаемым при любом положении курсора. */
+.cta-primary[data-tone="light"]::before {
+  background: radial-gradient(
+    circle 96px at var(--cta-x, 50%) var(--cta-y, 50%),
+    rgba(79, 70, 229, 0.1) 0,
+    rgba(79, 70, 229, 0.05) 55%,
+    transparent 100%
+  );
+}
+
+/* Прозрачный фон (ghost-кнопка) — самый слабый вариант подсветки. */
+.cta-primary[data-tone="transparent"]::before {
+  background: radial-gradient(
+    circle 96px at var(--cta-x, 50%) var(--cta-y, 50%),
+    rgba(79, 70, 229, 0.06) 0,
+    transparent 100%
+  );
 }
 
 .cta-primary-label {
@@ -6745,5 +6767,66 @@ button.rail-item {
 
   .home-log-list {
     max-height: 70vh;
+  }
+}
+
+
+/* Главная: основной блок не растягивается под длину лога.
+   Рейл берёт высоту основного блока (HomeRailSync), лог скроллится внутри. */
+.home-layout {
+  align-items: start;
+}
+
+.workspace {
+  align-self: start;
+}
+
+.home-rail {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: auto;
+  min-height: 0;
+}
+
+.home-log {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.home-log-list {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-right: 4px;
+  scrollbar-color: var(--line-soft) transparent;
+  scrollbar-width: thin;
+}
+
+.home-log-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.home-log-list::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: var(--line-soft);
+}
+
+@media (max-width: 1180px) {
+  .home-rail {
+    height: auto !important;
+  }
+
+  .home-log {
+    flex: 0 0 auto;
+    overflow: visible;
+  }
+
+  .home-log-list {
+    flex: 0 0 auto;
+    max-height: 70vh;
+    overflow-y: auto;
   }
 }

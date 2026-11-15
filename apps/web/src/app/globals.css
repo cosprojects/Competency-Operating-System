@@ -6708,3 +6708,42 @@ button.rail-item {
   width: 962px;
   height: auto;
 }
+
+/* Лог обновлений: возвращаем полную высоту и внутренний скролл после
+   реструктуризации главной по макету 369-14582. */
+.home-layout {
+  align-items: stretch;
+}
+
+.home-rail {
+  min-height: 0;
+}
+
+.home-log {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.home-log-list {
+  flex: 1 1 auto;
+  min-height: 0;
+  max-height: none;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-right: 4px;
+}
+
+@media (max-width: 1180px) {
+  .home-layout {
+    align-items: start;
+  }
+
+  .home-log {
+    flex: 0 0 auto;
+  }
+
+  .home-log-list {
+    max-height: 70vh;
+  }
+}

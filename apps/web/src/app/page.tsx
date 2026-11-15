@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { WelcomeToast } from "@/components/account/WelcomeToast";
-import { formatChangelogDate, latestChangelog } from "@/content/changelog";
+import { allChangelog, formatChangelogDate } from "@/content/changelog";
 import { IconCheckCircle } from "@/components/icons";
 import { SiteFooter } from "@/components/SiteFooter";
 import { PrimaryCta } from "@/components/ui/PrimaryCta";
@@ -174,7 +174,7 @@ export default async function HomePage({
         >
           <h2 id="home-log-title">Лог обновлений</h2>
           <div className="home-log-list" tabIndex={0} aria-label="Записи лога обновлений">
-            {latestChangelog(3).map((entry) => (
+            {allChangelog().map((entry) => (
               <article className="home-log-item" key={`${entry.date}-${entry.title}`}>
                 <div className="home-log-head">
                   <span className="home-log-date">{formatChangelogDate(entry.date)}</span>

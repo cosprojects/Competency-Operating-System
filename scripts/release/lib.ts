@@ -70,6 +70,7 @@ interface LearningSourceLink {
   competencyId: string;
   sourceIds: string[];
   rationale?: string;
+  sourceRationales?: Record<string, string>;
 }
 
 interface LearningSourceLinksFile {
@@ -599,10 +600,12 @@ export function evaluateRelease(
         }
 
         const link = inputs.linksByCompetency.get(competency.id);
-        const rationale =
-          link?.sourceIds.includes(effectiveId) || link?.sourceIds.includes(originalId)
-            ? link?.rationale
-            : undefined;
+        const linked = Boolean(link?.sourceIds.includes(effectiveId) || link?.sourceIds.includes(originalId));
+        const specific = link?.sourceRationales?.[effectiveId] ?? link?.sourceRationales?.[originalId];
+        // Общий rationale показываем только если у связи один источник: иначе он дублируется на всех карточках.
+        const rationale = linked
+          ? specific?.trim() || (link?.sourceIds.length === 1 ? link.rationale?.trim() : undefined)
+          : undefined;
         sources.push({
           sourceId: effectiveId,
           source,

@@ -2465,6 +2465,11 @@ html[data-consent="pending"] .canvas-toolbar {
 }
 
 .material-text .material-rationale {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
   color: var(--soft);
 }
 

@@ -16,7 +16,10 @@ import type {
 export interface LearningSourceLink {
   competencyId: string;
   sourceIds: string[];
+  /** Общая причина для одной связи; для нескольких источников используйте sourceRationales. */
   rationale?: string;
+  /** Причина релевантности конкретного источника (sourceId → текст). */
+  sourceRationales?: Record<string, string>;
 }
 
 export interface LearningSourceLinksFile {

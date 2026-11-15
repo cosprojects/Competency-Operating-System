@@ -10,7 +10,12 @@ interface LinksFile {
   linksVersion?: string;
   updatedAt?: string;
   description?: string;
-  links: Array<{ competencyId: string; sourceIds: string[]; rationale?: string }>;
+  links: Array<{
+    competencyId: string;
+    sourceIds: string[];
+    rationale?: string;
+    sourceRationales?: Record<string, string>;
+  }>;
 }
 
 interface ReleaseSourceReviewFile {
@@ -119,16 +124,19 @@ export async function promoteCandidates(
       .map((source) => [canonicalizeSourceUrl(source.url), source.id] as const)
       .filter((entry): entry is readonly [string, string] => Boolean(entry[0])),
   );
-  const linkByCompetency = new Map<string, { sourceIds: Set<string>; rationale: string }>();
+  const linkByCompetency = new Map<string, { sourceIds: Set<string>; rationale: string; sourceRationales: Map<string, string> }>();
   for (const link of linksFile.links) {
     const existing = linkByCompetency.get(link.competencyId);
     if (existing) {
       for (const sourceId of link.sourceIds) existing.sourceIds.add(sourceId);
-      existing.rationale = [existing.rationale, link.rationale ?? ""].filter(Boolean).join("; ");
+      for (const [sourceId, reason] of Object.entries(link.sourceRationales ?? {})) {
+        if (!existing.sourceRationales.has(sourceId) && reason.trim()) existing.sourceRationales.set(sourceId, reason.trim().slice(0, 300));
+      }
     } else {
       linkByCompetency.set(link.competencyId, {
         sourceIds: new Set(link.sourceIds),
         rationale: link.rationale ?? "",
+        sourceRationales: new Map(Object.entries(link.sourceRationales ?? {})),
       });
     }
   }
@@ -143,10 +151,13 @@ export async function promoteCandidates(
       const link = linkByCompetency.get(candidate.competencyId) ?? {
         sourceIds: new Set<string>(),
         rationale: "",
+        sourceRationales: new Map<string, string>(),
       };
       if (!link.sourceIds.has(existingId)) {
         link.sourceIds.add(existingId);
-        link.rationale = [link.rationale, candidate.reason].filter(Boolean).join("; ");
+        const reason = candidate.reason.trim().slice(0, 300);
+        if (reason) link.sourceRationales.set(existingId, reason);
+        link.rationale = link.sourceIds.size === 1 ? reason : "";
         linkByCompetency.set(candidate.competencyId, link);
         linkedExisting.push({ sourceId: existingId, competencyId: candidate.competencyId });
       }
@@ -196,9 +207,12 @@ export async function promoteCandidates(
     const link = linkByCompetency.get(candidate.competencyId) ?? {
       sourceIds: new Set<string>(),
       rationale: "",
+      sourceRationales: new Map<string, string>(),
     };
     link.sourceIds.add(record.id);
-    link.rationale = [link.rationale, candidate.reason].filter(Boolean).join("; ");
+    const reason = candidate.reason.trim().slice(0, 300);
+    if (reason) link.sourceRationales.set(record.id, reason);
+    link.rationale = link.sourceIds.size === 1 ? reason : "";
     linkByCompetency.set(candidate.competencyId, link);
   }
 
@@ -211,7 +225,8 @@ export async function promoteCandidates(
     linksFile.links = [...linkByCompetency.entries()].map(([competencyId, link]) => ({
       competencyId,
       sourceIds: [...link.sourceIds],
-      rationale: link.rationale,
+      ...(link.rationale ? { rationale: link.rationale } : {}),
+      ...(link.sourceRationales.size > 0 ? { sourceRationales: Object.fromEntries(link.sourceRationales) } : {}),
     }));
     await writeJson(linksPath, linksFile);
     if (options.reviewDecisions && added.length > 0) {

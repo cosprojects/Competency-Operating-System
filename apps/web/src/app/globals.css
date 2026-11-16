@@ -7543,3 +7543,24 @@ button.rail-item {
   color: var(--accent);
   border-color: transparent;
 }
+
+
+/* Стабильный ховер без сдвига: подъём на 1px заставлял кнопку/карточку
+   «убегать» из-под курсора и ховер мигал. Оставляем цвет, рамку и тень. */
+.button:hover:not(:disabled) {
+  transform: none;
+}
+
+.material-card:hover,
+.saved-materials .material-card:hover,
+.saved-profession-card:hover,
+.saved-skill-card:hover {
+  transform: none;
+}
+
+.material-card,
+.saved-materials .material-card,
+.saved-profession-card,
+.saved-skill-card {
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}

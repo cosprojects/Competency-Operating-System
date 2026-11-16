@@ -7483,3 +7483,15 @@ button.rail-item {
 .material-card .material-badges {
   z-index: 3;
 }
+
+
+/* Крестик «Зачем мы это делаем»: вместо серого круга при наведении —
+   только смена цвета иконки. */
+.why-dialog .account-close:hover {
+  background: transparent;
+  color: var(--accent);
+}
+
+.why-dialog .account-close:active {
+  background: transparent;
+}

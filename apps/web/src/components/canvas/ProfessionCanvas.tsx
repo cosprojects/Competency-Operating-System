@@ -235,7 +235,7 @@ export function ProfessionCanvas({
             </span>
             <span className="summary-count">
               {profession.published} из {profession.total}{" "}
-              {pluralWord(profession.total, ["компетенция", "компетенции", "компетенций"])}
+              {pluralWord(profession.total, ["компетенции", "компетенций", "компетенций"])}
             </span>
             {viewer ? (
               <SaveButton

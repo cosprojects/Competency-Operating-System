@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { memo, useDeferredValue, useMemo, useState } from "react";
 import { IconCloseSquare, IconStar } from "@/components/icons";
+import { matchesSearchTokens } from "@/lib/search-index";
 import { SaveButton } from "@/components/SaveButton";
 
 export interface SearchProfession {
@@ -122,8 +123,8 @@ export function ProfessionSearch({
       groups
         .map((group) => ({
           ...group,
-          professions: group.professions.filter(
-            (profession) => !normalized || profession.searchText.includes(normalized),
+          professions: group.professions.filter((profession) =>
+            matchesSearchTokens(profession.searchText, normalized),
           ),
         }))
         .filter((group) => group.professions.length > 0),

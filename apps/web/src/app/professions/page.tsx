@@ -6,10 +6,10 @@ import {
   competencySearchText,
   countLabel,
   getProfessionGroups,
-  normalizeQuery,
   pluralWord,
   professionSphere,
 } from "@/lib/content";
+import { compactSearchText } from "@/lib/search-index";
 import { sphereBadgeStyle } from "@/lib/spheres";
 import { getDb } from "@/lib/db";
 
@@ -41,10 +41,10 @@ export default async function ProfessionsPage() {
       sphereStyle: sphereBadgeStyle(sphere.color),
       countText: `${profession.coverage.published} из ${profession.coverage.total} ${pluralWord(
         profession.coverage.total,
-        ["компетенция", "компетенции", "компетенций"],
+        ["компетенции", "компетенций", "компетенций"],
       )}`,
       percent: profession.coverage.percent,
-      searchText: normalizeQuery(
+      searchText: compactSearchText(
         [
           profession.title,
           profession.titleEn ?? "",

@@ -59,41 +59,115 @@ const ADMIN_ITEMS = [
 export function NavRail({ user }: { user: ShellUser | null }) {
   const pathname = usePathname();
   const isCanvas = /^\/professions\/[^/]+$/.test(pathname);
-  const expanded = !isCanvas;
+  // Контентные страницы (схема профессии и выбор направления) — mini-рейл.
+  const expanded = !isCanvas && pathname !== "/professions";
   const railRef = useRef<HTMLElement | null>(null);
+  const hoverPillRef = useRef<HTMLDivElement | null>(null);
+  const hoverGroupRef = useRef<"top" | "bottom" | null>(null);
+  const hoverItemRef = useRef<HTMLElement | null>(null);
   const [accountOpen, setAccountOpen] = useState(false);
   const [whyOpen, setWhyOpen] = useState(false);
+
+  /**
+   * Перетекающий ховер: одна голубая плашка едет по рейлу между пунктами.
+   * Внутри блока (меню или низ рейла) она перетекает с небольшой задержкой и
+   * «догоняет» курсор; между блоками — перелетает быстро, без задержки.
+   * Позиция пишется в CSS-переменные напрямую, без ре-рендера.
+   */
+  function moveRailHover(element: HTMLElement) {
+    const pill = hoverPillRef.current;
+    if (!pill) return;
+    if (hoverItemRef.current === element) return;
+    hoverItemRef.current = element;
+
+    const group: "top" | "bottom" = element.closest(".rail-bottom") ? "bottom" : "top";
+    pill.classList.toggle("is-jumping", hoverGroupRef.current !== null && hoverGroupRef.current !== group);
+    hoverGroupRef.current = group;
+
+    pill.style.setProperty("--pill-x", `${element.offsetLeft}px`);
+    pill.style.setProperty("--pill-y", `${element.offsetTop}px`);
+    pill.style.setProperty("--pill-w", `${element.offsetWidth}px`);
+    pill.style.setProperty("--pill-h", `${element.offsetHeight}px`);
+    pill.classList.add("is-visible");
+  }
+
+  function hideRailHover() {
+    hoverItemRef.current = null;
+    hoverGroupRef.current = null;
+    hoverPillRef.current?.classList.remove("is-visible");
+  }
+
+  function onRailPointerOver(event: React.PointerEvent<HTMLElement>) {
+    const item = (event.target as HTMLElement).closest<HTMLElement>(".rail-item");
+    // У «Войти/Аккаунт» своя заливка — плашку туда не ведём.
+    if (!item || item.closest(".rail-cta")) {
+      hideRailHover();
+      return;
+    }
+    moveRailHover(item);
+  }
+
+  function onRailFocus(event: React.FocusEvent<HTMLElement>) {
+    const item = (event.target as HTMLElement).closest<HTMLElement>(".rail-item");
+    if (item && !item.closest(".rail-cta")) moveRailHover(item);
+  }
+
+  function onRailBlur(event: React.FocusEvent<HTMLElement>) {
+    if (!event.currentTarget.contains(event.relatedTarget as Node | null)) hideRailHover();
+  }
+
+  // Смена маршрута меняет набор пунктов и ширину рейла — плашку убираем.
+  useEffect(() => {
+    hideRailHover();
+  }, [pathname]);
 
   // Нижняя часть рейла останавливается за 40px до футера: при скролле меню
   // не заходит на подвал, а сжимается по высоте.
   useEffect(() => {
+    const rail = railRef.current;
+    // Футер ищем один раз на маршрут: querySelector на каждом кадре скролла —
+    // лишняя работа, а чтение scrollHeight после записи CSS-переменной давало
+    // принудительный layout на каждый кадр.
+    const footer = document.querySelector<HTMLElement>(".site-footer");
     let frame = 0;
-    const update = () => {
+
+    const updateOffset = () => {
       frame = 0;
-      const footer = document.querySelector<HTMLElement>(".site-footer");
       const viewport = window.innerHeight;
       let offset = 40;
       if (footer) {
-        const rect = footer.getBoundingClientRect();
-        offset = Math.max(40, Math.round(viewport - rect.top + 40));
+        offset = Math.max(40, Math.round(viewport - footer.getBoundingClientRect().top + 40));
       }
       document.documentElement.style.setProperty("--rail-bottom-offset", `${offset}px`);
-      const rail = railRef.current;
-      if (rail) {
-        const compressed = rail.scrollHeight > rail.clientHeight + 1;
-        rail.classList.toggle("is-compact", compressed);
-      }
     };
+
+    const updateCompact = () => {
+      if (!rail) return;
+      rail.classList.toggle("is-compact", rail.scrollHeight > rail.clientHeight + 1);
+    };
+
     const schedule = () => {
-      if (!frame) frame = window.requestAnimationFrame(update);
+      if (!frame) frame = window.requestAnimationFrame(updateOffset);
     };
-    update();
+
+    updateOffset();
+    updateCompact();
     window.addEventListener("scroll", schedule, { passive: true });
     window.addEventListener("resize", schedule);
+
+    // Сжатие рейла зависит от высоты контента, а не от прокрутки: наблюдаем
+    // за размерами вместо чтения scrollHeight в каждом кадре скролла.
+    const observer = new ResizeObserver(updateCompact);
+    if (rail) {
+      observer.observe(rail);
+      for (const child of Array.from(rail.children)) observer.observe(child);
+    }
+
     return () => {
       window.removeEventListener("scroll", schedule);
       window.removeEventListener("resize", schedule);
       if (frame) window.cancelAnimationFrame(frame);
+      observer.disconnect();
       document.documentElement.style.removeProperty("--rail-bottom-offset");
       railRef.current?.classList.remove("is-compact");
     };
@@ -104,7 +178,12 @@ export function NavRail({ user }: { user: ShellUser | null }) {
       className={`nav-rail${expanded ? "" : " is-mini"}`}
       ref={railRef}
       aria-label="Основная навигация"
+      onPointerOver={onRailPointerOver}
+      onPointerLeave={hideRailHover}
+      onFocus={onRailFocus}
+      onBlur={onRailBlur}
     >
+      <div className="rail-hover-pill" ref={hoverPillRef} aria-hidden="true" />
       <div className="rail-top">
         <Link className="rail-brand" href="/" aria-label="AXIONA — на главную">
           <img className="brand-mark" src="/brand/logo-mark.svg" alt="" width={34} height={32} />

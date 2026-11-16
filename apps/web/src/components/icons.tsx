@@ -186,6 +186,15 @@ export function IconPanelCollapse({ className }: { className?: string }) {
   );
 }
 
+// Источник: public/icons/Linear/Arrows/Arrow Left.svg
+export function IconArrowLeft({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className={className}>
+      <path d="M20 12H4m6-6-6 6 6 6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" stroke="currentColor" />
+    </svg>
+  );
+}
+
 // Источник: public/icons/Linear/Arrows/Arrow Right.svg
 export function IconArrowRight({ className }: { className?: string }) {
   return (

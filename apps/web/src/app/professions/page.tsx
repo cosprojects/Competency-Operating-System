@@ -2,7 +2,14 @@ import type { Metadata } from "next";
 import type { SearchGroup } from "@/components/ProfessionSearch";
 import { ProfessionSearch } from "@/components/ProfessionSearch";
 import { getCurrentUser } from "@/lib/auth";
-import { competencySearchText, countLabel, getProfessionGroups, normalizeQuery, professionSphere } from "@/lib/content";
+import {
+  competencySearchText,
+  countLabel,
+  getProfessionGroups,
+  normalizeQuery,
+  pluralWord,
+  professionSphere,
+} from "@/lib/content";
 import { sphereBadgeStyle } from "@/lib/spheres";
 import { getDb } from "@/lib/db";
 
@@ -32,11 +39,10 @@ export default async function ProfessionsPage() {
       description: profession.description,
       sphereTitle: sphere.title,
       sphereStyle: sphereBadgeStyle(sphere.color),
-      countText: countLabel(profession.coverage.published, [
-        "компетенция",
-        "компетенции",
-        "компетенций",
-      ]),
+      countText: `${profession.coverage.published} из ${profession.coverage.total} ${pluralWord(
+        profession.coverage.total,
+        ["компетенция", "компетенции", "компетенций"],
+      )}`,
       percent: profession.coverage.percent,
       searchText: normalizeQuery(
         [

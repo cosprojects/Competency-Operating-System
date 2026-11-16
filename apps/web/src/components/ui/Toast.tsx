@@ -1,9 +1,11 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 export interface ToastOptions {
   title: string;
+  /** Имя сохранённого элемента: одна строка с многоточием. */
+  headline?: string;
   text?: string;
   actionLabel?: string;
   onAction?: () => void;
@@ -15,6 +17,9 @@ interface ToastState extends ToastOptions {
   id: number;
 }
 
+/** Сколько держим карточку после команды закрыть, пока играет выход. */
+const EXIT_MS = 140;
+
 let listener: ((toast: ToastState) => void) | null = null;
 
 /** Показать алерт внизу экрана по центру над тулбаром (COS-EAR-013). */
@@ -25,13 +30,34 @@ export function showToast(options: ToastOptions): void {
 export function ToastHost() {
   const [toast, setToast] = useState<ToastState | null>(null);
   const [seconds, setSeconds] = useState(0);
+  const [leaving, setLeaving] = useState(false);
   const timerRef = useRef<number | null>(null);
+  const exitTimerRef = useRef<number | null>(null);
 
   useEffect(() => {
-    listener = (next) => setToast(next);
+    listener = (next) => {
+      if (exitTimerRef.current) window.clearTimeout(exitTimerRef.current);
+      exitTimerRef.current = null;
+      setLeaving(false);
+      setToast(next);
+    };
     return () => {
       listener = null;
     };
+  }, []);
+
+  /**
+   * Закрытие с коротким выходом: 140 мс карточка уезжает, затем снимаем её из
+   * DOM. Один таймер, сигнал доступности остаётся у контейнера.
+   */
+  const dismiss = useCallback(() => {
+    setLeaving(true);
+    if (exitTimerRef.current) window.clearTimeout(exitTimerRef.current);
+    exitTimerRef.current = window.setTimeout(() => {
+      exitTimerRef.current = null;
+      setToast(null);
+      setLeaving(false);
+    }, EXIT_MS);
   }, []);
 
   useEffect(() => {
@@ -44,20 +70,34 @@ export function ToastHost() {
       setSeconds(left);
       if (left <= 0) {
         if (timerRef.current) window.clearInterval(timerRef.current);
-        setToast(null);
+        dismiss();
       }
     }, 250);
     return () => {
       if (timerRef.current) window.clearInterval(timerRef.current);
     };
-  }, [toast]);
+  }, [toast, dismiss]);
+
+  useEffect(() => {
+    return () => {
+      if (exitTimerRef.current) window.clearTimeout(exitTimerRef.current);
+    };
+  }, []);
 
   if (!toast) return null;
 
+  const duration = toast.duration ?? 5000;
+
   return (
-    <div className="toast-host" role="status" aria-live="polite">
-      <div className="toast-card">
+    <div className="toast-host" role="status" aria-live="polite" data-state={leaving ? "out" : "in"}>
+      <div className={`toast-card${toast.headline ? " has-headline" : ""}`}>
+        <span
+          className="toast-progress"
+          aria-hidden="true"
+          style={{ animationDuration: `${duration}ms` }}
+        />
         <h3 className="toast-title">{toast.title}</h3>
+        {toast.headline ? <p className="toast-headline">{toast.headline}</p> : null}
         {toast.text ? <p className="toast-text">{toast.text}</p> : null}
         {toast.actionLabel ? (
           <button
@@ -65,14 +105,14 @@ export function ToastHost() {
             type="button"
             onClick={() => {
               toast.onAction?.();
-              setToast(null);
+              dismiss();
             }}
           >
             {toast.actionLabel}
             {seconds > 0 ? ` (${seconds} сек)` : ""}
           </button>
         ) : (
-          <button className="button block toast-action" type="button" onClick={() => setToast(null)}>
+          <button className="button block toast-action" type="button" onClick={dismiss}>
             Хорошо
           </button>
         )}

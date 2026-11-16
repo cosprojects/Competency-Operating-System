@@ -689,8 +689,9 @@ svg {
   transition: color 0.18s ease, background 0.18s ease, transform 0.12s ease;
 }
 
+/* Фон наведения даёт перетекающая плашка `.rail-hover-pill`; здесь остаётся
+   только цвет иконки и подписи. */
 .rail-item:hover {
-  background: rgba(238, 242, 255, 0.8);
   color: var(--accent);
   text-decoration: none;
 }
@@ -1738,7 +1739,13 @@ svg {
   text-align: left;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
-  transition: border-color 0.15s, box-shadow 0.15s, opacity 0.15s;
+  /* Магнит: карточка чуть тянется к курсору и доворачивается к нему. Значения
+     пишет CompetencyGraph в --magnet-* и --tilt-*; без курсора они равны нулю,
+     поэтому в покое карточка стоит ровно на своей оси. */
+  transform: perspective(600px) translate3d(var(--magnet-x, 0px), var(--magnet-y, 0px), 0)
+    rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+  transition: border-color 0.15s, box-shadow 0.15s, opacity 0.15s,
+    transform 180ms var(--ease-out-soft);
 }
 
 .graph-node:hover,
@@ -2531,9 +2538,9 @@ html[data-consent="pending"] .canvas-toolbar {
   align-items: center;
   justify-content: center;
   padding: 40px;
-  background: rgba(248, 250, 252, 0.72);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  background: rgba(248, 250, 252, 0.78);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
   overflow-y: auto;
 }
 
@@ -5482,9 +5489,13 @@ button.rail-item {
 }
 
 /* Glass-рейл и мелкие правки по макету */
+/* Стекло рейла: он закреплён над прокручиваемым контентом, поэтому
+   backdrop-filter пересчитывается каждый кадр скролла. Держим минимальный
+   радиус и чуть более плотный фон — вид тот же, цена кратно ниже. */
 .nav-rail {
-  backdrop-filter: blur(28px) saturate(150%);
-  -webkit-backdrop-filter: blur(28px) saturate(150%);
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   box-shadow: 0 24px 60px rgba(19, 34, 56, 0.06);
 }
 
@@ -6099,7 +6110,7 @@ button.rail-item {
 }
 
 /* ================================================================== */
-/* Движение и глубина (COS-EAR-016)                                   */
+/* Движение (COS-EAR-016)                                            */
 /*                                                                    */
 /* Язык движения: COS-COM-007 §4–5 (движение объясняет изменение,      */
 /* сила отклика пропорциональна значимости) и COS-COM-011 §2.5         */
@@ -6107,9 +6118,9 @@ button.rail-item {
 /*                                                                    */
 /* Правила раздела:                                                   */
 /* 1. Анимируются только transform и opacity.                         */
-/* 2. Параллакс включается атрибутом data-depth и живёт в CSS-         */
-/*    переменных, которые пишет lib/motion/pointer.ts — React в        */
-/*    движении не участвует.                                          */
+/* 2. Параллакс есть только у бумаги-канваса: переменные --pointer-*   */
+/*    пишет lib/motion/pointer.ts, React в движении не участвует.      */
+/*    Карточки курсор не догоняют: это шум, решение владельца.         */
 /* 3. Всё выключается атрибутом data-motion="off" (reduced motion) и   */
 /*    переменными --pointer-* = 0.                                    */
 /* 4. Один выразительный акцент — .cta-primary (PrimaryCta); остальное */
@@ -6126,9 +6137,6 @@ button.rail-item {
   --ease-out-structure: cubic-bezier(0.33, 1, 0.68, 1);
   --ease-in-exit: cubic-bezier(0.4, 0, 1, 1);
   --parallax-max: 6px;
-  --depth-far: 0.25;
-  --depth-mid: 0.55;
-  --depth-near: 1;
 }
 
 /* Точечная бумага: тот же рисунок, что был на body. Слой вынесен отдельно,
@@ -6143,38 +6151,16 @@ button.rail-item {
     radial-gradient(circle at 18px 34px, #eff2f6 2px, transparent 2px);
   background-size: 32px 64px;
   transform: translate3d(
-    calc(var(--pointer-nx, 0) * -6px),
-    calc(var(--pointer-ny, 0) * -6px),
+    calc(var(--pointer-nx, 0) * var(--parallax-max) * -1),
+    calc(var(--pointer-ny, 0) * var(--parallax-max) * -1),
     0
   );
-}
-
-/* Глубина: элемент тем сильнее отстаёт от курсора, чем он ближе к зрителю.
-   Отрицательный знак — курсор «толкает» слой, карточка уходит в сторону. */
-[data-depth] {
-  transform: translate3d(
-    calc(var(--pointer-nx, 0) * var(--parallax-max) * var(--depth, 0) * -1),
-    calc(var(--pointer-ny, 0) * var(--parallax-max) * var(--depth, 0) * -1),
-    0
-  );
-}
-
-[data-depth="far"] {
-  --depth: var(--depth-far);
-}
-
-[data-depth="mid"] {
-  --depth: var(--depth-mid);
-}
-
-[data-depth="near"] {
-  --depth: var(--depth-near);
 }
 
 /* Появление на первом кадре. Работает без JS: анимация стартует, как только
    элемент отрисован, поэтому контент не может «застрять» невидимым.
    Анимируется отдельное свойство `translate`, а не `transform`: иначе
-   fill-mode: both навсегда перебил бы transform у :hover и у [data-depth]. */
+   fill-mode: both навсегда перебил бы transform у :hover. */
 @keyframes enter-rise {
   from {
     opacity: 0;
@@ -6202,6 +6188,25 @@ button.rail-item {
 
 [data-enter="3"] {
   animation-delay: 180ms;
+}
+
+/* Сетка профессий: волна появления по порядку (слева направо, сверху вниз).
+   Задержку на карточку задаёт ProfessionSearch inline-стилем; здесь — более
+   заметный подъём, чем у одиночных блоков, потому что карточек много и они
+   мелкие. */
+@keyframes enter-card {
+  from {
+    opacity: 0;
+    translate: 0 14px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+.profession-tile[data-enter] {
+  animation: enter-card 420ms var(--ease-out-soft) both;
 }
 
 /* Появление секций ниже первого экрана. Стартовое состояние ставит JS
@@ -6290,19 +6295,33 @@ button.rail-item {
   animation: edges-fade var(--dur-200) var(--ease-out-soft) both;
 }
 
-/* Узел графа приподнимается на 1px — отклик на наведение, без изменения
-   геометрии раскладки и без will-change (иначе текст мылится при зуме). */
+/* Сборка схемы: карточки «съезжаются» из чуть сжатого облака и проявляются по
+   порядку — сверху вниз, слева направо. Анимируется отдельное свойство
+   `translate`, поэтому магнит (`transform`) и вход не конфликтуют. Смещение и
+   задержку считает CompetencyGraph (--enter-x/--enter-y, animation-delay). */
+@keyframes graph-node-in {
+  from {
+    opacity: 0;
+    translate: var(--enter-x, 0px) var(--enter-y, 0px);
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+.graph-node.is-entering {
+  animation: graph-node-in 380ms var(--ease-out-soft) both;
+}
+
+/* Дополнительный подъём на hover не нужен: карточка и так тянется к курсору
+   магнитом. Здесь только смягчаем переход к покою. */
 @media (hover: hover) {
   .graph-node {
     transition: border-color var(--dur-140) var(--ease-out-soft),
       box-shadow var(--dur-140) var(--ease-out-soft),
-      transform var(--dur-140) var(--ease-out-soft),
+      transform 180ms var(--ease-out-soft),
       opacity var(--dur-140) var(--ease-out-soft);
-  }
-
-  .graph-node:hover,
-  .graph-node.is-hover {
-    transform: translateY(-1px);
   }
 }
 
@@ -6403,6 +6422,53 @@ button.rail-item {
 }
 
 /* ------------------------------------------------------------------ */
+/* Рейл: перетекающий ховер                                           */
+/*                                                                    */
+/* Одна голубая плашка едет по рейлу за курсором. Внутри блока она     */
+/* перетекает с небольшой задержкой и «догоняет» курсор; между меню и  */
+/* нижним блоком перелетает быстро, без задержки. Позицию пишет        */
+/* NavRail в --pill-*, React в движении не участвует.                  */
+/* ------------------------------------------------------------------ */
+
+.rail-hover-pill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: var(--pill-w, 0px);
+  height: var(--pill-h, 0px);
+  border-radius: var(--r-10);
+  background: rgba(219, 234, 254, 0.95);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(var(--pill-x, 0px), var(--pill-y, 0px));
+  transition:
+    transform 240ms var(--ease-out-soft) 70ms,
+    width 240ms var(--ease-out-soft) 70ms,
+    height 240ms var(--ease-out-soft) 70ms,
+    opacity var(--dur-140) var(--ease-out-soft);
+}
+
+.rail-hover-pill.is-visible {
+  opacity: 1;
+}
+
+/* Перелёт между блоками рейла: быстро и сразу. */
+.rail-hover-pill.is-jumping {
+  transition:
+    transform 110ms var(--ease-out-soft),
+    width 110ms var(--ease-out-soft),
+    height 110ms var(--ease-out-soft),
+    opacity 120ms var(--ease-out-soft);
+}
+
+/* Пункты выше плашки, иначе она закроет иконку и подпись. */
+.nav-rail .rail-item {
+  position: relative;
+  z-index: 1;
+}
+
+/* ------------------------------------------------------------------ */
 /* Единственный выразительный акцент: главная CTA                     */
 /*                                                                    */
 /* Идея Liquid Carve Button сохранена (жидкость следует за курсором),  */
@@ -6479,8 +6545,7 @@ button.rail-item {
 /* Отключение движения                                                */
 /* ------------------------------------------------------------------ */
 
-[data-motion="off"] .paper-layer,
-[data-motion="off"] [data-depth] {
+[data-motion="off"] .paper-layer {
   transform: none;
 }
 
@@ -6489,6 +6554,7 @@ button.rail-item {
 [data-motion="off"] .coverage-bar span,
 [data-motion="off"] .search-clear,
 [data-motion="off"] .graph-edge.is-drawing,
+[data-motion="off"] .graph-node.is-entering,
 [data-motion="off"] .icon-button.is-popping svg,
 [data-motion="off"] .modal-backdrop > *,
 [data-motion="off"] .consent-banner,
@@ -6496,8 +6562,24 @@ button.rail-item {
   animation: none;
 }
 
+/* Магнит при reduced motion не включается (JS не пишет переменные), но
+   перспективу и переходы снимаем явно — карточка стоит ровно на своей оси. */
+[data-motion="off"] .graph-node {
+  transform: none;
+  transition: border-color 0.15s, box-shadow 0.15s, opacity 0.15s;
+}
+
 [data-motion="off"] .toast-progress {
   display: none;
+}
+
+/* Без движения перетекающая плашка не нужна: возвращаем простой ховер. */
+[data-motion="off"] .rail-hover-pill {
+  display: none;
+}
+
+[data-motion="off"] .rail-item:hover {
+  background: rgba(238, 242, 255, 0.8);
 }
 
 /* Без анимации нити должны быть видны: базовое состояние `.is-drawing` —
@@ -6835,3 +6917,164 @@ button.rail-item {
     overflow-y: auto;
   }
 }
+
+
+/* ------------------------------------------------------------------ */
+/* Правки интерфейса 2026-11-16                                        */
+/* ------------------------------------------------------------------ */
+
+/* 1) Материал: «Перейти к источнику» — белая, синяя при наведении */
+.material-cta {
+  border: 1px solid var(--line-card);
+  background: #ffffff;
+  color: var(--accent);
+  box-shadow: none;
+}
+
+.material-cta:hover {
+  border-color: transparent;
+  background: var(--accent);
+  color: #ffffff;
+  box-shadow: 0 12px 24px rgba(79, 70, 229, 0.24);
+}
+
+.material-cta:focus-visible {
+  outline: 3px solid rgba(79, 70, 229, 0.25);
+  outline-offset: 2px;
+}
+
+/* 2) Счётчик рядом с заголовком блока, отступ 16px */
+.detail-block-head {
+  justify-content: flex-start;
+  gap: 16px;
+}
+
+.detail-block-head .num-badge {
+  margin-left: 0;
+}
+
+/* 6) Страница направлений: заголовок и подзаголовок по центру */
+.search-screen {
+  padding: 128px 40px 60px;
+}
+
+.search-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.search-head h1 {
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 43px;
+  color: #0f172a;
+}
+
+.search-head p {
+  margin: 0;
+  color: #475569;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.search-bar {
+  top: 40px;
+  left: 50%;
+  width: min(720px, calc(100vw - 300px));
+}
+
+/* 3) Навигация по профессиям в шапке канваса */
+.rail-nav-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.rail-nav-btn {
+  display: inline-flex;
+  flex: 0 0 48px;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--line-card);
+  border-radius: var(--r-12);
+  background: var(--surface);
+  color: var(--ink);
+  text-decoration: none;
+  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+}
+
+.rail-nav-btn:hover {
+  border-color: #c7d2fe;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.rail-nav-btn.is-disabled {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.rail-nav-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.rail-nav-row .rail-choose {
+  flex: 1 1 auto;
+  min-height: 48px;
+}
+
+/* 5) Алерт сохранения: название в одну строку, описание в две */
+.toast-headline {
+  margin: 0;
+  overflow: hidden;
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 21px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.toast-card.has-headline .toast-text {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+
+/* Шапка канваса: стрелки по краям, кнопка выбора — по центру */
+.rail-nav-row .rail-choose {
+  order: 0;
+  flex: 1 1 auto;
+}
+
+/* Карточка направления: описание в две строки, как в макете */
+.tile-desc {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+/* ================================================================== */
+/* Производительность                                                 */
+/* ================================================================== */
+
+/* Группы профессий ниже первого экрана не раскладываются и не рисуются,
+   пока к ним не подошли. contain-intrinsic-size держит высоту-оценку, чтобы
+   скроллбар не прыгал, а волна появления срабатывает при первом показе. */
+.profession-group:not(:first-child) {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 520px;
+}
+

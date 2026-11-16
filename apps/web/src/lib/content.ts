@@ -214,12 +214,17 @@ export function professionMatches(profession: ContentProfession, query: string):
   return professionCompetencies(profession).some((item) => competencyMatches(item.competency, normalized));
 }
 
-export function countLabel(count: number, forms: [string, string, string]): string {
+/** Только слово в нужной форме: «компетенция / компетенции / компетенций». */
+export function pluralWord(count: number, forms: [string, string, string]): string {
   const mod10 = count % 10;
   const mod100 = count % 100;
-  if (mod10 === 1 && mod100 !== 11) return `${count} ${forms[0]}`;
-  if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return `${count} ${forms[1]}`;
-  return `${count} ${forms[2]}`;
+  if (mod10 === 1 && mod100 !== 11) return forms[0];
+  if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return forms[1];
+  return forms[2];
+}
+
+export function countLabel(count: number, forms: [string, string, string]): string {
+  return `${count} ${pluralWord(count, forms)}`;
 }
 
 export function competencyCounts(competency: ContentCompetency): {

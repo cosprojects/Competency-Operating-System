@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { CanvasToolbar } from "@/components/canvas/CanvasToolbar";
 import { CompetencyDetail } from "@/components/canvas/CompetencyDetail";
+import { CompetencyTile } from "@/components/canvas/CompetencyTile";
 import { CompetencyGraph, type GraphHandle } from "@/components/canvas/CompetencyGraph";
 import type {
   CanvasCompetency,
@@ -12,18 +13,12 @@ import type {
   CanvasViewer,
 } from "@/components/canvas/types";
 import { FeedbackTrigger } from "@/components/feedback/FeedbackTrigger";
-import { IconCloseSquare, IconStar } from "@/components/icons";
+import { IconArrowLeft, IconArrowRight, IconCloseSquare, IconStar } from "@/components/icons";
 import { SaveButton } from "@/components/SaveButton";
-import { competencyMatches, competencyMeta, countLabel, normalizeQuery } from "@/lib/content";
+import { competencyMatches, countLabel, normalizeQuery, pluralWord } from "@/lib/content";
 import { trackClient } from "@/lib/client-analytics";
 import { sphereBadgeStyle } from "@/lib/spheres";
 import type { GraphMode, GraphNodeInput } from "@/lib/graph-layout";
-
-const TIER_LABEL: Record<CanvasCompetency["tier"], string> = {
-  foundation: "Фундаментальная",
-  core: "Основная",
-  optional: "Необязательная",
-};
 
 export function ProfessionCanvas({
   profession,
@@ -33,6 +28,8 @@ export function ProfessionCanvas({
   professionSaved,
   initialCompetencyId,
   initialView = "board",
+  prevProfession,
+  nextProfession,
 }: {
   profession: CanvasProfession;
   competencies: CanvasCompetency[];
@@ -41,6 +38,8 @@ export function ProfessionCanvas({
   professionSaved: boolean;
   initialCompetencyId?: string;
   initialView?: GraphMode;
+  prevProfession?: { slug: string; title: string } | null;
+  nextProfession?: { slug: string; title: string } | null;
 }) {
   const byId = useMemo(() => new Map(competencies.map((item) => [item.id, item])), [competencies]);
   // Сквозная нумерация по профессии: 1..N в порядке разделов и приоритезации
@@ -61,6 +60,14 @@ export function ProfessionCanvas({
 
   const graphRef = useRef<GraphHandle>(null);
   const tileRefs = useRef(new Map<string, HTMLButtonElement>());
+
+  // Стабильные колбэки обязательны: memo-карточки и memo-схема перерисовываются
+  // только когда меняются их собственные пропсы, а не каждый рендер канваса.
+  const registerTile = useCallback((id: string, element: HTMLButtonElement | null) => {
+    if (element) tileRefs.current.set(id, element);
+    else tileRefs.current.delete(id);
+  }, []);
+  const hoverCompetency = useCallback((id: string | null) => setHoverId(id), []);
 
   const graphNodes: GraphNodeInput[] = useMemo(
     () =>
@@ -118,6 +125,9 @@ export function ProfessionCanvas({
     [profession.id, scrollTileIntoView],
   );
 
+  const selectFromGraph = useCallback((id: string) => select(id, { scroll: true }), [select]);
+  const selectFromTile = useCallback((id: string) => select(id, { focusGraph: true }), [select]);
+
   const closeDetail = useCallback(() => {
     setSelectedId(null);
     setExpanded(false);
@@ -148,6 +158,24 @@ export function ProfessionCanvas({
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [selectedId]);
 
+  // При входе в профессию фокус сразу на первой компетенции и её сайдбаре.
+  const autoOpenedRef = useRef(false);
+  useEffect(() => {
+    if (autoOpenedRef.current) return;
+    autoOpenedRef.current = true;
+    if (initialCompetencyId) return;
+    const firstId = profession.sections
+      .flatMap((section) => section.competencyIds)
+      .find((id) => byId.has(id));
+    if (!firstId) return;
+    setSelectedId(firstId);
+    const timer = window.setTimeout(() => {
+      graphRef.current?.focus(firstId);
+      scrollTileIntoView(firstId);
+    }, 250);
+    return () => window.clearTimeout(timer);
+  }, [byId, initialCompetencyId, profession.sections, scrollTileIntoView]);
+
   // Открытая по ссылке компетенция центрируется в схеме после первого замера канваса.
   useEffect(() => {
     if (!initialCompetencyId || !byId.has(initialCompetencyId)) return;
@@ -165,17 +193,49 @@ export function ProfessionCanvas({
     <div className={`canvas-screen${selected ? " has-detail" : ""}${expanded ? " is-expanded" : ""}`}>
       <div className="canvas-rail">
         <div className="rail-pinned">
-          <Link className="rail-choose" href="/professions">
-            Выбрать направление
-          </Link>
+          {/* Навигация по профессиям внутри сферы (макет 247-34832). */}
+          <div className="rail-nav-row">
+            {prevProfession ? (
+              <Link
+                className="rail-nav-btn"
+                href={`/professions/${prevProfession.slug}`}
+                aria-label={`Предыдущая профессия: ${prevProfession.title}`}
+                title={prevProfession.title}
+              >
+                <IconArrowLeft />
+              </Link>
+            ) : (
+              <span className="rail-nav-btn is-disabled" aria-hidden="true">
+                <IconArrowLeft />
+              </span>
+            )}
+            <Link className="rail-choose" href="/professions">
+              Выбрать направление
+            </Link>
+            {nextProfession ? (
+              <Link
+                className="rail-nav-btn"
+                href={`/professions/${nextProfession.slug}`}
+                aria-label={`Следующая профессия: ${nextProfession.title}`}
+                title={nextProfession.title}
+              >
+                <IconArrowRight />
+              </Link>
+            ) : (
+              <span className="rail-nav-btn is-disabled" aria-hidden="true">
+                <IconArrowRight />
+              </span>
+            )}
+          </div>
 
-          <section className="profession-summary">
+          <section className="profession-summary" data-enter="1">
           <div className="summary-top">
             <span className="badge" style={sphereBadgeStyle(profession.sphere.color)}>
               {profession.sphere.title}
             </span>
             <span className="summary-count">
-              {countLabel(profession.published, ["компетенция", "компетенции", "компетенций"])}
+              {profession.published} из {profession.total}{" "}
+              {pluralWord(profession.total, ["компетенция", "компетенции", "компетенций"])}
             </span>
             {viewer ? (
               <SaveButton
@@ -183,6 +243,8 @@ export function ProfessionCanvas({
                 targetType="PROFESSION"
                 targetId={profession.slug}
                 initialSaved={professionSaved}
+                title={profession.title}
+                description={profession.description}
               />
             ) : (
               <Link
@@ -212,8 +274,12 @@ export function ProfessionCanvas({
 
         <div className="rail-scroll">
           <div className="section-list">
-          {profession.sections.map((section) => (
-            <section className="section-panel" key={section.id}>
+          {profession.sections.map((section, index) => (
+            <section
+              className="section-panel"
+              key={section.id}
+              data-enter={String(Math.min(index + 2, 3))}
+            >
               <h3>{section.title}</h3>
               <p className="section-count">
                 {countLabel(section.competencyIds.length, ["компетенция", "компетенции", "компетенций"])}
@@ -222,31 +288,17 @@ export function ProfessionCanvas({
                 {section.competencyIds.map((id) => {
                   const competency = byId.get(id);
                   if (!competency) return null;
-                  const active = selectedId === id;
-                  const hovered = hoverId === id;
                   return (
-                    <button
+                    <CompetencyTile
                       key={id}
-                      type="button"
-                      ref={(element) => {
-                        if (element) tileRefs.current.set(id, element);
-                        else tileRefs.current.delete(id);
-                      }}
-                      className={`competency-tile${active ? " is-active" : ""}${hovered && !active ? " is-hover" : ""}`}
-                      onClick={() => select(id, { focusGraph: true })}
-                      onMouseEnter={() => setHoverId(id)}
-                      onMouseLeave={() => setHoverId(null)}
-                      onFocus={() => setHoverId(id)}
-                      onBlur={() => setHoverId(null)}
-                    >
-                      <span className="tile-head">
-                        <span className={`badge ${competency.tier}`}>{TIER_LABEL[competency.tier]}</span>
-                        <span className="num-badge">{displayOrder.get(competency.id)}</span>
-                      </span>
-                      <h4>{competency.title}</h4>
-                      <p>{competency.definition}</p>
-                      <span className="tile-meta">{competencyMeta(competency)}</span>
-                    </button>
+                      competency={competency}
+                      order={displayOrder.get(id) ?? competency.order}
+                      active={selectedId === id}
+                      hovered={hoverId === id}
+                      onSelect={selectFromTile}
+                      onHover={hoverCompetency}
+                      register={registerTile}
+                    />
                   );
                 })}
               </div>
@@ -301,8 +353,8 @@ export function ProfessionCanvas({
           activeId={selectedId}
           hoverId={hoverId}
           matches={matches}
-          onHover={setHoverId}
-          onSelect={(id) => select(id, { scroll: true })}
+          onHover={hoverCompetency}
+          onSelect={selectFromGraph}
           onZoomChange={setZoomPercent}
         />
 
@@ -316,7 +368,11 @@ export function ProfessionCanvas({
       </div>
 
       {selected ? (
+        // key по компетенции: панель пересобирается на новый выбор и заново
+        // въезжает справа — движение отвечает на вопрос «что изменилось»
+        // (COS-COM-007 §5), а внутренний скролл честно начинается сверху.
         <CompetencyDetail
+          key={selected.id}
           profession={profession}
           competency={selected}
           state={selectedState ?? { saved: false, status: "NOT_STARTED" }}

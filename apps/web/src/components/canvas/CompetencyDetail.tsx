@@ -116,6 +116,8 @@ export function CompetencyDetail({
                 targetId={competency.id}
                 initialSaved={state.saved}
                 contextProfession={profession.slug}
+                title={competency.title}
+                description={competency.definition}
               />
             ) : (
               <Link

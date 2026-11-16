@@ -4,7 +4,7 @@ import { ProfessionCanvas } from "@/components/canvas/ProfessionCanvas";
 import type { CanvasCompetency, CanvasProfession, CompetencyStates } from "@/components/canvas/types";
 import { ViewEvent } from "@/components/ViewEvent";
 import { getCurrentUser } from "@/lib/auth";
-import { findCompetencies, getProfession, professionSphere } from "@/lib/content";
+import { findCompetencies, getProfession, getProfessionGroups, professionSphere } from "@/lib/content";
 import { getDb } from "@/lib/db";
 import { loadProfessionSourceReviews } from "@/lib/source-review-server";
 
@@ -123,6 +123,21 @@ export default async function ProfessionCanvasPage({
     })),
   };
 
+  // Переключение между профессиями внутри выбранной сферы.
+  const sphereGroup = getProfessionGroups().find((group) =>
+    group.professions.some((item) => item.slug === profession.slug),
+  );
+  const sphereIndex = sphereGroup
+    ? sphereGroup.professions.findIndex((item) => item.slug === profession.slug)
+    : -1;
+  const prevItem = sphereGroup && sphereIndex > 0 ? sphereGroup.professions[sphereIndex - 1] : null;
+  const nextItem =
+    sphereGroup && sphereIndex >= 0 && sphereIndex < sphereGroup.professions.length - 1
+      ? sphereGroup.professions[sphereIndex + 1]
+      : null;
+  const prevProfession = prevItem ? { slug: prevItem.slug, title: prevItem.title } : null;
+  const nextProfession = nextItem ? { slug: nextItem.slug, title: nextItem.title } : null;
+
   const initialCompetencyId =
     query.competency && competencyIds.includes(query.competency) ? query.competency : undefined;
   const initialView = query.view === "network" ? "network" : "board";
@@ -144,6 +159,8 @@ export default async function ProfessionCanvasPage({
         professionSaved={professionSaved}
         initialCompetencyId={initialCompetencyId}
         initialView={initialView}
+        prevProfession={prevProfession}
+        nextProfession={nextProfession}
       />
     </>
   );

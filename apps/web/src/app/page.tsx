@@ -153,7 +153,7 @@ export default async function HomePage({
       <aside className="home-rail" aria-label="О платформе и обновления">
         <HomeRailSync />
         <div className="home-about">
-          <div className="hero-panel" data-depth="near" data-enter="1">
+          <div className="hero-panel" data-enter="1">
             <h2>Что внутри</h2>
             <ul className="checklist">
               {FEATURES.map((feature) => (
@@ -171,7 +171,6 @@ export default async function HomePage({
         <section
           className="home-log"
           aria-labelledby="home-log-title"
-          data-depth="mid"
           data-enter="2"
         >
           <h2 id="home-log-title">Лог обновлений</h2>

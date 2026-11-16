@@ -158,6 +158,8 @@ export function MaterialCard({
                 targetId={source.id}
                 initialSaved={Boolean(source.saved)}
                 variant="icon"
+                title={source.title}
+                description={source.summary}
               />
             ) : (
               <Link

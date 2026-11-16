@@ -31,7 +31,14 @@ export function SavedProfessionCard({ profession }: { profession: SavedProfessio
         <span className="small muted">
           {profession.published} из {profession.total} компетенций
         </span>
-        <SaveButton targetType="PROFESSION" targetId={profession.slug} initialSaved variant="icon" />
+        <SaveButton
+          targetType="PROFESSION"
+          targetId={profession.slug}
+          initialSaved
+          variant="icon"
+          title={profession.title}
+          description={profession.description}
+        />
       </div>
       <h3>
         <Link className="stretched-link" href={`/professions/${profession.slug}`}>
@@ -64,6 +71,8 @@ export function SavedSkillCard({ skill }: { skill: SavedSkillView }) {
           initialSaved
           variant="icon"
           contextProfession={skill.professionSlug}
+          title={skill.title}
+          description={skill.definition}
         />
       </div>
       <h3>

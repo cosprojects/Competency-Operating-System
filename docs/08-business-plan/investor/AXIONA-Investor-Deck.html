@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<title>AXIONA — investor deck</title>
+<style>
+  @page { size: 13.333in 7.5in; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #1b1f27; color: #111827; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
+  .slide {
+    width: 13.333in; height: 7.5in; background: #fff; padding: .55in .62in;
+    page-break-after: always; position: relative; overflow: hidden;
+  }
+  .slide:last-child { page-break-after: auto; }
+  .slide.dark { background: #0f1724; color: #fff; }
+  .slide.soft { background: #f4f7fb; }
+  .kicker { font-size: 9pt; letter-spacing: .16em; text-transform: uppercase; color: #6b7484; font-weight: 700; }
+  .dark .kicker { color: #9aa8bf; }
+  h1 { margin: .14in 0 .1in; font-size: 34pt; line-height: 1.05; letter-spacing: -.025em; }
+  h2 { margin: .08in 0 .16in; font-size: 28pt; line-height: 1.08; letter-spacing: -.02em; }
+  h3 { margin: 0 0 .06in; font-size: 13pt; }
+  p { margin: 0 0 .11in; font-size: 13pt; line-height: 1.35; color: #374151; }
+  .dark p { color: #c9d3e3; }
+  ul { margin: .04in 0 0; padding-left: .24in; }
+  li { font-size: 12.5pt; line-height: 1.4; margin-bottom: .055in; color: #374151; }
+  .dark li { color: #d7dfeb; }
+  .muted { color: #6b7484; }
+  .accent { color: #2452a5; }
+  .dark .accent { color: #8fb4ff; }
+  .mono { font-variant-numeric: tabular-nums; }
+  .num { position: absolute; right: .55in; top: .45in; font-size: 10pt; color: #9aa3b2; }
+  .footer { position: absolute; left: .62in; right: .62in; bottom: .32in; font-size: 7.5pt; color: #8a94a6; display: flex; justify-content: space-between; border-top: 1px solid #e2e7ef; padding-top: .07in; }
+  .dark .footer { border-color: #2b3648; color: #7f8ca3; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: .32in; }
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: .2in; }
+  .card { border: 1px solid #e1e7f0; border-radius: .12in; padding: .18in; background: #fff; }
+  .dark .card { background: #162033; border-color: #2b3648; }
+  .card h3 { font-size: 11.5pt; color: #2452a5; }
+  .dark .card h3 { color: #9fc0ff; }
+  .card p, .card li { font-size: 10.5pt; }
+  .kpi { display: grid; grid-template-columns: repeat(3,1fr); gap: .12in; margin-top: .16in; }
+  .kpi div { background: #eef3ff; border-radius: .1in; padding: .14in; }
+  .kpi b { display: block; font-size: 22pt; line-height: 1; color: #173b7a; }
+  .kpi span { display: block; font-size: 8.5pt; color: #4b5a73; margin-top: .05in; line-height: 1.25; }
+  table { width: 100%; border-collapse: collapse; font-size: 10.5pt; }
+  td, th { text-align: left; padding: .07in 0; border-bottom: 1px solid #e3e8f0; vertical-align: top; }
+  th { font-size: 8pt; text-transform: uppercase; letter-spacing: .06em; color: #6b7484; }
+  td.r, th.r { text-align: right; white-space: nowrap; }
+  .flow { display: flex; flex-wrap: wrap; gap: .07in; margin-top: .12in; }
+  .flow span { font-size: 8.5pt; background: #eef3ff; color: #173b7a; border-radius: 999px; padding: .05in .1in; }
+  .huge { font-size: 72pt; line-height: .9; letter-spacing: -.05em; color: #2452a5; }
+  .dark .huge { color: #8fb4ff; }
+  .two-col { display: grid; grid-template-columns: 1.15fr .85fr; gap: .35in; }
+  .quote { border-left: .05in solid #2452a5; padding-left: .16in; font-size: 13pt; color: #374151; }
+  .tag { display: inline-block; font-size: 8pt; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: #2452a5; background: #eef3ff; border-radius: 999px; padding: .04in .1in; }
+  .dark .tag { color: #9fc0ff; background: #1d2a44; }
+  .bar { height: .12in; border-radius: 999px; background: #e8edf6; overflow: hidden; margin: .04in 0 .08in; }
+  .bar i { display: block; height: 100%; background: #2452a5; }
+  .small { font-size: 8pt; line-height: 1.35; color: #6b7484; }
+  .dark .small { color: #8d9ab1; }
+</style>
+</head>
+<body>
+
+<!-- 1 -->
+<section class="slide dark">
+  <div class="kicker">AXIONA / Competency Operating System</div>
+  <h1 style="margin-top:.35in; max-width:10.5in">Система профессионального развития, а не ещё один курс</h1>
+  <p style="max-width:9.2in; font-size:15pt">Карта компетенций → диагностика разрыва → обучение → проверка → доказательства роста. AI-native. Начинаем с дизайна как теста, затем AI/IT-переобучение.</p>
+  <div style="display:flex; gap:.25in; margin-top:.35in; align-items:center">
+    <span class="tag">Pre-traction</span><span class="tag">продукт работает</span><span class="tag">регистрация закрыта</span>
+  </div>
+  <div style="margin-top:.38in; font-size:20pt; line-height:1.25; color:#d7dfeb; max-width:8.7in">Профессии меняются.<br/>Способность учиться — остаётся.</div>
+  <div style="display:flex; flex-wrap:wrap; gap:.08in; margin-top:.3in; max-width:9.8in">
+    <span class="tag">UX/UI</span><span class="tag">Product</span><span class="tag">Motion</span><span class="tag">Graphic</span><span class="tag">3D</span><span class="tag">Interior</span><span class="tag">Web</span><span class="tag">Presentation</span><span class="tag">AI designer</span><span class="tag">Game</span><span class="tag">Art direction</span>
+  </div>
+  <div style="position:absolute; left:.62in; bottom:.55in; font-size:11pt; color:#c9d3e3">
+    Кирилл Невзоров — co-founder / CTO / Product Owner · Луиза Смольская — founder / CEO<br/>
+    <span class="small">app.axiona.world · hi.axiona@protonmail.com</span>
+  </div>
+  <div class="footer"><span>Investor deck · 2026-11-13</span><span>1 / 14</span></div>
+</section>
+
+<!-- 2 -->
+<section class="slide">
+  <div class="num">2 / 14</div>
+  <div class="kicker">Проблема</div>
+  <h2>Люди не понимают разрыв — и учатся без доказательств</h2>
+  <div class="grid2">
+    <div>
+      <ul>
+        <li>Курсы фрагментированы: после них нет карты, проверки и evidence.</li>
+        <li>AI меняет требования: <b>39% навыков изменятся к 2030</b> (WEF 2025).</li>
+        <li><b>26%</b> IT-специалистов опасаются сокращений, <b>34%</b> — в активном поиске.</li>
+        <li>Работодатель не видит разницы между «прошёл курс» и «умеет».</li>
+      </ul>
+    </div>
+    <div class="card" style="align-self:start">
+      <h3>Что происходит сейчас</h3>
+      <p>Человек покупает курс → смотрит видео → получает сертификат → не понимает, что делать дальше.</p>
+      <p class="small">Нет карты профессии, нет проверки, нет доказательства. Следующий шаг — лотерея.</p>
+    </div>
+  </div>
+  <div class="footer"><span>Источники: WEF Future of Jobs 2025; hh.ru / PurpleSchool</span><span>2 / 14</span></div>
+</section>
+
+<!-- 3 -->
+<section class="slide soft">
+  <div class="num">3 / 14</div>
+  <div class="kicker">Почему сейчас</div>
+  <h2>AI усилил спрос на переобучение и обесценил «просто курс»</h2>
+  <div class="grid3">
+    <div class="card"><div class="huge">39%</div><p>навыков изменятся к 2030; 19 млн jobs created / 9 млн displaced.</p></div>
+    <div class="card"><div class="huge">505 тыс.</div><p>IT-вакансий в РФ; 202 тыс. — с обучением, 78 тыс. — без опыта.</p></div>
+    <div class="card"><div class="huge">+52%</div><p>рост вакансий с prompt-навыками; медиана 138,9 тыс. ₽.</p></div>
+  </div>
+  <p style="margin-top:.2in"><b>Выигрывает не контент, а система:</b> разрыв → практика → доказательство → следующий шаг.</p>
+  <div class="footer"><span>Источники: WEF 2025; hh.ru/CNews; Коммерсантъ/hh.ru</span><span>3 / 14</span></div>
+</section>
+
+<!-- 4 -->
+<section class="slide">
+  <div class="num">4 / 14</div>
+  <div class="kicker">Решение</div>
+  <h2>Один контур: от цели до следующего шага</h2>
+  <div class="flow">
+    <span>Цель</span><span>Диагностика</span><span>Разрыв</span><span>Путь</span><span>Микро-урок</span><span>Квиз</span><span>Проект / evidence</span><span>AI-фидбек</span><span>Прогресс</span><span>Следующий шаг</span>
+  </div>
+  <div class="grid2" style="margin-top:.24in">
+    <div class="card"><h3>Карта</h3><p>Сфера → профессия → компетенция → знания/навыки → материалы.</p></div>
+    <div class="card"><h3>Проверка</h3><p>Диагностика + квизы + mastery; не «просмотрел», а «подтвердил».</p></div>
+    <div class="card"><h3>Evidence</h3><p>Проект, артефакт, фото/видео для нецифровых; портфолио.</p></div>
+    <div class="card"><h3>AI</h3><p>Черновики вопросов, проверка по рубрике, рекомендации; human review.</p></div>
+  </div>
+  <div class="footer"><span>Не школа и не job board — слой навигации и доказательств</span><span>4 / 14</span></div>
+</section>
+
+<!-- 5 -->
+<section class="slide dark">
+  <div class="num">5 / 14</div>
+  <div class="kicker">Продукт</div>
+  <h2>Уже работает: 13 профессий, 292 связи</h2>
+  <div class="grid2">
+    <div>
+      <div class="kpi">
+        <div><b>13</b><span>профессий</span></div>
+        <div><b>131</b><span>компетенция опубликована</span></div>
+        <div><b>292</b><span>связи</span></div>
+      </div>
+      <ul style="margin-top:.22in">
+        <li>app.axiona.world: карта, профиль, сохранения, статусы, отзывы.</li>
+        <li>Production VDS Москва, TLS, backup; QA 77/79 PASS, 0 FAIL.</li>
+        <li>Регистрация закрыта: сначала тест на дизайн-сообществе.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Следующий слой</h3>
+      <p>Диагностика → уроки → квизы → evidence → Pro.</p>
+      <p class="small">Честная граница: обучение и платежи — не текущая функция, а предмет инвестиции.</p>
+    </div>
+  </div>
+  <div class="footer"><span>Скриншот продукта — на слайде в PPTX</span><span>5 / 14</span></div>
+</section>
+
+<!-- 6 -->
+<section class="slide">
+  <div class="num">6 / 14</div>
+  <div class="kicker">Learning loop</div>
+  <h2>Не «посмотрел видео», а «проверил и доказал»</h2>
+  <div class="grid2">
+    <div>
+      <ul>
+        <li><b>Диагностика:</b> где человек сейчас и где цель.</li>
+        <li><b>Урок → квиз → mastery:</b> проверка по компетенции.</li>
+        <li><b>Практика:</b> проект/артефакт; для нецифровых — фото/видео.</li>
+        <li><b>AI-фидбек:</b> по рубрике, с human review.</li>
+        <li><b>Фиксация:</b> уровень, история, FSRS, следующий шаг.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>MVP</h3>
+      <p><b>3 профессии</b>, 3–5 уроков, 5–10 квизов, 1 проект.</p>
+      <p>Метрики: активация, completion, quiz pass, mastery, D7/D30, Pro conversion.</p>
+      <p class="small">Главный риск — не деньги, а качество learning loop. Поэтому 3 профессии, а не 50.</p>
+    </div>
+  </div>
+  <div class="footer"><span>Learning science: retrieval, spacing, mastery, deliberate practice</span><span>6 / 14</span></div>
+</section>
+
+<!-- 7 -->
+<section class="slide soft">
+  <div class="num">7 / 14</div>
+  <div class="kicker">Рынок</div>
+  <h2>Не «TAM 154 млрд», а конкретный wedge</h2>
+  <table>
+    <tr><th>Уровень</th><th>Что входит</th><th class="r">Оценка</th></tr>
+    <tr><td>TAM (референс)</td><td>онлайн-образование РФ</td><td class="r">154 млрд ₽</td></tr>
+    <tr><td>SAM (bottom-up)</td><td>дизайн + IT/AI-переобучение + карьерный переход</td><td class="r">0,9–3,6 млрд ₽</td></tr>
+    <tr><td>SOM 24 мес (база)</td><td>15 тыс. рег., 500 платящих</td><td class="r">5–8 млн ₽</td></tr>
+  </table>
+  <div class="grid3" style="margin-top:.2in">
+    <div class="card"><h3>Дизайн-тест</h3><p>217 тыс. дизайнеров; 22,1 резюме/вакансию.</p></div>
+    <div class="card"><h3>AI/IT</h3><p>505 тыс. вакансий; 202 тыс. с обучением; 26% опасаются сокращений.</p></div>
+    <div class="card"><h3>Нецифровые</h3><p>58% рукоделие; 16–20% продают изделия.</p></div>
+  </div>
+  <div class="footer"><span>Источники: АСИ; hh.ru/CNews; Smart Ranking; WEF; Авито/Рамблер</span><span>7 / 14</span></div>
+</section>
+
+<!-- 8 -->
+<section class="slide">
+  <div class="num">8 / 14</div>
+  <div class="kicker">Бизнес-модель</div>
+  <h2>Платный пользователь — за результат, не за контент</h2>
+  <div class="grid3">
+    <div class="card"><h3>Pro</h3><div class="huge" style="font-size:30pt">590/990 ₽</div><p>в месяц; 4 900/8 900 ₽ в год.</p></div>
+    <div class="card"><h3>Карьерный переход</h3><div class="huge" style="font-size:30pt">9,9–19,9 тыс.</div><p>8–12 недель: диагностика, маршрут, портфолио, разбор.</p></div>
+    <div class="card"><h3>B2B</h3><div class="huge" style="font-size:30pt">0,5–2 млн</div><p>outplacement/L&D; после 3–5 пилотов.</p></div>
+  </div>
+  <p style="margin-top:.2in"><b>Реклама — последний резерв:</b> при текущем трафике CPM не имеет смысла; сначала Pro + карьерный переход.</p>
+  <div class="footer"><span>Выручка к M24: 5–8 млн ₽ (база), не прибыльность</span><span>8 / 14</span></div>
+</section>
+
+<!-- 9 -->
+<section class="slide dark">
+  <div class="num">9 / 14</div>
+  <div class="kicker">Traction / roadmap</div>
+  <h2>Pre-traction: продукт есть, метрик ещё нет</h2>
+  <div class="grid3">
+    <div class="card"><h3>Сейчас</h3><p>13 профессий, 292 связи, production, closed Beta. Выручки нет.</p></div>
+    <div class="card"><h3>T1 · 12 мес</h3><p>5–10 тыс. рег., 10% email, D7 20%, 50–100 платящих; learning MVP, 4–6 профессий.</p></div>
+    <div class="card"><h3>T2 · 24 мес</h3><p>15–20 тыс. рег., 300–800 платящих, LTV/CAC ≥3; 8–10 профессий, B2B-пилоты.</p></div>
+  </div>
+  <p style="margin-top:.2in"><b>Ворота:</b> если T1 не проходит — пивот/сокращение, а не «дорисовываем» план.</p>
+  <div class="footer"><span>Инвестор финансирует проверку, а не готовую прибыль</span><span>9 / 14</span></div>
+</section>
+
+<!-- 10 -->
+<section class="slide">
+  <div class="num">10 / 14</div>
+  <div class="kicker">Конкуренты</div>
+  <h2>Не школа и не job board</h2>
+  <table>
+    <tr><th>Категория</th><th>Игроки</th><th>Наше отличие</th></tr>
+    <tr><td>Онлайн-школы</td><td>Bang Bang, XYZ, Contented, Skillbox, Netology</td><td>карта + разрыв + evidence</td></tr>
+    <tr><td>IT-школы</td><td>Skillbox, Netology, Практикум</td><td>переход/рост, не «с нуля»</td></tr>
+    <tr><td>AI-курсы</td><td>мелкие игроки</td><td>методология, оценка, human review</td></tr>
+    <tr><td>Career services</td><td>консультанты, hh</td><td>масштабируемая система</td></tr>
+    <tr><td>LMS</td><td>Moodle, Open edX</td><td>consumer-навигация</td></tr>
+  </table>
+  <div class="footer"><span>Нас могут скопировать по контенту, но не по связке карта → проверка → evidence</span><span>10 / 14</span></div>
+</section>
+
+<!-- 11 -->
+<section class="slide soft">
+  <div class="num">11 / 14</div>
+  <div class="kicker">Go-to-market</div>
+  <h2>Дизайн-тест → AI/IT-переобучение → B2B</h2>
+  <div class="grid2">
+    <div>
+      <ul>
+        <li><b>Дизайн:</b> Telegram/VK, сообщества, SEO по компетенциям.</li>
+        <li><b>AI/IT:</b> каналы о сокращениях, hh, карьерные консультанты, outplacement.</li>
+        <li><b>Нецифровые:</b> YouTube/VK/Pinterest, маркетплейсы.</li>
+        <li><b>B2B:</b> 3–5 пилотов после первых paid-данных.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Принцип</h3>
+      <p>Не покупаем трафик, пока не поняли retention. Сначала сообщество и SEO, потом масштаб.</p>
+      <p class="small">Цель T1: 5–10 тыс. регистраций и 10% email capture.</p>
+    </div>
+  </div>
+  <div class="footer"><span>Платный трафик — только после CAC/LTV</span><span>11 / 14</span></div>
+</section>
+
+<!-- 12 -->
+<section class="slide">
+  <div class="num">12 / 14</div>
+  <div class="kicker">Команда / legal</div>
+  <h2>Founder + co-founder/CTO + агенты</h2>
+  <div class="grid2">
+    <div>
+      <p><b>Луиза Смольская</b> — Founder/CEO, исследования, методология, оценка; владелец патента RU2863772C1.</p>
+      <p><b>Кирилл Невзоров</b> — Co-founder/CTO/Product Owner, разработка и продукт.</p>
+      <p class="small">AI-агенты — операционная модель, не «команда». Найм после T1: контент-лид, инженер, методолог, юрист.</p>
+    </div>
+    <div class="card">
+      <h3>Рамка</h3>
+      <p>ООО; 70/25/5 до инвестиций; патент — исключительная лицензия ООО.</p>
+      <p>РКН № 100495783 подан; legal-документы draft.</p>
+      <p class="small">Key-person риск закрываем наймом и документацией.</p>
+    </div>
+  </div>
+  <div class="footer"><span>Не приукрашиваем: два человека и агенты</span><span>12 / 14</span></div>
+</section>
+
+<!-- 13 -->
+<section class="slide dark">
+  <div class="num">13 / 14</div>
+  <div class="kicker">Financials / ask</div>
+  <h2>10 млн ₽: 7 млн T1 + 3 млн T2</h2>
+  <div class="two-col">
+    <div>
+      <table>
+        <tr><td>Зарплаты основателей</td><td class="r">6,5–7,2 млн ₽</td></tr>
+        <tr><td>Сервисы/API</td><td class="r">0,6–1,0 млн ₽</td></tr>
+        <tr><td>Подрядчики</td><td class="r">0,8–1,2 млн ₽</td></tr>
+        <tr><td>Контент/обучение</td><td class="r">0,6–0,9 млн ₽</td></tr>
+        <tr><td>Legal/резерв</td><td class="r">0,7–1,0 млн ₽</td></tr>
+      </table>
+      <p class="small" style="margin-top:.15in">10 млн за 40%: 7 млн при pre-money 15 млн + 3 млн при pre-money 25 млн.</p>
+    </div>
+    <div class="card">
+      <h3>Ворота</h3>
+      <p><b>T1:</b> 5–10 тыс. рег., 10% email, D7 20%, 50–100 платящих.</p>
+      <p><b>T2:</b> 15–20 тыс. рег., 300–500 платящих, LTV/CAC ≥3.</p>
+      <p class="small">10 млн — lean: 24 мес с 4–6 профессиями или 18 мес с 8–10. Не полная мульти-вертикаль.</p>
+    </div>
+  </div>
+  <div class="footer"><span>Выручка к M24: 5–8 млн ₽ (база)</span><span>13 / 14</span></div>
+</section>
+
+<!-- 14 -->
+<section class="slide">
+  <div class="num">14 / 14</div>
+  <div class="kicker">Vision / close</div>
+  <h2>Профессии меняются — способность учиться остаётся</h2>
+  <div class="grid3">
+    <div class="card"><h3>Слой</h3><p>Навигация и доказательства между человеком, обучением и работой.</p></div>
+    <div class="card"><h3>Wedge</h3><p>Дизайн → AI/IT → смежные и нецифровые профессии.</p></div>
+    <div class="card"><h3>Ask</h3><p>10 млн ₽, 7+3 транша, 24 месяца.</p></div>
+  </div>
+  <p style="margin-top:.3in; font-size:16pt"><b>hi.axiona@protonmail.com</b> · app.axiona.world</p>
+  <div class="footer"><span>AXIONA / Competency Operating System · 2026-11-13</span><span>14 / 14</span></div>
+</section>
+
+</body>
+</html>

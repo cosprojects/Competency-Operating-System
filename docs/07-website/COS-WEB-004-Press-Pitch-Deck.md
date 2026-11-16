@@ -7,6 +7,8 @@
 
 ---
 
+> **Актуализация 2026-11-13.** Структура ниже — историческая версия. Актуальный текст слайдов — `COS-BP-019`, структура/визуалы — `COS-BP-021`, one-pager — `COS-BP-020`. Не использовать этот документ как deck для показа.
+
 # Purpose
 
 Данный документ определяет структуру и содержание инвестиционной презентации Competency Operating System.
@@ -2010,13 +2012,13 @@ Competency Operating System рождается в момент, когда ср�
 
 ## Контакты
 
-Founder
-
-Kirill Nevzorov
-
-Co-Founder
+Founder / CEO
 
 Luiza Smolskaya
+
+Co-founder / CTO / Product Owner
+
+Kirill Nevzorov
 
 contact@...
 

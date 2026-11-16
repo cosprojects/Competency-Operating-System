@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<title>AXIONA — one-pager для инвестора</title>
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #eef1f5; color: #12161f; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
+  .page { width: 210mm; min-height: 297mm; margin: 0 auto; background: #fff; padding: 11mm 12mm 9mm; position: relative; }
+  .top { display: flex; justify-content: space-between; align-items: flex-start; gap: 18px; border-bottom: 1px solid #dfe4ec; padding-bottom: 7mm; }
+  .brand { font-size: 10pt; letter-spacing: .14em; text-transform: uppercase; color: #5a6475; font-weight: 700; }
+  h1 { margin: 2mm 0; font-size: 24pt; line-height: 1.02; letter-spacing: -.02em; }
+  .lead { margin: 0; font-size: 10pt; color: #3c4658; line-height: 1.4; max-width: 118mm; }
+  .contact { text-align: right; font-size: 8.8pt; color: #5a6475; line-height: 1.5; min-width: 45mm; }
+  .badge { display: inline-block; margin-top: 2mm; padding: 1.3mm 2.3mm; border-radius: 99px; background: #eef3ff; color: #244b9b; font-size: 7.2pt; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+  .grid { display: grid; grid-template-columns: 1.06fr .94fr; gap: 4.6mm; margin-top: 5mm; }
+  .card { border: 1px solid #e1e6ee; border-radius: 4mm; padding: 3.6mm; break-inside: avoid; }
+  .card.dark { background: #111827; color: #fff; border-color: #111827; }
+  .card.soft { background: #f6f8fb; }
+  h2 { margin: 0 0 2mm; font-size: 8pt; letter-spacing: .1em; text-transform: uppercase; color: #6b7484; }
+  .dark h2 { color: #a9b4c8; }
+  p, li { font-size: 8.2pt; line-height: 1.36; }
+  p { margin: 0 0 1.6mm; }
+  ul { margin: 0; padding-left: 4mm; }
+  li { margin-bottom: 1mm; }
+  .kpi { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2mm; margin-top: 2.6mm; }
+  .kpi div { background: #fff; border: 1px solid #e1e6ee; border-radius: 3mm; padding: 2.4mm; }
+  .kpi b { display: block; font-size: 14pt; line-height: 1; letter-spacing: -.02em; }
+  .kpi span { display: block; font-size: 6.8pt; color: #6b7484; margin-top: 1mm; line-height: 1.25; }
+  table { width: 100%; border-collapse: collapse; font-size: 7.8pt; }
+  td, th { text-align: left; padding: 1.4mm 0; border-bottom: 1px solid #e4e8f0; vertical-align: top; }
+  th { color: #6b7484; font-size: 6.8pt; letter-spacing: .04em; text-transform: uppercase; font-weight: 700; }
+  td.r, th.r { text-align: right; white-space: nowrap; }
+  .flow { display: flex; flex-wrap: wrap; gap: 1.3mm; margin-top: 1.8mm; }
+  .flow span { font-size: 6.9pt; background: #eef3ff; color: #244b9b; border-radius: 99px; padding: 1.1mm 1.9mm; }
+  .footer { position: absolute; left: 12mm; right: 12mm; bottom: 7mm; display: flex; justify-content: space-between; gap: 8mm; border-top: 1px solid #e1e6ee; padding-top: 2.6mm; font-size: 6.8pt; color: #6b7484; }
+  .small { font-size: 6.8pt; color: #6b7484; line-height: 1.35; }
+  .accent { color: #244b9b; }
+  .mono { font-variant-numeric: tabular-nums; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="top">
+    <div>
+      <div class="brand">AXIONA / Competency Operating System</div>
+      <h1>Система профессионального развития, а не ещё один курс</h1>
+      <p class="lead">Карта профессий → диагностика разрыва → короткое обучение → проверка → доказательства роста. AI-native; начинаем с дизайна как теста, затем AI/IT-переобучение.</p>
+      <span class="badge">Pre-traction · продукт работает · регистрация закрыта</span>
+    </div>
+    <div class="contact">
+      <b>Кирилл Невзоров</b><br/>co-founder / CTO / Product Owner<br/><br/>
+      <b>Луиза Смольская</b><br/>founder / CEO<br/><br/>
+      app.axiona.world<br/>hi.axiona@protonmail.com
+    </div>
+  </div>
+
+  <div class="grid">
+    <div>
+      <div class="card">
+        <h2>Проблема</h2>
+        <ul>
+          <li>Человек не понимает, каких компетенций ему не хватает для роли.</li>
+          <li>Курсы фрагментированы: после них нет карты, проверки и доказательств.</li>
+          <li>AI меняет требования: 39% навыков изменятся к 2030.</li>
+          <li>26% IT-специалистов опасаются сокращений, 34% — в поиске.</li>
+        </ul>
+      </div>
+
+      <div class="card" style="margin-top:4mm">
+        <h2>Решение</h2>
+        <p>Один контур: цель → диагностика → разрыв → путь → микро-урок → квиз → проект/evidence → AI-фидбек → прогресс.</p>
+        <div class="flow">
+          <span>карта</span><span>диагностика</span><span>разрыв</span><span>урок</span><span>квиз</span><span>evidence</span><span>прогресс</span>
+        </div>
+        <p style="margin-top:2.2mm">Не школа и не job board — слой навигации и доказательств между человеком, обучением и работой.</p>
+      </div>
+
+      <div class="card soft" style="margin-top:4mm">
+        <h2>Продукт сейчас</h2>
+        <div class="kpi">
+          <div><b>13</b><span>профессий</span></div>
+          <div><b>131</b><span>компетенция опубликована</span></div>
+          <div><b>292</b><span>связи</span></div>
+        </div>
+        <p class="small" style="margin-top:2.2mm">Production VDS Москва · QA 77/79 PASS · карта, профиль, сохранения, статусы. Следующий слой: диагностика, уроки, квизы, Pro.</p>
+      </div>
+
+      <div class="card" style="margin-top:4mm">
+        <h2>Рынок</h2>
+        <table>
+          <tr><th>Уровень</th><th class="r">Оценка</th></tr>
+          <tr><td>TAM — онлайн-образование РФ (референс)</td><td class="r">154 млрд ₽</td></tr>
+          <tr><td>SAM — дизайн + AI/IT-переобучение + переход</td><td class="r">0,9–3,6 млрд ₽</td></tr>
+          <tr><td>SOM 24 мес, база</td><td class="r">5–8 млн ₽</td></tr>
+        </table>
+        <p class="small" style="margin-top:1.8mm">Wedge: дизайн-тест (217 тыс. дизайнеров) → AI/IT (505 тыс. вакансий) → нецифровые (58% рукоделие).</p>
+      </div>
+    </div>
+
+    <div>
+      <div class="card dark">
+        <h2>Бизнес-модель</h2>
+        <table style="color:#fff">
+          <tr><td style="border-color:#2a3445">Pro-подписка</td><td class="r" style="border-color:#2a3445">590/990 ₽/мес</td></tr>
+          <tr><td style="border-color:#2a3445">Карьерный переход</td><td class="r" style="border-color:#2a3445">9,9–19,9 тыс. ₽</td></tr>
+          <tr><td style="border-color:#2a3445">B2B-outplacement</td><td class="r" style="border-color:#2a3445">0,5–2 млн ₽</td></tr>
+          <tr><td style="border-color:#2a3445">Годовая подписка</td><td class="r" style="border-color:#2a3445">4,9/8,9 тыс. ₽</td></tr>
+        </table>
+        <p class="small" style="color:#a9b4c8;margin-top:2.2mm">Реклама — последний резерв. Сначала Pro + карьерный переход; B2B — после 3–5 пилотов.</p>
+      </div>
+
+      <div class="card" style="margin-top:4mm">
+        <h2>Почему сейчас</h2>
+        <ul>
+          <li>AI-роли в топе: AI engineers №1, AI consultants №2 (LinkedIn 2026).</li>
+          <li>Prompt-навыки: +52% вакансий, медиана 138,9 тыс. ₽.</li>
+          <li>EdTech РФ — 154 млрд ₽, +12% в 2025.</li>
+          <li>Компании готовы обучать: 202 тыс. IT-вакансий с обучением.</li>
+        </ul>
+      </div>
+
+      <div class="card" style="margin-top:4mm">
+        <h2>Команда и юридическая рамка</h2>
+        <p><b>Луиза Смольская</b> — Founder/CEO, исследования, методология, оценка; владелец патента RU2863772C1.</p>
+        <p><b>Кирилл Невзоров</b> — Co-founder/CTO/Product Owner, разработка и продукт.</p>
+        <p class="small">ООО; 70/25/5 до инвестиций; патент — исключительная лицензия. AI-агенты — операционная модель, не «команда».</p>
+      </div>
+
+      <div class="card soft" style="margin-top:4mm">
+        <h2>Ask — 10 млн ₽ за 40%</h2>
+        <p><b>7 млн T1 + 3 млн T2</b> · 24 месяца · 100 тыс. ₽ на руки каждому основателю.</p>
+        <table>
+          <tr><td>Зарплаты</td><td class="r">6,5–7,2 млн ₽</td></tr>
+          <tr><td>Сервисы/API</td><td class="r">0,6–1,0 млн ₽</td></tr>
+          <tr><td>Подрядчики</td><td class="r">0,8–1,2 млн ₽</td></tr>
+          <tr><td>Контент/обучение</td><td class="r">0,6–0,9 млн ₽</td></tr>
+          <tr><td>Legal/резерв</td><td class="r">0,7–1,0 млн ₽</td></tr>
+        </table>
+        <p class="small" style="margin-top:1.8mm">Ворота T1: 5–10 тыс. рег., 10% email, D7 20%, 50–100 платящих. T2: 15–20 тыс. рег., 300–500 платящих, LTV/CAC ≥3.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div>Pre-traction: продукт есть, пользовательских метрик и выручки пока нет. Инвестор финансирует проверку learning loop и paid-модели.</div>
+    <div class="mono">AXIONA · 2026-11-13</div>
+  </div>
+</div>
+</body>
+</html>

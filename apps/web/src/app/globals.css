@@ -225,10 +225,12 @@ svg {
   line-height: 1.2;
   text-align: center;
   cursor: pointer;
-  /* Ховер кнопки — мягкий вход 300 мс: фон, цвет, тень и рамка перетекают, а
-     нажатие остаётся быстрым (transform 120 мс), иначе кнопка кажется вязкой. */
-  transition: background 300ms ease-in, color 300ms ease-in,
-    box-shadow 300ms ease-in, border-color 300ms ease-in,
+  /* Ховер кнопки: быстрый старт, мягкое завершение. ease-in на 300 мс давал
+     почти незаметные первые ~150 мс — кнопка читалась как «не реагирует». */
+  transition: background 160ms cubic-bezier(0.2, 0, 0, 1),
+    color 160ms cubic-bezier(0.2, 0, 0, 1),
+    box-shadow 160ms cubic-bezier(0.2, 0, 0, 1),
+    border-color 160ms cubic-bezier(0.2, 0, 0, 1),
     transform 120ms ease-out;
 }
 
@@ -236,6 +238,8 @@ svg {
   background: var(--accent-dark);
   box-shadow: 0 8px 18px rgba(79, 70, 229, 0.18);
   text-decoration: none;
+  /* Подъём на 1px делает ховер очевидным даже там, где фон кнопки уже тёмный. */
+  transform: translateY(-1px);
 }
 
 .button:focus-visible {
@@ -6720,8 +6724,10 @@ button.rail-item {
   font-weight: 700;
 }
 
+/* Белая кнопка раньше на наведении не меняла фон — ховер читался только по
+   рамке. Теперь подсветка заметна и подъём берётся из общего .button:hover. */
 .feedback-invite .invite-button:hover {
-  background: #ffffff;
+  background: var(--accent-soft);
   border-color: #c7d2fe;
 }
 
@@ -7441,4 +7447,39 @@ button.rail-item {
 .why-dialog .account-close:focus-visible {
   outline: none;
   box-shadow: none;
+}
+
+
+/* Карточка материала: клик по всей площади ведёт к источнику */
+.material-card {
+  cursor: pointer;
+}
+
+.material-card > .material-card-hit {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;
+}
+
+.material-card .material-badge-slot,
+.material-card .material-cta,
+.material-card .material-meta .link-button,
+.material-card .material-rejected .button {
+  position: relative;
+  z-index: 3;
+}
+
+
+/* Обложка и тело карточки не создают stacking context: кнопки внутри должны
+   подниматься над растянутой ссылкой карточки. */
+.material-card > .material-cover,
+.material-card > .material-body {
+  z-index: auto;
+}
+
+
+/* Бейджи и кнопки в них — выше растянутой ссылки карточки */
+.material-card .material-badges {
+  z-index: 3;
 }

@@ -9,6 +9,7 @@ import { SourceLink } from "@/components/SourceLink";
 import { SourceReviewBadge } from "@/components/source-review/SourceReviewBadge";
 import { IconArrowRight, IconEye, IconStar } from "@/components/icons";
 import { accessHint, accessLabel, sourceKindLabel } from "@/lib/content";
+import { trackClient } from "@/lib/client-analytics";
 import type { ContentSource } from "@/lib/content-types";
 
 type ReviewAction = "CONFIRM" | "BLOCK" | null;
@@ -174,6 +175,37 @@ export function MaterialCard({
           </span>
         </div>
       </div>
+
+      {canOpen ? (
+        <a
+          className="material-card-hit"
+          href={source.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Открыть материал «${title}»`}
+          onClick={() => {
+            trackClient("source_click", {
+              competency_id: competencyId,
+              source_id: source.id,
+              source_kind: source.kind,
+              access: source.access,
+            });
+            void markViewed();
+          }}
+        />
+      ) : (
+        <Link
+          className="material-card-hit"
+          href={`/register?returnTo=${encodeURIComponent(returnTo)}`}
+          aria-label="Войти, чтобы открыть материал"
+          onClick={() =>
+            trackClient("source_gate_view", {
+              competency_id: competencyId,
+              source_id: source.id,
+            })
+          }
+        />
+      )}
 
       <div className="material-body">
         <h4 className="material-title">{title}</h4>

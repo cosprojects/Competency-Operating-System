@@ -60,9 +60,6 @@ const ProfessionTile = memo(function ProfessionTile({
         aria-label={`Открыть профессию «${profession.title}»`}
       />
       <div className="tile-top">
-        <span className="badge" style={profession.sphereStyle}>
-          {profession.sphereTitle}
-        </span>
         <span className="tile-count">{profession.countText}</span>
         <span className="tile-action">
           {viewer ? (

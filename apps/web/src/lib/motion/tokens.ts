@@ -9,17 +9,8 @@
  * Значения ниже обязаны совпадать с CSS-токенами в `app/globals.css`.
  */
 
-/** Максимальный сдвиг ближнего слоя за курсором, px. Больше — уже карусель. */
+/** Максимальный сдвиг бумаги-канваса за курсором, px (карточки не двигаются). */
 export const PARALLAX_MAX_PX = 6;
-
-/** Глубина слоёв: чем ближе к зрителю, тем сильнее отклик на курсор. */
-export const DEPTH = {
-  far: 0.25,
-  mid: 0.55,
-  near: 1,
-} as const;
-
-export type DepthLayer = keyof typeof DEPTH;
 
 /** Стаггер появления: шаг и потолок задержки, мс. */
 export const ENTER_STEP_MS = 60;
@@ -40,6 +31,19 @@ export const GRAPH_VIEW_MS = 280;
 
 /** Постоянная времени следования курсора: критически задемпфировано, без отскока. */
 export const POINTER_TAU = 0.09;
+
+/**
+ * Магнит в схеме компетенций: карточки слегка тянутся к курсору и наклоняются
+ * к нему. Радиус — в пикселях экрана, смещение — визуальные пиксели, наклон —
+ * градусы. Значения намеренно маленькие: это намёк на объём, а не 3D-аттракцион
+ * (COS-COM-011 §2.5).
+ */
+export const MAGNET_RADIUS = 220;
+export const MAGNET_MAX_PX = 8;
+export const MAGNET_MAX_DEG = 4;
+
+/** Строка схемы для порядка появления: карточки в одной визуальной полосе. */
+export const GRAPH_ROW_HEIGHT = 60;
 
 export const REDUCED_MOTION_QUERY = "(prefers-reduced-motion: reduce)";
 export const FINE_POINTER_QUERY = "(hover: hover) and (pointer: fine)";
@@ -84,22 +88,6 @@ export function normalizedPointer(
     x: clamp((clientX / width) * 2 - 1, -1, 1),
     y: clamp((clientY / height) * 2 - 1, -1, 1),
   };
-}
-
-/**
- * Смещение слоя за курсором. Знак отрицательный: элемент «отстаёт» от
- * курсора, поэтому бумага под ним читается как плоскость, а карточка — как
- * объект над ней (`COS-COM-006 §8`).
- */
-export function depthOffset(
-  pointer: number,
-  depth: number,
-  max = PARALLAX_MAX_PX,
-): number {
-  const value = -pointer * depth * max;
-  const rounded = Math.round(value * 100) / 100;
-  // −0 в CSS-переменной выглядит как «слой дёрнулся»: нормализуем к нулю.
-  return rounded === 0 ? 0 : rounded;
 }
 
 /** Задержка появления элемента в списке: шаг растёт линейно и упирается в потолок. */
@@ -158,7 +146,62 @@ export function interpolateView(from: ViewState, to: ViewState, t: number): View
   };
 }
 
-/** Числовой вид CSS-переменной глубины: `--depth` для `[data-depth]`. */
-export function depthFor(layer: DepthLayer): number {
-  return DEPTH[layer];
+/** Нормализует -0: иначе в CSS-переменную уходит «-0px» и тесты ловят −0. */
+function noNegativeZero(value: number): number {
+  return value === 0 ? 0 : value;
+}
+
+/**
+ * Притяжение карточки к курсору: линейное затухание к нулю на границе радиуса.
+ * Без overshoot — карточка именно «тянется», а не пружинит.
+ * Возвращает смещение в визуальных пикселях.
+ */
+export function magnetPull(
+  dx: number,
+  dy: number,
+  radius = MAGNET_RADIUS,
+  max = MAGNET_MAX_PX,
+): Point {
+  const distance = Math.hypot(dx, dy);
+  if (distance >= radius || distance === 0) return { x: 0, y: 0 };
+  const falloff = 1 - distance / radius;
+  const factor = (max * falloff) / distance;
+  return { x: noNegativeZero(dx * factor), y: noNegativeZero(dy * factor) };
+}
+
+/**
+ * Наклон карточки «от своей оси» в сторону курсора, в градусах.
+ * Курсор справа — карточка доворачивается к нему, курсор ниже — наклоняется
+ * верхним краем к зрителю. Тоже линейное затухание, без отскока.
+ */
+export function magnetTilt(
+  dx: number,
+  dy: number,
+  radius = MAGNET_RADIUS,
+  maxDeg = MAGNET_MAX_DEG,
+): Point {
+  const distance = Math.hypot(dx, dy);
+  if (distance >= radius) return { x: 0, y: 0 };
+  const falloff = 1 - distance / radius;
+  return {
+    x: noNegativeZero(clamp(-(dy / radius) * maxDeg * falloff, -maxDeg, maxDeg)),
+    y: noNegativeZero(clamp((dx / radius) * maxDeg * falloff, -maxDeg, maxDeg)),
+  };
+}
+
+/**
+ * Порядок появления карточек схемы: сверху вниз, внутри полосы — слева
+ * направо. Возвращает индекс 0…N-1 для каждой карточки.
+ */
+export function readingOrder(
+  nodes: ReadonlyArray<{ id: string; x: number; y: number }>,
+  rowHeight = GRAPH_ROW_HEIGHT,
+): Map<string, number> {
+  const sorted = [...nodes].sort((a, b) => {
+    const rowA = Math.round(a.y / rowHeight);
+    const rowB = Math.round(b.y / rowHeight);
+    if (rowA !== rowB) return rowA - rowB;
+    return a.x - b.x;
+  });
+  return new Map(sorted.map((node, index) => [node.id, index]));
 }

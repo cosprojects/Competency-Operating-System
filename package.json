@@ -14,6 +14,7 @@
     "changelog:check": "node --experimental-strip-types scripts/changelog/apply.ts -- --check",
     "agents:check": "sh scripts/check-agent-assets.sh",
     "figma:compare": "node scripts/web/figma-compare.mjs",
+    "qa:motion": "node scripts/web/motion-check.mjs",
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",
     "catalog:validate": "node --experimental-strip-types src/methodology/v1/competency/cli/catalog.ts",

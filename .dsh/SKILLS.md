@@ -30,6 +30,7 @@
 | `npm run changelog:check` | `node --experimental-strip-types scripts/changelog/apply.ts -- --check` |
 | `npm run agents:check` | `sh scripts/check-agent-assets.sh` |
 | `npm run figma:compare` | `node scripts/web/figma-compare.mjs` |
+| `npm run qa:motion` | `node scripts/web/motion-check.mjs` |
 | `npm run db:generate` | `prisma generate` |
 | `npm run db:migrate` | `prisma migrate dev` |
 | `npm run catalog:validate` | `node --experimental-strip-types src/methodology/v1/competency/cli/catalog.ts` |

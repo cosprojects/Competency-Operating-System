@@ -41,6 +41,20 @@ function autoOpenDelay(): number {
   return Math.max(0, Math.min(AUTO_OPEN_DELAY_MS, remaining));
 }
 
+/** Сколько едет схема от общей карты к первой компетенции, мс. */
+const AUTO_OPEN_GLIDE_MS = 560;
+
+/**
+ * Ширина правой панели, которую она отнимет у канваса. На узких экранах
+ * панель уходит под канвас и ширину не отнимает — там возвращаем 0.
+ */
+function detailRailWidth(): number {
+  if (window.matchMedia("(max-width: 1080px)").matches) return 0;
+  const raw = getComputedStyle(document.documentElement).getPropertyValue("--rail-side");
+  const parsed = Number.parseFloat(raw);
+  return Number.isFinite(parsed) ? parsed : 0;
+}
+
 export function ProfessionCanvas({
   profession,
   competencies,
@@ -123,18 +137,35 @@ export function ProfessionCanvas({
     if (tile) tile.scrollIntoView({ block: "nearest", inline: "nearest", behavior: "smooth" });
   }, []);
 
+  const autoOpenDoneRef = useRef(false);
+  const autoOpenTimerRef = useRef(0);
+  const autoOpenPanelTimerRef = useRef(0);
+  const autoOpenCanceledRef = useRef(false);
+
+  /** Пользователь выбрал/закрыл компетенцию — автопоказ больше не нужен. */
+  const cancelAutoOpen = useCallback(() => {
+    autoOpenCanceledRef.current = true;
+    if (autoOpenTimerRef.current) window.clearTimeout(autoOpenTimerRef.current);
+    if (autoOpenPanelTimerRef.current) window.clearTimeout(autoOpenPanelTimerRef.current);
+    autoOpenTimerRef.current = 0;
+    autoOpenPanelTimerRef.current = 0;
+  }, []);
   const select = useCallback(
     (id: string, options: { scroll?: boolean; focusGraph?: boolean } = {}) => {
       autoOpenDoneRef.current = true;
-      if (autoOpenTimerRef.current) window.clearTimeout(autoOpenTimerRef.current);
-      autoOpenTimerRef.current = 0;
+      cancelAutoOpen();
       setSelectedId(id);
       trackClient("competency_view", {
         profession_id: profession.id,
         competency_id: id,
       });
       if (options.scroll) scrollTileIntoView(id);
-      if (options.focusGraph) graphRef.current?.focus(id);
+      if (options.focusGraph) {
+        // Если панель ещё закрыта, целимся в ширину после её открытия: иначе
+        // карточка окажется смещённой, когда панель сузит канвас.
+        const panelOpen = Boolean(document.querySelector(".detail-rail"));
+        graphRef.current?.focus(id, { widthOffset: panelOpen ? 0 : detailRailWidth() });
+      }
       // На узких экранах сайдбар компетенции идёт ниже канваса — подводим к нему.
       if (window.matchMedia("(max-width: 1080px)").matches) {
         window.requestAnimationFrame(() => {
@@ -146,7 +177,7 @@ export function ProfessionCanvas({
       url.searchParams.set("competency", id);
       window.history.replaceState(null, "", url);
     },
-    [profession.id, scrollTileIntoView],
+    [profession.id, scrollTileIntoView, cancelAutoOpen],
   );
 
   const selectFromGraph = useCallback((id: string) => select(id, { scroll: true }), [select]);
@@ -154,14 +185,13 @@ export function ProfessionCanvas({
 
   const closeDetail = useCallback(() => {
     autoOpenDoneRef.current = true;
-    if (autoOpenTimerRef.current) window.clearTimeout(autoOpenTimerRef.current);
-    autoOpenTimerRef.current = 0;
+    cancelAutoOpen();
     setSelectedId(null);
     setExpanded(false);
     const url = new URL(window.location.href);
     url.searchParams.delete("competency");
     window.history.replaceState(null, "", url);
-  }, []);
+  }, [cancelAutoOpen]);
 
   const changeView = useCallback((next: GraphMode) => {
     setView(next);
@@ -195,8 +225,6 @@ export function ProfessionCanvas({
    * так двойной mount в StrictMode не теряет таймер, а клик пользователя до
    * истечения задержки отменяет автопоказ.
    */
-  const autoOpenDoneRef = useRef(false);
-  const autoOpenTimerRef = useRef(0);
   useEffect(() => {
     if (autoOpenDoneRef.current) return;
     if (initialCompetencyId) return;
@@ -212,22 +240,32 @@ export function ProfessionCanvas({
 
     autoOpenTimerRef.current = window.setTimeout(() => {
       autoOpenTimerRef.current = 0;
-      if (autoOpenDoneRef.current) return;
+      if (autoOpenDoneRef.current || autoOpenCanceledRef.current) return;
       autoOpenDoneRef.current = true;
-      setSelectedId(firstId);
-      // Фокус — после коммита и первой раскладки: панель уже сузила канвас,
-      // поэтому целевая точка считается по новой ширине контейнера.
-      window.requestAnimationFrame(() => {
-        window.requestAnimationFrame(() => {
-          graphRef.current?.focus(firstId);
-          scrollTileIntoView(firstId);
-        });
+
+      // 1. Схема плавно едет от общей карты к первой компетенции. Ширину целим
+      //    сразу с учётом будущей панели: карточка приезжает в центр того
+      //    канваса, который получится после её открытия, поэтому в момент
+      //    открытия панели схема не дёргается.
+      graphRef.current?.focus(firstId, {
+        widthOffset: detailRailWidth(),
+        duration: AUTO_OPEN_GLIDE_MS,
       });
+
+      // 2. Панель с подробностями выезжает, когда схема уже доехала.
+      autoOpenPanelTimerRef.current = window.setTimeout(() => {
+        autoOpenPanelTimerRef.current = 0;
+        if (autoOpenCanceledRef.current) return;
+        setSelectedId(firstId);
+        scrollTileIntoView(firstId);
+      }, AUTO_OPEN_GLIDE_MS + 40);
     }, delay);
 
     return () => {
       if (autoOpenTimerRef.current) window.clearTimeout(autoOpenTimerRef.current);
+      if (autoOpenPanelTimerRef.current) window.clearTimeout(autoOpenPanelTimerRef.current);
       autoOpenTimerRef.current = 0;
+      autoOpenPanelTimerRef.current = 0;
     };
   }, [byId, initialCompetencyId, profession.sections, scrollTileIntoView]);
 

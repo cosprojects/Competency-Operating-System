@@ -3,6 +3,7 @@ import { AppShell } from "@/components/AppShell";
 import { ConsentBanner } from "@/components/ConsentBanner";
 import { PageViewTracker } from "@/components/PageViewTracker";
 import { FeedbackProvider } from "@/components/feedback/FeedbackProvider";
+import { MotionProvider } from "@/components/motion/MotionProvider";
 import { getCurrentUser, isAdminEmail } from "@/lib/auth";
 import "./globals.css";
 
@@ -25,23 +26,40 @@ export default async function RootLayout({
   const user = await getCurrentUser();
   return (
     <html lang="ru">
+      <head>
+        {/* Шрифт грузим сразу: без preload первый экран успевает отрисоваться
+            fallback-шрифтом и затем перерисовывается после swap — это читается
+            как рывок при загрузке. */}
+        <link
+          rel="preload"
+          href="/fonts/Geist-VariableFont_wght.ttf"
+          as="font"
+          type="font/ttf"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body>
+        {/* Бумага-канвас: единый слой точек, который слегка уходит за курсором,
+            пока карточки над ним остаются на месте (COS-EAR-016). */}
+        <div className="paper-layer" aria-hidden="true" />
         <FeedbackProvider>
-          <AppShell
-            user={
-              user
-                ? {
-                    email: user.email,
-                    createdAt: user.createdAt.toISOString().slice(0, 10),
-                    isAdmin: isAdminEmail(user.email),
-                  }
-                : null
-            }
-          >
-            {children}
-          </AppShell>
-          <ConsentBanner />
-          <PageViewTracker />
+          <MotionProvider>
+            <AppShell
+              user={
+                user
+                  ? {
+                      email: user.email,
+                      createdAt: user.createdAt.toISOString().slice(0, 10),
+                      isAdmin: isAdminEmail(user.email),
+                    }
+                  : null
+              }
+            >
+              {children}
+            </AppShell>
+            <ConsentBanner />
+            <PageViewTracker />
+          </MotionProvider>
         </FeedbackProvider>
       </body>
     </html>

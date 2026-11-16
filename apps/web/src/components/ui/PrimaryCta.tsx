@@ -23,6 +23,27 @@ const REST_X = 50;
 const REST_Y = 50;
 
 /**
+ * Тон подсветки выбирается по фактическому фону кнопки, а не по имени класса.
+ * На тёмной (индиго) заливке работает затемнение — виден «жидкий» след; на
+ * светлой — только лёгкая индиговая подсветка, чтобы не съедать контраст
+ * подписи. Атрибут читает CSS (`.cta-primary[data-tone="light"]::before`).
+ */
+function applyTone(element: HTMLElement): void {
+  const background = window.getComputedStyle(element).backgroundColor;
+  const match = background.match(/rgba?\(([^)]+)\)/);
+  const channels = match?.[1];
+  if (!channels) return;
+  const [r = 255, g = 255, b = 255, a = 1] = channels
+    .split(/[,\s/]+/)
+    .filter(Boolean)
+    .map(Number);
+  const alpha = Number.isFinite(a) ? a : 1;
+  const luminance = (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255;
+  element.dataset.tone =
+    alpha < 0.35 ? "transparent" : luminance >= 0.7 ? "light" : "solid";
+}
+
+/**
  * Главная кнопка-действие (COS-EAR-016) — единственный выразительный акцент
  * интерфейса. Идея Liquid Carve Button сохранена: свет follows курсор. Но к
  * языку COS приведена жёстко — без goo-фильтра и вычитающей маски, без spring
@@ -42,6 +63,8 @@ export function PrimaryCta(props: PrimaryCtaProps) {
 
   useEffect(() => {
     const chaseRef = chase.current;
+    const element = elementRef.current;
+    if (element) applyTone(element);
     return () => {
       if (chaseRef.frame) window.cancelAnimationFrame(chaseRef.frame);
       chaseRef.frame = 0;
@@ -101,6 +124,8 @@ export function PrimaryCta(props: PrimaryCtaProps) {
     if (!canTrack()) return;
     const element = elementRef.current;
     if (element) {
+      // Фон мог смениться состоянием (`:hover`), поэтому тон пересчитываем.
+      applyTone(element);
       const rect = element.getBoundingClientRect();
       if (rect.width > 0 && rect.height > 0) {
         const state = chase.current;

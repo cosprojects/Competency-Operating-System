@@ -7485,13 +7485,61 @@ button.rail-item {
 }
 
 
-/* Крестик «Зачем мы это делаем»: вместо серого круга при наведении —
-   только смена цвета иконки. */
+/* Крестик «Зачем мы это делаем» использует типовой ховер иконок. */
 .why-dialog .account-close:hover {
-  background: transparent;
+  background: var(--accent-soft);
   color: var(--accent);
 }
 
-.why-dialog .account-close:active {
+
+/* ------------------------------------------------------------------ */
+/* Единый типовой ховер для кликабельных иконок                        */
+/* ------------------------------------------------------------------ */
+
+.account-close,
+.detail-close,
+.search-clear,
+.mobile-nav-burger,
+.mobile-nav-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
   background: transparent;
+  cursor: pointer;
+  transition: color 0.18s ease, background 0.18s ease, transform 0.12s ease;
+}
+
+.account-close:hover,
+.detail-close:hover,
+.search-clear:hover,
+.mobile-nav-burger:hover,
+.mobile-nav-close:hover,
+.account-close:focus-visible,
+.detail-close:focus-visible,
+.search-clear:focus-visible,
+.mobile-nav-burger:focus-visible,
+.mobile-nav-close:focus-visible {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.account-close:active,
+.detail-close:active,
+.search-clear:active,
+.mobile-nav-burger:active,
+.mobile-nav-close:active {
+  transform: scale(0.94);
+}
+
+/* Тултип-иконки в рейле и кнопки-стрелки — тот же отклик */
+.rail-nav-btn:hover,
+.rail-nav-btn:focus-visible {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-color: transparent;
 }

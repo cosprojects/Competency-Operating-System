@@ -187,6 +187,15 @@ export function IconPanelCollapse({ className }: { className?: string }) {
 }
 
 // Источник: public/icons/Linear/Arrows/Arrow Left.svg
+// Бургер мобильного меню (три линии)
+export function IconMenu({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className={className}>
+      <path d="M4 7h16M4 12h16M4 17h16" strokeWidth="1.5" strokeLinecap="round" stroke="currentColor" />
+    </svg>
+  );
+}
+
 export function IconArrowLeft({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className={className}>

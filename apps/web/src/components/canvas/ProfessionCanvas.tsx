@@ -17,8 +17,29 @@ import { IconArrowLeft, IconArrowRight, IconCloseSquare, IconStar } from "@/comp
 import { SaveButton } from "@/components/SaveButton";
 import { competencyMatches, countLabel, normalizeQuery, pluralWord } from "@/lib/content";
 import { trackClient } from "@/lib/client-analytics";
+import { REDUCED_MOTION_QUERY } from "@/lib/motion/tokens";
 import { sphereBadgeStyle } from "@/lib/spheres";
 import type { GraphMode, GraphNodeInput } from "@/lib/graph-layout";
+
+/** Порядок открытия профессии: рейл и схема успевают появиться, и только
+ *  затем (через 1.5 с после первого кадра) схема фокусируется на первой
+ *  компетенции и выезжает правая панель. */
+const AUTO_OPEN_DELAY_MS = 1500;
+
+/**
+ * Задержка автопоказа отсчитывается от первого кадра, а не от гидрации:
+ * иначе на медленном соединении пауза после видимого появления схемы
+ * растягивалась бы на время загрузки JS.
+ */
+function autoOpenDelay(): number {
+  if (window.matchMedia(REDUCED_MOTION_QUERY).matches) return 0;
+  const paint = performance
+    .getEntriesByType("paint")
+    .find((entry) => entry.name === "first-contentful-paint");
+  const anchor = paint?.startTime ?? performance.now();
+  const remaining = anchor + AUTO_OPEN_DELAY_MS - performance.now();
+  return Math.max(0, Math.min(AUTO_OPEN_DELAY_MS, remaining));
+}
 
 export function ProfessionCanvas({
   profession,
@@ -104,6 +125,9 @@ export function ProfessionCanvas({
 
   const select = useCallback(
     (id: string, options: { scroll?: boolean; focusGraph?: boolean } = {}) => {
+      autoOpenDoneRef.current = true;
+      if (autoOpenTimerRef.current) window.clearTimeout(autoOpenTimerRef.current);
+      autoOpenTimerRef.current = 0;
       setSelectedId(id);
       trackClient("competency_view", {
         profession_id: profession.id,
@@ -129,6 +153,9 @@ export function ProfessionCanvas({
   const selectFromTile = useCallback((id: string) => select(id, { focusGraph: true }), [select]);
 
   const closeDetail = useCallback(() => {
+    autoOpenDoneRef.current = true;
+    if (autoOpenTimerRef.current) window.clearTimeout(autoOpenTimerRef.current);
+    autoOpenTimerRef.current = 0;
     setSelectedId(null);
     setExpanded(false);
     const url = new URL(window.location.href);
@@ -158,22 +185,50 @@ export function ProfessionCanvas({
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [selectedId]);
 
-  // При входе в профессию фокус сразу на первой компетенции и её сайдбаре.
-  const autoOpenedRef = useRef(false);
+  /**
+   * Секвенция открытия профессии: сначала появляется левый рейл и собирается
+   * схема (свои анимации), и только через 1.5 с схема фокусируется на первой
+   * компетенции, одновременно выезжает правая панель. Пока таймер идёт, панель
+   * закрыта — иначе канвас успел бы сузиться до того, как схема появилась.
+   *
+   * Повторный запуск защищён флагом, который выставляется в момент открытия:
+   * так двойной mount в StrictMode не теряет таймер, а клик пользователя до
+   * истечения задержки отменяет автопоказ.
+   */
+  const autoOpenDoneRef = useRef(false);
+  const autoOpenTimerRef = useRef(0);
   useEffect(() => {
-    if (autoOpenedRef.current) return;
-    autoOpenedRef.current = true;
+    if (autoOpenDoneRef.current) return;
     if (initialCompetencyId) return;
+    // На мобильных первая компетенция не открывает шторку сама — только по тапу.
+    if (window.matchMedia("(max-width: 760px)").matches) return;
     const firstId = profession.sections
       .flatMap((section) => section.competencyIds)
       .find((id) => byId.has(id));
     if (!firstId) return;
-    setSelectedId(firstId);
-    const timer = window.setTimeout(() => {
-      graphRef.current?.focus(firstId);
-      scrollTileIntoView(firstId);
-    }, 250);
-    return () => window.clearTimeout(timer);
+
+    // При reduced motion смотреть нечего — открываем сразу, без паузы.
+    const delay = autoOpenDelay();
+
+    autoOpenTimerRef.current = window.setTimeout(() => {
+      autoOpenTimerRef.current = 0;
+      if (autoOpenDoneRef.current) return;
+      autoOpenDoneRef.current = true;
+      setSelectedId(firstId);
+      // Фокус — после коммита и первой раскладки: панель уже сузила канвас,
+      // поэтому целевая точка считается по новой ширине контейнера.
+      window.requestAnimationFrame(() => {
+        window.requestAnimationFrame(() => {
+          graphRef.current?.focus(firstId);
+          scrollTileIntoView(firstId);
+        });
+      });
+    }, delay);
+
+    return () => {
+      if (autoOpenTimerRef.current) window.clearTimeout(autoOpenTimerRef.current);
+      autoOpenTimerRef.current = 0;
+    };
   }, [byId, initialCompetencyId, profession.sections, scrollTileIntoView]);
 
   // Открытая по ссылке компетенция центрируется в схеме после первого замера канваса.
@@ -191,6 +246,7 @@ export function ProfessionCanvas({
 
   return (
     <div className={`canvas-screen${selected ? " has-detail" : ""}${expanded ? " is-expanded" : ""}`}>
+      {selected ? <div className="sheet-backdrop" role="presentation" onClick={closeDetail} /> : null}
       <div className="canvas-rail">
         <div className="rail-pinned">
           {/* Навигация по профессиям внутри сферы (макет 247-34832). */}

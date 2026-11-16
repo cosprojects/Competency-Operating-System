@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
+import { MobileNav } from "@/components/mobile/MobileNav";
 import { NavRail } from "@/components/NavRail";
 import { SiteFooter } from "@/components/SiteFooter";
 import { ToastHost } from "@/components/ui/Toast";
@@ -34,6 +35,7 @@ export function AppShell({
   return (
     <>
       <NavRail user={user} />
+      <MobileNav user={user} />
       <main className="app-main">
         <div className="app-viewport">
           {isPlain ? (

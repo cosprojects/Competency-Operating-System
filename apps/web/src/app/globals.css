@@ -225,8 +225,11 @@ svg {
   line-height: 1.2;
   text-align: center;
   cursor: pointer;
-  transition: background 0.18s ease, color 0.18s ease, box-shadow 0.18s ease,
-    border-color 0.18s ease, transform 0.12s ease;
+  /* Ховер кнопки — мягкий вход 300 мс: фон, цвет, тень и рамка перетекают, а
+     нажатие остаётся быстрым (transform 120 мс), иначе кнопка кажется вязкой. */
+  transition: background 300ms ease-in, color 300ms ease-in,
+    box-shadow 300ms ease-in, border-color 300ms ease-in,
+    transform 120ms ease-out;
 }
 
 .button:hover:not(:disabled) {
@@ -7400,4 +7403,42 @@ button.rail-item {
   .sheet-backdrop {
     display: block;
   }
+}
+
+
+/* ------------------------------------------------------------------ */
+/* Выбранный элемент рейтинга (макет radio-quatter 151-11284)          */
+/* ------------------------------------------------------------------ */
+
+.rating label {
+  min-width: 53px;
+  height: 40px;
+  padding: 0 12px;
+  border-color: #f2f4f7;
+  background: #ffffff;
+}
+
+.rating .rating-box {
+  flex: 0 0 13px;
+  width: 13px;
+  height: 13px;
+  border-radius: 7px;
+  background: #eef2ff;
+}
+
+.rating label.is-checked {
+  border-color: #1d4ed8;
+  background: #f9fafb;
+  box-shadow: none;
+}
+
+.rating label.is-checked .rating-box {
+  background: #4f46e5;
+}
+
+/* Крестик «Зачем мы это делаем»: без синей обводки при автофокусе */
+.why-dialog .account-close:focus,
+.why-dialog .account-close:focus-visible {
+  outline: none;
+  box-shadow: none;
 }

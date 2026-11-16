@@ -21,124 +21,71 @@
 > Переменные недоступны на этом плане (variables/local вернул ошибку).
 ## Узлы
 
-### Property 1=mobile/collapsed (`383:15425`)
+### radio-quatter (`151:11284`)
 
 ```json
 {
-  "id": "383:15425",
-  "name": "Property 1=mobile/collapsed",
-  "type": "COMPONENT",
-  "width": 424,
-  "height": 64,
+  "id": "151:11284",
+  "name": "radio-quatter",
+  "type": "COMPONENT_SET",
+  "width": 84,
+  "height": 122,
   "children": [
     {
-      "id": "383:15427",
-      "name": "Brand",
-      "type": "FRAME",
-      "width": 44,
-      "height": 44,
+      "id": "151:11283",
+      "name": "Property 1=default",
+      "type": "COMPONENT",
+      "width": 53,
+      "height": 40,
       "children": [
         {
-          "id": "383:15428",
-          "name": "logo",
-          "type": "INSTANCE",
-          "width": 34,
-          "height": 32,
-          "componentId": "2:213"
-        }
-      ]
-    },
-    {
-      "id": "383:15475",
-      "name": "logo text",
-      "type": "FRAME",
-      "width": 107,
-      "height": 18,
-      "children": [
-        {
-          "id": "383:15476",
-          "name": "Subtract",
-          "type": "BOOLEAN_OPERATION",
-          "width": 15,
-          "height": 17
-        },
-        {
-          "id": "383:15479",
-          "name": "Subtract",
-          "type": "BOOLEAN_OPERATION",
-          "width": 16,
-          "height": 16
-        },
-        {
-          "id": "383:15482",
-          "name": "Vector",
-          "type": "VECTOR",
+          "id": "151:11275",
+          "name": "Rectangle",
+          "type": "RECTANGLE",
           "width": 13,
-          "height": 16
-        },
-        {
-          "id": "383:15483",
-          "name": "Vector",
-          "type": "VECTOR",
-          "width": 16,
-          "height": 17
-        },
-        {
-          "id": "383:15484",
-          "name": "Vector",
-          "type": "VECTOR",
-          "width": 10,
-          "height": 16
-        },
-        {
-          "id": "383:15485",
-          "name": "Vector",
-          "type": "VECTOR",
-          "width": 10,
           "height": 13
         },
         {
-          "id": "383:15486",
-          "name": "Vector",
-          "type": "VECTOR",
-          "width": 2,
-          "height": 16
-        },
-        {
-          "id": "383:15487",
-          "name": "Vector",
-          "type": "VECTOR",
-          "width": 7,
-          "height": 7
-        },
-        {
-          "id": "383:15488",
-          "name": "Vector",
-          "type": "VECTOR",
-          "width": 7,
-          "height": 7
+          "id": "151:11276",
+          "name": "#text «1»",
+          "type": "TEXT",
+          "width": 6,
+          "height": 21,
+          "text": "1"
         }
       ]
     },
     {
-      "id": "383:15433",
-      "name": "bottom-elements",
-      "type": "FRAME",
-      "width": 44,
-      "height": 44,
+      "id": "151:11285",
+      "name": "Property 1=Variant2",
+      "type": "COMPONENT",
+      "width": 53,
+      "height": 40,
       "children": [
         {
-          "id": "383:15436",
-          "name": "Nav-CTA",
-          "type": "FRAME",
-          "width": 44,
-          "height": 44
+          "id": "151:11286",
+          "name": "Rectangle",
+          "type": "RECTANGLE",
+          "width": 13,
+          "height": 13
+        },
+        {
+          "id": "151:11287",
+          "name": "#text «1»",
+          "type": "TEXT",
+          "width": 6,
+          "height": 21,
+          "text": "1"
         }
       ]
     }
   ]
 }
 ```
+
+Тексты:
+- `151:11276` 1
+- `151:11287` 1
 
 ## Компоненты
 
@@ -154,8 +101,8 @@
 
 ```
 meta.json
-nodes/383-15425.json
+nodes/151-11284.json
 components.json
 styles.json
-images/383-15425.png
+images/151-11284.png
 ```

@@ -314,6 +314,46 @@
             "run",
             "guides:audit"
           ]
+        },
+        {
+          "id": "retry",
+          "label": "Второй проход по no_data",
+          "argv": [
+            "npm",
+            "run",
+            "guides:agent",
+            "--",
+            "--profession",
+            "all",
+            "--retry-no-data",
+            "--concurrency",
+            "5",
+            "--max-cost",
+            "2"
+          ],
+          "timeoutMs": 3600000,
+          "requiresEnv": [
+            "BRAVE_API_KEY",
+            "DEEPSEEK_API_KEY"
+          ]
+        },
+        {
+          "id": "review",
+          "label": "Фактчек выборки разборов",
+          "argv": [
+            "npm",
+            "run",
+            "guides:review",
+            "--",
+            "--sample",
+            "0.2",
+            "--concurrency",
+            "4"
+          ],
+          "timeoutMs": 3600000,
+          "requiresEnv": [
+            "DEEPSEEK_API_KEY"
+          ]
         }
       ]
     },

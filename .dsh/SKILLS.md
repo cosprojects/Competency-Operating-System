@@ -95,6 +95,7 @@
 | `npm run release:publications` | `node --experimental-strip-types scripts/release/publications.ts` |
 | `npm run guides:agent` | `node --env-file-if-exists=.env.local --experimental-strip-types src/methodology/v1/guides/cli/pilot.ts` |
 | `npm run guides:audit` | `node --experimental-strip-types src/methodology/v1/guides/cli/audit.ts` |
+| `npm run guides:review` | `node --env-file-if-exists=.env.local --experimental-strip-types src/methodology/v1/guides/cli/review.ts` |
 
 ## Как пользоваться
 

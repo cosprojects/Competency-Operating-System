@@ -75,6 +75,8 @@ interface Flags {
   limit: number;
   all: boolean;
   skipExisting: boolean;
+  retryNoData: boolean;
+  items: string[] | null;
   concurrency: number;
   out: string;
   maxCostUsd: number;
@@ -106,6 +108,9 @@ function flagValue(argv: string[], name: string): string | undefined {
 function readFlags(): Flags {
   const argv = process.argv.slice(2);
   const all = argv.includes("--all");
+  const retryNoData = argv.includes("--retry-no-data");
+  const itemsRaw = flagValue(argv, "--items");
+  const items = itemsRaw ? itemsRaw.split(",").map((id) => id.trim()).filter(Boolean) : null;
   const profession = flagValue(argv, "--profession") ?? "uxui";
   const rawLimit = Number(flagValue(argv, "--limit") ?? "50");
   const limit =
@@ -115,12 +120,16 @@ function readFlags(): Flags {
   const maxCostUsd = Number(flagValue(argv, "--max-cost") ?? "1.5");
   const scope = profession === "all" ? "all" : profession;
   const date = new Date().toISOString().slice(0, 10);
-  const out = flagValue(argv, "--out") ?? path.join("data/guides", `run-${scope}-${date}`);
+  const out =
+    flagValue(argv, "--out") ??
+    path.join("data/guides", `${items ? "rework" : retryNoData ? "retry" : "run"}-${scope}-${date}`);
   return {
     profession,
     limit,
     all,
     skipExisting: argv.includes("--skip-existing"),
+    retryNoData,
+    items,
     concurrency,
     out: path.resolve(ROOT, out),
     maxCostUsd: Number.isFinite(maxCostUsd) && maxCostUsd > 0 ? maxCostUsd : 1.5,
@@ -567,99 +576,115 @@ function toClusterItem(result: GuideResult): GuideClusterItem {
 /* Прогон пункта                                                       */
 /* ------------------------------------------------------------------ */
 
+type RunMode = "normal" | "retry";
+
+interface SearchStage {
+  query: string;
+  lang: "ru" | "en";
+}
+
+/**
+ * Каскад поисковых запросов.
+ * Обычный проход: RU → EN → запасная короткая сущность (EN и запасной — только если RU не дал источника).
+ * Повторный проход по `no_data`: EN первым (для API/MCP/Git русских разборов мало), затем короткая
+ * сущность без служебных слов, затем исходный запрос — и на каждом шаге пробуем синтез заново.
+ */
+function queryCascade(item: ItemInput, planned: { ru: string; en?: string }, mode: RunMode): SearchStage[] {
+  const stages: SearchStage[] = [];
+  const push = (query: string | undefined, lang: "ru" | "en") => {
+    if (!query) return;
+    if (stages.some((stage) => stage.query === query && stage.lang === lang)) return;
+    stages.push({ query, lang });
+  };
+  const fallback = fallbackQueries(item).ru;
+  if (mode === "retry") {
+    push(planned.en, "en");
+    push(fallback, "ru");
+    push(planned.ru, "ru");
+    return stages;
+  }
+  push(planned.ru, "ru");
+  push(planned.en, "en");
+  push(fallback, "ru");
+  return stages;
+}
+
+function sourceEntries(sources: FetchedPage[]): GuideSource[] {
+  return sources.map((page) => ({
+    title: page.title || hostOf(page.url),
+    url: page.url,
+    host: hostOf(page.url),
+    lang: sourceLang(page.cyrShare),
+    chars: page.chars,
+  }));
+}
+
 async function runItem(
   caller: LlmCaller,
   item: ItemInput,
   planned: { ru: string; en?: string },
+  mode: RunMode = "normal",
 ): Promise<GuideResult> {
   const queries = { ru: planned.ru, ...(planned.en ? { en: planned.en } : {}) };
   let tokens = { input: 0, output: 0 };
   let costUsd = 0;
+  const candidateLimit = mode === "retry" ? 8 : 5;
+  const sourceLimit = mode === "retry" ? 3 : 2;
 
   const fetchCandidates = async (hits: SearchHit[]): Promise<FetchedPage[]> => {
-    const candidates = pickCandidates(hits, 5);
+    const candidates = pickCandidates(hits, candidateLimit);
     const pages: FetchedPage[] = [];
     for (const candidate of candidates) pages.push(await fetchPage(candidate.url));
     return pages;
   };
 
-  const ruHits: SearchHit[] = [];
-  await braveSearch(planned.ru, "ru", ruHits);
-  let pages = await fetchCandidates(ruHits);
-  let sources = chooseSources(pages, item, 2);
-  if (sources.length === 0 && planned.en) {
-    const enHits: SearchHit[] = [];
-    await braveSearch(planned.en, "en", enHits);
-    pages = [...pages, ...(await fetchCandidates(enHits))];
-    sources = chooseSources(pages, item, 2);
-  }
-  // Запасной короткий запрос по сущности: длинная формулировка иногда не находит источник.
-  if (sources.length === 0) {
-    const fallback = fallbackQueries(item).ru;
-    if (fallback !== planned.ru) {
-      const extraHits: SearchHit[] = [];
-      await braveSearch(fallback, "ru", extraHits);
-      pages = [...pages, ...(await fetchCandidates(extraHits))];
-      sources = chooseSources(pages, item, 2);
-    }
-  }
-  const sourceEntries = (): GuideSource[] =>
-    sources.map((page) => ({
-      title: page.title || hostOf(page.url),
-      url: page.url,
-      host: hostOf(page.url),
-      lang: sourceLang(page.cyrShare),
-      chars: page.chars,
-    }));
+  let discovered: FetchedPage[] = [];
+  let lastReason = "нет источника, тематически совпадающего с пунктом (порог релевантности)";
 
-  if (sources.length === 0) {
-    return {
-      item,
-      status: "no_data",
-      guide: null,
-      sources: [],
-      queries,
-      reason: "нет источника, тематически совпадающего с пунктом (порог релевантности)",
-      tokens,
-      costUsd,
-    };
+  for (const stage of queryCascade(item, planned, mode)) {
+    const hits: SearchHit[] = [];
+    await braveSearch(stage.query, stage.lang, hits);
+    const sources = chooseSources(await fetchCandidates(hits), item, sourceLimit);
+    if (sources.length === 0) continue;
+    discovered = sources;
+    for (const source of sources) {
+      let synthesis: SynthesisResult;
+      try {
+        synthesis = await synthesize(caller, item, source);
+      } catch (error) {
+        if (isBudgetError(error)) throw error;
+        lastReason = `синтез не удался: ${error instanceof Error ? error.message.slice(0, 120) : "ошибка"}`;
+        continue;
+      }
+      tokens = { input: tokens.input + synthesis.tokens.input, output: tokens.output + synthesis.tokens.output };
+      costUsd += synthesis.costUsd;
+      if (!synthesis.content) {
+        lastReason = "ответ модели не прошёл разбор или валидатор";
+        continue;
+      }
+      if (synthesis.content.status === "no_data") {
+        lastReason = "источник признан недостаточным для подробного разбора";
+        continue;
+      }
+      return {
+        item,
+        status: "ok",
+        guide: synthesis.content,
+        sources: sourceEntries(sources),
+        queries,
+        tokens,
+        costUsd,
+      };
+    }
+    // Обычный проход: найденные источники исчерпаны — дальше не ищем (так было и раньше).
+    if (mode === "normal") break;
   }
 
-  let lastReason = "источник не дал достаточно материала";
-  for (const source of sources) {
-    let synthesis: SynthesisResult;
-    try {
-      synthesis = await synthesize(caller, item, source);
-    } catch (error) {
-      if (isBudgetError(error)) throw error;
-      lastReason = `синтез не удался: ${error instanceof Error ? error.message.slice(0, 120) : "ошибка"}`;
-      continue;
-    }
-    tokens = { input: tokens.input + synthesis.tokens.input, output: tokens.output + synthesis.tokens.output };
-    costUsd += synthesis.costUsd;
-    if (!synthesis.content) {
-      lastReason = "ответ модели не прошёл разбор или валидатор";
-      continue;
-    }
-    if (synthesis.content.status === "no_data") {
-      lastReason = "источник признан недостаточным для подробного разбора";
-      continue;
-    }
-    return {
-      item,
-      status: "ok",
-      guide: synthesis.content,
-      sources: sourceEntries(),
-      queries,
-      tokens,
-      costUsd,
-    };
-  }
   return {
     item,
     status: "no_data",
     guide: null,
-    sources: sourceEntries(),
+    sources: sourceEntries(discovered),
     queries,
     reason: lastReason,
     tokens,
@@ -702,9 +727,10 @@ async function runProfession(
       const item = items[index];
       if (!item) return;
       const query = planned.get(item.id) ?? fallbackQueries(item);
+      const mode: RunMode = flags.retryNoData || flags.items ? "retry" : "normal";
       let result: GuideResult;
       try {
-        result = await runItem(caller, item, query);
+        result = await runItem(caller, item, query, mode);
       } catch (error) {
         if (isBudgetError(error)) {
           fatal = error instanceof Error ? error : new Error("бюджет LLM исчерпан");
@@ -722,7 +748,10 @@ async function runProfession(
         };
       }
       results[index] = result;
-      cluster.items[item.id] = toClusterItem(result);
+      // Повторный проход не затирает прежний no_data-пункт неудачей: обновляем только если разбор получился.
+      if (!((flags.retryNoData || flags.items) && result.status !== "ok" && cluster.items[item.id])) {
+        cluster.items[item.id] = toClusterItem(result);
+      }
       enqueueSave();
       done += 1;
       const elapsed = (Date.now() - startedAt) / 1000;
@@ -863,19 +892,35 @@ async function main(): Promise<void> {
   const professions = selectProfessions(content, flags.profession);
   const cluster = await loadCluster();
   const covered = (id: string) => Boolean(cluster.items[id]);
-  const selection = professions.map((profession) => ({
-    profession,
-    items: pickItems(profession, flags.limit, flags.skipExisting ? covered : undefined),
-  }));
+  const selectedLimit = flags.limit;
+  const wanted = flags.items ? new Set(flags.items) : null;
+  const selection = professions
+    .map((profession) => ({
+      profession,
+      items: wanted
+        ? pickItems(profession, Number.POSITIVE_INFINITY).filter((item) => wanted.has(item.id))
+        : pickItems(profession, selectedLimit, (id) => {
+            if (flags.retryNoData) return cluster.items[id]?.status !== "no_data";
+            return flags.skipExisting ? covered(id) : false;
+          }),
+    }))
+    .filter((entry) => entry.items.length > 0);
   const totalSelected = selection.reduce((sum, entry) => sum + entry.items.length, 0);
 
+  const already = Object.keys(cluster.items).length;
   console.error(
     `guides:agent: профессий ${professions.length}; пунктов по плану ${totalSelected}; ` +
-      `concurrency ${flags.concurrency}; ${flags.skipExisting ? "готовые и общие для профессий пункты пропускаются; " : ""}` +
-      `в кластере уже ${Object.keys(cluster.items).length}`,
+      `concurrency ${flags.concurrency}; ` +
+      (flags.items
+        ? `точечная переработка ${flags.items.length} пунктов (в кластере ${already}); `
+        : flags.retryNoData
+        ? `повторный проход по no_data (в кластере ${already}); `
+        : `${flags.skipExisting ? "готовые и общие для профессий пункты пропускаются; " : ""}в кластере ${already}`),
   );
   if (totalSelected === 0) {
-    console.log("Нечего делать: все выбранные пункты уже в кластере.");
+    console.log(
+      flags.retryNoData ? "Нечего делать: в кластере нет пунктов со статусом no_data." : "Нечего делать: все выбранные пункты уже в кластере.",
+    );
     return;
   }
 
@@ -888,7 +933,13 @@ async function main(): Promise<void> {
   for (const entry of selection) {
     const profession = entry.profession;
     // Пересчитываем на входе в профессию: предыдущие профессии могли закрыть общие пункты.
-    const items = flags.skipExisting ? entry.items.filter((item) => !cluster.items[item.id]) : entry.items;
+    const items = flags.items
+      ? entry.items
+      : flags.retryNoData
+        ? entry.items.filter((item) => cluster.items[item.id]?.status === "no_data")
+        : flags.skipExisting
+          ? entry.items.filter((item) => !cluster.items[item.id])
+          : entry.items;
     if (items.length === 0) {
       console.error(`[${profession.slug}] всё уже в кластере — пропуск`);
       rows.push({ slug: profession.slug, planned: 0, ok: 0, noData: 0, ru: 0, costUsd: 0, braveCalls: 0, seconds: 0 });

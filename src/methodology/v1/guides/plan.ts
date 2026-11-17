@@ -20,13 +20,18 @@ export function normalizeTitle(title: string): string {
   return value.replace(/\s+/g, " ").trim();
 }
 
-/** Значимые слова названия: длиннее 3 символов, без пунктуации. */
+/** Значимые слова названия: длиннее 3 символов, без пунктуации.
+ *  Для коротких названий-аббревиатур (API, Git, MCP, CJM) значимых длинных слов нет —
+ *  тогда берём сами токены от 2 символов, иначе пункт никогда не пройдёт порог темы. */
 export function titleWords(title: string): string[] {
-  return normalizeTitle(title)
+  // Разбиваем по всем не-буквам: «бизнес-эмпатия» → [бизнес, эмпатия], «AI-аудио» → [аудио].
+  const words = normalizeTitle(title)
     .toLowerCase()
-    .replace(/[«»"(),.:;!?]/g, " ")
+    .replace(/[^a-zа-яё0-9]+/g, " ")
     .split(/\s+/)
-    .filter((word) => word.length > 3);
+    .filter(Boolean);
+  const long = words.filter((word) => word.length > 3);
+  return long.length > 0 ? long : words.filter((word) => word.length > 1);
 }
 
 /** Короткая сущность для запроса: не больше 5 значимых слов, без пунктуации. */

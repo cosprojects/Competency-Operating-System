@@ -104,7 +104,9 @@ npm run materials:daily -- --write      # один поиск + Pass E + при�
 ```bash
 npm run guides:agent -- --profession uxui --limit 2 --concurrency 2 --out data/guides/dry-run  # проверка ключей и качества
 npm run guides:agent -- --profession all --all --skip-existing --concurrency 5                 # все профессии
+npm run guides:agent -- --profession all --retry-no-data --concurrency 5                       # второй проход по no_data
 npm run guides:audit                                                                           # привязка разбора к источнику
+npm run guides:review -- --sample 0.2 --concurrency 4                                          # фактчек выборки разборов
 ```
 
 Нужны `BRAVE_API_KEY` и `DEEPSEEK_API_KEY` в корневом `.env.local`; прогон кеширует поиск,

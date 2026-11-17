@@ -29,6 +29,13 @@
 8. **Кластер** — `src/methodology/v1/guides/content/it.json`: `id → {status, sections, sources,
    generatedAt, promptVersion, review}`. Коммитится; `release:build` копирует его в
    `apps/web/src/content/generated/guides.json`, откуда `GET /api/guide` отдаёт разбор.
+9. **Второй проход** — `--retry-no-data`: для пунктов, где источник не нашёлся или не дал материала,
+   поиск идёт иначе (EN первым, короткая сущность без служебных слов, затем исходный запрос),
+   кандидатов и источников берётся больше; получившийся разбор заменяет `no_data`.
+10. **Ревью** — `npm run guides:review`: LLM-редактор проверяет каждый выбранный разбор против текста
+   источника (факты, цифры, термины, отсутствие обобщений), возвращает `pass`/`fix`/`reject` и
+   замечания; отчёт — `data/guides/review-<date>/`. Ревью не меняет кластер: `review.status` остаётся
+   `auto`, пока разбор не прочитал человек.
 
 ## Команды
 
@@ -36,7 +43,9 @@
 npm run guides:agent -- --profession uxui --limit 2 --concurrency 2 --out data/guides/dry-run  # дымовой прогон
 npm run guides:agent -- --profession uxui --all --skip-existing --concurrency 4                 # профессия целиком
 npm run guides:agent -- --profession all --all --skip-existing --concurrency 5 --max-cost 12    # все профессии
+npm run guides:agent -- --profession all --retry-no-data --concurrency 5 --max-cost 2           # второй проход по no_data
 npm run guides:audit                                                                            # аудит привязки к источнику
+npm run guides:review -- --sample 0.2 --concurrency 4                                           # фактчек выборки
 ```
 
 | Флаг | Смысл |
@@ -46,6 +55,7 @@ npm run guides:audit                                                            
 | `--all` | все пункты профессии (вместо `--limit`) |
 | `--skip-existing` | не пересобирать пункты, которые уже в кластере; общие для профессий теги не дублируются |
 | `--concurrency <1…8>` | сколько пунктов вести параллельно (запись кластера сериализуется) |
+| `--retry-no-data` | повторный проход только по пунктам со статусом `no_data`: EN-запрос первым, короткая сущность, больше кандидатов и источников; неудача не затирает прежний `no_data` |
 | `--max-cost <usd>` | потолок стоимости LLM на прогон (по умолчанию 1.5) |
 | `--out <dir>` | каталог прогона (по умолчанию `data/guides/run-<scope>-<date>`) |
 
@@ -61,6 +71,7 @@ npm run guides:audit                                                            
 | Прогон и отчёты | `data/guides/<run>/<profession>/guides.json`, `report.md`, `summary.md` | нет |
 | Кеш поиска/страниц/LLM | `data/guides/.cache` | нет |
 | Аудит | `data/guides/audit-<date>/report.md`, `audit.json` | нет |
+| Ревью | `data/guides/review-<date>/report.md`, `review.json` | нет |
 | Публикация | `apps/web/src/content/generated/guides.json` (после `release:build`) | да |
 
 ## Планка качества
@@ -69,6 +80,9 @@ npm run guides:audit                                                            
 - Привязка к источнику — `npm run guides:audit`: числа, латинские термины и значимые слова
   разбора, которые есть в тексте источника. Медиана должна быть **≥ 0.8**; пункты **< 0.6** —
   на вычитку, **0.6–0.8** — «наблюдать».
+- Фактчек — `npm run guides:review`: вердикты `pass`/`fix`/`reject` по выборке (по умолчанию 20%
+  плюс все пункты с низкой привязкой и все EN-источники). Пункты с `fix`/`reject` — в правку:
+  другой источник, повторный проход или ручная редактура.
 - `no_data` — не брак: честный отказ, если источник не дал трёх содержательных разделов.
 - Выборочная человеческая вычитка ~20% разборов остаётся обязательной: аудит ловит дрейф темы,
   но не смысловые ошибки внутри темы.

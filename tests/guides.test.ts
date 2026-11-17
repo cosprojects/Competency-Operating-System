@@ -12,6 +12,7 @@ import {
   scoreHit,
   searchPhrase,
   sourceLang,
+  titleWords,
 } from "../src/methodology/v1/guides/plan.ts";
 import { pickItems, professionOrder, type PublicProfession } from "../src/methodology/v1/guides/items.ts";
 import { parseGuideContent, renderGuideText, validateGuideDoc } from "../src/methodology/v1/guides/validate.ts";
@@ -97,6 +98,15 @@ describe("guides plan", () => {
     assert.equal(isTopicRelevant(page, { title: "Юзабилити-тестирование" }), false);
   });
 
+  it("не теряет короткие названия-аббревиатуры в значимых словах", () => {
+    assert.deepEqual(titleWords("API"), ["api"]);
+    assert.deepEqual(titleWords("Git"), ["git"]);
+    assert.deepEqual(titleWords("MCP"), ["mcp"]);
+    assert.deepEqual(titleWords("Понятие: CJM"), ["cjm"]);
+    assert.deepEqual(titleWords("Дизайн-токены и темы"), ["дизайн", "токены", "темы"]);
+    assert.ok(isTopicRelevant({ title: "Что такое API", text: "API — это интерфейс программирования." }, { title: "API" }));
+  });
+
   it("определяет язык источника и пригодность по объёму", () => {
     assert.equal(sourceLang(0.9), "ru");
     assert.equal(sourceLang(0.1), "en");
@@ -105,7 +115,8 @@ describe("guides plan", () => {
   });
 });
 
-describe("guides validate", () => {  it("принимает подробный разбор из 3–5 разделов", () => {
+describe("guides validate", () => {
+  it("принимает подробный разбор из 3–5 разделов", () => {
     assert.equal(validateGuideDoc(goodDoc).ok, true);
     assert.match(renderGuideText(goodDoc), /Что это/);
   });

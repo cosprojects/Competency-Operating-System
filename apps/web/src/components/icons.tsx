@@ -469,3 +469,23 @@ export function IconAcademicCap({ className }: { className?: string }) {
     </svg>
   );
 }
+
+/** Linear / School / Square Academic Cap — контурная шляпа (профессия ещё не в «Изучаю»). */
+export function IconAcademicCapOutline({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className={className}>
+      <path
+        d="M3.0916 10.3634L9.78281 13.5004C11.2038 14.1665 12.7963 14.1665 14.2173 13.5004L20.9084 10.3634C22.3639 9.68105 22.3639 7.31899 20.9084 6.63664L14.2172 3.49965C12.7962 2.83345 11.2037 2.83345 9.78272 3.49965L3.0916 6.63659C1.63614 7.31895 1.63613 9.68101 3.0916 10.3634Z"
+        strokeWidth="1.5"
+        stroke="currentColor"
+      />
+      <path d="M2 8.5V14" strokeWidth="1.5" strokeLinecap="round" stroke="currentColor" />
+      <path
+        d="M19 11.5V16.6254C19 17.6334 18.4965 18.5772 17.6147 19.0656C16.1463 19.8787 13.796 21 12 21C10.204 21 7.8537 19.8787 6.38533 19.0656C5.5035 18.5772 5 17.6334 5 16.6254V11.5"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        stroke="currentColor"
+      />
+    </svg>
+  );
+}

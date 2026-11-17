@@ -9913,62 +9913,77 @@ body:has(.studying-page) .paper-layer {
 }
 
 .learning-card .occurrence-row {
-  border: 0;
+  border: 1px solid transparent;
   background: #ffffff;
 }
 
 .learning-card .occurrence-row:hover {
+  border-color: #c7d2fe;
   background: #f3f4f6;
 }
 
-/* Без обводок в сайдбарах: иерархию задаёт фон, а не рамки */
+/* Без обводок в покое, но на ховере рамка возвращается (прозрачная база,
+   чтобы карточки не дёргались при наведении) */
 .canvas-rail .competency-tile {
-  border: 0;
+  border: 1px solid transparent;
   background: #f9fafb;
   box-shadow: none;
 }
 
-.canvas-rail .competency-tile:hover {
-  border: 0;
+.canvas-rail .competency-tile:hover,
+.canvas-rail .competency-tile.is-hover {
+  border-color: #c7d2fe;
   background: #f3f4f6;
   box-shadow: 0 10px 22px rgba(19, 34, 56, 0.08);
 }
 
-.canvas-rail .competency-tile.is-active,
-.canvas-rail .competency-tile.is-hover {
-  border: 0;
+.canvas-rail .competency-tile.is-active {
+  border-color: transparent;
   background: #eef2ff;
   box-shadow: none;
 }
 
+.canvas-rail .competency-tile.is-active:hover {
+  border-color: #c7d2fe;
+}
+
 .detail-rail .study-item {
-  border: 0;
+  border: 1px solid transparent;
   background: #f9fafb;
 }
 
 .detail-rail .study-item:hover {
+  border-color: #c7d2fe;
   background: #f3f4f6;
 }
 
 .detail-rail .study-item.is-learned {
-  border: 0;
+  border-color: transparent;
   background: var(--accent-soft);
 }
 
+.detail-rail .study-item.is-learned:hover {
+  border-color: #c7d2fe;
+}
+
 .detail-rail .occurrence-row {
-  border: 0;
+  border: 1px solid transparent;
   background: #f9fafb;
 }
 
 .detail-rail .occurrence-row:hover {
-  border: 0;
+  border-color: #c7d2fe;
   background: #f3f4f6;
   box-shadow: 0 8px 20px rgba(19, 34, 56, 0.06);
   transform: none;
 }
 
 .detail-rail .material-card {
-  border: 0;
+  border: 1px solid transparent;
+}
+
+.detail-rail .material-card:hover {
+  border-color: #c7d2fe;
 }
 
 /* Сегменты прогресса в сайдбаре компетенции — та же геометрия, что в «Изучаю» */

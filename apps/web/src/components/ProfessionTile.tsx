@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { memo } from "react";
-import { IconStar } from "@/components/icons";
+import { IconAcademicCapOutline } from "@/components/icons";
 import { SaveButton } from "@/components/SaveButton";
 
 export interface SearchProfession {
@@ -62,10 +62,10 @@ export const ProfessionTile = memo(function ProfessionTile({
             <Link
               className="icon-button"
               href={`/login?returnTo=${encodeURIComponent("/professions")}`}
-              aria-label="Войти, чтобы сохранить профессию"
-              title="Войти, чтобы сохранить профессию"
+              aria-label="Войти, чтобы изучать профессию"
+              title="Войти, чтобы изучать профессию"
             >
-              <IconStar />
+              <IconAcademicCapOutline />
             </Link>
           )}
         </span>

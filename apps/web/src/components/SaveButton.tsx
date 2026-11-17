@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { IconStar, IconStarFilled } from "@/components/icons";
+import { IconAcademicCap, IconAcademicCapOutline, IconStar, IconStarFilled } from "@/components/icons";
 import { showToast } from "@/components/ui/Toast";
 
 
@@ -31,6 +31,11 @@ export function SaveButton({
   // при каждом монтировании списка (COS-EAR-016, микро-фидбек).
   const [popping, setPopping] = useState(false);
   const popTimerRef = useRef<number | null>(null);
+  // Профессии не «сохраняют в избранное», а добавляют в «Изучаю»: шляпа
+  // (заливка — изучаю, контур — нет) и соответствующие подписи.
+  const isProfession = targetType === "PROFESSION";
+  const savedLabel = isProfession ? "Прекратить изучение" : "Убрать из избранного";
+  const unsavedLabel = isProfession ? "Изучать профессию" : "Сохранить в избранное";
 
   useEffect(() => {
     return () => {
@@ -64,7 +69,7 @@ export function SaveButton({
               ? "Компетенция"
               : "Материал";
         showToast({
-          title: "Теперь в сохраненных",
+          title: isProfession ? "Теперь в «Изучаю»" : "Теперь в сохраненных",
           ...(title ? { headline: title } : {}),
           text: description ? `${typeLabel} • ${description}` : typeLabel,
           actionLabel: "Отменить",
@@ -101,10 +106,16 @@ export function SaveButton({
         onClick={toggle}
         disabled={busy}
         aria-pressed={saved}
-        aria-label={saved ? "Убрать из избранного" : "Сохранить в избранное"}
-        title={saved ? "Убрать из избранного" : "Сохранить в избранное"}
+        aria-label={saved ? savedLabel : unsavedLabel}
+        title={saved ? savedLabel : unsavedLabel}
       >
-        {saved ? (
+        {isProfession ? (
+          saved ? (
+            <IconAcademicCap />
+          ) : (
+            <IconAcademicCapOutline />
+          )
+        ) : saved ? (
           <IconStarFilled />
         ) : (
           <IconStar />
@@ -123,7 +134,13 @@ export function SaveButton({
         disabled={busy}
         aria-pressed={saved}
       >
-        {saved ? "★ В сохранённом" : "☆ Сохранить"}
+        {isProfession
+          ? saved
+            ? "В изучении"
+            : "Изучать профессию"
+          : saved
+            ? "★ В сохранённом"
+            : "☆ Сохранить"}
       </button>
       {error ? (
         <div className="small" style={{ color: "var(--danger)", marginTop: 6 }}>

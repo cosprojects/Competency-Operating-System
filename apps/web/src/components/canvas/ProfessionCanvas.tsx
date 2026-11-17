@@ -14,7 +14,12 @@ import type {
   CanvasViewer,
 } from "@/components/canvas/types";
 import { FeedbackTrigger } from "@/components/feedback/FeedbackTrigger";
-import { IconArrowLeft, IconArrowRight, IconCloseSquare, IconStar } from "@/components/icons";
+import {
+  IconAcademicCapOutline,
+  IconArrowLeft,
+  IconArrowRight,
+  IconCloseSquare,
+} from "@/components/icons";
 import { SaveButton } from "@/components/SaveButton";
 import { competencyMatches, countLabel, normalizeQuery, pluralWord } from "@/lib/content";
 import { trackClient } from "@/lib/client-analytics";
@@ -379,10 +384,10 @@ export function ProfessionCanvas({
               <Link
                 className="icon-button summary-star"
                 href={`/login?returnTo=${encodeURIComponent(`/professions/${profession.slug}`)}`}
-                aria-label="Войти, чтобы сохранить профессию"
-                title="Войти, чтобы сохранить профессию"
+                aria-label="Войти, чтобы изучать профессию"
+                title="Войти, чтобы изучать профессию"
               >
-                <IconStar />
+                <IconAcademicCapOutline />
               </Link>
             )}
           </div>

@@ -194,10 +194,9 @@ npm run tasks:sync
 
 ## Хостинг и статус
 
-Локальная разработка и Vercel demo (`apps/web/vercel.json`). Два контура деплоя (`COS-REL-008`, ADR-023):
-Продукт — `app.axiona.world` на VDS в Москве; корпоративный сайт — `axiona.world` на Vercel. Vercel demo без реальных ПДн; `axiona.biz` — позже.
+Локальная разработка и Vercel demo (`apps/web/vercel.json`). Контуры: продукт — `app.axiona.world` на VDS в Москве (закрытая Beta), корпоративный сайт — `axiona.world` на Vercel; официальный публичный запуск — отдельно из РБ (ADR-030). Vercel demo без реальных ПДн.
 Vercel demo не является продакшн-контуром персональных данных: реальные регистрации там не открываются.
 
-✅ Beta 1: контентный gate пройден, AI-дизайнер опубликован (12 профессий, 131 компетенция, 292 связи), spot-check основателя проведён — манифест `beta-1` в статусе `ready`. Vercel собирает `web:build:release` (строгий `release:validate` в CI).
+✅ Beta 1: контентный gate пройден — **13 профессий, 147 опубликованных компетенций, 336 связей**, spot-check основателя проведён, манифест `beta-1` в статусе `ready`. Vercel собирает `web:build:release` (строгий `release:validate` в CI).
 
-✅ `app.axiona.world`: VDS в Москве, PostgreSQL 16, production TLS, health `db: ok`, nightly backup + restore test. Resend настроен, magic link и вход владельца работают; регистрация закрыта.
+✅ `app.axiona.world`: VDS в Москве (закрытая Beta), PostgreSQL 16, production TLS, health `db: ok`, nightly backup + restore test. Resend активен, magic link и вход владельца работают; регистрация закрыта. Yandex SMTP — аварийный Plan B, не включён.

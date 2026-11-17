@@ -93,7 +93,8 @@
 | `npm run materials:import-ledger` | `node --experimental-strip-types scripts/materials/import-ledger.ts` |
 | `npm run release:promote` | `node --experimental-strip-types scripts/release/promote.ts` |
 | `npm run release:publications` | `node --experimental-strip-types scripts/release/publications.ts` |
-| `npm run guides:agent` | `node --experimental-strip-types src/methodology/v1/guides/cli/pilot.ts` |
+| `npm run guides:agent` | `node --env-file-if-exists=.env.local --experimental-strip-types src/methodology/v1/guides/cli/pilot.ts` |
+| `npm run guides:audit` | `node --experimental-strip-types src/methodology/v1/guides/cli/audit.ts` |
 
 ## Как пользоваться
 

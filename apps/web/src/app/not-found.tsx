@@ -1,18 +1,25 @@
 import Link from "next/link";
+import { NotFoundShell } from "@/components/NotFoundShell";
 
+/**
+ * Страница 404 по макету 409-8104: крупный «404», короткое пояснение и
+ * возврат на главную. Полностью перекрывает оболочку приложения.
+ */
 export default function NotFound() {
   return (
-    <div className="empty" style={{ marginTop: 40 }}>
-      <h2>Страница не найдена</h2>
-      <p>Возможно, ссылка устарела или компетенция ещё не опубликована.</p>
-      <div className="actions" style={{ justifyContent: "center" }}>
-        <Link className="button" href="/professions">
-          К профессиям
-        </Link>
-        <Link className="button secondary" href="/">
-          На главную
-        </Link>
-      </div>
-    </div>
+    <>
+      <NotFoundShell />
+      <main className="not-found-screen">
+      <p className="not-found-code">404</p>
+      <p className="not-found-text">
+        Упс! Страница не найдена.
+        <br />
+        Работаю над этим.
+      </p>
+      <Link className="button not-found-cta" href="/">
+        Назад на главную
+      </Link>
+      </main>
+    </>
   );
 }

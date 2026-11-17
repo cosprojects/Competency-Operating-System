@@ -8275,6 +8275,11 @@ button.rail-item {
 /* Модалка знания/навыка по макетам 407-12705/12736/12767/12798        */
 /* ------------------------------------------------------------------ */
 
+/* Модалка знания выше мобильной навигации, но ниже окна фидбека (z-index 100) */
+.knowledge-backdrop {
+  z-index: 95;
+}
+
 .knowledge-sheet {
   width: min(760px, 100%);
   border-radius: 16px;
@@ -8379,44 +8384,156 @@ button.rail-item {
 
 
 /* ------------------------------------------------------------------ */
-/* Раздел «Изучаю» по макету 407-7332                                  */
+/* Раздел «Изучаю» — макеты 407-7332 / 409-3516 / 404-18654            */
 /* ------------------------------------------------------------------ */
 
-.studying-head {
+/* Страница «Изучаю» живёт без стеклянной карточки: контент прямо на белом,
+   как в макете. Ширина и отступы совпадают с рабочей областью приложения. */
+.studying-page {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 32px;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  max-width: calc(1180px + var(--shell-left) + var(--shell-right));
+  margin: 0 auto;
+  padding: 24px var(--shell-right) 56px var(--shell-left);
 }
 
-.studying-head-text p {
+.studying-head {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.studying-head .eyebrow {
+  margin: 0 0 4px;
+  color: #475569;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 18px;
+  text-transform: none;
+}
+
+.studying-head h1 {
+  margin: 0 0 10px;
+  color: #132238;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 43px;
+  letter-spacing: -0.01em;
+}
+
+.studying-head p {
+  max-width: none;
   margin: 0;
+  color: #475569;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+/* Панель над маршрутом: переключатель табов + поиск */
+.studying-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.studying-tabs {
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 8px;
+}
+
+.studying-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 0 32px;
+  border: 0;
+  border-radius: 12px;
+  background: #fcfdff;
+  color: #595959;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 20px;
+  text-decoration: none;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.studying-tab:hover {
+  background: #f4f6ff;
+  color: #4f46e5;
+}
+
+.studying-tab.is-active {
+  background: #edf2ff;
+  color: #4f46e5;
 }
 
 .studying-search {
+  position: relative;
   display: flex;
-  flex-direction: column;
-  gap: 6px;
+  align-items: center;
+  gap: 12px;
   width: min(420px, 100%);
-  flex: 0 0 auto;
+  height: 44px;
+  padding: 0 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #fff;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
-.studying-search label {
-  color: var(--muted);
-  font-size: 12px;
+.studying-search:focus-within {
+  border-color: #c7d2fe;
+  box-shadow: var(--shadow-brand);
+}
+
+.studying-search-icon {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  color: #64748b;
+}
+
+.studying-search-input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  color: #0f172a;
+  font: inherit;
+  font-size: 15px;
+  line-height: 20px;
+  outline: none;
+}
+
+.studying-search-input::placeholder {
+  color: #64748b;
 }
 
 .studying-list {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 14px;
 }
 
+/* Карточка «Маршрут компетенции»: светлая плашка r32, внутри — белая карточка */
 .learning-card {
-  border: 1px solid var(--line-card);
-  border-radius: var(--r-16);
-  background: var(--surface);
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 24px;
+  border: 0;
+  border-radius: 32px;
+  background: #f9fafb;
+  overflow: visible;
 }
 
 .learning-card-head {
@@ -8424,48 +8541,63 @@ button.rail-item {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 12px 18px;
-  border-bottom: 1px solid var(--line-soft);
+  min-height: 24px;
+  padding: 0;
+  border: 0;
 }
 
 .learning-card-eyebrow {
   margin: 0;
-  color: var(--accent);
-  font-size: 12px;
-  font-weight: 600;
+  color: #4f46e5;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
 }
 
 .learning-toggle {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
+  margin-left: auto;
+  padding: 0;
   border: 0;
+  border-radius: 8px;
   background: none;
-  color: var(--muted);
+  color: #374151;
   font: inherit;
-  font-size: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
   cursor: pointer;
+  transition: color 0.18s ease;
 }
 
 .learning-toggle:hover {
-  color: var(--accent);
+  color: #4f46e5;
 }
 
-.learning-toggle-icon svg {
-  width: 16px;
-  height: 16px;
-  transition: transform 0.18s ease;
+.learning-toggle-icon {
+  width: 24px;
+  height: 24px;
 }
 
-.learning-toggle-icon.is-open svg {
-  transform: rotate(180deg);
-}
-
+/* Сводка: карточка компетенции + сегментированный прогресс */
 .learning-summary {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 320px;
-  gap: 32px;
-  padding: 20px 18px;
+  grid-template-columns: 464px minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+  padding: 0;
+}
+
+.learning-summary-main {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  padding: 15px;
+  border-radius: 12px;
+  background: #fff;
 }
 
 .learning-summary-top {
@@ -8475,346 +8607,39 @@ button.rail-item {
   gap: 12px;
 }
 
-.learning-summary h3 {
-  margin: 8px 0 6px;
-  font-size: 20px;
+.learning-summary-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.learning-summary h3 a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.learning-summary p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-.learning-meta {
-  display: inline-block;
-  margin-top: 10px;
-  color: var(--placeholder);
+.learning-order {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  background: #f9fafb;
+  color: #4f46e5;
   font-size: 12px;
-}
-
-.learning-percent {
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
-  margin-bottom: 12px;
-}
-
-.learning-percent strong {
-  font-size: 34px;
+  font-weight: 700;
   line-height: 1;
 }
 
-.learning-percent span {
-  color: var(--muted);
-  font-size: 12.5px;
+.learning-star {
+  width: 24px;
+  height: 24px;
+  color: #4f46e5;
 }
 
-.learn-progress-line {
-  display: grid;
-  grid-template-columns: 112px minmax(0, 1fr) 40px;
-  align-items: center;
-  gap: 10px;
-  margin-top: 8px;
-  font-size: 12px;
-  color: var(--muted);
-}
-
-.learn-progress-track {
-  height: 6px;
-  border-radius: 999px;
-  background: var(--line-soft);
-  overflow: hidden;
-}
-
-.learn-progress-track span {
-  display: block;
-  height: 100%;
-  border-radius: 999px;
-  background: var(--accent);
-}
-
-.learn-progress-value {
-  text-align: right;
-}
-
-.learning-progress-note {
-  margin-top: 10px !important;
-  font-size: 12px !important;
-}
-
-.learning-body {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  padding: 4px 18px 20px;
-  border-top: 1px solid var(--line-soft);
-}
-
-.learning-columns {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 300px;
-  gap: 24px;
-}
-
-.learning-part h4 {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin: 20px 0 8px;
-  font-size: 16px;
-}
-
-.learning-part-note {
-  margin: 0 0 12px;
-  color: var(--muted);
-  font-size: 12.5px;
-}
-
-.learning-count {
-  color: var(--accent);
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.learning-rows {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.learning-row {
-  display: grid;
-  grid-template-columns: 28px minmax(0, 1fr) auto auto;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 14px;
-  border-radius: var(--r-12);
-  background: #fbfcff;
-}
-
-.learning-row:hover {
-  background: #f4f7ff;
-}
-
-.learning-row-num {
-  color: var(--accent);
-  font-size: 12px;
-}
-
-.learning-row-text {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  min-width: 0;
-}
-
-.learning-row-title {
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.learning-row-desc {
-  overflow: hidden;
-  color: var(--muted);
-  font-size: 12px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.learning-row-state {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  color: var(--muted);
-  font-size: 12px;
-  white-space: nowrap;
-}
-
-.learning-row-state.is-learned {
-  color: var(--accent);
-}
-
-.learning-row-state svg {
-  width: 16px;
-  height: 16px;
-}
-
-.learning-row-open {
-  min-height: 30px;
-  padding: 4px 12px;
-  border: 1px solid var(--line-card);
-  border-radius: 999px;
-  background: #fff;
-  color: var(--ink);
-  font: inherit;
-  font-size: 12px;
-  cursor: pointer;
-}
-
-.learning-next {
-  align-self: start;
-  margin-top: 20px;
-  padding: 16px;
-  border-radius: var(--r-12);
-  background: #eff6ff;
-}
-
-.learning-next-label {
-  color: var(--accent);
-  font-size: 11px;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-.learning-next h4 {
-  margin: 6px 0;
-  font-size: 16px;
-}
-
-.learning-next p {
-  margin: 0 0 12px;
-  color: var(--muted);
-  font-size: 12.5px;
-}
-
-.learning-next-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  min-height: 36px;
-  font-size: 13px;
-}
-
-.learning-next-note {
-  display: block;
-  margin-top: 8px;
-  color: var(--muted);
-  font-size: 11px;
-}
-
-.learning-materials {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-}
-
-.learning-occurrences {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.learning-occurrence {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 12px 14px;
-  border-radius: var(--r-12);
-  background: #eef2ff;
-  color: inherit;
-  text-decoration: none;
-}
-
-.learning-occurrence span {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  font-size: 12px;
-}
-
-.learning-occurrence svg {
-  width: 18px;
-  height: 18px;
-  color: var(--accent);
-}
-
-.learning-learned {
-  margin-top: 32px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.learning-learned-head {
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
-}
-
-.learning-learned-head h2 {
-  margin: 0;
-  font-size: 20px;
-}
-
-.learning-learned-head span {
-  color: var(--muted);
-  font-size: 12.5px;
-}
-
-@media (max-width: 1080px) {
-  .studying-head,
-  .learning-summary,
-  .learning-columns {
-    grid-template-columns: 1fr;
-    flex-direction: column;
-  }
-
-  .studying-head {
-    display: flex;
-  }
-
-  .studying-search {
-    width: 100%;
-  }
-
-  .learning-materials {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-/* Макет 407-7332: карточка маршрута — светлая плашка r32, внутри белая карточка */
-.learning-card {
-  padding: 24px;
-  border: 0;
-  border-radius: 32px;
-  background: #f9fafb;
-  overflow: visible;
-}
-
-.learning-card-head {
-  padding: 0 0 10px;
-  border-bottom: 0;
-}
-
-.learning-card-eyebrow {
-  color: var(--accent);
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.learning-summary {
-  grid-template-columns: 464px minmax(0, 1fr);
-  gap: 24px;
-  padding: 0;
-}
-
-.learning-summary-main {
-  padding: 15px;
-  border-radius: 12px;
-  background: #ffffff;
+.learning-star svg {
+  width: 20px;
+  height: 20px;
 }
 
 .learning-summary h3 {
-  margin: 4px 0 6px;
+  margin: 0;
   font-size: 16px;
   font-weight: 700;
   line-height: 1.12;
@@ -8822,92 +8647,166 @@ button.rail-item {
 
 .learning-summary h3 a {
   color: #3730a3;
+  text-decoration: none;
 }
 
 .learning-summary p {
   display: -webkit-box;
   overflow: hidden;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  margin: 0;
+  color: #5f6f85;
   font-size: 13px;
   line-height: 20px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
 }
 
 .learning-meta {
   color: #8a99ad;
   font-size: 12px;
+  line-height: 18px;
+}
+
+.learning-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  min-width: 0;
+  padding-top: 3px;
+}
+
+.learning-percent {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 0;
+  color: #111827;
 }
 
 .learning-percent strong {
   font-size: 36px;
   font-weight: 600;
-  color: #111827;
+  line-height: 43px;
+  letter-spacing: -0.36px;
 }
 
 .learning-percent span {
-  font-size: 16px;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 43px;
+}
+
+.learning-progress-count {
+  margin: 0;
   color: #0f172a;
+  font-size: 16px;
+  line-height: 20px;
 }
 
-.learn-progress-line {
-  grid-template-columns: 1fr auto;
+.learning-progress-count strong {
+  font-weight: 600;
+}
+
+/* Сегменты прогресса: один сегмент = одно знание или навык (макет 409-3537) */
+.learning-segments {
+  display: flex;
   gap: 6px;
-  font-size: 13px;
+  width: 100%;
 }
 
-.learn-progress-track {
-  grid-column: 1 / -1;
-  grid-row: 2;
+.learning-segment {
+  flex: 1 1 0;
+  min-width: 4px;
   height: 6px;
+  border-radius: 999px;
+  background: #eef2f7;
+  transition: background 0.25s ease;
 }
 
-.learn-progress-line {
-  grid-template-areas: "label value" "track track";
+.learning-segment.is-filled {
+  background: #4f46e5;
 }
 
-.learn-progress-label { grid-area: label; }
-.learn-progress-value { grid-area: value; }
-.learn-progress-track { grid-area: track; }
-
+.learning-progress-breakdown,
 .learning-progress-note {
-  font-size: 13px !important;
+  margin: 0;
+  color: #475569;
+  font-size: 13px;
+  line-height: 18px;
 }
 
+/* Развёрнутая часть */
 .learning-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   padding: 0;
-  border-top: 0;
-  gap: 22px;
+  border: 0;
+}
+
+.learning-list-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.learning-list-head h4,
+.learning-materials-head h4,
+.learning-occurrences-block h4 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 26px;
+}
+
+.learning-list-head p {
+  margin: 6px 0 0;
+  color: #475569;
+  font-size: 13px;
+  line-height: 18px;
 }
 
 .learning-columns {
-  grid-template-columns: minmax(0, 780px) 328px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 328px;
   gap: 24px;
+  align-items: start;
 }
 
-.learning-part h4,
-.learning-part h4.learning-count,
-.learning-part > h4 {
-  margin: 16px 0 10px;
-  font-size: 20px;
-  font-weight: 500;
+.learning-rows {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
 }
 
-.learning-part-note {
-  font-size: 13px;
-}
-
+/* Строка знания/навыка: номер, название, статус, «Открыть» (макет 409-3591) */
 .learning-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
   padding: 16px;
   border-radius: 10px;
-  background: #ffffff;
-  column-gap: 16px;
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.18s ease;
 }
 
 .learning-row:hover {
-  background: #ffffff;
+  background: #f3f4f6;
+}
+
+.learning-row.is-selected {
+  background: #edf2ff;
+}
+
+.learning-row:focus-visible {
+  outline: 2px solid #c7d2fe;
+  outline-offset: -2px;
 }
 
 .learning-row-num {
+  flex: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -8915,76 +8814,864 @@ button.rail-item {
   height: 38px;
   border-radius: 12px;
   background: #fff;
-  font-size: 13px;
+  color: #0f172a;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+.learning-row.is-selected .learning-row-num {
+  background: #f8fafc;
+}
+
+.learning-row-text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.learning-row-title {
+  color: #0f172a;
+  font-size: 16px;
   font-weight: 600;
+  line-height: 21px;
 }
 
 .learning-row-desc {
-  font-size: 13px;
-  line-height: 20px;
+  display: -webkit-box;
+  overflow: hidden;
+  color: #475569;
+  font-size: 14px;
+  line-height: 21px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
+.learning-row-actions {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.learning-row-state {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 44px;
+  padding: 6px 16px 4px;
+  border-radius: 16px;
+  background: #f8fafc;
+  color: #595959;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 19.5px;
+  white-space: nowrap;
+}
+
+.learning-row-state svg {
+  width: 18px;
+  height: 18px;
+  color: #4f46e5;
+}
+
+.learning-row-open {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #fff;
+  color: #4f46e5;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 19.5px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: border-color 0.18s ease, background 0.18s ease;
+}
+
+.learning-row-open:hover {
+  border-color: #c7d2fe;
+  background: #f8faff;
+}
+
+.learning-row-open svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Карточка следующего шага (макет 409-3642) */
 .learning-next {
-  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-self: start;
+  margin: 0;
   padding: 24px;
+  border: 0;
   border-radius: 16px;
   background: #edf2ff;
 }
 
 .learning-next-label {
+  margin: 0;
+  color: #4f46e5;
   font-size: 14px;
   font-weight: 500;
+  line-height: 18px;
   text-transform: none;
 }
 
 .learning-next h4 {
-  margin: 6px 0;
+  margin: 0;
+  color: #0f172a;
   font-size: 20px;
   font-weight: 500;
-  color: #0f172a;
+  line-height: 26px;
 }
 
 .learning-next p {
+  margin: 0;
+  color: #475569;
   font-size: 16px;
   line-height: 20px;
 }
 
 .learning-next-cta {
-  min-height: 52px;
-  width: 100%;
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
+  gap: 12px;
+  width: 100%;
+  height: 52px;
+  margin: 0;
+  padding: 0 32px;
+  border: 0;
+  border-radius: 12px;
+  background: #4f46e5;
+  color: #fff;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 20px;
+  cursor: pointer;
+  transition: background 0.18s ease;
+}
+
+.learning-next-cta:hover {
+  background: #4338ca;
+}
+
+.learning-next-cta:focus-visible,
+.learning-row-open:focus-visible,
+.learning-toggle:focus-visible,
+.studying-tab:focus-visible,
+.learning-occurrence:focus-visible {
+  outline: 2px solid #a5b4fc;
+  outline-offset: 2px;
+}
+
+.learning-next-cta svg {
+  width: 16px;
+  height: 16px;
+}
+
+.learning-next-note {
+  margin: 0;
+  color: #475569;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* Материалы: заголовок группы со счётчиком + компактные карточки без обложки */
+.learning-materials-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.learning-materials-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.learning-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border-radius: 999px;
+  background: #f9fafb;
+  color: #4f46e5;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.learning-materials {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.learning-materials[data-count="3"] {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.learning-materials[data-count="1"] {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+/* Входит в профессии: светлые строки-ссылки без обводки (макет 409-3516) */
+.learning-occurrences-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.learning-occurrences {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.learning-occurrence {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 80px;
+  padding: 16px;
+  border: 0;
+  border-radius: 12px;
+  background: #eef2ff;
+  color: inherit;
+  text-decoration: none;
+  transition: background 0.18s ease;
+}
+
+.learning-occurrence:hover {
+  background: #e4e9ff;
+}
+
+.learning-occurrence-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.learning-occurrence-text strong {
+  color: #3730a3;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.learning-occurrence-text span {
+  color: #5f6f85;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.learning-occurrence svg {
+  flex: none;
+  width: 24px;
+  height: 24px;
+  color: #3730a3;
+}
+
+/* Секция «Изучено» */
+.learning-learned {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.learning-learned-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.learning-learned-head h2 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 26px;
+}
+
+.learning-learned-head span {
+  color: #475569;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Компактная карточка материала (макет 409-3657, без обложки)         */
+/* ------------------------------------------------------------------ */
+
+.material-card.is-compact {
+  gap: 10px;
+  max-width: none;
+  padding: 16px;
+  overflow: visible;
+  border: 0;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: none;
+}
+
+.material-card.is-compact:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.material-card.is-compact > .material-card-hit {
+  border-radius: 12px;
+}
+
+.material-card.is-compact .material-body {
+  flex: 1;
+  gap: 8px;
+  padding: 0;
+}
+
+.material-card.is-compact .material-cta {
+  margin-top: auto;
+}
+
+.material-card.is-compact .material-compact-badges .material-badges {
+  position: static;
+  inset: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.material-card.is-compact .material-pill {
+  min-height: 26px;
+  padding: 3px 10px;
+  border: 1px solid #f2f4f7;
+  background: #fff;
+  color: #5f6f85;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 17px;
+  backdrop-filter: none;
+}
+
+.material-card.is-compact .material-badge-slot {
+  gap: 6px;
+}
+
+.material-card.is-compact .material-badge-slot .icon-button,
+.material-card.is-compact .material-viewed-icon {
+  width: 28px;
+  height: 26px;
+  border: 1px solid #f2f4f7;
+  border-radius: 999px;
+  background: #fcfdff;
+  color: #4f46e5;
+  backdrop-filter: none;
+}
+
+.material-card.is-compact .material-badge-slot .icon-button svg,
+.material-card.is-compact .material-viewed-icon svg {
+  width: 14px;
+  height: 14px;
+}
+
+.material-card.is-compact .material-title {
+  color: #132238;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 17px;
+  letter-spacing: -0.5px;
+}
+
+.material-card.is-compact .material-desc {
+  display: -webkit-box;
+  overflow: hidden;
+  color: #5f6f85;
+  font-size: 13px;
+  line-height: 20px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.material-card.is-compact .material-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.material-card.is-compact .material-cta {
+  width: 100%;
+  height: 44px;
+  padding: 0 20px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: none;
+  color: #0f172a;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.material-card.is-compact .material-cta::after {
+  display: none;
+}
+
+.material-card.is-compact .material-cta:hover {
+  background: #fff;
+}
+
+/* ------------------------------------------------------------------ */
+/* Модалка знания/навыка по макету 404-18654                           */
+/* ------------------------------------------------------------------ */
+
+/* Модалка знания выше мобильной навигации, но ниже окна фидбека (z-index 100) */
+.knowledge-backdrop {
+  z-index: 95;
+}
+
+.knowledge-sheet {
+  width: min(760px, 100%);
+  border-radius: 16px;
+}
+
+.knowledge-sheet-scroll {
+  padding: 40px 32px 12px;
+}
+
+.knowledge-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  z-index: 5;
+  width: 48px;
+  height: 48px;
+  border: 0;
+  border-radius: 12px;
+  background: #f8fafc;
+  color: #1c274c;
+  cursor: pointer;
+}
+
+.knowledge-close svg {
+  width: 24px;
+  height: 24px;
+}
+
+.knowledge-close:hover,
+.knowledge-close:focus-visible {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.knowledge-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0;
+}
+
+.knowledge-kind {
+  color: #4f46e5;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.knowledge-state {
+  color: #475569;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.knowledge-sheet h2 {
+  margin: 14px 0 0;
+  color: #0f172a;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+.knowledge-competency {
+  margin: 6px 0 0;
+  color: #475569;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.knowledge-intro {
+  margin: 24px 0 0;
+  color: #475569;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.knowledge-section {
+  margin-top: 26px;
+}
+
+.knowledge-section h3 {
+  margin: 0 0 8px;
+  color: #475569;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 21px;
+}
+
+.knowledge-section p {
+  margin: 0;
+  color: #475569;
+  font-size: 13px;
+  line-height: 21px;
+  white-space: pre-line;
+}
+
+.knowledge-sources-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 26px;
+  color: #5f6f85;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.knowledge-sources {
+  min-width: 0;
+}
+
+.knowledge-report {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  border: 0;
+  background: none;
+  color: #3730a3;
+  font: inherit;
+  font-size: 13px;
+  line-height: 20px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.knowledge-report:hover {
+  color: #4f46e5;
+  text-decoration: underline;
+}
+
+.knowledge-note {
+  margin: 20px 0 0;
+  color: #475569;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.knowledge-sheet-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 32px 28px;
+  border-top: 0;
+}
+
+.knowledge-sheet-footer .button {
+  min-height: 40px;
+  padding: 8px 20px;
+  border-radius: 12px;
+}
+
+.knowledge-sheet-footer .knowledge-footer-close {
+  border: 1px solid #f2f4f7;
+  background: #fff;
+  color: #132238;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.knowledge-sheet-footer .knowledge-footer-mark {
+  margin-left: auto;
   font-size: 15px;
   font-weight: 600;
 }
 
-.learning-materials {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+.knowledge-sheet-footer .knowledge-footer-mark.is-learned {
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  color: #0f172a;
 }
 
-.learning-materials .material-card {
-  max-width: none;
+/* ------------------------------------------------------------------ */
+/* «Изучаю»: адаптив                                                   */
+/* ------------------------------------------------------------------ */
+
+@media (max-width: 1180px) {
+  .learning-summary {
+    grid-template-columns: 380px minmax(0, 1fr);
+  }
 }
 
-.learning-materials .material-cta {
+@media (max-width: 1080px) {
+  .studying-toolbar {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .studying-search {
+    width: 100%;
+  }
+
+  .learning-summary {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .learning-columns {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .learning-next {
+    order: -1;
+    align-self: stretch;
+  }
+
+  .learning-materials[data-count="3"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .studying-page {
+    gap: 18px;
+    padding: 16px var(--shell-right) calc(88px + env(safe-area-inset-bottom, 0px)) var(--shell-left);
+  }
+
+  .studying-head h1 {
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  .studying-head p {
+    font-size: 15px;
+  }
+
+  .studying-tabs {
+    width: 100%;
+  }
+
+  .studying-tab {
+    flex: 1 1 0;
+    padding: 0 16px;
+  }
+
+  .learning-card {
+    gap: 12px;
+    padding: 16px;
+    border-radius: 24px;
+  }
+
+  .learning-card-head {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .learning-card-eyebrow {
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  .learning-summary {
+    gap: 16px;
+  }
+
+  .learning-summary-main {
+    padding: 14px;
+  }
+
+  .learning-percent strong,
+  .learning-percent span {
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  .learning-progress {
+    gap: 12px;
+    padding-top: 0;
+  }
+
+  .learning-row {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .learning-row-text {
+    flex: 1 1 60%;
+  }
+
+  .learning-row-desc {
+    -webkit-line-clamp: 3;
+  }
+
+  .learning-row-actions {
+    flex: 1 0 100%;
+    justify-content: space-between;
+  }
+
+  .learning-row-state,
+  .learning-row-open {
+    height: 40px;
+  }
+
+  .learning-next {
+    padding: 20px;
+  }
+
+  .learning-next p {
+    font-size: 15px;
+  }
+
+  .learning-materials,
+  .learning-materials[data-count="3"] {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .learning-materials-head h4,
+  .learning-occurrences-block h4,
+  .learning-list-head h4 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .learning-occurrence {
+    min-height: 72px;
+  }
+
+  .knowledge-sheet-scroll {
+    padding: 28px 18px 8px;
+  }
+
+  .knowledge-close {
+    top: 16px;
+    right: 16px;
+    width: 44px;
+    height: 44px;
+  }
+
+  .knowledge-sheet-footer {
+    flex-wrap: wrap;
+    padding: 12px 18px 20px;
+  }
+
+  .knowledge-sheet-footer .button {
+    flex: 1 1 auto;
+  }
+
+  .knowledge-footer-mark {
+    margin-left: 0;
+  }
+
+  .knowledge-sources-row {
+    flex-direction: column;
+    gap: 6px;
+  }
+}
+
+
+/* Страница 404 (макет 409-8104) */
+body.not-found-active .nav-rail,
+body.not-found-active .mobile-nav,
+body.not-found-active .site-footer {
+  display: none !important;
+}
+
+body.not-found-active .page-screen {
+  padding: 0;
+  background: transparent;
+}
+
+body.not-found-active .page-surface,
+body.not-found-active .page-plain {
   width: 100%;
+  max-width: none;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
-.learning-occurrence {
-  padding: 16px;
-  border-radius: 12px;
-  background: #eef2ff;
+.not-found-screen {
+  position: relative;
+  min-height: 100vh;
+  z-index: 130;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding: 24px;
+  background: #ffffff;
+  text-align: center;
 }
 
-.learning-occurrence strong {
+.not-found-code {
+  margin: 0;
   color: #3730a3;
-  font-size: 15px;
+  font-size: clamp(96px, 12vw, 160px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.8;
 }
 
-.learning-occurrence span span {
-  font-size: 13px;
-}
-
-.learning-learned-head h2 {
-  font-size: 20px;
+.not-found-text {
+  margin: 0;
+  color: #132238;
+  font-size: 30px;
   font-weight: 500;
+  line-height: 33.6px;
+}
+
+.not-found-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 352px;
+  max-width: 100%;
+  min-height: 44px;
+  margin-top: 8px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+@media (max-width: 760px) {
+  .not-found-screen {
+    gap: 24px;
+  }
+
+  .not-found-text {
+    font-size: 22px;
+    line-height: 26px;
+  }
 }

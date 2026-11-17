@@ -46,6 +46,15 @@ export const adminUserActionSchema = z.union([
   z.object({ action: z.literal("delete"), userId: z.string().trim().min(1).max(100) }),
 ]);
 
+export const STUDY_TARGETS = ["COMPETENCY", "KNOWLEDGE", "SKILL"] as const;
+export const STUDY_STATUSES = ["NOT_STARTED", "LEARNING", "LEARNED"] as const;
+
+export const studyMarkSchema = z.object({
+  targetType: z.enum(STUDY_TARGETS),
+  targetId: z.string().trim().min(1).max(200),
+  status: z.enum(STUDY_STATUSES),
+});
+
 export const studyStatusSchema = z.object({
   competencyId: z.string().trim().min(1).max(200),
   status: z.enum(["NOT_STARTED", "LEARNING", "LEARNED"]),
@@ -132,6 +141,7 @@ export const EVENT_NAMES = [
   "favorite_add",
   "favorite_remove",
   "study_status_change",
+  "study_mark_change",
   "feedback_open",
   "feedback_submit",
   "return_visit",

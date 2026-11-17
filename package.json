@@ -72,7 +72,8 @@
     "tasks:project": "node --experimental-strip-types scripts/tasks/project.ts",
     "materials:import-ledger": "node --experimental-strip-types scripts/materials/import-ledger.ts",
     "release:promote": "node --experimental-strip-types scripts/release/promote.ts",
-    "release:publications": "node --experimental-strip-types scripts/release/publications.ts"
+    "release:publications": "node --experimental-strip-types scripts/release/publications.ts",
+    "guides:agent": "node --experimental-strip-types src/methodology/v1/guides/cli/pilot.ts"
   },
   "dependencies": {
     "@prisma/client": "^6.4.0",

@@ -57,10 +57,14 @@ export interface CanvasViewer {
 
 export type CompetencyStates = Record<string, CompetencyState>;
 
+/** Отметки знаний и навыков: tag-id → статус (COS-EAR-017). */
+export type ItemStates = Record<string, StudyStatus>;
+
 export interface ProfessionCanvasProps {
   profession: CanvasProfession;
   competencies: CanvasCompetency[];
   states: CompetencyStates;
+  itemStates: ItemStates;
   viewer: CanvasViewer | null;
   initialCompetencyId?: string;
 }

@@ -8,10 +8,10 @@ import {
   IconCat,
   IconChart,
   IconHome,
+  IconGraduation,
   IconHomeAdd,
   IconPlaster,
   IconQuestion,
-  IconStarCircle,
   IconStructure,
   IconUsers,
 } from "@/components/icons";
@@ -29,8 +29,8 @@ const ITEMS = [
   },
   {
     href: "/saved",
-    label: "Сохранённое",
-    icon: IconStarCircle,
+    label: "Изучаю",
+    icon: IconGraduation,
     match: (pathname: string) => pathname === "/saved" || pathname.startsWith("/saved/"),
   },
 ];

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ProfessionCanvas } from "@/components/canvas/ProfessionCanvas";
-import type { CanvasCompetency, CanvasProfession, CompetencyStates } from "@/components/canvas/types";
+import type { CanvasCompetency, CanvasProfession, CompetencyStates, ItemStates } from "@/components/canvas/types";
 import { ViewEvent } from "@/components/ViewEvent";
 import { getCurrentUser } from "@/lib/auth";
 import { findCompetencies, getProfession, getProfessionGroups, professionSphere } from "@/lib/content";
@@ -45,15 +45,22 @@ export default async function ProfessionCanvasPage({
   const reviewIndex = await loadProfessionSourceReviews(db, profession, user?.id ?? null);
 
   const states: CompetencyStates = {};
+  const itemStates: ItemStates = {};
   let professionSaved = false;
   const viewedSourceIds = new Set<string>();
   const savedSourceIds = new Set<string>();
   if (user) {
-    const [favorites, studyStatuses, views] = await Promise.all([
+    const [favorites, studyStatuses, views, marks] = await Promise.all([
       db.favorite.findMany({ where: { userId: user.id } }),
       db.studyStatus.findMany({ where: { userId: user.id } }),
       db.sourceView.findMany({ where: { userId: user.id }, select: { sourceId: true } }),
+      db.studyMark.findMany({ where: { userId: user.id } }),
     ]);
+    for (const mark of marks) {
+      if (mark.targetType === "KNOWLEDGE" || mark.targetType === "SKILL") {
+        itemStates[mark.targetId] = mark.status;
+      }
+    }
     for (const view of views) viewedSourceIds.add(view.sourceId);
     const savedIds = new Set(
       favorites.filter((favorite) => favorite.targetType === "COMPETENCY").map((favorite) => favorite.targetId),
@@ -155,6 +162,7 @@ export default async function ProfessionCanvasPage({
         profession={canvasProfession}
         competencies={competencies}
         states={states}
+        itemStates={itemStates}
         viewer={user ? { email: user.email } : null}
         professionSaved={professionSaved}
         initialCompetencyId={initialCompetencyId}

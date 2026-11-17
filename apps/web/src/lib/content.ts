@@ -2,6 +2,7 @@ import raw from "../content/generated/beta-1.json";
 import type {
   CompetencyWithProfession,
   ContentCompetency,
+  ContentItem,
   ContentProfession,
   ContentSection,
   ContentSource,
@@ -13,6 +14,28 @@ export const content = raw as unknown as PublicContent;
 
 export function getProfessions(): ContentProfession[] {
   return content.professions;
+}
+
+export interface StudyItemContext {
+  item: ContentItem;
+  kind: "KNOWLEDGE" | "SKILL";
+  competency: ContentCompetency;
+  profession: ContentProfession;
+}
+
+/** Знание или навык по стабильному id (tag_*) вместе с контекстом компетенции и профессии. */
+export function findStudyItem(id: string): StudyItemContext | undefined {
+  for (const occurrence of getAllCompetencies()) {
+    const knowledge = occurrence.competency.knowledge.find((item) => item.id === id);
+    if (knowledge) {
+      return { item: knowledge, kind: "KNOWLEDGE", competency: occurrence.competency, profession: occurrence.profession };
+    }
+    const skill = occurrence.competency.skills.find((item) => item.id === id);
+    if (skill) {
+      return { item: skill, kind: "SKILL", competency: occurrence.competency, profession: occurrence.profession };
+    }
+  }
+  return undefined;
 }
 
 export function getProfession(slug: string): ContentProfession | undefined {

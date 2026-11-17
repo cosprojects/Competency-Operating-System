@@ -17,10 +17,10 @@ export default async function ProfilePage() {
   if (!user) redirect(`/login?returnTo=${encodeURIComponent("/profile")}`);
 
   const db = getDb();
-  const [favorites, favoriteCount, statusCount, viewCount, feedbackCount, consents] = await Promise.all([
+  const [favorites, favoriteCount, learnedCount, viewCount, feedbackCount, consents] = await Promise.all([
     db.favorite.findMany({ where: { userId: user.id }, orderBy: { createdAt: "desc" }, take: 12 }),
     db.favorite.count({ where: { userId: user.id } }),
-    db.studyStatus.count({ where: { userId: user.id } }),
+    db.studyMark.count({ where: { userId: user.id, status: "LEARNED" } }),
     db.sourceView.count({ where: { userId: user.id } }),
     db.feedback.count({ where: { userId: user.id } }),
     db.consentRecord.findMany({ where: { userId: user.id }, orderBy: { grantedAt: "desc" } }),
@@ -57,7 +57,7 @@ export default async function ProfilePage() {
 
       <div className="card-grid">
         <div className="card"><span className="small muted">Сохранения</span><h2 style={{ marginTop: 6 }}>{favoriteCount}</h2></div>
-        <div className="card"><span className="small muted">Статусы</span><h2 style={{ marginTop: 6 }}>{statusCount}</h2></div>
+        <div className="card"><span className="small muted">Усвоено пунктов</span><h2 style={{ marginTop: 6 }}>{learnedCount}</h2></div>
         <div className="card"><span className="small muted">Просмотры</span><h2 style={{ marginTop: 6 }}>{viewCount}</h2></div>
         <div className="card"><span className="small muted">Отзывы</span><h2 style={{ marginTop: 6 }}>{feedbackCount}</h2></div>
       </div>

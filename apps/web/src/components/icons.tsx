@@ -391,3 +391,23 @@ export function IconStarFilled({ className }: { className?: string }) {
     </svg>
   );
 }
+
+/** Шапка (graduation cap) — «Изучаю» и режим изучения (COS-EAR-017). */
+export function IconGraduation({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path
+        d="M3.09 10.36 9.78 13.5a4.6 4.6 0 0 0 4.44 0l6.69-3.14c1.46-.68 1.46-3.04 0-3.72L14.22 3.5a4.6 4.6 0 0 0-4.44 0L3.09 6.64c-1.45.68-1.45 3.04 0 3.72Z"
+        stroke="currentColor"
+        strokeWidth="1.5"
+      />
+      <path d="M2 8.5V14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <path
+        d="M19 11.5v5.13c0 1-.5 1.95-1.39 2.44C16.15 19.88 13.8 21 12 21s-4.15-1.12-5.61-1.93A2.78 2.78 0 0 1 5 16.63V11.5"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}

@@ -10,6 +10,7 @@ import type {
   CanvasCompetency,
   CanvasProfession,
   CompetencyStates,
+  ItemStates,
   CanvasViewer,
 } from "@/components/canvas/types";
 import { FeedbackTrigger } from "@/components/feedback/FeedbackTrigger";
@@ -59,6 +60,7 @@ export function ProfessionCanvas({
   profession,
   competencies,
   states,
+  itemStates,
   viewer,
   professionSaved,
   initialCompetencyId,
@@ -69,6 +71,7 @@ export function ProfessionCanvas({
   profession: CanvasProfession;
   competencies: CanvasCompetency[];
   states: CompetencyStates;
+  itemStates: ItemStates;
   viewer: CanvasViewer | null;
   professionSaved: boolean;
   initialCompetencyId?: string;
@@ -470,6 +473,7 @@ export function ProfessionCanvas({
           profession={profession}
           competency={selected}
           state={selectedState ?? { saved: false, status: "NOT_STARTED" }}
+          itemStates={itemStates}
           viewer={viewer}
           expanded={expanded}
           onToggleExpanded={() => setExpanded((current) => !current)}

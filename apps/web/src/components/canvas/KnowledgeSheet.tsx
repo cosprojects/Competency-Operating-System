@@ -1,0 +1,228 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
+import { FeedbackTrigger } from "@/components/feedback/FeedbackTrigger";
+import { IconArrowLeft, IconArrowRight, IconCloseCircle } from "@/components/icons";
+
+interface GuideSection {
+  heading: string;
+  text: string;
+}
+
+interface Guide {
+  status: "ok" | "no_data";
+  sections: GuideSection[];
+  sources: Array<{ title: string; url: string; lang: string }>;
+}
+
+export interface KnowledgeItem {
+  id: string;
+  title: string;
+  definition?: string;
+  kind: "KNOWLEDGE" | "SKILL";
+}
+
+/** Модалка знания/навыка: разбор, источники, отметка «усвоено» (COS-EAR-017). */
+export function KnowledgeSheet({
+  competencyId,
+  competencyTitle,
+  items,
+  index,
+  learnedIds,
+  onNavigate,
+  onClose,
+  onLearnedChange,
+}: {
+  competencyId: string;
+  competencyTitle: string;
+  items: KnowledgeItem[];
+  index: number;
+  learnedIds: Set<string>;
+  onNavigate: (nextIndex: number) => void;
+  onClose: () => void;
+  onLearnedChange: (itemId: string, learned: boolean) => void;
+}) {
+  const item = items[index];
+  const [guide, setGuide] = useState<Guide | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [busy, setBusy] = useState(false);
+  const learned = item ? learnedIds.has(item.id) : false;
+
+  useEffect(() => {
+    if (!item) return;
+    let cancelled = false;
+    setLoading(true);
+    setError(null);
+    setGuide(null);
+    fetch(`/api/guide?item=${encodeURIComponent(item.id)}`)
+      .then(async (response) => {
+        if (response.status === 401) throw new Error("auth");
+        if (!response.ok) throw new Error("empty");
+        return (await response.json()) as { guide: Guide };
+      })
+      .then((data) => {
+        if (!cancelled) setGuide(data.guide);
+      })
+      .catch((reason: Error) => {
+        if (!cancelled) setError(reason.message);
+      })
+      .finally(() => {
+        if (!cancelled) setLoading(false);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [item]);
+
+  useEffect(() => {
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") onClose();
+      if (event.key === "ArrowLeft" && index > 0) onNavigate(index - 1);
+      if (event.key === "ArrowRight" && index < items.length - 1) onNavigate(index + 1);
+    }
+    document.addEventListener("keydown", onKeyDown);
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = previous;
+    };
+  }, [index, items.length, onClose, onNavigate]);
+
+  if (!item || typeof document === "undefined") return null;
+
+  async function toggleLearned() {
+    if (!item) return;
+    setBusy(true);
+    const next = !learned;
+    try {
+      const response = await fetch("/api/study-marks", {
+        method: next ? "POST" : "DELETE",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(
+          next
+            ? { targetType: item.kind, targetId: item.id, status: "LEARNED" }
+            : { targetType: item.kind, targetId: item.id },
+        ),
+      });
+      if (!response.ok) throw new Error("fail");
+      onLearnedChange(item.id, next);
+    } catch {
+      // Оставляем состояние как было — повторное нажатие безопасно.
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  return createPortal(
+    <div
+      className="knowledge-backdrop"
+      role="presentation"
+      onMouseDown={(event) => {
+        if (event.target === event.currentTarget) onClose();
+      }}
+    >
+      <section className="knowledge-sheet" role="dialog" aria-modal="true" aria-labelledby="knowledge-sheet-title">
+        <button className="knowledge-close" type="button" onClick={onClose} aria-label="Закрыть">
+          <IconCloseCircle />
+        </button>
+        <div className="knowledge-sheet-scroll">
+          <header className="knowledge-sheet-head">
+            <div>
+              <p className="knowledge-sheet-eyebrow">{item.kind === "SKILL" ? "Навык" : "Знание"} · {competencyTitle}</p>
+              <h2 id="knowledge-sheet-title">{item.title}</h2>
+            </div>
+          </header>
+
+          {loading ? <p className="knowledge-status">Загружаем разбор…</p> : null}
+          {error === "auth" ? <p className="knowledge-status">Разборы открываются после входа.</p> : null}
+          {error === "empty" ? <p className="knowledge-status">Разбор пока готовится.</p> : null}
+          {error && error !== "auth" && error !== "empty" ? (
+            <p className="knowledge-status">Не удалось загрузить разбор. Попробуйте ещё раз.</p>
+          ) : null}
+
+          {guide && guide.status === "ok"
+            ? guide.sections.map((section) => (
+                <article className="knowledge-section" key={section.heading}>
+                  <h3>{section.heading}</h3>
+                  <p>{section.text}</p>
+                </article>
+              ))
+            : null}
+
+          {guide?.status === "no_data" || error === "empty" ? (
+            <>
+              {item.definition ? (
+                <article className="knowledge-section">
+                  <h3>Что известно</h3>
+                  <p>{item.definition}</p>
+                </article>
+              ) : null}
+              <div className="knowledge-notice">
+                <p className="knowledge-notice-title">Данных пока не хватает</p>
+                <p>
+                  Сейчас мы собираем данные по всему интернету, чтобы наполнить систему пользой. Я уведомлю тебя по почте,
+                  когда добавлю актуальные данные. Ты также можешь прислать источник с обучающими материалами — это поможет
+                  добавить и улучшить систему.
+                </p>
+                <FeedbackTrigger
+                  className="button secondary small"
+                  options={{ context: "competency", type: "IMPROVEMENT", targetType: "COMPETENCY", targetId: competencyId, title: item.title }}
+                >
+                  Поделиться источником знаний
+                </FeedbackTrigger>
+              </div>
+            </>
+          ) : null}
+        </div>
+
+        <footer className="knowledge-sheet-footer">
+          <div className="knowledge-sources-row">
+            <span className="knowledge-sources">
+              {guide && guide.sources.length > 0
+                ? `Источники: ${[...new Set(guide.sources.map((source) => source.title))].join(", ")}`
+                : "Источники: пока не подобраны"}
+            </span>
+            <FeedbackTrigger
+              className="link-button"
+              options={{ context: "competency", type: "CONTENT_ERROR", targetType: "COMPETENCY", targetId: competencyId, title: item.title }}
+            >
+              Сообщить о проблеме
+            </FeedbackTrigger>
+          </div>
+          <div className="knowledge-toolbar">
+            <button
+              className="rail-nav-btn knowledge-nav"
+              type="button"
+              onClick={() => onNavigate(index - 1)}
+              disabled={index === 0}
+              aria-label="Предыдущий пункт"
+            >
+              <IconArrowLeft />
+            </button>
+            <button
+              className={`knowledge-learn${learned ? " is-learned" : ""}`}
+              type="button"
+              onClick={() => void toggleLearned()}
+              disabled={busy}
+            >
+              {learned ? "Усвоено" : "Пометить как изученное"}
+            </button>
+            <button
+              className="rail-nav-btn knowledge-nav"
+              type="button"
+              onClick={() => onNavigate(index + 1)}
+              disabled={index >= items.length - 1}
+              aria-label="Следующий пункт"
+            >
+              <IconArrowRight />
+            </button>
+          </div>
+        </footer>
+      </section>
+    </div>,
+    document.body,
+  );
+}

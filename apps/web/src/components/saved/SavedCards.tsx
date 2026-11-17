@@ -20,6 +20,8 @@ export interface SavedSkillView {
   tierClass: "foundation" | "core" | "optional";
   summary: string;
   professionSlug: string;
+  itemCount: number;
+  learnedCount: number;
 }
 
 /** Карточка сохранённой профессии (в секции «Профессии»). */
@@ -85,6 +87,19 @@ export function SavedSkillCard({ skill }: { skill: SavedSkillView }) {
       </h3>
       <p>{skill.definition}</p>
       <div className="saved-skill-meta">{skill.summary}</div>
+      {skill.itemCount > 0 ? (
+        <div className="study-progress">
+          <div className="study-progress-bar" aria-hidden="true">
+            <span style={{ width: `${Math.round((skill.learnedCount / skill.itemCount) * 100)}%` }} />
+          </div>
+          <div className="study-progress-text">
+            <span>{skill.learnedCount === skill.itemCount ? "Освоено" : "Изучено"}</span>
+            <span>
+              {skill.learnedCount} из {skill.itemCount}
+            </span>
+          </div>
+        </div>
+      ) : null}
     </article>
   );
 }

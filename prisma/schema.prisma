@@ -68,6 +68,7 @@ model User {
   sessions          Session[]
   favorites         Favorite[]
   statuses          StudyStatus[]
+  studyMarks        StudyMark[]
   feedback          Feedback[]
   sourceReviews     SourceReview[]
   sourceViews       SourceView[]
@@ -131,6 +132,28 @@ model StudyStatus {
 
   @@unique([userId, competencyId])
   @@index([userId, status])
+}
+
+/// COS-EAR-017: отметки усвоения знаний/навыков и изучения компетенций.
+enum StudyTarget {
+  COMPETENCY
+  KNOWLEDGE
+  SKILL
+}
+
+model StudyMark {
+  id         String   @id @default(cuid())
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  targetType StudyTarget
+  targetId   String
+  status     StudyStatusValue @default(NOT_STARTED)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@unique([userId, targetType, targetId])
+  @@index([userId, status])
+  @@index([userId, updatedAt])
 }
 
 model Feedback {

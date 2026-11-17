@@ -36,6 +36,8 @@ export default async function SavedPage({
     where: { userId: user.id, targetType: { in: ["PROFESSION", "COMPETENCY", "SOURCE"] } },
     orderBy: { createdAt: "desc" },
   });
+  const marks = await db.studyMark.findMany({ where: { userId: user.id, status: "LEARNED" } });
+  const learnedIds = new Set(marks.map((mark) => mark.targetId));
   const savedProfessionSlugs = new Set(
     favorites.filter((item) => item.targetType === "PROFESSION").map((item) => item.targetId),
   );
@@ -67,6 +69,7 @@ export default async function SavedPage({
     for (const competency of profession.sections.flatMap((section) => section.competencies)) {
       if (!savedCompetencyIds.has(competency.id) || seenSkills.has(competency.id)) continue;
       seenSkills.add(competency.id);
+      const items = [...competency.knowledge, ...competency.skills];
       skills.push({
         id: competency.id,
         title: competency.title,
@@ -75,6 +78,8 @@ export default async function SavedPage({
         tierClass: competency.tier,
         summary: contentTypeSummary(competency),
         professionSlug: profession.slug,
+        itemCount: items.length,
+        learnedCount: items.filter((item) => learnedIds.has(item.id)).length,
       });
     }
   }
@@ -137,23 +142,26 @@ export default async function SavedPage({
 
   const empty =
     visibleMaterials.length === 0 && visibleProfessions.length === 0 && visibleSkills.length === 0;
+  const hasAnySaved = materials.length + professions.length + skills.length > 0;
 
   return (
     <>
       <div className="page-head">
         <div className="eyebrow">Профиль</div>
-        <h1>Сохранённое</h1>
-        <p>Материалы, компетенции и профессии, к которым вы хотите вернуться.</p>
-        <form className="saved-search" method="get" role="search">
-          <input
-            className="input"
-            type="search"
-            name="q"
-            defaultValue={q ?? ""}
-            placeholder="Введите название материала, профессии или навыка"
-            aria-label="Поиск по сохранённому"
-          />
-        </form>
+        <h1>Изучаю</h1>
+        <p>Компетенции, которые ты изучаешь, материалы и профессии, к которым хочешь вернуться.</p>
+        {hasAnySaved ? (
+          <form className="saved-search" method="get" role="search">
+            <input
+              className="input"
+              type="search"
+              name="q"
+              defaultValue={q ?? ""}
+              placeholder="Введите название материала, профессии или навыка"
+              aria-label="Поиск по сохранённому"
+            />
+          </form>
+        ) : null}
       </div>
 
       {welcome === "1" ? <WelcomeNotice /> : null}

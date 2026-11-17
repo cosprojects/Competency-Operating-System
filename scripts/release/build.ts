@@ -1,3 +1,4 @@
+import { readFile, writeFile } from "node:fs/promises";
 import process from "node:process";
 import path from "node:path";
 import { buildPublicContent, evaluateRelease, loadReleaseInputs, writePublicContent } from "./lib.ts";
@@ -47,6 +48,14 @@ async function main(): Promise<void> {
   }
 
   const file = await writePublicContent(root, content);
+  // Кластер разборов знаний/навыков (COS-EAR-017) — отдельная база знаний, кладём рядом с публикацией.
+  try {
+    const clusterRaw = await readFile(path.join(root, "src/methodology/v1/guides/content/it.json"), "utf8");
+    await writeFile(path.join(root, "apps/web/src/content/generated/guides.json"), clusterRaw);
+    console.log("release:build: guides → apps/web/src/content/generated/guides.json");
+  } catch {
+    console.log("release:build: кластер разборов отсутствует, guides.json не обновлялся");
+  }
   console.log(
     `release:build: ${file}; status ${content.status}; professions ${content.stats.professions}; ` +
       `competencies ${content.stats.publishedCompetencies}; links ${content.stats.publishedLinks}; sources ${content.stats.sources}`,

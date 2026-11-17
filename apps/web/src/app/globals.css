@@ -8241,3 +8241,138 @@ button.rail-item {
 .detail-head.is-stuck .study-button span {
   display: inline;
 }
+
+
+/* Карточка компетенции в «Изучаю»: позиционируем её, чтобы растянутая ссылка
+   не выходила за пределы карточки. */
+.saved-skill-card {
+  position: relative;
+}
+
+/* Вся плашка знания/навыка кликабельна */
+.study-item.is-clickable {
+  cursor: pointer;
+  transition: border-color 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
+}
+
+.study-item.is-clickable:hover,
+.study-item.is-clickable:focus-visible {
+  border-color: #c7d2fe;
+  background: #f8faff;
+  box-shadow: 0 8px 20px rgba(19, 34, 56, 0.08);
+  outline: none;
+}
+
+
+.saved-section-note {
+  margin: -8px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+
+/* ------------------------------------------------------------------ */
+/* Модалка знания/навыка по макетам 407-12705/12736/12767/12798        */
+/* ------------------------------------------------------------------ */
+
+.knowledge-sheet {
+  width: min(760px, 100%);
+  border-radius: 16px;
+}
+
+.knowledge-sheet-scroll {
+  padding: 40px 40px 12px;
+}
+
+.knowledge-close {
+  top: 24px;
+  right: 24px;
+  border: 0;
+  background: #f8fafc;
+}
+
+.knowledge-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 13px;
+}
+
+.knowledge-kind {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.knowledge-state {
+  color: var(--muted);
+}
+
+.knowledge-sheet h2 {
+  margin-top: 14px;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.knowledge-competency {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.knowledge-intro {
+  margin: 24px 0 0;
+  color: var(--ink);
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+.knowledge-section {
+  margin-top: 26px;
+}
+
+.knowledge-section h3 {
+  margin: 0 0 8px;
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.knowledge-section p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13.5px;
+  line-height: 1.65;
+  white-space: pre-line;
+}
+
+.knowledge-note {
+  margin: 28px 0 0;
+  color: var(--muted);
+  font-size: 12.5px;
+}
+
+.knowledge-sheet-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 40px 28px;
+  border-top: 0;
+}
+
+.knowledge-sheet-footer .button {
+  min-height: 44px;
+  padding: 10px 24px;
+  border-radius: 12px;
+}
+
+.knowledge-footer-mark {
+  margin-left: auto;
+}
+
+.knowledge-footer-mark.is-learned {
+  border: 1px solid var(--line-card);
+  background: #ffffff;
+  color: var(--ink);
+}

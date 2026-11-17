@@ -124,17 +124,26 @@ export function KnowledgeSheet({
         if (event.target === event.currentTarget) onClose();
       }}
     >
-      <section className="knowledge-sheet" role="dialog" aria-modal="true" aria-labelledby="knowledge-sheet-title">
+      <section
+        className="knowledge-sheet"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="knowledge-sheet-title"
+      >
         <button className="knowledge-close" type="button" onClick={onClose} aria-label="Закрыть">
           <IconCloseCircle />
         </button>
+
         <div className="knowledge-sheet-scroll">
-          <header className="knowledge-sheet-head">
-            <div>
-              <p className="knowledge-sheet-eyebrow">{item.kind === "SKILL" ? "Навык" : "Знание"} · {competencyTitle}</p>
-              <h2 id="knowledge-sheet-title">{item.title}</h2>
-            </div>
-          </header>
+          <div className="knowledge-meta">
+            <span className="knowledge-kind">{item.kind === "SKILL" ? "Навык" : "Знание"}</span>
+            <span className="knowledge-state">{learned ? "Изучено" : "Не изучено"}</span>
+          </div>
+
+          <h2 id="knowledge-sheet-title">{item.title}</h2>
+          <p className="knowledge-competency">{competencyTitle}</p>
+
+          {item.definition ? <p className="knowledge-intro">{item.definition}</p> : null}
 
           {loading ? <p className="knowledge-status">Загружаем разбор…</p> : null}
           {error === "auth" ? <p className="knowledge-status">Разборы открываются после входа.</p> : null}
@@ -153,73 +162,37 @@ export function KnowledgeSheet({
             : null}
 
           {guide?.status === "no_data" || error === "empty" ? (
-            <>
-              {item.definition ? (
-                <article className="knowledge-section">
-                  <h3>Что известно</h3>
-                  <p>{item.definition}</p>
-                </article>
-              ) : null}
-              <div className="knowledge-notice">
-                <p className="knowledge-notice-title">Данных пока не хватает</p>
-                <p>
-                  Сейчас мы собираем данные по всему интернету, чтобы наполнить систему пользой. Я уведомлю тебя по почте,
-                  когда добавлю актуальные данные. Ты также можешь прислать источник с обучающими материалами — это поможет
-                  добавить и улучшить систему.
-                </p>
-                <FeedbackTrigger
-                  className="button secondary small"
-                  options={{ context: "competency", type: "IMPROVEMENT", targetType: "COMPETENCY", targetId: competencyId, title: item.title }}
-                >
-                  Поделиться источником знаний
-                </FeedbackTrigger>
-              </div>
-            </>
+            <div className="knowledge-notice">
+              <p className="knowledge-notice-title">Данных пока не хватает</p>
+              <p>
+                Сейчас мы собираем данные по всему интернету, чтобы наполнить систему пользой. Я уведомлю тебя по почте,
+                когда добавлю актуальные данные. Ты также можешь прислать источник с обучающими материалами — это поможет
+                добавить и улучшить систему.
+              </p>
+              <FeedbackTrigger
+                className="button secondary small"
+                options={{ context: "competency", type: "IMPROVEMENT", targetType: "COMPETENCY", targetId: competencyId, title: item.title }}
+              >
+                Поделиться источником знаний
+              </FeedbackTrigger>
+            </div>
           ) : null}
+
+          <p className="knowledge-note">Отметка изменит прогресс компетенции. Её можно снять.</p>
         </div>
 
         <footer className="knowledge-sheet-footer">
-          <div className="knowledge-sources-row">
-            <span className="knowledge-sources">
-              {guide && guide.sources.length > 0
-                ? `Источники: ${[...new Set(guide.sources.map((source) => source.title))].join(", ")}`
-                : "Источники: пока не подобраны"}
-            </span>
-            <FeedbackTrigger
-              className="link-button"
-              options={{ context: "competency", type: "CONTENT_ERROR", targetType: "COMPETENCY", targetId: competencyId, title: item.title }}
-            >
-              Сообщить о проблеме
-            </FeedbackTrigger>
-          </div>
-          <div className="knowledge-toolbar">
-            <button
-              className="rail-nav-btn knowledge-nav"
-              type="button"
-              onClick={() => onNavigate(index - 1)}
-              disabled={index === 0}
-              aria-label="Предыдущий пункт"
-            >
-              <IconArrowLeft />
-            </button>
-            <button
-              className={`knowledge-learn${learned ? " is-learned" : ""}`}
-              type="button"
-              onClick={() => void toggleLearned()}
-              disabled={busy}
-            >
-              {learned ? "Усвоено" : "Пометить как изученное"}
-            </button>
-            <button
-              className="rail-nav-btn knowledge-nav"
-              type="button"
-              onClick={() => onNavigate(index + 1)}
-              disabled={index >= items.length - 1}
-              aria-label="Следующий пункт"
-            >
-              <IconArrowRight />
-            </button>
-          </div>
+          <button className="button secondary knowledge-footer-close" type="button" onClick={onClose}>
+            Закрыть
+          </button>
+          <button
+            className={`button knowledge-footer-mark${learned ? " is-learned" : ""}`}
+            type="button"
+            onClick={() => void toggleLearned()}
+            disabled={busy}
+          >
+            {learned ? "Снять отметку «Изучено»" : "Отметить изученным"}
+          </button>
         </footer>
       </section>
     </div>,

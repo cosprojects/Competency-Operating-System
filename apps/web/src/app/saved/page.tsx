@@ -38,6 +38,9 @@ export default async function SavedPage({
   });
   const marks = await db.studyMark.findMany({ where: { userId: user.id, status: "LEARNED" } });
   const learnedIds = new Set(marks.map((mark) => mark.targetId));
+  const learnedCompetencyIds = new Set(
+    marks.filter((mark) => mark.targetType === "COMPETENCY").map((mark) => mark.targetId),
+  );
   const savedProfessionSlugs = new Set(
     favorites.filter((item) => item.targetType === "PROFESSION").map((item) => item.targetId),
   );
@@ -83,6 +86,35 @@ export default async function SavedPage({
       });
     }
   }
+  // Изученные компетенции — отдельный блок «Изучено».
+  const learnedSkills: SavedSkillView[] = [];
+  const seenLearned = new Set<string>();
+  for (const profession of getProfessions()) {
+    for (const competency of profession.sections.flatMap((section) => section.competencies)) {
+      const items = [...competency.knowledge, ...competency.skills];
+      const fullyLearned =
+        items.length > 0 && items.every((item) => learnedIds.has(item.id));
+      if (
+        (!learnedCompetencyIds.has(competency.id) && !fullyLearned) ||
+        seenLearned.has(competency.id)
+      ) {
+        continue;
+      }
+      seenLearned.add(competency.id);
+      learnedSkills.push({
+        id: competency.id,
+        title: competency.title,
+        definition: competency.definition,
+        tierLabel: tierLabel(competency.tier),
+        tierClass: competency.tier,
+        summary: contentTypeSummary(competency),
+        professionSlug: profession.slug,
+        itemCount: items.length,
+        learnedCount: items.filter((item) => learnedIds.has(item.id)).length,
+      });
+    }
+  }
+
   // Данные до связки: профессия для сохранённой компетенции может быть не сохранена явно.
   for (const competencyId of savedCompetencyIds) {
     if (seenProfessions.size > 0) break;
@@ -142,7 +174,7 @@ export default async function SavedPage({
 
   const empty =
     visibleMaterials.length === 0 && visibleProfessions.length === 0 && visibleSkills.length === 0;
-  const hasAnySaved = materials.length + professions.length + skills.length > 0;
+  const hasAnySaved = materials.length + professions.length + skills.length + learnedSkills.length > 0;
 
   return (
     <>
@@ -222,6 +254,22 @@ export default async function SavedPage({
                 {visibleProfessions.map((profession) => (
                   <SavedProfessionCard key={profession.slug} profession={profession} />
                 ))}
+              </div>
+            </section>
+          ) : null}
+
+          {learnedSkills.length > 0 ? (
+            <section className="saved-section">
+              <h2>Изучено</h2>
+              <p className="saved-section-note">
+                Пока это самооценка, а не подтверждение профессионального уровня.
+              </p>
+              <div className="saved-section-box">
+                <div className="saved-skills">
+                  {learnedSkills.map((skill) => (
+                    <SavedSkillCard key={skill.id} skill={skill} />
+                  ))}
+                </div>
               </div>
             </section>
           ) : null}

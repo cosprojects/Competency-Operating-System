@@ -67,14 +67,33 @@ function StudyItemCard({
   onOpen: () => void;
 }) {
   return (
-    <article className={`study-item${learned ? " is-learned" : ""}`}>
+    <article
+      className={`study-item${learned ? " is-learned" : ""}${canStudy ? " is-clickable" : ""}`}
+      onClick={canStudy ? onOpen : undefined}
+      onKeyDown={
+        canStudy
+          ? (event) => {
+              if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                onOpen();
+              }
+            }
+          : undefined
+      }
+      role={canStudy ? "button" : undefined}
+      tabIndex={canStudy ? 0 : undefined}
+      aria-label={canStudy ? `Открыть разбор: ${item.title}` : undefined}
+    >
       <div className="study-item-head">
         <h4>{item.title}</h4>
         {canStudy ? (
           <button
             className={`study-item-action${learned ? " is-learned" : ""}`}
             type="button"
-            onClick={onOpen}
+            onClick={(event) => {
+              event.stopPropagation();
+              onOpen();
+            }}
             aria-label={`${learned ? "Открыть и снять отметку" : "Усвоить"}: ${item.title}`}
           >
             {learned ? <IconCheckCircle /> : null}

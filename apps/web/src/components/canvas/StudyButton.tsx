@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { IconGraduation } from "@/components/icons";
 import { showToast } from "@/components/ui/Toast";
 
@@ -17,6 +18,7 @@ export function StudyButton({
   initialSaved: boolean;
   isAuthed: boolean;
 }) {
+  const router = useRouter();
   const [saved, setSaved] = useState(initialSaved);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState(false);
@@ -49,7 +51,9 @@ export function StudyButton({
         showToast({
           title: "Теперь в «Изучаю»",
           text: "Отметки «Усвоено» помогут видеть прогресс",
-          duration: 3200,
+          actionLabel: "Посмотреть",
+          onAction: () => router.push("/saved"),
+          duration: 5000,
         });
       }
     } catch {

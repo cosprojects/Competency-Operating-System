@@ -206,7 +206,13 @@ await check("Доступность", "QA-17", "Время ответа глав
 // ─────────────────────────────────────────────────────────────────────────────
 // B. Доступ к приватным страницам без сессии
 // ─────────────────────────────────────────────────────────────────────────────
-await check("Доступ без сессии", "QA-20", "GET /profile", "redirect на /login?returnTo=/profile", redirectToLogin("/profile", "/profile"));
+// Тестовая страница профиля удалена из продукта: в проде её быть не должно.
+await check("Доступ без сессии", "QA-20", "GET /profile", "404 — тестовой страницы профиля нет", async () => {
+  const result = await request("/profile");
+  if (result.error) throw new Error(result.error.message);
+  const ok = result.response.status === 404;
+  return { status: ok ? "PASS" : "FAIL", detail: `HTTP ${result.response.status}`, ms: result.ms };
+});
 await check("Доступ без сессии", "QA-21", "GET /account", "redirect на /login?returnTo=/account", redirectToLogin("/account", "/account"));
 await check("Доступ без сессии", "QA-22", "GET /saved", "redirect на /login?returnTo=/saved", redirectToLogin("/saved", "/saved"));
 await check("Доступ без сессии", "QA-23", "GET /admin", "redirect на /login (admin/materials)", redirectToLogin("/admin", "/admin/materials"));

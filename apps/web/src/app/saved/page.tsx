@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { IconSearch } from "@/components/icons";
 import { redirect } from "next/navigation";
 import { LearningCard } from "@/components/saved/LearningCard";
 import type { LearningCardData, LearningItemData } from "@/components/saved/LearningCard";
@@ -117,30 +118,41 @@ export default async function SavedPage({
 
   const activeVisible = active.filter(matches);
   const learnedVisible = learned.filter(matches);
-  const hasAny = active.length + learned.length > 0;
   const empty = activeVisible.length === 0 && learnedVisible.length === 0;
 
   return (
     <>
-      <div className="page-head studying-head">
+      <header className="studying-head">
         <div className="studying-head-text">
-          <div className="eyebrow">Личное пространство</div>
+          <p className="eyebrow">Личное пространство</p>
           <h1>Изучаю</h1>
           <p>От намерения — к освоению. Соберите свой маршрут и двигайтесь в удобном темпе.</p>
         </div>
-        {hasAny ? (
-          <form className="studying-search" method="get" role="search">
-            <label htmlFor="studying-search">Поиск в изучаемом</label>
-            <input
-              className="input"
-              id="studying-search"
-              type="search"
-              name="q"
-              defaultValue={q ?? ""}
-              placeholder="Знание, навык или компетенция"
-            />
-          </form>
-        ) : null}
+      </header>
+
+      <div className="studying-toolbar">
+        <nav className="studying-tabs" aria-label="Разделы «Изучаю»">
+          <span className="studying-tab is-active" aria-current="page">
+            Компетенции
+          </span>
+          <Link className="studying-tab" href="/professions">
+            Профессии
+          </Link>
+        </nav>
+        <form className="studying-search" method="get" role="search">
+          <label className="sr-only" htmlFor="studying-search">
+            Поиск в изучаемом
+          </label>
+          <IconSearch className="studying-search-icon" />
+          <input
+            className="studying-search-input"
+            id="studying-search"
+            type="search"
+            name="q"
+            defaultValue={q ?? ""}
+            placeholder="Знание, навык или компетенция"
+          />
+        </form>
       </div>
 
       {welcome === "1" ? <WelcomeNotice /> : null}
@@ -161,7 +173,7 @@ export default async function SavedPage({
         <>
           <div className="studying-list">
             {activeVisible.map((card, index) => (
-              <LearningCard key={card.competencyId} card={card} defaultExpanded={index === 0} />
+              <LearningCard key={card.competencyId} card={card} order={index + 1} defaultExpanded={index === 0} />
             ))}
           </div>
 
@@ -172,24 +184,16 @@ export default async function SavedPage({
                 <span>Пока это самооценка, а не подтверждение профессионального уровня.</span>
               </div>
               <div className="studying-list">
-                {learnedVisible.map((card) => (
-                  <LearningCard key={`learned-${card.competencyId}`} card={card} />
+                {learnedVisible.map((card, index) => (
+                  <LearningCard
+                    key={`learned-${card.competencyId}`}
+                    card={card}
+                    order={activeVisible.length + index + 1}
+                  />
                 ))}
               </div>
             </section>
           ) : null}
-
-          <aside className="saved-notice">
-            <div className="saved-notice-title">Помогите нам сделать систему полезнее</div>
-            <p>
-              Мы хотим, чтобы эти карты действительно помогали людям ориентироваться в профессии,
-              находить новые направления для развития и понимать, какие знания могут быть полезны в
-              работе.
-            </p>
-            <Link className="saved-notice-button" href="/feedback">
-              Поделитесь своим мнением
-            </Link>
-          </aside>
         </>
       )}
     </>

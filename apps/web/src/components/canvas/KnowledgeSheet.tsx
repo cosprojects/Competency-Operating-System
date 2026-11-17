@@ -178,6 +178,28 @@ export function KnowledgeSheet({
             </div>
           ) : null}
 
+          {guide ? (
+            <div className="knowledge-sources-row">
+              <span className="knowledge-sources">
+                {guide.sources.length > 0
+                  ? `Источники: ${[...new Set(guide.sources.map((source) => source.title.trim()).filter(Boolean))].join(", ")}`
+                  : "Источники: пока не подобраны"}
+              </span>
+              <FeedbackTrigger
+                className="knowledge-report"
+                options={{
+                  context: "competency",
+                  type: "CONTENT_ERROR",
+                  targetType: "COMPETENCY",
+                  targetId: competencyId,
+                  title: item.title,
+                }}
+              >
+                Сообщить о проблеме
+              </FeedbackTrigger>
+            </div>
+          ) : null}
+
           <p className="knowledge-note">Отметка изменит прогресс компетенции. Её можно снять.</p>
         </div>
 

@@ -29,7 +29,8 @@ export function AppShell({
     pathname === "/register" ||
     pathname === "/feedback" ||
     pathname.startsWith("/auth/");
-  const isWorkspace = pathname === "/saved" || pathname.startsWith("/admin");
+  const isSaved = pathname === "/saved";
+  const isWorkspace = pathname.startsWith("/admin");
   const isSecondary = !isHome && !isSearch && !isCanvas && !isPlain && !isWorkspace;
 
   return (
@@ -40,6 +41,8 @@ export function AppShell({
         <div className="app-viewport">
           {isPlain ? (
             <div className="page-plain">{children}</div>
+          ) : isSaved ? (
+            <div className="studying-page">{children}</div>
           ) : isWorkspace ? (
             <div className="workspace-page">
               <div className="workspace-glass">{children}</div>

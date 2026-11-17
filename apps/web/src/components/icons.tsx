@@ -411,3 +411,45 @@ export function IconGraduation({ className }: { className?: string }) {
     </svg>
   );
 }
+
+/** Linear / Arrows Action / Maximize Square 3 — свернуть/развернуть маршрут компетенции. */
+export function IconMaximizeSquare({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className={className}>
+      <path
+        d="M2.5 13V7.5A5 5 0 0 1 7.5 2.5h9a5 5 0 0 1 5 5v9a5 5 0 0 1-5 5H13"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        stroke="currentColor"
+      />
+      <rect x="2.5" y="14.5" width="7" height="7" rx="2" strokeWidth="1.5" stroke="currentColor" />
+      <path d="M12 11.5 17 6.5" strokeWidth="1.5" strokeLinecap="round" stroke="currentColor" />
+      <path d="M12.5 6.5H17V11" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" stroke="currentColor" />
+    </svg>
+  );
+}
+
+/** Linear / Arrows / Square Arrow Right Up — переход во внешнюю сущность (профессия). */
+export function IconSquareArrowUpRight({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className={className}>
+      <path
+        d="M12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22Z"
+        strokeWidth="1.5"
+        stroke="currentColor"
+      />
+      <path d="M9 15 15 9" strokeWidth="1.5" strokeLinecap="round" stroke="currentColor" />
+      <path d="M9.5 9H15v5.5" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" stroke="currentColor" />
+    </svg>
+  );
+}
+
+/** Поиск: лупа для строки поиска «Изучаю». */
+export function IconSearch({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className={className}>
+      <circle cx="11" cy="11" r="7" strokeWidth="1.5" stroke="currentColor" />
+      <path d="m20 20-3.5-3.5" strokeWidth="1.5" strokeLinecap="round" stroke="currentColor" />
+    </svg>
+  );
+}

@@ -34,6 +34,7 @@ export function MaterialCard({
   canReview,
   canSave,
   returnTo,
+  compact = false,
 }: {
   source: ContentSource;
   competencyId: string;
@@ -42,6 +43,8 @@ export function MaterialCard({
   canReview: boolean;
   canSave: boolean;
   returnTo: string;
+  /** Компактный вид без обложки: для списков материалов в «Изучаю» (макет 409-3657). */
+  compact?: boolean;
 }) {
   const router = useRouter();
   const [preview, setPreview] = useState<PreviewData | null>(null);
@@ -51,6 +54,8 @@ export function MaterialCard({
   const [undoBusy, setUndoBusy] = useState(false);
 
   useEffect(() => {
+    // В компактной карточке обложки нет, поэтому превью — только лишний запрос.
+    if (compact) return;
     let cancelled = false;
     const controller = new AbortController();
     const timer = window.setTimeout(() => controller.abort(), 8000);
@@ -68,7 +73,7 @@ export function MaterialCard({
       controller.abort();
       window.clearTimeout(timer);
     };
-  }, [source.url]);
+  }, [source.url, compact]);
 
   async function markViewed() {
     if (viewed) return;
@@ -108,73 +113,79 @@ export function MaterialCard({
   const image = preview?.image;
   const showImage = Boolean(image) && !imageFailed;
 
+  const badges = (
+    <div className="material-badges">
+      <span className="material-pill">{sourceKindLabel(source.kind)}</span>
+      <span className="material-pill" title={accessHint(source.access)}>
+        {accessLabel(source.access)}
+      </span>
+      <span className="material-pill">
+        {source.languages.length > 0
+          ? source.languages.map((language) => language.toUpperCase()).join(", ")
+          : "язык не указан"}
+      </span>
+      <span className="material-badge-slot">
+        {viewed ? (
+          <span className="material-viewed-icon" title="Просмотрен" aria-label="Просмотрен">
+            <IconEye />
+          </span>
+        ) : null}
+        {!reviewAction ? (
+          <SourceReviewBadge
+            sourceId={source.id}
+            sourceTitle={source.title}
+            competencyId={competencyId}
+            competencyTitle={competencyTitle}
+            initialStatus={source.reviewStatus}
+            canReview={canReview}
+            returnTo={returnTo}
+            myReviewAction={reviewAction}
+            onDecided={(action) => setReviewAction(action)}
+          />
+        ) : null}
+        {canSave ? (
+          <SaveButton
+            targetType="SOURCE"
+            targetId={source.id}
+            initialSaved={Boolean(source.saved)}
+            variant="icon"
+            title={source.title}
+            description={source.summary}
+          />
+        ) : (
+          <Link
+            className="icon-button material-save-guest"
+            href={`/register?returnTo=${encodeURIComponent(returnTo)}`}
+            aria-label="Войти, чтобы сохранить материал"
+            title="Войти, чтобы сохранить материал"
+          >
+            <IconStar />
+          </Link>
+        )}
+      </span>
+    </div>
+  );
+
   return (
-    <article className={`material-card${rejected ? " is-rejected" : ""}`}>
-      <div className="material-cover">
-        <div className="material-bg-image">
-          {showImage ? (
-            <img
-              src={image}
-              alt=""
-              loading="lazy"
-              referrerPolicy="no-referrer"
-              onError={() => setImageFailed(true)}
-            />
-          ) : (
-            <span className="material-bg-fallback" />
-          )}
-        </div>
-        <div className="material-badges">
-          <span className="material-pill">{sourceKindLabel(source.kind)}</span>
-          <span className="material-pill" title={accessHint(source.access)}>
-            {accessLabel(source.access)}
-          </span>
-          <span className="material-pill">
-            {source.languages.length > 0
-              ? source.languages.map((language) => language.toUpperCase()).join(", ")
-              : "язык не указан"}
-          </span>
-          <span className="material-badge-slot">
-            {viewed ? (
-              <span className="material-viewed-icon" title="Просмотрен" aria-label="Просмотрен">
-                <IconEye />
-              </span>
-            ) : null}
-            {!reviewAction ? (
-              <SourceReviewBadge
-                sourceId={source.id}
-                sourceTitle={source.title}
-                competencyId={competencyId}
-                competencyTitle={competencyTitle}
-                initialStatus={source.reviewStatus}
-                canReview={canReview}
-                returnTo={returnTo}
-                myReviewAction={reviewAction}
-                onDecided={(action) => setReviewAction(action)}
-              />
-            ) : null}
-            {canSave ? (
-              <SaveButton
-                targetType="SOURCE"
-                targetId={source.id}
-                initialSaved={Boolean(source.saved)}
-                variant="icon"
-                title={source.title}
-                description={source.summary}
+    <article className={`material-card${rejected ? " is-rejected" : ""}${compact ? " is-compact" : ""}`}>
+      {compact ? null : (
+        <div className="material-cover">
+          <div className="material-bg-image">
+            {showImage ? (
+              <img
+                src={image}
+                alt=""
+                loading="lazy"
+                referrerPolicy="no-referrer"
+                onError={() => setImageFailed(true)}
               />
             ) : (
-              <Link
-                className="icon-button material-save-guest"
-                href={`/register?returnTo=${encodeURIComponent(returnTo)}`}
-                aria-label="Войти, чтобы сохранить материал"
-                title="Войти, чтобы сохранить материал"
-              >
-                <IconStar />
-              </Link>
+              <span className="material-bg-fallback" />
             )}
-          </span>
+          </div>
+          {badges}
         </div>
-      </div>
+      )}
 
       {canOpen ? (
         <a
@@ -208,6 +219,7 @@ export function MaterialCard({
       )}
 
       <div className="material-body">
+        {compact ? <div className="material-compact-badges">{badges}</div> : null}
         <h4 className="material-title">{title}</h4>
         <p className="material-desc">{description}</p>
         {source.rationale || source.whyUseful ? (

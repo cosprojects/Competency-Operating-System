@@ -2,7 +2,13 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import { IconArrowRight, IconCheckCircle, IconStar } from "@/components/icons";
+import {
+  IconArrowRight,
+  IconCheckCircle,
+  IconMaximizeSquare,
+  IconSquareArrowUpRight,
+  IconStar,
+} from "@/components/icons";
 import { KnowledgeSheet, type KnowledgeItem } from "@/components/canvas/KnowledgeSheet";
 import { MaterialCard } from "@/components/canvas/MaterialCard";
 import type { ContentSource } from "@/lib/content-types";
@@ -42,31 +48,36 @@ function plural(value: number, forms: [string, string, string]): string {
   return forms[2];
 }
 
-function ProgressBar({ value, label }: { value: number; label: string }) {
-  return (
-    <div className="learn-progress-line">
-      <span className="learn-progress-label">{label}</span>
-      <span className="learn-progress-track" aria-hidden="true">
-        <span style={{ width: `${value}%` }} />
-      </span>
-      <span className="learn-progress-value">{value}%</span>
-    </div>
-  );
+function kindWord(kind: LearningItemData["kind"]): string {
+  return kind === "SKILL" ? "навык" : "знание";
 }
 
-/** Карточка компетенции в «Изучаю»: прогресс, знания/навыки, материалы. */
+/**
+ * «Изучаю»: маршрут компетенции по макету 407-7332.
+ *
+ * Свёрнутая карточка — прогресс компетенции, развёрнутая добавляет список знаний
+ * и навыков, карточку следующего шага, материалы и «Входит в профессии».
+ * Сегментированный прогресс: один сегмент — одно знание или навык.
+ */
 export function LearningCard({
   card,
+  order = 1,
   defaultExpanded = false,
   returnTo = "/saved",
 }: {
   card: LearningCardData;
+  order?: number;
   defaultExpanded?: boolean;
   returnTo?: string;
 }) {
   const [expanded, setExpanded] = useState(defaultExpanded);
   const [learned, setLearned] = useState<Record<string, boolean>>(() =>
     Object.fromEntries(card.items.map((item) => [item.id, item.learned])),
+  );
+  // По умолчанию выбран первый неизученный элемент (как «Следующий шаг» в макете);
+  // если всё изучено — первый элемент, чтобы CTA всё равно открывал модалку.
+  const [selectedId, setSelectedId] = useState<string | null>(
+    card.items.find((item) => !item.learned)?.id ?? card.items[0]?.id ?? null,
   );
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
@@ -89,11 +100,20 @@ export function LearningCard({
   const knowledgeLearned = knowledge.filter((item) => learned[item.id]).length;
   const skillsLearned = skills.filter((item) => learned[item.id]).length;
 
+  const selectedItem = card.items.find((item) => item.id === selectedId) ?? card.items[0];
+  const selectedLearned = selectedItem ? Boolean(learned[selectedItem.id]) : false;
+  const allLearned = total > 0 && learnedCount === total;
+  const materialsCount = card.materials.reduce((sum, group) => sum + group.sources.length, 0);
+
   function markLearned(id: string, next: boolean) {
     setLearned((current) => ({ ...current, [id]: next }));
   }
 
-  const nextItem = card.items.find((item) => !learned[item.id]);
+  function openItem(item: LearningItemData) {
+    const index = card.items.findIndex((entry) => entry.id === item.id);
+    setSelectedId(item.id);
+    setOpenIndex(index >= 0 ? index : 0);
+  }
 
   return (
     <article className={`learning-card${expanded ? " is-expanded" : ""}`}>
@@ -105,12 +125,8 @@ export function LearningCard({
           onClick={() => setExpanded((value) => !value)}
           aria-expanded={expanded}
         >
-          {expanded ? "Свернуть" : "Развернуть"}
-          <span className={`learning-toggle-icon${expanded ? " is-open" : ""}`} aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M9 15 15 9M9 9h6v6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" stroke="currentColor" />
-            </svg>
-          </span>
+          <span>{expanded ? "Свернуть" : "Развернуть"}</span>
+          <IconMaximizeSquare className="learning-toggle-icon" />
         </button>
       </div>
 
@@ -118,93 +134,163 @@ export function LearningCard({
         <div className="learning-summary-main">
           <div className="learning-summary-top">
             <span className={`badge ${card.tierClass}`}>{card.tierLabel}</span>
-            <Link className="icon-button learning-star" href={`/professions/${card.professionSlug}?competency=${card.competencyId}`} aria-label="Открыть компетенцию" title="Открыть компетенцию">
-              <IconStar />
-            </Link>
+            <span className="learning-summary-actions">
+              <span className="learning-order" aria-label={`Компетенция ${order} в маршруте`}>
+                {order}
+              </span>
+              <Link
+                className="icon-button learning-star"
+                href={`/professions/${card.professionSlug}?competency=${card.competencyId}`}
+                aria-label="Открыть компетенцию в профессии"
+                title="Открыть компетенцию в профессии"
+              >
+                <IconStar />
+              </Link>
+            </span>
           </div>
           <h3>
-            <Link href={`/professions/${card.professionSlug}?competency=${card.competencyId}`}>{card.title}</Link>
+            <Link href={`/professions/${card.professionSlug}?competency=${card.competencyId}`}>
+              {card.title}
+            </Link>
           </h3>
           <p>{card.definition}</p>
           <span className="learning-meta">
             {knowledge.length} {plural(knowledge.length, ["знание", "знания", "знаний"])} ·{" "}
-            {skills.length} {plural(skills.length, ["навык", "навыка", "навыков"])} ·{" "}
-            {card.materials.reduce((sum, group) => sum + group.sources.length, 0)}{" "}
-            {plural(card.materials.reduce((sum, group) => sum + group.sources.length, 0), ["материал", "материала", "материалов"])}
+            {skills.length} {plural(skills.length, ["навык", "навыка", "навыков"])} · {materialsCount}{" "}
+            {plural(materialsCount, ["материал", "материала", "материалов"])}
           </span>
         </div>
 
-        <div className="learning-summary-progress">
+        <div className="learning-progress">
           <div className="learning-percent">
-            <strong>{percent}%</strong>
-            <span>{learnedCount} из {total} знаний и навыков изучено</span>
+            <strong>{percent}</strong>
+            <span>%</span>
           </div>
-          <ProgressBar value={knowledge.length > 0 ? Math.round((knowledgeLearned / knowledge.length) * 100) : 0} label={`Знания: ${knowledgeLearned} из ${knowledge.length}`} />
-          <ProgressBar value={skills.length > 0 ? Math.round((skillsLearned / skills.length) * 100) : 0} label={`Навыки: ${skillsLearned} из ${skills.length}`} />
+          <p className="learning-progress-count">
+            <strong>{learnedCount}</strong> из {total} знаний и навыков изучено
+          </p>
+          <div
+            className="learning-segments"
+            role="img"
+            aria-label={`Освоено ${learnedCount} из ${total} знаний и навыков`}
+          >
+            {card.items.map((item) => (
+              <span
+                key={item.id}
+                className={`learning-segment${learned[item.id] ? " is-filled" : ""}`}
+              />
+            ))}
+          </div>
+          <p className="learning-progress-breakdown">
+            Знания: {knowledgeLearned} из {knowledge.length} · Навыки: {skillsLearned} из{" "}
+            {skills.length}
+          </p>
           <p className="learning-progress-note">
-            {percent === 100 ? "Компетенция изучена" : "Каждая отметка «Изучено» продвигает вас по маршруту."}
+            {allLearned ? "Компетенция изучена" : "Каждая отметка «Изучено» продвигает вас по маршруту."}
           </p>
         </div>
       </div>
 
       {expanded ? (
         <div className="learning-body">
-          <div className="learning-columns">
-            <section className="learning-part">
+          <section className="learning-list-block">
+            <div className="learning-list-head">
               <h4>Знания и навыки</h4>
-              <p className="learning-part-note">Отметьте элемент, чтобы изучить подробности и отметить результат.</p>
+              <p>
+                {total} {plural(total, ["элемент", "элемента", "элементов"])} в компетенции · Откройте
+                элемент, чтобы изучить подробности и отметить результат.
+              </p>
+            </div>
+
+            <div className="learning-columns">
               <div className="learning-rows">
-                {card.items.map((item, index) => (
-                  <div className="learning-row" key={item.id}>
-                    <span className="learning-row-num">{String(index + 1).padStart(2, "0")}</span>
-                    <div className="learning-row-text">
-                      <span className="learning-row-title">{item.title}</span>
-                      <span className="learning-row-desc">
-                        {item.kind === "SKILL" ? "Навык" : "Знание"} · {item.definition ?? ""}
+                {card.items.map((item, index) => {
+                  const isSelected = selectedItem?.id === item.id;
+                  const isLearned = Boolean(learned[item.id]);
+                  return (
+                    <div
+                      className={`learning-row${isSelected ? " is-selected" : ""}`}
+                      key={item.id}
+                      onClick={() => setSelectedId(item.id)}
+                    >
+                      <span className="learning-row-num">{String(index + 1).padStart(2, "0")}</span>
+                      <span className="learning-row-text">
+                        <span className="learning-row-title">{item.title}</span>
+                        <span className="learning-row-desc">
+                          {item.kind === "SKILL" ? "Навык" : "Знание"}
+                          {item.definition ? ` · ${item.definition}` : ""}
+                        </span>
+                      </span>
+                      <span className="learning-row-actions">
+                        <span className={`learning-row-state${isLearned ? " is-learned" : ""}`}>
+                          {isLearned ? <IconCheckCircle /> : null}
+                          {isLearned ? "Изучено" : "Хочу изучить"}
+                        </span>
+                        <button
+                          className="learning-row-open"
+                          type="button"
+                          onClick={(event) => {
+                            event.stopPropagation();
+                            openItem(item);
+                          }}
+                        >
+                          Открыть
+                          <IconArrowRight />
+                        </button>
                       </span>
                     </div>
-                    <span className={`learning-row-state${learned[item.id] ? " is-learned" : ""}`}>
-                      {learned[item.id] ? <IconCheckCircle /> : null}
-                      {learned[item.id] ? "Изучено" : "Хочу изучить"}
-                    </span>
-                    <button className="learning-row-open" type="button" onClick={() => setOpenIndex(index)}>
-                      Открыть
-                    </button>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
-            </section>
 
-            {nextItem ? (
               <aside className="learning-next">
-                <span className="learning-next-label">Следующий шаг</span>
-                <h4>{nextItem.title}</h4>
-                <p>Откройте любой неизученный элемент. Каждая отметка делает ваш прогресс заметным.</p>
-                <button
-                  className="button learning-next-cta"
-                  type="button"
-                  onClick={() => setOpenIndex(card.items.findIndex((item) => item.id === nextItem.id))}
-                >
-                  Изучить {nextItem.kind === "SKILL" ? "навык" : "знание"} <IconArrowRight />
-                </button>
-                <span className="learning-next-note">Углубляйтесь в профессию в своем темпе</span>
+                {selectedItem && !allLearned ? (
+                  <>
+                    <span className="learning-next-label">Следующий шаг</span>
+                    <h4>{selectedItem.title}</h4>
+                    <p>Откройте любой неизученный элемент. Каждая отметка делает ваш прогресс заметным.</p>
+                    <button
+                      className="learning-next-cta"
+                      type="button"
+                      onClick={() => openItem(selectedItem)}
+                    >
+                      {selectedLearned ? "Открыть" : "Изучить"} {kindWord(selectedItem.kind)}
+                      <IconArrowRight />
+                    </button>
+                    <span className="learning-next-note">Углубляйтесь в профессию в своем темпе</span>
+                  </>
+                ) : (
+                  <>
+                    <span className="learning-next-label">Готово</span>
+                    <h4>Все элементы изучены</h4>
+                    <p>Компетенция отмечена как изученная. Можно перейти к следующей.</p>
+                    {selectedItem ? (
+                      <button
+                        className="learning-next-cta"
+                        type="button"
+                        onClick={() => openItem(selectedItem)}
+                      >
+                        Открыть {kindWord(selectedItem.kind)}
+                        <IconArrowRight />
+                      </button>
+                    ) : null}
+                  </>
+                )}
               </aside>
-            ) : (
-              <aside className="learning-next">
-                <span className="learning-next-label">Готово</span>
-                <h4>Все элементы изучены</h4>
-                <p>Компетенция отмечена как изученная. Можно перейти к следующей.</p>
-              </aside>
-            )}
-          </div>
+            </div>
+          </section>
 
           {card.materials.map((group) =>
             group.sources.length > 0 ? (
-              <section className="learning-part" key={group.title}>
-                <h4>
-                  {group.title} <span className="learning-count">{group.sources.length}</span>
-                </h4>
-                <div className="learning-materials">
+              <section className="learning-materials-block" key={group.title}>
+                <div className="learning-materials-head">
+                  <h4>{group.title}</h4>
+                  <span className="learning-count">{group.sources.length}</span>
+                </div>
+                <div
+                  className="learning-materials"
+                  data-count={Math.min(group.sources.length, 3)}
+                >
                   {group.sources.map((source) => (
                     <MaterialCard
                       key={source.id}
@@ -215,6 +301,7 @@ export function LearningCard({
                       canReview={false}
                       canSave
                       returnTo={returnTo}
+                      compact
                     />
                   ))}
                 </div>
@@ -223,7 +310,7 @@ export function LearningCard({
           )}
 
           {card.occurrences.length > 0 ? (
-            <section className="learning-part">
+            <section className="learning-occurrences-block">
               <h4>Входит в профессии</h4>
               <div className="learning-occurrences">
                 {card.occurrences.map((occurrence) => (
@@ -232,11 +319,11 @@ export function LearningCard({
                     key={`${occurrence.professionSlug}-${occurrence.sectionTitle}`}
                     href={`/professions/${occurrence.professionSlug}?competency=${card.competencyId}`}
                   >
-                    <span>
+                    <span className="learning-occurrence-text">
                       <strong>{occurrence.professionTitle}</strong>
                       <span>{occurrence.sectionTitle}</span>
                     </span>
-                    <IconArrowRight />
+                    <IconSquareArrowUpRight />
                   </Link>
                 ))}
               </div>
@@ -248,12 +335,12 @@ export function LearningCard({
       {openIndex !== null ? (
         <KnowledgeSheet
           competencyId={card.competencyId}
-        competencyTitle={card.title}
-        items={studyItems}
-        index={openIndex ?? 0}
-        learnedIds={new Set(card.items.filter((item) => learned[item.id]).map((item) => item.id))}
-        onNavigate={setOpenIndex}
-        onClose={() => setOpenIndex(null)}
+          competencyTitle={card.title}
+          items={studyItems}
+          index={openIndex}
+          learnedIds={new Set(card.items.filter((item) => learned[item.id]).map((item) => item.id))}
+          onNavigate={setOpenIndex}
+          onClose={() => setOpenIndex(null)}
           onLearnedChange={markLearned}
         />
       ) : null}

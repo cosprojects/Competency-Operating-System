@@ -8779,3 +8779,212 @@ button.rail-item {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* Макет 407-7332: карточка маршрута — светлая плашка r32, внутри белая карточка */
+.learning-card {
+  padding: 24px;
+  border: 0;
+  border-radius: 32px;
+  background: #f9fafb;
+  overflow: visible;
+}
+
+.learning-card-head {
+  padding: 0 0 10px;
+  border-bottom: 0;
+}
+
+.learning-card-eyebrow {
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.learning-summary {
+  grid-template-columns: 464px minmax(0, 1fr);
+  gap: 24px;
+  padding: 0;
+}
+
+.learning-summary-main {
+  padding: 15px;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.learning-summary h3 {
+  margin: 4px 0 6px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.12;
+}
+
+.learning-summary h3 a {
+  color: #3730a3;
+}
+
+.learning-summary p {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.learning-meta {
+  color: #8a99ad;
+  font-size: 12px;
+}
+
+.learning-percent strong {
+  font-size: 36px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.learning-percent span {
+  font-size: 16px;
+  color: #0f172a;
+}
+
+.learn-progress-line {
+  grid-template-columns: 1fr auto;
+  gap: 6px;
+  font-size: 13px;
+}
+
+.learn-progress-track {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  height: 6px;
+}
+
+.learn-progress-line {
+  grid-template-areas: "label value" "track track";
+}
+
+.learn-progress-label { grid-area: label; }
+.learn-progress-value { grid-area: value; }
+.learn-progress-track { grid-area: track; }
+
+.learning-progress-note {
+  font-size: 13px !important;
+}
+
+.learning-body {
+  padding: 0;
+  border-top: 0;
+  gap: 22px;
+}
+
+.learning-columns {
+  grid-template-columns: minmax(0, 780px) 328px;
+  gap: 24px;
+}
+
+.learning-part h4,
+.learning-part h4.learning-count,
+.learning-part > h4 {
+  margin: 16px 0 10px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.learning-part-note {
+  font-size: 13px;
+}
+
+.learning-row {
+  padding: 16px;
+  border-radius: 10px;
+  background: #ffffff;
+  column-gap: 16px;
+}
+
+.learning-row:hover {
+  background: #ffffff;
+}
+
+.learning-row-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 38px;
+  border-radius: 12px;
+  background: #fff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.learning-row-desc {
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.learning-next {
+  margin-top: 16px;
+  padding: 24px;
+  border-radius: 16px;
+  background: #edf2ff;
+}
+
+.learning-next-label {
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: none;
+}
+
+.learning-next h4 {
+  margin: 6px 0;
+  font-size: 20px;
+  font-weight: 500;
+  color: #0f172a;
+}
+
+.learning-next p {
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.learning-next-cta {
+  min-height: 52px;
+  width: 100%;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.learning-materials {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.learning-materials .material-card {
+  max-width: none;
+}
+
+.learning-materials .material-cta {
+  width: 100%;
+}
+
+.learning-occurrence {
+  padding: 16px;
+  border-radius: 12px;
+  background: #eef2ff;
+}
+
+.learning-occurrence strong {
+  color: #3730a3;
+  font-size: 15px;
+}
+
+.learning-occurrence span span {
+  font-size: 13px;
+}
+
+.learning-learned-head h2 {
+  font-size: 20px;
+  font-weight: 500;
+}

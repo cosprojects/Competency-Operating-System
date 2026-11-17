@@ -41,14 +41,16 @@ const ZOOM_READOUT_MS = 90;
 /** Перелёт зума кнопками — короче программного фокуса. */
 const BUTTON_ZOOM_MS = 160;
 /** Сборка схемы: волна появления карточек, мс. */
-const NODE_ENTER_STEP_MS = 16;
-const NODE_ENTER_CAP_MS = 420;
-const NODE_ENTER_DURATION_MS = 380;
+// Сборка схемы: волна короче и с меньшим пробегом. Открытие — самый дорогой
+// момент (34 карточки + 25 нитей), длинная анимация читается как «тормозит».
+const NODE_ENTER_STEP_MS = 10;
+const NODE_ENTER_CAP_MS = 260;
+const NODE_ENTER_DURATION_MS = 260;
 /** Куда «сжимается» схема перед сборкой: доля пути к центру и потолок, px. */
-const NODE_ENTER_SHRINK = 0.14;
-const NODE_ENTER_MAX_PX = 46;
+const NODE_ENTER_SHRINK = 0.1;
+const NODE_ENTER_MAX_PX = 32;
 /** Нити начинают расти, когда карточки уже в основном на местах. */
-const EDGE_DRAW_BASE_MS = 180;
+const EDGE_DRAW_BASE_MS = 80;
 /** Магнит: не переписываем стили, если смещение изменилось меньше этого. */
 const MAGNET_EPSILON_PX = 0.15;
 const MAGNET_EPSILON_DEG = 0.1;

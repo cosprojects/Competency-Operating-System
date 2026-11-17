@@ -17,8 +17,8 @@ export const ENTER_STEP_MS = 60;
 export const ENTER_MAX_MS = 240;
 
 /** Стаггер роста нитей графа, мс. */
-export const EDGE_DRAW_STEP_MS = 12;
-export const EDGE_DRAW_MAX_MS = 400;
+export const EDGE_DRAW_STEP_MS = 6;
+export const EDGE_DRAW_MAX_MS = 160;
 
 /**
  * Выше этого числа рёбер рисование нитей по одной заменяется общим

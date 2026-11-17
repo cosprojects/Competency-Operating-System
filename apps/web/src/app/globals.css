@@ -6138,6 +6138,7 @@ button.rail-item {
   --dur-140: 140ms;
   --dur-200: 200ms;
   --dur-280: 280ms;
+  --dur-320: 320ms;
   --dur-560: 560ms;
   --ease-out-soft: cubic-bezier(0.4, 0, 0.2, 1);
   --ease-out-structure: cubic-bezier(0.33, 1, 0.68, 1);
@@ -6284,7 +6285,7 @@ button.rail-item {
 .graph-edge.is-drawing {
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
-  animation: edge-draw var(--dur-560) var(--ease-out-structure) both;
+  animation: edge-draw var(--dur-320) var(--ease-out-structure) both;
 }
 
 /* Рёбер больше, чем разумно рисовать по одному: слой проявляется целиком. */
@@ -6317,7 +6318,7 @@ button.rail-item {
 }
 
 .graph-node.is-entering {
-  animation: graph-node-in 380ms var(--ease-out-soft) both;
+  animation: graph-node-in 260ms var(--ease-out-soft) both;
 }
 
 /* Дополнительный подъём на hover не нужен: карточка и так тянется к курсору
@@ -9988,4 +9989,18 @@ body:has(.studying-page) .paper-layer {
 /* Сегменты прогресса в сайдбаре компетенции — та же геометрия, что в «Изучаю» */
 .study-progress .learning-segments {
   gap: 6px;
+}
+
+/* Открытие профессии — самый дорогой момент: одновременно монтируются 34
+   карточки схемы, 25 нитей, 12 разделов рейла и панель компетенции. Разделы
+   рейла ниже первого экрана и дальние блоки панели подключаем по мере
+   прокрутки — это снимает раскладку и отрисовку с первых кадров. */
+.rail-scroll .section-panel:nth-child(n + 3) {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 240px;
+}
+
+.detail-rail .detail-block:nth-of-type(n + 3) {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 360px;
 }

@@ -2,6 +2,8 @@ import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 import {
   EDGE_DRAW_MAX,
+  EDGE_DRAW_MAX_MS,
+  EDGE_DRAW_STEP_MS,
   MAGNET_MAX_DEG,
   MAGNET_MAX_PX,
   MAGNET_RADIUS,
@@ -50,8 +52,8 @@ describe("motion tokens", () => {
 
   it("edgeDelay: потолок, нулевой индекс и отказ при большом графе", () => {
     assert.equal(edgeDelay(0, 10), 0);
-    assert.equal(edgeDelay(2, 10), 24);
-    assert.equal(edgeDelay(100, 10), 400);
+    assert.equal(edgeDelay(2, 10), EDGE_DRAW_STEP_MS * 2);
+    assert.equal(edgeDelay(100, 10), EDGE_DRAW_MAX_MS);
     assert.equal(edgeDelay(2, EDGE_DRAW_MAX + 1), 0);
   });
 

@@ -98,6 +98,18 @@ export function ProfessionCanvas({
 
   const graphRef = useRef<GraphHandle>(null);
   const tileRefs = useRef(new Map<string, HTMLButtonElement>());
+  const railScrollRef = useRef<HTMLDivElement | null>(null);
+  const [railScrolled, setRailScrolled] = useState(false);
+
+  // При скролле списка шапка рейла сжимается: прячем описание и покрытие.
+  useEffect(() => {
+    const element = railScrollRef.current;
+    if (!element) return;
+    const onScroll = () => setRailScrolled(element.scrollTop > 4);
+    onScroll();
+    element.addEventListener("scroll", onScroll, { passive: true });
+    return () => element.removeEventListener("scroll", onScroll);
+  }, []);
 
   // Стабильные колбэки обязательны: memo-карточки и memo-схема перерисовываются
   // только когда меняются их собственные пропсы, а не каждый рендер канваса.
@@ -289,7 +301,7 @@ export function ProfessionCanvas({
     <div className={`canvas-screen${selected ? " has-detail" : ""}${expanded ? " is-expanded" : ""}`}>
       {selected ? <div className="sheet-backdrop" role="presentation" onClick={closeDetail} /> : null}
       <div className="canvas-rail">
-        <div className="rail-pinned">
+        <div className={`rail-pinned${railScrolled ? " is-compact" : ""}`}>
           {/* Навигация по профессиям внутри сферы (макет 247-34832). */}
           <div className="rail-nav-row">
             {prevProfession ? (
@@ -369,7 +381,7 @@ export function ProfessionCanvas({
 
         </div>
 
-        <div className="rail-scroll">
+        <div className="rail-scroll" ref={railScrollRef}>
           <div className="section-list">
           {profession.sections.map((section, index) => (
             <section

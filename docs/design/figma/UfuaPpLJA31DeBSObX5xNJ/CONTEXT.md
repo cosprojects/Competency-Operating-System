@@ -1,7 +1,7 @@
 # Figma snapshot: AXIONA - mvp
 
 - fileKey: `UfuaPpLJA31DeBSObX5xNJ`
-- lastModified: 2026-11-16T13:55:04Z
+- lastModified: 2026-11-17T09:44:22Z
 - API-вызовов: 6
 
 ## Страницы
@@ -21,61 +21,94 @@
 > Переменные недоступны на этом плане (variables/local вернул ошибку).
 ## Узлы
 
-### radio-quatter (`151:11284`)
+### Sidebar / UX-UI Designer (`403:17295`)
 
 ```json
 {
-  "id": "151:11284",
-  "name": "radio-quatter",
-  "type": "COMPONENT_SET",
-  "width": 84,
-  "height": 122,
+  "id": "403:17295",
+  "name": "Sidebar / UX-UI Designer",
+  "type": "INSTANCE",
+  "width": 400,
+  "height": 184,
+  "componentId": "247:34832",
   "children": [
     {
-      "id": "151:11283",
-      "name": "Property 1=default",
-      "type": "COMPONENT",
-      "width": 53,
-      "height": 40,
+      "id": "I403:17295;379:15337",
+      "name": "button bar",
+      "type": "FRAME",
+      "width": 382,
+      "height": 44,
       "children": [
         {
-          "id": "151:11275",
-          "name": "Rectangle",
-          "type": "RECTANGLE",
-          "width": 13,
-          "height": 13
+          "id": "I403:17295;379:15404",
+          "name": "iconButton",
+          "type": "INSTANCE",
+          "width": 40,
+          "height": 40,
+          "componentId": "8:14526"
         },
         {
-          "id": "151:11276",
-          "name": "#text «1»",
-          "type": "TEXT",
-          "width": 6,
-          "height": 21,
-          "text": "1"
+          "id": "I403:17295;210:29485",
+          "name": "button",
+          "type": "INSTANCE",
+          "width": 282,
+          "height": 44,
+          "componentId": "112:3750"
+        },
+        {
+          "id": "I403:17295;379:15320",
+          "name": "iconButton",
+          "type": "INSTANCE",
+          "width": 40,
+          "height": 40,
+          "componentId": "8:14526"
         }
       ]
     },
     {
-      "id": "151:11285",
-      "name": "Property 1=Variant2",
-      "type": "COMPONENT",
-      "width": 53,
-      "height": 40,
+      "id": "I403:17295;210:29484",
+      "name": "Profession overview",
+      "type": "INSTANCE",
+      "width": 380,
+      "height": 104,
+      "componentId": "151:16092",
       "children": [
         {
-          "id": "151:11286",
-          "name": "Rectangle",
-          "type": "RECTANGLE",
-          "width": 13,
-          "height": 13
+          "id": "I403:17295;210:29484;151:14172",
+          "name": "header-top",
+          "type": "FRAME",
+          "width": 348,
+          "height": 28
         },
         {
-          "id": "151:11287",
-          "name": "#text «1»",
+          "id": "I403:17295;210:29484;151:14179",
+          "name": "UX/UI-дизайнер",
           "type": "TEXT",
-          "width": 6,
-          "height": 21,
-          "text": "1"
+          "width": 348,
+          "height": 34,
+          "text": "UX/UI-дизайнер"
+        },
+        {
+          "id": "I403:17295;210:29484;151:14180",
+          "name": "UX/UI-дизайнер: структура компетенций, знания, навыки и учебные материалы.",
+          "type": "TEXT",
+          "width": 348,
+          "height": 50,
+          "text": "UX/UI-дизайнер: структура компетенций, знания, навыки и учебные материалы."
+        },
+        {
+          "id": "I403:17295;210:29484;151:14181",
+          "name": "coverage-bar",
+          "type": "FRAME",
+          "width": 348,
+          "height": 8
+        },
+        {
+          "id": "I403:17295;210:29484;151:14183",
+          "name": "coverage-meta",
+          "type": "FRAME",
+          "width": 348,
+          "height": 19
         }
       ]
     }
@@ -84,8 +117,16 @@
 ```
 
 Тексты:
-- `151:11276` 1
-- `151:11287` 1
+- `I403:17295;210:29485;112:3751` Выбрать профессию
+- `I403:17295;210:29484;151:14173;112:3780` ДИЗАЙН
+- `I403:17295;210:29484;151:14175` 34
+- `I403:17295;210:29484;151:14176` из
+- `I403:17295;210:29484;151:14177` 34
+- `I403:17295;210:29484;151:14178` компетенций
+- `I403:17295;210:29484;151:14179` UX/UI-дизайнер
+- `I403:17295;210:29484;151:14180` UX/UI-дизайнер: структура компетенций, знания, навыки и учебные материалы.
+- `I403:17295;210:29484;151:14184` Покрытие Beta
+- `I403:17295;210:29484;151:14185` 100%
 
 ## Компоненты
 
@@ -101,8 +142,8 @@
 
 ```
 meta.json
-nodes/151-11284.json
+nodes/403-17295.json
 components.json
 styles.json
-images/151-11284.png
+images/403-17295.png
 ```

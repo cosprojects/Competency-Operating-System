@@ -8098,8 +8098,8 @@ button.rail-item {
 
 /* Скрываемые части карточки профессии: анимируем высоту и прозрачность.
    Отрицательный margin компенсирует gap контейнера, чтобы не было ступеньки. */
-.summary-desc,
-.coverage {
+/* Прогресс наполнения профессии остаётся видимым всегда, даже в сжатой шапке */
+.summary-desc {
   overflow: hidden;
   max-height: 420px;
   opacity: 1;
@@ -8109,12 +8109,7 @@ button.rail-item {
     margin 0.42s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.coverage {
-  max-height: 90px;
-}
-
-.rail-pinned.is-compact .summary-desc,
-.rail-pinned.is-compact .coverage {
+.rail-pinned.is-compact .summary-desc {
   max-height: 0;
   margin-top: -10px;
   opacity: 0;
@@ -8188,20 +8183,10 @@ button.rail-item {
   --rail-collapse: 0;
 }
 
-.summary-desc,
-.coverage {
+.summary-desc {
   overflow: hidden;
   transition: none;
-}
-
-.summary-desc {
   max-height: calc((1 - var(--rail-collapse)) * var(--desc-h, 420px));
-  margin-top: calc(var(--rail-collapse) * -10px);
-  opacity: calc(1 - var(--rail-collapse));
-}
-
-.coverage {
-  max-height: calc((1 - var(--rail-collapse)) * var(--coverage-h, 90px));
   margin-top: calc(var(--rail-collapse) * -10px);
   opacity: calc(1 - var(--rail-collapse));
 }
@@ -9885,175 +9870,15 @@ body:has(.studying-page) .paper-layer {
   backdrop-filter: blur(10px);
 }
 
-/* Второй таб «Изучаю» — сохранённые профессии (макет 404-24323) */
-.studying-professions {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.studying-professions-group {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.studying-group-title {
-  margin: 0;
-  color: #0f172a;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 26px;
-}
-
-.studying-professions-route {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
-  padding: 24px;
-  border-radius: 32px;
-  background: #f9fafb;
-}
-
-.learning-profession-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  min-width: 0;
-  padding: 16px;
-  border-radius: 16px;
-  background: #ffffff;
-}
-
-.learning-profession-hit {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  border-radius: inherit;
-}
-
-.learning-profession-top {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.learning-profession-badge {
-  display: inline-flex;
-  flex: none;
-  align-items: center;
-  justify-content: center;
-  min-height: 28px;
-  padding: 6px 8px 4px;
-  border-radius: 16px;
-  font-size: 11px;
-  font-weight: 800;
-  line-height: 17px;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-}
-
-.learning-profession-count {
-  flex: 1 1 auto;
-  min-width: 0;
-  color: #5f6f85;
-  font-size: 13px;
-  line-height: 20px;
-}
-
-.learning-profession-top .icon-button {
-  width: 24px;
-  height: 24px;
-  color: #4f46e5;
-}
-
-.learning-profession-top .icon-button svg {
-  width: 24px;
-  height: 24px;
-}
-
-.learning-profession-card h3 {
-  margin: 0;
-  color: #132238;
-  font-size: 28px;
-  font-weight: 600;
-  line-height: 1.2;
-}
-
-.learning-profession-card > p {
-  display: -webkit-box;
-  overflow: hidden;
-  margin: 0;
-  color: #5f6f85;
-  font-size: 16px;
-  line-height: 1.55;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-}
-
-.learning-profession-card .coverage {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-top: auto;
-}
-
-.learning-profession-card .coverage-text {
-  color: #8a99ad;
-  font-size: 13px;
-  font-weight: 600;
-  line-height: 18.6px;
-}
-
-@media (max-width: 1180px) {
-  .studying-professions-route {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 760px) {
-  .studying-professions {
-    gap: 18px;
-  }
-
-  .studying-professions-route {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 10px;
-    padding: 16px;
-    border-radius: 24px;
-  }
-
-  .learning-profession-card h3 {
-    font-size: 22px;
-  }
-
-  .learning-profession-card > p {
-    font-size: 14px;
-  }
-}
-
-
 /* Ховер карточек материалов и профессий + никакого подчёркивания в кнопках */
 .material-card.is-compact {
   transition: box-shadow 0.18s ease, background 0.18s ease;
-}
-
-.learning-profession-card {
-  transition: box-shadow 0.18s ease;
-}
-
-.learning-profession-card:hover {
-  box-shadow: 0 16px 34px rgba(19, 34, 56, 0.1);
 }
 
 .material-card.is-compact .material-cta:hover,
 .material-card.is-compact .material-meta .link-button:hover,
 .studying-tab:hover,
 .learning-occurrence:hover,
-.learning-profession-card .icon-button:hover,
 .knowledge-report:hover {
   text-decoration: none;
 }
@@ -10063,4 +9888,90 @@ body:has(.studying-page) .paper-layer {
   background: rgba(255, 255, 255, 0.82);
   border-color: #dbe3ef;
   box-shadow: 0 8px 20px rgba(19, 34, 56, 0.08);
+}
+
+
+/* ------------------------------------------------------------------ */
+/* Правки «Изучаю» и сайдбаров 2026-11-17 (3)                          */
+/* ------------------------------------------------------------------ */
+
+/* Больше воздуха между смысловыми блоками развёрнутой компетенции */
+.learning-body {
+  gap: 32px;
+}
+
+/* Второй таб: та же сетка профессий, что в разделе «Направления» */
+.studying-profession-groups {
+  width: 100%;
+}
+
+/* «В профессии» в «Изучаю» — как одноимённый блок в сайдбаре компетенции */
+.learning-occurrences-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.learning-card .occurrence-row {
+  border: 0;
+  background: #ffffff;
+}
+
+.learning-card .occurrence-row:hover {
+  background: #f3f4f6;
+}
+
+/* Без обводок в сайдбарах: иерархию задаёт фон, а не рамки */
+.canvas-rail .competency-tile {
+  border: 0;
+  background: #f9fafb;
+  box-shadow: none;
+}
+
+.canvas-rail .competency-tile:hover {
+  border: 0;
+  background: #f3f4f6;
+  box-shadow: 0 10px 22px rgba(19, 34, 56, 0.08);
+}
+
+.canvas-rail .competency-tile.is-active,
+.canvas-rail .competency-tile.is-hover {
+  border: 0;
+  background: #eef2ff;
+  box-shadow: none;
+}
+
+.detail-rail .study-item {
+  border: 0;
+  background: #f9fafb;
+}
+
+.detail-rail .study-item:hover {
+  background: #f3f4f6;
+}
+
+.detail-rail .study-item.is-learned {
+  border: 0;
+  background: var(--accent-soft);
+}
+
+.detail-rail .occurrence-row {
+  border: 0;
+  background: #f9fafb;
+}
+
+.detail-rail .occurrence-row:hover {
+  border: 0;
+  background: #f3f4f6;
+  box-shadow: 0 8px 20px rgba(19, 34, 56, 0.06);
+  transform: none;
+}
+
+.detail-rail .material-card {
+  border: 0;
+}
+
+/* Сегменты прогресса в сайдбаре компетенции — та же геометрия, что в «Изучаю» */
+.study-progress .learning-segments {
+  gap: 6px;
 }

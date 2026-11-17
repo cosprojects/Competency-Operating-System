@@ -6,9 +6,9 @@ import { useRouter } from "next/navigation";
 import {
   IconAcademicCap,
   IconArrowRight,
+  IconArrowSquareRight,
   IconCheckCircle,
   IconMaximizeSquare,
-  IconSquareArrowUpRight,
 } from "@/components/icons";
 import { KnowledgeSheet, type KnowledgeItem } from "@/components/canvas/KnowledgeSheet";
 import { MaterialCard } from "@/components/canvas/MaterialCard";
@@ -349,20 +349,24 @@ export function LearningCard({
           )}
 
           {card.occurrences.length > 0 ? (
-            <section className="learning-occurrences-block">
-              <h4>Входит в профессии</h4>
-              <div className="learning-occurrences">
+            <section className="learning-occurrences-block detail-block">
+              <div className="detail-block-head">
+                <h3>В профессии</h3>
+                <span className="num-badge">{card.occurrences.length}</span>
+              </div>
+              <p className="detail-hint">Компетенция может входить в несколько направлений.</p>
+              <div className="occurrence-list">
                 {card.occurrences.map((occurrence) => (
                   <Link
-                    className="learning-occurrence"
+                    className="occurrence-row"
                     key={`${occurrence.professionSlug}-${occurrence.sectionTitle}`}
                     href={`/professions/${occurrence.professionSlug}?competency=${card.competencyId}`}
                   >
-                    <span className="learning-occurrence-text">
+                    <span className="occurrence-text">
                       <strong>{occurrence.professionTitle}</strong>
                       <span>{occurrence.sectionTitle}</span>
                     </span>
-                    <IconSquareArrowUpRight />
+                    <IconArrowSquareRight className="occurrence-icon" />
                   </Link>
                 ))}
               </div>

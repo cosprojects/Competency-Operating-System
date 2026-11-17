@@ -3,8 +3,8 @@ import { IconSearch } from "@/components/icons";
 import { redirect } from "next/navigation";
 import { LearningCard } from "@/components/saved/LearningCard";
 import type { LearningCardData, LearningItemData } from "@/components/saved/LearningCard";
-import { ProfessionLearningCard } from "@/components/saved/ProfessionLearningCard";
-import type { LearningProfessionData } from "@/components/saved/ProfessionLearningCard";
+import { ProfessionTile } from "@/components/ProfessionTile";
+import type { SearchProfession } from "@/components/ProfessionTile";
 import { WelcomeNotice } from "@/components/account/WelcomeNotice";
 import { getCurrentUser } from "@/lib/auth";
 import {
@@ -138,7 +138,7 @@ export default async function SavedPage({
   const professionGroups: Array<{
     id: string;
     title: string;
-    professions: LearningProfessionData[];
+    professions: SearchProfession[];
   }> = getProfessionGroups()
     .map((group) => ({
       id: group.id,
@@ -165,6 +165,7 @@ export default async function SavedPage({
               ["компетенции", "компетенций", "компетенций"],
             )}`,
             percent: profession.coverage.percent,
+            searchText: `${profession.title} ${profession.description}`.toLowerCase(),
           };
         }),
     }))
@@ -293,13 +294,19 @@ export default async function SavedPage({
           </Link>
         </div>
       ) : (
-        <div className="studying-professions">
+        <div className="profession-groups studying-profession-groups">
           {professionGroups.map((group) => (
-            <section className="studying-professions-group" key={group.id}>
-              <h2 className="studying-group-title">{group.title}</h2>
-              <div className="studying-professions-route">
-                {group.professions.map((profession) => (
-                  <ProfessionLearningCard key={profession.slug} profession={profession} />
+            <section className="profession-group" key={group.id}>
+              <h2 className="group-title">{group.title}</h2>
+              <div className="profession-grid">
+                {group.professions.map((profession, index) => (
+                  <ProfessionTile
+                    key={profession.slug}
+                    profession={profession}
+                    index={index}
+                    saved
+                    viewer
+                  />
                 ))}
               </div>
             </section>

@@ -235,8 +235,17 @@ export function CompetencyDetail({
         </div>
         {viewer ? (
           <div className="study-progress">
-            <div className="study-progress-bar" aria-hidden="true">
-              <span style={{ width: `${learnedPercent}%` }} />
+            <div
+              className="learning-segments"
+              role="img"
+              aria-label={`Освоено ${learnedCount} из ${studyItems.length} знаний и навыков`}
+            >
+              {studyItems.map((item) => (
+                <span
+                  key={item.id}
+                  className={`learning-segment${learnedIds.has(item.id) ? " is-filled" : ""}`}
+                />
+              ))}
             </div>
             <div className="study-progress-text">
               <span>Прогресс изучения</span>

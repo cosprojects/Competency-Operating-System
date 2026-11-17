@@ -9873,9 +9873,11 @@ body:has(.studying-page) .paper-layer {
   );
 }
 
+/* Без z-index: body не должен создавать stacking context, иначе растянутая
+   ссылка карточки (z-index 2) перекроет CTA и кнопки (z-index 3) внутри. */
 .material-card.is-compact .material-body {
   position: relative;
-  z-index: 1;
+  z-index: auto;
 }
 
 .material-card.is-compact .material-cta {

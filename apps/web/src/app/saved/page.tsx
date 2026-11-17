@@ -3,11 +3,22 @@ import { IconSearch } from "@/components/icons";
 import { redirect } from "next/navigation";
 import { LearningCard } from "@/components/saved/LearningCard";
 import type { LearningCardData, LearningItemData } from "@/components/saved/LearningCard";
+import { ProfessionLearningCard } from "@/components/saved/ProfessionLearningCard";
+import type { LearningProfessionData } from "@/components/saved/ProfessionLearningCard";
 import { WelcomeNotice } from "@/components/account/WelcomeNotice";
 import { getCurrentUser } from "@/lib/auth";
-import { findCompetencies, getProfessions, groupSources, tierLabel } from "@/lib/content";
+import {
+  findCompetencies,
+  getProfessionGroups,
+  getProfessions,
+  groupSources,
+  pluralWord,
+  professionSphere,
+  tierLabel,
+} from "@/lib/content";
 import type { ContentSource } from "@/lib/content-types";
 import { getDb } from "@/lib/db";
+import { sphereBadgeStyle } from "@/lib/spheres";
 
 export const dynamic = "force-dynamic";
 
@@ -66,9 +77,10 @@ function buildCard(
 export default async function SavedPage({
   searchParams,
 }: {
-  searchParams: Promise<{ q?: string; welcome?: string }>;
+  searchParams: Promise<{ q?: string; tab?: string; welcome?: string }>;
 }) {
-  const { q, welcome } = await searchParams;
+  const { q, tab, welcome } = await searchParams;
+  const activeTab = tab === "professions" ? "professions" : "competencies";
   const query = (q ?? "").trim().toLowerCase();
   const user = await getCurrentUser();
   if (!user) redirect(`/login?returnTo=${encodeURIComponent("/saved")}`);
@@ -80,6 +92,9 @@ export default async function SavedPage({
     }),
     db.studyMark.findMany({ where: { userId: user.id, status: "LEARNED" } }),
   ]);
+  const savedProfessionSlugs = new Set(
+    favorites.filter((item) => item.targetType === "PROFESSION").map((item) => item.targetId),
+  );
   const savedCompetencyIds = new Set(
     favorites.filter((item) => item.targetType === "COMPETENCY").map((item) => item.targetId),
   );
@@ -118,7 +133,54 @@ export default async function SavedPage({
 
   const activeVisible = active.filter(matches);
   const learnedVisible = learned.filter(matches);
-  const empty = activeVisible.length === 0 && learnedVisible.length === 0;
+
+  // Второй таб — профессии, которые пользователь сохранил в изучение.
+  const professionGroups: Array<{
+    id: string;
+    title: string;
+    professions: LearningProfessionData[];
+  }> = getProfessionGroups()
+    .map((group) => ({
+      id: group.id,
+      title: group.title,
+      professions: group.professions
+        .filter(
+          (profession) =>
+            savedProfessionSlugs.has(profession.slug) &&
+            (!query ||
+              profession.title.toLowerCase().includes(query) ||
+              profession.description.toLowerCase().includes(query) ||
+              group.title.toLowerCase().includes(query)),
+        )
+        .map((profession) => {
+          const sphere = professionSphere(profession);
+          return {
+            slug: profession.slug,
+            title: profession.title,
+            description: profession.description,
+            sphereTitle: sphere.title,
+            sphereStyle: sphereBadgeStyle(sphere.color),
+            countText: `${profession.coverage.published} из ${profession.coverage.total} ${pluralWord(
+              profession.coverage.total,
+              ["компетенции", "компетенций", "компетенций"],
+            )}`,
+            percent: profession.coverage.percent,
+          };
+        }),
+    }))
+    .filter((group) => group.professions.length > 0);
+
+  const hasSavedProfessions = savedProfessionSlugs.size > 0;
+  const tabHref = (next: "competencies" | "professions") => {
+    const params = new URLSearchParams();
+    if (next === "professions") params.set("tab", "professions");
+    if (q) params.set("q", q);
+    const search = params.toString();
+    return search ? `/saved?${search}` : "/saved";
+  };
+
+  const emptyCompetencies = activeVisible.length === 0 && learnedVisible.length === 0;
+  const emptyProfessions = professionGroups.length === 0;
 
   return (
     <>
@@ -132,69 +194,117 @@ export default async function SavedPage({
 
       <div className="studying-toolbar">
         <nav className="studying-tabs" aria-label="Разделы «Изучаю»">
-          <span className="studying-tab is-active" aria-current="page">
-            Компетенции
-          </span>
-          <Link className="studying-tab" href="/professions">
-            Профессии
-          </Link>
+          {activeTab === "competencies" ? (
+            <span className="studying-tab is-active" aria-current="page">
+              Компетенции
+            </span>
+          ) : (
+            <Link className="studying-tab" href={tabHref("competencies")}>
+              Компетенции
+            </Link>
+          )}
+          {activeTab === "professions" ? (
+            <span className="studying-tab is-active" aria-current="page">
+              Профессии
+            </span>
+          ) : (
+            <Link className="studying-tab" href={tabHref("professions")}>
+              Профессии
+            </Link>
+          )}
         </nav>
         <form className="studying-search" method="get" role="search">
           <label className="sr-only" htmlFor="studying-search">
             Поиск в изучаемом
           </label>
           <IconSearch className="studying-search-icon" />
+          {activeTab === "professions" ? <input type="hidden" name="tab" value="professions" /> : null}
           <input
             className="studying-search-input"
             id="studying-search"
             type="search"
             name="q"
             defaultValue={q ?? ""}
-            placeholder="Знание, навык или компетенция"
+            placeholder={
+              activeTab === "professions" ? "Название профессии" : "Знание, навык или компетенция"
+            }
           />
         </form>
       </div>
 
       {welcome === "1" ? <WelcomeNotice /> : null}
 
-      {empty ? (
+      {activeTab === "competencies" ? (
+        emptyCompetencies ? (
+          <div className="empty">
+            <h2>{query ? "Ничего не найдено" : "Пока пусто"}</h2>
+            <p>
+              {query
+                ? "Проверьте запрос или сохраните новые компетенции."
+                : "Откройте профессию, сохраните компетенцию и отметьте знания и навыки — они появятся здесь."}
+            </p>
+            <Link className="button" href="/professions">
+              Выбрать направление
+            </Link>
+          </div>
+        ) : (
+          <>
+            <div className="studying-list">
+              {activeVisible.map((card, index) => (
+                <LearningCard
+                  key={card.competencyId}
+                  card={card}
+                  defaultExpanded={index === 0}
+                />
+              ))}
+            </div>
+
+            {learnedVisible.length > 0 ? (
+              <section className="learning-learned">
+                <div className="learning-learned-head">
+                  <h2>Изучено</h2>
+                  <span>Пока это самооценка, а не подтверждение профессионального уровня.</span>
+                </div>
+                <div className="studying-list">
+                  {learnedVisible.map((card) => (
+                    <LearningCard
+                      key={`learned-${card.competencyId}`}
+                      card={card}
+                      canStopStudy={false}
+                    />
+                  ))}
+                </div>
+              </section>
+            ) : null}
+          </>
+        )
+      ) : emptyProfessions ? (
         <div className="empty">
-          <h2>{query ? "Ничего не найдено" : "Пока пусто"}</h2>
+          <h2>{query ? "Ничего не найдено" : "Пока нет профессий"}</h2>
           <p>
             {query
-              ? "Проверьте запрос или сохраните новые компетенции."
-              : "Откройте профессию, сохраните компетенцию и отметьте знания и навыки — они появятся здесь."}
+              ? "Проверьте запрос или выберите другую профессию."
+              : hasSavedProfessions
+                ? "По запросу ничего не нашлось. Попробуйте другое название."
+                : "Откройте каталог, сохраните профессию — и вернитесь к ней здесь."}
           </p>
           <Link className="button" href="/professions">
             Выбрать направление
           </Link>
         </div>
       ) : (
-        <>
-          <div className="studying-list">
-            {activeVisible.map((card, index) => (
-              <LearningCard key={card.competencyId} card={card} order={index + 1} defaultExpanded={index === 0} />
-            ))}
-          </div>
-
-          {learnedVisible.length > 0 ? (
-            <section className="learning-learned">
-              <div className="learning-learned-head">
-                <h2>Изучено</h2>
-                <span>Пока это самооценка, а не подтверждение профессионального уровня.</span>
-              </div>
-              <div className="studying-list">
-                {learnedVisible.map((card, index) => (
-                  <LearningCard
-                    key={`learned-${card.competencyId}`}
-                    card={card}
-                    order={activeVisible.length + index + 1}
-                  />
+        <div className="studying-professions">
+          {professionGroups.map((group) => (
+            <section className="studying-professions-group" key={group.id}>
+              <h2 className="studying-group-title">{group.title}</h2>
+              <div className="studying-professions-route">
+                {group.professions.map((profession) => (
+                  <ProfessionLearningCard key={profession.slug} profession={profession} />
                 ))}
               </div>
             </section>
-          ) : null}
-        </>
+          ))}
+        </div>
       )}
     </>
   );

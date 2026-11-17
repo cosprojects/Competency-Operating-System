@@ -9136,7 +9136,7 @@ button.rail-item {
 
 .material-card.is-compact:hover {
   transform: none;
-  box-shadow: none;
+  box-shadow: 0 16px 34px rgba(19, 34, 56, 0.12);
 }
 
 .material-card.is-compact > .material-card-hit {
@@ -9674,4 +9674,391 @@ body.not-found-active .page-plain {
     font-size: 22px;
     line-height: 26px;
   }
+}
+
+
+/* ------------------------------------------------------------------ */
+/* Правки «Изучаю» 2026-11-17 (2): белый фон, шапка изучения,          */
+/* материалы с блюром, профессии во втором табе, ховер кнопок          */
+/* ------------------------------------------------------------------ */
+
+/* В «Изучаю» — чистый белый фон без бумаги-канваса с точками */
+body:has(.studying-page) {
+  background-color: #ffffff;
+}
+
+body:has(.studying-page) .paper-layer {
+  display: none;
+}
+
+/* Шапка изучения вместо звезды: заливная академическая шапка */
+.learning-study-cap {
+  width: 24px;
+  height: 24px;
+  color: #4f46e5;
+}
+
+.learning-study-cap svg {
+  width: 24px;
+  height: 24px;
+}
+
+.learning-study-cap:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* Диалог «Прекратить изучение?» */
+.stop-dialog {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: min(440px, calc(100vw - 32px));
+  padding: 24px;
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow: var(--shadow-float);
+}
+
+.stop-dialog-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.stop-dialog h2 {
+  margin: 0;
+  color: #132238;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.stop-dialog p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.stop-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+@media (max-width: 760px) {
+  .stop-dialog h2 {
+    font-size: 20px;
+  }
+
+  .stop-dialog-actions .button {
+    flex: 1 1 0;
+  }
+}
+
+/* Динамичный ховер кнопок: свет следует за курсором (как у PrimaryCta) */
+.has-hover-light {
+  position: relative;
+  isolation: isolate;
+}
+
+.has-hover-light::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle 110px at var(--hl-x, 50%) var(--hl-y, 50%),
+    rgba(23, 20, 84, 0.62) 0,
+    rgba(23, 20, 84, 0.26) 55%,
+    transparent 100%
+  );
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+.has-hover-light[data-tone="light"]::before {
+  background: radial-gradient(
+    circle 96px at var(--hl-x, 50%) var(--hl-y, 50%),
+    rgba(79, 70, 229, 0.1) 0,
+    rgba(79, 70, 229, 0.05) 55%,
+    transparent 100%
+  );
+}
+
+.has-hover-light[data-tone="transparent"]::before {
+  background: radial-gradient(
+    circle 96px at var(--hl-x, 50%) var(--hl-y, 50%),
+    rgba(79, 70, 229, 0.06) 0,
+    transparent 100%
+  );
+}
+
+.has-hover-light:hover::before {
+  opacity: 1;
+}
+
+.has-hover-light:active::before {
+  opacity: 0.8;
+}
+
+@media (hover: none) {
+  .has-hover-light::before {
+    display: none;
+  }
+}
+
+[data-motion="off"] .has-hover-light::before {
+  opacity: 0;
+  transition: none;
+}
+
+/* Материалы в «Изучаю»: текст поверх изображения с блюром и градиентом */
+.material-card.is-compact {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Перебиваем общее правило `.material-card > :not(.material-bg)`: фон материалов
+   в «Изучаю» — абсолютный слой под текстом, а не элемент в потоке. */
+.material-card.is-compact > .material-compact-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.material-compact-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.material-compact-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(16px) saturate(1.15);
+  opacity: 0.82;
+  transform: scale(1.15);
+}
+
+.material-compact-fallback {
+  display: block;
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(120% 90% at 15% 0%, rgba(79, 70, 229, 0.35), transparent 70%),
+    radial-gradient(120% 90% at 85% 10%, rgba(245, 158, 11, 0.35), transparent 70%),
+    linear-gradient(180deg, #eef2ff 0%, #ffffff 100%);
+}
+
+.material-compact-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.22) 0%,
+    rgba(255, 255, 255, 0.66) 38%,
+    rgba(255, 255, 255, 0.92) 68%,
+    #ffffff 100%
+  );
+}
+
+.material-card.is-compact .material-body {
+  position: relative;
+  z-index: 1;
+}
+
+.material-card.is-compact .material-cta {
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+/* Второй таб «Изучаю» — сохранённые профессии (макет 404-24323) */
+.studying-professions {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.studying-professions-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.studying-group-title {
+  margin: 0;
+  color: #0f172a;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 26px;
+}
+
+.studying-professions-route {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  padding: 24px;
+  border-radius: 32px;
+  background: #f9fafb;
+}
+
+.learning-profession-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+  padding: 16px;
+  border-radius: 16px;
+  background: #ffffff;
+}
+
+.learning-profession-hit {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+}
+
+.learning-profession-top {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.learning-profession-badge {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  min-height: 28px;
+  padding: 6px 8px 4px;
+  border-radius: 16px;
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 17px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.learning-profession-count {
+  flex: 1 1 auto;
+  min-width: 0;
+  color: #5f6f85;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.learning-profession-top .icon-button {
+  width: 24px;
+  height: 24px;
+  color: #4f46e5;
+}
+
+.learning-profession-top .icon-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+.learning-profession-card h3 {
+  margin: 0;
+  color: #132238;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.learning-profession-card > p {
+  display: -webkit-box;
+  overflow: hidden;
+  margin: 0;
+  color: #5f6f85;
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.learning-profession-card .coverage {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.learning-profession-card .coverage-text {
+  color: #8a99ad;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 18.6px;
+}
+
+@media (max-width: 1180px) {
+  .studying-professions-route {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .studying-professions {
+    gap: 18px;
+  }
+
+  .studying-professions-route {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+    padding: 16px;
+    border-radius: 24px;
+  }
+
+  .learning-profession-card h3 {
+    font-size: 22px;
+  }
+
+  .learning-profession-card > p {
+    font-size: 14px;
+  }
+}
+
+
+/* Ховер карточек материалов и профессий + никакого подчёркивания в кнопках */
+.material-card.is-compact {
+  transition: box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.learning-profession-card {
+  transition: box-shadow 0.18s ease;
+}
+
+.learning-profession-card:hover {
+  box-shadow: 0 16px 34px rgba(19, 34, 56, 0.1);
+}
+
+.material-card.is-compact .material-cta:hover,
+.material-card.is-compact .material-meta .link-button:hover,
+.studying-tab:hover,
+.learning-occurrence:hover,
+.learning-profession-card .icon-button:hover,
+.knowledge-report:hover {
+  text-decoration: none;
+}
+
+/* CTA материалов: при наведении подложка светлее и заметнее блюр */
+.material-card.is-compact .material-cta:hover {
+  background: rgba(255, 255, 255, 0.82);
+  border-color: #dbe3ef;
+  box-shadow: 0 8px 20px rgba(19, 34, 56, 0.08);
 }

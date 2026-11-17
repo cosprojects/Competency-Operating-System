@@ -2,15 +2,18 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import {
+  IconAcademicCap,
   IconArrowRight,
   IconCheckCircle,
   IconMaximizeSquare,
   IconSquareArrowUpRight,
-  IconStar,
 } from "@/components/icons";
 import { KnowledgeSheet, type KnowledgeItem } from "@/components/canvas/KnowledgeSheet";
 import { MaterialCard } from "@/components/canvas/MaterialCard";
+import { StopLearningDialog } from "@/components/saved/StopLearningDialog";
+import { showToast } from "@/components/ui/Toast";
 import type { ContentSource } from "@/lib/content-types";
 
 export interface LearningItemData {
@@ -61,16 +64,21 @@ function kindWord(kind: LearningItemData["kind"]): string {
  */
 export function LearningCard({
   card,
-  order = 1,
   defaultExpanded = false,
+  canStopStudy = true,
   returnTo = "/saved",
 }: {
   card: LearningCardData;
-  order?: number;
   defaultExpanded?: boolean;
+  /** Показывать иконку «прекратить изучение»: для карточек в «Изучено» она не нужна. */
+  canStopStudy?: boolean;
   returnTo?: string;
 }) {
+  const router = useRouter();
   const [expanded, setExpanded] = useState(defaultExpanded);
+  const [stopOpen, setStopOpen] = useState(false);
+  const [stopping, setStopping] = useState(false);
+  const [stopped, setStopped] = useState(false);
   const [learned, setLearned] = useState<Record<string, boolean>>(() =>
     Object.fromEntries(card.items.map((item) => [item.id, item.learned])),
   );
@@ -109,6 +117,39 @@ export function LearningCard({
     setLearned((current) => ({ ...current, [id]: next }));
   }
 
+  async function stopStudying() {
+    setStopping(true);
+    try {
+      const response = await fetch("/api/favorites", {
+        method: "DELETE",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ targetType: "COMPETENCY", targetId: card.competencyId }),
+      });
+      if (!response.ok) throw new Error("fail");
+      setStopOpen(false);
+      setStopped(true);
+      showToast({
+        title: "Изучение прекращено",
+        headline: card.title,
+        text: "Компетенция убрана из активного маршрута. Отметки знаний и навыков сохранились.",
+        actionLabel: "Закрыть",
+        duration: 5000,
+      });
+      router.refresh();
+    } catch {
+      showToast({
+        title: "Не получилось",
+        text: "Не удалось убрать компетенцию из «Изучаю». Попробуйте ещё раз.",
+        actionLabel: "Закрыть",
+        duration: 5000,
+      });
+    } finally {
+      setStopping(false);
+    }
+  }
+
+  if (stopped) return null;
+
   function openItem(item: LearningItemData) {
     const index = card.items.findIndex((entry) => entry.id === item.id);
     setSelectedId(item.id);
@@ -134,19 +175,17 @@ export function LearningCard({
         <div className="learning-summary-main">
           <div className="learning-summary-top">
             <span className={`badge ${card.tierClass}`}>{card.tierLabel}</span>
-            <span className="learning-summary-actions">
-              <span className="learning-order" aria-label={`Компетенция ${order} в маршруте`}>
-                {order}
-              </span>
-              <Link
-                className="icon-button learning-star"
-                href={`/professions/${card.professionSlug}?competency=${card.competencyId}`}
-                aria-label="Открыть компетенцию в профессии"
-                title="Открыть компетенцию в профессии"
+            {canStopStudy ? (
+              <button
+                className="icon-button learning-study-cap"
+                type="button"
+                onClick={() => setStopOpen(true)}
+                aria-label="Прекратить изучение"
+                title="Прекратить изучение"
               >
-                <IconStar />
-              </Link>
-            </span>
+                <IconAcademicCap />
+              </button>
+            ) : null}
           </div>
           <h3>
             <Link href={`/professions/${card.professionSlug}?competency=${card.competencyId}`}>
@@ -330,6 +369,16 @@ export function LearningCard({
             </section>
           ) : null}
         </div>
+      ) : null}
+
+      {canStopStudy ? (
+        <StopLearningDialog
+          open={stopOpen}
+          competencyTitle={card.title}
+          busy={stopping}
+          onCancel={() => setStopOpen(false)}
+          onConfirm={() => void stopStudying()}
+        />
       ) : null}
 
       {openIndex !== null ? (

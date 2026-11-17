@@ -54,8 +54,6 @@ export function MaterialCard({
   const [undoBusy, setUndoBusy] = useState(false);
 
   useEffect(() => {
-    // В компактной карточке обложки нет, поэтому превью — только лишний запрос.
-    if (compact) return;
     let cancelled = false;
     const controller = new AbortController();
     const timer = window.setTimeout(() => controller.abort(), 8000);
@@ -168,7 +166,23 @@ export function MaterialCard({
 
   return (
     <article className={`material-card${rejected ? " is-rejected" : ""}${compact ? " is-compact" : ""}`}>
-      {compact ? null : (
+      {compact ? (
+        <div className="material-compact-media" aria-hidden="true">
+          {showImage ? (
+            <img
+              className="material-compact-image"
+              src={image}
+              alt=""
+              loading="lazy"
+              referrerPolicy="no-referrer"
+              onError={() => setImageFailed(true)}
+            />
+          ) : (
+            <span className="material-compact-fallback" />
+          )}
+          <span className="material-compact-overlay" />
+        </div>
+      ) : (
         <div className="material-cover">
           <div className="material-bg-image">
             {showImage ? (

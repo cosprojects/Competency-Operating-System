@@ -30,6 +30,10 @@
 | `npm run changelog:check` | `node --experimental-strip-types scripts/changelog/apply.ts -- --check` |
 | `npm run agents:check` | `sh scripts/check-agent-assets.sh` |
 | `npm run figma:compare` | `node scripts/web/figma-compare.mjs` |
+| `npm run deck:build` | `node scripts/deck/build.mjs` |
+| `npm run deck:verify` | `node scripts/deck/verify.mjs` |
+| `npm run deck:maps` | `node scripts/deck/maps.mjs` |
+| `npm run deck:audit` | `node scripts/deck/audit.mjs` |
 | `npm run qa:motion` | `node scripts/web/motion-check.mjs` |
 | `npm run db:generate` | `prisma generate` |
 | `npm run db:migrate` | `prisma migrate dev` |

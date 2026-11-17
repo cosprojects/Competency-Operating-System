@@ -5,6 +5,7 @@ import type { ReactNode } from "react";
 import { MobileNav } from "@/components/mobile/MobileNav";
 import { NavRail } from "@/components/NavRail";
 import { SiteFooter } from "@/components/SiteFooter";
+import { ButtonHoverLights } from "@/components/ui/ButtonHoverLights";
 import { ToastHost } from "@/components/ui/Toast";
 
 export interface ShellUser {
@@ -58,6 +59,7 @@ export function AppShell({
         {isHome ? null : <SiteFooter />}
       </main>
       <ToastHost />
+      <ButtonHoverLights />
     </>
   );
 }

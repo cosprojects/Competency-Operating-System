@@ -130,6 +130,10 @@ export function NavRail({ user }: { user: ShellUser | null }) {
     // принудительный layout на каждый кадр.
     const footer = document.querySelector<HTMLElement>(".site-footer");
     let frame = 0;
+    // Смещение меняется на каждом пикселе скролла, но переписывать переменную
+    // (и тем самым дёргать раскладку закреплённого рейла) стоит только когда
+    // оно реально изменилось.
+    let lastOffset = -1;
 
     const updateOffset = () => {
       frame = 0;
@@ -138,6 +142,8 @@ export function NavRail({ user }: { user: ShellUser | null }) {
       if (footer) {
         offset = Math.max(40, Math.round(viewport - footer.getBoundingClientRect().top + 40));
       }
+      if (offset === lastOffset) return;
+      lastOffset = offset;
       document.documentElement.style.setProperty("--rail-bottom-offset", `${offset}px`);
     };
 

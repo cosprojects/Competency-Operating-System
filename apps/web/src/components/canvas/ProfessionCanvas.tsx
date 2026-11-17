@@ -108,30 +108,53 @@ export function ProfessionCanvas({
 
   // Шапка рейла сжимается непрерывно по мере прокрутки: без переключения
   // состояний, просто плавно уменьшается под скроллом контента.
+  //
+  // Меряем содержимое один раз (и после загрузки шрифтов/ресайза): чтение
+  // scrollHeight в каждом кадре скролла заставляло браузер синхронно
+  // пересчитывать раскладку — это и было «тормозит» при прокрутке рейла.
+  // Прогресс пишем шагом 2 %, чтобы не дёргать раскладку на каждый пиксель.
   useEffect(() => {
     const element = railScrollRef.current;
     const pinned = pinnedRef.current;
     if (!element || !pinned) return;
-    let frame = 0;
     const desc = pinned.querySelector<HTMLElement>(".summary-desc");
     const coverage = pinned.querySelector<HTMLElement>(".coverage");
+
     const measure = () => {
       if (desc) pinned.style.setProperty("--desc-h", `${desc.scrollHeight}px`);
       if (coverage) pinned.style.setProperty("--coverage-h", `${coverage.scrollHeight}px`);
     };
+
+    let frame = 0;
+    let lastProgress = -1;
     const update = () => {
       frame = 0;
-      measure();
       const progress = Math.min(1, Math.max(0, element.scrollTop / 180));
-      pinned.style.setProperty("--rail-collapse", String(progress));
+      const rounded = Math.round(progress * 50) / 50;
+      if (rounded === lastProgress) return;
+      lastProgress = rounded;
+      pinned.style.setProperty("--rail-collapse", String(rounded));
     };
     const onScroll = () => {
       if (!frame) frame = window.requestAnimationFrame(update);
     };
-    update();
+    const remeasure = () => {
+      measure();
+      lastProgress = -1;
+      update();
+    };
+
+    remeasure();
     element.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", remeasure);
+    let cancelled = false;
+    document.fonts?.ready.then(() => {
+      if (!cancelled) remeasure();
+    });
     return () => {
+      cancelled = true;
       element.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", remeasure);
       if (frame) window.cancelAnimationFrame(frame);
     };
   }, []);

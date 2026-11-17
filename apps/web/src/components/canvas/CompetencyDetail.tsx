@@ -148,32 +148,54 @@ export function CompetencyDetail({
 
   // Шапка компетенции сжимается непрерывно по скроллу: без дискретных
   // состояний, высота плавно следует за прокруткой.
+  //
+  // Меряем содержимое один раз (и после загрузки шрифтов/ресайза), а на скролле
+  // читаем только scrollTop: чтение scrollHeight в каждом кадре заставляло
+  // браузер синхронно пересчитывать раскладку. Прогресс пишем шагом 2 %.
   useEffect(() => {
     const rail = headRef.current?.closest(".detail-rail");
     const head = headRef.current;
     if (!rail || !head) return;
-    let frame = 0;
     const desc = head.querySelector<HTMLElement>(".detail-desc");
     const tags = head.querySelector<HTMLElement>(".detail-tags");
     const progressEl = head.querySelector<HTMLElement>(".study-progress");
+
     const measure = () => {
       if (desc) head.style.setProperty("--desc-h", `${desc.scrollHeight}px`);
       if (tags) head.style.setProperty("--tags-h", `${tags.scrollHeight}px`);
       if (progressEl) head.style.setProperty("--progress-h", `${progressEl.scrollHeight}px`);
     };
+
+    let frame = 0;
+    let lastProgress = -1;
     const update = () => {
       frame = 0;
-      measure();
       const progress = Math.min(1, Math.max(0, rail.scrollTop / 200));
-      head.style.setProperty("--head-collapse", String(progress));
+      const rounded = Math.round(progress * 50) / 50;
+      if (rounded === lastProgress) return;
+      lastProgress = rounded;
+      head.style.setProperty("--head-collapse", String(rounded));
     };
     const onScroll = () => {
       if (!frame) frame = window.requestAnimationFrame(update);
     };
-    update();
+    const remeasure = () => {
+      measure();
+      lastProgress = -1;
+      update();
+    };
+
+    remeasure();
     rail.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", remeasure);
+    let cancelled = false;
+    document.fonts?.ready.then(() => {
+      if (!cancelled) remeasure();
+    });
     return () => {
+      cancelled = true;
       rail.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", remeasure);
       if (frame) window.cancelAnimationFrame(frame);
     };
   }, []);

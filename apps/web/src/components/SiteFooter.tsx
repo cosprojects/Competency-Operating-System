@@ -1,12 +1,27 @@
-import Link from "next/link";
+"use client";
 
-/**
- * Подвал сайта по макету Footer/ru (2:10328): тёмная полоса, слева — правовая
- * информация, по центру — знак и крупный логотип, справа — навигация и контакты.
- */
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { CookieModalLink } from "@/components/CookieModal";
+
+/** Подвал сайта по макету Footer/ru: правовая информация, знак и навигация. */
 export function SiteFooter() {
-  return (
-    <footer className="site-footer">
+  const [authed, setAuthed] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+    fetch("/api/session")
+      .then((response) => (response.ok ? response.json() : { authed: false }))
+      .then((data: { authed?: boolean }) => {
+        if (!cancelled) setAuthed(Boolean(data.authed));
+      })
+      .catch(() => undefined);
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  return (    <footer className="site-footer">
       <div className="site-footer-inner">
         <div className="site-footer-left">
           <div className="site-footer-legal">
@@ -15,9 +30,7 @@ export function SiteFooter() {
           </div>
           <p>Операционная система человеческого развития</p>
           <p>© 2026 Все права защищены.</p>
-          <p className="site-footer-operator">
-            Оператор: Невзоров Кирилл Игоревич, самозанятый (НПД), ИНН 480708141554
-          </p>
+          <p className="site-footer-operator">Невзоров Кирилл Игоревич, ИНН 480708141554</p>
         </div>
 
         <div className="site-footer-right">
@@ -25,7 +38,7 @@ export function SiteFooter() {
             <Link href="/">Главная</Link>
             <Link href="/professions">Направления</Link>
             <Link href="/feedback">Ваш фидбек</Link>
-            <Link href="/login">Войти</Link>
+            {authed ? <Link href="/account">Аккаунт</Link> : <Link href="/login">Войти</Link>}
           </div>
           <div className="site-footer-nav">
             <a href="https://t.me/myaxiona" target="_blank" rel="noopener noreferrer">
@@ -34,7 +47,7 @@ export function SiteFooter() {
             <a href="https://www.axiona.world/en" target="_blank" rel="noopener noreferrer">
               Сайт компании
             </a>
-            <Link href="/legal/cookies">Cookies</Link>
+            <CookieModalLink />
           </div>
           <a className="site-footer-mail" href="mailto:hi.axiona@protonmail.com">
             hi.axiona@protonmail.com

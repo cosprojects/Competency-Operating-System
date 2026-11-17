@@ -129,7 +129,9 @@ export function ProfessionCanvas({
     let lastProgress = -1;
     const update = () => {
       frame = 0;
-      const progress = Math.min(1, Math.max(0, element.scrollTop / 180));
+      // На мобиле скроллится страница, на десктопе — список рейла.
+      const scrolled = Math.max(element.scrollTop, window.scrollY);
+      const progress = Math.min(1, Math.max(0, scrolled / 120));
       const rounded = Math.round(progress * 50) / 50;
       if (rounded === lastProgress) return;
       lastProgress = rounded;

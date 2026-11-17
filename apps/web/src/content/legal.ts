@@ -143,8 +143,8 @@ export const legalDocuments: LegalDocument[] = [
     slug: "cookies",
     title: "Cookie и аналитика",
     updated: "2026-11-10",
-    draft: true,
-    intro: DRAFT_NOTE,
+    draft: false,
+    intro: "",
     sections: [
       {
         heading: "1. Необходимые cookie",

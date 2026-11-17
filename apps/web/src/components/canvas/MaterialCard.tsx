@@ -141,25 +141,6 @@ export function MaterialCard({
             onDecided={(action) => setReviewAction(action)}
           />
         ) : null}
-        {canSave ? (
-          <SaveButton
-            targetType="SOURCE"
-            targetId={source.id}
-            initialSaved={Boolean(source.saved)}
-            variant="icon"
-            title={source.title}
-            description={source.summary}
-          />
-        ) : (
-          <Link
-            className="icon-button material-save-guest"
-            href={`/register?returnTo=${encodeURIComponent(returnTo)}`}
-            aria-label="Войти, чтобы сохранить материал"
-            title="Войти, чтобы сохранить материал"
-          >
-            <IconStar />
-          </Link>
-        )}
       </span>
     </div>
   );

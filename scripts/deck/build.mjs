@@ -14,6 +14,7 @@
  *   SPEAKER-NOTES.md, verify.json, VERIFY.md
  */
 import { execFileSync } from "node:child_process";
+import { tmpdir } from "node:os";
 import { copyFileSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -31,8 +32,8 @@ const FLAG = (name) => process.argv.includes(name);
 const deckName = arg("--deck", "axiona-pitch-ru-2026-11");
 const deck = deckName === "axiona-pitch-ru-2026-11" ? defaultDeck : (await import(`./decks/${deckName}.mjs`)).deck;
 const OUT = resolve(ROOT, "docs/08-business-plan/investor/deck-v2");
-const CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
-const PROFILE = "/tmp/axiona-deck-chrome";
+const CHROME = process.env.CHROME_BIN ?? "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
+const PROFILE = join(tmpdir(), `axiona-deck-chrome-${process.pid}`);
 const htmlFile = join(OUT, "AXIONA-Investor-Deck.html");
 const pdfFile = join(OUT, "AXIONA-Investor-Deck.pdf");
 const total = deck.slides.length;

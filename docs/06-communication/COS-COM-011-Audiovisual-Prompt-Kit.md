@@ -586,8 +586,8 @@ blue-grey shadow, editorial product still, high-key, matte paper, 100mm --ar 16:
 1. **Style anchor.** Первым генерируется S03. Он утверждается владельцем
    продукта и дальше подаётся как референс-изображение во все остальные кадры.
 2. **Порядок генерации:** S03 → S01 → S02 → S04 → S05 → S06a.
-3. **Референсы в папке** `docs/design/av/refs/`: `anchor_s03.png`, `logo-mark.png`,
-   `plate_white.jpg`, `ui-beta1.png`.
+3. **Референсы** (`anchor_s03.png`, `logo-mark.png`, `plate_white.jpg`, `ui-beta1.png`)
+   складываются в `docs/design/av/refs/` — папку создаём при первом использовании.
 4. **Именование файлов:** `av-v1_s03_key_v03.png`, `av-v1_s02_video_kling_v02.mp4`.
    Версия — всегда в имени, «final» запрещено.
 5. **Seed-дисциплина:** один seed на серию, если платформа позволяет; иначе — один

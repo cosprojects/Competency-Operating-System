@@ -13,7 +13,7 @@ import { fileURLToPath } from "node:url";
 const here = dirname(fileURLToPath(import.meta.url));
 const root = resolve(here, "../..");
 const html = join(root, "docs/08-business-plan/investor/deck-v2/AXIONA-Investor-Deck.html");
-const chrome = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
+const chrome = process.env.CHROME_BIN ?? "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
 function dump() {
   const profile = `/tmp/axiona-deck-audit-${process.pid}-${Date.now()}`;
   return execFileSync(

@@ -48,7 +48,7 @@ export function renderMagicLinkEmail(input: MagicLinkTemplateInput): RenderedEma
     "",
     `Ссылка действует ${input.expiresText} и работает один раз.`,
     "",
-    `Если ты не запрашивал вход - проигнорируй письмо. Проигнорируй возможность развития.`,
+    `Если ты не запрашивал вход — просто проигнорируй письмо.`,
     "",
     `Нужна помощь? Напиши мне на ${input.supportEmail}`,
     `Политика конфиденциальности: ${input.privacyUrl}`,
@@ -117,7 +117,7 @@ export function renderMagicLinkEmail(input: MagicLinkTemplateInput): RenderedEma
                 </p>
 
                 <p style="margin:27px 0 0 0;max-width:359px;font-size:14px;line-height:21px;color:#8a99ad;">
-                  Если ты не запрашивал вход - проигнорируй письмо. Проигнорируй возможность развития.
+                  Если ты не запрашивал вход — просто проигнорируй письмо.
                 </p>
 
                 <p style="margin:37px 0 0 0;font-size:16px;line-height:20px;color:#595959;">

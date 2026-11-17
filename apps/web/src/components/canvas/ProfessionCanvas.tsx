@@ -108,9 +108,16 @@ export function ProfessionCanvas({
     const pinned = pinnedRef.current;
     if (!element || !pinned) return;
     let frame = 0;
+    const desc = pinned.querySelector<HTMLElement>(".summary-desc");
+    const coverage = pinned.querySelector<HTMLElement>(".coverage");
+    const measure = () => {
+      if (desc) pinned.style.setProperty("--desc-h", `${desc.scrollHeight}px`);
+      if (coverage) pinned.style.setProperty("--coverage-h", `${coverage.scrollHeight}px`);
+    };
     const update = () => {
       frame = 0;
-      const progress = Math.min(1, Math.max(0, element.scrollTop / 90));
+      measure();
+      const progress = Math.min(1, Math.max(0, element.scrollTop / 180));
       pinned.style.setProperty("--rail-collapse", String(progress));
     };
     const onScroll = () => {

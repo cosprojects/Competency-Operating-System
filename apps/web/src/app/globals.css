@@ -8195,13 +8195,13 @@ button.rail-item {
 }
 
 .summary-desc {
-  max-height: calc((1 - var(--rail-collapse)) * 420px);
+  max-height: calc((1 - var(--rail-collapse)) * var(--desc-h, 420px));
   margin-top: calc(var(--rail-collapse) * -10px);
   opacity: calc(1 - var(--rail-collapse));
 }
 
 .coverage {
-  max-height: calc((1 - var(--rail-collapse)) * 90px);
+  max-height: calc((1 - var(--rail-collapse)) * var(--coverage-h, 90px));
   margin-top: calc(var(--rail-collapse) * -10px);
   opacity: calc(1 - var(--rail-collapse));
 }
@@ -8219,14 +8219,19 @@ button.rail-item {
 }
 
 .detail-desc {
-  max-height: calc((1 - var(--head-collapse)) * 520px);
+  max-height: calc((1 - var(--head-collapse)) * var(--desc-h, 520px));
   margin-top: calc(var(--head-collapse) * -10px);
   opacity: calc(1 - var(--head-collapse));
 }
 
-.detail-tags,
+.detail-tags {
+  max-height: calc((1 - var(--head-collapse)) * var(--tags-h, 160px));
+  margin-top: calc(var(--head-collapse) * -10px);
+  opacity: calc(1 - var(--head-collapse));
+}
+
 .study-progress {
-  max-height: calc((1 - var(--head-collapse)) * 160px);
+  max-height: calc((1 - var(--head-collapse)) * var(--progress-h, 160px));
   margin-top: calc(var(--head-collapse) * -10px);
   opacity: calc(1 - var(--head-collapse));
 }

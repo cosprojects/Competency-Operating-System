@@ -134,9 +134,18 @@ export function CompetencyDetail({
     const head = headRef.current;
     if (!rail || !head) return;
     let frame = 0;
+    const desc = head.querySelector<HTMLElement>(".detail-desc");
+    const tags = head.querySelector<HTMLElement>(".detail-tags");
+    const progressEl = head.querySelector<HTMLElement>(".study-progress");
+    const measure = () => {
+      if (desc) head.style.setProperty("--desc-h", `${desc.scrollHeight}px`);
+      if (tags) head.style.setProperty("--tags-h", `${tags.scrollHeight}px`);
+      if (progressEl) head.style.setProperty("--progress-h", `${progressEl.scrollHeight}px`);
+    };
     const update = () => {
       frame = 0;
-      const progress = Math.min(1, Math.max(0, rail.scrollTop / 120));
+      measure();
+      const progress = Math.min(1, Math.max(0, rail.scrollTop / 200));
       head.style.setProperty("--head-collapse", String(progress));
     };
     const onScroll = () => {

@@ -13,6 +13,7 @@ import {
   searchPhrase,
   sourceLang,
 } from "../src/methodology/v1/guides/plan.ts";
+import { pickItems, professionOrder, type PublicProfession } from "../src/methodology/v1/guides/items.ts";
 import { parseGuideContent, renderGuideText, validateGuideDoc } from "../src/methodology/v1/guides/validate.ts";
 import type { GuideDoc, ItemInput, SearchHit } from "../src/methodology/v1/guides/types.ts";
 
@@ -104,8 +105,7 @@ describe("guides plan", () => {
   });
 });
 
-describe("guides validate", () => {
-  it("принимает подробный разбор из 3–5 разделов", () => {
+describe("guides validate", () => {  it("принимает подробный разбор из 3–5 разделов", () => {
     assert.equal(validateGuideDoc(goodDoc).ok, true);
     assert.match(renderGuideText(goodDoc), /Что это/);
   });
@@ -137,5 +137,81 @@ describe("guides validate", () => {
     const noData = parseGuideContent('{"status":"no_data"}');
     assert.equal(noData?.status, "no_data");
     assert.equal(parseGuideContent("не json"), null);
+  });
+});
+
+const profession: PublicProfession = {
+  slug: "uxui",
+  sections: [
+    {
+      title: "Основы",
+      competencies: [
+        {
+          id: "c1",
+          title: "Дизайн-мышление",
+          knowledge: [
+            { id: "k1", title: "Гипотезы", definition: "Проверяемые предположения." },
+            { id: "k2", title: "Когорты", definition: "Группы пользователей." },
+          ],
+          skills: [{ id: "s1", title: "Проводить интервью", definition: "Собирать контекст." }],
+        },
+        {
+          id: "c2",
+          title: "Исследования",
+          knowledge: [{ id: "k1", title: "Гипотезы", definition: "Повтор в другой компетенции." }],
+          skills: [{ id: "s2", title: "Анализировать данные", definition: "Искать паттерны." }],
+        },
+      ],
+    },
+  ],
+};
+
+describe("guides items", () => {
+  it("идёт по кругу между компетенциями, не повторяет пункты и чередует типы", () => {
+    const items = pickItems(profession, 10);
+    assert.deepEqual(
+      items.map((item) => item.id),
+      ["k1", "s1", "s2", "k2"],
+    );
+    assert.equal(items[0]?.kind, "knowledge");
+    assert.equal(items[1]?.kind, "skill");
+    assert.equal(items[0]?.competencyTitle, "Дизайн-мышление");
+    assert.equal(items[1]?.sectionTitle, "Основы");
+  });
+
+  it("уважает лимит и пропускает готовые пункты, продолжая круги", () => {
+    assert.equal(pickItems(profession, 2).length, 2);
+    const fresh = pickItems(profession, 10, (id) => id === "k1");
+    assert.deepEqual(
+      fresh.map((item) => item.id),
+      ["s1", "s2", "k2"],
+    );
+    assert.equal(pickItems(profession, 10, () => true).length, 0);
+  });
+
+  it("не теряет пункты за кругом, где все совпадения уже видели", () => {
+    const long = Array.from({ length: 17 }, (_, index) => ({ id: `k${index}`, title: `Пункт ${index}` }));
+    const tricky: PublicProfession = {
+      slug: "test",
+      sections: [
+        {
+          title: "Раздел",
+          competencies: [
+            { id: "long", title: "Длинная", knowledge: long, skills: [] },
+            { id: "dup", title: "Дубль", knowledge: [{ id: "k12", title: "Пункт 12 из другой компетенции" }], skills: [] },
+          ],
+        },
+      ],
+    };
+    const items = pickItems(tricky, Number.POSITIVE_INFINITY);
+    assert.equal(items.length, 17);
+    assert.deepEqual(new Set(items.map((item) => item.id)).size, 17);
+  });
+
+  it("ставит uxui первым в полном прогоне", () => {
+    assert.deepEqual(
+      professionOrder([{ slug: "aidesigner" }, { slug: "uxui" }, { slug: "game" }]),
+      ["uxui", "aidesigner", "game"],
+    );
   });
 });

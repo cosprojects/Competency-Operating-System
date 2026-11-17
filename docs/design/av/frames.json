@@ -1,0 +1,117 @@
+{
+  "spec": "COS-COM-011 Audiovisual Prompt Kit",
+  "doc": "docs/06-communication/COS-COM-011-Audiovisual-Prompt-Kit.md",
+  "generator": "scripts/av/storyboard.mjs",
+  "aspect": "16:9",
+  "size": [
+    1920,
+    1080
+  ],
+  "totalSeconds": 33,
+  "frames": [
+    {
+      "id": "S01",
+      "name": "Один узел",
+      "time": "0:00.0–0:03.5",
+      "shot": "Macro · 100 mm · top-down · push-in 8%",
+      "title": "У профессии есть структура",
+      "action": "Камера медленно наезжает на единственную карточку. Вокруг — только точечная бумага.",
+      "docRef": "COS-COM-011 §4 S01",
+      "files": {
+        "svg": "s01.svg",
+        "png": "frames/s01.png"
+      }
+    },
+    {
+      "id": "S02",
+      "name": "Появляются связи",
+      "time": "0:03.5–0:07.0",
+      "shot": "Wide-top-down · 50 mm · static · rack to edges",
+      "title": "Знания. Навыки. Компетенции",
+      "action": "От активного узла прорастает нить и завязывается на соседнем. Ещё три карточки проявляются из пустоты.",
+      "docRef": "COS-COM-011 §4 S02",
+      "files": {
+        "svg": "s02.svg",
+        "png": "frames/s02.png"
+      }
+    },
+    {
+      "id": "S03",
+      "name": "Карта складывается",
+      "time": "0:07.0–0:12.0",
+      "shot": "Wide · 35 mm · crane up + pull-back 12%",
+      "title": "Увидеть профессию целиком",
+      "action": "Узлы выстраиваются в три горизонтальные полосы: фундаментальные, основные, дополнительные. Связи прошивают полосы.",
+      "docRef": "COS-COM-011 §4 S03",
+      "files": {
+        "svg": "s03.svg",
+        "png": "frames/s03.png"
+      }
+    },
+    {
+      "id": "S04",
+      "name": "Внутри узла",
+      "time": "0:12.0–0:16.0",
+      "shot": "Macro · 85 mm · eye-level · orbit 15° + tilt up",
+      "title": "Внутри — знания, навыки, материалы",
+      "action": "Одна карточка приподнимается и расходится на три тонких слоя. Тень углубляется, слои остаются матовыми.",
+      "docRef": "COS-COM-011 §4 S04",
+      "files": {
+        "svg": "s04.svg",
+        "png": "frames/s04.png"
+      }
+    },
+    {
+      "id": "S05",
+      "name": "Связи",
+      "time": "0:16.0–0:20.5",
+      "shot": "Medium · 50 mm · rack focus · slide 4%",
+      "title": "Связанное становится видимым",
+      "action": "Передний план уходит в мягкий расфокус, в фокусе остаётся путь из трёх узлов. Одна ветка подсвечивается индиго.",
+      "docRef": "COS-COM-011 §4 S05",
+      "files": {
+        "svg": "s05.svg",
+        "png": "frames/s05.png"
+      }
+    },
+    {
+      "id": "S06",
+      "name": "Выбор",
+      "time": "0:20.5–0:25.0",
+      "shot": "Screen / product UI · static + canvas pan",
+      "title": "Начать можно с любого места",
+      "action": "Край карточки совпадает с краем панели в интерфейсе. Курсор выбирает компетенцию, канвас подсвечивает связанные узлы.",
+      "docRef": "COS-COM-011 §4 S06",
+      "files": {
+        "svg": "s06.svg",
+        "png": "frames/s06.png"
+      }
+    },
+    {
+      "id": "S07",
+      "name": "Целиком",
+      "time": "0:25.0–0:29.0",
+      "shot": "Full canvas · product UI · pan + pull-back",
+      "title": "Картина складывается постепенно",
+      "action": "Продуктовый канвас отъезжает: видно всю карту профессии, связи читаются, зум-контролы внизу.",
+      "docRef": "COS-COM-011 §4 S07",
+      "files": {
+        "svg": "s07.svg",
+        "png": "frames/s07.png"
+      }
+    },
+    {
+      "id": "S08",
+      "name": "Эндкард",
+      "time": "0:29.0–0:33.0",
+      "shot": "Motion design endcard · static · 4 s",
+      "title": "AXIONA",
+      "action": "Три узла сходятся в знак, в центре загорается индиговое ядро, проявляется вордмарк и строка-подпись.",
+      "docRef": "COS-COM-011 §4 S08",
+      "files": {
+        "svg": "s08.svg",
+        "png": "frames/s08.png"
+      }
+    }
+  ]
+}

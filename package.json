@@ -14,6 +14,10 @@
     "changelog:check": "node --experimental-strip-types scripts/changelog/apply.ts -- --check",
     "agents:check": "sh scripts/check-agent-assets.sh",
     "figma:compare": "node scripts/web/figma-compare.mjs",
+    "deck:build": "node scripts/deck/build.mjs",
+    "deck:verify": "node scripts/deck/verify.mjs",
+    "deck:maps": "node scripts/deck/maps.mjs",
+    "deck:audit": "node scripts/deck/audit.mjs",
     "qa:motion": "node scripts/web/motion-check.mjs",
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",
@@ -73,7 +77,8 @@
     "materials:import-ledger": "node --experimental-strip-types scripts/materials/import-ledger.ts",
     "release:promote": "node --experimental-strip-types scripts/release/promote.ts",
     "release:publications": "node --experimental-strip-types scripts/release/publications.ts",
-    "guides:agent": "node --experimental-strip-types src/methodology/v1/guides/cli/pilot.ts"
+    "guides:agent": "node --env-file-if-exists=.env.local --experimental-strip-types src/methodology/v1/guides/cli/pilot.ts",
+    "guides:audit": "node --experimental-strip-types src/methodology/v1/guides/cli/audit.ts"
   },
   "dependencies": {
     "@prisma/client": "^6.4.0",

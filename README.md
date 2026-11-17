@@ -74,14 +74,6 @@ npm run reviews:export
 
 ### Ежедневный добор материалов
 
-### Описания профессий и карточек
-
-`npm run descriptions:agent` собирает информативные описания профессий, компетенций, знаний и навыков
-из контекста блоков и источников, проверяет их валидатором и пишет в источники правды.
-Входит в `npm run aggregate --write`; проверка без LLM — `npm run descriptions:validate`.
-Подробности — [`COS-REL-011`](docs/12-release/COS-REL-011-Descriptions-Agent.md).
-
-
 Автоматизация добавляет **один материал в день** в самый дефицитный формат компетенции
 (цель 2–5 на формат). По умолчанию — dry-run:
 
@@ -93,6 +85,31 @@ npm run materials:daily -- --write      # один поиск + Pass E + при�
 Алгоритм, ротация источников, cooldown и корнер-кейсы — [`COS-REL-010`](docs/12-release/COS-REL-010-Daily-Materials-Automation.md).
 Ежедневный GitHub Actions выключен по умолчанию: включи переменную `MATERIALS_DAILY_ENABLED=true`
 и секрет `DEEPSEEK_API_KEY`.
+
+### Описания профессий и карточек
+
+`npm run descriptions:agent` собирает информативные описания профессий, компетенций, знаний и навыков
+из контекста блоков и источников, проверяет их валидатором и пишет в источники правды.
+Входит в `npm run aggregate --write`; проверка без LLM — `npm run descriptions:validate`.
+Подробности — [`COS-REL-011`](docs/12-release/COS-REL-011-Descriptions-Agent.md).
+
+### Разборы знаний и навыков
+
+`npm run guides:agent` ищет по каждому знанию и навыку источник в Brave (RU, EN — как запасной путь)
+и пишет по нему подробный разбор из 3–5 разделов: что это, зачем в работе, как применять, пример,
+на что обратить внимание. Разборы складываются в отдельный кластер
+`src/methodology/v1/guides/content/it.json`, а `release:build` отдаёт его в `generated/guides.json`
+и через `GET /api/guide` — в модалку знания/навыка.
+
+```bash
+npm run guides:agent -- --profession uxui --limit 2 --concurrency 2 --out data/guides/dry-run  # проверка ключей и качества
+npm run guides:agent -- --profession all --all --skip-existing --concurrency 5                 # все профессии
+npm run guides:audit                                                                           # привязка разбора к источнику
+```
+
+Нужны `BRAVE_API_KEY` и `DEEPSEEK_API_KEY` в корневом `.env.local`; прогон кеширует поиск,
+страницы и ответы LLM в `data/guides/.cache`, поэтому повторный запуск почти бесплатный.
+Контракт и планка качества — [`AGENTS-guides-writer`](agents/AGENTS-guides-writer.md).
 
 ## Быстрый старт
 

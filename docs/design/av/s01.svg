@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <filter id="sh" x="-30%" y="-30%" width="160%" height="180%">
+     <feDropShadow dx="0" dy="8" stdDeviation="18" flood-color="#cad4eb" flood-opacity="0.5"/>
+   </filter>
+    <filter id="shN" x="-30%" y="-30%" width="160%" height="180%">
+     <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#cad4eb" flood-opacity="0.6"/>
+   </filter>
+    <pattern id="dots" width="64" height="64" patternUnits="userSpaceOnUse">
+      <circle cx="16" cy="18" r="2.1" fill="#e8edf4"/>
+      <circle cx="48" cy="50" r="2.1" fill="#e8edf4"/>
+    </pattern>
+    <radialGradient id="daylight" cx="18%" cy="6%" r="86%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="55%" stop-color="#ffffff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="progress" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3730a3"/>
+      <stop offset="55%" stop-color="#4f46e5"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
+    </linearGradient>
+    <linearGradient id="fadeBottom" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f8fafc" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#f8fafc" stop-opacity="0.85"/>
+    </linearGradient>
+    <linearGradient id="fadeTop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="blurFg" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="7"/></filter>
+    <filter id="blurBg" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2.4"/></filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.055"/></feComponentTransfer>
+    </filter>
+  </defs>
+    
+  <rect width="1920" height="1080" fill="#f8fafc"/>
+  <rect width="1920" height="1080" fill="url(#dots)"/>
+  <rect width="1920" height="1080" fill="url(#daylight)"/>
+  <rect width="1920" height="1080" filter="url(#grain)" opacity="0.5"/>
+    
+  <g opacity="1" filter="url(#sh)">
+    <rect x="742" y="428" width="400" height="232" rx="16" fill="#ffffff" stroke="#e7ecf3" stroke-width="1.5"/>
+    <rect x="762" y="448" width="96" height="20" rx="10" fill="#fff7ed"/>
+           <circle cx="773" cy="458" r="3" fill="#b45309"/>
+           <rect x="782" y="456" width="70" height="4.5" rx="2.2" fill="#b45309" opacity="0.55"/>
+           <rect x="762" y="530.08" width="248" height="17.4" rx="4.5" fill="#132238" opacity="0.72"/>
+           <rect x="762" y="555.6" width="312" height="10.44" rx="3" fill="#132238" opacity="0.16"/>
+           <rect x="762" y="574.16" width="208" height="10.44" rx="3" fill="#132238" opacity="0.12"/>
+    <circle cx="1112" cy="458" r="11" fill="#f4f7fb"/>
+    <circle cx="1112" cy="458" r="3.2" fill="#5f6f85" opacity="0.35"/>
+  </g>
+    <path d="M 1142 526 Q 1220 512.76 1298 512" fill="none"
+     stroke="#d3dbe7" stroke-width="1.6"
+     stroke-linecap="round" stroke-dasharray="3 10" opacity="0.95"/>
+    <circle cx="1330" cy="509" r="4" fill="#5f6f85" opacity="0.32"/>
+    <rect x="0" y="0" width="1920" height="1080" fill="url(#daylight)"/></svg>

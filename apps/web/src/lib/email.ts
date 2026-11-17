@@ -1,4 +1,5 @@
 import nodemailer from "nodemailer";
+import { renderMagicLinkEmail } from "./email-templates/magic-link";
 
 export interface MagicLinkEmail {
   to: string;
@@ -8,19 +9,15 @@ export interface MagicLinkEmail {
 }
 
 export async function sendMagicLink({ to, url, expiresText = "15 минут" }: MagicLinkEmail): Promise<void> {
-  const subject = "Ссылка для входа в AXIONA";
-  const text = [
-    "Привет!",
-    "",
-    "Это ссылка для входа в AXIONA. Открой её:",
+  const appUrl = process.env.APP_URL ?? "https://app.axiona.world";
+  const supportEmail = process.env.SUPPORT_EMAIL ?? "hi.axiona@protonmail.com";
+  const { subject, text, html } = renderMagicLinkEmail({
     url,
-    "",
-    `Ссылка действует ${expiresText} и работает один раз.`,
-    "Если ты не запрашивал вход — просто проигнорируй письмо.",
-    "",
-    "AXIONA — карта компетенций дизайнера.",
-  ].join("\n");
-  const html = `<p>Привет!</p><p>Это ссылка для входа в AXIONA. Открой её:</p><p><a href="${escapeHtml(url)}">Войти в AXIONA</a></p><p>Ссылка действует ${expiresText} и работает один раз. Если ты не запрашивал вход — просто проигнорируй письмо.</p>`;
+    expiresText,
+    supportEmail,
+    privacyUrl: `${appUrl}/legal/privacy`,
+    logoUrl: `${appUrl}/brand/email-logo.png`,
+  });
   await sendTransactionalEmail({ to, subject, text, html });
 }
 

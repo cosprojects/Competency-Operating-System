@@ -2,23 +2,35 @@
  * Агент разборов: подробные учебные описания знаний и навыков.
  *
  *   npm run guides:agent -- --profession uxui --limit 50
+ *   npm run guides:agent -- --profession uxui --all --skip-existing --concurrency 4
+ *   npm run guides:agent -- --profession all --all --skip-existing --concurrency 4
  *   npm run guides:agent -- --profession uxui --limit 2 --out data/guides/dry-run   # дымовой прогон
  *
- * Требует BRAVE_API_KEY и DEEPSEEK_API_KEY (корневой .env.local).
+ * Требует BRAVE_API_KEY и DEEPSEEK_API_KEY (корневой .env.local — npm-скрипт читает его сам).
  *
  * Результаты:
- *   data/guides/<run>/guides.json + report.md  — сырой прогон (в git не коммитится);
- *   src/methodology/v1/guides/content/it.json  — кластер валидных разборов (коммитится).
+ *   data/guides/<run>/<profession>/guides.json + report.md — сырой прогон (в git не коммитится);
+ *   data/guides/<run>/summary.md — сводка по профессиям;
+ *   src/methodology/v1/guides/content/it.json — кластер валидных разборов (коммитится).
  *
  * Оптимизация: RU-поиск первым (EN — только если RU не дал источника), кеш поиска,
- * страниц и LLM-ответов в data/guides/.cache, батчи плана запросов по 15 пунктов.
+ * страниц и LLM-ответов в data/guides/.cache, батчи плана запросов по 15 пунктов,
+ * `--skip-existing` не пересобирает готовые пункты, `--concurrency` ведёт несколько
+ * пунктов параллельно (запись кластера сериализуется, чтобы файл не терял данные).
  */
 
 import { createHash } from "node:crypto";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { DeepSeekTransport } from "../../competency/llm/transport.ts";
-import { DEFAULT_LLM_POLICY, LlmBudget, estimateCost, type LlmPolicy } from "../../competency/llm/policy.ts";
+import {
+  BudgetExceededError,
+  DEFAULT_LLM_POLICY,
+  LlmBudget,
+  estimateCost,
+  type LlmPolicy,
+} from "../../competency/llm/policy.ts";
+import type { TokenUsage } from "../../ai-guardrails.ts";
 import {
   fallbackQueries,
   hostOf,
@@ -31,6 +43,12 @@ import {
   sourceLang,
 } from "../plan.ts";
 import { parseGuideContent, renderGuideText, validateGuideDoc } from "../validate.ts";
+import {
+  pickItems,
+  professionOrder,
+  type PublicContent,
+  type PublicProfession,
+} from "../items.ts";
 import type {
   FetchedPage,
   GuideCluster,
@@ -46,19 +64,36 @@ import type {
 
 const ROOT = path.resolve(import.meta.dirname, "../../../../..");
 const PROMPT_VERSION = "guides-2";
-const UA = "COS-GuidesAgent/0.2 (+https://axiona.world)";
+const UA = "COS-GuidesAgent/0.3 (+https://axiona.world)";
 const BRAVE_DELAY_MS = 700;
 const CACHE_ROOT = path.join(ROOT, "data/guides/.cache");
 const CLUSTER_FILE = path.join(ROOT, "src/methodology/v1/guides/content/it.json");
+const LLM_RETRIES = 3;
 
 interface Flags {
   profession: string;
   limit: number;
+  all: boolean;
+  skipExisting: boolean;
+  concurrency: number;
   out: string;
   maxCostUsd: number;
 }
 
-const cacheStats = { braveHits: 0, pageHits: 0, llmHits: 0 };
+interface LlmMeter {
+  calls: number;
+  costUsd: number;
+  input: number;
+  output: number;
+}
+
+interface CacheSnapshot {
+  braveHits: number;
+  pageHits: number;
+  llmHits: number;
+}
+
+const cacheStats: CacheSnapshot = { braveHits: 0, pageHits: 0, llmHits: 0 };
 let braveCalls = 0;
 
 function flagValue(argv: string[], name: string): string | undefined {
@@ -70,21 +105,34 @@ function flagValue(argv: string[], name: string): string | undefined {
 
 function readFlags(): Flags {
   const argv = process.argv.slice(2);
+  const all = argv.includes("--all");
   const profession = flagValue(argv, "--profession") ?? "uxui";
-  const limit = Number(flagValue(argv, "--limit") ?? "50");
+  const rawLimit = Number(flagValue(argv, "--limit") ?? "50");
+  const limit =
+    all || !Number.isFinite(rawLimit) || rawLimit <= 0 ? (all ? Number.POSITIVE_INFINITY : 50) : Math.floor(rawLimit);
+  const rawConcurrency = Number(flagValue(argv, "--concurrency") ?? "1");
+  const concurrency = Math.min(8, Math.max(1, Number.isFinite(rawConcurrency) ? Math.floor(rawConcurrency) : 1));
   const maxCostUsd = Number(flagValue(argv, "--max-cost") ?? "1.5");
+  const scope = profession === "all" ? "all" : profession;
   const date = new Date().toISOString().slice(0, 10);
-  const out = flagValue(argv, "--out") ?? path.join("data/guides", `run-${profession}-${date}`);
+  const out = flagValue(argv, "--out") ?? path.join("data/guides", `run-${scope}-${date}`);
   return {
     profession,
-    limit: Number.isFinite(limit) && limit > 0 ? Math.floor(limit) : 50,
+    limit,
+    all,
+    skipExisting: argv.includes("--skip-existing"),
+    concurrency,
     out: path.resolve(ROOT, out),
-    maxCostUsd: Number.isFinite(maxCostUsd) ? maxCostUsd : 1.5,
+    maxCostUsd: Number.isFinite(maxCostUsd) && maxCostUsd > 0 ? maxCostUsd : 1.5,
   };
 }
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 const hash = (value: string) => createHash("sha1").update(value).digest("hex");
+
+function isBudgetError(error: unknown): boolean {
+  return error instanceof BudgetExceededError || (error instanceof Error && error.name === "BudgetExceededError");
+}
 
 async function readCache<T>(kind: string, key: string): Promise<T | null> {
   try {
@@ -102,84 +150,21 @@ async function writeCache(kind: string, key: string, value: unknown): Promise<vo
 }
 
 /* ------------------------------------------------------------------ */
-/* Выборка пунктов                                                     */
+/* Публикация                                                          */
 /* ------------------------------------------------------------------ */
-
-interface PublicItem {
-  id: string;
-  title: string;
-  definition?: string;
-}
-
-interface PublicCompetency {
-  id: string;
-  title: string;
-  knowledge: PublicItem[];
-  skills: PublicItem[];
-}
-
-interface PublicProfession {
-  slug: string;
-  sections: Array<{ title: string; competencies: PublicCompetency[] }>;
-}
-
-interface PublicContent {
-  professions: PublicProfession[];
-}
 
 async function loadContent(): Promise<PublicContent> {
   const raw = await readFile(path.join(ROOT, "apps/web/src/content/generated/beta-1.json"), "utf8");
   return JSON.parse(raw) as PublicContent;
 }
 
-function interleave(
-  knowledge: PublicItem[],
-  skills: PublicItem[],
-): Array<PublicItem & { kind: ItemKind }> {
-  const result: Array<PublicItem & { kind: ItemKind }> = [];
-  const max = Math.max(knowledge.length, skills.length);
-  for (let index = 0; index < max; index += 1) {
-    const known = knowledge[index];
-    if (known) result.push({ ...known, kind: "knowledge" });
-    const skill = skills[index];
-    if (skill) result.push({ ...skill, kind: "skill" });
-  }
-  return result;
-}
-
-/** Уникальные пункты по кругу между компетенциями: покрытие тем и оба типа. */
-export function pickItems(profession: PublicProfession, limit: number): ItemInput[] {
-  const queues = profession.sections.flatMap((section) =>
-    section.competencies.map((competency) => ({
-      sectionTitle: section.title,
-      competencyTitle: competency.title,
-      items: interleave(competency.knowledge, competency.skills),
-    })),
-  );
-  const result: ItemInput[] = [];
-  const seen = new Set<string>();
-  let round = 0;
-  while (result.length < limit) {
-    let taken = 0;
-    for (const queue of queues) {
-      const item = queue.items[round];
-      if (!item || seen.has(item.id)) continue;
-      seen.add(item.id);
-      result.push({
-        id: item.id,
-        kind: item.kind,
-        title: item.title,
-        definition: item.definition ?? "",
-        competencyTitle: queue.competencyTitle,
-        sectionTitle: queue.sectionTitle,
-      });
-      taken += 1;
-      if (result.length >= limit) break;
-    }
-    if (taken === 0) break;
-    round += 1;
-  }
-  return result;
+function selectProfessions(content: PublicContent, scope: string): PublicProfession[] {
+  const slugs = scope === "all" ? professionOrder(content.professions) : [scope];
+  return slugs.map((slug) => {
+    const profession = content.professions.find((item) => item.slug === slug);
+    if (!profession) throw new Error(`Профессия ${slug} не найдена в публикации`);
+    return profession;
+  });
 }
 
 /* ------------------------------------------------------------------ */
@@ -218,6 +203,12 @@ function parseJsonObject(content: string): unknown {
   }
 }
 
+interface LlmReply {
+  content: string;
+  costUsd: number;
+  tokens: { input: number; output: number };
+}
+
 class LlmCaller {
   readonly transport: DeepSeekTransport;
   readonly budget: LlmBudget;
@@ -226,37 +217,58 @@ class LlmCaller {
   costUsd = 0;
   tokens = { input: 0, output: 0 };
 
-  constructor(maxCostUsd: number) {
+  constructor(maxCostUsd: number, maxCalls = 600) {
     const apiKey = process.env.DEEPSEEK_API_KEY;
     if (!apiKey) throw new Error("Нет DEEPSEEK_API_KEY");
-    this.policy = { ...DEFAULT_LLM_POLICY, maxCallsPerRun: 600, maxCostUsd, maxOutputTokens: 4500 };
+    this.policy = { ...DEFAULT_LLM_POLICY, maxCallsPerRun: maxCalls, maxCostUsd, maxOutputTokens: 4500 };
     this.transport = new DeepSeekTransport({ apiKey, policy: this.policy, fetchImpl: fetch });
     this.budget = new LlmBudget(this.policy);
   }
 
-  async chat(system: string, user: string, maxTokens: number): Promise<string> {
-    this.budget.assertCanCall();
-    const response = await this.transport.chat({ system, user, maxTokens, temperature: 0.2 });
+  meter(): LlmMeter {
+    return { calls: this.calls, costUsd: this.costUsd, input: this.tokens.input, output: this.tokens.output };
+  }
+
+  private record(usage: TokenUsage | undefined): LlmReply["tokens"] & { costUsd: number } {
+    if (!usage) return { input: 0, output: 0, costUsd: 0 };
+    const input = usage.cacheHitTokens + usage.cacheMissTokens;
+    const costUsd = estimateCost(usage);
     this.calls += 1;
-    this.budget.record(response.usage);
-    if (response.usage) {
-      this.costUsd += estimateCost(response.usage);
-      this.tokens.input += response.usage.cacheHitTokens + response.usage.cacheMissTokens;
-      this.tokens.output += response.usage.outputTokens;
+    this.budget.record(usage);
+    this.costUsd += costUsd;
+    this.tokens.input += input;
+    this.tokens.output += usage.outputTokens;
+    return { input, output: usage.outputTokens, costUsd };
+  }
+
+  /** Запрос с повтором на сетевых ошибках и 429: длинный прогон не должен терять пункты. */
+  async chat(system: string, user: string, maxTokens: number): Promise<LlmReply> {
+    this.budget.assertCanCall();
+    let lastError: unknown = null;
+    for (let attempt = 0; attempt < LLM_RETRIES; attempt += 1) {
+      try {
+        const response = await this.transport.chat({ system, user, maxTokens, temperature: 0.2 });
+        const recorded = this.record(response.usage);
+        return { content: response.content, costUsd: recorded.costUsd, tokens: { input: recorded.input, output: recorded.output } };
+      } catch (error) {
+        lastError = error;
+        if (isBudgetError(error)) throw error;
+        if (attempt < LLM_RETRIES - 1) await sleep(1_500 * (attempt + 1));
+      }
     }
-    return response.content;
+    throw lastError instanceof Error ? lastError : new Error("DeepSeek: неизвестная ошибка");
   }
 
   /** Ответ модели с кешем по ключу: повторный прогон не тратит токены. */
-  async cachedChat(cacheKey: string, system: string, user: string, maxTokens: number): Promise<string> {
+  async cachedChat(cacheKey: string, system: string, user: string, maxTokens: number): Promise<LlmReply> {
     const cached = await readCache<{ content: string }>("llm", cacheKey);
     if (cached) {
       cacheStats.llmHits += 1;
-      return cached.content;
+      return { content: cached.content, costUsd: 0, tokens: { input: 0, output: 0 } };
     }
-    const content = await this.chat(system, user, maxTokens);
-    await writeCache("llm", cacheKey, { content });
-    return content;
+    const reply = await this.chat(system, user, maxTokens);
+    await writeCache("llm", cacheKey, { content: reply.content });
+    return reply;
   }
 }
 
@@ -271,8 +283,9 @@ async function planQueries(caller: LlmCaller, items: ItemInput[]): Promise<Map<s
     let parsed: unknown = null;
     try {
       const content = await caller.cachedChat(`plan:${PROMPT_VERSION}:${hash(user)}`, QUERY_SYSTEM, user, 3000);
-      parsed = parseJsonObject(content);
+      parsed = parseJsonObject(content.content);
     } catch (error) {
+      if (isBudgetError(error)) throw error;
       console.error("планировщик: ошибка", error instanceof Error ? error.message : error);
     }
     const queries = (parsed as { queries?: unknown } | null)?.queries;
@@ -472,19 +485,23 @@ function buildGuideUser(item: ItemInput, source: FetchedPage): string {
     .join("\n");
 }
 
-async function synthesize(
-  caller: LlmCaller,
-  item: ItemInput,
-  source: FetchedPage,
-): Promise<GuideContent | null> {
+interface SynthesisResult {
+  content: GuideContent | null;
+  costUsd: number;
+  tokens: { input: number; output: number };
+}
+
+async function synthesize(caller: LlmCaller, item: ItemInput, source: FetchedPage): Promise<SynthesisResult> {
   const user = buildGuideUser(item, source);
   const cacheKey = `guide:${PROMPT_VERSION}:${item.id}:${hash(user)}`;
-  const raw = await caller.cachedChat(cacheKey, GUIDE_SYSTEM, user, 4500);
-  const first = parseGuideContent(raw);
-  if (!first) return null;
-  if (first.status === "no_data") return first;
-  const check = validateGuideDoc(first);
-  if (check.ok) return first;
+  const first = await caller.cachedChat(cacheKey, GUIDE_SYSTEM, user, 4500);
+  let costUsd = first.costUsd;
+  const tokens = { ...first.tokens };
+  const parsed = parseGuideContent(first.content);
+  if (!parsed) return { content: null, costUsd, tokens };
+  if (parsed.status === "no_data") return { content: parsed, costUsd, tokens };
+  const check = validateGuideDoc(parsed);
+  if (check.ok) return { content: parsed, costUsd, tokens };
   const repairUser = [
     user,
     "",
@@ -494,10 +511,13 @@ async function synthesize(
     "Исправь ответ: верни только JSON нужной структуры, не меняя факты источника.",
   ].join("\n");
   const repaired = await caller.cachedChat(`${cacheKey}:repair`, GUIDE_SYSTEM, repairUser, 4500);
-  const second = parseGuideContent(repaired);
-  if (!second) return null;
-  if (second.status === "no_data") return second;
-  return validateGuideDoc(second).ok ? second : null;
+  costUsd += repaired.costUsd;
+  tokens.input += repaired.tokens.input;
+  tokens.output += repaired.tokens.output;
+  const second = parseGuideContent(repaired.content);
+  if (!second) return { content: null, costUsd, tokens };
+  if (second.status === "no_data") return { content: second, costUsd, tokens };
+  return { content: validateGuideDoc(second).ok ? second : null, costUsd, tokens };
 }
 
 /* ------------------------------------------------------------------ */
@@ -544,7 +564,7 @@ function toClusterItem(result: GuideResult): GuideClusterItem {
 }
 
 /* ------------------------------------------------------------------ */
-/* Прогон                                                              */
+/* Прогон пункта                                                       */
 /* ------------------------------------------------------------------ */
 
 async function runItem(
@@ -552,14 +572,9 @@ async function runItem(
   item: ItemInput,
   planned: { ru: string; en?: string },
 ): Promise<GuideResult> {
-  const tokensBefore = { ...caller.tokens };
-  const costBefore = caller.costUsd;
-  const readTokens = () => ({
-    input: caller.tokens.input - tokensBefore.input,
-    output: caller.tokens.output - tokensBefore.output,
-  });
-  const readCost = () => Math.round((caller.costUsd - costBefore) * 10000) / 10000;
   const queries = { ru: planned.ru, ...(planned.en ? { en: planned.en } : {}) };
+  let tokens = { input: 0, output: 0 };
+  let costUsd = 0;
 
   const fetchCandidates = async (hits: SearchHit[]): Promise<FetchedPage[]> => {
     const candidates = pickCandidates(hits, 5);
@@ -605,36 +620,39 @@ async function runItem(
       sources: [],
       queries,
       reason: "нет источника, тематически совпадающего с пунктом (порог релевантности)",
-      tokens: readTokens(),
-      costUsd: readCost(),
+      tokens,
+      costUsd,
     };
   }
 
   let lastReason = "источник не дал достаточно материала";
   for (const source of sources) {
-    let content: GuideContent | null;
+    let synthesis: SynthesisResult;
     try {
-      content = await synthesize(caller, item, source);
+      synthesis = await synthesize(caller, item, source);
     } catch (error) {
+      if (isBudgetError(error)) throw error;
       lastReason = `синтез не удался: ${error instanceof Error ? error.message.slice(0, 120) : "ошибка"}`;
       continue;
     }
-    if (!content) {
+    tokens = { input: tokens.input + synthesis.tokens.input, output: tokens.output + synthesis.tokens.output };
+    costUsd += synthesis.costUsd;
+    if (!synthesis.content) {
       lastReason = "ответ модели не прошёл разбор или валидатор";
       continue;
     }
-    if (content.status === "no_data") {
+    if (synthesis.content.status === "no_data") {
       lastReason = "источник признан недостаточным для подробного разбора";
       continue;
     }
     return {
       item,
       status: "ok",
-      guide: content,
+      guide: synthesis.content,
       sources: sourceEntries(),
       queries,
-      tokens: readTokens(),
-      costUsd: readCost(),
+      tokens,
+      costUsd,
     };
   }
   return {
@@ -644,12 +662,105 @@ async function runItem(
     sources: sourceEntries(),
     queries,
     reason: lastReason,
-    tokens: readTokens(),
-    costUsd: readCost(),
+    tokens,
+    costUsd,
   };
 }
 
-function renderReport(results: GuideResult[], flags: Flags, caller: LlmCaller, cluster: GuideCluster): string {
+/* ------------------------------------------------------------------ */
+/* Прогон профессии: пул воркеров + сериализованная запись кластера    */
+/* ------------------------------------------------------------------ */
+
+interface ProfessionRun {
+  results: GuideResult[];
+  fatal: Error | null;
+  seconds: number;
+}
+
+async function runProfession(
+  caller: LlmCaller,
+  items: ItemInput[],
+  planned: Map<string, { ru: string; en?: string }>,
+  flags: Flags,
+  cluster: GuideCluster,
+): Promise<ProfessionRun> {
+  const results: GuideResult[] = new Array(items.length);
+  const startedAt = Date.now();
+  let cursor = 0;
+  let done = 0;
+  let fatal: Error | null = null;
+  let saveChain: Promise<void> = Promise.resolve();
+  const enqueueSave = () => {
+    saveChain = saveChain.then(() => saveCluster(cluster));
+  };
+
+  const worker = async (): Promise<void> => {
+    while (!fatal) {
+      const index = cursor;
+      cursor += 1;
+      if (index >= items.length) return;
+      const item = items[index];
+      if (!item) return;
+      const query = planned.get(item.id) ?? fallbackQueries(item);
+      let result: GuideResult;
+      try {
+        result = await runItem(caller, item, query);
+      } catch (error) {
+        if (isBudgetError(error)) {
+          fatal = error instanceof Error ? error : new Error("бюджет LLM исчерпан");
+          return;
+        }
+        result = {
+          item,
+          status: "no_data",
+          guide: null,
+          sources: [],
+          queries: { ru: query.ru, ...(query.en ? { en: query.en } : {}) },
+          reason: `ошибка: ${error instanceof Error ? error.message.slice(0, 120) : "неизвестно"}`,
+          tokens: { input: 0, output: 0 },
+          costUsd: 0,
+        };
+      }
+      results[index] = result;
+      cluster.items[item.id] = toClusterItem(result);
+      enqueueSave();
+      done += 1;
+      const elapsed = (Date.now() - startedAt) / 1000;
+      const rate = done / elapsed;
+      const etaSeconds = rate > 0 ? Math.round((items.length - done) / rate) : 0;
+      console.error(
+        `[${flags.profession} ${done}/${items.length}] ${result.status === "ok" ? "✓" : "—"} ${item.title} ` +
+          `(${result.guide?.sections.length ?? 0} разд., ${result.sources[0]?.host ?? "нет источника"}) ` +
+          `${Math.round(elapsed)}s, осталось ~${Math.round(etaSeconds / 60)} мин`,
+      );
+    }
+  };
+
+  await Promise.all(Array.from({ length: Math.min(flags.concurrency, items.length) }, () => worker()));
+  await saveChain;
+  return { results: results.filter((result) => result !== undefined), fatal, seconds: Math.round((Date.now() - startedAt) / 1000) };
+}
+
+/* ------------------------------------------------------------------ */
+/* Отчёты                                                              */
+/* ------------------------------------------------------------------ */
+
+interface RunTotals {
+  braveCalls: number;
+  cache: CacheSnapshot;
+  llm: LlmMeter;
+}
+
+function meterDelta(before: LlmMeter, after: LlmMeter): LlmMeter {
+  return {
+    calls: after.calls - before.calls,
+    costUsd: Math.round((after.costUsd - before.costUsd) * 10000) / 10000,
+    input: after.input - before.input,
+    output: after.output - before.output,
+  };
+}
+
+function renderReport(results: GuideResult[], slug: string, totals: RunTotals, clusterCount: number): string {
   const ok = results.filter((result) => result.status === "ok");
   const noData = results.filter((result) => result.status === "no_data");
   const ru = ok.filter((result) => result.sources[0]?.lang === "ru");
@@ -658,19 +769,19 @@ function renderReport(results: GuideResult[], flags: Flags, caller: LlmCaller, c
   const chars = ok.map((result) => (result.guide ? renderGuideText(result.guide).length : 0)).sort((a, b) => a - b);
   const avg = (values: number[]) => (values.length ? Math.round(values.reduce((a, b) => a + b, 0) / values.length) : 0);
   const lines: string[] = [];
-  lines.push(`# Разборы — ${flags.profession} — ${new Date().toISOString().slice(0, 10)}`);
+  lines.push(`# Разборы — ${slug} — ${new Date().toISOString().slice(0, 10)}`);
   lines.push("");
   lines.push(`- пунктов: ${results.length}; с разбором: ${ok.length}; без данных: ${noData.length}`);
   lines.push(`- источник русский: ${ru.length}; английский: ${en.length}`);
   lines.push(
     `- разделов: среднее ${avg(sectionCounts)}; символов: медиана ${chars[Math.floor(chars.length / 2)] ?? "—"}, макс ${chars.at(-1) ?? "—"}`,
   );
-  lines.push(`- в кластере всего: ${Object.keys(cluster.items).length} пунктов`);
+  lines.push(`- в кластере всего: ${clusterCount} пунктов`);
   lines.push(
-    `- Brave: ${braveCalls} запросов (кеш ${cacheStats.braveHits}); страницы: кеш ${cacheStats.pageHits}; LLM: кеш ${cacheStats.llmHits}`,
+    `- Brave: ${totals.braveCalls} запросов (кеш ${totals.cache.braveHits}); страницы: кеш ${totals.cache.pageHits}; LLM: кеш ${totals.cache.llmHits}`,
   );
-  lines.push(`- вызовов LLM: ${caller.calls}; токены: вход ${caller.tokens.input}, выход ${caller.tokens.output}`);
-  lines.push(`- стоимость LLM: $${caller.costUsd.toFixed(4)}`);
+  lines.push(`- вызовов LLM: ${totals.llm.calls}; токены: вход ${totals.llm.input}, выход ${totals.llm.output}`);
+  lines.push(`- стоимость LLM: $${totals.llm.costUsd.toFixed(4)}`);
   lines.push("");
   lines.push("| Пункт | Тип | Статус | Разделов | Источник | Ланг |");
   lines.push("|---|---|---|---|---|---|");
@@ -696,53 +807,166 @@ function renderReport(results: GuideResult[], flags: Flags, caller: LlmCaller, c
   return lines.join("\n");
 }
 
+interface SummaryRow {
+  slug: string;
+  planned: number;
+  ok: number;
+  noData: number;
+  ru: number;
+  costUsd: number;
+  braveCalls: number;
+  seconds: number;
+}
+
+function renderSummary(scope: string, rows: SummaryRow[], clusterCount: number, seconds: number): string {
+  const sum = rows.reduce(
+    (acc, row) => ({
+      planned: acc.planned + row.planned,
+      ok: acc.ok + row.ok,
+      noData: acc.noData + row.noData,
+      ru: acc.ru + row.ru,
+      costUsd: acc.costUsd + row.costUsd,
+      braveCalls: acc.braveCalls + row.braveCalls,
+    }),
+    { planned: 0, ok: 0, noData: 0, ru: 0, costUsd: 0, braveCalls: 0 },
+  );
+  const lines: string[] = [];
+  lines.push(`# Разборы — ${scope} — ${new Date().toISOString().slice(0, 10)}`);
+  lines.push("");
+  lines.push(
+    `- профессий: ${rows.length}; пунктов: ${sum.planned}; с разбором: ${sum.ok}; без данных: ${sum.noData}`,
+  );
+  lines.push(`- в кластере всего: ${clusterCount} пунктов`);
+  lines.push(`- стоимость LLM: $${sum.costUsd.toFixed(4)}; Brave: ${sum.braveCalls} новых запросов`);
+  lines.push(`- время прогона: ${Math.round(seconds / 60)} мин`);
+  lines.push("");
+  lines.push("| Профессия | Пунктов | С разбором | Без данных | RU | LLM, $ | Brave | Время |");
+  lines.push("|---|---|---|---|---|---|---|---|");
+  for (const row of rows) {
+    lines.push(
+      `| ${row.slug} | ${row.planned} | ${row.ok} | ${row.noData} | ${row.ru} | ${row.costUsd.toFixed(4)} | ${row.braveCalls} | ${Math.round(row.seconds / 60)} мин |`,
+    );
+  }
+  return lines.join("\n");
+}
+
+/* ------------------------------------------------------------------ */
+/* main                                                                */
+/* ------------------------------------------------------------------ */
+
 async function main(): Promise<void> {
   const flags = readFlags();
   if (!process.env.BRAVE_API_KEY) throw new Error("Нет BRAVE_API_KEY (корневой .env.local)");
+  if (!process.env.DEEPSEEK_API_KEY) throw new Error("Нет DEEPSEEK_API_KEY (корневой .env.local)");
+
   const content = await loadContent();
-  const profession = content.professions.find((item) => item.slug === flags.profession);
-  if (!profession) throw new Error(`Профессия ${flags.profession} не найдена в публикации`);
-  const items = pickItems(profession, flags.limit);
-  console.error(`Пункты: ${items.length} (${profession.slug})`);
-  const caller = new LlmCaller(flags.maxCostUsd);
-  const planned = await planQueries(caller, items);
-  await mkdir(flags.out, { recursive: true });
+  const professions = selectProfessions(content, flags.profession);
   const cluster = await loadCluster();
-  const results: GuideResult[] = [];
-  for (const [index, item] of items.entries()) {
-    const query = planned.get(item.id) ?? fallbackQueries(item);
-    try {
-      const result = await runItem(caller, item, query);
-      results.push(result);
-      cluster.items[item.id] = toClusterItem(result);
-      await saveCluster(cluster);
-      console.error(
-        `[${index + 1}/${items.length}] ${result.status === "ok" ? "✓" : "—"} ${item.title} (${result.guide?.sections.length ?? 0} разд., ${result.sources[0]?.host ?? "нет источника"})`,
-      );
-    } catch (error) {
-      results.push({
-        item,
-        status: "no_data",
-        guide: null,
-        sources: [],
-        queries: { ru: query.ru, ...(query.en ? { en: query.en } : {}) },
-        reason: `ошибка: ${error instanceof Error ? error.message.slice(0, 120) : "неизвестно"}`,
-        tokens: { input: 0, output: 0 },
-        costUsd: 0,
-      });
-      console.error(`[${index + 1}/${items.length}] ✕ ${item.title}: ${error instanceof Error ? error.message : error}`);
-    }
-    await writeFile(
-      path.join(flags.out, "guides.json"),
-      JSON.stringify({ flags, braveCalls, cacheStats, results }, null, 2),
-    );
-  }
-  const report = renderReport(results, flags, caller, cluster);
-  await writeFile(path.join(flags.out, "report.md"), report);
-  console.log(report);
-  console.log(
-    `\nГотово: ${results.filter((result) => result.status === "ok").length}/${results.length} · $${caller.costUsd.toFixed(4)} · Brave ${braveCalls} (кеш ${cacheStats.braveHits})`,
+  const covered = (id: string) => Boolean(cluster.items[id]);
+  const selection = professions.map((profession) => ({
+    profession,
+    items: pickItems(profession, flags.limit, flags.skipExisting ? covered : undefined),
+  }));
+  const totalSelected = selection.reduce((sum, entry) => sum + entry.items.length, 0);
+
+  console.error(
+    `guides:agent: профессий ${professions.length}; пунктов по плану ${totalSelected}; ` +
+      `concurrency ${flags.concurrency}; ${flags.skipExisting ? "готовые и общие для профессий пункты пропускаются; " : ""}` +
+      `в кластере уже ${Object.keys(cluster.items).length}`,
   );
+  if (totalSelected === 0) {
+    console.log("Нечего делать: все выбранные пункты уже в кластере.");
+    return;
+  }
+
+  const caller = new LlmCaller(flags.maxCostUsd, Math.max(600, Math.ceil(totalSelected * 3)));
+  await mkdir(flags.out, { recursive: true });
+  const startedAt = Date.now();
+  const rows: SummaryRow[] = [];
+  let fatal: Error | null = null;
+
+  for (const entry of selection) {
+    const profession = entry.profession;
+    // Пересчитываем на входе в профессию: предыдущие профессии могли закрыть общие пункты.
+    const items = flags.skipExisting ? entry.items.filter((item) => !cluster.items[item.id]) : entry.items;
+    if (items.length === 0) {
+      console.error(`[${profession.slug}] всё уже в кластере — пропуск`);
+      rows.push({ slug: profession.slug, planned: 0, ok: 0, noData: 0, ru: 0, costUsd: 0, braveCalls: 0, seconds: 0 });
+      continue;
+    }
+    const before = {
+      brave: braveCalls,
+      cache: { ...cacheStats },
+      meter: caller.meter(),
+      time: Date.now(),
+    };
+    console.error(`[${profession.slug}] старт: ${items.length} пунктов`);
+    try {
+      const planned = await planQueries(caller, items);
+      const run = await runProfession(caller, items, planned, { ...flags, profession: profession.slug }, cluster);
+      const meter = meterDelta(before.meter, caller.meter());
+      const totals: RunTotals = {
+        braveCalls: braveCalls - before.brave,
+        cache: {
+          braveHits: cacheStats.braveHits - before.cache.braveHits,
+          pageHits: cacheStats.pageHits - before.cache.pageHits,
+          llmHits: cacheStats.llmHits - before.cache.llmHits,
+        },
+        llm: meter,
+      };
+      const ok = run.results.filter((result) => result.status === "ok").length;
+      const noData = run.results.length - ok;
+      const ru = run.results.filter((result) => result.status === "ok" && result.sources[0]?.lang === "ru").length;
+
+      const dir = path.join(flags.out, profession.slug);
+      await mkdir(dir, { recursive: true });
+      await writeFile(
+        path.join(dir, "guides.json"),
+        `${JSON.stringify(
+          {
+            flags: { ...flags, profession: profession.slug, limit: flags.all ? "all" : flags.limit },
+            totals,
+            results: run.results,
+          },
+          null,
+          2,
+        )}\n`,
+      );
+      const report = renderReport(run.results, profession.slug, totals, Object.keys(cluster.items).length);
+      await writeFile(path.join(dir, "report.md"), report);
+
+      rows.push({
+        slug: profession.slug,
+        planned: run.results.length,
+        ok,
+        noData,
+        ru,
+        costUsd: meter.costUsd,
+        braveCalls: totals.braveCalls,
+        seconds: run.seconds,
+      });
+      console.error(
+        `[${profession.slug}] готово: ${ok}/${run.results.length} с разбором, $${meter.costUsd.toFixed(4)}, ` +
+          `${Math.round(run.seconds / 60)} мин`,
+      );
+      if (run.fatal) {
+        fatal = run.fatal;
+        break;
+      }
+    } catch (error) {
+      fatal = error instanceof Error ? error : new Error("прогон прерван");
+      console.error(`[${profession.slug}] прервано: ${fatal.message}`);
+      break;
+    }
+  }
+
+  const summary = renderSummary(flags.profession, rows, Object.keys(cluster.items).length, (Date.now() - startedAt) / 1000);
+  await writeFile(path.join(flags.out, "summary.md"), summary);
+  console.log(summary);
+  if (fatal) {
+    console.error(`\nПрогон прерван: ${fatal.message}. Кластер сохранён, продолжить: --skip-existing`);
+    process.exitCode = 1;
+  }
 }
 
 await main();

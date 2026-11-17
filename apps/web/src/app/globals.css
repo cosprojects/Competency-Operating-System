@@ -8313,7 +8313,7 @@ button.rail-item {
 .knowledge-intro {
   margin: 24px 0 0;
   color: var(--ink);
-  font-size: 14.5px;
+  font-size: 14px;
   line-height: 1.6;
 }
 
@@ -8331,8 +8331,8 @@ button.rail-item {
 .knowledge-section p {
   margin: 0;
   color: var(--muted);
-  font-size: 13.5px;
-  line-height: 1.65;
+  font-size: 14px;
+  line-height: 1.6;
   white-space: pre-line;
 }
 

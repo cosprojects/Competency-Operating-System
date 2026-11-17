@@ -226,6 +226,98 @@
       ]
     },
     {
+      "id": "guides-writer",
+      "name": "Агент разборов",
+      "role": "research · разборы знаний и навыков",
+      "summary": "Ищет по каждому знанию и навыку источник в Brave и пишет подробный учебный разбор (3–5 разделов) только по этому источнику; кладёт разборы в отдельный кластер и публикует их через release:build.",
+      "kind": "session",
+      "contract": "agents/AGENTS-guides-writer.md",
+      "tags": [
+        "research",
+        "content",
+        "brave",
+        "guides"
+      ],
+      "inputs": [
+        {
+          "path": "apps/web/src/content/generated/beta-1.json",
+          "label": "публикация"
+        },
+        {
+          "path": "data/guides/.cache",
+          "label": "кеш поиска и страниц"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "src/methodology/v1/guides/content/it.json",
+          "label": "кластер разборов"
+        },
+        {
+          "path": "data/guides",
+          "label": "прогоны и аудит"
+        }
+      ],
+      "dependsOn": [
+        "aggregation"
+      ],
+      "commands": [
+        {
+          "id": "run-all",
+          "label": "Собрать разборы (все профессии)",
+          "argv": [
+            "npm",
+            "run",
+            "guides:agent",
+            "--",
+            "--profession",
+            "all",
+            "--all",
+            "--skip-existing",
+            "--concurrency",
+            "5"
+          ],
+          "timeoutMs": 21600000,
+          "requiresEnv": [
+            "BRAVE_API_KEY",
+            "DEEPSEEK_API_KEY"
+          ]
+        },
+        {
+          "id": "dry-run",
+          "label": "Дымовой прогон (2 пункта)",
+          "argv": [
+            "npm",
+            "run",
+            "guides:agent",
+            "--",
+            "--profession",
+            "uxui",
+            "--limit",
+            "2",
+            "--concurrency",
+            "2",
+            "--out",
+            "data/guides/dry-run"
+          ],
+          "timeoutMs": 900000,
+          "requiresEnv": [
+            "BRAVE_API_KEY",
+            "DEEPSEEK_API_KEY"
+          ]
+        },
+        {
+          "id": "audit",
+          "label": "Аудит привязки к источнику",
+          "argv": [
+            "npm",
+            "run",
+            "guides:audit"
+          ]
+        }
+      ]
+    },
+    {
       "id": "materials-agent",
       "name": "Material Agent",
       "role": "materials · учебные материалы",

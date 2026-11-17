@@ -109,6 +109,11 @@ Legacy-канвасы `web/*.html` и `web:canvases` удалены: конте�
 Полный промпт-контракт для новой сессии: `agents/AGENTS-aggregation-session.md`.
 Контракт субагента описаний: `agents/AGENTS-description-writer.md`.
 
+Разборы знаний и навыков (подробные описания по источникам) — отдельный слой:
+`npm run guides:agent -- --profession all --all --skip-existing --concurrency 5`, аудит качества —
+`npm run guides:audit`. Кластер `src/methodology/v1/guides/content/it.json` → `release:build` →
+`GET /api/guide`. Контракт и планка качества: `agents/AGENTS-guides-writer.md`.
+
 ## Agent Console (панель агентов проекта)
 
 `agent-console.json` в корне описывает агентов проекта: роль, контракт, входные/выходные

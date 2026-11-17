@@ -8169,3 +8169,70 @@ button.rail-item {
   width: 22px;
   height: 22px;
 }
+
+
+/* Отключаем scroll anchoring в рейлах: иначе изменение высоты залипшей
+   шапки само меняет scrollTop и состояние начинает скакать. */
+.canvas-rail,
+.rail-scroll,
+.detail-rail {
+  overflow-anchor: none;
+}
+
+
+/* ------------------------------------------------------------------ */
+/* Сжатие плашек по прогрессу скролла (без переключения состояний)     */
+/* ------------------------------------------------------------------ */
+
+.rail-pinned {
+  --rail-collapse: 0;
+}
+
+.summary-desc,
+.coverage {
+  overflow: hidden;
+  transition: none;
+}
+
+.summary-desc {
+  max-height: calc((1 - var(--rail-collapse)) * 420px);
+  margin-top: calc(var(--rail-collapse) * -10px);
+  opacity: calc(1 - var(--rail-collapse));
+}
+
+.coverage {
+  max-height: calc((1 - var(--rail-collapse)) * 90px);
+  margin-top: calc(var(--rail-collapse) * -10px);
+  opacity: calc(1 - var(--rail-collapse));
+}
+
+.detail-head {
+  --head-collapse: 0;
+  box-shadow: 0 12px 28px rgb(19 34 56 / calc(0.14 * var(--head-collapse)));
+}
+
+.detail-desc,
+.detail-tags,
+.study-progress {
+  overflow: hidden;
+  transition: none;
+}
+
+.detail-desc {
+  max-height: calc((1 - var(--head-collapse)) * 520px);
+  margin-top: calc(var(--head-collapse) * -10px);
+  opacity: calc(1 - var(--head-collapse));
+}
+
+.detail-tags,
+.study-progress {
+  max-height: calc((1 - var(--head-collapse)) * 160px);
+  margin-top: calc(var(--head-collapse) * -10px);
+  opacity: calc(1 - var(--head-collapse));
+}
+
+/* Кнопка изучения всегда с текстом */
+.detail-head .study-button span,
+.detail-head.is-stuck .study-button span {
+  display: inline;
+}

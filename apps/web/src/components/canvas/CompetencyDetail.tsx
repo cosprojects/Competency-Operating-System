@@ -126,18 +126,28 @@ export function CompetencyDetail({
   );
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const headRef = useRef<HTMLElement | null>(null);
-  const [headStuck, setHeadStuck] = useState(false);
 
+  // Шапка компетенции сжимается непрерывно по скроллу: без дискретных
+  // состояний, высота плавно следует за прокруткой.
   useEffect(() => {
     const rail = headRef.current?.closest(".detail-rail");
-    if (!rail) return;
-    const onScroll = () => {
-      const top = rail.scrollTop;
-      setHeadStuck((current) => (top > 16 ? true : top < 6 ? false : current));
+    const head = headRef.current;
+    if (!rail || !head) return;
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const progress = Math.min(1, Math.max(0, rail.scrollTop / 120));
+      head.style.setProperty("--head-collapse", String(progress));
     };
-    onScroll();
+    const onScroll = () => {
+      if (!frame) frame = window.requestAnimationFrame(update);
+    };
+    update();
     rail.addEventListener("scroll", onScroll, { passive: true });
-    return () => rail.removeEventListener("scroll", onScroll);
+    return () => {
+      rail.removeEventListener("scroll", onScroll);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
   }, []);
 
   const learnedCount = learnedIds.size;
@@ -158,7 +168,7 @@ export function CompetencyDetail({
       className={`detail-rail${expanded ? " is-expanded" : ""}`}
       aria-label={`Компетенция: ${competency.title}`}
     >
-      <header className={`detail-head${headStuck ? " is-stuck" : ""}`} ref={headRef}>
+      <header className="detail-head" ref={headRef}>
         <div className="detail-head-row">
           <button
             className="icon-button detail-expand"

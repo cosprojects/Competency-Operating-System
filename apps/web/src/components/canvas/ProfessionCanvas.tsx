@@ -99,19 +99,29 @@ export function ProfessionCanvas({
   const graphRef = useRef<GraphHandle>(null);
   const tileRefs = useRef(new Map<string, HTMLButtonElement>());
   const railScrollRef = useRef<HTMLDivElement | null>(null);
-  const [railScrolled, setRailScrolled] = useState(false);
+  const pinnedRef = useRef<HTMLDivElement | null>(null);
 
-  // При скролле списка шапка рейла сжимается: прячем описание и покрытие.
+  // Шапка рейла сжимается непрерывно по мере прокрутки: без переключения
+  // состояний, просто плавно уменьшается под скроллом контента.
   useEffect(() => {
     const element = railScrollRef.current;
-    if (!element) return;
-    const onScroll = () => {
-      const top = element.scrollTop;
-      setRailScrolled((current) => (top > 16 ? true : top < 6 ? false : current));
+    const pinned = pinnedRef.current;
+    if (!element || !pinned) return;
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const progress = Math.min(1, Math.max(0, element.scrollTop / 90));
+      pinned.style.setProperty("--rail-collapse", String(progress));
     };
-    onScroll();
+    const onScroll = () => {
+      if (!frame) frame = window.requestAnimationFrame(update);
+    };
+    update();
     element.addEventListener("scroll", onScroll, { passive: true });
-    return () => element.removeEventListener("scroll", onScroll);
+    return () => {
+      element.removeEventListener("scroll", onScroll);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
   }, []);
 
   // Стабильные колбэки обязательны: memo-карточки и memo-схема перерисовываются
@@ -304,7 +314,7 @@ export function ProfessionCanvas({
     <div className={`canvas-screen${selected ? " has-detail" : ""}${expanded ? " is-expanded" : ""}`}>
       {selected ? <div className="sheet-backdrop" role="presentation" onClick={closeDetail} /> : null}
       <div className="canvas-rail">
-        <div className={`rail-pinned${railScrolled ? " is-compact" : ""}`}>
+        <div className="rail-pinned" ref={pinnedRef}>
           {/* Навигация по профессиям внутри сферы (макет 247-34832). */}
           <div className="rail-nav-row">
             {prevProfession ? (

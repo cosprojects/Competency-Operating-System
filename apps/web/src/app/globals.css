@@ -6140,7 +6140,7 @@ button.rail-item {
   --dur-200: 200ms;
   --dur-280: 280ms;
   --dur-560: 560ms;
-  --ease-out-soft: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-out-soft: cubic-bezier(0.4, 0, 0.2, 1);
   --ease-out-structure: cubic-bezier(0.33, 1, 0.68, 1);
   --ease-in-exit: cubic-bezier(0.4, 0, 1, 1);
   --parallax-max: 6px;
@@ -8026,11 +8026,6 @@ button.rail-item {
   padding: 16px;
 }
 
-.rail-pinned.is-compact .summary-desc,
-.rail-pinned.is-compact .coverage {
-  display: none;
-}
-
 .rail-pinned.is-compact .summary-title {
   font-size: 28px;
   line-height: 1.2;
@@ -8041,12 +8036,6 @@ button.rail-item {
 .detail-head.is-stuck {
   gap: 8px;
   padding: 12px 16px;
-}
-
-.detail-head.is-stuck .detail-desc,
-.detail-head.is-stuck .detail-tags,
-.detail-head.is-stuck .study-progress {
-  display: none;
 }
 
 .detail-head.is-stuck .detail-head-row {
@@ -8065,4 +8054,118 @@ button.rail-item {
 .detail-head.is-stuck .study-button svg {
   width: 24px;
   height: 24px;
+}
+
+
+/* ------------------------------------------------------------------ */
+/* Плавное сворачивание шапок (ease-in-out, с лёгкой инерцией)          */
+/* ------------------------------------------------------------------ */
+
+.rail-pinned,
+.profession-summary,
+.detail-head {
+  transition:
+    gap 0.38s cubic-bezier(0.4, 0, 0.2, 1),
+    padding 0.38s cubic-bezier(0.4, 0, 0.2, 1),
+    margin 0.42s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Кнопки тулбара над плашкой профессии одинаковые в обоих состояниях */
+.rail-pinned.is-compact {
+  gap: 10px;
+}
+
+.rail-pinned.is-compact .rail-nav-row {
+  gap: 8px;
+}
+
+.rail-pinned.is-compact .rail-nav-btn {
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+}
+
+.rail-pinned.is-compact .rail-nav-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.rail-pinned.is-compact .rail-choose {
+  min-height: 48px;
+  padding: 0 18px;
+  font-size: 14px;
+}
+
+/* Скрываемые части карточки профессии: анимируем высоту и прозрачность.
+   Отрицательный margin компенсирует gap контейнера, чтобы не было ступеньки. */
+.summary-desc,
+.coverage {
+  overflow: hidden;
+  max-height: 420px;
+  opacity: 1;
+  transition:
+    max-height 0.42s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.3s ease-in-out,
+    margin 0.42s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.coverage {
+  max-height: 90px;
+}
+
+.rail-pinned.is-compact .summary-desc,
+.rail-pinned.is-compact .coverage {
+  max-height: 0;
+  margin-top: -10px;
+  opacity: 0;
+}
+
+.rail-pinned.is-compact .profession-summary {
+  gap: 10px;
+  padding: 16px;
+}
+
+/* Правая шапка: описание, теги и прогресс плавно уезжают, кнопка «Изучаю» —
+   с текстом в обоих состояниях. */
+.detail-desc,
+.detail-tags,
+.study-progress {
+  overflow: hidden;
+  max-height: 520px;
+  opacity: 1;
+  transition:
+    max-height 0.42s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.3s ease-in-out,
+    margin 0.42s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.detail-tags,
+.study-progress {
+  max-height: 160px;
+}
+
+.detail-head.is-stuck {
+  gap: 10px;
+  padding: 16px;
+}
+
+.detail-head.is-stuck .detail-desc,
+.detail-head.is-stuck .detail-tags,
+.detail-head.is-stuck .study-progress {
+  max-height: 0;
+  margin-top: -10px;
+  opacity: 0;
+}
+
+.detail-head.is-stuck .study-button {
+  padding: 4px 6px;
+}
+
+.detail-head.is-stuck .study-button span {
+  display: inline;
+}
+
+.detail-head.is-stuck .study-button svg {
+  width: 22px;
+  height: 22px;
 }

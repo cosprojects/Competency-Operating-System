@@ -131,7 +131,10 @@ export function CompetencyDetail({
   useEffect(() => {
     const rail = headRef.current?.closest(".detail-rail");
     if (!rail) return;
-    const onScroll = () => setHeadStuck(rail.scrollTop > 4);
+    const onScroll = () => {
+      const top = rail.scrollTop;
+      setHeadStuck((current) => (top > 16 ? true : top < 6 ? false : current));
+    };
     onScroll();
     rail.addEventListener("scroll", onScroll, { passive: true });
     return () => rail.removeEventListener("scroll", onScroll);

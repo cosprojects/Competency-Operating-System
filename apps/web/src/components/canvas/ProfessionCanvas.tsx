@@ -105,7 +105,10 @@ export function ProfessionCanvas({
   useEffect(() => {
     const element = railScrollRef.current;
     if (!element) return;
-    const onScroll = () => setRailScrolled(element.scrollTop > 4);
+    const onScroll = () => {
+      const top = element.scrollTop;
+      setRailScrolled((current) => (top > 16 ? true : top < 6 ? false : current));
+    };
     onScroll();
     element.addEventListener("scroll", onScroll, { passive: true });
     return () => element.removeEventListener("scroll", onScroll);

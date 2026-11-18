@@ -13,7 +13,7 @@ import {
   IconMenu,
   IconPlaster,
   IconQuestion,
-  IconStarCircle,
+  IconGraduation,
   IconStructure,
   IconUsers,
 } from "@/components/icons";
@@ -31,8 +31,8 @@ const ITEMS = [
   },
   {
     href: "/saved",
-    label: "Сохранённое",
-    icon: IconStarCircle,
+    label: "Изучаю",
+    icon: IconGraduation,
     match: (p: string) => p === "/saved" || p.startsWith("/saved/"),
   },
 ];

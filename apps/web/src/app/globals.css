@@ -10373,3 +10373,57 @@ body:has(.studying-page) .paper-layer {
   flex: 0 0 auto;
   margin: 0;
 }
+
+
+/* Мобильные экраны: единые боковые отступы 16px и центрированный поиск */
+@media (max-width: 760px) {
+  :root {
+    --shell-left: 16px;
+    --shell-right: 16px;
+  }
+
+  .page-screen,
+  .page-plain,
+  .home-screen,
+  .search-screen,
+  .canvas-screen,
+  .canvas-screen.has-detail,
+  .auth-page,
+  .saved-page {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .search-bar {
+    position: relative;
+    top: auto;
+    right: auto;
+    left: auto;
+    width: 100%;
+    max-width: none;
+    margin: 0 0 20px;
+    transform: none;
+    text-align: left;
+  }
+
+  .search-bar input,
+  .search-bar input::placeholder {
+    text-align: left;
+  }
+
+  .profession-grid,
+  .studying-list,
+  .saved-materials,
+  .learning-materials {
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .profession-card,
+  .saved-profession-card,
+  .saved-skill-card,
+  .learning-card {
+    width: 100%;
+    max-width: none;
+  }
+}

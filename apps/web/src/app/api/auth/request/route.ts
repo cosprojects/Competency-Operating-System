@@ -50,9 +50,12 @@ export async function POST(request: Request) {
     return uniformOk();
   }
 
-  // Аварийный стоп публичной регистрации: письма уходят только существующим аккаунтам.
+  // Аварийный стоп публичной регистрации: письма уходят только существующим
+  // аккаунтам. Исключение — явный запрос приглашения из формы регистрации.
   const registrationDisabled = process.env.AUTH_REGISTRATION_DISABLED === "1";
-  if (registrationDisabled) {
+  const wantsInvite =
+    Boolean(payload && typeof payload === "object" && (payload as { intent?: unknown }).intent === "invite");
+  if (registrationDisabled && !wantsInvite) {
     const user = await getDb()
       .user.findUnique({ where: { email }, select: { id: true } })
       .catch(() => null);

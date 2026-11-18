@@ -15,7 +15,17 @@ interface Copy {
   consentVerb: string;
 }
 
-function copyFor(mode: Mode, ttlText: string): Copy {
+function copyFor(mode: Mode, ttlText: string, intent?: "invite"): Copy {
+  if (intent === "invite") {
+    return {
+      title: "Получить приглашение",
+      description: "Введи email — отправим ссылку-приглашение на почту. Ссылка действует один раз.",
+      sentNote: `Письмо отправлено. Ссылка действует ${ttlText}.`,
+      submit: "Получить приглашение",
+      sending: "Отправляем…",
+      consentVerb: "Получить приглашение",
+    };
+  }
   if (mode === "register") {
     return {
       title: "Создай аккаунт",
@@ -40,13 +50,16 @@ function copyFor(mode: Mode, ttlText: string): Copy {
 export function LoginForm({
   returnTo,
   mode = "login",
+  intent,
   linkTtlText = "15 минут",
 }: {
   returnTo: string;
   mode?: Mode;
+  /** Режим запроса приглашения в закрытую бету. */
+  intent?: "invite";
   linkTtlText?: string;
 }) {
-  const copy = copyFor(mode, linkTtlText);
+  const copy = copyFor(mode, linkTtlText, intent);
   const [email, setEmail] = useState("");
   const [website, setWebsite] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
@@ -62,7 +75,7 @@ export function LoginForm({
       const response = await fetch("/api/auth/request", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ email, returnTo, website }),
+        body: JSON.stringify({ email, returnTo, website, ...(intent ? { intent } : {}) }),
       });
       if (!response.ok) {
         const data = (await response.json()) as { error?: string };

@@ -24,23 +24,18 @@ export default async function RegisterPage({
         <h1>{registrationDisabled ? "AXIONA в закрытой Beta" : "Создай аккаунт в AXIONA"}</h1>
         <p>
           {registrationDisabled
-            ? "Сейчас доступ по приглашениям: мы тестируем карту компетенций с ограниченной группой дизайнеров. Если у тебя есть приглашение — открой ссылку из письма."
+            ? "Сейчас доступ по приглашениям: мы тестируем карту компетенций. Чтобы получить приглашение — введите свой email и ждите ссылку на почту."
             : "Сохраняй компетенции и материалы, возвращайся к ним с любого устройства и собирай личный профиль. Без пароля: вход по ссылке из письма."}
         </p>
       </header>
       <div className="auth-card">
         {registrationDisabled ? (
-          <>
-            <div className="notice">Публичная регистрация пока закрыта. Аккаунт создаётся по приглашению.</div>
-            <p className="muted" style={{ marginTop: 12 }}>
-              Уже есть приглашение или аккаунт? Войди по ссылке из письма.
-            </p>
-            <p style={{ marginTop: 16 }}>
-              <Link className="button block" href={`/login?returnTo=${encodeURIComponent(safeReturn)}`}>
-                Войти
-              </Link>
-            </p>
-          </>
+          <LoginForm
+            returnTo={safeReturn}
+            mode="register"
+            intent="invite"
+            linkTtlText={loginLinkTtlText()}
+          />
         ) : (
           <>
             <LoginForm returnTo={safeReturn} mode="register" linkTtlText={loginLinkTtlText()} />

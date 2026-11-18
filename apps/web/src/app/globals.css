@@ -10326,3 +10326,19 @@ body:has(.studying-page) .paper-layer {
   opacity: 0;
   pointer-events: none;
 }
+
+
+/* «Изучаю»: 40px от верха страницы до eyebrow, eyebrow капсом */
+.page-screen:has(.studying-head) {
+  padding-top: 40px;
+}
+
+.studying-head {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.studying-head .eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}

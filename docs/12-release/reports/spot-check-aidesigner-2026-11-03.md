@@ -1,4 +1,4 @@
-# Spot-check AI-дизайнера — 2026-11-03
+# Spot-check AI native дизайнера — 2026-11-03
 
 - Профессия: `it.aidesigner` — 27 компетенций, из них 19 AI-слоя (9 сквозных `ai-*` + 10 собственных `aidesigner-*`)
 - Проверялось: публикуемый набор по `release:validate`, реестр источников против журналов discovery, блоки/теги/доказательства, материалы, рендер на локальном dev-сервере
@@ -14,7 +14,7 @@
 | 3 | Универсальный блок `ai-model-landscape` содержал interior-специфичные знания («Базовая и детализированная модели интерьера», «Альтернативные инструменты и презентация»), а доказательства ссылались на программу «Дизайнер интерьеров» | Блок переписан на универсальные формулировки: 2 знания + 1 навык («Критерии выбора инструмента под задачу») с AI-доказательствами (`practicum-ai-tools-for-designers`, `elements-of-ai`); блок внесён в `excludedBlocks` canonical-карты UX/UI |
 | 4 | 2 нерелевантных/мёртвых источника попадали в публикацию | Заблокированы ранее в этом прогоне: `almcorp-ai-design` (страница агентства), `sostav-ai-design-112390` (HTTP 404) |
 
-После правок: `catalog:validate` — ок (125 блоков / 565 тегов / 44 материала), `canonical:validate` — 0 ошибок, `release:validate` — PASS (263/263, 121/121), `release:build:draft` — AI-дизайнер 27/27.
+После правок: `catalog:validate` — ок (125 блоков / 565 тегов / 44 материала), `canonical:validate` — 0 ошибок, `release:validate` — PASS (263/263, 121/121), `release:build:draft` — AI native дизайнер 27/27.
 
 ## 2. Применено по апруву: исключён шум из публикации (58 пар, 11 источников)
 
@@ -25,7 +25,7 @@
 | Источник | Причина |
 |---|---|
 | `oxfordhomestudy-ai-free`, `greatlearning-ai-free`, `coursera-ai-free` | каталоги бесплатных курсов, не материал по теме |
-| `practicum-presentation`, `practicum-appdesign`, `practicum-artdir`, `practicum-3ddesigner`, `practicum-interior`, `practicum-webdesigner` | страницы программ других профессий; для AI-дизайнера профильные курсы — `practicum-ai-for-design` и `practicum-ai-tools-for-designers` |
+| `practicum-presentation`, `practicum-appdesign`, `practicum-artdir`, `practicum-3ddesigner`, `practicum-interior`, `practicum-webdesigner` | страницы программ других профессий; для AI native дизайнера профильные курсы — `practicum-ai-for-design` и `practicum-ai-tools-for-designers` |
 | `practicum-design-catalog`, `motiondesign-school-courses` | каталоги курсов |
 
 `practicum-uxresearch` остаётся: у него документированы воркшопы по ИИ для исследований (COS-RES-024).

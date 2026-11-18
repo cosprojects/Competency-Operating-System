@@ -2,8 +2,8 @@
   "viewVersion": "1.0.0",
   "professionId": "it.aidesigner",
   "sphereId": "it",
-  "title": "AI-дизайнер",
-  "titleEn": "AI designer",
+  "title": "AI native дизайнер",
+  "titleEn": "AI native designer",
   "sections": [
     {
       "id": "aid-research",
@@ -224,19 +224,11 @@
           ]
         },
         {
-          "competencyId": "aidesigner-design-tokens",
+          "competencyId": "aidesigner-design-system-engineering",
           "tier": "core",
           "order": 27,
           "prerequisites": [
             "ui-design-systems"
-          ]
-        },
-        {
-          "competencyId": "aidesigner-design-system-engineering",
-          "tier": "core",
-          "order": 28,
-          "prerequisites": [
-            "aidesigner-design-tokens"
           ]
         }
       ]
@@ -249,7 +241,7 @@
         {
           "competencyId": "aidesigner-ai-development",
           "tier": "core",
-          "order": 29,
+          "order": 28,
           "prerequisites": [
             "ui-figma"
           ]
@@ -257,7 +249,7 @@
         {
           "competencyId": "aidesigner-mcp-integration",
           "tier": "core",
-          "order": 30,
+          "order": 29,
           "prerequisites": [
             "aidesigner-ai-development"
           ]
@@ -270,43 +262,29 @@
       "definition": "Генерация и доводка изображений, видео, аудио и контента.",
       "competencies": [
         {
-          "competencyId": "ai-visual-generation",
-          "tier": "core",
-          "order": 31
-        },
-        {
           "competencyId": "aidesigner-visual-generation",
           "tier": "core",
-          "order": 32,
-          "prerequisites": [
-            "ai-visual-generation"
-          ]
+          "order": 30,
+          "prerequisites": []
         },
         {
           "competencyId": "aidesigner-series-adaptation",
           "tier": "core",
-          "order": 33,
+          "order": 31,
           "prerequisites": [
             "aidesigner-visual-generation"
           ]
         },
         {
-          "competencyId": "ai-video-audio",
-          "tier": "core",
-          "order": 34
-        },
-        {
           "competencyId": "aidesigner-video-audio",
           "tier": "core",
-          "order": 35,
-          "prerequisites": [
-            "ai-video-audio"
-          ]
+          "order": 32,
+          "prerequisites": []
         },
         {
           "competencyId": "ai-copy-content",
           "tier": "core",
-          "order": 36
+          "order": 33
         }
       ]
     },
@@ -318,17 +296,17 @@
         {
           "competencyId": "ui-motion",
           "tier": "core",
-          "order": 37
+          "order": 34
         },
         {
           "competencyId": "motion-animation-principles",
           "tier": "core",
-          "order": 38
+          "order": 35
         },
         {
           "competencyId": "motion-timing-easing",
           "tier": "core",
-          "order": 39
+          "order": 36
         }
       ]
     },
@@ -340,17 +318,17 @@
         {
           "competencyId": "aidesigner-automation",
           "tier": "core",
-          "order": 40
+          "order": 37
         },
         {
           "competencyId": "ai-workflow-integration",
           "tier": "core",
-          "order": 41
+          "order": 38
         },
         {
           "competencyId": "aidesigner-agent-orchestration",
           "tier": "core",
-          "order": 42,
+          "order": 39,
           "prerequisites": [
             "aidesigner-automation"
           ]
@@ -365,12 +343,12 @@
         {
           "competencyId": "aidesigner-quality-eval",
           "tier": "core",
-          "order": 43
+          "order": 40
         },
         {
           "competencyId": "aidesigner-visual-qa",
           "tier": "core",
-          "order": 44,
+          "order": 41,
           "prerequisites": [
             "aidesigner-quality-eval"
           ]
@@ -378,17 +356,17 @@
         {
           "competencyId": "ux-usability-testing",
           "tier": "optional",
-          "order": 45
+          "order": 42
         },
         {
           "competencyId": "ux-metrics",
           "tier": "optional",
-          "order": 46
+          "order": 43
         },
         {
           "competencyId": "ui-accessibility",
           "tier": "core",
-          "order": 57,
+          "order": 44,
           "prerequisites": [
             "aidesigner-quality-eval",
             "aidesigner-visual-qa"
@@ -404,17 +382,17 @@
         {
           "competencyId": "ui-handoff",
           "tier": "optional",
-          "order": 47
+          "order": 45
         },
         {
           "competencyId": "ai-layout-docs",
           "tier": "optional",
-          "order": 48
+          "order": 46
         },
         {
           "competencyId": "aidesigner-integration",
           "tier": "core",
-          "order": 49
+          "order": 47
         }
       ]
     },
@@ -424,27 +402,20 @@
       "definition": "AI literacy, промптинг, инструменты, этика и техническая грамотность.",
       "competencies": [
         {
-          "competencyId": "ai-model-landscape",
-          "tier": "foundation",
-          "order": 50
-        },
-        {
           "competencyId": "ai-prompting",
           "tier": "foundation",
-          "order": 51,
-          "prerequisites": [
-            "ai-model-landscape"
-          ]
+          "order": 48,
+          "prerequisites": []
         },
         {
           "competencyId": "aidesigner-tool-landscape",
           "tier": "foundation",
-          "order": 52
+          "order": 49
         },
         {
           "competencyId": "aidesigner-prompt-systems",
           "tier": "core",
-          "order": 53,
+          "order": 50,
           "prerequisites": [
             "ai-prompting"
           ]
@@ -452,7 +423,7 @@
         {
           "competencyId": "aidesigner-tool-evaluation",
           "tier": "core",
-          "order": 54,
+          "order": 51,
           "prerequisites": [
             "aidesigner-tool-landscape"
           ]
@@ -460,16 +431,16 @@
         {
           "competencyId": "ai-ethics-rights",
           "tier": "core",
-          "order": 55
+          "order": 52
         },
         {
           "competencyId": "aidesigner-technical-literacy",
           "tier": "foundation",
-          "order": 56
+          "order": 53
         }
       ]
     }
   ],
   "description": "Проектирует цифровые продукты и визуальные коммуникации с опорой на генеративные модели и AI-агентов: ведёт исследование, сценарии, интерфейсы, прототипы и производство контента, связывая дизайн-решения с ценностью продукта и проверяя качество AI-результата.",
-  "updatedAt": "2026-11-11"
+  "updatedAt": "2026-11-14"
 }

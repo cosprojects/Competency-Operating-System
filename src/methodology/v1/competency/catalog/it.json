@@ -8590,7 +8590,7 @@
         "Практика генерации визуала",
         "AI-генерация изображений: практика"
       ],
-      "definition": "Генерация, устранение артефактов, апскейл и стилизация.",
+      "definition": "Превращает запрос в готовое изображение: формулирует задачу генерации, управляет параметрами модели, распознаёт и устраняет типовые дефекты, дорабатывает кадр и выполняет апскейл, удерживая единый стиль референсами и стилевыми приёмами.",
       "scope": "universal",
       "canonicalIds": [
         "aidesigner-visual-generation"
@@ -8606,7 +8606,9 @@
           "definition": "Постановка задачи генерации и управление параметрами модели для получения изображения.",
           "order": 1,
           "tagIds": [
-            "tag_a81b55da2143"
+            "tag_a81b55da2143",
+            "tag_e3f823e709a6",
+            "tag_5332bcb4f6bd"
           ]
         },
         {
@@ -8636,7 +8638,8 @@
           "definition": "Управление визуальным стилем результата через референсы и стилевые приёмы.",
           "order": 4,
           "tagIds": [
-            "tag_38b872764f10"
+            "tag_38b872764f10",
+            "tag_99d1bd83b9e9"
           ]
         }
       ],
@@ -8760,9 +8763,128 @@
           ],
           "materialIds": [],
           "needsReview": false
+        },
+        {
+          "id": "tag_e3f823e709a6",
+          "slug": "m-generaciya-izobrazheniya-8ffcbc",
+          "title": "Генерация изображения по промпту",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Промпт задаёт первый визуал, а параметры и режимы генерации позволяют управлять результатом; это нужно, чтобы быстро получать исходное изображение для дальнейшей доработки.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum-ai-for-design",
+              "externalId": "ai-for-design",
+              "url": "https://practicum.yandex.ru/ai-for-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            },
+            {
+              "sourceId": "learntube-ai-graphic-design",
+              "externalId": "learntube-ai-graphic-design",
+              "url": "https://learntube.ai/learn/course/ai-for-graphic-design",
+              "retrievedAt": "2026-11-03",
+              "license": "© LearnTube; извлекаются название и темы курса."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_98f8b80e3d5f",
+              "componentId": "generatsiya-vizuala-praktika.generatsiya-izobrazheniy",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_5332bcb4f6bd",
+          "slug": "m-stil-i-referensy-acb501",
+          "title": "Стиль и референсы",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Референсы передают характеристики стиля, а их подбор и воспроизведение помогают сохранять единый визуальный язык в новых изображениях.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum-ai-for-design",
+              "externalId": "ai-for-design",
+              "url": "https://practicum.yandex.ru/ai-for-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_98f8b80e3d5f",
+              "componentId": "generatsiya-vizuala-praktika.generatsiya-izobrazheniy",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_99d1bd83b9e9",
+          "slug": "m-dovedenie-vizuala-39d5e7",
+          "title": "Доведение AI-визуала",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Устраняет артефакты, выполняет генеративную заливку и апскейл сгенерированного изображения, добиваясь пригодности визуала для рабочего использования.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum-ai-tools-for-designers",
+              "externalId": "ai-tools-for-designers",
+              "url": "https://practicum.yandex.ru/ai-tools-for-designers/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_98f8b80e3d5f",
+              "componentId": "generatsiya-vizuala-praktika.stilizatsiya",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
         }
       ],
-      "sourceRefs": [],
+      "sourceRefs": [
+        {
+          "sourceId": "learntube-ai-graphic-design",
+          "externalId": "learntube-ai-graphic-design",
+          "url": "https://learntube.ai/learn/course/ai-for-graphic-design",
+          "retrievedAt": "2026-11-03",
+          "license": "© LearnTube; извлекаются название и темы курса."
+        },
+        {
+          "sourceId": "practicum-ai-for-design",
+          "externalId": "ai-for-design",
+          "url": "https://practicum.yandex.ru/ai-for-design/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        },
+        {
+          "sourceId": "practicum-ai-tools-for-designers",
+          "externalId": "ai-tools-for-designers",
+          "url": "https://practicum.yandex.ru/ai-tools-for-designers/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
       "evidenceState": "needs_review",
       "status": "accepted",
       "llmMeta": {
@@ -9892,7 +10014,7 @@
         "UI-кит",
         "Токены дизайна"
       ],
-      "definition": "Архитектура дизайн-системы, семантические токены и синхронизация с кодом.",
+      "definition": "Специалист проектирует и поддерживает архитектуру дизайн-системы и токенов — от primitive до semantic и component-уровней, включая светлую и тёмную темы, — и выстраивает синхронизацию решений с кодом, чтобы интерфейс масштабировался без потери согласованности.",
       "scope": "universal",
       "canonicalIds": [
         "ui-design-systems"
@@ -9909,7 +10031,12 @@
           "order": 1,
           "tagIds": [
             "tag_0bf2d25508ad",
-            "tag_2eec2142980e"
+            "tag_2eec2142980e",
+            "tag_d46d639d9302",
+            "tag_d2cada1fbb88",
+            "tag_ae8802703be1",
+            "tag_06a01c31fbd8",
+            "tag_379c027e363d"
           ]
         },
         {
@@ -9930,7 +10057,11 @@
           "definition": "Проектирование компонентов дизайн-системы с учётом масштабируемости и повторного использования.",
           "order": 3,
           "tagIds": [
-            "tag_0b29a5fb2ef9"
+            "tag_0b29a5fb2ef9",
+            "tag_562f0ec97e60",
+            "tag_64047b7a0ed7",
+            "tag_520208bdf15c",
+            "tag_afeeec9c273a"
           ]
         }
       ],
@@ -10084,6 +10215,276 @@
           ],
           "materialIds": [],
           "needsReview": false
+        },
+        {
+          "id": "tag_d46d639d9302",
+          "slug": "m-k-dizayn-tokeny-3be856e96086-9db658",
+          "title": "Token taxonomy",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Уровни абстракции от исходных значений до компонентных задают иерархию и типы токенов, на которой держится управляемая и масштабируемая дизайн-система.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "habr-ai-design-1096288",
+              "externalId": "habr-ai-design-1096288",
+              "url": "https://habr.com/ru/articles/1096288/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Хабр — статья про ИИ-инструменты в дизайне. Извлекаются названия и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_9a71b8071561",
+              "componentId": "dizayn-sistemy-i-tokeny.osnovy-dizayn-sistem",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_d2cada1fbb88",
+          "slug": "m-k-dizayn-tokeny-1d34288011d7-5f60b5",
+          "title": "Aliases и semantic tokens",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Связи между токенами и смысловые роли привязывают значения к назначению, а не к конкретному цвету, поэтому смена палитры не требует правок в компонентах.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "habr-ai-design-1096288",
+              "externalId": "habr-ai-design-1096288",
+              "url": "https://habr.com/ru/articles/1096288/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Хабр — статья про ИИ-инструменты в дизайне. Извлекаются названия и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_9a71b8071561",
+              "componentId": "dizayn-sistemy-i-tokeny.osnovy-dizayn-sistem",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_ae8802703be1",
+          "slug": "m-k-dizayn-tokeny-da146e02e764-c4b99c",
+          "title": "Light/Dark themes",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Парные цветовые схемы строятся так, чтобы одни и те же семантические роли получали разные значения в светлой и тёмной теме и интерфейс оставался предсказуемым.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "habr-ai-design-1096288",
+              "externalId": "habr-ai-design-1096288",
+              "url": "https://habr.com/ru/articles/1096288/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Хабр — статья про ИИ-инструменты в дизайне. Извлекаются названия и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_9a71b8071561",
+              "componentId": "dizayn-sistemy-i-tokeny.osnovy-dizayn-sistem",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_06a01c31fbd8",
+          "slug": "m-k-dizayn-tokeny-4f6aee8d8988-50c480",
+          "title": "Контраст и доступность",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Различимость текста и элементов интерфейса проверяют на уровне токенов, чтобы каждая тема оставалась читаемой для пользователей.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "habr-ai-design-1096288",
+              "externalId": "habr-ai-design-1096288",
+              "url": "https://habr.com/ru/articles/1096288/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Хабр — статья про ИИ-инструменты в дизайне. Извлекаются названия и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_9a71b8071561",
+              "componentId": "dizayn-sistemy-i-tokeny.osnovy-dizayn-sistem",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_379c027e363d",
+          "slug": "m-k-dizayn-tokeny-8b4617b659a5-66d4d0",
+          "title": "Naming",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Правила именования отражают роль и уровень токена, от них зависят предсказуемость системы и согласованность работы команды.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "habr-ai-design-1096288",
+              "externalId": "habr-ai-design-1096288",
+              "url": "https://habr.com/ru/articles/1096288/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Хабр — статья про ИИ-инструменты в дизайне. Извлекаются названия и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_9a71b8071561",
+              "componentId": "dizayn-sistemy-i-tokeny.osnovy-dizayn-sistem",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_562f0ec97e60",
+          "slug": "m-s-dizayn-tokeny-f2921ee7987c-a88884",
+          "title": "Собирать систему токенов",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Выстраивает токены от primitive до component-уровня с наследованием значений без дублей, чтобы компоненты опирались на семантические роли.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "habr-ai-design-1096288",
+              "externalId": "habr-ai-design-1096288",
+              "url": "https://habr.com/ru/articles/1096288/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Хабр — статья про ИИ-инструменты в дизайне. Извлекаются названия и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_9a71b8071561",
+              "componentId": "dizayn-sistemy-i-tokeny.arhitektura-komponentov",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_64047b7a0ed7",
+          "slug": "m-s-dizayn-tokeny-a8fd18a09ac7-bbdc43",
+          "title": "Настраивать темы",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Задаёт значения семантических токенов для светлой и тёмной темы, сохраняя единый набор ролей и предсказуемый вид интерфейса при переключении.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "habr-ai-design-1096288",
+              "externalId": "habr-ai-design-1096288",
+              "url": "https://habr.com/ru/articles/1096288/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Хабр — статья про ИИ-инструменты в дизайне. Извлекаются названия и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_9a71b8071561",
+              "componentId": "dizayn-sistemy-i-tokeny.arhitektura-komponentov",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_520208bdf15c",
+          "slug": "m-s-dizayn-tokeny-62671d9830da-9f3478",
+          "title": "Экспортировать токены в код",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Передаёт токены в код в согласованном формате, чтобы значения в дизайне и реализации совпадали и обновлялись из одного источника.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "habr-ai-design-1096288",
+              "externalId": "habr-ai-design-1096288",
+              "url": "https://habr.com/ru/articles/1096288/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Хабр — статья про ИИ-инструменты в дизайне. Извлекаются названия и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_9a71b8071561",
+              "componentId": "dizayn-sistemy-i-tokeny.arhitektura-komponentov",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_afeeec9c273a",
+          "slug": "m-s-dizayn-tokeny-cc1c10e37ac5-ef683f",
+          "title": "Проверять консистентность",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Сверяет токены и темы на дубли, разрывы и несогласованные значения, устраняя расхождения до передачи системы в разработку.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "habr-ai-design-1096288",
+              "externalId": "habr-ai-design-1096288",
+              "url": "https://habr.com/ru/articles/1096288/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Хабр — статья про ИИ-инструменты в дизайне. Извлекаются названия и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_9a71b8071561",
+              "componentId": "dizayn-sistemy-i-tokeny.arhitektura-komponentov",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
         }
       ],
       "sourceRefs": [
@@ -10107,6 +10508,13 @@
           "url": "https://practicum.yandex.ru/catalog/design/",
           "retrievedAt": "2026-10-28",
           "license": "Ссылка на программу/материал; используются названия тем и краткие формулировки."
+        },
+        {
+          "sourceId": "habr-ai-design-1096288",
+          "externalId": "habr-ai-design-1096288",
+          "url": "https://habr.com/ru/articles/1096288/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Хабр — статья про ИИ-инструменты в дизайне. Извлекаются названия и короткие цитаты; полные тексты не копируются."
         }
       ],
       "evidenceState": "supported",
@@ -10120,345 +10528,6 @@
           "cacheHitTokens": 512,
           "cacheMissTokens": 711,
           "outputTokens": 769
-        }
-      },
-      "issues": [],
-      "methodologyVersion": "0.1.0"
-    },
-    {
-      "id": "comp_d2750b393ebd",
-      "slug": "dizayn-tokeny-praktika",
-      "title": "Дизайн-токены и темы",
-      "aliases": [],
-      "definition": "Проектирование и поддержка системы токенов и тем: primitive, semantic и component-уровни, light/dark.",
-      "scope": "universal",
-      "canonicalIds": [
-        "aidesigner-design-tokens"
-      ],
-      "professionIds": [
-        "it.aidesigner"
-      ],
-      "components": [
-        {
-          "id": "dizayn-tokeny-praktika.znaniya",
-          "slug": "znaniya",
-          "title": "Знания",
-          "definition": "Понятия и принципы, которые нужны для компетенции.",
-          "order": 1,
-          "tagIds": [
-            "tag_92d2df61f9b1",
-            "tag_9113d4ba1cce",
-            "tag_31920d88f2fd",
-            "tag_a5730386e61e",
-            "tag_ad64902c5d49"
-          ]
-        },
-        {
-          "id": "dizayn-tokeny-praktika.navyki",
-          "slug": "navyki",
-          "title": "Навыки",
-          "definition": "Практические действия, которые выполняет специалист.",
-          "order": 2,
-          "tagIds": [
-            "tag_2e481483cd70",
-            "tag_b57ffff6ebc1",
-            "tag_c8e74b412177",
-            "tag_84be6f60987f"
-          ]
-        }
-      ],
-      "tags": [
-        {
-          "id": "tag_92d2df61f9b1",
-          "slug": "k-dizayn-tokeny-3be856e96086",
-          "title": "Token taxonomy",
-          "aliases": [],
-          "kind": "knowledge",
-          "definition": "Уровни абстракции от исходных значений до компонентных задают иерархию и типы токенов, на которой держится управляемая и масштабируемая дизайн-система.",
-          "professionIds": [
-            "it.aidesigner"
-          ],
-          "sourceRefs": [
-            {
-              "sourceId": "habr-ai-design-1096288",
-              "externalId": "habr-ai-design-1096288",
-              "url": "https://habr.com/ru/articles/1096288/",
-              "retrievedAt": "2026-11-03",
-              "license": "© Хабр — статья про ИИ-инструменты в дизайне. Извлекаются названия и короткие цитаты; полные тексты не копируются."
-            }
-          ],
-          "evidenceState": "supported",
-          "competencyLinks": [
-            {
-              "competencyId": "comp_d2750b393ebd",
-              "componentId": "dizayn-tokeny-praktika.znaniya",
-              "role": "primary"
-            }
-          ],
-          "materialIds": [],
-          "needsReview": false
-        },
-        {
-          "id": "tag_9113d4ba1cce",
-          "slug": "k-dizayn-tokeny-1d34288011d7",
-          "title": "Aliases и semantic tokens",
-          "aliases": [],
-          "kind": "knowledge",
-          "definition": "Связи между токенами и смысловые роли привязывают значения к назначению, а не к конкретному цвету, поэтому смена палитры не требует правок в компонентах.",
-          "professionIds": [
-            "it.aidesigner"
-          ],
-          "sourceRefs": [
-            {
-              "sourceId": "habr-ai-design-1096288",
-              "externalId": "habr-ai-design-1096288",
-              "url": "https://habr.com/ru/articles/1096288/",
-              "retrievedAt": "2026-11-03",
-              "license": "© Хабр — статья про ИИ-инструменты в дизайне. Извлекаются названия и короткие цитаты; полные тексты не копируются."
-            }
-          ],
-          "evidenceState": "supported",
-          "competencyLinks": [
-            {
-              "competencyId": "comp_d2750b393ebd",
-              "componentId": "dizayn-tokeny-praktika.znaniya",
-              "role": "primary"
-            }
-          ],
-          "materialIds": [],
-          "needsReview": false
-        },
-        {
-          "id": "tag_31920d88f2fd",
-          "slug": "k-dizayn-tokeny-da146e02e764",
-          "title": "Light/Dark themes",
-          "aliases": [],
-          "kind": "knowledge",
-          "definition": "Парные цветовые схемы строятся так, чтобы одни и те же семантические роли получали разные значения в светлой и тёмной теме и интерфейс оставался предсказуемым.",
-          "professionIds": [
-            "it.aidesigner"
-          ],
-          "sourceRefs": [
-            {
-              "sourceId": "habr-ai-design-1096288",
-              "externalId": "habr-ai-design-1096288",
-              "url": "https://habr.com/ru/articles/1096288/",
-              "retrievedAt": "2026-11-03",
-              "license": "© Хабр — статья про ИИ-инструменты в дизайне. Извлекаются названия и короткие цитаты; полные тексты не копируются."
-            }
-          ],
-          "evidenceState": "supported",
-          "competencyLinks": [
-            {
-              "competencyId": "comp_d2750b393ebd",
-              "componentId": "dizayn-tokeny-praktika.znaniya",
-              "role": "primary"
-            }
-          ],
-          "materialIds": [],
-          "needsReview": false
-        },
-        {
-          "id": "tag_a5730386e61e",
-          "slug": "k-dizayn-tokeny-4f6aee8d8988",
-          "title": "Контраст и доступность",
-          "aliases": [],
-          "kind": "knowledge",
-          "definition": "Различимость текста и элементов интерфейса проверяют на уровне токенов, чтобы каждая тема оставалась читаемой для пользователей.",
-          "professionIds": [
-            "it.aidesigner"
-          ],
-          "sourceRefs": [
-            {
-              "sourceId": "habr-ai-design-1096288",
-              "externalId": "habr-ai-design-1096288",
-              "url": "https://habr.com/ru/articles/1096288/",
-              "retrievedAt": "2026-11-03",
-              "license": "© Хабр — статья про ИИ-инструменты в дизайне. Извлекаются названия и короткие цитаты; полные тексты не копируются."
-            }
-          ],
-          "evidenceState": "supported",
-          "competencyLinks": [
-            {
-              "competencyId": "comp_d2750b393ebd",
-              "componentId": "dizayn-tokeny-praktika.znaniya",
-              "role": "primary"
-            }
-          ],
-          "materialIds": [],
-          "needsReview": false
-        },
-        {
-          "id": "tag_ad64902c5d49",
-          "slug": "k-dizayn-tokeny-8b4617b659a5",
-          "title": "Naming",
-          "aliases": [],
-          "kind": "knowledge",
-          "definition": "Правила именования отражают роль и уровень токена, от них зависят предсказуемость системы и согласованность работы команды.",
-          "professionIds": [
-            "it.aidesigner"
-          ],
-          "sourceRefs": [
-            {
-              "sourceId": "habr-ai-design-1096288",
-              "externalId": "habr-ai-design-1096288",
-              "url": "https://habr.com/ru/articles/1096288/",
-              "retrievedAt": "2026-11-03",
-              "license": "© Хабр — статья про ИИ-инструменты в дизайне. Извлекаются названия и короткие цитаты; полные тексты не копируются."
-            }
-          ],
-          "evidenceState": "supported",
-          "competencyLinks": [
-            {
-              "competencyId": "comp_d2750b393ebd",
-              "componentId": "dizayn-tokeny-praktika.znaniya",
-              "role": "primary"
-            }
-          ],
-          "materialIds": [],
-          "needsReview": false
-        },
-        {
-          "id": "tag_2e481483cd70",
-          "slug": "s-dizayn-tokeny-f2921ee7987c",
-          "title": "Собирать систему токенов",
-          "aliases": [],
-          "kind": "skill",
-          "definition": "Выстраивает токены от primitive до component-уровня с наследованием значений без дублей, чтобы компоненты опирались на семантические роли.",
-          "professionIds": [
-            "it.aidesigner"
-          ],
-          "sourceRefs": [
-            {
-              "sourceId": "habr-ai-design-1096288",
-              "externalId": "habr-ai-design-1096288",
-              "url": "https://habr.com/ru/articles/1096288/",
-              "retrievedAt": "2026-11-03",
-              "license": "© Хабр — статья про ИИ-инструменты в дизайне. Извлекаются названия и короткие цитаты; полные тексты не копируются."
-            }
-          ],
-          "evidenceState": "supported",
-          "competencyLinks": [
-            {
-              "competencyId": "comp_d2750b393ebd",
-              "componentId": "dizayn-tokeny-praktika.navyki",
-              "role": "primary"
-            }
-          ],
-          "materialIds": [],
-          "needsReview": false
-        },
-        {
-          "id": "tag_b57ffff6ebc1",
-          "slug": "s-dizayn-tokeny-a8fd18a09ac7",
-          "title": "Настраивать темы",
-          "aliases": [],
-          "kind": "skill",
-          "definition": "Задаёт значения семантических токенов для светлой и тёмной темы, сохраняя единый набор ролей и предсказуемый вид интерфейса при переключении.",
-          "professionIds": [
-            "it.aidesigner"
-          ],
-          "sourceRefs": [
-            {
-              "sourceId": "habr-ai-design-1096288",
-              "externalId": "habr-ai-design-1096288",
-              "url": "https://habr.com/ru/articles/1096288/",
-              "retrievedAt": "2026-11-03",
-              "license": "© Хабр — статья про ИИ-инструменты в дизайне. Извлекаются названия и короткие цитаты; полные тексты не копируются."
-            }
-          ],
-          "evidenceState": "supported",
-          "competencyLinks": [
-            {
-              "competencyId": "comp_d2750b393ebd",
-              "componentId": "dizayn-tokeny-praktika.navyki",
-              "role": "primary"
-            }
-          ],
-          "materialIds": [],
-          "needsReview": false
-        },
-        {
-          "id": "tag_c8e74b412177",
-          "slug": "s-dizayn-tokeny-62671d9830da",
-          "title": "Экспортировать токены в код",
-          "aliases": [],
-          "kind": "skill",
-          "definition": "Передаёт токены в код в согласованном формате, чтобы значения в дизайне и реализации совпадали и обновлялись из одного источника.",
-          "professionIds": [
-            "it.aidesigner"
-          ],
-          "sourceRefs": [
-            {
-              "sourceId": "habr-ai-design-1096288",
-              "externalId": "habr-ai-design-1096288",
-              "url": "https://habr.com/ru/articles/1096288/",
-              "retrievedAt": "2026-11-03",
-              "license": "© Хабр — статья про ИИ-инструменты в дизайне. Извлекаются названия и короткие цитаты; полные тексты не копируются."
-            }
-          ],
-          "evidenceState": "supported",
-          "competencyLinks": [
-            {
-              "competencyId": "comp_d2750b393ebd",
-              "componentId": "dizayn-tokeny-praktika.navyki",
-              "role": "primary"
-            }
-          ],
-          "materialIds": [],
-          "needsReview": false
-        },
-        {
-          "id": "tag_84be6f60987f",
-          "slug": "s-dizayn-tokeny-cc1c10e37ac5",
-          "title": "Проверять консистентность",
-          "aliases": [],
-          "kind": "skill",
-          "definition": "Сверяет токены и темы на дубли, разрывы и несогласованные значения, устраняя расхождения до передачи системы в разработку.",
-          "professionIds": [
-            "it.aidesigner"
-          ],
-          "sourceRefs": [
-            {
-              "sourceId": "habr-ai-design-1096288",
-              "externalId": "habr-ai-design-1096288",
-              "url": "https://habr.com/ru/articles/1096288/",
-              "retrievedAt": "2026-11-03",
-              "license": "© Хабр — статья про ИИ-инструменты в дизайне. Извлекаются названия и короткие цитаты; полные тексты не копируются."
-            }
-          ],
-          "evidenceState": "supported",
-          "competencyLinks": [
-            {
-              "competencyId": "comp_d2750b393ebd",
-              "componentId": "dizayn-tokeny-praktika.navyki",
-              "role": "primary"
-            }
-          ],
-          "materialIds": [],
-          "needsReview": false
-        }
-      ],
-      "sourceRefs": [
-        {
-          "sourceId": "habr-ai-design-1096288",
-          "externalId": "habr-ai-design-1096288",
-          "url": "https://habr.com/ru/articles/1096288/",
-          "retrievedAt": "2026-11-03",
-          "license": "© Хабр — статья про ИИ-инструменты в дизайне. Извлекаются названия и короткие цитаты; полные тексты не копируются."
-        }
-      ],
-      "evidenceState": "supported",
-      "status": "accepted",
-      "llmMeta": {
-        "promptVersion": "competency-v1",
-        "model": "manual-curation",
-        "inputHash": "manual-705c3b2996ba",
-        "costUsd": 0,
-        "tokens": {
-          "cacheHitTokens": 0,
-          "cacheMissTokens": 0,
-          "outputTokens": 0
         }
       },
       "issues": [],
@@ -11779,188 +11848,6 @@
       "methodologyVersion": "1.0.0"
     },
     {
-      "id": "comp_411bb6f4e08d",
-      "slug": "ii-v-video-i-audio-praktika",
-      "title": "ИИ в видео и аудио: практика",
-      "titleEn": "AI video and audio practice",
-      "aliases": [
-        "AI-видео и аудио",
-        "Генерация анимации и звука"
-      ],
-      "definition": "Практика генерации видео и аудио нейросетями: сценарии анимации, генерация музыки и озвучки, монтаж и синхронизация в продакшене.",
-      "scope": "universal",
-      "canonicalIds": [
-        "ai-video-audio"
-      ],
-      "professionIds": [
-        "it.aidesigner"
-      ],
-      "components": [
-        {
-          "id": "ii-v-video-i-audio-praktika.scenarii-animacii",
-          "slug": "scenarii-animacii",
-          "title": "Сценарии и анимация",
-          "definition": "Построение сценария анимации и генерация анимации по промпту и референсам.",
-          "order": 1,
-          "tagIds": [
-            "tag_a79c37116dc2"
-          ]
-        },
-        {
-          "id": "ii-v-video-i-audio-praktika.generaciya-audio-video",
-          "slug": "generaciya-audio-video",
-          "title": "Генерация видео и аудио",
-          "definition": "Инструменты генерации видео, музыки и озвучки, их возможности и ограничения.",
-          "order": 2,
-          "tagIds": [
-            "tag_8b1a0805a521"
-          ]
-        },
-        {
-          "id": "ii-v-video-i-audio-praktika.montazh-i-sinhronizaciya",
-          "slug": "montazh-i-sinhronizaciya",
-          "title": "Монтаж и синхронизация",
-          "definition": "Сборка, монтаж и синхронизация сгенерированного видео и аудио в готовый продукт.",
-          "order": 3,
-          "tagIds": [
-            "tag_0a7026fe8be0"
-          ]
-        }
-      ],
-      "tags": [
-        {
-          "id": "tag_a79c37116dc2",
-          "slug": "scenarii-animacii",
-          "title": "Сценарии анимации с ИИ",
-          "aliases": [],
-          "kind": "knowledge",
-          "definition": "Продумывание последовательности сцен и действий персонажей до генерации помогает задавать нейросети управляемые промпты и референсы и получать предсказуемый результат.",
-          "professionIds": [
-            "it.aidesigner"
-          ],
-          "sourceRefs": [
-            {
-              "sourceId": "practicum-ai-for-design",
-              "externalId": "ai-for-design",
-              "url": "https://practicum.yandex.ru/ai-for-design/",
-              "retrievedAt": "2026-11-03",
-              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
-            }
-          ],
-          "evidenceState": "supported",
-          "competencyLinks": [
-            {
-              "competencyId": "comp_411bb6f4e08d",
-              "componentId": "ii-v-video-i-audio-praktika.scenarii-animacii",
-              "role": "primary"
-            }
-          ],
-          "materialIds": [],
-          "needsReview": false
-        },
-        {
-          "id": "tag_8b1a0805a521",
-          "slug": "generaciya-audio-video",
-          "title": "Генерация видео, музыки и озвучки",
-          "aliases": [],
-          "kind": "knowledge",
-          "definition": "Различение возможностей и ограничений нейросетей для видео, музыки и речи позволяет выбирать подходящий инструмент под задачу и реалистично оценивать результат генерации.",
-          "professionIds": [
-            "it.aidesigner"
-          ],
-          "sourceRefs": [
-            {
-              "sourceId": "practicum-ai-tools-for-designers",
-              "externalId": "ai-tools-for-designers",
-              "url": "https://practicum.yandex.ru/ai-tools-for-designers/",
-              "retrievedAt": "2026-11-03",
-              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
-            },
-            {
-              "sourceId": "skillbox-ru-course-ai-audio-video",
-              "externalId": "ai-audio-video",
-              "url": "https://skillbox.ru/course/ai-audio-video/",
-              "retrievedAt": "2026-11-03",
-              "license": "© Skillbox; извлекаются название и темы курса."
-            }
-          ],
-          "evidenceState": "supported",
-          "competencyLinks": [
-            {
-              "competencyId": "comp_411bb6f4e08d",
-              "componentId": "ii-v-video-i-audio-praktika.generaciya-audio-video",
-              "role": "primary"
-            }
-          ],
-          "materialIds": [],
-          "needsReview": false
-        },
-        {
-          "id": "tag_0a7026fe8be0",
-          "slug": "montazh-i-sinhronizaciya",
-          "title": "Монтаж и синхронизация AI-видео",
-          "aliases": [],
-          "kind": "skill",
-          "definition": "Собирает сгенерированные видео- и аудиофрагменты в единый продукт, выравнивает тайминг и синхронизирует звук с изображением так, чтобы сцены шли без рассинхрона и монтажных разрывов.",
-          "professionIds": [
-            "it.aidesigner"
-          ],
-          "sourceRefs": [
-            {
-              "sourceId": "practicum-ai-tools-for-designers",
-              "externalId": "ai-tools-for-designers",
-              "url": "https://practicum.yandex.ru/ai-tools-for-designers/",
-              "retrievedAt": "2026-11-03",
-              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
-            }
-          ],
-          "evidenceState": "supported",
-          "competencyLinks": [
-            {
-              "competencyId": "comp_411bb6f4e08d",
-              "componentId": "ii-v-video-i-audio-praktika.montazh-i-sinhronizaciya",
-              "role": "primary"
-            }
-          ],
-          "materialIds": [],
-          "needsReview": false
-        }
-      ],
-      "sourceRefs": [
-        {
-          "sourceId": "practicum-ai-for-design",
-          "externalId": "ai-for-design",
-          "url": "https://practicum.yandex.ru/ai-for-design/",
-          "retrievedAt": "2026-11-03",
-          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
-        },
-        {
-          "sourceId": "practicum-ai-tools-for-designers",
-          "externalId": "ai-tools-for-designers",
-          "url": "https://practicum.yandex.ru/ai-tools-for-designers/",
-          "retrievedAt": "2026-11-03",
-          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
-        },
-        {
-          "sourceId": "skillbox-ru-course-ai-audio-video",
-          "externalId": "ai-audio-video",
-          "url": "https://skillbox.ru/",
-          "retrievedAt": "2026-11-03",
-          "license": "© Skillbox; извлекаются название и темы курса."
-        }
-      ],
-      "evidenceState": "supported",
-      "status": "accepted",
-      "llmMeta": {
-        "promptVersion": "manual-ai-layer-1",
-        "model": "deepseek-v4-flash",
-        "inputHash": "411bb6f4e08d277f",
-        "costUsd": 0
-      },
-      "issues": [],
-      "methodologyVersion": "0.1.0"
-    },
-    {
       "id": "comp_afc0ed77e337",
       "slug": "ai-in-gamedev",
       "title": "ИИ в геймдеве",
@@ -12292,188 +12179,6 @@
       },
       "issues": [],
       "methodologyVersion": "1.0.0"
-    },
-    {
-      "id": "comp_bc4de5f33fa7",
-      "slug": "ii-v-generacii-izobrazheniy-praktika",
-      "title": "ИИ в генерации изображений: практика",
-      "titleEn": "AI image generation practice",
-      "aliases": [
-        "Генерация изображений ИИ",
-        "ИИ-визуал"
-      ],
-      "definition": "Практика генерации и обработки изображений нейросетями: управление стилем и референсами, устранение артефактов, апскейл и доведение визуала до рабочего качества.",
-      "scope": "universal",
-      "canonicalIds": [
-        "ai-visual-generation"
-      ],
-      "professionIds": [
-        "it.aidesigner"
-      ],
-      "components": [
-        {
-          "id": "ii-v-generacii-izobrazheniy-praktika.generaciya-izobrazheniya",
-          "slug": "generaciya-izobrazheniya",
-          "title": "Генерация изображения",
-          "definition": "Создание изображения по промпту: первый визуал, параметры и режимы генерации.",
-          "order": 1,
-          "tagIds": [
-            "tag_68a0788b1ba4"
-          ]
-        },
-        {
-          "id": "ii-v-generacii-izobrazheniy-praktika.stil-i-referensy",
-          "slug": "stil-i-referensy",
-          "title": "Стиль и референсы",
-          "definition": "Управление характеристиками стиля через референсы и воспроизведение стиля в новых изображениях.",
-          "order": 2,
-          "tagIds": [
-            "tag_9268f0f2845c"
-          ]
-        },
-        {
-          "id": "ii-v-generacii-izobrazheniy-praktika.dovedenie-vizuala",
-          "slug": "dovedenie-vizuala",
-          "title": "Доведение визуала",
-          "definition": "Доведение сгенерированного визуала до рабочего качества: устранение артефактов, генеративная заливка и апскейл.",
-          "order": 3,
-          "tagIds": [
-            "tag_fe0b1d0e885b"
-          ]
-        }
-      ],
-      "tags": [
-        {
-          "id": "tag_68a0788b1ba4",
-          "slug": "generaciya-izobrazheniya",
-          "title": "Генерация изображения по промпту",
-          "aliases": [],
-          "kind": "knowledge",
-          "definition": "Промпт задаёт первый визуал, а параметры и режимы генерации позволяют управлять результатом; это нужно, чтобы быстро получать исходное изображение для дальнейшей доработки.",
-          "professionIds": [
-            "it.aidesigner"
-          ],
-          "sourceRefs": [
-            {
-              "sourceId": "practicum-ai-for-design",
-              "externalId": "ai-for-design",
-              "url": "https://practicum.yandex.ru/ai-for-design/",
-              "retrievedAt": "2026-11-03",
-              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
-            },
-            {
-              "sourceId": "learntube-ai-graphic-design",
-              "externalId": "learntube-ai-graphic-design",
-              "url": "https://learntube.ai/learn/course/ai-for-graphic-design",
-              "retrievedAt": "2026-11-03",
-              "license": "© LearnTube; извлекаются название и темы курса."
-            }
-          ],
-          "evidenceState": "supported",
-          "competencyLinks": [
-            {
-              "competencyId": "comp_bc4de5f33fa7",
-              "componentId": "ii-v-generacii-izobrazheniy-praktika.generaciya-izobrazheniya",
-              "role": "primary"
-            }
-          ],
-          "materialIds": [],
-          "needsReview": false
-        },
-        {
-          "id": "tag_9268f0f2845c",
-          "slug": "stil-i-referensy",
-          "title": "Стиль и референсы",
-          "aliases": [],
-          "kind": "knowledge",
-          "definition": "Референсы передают характеристики стиля, а их подбор и воспроизведение помогают сохранять единый визуальный язык в новых изображениях.",
-          "professionIds": [
-            "it.aidesigner"
-          ],
-          "sourceRefs": [
-            {
-              "sourceId": "practicum-ai-for-design",
-              "externalId": "ai-for-design",
-              "url": "https://practicum.yandex.ru/ai-for-design/",
-              "retrievedAt": "2026-11-03",
-              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
-            }
-          ],
-          "evidenceState": "supported",
-          "competencyLinks": [
-            {
-              "competencyId": "comp_bc4de5f33fa7",
-              "componentId": "ii-v-generacii-izobrazheniy-praktika.stil-i-referensy",
-              "role": "primary"
-            }
-          ],
-          "materialIds": [],
-          "needsReview": false
-        },
-        {
-          "id": "tag_fe0b1d0e885b",
-          "slug": "dovedenie-vizuala",
-          "title": "Доведение AI-визуала",
-          "aliases": [],
-          "kind": "skill",
-          "definition": "Устраняет артефакты, выполняет генеративную заливку и апскейл сгенерированного изображения, добиваясь пригодности визуала для рабочего использования.",
-          "professionIds": [
-            "it.aidesigner"
-          ],
-          "sourceRefs": [
-            {
-              "sourceId": "practicum-ai-tools-for-designers",
-              "externalId": "ai-tools-for-designers",
-              "url": "https://practicum.yandex.ru/ai-tools-for-designers/",
-              "retrievedAt": "2026-11-03",
-              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
-            }
-          ],
-          "evidenceState": "supported",
-          "competencyLinks": [
-            {
-              "competencyId": "comp_bc4de5f33fa7",
-              "componentId": "ii-v-generacii-izobrazheniy-praktika.dovedenie-vizuala",
-              "role": "primary"
-            }
-          ],
-          "materialIds": [],
-          "needsReview": false
-        }
-      ],
-      "sourceRefs": [
-        {
-          "sourceId": "learntube-ai-graphic-design",
-          "externalId": "learntube-ai-graphic-design",
-          "url": "https://learntube.ai/learn/course/ai-for-graphic-design",
-          "retrievedAt": "2026-11-03",
-          "license": "© LearnTube; извлекаются название и темы курса."
-        },
-        {
-          "sourceId": "practicum-ai-for-design",
-          "externalId": "ai-for-design",
-          "url": "https://practicum.yandex.ru/ai-for-design/",
-          "retrievedAt": "2026-11-03",
-          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
-        },
-        {
-          "sourceId": "practicum-ai-tools-for-designers",
-          "externalId": "ai-tools-for-designers",
-          "url": "https://practicum.yandex.ru/ai-tools-for-designers/",
-          "retrievedAt": "2026-11-03",
-          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
-        }
-      ],
-      "evidenceState": "supported",
-      "status": "accepted",
-      "llmMeta": {
-        "promptVersion": "manual-ai-layer-1",
-        "model": "deepseek-v4-flash",
-        "inputHash": "bc4de5f33fa74e6e",
-        "costUsd": 0
-      },
-      "issues": [],
-      "methodologyVersion": "0.1.0"
     },
     {
       "id": "comp_6b778dd309d3",
@@ -16992,7 +16697,7 @@
         "AI-инструменты в дизайне: практика",
         "Практика работы с AI-инструментами"
       ],
-      "definition": "Практическое ориентирование в инструментах искусственного интеллекта для работы с текстом, изображениями, аудио, видео и 3D, включая понимание их ограничений и выбор подходящего инструмента под задачу.",
+      "definition": "Практически ориентируется в инструментах ИИ для текста, изображений, аудио, видео и 3D, подбирает подходящий инструмент и модель под задачу и оценивает ограничения, стоимость и качество результата.",
       "scope": "universal",
       "canonicalIds": [
         "aidesigner-tool-landscape"
@@ -17008,7 +16713,9 @@
           "definition": "Инструменты генерации и редактирования текстового контента и практика их применения.",
           "order": 1,
           "tagIds": [
-            "tag_6486637b26e3"
+            "tag_6486637b26e3",
+            "tag_decfa95e3827",
+            "tag_fb2482a0a0d2"
           ]
         },
         {
@@ -17050,7 +16757,8 @@
           "definition": "Понимание ограничений, стоимости и качества результатов работы AI-инструментов.",
           "order": 5,
           "tagIds": [
-            "tag_6b369477352b"
+            "tag_6b369477352b",
+            "tag_8058ad047df1"
           ]
         }
       ],
@@ -17264,9 +16972,121 @@
           ],
           "materialIds": [],
           "needsReview": false
+        },
+        {
+          "id": "tag_decfa95e3827",
+          "slug": "m-tipy-generativnyh-modeley-1d99c8",
+          "title": "Типы генеративных моделей",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Различение основных классов генеративных моделей — текстовых, изображенческих и трёхмерных — помогает заранее соотнести задачу с подходящим типом генерации и не выбирать инструмент наугад.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum-ai-tools-for-designers",
+              "externalId": "ai-tools-for-designers",
+              "url": "https://practicum.yandex.ru/ai-tools-for-designers/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            },
+            {
+              "sourceId": "elements-of-ai",
+              "externalId": "elements-of-ai",
+              "url": "https://www.elementsofai.com/",
+              "retrievedAt": "2026-11-03",
+              "license": "CC BY-NC-SA 4.0 (Reaktor / University of Helsinki)"
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_e02c5f4d39ea",
+              "componentId": "landshaft-ai-instrumentov-praktika.ai-instrumenty-dlya-teksta",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_fb2482a0a0d2",
+          "slug": "m-vozmozhnosti-i-ogranicheniya-modeley-c6ec98",
+          "title": "Возможности и ограничения моделей",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Представление о сильных и слабых сторонах разных классов моделей и типовых ограничениях их применения снижает риск неверных ожиданий и помогает выбирать реалистичный сценарий работы.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum-ai-tools-for-designers",
+              "externalId": "ai-tools-for-designers",
+              "url": "https://practicum.yandex.ru/ai-tools-for-designers/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            },
+            {
+              "sourceId": "elements-of-ai",
+              "externalId": "elements-of-ai",
+              "url": "https://www.elementsofai.com/",
+              "retrievedAt": "2026-11-03",
+              "license": "CC BY-NC-SA 4.0 (Reaktor / University of Helsinki)"
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_e02c5f4d39ea",
+              "componentId": "landshaft-ai-instrumentov-praktika.ai-instrumenty-dlya-teksta",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_8058ad047df1",
+          "slug": "m-kriterii-vybora-instrumenta-pod-zadachu-795ac7",
+          "title": "Критерии выбора инструмента под задачу",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Сопоставляет задачу проектирования с возможностями и ограничениями инструментов и обоснованно выбирает подходящий, проверяя, что его применение ведёт к нужному результату.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum-ai-tools-for-designers",
+              "externalId": "ai-tools-for-designers",
+              "url": "https://practicum.yandex.ru/ai-tools-for-designers/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_e02c5f4d39ea",
+              "componentId": "landshaft-ai-instrumentov-praktika.ogranicheniya-ai-instrumentov",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
         }
       ],
-      "sourceRefs": [],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum",
+          "externalId": "interior-designer",
+          "url": "https://practicum.yandex.ru/interior-designer/",
+          "retrievedAt": "2026-11-02",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
       "evidenceState": "needs_review",
       "status": "accepted",
       "llmMeta": {
@@ -19249,189 +19069,6 @@
       },
       "issues": [],
       "methodologyVersion": "1.0.0"
-    },
-    {
-      "id": "comp_a6e9c9d34d14",
-      "slug": "modeli-i-instrumenty-ii",
-      "title": "Модели и инструменты ИИ",
-      "titleEn": "AI Models and Tools",
-      "aliases": [
-        "Генеративные модели и инструменты",
-        "ИИ-инструменты в дизайне"
-      ],
-      "definition": "Виды генеративных моделей и инструментов, их возможности, ограничения и выбор под задачу.",
-      "scope": "profession",
-      "canonicalIds": [
-        "ai-model-landscape"
-      ],
-      "professionIds": [
-        "it.uxui",
-        "it.product",
-        "it.motion",
-        "it.graphic",
-        "it.3ddesigner",
-        "it.interior",
-        "it.webdesigner",
-        "it.presentation",
-        "it.uxresearch",
-        "it.artdir",
-        "it.appdesign",
-        "it.aidesigner",
-        "it.game"
-      ],
-      "components": [
-        {
-          "id": "modeli-i-instrumenty-ii.klassy-generativnyh-modeley",
-          "slug": "klassy-generativnyh-modeley",
-          "title": "Классы генеративных моделей",
-          "definition": "Обзор типов генеративных моделей и их назначения при работе над дизайн-задачей.",
-          "order": 1,
-          "tagIds": [
-            "tag_aae457bfb57e",
-            "tag_808809f1712c"
-          ]
-        },
-        {
-          "id": "modeli-i-instrumenty-ii.instrumenty-i-vybor-pod-zadachu",
-          "slug": "instrumenty-i-vybor-pod-zadachu",
-          "title": "Инструменты и выбор под задачу",
-          "definition": "Ориентация в инструментах на основе генеративных моделей и критериях их выбора.",
-          "order": 2,
-          "tagIds": [
-            "tag_385f6aa91bf9"
-          ]
-        }
-      ],
-      "tags": [
-        {
-          "id": "tag_aae457bfb57e",
-          "slug": "tipy-generativnyh-modeley",
-          "title": "Типы генеративных моделей",
-          "aliases": [],
-          "kind": "knowledge",
-          "definition": "Различение основных классов генеративных моделей — текстовых, изображенческих и трёхмерных — помогает заранее соотнести задачу с подходящим типом генерации и не выбирать инструмент наугад.",
-          "professionIds": [
-            "it.aidesigner"
-          ],
-          "sourceRefs": [
-            {
-              "sourceId": "practicum-ai-tools-for-designers",
-              "externalId": "ai-tools-for-designers",
-              "url": "https://practicum.yandex.ru/ai-tools-for-designers/",
-              "retrievedAt": "2026-11-03",
-              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
-            },
-            {
-              "sourceId": "elements-of-ai",
-              "externalId": "elements-of-ai",
-              "url": "https://www.elementsofai.com/",
-              "retrievedAt": "2026-11-03",
-              "license": "CC BY-NC-SA 4.0 (Reaktor / University of Helsinki)"
-            }
-          ],
-          "evidenceState": "supported",
-          "competencyLinks": [
-            {
-              "competencyId": "comp_a6e9c9d34d14",
-              "componentId": "modeli-i-instrumenty-ii.klassy-generativnyh-modeley",
-              "role": "primary"
-            }
-          ],
-          "materialIds": [],
-          "needsReview": false
-        },
-        {
-          "id": "tag_808809f1712c",
-          "slug": "vozmozhnosti-i-ogranicheniya-modeley",
-          "title": "Возможности и ограничения моделей",
-          "aliases": [],
-          "kind": "knowledge",
-          "definition": "Представление о сильных и слабых сторонах разных классов моделей и типовых ограничениях их применения снижает риск неверных ожиданий и помогает выбирать реалистичный сценарий работы.",
-          "professionIds": [
-            "it.aidesigner"
-          ],
-          "sourceRefs": [
-            {
-              "sourceId": "practicum-ai-tools-for-designers",
-              "externalId": "ai-tools-for-designers",
-              "url": "https://practicum.yandex.ru/ai-tools-for-designers/",
-              "retrievedAt": "2026-11-03",
-              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
-            },
-            {
-              "sourceId": "elements-of-ai",
-              "externalId": "elements-of-ai",
-              "url": "https://www.elementsofai.com/",
-              "retrievedAt": "2026-11-03",
-              "license": "CC BY-NC-SA 4.0 (Reaktor / University of Helsinki)"
-            }
-          ],
-          "evidenceState": "supported",
-          "competencyLinks": [
-            {
-              "competencyId": "comp_a6e9c9d34d14",
-              "componentId": "modeli-i-instrumenty-ii.klassy-generativnyh-modeley",
-              "role": "primary"
-            }
-          ],
-          "materialIds": [],
-          "needsReview": false
-        },
-        {
-          "id": "tag_385f6aa91bf9",
-          "slug": "kriterii-vybora-instrumenta-pod-zadachu",
-          "title": "Критерии выбора инструмента под задачу",
-          "aliases": [],
-          "kind": "skill",
-          "definition": "Сопоставляет задачу проектирования с возможностями и ограничениями инструментов и обоснованно выбирает подходящий, проверяя, что его применение ведёт к нужному результату.",
-          "professionIds": [
-            "it.aidesigner"
-          ],
-          "sourceRefs": [
-            {
-              "sourceId": "practicum-ai-tools-for-designers",
-              "externalId": "ai-tools-for-designers",
-              "url": "https://practicum.yandex.ru/ai-tools-for-designers/",
-              "retrievedAt": "2026-11-03",
-              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
-            }
-          ],
-          "evidenceState": "supported",
-          "competencyLinks": [
-            {
-              "competencyId": "comp_a6e9c9d34d14",
-              "componentId": "modeli-i-instrumenty-ii.instrumenty-i-vybor-pod-zadachu",
-              "role": "primary"
-            }
-          ],
-          "materialIds": [],
-          "needsReview": false
-        }
-      ],
-      "sourceRefs": [
-        {
-          "sourceId": "practicum",
-          "externalId": "interior-designer",
-          "url": "https://practicum.yandex.ru/interior-designer/",
-          "retrievedAt": "2026-11-02",
-          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
-        }
-      ],
-      "evidenceState": "needs_review",
-      "status": "accepted",
-      "llmMeta": {
-        "promptVersion": "competency-v1",
-        "model": "deepseek-flash",
-        "inputHash": "llm_10758106d700",
-        "costUsd": 0.0010598100000000002,
-        "tokens": {
-          "cacheHitTokens": 896,
-          "cacheMissTokens": 397,
-          "outputTokens": 809
-        }
-      },
-      "issues": [],
-      "methodologyVersion": "0.1.0"
     },
     {
       "id": "comp_481dccaaa75f",
@@ -35305,7 +34942,7 @@
       "aliases": [
         "Генерация видео и аудио с ИИ: практика"
       ],
-      "definition": "Практическая компетенция генерации видео и аудио с помощью инструментов искусственного интеллекта, включая анимацию, монтаж и озвучку.",
+      "definition": "Ставит задачи генеративным моделям и получает пригодные для монтажа видео, анимацию и аудио, собирая из них целостный ролик с согласованным звуком и визуалом.",
       "scope": "universal",
       "canonicalIds": [
         "aidesigner-video-audio"
@@ -35321,7 +34958,9 @@
           "definition": "Создание видеоматериала средствами генеративных моделей: от постановки задачи до получения пригодного к монтажу результата.",
           "order": 1,
           "tagIds": [
-            "tag_4100d2062876"
+            "tag_4100d2062876",
+            "tag_eb3285459661",
+            "tag_c16e455305a2"
           ]
         },
         {
@@ -35351,7 +34990,8 @@
           "definition": "Совмещение видеоряда и аудиодорожки в единое согласованное целое.",
           "order": 4,
           "tagIds": [
-            "tag_28399a52ac19"
+            "tag_28399a52ac19",
+            "tag_ad90fe23751f"
           ]
         }
       ],
@@ -35475,9 +35115,128 @@
           ],
           "materialIds": [],
           "needsReview": false
+        },
+        {
+          "id": "tag_eb3285459661",
+          "slug": "m-scenarii-animacii-108993",
+          "title": "Сценарии анимации с ИИ",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Продумывание последовательности сцен и действий персонажей до генерации помогает задавать нейросети управляемые промпты и референсы и получать предсказуемый результат.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum-ai-for-design",
+              "externalId": "ai-for-design",
+              "url": "https://practicum.yandex.ru/ai-for-design/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_a06b049442ac",
+              "componentId": "ai-video-i-audio-praktika.generatsiya-video-s-ii",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_c16e455305a2",
+          "slug": "m-generaciya-audio-video-2356e2",
+          "title": "Генерация видео, музыки и озвучки",
+          "aliases": [],
+          "kind": "knowledge",
+          "definition": "Различение возможностей и ограничений нейросетей для видео, музыки и речи позволяет выбирать подходящий инструмент под задачу и реалистично оценивать результат генерации.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum-ai-tools-for-designers",
+              "externalId": "ai-tools-for-designers",
+              "url": "https://practicum.yandex.ru/ai-tools-for-designers/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            },
+            {
+              "sourceId": "skillbox-ru-course-ai-audio-video",
+              "externalId": "ai-audio-video",
+              "url": "https://skillbox.ru/course/ai-audio-video/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Skillbox; извлекаются название и темы курса."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_a06b049442ac",
+              "componentId": "ai-video-i-audio-praktika.generatsiya-video-s-ii",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
+        },
+        {
+          "id": "tag_ad90fe23751f",
+          "slug": "m-montazh-i-sinhronizaciya-1a3a31",
+          "title": "Монтаж и синхронизация AI-видео",
+          "aliases": [],
+          "kind": "skill",
+          "definition": "Собирает сгенерированные видео- и аудиофрагменты в единый продукт, выравнивает тайминг и синхронизирует звук с изображением так, чтобы сцены шли без рассинхрона и монтажных разрывов.",
+          "professionIds": [
+            "it.aidesigner"
+          ],
+          "sourceRefs": [
+            {
+              "sourceId": "practicum-ai-tools-for-designers",
+              "externalId": "ai-tools-for-designers",
+              "url": "https://practicum.yandex.ru/ai-tools-for-designers/",
+              "retrievedAt": "2026-11-03",
+              "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+            }
+          ],
+          "evidenceState": "supported",
+          "competencyLinks": [
+            {
+              "competencyId": "comp_a06b049442ac",
+              "componentId": "ai-video-i-audio-praktika.sinhronizatsiya-video-i-zvuka",
+              "role": "primary"
+            }
+          ],
+          "materialIds": [],
+          "needsReview": false
         }
       ],
-      "sourceRefs": [],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum-ai-for-design",
+          "externalId": "ai-for-design",
+          "url": "https://practicum.yandex.ru/ai-for-design/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        },
+        {
+          "sourceId": "practicum-ai-tools-for-designers",
+          "externalId": "ai-tools-for-designers",
+          "url": "https://practicum.yandex.ru/ai-tools-for-designers/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        },
+        {
+          "sourceId": "skillbox-ru-course-ai-audio-video",
+          "externalId": "ai-audio-video",
+          "url": "https://skillbox.ru/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Skillbox; извлекаются название и темы курса."
+        }
+      ],
       "evidenceState": "needs_review",
       "status": "accepted",
       "llmMeta": {
@@ -44060,43 +43819,6 @@
       "needsReview": false
     },
     {
-      "id": "tag_808809f1712c",
-      "slug": "vozmozhnosti-i-ogranicheniya-modeley",
-      "title": "Возможности и ограничения моделей",
-      "aliases": [],
-      "kind": "knowledge",
-      "definition": "Представление о сильных и слабых сторонах разных классов моделей и типовых ограничениях их применения снижает риск неверных ожиданий и помогает выбирать реалистичный сценарий работы.",
-      "professionIds": [
-        "it.aidesigner"
-      ],
-      "sourceRefs": [
-        {
-          "sourceId": "practicum-ai-tools-for-designers",
-          "externalId": "ai-tools-for-designers",
-          "url": "https://practicum.yandex.ru/ai-tools-for-designers/",
-          "retrievedAt": "2026-11-03",
-          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
-        },
-        {
-          "sourceId": "elements-of-ai",
-          "externalId": "elements-of-ai",
-          "url": "https://www.elementsofai.com/",
-          "retrievedAt": "2026-11-03",
-          "license": "CC BY-NC-SA 4.0 (Reaktor / University of Helsinki)"
-        }
-      ],
-      "evidenceState": "supported",
-      "competencyLinks": [
-        {
-          "competencyId": "comp_a6e9c9d34d14",
-          "componentId": "modeli-i-instrumenty-ii.klassy-generativnyh-modeley",
-          "role": "primary"
-        }
-      ],
-      "materialIds": [],
-      "needsReview": false
-    },
-    {
       "id": "tag_2575c9c7a981",
       "slug": "vozmozhnosti-uluchsheniya",
       "title": "Возможности улучшения",
@@ -44494,43 +44216,6 @@
       "needsReview": false
     },
     {
-      "id": "tag_8b1a0805a521",
-      "slug": "generaciya-audio-video",
-      "title": "Генерация видео, музыки и озвучки",
-      "aliases": [],
-      "kind": "knowledge",
-      "definition": "Различение возможностей и ограничений нейросетей для видео, музыки и речи позволяет выбирать подходящий инструмент под задачу и реалистично оценивать результат генерации.",
-      "professionIds": [
-        "it.aidesigner"
-      ],
-      "sourceRefs": [
-        {
-          "sourceId": "practicum-ai-tools-for-designers",
-          "externalId": "ai-tools-for-designers",
-          "url": "https://practicum.yandex.ru/ai-tools-for-designers/",
-          "retrievedAt": "2026-11-03",
-          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
-        },
-        {
-          "sourceId": "skillbox-ru-course-ai-audio-video",
-          "externalId": "ai-audio-video",
-          "url": "https://skillbox.ru/course/ai-audio-video/",
-          "retrievedAt": "2026-11-03",
-          "license": "© Skillbox; извлекаются название и темы курса."
-        }
-      ],
-      "evidenceState": "supported",
-      "competencyLinks": [
-        {
-          "competencyId": "comp_411bb6f4e08d",
-          "componentId": "ii-v-video-i-audio-praktika.generaciya-audio-video",
-          "role": "primary"
-        }
-      ],
-      "materialIds": [],
-      "needsReview": false
-    },
-    {
       "id": "tag_e00bc27c7ea8",
       "slug": "generaciya-teksta",
       "title": "Генерация и редактура текста",
@@ -44591,43 +44276,6 @@
         {
           "competencyId": "comp_98f8b80e3d5f",
           "componentId": "generatsiya-vizuala-praktika.generatsiya-izobrazheniy",
-          "role": "primary"
-        }
-      ],
-      "materialIds": [],
-      "needsReview": false
-    },
-    {
-      "id": "tag_68a0788b1ba4",
-      "slug": "generaciya-izobrazheniya",
-      "title": "Генерация изображения по промпту",
-      "aliases": [],
-      "kind": "knowledge",
-      "definition": "Промпт задаёт первый визуал, а параметры и режимы генерации позволяют управлять результатом; это нужно, чтобы быстро получать исходное изображение для дальнейшей доработки.",
-      "professionIds": [
-        "it.aidesigner"
-      ],
-      "sourceRefs": [
-        {
-          "sourceId": "practicum-ai-for-design",
-          "externalId": "ai-for-design",
-          "url": "https://practicum.yandex.ru/ai-for-design/",
-          "retrievedAt": "2026-11-03",
-          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
-        },
-        {
-          "sourceId": "learntube-ai-graphic-design",
-          "externalId": "learntube-ai-graphic-design",
-          "url": "https://learntube.ai/learn/course/ai-for-graphic-design",
-          "retrievedAt": "2026-11-03",
-          "license": "© LearnTube; извлекаются название и темы курса."
-        }
-      ],
-      "evidenceState": "supported",
-      "competencyLinks": [
-        {
-          "competencyId": "comp_bc4de5f33fa7",
-          "componentId": "ii-v-generacii-izobrazheniy-praktika.generaciya-izobrazheniya",
           "role": "primary"
         }
       ],
@@ -45460,36 +45108,6 @@
         {
           "competencyId": "comp_98f8b80e3d5f",
           "componentId": "generatsiya-vizuala-praktika.dovedenie-vizuala",
-          "role": "primary"
-        }
-      ],
-      "materialIds": [],
-      "needsReview": false
-    },
-    {
-      "id": "tag_fe0b1d0e885b",
-      "slug": "dovedenie-vizuala",
-      "title": "Доведение AI-визуала",
-      "aliases": [],
-      "kind": "skill",
-      "definition": "Устраняет артефакты, выполняет генеративную заливку и апскейл сгенерированного изображения, добиваясь пригодности визуала для рабочего использования.",
-      "professionIds": [
-        "it.aidesigner"
-      ],
-      "sourceRefs": [
-        {
-          "sourceId": "practicum-ai-tools-for-designers",
-          "externalId": "ai-tools-for-designers",
-          "url": "https://practicum.yandex.ru/ai-tools-for-designers/",
-          "retrievedAt": "2026-11-03",
-          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
-        }
-      ],
-      "evidenceState": "supported",
-      "competencyLinks": [
-        {
-          "competencyId": "comp_bc4de5f33fa7",
-          "componentId": "ii-v-generacii-izobrazheniy-praktika.dovedenie-vizuala",
           "role": "primary"
         }
       ],
@@ -47602,36 +47220,6 @@
       "needsReview": false
     },
     {
-      "id": "tag_a5730386e61e",
-      "slug": "k-dizayn-tokeny-4f6aee8d8988",
-      "title": "Контраст и доступность",
-      "aliases": [],
-      "kind": "knowledge",
-      "definition": "Различимость текста и элементов интерфейса проверяют на уровне токенов, чтобы каждая тема оставалась читаемой для пользователей.",
-      "professionIds": [
-        "it.aidesigner"
-      ],
-      "sourceRefs": [
-        {
-          "sourceId": "habr-ai-design-1096288",
-          "externalId": "habr-ai-design-1096288",
-          "url": "https://habr.com/ru/articles/1096288/",
-          "retrievedAt": "2026-11-03",
-          "license": "© Хабр — статья про ИИ-инструменты в дизайне. Извлекаются названия и короткие цитаты; полные тексты не копируются."
-        }
-      ],
-      "evidenceState": "supported",
-      "competencyLinks": [
-        {
-          "competencyId": "comp_d2750b393ebd",
-          "componentId": "dizayn-tokeny-praktika.znaniya",
-          "role": "primary"
-        }
-      ],
-      "materialIds": [],
-      "needsReview": false
-    },
-    {
       "id": "tag_abda552b30fa",
       "slug": "s-ai-generatsiya-interfeysov-f1a89d5147f2",
       "title": "Контролировать сетку, типографику и состояния",
@@ -47849,36 +47437,6 @@
         {
           "competencyId": "comp_8dba4d21d998",
           "componentId": "jobs-to-be-done.kriterii-vybora-resheniya",
-          "role": "primary"
-        }
-      ],
-      "materialIds": [],
-      "needsReview": false
-    },
-    {
-      "id": "tag_385f6aa91bf9",
-      "slug": "kriterii-vybora-instrumenta-pod-zadachu",
-      "title": "Критерии выбора инструмента под задачу",
-      "aliases": [],
-      "kind": "skill",
-      "definition": "Сопоставляет задачу проектирования с возможностями и ограничениями инструментов и обоснованно выбирает подходящий, проверяя, что его применение ведёт к нужному результату.",
-      "professionIds": [
-        "it.aidesigner"
-      ],
-      "sourceRefs": [
-        {
-          "sourceId": "practicum-ai-tools-for-designers",
-          "externalId": "ai-tools-for-designers",
-          "url": "https://practicum.yandex.ru/ai-tools-for-designers/",
-          "retrievedAt": "2026-11-03",
-          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
-        }
-      ],
-      "evidenceState": "supported",
-      "competencyLinks": [
-        {
-          "competencyId": "comp_a6e9c9d34d14",
-          "componentId": "modeli-i-instrumenty-ii.instrumenty-i-vybor-pod-zadachu",
           "role": "primary"
         }
       ],
@@ -49112,36 +48670,6 @@
       "needsReview": false
     },
     {
-      "id": "tag_0a7026fe8be0",
-      "slug": "montazh-i-sinhronizaciya",
-      "title": "Монтаж и синхронизация AI-видео",
-      "aliases": [],
-      "kind": "skill",
-      "definition": "Собирает сгенерированные видео- и аудиофрагменты в единый продукт, выравнивает тайминг и синхронизирует звук с изображением так, чтобы сцены шли без рассинхрона и монтажных разрывов.",
-      "professionIds": [
-        "it.aidesigner"
-      ],
-      "sourceRefs": [
-        {
-          "sourceId": "practicum-ai-tools-for-designers",
-          "externalId": "ai-tools-for-designers",
-          "url": "https://practicum.yandex.ru/ai-tools-for-designers/",
-          "retrievedAt": "2026-11-03",
-          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
-        }
-      ],
-      "evidenceState": "supported",
-      "competencyLinks": [
-        {
-          "competencyId": "comp_411bb6f4e08d",
-          "componentId": "ii-v-video-i-audio-praktika.montazh-i-sinhronizaciya",
-          "role": "primary"
-        }
-      ],
-      "materialIds": [],
-      "needsReview": false
-    },
-    {
       "id": "tag_37288c3c1bd9",
       "slug": "montazh-rolika",
       "title": "Монтаж ролика",
@@ -49824,36 +49352,6 @@
         {
           "competencyId": "comp_92e9921f59b8",
           "componentId": "tayming-i-krivye-uskoreniya.tayming-i-ritm",
-          "role": "primary"
-        }
-      ],
-      "materialIds": [],
-      "needsReview": false
-    },
-    {
-      "id": "tag_b57ffff6ebc1",
-      "slug": "s-dizayn-tokeny-a8fd18a09ac7",
-      "title": "Настраивать темы",
-      "aliases": [],
-      "kind": "skill",
-      "definition": "Задаёт значения семантических токенов для светлой и тёмной темы, сохраняя единый набор ролей и предсказуемый вид интерфейса при переключении.",
-      "professionIds": [
-        "it.aidesigner"
-      ],
-      "sourceRefs": [
-        {
-          "sourceId": "habr-ai-design-1096288",
-          "externalId": "habr-ai-design-1096288",
-          "url": "https://habr.com/ru/articles/1096288/",
-          "retrievedAt": "2026-11-03",
-          "license": "© Хабр — статья про ИИ-инструменты в дизайне. Извлекаются названия и короткие цитаты; полные тексты не копируются."
-        }
-      ],
-      "evidenceState": "supported",
-      "competencyLinks": [
-        {
-          "competencyId": "comp_d2750b393ebd",
-          "componentId": "dizayn-tokeny-praktika.navyki",
           "role": "primary"
         }
       ],
@@ -54328,36 +53826,6 @@
       "needsReview": false
     },
     {
-      "id": "tag_84be6f60987f",
-      "slug": "s-dizayn-tokeny-cc1c10e37ac5",
-      "title": "Проверять консистентность",
-      "aliases": [],
-      "kind": "skill",
-      "definition": "Сверяет токены и темы на дубли, разрывы и несогласованные значения, устраняя расхождения до передачи системы в разработку.",
-      "professionIds": [
-        "it.aidesigner"
-      ],
-      "sourceRefs": [
-        {
-          "sourceId": "habr-ai-design-1096288",
-          "externalId": "habr-ai-design-1096288",
-          "url": "https://habr.com/ru/articles/1096288/",
-          "retrievedAt": "2026-11-03",
-          "license": "© Хабр — статья про ИИ-инструменты в дизайне. Извлекаются названия и короткие цитаты; полные тексты не копируются."
-        }
-      ],
-      "evidenceState": "supported",
-      "competencyLinks": [
-        {
-          "competencyId": "comp_d2750b393ebd",
-          "componentId": "dizayn-tokeny-praktika.navyki",
-          "role": "primary"
-        }
-      ],
-      "materialIds": [],
-      "needsReview": false
-    },
-    {
       "id": "tag_bc9d377e6dc5",
       "slug": "s-game-engines-prototyping-2",
       "title": "Проверять механику вживую",
@@ -58707,36 +58175,6 @@
       "needsReview": false
     },
     {
-      "id": "tag_2e481483cd70",
-      "slug": "s-dizayn-tokeny-f2921ee7987c",
-      "title": "Собирать систему токенов",
-      "aliases": [],
-      "kind": "skill",
-      "definition": "Выстраивает токены от primitive до component-уровня с наследованием значений без дублей, чтобы компоненты опирались на семантические роли.",
-      "professionIds": [
-        "it.aidesigner"
-      ],
-      "sourceRefs": [
-        {
-          "sourceId": "habr-ai-design-1096288",
-          "externalId": "habr-ai-design-1096288",
-          "url": "https://habr.com/ru/articles/1096288/",
-          "retrievedAt": "2026-11-03",
-          "license": "© Хабр — статья про ИИ-инструменты в дизайне. Извлекаются названия и короткие цитаты; полные тексты не копируются."
-        }
-      ],
-      "evidenceState": "supported",
-      "competencyLinks": [
-        {
-          "competencyId": "comp_d2750b393ebd",
-          "componentId": "dizayn-tokeny-praktika.navyki",
-          "role": "primary"
-        }
-      ],
-      "materialIds": [],
-      "needsReview": false
-    },
-    {
       "id": "tag_073c87eaf981",
       "slug": "praktika-razdela-shouril",
       "title": "Собирать шоурил и презентацию работ",
@@ -59932,36 +59370,6 @@
       "needsReview": false
     },
     {
-      "id": "tag_9268f0f2845c",
-      "slug": "stil-i-referensy",
-      "title": "Стиль и референсы",
-      "aliases": [],
-      "kind": "knowledge",
-      "definition": "Референсы передают характеристики стиля, а их подбор и воспроизведение помогают сохранять единый визуальный язык в новых изображениях.",
-      "professionIds": [
-        "it.aidesigner"
-      ],
-      "sourceRefs": [
-        {
-          "sourceId": "practicum-ai-for-design",
-          "externalId": "ai-for-design",
-          "url": "https://practicum.yandex.ru/ai-for-design/",
-          "retrievedAt": "2026-11-03",
-          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
-        }
-      ],
-      "evidenceState": "supported",
-      "competencyLinks": [
-        {
-          "competencyId": "comp_bc4de5f33fa7",
-          "componentId": "ii-v-generacii-izobrazheniy-praktika.stil-i-referensy",
-          "role": "primary"
-        }
-      ],
-      "materialIds": [],
-      "needsReview": false
-    },
-    {
       "id": "tag_d6f699d7e3e6",
       "slug": "storibord",
       "title": "Сториборд",
@@ -60381,36 +59789,6 @@
         {
           "competencyId": "comp_c9042039c71b",
           "componentId": "nizkodetalizirovannye-prototipy.tehniki-bystrogo-prototipirovaniya",
-          "role": "primary"
-        }
-      ],
-      "materialIds": [],
-      "needsReview": false
-    },
-    {
-      "id": "tag_a79c37116dc2",
-      "slug": "scenarii-animacii",
-      "title": "Сценарии анимации с ИИ",
-      "aliases": [],
-      "kind": "knowledge",
-      "definition": "Продумывание последовательности сцен и действий персонажей до генерации помогает задавать нейросети управляемые промпты и референсы и получать предсказуемый результат.",
-      "professionIds": [
-        "it.aidesigner"
-      ],
-      "sourceRefs": [
-        {
-          "sourceId": "practicum-ai-for-design",
-          "externalId": "ai-for-design",
-          "url": "https://practicum.yandex.ru/ai-for-design/",
-          "retrievedAt": "2026-11-03",
-          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
-        }
-      ],
-      "evidenceState": "supported",
-      "competencyLinks": [
-        {
-          "competencyId": "comp_411bb6f4e08d",
-          "componentId": "ii-v-video-i-audio-praktika.scenarii-animacii",
           "role": "primary"
         }
       ],
@@ -60881,43 +60259,6 @@
         {
           "competencyId": "comp_07a221882772",
           "componentId": "vizualnaya-kompozitsiya-i-tipografika-v-interfeyse.tipografika-v-interfeyse",
-          "role": "primary"
-        }
-      ],
-      "materialIds": [],
-      "needsReview": false
-    },
-    {
-      "id": "tag_aae457bfb57e",
-      "slug": "tipy-generativnyh-modeley",
-      "title": "Типы генеративных моделей",
-      "aliases": [],
-      "kind": "knowledge",
-      "definition": "Различение основных классов генеративных моделей — текстовых, изображенческих и трёхмерных — помогает заранее соотнести задачу с подходящим типом генерации и не выбирать инструмент наугад.",
-      "professionIds": [
-        "it.aidesigner"
-      ],
-      "sourceRefs": [
-        {
-          "sourceId": "practicum-ai-tools-for-designers",
-          "externalId": "ai-tools-for-designers",
-          "url": "https://practicum.yandex.ru/ai-tools-for-designers/",
-          "retrievedAt": "2026-11-03",
-          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
-        },
-        {
-          "sourceId": "elements-of-ai",
-          "externalId": "elements-of-ai",
-          "url": "https://www.elementsofai.com/",
-          "retrievedAt": "2026-11-03",
-          "license": "CC BY-NC-SA 4.0 (Reaktor / University of Helsinki)"
-        }
-      ],
-      "evidenceState": "supported",
-      "competencyLinks": [
-        {
-          "competencyId": "comp_a6e9c9d34d14",
-          "componentId": "modeli-i-instrumenty-ii.klassy-generativnyh-modeley",
           "role": "primary"
         }
       ],
@@ -62889,36 +62230,6 @@
       "needsReview": false
     },
     {
-      "id": "tag_c8e74b412177",
-      "slug": "s-dizayn-tokeny-62671d9830da",
-      "title": "Экспортировать токены в код",
-      "aliases": [],
-      "kind": "skill",
-      "definition": "Передаёт токены в код в согласованном формате, чтобы значения в дизайне и реализации совпадали и обновлялись из одного источника.",
-      "professionIds": [
-        "it.aidesigner"
-      ],
-      "sourceRefs": [
-        {
-          "sourceId": "habr-ai-design-1096288",
-          "externalId": "habr-ai-design-1096288",
-          "url": "https://habr.com/ru/articles/1096288/",
-          "retrievedAt": "2026-11-03",
-          "license": "© Хабр — статья про ИИ-инструменты в дизайне. Извлекаются названия и короткие цитаты; полные тексты не копируются."
-        }
-      ],
-      "evidenceState": "supported",
-      "competencyLinks": [
-        {
-          "competencyId": "comp_d2750b393ebd",
-          "componentId": "dizayn-tokeny-praktika.navyki",
-          "role": "primary"
-        }
-      ],
-      "materialIds": [],
-      "needsReview": false
-    },
-    {
       "id": "tag_205651ba09c1",
       "slug": "k-game-player-psychology-3",
       "title": "Эмоциональные циклы",
@@ -63513,36 +62824,6 @@
         {
           "competencyId": "comp_88be87bf8498",
           "componentId": "veb-tehnologii-ajax.freymvorki-i-sredy-razrabotki-ajax",
-          "role": "primary"
-        }
-      ],
-      "materialIds": [],
-      "needsReview": false
-    },
-    {
-      "id": "tag_9113d4ba1cce",
-      "slug": "k-dizayn-tokeny-1d34288011d7",
-      "title": "Aliases и semantic tokens",
-      "aliases": [],
-      "kind": "knowledge",
-      "definition": "Связи между токенами и смысловые роли привязывают значения к назначению, а не к конкретному цвету, поэтому смена палитры не требует правок в компонентах.",
-      "professionIds": [
-        "it.aidesigner"
-      ],
-      "sourceRefs": [
-        {
-          "sourceId": "habr-ai-design-1096288",
-          "externalId": "habr-ai-design-1096288",
-          "url": "https://habr.com/ru/articles/1096288/",
-          "retrievedAt": "2026-11-03",
-          "license": "© Хабр — статья про ИИ-инструменты в дизайне. Извлекаются названия и короткие цитаты; полные тексты не копируются."
-        }
-      ],
-      "evidenceState": "supported",
-      "competencyLinks": [
-        {
-          "competencyId": "comp_d2750b393ebd",
-          "componentId": "dizayn-tokeny-praktika.znaniya",
           "role": "primary"
         }
       ],
@@ -64825,36 +64106,6 @@
       "needsReview": false
     },
     {
-      "id": "tag_31920d88f2fd",
-      "slug": "k-dizayn-tokeny-da146e02e764",
-      "title": "Light/Dark themes",
-      "aliases": [],
-      "kind": "knowledge",
-      "definition": "Парные цветовые схемы строятся так, чтобы одни и те же семантические роли получали разные значения в светлой и тёмной теме и интерфейс оставался предсказуемым.",
-      "professionIds": [
-        "it.aidesigner"
-      ],
-      "sourceRefs": [
-        {
-          "sourceId": "habr-ai-design-1096288",
-          "externalId": "habr-ai-design-1096288",
-          "url": "https://habr.com/ru/articles/1096288/",
-          "retrievedAt": "2026-11-03",
-          "license": "© Хабр — статья про ИИ-инструменты в дизайне. Извлекаются названия и короткие цитаты; полные тексты не копируются."
-        }
-      ],
-      "evidenceState": "supported",
-      "competencyLinks": [
-        {
-          "competencyId": "comp_d2750b393ebd",
-          "componentId": "dizayn-tokeny-praktika.znaniya",
-          "role": "primary"
-        }
-      ],
-      "materialIds": [],
-      "needsReview": false
-    },
-    {
       "id": "tag_11cb80f81070",
       "slug": "k-game-liveops-monetization-1",
       "title": "Live-ops и ритм обновлений",
@@ -65102,36 +64353,6 @@
         {
           "competencyId": "comp_dc0927613fb1",
           "componentId": "orkestratsiya-agentov-praktika.znaniya",
-          "role": "primary"
-        }
-      ],
-      "materialIds": [],
-      "needsReview": false
-    },
-    {
-      "id": "tag_ad64902c5d49",
-      "slug": "k-dizayn-tokeny-8b4617b659a5",
-      "title": "Naming",
-      "aliases": [],
-      "kind": "knowledge",
-      "definition": "Правила именования отражают роль и уровень токена, от них зависят предсказуемость системы и согласованность работы команды.",
-      "professionIds": [
-        "it.aidesigner"
-      ],
-      "sourceRefs": [
-        {
-          "sourceId": "habr-ai-design-1096288",
-          "externalId": "habr-ai-design-1096288",
-          "url": "https://habr.com/ru/articles/1096288/",
-          "retrievedAt": "2026-11-03",
-          "license": "© Хабр — статья про ИИ-инструменты в дизайне. Извлекаются названия и короткие цитаты; полные тексты не копируются."
-        }
-      ],
-      "evidenceState": "supported",
-      "competencyLinks": [
-        {
-          "competencyId": "comp_d2750b393ebd",
-          "componentId": "dizayn-tokeny-praktika.znaniya",
           "role": "primary"
         }
       ],
@@ -65658,36 +64879,6 @@
       "needsReview": false
     },
     {
-      "id": "tag_92d2df61f9b1",
-      "slug": "k-dizayn-tokeny-3be856e96086",
-      "title": "Token taxonomy",
-      "aliases": [],
-      "kind": "knowledge",
-      "definition": "Уровни абстракции от исходных значений до компонентных задают иерархию и типы токенов, на которой держится управляемая и масштабируемая дизайн-система.",
-      "professionIds": [
-        "it.aidesigner"
-      ],
-      "sourceRefs": [
-        {
-          "sourceId": "habr-ai-design-1096288",
-          "externalId": "habr-ai-design-1096288",
-          "url": "https://habr.com/ru/articles/1096288/",
-          "retrievedAt": "2026-11-03",
-          "license": "© Хабр — статья про ИИ-инструменты в дизайне. Извлекаются названия и короткие цитаты; полные тексты не копируются."
-        }
-      ],
-      "evidenceState": "supported",
-      "competencyLinks": [
-        {
-          "competencyId": "comp_d2750b393ebd",
-          "componentId": "dizayn-tokeny-praktika.znaniya",
-          "role": "primary"
-        }
-      ],
-      "materialIds": [],
-      "needsReview": false
-    },
-    {
       "id": "tag_7dc5e19535e0",
       "slug": "k-inzheneriya-dizayn-sistemy-321044897bfd",
       "title": "Tokens Studio / Style Dictionary",
@@ -66113,6 +65304,574 @@
         {
           "competencyId": "comp_74e9d09d4150",
           "componentId": "tehnicheskaya-gramotnost-praktika.znaniya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_d46d639d9302",
+      "slug": "m-k-dizayn-tokeny-3be856e96086-9db658",
+      "title": "Token taxonomy",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Уровни абстракции от исходных значений до компонентных задают иерархию и типы токенов, на которой держится управляемая и масштабируемая дизайн-система.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "habr-ai-design-1096288",
+          "externalId": "habr-ai-design-1096288",
+          "url": "https://habr.com/ru/articles/1096288/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Хабр — статья про ИИ-инструменты в дизайне. Извлекаются названия и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_9a71b8071561",
+          "componentId": "dizayn-sistemy-i-tokeny.osnovy-dizayn-sistem",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_d2cada1fbb88",
+      "slug": "m-k-dizayn-tokeny-1d34288011d7-5f60b5",
+      "title": "Aliases и semantic tokens",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Связи между токенами и смысловые роли привязывают значения к назначению, а не к конкретному цвету, поэтому смена палитры не требует правок в компонентах.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "habr-ai-design-1096288",
+          "externalId": "habr-ai-design-1096288",
+          "url": "https://habr.com/ru/articles/1096288/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Хабр — статья про ИИ-инструменты в дизайне. Извлекаются названия и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_9a71b8071561",
+          "componentId": "dizayn-sistemy-i-tokeny.osnovy-dizayn-sistem",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_ae8802703be1",
+      "slug": "m-k-dizayn-tokeny-da146e02e764-c4b99c",
+      "title": "Light/Dark themes",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Парные цветовые схемы строятся так, чтобы одни и те же семантические роли получали разные значения в светлой и тёмной теме и интерфейс оставался предсказуемым.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "habr-ai-design-1096288",
+          "externalId": "habr-ai-design-1096288",
+          "url": "https://habr.com/ru/articles/1096288/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Хабр — статья про ИИ-инструменты в дизайне. Извлекаются названия и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_9a71b8071561",
+          "componentId": "dizayn-sistemy-i-tokeny.osnovy-dizayn-sistem",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_06a01c31fbd8",
+      "slug": "m-k-dizayn-tokeny-4f6aee8d8988-50c480",
+      "title": "Контраст и доступность",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Различимость текста и элементов интерфейса проверяют на уровне токенов, чтобы каждая тема оставалась читаемой для пользователей.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "habr-ai-design-1096288",
+          "externalId": "habr-ai-design-1096288",
+          "url": "https://habr.com/ru/articles/1096288/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Хабр — статья про ИИ-инструменты в дизайне. Извлекаются названия и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_9a71b8071561",
+          "componentId": "dizayn-sistemy-i-tokeny.osnovy-dizayn-sistem",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_379c027e363d",
+      "slug": "m-k-dizayn-tokeny-8b4617b659a5-66d4d0",
+      "title": "Naming",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Правила именования отражают роль и уровень токена, от них зависят предсказуемость системы и согласованность работы команды.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "habr-ai-design-1096288",
+          "externalId": "habr-ai-design-1096288",
+          "url": "https://habr.com/ru/articles/1096288/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Хабр — статья про ИИ-инструменты в дизайне. Извлекаются названия и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_9a71b8071561",
+          "componentId": "dizayn-sistemy-i-tokeny.osnovy-dizayn-sistem",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_562f0ec97e60",
+      "slug": "m-s-dizayn-tokeny-f2921ee7987c-a88884",
+      "title": "Собирать систему токенов",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Выстраивает токены от primitive до component-уровня с наследованием значений без дублей, чтобы компоненты опирались на семантические роли.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "habr-ai-design-1096288",
+          "externalId": "habr-ai-design-1096288",
+          "url": "https://habr.com/ru/articles/1096288/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Хабр — статья про ИИ-инструменты в дизайне. Извлекаются названия и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_9a71b8071561",
+          "componentId": "dizayn-sistemy-i-tokeny.arhitektura-komponentov",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_64047b7a0ed7",
+      "slug": "m-s-dizayn-tokeny-a8fd18a09ac7-bbdc43",
+      "title": "Настраивать темы",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Задаёт значения семантических токенов для светлой и тёмной темы, сохраняя единый набор ролей и предсказуемый вид интерфейса при переключении.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "habr-ai-design-1096288",
+          "externalId": "habr-ai-design-1096288",
+          "url": "https://habr.com/ru/articles/1096288/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Хабр — статья про ИИ-инструменты в дизайне. Извлекаются названия и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_9a71b8071561",
+          "componentId": "dizayn-sistemy-i-tokeny.arhitektura-komponentov",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_520208bdf15c",
+      "slug": "m-s-dizayn-tokeny-62671d9830da-9f3478",
+      "title": "Экспортировать токены в код",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Передаёт токены в код в согласованном формате, чтобы значения в дизайне и реализации совпадали и обновлялись из одного источника.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "habr-ai-design-1096288",
+          "externalId": "habr-ai-design-1096288",
+          "url": "https://habr.com/ru/articles/1096288/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Хабр — статья про ИИ-инструменты в дизайне. Извлекаются названия и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_9a71b8071561",
+          "componentId": "dizayn-sistemy-i-tokeny.arhitektura-komponentov",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_afeeec9c273a",
+      "slug": "m-s-dizayn-tokeny-cc1c10e37ac5-ef683f",
+      "title": "Проверять консистентность",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Сверяет токены и темы на дубли, разрывы и несогласованные значения, устраняя расхождения до передачи системы в разработку.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "habr-ai-design-1096288",
+          "externalId": "habr-ai-design-1096288",
+          "url": "https://habr.com/ru/articles/1096288/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Хабр — статья про ИИ-инструменты в дизайне. Извлекаются названия и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_9a71b8071561",
+          "componentId": "dizayn-sistemy-i-tokeny.arhitektura-komponentov",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_e3f823e709a6",
+      "slug": "m-generaciya-izobrazheniya-8ffcbc",
+      "title": "Генерация изображения по промпту",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Промпт задаёт первый визуал, а параметры и режимы генерации позволяют управлять результатом; это нужно, чтобы быстро получать исходное изображение для дальнейшей доработки.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum-ai-for-design",
+          "externalId": "ai-for-design",
+          "url": "https://practicum.yandex.ru/ai-for-design/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        },
+        {
+          "sourceId": "learntube-ai-graphic-design",
+          "externalId": "learntube-ai-graphic-design",
+          "url": "https://learntube.ai/learn/course/ai-for-graphic-design",
+          "retrievedAt": "2026-11-03",
+          "license": "© LearnTube; извлекаются название и темы курса."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_98f8b80e3d5f",
+          "componentId": "generatsiya-vizuala-praktika.generatsiya-izobrazheniy",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_5332bcb4f6bd",
+      "slug": "m-stil-i-referensy-acb501",
+      "title": "Стиль и референсы",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Референсы передают характеристики стиля, а их подбор и воспроизведение помогают сохранять единый визуальный язык в новых изображениях.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum-ai-for-design",
+          "externalId": "ai-for-design",
+          "url": "https://practicum.yandex.ru/ai-for-design/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_98f8b80e3d5f",
+          "componentId": "generatsiya-vizuala-praktika.generatsiya-izobrazheniy",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_99d1bd83b9e9",
+      "slug": "m-dovedenie-vizuala-39d5e7",
+      "title": "Доведение AI-визуала",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Устраняет артефакты, выполняет генеративную заливку и апскейл сгенерированного изображения, добиваясь пригодности визуала для рабочего использования.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum-ai-tools-for-designers",
+          "externalId": "ai-tools-for-designers",
+          "url": "https://practicum.yandex.ru/ai-tools-for-designers/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_98f8b80e3d5f",
+          "componentId": "generatsiya-vizuala-praktika.stilizatsiya",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_eb3285459661",
+      "slug": "m-scenarii-animacii-108993",
+      "title": "Сценарии анимации с ИИ",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Продумывание последовательности сцен и действий персонажей до генерации помогает задавать нейросети управляемые промпты и референсы и получать предсказуемый результат.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum-ai-for-design",
+          "externalId": "ai-for-design",
+          "url": "https://practicum.yandex.ru/ai-for-design/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_a06b049442ac",
+          "componentId": "ai-video-i-audio-praktika.generatsiya-video-s-ii",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_c16e455305a2",
+      "slug": "m-generaciya-audio-video-2356e2",
+      "title": "Генерация видео, музыки и озвучки",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Различение возможностей и ограничений нейросетей для видео, музыки и речи позволяет выбирать подходящий инструмент под задачу и реалистично оценивать результат генерации.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum-ai-tools-for-designers",
+          "externalId": "ai-tools-for-designers",
+          "url": "https://practicum.yandex.ru/ai-tools-for-designers/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        },
+        {
+          "sourceId": "skillbox-ru-course-ai-audio-video",
+          "externalId": "ai-audio-video",
+          "url": "https://skillbox.ru/course/ai-audio-video/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Skillbox; извлекаются название и темы курса."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_a06b049442ac",
+          "componentId": "ai-video-i-audio-praktika.generatsiya-video-s-ii",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_ad90fe23751f",
+      "slug": "m-montazh-i-sinhronizaciya-1a3a31",
+      "title": "Монтаж и синхронизация AI-видео",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Собирает сгенерированные видео- и аудиофрагменты в единый продукт, выравнивает тайминг и синхронизирует звук с изображением так, чтобы сцены шли без рассинхрона и монтажных разрывов.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum-ai-tools-for-designers",
+          "externalId": "ai-tools-for-designers",
+          "url": "https://practicum.yandex.ru/ai-tools-for-designers/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_a06b049442ac",
+          "componentId": "ai-video-i-audio-praktika.sinhronizatsiya-video-i-zvuka",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_decfa95e3827",
+      "slug": "m-tipy-generativnyh-modeley-1d99c8",
+      "title": "Типы генеративных моделей",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Различение основных классов генеративных моделей — текстовых, изображенческих и трёхмерных — помогает заранее соотнести задачу с подходящим типом генерации и не выбирать инструмент наугад.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum-ai-tools-for-designers",
+          "externalId": "ai-tools-for-designers",
+          "url": "https://practicum.yandex.ru/ai-tools-for-designers/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        },
+        {
+          "sourceId": "elements-of-ai",
+          "externalId": "elements-of-ai",
+          "url": "https://www.elementsofai.com/",
+          "retrievedAt": "2026-11-03",
+          "license": "CC BY-NC-SA 4.0 (Reaktor / University of Helsinki)"
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_e02c5f4d39ea",
+          "componentId": "landshaft-ai-instrumentov-praktika.ai-instrumenty-dlya-teksta",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_fb2482a0a0d2",
+      "slug": "m-vozmozhnosti-i-ogranicheniya-modeley-c6ec98",
+      "title": "Возможности и ограничения моделей",
+      "aliases": [],
+      "kind": "knowledge",
+      "definition": "Представление о сильных и слабых сторонах разных классов моделей и типовых ограничениях их применения снижает риск неверных ожиданий и помогает выбирать реалистичный сценарий работы.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum-ai-tools-for-designers",
+          "externalId": "ai-tools-for-designers",
+          "url": "https://practicum.yandex.ru/ai-tools-for-designers/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        },
+        {
+          "sourceId": "elements-of-ai",
+          "externalId": "elements-of-ai",
+          "url": "https://www.elementsofai.com/",
+          "retrievedAt": "2026-11-03",
+          "license": "CC BY-NC-SA 4.0 (Reaktor / University of Helsinki)"
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_e02c5f4d39ea",
+          "componentId": "landshaft-ai-instrumentov-praktika.ai-instrumenty-dlya-teksta",
+          "role": "primary"
+        }
+      ],
+      "materialIds": [],
+      "needsReview": false
+    },
+    {
+      "id": "tag_8058ad047df1",
+      "slug": "m-kriterii-vybora-instrumenta-pod-zadachu-795ac7",
+      "title": "Критерии выбора инструмента под задачу",
+      "aliases": [],
+      "kind": "skill",
+      "definition": "Сопоставляет задачу проектирования с возможностями и ограничениями инструментов и обоснованно выбирает подходящий, проверяя, что его применение ведёт к нужному результату.",
+      "professionIds": [
+        "it.aidesigner"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "practicum-ai-tools-for-designers",
+          "externalId": "ai-tools-for-designers",
+          "url": "https://practicum.yandex.ru/ai-tools-for-designers/",
+          "retrievedAt": "2026-11-03",
+          "license": "© Яндекс Практикум. Извлекаются названия навыков и короткие цитаты; полные тексты не копируются."
+        }
+      ],
+      "evidenceState": "supported",
+      "competencyLinks": [
+        {
+          "competencyId": "comp_e02c5f4d39ea",
+          "componentId": "landshaft-ai-instrumentov-praktika.ogranicheniya-ai-instrumentov",
           "role": "primary"
         }
       ],
@@ -67908,7 +67667,7 @@
       "retrievedAt": "2026-11-03",
       "links": [
         {
-          "competencyId": "comp_a6e9c9d34d14",
+          "competencyId": "comp_e02c5f4d39ea",
           "componentId": "modeli-i-instrumenty-ii.instrumenty-i-vybor-pod-zadachu",
           "tagId": "tag_385f6aa91bf9",
           "relevance": 0.6,
@@ -68751,7 +68510,7 @@
           "modelProposal": false
         },
         {
-          "competencyId": "comp_bc4de5f33fa7",
+          "competencyId": "comp_98f8b80e3d5f",
           "relevance": 0.78,
           "reason": "ИИ в обработке изображений: генерация и доработка визуала.",
           "modelProposal": false
@@ -70290,7 +70049,7 @@
       "retrievedAt": "2026-11-13",
       "links": [
         {
-          "competencyId": "comp_d2750b393ebd",
+          "competencyId": "comp_9a71b8071561",
           "relevance": 0.85,
           "reason": "Токены и темы на уровне переменных Figma.",
           "modelProposal": false

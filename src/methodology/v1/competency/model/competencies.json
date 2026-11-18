@@ -2233,20 +2233,6 @@
       ]
     },
     {
-      "id": "aidesigner-design-tokens",
-      "branchId": "aidesigner",
-      "branchTitle": "AI-дизайнер",
-      "sectionId": "aid-design-systems",
-      "sectionTitle": "Дизайн-системы",
-      "title": "Дизайн-токены и темы",
-      "titleEn": "Design tokens and themes",
-      "definition": "Проектирует и поддерживает систему токенов и тем от primitive до semantic и component-уровней, чтобы светлая и тёмная темы оставались единообразными, а решения предсказуемо передавались в код.",
-      "priorityHint": "core",
-      "learningSourceIds": [
-        "habr-ai-design-1096288"
-      ]
-    },
-    {
       "id": "aidesigner-design-system-engineering",
       "branchId": "aidesigner",
       "branchTitle": "AI-дизайнер",
@@ -2556,7 +2542,7 @@
       "sectionTitle": "game-systems",
       "title": "Мультиплеер и социальные механики",
       "titleEn": "Multiplayer and social mechanics",
-      "definition": "Проектирует мультиплеер и социальные механики: роли игроков, взаимодействие и социальные циклы, чтобы совместная игра давала понятные роли и причины возвращаться.",
+      "definition": "Проектирует совместную игру так, чтобы у участников были понятные роли и взаимодействие, а социальные циклы и общие цели давали причины возвращаться; баланс команд и ролей проверяется отдельно.",
       "priorityHint": "core",
       "learningSourceIds": [
         "gdcvault",

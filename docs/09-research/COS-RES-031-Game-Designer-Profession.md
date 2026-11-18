@@ -92,7 +92,7 @@ Twine Cookbook, Twine, inkle/ink, ink (сайт), GameAnalytics Docs, Unity Anal
 - `release/beta-1.json`: `it.game` добавлен в `professionIds` (13 профессий), убран из `excludedProfessionIds`.
 - Gate: **PASS** — 336/438 связей, 147/147 опубликованных компетенций, 0 пробелов; гейм-дизайнер — 43/46 связей.
 - 3 компетенции AI-слоя (`ai-prompting`, `ai-visual-generation`, `ai-ethics-rights`) остаются в профессии,
-  но не публикуются: по ADR-015 AI-слой — ядро только AI-дизайнера (правило `coreCompetencyPrefixes`).
+  но не публикуются: по ADR-015 AI-слой — ядро только AI native дизайнера (правило `coreCompetencyPrefixes`).
   Игровая компетенция «ИИ в геймдеве» получила id `game-ai-gamedev`, чтобы не попадать под AI-слой.
 - Source review: +72 автоматических accepted-решения для игровых пар, +3 ручных для «ИИ в геймдеве»
   (`reviewedBy: game-layer-review-v1`), требуется spot-check основателя.

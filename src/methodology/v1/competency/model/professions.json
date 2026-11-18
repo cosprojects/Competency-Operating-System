@@ -9,8 +9,7 @@
       "canonicalMapFile": "canonical/uxui.json",
       "catalogFile": "catalog/it.json",
       "priorityFile": "priority/uxui.json",
-      "sourcesFile": "sources/professions/it.uxui.json",
-      "updatedAt": "2026-11-10"
+      "sourcesFile": "sources/professions/it.uxui.json"
     },
     {
       "id": "it.graphic",
@@ -21,8 +20,7 @@
       "viewFile": "model/professions/views/graphic.json",
       "catalogFile": "catalog/it.json",
       "priorityFile": "model/profession-competencies/graphic.json",
-      "sourcesFile": "sources/professions/it.graphic.json",
-      "updatedAt": "2026-11-03"
+      "sourcesFile": "sources/professions/it.graphic.json"
     },
     {
       "id": "it.motion",
@@ -33,8 +31,7 @@
       "viewFile": "model/professions/views/motion.json",
       "catalogFile": "catalog/it.json",
       "priorityFile": "model/profession-competencies/motion.json",
-      "sourcesFile": "sources/professions/it.motion.json",
-      "updatedAt": "2026-11-03"
+      "sourcesFile": "sources/professions/it.motion.json"
     },
     {
       "id": "it.product",
@@ -45,8 +42,7 @@
       "viewFile": "model/professions/views/product.json",
       "catalogFile": "catalog/it.json",
       "priorityFile": "model/profession-competencies/product.json",
-      "sourcesFile": "sources/professions/it.product.json",
-      "updatedAt": "2026-11-03"
+      "sourcesFile": "sources/professions/it.product.json"
     },
     {
       "id": "it.3ddesigner",
@@ -57,8 +53,7 @@
       "viewFile": "model/professions/views/3ddesigner.json",
       "catalogFile": "catalog/it.json",
       "priorityFile": "model/profession-competencies/3ddesigner.json",
-      "sourcesFile": "sources/professions/it.3ddesigner.json",
-      "updatedAt": "2026-11-03"
+      "sourcesFile": "sources/professions/it.3ddesigner.json"
     },
     {
       "id": "it.appdesign",
@@ -69,8 +64,7 @@
       "viewFile": "model/professions/views/appdesign.json",
       "catalogFile": "catalog/it.json",
       "priorityFile": "model/profession-competencies/appdesign.json",
-      "sourcesFile": "sources/professions/it.appdesign.json",
-      "updatedAt": "2026-11-03"
+      "sourcesFile": "sources/professions/it.appdesign.json"
     },
     {
       "id": "it.artdir",
@@ -81,8 +75,7 @@
       "viewFile": "model/professions/views/artdir.json",
       "catalogFile": "catalog/it.json",
       "priorityFile": "model/profession-competencies/artdir.json",
-      "sourcesFile": "sources/professions/it.artdir.json",
-      "updatedAt": "2026-11-03"
+      "sourcesFile": "sources/professions/it.artdir.json"
     },
     {
       "id": "it.interior",
@@ -93,8 +86,7 @@
       "viewFile": "model/professions/views/interior.json",
       "catalogFile": "catalog/it.json",
       "priorityFile": "model/profession-competencies/interior.json",
-      "sourcesFile": "sources/professions/it.interior.json",
-      "updatedAt": "2026-11-03"
+      "sourcesFile": "sources/professions/it.interior.json"
     },
     {
       "id": "it.presentation",
@@ -105,8 +97,7 @@
       "viewFile": "model/professions/views/presentation.json",
       "catalogFile": "catalog/it.json",
       "priorityFile": "model/profession-competencies/presentation.json",
-      "sourcesFile": "sources/professions/it.presentation.json",
-      "updatedAt": "2026-11-03"
+      "sourcesFile": "sources/professions/it.presentation.json"
     },
     {
       "id": "it.uxresearch",
@@ -117,8 +108,7 @@
       "viewFile": "model/professions/views/uxresearch.json",
       "catalogFile": "catalog/it.json",
       "priorityFile": "model/profession-competencies/uxresearch.json",
-      "sourcesFile": "sources/professions/it.uxresearch.json",
-      "updatedAt": "2026-11-03"
+      "sourcesFile": "sources/professions/it.uxresearch.json"
     },
     {
       "id": "it.webdesigner",
@@ -129,20 +119,18 @@
       "viewFile": "model/professions/views/webdesigner.json",
       "catalogFile": "catalog/it.json",
       "priorityFile": "model/profession-competencies/webdesigner.json",
-      "sourcesFile": "sources/professions/it.webdesigner.json",
-      "updatedAt": "2026-11-03"
+      "sourcesFile": "sources/professions/it.webdesigner.json"
     },
     {
       "id": "it.aidesigner",
       "sphereId": "it",
-      "title": "AI-дизайнер",
-      "titleEn": "AI designer",
+      "title": "AI native дизайнер",
+      "titleEn": "AI native designer",
       "canonicalMapFile": "model/professions/views/aidesigner.json",
       "viewFile": "model/professions/views/aidesigner.json",
       "catalogFile": "catalog/it.json",
       "priorityFile": "model/profession-competencies/aidesigner.json",
-      "sourcesFile": "sources/professions/it.aidesigner.json",
-      "updatedAt": "2026-11-11"
+      "sourcesFile": "sources/professions/it.aidesigner.json"
     },
     {
       "id": "it.game",
@@ -153,8 +141,7 @@
       "viewFile": "model/professions/views/game.json",
       "catalogFile": "catalog/it.json",
       "priorityFile": "model/profession-competencies/game.json",
-      "sourcesFile": "sources/professions/it.game.json",
-      "updatedAt": "2026-11-08"
+      "sourcesFile": "sources/professions/it.game.json"
     }
   ]
 }

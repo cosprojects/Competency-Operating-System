@@ -476,10 +476,13 @@
     },
     {
       "id": "aidesigner",
-      "title": "AI-дизайнер",
-      "titleEn": "AI designer",
+      "title": "AI native дизайнер",
+      "titleEn": "AI native designer",
       "aliases": [
         "AI designer",
+        "AI native designer",
+        "AI native-дизайнер",
+        "AI-дизайнер",
         "ИИ-дизайнер"
       ],
       "practicum": {

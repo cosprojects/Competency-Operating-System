@@ -1218,17 +1218,6 @@
       "priorityHint": "core"
     },
     {
-      "id": "aidesigner-design-tokens",
-      "branchId": "aidesigner",
-      "branchTitle": "AI-дизайнер",
-      "sectionId": "aid-design-systems",
-      "sectionTitle": "Дизайн-системы",
-      "title": "Дизайн-токены и темы",
-      "titleEn": "Design tokens and themes",
-      "definition": "Проектирует и поддерживает систему токенов и тем от primitive до semantic и component-уровней, чтобы светлая и тёмная темы оставались единообразными, а решения предсказуемо передавались в код.",
-      "priorityHint": "core"
-    },
-    {
       "id": "aidesigner-design-system-engineering",
       "branchId": "aidesigner",
       "branchTitle": "AI-дизайнер",

@@ -174,7 +174,7 @@ Human-review канвас: `web/competencies-review-canvas.html` — табы п
 
 - сфера: `it`;
 - профессий: **12** — `it.uxui`, `it.product`, `it.motion`, `it.graphic`, `it.presentation`, `it.appdesign`, `it.uxresearch`, `it.artdir`, `it.3ddesigner`, `it.interior`, `it.webdesigner`, `it.aidesigner`;
-- компетенций в едином массиве: **122** (34 базовых + 69 профессио-специфичных + 9 сквозных AI-компетенций + 10 компетенций AI-дизайнера; `COS-RES-023`, `COS-RES-024`, `COS-RES-025`);
+- компетенций в едином массиве: **122** (34 базовых + 69 профессио-специфичных + 9 сквозных AI-компетенций + 10 компетенций AI native дизайнера; `COS-RES-023`, `COS-RES-024`, `COS-RES-025`);
 - каталог домена: **44 блока, 195 тегов** (UX/UI + profession-specific);
 - profession-competencies: UX/UI — 43 (35), product — 39 (51), motion — 37 (52), graphic — 27 (43), presentation — 22 (25), appdesign — 35 (44), uxresearch — 27 (37), artdir — 25 (34), 3ddesigner — 24 (30), interior — 23 (32), webdesigner — 33 (46), aidesigner — 27 (41); в каждой профессии — 9 AI-компетенций; графы связные;
 - переиспользуемых компетенций: **34** (базовые входят в несколько профессий; 9 специфичных — в свою);

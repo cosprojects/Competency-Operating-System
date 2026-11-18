@@ -3,7 +3,7 @@
 - Дата: 2026-11-03
 - Релиз: `beta-1` (manifest `draft`)
 - Источник данных: `registry.json`, `learning-source-links.json`, `competencies.json`, `catalog/it.json`, `data/learning-sources/open-sources-by-profession-2026-11-03.json`
-- Актуальная сводка после агрегации AI-дизайнера и гейм-дизайнера: [`aggregation-2026-11-03.md`](aggregation-2026-11-03.md)
+- Актуальная сводка после агрегации AI native дизайнера и гейм-дизайнера: [`aggregation-2026-11-03.md`](aggregation-2026-11-03.md)
 
 ## Итог
 
@@ -33,7 +33,7 @@
 | Дизайнер презентаций | 22 | 138 | 48 | 47 | 8 | 24 | 8 | 4 | 13/13 |
 | UX-исследователь | 27 | 150 | 43 | 43 | 9 | 23 | 8 | 6 | 18/18 |
 | Веб-дизайнер | 33 | 173 | 55 | 53 | 10 | 30 | 15 | 3 | 24/24 |
-| AI-дизайнер | 27 | 182 | 56 | 55 | 7 | 34 | 5 | 1 | 0/27 |
+| AI native дизайнер | 27 | 182 | 56 | 55 | 7 | 34 | 5 | 1 | 0/27 |
 
 ## Новые авто-источники по профессиям
 
@@ -48,7 +48,7 @@
 - **Дизайнер презентаций**: tilda.education, bangbangeducation.ru, bureau.ru, hudozhnik.online, skillbox.ru, spb.hse.ru, cbsd.ru, hse.ru
 - **UX-исследователь**: tilda.education, stepik.org, skillbox.ru, spb.hse.ru, openedu.ru, hse.ru, freeuniversity.education, productlab.ru, privet.marketing
 - **Веб-дизайнер**: tilda.education, hudozhnik.online, bangbangeducation.ru, bureau.ru, skillbox.ru, spb.hse.ru, contented.ru, itproger.com, developer.mozilla.org, intuit.ru
-- **AI-дизайнер**: tilda.education, aistudio.yandex.ru, stepik.org, learn.rarus.ru, skillbox.ru, bangbangeducation.ru, spb.hse.ru
+- **AI native дизайнер**: tilda.education, aistudio.yandex.ru, stepik.org, learn.rarus.ru, skillbox.ru, bangbangeducation.ru, spb.hse.ru
 
 ## Что это значит
 

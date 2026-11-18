@@ -243,7 +243,7 @@
       "sectionTitle": "Дизайн-системы"
     },
     {
-      "competencyId": "aidesigner-design-tokens",
+      "competencyId": "aidesigner-design-system-engineering",
       "tier": "core",
       "order": 27,
       "prerequisites": [
@@ -253,19 +253,9 @@
       "sectionTitle": "Дизайн-системы"
     },
     {
-      "competencyId": "aidesigner-design-system-engineering",
-      "tier": "core",
-      "order": 28,
-      "prerequisites": [
-        "aidesigner-design-tokens"
-      ],
-      "sectionId": "aid-design-systems",
-      "sectionTitle": "Дизайн-системы"
-    },
-    {
       "competencyId": "aidesigner-ai-development",
       "tier": "core",
-      "order": 29,
+      "order": 28,
       "prerequisites": [
         "ui-figma"
       ],
@@ -275,7 +265,7 @@
     {
       "competencyId": "aidesigner-mcp-integration",
       "tier": "core",
-      "order": 30,
+      "order": 29,
       "prerequisites": [
         "aidesigner-ai-development"
       ],
@@ -283,27 +273,17 @@
       "sectionTitle": "AI-assisted разработка"
     },
     {
-      "competencyId": "ai-visual-generation",
-      "tier": "core",
-      "order": 31,
-      "prerequisites": [],
-      "sectionId": "aid-media",
-      "sectionTitle": "AI Media Production"
-    },
-    {
       "competencyId": "aidesigner-visual-generation",
       "tier": "core",
-      "order": 32,
-      "prerequisites": [
-        "ai-visual-generation"
-      ],
+      "order": 30,
+      "prerequisites": [],
       "sectionId": "aid-media",
       "sectionTitle": "AI Media Production"
     },
     {
       "competencyId": "aidesigner-series-adaptation",
       "tier": "core",
-      "order": 33,
+      "order": 31,
       "prerequisites": [
         "aidesigner-visual-generation"
       ],
@@ -311,27 +291,17 @@
       "sectionTitle": "AI Media Production"
     },
     {
-      "competencyId": "ai-video-audio",
-      "tier": "core",
-      "order": 34,
-      "prerequisites": [],
-      "sectionId": "aid-media",
-      "sectionTitle": "AI Media Production"
-    },
-    {
       "competencyId": "aidesigner-video-audio",
       "tier": "core",
-      "order": 35,
-      "prerequisites": [
-        "ai-video-audio"
-      ],
+      "order": 32,
+      "prerequisites": [],
       "sectionId": "aid-media",
       "sectionTitle": "AI Media Production"
     },
     {
       "competencyId": "ai-copy-content",
       "tier": "core",
-      "order": 36,
+      "order": 33,
       "prerequisites": [],
       "sectionId": "aid-media",
       "sectionTitle": "AI Media Production"
@@ -339,7 +309,7 @@
     {
       "competencyId": "ui-motion",
       "tier": "core",
-      "order": 37,
+      "order": 34,
       "prerequisites": [],
       "sectionId": "aid-motion",
       "sectionTitle": "Motion & Interaction"
@@ -347,7 +317,7 @@
     {
       "competencyId": "motion-animation-principles",
       "tier": "core",
-      "order": 38,
+      "order": 35,
       "prerequisites": [],
       "sectionId": "aid-motion",
       "sectionTitle": "Motion & Interaction"
@@ -355,7 +325,7 @@
     {
       "competencyId": "motion-timing-easing",
       "tier": "core",
-      "order": 39,
+      "order": 36,
       "prerequisites": [],
       "sectionId": "aid-motion",
       "sectionTitle": "Motion & Interaction"
@@ -363,7 +333,7 @@
     {
       "competencyId": "aidesigner-automation",
       "tier": "core",
-      "order": 40,
+      "order": 37,
       "prerequisites": [],
       "sectionId": "aid-automation",
       "sectionTitle": "Автоматизация и оркестрация"
@@ -371,7 +341,7 @@
     {
       "competencyId": "ai-workflow-integration",
       "tier": "core",
-      "order": 41,
+      "order": 38,
       "prerequisites": [],
       "sectionId": "aid-automation",
       "sectionTitle": "Автоматизация и оркестрация"
@@ -379,7 +349,7 @@
     {
       "competencyId": "aidesigner-agent-orchestration",
       "tier": "core",
-      "order": 42,
+      "order": 39,
       "prerequisites": [
         "aidesigner-automation"
       ],
@@ -389,7 +359,7 @@
     {
       "competencyId": "aidesigner-quality-eval",
       "tier": "core",
-      "order": 43,
+      "order": 40,
       "prerequisites": [],
       "sectionId": "aid-qa",
       "sectionTitle": "Качество и валидация"
@@ -397,7 +367,7 @@
     {
       "competencyId": "aidesigner-visual-qa",
       "tier": "core",
-      "order": 44,
+      "order": 41,
       "prerequisites": [
         "aidesigner-quality-eval"
       ],
@@ -407,7 +377,7 @@
     {
       "competencyId": "ux-usability-testing",
       "tier": "optional",
-      "order": 45,
+      "order": 42,
       "prerequisites": [],
       "sectionId": "aid-qa",
       "sectionTitle": "Качество и валидация"
@@ -415,7 +385,7 @@
     {
       "competencyId": "ux-metrics",
       "tier": "optional",
-      "order": 46,
+      "order": 43,
       "prerequisites": [],
       "sectionId": "aid-qa",
       "sectionTitle": "Качество и валидация"
@@ -423,7 +393,7 @@
     {
       "competencyId": "ui-accessibility",
       "tier": "core",
-      "order": 57,
+      "order": 44,
       "prerequisites": [
         "aidesigner-quality-eval",
         "aidesigner-visual-qa"
@@ -434,7 +404,7 @@
     {
       "competencyId": "ui-handoff",
       "tier": "optional",
-      "order": 47,
+      "order": 45,
       "prerequisites": [],
       "sectionId": "aid-delivery",
       "sectionTitle": "Документация и доставка"
@@ -442,7 +412,7 @@
     {
       "competencyId": "ai-layout-docs",
       "tier": "optional",
-      "order": 48,
+      "order": 46,
       "prerequisites": [],
       "sectionId": "aid-delivery",
       "sectionTitle": "Документация и доставка"
@@ -450,33 +420,23 @@
     {
       "competencyId": "aidesigner-integration",
       "tier": "core",
-      "order": 49,
+      "order": 47,
       "prerequisites": [],
       "sectionId": "aid-delivery",
       "sectionTitle": "Документация и доставка"
     },
     {
-      "competencyId": "ai-model-landscape",
-      "tier": "foundation",
-      "order": 50,
-      "prerequisites": [],
-      "sectionId": "aid-foundations",
-      "sectionTitle": "Сквозные компетенции"
-    },
-    {
       "competencyId": "ai-prompting",
       "tier": "foundation",
-      "order": 51,
-      "prerequisites": [
-        "ai-model-landscape"
-      ],
+      "order": 48,
+      "prerequisites": [],
       "sectionId": "aid-foundations",
       "sectionTitle": "Сквозные компетенции"
     },
     {
       "competencyId": "aidesigner-tool-landscape",
       "tier": "foundation",
-      "order": 52,
+      "order": 49,
       "prerequisites": [],
       "sectionId": "aid-foundations",
       "sectionTitle": "Сквозные компетенции"
@@ -484,7 +444,7 @@
     {
       "competencyId": "aidesigner-prompt-systems",
       "tier": "core",
-      "order": 53,
+      "order": 50,
       "prerequisites": [
         "ai-prompting"
       ],
@@ -494,7 +454,7 @@
     {
       "competencyId": "aidesigner-tool-evaluation",
       "tier": "core",
-      "order": 54,
+      "order": 51,
       "prerequisites": [
         "aidesigner-tool-landscape"
       ],
@@ -504,7 +464,7 @@
     {
       "competencyId": "ai-ethics-rights",
       "tier": "core",
-      "order": 55,
+      "order": 52,
       "prerequisites": [],
       "sectionId": "aid-foundations",
       "sectionTitle": "Сквозные компетенции"
@@ -512,7 +472,7 @@
     {
       "competencyId": "aidesigner-technical-literacy",
       "tier": "foundation",
-      "order": 56,
+      "order": 53,
       "prerequisites": [],
       "sectionId": "aid-foundations",
       "sectionTitle": "Сквозные компетенции"

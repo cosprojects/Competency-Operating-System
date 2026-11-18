@@ -52,7 +52,7 @@ references:
 ### Нормализованная модель
 - `model/spheres.json` — сфера `it`.
 - `model/professions.json` — **12 профессий**: `it.uxui`, `it.product`, `it.motion`, `it.graphic` + новые `it.presentation`, `it.appdesign`, `it.uxresearch`, `it.artdir`, `it.3ddesigner`, `it.interior`, `it.webdesigner` (`COS-RES-023`) + `it.aidesigner` (`COS-RES-025`).
-- `model/competencies.json` — **единый массив 122 компетенций** (34 базовых + 69 профессио-специфичных + 9 сквозных AI-компетенций + 10 компетенций AI-дизайнера; `COS-RES-024`, `COS-RES-025`).
+- `model/competencies.json` — **единый массив 122 компетенций** (34 базовых + 69 профессио-специфичных + 9 сквозных AI-компетенций + 10 компетенций AI native дизайнера; `COS-RES-024`, `COS-RES-025`).
 - `model/profession-competencies/*.json` — ссылки competencyId + tier/order + prerequisites по профессии.
 - `model/professions/views/*.json` — профессиональные view: разделы, tier/order, prerequisites.
 
@@ -71,9 +71,9 @@ references:
 | 3D | 24 | 24 | 30 |
 | Интерьеры | 23 | 23 | 32 |
 | Веб-дизайн | 33 | 33 | 46 |
-| AI-дизайнер | 27 | 27 | 41 |
+| AI native дизайнер | 27 | 27 | 41 |
 
-Во все 12 профессий добавлен сквозной слой из 9 AI-компетенций (`COS-RES-024`): в 10 views — секция «ИИ на этапах работы», в UX/UI — через `model:sync` (43 = 34+9). Профессия «AI-дизайнер» (`COS-RES-025`) переиспользует AI-слой и добавляет 10 собственных компетенций.
+Во все 12 профессий добавлен сквозной слой из 9 AI-компетенций (`COS-RES-024`): в 10 views — секция «ИИ на этапах работы», в UX/UI — через `model:sync` (43 = 34+9). Профессия «AI native дизайнер» (`COS-RES-025`) переиспользует AI-слой и добавляет 10 собственных компетенций.
 
 Все три графа (product, motion, graphic) теперь связные: единственный корень `ux-design-thinking`, компонент — 1. Product view: 3 foundation / 24 core / 3 optional; motion: 8/15/5; graphic: 7/4/7.
 
@@ -159,7 +159,7 @@ open web/it-product-competency-canvas.html
 
 1. **Human-review Motion-расширения.** 10 новых motion-компетенций и 10 seed-блоков (`COS-RES-022`) приняты технически; теги блоков синтетические (без `sourceRefs`). Mapping Motion уже сопоставляет их с собранными Practicum/O*NET-тегами — нужно подтвердить людьми и решить, привязывать ли теги к блокам.
 2. **Human-review evidence-backed блоков (Product/Graphic).** `tagHints` заполнены, `competency:seed` + Pass B дали предложения: product 5 блоков (sourceRefs 1–5), graphic 3 (5–6). Артефакты — `data/competency/proposed-blocks-it-*.json` (gitignored), приёмка не выполнена.
-3. **Learning sources (`COS-RES-022`).** `learning:validate` — 118 источников, 89 active, 0 ошибок; 76 источников присланы заказчиком (56 active, 19 blocked/degraded → discoveryOnly/перепроверка); `learning:map` — 118 связанных компетенций, все 12 профессий покрыты (AI-дизайнер 27/27); `learning:audit --profession motion` — 9/9 active; `learning:map` — проекция source→competency и покрытие: UX/UI 24/34, Product 23/30, Motion 23/28, Graphic 14/18 (43/55 компетенций), 0 предупреждений; связи ведутся в `model/learning-source-links.json` и мержатся в `model:sync`; каталоги/обзоры размечены `discoveryOnly` (8 шт.); `learning:topics` — robots-safe извлечение коротких тем из course pages (Motion 5/7 источников / 45 тем, UX/UI 180, Product 198, Graphic 140); `learning:discover` требует Google CSE keys и human-review.
+3. **Learning sources (`COS-RES-022`).** `learning:validate` — 118 источников, 89 active, 0 ошибок; 76 источников присланы заказчиком (56 active, 19 blocked/degraded → discoveryOnly/перепроверка); `learning:map` — 118 связанных компетенций, все 12 профессий покрыты (AI native дизайнер 27/27); `learning:audit --profession motion` — 9/9 active; `learning:map` — проекция source→competency и покрытие: UX/UI 24/34, Product 23/30, Motion 23/28, Graphic 14/18 (43/55 компетенций), 0 предупреждений; связи ведутся в `model/learning-source-links.json` и мержатся в `model:sync`; каталоги/обзоры размечены `discoveryOnly` (8 шт.); `learning:topics` — robots-safe извлечение коротких тем из course pages (Motion 5/7 источников / 45 тем, UX/UI 180, Product 198, Graphic 140); `learning:discover` требует Google CSE keys и human-review.
 2. **Human-review материалов** — журналы и review готовы: UX/UI 34/34, Product 30/30, Motion 28/28, Graphic 18/18. Нужно решить, какие материалы принимать; только после этого `catalog.materials`. Перезапуск: `materials:agent:queue -- --domain it --profession <prof> --classify --budget-usd 0.15 --max-calls 120`, затем `materials:agent:review`.
 4. **Human-review mapping Graphic** и привязка Practicum-тегов к accepted-блокам (теги собственных блоков синтетические).
 5. **Knowledge graph** (competency → components/tags/materials) — отложен по решению пользователя.
@@ -169,7 +169,7 @@ open web/it-product-competency-canvas.html
 ## 4a. Roadmap этапов 2–3 (зафиксировано)
 
 - **Этап 2**: слой AI/нейрокомпетенций во **все** профессии — **сделано** (`COS-RES-024`): 9 сквозных компетенций, 112 в массиве, learning:map 107 / 0 ошибок.
-- **Этап 3**: профессия **«AI-дизайнер»** — **сделано** (`COS-RES-025`): `it.aidesigner`, 27 компетенций (17 переиспользованных + 10 собственных), 41 связь, 2 Practicum AI-источника.
+- **Этап 3**: профессия **«AI native дизайнер»** — **сделано** (`COS-RES-025`): `it.aidesigner`, 27 компетенций (17 переиспользованных + 10 собственных), 41 связь, 2 Practicum AI-источника.
 
 ## 5. Известные ограничения и риски
 
@@ -210,5 +210,5 @@ open web/it-product-competency-canvas.html
 | 1.13.0 | 2026-10-26 | Второй пакет источников: арт-дирекшн (8: 5 active/3 blocked) и UX-исследователь (8: 5 active/3 blocked; один URL — дубль); реестр 89/65; learning:map 99 компетенций, 0 ошибок/0 предупреждений |
 | 1.14.0 | 2026-10-26 | Этап 2 (`COS-RES-024`): 9 сквозных AI-компетенций во всех 11 профессиях, массив 112, AI-секции в 10 views + UX/UI через model:sync; learning:map 107 компетенций / 0 ошибок; канвасы 10 профессий с AI-узлами; 157 тестов |
 | 1.15.0 | 2026-10-26 | Этап 3 (`COS-RES-025`): профессия `it.aidesigner` — 10 собственных компетенций, view 27 / 41 связь; массив 122, 12 профессий; 2 новых Practicum AI-источника (реестр 91/67), learning:map 117 / 0 ошибок; канвас + таб; 157 тестов |
-| 1.16.0 | 2026-10-26 | AI-библиотека по ссылкам заказчика: +27 источников (22 active, 4 blocked, 1 degraded); фундаментальные ИИ-курсы для всех 12 профессий; реестр 118/89; learning:map 118 / 0 ошибок; покрытие AI-дизайнера 27/27 |
+| 1.16.0 | 2026-10-26 | AI-библиотека по ссылкам заказчика: +27 источников (22 active, 4 blocked, 1 degraded); фундаментальные ИИ-курсы для всех 12 профессий; реестр 118/89; learning:map 118 / 0 ошибок; покрытие AI native дизайнера 27/27 |
 | 1.5.0 | 2026-10-26 | Motion evidence pass + learning source library: 10 motion компетенций (28 узлов / 42 связи), 10 motion-блоков, каталог 54/237, глобальный массив 55; `learning-sources` registry (33 записи, 24 active) и Google CSE discovery scaffold |

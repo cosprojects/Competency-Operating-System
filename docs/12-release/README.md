@@ -27,7 +27,7 @@
 - [`reports/beta-1-sources-expansion-2026-11-03.md`](reports/beta-1-sources-expansion-2026-11-03.md) — финальная сводка ресурсной базы по профессиям: авто-расширение Brave, покрытие, пробелы.
 - [`reports/cleanup-2026-11-03.md`](reports/cleanup-2026-11-03.md) — аудит документации и legacy-скриптов, что удалено/переименовано, что требует решения.
 - [`COS-REL-010-Daily-Materials-Automation.md`](COS-REL-010-Daily-Materials-Automation.md) — ежедневный добор материалов: алгоритм, корнер-кейсы, opt-in GitHub Actions.
-- [`reports/spot-check-aidesigner-expanded-2026-11-03.md`](reports/spot-check-aidesigner-expanded-2026-11-03.md) — spot-check AI-дизайнера после расширения до 56 компетенций.
+- [`reports/spot-check-aidesigner-expanded-2026-11-03.md`](reports/spot-check-aidesigner-expanded-2026-11-03.md) — spot-check AI native дизайнера после расширения до 56 компетенций.
 - [`reports/descriptions-2026-11-03.md`](reports/descriptions-2026-11-03.md) — субагент описаний: раскатка на 13 профессий, 0 ошибок валидатора.
 - [`reports/demo-2026-11-09.md`](reports/demo-2026-11-09.md) — demo-сборка: commit, CI, Vercel и ограничения.
 - [`reports/qa-2026-11-10.md`](reports/qa-2026-11-10.md) — QA локального контура: профиль, аккаунт, admin, audit.

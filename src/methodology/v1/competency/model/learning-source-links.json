@@ -15,11 +15,13 @@
         "uxdesigninstitute-free-ux-course",
         "tilda-education-courses-web-design-designthinking",
         "wybex-ux-ui-course",
-        "wybex-ux-basics"
+        "wybex-ux-basics",
+        "wybex-ux-guide"
       ],
       "sourceRationales": {
         "wybex-ux-ui-course": "Начинает с UX-мышления: пользователи, сценарии и CJM на одном проекте.",
-        "wybex-ux-basics": "Учебник объясняет UX-процесс и принципы проектирования цифровых продуктов."
+        "wybex-ux-basics": "Учебник объясняет UX-процесс и принципы проектирования цифровых продуктов.",
+        "wybex-ux-guide": "UX-процесс, принципы и отличие UX от UI."
       }
     },
     {
@@ -33,11 +35,21 @@
         "lil-school-blog-osnovy-kompozicii-v-dizajne",
         "aicodinglab-ru-infographics-lesson-6",
         "wybex-ux-ui-course",
-        "wybex-ux-basics"
+        "wybex-ux-basics",
+        "wybex-typography-basics",
+        "wybex-type-hierarchy",
+        "wybex-composition",
+        "wybex-grids",
+        "wybex-60-30-10"
       ],
       "sourceRationales": {
         "wybex-ux-ui-course": "Модуль UI-дизайна разбирает сетки, композицию и визуальную иерархию.",
-        "wybex-ux-basics": "Разбирает элементы дизайна и принципы композиции интерфейса."
+        "wybex-ux-basics": "Разбирает элементы дизайна и принципы композиции интерфейса.",
+        "wybex-typography-basics": "Типографика в структуре макета.",
+        "wybex-type-hierarchy": "Иерархия текста и визуальная структура экрана.",
+        "wybex-composition": "Композиция, баланс и визуальная структура макета.",
+        "wybex-grids": "Сетки, колонки и отступы в макете.",
+        "wybex-60-30-10": "Цветовое распределение в композиции экрана."
       }
     },
     {
@@ -55,8 +67,14 @@
       "sourceIds": [
         "motiondesign-school-youtube",
         "school-of-motion",
-        "figma-design-basics"
-      ]
+        "figma-design-basics",
+        "wybex-forms",
+        "wybex-empty-states"
+      ],
+      "sourceRationales": {
+        "wybex-forms": "Состояния и ошибки форм.",
+        "wybex-empty-states": "Проектирование пустых состояний."
+      }
     },
     {
       "competencyId": "ui-visual-communication",
@@ -69,18 +87,27 @@
         "coursera-graphic-fundamentals",
         "coursera-web-design-free",
         "hse-ru-edu-courses-470898711",
-        "wybex-color-theory"
+        "wybex-color-theory",
+        "wybex-color-psychology",
+        "wybex-color-in-uxui",
+        "wybex-composition"
       ],
       "sourceRationales": {
-        "wybex-color-theory": "Показывает, как цвет влияет на восприятие интерфейса и визуальный язык."
+        "wybex-color-theory": "Показывает, как цвет влияет на восприятие интерфейса и визуальный язык.",
+        "wybex-color-psychology": "Цвет как часть визуальной коммуникации продукта.",
+        "wybex-color-in-uxui": "Цвет как инструмент визуальной иерархии и коммуникации.",
+        "wybex-composition": "Композиция как часть визуального языка продукта."
       }
     },
     {
       "competencyId": "ui-handoff",
       "sourceIds": [
-        "school-of-motion-free"
+        "school-of-motion-free",
+        "wybex-figma-handoff"
       ],
-      "rationale": "Бесплатные материалы School of Motion про workflow, брифы и reference."
+      "sourceRationales": {
+        "wybex-figma-handoff": "Чек-лист передачи макета в разработку."
+      }
     },
     {
       "competencyId": "motion-timing-easing",
@@ -110,10 +137,12 @@
         "coursera-microsoft-product-design",
         "udacity-product-design",
         "uxdesigninstitute-free-ux-course",
-        "wybex-ux-basics"
+        "wybex-ux-basics",
+        "wybex-ux-guide"
       ],
       "sourceRationales": {
-        "wybex-ux-basics": "Основы UX: как понимать пользователя и его опыт."
+        "wybex-ux-basics": "Основы UX: как понимать пользователя и его опыт.",
+        "wybex-ux-guide": "Исследование пользователя как часть UX-процесса."
       }
     },
     {
@@ -140,11 +169,13 @@
         "figma-design-basics",
         "coursera-uxui-fundamentals",
         "wybex-ux-ui-course",
-        "wybex-ux-basics"
+        "wybex-ux-basics",
+        "wybex-user-flow"
       ],
       "sourceRationales": {
         "wybex-ux-ui-course": "Модуль «Структура и UX» разбирает структуру сайта и информационную архитектуру.",
-        "wybex-ux-basics": "Разбирает структуру интерфейсов и информационную архитектуру."
+        "wybex-ux-basics": "Разбирает структуру интерфейсов и информационную архитектуру.",
+        "wybex-user-flow": "Связь user flow со структурой продукта."
       }
     },
     {
@@ -155,11 +186,13 @@
         "practicum-ai-tools-for-designers",
         "school-usabilitylab-ru-a8b157",
         "wybex-ux-ui-course",
-        "wybex-ux-basics"
+        "wybex-ux-basics",
+        "wybex-user-flow"
       ],
       "sourceRationales": {
         "wybex-ux-ui-course": "В курсе проектируются сценарии и путь пользователя на одном проекте.",
-        "wybex-ux-basics": "Описывает UX-процесс и путь пользователя в продукте."
+        "wybex-ux-basics": "Описывает UX-процесс и путь пользователя в продукте.",
+        "wybex-user-flow": "Пошаговое проектирование пользовательского потока."
       }
     },
     {
@@ -221,8 +254,12 @@
         "greatlearning-uiux",
         "coursera-microsoft-product-design",
         "practicum-ai-tools-for-designers",
-        "online-spbu-ru-16ff04"
-      ]
+        "online-spbu-ru-16ff04",
+        "wybex-forms"
+      ],
+      "sourceRationales": {
+        "wybex-forms": "Проверка удобства форм с пользователями."
+      }
     },
     {
       "competencyId": "ux-product-thinking",
@@ -242,11 +279,21 @@
         "alison-graphic-design",
         "hudozhnik-online-colorsciense",
         "wybex-ux-ui-course",
-        "wybex-color-theory"
+        "wybex-color-theory",
+        "wybex-color-psychology",
+        "wybex-color-in-uxui",
+        "wybex-color-codes",
+        "wybex-60-30-10",
+        "wybex-contrast"
       ],
       "sourceRationales": {
         "wybex-ux-ui-course": "В бесплатном модуле студенты собирают цветовую палитру проекта.",
-        "wybex-color-theory": "Урок про цветовой круг, тёплые/холодные/нейтральные цвета, палитры, RGB и HEX."
+        "wybex-color-theory": "Урок про цветовой круг, тёплые/холодные/нейтральные цвета, палитры, RGB и HEX.",
+        "wybex-color-psychology": "Психология цвета и подбор палитры для интерфейса.",
+        "wybex-color-in-uxui": "Практические принципы работы с цветом и его влияние на конверсию.",
+        "wybex-color-codes": "HEX, RGB и HSL для работы с цветом.",
+        "wybex-60-30-10": "Практическая схема распределения цветов.",
+        "wybex-contrast": "Контраст текста и цветовых пар."
       }
     },
     {
@@ -257,10 +304,16 @@
         "coursera-graphic-fundamentals",
         "bangbangeducation-ru-course-motion",
         "bureau-ru-courses-typography",
-        "wybex-ux-ui-course"
+        "wybex-ux-ui-course",
+        "wybex-typography-basics",
+        "wybex-type-hierarchy",
+        "wybex-uppercase"
       ],
       "sourceRationales": {
-        "wybex-ux-ui-course": "В бесплатном модуле студенты собирают систему типографики проекта."
+        "wybex-ux-ui-course": "В бесплатном модуле студенты собирают систему типографики проекта.",
+        "wybex-typography-basics": "Базовые принципы типографики и читаемости.",
+        "wybex-type-hierarchy": "Практика типографической иерархии в интерфейсе.",
+        "wybex-uppercase": "Правила использования заглавных букв и читаемость."
       }
     },
     {
@@ -269,8 +322,12 @@
         "greatlearning-uiux",
         "practicum-design-catalog",
         "alison-graphic-design",
-        "greatlearning-photoshop-graphic"
-      ]
+        "greatlearning-photoshop-graphic",
+        "wybex-composition"
+      ],
+      "sourceRationales": {
+        "wybex-composition": "Композиционные принципы для визуальных элементов."
+      }
     },
     {
       "competencyId": "ui-design-systems",
@@ -278,30 +335,50 @@
         "figma-design-basics",
         "greatlearning-uiux",
         "bangbangeducation-ru-course-motion",
-        "wybex-ux-ui-course"
+        "wybex-ux-ui-course",
+        "wybex-color-codes",
+        "wybex-figma-components"
       ],
       "sourceRationales": {
-        "wybex-ux-ui-course": "В курсе собирается дизайн-система проекта и её использование в макетах."
+        "wybex-ux-ui-course": "В курсе собирается дизайн-система проекта и её использование в макетах.",
+        "wybex-color-codes": "Цветовые токены и форматы для дизайн-системы.",
+        "wybex-figma-components": "Библиотека компонентов как часть дизайн-системы."
       }
     },
     {
       "competencyId": "ui-components",
       "sourceIds": [
         "figma-design-basics",
-        "wybex-ux-ui-course"
+        "wybex-ux-ui-course",
+        "wybex-auto-layout",
+        "wybex-figma-components",
+        "wybex-forms",
+        "wybex-empty-states"
       ],
       "sourceRationales": {
-        "wybex-ux-ui-course": "Компоненты и Auto Layout разбираются в Figma на практике."
+        "wybex-ux-ui-course": "Компоненты и Auto Layout разбираются в Figma на практике.",
+        "wybex-auto-layout": "Адаптивные компоненты и вложенность.",
+        "wybex-figma-components": "Компоненты, варианты и состояния в Figma.",
+        "wybex-forms": "Паттерны форм и полей.",
+        "wybex-empty-states": "Пустые состояния как паттерн компонентов."
       }
     },
     {
       "competencyId": "ui-figma",
       "sourceIds": [
         "figma-design-basics",
-        "wybex-ux-ui-course"
+        "wybex-ux-ui-course",
+        "wybex-color-codes",
+        "wybex-auto-layout",
+        "wybex-figma-handoff",
+        "wybex-figma-make-ai"
       ],
       "sourceRationales": {
-        "wybex-ux-ui-course": "Курс построен на практике в Figma: фреймы, Auto Layout, стили и компоненты."
+        "wybex-ux-ui-course": "Курс построен на практике в Figma: фреймы, Auto Layout, стили и компоненты.",
+        "wybex-color-codes": "Применение цветовых кодов в макетах Figma.",
+        "wybex-auto-layout": "Практика Auto Layout в Figma.",
+        "wybex-figma-handoff": "Подготовка Figma-макета к handoff.",
+        "wybex-figma-make-ai": "Генерация и доработка макетов в Figma."
       }
     },
     {
@@ -375,11 +452,15 @@
         "framer-learn",
         "itproger-com-course-responsible",
         "wybex-ux-ui-course",
-        "wybex-ux-basics"
+        "wybex-ux-basics",
+        "wybex-grids",
+        "wybex-responsive-design"
       ],
       "sourceRationales": {
         "wybex-ux-ui-course": "Адаптивная версия проекта — отдельный этап курса.",
-        "wybex-ux-basics": "Отдельный раздел про адаптацию интерфейсов под устройства."
+        "wybex-ux-basics": "Отдельный раздел про адаптацию интерфейсов под устройства.",
+        "wybex-grids": "Сетка как основа адаптивного поведения интерфейса.",
+        "wybex-responsive-design": "Принципы адаптивного дизайна и адаптации интерфейса."
       }
     },
     {
@@ -387,11 +468,17 @@
       "sourceIds": [
         "practicum-appdesign",
         "wybex-ux-basics",
-        "wybex-color-theory"
+        "wybex-color-theory",
+        "wybex-color-psychology",
+        "wybex-contrast",
+        "wybex-keyboard-accessibility"
       ],
       "sourceRationales": {
         "wybex-ux-basics": "Принципы дизайна включают доступность и понятность интерфейса.",
-        "wybex-color-theory": "Объясняет влияние цвета на восприятие и читаемость интерфейса."
+        "wybex-color-theory": "Объясняет влияние цвета на восприятие и читаемость интерфейса.",
+        "wybex-color-psychology": "Цвет влияет на восприятие и доступность интерфейса.",
+        "wybex-contrast": "Проверка контраста по WCAG.",
+        "wybex-keyboard-accessibility": "Клавиатурная доступность и порядок фокуса."
       }
     },
     {
@@ -724,8 +811,12 @@
         "learntube-ai-graphic-design",
         "elements-of-ai",
         "oxfordhomestudy-ai-free",
-        "greatlearning-ai-free"
-      ]
+        "greatlearning-ai-free",
+        "wybex-figma-make-ai"
+      ],
+      "sourceRationales": {
+        "wybex-figma-make-ai": "Генерация визуальных решений для интерфейса."
+      }
     },
     {
       "competencyId": "ai-layout-docs",
@@ -1087,8 +1178,12 @@
         "coursera-uxui-fundamentals",
         "greatlearning-uiux",
         "coursera-graphic-fundamentals",
-        "aicodinglab-ru-infographics-lesson-6"
-      ]
+        "aicodinglab-ru-infographics-lesson-6",
+        "wybex-figma-make-ai"
+      ],
+      "sourceRationales": {
+        "wybex-figma-make-ai": "Практика генерации интерфейсов через Figma Make и промпты."
+      }
     },
     {
       "competencyId": "aidesigner-design-system-engineering",

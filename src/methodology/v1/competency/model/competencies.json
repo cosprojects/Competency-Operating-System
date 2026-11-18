@@ -21,7 +21,8 @@
         "uxdesigninstitute-free-ux-course",
         "tilda-education-courses-web-design-designthinking",
         "wybex-ux-ui-course",
-        "wybex-ux-basics"
+        "wybex-ux-basics",
+        "wybex-ux-guide"
       ]
     },
     {
@@ -49,7 +50,8 @@
         "coursera-microsoft-product-design",
         "udacity-product-design",
         "uxdesigninstitute-free-ux-course",
-        "wybex-ux-basics"
+        "wybex-ux-basics",
+        "wybex-ux-guide"
       ]
     },
     {
@@ -118,7 +120,8 @@
         "figma-design-basics",
         "coursera-uxui-fundamentals",
         "wybex-ux-ui-course",
-        "wybex-ux-basics"
+        "wybex-ux-basics",
+        "wybex-user-flow"
       ]
     },
     {
@@ -145,7 +148,8 @@
         "practicum-ai-tools-for-designers",
         "school-usabilitylab-ru-a8b157",
         "wybex-ux-ui-course",
-        "wybex-ux-basics"
+        "wybex-ux-basics",
+        "wybex-user-flow"
       ]
     },
     {
@@ -273,7 +277,8 @@
         "greatlearning-uiux",
         "coursera-microsoft-product-design",
         "practicum-ai-tools-for-designers",
-        "online-spbu-ru-16ff04"
+        "online-spbu-ru-16ff04",
+        "wybex-forms"
       ]
     },
     {
@@ -383,7 +388,12 @@
         "alison-graphic-design",
         "hudozhnik-online-colorsciense",
         "wybex-ux-ui-course",
-        "wybex-color-theory"
+        "wybex-color-theory",
+        "wybex-color-psychology",
+        "wybex-color-in-uxui",
+        "wybex-color-codes",
+        "wybex-60-30-10",
+        "wybex-contrast"
       ]
     },
     {
@@ -407,7 +417,10 @@
         "coursera-graphic-fundamentals",
         "bangbangeducation-ru-course-motion",
         "bureau-ru-courses-typography",
-        "wybex-ux-ui-course"
+        "wybex-ux-ui-course",
+        "wybex-typography-basics",
+        "wybex-type-hierarchy",
+        "wybex-uppercase"
       ]
     },
     {
@@ -435,7 +448,12 @@
         "lil-school-blog-osnovy-kompozicii-v-dizajne",
         "aicodinglab-ru-infographics-lesson-6",
         "wybex-ux-ui-course",
-        "wybex-ux-basics"
+        "wybex-ux-basics",
+        "wybex-typography-basics",
+        "wybex-type-hierarchy",
+        "wybex-composition",
+        "wybex-grids",
+        "wybex-60-30-10"
       ]
     },
     {
@@ -452,7 +470,8 @@
         "greatlearning-uiux",
         "practicum-design-catalog",
         "alison-graphic-design",
-        "greatlearning-photoshop-graphic"
+        "greatlearning-photoshop-graphic",
+        "wybex-composition"
       ]
     },
     {
@@ -474,7 +493,10 @@
         "coursera-graphic-fundamentals",
         "coursera-web-design-free",
         "hse-ru-edu-courses-470898711",
-        "wybex-color-theory"
+        "wybex-color-theory",
+        "wybex-color-psychology",
+        "wybex-color-in-uxui",
+        "wybex-composition"
       ]
     },
     {
@@ -499,7 +521,9 @@
         "figma-design-basics",
         "greatlearning-uiux",
         "bangbangeducation-ru-course-motion",
-        "wybex-ux-ui-course"
+        "wybex-ux-ui-course",
+        "wybex-color-codes",
+        "wybex-figma-components"
       ]
     },
     {
@@ -519,7 +543,11 @@
       },
       "learningSourceIds": [
         "figma-design-basics",
-        "wybex-ux-ui-course"
+        "wybex-ux-ui-course",
+        "wybex-auto-layout",
+        "wybex-figma-components",
+        "wybex-forms",
+        "wybex-empty-states"
       ]
     },
     {
@@ -542,7 +570,9 @@
         "framer-learn",
         "itproger-com-course-responsible",
         "wybex-ux-ui-course",
-        "wybex-ux-basics"
+        "wybex-ux-basics",
+        "wybex-grids",
+        "wybex-responsive-design"
       ]
     },
     {
@@ -563,7 +593,10 @@
       "learningSourceIds": [
         "practicum-appdesign",
         "wybex-ux-basics",
-        "wybex-color-theory"
+        "wybex-color-theory",
+        "wybex-color-psychology",
+        "wybex-contrast",
+        "wybex-keyboard-accessibility"
       ]
     },
     {
@@ -579,7 +612,9 @@
       "learningSourceIds": [
         "motiondesign-school-youtube",
         "school-of-motion",
-        "figma-design-basics"
+        "figma-design-basics",
+        "wybex-forms",
+        "wybex-empty-states"
       ]
     },
     {
@@ -617,7 +652,11 @@
       },
       "learningSourceIds": [
         "figma-design-basics",
-        "wybex-ux-ui-course"
+        "wybex-ux-ui-course",
+        "wybex-color-codes",
+        "wybex-auto-layout",
+        "wybex-figma-handoff",
+        "wybex-figma-make-ai"
       ]
     },
     {
@@ -669,7 +708,8 @@
       "definition": "Готовить спецификации и компонентные контракты, а также выстраивать коммуникацию с инженерами, чтобы дизайн-договорённости были зафиксированы и однозначно поняты при разработке.",
       "priorityHint": "core",
       "learningSourceIds": [
-        "school-of-motion-free"
+        "school-of-motion-free",
+        "wybex-figma-handoff"
       ]
     },
     {
@@ -1915,7 +1955,8 @@
         "learntube-ai-graphic-design",
         "elements-of-ai",
         "oxfordhomestudy-ai-free",
-        "greatlearning-ai-free"
+        "greatlearning-ai-free",
+        "wybex-figma-make-ai"
       ]
     },
     {
@@ -2237,7 +2278,8 @@
         "coursera-uxui-fundamentals",
         "greatlearning-uiux",
         "coursera-graphic-fundamentals",
-        "aicodinglab-ru-infographics-lesson-6"
+        "aicodinglab-ru-infographics-lesson-6",
+        "wybex-figma-make-ai"
       ]
     },
     {

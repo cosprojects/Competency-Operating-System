@@ -7325,7 +7325,19 @@
       "url": "https://wybex.ru/online-courses/ux-ui-and-web-design-from-scratch/",
       "kind": "course-platform",
       "professionIds": [
-        "it.uxui"
+        "it.uxui",
+        "it.graphic",
+        "it.motion",
+        "it.product",
+        "it.3ddesigner",
+        "it.appdesign",
+        "it.artdir",
+        "it.interior",
+        "it.presentation",
+        "it.uxresearch",
+        "it.webdesigner",
+        "it.aidesigner",
+        "it.game"
       ],
       "languages": [
         "ru"
@@ -7355,7 +7367,19 @@
       "url": "https://wybex.ru/courses/ux-basics/",
       "kind": "reference",
       "professionIds": [
-        "it.uxui"
+        "it.uxui",
+        "it.graphic",
+        "it.motion",
+        "it.product",
+        "it.3ddesigner",
+        "it.appdesign",
+        "it.artdir",
+        "it.interior",
+        "it.presentation",
+        "it.uxresearch",
+        "it.webdesigner",
+        "it.aidesigner",
+        "it.game"
       ],
       "languages": [
         "ru"
@@ -7382,7 +7406,18 @@
       "url": "https://wybex.ru/lessons/intro-to-color-theory/",
       "kind": "blog",
       "professionIds": [
-        "it.uxui"
+        "it.uxui",
+        "it.graphic",
+        "it.motion",
+        "it.product",
+        "it.3ddesigner",
+        "it.appdesign",
+        "it.artdir",
+        "it.interior",
+        "it.presentation",
+        "it.webdesigner",
+        "it.aidesigner",
+        "it.game"
       ],
       "languages": [
         "ru"
@@ -7403,6 +7438,679 @@
       "httpStatus": 200,
       "notes": "Бесплатный образовательный материал Wybex.",
       "summary": "Бесплатный урок по теории цвета в UX/UI: цветовой круг, тёплые и холодные цвета, палитры, RGB и HEX, влияние цвета на восприятие интерфейса."
+    },
+    {
+      "id": "wybex-color-psychology",
+      "title": "Wybex — Психология цвета в UI/UX",
+      "url": "https://wybex.ru/psihologiya-czveta-v-ui-ux-dizajne/",
+      "kind": "blog",
+      "professionIds": [
+        "it.uxui",
+        "it.graphic",
+        "it.motion",
+        "it.product",
+        "it.3ddesigner",
+        "it.appdesign",
+        "it.artdir",
+        "it.interior",
+        "it.presentation",
+        "it.webdesigner",
+        "it.aidesigner",
+        "it.game"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Психология цвета и подбор палитры для интерфейса.",
+        "Цвет как часть визуальной коммуникации продукта.",
+        "Цвет влияет на восприятие и доступность интерфейса."
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-11-18",
+      "httpStatus": 200,
+      "notes": "Бесплатная статья Wybex.",
+      "summary": "Как цвет влияет на поведение пользователей, как подбирать палитру и использовать цвет в интерфейсе."
+    },
+    {
+      "id": "wybex-color-in-uxui",
+      "title": "Wybex — Цвет в UX/UI",
+      "url": "https://wybex.ru/czvet-v-ux-ui-kak-on-vliyaet-na-vospriyatie-povedenie-polzovatelya-i-konversiyu/",
+      "kind": "blog",
+      "professionIds": [
+        "it.uxui",
+        "it.graphic",
+        "it.motion",
+        "it.product",
+        "it.3ddesigner",
+        "it.appdesign",
+        "it.artdir",
+        "it.interior",
+        "it.presentation",
+        "it.webdesigner",
+        "it.aidesigner",
+        "it.game"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Практические принципы работы с цветом и его влияние на конверсию.",
+        "Цвет как инструмент визуальной иерархии и коммуникации."
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-11-18",
+      "httpStatus": 200,
+      "notes": "Бесплатная статья Wybex.",
+      "summary": "Цвет в UX/UI: восприятие, визуальная иерархия, поведение пользователя и конверсия."
+    },
+    {
+      "id": "wybex-color-codes",
+      "title": "Wybex — Форматы цветовых кодов",
+      "url": "https://wybex.ru/formaty-kodovogo-oboznacheniya-czveta-v-dizajne-interfejsov/",
+      "kind": "blog",
+      "professionIds": [
+        "it.uxui",
+        "it.graphic",
+        "it.motion",
+        "it.product",
+        "it.3ddesigner",
+        "it.appdesign",
+        "it.artdir",
+        "it.interior",
+        "it.presentation",
+        "it.webdesigner",
+        "it.aidesigner",
+        "it.game"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "HEX, RGB и HSL для работы с цветом.",
+        "Цветовые токены и форматы для дизайн-системы.",
+        "Применение цветовых кодов в макетах Figma."
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-11-18",
+      "httpStatus": 200,
+      "notes": "Бесплатная статья Wybex.",
+      "summary": "HEX, RGB, HSL и другие форматы цветовых кодов в веб- и UX/UI-дизайне."
+    },
+    {
+      "id": "wybex-typography-basics",
+      "title": "Wybex — Основы типографики",
+      "url": "https://wybex.ru/osnovy-tipografiki/",
+      "kind": "blog",
+      "professionIds": [
+        "it.uxui",
+        "it.graphic",
+        "it.motion",
+        "it.product",
+        "it.3ddesigner",
+        "it.appdesign",
+        "it.artdir",
+        "it.interior",
+        "it.presentation",
+        "it.webdesigner",
+        "it.aidesigner",
+        "it.game"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Базовые принципы типографики и читаемости.",
+        "Типографика в структуре макета."
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-11-18",
+      "httpStatus": 200,
+      "notes": "Бесплатная статья Wybex.",
+      "summary": "Базовые принципы типографики: размеры, иерархия, читаемость и практические советы."
+    },
+    {
+      "id": "wybex-type-hierarchy",
+      "title": "Wybex — Иерархия в типографике",
+      "url": "https://wybex.ru/polnoe-rukovodstvo-po-ierarhii-v-tipografike/",
+      "kind": "blog",
+      "professionIds": [
+        "it.uxui",
+        "it.graphic",
+        "it.motion",
+        "it.product",
+        "it.3ddesigner",
+        "it.appdesign",
+        "it.artdir",
+        "it.interior",
+        "it.presentation",
+        "it.webdesigner",
+        "it.aidesigner",
+        "it.game"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Практика типографической иерархии в интерфейсе.",
+        "Иерархия текста и визуальная структура экрана."
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-11-18",
+      "httpStatus": 200,
+      "notes": "Бесплатная статья Wybex.",
+      "summary": "Как выстраивать типографическую иерархию в интерфейсе."
+    },
+    {
+      "id": "wybex-uppercase",
+      "title": "Wybex — Заглавные буквы в UI",
+      "url": "https://wybex.ru/kak-pravilno-ispolzovat-zaglavnye-bukvy-v-ui-dizajne/",
+      "kind": "blog",
+      "professionIds": [
+        "it.uxui",
+        "it.graphic",
+        "it.motion",
+        "it.product",
+        "it.appdesign",
+        "it.artdir",
+        "it.presentation",
+        "it.webdesigner",
+        "it.aidesigner",
+        "it.game"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Правила использования заглавных букв и читаемость."
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-11-18",
+      "httpStatus": 200,
+      "notes": "Бесплатная статья Wybex.",
+      "summary": "Когда использовать заглавные буквы и как они влияют на читаемость интерфейса."
+    },
+    {
+      "id": "wybex-composition",
+      "title": "Wybex — Композиция и её принципы",
+      "url": "https://wybex.ru/teorii-dizajna-kompozicziya-i-eyo-princzipy/",
+      "kind": "blog",
+      "professionIds": [
+        "it.uxui",
+        "it.graphic",
+        "it.motion",
+        "it.product",
+        "it.3ddesigner",
+        "it.appdesign",
+        "it.artdir",
+        "it.interior",
+        "it.presentation",
+        "it.webdesigner",
+        "it.aidesigner",
+        "it.game"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Композиция, баланс и визуальная структура макета.",
+        "Композиционные принципы для визуальных элементов.",
+        "Композиция как часть визуального языка продукта."
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-11-18",
+      "httpStatus": 200,
+      "notes": "Бесплатная статья Wybex.",
+      "summary": "Баланс, иерархия и визуальная структура: принципы композиции в интерфейсах."
+    },
+    {
+      "id": "wybex-grids",
+      "title": "Wybex — Сетки в UI/UX",
+      "url": "https://wybex.ru/osnovy-setok-v-ui-ux-dizajne-kak-rabotaet-grid-i-zachem-on-nuzhen/",
+      "kind": "blog",
+      "professionIds": [
+        "it.uxui",
+        "it.graphic",
+        "it.motion",
+        "it.product",
+        "it.3ddesigner",
+        "it.appdesign",
+        "it.artdir",
+        "it.interior",
+        "it.presentation",
+        "it.webdesigner",
+        "it.aidesigner",
+        "it.game"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Сетки, колонки и отступы в макете.",
+        "Сетка как основа адаптивного поведения интерфейса."
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-11-18",
+      "httpStatus": 200,
+      "notes": "Бесплатная статья Wybex.",
+      "summary": "Колонки, margin, gutter, 12-колоночная и 8pt сетки в UI/UX-дизайне."
+    },
+    {
+      "id": "wybex-60-30-10",
+      "title": "Wybex — Правило 60-30-10",
+      "url": "https://wybex.ru/pravilo-60-30-10-prostoj-sposob-sozdat-effektnyj-polzovatelskij-interfejs/",
+      "kind": "blog",
+      "professionIds": [
+        "it.uxui",
+        "it.graphic",
+        "it.motion",
+        "it.product",
+        "it.3ddesigner",
+        "it.appdesign",
+        "it.artdir",
+        "it.interior",
+        "it.presentation",
+        "it.webdesigner",
+        "it.aidesigner",
+        "it.game"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Практическая схема распределения цветов.",
+        "Цветовое распределение в композиции экрана."
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-11-18",
+      "httpStatus": 200,
+      "notes": "Бесплатная статья Wybex.",
+      "summary": "Схема распределения цветов 60-30-10 для гармоничного интерфейса."
+    },
+    {
+      "id": "wybex-responsive-design",
+      "title": "Wybex — Адаптивный дизайн",
+      "url": "https://wybex.ru/chto-takoe-adaptivnyj-dizajn-i-pochemu-on-vazhen/",
+      "kind": "blog",
+      "professionIds": [
+        "it.uxui",
+        "it.motion",
+        "it.appdesign",
+        "it.webdesigner",
+        "it.aidesigner"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Принципы адаптивного дизайна и адаптации интерфейса."
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-11-18",
+      "httpStatus": 200,
+      "notes": "Бесплатная статья Wybex.",
+      "summary": "Что такое адаптивный дизайн, как он работает и почему без него невозможен современный сайт."
+    },
+    {
+      "id": "wybex-ux-guide",
+      "title": "Wybex — Руководство по UX-дизайну",
+      "url": "https://wybex.ru/polnoe-rukovodstvo-po-ux-dizajnu-dlya-nachinayushhih/",
+      "kind": "blog",
+      "professionIds": [
+        "it.uxui",
+        "it.graphic",
+        "it.motion",
+        "it.product",
+        "it.3ddesigner",
+        "it.appdesign",
+        "it.artdir",
+        "it.interior",
+        "it.presentation",
+        "it.uxresearch",
+        "it.webdesigner",
+        "it.aidesigner",
+        "it.game"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "UX-процесс, принципы и отличие UX от UI.",
+        "Исследование пользователя как часть UX-процесса."
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-11-18",
+      "httpStatus": 200,
+      "notes": "Бесплатная статья Wybex.",
+      "summary": "Что такое UX, чем он отличается от UI, этапы UX-процесса и навыки UX-дизайнера."
+    },
+    {
+      "id": "wybex-user-flow",
+      "title": "Wybex — User Flow",
+      "url": "https://wybex.ru/chto-takoe-user-flow-polzovatelskij-potok-v-ux-dizajne-rukovodstvo-dlya-nachinayushhih/",
+      "kind": "blog",
+      "professionIds": [
+        "it.uxui",
+        "it.product",
+        "it.appdesign",
+        "it.uxresearch",
+        "it.webdesigner",
+        "it.aidesigner",
+        "it.game"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Пошаговое проектирование пользовательского потока.",
+        "Связь user flow со структурой продукта."
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-11-18",
+      "httpStatus": 200,
+      "notes": "Бесплатная статья Wybex.",
+      "summary": "User Flow в UX-дизайне: примеры, схемы и пошаговое создание пользовательского потока."
+    },
+    {
+      "id": "wybex-auto-layout",
+      "title": "Wybex — Auto Layout в Figma",
+      "url": "https://wybex.ru/auto-layout-figma-poshagovaya-instrukciya/",
+      "kind": "blog",
+      "professionIds": [
+        "it.uxui",
+        "it.graphic",
+        "it.motion",
+        "it.product",
+        "it.appdesign",
+        "it.artdir",
+        "it.interior",
+        "it.presentation",
+        "it.webdesigner",
+        "it.aidesigner",
+        "it.game"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Практика Auto Layout в Figma.",
+        "Адаптивные компоненты и вложенность."
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-11-18",
+      "httpStatus": 200,
+      "notes": "Бесплатная статья Wybex.",
+      "summary": "Пошаговая инструкция по Auto Layout: Hug, Fill, Fixed, отступы и вложенность."
+    },
+    {
+      "id": "wybex-figma-components",
+      "title": "Wybex — Компоненты и варианты в Figma",
+      "url": "https://wybex.ru/komponenty-varianty-figma-biblioteka-knopok/",
+      "kind": "blog",
+      "professionIds": [
+        "it.uxui",
+        "it.graphic",
+        "it.motion",
+        "it.product",
+        "it.appdesign",
+        "it.artdir",
+        "it.webdesigner",
+        "it.aidesigner",
+        "it.game"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Компоненты, варианты и состояния в Figma.",
+        "Библиотека компонентов как часть дизайн-системы."
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-11-18",
+      "httpStatus": 200,
+      "notes": "Бесплатная статья Wybex.",
+      "summary": "Сборка библиотеки кнопок: компоненты, экземпляры, варианты и свойства."
+    },
+    {
+      "id": "wybex-figma-handoff",
+      "title": "Wybex — Передача макета разработчику",
+      "url": "https://wybex.ru/figma-peredacha-maketa-razrabotchiku/",
+      "kind": "blog",
+      "professionIds": [
+        "it.uxui",
+        "it.graphic",
+        "it.motion",
+        "it.appdesign",
+        "it.interior",
+        "it.presentation",
+        "it.webdesigner",
+        "it.aidesigner",
+        "it.game"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Чек-лист передачи макета в разработку.",
+        "Подготовка Figma-макета к handoff."
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-11-18",
+      "httpStatus": 200,
+      "notes": "Бесплатная статья Wybex.",
+      "summary": "Как подготовить компоненты, состояния, адаптивность и критерии приёмки к передаче в разработку."
+    },
+    {
+      "id": "wybex-contrast",
+      "title": "Wybex — Проверка контраста",
+      "url": "https://wybex.ru/kak-proverit-kontrast-teksta-interfejsa/",
+      "kind": "blog",
+      "professionIds": [
+        "it.uxui",
+        "it.graphic",
+        "it.motion",
+        "it.product",
+        "it.3ddesigner",
+        "it.appdesign",
+        "it.artdir",
+        "it.interior",
+        "it.presentation",
+        "it.webdesigner",
+        "it.aidesigner",
+        "it.game"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Проверка контраста по WCAG.",
+        "Контраст текста и цветовых пар."
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-11-18",
+      "httpStatus": 200,
+      "notes": "Бесплатная статья Wybex.",
+      "summary": "Проверка контраста по WCAG 2.2: пороги 4,5:1 и 3:1, градиенты и исправление цветов."
+    },
+    {
+      "id": "wybex-keyboard-accessibility",
+      "title": "Wybex — Проверка интерфейса с клавиатуры",
+      "url": "https://wybex.ru/proverka-interfejsa-s-klaviatury/",
+      "kind": "blog",
+      "professionIds": [
+        "it.uxui",
+        "it.graphic",
+        "it.motion",
+        "it.product",
+        "it.appdesign",
+        "it.webdesigner",
+        "it.aidesigner",
+        "it.game"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Клавиатурная доступность и порядок фокуса."
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-11-18",
+      "httpStatus": 200,
+      "notes": "Бесплатная статья Wybex.",
+      "summary": "Порядок фокуса, формы и диалоги: как проверить интерфейс без мыши."
+    },
+    {
+      "id": "wybex-forms",
+      "title": "Wybex — Дизайн форм в UX/UI",
+      "url": "https://wybex.ru/luchshie-praktiki-dizajna-form-v-ux-ui-kak-sozdavat-udobnye-i-effektivnye-formy/",
+      "kind": "blog",
+      "professionIds": [
+        "it.uxui",
+        "it.graphic",
+        "it.motion",
+        "it.product",
+        "it.appdesign",
+        "it.artdir",
+        "it.webdesigner",
+        "it.aidesigner",
+        "it.game"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Паттерны форм и полей.",
+        "Состояния и ошибки форм.",
+        "Проверка удобства форм с пользователями."
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-11-18",
+      "httpStatus": 200,
+      "notes": "Бесплатная статья Wybex.",
+      "summary": "Структура форм, типы полей, валидация, ошибки и практики удобства."
+    },
+    {
+      "id": "wybex-empty-states",
+      "title": "Wybex — Пустые состояния интерфейса",
+      "url": "https://wybex.ru/pustye-sostoyaniya-interfejsa/",
+      "kind": "blog",
+      "professionIds": [
+        "it.uxui",
+        "it.graphic",
+        "it.motion",
+        "it.product",
+        "it.appdesign",
+        "it.artdir",
+        "it.webdesigner",
+        "it.aidesigner",
+        "it.game"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Проектирование пустых состояний.",
+        "Пустые состояния как паттерн компонентов."
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-11-18",
+      "httpStatus": 200,
+      "notes": "Бесплатная статья Wybex.",
+      "summary": "Текст, действие и иллюстрация для пустых состояний в разных сценариях."
+    },
+    {
+      "id": "wybex-figma-make-ai",
+      "title": "Wybex — Интерфейсы с помощью ИИ: Figma Make",
+      "url": "https://wybex.ru/kak-sozdavat-interfejsy-s-pomoshhyu-ii-figma-make-primery-i-5-gotovyh-promptov/",
+      "kind": "blog",
+      "professionIds": [
+        "it.uxui",
+        "it.graphic",
+        "it.motion",
+        "it.product",
+        "it.3ddesigner",
+        "it.appdesign",
+        "it.artdir",
+        "it.interior",
+        "it.presentation",
+        "it.uxresearch",
+        "it.webdesigner",
+        "it.aidesigner",
+        "it.game"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "Практика генерации интерфейсов через Figma Make и промпты.",
+        "Генерация визуальных решений для интерфейса.",
+        "Генерация и доработка макетов в Figma."
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-11-18",
+      "httpStatus": 200,
+      "notes": "Бесплатная статья Wybex.",
+      "summary": "Figma Make, Google Stitch, примеры ТЗ и готовые промпты для генерации интерфейсов."
     }
   ]
 }

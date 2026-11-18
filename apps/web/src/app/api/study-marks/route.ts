@@ -51,6 +51,44 @@ export async function POST(request: Request) {
       create: { userId: user.id, targetType, targetId, status },
     });
   }
+  // Отметил знание/навык как изученный — компетенция автоматически попадает
+  // в «Изучаю», чтобы прогресс было видно в соответствующем разделе.
+  if (status === "LEARNED" && targetType !== "COMPETENCY") {
+    const context = findStudyItem(targetId);
+    if (context) {
+      await db.favorite.upsert({
+        where: {
+          userId_targetType_targetId: {
+            userId: user.id,
+            targetType: "COMPETENCY",
+            targetId: context.competency.id,
+          },
+        },
+        update: {},
+        create: {
+          userId: user.id,
+          targetType: "COMPETENCY",
+          targetId: context.competency.id,
+        },
+      });
+      await db.favorite.upsert({
+        where: {
+          userId_targetType_targetId: {
+            userId: user.id,
+            targetType: "PROFESSION",
+            targetId: context.profession.slug,
+          },
+        },
+        update: {},
+        create: {
+          userId: user.id,
+          targetType: "PROFESSION",
+          targetId: context.profession.slug,
+        },
+      });
+    }
+  }
+
   await trackServerEvent({
     name: "study_mark_change",
     userId: user.id,

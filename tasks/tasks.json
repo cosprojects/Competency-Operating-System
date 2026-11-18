@@ -111,12 +111,13 @@
       "acceptance": [
         "Токены и компоненты сведены в globals.css/components",
         "Обновлены главная, профессия, компетенция, saved, auth, feedback",
+        "CookieModal, /api/session и футер синхронизированы с текущим состоянием",
         "Мобильная версия 360–1280px проверена",
-        "typecheck и build зелёные"
+        "typecheck, test и build зелёные; WIP закоммичен и задеплоен"
       ],
       "issueNumber": 2,
       "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/2",
-      "context": "Редизайн идёт: новые экраны, CookieModal, /api/session, футер и legal cookie — часть изменений ещё не закоммичена. Нужно завершить, собрать, задеплоить и только потом закрывать.",
+      "context": "Редизайн в работе: новый футер, CookieModal, /api/session, правки материалов и канваса. Часть изменений не закоммичена; production обновлять только после ревью WIP.",
       "deliverable": "Обновлённые экраны и компоненты, визуальная сверка с макетами.",
       "outOfScope": [
         "Новые продуктовые функции",
@@ -133,7 +134,7 @@
       "priority": "P1",
       "area": "Web",
       "stage": "I",
-      "status": "Review",
+      "status": "Backlog",
       "labels": [],
       "acceptance": [
         "Проверены 13 профессий, 147 компетенций и 336 опубликованных связей",
@@ -143,7 +144,7 @@
       ],
       "issueNumber": 3,
       "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/3",
-      "context": "Vercel demo уже собирается из release-контура; preview закрыт SSO. Нужно проверить актуальный commit и текущий состав 13/147/336, а не старый demo 12/131/292.",
+      "context": "Vercel demo собирается из release-контура, preview закрыт SSO. Проверка отложена до завершения T-002: нужно проверить актуальный commit и состав 13/147/336, а не старый demo.",
       "deliverable": "Отчёт demo: доступные сценарии, ограничения, blockers.",
       "outOfScope": [
         "Публичный запуск",
@@ -344,13 +345,14 @@
       ],
       "issueNumber": 9,
       "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/9",
-      "context": "Нужны данные для решения после Beta; в COS-EAR-014 зафиксированы пробелы: competency_view не отправляется, return_visit нет, study_status_change дублируется. 2026-11-10: согласие на аналитику теперь пишется на сервер (ConsentRecord ANALYTICS, отзыв, CSV); остались события competency_view/return_visit, дубль study_status_change и сверка метрик.",
+      "context": "Серверная фиксация согласия на аналитику уже есть (ConsentRecord, отзыв, CSV); события page_view/profession_view проверены. После T-002/T-009 проверить competency_view, study_status_change, отказ и сверку метрик; return_visit — убрать из ожиданий или реализовать отдельно.",
       "deliverable": "Проверенные события и отчёт по метрикам.",
       "outOfScope": [
         "Внешние трекеры"
       ],
       "dependsOn": [
-        "T-008"
+        "T-008",
+        "T-009"
       ],
       "deferred": false
     },
@@ -372,13 +374,13 @@
       ],
       "issueNumber": 10,
       "issueUrl": "https://github.com/cosprojects/Competency-Operating-System/issues/10",
-      "context": "Отзывы должны не только собираться, но и обрабатываться.",
+      "context": "Отзывы собираются и видны в админке; после T-009 закрепить ответственного, статусы NEW/TRIAGED/RESOLVED, CSV и еженедельный обзор.",
       "deliverable": "Регламент триажа и шаблон ответа.",
       "outOfScope": [
         "CRM-система"
       ],
       "dependsOn": [
-        "T-008"
+        "T-009"
       ],
       "deferred": false
     },
@@ -1135,7 +1137,7 @@
       "version": "v0.1.0",
       "title": "Аккаунт-модалка и удаление аккаунта",
       "description": "Закрыть аккаунт-модалку, /account и удаление аккаунта; профиль вынесен в отдельную задачу T-046 после Beta.",
-      "context": "Аккаунт-модалка и удаление через модалку реализованы и проверены на production 2026-11-12: /profile 200 → delete {\"ok\":true} → 307, пользователь удалён. Профиль как отдельная страница удалён из текущего релиза; его развитие перенесено в T-046 (после Beta и первой аналитики).",
+      "context": "Аккаунт-модалка и удаление проверены на production 2026-11-12; после T-002 проверить, что редизайн не сломал навигацию/модалку. Профиль — T-046 после Beta.",
       "deliverable": "/profile с сохранениями/прогрессом; /account только данные, сессия и удаление через модалку.",
       "outOfScope": [
         "Публичный профиль",
@@ -1143,9 +1145,7 @@
         "Экспорт данных перед удалением",
         "Редактирование профиля"
       ],
-      "dependsOn": [
-        "T-002"
-      ],
+      "dependsOn": [],
       "acceptance": [
         "Аккаунт-модалка открывается из навигации",
         "/account отделён от профиля",

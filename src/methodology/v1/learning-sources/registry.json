@@ -8111,6 +8111,560 @@
       "httpStatus": 200,
       "notes": "Бесплатная статья Wybex.",
       "summary": "Figma Make, Google Stitch, примеры ТЗ и готовые промпты для генерации интерфейсов."
+    },
+    {
+      "id": "jvetrau",
+      "title": "Карта компетенций — Юрий Ветров",
+      "url": "https://jvetrau.com/skillknowledge",
+      "kind": "reference",
+      "professionIds": [
+        "it.uxui",
+        "it.product",
+        "it.motion",
+        "it.graphic",
+        "it.3ddesigner",
+        "it.interior",
+        "it.presentation",
+        "it.appdesign",
+        "it.artdir",
+        "it.webdesigner",
+        "it.uxresearch",
+        "it.aidesigner",
+        "it.game"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "design competencies",
+        "Общепрофессиональные и лидерские навыки: ориентация на достижения, коммуникация, командная работа, креативное и системное мышление, планирование, стратегия, неопределённость, найм, развитие, мотивация."
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-18",
+      "httpStatus": 200,
+      "summary": "Карта компетенций дизайнера интерфейсов: hard, soft и leadership skills с чек-листами уровней.",
+      "notes": "Доверенный источник по карте компетенций дизайнера (COS-RES-032)."
+    },
+    {
+      "id": "jvetrau-ia",
+      "title": "Информационная архитектура и проектирование интерфейсов — Юрий Ветров",
+      "url": "https://jvetrau.com/skillknowledge/ia",
+      "kind": "reference",
+      "professionIds": [
+        "it.uxui",
+        "it.product",
+        "it.motion",
+        "it.graphic",
+        "it.3ddesigner",
+        "it.interior",
+        "it.presentation",
+        "it.appdesign",
+        "it.artdir",
+        "it.webdesigner",
+        "it.uxresearch",
+        "it.aidesigner",
+        "it.game"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "design competencies",
+        "Проектирование структуры и навигации",
+        "Проектирование экранов и интерактивных прототипов"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-18",
+      "httpStatus": 200,
+      "summary": "IA и проектирование интерфейсов: структура и навигация, экраны и прототипы, сервис-дизайн, гайдлайны и спецификации.",
+      "notes": "Доверенный источник по карте компетенций дизайнера (COS-RES-032)."
+    },
+    {
+      "id": "jvetrau-visualdesign",
+      "title": "Визуальный дизайн — Юрий Ветров",
+      "url": "https://jvetrau.com/skillknowledge/visualdesign",
+      "kind": "reference",
+      "professionIds": [
+        "it.uxui",
+        "it.product",
+        "it.motion",
+        "it.graphic",
+        "it.3ddesigner",
+        "it.interior",
+        "it.presentation",
+        "it.appdesign",
+        "it.artdir",
+        "it.webdesigner",
+        "it.uxresearch",
+        "it.aidesigner",
+        "it.game"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "design competencies",
+        "Базовые навыки: композиция, сетки, типографика, цвет",
+        "Иконографика и иллюстрации"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-18",
+      "httpStatus": 200,
+      "summary": "Визуальный дизайн: сетки, типографика, цвет, иконографика, анимация, гайдлайны, визуализация данных, айдентика, шрифтовой дизайн, 3D.",
+      "notes": "Доверенный источник по карте компетенций дизайнера (COS-RES-032)."
+    },
+    {
+      "id": "jvetrau-uxresearch",
+      "title": "Пользовательские исследования — Юрий Ветров",
+      "url": "https://jvetrau.com/skillknowledge/uxresearch",
+      "kind": "reference",
+      "professionIds": [
+        "it.uxui",
+        "it.product",
+        "it.motion",
+        "it.graphic",
+        "it.3ddesigner",
+        "it.interior",
+        "it.presentation",
+        "it.appdesign",
+        "it.artdir",
+        "it.webdesigner",
+        "it.uxresearch",
+        "it.aidesigner",
+        "it.game"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "design competencies",
+        "Понимание и описание пользователей",
+        "Проверка дизайн-решений"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-18",
+      "httpStatus": 200,
+      "summary": "Исследования: понимание и описание пользователей, проверка дизайн-решений, экспертная оценка интерфейсов.",
+      "notes": "Доверенный источник по карте компетенций дизайнера (COS-RES-032)."
+    },
+    {
+      "id": "jvetrau-productthinking",
+      "title": "Продуктовое мышление и аналитика — Юрий Ветров",
+      "url": "https://jvetrau.com/skillknowledge/productthinking",
+      "kind": "reference",
+      "professionIds": [
+        "it.uxui",
+        "it.product",
+        "it.motion",
+        "it.graphic",
+        "it.3ddesigner",
+        "it.interior",
+        "it.presentation",
+        "it.appdesign",
+        "it.artdir",
+        "it.webdesigner",
+        "it.uxresearch",
+        "it.aidesigner",
+        "it.game"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "design competencies",
+        "Понимание предметной области и рынка",
+        "Определение и отслеживание метрик"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-18",
+      "httpStatus": 200,
+      "summary": "Продуктовое мышление: предметная область и рынок, метрики, гипотезы, SEO/ASO, статистика и анализ данных.",
+      "notes": "Доверенный источник по карте компетенций дизайнера (COS-RES-032)."
+    },
+    {
+      "id": "jvetrau-copywriting",
+      "title": "Редактура — Юрий Ветров",
+      "url": "https://jvetrau.com/skillknowledge/copywriting",
+      "kind": "reference",
+      "professionIds": [
+        "it.uxui",
+        "it.product",
+        "it.motion",
+        "it.graphic",
+        "it.3ddesigner",
+        "it.interior",
+        "it.presentation",
+        "it.appdesign",
+        "it.artdir",
+        "it.webdesigner",
+        "it.uxresearch",
+        "it.aidesigner",
+        "it.game"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "design competencies",
+        "Микро-копирайтинг",
+        "Публикации и презентации."
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-18",
+      "httpStatus": 200,
+      "summary": "Редактура и текст в интерфейсе: микро-копирайтинг, публикации и презентации.",
+      "notes": "Доверенный источник по карте компетенций дизайнера (COS-RES-032)."
+    },
+    {
+      "id": "jvetrau-frontend",
+      "title": "Фронт-енд — Юрий Ветров",
+      "url": "https://jvetrau.com/skillknowledge/frontend",
+      "kind": "reference",
+      "professionIds": [
+        "it.uxui",
+        "it.product",
+        "it.motion",
+        "it.graphic",
+        "it.3ddesigner",
+        "it.interior",
+        "it.presentation",
+        "it.appdesign",
+        "it.artdir",
+        "it.webdesigner",
+        "it.uxresearch",
+        "it.aidesigner",
+        "it.game"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "design competencies",
+        "Вёрстка HTML/CSS/JS и анимация",
+        "Работа с источниками данных"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-18",
+      "httpStatus": 200,
+      "summary": "Фронтенд для дизайнера: вёрстка и анимация, работа с данными, окружение для запуска, формализованное тестирование качества.",
+      "notes": "Доверенный источник по карте компетенций дизайнера (COS-RES-032)."
+    },
+    {
+      "id": "jvetrau-systemsthinking",
+      "title": "Системное мышление — Юрий Ветров",
+      "url": "https://jvetrau.com/skillknowledge/systemsthinking",
+      "kind": "reference",
+      "professionIds": [
+        "it.uxui",
+        "it.product",
+        "it.motion",
+        "it.graphic",
+        "it.3ddesigner",
+        "it.interior",
+        "it.presentation",
+        "it.appdesign",
+        "it.artdir",
+        "it.webdesigner",
+        "it.uxresearch",
+        "it.aidesigner",
+        "it.game"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "design competencies",
+        "Комплексность анализа",
+        "Обоснованность выводов."
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-18",
+      "httpStatus": 200,
+      "summary": "Системное мышление: комплексность анализа и обоснованность выводов.",
+      "notes": "Доверенный источник по карте компетенций дизайнера (COS-RES-032)."
+    },
+    {
+      "id": "jvetrau-creativethinking",
+      "title": "Креативное мышление — Юрий Ветров",
+      "url": "https://jvetrau.com/skillknowledge/creativethinking",
+      "kind": "reference",
+      "professionIds": [
+        "it.uxui",
+        "it.product",
+        "it.motion",
+        "it.graphic",
+        "it.3ddesigner",
+        "it.interior",
+        "it.presentation",
+        "it.appdesign",
+        "it.artdir",
+        "it.webdesigner",
+        "it.uxresearch",
+        "it.aidesigner",
+        "it.game"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "design competencies",
+        "Конвергентное и дивергентное мышление",
+        "Насмотренность."
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-18",
+      "httpStatus": 200,
+      "summary": "Креативное мышление: конвергентное и дивергентное мышление, насмотренность.",
+      "notes": "Доверенный источник по карте компетенций дизайнера (COS-RES-032)."
+    },
+    {
+      "id": "jvetrau-planning",
+      "title": "Планирование и организация — Юрий Ветров",
+      "url": "https://jvetrau.com/skillknowledge/planning",
+      "kind": "reference",
+      "professionIds": [
+        "it.uxui",
+        "it.product",
+        "it.motion",
+        "it.graphic",
+        "it.3ddesigner",
+        "it.interior",
+        "it.presentation",
+        "it.appdesign",
+        "it.artdir",
+        "it.webdesigner",
+        "it.uxresearch",
+        "it.aidesigner",
+        "it.game"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "design competencies",
+        "Планирование",
+        "Расстановка приоритетов"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-18",
+      "httpStatus": 200,
+      "summary": "Планирование: планы, приоритеты, формирование команды, контроль, постановка задач.",
+      "notes": "Доверенный источник по карте компетенций дизайнера (COS-RES-032)."
+    },
+    {
+      "id": "jvetrau-strategy",
+      "title": "Стратегия — Юрий Ветров",
+      "url": "https://jvetrau.com/skillknowledge/strategy",
+      "kind": "reference",
+      "professionIds": [
+        "it.uxui",
+        "it.product",
+        "it.motion",
+        "it.graphic",
+        "it.3ddesigner",
+        "it.interior",
+        "it.presentation",
+        "it.appdesign",
+        "it.artdir",
+        "it.webdesigner",
+        "it.uxresearch",
+        "it.aidesigner",
+        "it.game"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "design competencies",
+        "Долгосрочное видение",
+        "Связь стратегии и повседневной работы."
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-18",
+      "httpStatus": 200,
+      "summary": "Стратегия: долгосрочное видение и связь плана с повседневной работой.",
+      "notes": "Доверенный источник по карте компетенций дизайнера (COS-RES-032)."
+    },
+    {
+      "id": "jvetrau-uncertainty",
+      "title": "Работа в условиях неопределённости — Юрий Ветров",
+      "url": "https://jvetrau.com/skillknowledge/uncertainty",
+      "kind": "reference",
+      "professionIds": [
+        "it.uxui",
+        "it.product",
+        "it.motion",
+        "it.graphic",
+        "it.3ddesigner",
+        "it.interior",
+        "it.presentation",
+        "it.appdesign",
+        "it.artdir",
+        "it.webdesigner",
+        "it.uxresearch",
+        "it.aidesigner",
+        "it.game"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "design competencies",
+        "Просчёт рисков",
+        "Самостоятельность"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-18",
+      "httpStatus": 200,
+      "summary": "Неопределённость: просчёт рисков, самостоятельность, оперативность решений, толерантность.",
+      "notes": "Доверенный источник по карте компетенций дизайнера (COS-RES-032)."
+    },
+    {
+      "id": "jvetrau-hiring",
+      "title": "Найм — Юрий Ветров",
+      "url": "https://jvetrau.com/skillknowledge/hiring",
+      "kind": "reference",
+      "professionIds": [
+        "it.uxui",
+        "it.product",
+        "it.motion",
+        "it.graphic",
+        "it.3ddesigner",
+        "it.interior",
+        "it.presentation",
+        "it.appdesign",
+        "it.artdir",
+        "it.webdesigner",
+        "it.uxresearch",
+        "it.aidesigner",
+        "it.game"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "design competencies",
+        "Ожидания и требования",
+        "Поиск и отбор"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-18",
+      "httpStatus": 200,
+      "summary": "Найм дизайнеров: требования, поиск и отбор, собеседования, адаптация, увольнение.",
+      "notes": "Доверенный источник по карте компетенций дизайнера (COS-RES-032)."
+    },
+    {
+      "id": "jvetrau-profdevelopment",
+      "title": "Развитие дизайнеров — Юрий Ветров",
+      "url": "https://jvetrau.com/skillknowledge/profdevelopment",
+      "kind": "reference",
+      "professionIds": [
+        "it.uxui",
+        "it.product",
+        "it.motion",
+        "it.graphic",
+        "it.3ddesigner",
+        "it.interior",
+        "it.presentation",
+        "it.appdesign",
+        "it.artdir",
+        "it.webdesigner",
+        "it.uxresearch",
+        "it.aidesigner",
+        "it.game"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "design competencies",
+        "Анализ компетентности",
+        "Персональный план развития"
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-18",
+      "httpStatus": 200,
+      "summary": "Развитие дизайнеров: анализ компетентности, персональный план, обратная связь, обучение.",
+      "notes": "Доверенный источник по карте компетенций дизайнера (COS-RES-032)."
+    },
+    {
+      "id": "jvetrau-motivation",
+      "title": "Мотивация — Юрий Ветров",
+      "url": "https://jvetrau.com/skillknowledge/motivation",
+      "kind": "reference",
+      "professionIds": [
+        "it.uxui",
+        "it.product",
+        "it.motion",
+        "it.graphic",
+        "it.3ddesigner",
+        "it.interior",
+        "it.presentation",
+        "it.appdesign",
+        "it.artdir",
+        "it.webdesigner",
+        "it.uxresearch",
+        "it.aidesigner",
+        "it.game"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "design competencies",
+        "Мотивирование и воодушевление",
+        "Адаптация стиля управления."
+      ],
+      "discoveredBy": "manual",
+      "lastChecked": "2026-11-18",
+      "httpStatus": 200,
+      "summary": "Мотивация: мотивирование и воодушевление, адаптация стиля управления.",
+      "notes": "Доверенный источник по карте компетенций дизайнера (COS-RES-032)."
     }
   ]
 }

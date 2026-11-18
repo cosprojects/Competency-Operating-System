@@ -257,9 +257,115 @@
       ]
     },
     {
+      "competencyId": "ux-service-design",
+      "tier": "core",
+      "order": 35,
+      "prerequisites": []
+    },
+    {
+      "competencyId": "ux-data-visualization",
+      "tier": "core",
+      "order": 36,
+      "prerequisites": [
+        "ux-service-design"
+      ]
+    },
+    {
+      "competencyId": "ux-writing",
+      "tier": "core",
+      "order": 37,
+      "prerequisites": [
+        "ux-data-visualization"
+      ]
+    },
+    {
+      "competencyId": "ux-expert-review",
+      "tier": "core",
+      "order": 38,
+      "prerequisites": [
+        "ux-writing"
+      ]
+    },
+    {
+      "competencyId": "ux-frontend-basics",
+      "tier": "core",
+      "order": 39,
+      "prerequisites": [
+        "ux-expert-review"
+      ]
+    },
+    {
+      "competencyId": "ui-iconography-illustration",
+      "tier": "optional",
+      "order": 40,
+      "prerequisites": [
+        "ux-frontend-basics"
+      ]
+    },
+    {
+      "competencyId": "ux-achievement-focus",
+      "tier": "core",
+      "order": 41,
+      "prerequisites": []
+    },
+    {
+      "competencyId": "ux-communication-collaboration",
+      "tier": "core",
+      "order": 42,
+      "prerequisites": [
+        "ux-achievement-focus"
+      ]
+    },
+    {
+      "competencyId": "ux-creative-thinking",
+      "tier": "core",
+      "order": 43,
+      "prerequisites": [
+        "ux-communication-collaboration"
+      ]
+    },
+    {
+      "competencyId": "ux-systems-thinking",
+      "tier": "core",
+      "order": 44,
+      "prerequisites": [
+        "ux-creative-thinking"
+      ]
+    },
+    {
+      "competencyId": "ux-planning-organization",
+      "tier": "optional",
+      "order": 45,
+      "prerequisites": []
+    },
+    {
+      "competencyId": "ux-strategy-vision",
+      "tier": "optional",
+      "order": 46,
+      "prerequisites": [
+        "ux-planning-organization"
+      ]
+    },
+    {
+      "competencyId": "ux-uncertainty-risk",
+      "tier": "optional",
+      "order": 47,
+      "prerequisites": [
+        "ux-strategy-vision"
+      ]
+    },
+    {
+      "competencyId": "ux-team-management",
+      "tier": "optional",
+      "order": 48,
+      "prerequisites": [
+        "ux-uncertainty-risk"
+      ]
+    },
+    {
       "competencyId": "ai-model-landscape",
       "tier": "foundation",
-      "order": 35,
+      "order": 49,
       "prerequisites": [
         "ux-design-thinking"
       ],
@@ -269,7 +375,7 @@
     {
       "competencyId": "ai-prompting",
       "tier": "foundation",
-      "order": 36,
+      "order": 50,
       "prerequisites": [
         "ai-model-landscape"
       ],
@@ -279,7 +385,7 @@
     {
       "competencyId": "ai-research-synthesis",
       "tier": "core",
-      "order": 37,
+      "order": 51,
       "prerequisites": [
         "ai-prompting"
       ],
@@ -289,7 +395,7 @@
     {
       "competencyId": "ai-visual-generation",
       "tier": "core",
-      "order": 38,
+      "order": 52,
       "prerequisites": [
         "ai-prompting"
       ],
@@ -299,7 +405,7 @@
     {
       "competencyId": "ai-video-audio",
       "tier": "optional",
-      "order": 39,
+      "order": 53,
       "prerequisites": [
         "ai-prompting"
       ],
@@ -309,7 +415,7 @@
     {
       "competencyId": "ai-copy-content",
       "tier": "optional",
-      "order": 40,
+      "order": 54,
       "prerequisites": [
         "ai-prompting"
       ],
@@ -319,7 +425,7 @@
     {
       "competencyId": "ai-layout-docs",
       "tier": "core",
-      "order": 41,
+      "order": 55,
       "prerequisites": [
         "ai-prompting"
       ],
@@ -329,7 +435,7 @@
     {
       "competencyId": "ai-workflow-integration",
       "tier": "core",
-      "order": 42,
+      "order": 56,
       "prerequisites": [
         "ai-prompting",
         "ai-model-landscape"
@@ -340,7 +446,7 @@
     {
       "competencyId": "ai-ethics-rights",
       "tier": "core",
-      "order": 43,
+      "order": 57,
       "prerequisites": [
         "ai-model-landscape"
       ],

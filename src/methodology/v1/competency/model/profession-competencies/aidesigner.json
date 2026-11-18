@@ -476,6 +476,118 @@
       "prerequisites": [],
       "sectionId": "aid-foundations",
       "sectionTitle": "Сквозные компетенции"
+    },
+    {
+      "competencyId": "ux-service-design",
+      "tier": "optional",
+      "order": 54,
+      "prerequisites": [],
+      "sectionId": "pro-hard",
+      "sectionTitle": "Продуктовые и профессиональные навыки"
+    },
+    {
+      "competencyId": "ux-data-visualization",
+      "tier": "optional",
+      "order": 55,
+      "prerequisites": [],
+      "sectionId": "pro-hard",
+      "sectionTitle": "Продуктовые и профессиональные навыки"
+    },
+    {
+      "competencyId": "ux-writing",
+      "tier": "optional",
+      "order": 56,
+      "prerequisites": [],
+      "sectionId": "pro-hard",
+      "sectionTitle": "Продуктовые и профессиональные навыки"
+    },
+    {
+      "competencyId": "ux-expert-review",
+      "tier": "optional",
+      "order": 57,
+      "prerequisites": [],
+      "sectionId": "pro-hard",
+      "sectionTitle": "Продуктовые и профессиональные навыки"
+    },
+    {
+      "competencyId": "ux-frontend-basics",
+      "tier": "optional",
+      "order": 58,
+      "prerequisites": [],
+      "sectionId": "pro-hard",
+      "sectionTitle": "Продуктовые и профессиональные навыки"
+    },
+    {
+      "competencyId": "ui-iconography-illustration",
+      "tier": "optional",
+      "order": 59,
+      "prerequisites": [],
+      "sectionId": "pro-hard",
+      "sectionTitle": "Продуктовые и профессиональные навыки"
+    },
+    {
+      "competencyId": "ux-achievement-focus",
+      "tier": "optional",
+      "order": 60,
+      "prerequisites": [],
+      "sectionId": "pro-soft",
+      "sectionTitle": "Общепрофессиональные навыки"
+    },
+    {
+      "competencyId": "ux-communication-collaboration",
+      "tier": "optional",
+      "order": 61,
+      "prerequisites": [],
+      "sectionId": "pro-soft",
+      "sectionTitle": "Общепрофессиональные навыки"
+    },
+    {
+      "competencyId": "ux-creative-thinking",
+      "tier": "optional",
+      "order": 62,
+      "prerequisites": [],
+      "sectionId": "pro-soft",
+      "sectionTitle": "Общепрофессиональные навыки"
+    },
+    {
+      "competencyId": "ux-systems-thinking",
+      "tier": "optional",
+      "order": 63,
+      "prerequisites": [],
+      "sectionId": "pro-soft",
+      "sectionTitle": "Общепрофессиональные навыки"
+    },
+    {
+      "competencyId": "ux-planning-organization",
+      "tier": "optional",
+      "order": 64,
+      "prerequisites": [],
+      "sectionId": "pro-leadership",
+      "sectionTitle": "Лидерство и развитие"
+    },
+    {
+      "competencyId": "ux-strategy-vision",
+      "tier": "optional",
+      "order": 65,
+      "prerequisites": [],
+      "sectionId": "pro-leadership",
+      "sectionTitle": "Лидерство и развитие"
+    },
+    {
+      "competencyId": "ux-uncertainty-risk",
+      "tier": "optional",
+      "order": 66,
+      "prerequisites": [],
+      "sectionId": "pro-leadership",
+      "sectionTitle": "Лидерство и развитие"
+    },
+    {
+      "competencyId": "ux-team-management",
+      "tier": "optional",
+      "order": 67,
+      "prerequisites": [],
+      "sectionId": "pro-leadership",
+      "sectionTitle": "Лидерство и развитие"
     }
   ]
 }

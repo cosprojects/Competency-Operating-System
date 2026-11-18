@@ -362,6 +362,97 @@
           ]
         }
       ]
+    },
+    {
+      "id": "pro-hard",
+      "title": "Продуктовые и профессиональные навыки",
+      "definition": "Сервис-дизайн, визуализация данных, текст, экспертная оценка, фронтенд, иконографика.",
+      "competencies": [
+        {
+          "competencyId": "ux-service-design",
+          "tier": "optional",
+          "order": 38
+        },
+        {
+          "competencyId": "ux-data-visualization",
+          "tier": "optional",
+          "order": 39
+        },
+        {
+          "competencyId": "ux-writing",
+          "tier": "optional",
+          "order": 40
+        },
+        {
+          "competencyId": "ux-expert-review",
+          "tier": "optional",
+          "order": 41
+        },
+        {
+          "competencyId": "ux-frontend-basics",
+          "tier": "optional",
+          "order": 42
+        },
+        {
+          "competencyId": "ui-iconography-illustration",
+          "tier": "optional",
+          "order": 43
+        }
+      ]
+    },
+    {
+      "id": "pro-soft",
+      "title": "Общепрофессиональные навыки",
+      "definition": "Ориентация на достижения, коммуникация, креативное и системное мышление.",
+      "competencies": [
+        {
+          "competencyId": "ux-achievement-focus",
+          "tier": "optional",
+          "order": 44
+        },
+        {
+          "competencyId": "ux-communication-collaboration",
+          "tier": "optional",
+          "order": 45
+        },
+        {
+          "competencyId": "ux-creative-thinking",
+          "tier": "optional",
+          "order": 46
+        },
+        {
+          "competencyId": "ux-systems-thinking",
+          "tier": "optional",
+          "order": 47
+        }
+      ]
+    },
+    {
+      "id": "pro-leadership",
+      "title": "Лидерство и развитие",
+      "definition": "Планирование, стратегия, неопределённость, управление командой.",
+      "competencies": [
+        {
+          "competencyId": "ux-planning-organization",
+          "tier": "optional",
+          "order": 48
+        },
+        {
+          "competencyId": "ux-strategy-vision",
+          "tier": "optional",
+          "order": 49
+        },
+        {
+          "competencyId": "ux-uncertainty-risk",
+          "tier": "optional",
+          "order": 50
+        },
+        {
+          "competencyId": "ux-team-management",
+          "tier": "optional",
+          "order": 51
+        }
+      ]
     }
   ],
   "description": "Проектирует движение в интерфейсах, роликах и 3D-сценах: отвечает за анимацию, кинетику, звук и композитинг, а нейросети применяет для генерации и ускорения производства, сохраняя контроль качества, целостность стиля и понятность переходов.",

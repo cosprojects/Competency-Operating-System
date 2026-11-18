@@ -357,6 +357,97 @@
           "order": 46
         }
       ]
+    },
+    {
+      "id": "pro-hard",
+      "title": "Продуктовые и профессиональные навыки",
+      "definition": "Сервис-дизайн, визуализация данных, текст, экспертная оценка, фронтенд, иконографика.",
+      "competencies": [
+        {
+          "competencyId": "ux-service-design",
+          "tier": "optional",
+          "order": 47
+        },
+        {
+          "competencyId": "ux-data-visualization",
+          "tier": "optional",
+          "order": 48
+        },
+        {
+          "competencyId": "ux-writing",
+          "tier": "optional",
+          "order": 49
+        },
+        {
+          "competencyId": "ux-expert-review",
+          "tier": "optional",
+          "order": 50
+        },
+        {
+          "competencyId": "ux-frontend-basics",
+          "tier": "optional",
+          "order": 51
+        },
+        {
+          "competencyId": "ui-iconography-illustration",
+          "tier": "optional",
+          "order": 52
+        }
+      ]
+    },
+    {
+      "id": "pro-soft",
+      "title": "Общепрофессиональные навыки",
+      "definition": "Ориентация на достижения, коммуникация, креативное и системное мышление.",
+      "competencies": [
+        {
+          "competencyId": "ux-achievement-focus",
+          "tier": "optional",
+          "order": 53
+        },
+        {
+          "competencyId": "ux-communication-collaboration",
+          "tier": "optional",
+          "order": 54
+        },
+        {
+          "competencyId": "ux-creative-thinking",
+          "tier": "optional",
+          "order": 55
+        },
+        {
+          "competencyId": "ux-systems-thinking",
+          "tier": "optional",
+          "order": 56
+        }
+      ]
+    },
+    {
+      "id": "pro-leadership",
+      "title": "Лидерство и развитие",
+      "definition": "Планирование, стратегия, неопределённость, управление командой.",
+      "competencies": [
+        {
+          "competencyId": "ux-planning-organization",
+          "tier": "optional",
+          "order": 57
+        },
+        {
+          "competencyId": "ux-strategy-vision",
+          "tier": "optional",
+          "order": 58
+        },
+        {
+          "competencyId": "ux-uncertainty-risk",
+          "tier": "optional",
+          "order": 59
+        },
+        {
+          "competencyId": "ux-team-management",
+          "tier": "optional",
+          "order": 60
+        }
+      ]
     }
   ],
   "description": "Проектирует игровые системы, правила и сценарии, связывая решения с потребностями игроков и метриками продукта, проверяет гипотезы на прототипах и плейтестах и доводит механику и интерфейс до согласованной реализации.",

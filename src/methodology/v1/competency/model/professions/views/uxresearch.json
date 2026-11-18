@@ -263,6 +263,97 @@
           ]
         }
       ]
+    },
+    {
+      "id": "pro-hard",
+      "title": "Продуктовые и профессиональные навыки",
+      "definition": "Сервис-дизайн, визуализация данных, текст, экспертная оценка, фронтенд, иконографика.",
+      "competencies": [
+        {
+          "competencyId": "ux-service-design",
+          "tier": "optional",
+          "order": 28
+        },
+        {
+          "competencyId": "ux-data-visualization",
+          "tier": "optional",
+          "order": 29
+        },
+        {
+          "competencyId": "ux-writing",
+          "tier": "optional",
+          "order": 30
+        },
+        {
+          "competencyId": "ux-expert-review",
+          "tier": "optional",
+          "order": 31
+        },
+        {
+          "competencyId": "ux-frontend-basics",
+          "tier": "optional",
+          "order": 32
+        },
+        {
+          "competencyId": "ui-iconography-illustration",
+          "tier": "optional",
+          "order": 33
+        }
+      ]
+    },
+    {
+      "id": "pro-soft",
+      "title": "Общепрофессиональные навыки",
+      "definition": "Ориентация на достижения, коммуникация, креативное и системное мышление.",
+      "competencies": [
+        {
+          "competencyId": "ux-achievement-focus",
+          "tier": "optional",
+          "order": 34
+        },
+        {
+          "competencyId": "ux-communication-collaboration",
+          "tier": "optional",
+          "order": 35
+        },
+        {
+          "competencyId": "ux-creative-thinking",
+          "tier": "optional",
+          "order": 36
+        },
+        {
+          "competencyId": "ux-systems-thinking",
+          "tier": "optional",
+          "order": 37
+        }
+      ]
+    },
+    {
+      "id": "pro-leadership",
+      "title": "Лидерство и развитие",
+      "definition": "Планирование, стратегия, неопределённость, управление командой.",
+      "competencies": [
+        {
+          "competencyId": "ux-planning-organization",
+          "tier": "optional",
+          "order": 38
+        },
+        {
+          "competencyId": "ux-strategy-vision",
+          "tier": "optional",
+          "order": 39
+        },
+        {
+          "competencyId": "ux-uncertainty-risk",
+          "tier": "optional",
+          "order": 40
+        },
+        {
+          "competencyId": "ux-team-management",
+          "tier": "optional",
+          "order": 41
+        }
+      ]
     }
   ],
   "description": "Планирует и проводит исследования пользователей: превращает задачи продукта в проверяемые гипотезы, подбирает методы и респондентов. Синтезирует данные интервью, тестов и аналитики, чтобы обосновывать проектные решения и их вклад в метрики продукта.",

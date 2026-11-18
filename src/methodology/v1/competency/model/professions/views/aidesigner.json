@@ -439,6 +439,97 @@
           "order": 53
         }
       ]
+    },
+    {
+      "id": "pro-hard",
+      "title": "Продуктовые и профессиональные навыки",
+      "definition": "Сервис-дизайн, визуализация данных, текст, экспертная оценка, фронтенд, иконографика.",
+      "competencies": [
+        {
+          "competencyId": "ux-service-design",
+          "tier": "optional",
+          "order": 54
+        },
+        {
+          "competencyId": "ux-data-visualization",
+          "tier": "optional",
+          "order": 55
+        },
+        {
+          "competencyId": "ux-writing",
+          "tier": "optional",
+          "order": 56
+        },
+        {
+          "competencyId": "ux-expert-review",
+          "tier": "optional",
+          "order": 57
+        },
+        {
+          "competencyId": "ux-frontend-basics",
+          "tier": "optional",
+          "order": 58
+        },
+        {
+          "competencyId": "ui-iconography-illustration",
+          "tier": "optional",
+          "order": 59
+        }
+      ]
+    },
+    {
+      "id": "pro-soft",
+      "title": "Общепрофессиональные навыки",
+      "definition": "Ориентация на достижения, коммуникация, креативное и системное мышление.",
+      "competencies": [
+        {
+          "competencyId": "ux-achievement-focus",
+          "tier": "optional",
+          "order": 60
+        },
+        {
+          "competencyId": "ux-communication-collaboration",
+          "tier": "optional",
+          "order": 61
+        },
+        {
+          "competencyId": "ux-creative-thinking",
+          "tier": "optional",
+          "order": 62
+        },
+        {
+          "competencyId": "ux-systems-thinking",
+          "tier": "optional",
+          "order": 63
+        }
+      ]
+    },
+    {
+      "id": "pro-leadership",
+      "title": "Лидерство и развитие",
+      "definition": "Планирование, стратегия, неопределённость, управление командой.",
+      "competencies": [
+        {
+          "competencyId": "ux-planning-organization",
+          "tier": "optional",
+          "order": 64
+        },
+        {
+          "competencyId": "ux-strategy-vision",
+          "tier": "optional",
+          "order": 65
+        },
+        {
+          "competencyId": "ux-uncertainty-risk",
+          "tier": "optional",
+          "order": 66
+        },
+        {
+          "competencyId": "ux-team-management",
+          "tier": "optional",
+          "order": 67
+        }
+      ]
     }
   ],
   "description": "Проектирует цифровые продукты и визуальные коммуникации с опорой на генеративные модели и AI-агентов: ведёт исследование, сценарии, интерфейсы, прототипы и производство контента, связывая дизайн-решения с ценностью продукта и проверяя качество AI-результата.",

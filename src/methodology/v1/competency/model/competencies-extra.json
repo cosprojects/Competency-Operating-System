@@ -1458,6 +1458,160 @@
       "titleEn": "Game analytics and metrics",
       "definition": "Собирает и интерпретирует игровые метрики: события, воронки, удержание и сегменты, чтобы решения о дизайне опирались на поведение игроков, а не на догадки.",
       "priorityHint": "core"
+    },
+    {
+      "id": "ux-service-design",
+      "branchId": "design-pro",
+      "branchTitle": "Профессиональные навыки дизайнера",
+      "sectionId": "pro-hard",
+      "sectionTitle": "pro-hard",
+      "title": "Сервис-дизайн и карты пути",
+      "titleEn": "Service design and journey maps",
+      "definition": "Проектирует взаимодействие вне интерфейса: строит Customer Journey Map, Service Blueprint и Employee Journey Map, связывает точки контакта и участников сервиса, чтобы опыт оставался целостным на всём пути.",
+      "priorityHint": "core"
+    },
+    {
+      "id": "ux-data-visualization",
+      "branchId": "design-pro",
+      "branchTitle": "Профессиональные навыки дизайнера",
+      "sectionId": "pro-hard",
+      "sectionTitle": "pro-hard",
+      "title": "Визуализация данных",
+      "titleEn": "Data visualization",
+      "definition": "Проектирует форму подачи данных — тип графика, композицию и анимацию — так, чтобы информация читалась быстро и поддерживала решение, а не запутывала.",
+      "priorityHint": "core"
+    },
+    {
+      "id": "ux-writing",
+      "branchId": "design-pro",
+      "branchTitle": "Профессиональные навыки дизайнера",
+      "sectionId": "pro-hard",
+      "sectionTitle": "pro-hard",
+      "title": "Редактура и микрокопирайтинг",
+      "titleEn": "UX writing and editing",
+      "definition": "Пишет и редактирует текст в интерфейсе: подписи, подсказки, ошибки и состояния формулируются ясно и в тоне продукта, а публикации и презентации доносят решения команде.",
+      "priorityHint": "core"
+    },
+    {
+      "id": "ux-expert-review",
+      "branchId": "design-pro",
+      "branchTitle": "Профессиональные навыки дизайнера",
+      "sectionId": "pro-hard",
+      "sectionTitle": "pro-hard",
+      "title": "Экспертная оценка интерфейсов",
+      "titleEn": "Expert interface review",
+      "definition": "Проводит экспертную оценку интерфейса по эвристикам и критериям (обучаемость, запоминаемость, эффективность, предотвращение ошибок, удовлетворённость) и приоритизирует problemas для команды.",
+      "priorityHint": "core"
+    },
+    {
+      "id": "ux-frontend-basics",
+      "branchId": "design-pro",
+      "branchTitle": "Профессиональные навыки дизайнера",
+      "sectionId": "pro-hard",
+      "sectionTitle": "pro-hard",
+      "title": "Основы фронтенда и проверка качества",
+      "titleEn": "Frontend basics and quality checks",
+      "definition": "Понимает фронтенд-часть продукта: вёрстку и анимацию, источники данных и API, рабочее окружение и формализованное тестирование качества, чтобы проверять реализацию и ставить задачи разработке.",
+      "priorityHint": "core"
+    },
+    {
+      "id": "ui-iconography-illustration",
+      "branchId": "design-pro",
+      "branchTitle": "Профессиональные навыки дизайнера",
+      "sectionId": "pro-hard",
+      "sectionTitle": "pro-hard",
+      "title": "Иконографика и иллюстрации",
+      "titleEn": "Iconography and illustrations",
+      "definition": "Специалист подбирает понятные метафоры и держит стилистическую целостность графики, раскладывая стиль на составляющие; в результате иконки и иллюстрации работают на восприятие и бренд.",
+      "priorityHint": "optional"
+    },
+    {
+      "id": "ux-achievement-focus",
+      "branchId": "design-pro",
+      "branchTitle": "Профессиональные навыки дизайнера",
+      "sectionId": "pro-soft",
+      "sectionTitle": "pro-soft",
+      "title": "Ориентация на достижения",
+      "titleEn": "Achievement focus",
+      "definition": "Способность доводить работу до результата: брать ответственность, следить за качеством и соответствием стандартам, проявлять проактивность и ставить амбициозные, но достижимые цели в задачах 3D-дизайна.",
+      "priorityHint": "core"
+    },
+    {
+      "id": "ux-communication-collaboration",
+      "branchId": "design-pro",
+      "branchTitle": "Профессиональные навыки дизайнера",
+      "sectionId": "pro-soft",
+      "sectionTitle": "pro-soft",
+      "title": "Коммуникация и командная работа",
+      "titleEn": "Communication and collaboration",
+      "definition": "Специалист ведёт переговоры, аргументирует решения и работает с возражениями, фасилитирует встречи и выстраивает совместную работу команды, чтобы приходить к понятным договорённостям и решениям.",
+      "priorityHint": "core"
+    },
+    {
+      "id": "ux-creative-thinking",
+      "branchId": "design-pro",
+      "branchTitle": "Профессиональные навыки дизайнера",
+      "sectionId": "pro-soft",
+      "sectionTitle": "pro-soft",
+      "title": "Креативное мышление",
+      "titleEn": "Creative thinking",
+      "definition": "Позволяет специалисту находить несколько решений задачи, опираясь на приёмы генерации и насмотренность, а затем осознанно выбирать лучший вариант по критериям.",
+      "priorityHint": "core"
+    },
+    {
+      "id": "ux-systems-thinking",
+      "branchId": "design-pro",
+      "branchTitle": "Профессиональные навыки дизайнера",
+      "sectionId": "pro-soft",
+      "sectionTitle": "pro-soft",
+      "title": "Системное мышление",
+      "titleEn": "Systems thinking",
+      "definition": "Способность видеть задачу как систему: раскладывать её на элементы и связи, учитывать обратные связи и проверять обоснованность выводов, чтобы локальные решения не порождали проблем в других частях продукта.",
+      "priorityHint": "core"
+    },
+    {
+      "id": "ux-planning-organization",
+      "branchId": "design-pro",
+      "branchTitle": "Профессиональные навыки дизайнера",
+      "sectionId": "pro-leadership",
+      "sectionTitle": "pro-leadership",
+      "title": "Планирование и организация",
+      "titleEn": "Planning and organization",
+      "definition": "Способность выстраивать работу над 3D-проектом: определять этапы и приоритеты, формулировать задачи и контролировать исполнение, чтобы команда двигалась согласованно и результат соответствовал плану.",
+      "priorityHint": "optional"
+    },
+    {
+      "id": "ux-strategy-vision",
+      "branchId": "design-pro",
+      "branchTitle": "Профессиональные навыки дизайнера",
+      "sectionId": "pro-leadership",
+      "sectionTitle": "pro-leadership",
+      "title": "Стратегия и видение",
+      "titleEn": "Strategy and vision",
+      "definition": "Способность задавать долгосрочное направление продукта и переводить его в повседневные решения, чтобы работа команды опиралась на выбранный курс, а не на случайные запросы.",
+      "priorityHint": "optional"
+    },
+    {
+      "id": "ux-uncertainty-risk",
+      "branchId": "design-pro",
+      "branchTitle": "Профессиональные навыки дизайнера",
+      "sectionId": "pro-leadership",
+      "sectionTitle": "pro-leadership",
+      "title": "Работа в условиях неопределённости",
+      "titleEn": "Working under uncertainty",
+      "definition": "Специалист сохраняет работоспособность и темп при неполных данных: оценивает риски и сценарии, фиксирует допущения и принимает следующий шаг в своей зоне ответственности, не останавливая команду ожиданием идеальной информации.",
+      "priorityHint": "optional"
+    },
+    {
+      "id": "ux-team-management",
+      "branchId": "design-pro",
+      "branchTitle": "Профессиональные навыки дизайнера",
+      "sectionId": "pro-leadership",
+      "sectionTitle": "pro-leadership",
+      "title": "Найм, развитие и мотивация команды",
+      "titleEn": "Hiring, growth and motivation",
+      "definition": "Формирует команду через понятные требования к роли, структурированный отбор и адаптацию новичков, а затем поддерживает рост сотрудников с помощью планов развития, регулярной обратной связи и гибкой мотивации.",
+      "priorityHint": "optional"
     }
   ]
 }

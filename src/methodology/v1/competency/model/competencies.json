@@ -51,7 +51,8 @@
         "udacity-product-design",
         "uxdesigninstitute-free-ux-course",
         "wybex-ux-basics",
-        "wybex-ux-guide"
+        "wybex-ux-guide",
+        "jvetrau-uxresearch"
       ]
     },
     {
@@ -73,7 +74,8 @@
         "coursera-uxui-fundamentals",
         "greatlearning-uiux",
         "coursera-microsoft-product-design",
-        "sendsay-ru-blog-metod-person-kak-sozdat-portret-klienta"
+        "sendsay-ru-blog-metod-person-kak-sozdat-portret-klienta",
+        "jvetrau-uxresearch"
       ]
     },
     {
@@ -121,7 +123,8 @@
         "coursera-uxui-fundamentals",
         "wybex-ux-ui-course",
         "wybex-ux-basics",
-        "wybex-user-flow"
+        "wybex-user-flow",
+        "jvetrau-ia"
       ]
     },
     {
@@ -189,7 +192,8 @@
         "figma-design-basics",
         "codecademy-intro-uiux",
         "wybex-ux-ui-course",
-        "wybex-ux-basics"
+        "wybex-ux-basics",
+        "jvetrau-ia"
       ]
     },
     {
@@ -254,7 +258,8 @@
         "codecademy-intro-uiux",
         "coursera-microsoft-product-design",
         "contented-ru-courses-prototipirovanie",
-        "wybex-ux-ui-course"
+        "wybex-ux-ui-course",
+        "jvetrau-ia"
       ]
     },
     {
@@ -278,7 +283,8 @@
         "coursera-microsoft-product-design",
         "practicum-ai-tools-for-designers",
         "online-spbu-ru-16ff04",
-        "wybex-forms"
+        "wybex-forms",
+        "jvetrau-uxresearch"
       ]
     },
     {
@@ -292,7 +298,8 @@
       "definition": "Специалист выбирает метрики, проектирует эксперименты и интерпретирует результаты, чтобы обосновывать UX-решения и связывать их с бизнес-целями.",
       "priorityHint": "optional",
       "learningSourceIds": [
-        "practicum-uxresearch"
+        "practicum-uxresearch",
+        "jvetrau-uxresearch"
       ]
     },
     {
@@ -309,7 +316,8 @@
         "practicum-design-catalog",
         "codecademy-intro-uiux",
         "udacity-product-design",
-        "coursera-microsoft-product-design"
+        "coursera-microsoft-product-design",
+        "jvetrau-productthinking"
       ]
     },
     {
@@ -325,7 +333,8 @@
       "learningSourceIds": [
         "practicum-uxresearch",
         "hse-ru-edu-courses-470898711",
-        "productlab-ru-strategy"
+        "productlab-ru-strategy",
+        "jvetrau-productthinking"
       ]
     },
     {
@@ -393,7 +402,8 @@
         "wybex-color-in-uxui",
         "wybex-color-codes",
         "wybex-60-30-10",
-        "wybex-contrast"
+        "wybex-contrast",
+        "jvetrau-visualdesign"
       ]
     },
     {
@@ -420,7 +430,8 @@
         "wybex-ux-ui-course",
         "wybex-typography-basics",
         "wybex-type-hierarchy",
-        "wybex-uppercase"
+        "wybex-uppercase",
+        "jvetrau-visualdesign"
       ]
     },
     {
@@ -453,7 +464,8 @@
         "wybex-type-hierarchy",
         "wybex-composition",
         "wybex-grids",
-        "wybex-60-30-10"
+        "wybex-60-30-10",
+        "jvetrau-visualdesign"
       ]
     },
     {
@@ -496,7 +508,8 @@
         "wybex-color-theory",
         "wybex-color-psychology",
         "wybex-color-in-uxui",
-        "wybex-composition"
+        "wybex-composition",
+        "jvetrau-visualdesign"
       ]
     },
     {
@@ -523,7 +536,9 @@
         "bangbangeducation-ru-course-motion",
         "wybex-ux-ui-course",
         "wybex-color-codes",
-        "wybex-figma-components"
+        "wybex-figma-components",
+        "jvetrau-visualdesign",
+        "habr-ai-design-1096288"
       ]
     },
     {
@@ -547,7 +562,8 @@
         "wybex-auto-layout",
         "wybex-figma-components",
         "wybex-forms",
-        "wybex-empty-states"
+        "wybex-empty-states",
+        "jvetrau-visualdesign"
       ]
     },
     {
@@ -632,7 +648,8 @@
         "school-of-motion",
         "motiondesign-school-youtube",
         "cloud-itstep-org-ru-course-motion-design",
-        "bangbangeducation-ru-course-motion"
+        "bangbangeducation-ru-course-motion",
+        "jvetrau-visualdesign"
       ]
     },
     {
@@ -709,7 +726,8 @@
       "priorityHint": "core",
       "learningSourceIds": [
         "school-of-motion-free",
-        "wybex-figma-handoff"
+        "wybex-figma-handoff",
+        "jvetrau-frontend"
       ]
     },
     {
@@ -741,6 +759,204 @@
       "priorityHint": "optional",
       "learningSourceIds": [
         "practicum-presentation"
+      ]
+    },
+    {
+      "id": "ux-service-design",
+      "branchId": "design-pro",
+      "branchTitle": "Профессиональные навыки дизайнера",
+      "sectionId": "pro-hard",
+      "sectionTitle": "Продуктовые и профессиональные навыки",
+      "title": "Сервис-дизайн и карты пути",
+      "titleEn": "Service design and journey maps",
+      "definition": "Проектирует взаимодействие вне интерфейса: строит Customer Journey Map, Service Blueprint и Employee Journey Map, связывает точки контакта и участников сервиса, чтобы опыт оставался целостным на всём пути.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "jvetrau-ia"
+      ]
+    },
+    {
+      "id": "ux-data-visualization",
+      "branchId": "design-pro",
+      "branchTitle": "Профессиональные навыки дизайнера",
+      "sectionId": "pro-hard",
+      "sectionTitle": "Продуктовые и профессиональные навыки",
+      "title": "Визуализация данных",
+      "titleEn": "Data visualization",
+      "definition": "Выбирает и проектирует форму представления данных: тип графика, композицию и анимацию, чтобы данные читались быстро и поддерживали решение, а не запутывали.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "jvetrau-visualdesign"
+      ]
+    },
+    {
+      "id": "ux-writing",
+      "branchId": "design-pro",
+      "branchTitle": "Профессиональные навыки дизайнера",
+      "sectionId": "pro-hard",
+      "sectionTitle": "Продуктовые и профессиональные навыки",
+      "title": "Редактура и микрокопирайтинг",
+      "titleEn": "UX writing and editing",
+      "definition": "Пишет и редактирует текст в интерфейсе: подписи, подсказки, ошибки и состояния формулируются ясно и в тоне продукта, а публикации и презентации доносят решения команде.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "jvetrau-copywriting"
+      ]
+    },
+    {
+      "id": "ux-expert-review",
+      "branchId": "design-pro",
+      "branchTitle": "Профессиональные навыки дизайнера",
+      "sectionId": "pro-hard",
+      "sectionTitle": "Продуктовые и профессиональные навыки",
+      "title": "Экспертная оценка интерфейсов",
+      "titleEn": "Expert interface review",
+      "definition": "Проводит экспертную оценку интерфейса по эвристикам и критериям (обучаемость, запоминаемость, эффективность, предотвращение ошибок, удовлетворённость) и приоритизирует problemas для команды.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "jvetrau-uxresearch"
+      ]
+    },
+    {
+      "id": "ux-frontend-basics",
+      "branchId": "design-pro",
+      "branchTitle": "Профессиональные навыки дизайнера",
+      "sectionId": "pro-hard",
+      "sectionTitle": "Продуктовые и профессиональные навыки",
+      "title": "Основы фронтенда и проверка качества",
+      "titleEn": "Frontend basics and quality checks",
+      "definition": "Понимает фронтенд-часть продукта: вёрстку и анимацию, источники данных и API, рабочее окружение и формализованное тестирование качества, чтобы проверять реализацию и ставить задачи разработке.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "jvetrau-frontend"
+      ]
+    },
+    {
+      "id": "ui-iconography-illustration",
+      "branchId": "design-pro",
+      "branchTitle": "Профессиональные навыки дизайнера",
+      "sectionId": "pro-hard",
+      "sectionTitle": "Продуктовые и профессиональные навыки",
+      "title": "Иконографика и иллюстрации",
+      "titleEn": "Iconography and illustrations",
+      "definition": "Создаёт иконки и иллюстрации в едином стиле: подбирает метафоры, держит стилистическую целостность и раскладывает стиль на составляющие, чтобы графика работала на восприятие и бренд.",
+      "priorityHint": "optional",
+      "learningSourceIds": [
+        "jvetrau-visualdesign"
+      ]
+    },
+    {
+      "id": "ux-achievement-focus",
+      "branchId": "design-pro",
+      "branchTitle": "Профессиональные навыки дизайнера",
+      "sectionId": "pro-soft",
+      "sectionTitle": "Общепрофессиональные навыки",
+      "title": "Ориентация на достижения",
+      "titleEn": "Achievement focus",
+      "definition": "Доводит работу до результата: берёт ответственность, следит за качеством и стандартами, проявляет проактивность и ставит амбициозные, но достижимые цели.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "jvetrau"
+      ]
+    },
+    {
+      "id": "ux-communication-collaboration",
+      "branchId": "design-pro",
+      "branchTitle": "Профессиональные навыки дизайнера",
+      "sectionId": "pro-soft",
+      "sectionTitle": "Общепрофессиональные навыки",
+      "title": "Коммуникация и командная работа",
+      "titleEn": "Communication and collaboration",
+      "definition": "Работает с людьми: ведёт переговоры, аргументирует решения и работает с возражениями, фасилитирует встречи и выстраивает совместную работу команды.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "jvetrau"
+      ]
+    },
+    {
+      "id": "ux-creative-thinking",
+      "branchId": "design-pro",
+      "branchTitle": "Профессиональные навыки дизайнера",
+      "sectionId": "pro-soft",
+      "sectionTitle": "Общепрофессиональные навыки",
+      "title": "Креативное мышление",
+      "titleEn": "Creative thinking",
+      "definition": "Генерирует и отбирает идеи: использует дивергентное и конвергентное мышление, приёмы генерации и насмотренность, чтобы находить варианты и осознанно выбирать.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "jvetrau-creativethinking"
+      ]
+    },
+    {
+      "id": "ux-systems-thinking",
+      "branchId": "design-pro",
+      "branchTitle": "Профессиональные навыки дизайнера",
+      "sectionId": "pro-soft",
+      "sectionTitle": "Общепрофессиональные навыки",
+      "title": "Системное мышление",
+      "titleEn": "Systems thinking",
+      "definition": "Видит систему целиком: раскладывает задачу на элементы и связи, учитывает обратные связи и проверяет обоснованность выводов, чтобы решения не создавали проблем в другом месте.",
+      "priorityHint": "core",
+      "learningSourceIds": [
+        "jvetrau-systemsthinking"
+      ]
+    },
+    {
+      "id": "ux-planning-organization",
+      "branchId": "design-pro",
+      "branchTitle": "Профессиональные навыки дизайнера",
+      "sectionId": "pro-leadership",
+      "sectionTitle": "Лидерство и развитие",
+      "title": "Планирование и организация",
+      "titleEn": "Planning and organization",
+      "definition": "Планирует работу и организацию: задаёт этапы, приоритеты и контроль, формулирует задачи и поддерживает команду проекта в согласованном движении.",
+      "priorityHint": "optional",
+      "learningSourceIds": [
+        "jvetrau-planning"
+      ]
+    },
+    {
+      "id": "ux-strategy-vision",
+      "branchId": "design-pro",
+      "branchTitle": "Профессиональные навыки дизайнера",
+      "sectionId": "pro-leadership",
+      "sectionTitle": "Лидерство и развитие",
+      "title": "Стратегия и видение",
+      "titleEn": "Strategy and vision",
+      "definition": "Формулирует долгосрочное видение и связывает его с повседневной работой, чтобы решения опирались на направление, а не на случайные запросы.",
+      "priorityHint": "optional",
+      "learningSourceIds": [
+        "jvetrau-strategy"
+      ]
+    },
+    {
+      "id": "ux-uncertainty-risk",
+      "branchId": "design-pro",
+      "branchTitle": "Профессиональные навыки дизайнера",
+      "sectionId": "pro-leadership",
+      "sectionTitle": "Лидерство и развитие",
+      "title": "Работа в условиях неопределённости",
+      "titleEn": "Working under uncertainty",
+      "definition": "Действует в условиях неопределённости: просчитывает риски, принимает решения при неполных данных, сохраняет самостоятельность и не парализует команду.",
+      "priorityHint": "optional",
+      "learningSourceIds": [
+        "jvetrau-uncertainty"
+      ]
+    },
+    {
+      "id": "ux-team-management",
+      "branchId": "design-pro",
+      "branchTitle": "Профессиональные навыки дизайнера",
+      "sectionId": "pro-leadership",
+      "sectionTitle": "Лидерство и развитие",
+      "title": "Найм, развитие и мотивация команды",
+      "titleEn": "Hiring, growth and motivation",
+      "definition": "Растит команду: формулирует требования, проводит отбор и собеседования, помогает адаптации и развитию через ИПР и обратную связь, поддерживает мотивацию и адаптирует стиль управления.",
+      "priorityHint": "optional",
+      "learningSourceIds": [
+        "jvetrau-hiring",
+        "jvetrau-profdevelopment",
+        "jvetrau-motivation"
       ]
     },
     {
@@ -803,7 +1019,8 @@
         "udacity-product-design",
         "coursera-microsoft-product-design",
         "hse-ru-edu-courses-470898711",
-        "productlab-ru-strategy"
+        "productlab-ru-strategy",
+        "jvetrau-productthinking"
       ]
     },
     {
@@ -1572,7 +1789,8 @@
       "learningSourceIds": [
         "practicum-3ddesigner",
         "greatlearning-blender-3d",
-        "dev-epicgames-com-8792b9"
+        "dev-epicgames-com-8792b9",
+        "epic-greyboxing"
       ]
     },
     {
@@ -2352,7 +2570,8 @@
       "definition": "Выстраивать последовательность AI-агентов и инструментов под производственную задачу, распределяя шаги и контроль так, чтобы результат оставался управляемым и проверяемым.",
       "priorityHint": "core",
       "learningSourceIds": [
-        "learn-microsoft-com-2c1fcb"
+        "learn-microsoft-com-2c1fcb",
+        "xbox-a11y"
       ]
     },
     {

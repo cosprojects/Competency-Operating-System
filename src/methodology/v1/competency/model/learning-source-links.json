@@ -21,7 +21,8 @@
       "sourceRationales": {
         "wybex-ux-ui-course": "Начинает с UX-мышления: пользователи, сценарии и CJM на одном проекте.",
         "wybex-ux-basics": "Учебник объясняет UX-процесс и принципы проектирования цифровых продуктов.",
-        "wybex-ux-guide": "UX-процесс, принципы и отличие UX от UI."
+        "wybex-ux-guide": "UX-процесс, принципы и отличие UX от UI.",
+        "specialist-ru-course-vizkom": "совпадение с «Дизайн-мышление», формат course-platform, score 0.37, домен уже в реестре: specialist-ru-course-vizkom"
       }
     },
     {
@@ -40,7 +41,8 @@
         "wybex-type-hierarchy",
         "wybex-composition",
         "wybex-grids",
-        "wybex-60-30-10"
+        "wybex-60-30-10",
+        "jvetrau-visualdesign"
       ],
       "sourceRationales": {
         "wybex-ux-ui-course": "Модуль UI-дизайна разбирает сетки, композицию и визуальную иерархию.",
@@ -59,7 +61,8 @@
         "school-of-motion",
         "motiondesign-school-youtube",
         "cloud-itstep-org-ru-course-motion-design",
-        "bangbangeducation-ru-course-motion"
+        "bangbangeducation-ru-course-motion",
+        "jvetrau-visualdesign"
       ]
     },
     {
@@ -90,20 +93,23 @@
         "wybex-color-theory",
         "wybex-color-psychology",
         "wybex-color-in-uxui",
-        "wybex-composition"
+        "wybex-composition",
+        "jvetrau-visualdesign"
       ],
       "sourceRationales": {
         "wybex-color-theory": "Показывает, как цвет влияет на восприятие интерфейса и визуальный язык.",
         "wybex-color-psychology": "Цвет как часть визуальной коммуникации продукта.",
         "wybex-color-in-uxui": "Цвет как инструмент визуальной иерархии и коммуникации.",
-        "wybex-composition": "Композиция как часть визуального языка продукта."
+        "wybex-composition": "Композиция как часть визуального языка продукта.",
+        "specialist-ru-course-vizkom": "совпадение с «Визуальная коммуникация», формат course-platform, score 0.37"
       }
     },
     {
       "competencyId": "ui-handoff",
       "sourceIds": [
         "school-of-motion-free",
-        "wybex-figma-handoff"
+        "wybex-figma-handoff",
+        "jvetrau-frontend"
       ],
       "sourceRationales": {
         "wybex-figma-handoff": "Чек-лист передачи макета в разработку."
@@ -138,7 +144,8 @@
         "udacity-product-design",
         "uxdesigninstitute-free-ux-course",
         "wybex-ux-basics",
-        "wybex-ux-guide"
+        "wybex-ux-guide",
+        "jvetrau-uxresearch"
       ],
       "sourceRationales": {
         "wybex-ux-basics": "Основы UX: как понимать пользователя и его опыт.",
@@ -151,7 +158,8 @@
         "coursera-uxui-fundamentals",
         "greatlearning-uiux",
         "coursera-microsoft-product-design",
-        "sendsay-ru-blog-metod-person-kak-sozdat-portret-klienta"
+        "sendsay-ru-blog-metod-person-kak-sozdat-portret-klienta",
+        "jvetrau-uxresearch"
       ]
     },
     {
@@ -170,7 +178,8 @@
         "coursera-uxui-fundamentals",
         "wybex-ux-ui-course",
         "wybex-ux-basics",
-        "wybex-user-flow"
+        "wybex-user-flow",
+        "jvetrau-ia"
       ],
       "sourceRationales": {
         "wybex-ux-ui-course": "Модуль «Структура и UX» разбирает структуру сайта и информационную архитектуру.",
@@ -211,7 +220,8 @@
         "figma-design-basics",
         "codecademy-intro-uiux",
         "wybex-ux-ui-course",
-        "wybex-ux-basics"
+        "wybex-ux-basics",
+        "jvetrau-ia"
       ],
       "sourceRationales": {
         "wybex-ux-ui-course": "Модуль прототипирования даёт вайрфреймы и структуру страниц.",
@@ -241,7 +251,8 @@
         "codecademy-intro-uiux",
         "coursera-microsoft-product-design",
         "contented-ru-courses-prototipirovanie",
-        "wybex-ux-ui-course"
+        "wybex-ux-ui-course",
+        "jvetrau-ia"
       ],
       "sourceRationales": {
         "wybex-ux-ui-course": "Практика в Figma включает интерактивный прототип."
@@ -255,7 +266,8 @@
         "coursera-microsoft-product-design",
         "practicum-ai-tools-for-designers",
         "online-spbu-ru-16ff04",
-        "wybex-forms"
+        "wybex-forms",
+        "jvetrau-uxresearch"
       ],
       "sourceRationales": {
         "wybex-forms": "Проверка удобства форм с пользователями."
@@ -267,7 +279,8 @@
         "practicum-design-catalog",
         "codecademy-intro-uiux",
         "udacity-product-design",
-        "coursera-microsoft-product-design"
+        "coursera-microsoft-product-design",
+        "jvetrau-productthinking"
       ]
     },
     {
@@ -284,7 +297,8 @@
         "wybex-color-in-uxui",
         "wybex-color-codes",
         "wybex-60-30-10",
-        "wybex-contrast"
+        "wybex-contrast",
+        "jvetrau-visualdesign"
       ],
       "sourceRationales": {
         "wybex-ux-ui-course": "В бесплатном модуле студенты собирают цветовую палитру проекта.",
@@ -307,7 +321,8 @@
         "wybex-ux-ui-course",
         "wybex-typography-basics",
         "wybex-type-hierarchy",
-        "wybex-uppercase"
+        "wybex-uppercase",
+        "jvetrau-visualdesign"
       ],
       "sourceRationales": {
         "wybex-ux-ui-course": "В бесплатном модуле студенты собирают систему типографики проекта.",
@@ -337,12 +352,15 @@
         "bangbangeducation-ru-course-motion",
         "wybex-ux-ui-course",
         "wybex-color-codes",
-        "wybex-figma-components"
+        "wybex-figma-components",
+        "jvetrau-visualdesign",
+        "habr-ai-design-1096288"
       ],
       "sourceRationales": {
         "wybex-ux-ui-course": "В курсе собирается дизайн-система проекта и её использование в макетах.",
         "wybex-color-codes": "Цветовые токены и форматы для дизайн-системы.",
-        "wybex-figma-components": "Библиотека компонентов как часть дизайн-системы."
+        "wybex-figma-components": "Библиотека компонентов как часть дизайн-системы.",
+        "habr-ai-design-1096288": "совпадение с «Дизайн-токены и темы», формат blog, score 0.35, домен уже в реестре: habr-ai-design-1096288"
       }
     },
     {
@@ -353,7 +371,8 @@
         "wybex-auto-layout",
         "wybex-figma-components",
         "wybex-forms",
-        "wybex-empty-states"
+        "wybex-empty-states",
+        "jvetrau-visualdesign"
       ],
       "sourceRationales": {
         "wybex-ux-ui-course": "Компоненты и Auto Layout разбираются в Figma на практике.",
@@ -403,7 +422,8 @@
         "udacity-product-design",
         "coursera-microsoft-product-design",
         "hse-ru-edu-courses-470898711",
-        "productlab-ru-strategy"
+        "productlab-ru-strategy",
+        "jvetrau-productthinking"
       ]
     },
     {
@@ -484,7 +504,8 @@
     {
       "competencyId": "ux-experiments",
       "sourceIds": [
-        "practicum-uxresearch"
+        "practicum-uxresearch",
+        "jvetrau-uxresearch"
       ],
       "rationale": "Источник программы «UX-исследователь» покрывает тему в рамках курса."
     },
@@ -501,7 +522,8 @@
       "sourceIds": [
         "practicum-uxresearch",
         "hse-ru-edu-courses-470898711",
-        "productlab-ru-strategy"
+        "productlab-ru-strategy",
+        "jvetrau-productthinking"
       ]
     },
     {
@@ -554,8 +576,12 @@
       "competencyId": "3d-texturing",
       "sourceIds": [
         "greatlearning-blender-3d",
-        "dev-epicgames-com-8792b9"
-      ]
+        "dev-epicgames-com-8792b9",
+        "epic-greyboxing"
+      ],
+      "sourceRationales": {
+        "epic-greyboxing": "совпадение с «Материалы и текстуры», формат course-platform, score 0.37"
+      }
     },
     {
       "competencyId": "3d-lighting",
@@ -993,7 +1019,9 @@
       "sourceIds": [
         "framer-learn"
       ],
-      "rationale": "Framer Learn: официальные материалы по интерактивным прототипам."
+      "sourceRationales": {
+        "udemy-interior-design-free": "совпадение с «Framer: интерактивные прототипы», формат course-platform, score 0.49, домен уже в реестре: udemy-interior-design-free"
+      }
     },
     {
       "competencyId": "product-growth",
@@ -1123,7 +1151,10 @@
       "competencyId": "web-visual",
       "sourceIds": [
         "bangbangeducation-ru-course-motion"
-      ]
+      ],
+      "sourceRationales": {
+        "specialist-ru-course-vizkom": "совпадение с «Визуальный дизайн для веба», формат course-platform, score 0.40"
+      }
     },
     {
       "competencyId": "presentation-data",
@@ -1140,14 +1171,21 @@
     {
       "competencyId": "aidesigner-agent-orchestration",
       "sourceIds": [
-        "learn-microsoft-com-2c1fcb"
-      ]
+        "learn-microsoft-com-2c1fcb",
+        "xbox-a11y"
+      ],
+      "sourceRationales": {
+        "xbox-a11y": "совпадение с «Оркестрация AI-агентов», формат blog, score 0.49"
+      }
     },
     {
       "competencyId": "aidesigner-ai-development",
       "sourceIds": [
         "ai-softuni-bg-courses-ai-assisted-development"
-      ]
+      ],
+      "sourceRationales": {
+        "datacamp-com-ru-courses-ai-assisted-coding-for-developers": "совпадение с «AI-assisted разработка», формат course-platform, score 0.42"
+      }
     },
     {
       "competencyId": "aidesigner-ai-prototyping",
@@ -1337,6 +1375,106 @@
         "gameanalytics-docs",
         "unity-analytics"
       ]
+    },
+    {
+      "competencyId": "ux-service-design",
+      "sourceIds": [
+        "jvetrau-ia"
+      ],
+      "rationale": "Карта компетенций Юрия Ветрова (COS-RES-032)."
+    },
+    {
+      "competencyId": "ux-data-visualization",
+      "sourceIds": [
+        "jvetrau-visualdesign"
+      ],
+      "rationale": "Карта компетенций Юрия Ветрова (COS-RES-032)."
+    },
+    {
+      "competencyId": "ux-writing",
+      "sourceIds": [
+        "jvetrau-copywriting"
+      ],
+      "rationale": "Карта компетенций Юрия Ветрова (COS-RES-032)."
+    },
+    {
+      "competencyId": "ux-expert-review",
+      "sourceIds": [
+        "jvetrau-uxresearch"
+      ],
+      "rationale": "Карта компетенций Юрия Ветрова (COS-RES-032)."
+    },
+    {
+      "competencyId": "ux-frontend-basics",
+      "sourceIds": [
+        "jvetrau-frontend"
+      ],
+      "rationale": "Карта компетенций Юрия Ветрова (COS-RES-032)."
+    },
+    {
+      "competencyId": "ui-iconography-illustration",
+      "sourceIds": [
+        "jvetrau-visualdesign"
+      ],
+      "rationale": "Карта компетенций Юрия Ветрова (COS-RES-032)."
+    },
+    {
+      "competencyId": "ux-achievement-focus",
+      "sourceIds": [
+        "jvetrau"
+      ],
+      "rationale": "Карта компетенций Юрия Ветрова (COS-RES-032)."
+    },
+    {
+      "competencyId": "ux-communication-collaboration",
+      "sourceIds": [
+        "jvetrau"
+      ],
+      "rationale": "Карта компетенций Юрия Ветрова (COS-RES-032)."
+    },
+    {
+      "competencyId": "ux-creative-thinking",
+      "sourceIds": [
+        "jvetrau-creativethinking"
+      ],
+      "rationale": "Карта компетенций Юрия Ветрова (COS-RES-032)."
+    },
+    {
+      "competencyId": "ux-systems-thinking",
+      "sourceIds": [
+        "jvetrau-systemsthinking"
+      ],
+      "rationale": "Карта компетенций Юрия Ветрова (COS-RES-032)."
+    },
+    {
+      "competencyId": "ux-planning-organization",
+      "sourceIds": [
+        "jvetrau-planning"
+      ],
+      "rationale": "Карта компетенций Юрия Ветрова (COS-RES-032)."
+    },
+    {
+      "competencyId": "ux-strategy-vision",
+      "sourceIds": [
+        "jvetrau-strategy"
+      ],
+      "rationale": "Карта компетенций Юрия Ветрова (COS-RES-032)."
+    },
+    {
+      "competencyId": "ux-uncertainty-risk",
+      "sourceIds": [
+        "jvetrau-uncertainty"
+      ],
+      "rationale": "Карта компетенций Юрия Ветрова (COS-RES-032)."
+    },
+    {
+      "competencyId": "ux-team-management",
+      "sourceIds": [
+        "jvetrau-hiring",
+        "jvetrau-profdevelopment",
+        "jvetrau-motivation"
+      ],
+      "rationale": "Карта компетенций Юрия Ветрова (COS-RES-032)."
     }
   ]
 }

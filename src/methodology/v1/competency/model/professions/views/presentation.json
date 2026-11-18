@@ -216,6 +216,97 @@
           ]
         }
       ]
+    },
+    {
+      "id": "pro-hard",
+      "title": "Продуктовые и профессиональные навыки",
+      "definition": "Сервис-дизайн, визуализация данных, текст, экспертная оценка, фронтенд, иконографика.",
+      "competencies": [
+        {
+          "competencyId": "ux-service-design",
+          "tier": "optional",
+          "order": 23
+        },
+        {
+          "competencyId": "ux-data-visualization",
+          "tier": "optional",
+          "order": 24
+        },
+        {
+          "competencyId": "ux-writing",
+          "tier": "optional",
+          "order": 25
+        },
+        {
+          "competencyId": "ux-expert-review",
+          "tier": "optional",
+          "order": 26
+        },
+        {
+          "competencyId": "ux-frontend-basics",
+          "tier": "optional",
+          "order": 27
+        },
+        {
+          "competencyId": "ui-iconography-illustration",
+          "tier": "optional",
+          "order": 28
+        }
+      ]
+    },
+    {
+      "id": "pro-soft",
+      "title": "Общепрофессиональные навыки",
+      "definition": "Ориентация на достижения, коммуникация, креативное и системное мышление.",
+      "competencies": [
+        {
+          "competencyId": "ux-achievement-focus",
+          "tier": "optional",
+          "order": 29
+        },
+        {
+          "competencyId": "ux-communication-collaboration",
+          "tier": "optional",
+          "order": 30
+        },
+        {
+          "competencyId": "ux-creative-thinking",
+          "tier": "optional",
+          "order": 31
+        },
+        {
+          "competencyId": "ux-systems-thinking",
+          "tier": "optional",
+          "order": 32
+        }
+      ]
+    },
+    {
+      "id": "pro-leadership",
+      "title": "Лидерство и развитие",
+      "definition": "Планирование, стратегия, неопределённость, управление командой.",
+      "competencies": [
+        {
+          "competencyId": "ux-planning-organization",
+          "tier": "optional",
+          "order": 33
+        },
+        {
+          "competencyId": "ux-strategy-vision",
+          "tier": "optional",
+          "order": 34
+        },
+        {
+          "competencyId": "ux-uncertainty-risk",
+          "tier": "optional",
+          "order": 35
+        },
+        {
+          "competencyId": "ux-team-management",
+          "tier": "optional",
+          "order": 36
+        }
+      ]
     }
   ],
   "description": "Формирует сценарий и визуальную систему слайдов, адаптирует подачу под конкретную аудиторию и доводит материал до защиты, применяя ИИ для рутинных этапов и проверяя качество результата.",

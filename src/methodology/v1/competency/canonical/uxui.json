@@ -669,6 +669,218 @@
           ]
         }
       ]
+    },
+    {
+      "id": "design-pro",
+      "title": "Профессиональные навыки дизайнера",
+      "sections": [
+        {
+          "id": "pro-hard",
+          "order": 1,
+          "title": "Продуктовые и профессиональные навыки",
+          "definition": "Сервис-дизайн, визуализация данных, текст, экспертная оценка, фронтенд, иконографика.",
+          "competencies": [
+            {
+              "id": "ux-service-design",
+              "order": 1,
+              "title": "Сервис-дизайн и карты пути",
+              "titleEn": "Service design and journey maps",
+              "definition": "Проектирует взаимодействие вне интерфейса: строит Customer Journey Map, Service Blueprint и Employee Journey Map, связывает точки контакта и участников сервиса, чтобы опыт оставался целостным на всём пути.",
+              "priorityHint": "core",
+              "status": "covered",
+              "coveredBy": [
+                "comp_53a495c01992"
+              ],
+              "note": "Покрыто accepted-блоком"
+            },
+            {
+              "id": "ux-data-visualization",
+              "order": 2,
+              "title": "Визуализация данных",
+              "titleEn": "Data visualization",
+              "definition": "Выбирает и проектирует форму представления данных: тип графика, композицию и анимацию, чтобы данные читались быстро и поддерживали решение, а не запутывали.",
+              "priorityHint": "core",
+              "status": "covered",
+              "coveredBy": [
+                "comp_97c8137b6e4b"
+              ],
+              "note": "Покрыто accepted-блоком"
+            },
+            {
+              "id": "ux-writing",
+              "order": 3,
+              "title": "Редактура и микрокопирайтинг",
+              "titleEn": "UX writing and editing",
+              "definition": "Пишет и редактирует текст в интерфейсе: подписи, подсказки, ошибки и состояния формулируются ясно и в тоне продукта, а публикации и презентации доносят решения команде.",
+              "priorityHint": "core",
+              "status": "covered",
+              "coveredBy": [
+                "comp_d78467c12838"
+              ],
+              "note": "Покрыто accepted-блоком"
+            },
+            {
+              "id": "ux-expert-review",
+              "order": 4,
+              "title": "Экспертная оценка интерфейсов",
+              "titleEn": "Expert interface review",
+              "definition": "Проводит экспертную оценку интерфейса по эвристикам и критериям (обучаемость, запоминаемость, эффективность, предотвращение ошибок, удовлетворённость) и приоритизирует problemas для команды.",
+              "priorityHint": "core",
+              "status": "covered",
+              "coveredBy": [
+                "comp_8be47c42c20b"
+              ],
+              "note": "Покрыто accepted-блоком"
+            },
+            {
+              "id": "ux-frontend-basics",
+              "order": 5,
+              "title": "Основы фронтенда и проверка качества",
+              "titleEn": "Frontend basics and quality checks",
+              "definition": "Понимает фронтенд-часть продукта: вёрстку и анимацию, источники данных и API, рабочее окружение и формализованное тестирование качества, чтобы проверять реализацию и ставить задачи разработке.",
+              "priorityHint": "core",
+              "status": "covered",
+              "coveredBy": [
+                "comp_d5111537d72b"
+              ],
+              "note": "Покрыто accepted-блоком"
+            },
+            {
+              "id": "ui-iconography-illustration",
+              "order": 6,
+              "title": "Иконографика и иллюстрации",
+              "titleEn": "Iconography and illustrations",
+              "definition": "Создаёт иконки и иллюстрации в едином стиле: подбирает метафоры, держит стилистическую целостность и раскладывает стиль на составляющие, чтобы графика работала на восприятие и бренд.",
+              "priorityHint": "optional",
+              "status": "covered",
+              "coveredBy": [
+                "comp_067abd021bc2"
+              ],
+              "note": "Покрыто accepted-блоком"
+            }
+          ]
+        },
+        {
+          "id": "pro-soft",
+          "order": 2,
+          "title": "Общепрофессиональные навыки",
+          "definition": "Ориентация на достижения, коммуникация, креативное и системное мышление.",
+          "competencies": [
+            {
+              "id": "ux-achievement-focus",
+              "order": 1,
+              "title": "Ориентация на достижения",
+              "titleEn": "Achievement focus",
+              "definition": "Доводит работу до результата: берёт ответственность, следит за качеством и стандартами, проявляет проактивность и ставит амбициозные, но достижимые цели.",
+              "priorityHint": "core",
+              "status": "covered",
+              "coveredBy": [
+                "comp_b381afcd1f2c"
+              ],
+              "note": "Покрыто accepted-блоком"
+            },
+            {
+              "id": "ux-communication-collaboration",
+              "order": 2,
+              "title": "Коммуникация и командная работа",
+              "titleEn": "Communication and collaboration",
+              "definition": "Работает с людьми: ведёт переговоры, аргументирует решения и работает с возражениями, фасилитирует встречи и выстраивает совместную работу команды.",
+              "priorityHint": "core",
+              "status": "covered",
+              "coveredBy": [
+                "comp_2dcbc5f26af7"
+              ],
+              "note": "Покрыто accepted-блоком"
+            },
+            {
+              "id": "ux-creative-thinking",
+              "order": 3,
+              "title": "Креативное мышление",
+              "titleEn": "Creative thinking",
+              "definition": "Генерирует и отбирает идеи: использует дивергентное и конвергентное мышление, приёмы генерации и насмотренность, чтобы находить варианты и осознанно выбирать.",
+              "priorityHint": "core",
+              "status": "covered",
+              "coveredBy": [
+                "comp_de784fa6afe0"
+              ],
+              "note": "Покрыто accepted-блоком"
+            },
+            {
+              "id": "ux-systems-thinking",
+              "order": 4,
+              "title": "Системное мышление",
+              "titleEn": "Systems thinking",
+              "definition": "Видит систему целиком: раскладывает задачу на элементы и связи, учитывает обратные связи и проверяет обоснованность выводов, чтобы решения не создавали проблем в другом месте.",
+              "priorityHint": "core",
+              "status": "covered",
+              "coveredBy": [
+                "comp_4257a4161ec8"
+              ],
+              "note": "Покрыто accepted-блоком"
+            }
+          ]
+        },
+        {
+          "id": "pro-leadership",
+          "order": 3,
+          "title": "Лидерство и развитие",
+          "definition": "Планирование, стратегия, неопределённость, управление командой.",
+          "competencies": [
+            {
+              "id": "ux-planning-organization",
+              "order": 1,
+              "title": "Планирование и организация",
+              "titleEn": "Planning and organization",
+              "definition": "Планирует работу и организацию: задаёт этапы, приоритеты и контроль, формулирует задачи и поддерживает команду проекта в согласованном движении.",
+              "priorityHint": "optional",
+              "status": "covered",
+              "coveredBy": [
+                "comp_ce4a23b8a91c"
+              ],
+              "note": "Покрыто accepted-блоком"
+            },
+            {
+              "id": "ux-strategy-vision",
+              "order": 2,
+              "title": "Стратегия и видение",
+              "titleEn": "Strategy and vision",
+              "definition": "Формулирует долгосрочное видение и связывает его с повседневной работой, чтобы решения опирались на направление, а не на случайные запросы.",
+              "priorityHint": "optional",
+              "status": "covered",
+              "coveredBy": [
+                "comp_c5d2e4f7de7c"
+              ],
+              "note": "Покрыто accepted-блоком"
+            },
+            {
+              "id": "ux-uncertainty-risk",
+              "order": 3,
+              "title": "Работа в условиях неопределённости",
+              "titleEn": "Working under uncertainty",
+              "definition": "Действует в условиях неопределённости: просчитывает риски, принимает решения при неполных данных, сохраняет самостоятельность и не парализует команду.",
+              "priorityHint": "optional",
+              "status": "covered",
+              "coveredBy": [
+                "comp_43ddd4385e9b"
+              ],
+              "note": "Покрыто accepted-блоком"
+            },
+            {
+              "id": "ux-team-management",
+              "order": 4,
+              "title": "Найм, развитие и мотивация команды",
+              "titleEn": "Hiring, growth and motivation",
+              "definition": "Растит команду: формулирует требования, проводит отбор и собеседования, помогает адаптации и развитию через ИПР и обратную связь, поддерживает мотивацию и адаптирует стиль управления.",
+              "priorityHint": "optional",
+              "status": "covered",
+              "coveredBy": [
+                "comp_9edb9a7fe596"
+              ],
+              "note": "Покрыто accepted-блоком"
+            }
+          ]
+        }
+      ]
     }
   ],
   "excludedBlocks": [

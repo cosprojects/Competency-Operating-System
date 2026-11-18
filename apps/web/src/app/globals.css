@@ -10342,3 +10342,34 @@ body:has(.studying-page) .paper-layer {
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
+
+
+/* Рейл: при сжатии у футера не смещаем логотип по горизонтали */
+.nav-rail.is-compact {
+  padding: 10px 2px;
+}
+
+.nav-rail.is-mini {
+  padding: 20px 16px;
+}
+
+/* В свёрнутом рейле бренд строго по центру колонки, без слова */
+.nav-rail.is-mini .rail-top {
+  align-items: center;
+  width: 100%;
+}
+
+.nav-rail.is-mini .rail-brand {
+  justify-content: center;
+  width: 100%;
+  padding-inline: 0;
+}
+
+.nav-rail.is-mini .brand-wordmark {
+  display: none !important;
+}
+
+.nav-rail.is-mini .brand-mark {
+  flex: 0 0 auto;
+  margin: 0;
+}

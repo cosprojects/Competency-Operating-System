@@ -1,7 +1,7 @@
 {
   "reviewVersion": "1.0.0",
   "releaseId": "beta-1",
-  "updatedAt": "2026-11-14",
+  "updatedAt": "2026-11-18",
   "reviewedBy": "deepseek-content-gate",
   "decisions": [
     {
@@ -13078,6 +13078,213 @@
       "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
       "reviewedBy": "sources-gate-v1",
       "reviewedAt": "2026-11-14"
+    },
+    {
+      "professionId": "it.uxui",
+      "competencyId": "ux-design-thinking",
+      "sourceId": "wybex-ux-ui-course",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-18"
+    },
+    {
+      "professionId": "it.uxui",
+      "competencyId": "ux-information-architecture",
+      "sourceId": "wybex-ux-ui-course",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-18"
+    },
+    {
+      "professionId": "it.uxui",
+      "competencyId": "ux-user-flows",
+      "sourceId": "wybex-ux-ui-course",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-18"
+    },
+    {
+      "professionId": "it.uxui",
+      "competencyId": "ux-wireframes",
+      "sourceId": "wybex-ux-ui-course",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-18"
+    },
+    {
+      "professionId": "it.uxui",
+      "competencyId": "ux-interactive-prototype",
+      "sourceId": "wybex-ux-ui-course",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-18"
+    },
+    {
+      "professionId": "it.uxui",
+      "competencyId": "ui-color",
+      "sourceId": "wybex-ux-ui-course",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-18"
+    },
+    {
+      "professionId": "it.uxui",
+      "competencyId": "ui-typography",
+      "sourceId": "wybex-ux-ui-course",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-18"
+    },
+    {
+      "professionId": "it.uxui",
+      "competencyId": "ui-layout",
+      "sourceId": "wybex-ux-ui-course",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-18"
+    },
+    {
+      "professionId": "it.uxui",
+      "competencyId": "ui-design-systems",
+      "sourceId": "wybex-ux-ui-course",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-18"
+    },
+    {
+      "professionId": "it.uxui",
+      "competencyId": "ui-components",
+      "sourceId": "wybex-ux-ui-course",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-18"
+    },
+    {
+      "professionId": "it.uxui",
+      "competencyId": "ui-responsive",
+      "sourceId": "wybex-ux-ui-course",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-18"
+    },
+    {
+      "professionId": "it.uxui",
+      "competencyId": "ui-figma",
+      "sourceId": "wybex-ux-ui-course",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-18"
+    },
+    {
+      "professionId": "it.uxui",
+      "competencyId": "ux-design-thinking",
+      "sourceId": "wybex-ux-basics",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-18"
+    },
+    {
+      "professionId": "it.uxui",
+      "competencyId": "ux-user-research",
+      "sourceId": "wybex-ux-basics",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-18"
+    },
+    {
+      "professionId": "it.uxui",
+      "competencyId": "ux-information-architecture",
+      "sourceId": "wybex-ux-basics",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-18"
+    },
+    {
+      "professionId": "it.uxui",
+      "competencyId": "ux-user-flows",
+      "sourceId": "wybex-ux-basics",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-18"
+    },
+    {
+      "professionId": "it.uxui",
+      "competencyId": "ux-wireframes",
+      "sourceId": "wybex-ux-basics",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-18"
+    },
+    {
+      "professionId": "it.uxui",
+      "competencyId": "ui-color",
+      "sourceId": "wybex-color-theory",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-18"
+    },
+    {
+      "professionId": "it.uxui",
+      "competencyId": "ui-layout",
+      "sourceId": "wybex-ux-basics",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-18"
+    },
+    {
+      "professionId": "it.uxui",
+      "competencyId": "ui-visual-communication",
+      "sourceId": "wybex-color-theory",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-18"
+    },
+    {
+      "professionId": "it.uxui",
+      "competencyId": "ui-responsive",
+      "sourceId": "wybex-ux-basics",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-18"
+    },
+    {
+      "professionId": "it.uxui",
+      "competencyId": "ui-accessibility",
+      "sourceId": "wybex-ux-basics",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-18"
+    },
+    {
+      "professionId": "it.uxui",
+      "competencyId": "ui-accessibility",
+      "sourceId": "wybex-color-theory",
+      "decision": "accepted",
+      "reason": "AI-assisted source relevance check: активный не-агрегатор с описанием и свежей проверкой; нужен spot-check основателя.",
+      "reviewedBy": "sources-gate-v1",
+      "reviewedAt": "2026-11-18"
     }
   ],
   "notes": [

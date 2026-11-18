@@ -78,6 +78,7 @@ async function main(): Promise<void> {
   for (const [sourceId, competencies] of linkedCompetencies) {
     const source = sourceById.get(sourceId);
     if (!source || blockedIds.has(sourceId)) continue;
+    if (source.discoveredBy !== "search") continue;
     const professions = new Set(source.professionIds);
     for (const competencyId of competencies) {
       for (const professionId of compProfessions.get(competencyId) ?? []) professions.add(professionId);

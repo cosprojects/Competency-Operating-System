@@ -132,7 +132,7 @@ describe("learning source → competency map", () => {
     assert.ok(result.warnings.some((warning) => warning.includes("только агрегаторы")));
   });
 
-  it("запрещает blocked/duplicate источники и чужую профессию", () => {
+  it("исключает blocked- и чужие для профессии источники", () => {
     const result = buildLearningSourceMap({
       registry: {
         registryVersion: "1.0.0",
@@ -149,7 +149,8 @@ describe("learning source → competency map", () => {
       professionCompetencies: [professionFile(["c1"])],
     });
     assert.ok(result.errors.some((error) => error.includes("blocked") && error.includes("не может быть доказательством")));
-    assert.ok(result.errors.some((error) => error.includes("не объявлен для профессии")));
+    // Источник, закреплённый за другой профессией, для этой профессии не применяется — без ошибки.
+    assert.equal(result.errors.some((error) => error.includes("не объявлен для профессии")), false);
     assert.equal(result.coverage[0]?.covered, 0);
   });
 });

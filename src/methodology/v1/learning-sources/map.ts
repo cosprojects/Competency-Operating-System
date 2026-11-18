@@ -73,9 +73,8 @@ export function buildLearningSourceMap(input: {
       }
       const professionMatches = professions.length === 0 || source.professionIds.some((id) => professions.includes(id));
       if (!professionMatches) {
-        errors.push(
-          `${competency.id}: источник «${sourceId}» не объявлен для профессии ${professions.join(", ")}`,
-        );
+        // Источник закреплён за другой профессией — для этой он просто не применяется.
+        continue;
       }
       if (source.status === "active" && source.authority !== "aggregator" && professionMatches) {
         const usable = usableByCompetency.get(competency.id) ?? [];

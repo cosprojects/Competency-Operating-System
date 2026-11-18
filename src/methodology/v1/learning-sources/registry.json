@@ -1,6 +1,6 @@
 {
   "registryVersion": "1.0.0",
-  "updatedAt": "2026-11-14",
+  "updatedAt": "2026-11-18",
   "sources": [
     {
       "id": "motiondesign-school-courses",
@@ -7318,6 +7318,91 @@
       "httpStatus": 200,
       "summary": "Документация Epic о грейбоксинге — черновой геометрии уровня для проверки пространства.",
       "notes": "Гейм-дизайн, жанровый слой (COS-RES-031 v1.1)."
+    },
+    {
+      "id": "wybex-ux-ui-course",
+      "title": "Wybex — UX/UI и веб-дизайн с нуля",
+      "url": "https://wybex.ru/online-courses/ux-ui-and-web-design-from-scratch/",
+      "kind": "course-platform",
+      "professionIds": [
+        "it.uxui"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "freemium",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "ux",
+        "ui",
+        "web design",
+        "figma",
+        "wireframe",
+        "prototype",
+        "adaptive design",
+        "portfolio"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-11-18",
+      "httpStatus": 200,
+      "notes": "Курс от Wybex: первый модуль бесплатно, полный доступ платный; один сквозной проект.",
+      "summary": "Онлайн-курс UX/UI и веб-дизайна: один проект от структуры и вайрфреймов до UI, адаптива и портфолио; первый модуль бесплатно."
+    },
+    {
+      "id": "wybex-ux-basics",
+      "title": "Wybex — Основы UX",
+      "url": "https://wybex.ru/courses/ux-basics/",
+      "kind": "reference",
+      "professionIds": [
+        "it.uxui"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "ux",
+        "ux process",
+        "information architecture",
+        "design principles",
+        "responsive design"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-11-18",
+      "httpStatus": 200,
+      "notes": "Бесплатный образовательный материал Wybex.",
+      "summary": "Бесплатный учебник по основам UX: пользовательский опыт, структура интерфейсов, элементы дизайна и принципы проектирования цифровых продуктов."
+    },
+    {
+      "id": "wybex-color-theory",
+      "title": "Wybex — Введение в теорию цвета",
+      "url": "https://wybex.ru/lessons/intro-to-color-theory/",
+      "kind": "blog",
+      "professionIds": [
+        "it.uxui"
+      ],
+      "languages": [
+        "ru"
+      ],
+      "access": "free",
+      "authority": "secondary",
+      "status": "active",
+      "topics": [
+        "color theory",
+        "color palette",
+        "rgb",
+        "hex",
+        "visual perception",
+        "accessibility"
+      ],
+      "discoveredBy": "user",
+      "lastChecked": "2026-11-18",
+      "httpStatus": 200,
+      "notes": "Бесплатный образовательный материал Wybex.",
+      "summary": "Бесплатный урок по теории цвета в UX/UI: цветовой круг, тёплые и холодные цвета, палитры, RGB и HEX, влияние цвета на восприятие интерфейса."
     }
   ]
 }

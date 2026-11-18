@@ -531,6 +531,9 @@ export function evaluateRelease(
           continue;
         }
 
+        // Источник, явно закреплённый за другими профессиями, не показываем здесь.
+        if (source.professionIds.length > 0 && !source.professionIds.includes(professionId)) continue;
+
         // Публикуем только активные первичные источники. Вторичные и blocked
         // не считаются доказательством и не создают отдельный пробел: они просто
         // не попадают в публичный набор, а minActivePrimarySources проверяется ниже.

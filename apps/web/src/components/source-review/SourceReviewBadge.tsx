@@ -254,7 +254,7 @@ export function SourceReviewBadge({
             <div className="feedback-dialog-top">
               <p className="eyebrow">Проверка материала</p>
               <button
-                className="detail-close"
+                className="account-close"
                 type="button"
                 onClick={() => setOpen(false)}
                 ref={closeRef}

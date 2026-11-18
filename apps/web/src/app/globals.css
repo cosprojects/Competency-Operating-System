@@ -10234,3 +10234,95 @@ body:has(.studying-page) .paper-layer {
   font-size: 15px;
   line-height: 1.55;
 }
+
+
+/* Правки 2026-11-18 (утро): шапка «Изучаю» и модалка проверки материала */
+.studying-head {
+  margin-bottom: 16px;
+}
+
+.studying-head .eyebrow {
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.feedback-dialog .feedback-dialog-top .account-close {
+  width: 32px;
+  height: 32px;
+}
+
+.feedback-dialog .feedback-dialog-top .account-close svg {
+  width: 24px;
+  height: 24px;
+}
+
+.feedback-form-card fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.feedback-dialog .rating {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.feedback-dialog .rating label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 10px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: #f8fafc;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.feedback-dialog .rating label:hover,
+.feedback-dialog .rating label:focus-within {
+  border-color: var(--line-card);
+  box-shadow: none;
+  outline: none;
+}
+
+.feedback-dialog .rating label.is-checked {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  box-shadow: none;
+}
+
+.feedback-dialog .rating label .rating-box {
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--line-card);
+  border-radius: 50%;
+  background: #fff;
+}
+
+.feedback-dialog .rating label.is-checked .rating-box {
+  border-color: var(--accent);
+  background: var(--accent);
+  box-shadow: inset 0 0 0 4px #fff;
+}
+
+.feedback-dialog .rating label input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}

@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { showToast } from "@/components/ui/Toast";
+import { ConfirmPrompt } from "@/components/ui/ConfirmPrompt";
 
 /** Решение владельца по материалу: одобрить, опровергнуть, снять (COS-EAR-014). */
 export function MaterialDecisionActions({
@@ -14,13 +15,15 @@ export function MaterialDecisionActions({
 }) {
   const router = useRouter();
   const [busy, setBusy] = useState(false);
+  const [dialog, setDialog] = useState<"RESET" | "BLOCK" | null>(null);
 
   async function submit(action: "APPROVE" | "BLOCK" | "RESET") {
-    if (action === "RESET" && !window.confirm("Снять решение и вернуть материал в очередь?")) return;
+    if (action === "RESET") {
+      setDialog("RESET");
+      return;
+    }
     if (action === "BLOCK") {
-      const reason = window.prompt("Причина опровержения (обязательно):", "устаревшие примеры");
-      if (!reason?.trim()) return;
-      await send(action, reason.trim());
+      setDialog("BLOCK");
       return;
     }
     await send(action);
@@ -53,6 +56,30 @@ export function MaterialDecisionActions({
 
   return (
     <div className="admin-actions">
+      <ConfirmPrompt
+        open={dialog === "RESET"}
+        title="Снять решение?"
+        description="Материал вернётся в очередь на проверку."
+        confirmLabel="Снять решение"
+        onClose={() => setDialog(null)}
+        onConfirm={() => {
+          setDialog(null);
+          void send("RESET");
+        }}
+      />
+      <ConfirmPrompt
+        open={dialog === "BLOCK"}
+        title="Опровергнуть материал?"
+        description="Укажи причину — она сохранится в решении."
+        inputLabel="Причина опровержения"
+        defaultValue="устаревшие примеры"
+        confirmLabel="Опровергнуть"
+        onClose={() => setDialog(null)}
+        onConfirm={(reason) => {
+          setDialog(null);
+          void send("BLOCK", reason);
+        }}
+      />
       {decision ? (
         <button className="button secondary small" type="button" disabled={busy} onClick={() => void submit("RESET")}>
           Снять решение

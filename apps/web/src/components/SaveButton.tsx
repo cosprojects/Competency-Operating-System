@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { IconAcademicCap, IconAcademicCapOutline, IconStar, IconStarFilled } from "@/components/icons";
+import { useRouter } from "next/navigation";
 import { showToast } from "@/components/ui/Toast";
 
 
@@ -24,6 +25,7 @@ export function SaveButton({
   /** Короткое описание элемента — вторая строка алерта. */
   description?: string;
 }) {
+  const router = useRouter();
   const [saved, setSaved] = useState(initialSaved);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -69,12 +71,12 @@ export function SaveButton({
               ? "Компетенция"
               : "Материал";
         showToast({
-          title: isProfession ? "Теперь в «Изучаю»" : "Теперь в сохраненных",
+          title: "Теперь в «Изучаю»",
           ...(title ? { headline: title } : {}),
           text: description ? `${typeLabel} • ${description}` : typeLabel,
-          actionLabel: "Отменить",
+          actionLabel: "Посмотреть",
           duration: 3000,
-          onAction: () => void undo(),
+          onAction: () => router.push("/saved"),
         });
       }
     } catch {

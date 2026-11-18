@@ -10188,3 +10188,49 @@ body:has(.studying-page) .paper-layer {
     padding: 16px;
   }
 }
+
+
+/* Правки «Изучаю» 2026-11-18: отступы и единый вид карточек материалов */
+.studying-head {
+  margin-bottom: 40px;
+}
+
+.learning-body {
+  gap: 32px;
+}
+
+.learning-columns {
+  margin-top: 4px;
+}
+
+.learning-part > h4:first-child {
+  margin-top: 0;
+}
+
+
+/* Модалка «Зачем мы это делаем»: вводный блок-выноска (макет 53-4263) */
+.why-callout {
+  padding: 20px 24px;
+  border-radius: 16px;
+  background: #edf2ff;
+}
+
+.why-callout h3 {
+  margin: 0 0 8px;
+  color: var(--accent-dark);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.why-callout p {
+  margin: 0;
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.why-dialog p {
+  font-size: 15px;
+  line-height: 1.55;
+}

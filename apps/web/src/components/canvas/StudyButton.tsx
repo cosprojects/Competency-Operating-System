@@ -53,7 +53,7 @@ export function StudyButton({
           text: "Отметки «Усвоено» помогут видеть прогресс",
           actionLabel: "Посмотреть",
           onAction: () => router.push("/saved"),
-          duration: 5000,
+          duration: 3000,
         });
       }
     } catch {

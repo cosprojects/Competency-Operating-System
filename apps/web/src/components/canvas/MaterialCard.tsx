@@ -34,7 +34,7 @@ export function MaterialCard({
   canReview,
   canSave,
   returnTo,
-  compact = false,
+  compact = true,
 }: {
   source: ContentSource;
   competencyId: string;

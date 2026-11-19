@@ -31,10 +31,20 @@ export function SiteFooter() {
           </div>
           <p>Операционная система человеческого развития</p>
           <p>© 2026 Все права защищены.</p>
+          <p className="footer2-operator">
+            Оператор: Невзоров Кирилл Игоревич, самозанятый (НПД), ИНН 480708141554
+          </p>
         </div>
 
         <div className="footer2-center">
-          <img src="/brand/Footer/logo-mark-footer.svg" alt="" aria-hidden="true" className="footer2-logo" />
+          <img
+            src="/brand/logo-mark-white.svg"
+            alt=""
+            aria-hidden="true"
+            className="footer2-logo"
+            width={162}
+            height={154}
+          />
         </div>
 
         <div className="footer2-right">
@@ -61,9 +71,11 @@ export function SiteFooter() {
 
       <img
         className="footer2-wordmark"
-        src="/brand/Footer/wordmark-footer.svg"
+        src="/brand/Footer/big-logo-footer.svg"
         alt=""
         aria-hidden="true"
+        width={1073}
+        height={165}
       />
     </footer>
   );

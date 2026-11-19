@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Eyebrow } from "@/components/ui/Eyebrow";
 import { UserDeleteButton } from "@/components/admin/UserDeleteButton";
 import { InviteResendButton } from "@/components/admin/InviteResendButton";
 import { UserInviteForm } from "@/components/admin/UserInviteForm";
@@ -53,7 +54,7 @@ export default async function AdminUsersPage({
   return (
     <>
       <div className="page-head">
-        <div className="eyebrow">Админка</div>
+        <Eyebrow as="div">Админка</Eyebrow>
         <div className="page-head-row">
           <h1>Пользователи</h1>
           <div className="export-actions">

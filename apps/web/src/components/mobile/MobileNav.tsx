@@ -14,6 +14,7 @@ import {
   IconPlaster,
   IconQuestion,
   IconGraduation,
+  IconPlan,
   IconStructure,
   IconUsers,
 } from "@/components/icons";
@@ -34,6 +35,12 @@ const ITEMS = [
     label: "Изучаю",
     icon: IconGraduation,
     match: (p: string) => p === "/saved" || p.startsWith("/saved/"),
+  },
+  {
+    href: "/plan",
+    label: "План",
+    icon: IconPlan,
+    match: (p: string) => p === "/plan" || p.startsWith("/plan/"),
   },
 ];
 

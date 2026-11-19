@@ -79,7 +79,9 @@
     "release:publications": "node --experimental-strip-types scripts/release/publications.ts",
     "guides:agent": "node --env-file-if-exists=.env.local --experimental-strip-types src/methodology/v1/guides/cli/pilot.ts",
     "guides:audit": "node --experimental-strip-types src/methodology/v1/guides/cli/audit.ts",
-    "guides:review": "node --env-file-if-exists=.env.local --experimental-strip-types src/methodology/v1/guides/cli/review.ts"
+    "guides:review": "node --env-file-if-exists=.env.local --experimental-strip-types src/methodology/v1/guides/cli/review.ts",
+    "matrix:validate": "node --experimental-strip-types src/methodology/v1/matrix/cli/validate.ts",
+    "matrix:report": "node --experimental-strip-types src/methodology/v1/matrix/cli/validate.ts"
   },
   "dependencies": {
     "@prisma/client": "^6.4.0",

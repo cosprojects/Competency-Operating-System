@@ -13614,12 +13614,13 @@ a.plan-stepper-link:hover {
   flex-direction: column;
   gap: 10px;
   width: 381px;
-  text-align: center;
+  text-align: left;
 }
 
 .footer2-left .footer2-legal {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 32px;
   width: 100%;
   text-align: left;
 }
@@ -13628,11 +13629,17 @@ a.plan-stepper-link:hover {
   margin: 0;
 }
 
+.footer2-operator {
+  font-size: 12px;
+  line-height: 1.4;
+  color: rgba(148, 163, 184, 0.85);
+}
+
 .footer2-right {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 12px;
+  gap: 10px;
 }
 
 .footer2-nav {
@@ -13672,17 +13679,17 @@ a.plan-stepper-link:hover {
 }
 
 .footer2-logo {
-  width: 170.5px;
-  height: 162.9px;
-  margin-top: -36px;
+  width: 162px;
+  height: 154px;
+  margin-top: -45px;
 }
 
 .footer2-wordmark {
   position: absolute;
-  bottom: -0.3px;
+  bottom: 0;
   left: 50%;
-  width: 1029px;
-  height: 168px;
+  width: 1073px;
+  height: 165px;
   transform: translateX(-50%);
 }
 
@@ -14527,4 +14534,1678 @@ a.plan-stepper-link:hover {
   .home2-hero-copy h1 {
     width: 100%;
   }
+}
+
+/* Карточки шагов: типографика и высота как в 436-8679 */
+.plan-page--home .plan-step h2 {
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 21.28px;
+  letter-spacing: -0.665px;
+}
+
+.plan-page--home .plan-step p {
+  font-size: 14px;
+  line-height: 21.7px;
+}
+
+/* Карточки профессий: используем существующий .profession-tile */
+.plan-page--home .plan-home-prof-grid {
+  width: calc(100% + 24px);
+}
+
+.plan-page--home .plan-home-prof-grid .profession-tile {
+  min-height: 203px;
+  border-color: var(--line);
+}
+
+.plan-page--home .plan-home-prof-grid .coverage-bar {
+  height: 5px;
+}
+
+/* Карточки уровней: ellipse + layer blur, поверх — card с 40% фоном и backdrop blur */
+.plan-home-level {
+  position: relative;
+  min-height: 99px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.plan-home-level-glow {
+  position: absolute;
+  left: 0;
+  top: -105px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.plan-home-level-glow--lilac {
+  background: rgba(205, 70, 229, 0.3);
+}
+
+.plan-home-level-glow--sky {
+  background: rgba(70, 173, 229, 0.3);
+}
+
+.plan-home-level-glow--mint {
+  background: rgba(70, 229, 203, 0.3);
+}
+
+.plan-home-level-glow--blue {
+  background: rgba(70, 128, 229, 0.3);
+}
+
+.plan-home-level-card {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 99px;
+  padding: 16px;
+  border-radius: 12px;
+  background: rgba(248, 250, 252, 0.4);
+  -webkit-backdrop-filter: blur(40px);
+  backdrop-filter: blur(40px);
+}
+
+.plan-home-level-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.plan-home-level-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 40px;
+  height: 38px;
+  border-radius: 12px;
+  background: #fff;
+  color: var(--ink-strong);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18.2px;
+}
+
+.plan-home-level-head strong {
+  color: var(--ink-strong);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20.8px;
+}
+
+.plan-home-level p {
+  margin: 0;
+  padding-left: 48px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 21px;
+}
+
+@media (max-width: 1100px) {
+  .plan-page--home .plan-home-prof-grid {
+    width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .plan-home-level p {
+    padding-left: 0;
+  }
+}
+
+.plan-home-level p {
+  padding-left: 0;
+}
+
+@media (min-width: 1101px) {
+  .plan-home-level-grid {
+    grid-template-columns: repeat(2, 558px);
+  }
+}
+
+.plan-page--home .plan-hero .eyebrow {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.76px;
+  line-height: 17.05px;
+}
+
+.plan-page--home .plan-hero-actions .button.secondary {
+  border-color: #f2f4f7;
+  color: var(--accent);
+}
+
+.plan-home-section-head {
+  margin-bottom: 32px;
+}
+
+.plan-home-prof-grid .tile-top .badge {
+  flex: 0 0 auto;
+}
+
+.plan-home-level {
+  display: block;
+  padding: 0;
+  gap: 0;
+}
+
+
+/* Уточнение по макету: белый фон страницы, а не лаванда */
+.home2,
+.home2-frame {
+  background: #ffffff;
+}
+
+.home2-hero {
+  background: #ffffff;
+  background-image: none;
+}
+
+.home2-start-card {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.home2-profession-card {
+  background: #ffffff;
+}
+
+.home2-plan-image {
+  transform: none;
+  object-fit: cover;
+}
+
+
+/* В hero только видео, без лавандовой подложки-картинки */
+.home2-hero,
+.home2-hero-video {
+  background: transparent;
+}
+
+.home2-hero {
+  background: #ffffff;
+}
+
+
+/* Флоу-раскладка поверх абсолютного hero: футер не наезжает на контент */
+.home2-frame {
+  height: auto;
+  padding-top: 475px;
+}
+
+.home2-hero {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.home2-main {
+  position: relative;
+  top: auto;
+  left: auto;
+  margin: 0 0 0 300px;
+  margin-top: -26px;
+  width: 770px;
+}
+
+.home2-aside {
+  position: absolute;
+  top: 505px;
+  left: 1111px;
+  height: auto;
+}
+
+/* Карточки направлений как в макете: белые, рамка, 2 строки описания, прогресс */
+.home2-profession-card {
+  padding: 16px;
+  border: 1px solid #eef2f7;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.04);
+}
+
+.home2-card-desc {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  margin: 0;
+  color: #5f6f85;
+  font-size: 16px;
+  line-height: 24.8px;
+}
+
+.home2-card-progress {
+  display: block;
+  width: 100%;
+  height: 6px;
+  margin-top: 4px;
+  border-radius: 999px;
+  background: #eef2f7;
+  overflow: hidden;
+}
+
+.home2-card-progress span {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #4f46e5, #0ea5e9);
+}
+
+.home2-start-card {
+  border: 1px solid #eef2f7;
+  background: #f8fafc;
+  backdrop-filter: none;
+}
+
+.home2-panel {
+  border: 1px solid #eef2f7;
+  background: #f8fafc;
+  backdrop-filter: none;
+}
+
+
+/* Aside обрезается по высоте макета и не залезает на футер */
+.home2-aside {
+  height: 1903px;
+  overflow: hidden;
+}
+
+.site-footer {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* Точечные правки по замечаниям 19.11 */
+
+/* 1) плашки и aside: EDF2FF 50%, без обводки */
+.home2-start-card,
+.home2-panel {
+  background: rgba(237, 242, 255, 0.5);
+  border: 0;
+}
+
+/* 2) баннер: wave прибит справа, ховер как у белых кнопок */
+.home2-plan-wave {
+  left: auto;
+  right: 0;
+  object-fit: cover;
+  object-position: right center;
+}
+
+.home2-plan-banner {
+  transition: box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+.home2-plan-banner:hover {
+  box-shadow: 0 12px 28px rgba(19, 34, 56, 0.12);
+  transform: translateY(-1px);
+}
+
+/* 3) дорожная карта и aside */
+.home2-stage {
+  border-color: #eef2f7;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.home2-stage:first-child {
+  border: 1px solid #eef2f7;
+  background: #eef2ff;
+}
+
+.home2-stage-desc {
+  margin-top: 12px;
+}
+
+.home2-stage-body {
+  gap: 0;
+}
+
+.home2-aside {
+  border-radius: 12px;
+}
+
+/* 4) 40px от контента до футера */
+.home2-frame {
+  padding-bottom: 40px;
+}
+
+/* 4) мобильная версия */
+@media (max-width: 900px) {
+  .home2-frame {
+    width: 100%;
+    padding: 0 16px 40px;
+  }
+
+  .home2-hero {
+    position: relative;
+    width: 100%;
+    height: 420px;
+  }
+
+  .home2-hero-video {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    object-position: right top;
+  }
+
+  .home2-sec1 {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    padding: 40px 0 24px;
+  }
+
+  .home2-hero-copy,
+  .home2-hero-copy h1 {
+    width: 100%;
+  }
+
+  .home2-hero-copy h1 {
+    font-size: 34px;
+    line-height: 1.1;
+  }
+
+  .home2-main {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    margin: 0;
+  }
+
+  .home2-aside {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: auto;
+    margin-top: 32px;
+    overflow: visible;
+  }
+
+  .home2-start {
+    flex-direction: column;
+  }
+
+  .home2-latest-grid {
+    flex-direction: column;
+  }
+
+  .home2-plan-banner {
+    width: 100%;
+  }
+
+  .home2-plan-text strong,
+  .home2-plan-text span {
+    left: 24px;
+  }
+
+  .home2-plan-button {
+    right: 16px;
+  }
+
+  .home2-notice {
+    width: 100%;
+  }
+}
+
+
+/* Мобильная главная: аккуратная колонка без переполнений */
+@media (max-width: 900px) {
+  .home2-frame {
+    width: 100%;
+    padding: 0 16px 40px;
+  }
+
+  .home2-hero {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 440px;
+    overflow: hidden;
+    border-radius: 16px;
+  }
+
+  .home2-hero-video {
+    position: absolute;
+    top: -20px;
+    right: -140px;
+    width: 560px;
+    height: 360px;
+    opacity: 0.5;
+    object-fit: cover;
+  }
+
+  .home2-sec1 {
+    position: relative;
+    z-index: 2;
+    top: auto;
+    left: auto;
+    width: 100%;
+    padding: 28px 0 24px;
+  }
+
+  .home2-hero-copy,
+  .home2-hero-copy h1 {
+    width: 100%;
+  }
+
+  .home2-hero-copy h1 {
+    font-size: 32px;
+    line-height: 1.1;
+  }
+
+  .home2-lead {
+    font-size: 16px;
+  }
+
+  .home2-main {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    margin: 0;
+    gap: 32px;
+  }
+
+  .home2-aside {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: auto;
+    margin-top: 32px;
+    overflow: visible;
+    border-radius: 0;
+  }
+
+  .home2-start {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .home2-latest-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .home2-intro h2,
+  .home2-latest h2,
+  .home2-roadmap h2 {
+    font-size: 26px;
+    line-height: 30px;
+  }
+
+  .home2-plan-banner {
+    width: 100%;
+    height: auto;
+    min-height: 120px;
+    padding: 20px;
+    display: flex;
+  }
+
+  .home2-plan-wave {
+    width: 100%;
+    right: 0;
+    opacity: 0.5;
+  }
+
+  .home2-plan-image {
+    display: none;
+  }
+
+  .home2-plan-text strong {
+    position: static;
+    display: block;
+    padding-right: 0;
+    font-size: 18px;
+  }
+
+  .home2-plan-text span {
+    position: static;
+    display: block;
+    margin-top: 6px;
+    font-size: 14px;
+  }
+
+  .home2-plan-button {
+    position: static;
+    transform: none;
+    margin-top: 14px;
+    width: fit-content;
+    height: 44px;
+    padding: 10px 16px;
+  }
+
+  .home2-notice {
+    width: 100%;
+  }
+
+  .home2-stage {
+    padding: 16px;
+  }
+
+  .site-footer {
+    height: auto;
+  }
+
+  .footer2-inner {
+    width: 100%;
+    padding: 40px 16px 24px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer2-left {
+    width: 100%;
+  }
+
+  .footer2-center {
+    order: -1;
+  }
+
+  .footer2-logo {
+    margin-top: -10px;
+  }
+
+  .footer2-right {
+    align-items: flex-start;
+  }
+
+  .footer2-wordmark {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin-top: 8px;
+    transform: none;
+  }
+}
+
+
+/* mobile overflow guard */
+.home2 {
+  overflow-x: hidden;
+}
+
+@media (max-width: 900px) {
+  .home2-frame,
+  .home2-main,
+  .home2-sec1,
+  .home2-aside,
+  .home2-hero-copy,
+  .home2-hero-copy h1,
+  .home2-start-card,
+  .home2-profession-card,
+  .home2-notice,
+  .home2-panel {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .home2-hero-copy h1 {
+    width: 100% !important;
+    font-size: 32px;
+    word-break: break-word;
+  }
+
+  .home2-lead {
+    max-width: 100%;
+  }
+
+  .home2-plan-banner,
+  .home2-plan-text {
+    max-width: 100%;
+  }
+}
+
+
+/* Единый светлый тон плашек из макета */
+.home2-start-card,
+.home2-panel {
+  background: rgba(237, 242, 255, 0.5);
+}
+
+/* ================================================================== */
+/* 369-14582 · Главная — / — финальная сверка с макетом (19.11.2026)  */
+/* Источник: docs/design/figma/UfuaPpLJA31DeBSObX5xNJ/PAGE-369-14582.md */
+/* ================================================================== */
+
+.home2 {
+  background: #fafaf8;
+}
+
+.home2-frame {
+  position: relative;
+  width: 1500px;
+  height: auto;
+  margin: 0 auto;
+  padding: 475px 0 40px;
+  background: transparent;
+}
+
+/* --- hero: видео 700×394 в точке (800, 81) --- */
+.home2-hero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1500px;
+  height: 475px;
+  background: #fafaf8;
+  background-image: none;
+  overflow: hidden;
+}
+
+.home2-hero-video {
+  position: absolute;
+  top: 81px;
+  left: 800px;
+  right: auto;
+  width: 700px;
+  height: 394px;
+  object-fit: cover;
+  opacity: 1;
+}
+
+.home2-sec1 {
+  position: absolute;
+  top: 65px;
+  left: 300px;
+  width: 730px;
+  padding: 0;
+}
+
+.home2-hero-copy {
+  width: 570px;
+  padding: 0;
+  gap: 16px;
+}
+
+.home2-hero-copy .eyebrow {
+  height: 22px;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 17px;
+  letter-spacing: normal;
+}
+
+.home2-hero-copy h1 {
+  width: 741px;
+  margin: 0;
+  font-size: 50px;
+  line-height: 55px;
+}
+
+.home2-lead {
+  margin: 0;
+  max-width: 570px;
+  color: #595959;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.home2-hero-actions {
+  gap: 16px;
+}
+
+.home2-hero-actions .button {
+  height: 48px;
+  min-height: 48px;
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 22px;
+}
+
+.home2-hero-secondary {
+  border: 0;
+  background: #ffffff;
+  color: #132238;
+}
+
+/* --- сетка контента: 300 / 770 / 350 --- */
+.home2-main {
+  position: relative;
+  top: auto;
+  left: auto;
+  margin: 0 0 0 300px;
+  margin-top: -26px;
+  width: 770px;
+  gap: 40px;
+}
+
+.home2-aside {
+  position: absolute;
+  top: 505px;
+  left: 1111px;
+  width: 350px;
+  height: 1893px;
+  margin: 0;
+  gap: 32px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+/* --- «Собираю все для развития» --- */
+.home2-intro {
+  gap: 16px;
+}
+
+.home2-intro h2 {
+  min-height: 40px;
+}
+
+.home2-start-card {
+  padding: 24px;
+  gap: 10px;
+  border: 0;
+  border-radius: 12px;
+  background: rgba(237, 242, 255, 0.5);
+  -webkit-backdrop-filter: blur(40px);
+  backdrop-filter: blur(40px);
+  box-shadow: none;
+}
+
+.home2-start-card h3 {
+  font-size: 19px;
+  line-height: 21px;
+  letter-spacing: -0.665px;
+}
+
+.home2-start-card p {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+/* --- «Последние добавленные» --- */
+.home2-latest {
+  gap: 20px;
+}
+
+.home2-latest-grid {
+  gap: 20px;
+}
+
+.home2-profession-card {
+  padding: 16px;
+  gap: 10px;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: none;
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.15s ease;
+}
+
+/* Ховер как у карточек в «Направлениях»: обводка + мягкая тень + подъём */
+.home2-profession-card:hover {
+  border-color: #c7d2fe;
+  box-shadow: 0 16px 34px rgba(19, 34, 56, 0.1);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.home2-profession-card:hover *,
+.home2-profession-card:hover h3,
+.home2-profession-card:hover p {
+  text-decoration: none;
+}
+
+.home2-profession-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.home2-card-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 28px;
+}
+
+.home2-card-head > .home2-icon {
+  width: 24px;
+  height: 24px;
+  margin-left: auto;
+}
+
+.home2-card-count {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #5f6f85;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.home2-profession-card h3 {
+  margin: 0;
+  color: #132238;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+.home2-card-desc {
+  margin: 0;
+  color: #5f6f85;
+  font-size: 16px;
+  line-height: 25px;
+  -webkit-line-clamp: 2;
+}
+
+/* --- баннер плана --- */
+.home2-plan-banner {
+  width: 770px;
+  height: 100px;
+  border-radius: 24px;
+  background: #fefefe;
+}
+
+.home2-plan-text strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+.home2-plan-text span {
+  font-size: 15px;
+  line-height: 25px;
+}
+
+.home2-plan-button {
+  height: 52px;
+  padding: 16px;
+  border-radius: 12px;
+  background: #f8fafc;
+  box-shadow: 0 8px 24px rgba(79, 70, 229, 0.2);
+  color: #4f46e5;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* --- notice --- */
+.home2-notice {
+  width: 770px;
+  gap: 16px;
+  padding: 24px;
+  border-radius: 12px;
+  background: #eff6ff;
+}
+
+.home2-notice-title {
+  margin: 0;
+  color: #4338ca;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 21px;
+}
+
+.home2-notice-text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  color: #0f172a;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.home2-notice-text p {
+  margin: 0;
+}
+
+.button.home2-notice-button {
+  height: 44px;
+  min-height: 44px;
+  padding: 10px 18px;
+  border: 1px solid #f2f4f7;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #3730a3;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 22px;
+}
+
+/* --- дорожная карта --- */
+.home2-roadmap {
+  gap: 24px;
+}
+
+.home2-roadmap-head {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.home2-subtitle {
+  margin: 0;
+  color: #5f6f85;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.home2-timeline {
+  margin: 0;
+  gap: 16px;
+}
+
+.home2-stage {
+  gap: 16px;
+  padding: 16px;
+  border: 0;
+  border-radius: 10px;
+  background: #f9fafb;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.02);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+.home2-stage:first-child {
+  border: 0;
+  background: #eef2ff;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.02);
+}
+
+.home2-stage-icon {
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #4f46e5;
+  color: #ffffff;
+}
+
+.home2-stage:not(:first-child) .home2-stage-icon {
+  background: #ffffff;
+  color: #f2f4f7;
+}
+
+.home2-stage-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.home2-stage-body {
+  gap: 0;
+}
+
+.home2-stage-label,
+.home2-stage-title {
+  margin: 0;
+  color: #111827;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: normal;
+}
+
+.home2-stage-label {
+  text-transform: uppercase;
+}
+
+.home2-stage-desc {
+  margin: 4px 0 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+/* --- aside --- */
+.home2-aside .home2-panel {
+  padding: 24px;
+  border: 0;
+  border-radius: 12px;
+  background: rgba(237, 242, 255, 0.5);
+  -webkit-backdrop-filter: blur(40px);
+  backdrop-filter: blur(40px);
+  box-shadow: none;
+}
+
+.home2-panel h2 {
+  margin: 0;
+  gap: 10px;
+  color: #132238;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 21px;
+  letter-spacing: -0.665px;
+}
+
+.home2-about {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.home2-about p {
+  margin: 0;
+  color: #132238;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.home2-log {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 0;
+}
+
+.home2-panel.home2-log h2 {
+  font-size: 20px;
+  line-height: 26px;
+  letter-spacing: normal;
+}
+
+.home2-log-list {
+  gap: 12px;
+  max-height: none;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.home2-log-item {
+  gap: 12px;
+}
+
+.home2-log-head {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.home2-log-date {
+  color: #5f6f85;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.home2-log-title {
+  margin: 0;
+  color: #132238;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+}
+
+.home2-log-desc {
+  margin: 0;
+  color: #5f6f85;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+/* --- рейл главной: white 40 % + glass, 188×764, CTA 148×44 --- */
+body:has(.home2) .nav-rail {
+  /* Высота и bottom не переопределяем: рейл тянется по экрану, а низ держит
+     --rail-bottom-offset на 40px выше футера (см. NavRail.tsx). */
+  padding: 20px 2px;
+  border: 0;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.4);
+  -webkit-backdrop-filter: blur(40px);
+  backdrop-filter: blur(40px);
+  box-shadow: none;
+}
+
+body:has(.home2) .nav-rail .rail-brand {
+  padding-inline: 18px;
+}
+
+body:has(.home2) .nav-rail .rail-menu {
+  gap: 8px;
+}
+
+body:has(.home2) .nav-rail .rail-cta {
+  width: 148px;
+  margin: 14px auto 0;
+  padding: 10px 14px;
+  gap: 10px;
+  border-radius: 10px;
+  background: #f8fafc;
+  color: #141414;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+body:has(.home2) .nav-rail .rail-cta svg {
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+}
+
+/* --- адаптив: ниже канвы 1500 макет перестраивается в поток --- */
+@media (max-width: 1499px) {
+  .home2-frame {
+    width: 100%;
+    height: auto;
+    padding: 0 40px 40px;
+  }
+
+  .home2-hero {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: 475px;
+  }
+
+  .home2-hero-video {
+    top: 81px;
+    left: auto;
+    right: 0;
+    width: 700px;
+    height: 394px;
+  }
+
+  .home2-sec1 {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: auto;
+    margin: 0 0 0 200px;
+    padding: 40px 0;
+  }
+
+  .home2-main {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: auto;
+    margin: 0 0 0 200px;
+  }
+
+  .home2-aside {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: auto;
+    height: auto;
+    max-height: none;
+    overflow: visible;
+    margin: 32px 0 0 200px;
+  }
+
+  .home2-hero-copy {
+    width: 570px;
+    max-width: 100%;
+  }
+
+  .home2-hero-copy h1 {
+    width: 741px;
+    max-width: 741px;
+  }
+
+  .home2-lead {
+    max-width: 570px;
+  }
+
+  .home2-plan-banner,
+  .home2-notice {
+    width: 100%;
+  }
+
+  .home2-log-list {
+    overflow: visible;
+  }
+}
+
+@media (max-width: 1023px) {
+  .home2-frame {
+    padding: 0 24px 40px;
+  }
+
+  .home2-sec1,
+  .home2-main,
+  .home2-aside {
+    margin-left: 216px;
+  }
+
+  .home2-start,
+  .home2-latest-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .home2-hero-video {
+    top: 16px;
+    right: -40px;
+    width: 440px;
+    height: 247px;
+    opacity: 0.32;
+  }
+
+  .home2-hero-copy h1 {
+    width: auto;
+    max-width: 100%;
+    font-size: 44px;
+    line-height: 49px;
+  }
+
+  .home2-lead {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 760px) {
+  .home2-frame {
+    padding: 0 16px 40px;
+  }
+
+  .home2-hero {
+    height: 440px;
+  }
+
+  .home2-hero-video {
+    top: 20px;
+    right: -120px;
+    width: 560px;
+    height: 292px;
+    opacity: 0.5;
+  }
+
+  .home2-sec1 {
+    margin: 0;
+    padding: 32px 0 24px;
+  }
+
+  .home2-main,
+  .home2-aside {
+    margin: 0;
+  }
+
+  .home2-hero-copy h1 {
+    font-size: 32px;
+    line-height: 36px;
+  }
+
+  .home2-lead {
+    max-width: 100%;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .home2-intro h2,
+  .home2-latest h2,
+  .home2-roadmap h2 {
+    font-size: 26px;
+    line-height: 30px;
+  }
+
+  .home2-plan-banner {
+    display: flex;
+    height: auto;
+    min-height: 120px;
+    padding: 20px;
+  }
+
+  .home2-plan-wave {
+    width: 100%;
+    opacity: 0.5;
+  }
+
+  .home2-plan-image {
+    display: none;
+  }
+
+  .home2-plan-text {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .home2-plan-text strong,
+  .home2-plan-text span {
+    position: static;
+    left: auto;
+  }
+
+  .home2-plan-button {
+    position: static;
+    align-self: flex-start;
+    transform: none;
+    margin-top: 14px;
+    height: 44px;
+    padding: 10px 16px;
+  }
+
+  .home2-stage-icon {
+    flex: 0 0 36px;
+  }
+}
+
+
+/* Карточка выбора профессии из 459-8074 */
+.plan-matrix-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.plan-matrix-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+  border: 1px solid #f2f4f7;
+  border-radius: 16px;
+  background: #fff;
+  color: inherit;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(202, 212, 235, 0.55);
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.plan-matrix-card:hover {
+  border-color: #c7d2fe;
+  box-shadow: 0 8px 20px rgba(202, 212, 235, 0.7);
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+.plan-matrix-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.plan-matrix-card-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 28px;
+  padding: 6px 8px 4px;
+  border-radius: 16px;
+  background: #eef2ff;
+  color: var(--accent-dark);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.33px;
+  line-height: 17px;
+  text-transform: uppercase;
+}
+
+.plan-matrix-card-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 26px;
+}
+
+.plan-matrix-card-icon {
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  color: #374151;
+}
+
+.plan-matrix-card-head strong {
+  color: var(--ink);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+.plan-matrix-card p {
+  display: -webkit-box;
+  overflow: hidden;
+  margin: 0;
+  color: #5f6f85;
+  font-size: 16px;
+  line-height: 24.8px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.plan-matrix-card-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 24px;
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18.2px;
+}
+
+.plan-matrix-card-link svg {
+  width: 24px;
+  height: 24px;
+}
+
+@media (max-width: 1100px) {
+  .plan-matrix-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .plan-matrix-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.plan-matrix-card {
+  height: 190px;
+  box-shadow: 0 4px 12px #cad4eb;
+}
+
+@media (max-width: 640px) {
+  .plan-matrix-card {
+    height: auto;
+  }
+}
+
+:root {
+  --plan-section-radius: 16px;
+}
+
+.plan-page--home .plan-glass {
+  border-radius: var(--plan-section-radius);
+}
+
+.plan-hero .eyebrow,
+.plan-page-head .eyebrow {
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+/* Карточка матрицы — компонент 459-9400 */
+.plan-matrix-card-result {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 158px;
+  padding: 24px;
+  border-radius: 12px;
+  background: #fcfdff;
+  color: inherit;
+  text-decoration: none;
+  transition: background 160ms ease, box-shadow 160ms ease;
+}
+
+.plan-matrix-card-result:hover {
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(202, 212, 235, 0.45);
+  text-decoration: none;
+}
+
+.plan-matrix-card-result:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.plan-matrix-card-result-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18.2px;
+}
+
+.plan-matrix-card-result h2 {
+  margin: 0;
+  color: var(--ink-strong);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+.plan-matrix-card-result-track {
+  display: flex;
+  gap: 6px;
+  width: 100%;
+  height: 6px;
+}
+
+.plan-matrix-card-result-track span {
+  flex: 1 1 0;
+  border-radius: 999px;
+  background: #eef2f7;
+}
+
+.plan-matrix-card-result-track span.is-filled {
+  background: var(--accent);
+}
+
+.plan-matrix-card-result-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+/* Единый стандарт: 40px до eyebrow на всех страницах «Изучаю» и «План» */
+.studying-page {
+  padding-top: 40px;
+}
+
+/* Единый eyebrow: accent, uppercase, 11/17 800 */
+.eyebrow,
+.plan-hero .eyebrow,
+.plan-page-head .eyebrow,
+.learning-next-label {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.76px;
+  line-height: 17px;
+  text-transform: uppercase;
+}
+
+/* Токены выбранной поверхности и aside */
+:root {
+  --surface-selected: #edf2ff;
+  --aside-surface: var(--surface-selected);
+}
+
+.plan-grade-option.is-active {
+  background: var(--surface-selected);
+}
+
+.plan-grade-panel,
+.learning-next {
+  background: var(--aside-surface);
+}
+
+/* Свечение на карточках — тот же слой, что у белых кнопок */
+.profession-tile,
+.plan-matrix-card,
+.plan-matrix-card-result {
+  isolation: isolate;
+}
+
+.plan-grade-panel {
+  position: sticky;
+  top: 88px;
+  gap: 16px;
+}
+
+.plan-grade-panel .plan-grade-highlights {
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.plan-grade-panel .learning-next-cta {
+  margin-top: 2px;
+}
+
+.plan-result-side .learning-next .button {
+  width: 100%;
+  min-height: 48px;
+  border-color: transparent;
+  background: var(--accent);
+  color: #fff;
+}
+
+.plan-result-side .learning-next .button:hover:not(:disabled) {
+  background: var(--accent-dark);
+}
+
+.plan-result-side .learning-next .learning-next-note {
+  text-decoration: none;
+}
+
+.plan-result-side .learning-next .learning-next-note:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.profession-tile,
+.plan-matrix-card,
+.plan-matrix-card-result {
+  position: relative;
+}
+
+/* Единый eyebrow во всей системе */
+.eyebrow {
+  color: var(--accent) !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 1.76px !important;
+  line-height: 17px !important;
+  text-transform: uppercase !important;
+}
+
+/* CTA внутри aside «Следующий шаг» — не растягивать иконку */
+.plan-result-side .learning-next .button {
+  min-height: 52px;
+  padding: 0 18px;
+  gap: 8px;
+  white-space: nowrap;
+  font-size: 15px;
+}
+
+.plan-result-side .learning-next .button svg {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;
 }

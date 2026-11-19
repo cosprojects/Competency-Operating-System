@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Eyebrow } from "@/components/ui/Eyebrow";
 import { IconSearch } from "@/components/icons";
 import { redirect } from "next/navigation";
 import { LearningCard } from "@/components/saved/LearningCard";
@@ -18,6 +19,7 @@ import {
 } from "@/lib/content";
 import type { ContentSource } from "@/lib/content-types";
 import { getDb } from "@/lib/db";
+import { loadPlanContext } from "@/lib/matrix-server";
 import { sphereBadgeStyle } from "@/lib/spheres";
 
 export const dynamic = "force-dynamic";
@@ -121,6 +123,24 @@ export default async function SavedPage({
     }
   }
 
+  const planContext = await loadPlanContext(user.id, [
+    ...new Set([...active, ...learned].map((card) => card.competencyId)),
+  ]);
+  for (const card of [...active, ...learned]) {
+    const plan = planContext[card.competencyId];
+    if (plan) {
+      card.plan = {
+        professionSlug: plan.professionSlug,
+        professionTitle: plan.professionTitle,
+        gradeCode: plan.gradeCode,
+        gradeTitle: plan.gradeTitle,
+        currentLevel: plan.currentLevel,
+        targetLevel: plan.targetLevel,
+        stale: plan.stale,
+      };
+    }
+  }
+
   const matches = (card: LearningCardData) =>
     !query ||
     card.title.toLowerCase().includes(query) ||
@@ -187,9 +207,12 @@ export default async function SavedPage({
     <>
       <header className="studying-head">
         <div className="studying-head-text">
-          <p className="eyebrow">Личное пространство</p>
+          <Eyebrow>Личное пространство</Eyebrow>
           <h1>Изучаю</h1>
           <p>От намерения — к освоению. Соберите свой маршрут и двигайтесь в удобном темпе.</p>
+          <Link className="learning-plan-link" href="/plan">
+            Матрица компетенций: где я и что подтянуть →
+          </Link>
         </div>
       </header>
 

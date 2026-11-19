@@ -41,6 +41,15 @@ export interface LearningCardData {
   items: LearningItemData[];
   materials: LearningMaterialGroup[];
   occurrences: Array<{ professionSlug: string; professionTitle: string; sectionTitle: string }>;
+  plan?: {
+    professionSlug: string;
+    professionTitle: string;
+    gradeCode: string;
+    gradeTitle: string;
+    currentLevel: number;
+    targetLevel: number;
+    stale: boolean;
+  };
 }
 
 function plural(value: number, forms: [string, string, string]): string {
@@ -193,6 +202,18 @@ export function LearningCard({
             </Link>
           </h3>
           <p>{card.definition}</p>
+          {card.plan ? (
+            <div className="learning-plan-badge">
+              <span>
+                План {card.plan.professionTitle} · {card.plan.currentLevel} → {card.plan.targetLevel}
+              </span>
+              <Link href="/plan/result">Матрица</Link>
+              <Link href={`/plan/assess?profession=${card.plan.professionSlug}&grade=${card.plan.gradeCode}`}>
+                Переоценить
+              </Link>
+              {card.plan.stale ? <span className="learning-plan-stale">по прежней версии</span> : null}
+            </div>
+          ) : null}
           <span className="learning-meta">
             {knowledge.length} {plural(knowledge.length, ["знание", "знания", "знаний"])} ·{" "}
             {skills.length} {plural(skills.length, ["навык", "навыка", "навыков"])} · {materialsCount}{" "}

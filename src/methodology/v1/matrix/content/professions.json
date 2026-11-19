@@ -1,0 +1,109 @@
+{
+  "professionsVersion": "1.1.0",
+  "professions": [
+    {
+      "slug": "uxui",
+      "title": "UX/UI-дизайнер",
+      "family": "digital-product",
+      "ready": true,
+      "order": 1,
+      "description": "Интерфейсы, прототипы, визуал, исследования и продуктовая логика."
+    },
+    {
+      "slug": "product",
+      "title": "Продуктовый дизайнер",
+      "family": "digital-product",
+      "ready": true,
+      "order": 2,
+      "description": "Discovery, JTBD, метрики, стратегия и рост продукта."
+    },
+    {
+      "slug": "aidesigner",
+      "title": "AI native дизайнер",
+      "family": "digital-product",
+      "ready": true,
+      "order": 3,
+      "description": "UX/UI и продукт плюс AI-инструменты, генерация и автоматизация."
+    },
+    {
+      "slug": "webdesigner",
+      "title": "Веб-дизайнер",
+      "family": "digital-product",
+      "ready": true,
+      "order": 4,
+      "description": "Лендинги, адаптивность, дизайн-системы и ограничения веба."
+    },
+    {
+      "slug": "appdesign",
+      "title": "Дизайнер приложений",
+      "family": "digital-product",
+      "ready": true,
+      "order": 5,
+      "description": "Мобильные паттерны, прототипы, платформы и метрики приложений."
+    },
+    {
+      "slug": "motion",
+      "title": "Моушн-дизайнер",
+      "family": "motion-3d",
+      "ready": true,
+      "order": 6,
+      "description": "Анимация, тайминг, звук, 3D-моушн и продакшн."
+    },
+    {
+      "slug": "3ddesigner",
+      "title": "3D-дизайнер",
+      "family": "motion-3d",
+      "ready": true,
+      "order": 7,
+      "description": "Моделирование, материалы, свет, рендер и подача 3D-проекта."
+    },
+    {
+      "slug": "graphic",
+      "title": "Графический дизайнер",
+      "family": "visual-brand",
+      "ready": true,
+      "order": 8,
+      "description": "Айдентика, типографика, печать и редакционный дизайн."
+    },
+    {
+      "slug": "artdir",
+      "title": "Арт-директор",
+      "family": "visual-brand",
+      "ready": true,
+      "order": 9,
+      "description": "Бренд-стратегия, арт-дирекшн, коммуникация и команда."
+    },
+    {
+      "slug": "interior",
+      "title": "Дизайнер интерьеров",
+      "family": "spatial",
+      "ready": true,
+      "order": 10,
+      "description": "Зонирование, эргономика, материалы, чертежи и визуализация."
+    },
+    {
+      "slug": "presentation",
+      "title": "Дизайнер презентаций",
+      "family": "presentation",
+      "ready": true,
+      "order": 11,
+      "description": "Структура, смысл, визуализация данных и защита презентации."
+    },
+    {
+      "slug": "uxresearch",
+      "title": "UX-исследователь",
+      "family": "research",
+      "ready": true,
+      "order": 12,
+      "description": "Методы, выборка, синтез, этика и репортинг исследований."
+    },
+    {
+      "slug": "game",
+      "title": "Гейм-дизайнер",
+      "family": "game",
+      "ready": true,
+      "order": 13,
+      "description": "Механики, левел-дизайн, баланс, игровой UI и плейтестинг."
+    }
+  ]
+}

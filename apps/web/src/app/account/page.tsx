@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Eyebrow } from "@/components/ui/Eyebrow";
 import { redirect } from "next/navigation";
 import { DeleteAccountButton } from "@/components/DeleteAccountButton";
 import { ConsentControls } from "@/components/account/ConsentControls";
@@ -41,7 +42,7 @@ export default async function AccountPage() {
   return (
     <>
       <div className="page-head">
-        <div className="eyebrow">Аккаунт</div>
+        <Eyebrow as="div">Аккаунт</Eyebrow>
         <h1>{user.email}</h1>
         <p>Аккаунт создан {user.createdAt.toISOString().slice(0, 10)}. Пароля нет: вход по ссылке из письма.</p>
       </div>

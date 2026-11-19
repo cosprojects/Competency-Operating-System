@@ -1,4 +1,4 @@
-import { readFile, writeFile } from "node:fs/promises";
+import { cp, readFile, writeFile } from "node:fs/promises";
 import process from "node:process";
 import path from "node:path";
 import { buildPublicContent, evaluateRelease, loadReleaseInputs, writePublicContent } from "./lib.ts";
@@ -55,6 +55,17 @@ async function main(): Promise<void> {
     console.log("release:build: guides → apps/web/src/content/generated/guides.json");
   } catch {
     console.log("release:build: кластер разборов отсутствует, guides.json не обновлялся");
+  }
+  // Кластер матрицы компетенций (MVP «План») — пул, fit, грейды, профессии.
+  try {
+    await cp(
+      path.join(root, "src/methodology/v1/matrix/content"),
+      path.join(root, "apps/web/src/content/generated/matrix"),
+      { recursive: true, force: true },
+    );
+    console.log("release:build: matrix → apps/web/src/content/generated/matrix");
+  } catch {
+    console.log("release:build: кластер матрицы отсутствует, matrix не обновлялся");
   }
   console.log(
     `release:build: ${file}; status ${content.status}; professions ${content.stats.professions}; ` +

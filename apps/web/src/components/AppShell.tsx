@@ -31,6 +31,8 @@ export function AppShell({
     pathname === "/feedback" ||
     pathname.startsWith("/auth/");
   const isSaved = pathname === "/saved";
+  const isPlan = pathname === "/plan" || pathname.startsWith("/plan/");
+  const isPlanHome = pathname === "/plan";
   const isWorkspace = pathname.startsWith("/admin");
   const isSecondary = !isHome && !isSearch && !isCanvas && !isPlain && !isWorkspace;
 
@@ -39,10 +41,15 @@ export function AppShell({
       <NavRail user={user} />
       <MobileNav user={user} />
       <main className="app-main">
-        <div className="app-viewport">
+        <div className={`app-viewport${isPlan ? " app-viewport--plan" : ""}`}>
+          {isPlanHome ? (
+            <div className="plan-bg-app" aria-hidden="true">
+              <img src="/images/bg-plan.png" alt="" width={1671} height={941} />
+            </div>
+          ) : null}
           {isPlain ? (
             <div className="page-plain">{children}</div>
-          ) : isSaved ? (
+          ) : isSaved || isPlan ? (
             <div className="studying-page">{children}</div>
           ) : isWorkspace ? (
             <div className="workspace-page">

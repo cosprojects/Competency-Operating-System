@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import { Eyebrow } from "@/components/ui/Eyebrow";
 import { useEffect, useRef, useState } from "react";
 import { IconCheckCircle, IconCloseCircle } from "@/components/icons";
 import { trackClient } from "@/lib/client-analytics";
@@ -133,7 +134,7 @@ export function FeedbackDialog({
         aria-labelledby="feedback-title"
       >
         <div className="feedback-dialog-top">
-          <p className="eyebrow">Обратная связь</p>
+          <Eyebrow>Обратная связь</Eyebrow>
           <button className="detail-close" type="button" onClick={onClose} ref={closeRef} aria-label="Закрыть">
             <IconCloseCircle />
           </button>

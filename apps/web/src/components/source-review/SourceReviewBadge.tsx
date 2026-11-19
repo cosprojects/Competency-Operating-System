@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { Eyebrow } from "@/components/ui/Eyebrow";
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { IconCheckCircle, IconCloseCircle } from "@/components/icons";
@@ -252,7 +253,7 @@ export function SourceReviewBadge({
             aria-labelledby="source-review-title"
           >
             <div className="feedback-dialog-top">
-              <p className="eyebrow">Проверка материала</p>
+              <Eyebrow>Проверка материала</Eyebrow>
               <button
                 className="account-close"
                 type="button"

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import { Eyebrow } from "@/components/ui/Eyebrow";
 import Link from "next/link";
 import { WelcomeToast } from "@/components/account/WelcomeToast";
+import { IconCheckCircle } from "@/components/icons";
 import { HomeWhyButton } from "@/components/home/HomeWhyButton";
 import { allChangelog, formatChangelogDate } from "@/content/changelog";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -33,8 +35,8 @@ const ROADMAP = [
   { stage: "01 · Сейчас", title: "Beta • Карта профессий • План развития • Прогресс изучения", text: "Уже открыта: Направления дизайна, компетенции, знания, навыки и материалы к ним, где видно, что на чём стоит. Структура улучшается и обновляется." },
   { stage: "02 · Дальше", title: "Больше направлений и проверенная база", text: "Добавим новые профессии и будем следить за качеством: формулировки компетенций, связи между ними и учебные источники." },
   { stage: "03 · Дальше", title: "Личное пространство", text: "Появится сохранение компетенций и материалов, статусы изучения и цель — чтобы возвращаться к своему плану, а не искать заново." },
-  { stage: "04 · Дальше", title: "Пробиль компетенций", text: "Соберём картину твоих навыков и поможем оценить текущий уровень знаний в направлениях." },
-  { stage: "05 · Дальше", title: "Персональный маршрут развития", text: "Построим индивидуальный маршрут к выбранной цели и покажем, с чего начать, а результат шагов будет виден в профиле." },
+  { stage: "04 · Дальше", title: "Профиль компетенций", text: "Соберём картину твоих навыков и поможем оценить текущий уровень знаний в направлении." },
+  { stage: "05 · Дальше", title: "Персональный маршрут развития", text: "Построим индивидуальный маршрут к выбранной цели и покажем с чего начать, а результат шагов будет виден в профиле." },
   { stage: "06 · Позже", title: "Команды и организации", text: "Общий язык компетенций для команд со своей методологией развития: цели развития, пробелы, прогресс и управление." },
 ];
 
@@ -56,7 +58,7 @@ export default async function HomePage({
           <video
             className="home2-hero-video"
             src="/assets/content/AXIONA-bg.mp4"
-            poster="/assets/content/AXIONA-bg.png"
+            poster="/assets/content/AXIONA-bg-poster.png"
             autoPlay
             muted
             loop
@@ -65,7 +67,7 @@ export default async function HomePage({
           />
           <section className="home2-sec1">
             <div className="home2-hero-copy">
-              <p className="eyebrow">Beta 1</p>
+              <Eyebrow>Beta 1</Eyebrow>
               <h1>Разберись в профессии.<br />Строй свой путь развития</h1>
               <p className="home2-lead">
                 AXIONA собирает профессиональные знания и навыки в понятную структуру, чтобы каждый
@@ -100,15 +102,17 @@ export default async function HomePage({
                   const sphere = professionSphere(profession);
                   return (
                     <Link className="home2-profession-card" key={profession.slug} href={`/professions/${profession.slug}`}>
-                      <span className="home2-card-badge" style={sphereBadgeStyle(sphere.color)}>
-                        {sphere.title.toLowerCase()}
-                      </span>
-                      <span className="home2-card-count">
-                        {profession.coverage.published} из {profession.coverage.total} компетенций
+                      <span className="home2-card-head">
+                        <span className="home2-card-badge" style={sphereBadgeStyle(sphere.color)}>
+                          {sphere.title.toLowerCase()}
+                        </span>
+                        <span className="home2-card-count">
+                          {profession.coverage.published} из {profession.coverage.total} компетенций
+                        </span>
                         <img className="home2-icon" src="/icons/home/cap.svg" alt="" aria-hidden="true" />
                       </span>
                       <h3>{profession.title}</h3>
-                      <p>{profession.description}</p>
+                      <p className="home2-card-desc">{profession.description}</p>
                     </Link>
                   );
                 })}
@@ -116,8 +120,8 @@ export default async function HomePage({
             </section>
 
             <Link className="home2-plan-banner" href="/plan">
-              <img className="home2-plan-wave" src="/icons/home/wave.svg" alt="" aria-hidden="true" />
-              <img className="home2-plan-image" src="/icons/home/plan-banner.png" alt="" aria-hidden="true" />
+              <img className="home2-plan-wave" src="/assets/content/bg-wave.svg" alt="" aria-hidden="true" />
+              <img className="home2-plan-image" src="/assets/content/bg-plan-banner.png" alt="" aria-hidden="true" />
               <span className="home2-plan-text">
                 <strong>Собери матрицу компетенций</strong>
                 <span>Определи грейд и узнай, что нужно подтянуть для роста.</span>
@@ -143,19 +147,21 @@ export default async function HomePage({
                   ближе к реальным потребностям людей.
                 </p>
               </div>
-              <PrimaryCta className="button home2-notice-button" href="/feedback">
+              <PrimaryCta className="button secondary home2-notice-button" href="/feedback">
                 Поделитесь своим мнением
               </PrimaryCta>
             </section>
 
             <section className="home2-roadmap">
-              <h2>Дорожная карта развития системы</h2>
-              <p className="home2-subtitle">Последовательность этапов развития платформы компетенций.</p>
+              <div className="home2-roadmap-head">
+                <h2>Дорожная карта развития системы</h2>
+                <p className="home2-subtitle">Последовательность этапов развития платформы компетенций.</p>
+              </div>
               <div className="home2-timeline">
                 {ROADMAP.map((item) => (
                   <article className="home2-stage" key={item.title}>
                     <span className="home2-stage-icon" aria-hidden="true">
-                      <img className="home2-icon" src="/icons/home/check.svg" alt="" />
+                      <IconCheckCircle />
                     </span>
                     <div className="home2-stage-body">
                       <p className="home2-stage-label">{item.stage}</p>
@@ -175,11 +181,11 @@ export default async function HomePage({
               </h2>
               <p>
                 Каждая профессия имеет свою структуру: знания, навыки и компетенции, необходимые для
-                решения профессиональных задач. Понять, что именно изучать и какие навыки развивать,
-                бывает сложно. AXIONA помогает увидеть профессию в целом и разобраться в её
-                составляющих. Выберите интересующую вас профессию, изучите её компетенции и связанные
-                с ними знания и навыки. Не обязательно знать всё заранее — начните с того, что вам
-                интересно, и постепенно поймёте свои возможности и направления развития.
+                решения профессиональных задач. Понять, что изучать и какие навыки развивать, бывает
+                сложно. AXIONA помогает увидеть профессию в целом и разобраться в её составляющих.
+                Выберите интересующую вас профессию, изучите её компетенции и связанные знания. Не
+                обязательно знать всё заранее — начните с того, что вам интересно, и постепенно
+                поймёте свои возможности и направления развития.
               </p>
             </section>
 
@@ -188,8 +194,10 @@ export default async function HomePage({
               <div className="home2-log-list">
                 {allChangelog().slice(0, 6).map((entry) => (
                   <article className="home2-log-item" key={`${entry.date}-${entry.title}`}>
-                    <span className="home2-log-date">{formatChangelogDate(entry.date)}</span>
-                    <p className="home2-log-title">{entry.title}</p>
+                    <div className="home2-log-head">
+                      <span className="home2-log-date">{formatChangelogDate(entry.date)}</span>
+                      <p className="home2-log-title">{entry.title}</p>
+                    </div>
                     <p className="home2-log-desc">{entry.description}</p>
                   </article>
                 ))}

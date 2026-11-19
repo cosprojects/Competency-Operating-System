@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Eyebrow } from "@/components/ui/Eyebrow";
 import { AdminReviewActions } from "@/components/admin/AdminReviewActions";
 import { requireCapability } from "@/lib/access";
 import { findCompetency, findSource } from "@/lib/content";
@@ -93,7 +94,7 @@ export default async function AdminReviewsPage() {
   return (
     <>
       <div className="page-head">
-        <div className="eyebrow">Админка</div>
+        <Eyebrow as="div">Админка</Eyebrow>
         <h1>Спорные материалы</h1>
         <p>
           Очередь блокировок: пользовательские голоса и админ-решения. Активных залогиненных за

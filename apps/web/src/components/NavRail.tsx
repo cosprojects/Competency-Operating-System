@@ -9,6 +9,7 @@ import {
   IconChart,
   IconHome,
   IconGraduation,
+  IconPlan,
   IconHomeAdd,
   IconPlaster,
   IconQuestion,
@@ -32,6 +33,12 @@ const ITEMS = [
     label: "Изучаю",
     icon: IconGraduation,
     match: (pathname: string) => pathname === "/saved" || pathname.startsWith("/saved/"),
+  },
+  {
+    href: "/plan",
+    label: "План",
+    icon: IconPlan,
+    match: (pathname: string) => pathname === "/plan" || pathname.startsWith("/plan/"),
   },
 ];
 

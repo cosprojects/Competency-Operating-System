@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { Eyebrow } from "@/components/ui/Eyebrow";
 import { getLegalDocument, legalDocuments } from "@/content/legal";
 
 export function generateStaticParams() {
@@ -16,7 +17,7 @@ export default async function LegalPage({ params }: { params: Promise<{ doc: str
 
   return (
     <article className="card" style={{ maxWidth: 900, margin: "0 auto" }}>
-      <div className="eyebrow">Правовая информация</div>
+      <Eyebrow as="div">Правовая информация</Eyebrow>
       <h1 style={{ fontSize: "clamp(28px, 4vw, 42px)", margin: "8px 0 6px" }}>{document.title}</h1>
       <p className="small muted">Обновлено: {document.updated}</p>
       {document.draft ? <div className="notice">{document.intro}</div> : null}

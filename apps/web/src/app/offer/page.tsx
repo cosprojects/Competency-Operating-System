@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Eyebrow } from "@/components/ui/Eyebrow";
 import Link from "next/link";
 import { OfferCta } from "@/components/OfferCta";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -24,7 +25,7 @@ export default async function OfferPage({
     <>
       <main className="workspace">
         <section className="page-head">
-          <div className="eyebrow">{copy.eyebrow}</div>
+          <Eyebrow as="div">{copy.eyebrow}</Eyebrow>
           <h1>{copy.title}</h1>
           <p>{copy.lead}</p>
           <div className="actions" style={{ marginTop: 20 }}>

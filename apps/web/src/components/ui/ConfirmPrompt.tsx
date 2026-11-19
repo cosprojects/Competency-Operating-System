@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { Eyebrow } from "@/components/ui/Eyebrow";
 import { createPortal } from "react-dom";
 import { IconCloseCircle } from "@/components/icons";
 
@@ -50,7 +51,7 @@ export function ConfirmPrompt({
     >
       <section className="feedback-dialog confirm-dialog" role="dialog" aria-modal="true" aria-labelledby="confirm-title">
         <div className="feedback-dialog-top">
-          <p className="eyebrow">Подтверждение</p>
+          <Eyebrow>Подтверждение</Eyebrow>
           <button className="account-close" type="button" onClick={onClose} aria-label="Закрыть">
             <IconCloseCircle />
           </button>

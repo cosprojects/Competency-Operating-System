@@ -1,0 +1,467 @@
+{
+  "gradesVersion": "1.0.0",
+  "professionSlug": "aidesigner",
+  "updatedAt": "2026-11-18",
+  "grades": [
+    {
+      "code": "intern",
+      "title": "Стажёр",
+      "order": 1,
+      "scope": "Понимает область и делает базовые задачи с поддержкой",
+      "requirements": [
+        {
+          "competencyId": "ux-design-thinking",
+          "targetLevel": 1
+        },
+        {
+          "competencyId": "ux-user-research",
+          "targetLevel": 1
+        },
+        {
+          "competencyId": "ux-product-thinking",
+          "targetLevel": 1
+        },
+        {
+          "competencyId": "ux-information-architecture",
+          "targetLevel": 1
+        },
+        {
+          "competencyId": "ux-user-flows",
+          "targetLevel": 1
+        },
+        {
+          "competencyId": "ux-wireframes",
+          "targetLevel": 1
+        },
+        {
+          "competencyId": "ui-layout",
+          "targetLevel": 1
+        },
+        {
+          "competencyId": "ai-prompting",
+          "targetLevel": 1
+        },
+        {
+          "competencyId": "ai-ethics-rights",
+          "targetLevel": 1
+        },
+        {
+          "competencyId": "aidesigner-ai-features",
+          "targetLevel": 1
+        },
+        {
+          "competencyId": "aidesigner-ai-ui-generation",
+          "targetLevel": 1
+        },
+        {
+          "competencyId": "aidesigner-ai-prototyping",
+          "targetLevel": 1
+        }
+      ]
+    },
+    {
+      "code": "junior",
+      "title": "Младший дизайнер",
+      "order": 2,
+      "scope": "Решает базовые задачи, есть примеры",
+      "requirements": [
+        {
+          "competencyId": "ux-design-thinking",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "ux-user-research",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "ux-achievement-focus",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "ux-communication-collaboration",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "ux-product-thinking",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "ux-information-architecture",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "ux-user-flows",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "ux-wireframes",
+          "targetLevel": 1
+        },
+        {
+          "competencyId": "ux-usability-testing",
+          "targetLevel": 1
+        },
+        {
+          "competencyId": "ui-layout",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "ui-accessibility",
+          "targetLevel": 1
+        },
+        {
+          "competencyId": "ai-prompting",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "aidesigner-ai-features",
+          "targetLevel": 1
+        },
+        {
+          "competencyId": "aidesigner-ai-ui-generation",
+          "targetLevel": 1
+        },
+        {
+          "competencyId": "aidesigner-ai-prototyping",
+          "targetLevel": 1
+        },
+        {
+          "competencyId": "aidesigner-quality-eval",
+          "targetLevel": 1
+        },
+        {
+          "competencyId": "ai-ethics-rights",
+          "targetLevel": 1
+        },
+        {
+          "competencyId": "product-jtbd",
+          "targetLevel": 1
+        },
+        {
+          "competencyId": "product-strategy",
+          "targetLevel": 1
+        }
+      ]
+    },
+    {
+      "code": "designer",
+      "title": "Дизайнер",
+      "order": 3,
+      "scope": "Ведёт задачи end-to-end, защищает решения",
+      "requirements": [
+        {
+          "competencyId": "ux-design-thinking",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "ux-user-research",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "ux-product-thinking",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ux-information-architecture",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "ux-user-flows",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ux-wireframes",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "ux-interactive-prototype",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "ux-usability-testing",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "ui-layout",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "ui-design-systems",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "ux-metrics",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "ui-components",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "ui-accessibility",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "ai-prompting",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "aidesigner-ai-features",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "aidesigner-ai-ui-generation",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "aidesigner-ai-prototyping",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "aidesigner-automation",
+          "targetLevel": 1
+        },
+        {
+          "competencyId": "aidesigner-quality-eval",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "ai-ethics-rights",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "product-jtbd",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "product-strategy",
+          "targetLevel": 2
+        }
+      ]
+    },
+    {
+      "code": "senior",
+      "title": "Старший дизайнер",
+      "order": 4,
+      "scope": "Отвечает за качество направления, менторит",
+      "requirements": [
+        {
+          "competencyId": "ux-design-thinking",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ux-user-research",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ux-systems-thinking",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ux-strategy-vision",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ux-uncertainty-risk",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ux-product-thinking",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ux-information-architecture",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ux-user-flows",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ux-wireframes",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ux-interactive-prototype",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ux-usability-testing",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "ui-layout",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ui-design-systems",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ux-metrics",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "ui-components",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "ui-accessibility",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "ai-prompting",
+          "targetLevel": 4
+        },
+        {
+          "competencyId": "aidesigner-ai-features",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "aidesigner-ai-ui-generation",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "aidesigner-ai-prototyping",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "aidesigner-automation",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "aidesigner-quality-eval",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ai-ethics-rights",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "product-jtbd",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "product-strategy",
+          "targetLevel": 3
+        }
+      ]
+    },
+    {
+      "code": "lead",
+      "title": "Ведущий дизайнер",
+      "order": 5,
+      "scope": "Задаёт стандарт и развивает команду",
+      "requirements": [
+        {
+          "competencyId": "ux-design-thinking",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ux-user-research",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ux-systems-thinking",
+          "targetLevel": 4
+        },
+        {
+          "competencyId": "ux-planning-organization",
+          "targetLevel": 4
+        },
+        {
+          "competencyId": "ux-strategy-vision",
+          "targetLevel": 4
+        },
+        {
+          "competencyId": "ux-uncertainty-risk",
+          "targetLevel": 4
+        },
+        {
+          "competencyId": "ux-team-management",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ux-product-thinking",
+          "targetLevel": 4
+        },
+        {
+          "competencyId": "ux-information-architecture",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ux-user-flows",
+          "targetLevel": 4
+        },
+        {
+          "competencyId": "ux-wireframes",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ux-interactive-prototype",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ux-usability-testing",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ui-layout",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ui-design-systems",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ux-metrics",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ui-components",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ui-accessibility",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ai-prompting",
+          "targetLevel": 4
+        },
+        {
+          "competencyId": "aidesigner-ai-features",
+          "targetLevel": 4
+        },
+        {
+          "competencyId": "aidesigner-ai-ui-generation",
+          "targetLevel": 4
+        },
+        {
+          "competencyId": "aidesigner-ai-prototyping",
+          "targetLevel": 4
+        },
+        {
+          "competencyId": "aidesigner-automation",
+          "targetLevel": 4
+        },
+        {
+          "competencyId": "aidesigner-quality-eval",
+          "targetLevel": 4
+        },
+        {
+          "competencyId": "ai-ethics-rights",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "product-jtbd",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "product-strategy",
+          "targetLevel": 4
+        }
+      ]
+    }
+  ]
+}

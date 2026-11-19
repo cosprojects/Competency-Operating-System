@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { Eyebrow } from "@/components/ui/Eyebrow";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { IconCheckCircle, IconCloseCircle } from "@/components/icons";
@@ -68,7 +69,7 @@ export function FeedbackPageForm() {
   return (
     <div className="feedback-page">
       <div className="feedback-page-top">
-        <p className="eyebrow">Обратная связь</p>
+        <Eyebrow>Обратная связь</Eyebrow>
         <Link className="icon-button" href="/" aria-label="Закрыть и вернуться на главную">
           <IconCloseCircle />
         </Link>

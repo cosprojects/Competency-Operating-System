@@ -60,6 +60,13 @@ export const studyStatusSchema = z.object({
   status: z.enum(["NOT_STARTED", "LEARNING", "LEARNED"]),
 });
 
+/** MVP «План»: снимок самооценки матрицы. */
+export const matrixSchema = z.object({
+  professionSlug: z.string().trim().min(1).max(100),
+  gradeCode: z.string().trim().min(1).max(50),
+  levels: z.record(z.number().int().min(0).max(4)),
+});
+
 export const adminFeedbackStatusSchema = z.object({
   id: z.string().min(1).max(100),
   status: z.enum(["NEW", "TRIAGED", "RESOLVED"]),
@@ -142,6 +149,11 @@ export const EVENT_NAMES = [
   "favorite_remove",
   "study_status_change",
   "study_mark_change",
+  "matrix_view",
+  "matrix_start",
+  "matrix_saved",
+  "matrix_plan_to_study",
+  "matrix_reassess",
   "feedback_open",
   "feedback_submit",
   "return_visit",
@@ -183,6 +195,11 @@ const EVENT_PROP_KEYS = new Set([
   "cta_id",
   "cta_target",
   "page",
+  "profession_slug",
+  "grade_code",
+  "requirement_count",
+  "gap_count",
+  "source",
 ]);
 
 export const eventSchema = z.object({

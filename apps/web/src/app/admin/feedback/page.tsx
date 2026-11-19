@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Eyebrow } from "@/components/ui/Eyebrow";
 import type { Prisma } from "@prisma/client";
 import { FeedbackStatusSelect } from "@/components/FeedbackStatusSelect";
 import { requireCapability } from "@/lib/access";
@@ -44,7 +45,7 @@ export default async function AdminFeedbackPage({
   return (
     <>
       <div className="page-head">
-        <div className="eyebrow">Админка</div>
+        <Eyebrow as="div">Админка</Eyebrow>
         <h1>Обратная связь</h1>
         <p>
           Показано {items.length} из {total}. Статусы: NEW → TRIAGED → RESOLVED. CSV — для

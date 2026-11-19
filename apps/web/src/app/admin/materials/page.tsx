@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Eyebrow } from "@/components/ui/Eyebrow";
 import { MaterialDecisionActions } from "@/components/admin/MaterialDecisionActions";
 import { requireCapability } from "@/lib/access";
 import { findCompetency, findSource } from "@/lib/content";
@@ -159,7 +160,7 @@ export default async function AdminMaterialsPage({
   return (
     <>
       <div className="page-head">
-        <div className="eyebrow">Админка</div>
+        <Eyebrow as="div">Админка</Eyebrow>
         <h1>Материалы</h1>
         <p>
           Один материал — одно решение. Голоса показываются по компетенциям, решение владельца

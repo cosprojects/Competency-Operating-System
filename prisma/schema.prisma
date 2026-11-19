@@ -75,6 +75,7 @@ model User {
   materialDecisions MaterialDecision[]
   consents          ConsentRecord[]
   events            AnalyticsEvent[]
+  matrixRuns        MatrixRun[]
 
   @@index([createdAt])
 }
@@ -414,4 +415,21 @@ model ReviewDecision {
   @@index([runId])
   @@index([outcome, createdAt])
   @@index([materialUrl])
+}
+
+/// Снимок самооценки матрицы компетенций (MVP «План»).
+/// Хранит выбранную профессию/грейд и уровни 0–4 по компетенциям.
+model MatrixRun {
+  id             String   @id @default(cuid())
+  userId         String
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  professionSlug String
+  gradeCode      String
+  /// JSON: { "competencyId": 0..4 }
+  levelsJson     String
+  contentVersion String
+  createdAt      DateTime @default(now())
+
+  @@index([userId, createdAt])
+  @@index([professionSlug, gradeCode])
 }

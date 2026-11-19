@@ -21,6 +21,8 @@ interface ProfessionTileProps {
   index: number;
   saved: boolean;
   viewer: boolean;
+  href?: string;
+  badge?: string;
 }
 
 /**
@@ -32,6 +34,8 @@ export const ProfessionTile = memo(function ProfessionTile({
   index,
   saved,
   viewer,
+  href,
+  badge,
 }: ProfessionTileProps) {
   return (
     <div
@@ -43,10 +47,11 @@ export const ProfessionTile = memo(function ProfessionTile({
     >
       <Link
         className="tile-hit"
-        href={`/professions/${profession.slug}`}
+        href={href ?? `/professions/${profession.slug}`}
         aria-label={`Открыть профессию «${profession.title}»`}
       />
       <div className="tile-top">
+        {badge ? <span className="badge">{badge}</span> : null}
         <span className="tile-count">{profession.countText}</span>
         <span className="tile-action">
           {viewer ? (

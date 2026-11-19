@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { Eyebrow } from "@/components/ui/Eyebrow";
 import { createPortal } from "react-dom";
 import { useRouter } from "next/navigation";
 import { IconCloseCircle, IconLink, IconMail } from "@/components/icons";
@@ -128,7 +129,7 @@ export function AccountDialog({
     >
       <section className="account-dialog" role="dialog" aria-modal="true" aria-labelledby="account-dialog-title">
         <div className="account-dialog-top">
-          <p className="eyebrow">Ваш аккаунт</p>
+          <Eyebrow>Ваш аккаунт</Eyebrow>
           <button className="account-close" type="button" onClick={onClose} ref={closeRef} aria-label="Закрыть">
             <IconCloseCircle />
           </button>

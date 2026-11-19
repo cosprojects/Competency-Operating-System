@@ -1,0 +1,423 @@
+{
+  "gradesVersion": "1.0.0",
+  "professionSlug": "artdir",
+  "updatedAt": "2026-11-18",
+  "grades": [
+    {
+      "code": "intern",
+      "title": "Стажёр",
+      "order": 1,
+      "scope": "Понимает область и делает базовые задачи с поддержкой",
+      "requirements": [
+        {
+          "competencyId": "ux-achievement-focus",
+          "targetLevel": 1
+        },
+        {
+          "competencyId": "ux-communication-collaboration",
+          "targetLevel": 1
+        },
+        {
+          "competencyId": "ux-creative-thinking",
+          "targetLevel": 1
+        },
+        {
+          "competencyId": "ux-design-thinking",
+          "targetLevel": 1
+        },
+        {
+          "competencyId": "ux-systems-thinking",
+          "targetLevel": 1
+        },
+        {
+          "competencyId": "ui-color",
+          "targetLevel": 1
+        },
+        {
+          "competencyId": "ui-design-systems",
+          "targetLevel": 1
+        },
+        {
+          "competencyId": "ui-layout",
+          "targetLevel": 1
+        },
+        {
+          "competencyId": "ui-typography",
+          "targetLevel": 1
+        },
+        {
+          "competencyId": "ui-visual-communication",
+          "targetLevel": 1
+        },
+        {
+          "competencyId": "artdir-brand-platform",
+          "targetLevel": 1
+        },
+        {
+          "competencyId": "artdir-brand-strategy",
+          "targetLevel": 1
+        },
+        {
+          "competencyId": "artdir-brief",
+          "targetLevel": 1
+        }
+      ]
+    },
+    {
+      "code": "junior",
+      "title": "Младший дизайнер",
+      "order": 2,
+      "scope": "Решает базовые задачи, есть примеры",
+      "requirements": [
+        {
+          "competencyId": "ux-achievement-focus",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "ux-communication-collaboration",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "ux-creative-thinking",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "ux-design-thinking",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "ux-planning-organization",
+          "targetLevel": 1
+        },
+        {
+          "competencyId": "ux-systems-thinking",
+          "targetLevel": 1
+        },
+        {
+          "competencyId": "ux-uncertainty-risk",
+          "targetLevel": 1
+        },
+        {
+          "competencyId": "ui-color",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "ui-components",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "ui-design-systems",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "ui-layout",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "ui-typography",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "ui-visual-communication",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "artdir-brand-platform",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "artdir-brand-strategy",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "artdir-brief",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "artdir-communication",
+          "targetLevel": 2
+        }
+      ]
+    },
+    {
+      "code": "designer",
+      "title": "Дизайнер",
+      "order": 3,
+      "scope": "Ведёт задачи end-to-end, защищает решения",
+      "requirements": [
+        {
+          "competencyId": "ux-achievement-focus",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "ux-communication-collaboration",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ux-creative-thinking",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "ux-design-thinking",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "ux-planning-organization",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "ux-strategy-vision",
+          "targetLevel": 1
+        },
+        {
+          "competencyId": "ux-systems-thinking",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "ux-uncertainty-risk",
+          "targetLevel": 1
+        },
+        {
+          "competencyId": "ui-color",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "ui-components",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "ui-design-systems",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "ui-layout",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "ui-typography",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "ui-visual-communication",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "ux-product-thinking",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "artdir-brand-platform",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "artdir-brand-strategy",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "artdir-brief",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "artdir-communication",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "artdir-presentation",
+          "targetLevel": 2
+        }
+      ]
+    },
+    {
+      "code": "senior",
+      "title": "Старший дизайнер",
+      "order": 4,
+      "scope": "Отвечает за качество направления, менторит",
+      "requirements": [
+        {
+          "competencyId": "ux-achievement-focus",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ux-communication-collaboration",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ux-creative-thinking",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ux-design-thinking",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ux-planning-organization",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ux-strategy-vision",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "ux-systems-thinking",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ux-team-management",
+          "targetLevel": 1
+        },
+        {
+          "competencyId": "ux-uncertainty-risk",
+          "targetLevel": 2
+        },
+        {
+          "competencyId": "ui-color",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ui-components",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ui-design-systems",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ui-layout",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ui-typography",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ui-visual-communication",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ux-product-thinking",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "artdir-brand-platform",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "artdir-brand-strategy",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "artdir-brief",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "artdir-communication",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "artdir-presentation",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "artdir-team",
+          "targetLevel": 3
+        }
+      ]
+    },
+    {
+      "code": "lead",
+      "title": "Ведущий дизайнер",
+      "order": 5,
+      "scope": "Задаёт стандарт и развивает команду",
+      "requirements": [
+        {
+          "competencyId": "ux-achievement-focus",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ux-communication-collaboration",
+          "targetLevel": 4
+        },
+        {
+          "competencyId": "ux-creative-thinking",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ux-design-thinking",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ux-planning-organization",
+          "targetLevel": 4
+        },
+        {
+          "competencyId": "ux-strategy-vision",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ux-systems-thinking",
+          "targetLevel": 4
+        },
+        {
+          "competencyId": "ux-team-management",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ux-uncertainty-risk",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ui-color",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ui-components",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ui-design-systems",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ui-layout",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ui-typography",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "ui-visual-communication",
+          "targetLevel": 3
+        },
+        {
+          "competencyId": "artdir-brand-platform",
+          "targetLevel": 4
+        },
+        {
+          "competencyId": "artdir-brand-strategy",
+          "targetLevel": 4
+        },
+        {
+          "competencyId": "artdir-brief",
+          "targetLevel": 4
+        },
+        {
+          "competencyId": "artdir-communication",
+          "targetLevel": 4
+        },
+        {
+          "competencyId": "artdir-hiring",
+          "targetLevel": 4
+        },
+        {
+          "competencyId": "artdir-presentation",
+          "targetLevel": 4
+        },
+        {
+          "competencyId": "artdir-team",
+          "targetLevel": 4
+        }
+      ]
+    }
+  ]
+}

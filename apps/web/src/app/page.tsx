@@ -1,28 +1,22 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { WelcomeToast } from "@/components/account/WelcomeToast";
-import { HomeRailSync } from "@/components/home/HomeRailSync";
+import { HomeWhyButton } from "@/components/home/HomeWhyButton";
 import { allChangelog, formatChangelogDate } from "@/content/changelog";
-import { IconCheckCircle } from "@/components/icons";
 import { SiteFooter } from "@/components/SiteFooter";
 import { PrimaryCta } from "@/components/ui/PrimaryCta";
+import { getProfessions, professionSphere } from "@/lib/content";
+import { sphereBadgeStyle } from "@/lib/spheres";
 
 export const metadata: Metadata = {
-  title: "AXIONA — карта компетенций, которая объясняет профессию",
+  title: "AXIONA — разберись в профессии и строй свой путь развития",
   description:
-    "AXIONA помогает разобраться в профессии: структура компетенций, знания, навыки и учебные материалы на одном канвасе.",
+    "AXIONA собирает профессиональные знания и навыки в понятную структуру: компетенции, знания, навыки и материалы для развития.",
 };
-
-const FEATURES = [
-  "Взаимосвязанная структура профессии",
-  "Знания и навыки по каждой компетенции",
-  "Учебные материалы",
-  "Сохранения и статусы изучения",
-  "Обратная связь о качестве карты",
-];
 
 const START_STEPS = [
   {
-    title: "Выберите профессию",
+    title: "Выберите направление",
     text: "Посмотрите разделы и поймите, из чего состоит направление.",
   },
   {
@@ -31,37 +25,17 @@ const START_STEPS = [
   },
   {
     title: "Найдите материал",
-    text: "Перейдите к курсу или статье и сохраните то, к чему хотите вернуться.",
+    text: "Посмотрите разделы и поймите, из чего состоит направление.",
   },
 ];
 
 const ROADMAP = [
-  {
-    stage: "01 · Сейчас",
-    title: "Одна сфера, курс на качество",
-    text: "Открыта одна сфера деятельности — дизайн: профессии, компетенции, знания, навыки и материалы собраны в карту. Качество материалов продолжаем улучшать, а интересное сохраняется в личном пространстве.",
-    current: true,
-  },
-  {
-    stage: "02 · Дальше",
-    title: "Больше сфер, ближе к профилю",
-    text: "Расширим покрытие компетенций, добавим новые сферы деятельности и продолжим повышать качество материалов. Личный кабинет начнёт складываться в профессиональный профиль.",
-  },
-  {
-    stage: "03 · Дальше",
-    title: "Личный профиль компетенций",
-    text: "Профиль соберёт в одном месте твои компетенции, знания и навыки — что уже освоено и что хочется добавить. По нему будет проще развиваться в профессии и учить новое осознанно.",
-  },
-  {
-    stage: "04 · Дальше",
-    title: "Маршрут развития",
-    text: "Система адаптируется под тебя: строит маршрут развития, собирает шаги под цель и твои способности, даёт релевантные знания и проверяет понимание. Разбираться в них поможет сам сервис — так реже придётся уходить на сторонние ресурсы.",
-  },
-  {
-    stage: "05 · Позже",
-    title: "Личный капитал в команде",
-    text: "Каждый приносит в команду личный капитал — знания и навыки, которые двигают её к бизнес-целям. Компания помогает ему расти, а аналитика компетенций точнее распределяет ресурсы — выигрывают человек, команда и бизнес.",
-  },
+  { stage: "01 · Сейчас", title: "Beta • Карта профессий • План развития • Прогресс изучения", text: "Уже открыта: Направления дизайна, компетенции, знания, навыки и материалы к ним, где видно, что на чём стоит. Структура улучшается и обновляется." },
+  { stage: "02 · Дальше", title: "Больше направлений и проверенная база", text: "Добавим новые профессии и будем следить за качеством: формулировки компетенций, связи между ними и учебные источники." },
+  { stage: "03 · Дальше", title: "Личное пространство", text: "Появится сохранение компетенций и материалов, статусы изучения и цель — чтобы возвращаться к своему плану, а не искать заново." },
+  { stage: "04 · Дальше", title: "Пробиль компетенций", text: "Соберём картину твоих навыков и поможем оценить текущий уровень знаний в направлениях." },
+  { stage: "05 · Дальше", title: "Персональный маршрут развития", text: "Построим индивидуальный маршрут к выбранной цели и покажем, с чего начать, а результат шагов будет виден в профиле." },
+  { stage: "06 · Позже", title: "Команды и организации", text: "Общий язык компетенций для команд со своей методологией развития: цели развития, пробелы, прогресс и управление." },
 ];
 
 export default async function HomePage({
@@ -70,127 +44,162 @@ export default async function HomePage({
   searchParams: Promise<{ welcome?: string }>;
 }) {
   const { welcome } = await searchParams;
+  const latest = [...getProfessions()]
+    .sort((a, b) => (b.updatedAt ?? "").localeCompare(a.updatedAt ?? ""))
+    .slice(0, 2);
+
   return (
     <>
-    <div className="home-screen">
-      <div className="home-layout">
-      <div className="workspace">
-        <section className="home-hero">
-          <div className="home-hero-copy" data-enter>
-            <p className="eyebrow">Beta 1</p>
-            <h1>Карта компетенций, которая объясняет профессию</h1>
-            <p className="home-lead">
-              AXIONA помогает разобраться в своей профессии и понять, куда развиваться дальше. Мы
-              собираем профессиональные знания и навыки в понятную структуру, чтобы каждый мог
-              увидеть, из чего складывается его профессия, оценить интересующие направления и найти
-              материалы для обучения.
-            </p>
-            <PrimaryCta className="button home-hero-cta" href="/professions">
-              Выбрать направление
-            </PrimaryCta>
-          </div>
-        </section>
-
-        <section className="home-section" data-reveal>
-          <p className="eyebrow">Направления</p>
-          <h2>С чего начать</h2>
-          <div className="start-grid">
-            {START_STEPS.map((step, index) => (
-              <article className="start-card" key={step.title}>
-                <span className="start-num">{index + 1}</span>
-                <h3>{step.title}</h3>
-                <p>{step.text}</p>
-              </article>
-            ))}
-          </div>
-          <p className="home-paragraph">
-            У каждой профессии есть своя структура: знания, навыки и компетенции, которые помогают
-            специалисту решать профессиональные задачи. Но часто бывает непросто понять, что именно
-            нужно изучать, какие навыки развивать и с чего лучше начать. AXIONA помогает увидеть
-            профессию целиком и разобраться в её составляющих. Выберите интересующую вас профессию,
-            изучите её компетенции, посмотрите связанные с ними знания и навыки, найдите полезные
-            материалы. Необязательно знать всё заранее или двигаться по готовому плану. Начните с
-            того, что интересно или актуально для вас сейчас. Постепенно вы сможете лучше понять свои
-            возможности и направления дальнейшего развития.
-          </p>
-        </section>
-
-        <section className="feedback-invite" data-enter="1">
-          <p className="invite-title">Помогите нам сделать систему полезнее</p>
-          <p>
-            Мы хотим, чтобы эти карты действительно помогали людям ориентироваться в профессии,
-            находить новые направления для развития и понимать, какие знания могут быть полезны в
-            работе. Попробуйте изучить карту своей профессии. Насколько полно она отражает реальные
-            требования к специалисту? Всё ли понятно? Каких компетенций, знаний или навыков не
-            хватает? Поделитесь своим мнением. Ваш опыт поможет нам сделать систему точнее,
-            полезнее и ближе к реальным потребностям людей.
-          </p>
-          <PrimaryCta className="button invite-button" href="/feedback">
-            Поделитесь своим мнением
-          </PrimaryCta>
-        </section>
-
-        <section className="home-section" data-reveal>
-          <h2>Дорожная карта развития</h2>
-          <p className="section-subtitle">Последовательность этапов развития платформы компетенций.</p>
-          <div className="roadmap-card">
-            {ROADMAP.map((item) => (
-              <article className={`roadmap-stage${item.current ? " is-current" : ""}`} key={item.title}>
-                <span className="roadmap-icon" aria-hidden="true">
-                  <IconCheckCircle />
-                </span>
-                <div className="roadmap-text">
-                  <p className="roadmap-stage-label">{item.stage}</p>
-                  <p className="roadmap-title">{item.title}</p>
-                  <p className="roadmap-desc">{item.text}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-      </div>
-
-      <aside className="home-rail" aria-label="О платформе и обновления">
-        <HomeRailSync />
-        <div className="home-about">
-          <div className="hero-panel" data-enter="1">
-            <h2>Что внутри</h2>
-            <ul className="checklist">
-              {FEATURES.map((feature) => (
-                <li key={feature}>
-                  <span className="check" aria-hidden="true">
-                    ✓
-                  </span>
-                  {feature}
-                </li>
-              ))}
-            </ul>
-          </div>
+      <div className="home2">
+        <div className="home2-frame">
+        <div className="home2-hero">
+          <video
+            className="home2-hero-video"
+            src="/assets/content/AXIONA-bg.mp4"
+            poster="/assets/content/AXIONA-bg.png"
+            autoPlay
+            muted
+            loop
+            playsInline
+            aria-hidden="true"
+          />
+          <section className="home2-sec1">
+            <div className="home2-hero-copy">
+              <p className="eyebrow">Beta 1</p>
+              <h1>Разберись в профессии.<br />Строй свой путь развития</h1>
+              <p className="home2-lead">
+                AXIONA собирает профессиональные знания и навыки в понятную структуру, чтобы каждый
+                мог увидеть, из чего складывается его профессия, оценить интересующие направления и
+                найти материалы для обучения.
+              </p>
+              <div className="home2-hero-actions">
+                <PrimaryCta className="button" href="/professions">Изучить направления</PrimaryCta>
+                <HomeWhyButton />
+              </div>
+            </div>
+          </section>
         </div>
 
-        <section
-          className="home-log"
-          aria-labelledby="home-log-title"
-          data-enter="2"
-        >
-          <h2 id="home-log-title">Лог обновлений</h2>
-          <div className="home-log-list" tabIndex={0} aria-label="Записи лога обновлений">
-            {allChangelog().map((entry) => (
-              <article className="home-log-item" key={`${entry.date}-${entry.title}`}>
-                <div className="home-log-head">
-                  <span className="home-log-date">{formatChangelogDate(entry.date)}</span>
-                  <span className="home-log-title">{entry.title}</span>
-                </div>
-                <p className="home-log-desc">{entry.description}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-      </aside>
+        <div className="home2-main">
+            <section className="home2-intro">
+              <h2>Собираю все для твоего развития</h2>
+              <div className="home2-start">
+                {START_STEPS.map((step) => (
+                  <article className="home2-start-card" key={step.title}>
+                    <h3>{step.title}</h3>
+                    <p>{step.text}</p>
+                  </article>
+                ))}
+              </div>
+            </section>
+
+            <section className="home2-latest">
+              <h2>Последние добавленные</h2>
+              <div className="home2-latest-grid">
+                {latest.map((profession) => {
+                  const sphere = professionSphere(profession);
+                  return (
+                    <Link className="home2-profession-card" key={profession.slug} href={`/professions/${profession.slug}`}>
+                      <span className="home2-card-badge" style={sphereBadgeStyle(sphere.color)}>
+                        {sphere.title.toLowerCase()}
+                      </span>
+                      <span className="home2-card-count">
+                        {profession.coverage.published} из {profession.coverage.total} компетенций
+                        <img className="home2-icon" src="/icons/home/cap.svg" alt="" aria-hidden="true" />
+                      </span>
+                      <h3>{profession.title}</h3>
+                      <p>{profession.description}</p>
+                    </Link>
+                  );
+                })}
+              </div>
+            </section>
+
+            <Link className="home2-plan-banner" href="/plan">
+              <img className="home2-plan-wave" src="/icons/home/wave.svg" alt="" aria-hidden="true" />
+              <img className="home2-plan-image" src="/icons/home/plan-banner.png" alt="" aria-hidden="true" />
+              <span className="home2-plan-text">
+                <strong>Собери матрицу компетенций</strong>
+                <span>Определи грейд и узнай, что нужно подтянуть для роста.</span>
+              </span>
+              <span className="home2-plan-button">Перейти к плану <img className="home2-icon" src="/icons/home/arrow-right.svg" alt="" aria-hidden="true" /></span>
+            </Link>
+
+            <section className="home2-notice">
+              <p className="home2-notice-title">Помогите сделать систему полезнее</p>
+              <div className="home2-notice-text">
+                <p>
+                  Мы хотим, чтобы эти карты действительно помогали людям ориентироваться в профессии,
+                  находить новые направления для развития и понимать, какие знания могут быть полезны в
+                  работе.
+                </p>
+                <p>
+                  Попробуйте изучить карту своей профессии. Насколько полно она отражает реальные
+                  требования к специалисту? Всё ли понятно? Каких компетенций, знаний или навыков не
+                  хватает?
+                </p>
+                <p>
+                  Поделитесь своим мнением. Ваш опыт поможет нам сделать систему точнее, полезнее и
+                  ближе к реальным потребностям людей.
+                </p>
+              </div>
+              <PrimaryCta className="button home2-notice-button" href="/feedback">
+                Поделитесь своим мнением
+              </PrimaryCta>
+            </section>
+
+            <section className="home2-roadmap">
+              <h2>Дорожная карта развития системы</h2>
+              <p className="home2-subtitle">Последовательность этапов развития платформы компетенций.</p>
+              <div className="home2-timeline">
+                {ROADMAP.map((item) => (
+                  <article className="home2-stage" key={item.title}>
+                    <span className="home2-stage-icon" aria-hidden="true">
+                      <img className="home2-icon" src="/icons/home/check.svg" alt="" />
+                    </span>
+                    <div className="home2-stage-body">
+                      <p className="home2-stage-label">{item.stage}</p>
+                      <p className="home2-stage-title">{item.title}</p>
+                      <p className="home2-stage-desc">{item.text}</p>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </section>
+        </div>
+
+        <aside className="home2-aside">
+            <section className="home2-panel home2-about">
+              <h2>
+                <img className="home2-icon" src="/icons/home/lightbulb.svg" alt="" aria-hidden="true" /> Что такое AXIONA
+              </h2>
+              <p>
+                Каждая профессия имеет свою структуру: знания, навыки и компетенции, необходимые для
+                решения профессиональных задач. Понять, что именно изучать и какие навыки развивать,
+                бывает сложно. AXIONA помогает увидеть профессию в целом и разобраться в её
+                составляющих. Выберите интересующую вас профессию, изучите её компетенции и связанные
+                с ними знания и навыки. Не обязательно знать всё заранее — начните с того, что вам
+                интересно, и постепенно поймёте свои возможности и направления развития.
+              </p>
+            </section>
+
+            <section className="home2-panel home2-log" aria-labelledby="home2-log-title">
+              <h2 id="home2-log-title"><img className="home2-icon" src="/icons/home/starfall.svg" alt="" aria-hidden="true" /> Последние обновления</h2>
+              <div className="home2-log-list">
+                {allChangelog().slice(0, 6).map((entry) => (
+                  <article className="home2-log-item" key={`${entry.date}-${entry.title}`}>
+                    <span className="home2-log-date">{formatChangelogDate(entry.date)}</span>
+                    <p className="home2-log-title">{entry.title}</p>
+                    <p className="home2-log-desc">{entry.description}</p>
+                  </article>
+                ))}
+              </div>
+            </section>
+        </aside>
+        </div>
       </div>
-    </div>
-    <SiteFooter />
-    {welcome === "1" ? <WelcomeToast /> : null}
+      <SiteFooter />
+      {welcome === "1" ? <WelcomeToast /> : null}
     </>
   );
 }

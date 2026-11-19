@@ -4,10 +4,14 @@ import Link from "next/link";
 import { WelcomeToast } from "@/components/account/WelcomeToast";
 import { IconCheckCircle } from "@/components/icons";
 import { HomeWhyButton } from "@/components/home/HomeWhyButton";
+import { ProfessionTile } from "@/components/ProfessionTile";
+import type { SearchProfession } from "@/components/ProfessionTile";
 import { allChangelog, formatChangelogDate } from "@/content/changelog";
 import { SiteFooter } from "@/components/SiteFooter";
 import { PrimaryCta } from "@/components/ui/PrimaryCta";
-import { getProfessions, professionSphere } from "@/lib/content";
+import { getCurrentUser } from "@/lib/auth";
+import { getDb } from "@/lib/db";
+import { getProfessions, pluralWord, professionSphere } from "@/lib/content";
 import { sphereBadgeStyle } from "@/lib/spheres";
 
 export const metadata: Metadata = {
@@ -46,9 +50,37 @@ export default async function HomePage({
   searchParams: Promise<{ welcome?: string }>;
 }) {
   const { welcome } = await searchParams;
-  const latest = [...getProfessions()]
+  const user = await getCurrentUser();
+  let savedSlugs: string[] = [];
+  if (user) {
+    const favorites = await getDb().favorite.findMany({
+      where: { userId: user.id, targetType: "PROFESSION" },
+    });
+    savedSlugs = favorites.map((favorite) => favorite.targetId);
+  }
+  const saved = new Set(savedSlugs);
+
+  // Карточки главной — та же ProfessionTile, что и в разделе «Направления»;
+  // отличается только скрытым прогрессом покрытия (макет 369-14582).
+  const latest: SearchProfession[] = [...getProfessions()]
     .sort((a, b) => (b.updatedAt ?? "").localeCompare(a.updatedAt ?? ""))
-    .slice(0, 2);
+    .slice(0, 2)
+    .map((profession) => {
+      const sphere = professionSphere(profession);
+      return {
+        slug: profession.slug,
+        title: profession.title,
+        description: profession.description,
+        sphereTitle: sphere.title,
+        sphereStyle: sphereBadgeStyle(sphere.color),
+        countText: `${profession.coverage.published} из ${profession.coverage.total} ${pluralWord(
+          profession.coverage.total,
+          ["компетенция", "компетенции", "компетенций"],
+        )}`,
+        percent: profession.coverage.percent,
+        searchText: "",
+      };
+    });
 
   return (
     <>
@@ -98,24 +130,16 @@ export default async function HomePage({
             <section className="home2-latest">
               <h2>Последние добавленные</h2>
               <div className="home2-latest-grid">
-                {latest.map((profession) => {
-                  const sphere = professionSphere(profession);
-                  return (
-                    <Link className="home2-profession-card" key={profession.slug} href={`/professions/${profession.slug}`}>
-                      <span className="home2-card-head">
-                        <span className="home2-card-badge" style={sphereBadgeStyle(sphere.color)}>
-                          {sphere.title.toLowerCase()}
-                        </span>
-                        <span className="home2-card-count">
-                          {profession.coverage.published} из {profession.coverage.total} компетенций
-                        </span>
-                        <img className="home2-icon" src="/icons/home/cap.svg" alt="" aria-hidden="true" />
-                      </span>
-                      <h3>{profession.title}</h3>
-                      <p className="home2-card-desc">{profession.description}</p>
-                    </Link>
-                  );
-                })}
+                {latest.map((profession, index) => (
+                  <ProfessionTile
+                    key={profession.slug}
+                    profession={profession}
+                    index={index}
+                    saved={saved.has(profession.slug)}
+                    viewer={Boolean(user)}
+                    showCoverage={false}
+                  />
+                ))}
               </div>
             </section>
 

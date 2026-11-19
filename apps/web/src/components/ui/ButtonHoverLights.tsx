@@ -24,6 +24,7 @@ const BUTTON_SELECTOR = [
   ".studying-tab",
   ".learning-profession-card .icon-button",
   ".profession-tile",
+  ".home2-plan-banner",
   ".plan-matrix-card",
   ".plan-matrix-card-result",
 ].join(",");

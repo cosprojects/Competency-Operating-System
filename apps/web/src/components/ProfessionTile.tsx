@@ -23,6 +23,8 @@ interface ProfessionTileProps {
   viewer: boolean;
   href?: string;
   badge?: string;
+  /** Показывать прогресс покрытия. На главной он скрыт (макет 369-14582). */
+  showCoverage?: boolean;
 }
 
 /**
@@ -36,6 +38,7 @@ export const ProfessionTile = memo(function ProfessionTile({
   viewer,
   href,
   badge,
+  showCoverage = true,
 }: ProfessionTileProps) {
   return (
     <div
@@ -77,15 +80,17 @@ export const ProfessionTile = memo(function ProfessionTile({
       </div>
       <h3 className="tile-title">{profession.title}</h3>
       <p className="tile-desc">{profession.description}</p>
-      <div className="coverage">
-        <div className="coverage-bar" aria-hidden="true">
-          <span style={{ width: `${profession.percent}%` }} />
+      {showCoverage ? (
+        <div className="coverage">
+          <div className="coverage-bar" aria-hidden="true">
+            <span style={{ width: `${profession.percent}%` }} />
+          </div>
+          <div className="coverage-text">
+            <span>Покрытие Beta</span>
+            <span>{profession.percent}%</span>
+          </div>
         </div>
-        <div className="coverage-text">
-          <span>Покрытие Beta</span>
-          <span>{profession.percent}%</span>
-        </div>
-      </div>
+      ) : null}
     </div>
   );
 });

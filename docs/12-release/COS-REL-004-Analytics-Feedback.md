@@ -1,14 +1,15 @@
 ---
 id: COS-REL-004
 title: Аналитика и обратная связь Beta 1
-version: 1.1.1
+version: 1.2.0
 status: Draft
 owner: Product Team
-last_updated: 2026-11-10
+last_updated: 2026-11-18
 references:
   - COS-REL-000
   - COS-REL-003
   - COS-REL-008
+  - COS-EAR-018
 ---
 
 # COS-REL-004 — Аналитика и обратная связь Beta 1
@@ -38,6 +39,11 @@ references:
 | `feedback_submit` | Отправка | `feedback_type`, `target_type?`, `has_rating`, `has_comment` | Объём и типы |
 | `return_visit` | Повторная сессия | `days_since_signup` | Удержание; событие зарезервировано, 7-дневный возврат считается по событиям + `User.createdAt` |
 | `cta_click` | Клик по CTA на лендинге/оффере | `cta_id`, `cta_target`, `landing_variant`, `page` | Проверка оффера и лендинга |
+| `matrix_view` | Открытие «Плана»/результата | `profession_slug?`, `grade_code?` | Интерес к матрице |
+| `matrix_start` | Старт самооценки | `profession_slug`, `grade_code` | Вход в сценарий |
+| `matrix_saved` | Сохранение снимка | `profession_slug`, `grade_code`, `requirement_count`, `gap_count?` | Использование матрицы |
+| `matrix_plan_to_study` | Из плана в «Изучаю» | `competency_id`, `grade_code` | Связка плана и изучения |
+| `matrix_reassess` | Переоценка уровня | `profession_slug`, `grade_code` | Возврат к матрице |
 
 Правила:
 - `path` — без query-параметров и email.

@@ -96,6 +96,8 @@
 | `npm run guides:agent` | `node --env-file-if-exists=.env.local --experimental-strip-types src/methodology/v1/guides/cli/pilot.ts` |
 | `npm run guides:audit` | `node --experimental-strip-types src/methodology/v1/guides/cli/audit.ts` |
 | `npm run guides:review` | `node --env-file-if-exists=.env.local --experimental-strip-types src/methodology/v1/guides/cli/review.ts` |
+| `npm run matrix:validate` | `node --experimental-strip-types src/methodology/v1/matrix/cli/validate.ts` |
+| `npm run matrix:report` | `node --experimental-strip-types src/methodology/v1/matrix/cli/validate.ts` |
 
 ## Как пользоваться
 

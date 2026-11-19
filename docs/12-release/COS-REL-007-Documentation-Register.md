@@ -1,10 +1,10 @@
 ---
 id: COS-REL-007
 title: Реестр документации перед Beta 1
-version: 1.5.2
+version: 1.6.0
 status: Draft
 owner: Product Team
-last_updated: 2026-11-13
+last_updated: 2026-11-18
 references:
   - COS-REL-000
   - COS-REL-008
@@ -24,6 +24,9 @@ references:
   - COS-EAR-013
   - COS-EAR-014
   - COS-EAR-015
+  - COS-EAR-017
+  - COS-EAR-018
+  - COS-RES-033
 ---
 
 # COS-REL-007 — Реестр документации перед Beta 1
@@ -56,6 +59,8 @@ references:
 | `docs/04-experience-architecture/COS-EAR-013-Account-Modal-Cabinet-and-Material-States.md` | Спека аккаунт-модалки, кабинета и состояний материалов | Draft-спека (актуальна) | `COS-ARCH-173`, `COS-COM-010`, `COS-REL-009`, `COS-EAR-012` | Design, Web | Дизайн и реализация по решениям §11 спеки; Figma `UfuaPpLJA31DeBSObX5xNJ` | До Beta |
 | `docs/04-experience-architecture/COS-EAR-014-Owner-Console.md` | Спека кабинета владельца: материалы, метрики, email-база | Draft-спека (актуальна) | `COS-ARCH-173`, `COS-REL-004`, `COS-REL-009`, `T-040` | Design, Infra, Web | Предусловие — `T-040`; дизайн-концепт «Аудит приёмки» в Figma | До Beta |
 | `docs/04-experience-architecture/COS-EAR-015-Registration-by-Email.md` | Спека публичной регистрации по email: экраны, согласие, состояния, критерии | Draft-спека (актуальна) | `COS-EAR-012`, `COS-REL-008`, `COS-COM-010`, `COS-LEG-001/002` | Design, Web | Реализация по `COS-EAR-015` и ADR-022; публичное открытие — за gate ADR-004 | До Beta |
+| `docs/09-research/COS-RES-033-Fit-Matrix-and-Design-Core.md` | Fit-матрица компетенций и ядро дизайнера для MVP «План» | Draft-исследование (актуально) | `COS-RES-032`, `COS-EAR-018` | Research, Methodologist | Fit 13 профессий; все 13 матриц и грейдов готовы (волна 1 — цифровые, волна 2 — остальные) | После Beta |
+| `docs/04-experience-architecture/COS-EAR-018-Competency-Matrix-and-Plan.md` | Спека «План»: матрица компетенций, самооценка, связь с «Изучаю» | Draft-спека (актуальна) | `COS-RES-033`, `COS-EAR-017`, `COS-REL-008`, `COS-LEG-001/002` | Design, Web | Реализованы все 13 профессий и редизайн 2.0 (шаги, профессии, грейды, табы, результат); лид-режим, цели и паспорт — следующие слои | После Beta |
 | `docs/02-architecture/COS-ARCH-000-Enterprise-Architecture-Overview.md` | Архитектурный обзор | Уточнить | Foundation, DDD | ADE, Experience | Добавить current-state note: Beta использует JSON-модель + тонкое приложение | До Beta |
 | `docs/02-architecture/COS-ARCH-001-Development-Workflow.md` | Процесс развития | Уточнить | Foundation | Engineering Standard | Разделить архитектурную стадию и Beta release track; последовательность не менять | После Beta |
 | `docs/01-ddd/COS-DDD-SUMMARY-Domain-Driven-Design-Summary.md` | Сводка домена | Уточнить | DDD-001…010 | Model, Architecture | Добавить таблицу текущих объектов Beta (Profession, Competency, LearningSource, Favorite, StudyStatus, Feedback); не вводить новые bounded contexts | После Beta |
@@ -131,5 +136,7 @@ references:
 | 1.1.0 | 2026-10-28 | Синхронизация с актуализацией `04-experience-architecture`: добавлены `COS-EAR-012` и группа `COS-EAR-001…011`; обновлены строки `COS-EAR-002`, `COS-EAR-009` и книги (`COS-EAR-000`); добавлены ссылки на `COS-BP-005` и `COS-BP-007` |
 | 1.2.0 | 2026-11-05 | Добавлены спеки `COS-EAR-013` и `COS-EAR-014`; актуализирован `COS-EAR-012` (дополнение 1.1) |
 | 1.3.0 | 2026-11-05 | Добавлена спека `COS-EAR-015` (публичная регистрация по email) и ссылка на ADR-022 |
+| 1.6.0 | 2026-11-18 | Добавлены `COS-RES-033` (fit-матрица) и `COS-EAR-018` (MVP «План»); обновлены ADR-031, глоссарий, legal |
+| 1.7.0 | 2026-11-19 | Редизайн «Плана»: шаги, профессии с фильтрами, выбор грейда, табы самооценки, новый результат |
 | 1.5.0 | 2026-11-11 | Legal 1.1.0: реквизиты НПД, Resend/Proton, `COS-LEG-005` (РКН), VDS/Resend отчёты |
 | 1.5.1 | 2026-11-12 | Добавлен `COS-COM-011` — промпт-кит ролика (визуальный язык, сценарий, раскадровка, видео-промпты) |

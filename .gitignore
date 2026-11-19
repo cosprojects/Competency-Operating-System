@@ -91,3 +91,7 @@ release/publications/
 # npm cache для песочницы
 .npm-cache/
 data/guides/
+# Локальные исходники экспорта Figma (используются только для регенерации)
+apps/web/src/assets/content/
+# Артефакты визуальной сверки figma:compare (генерируются)
+scripts/web/figma-parity/compare/

@@ -1,7 +1,7 @@
 ---
 id: COS-005
 title: Domain Glossary
-version: 1.0.0
+version: 1.1.0
 status: Draft
 owner: Product Team
 
@@ -217,6 +217,45 @@ A gap is recorded as `insufficient` only after the search-round limit is exhaust
 
 ---
 
+
+## Competency Level
+
+A 0–4 self-assessment scale for a competency: 0 — no command, 1 — awareness, 2 — skill, 3 — expertise, 4 — leadership.
+
+A level describes the ability to solve tasks, not a person's value, intelligence or personality. In the MVP it is a self-assessment, not a verified assessment.
+
+---
+
+## Grade Profile
+
+A profession-scoped set of requirements: which competencies are required, at what target level, and what scope of responsibility the grade implies.
+
+The grade structure is shared, but requirements, target levels and names are defined per profession. A grade is a reference point, not a formal employer grade or a promotion promise.
+
+---
+
+## Competency Matrix
+
+A snapshot of a person's self-assessed levels against a grade profile: strengths, gaps and next steps.
+
+A matrix is not a diagnostic passport and does not confirm a level.
+
+---
+
+## Fit
+
+The applicability of a competency to a profession: `core`, `recommended`, `specific`, `optional` or `none`.
+
+Fit prevents product/interface competencies from being mechanically copied to 3D, interior, motion, game and other design professions.
+
+---
+
+## Self-Assessment
+
+A person's own mark of a level against observable criteria. It is planning input, not an attestation, and does not automatically change from learning marks.
+
+---
+
 # 🇷🇺 Русский
 
 ## Развитие (Development)
@@ -410,6 +449,45 @@ LLM-пасс, который ранжирует найденный матери�
 Целевое число учебных материалов на компетенцию и формат: минимум 2, цель 3 (foundation — 5), максимум 5.
 
 Пробел фиксируется как `insufficient` только после исчерпания лимита раундов поиска, а не молча.
+
+---
+
+
+## Уровень компетенции (Competency Level)
+
+Шкала самооценки 0–4: 0 — не владею, 1 — осведомлённость, 2 — умение, 3 — экспертиза, 4 — лидерство.
+
+Уровень описывает способность решать задачи, а не ценность человека, интеллект или личность. В MVP это самооценка, а не подтверждённая оценка.
+
+---
+
+## Профиль грейда (Grade Profile)
+
+Набор требований профессии: какие компетенции нужны, на каком целевом уровне и какой объём ответственности предполагает грейд.
+
+Структура грейдов общая, но требования, целевые уровни и названия задаются профессией. Грейд — ориентир, а не формальный грейд работодателя и не обещание повышения.
+
+---
+
+## Матрица компетенций (Competency Matrix)
+
+Снимок самооценки уровней относительно профиля грейда: сильные стороны, разрывы и следующие шаги.
+
+Матрица не является диагностическим паспортом и не подтверждает уровень.
+
+---
+
+## Fit (применимость)
+
+Применимость компетенции к профессии: `core`, `recommended`, `specific`, `optional` или `none`.
+
+Fit не даёт механически переносить продуктовые и интерфейсные компетенции на 3D, интерьер, motion, game и другие дизайнерские профессии.
+
+---
+
+## Самооценка (Self-Assessment)
+
+Собственная отметка уровня по наблюдаемым критериям. Это вход для планирования, а не аттестация; она не меняется автоматически от отметок изучения.
 
 ---
 

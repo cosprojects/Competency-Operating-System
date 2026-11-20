@@ -300,12 +300,22 @@ export function IconEye({ className }: { className?: string }) {
   );
 }
 
+/** Linear / Essentional, UI / Question Square — «Зачем это?» в рейле (Figma 2:3305). */
 export function IconQuestion({ className }: { className?: string }) {
   return (
-    <svg className={className} width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <circle cx="12" cy="12" r="9" />
-      <path d="M9.6 9.2a2.5 2.5 0 1 1 3.8 2.2c-.9.6-1.4 1.1-1.4 2.1" />
-      <path d="M12 17h.01" />
+    <svg className={className} viewBox="0 0 48 48" fill="none" aria-hidden="true">
+      <path
+        d="M24 44C14.5719 44 9.85786 44 6.92893 41.0711C4 38.1421 4 33.4281 4 24C4 14.5719 4 9.85786 6.92893 6.92893C9.85786 4 14.5719 4 24 4C33.4281 4 38.1421 4 41.0711 6.92893C44 9.85786 44 14.5719 44 24C44 33.4281 44 38.1421 41.0711 41.0711C38.1421 44 33.4281 44 24 44Z"
+        stroke="currentColor"
+        strokeWidth="3"
+      />
+      <path
+        d="M20.25 17.75C20.25 15.6789 21.9289 14 24 14C26.0711 14 27.75 15.6789 27.75 17.75C27.75 19.1249 27.0101 20.327 25.9067 20.9798C24.9561 21.5422 24 22.3954 24 23.5V26"
+        stroke="currentColor"
+        strokeWidth="3"
+        strokeLinecap="round"
+      />
+      <circle cx="24" cy="32" r="2" fill="currentColor" />
     </svg>
   );
 }
@@ -485,6 +495,26 @@ export function IconAcademicCapOutline({ className }: { className?: string }) {
         strokeWidth="1.5"
         strokeLinecap="round"
         stroke="currentColor"
+      />
+    </svg>
+  );
+}
+
+/** Linear / Business, Statistic / Graph Up — раздел «План» в рейле (Figma 2:4822). */
+export function IconGraphUp({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 48 48" fill="none" aria-hidden="true">
+      <path
+        d="M24 44C14.5719 44 9.85786 44 6.92893 41.0711C4 38.1421 4 33.4281 4 24C4 14.5719 4 9.85786 6.92893 6.92893C9.85786 4 14.5719 4 24 4C33.4281 4 38.1421 4 41.0711 6.92893C44 9.85786 44 14.5719 44 24C44 33.4281 44 38.1421 41.0711 41.0711C38.1421 44 33.4281 44 24 44Z"
+        stroke="currentColor"
+        strokeWidth="3"
+      />
+      <path
+        d="M14 28L18.5858 23.4142C19.3668 22.6332 20.6332 22.6332 21.4142 23.4142L24.5858 26.5858C25.3668 27.3668 26.6332 27.3668 27.4142 26.5858L34 20M29 20H34V25"
+        stroke="currentColor"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

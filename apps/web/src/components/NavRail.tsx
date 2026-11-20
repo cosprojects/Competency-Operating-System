@@ -9,7 +9,7 @@ import {
   IconChart,
   IconHome,
   IconGraduation,
-  IconPlan,
+  IconGraphUp,
   IconHomeAdd,
   IconPlaster,
   IconQuestion,
@@ -37,7 +37,7 @@ const ITEMS = [
   {
     href: "/plan",
     label: "План",
-    icon: IconPlan,
+    icon: IconGraphUp,
     match: (pathname: string) => pathname === "/plan" || pathname.startsWith("/plan/"),
   },
 ];
@@ -132,15 +132,48 @@ export function NavRail({ user }: { user: ShellUser | null }) {
   // не заходит на подвал, а сжимается по высоте.
   useEffect(() => {
     const rail = railRef.current;
-    // Футер ищем один раз на маршрут: querySelector на каждом кадре скролла —
-    // лишняя работа, а чтение scrollHeight после записи CSS-переменной давало
-    // принудительный layout на каждый кадр.
     const footer = document.querySelector<HTMLElement>(".site-footer");
     let frame = 0;
-    // Смещение меняется на каждом пикселе скролла, но переписывать переменную
-    // (и тем самым дёргать раскладку закреплённого рейла) стоит только когда
-    // оно реально изменилось.
     let lastOffset = -1;
+
+    // Высота, нужная рейлу в обычной плотности. Меряем один раз, сняв
+    // .is-compact: сам класс меняет padding и gap, поэтому сравнение
+    // scrollHeight > clientHeight создавало обратную связь — у футера рейл
+    // сжимался, контент влезал, класс снимался, контент снова не влезал и так
+    // по кадру (бесконечное дёрганье). Фиксированный порог петли не даёт.
+    const measureRequiredHeight = (): number => {
+      if (!rail) return 0;
+      const wasCompact = rail.classList.contains("is-compact");
+      rail.classList.remove("is-compact");
+      const railStyles = window.getComputedStyle(rail);
+      const px = (value: string) => Number.parseFloat(value) || 0;
+      const children = Array.from(rail.children).filter(
+        (child): child is HTMLElement =>
+          child instanceof HTMLElement && window.getComputedStyle(child).position !== "absolute",
+      );
+      const content = children.reduce(
+        (sum, child) => sum + child.getBoundingClientRect().height,
+        0,
+      );
+      const required =
+        content +
+        px(railStyles.rowGap) * Math.max(0, children.length - 1) +
+        px(railStyles.paddingTop) +
+        px(railStyles.paddingBottom) +
+        px(railStyles.borderTopWidth) +
+        px(railStyles.borderBottomWidth);
+      if (wasCompact) rail.classList.add("is-compact");
+      return required;
+    };
+
+    let requiredHeight = measureRequiredHeight();
+
+    // clientHeight рейла задаётся top/bottom и от плотности не зависит,
+    // поэтому решение принимается по стабильному порогу, без мигания класса.
+    const updateCompact = () => {
+      if (!rail || requiredHeight <= 0) return;
+      rail.classList.toggle("is-compact", rail.clientHeight < requiredHeight);
+    };
 
     const updateOffset = () => {
       frame = 0;
@@ -152,39 +185,42 @@ export function NavRail({ user }: { user: ShellUser | null }) {
       if (offset === lastOffset) return;
       lastOffset = offset;
       document.documentElement.style.setProperty("--rail-bottom-offset", `${offset}px`);
-    };
-
-    const updateCompact = () => {
-      if (!rail) return;
-      rail.classList.toggle("is-compact", rail.scrollHeight > rail.clientHeight + 1);
+      updateCompact();
     };
 
     const schedule = () => {
       if (!frame) frame = window.requestAnimationFrame(updateOffset);
     };
 
+    const onResize = () => {
+      requiredHeight = measureRequiredHeight();
+      updateCompact();
+      schedule();
+    };
+
     updateOffset();
     updateCompact();
     window.addEventListener("scroll", schedule, { passive: true });
-    window.addEventListener("resize", schedule);
+    window.addEventListener("resize", onResize);
 
-    // Сжатие рейла зависит от высоты контента, а не от прокрутки: наблюдаем
-    // за размерами вместо чтения scrollHeight в каждом кадре скролла.
-    const observer = new ResizeObserver(updateCompact);
-    if (rail) {
-      observer.observe(rail);
-      for (const child of Array.from(rail.children)) observer.observe(child);
-    }
+    // Шрифт и логотип догружаются после гидрации — порог пересчитываем.
+    let cancelled = false;
+    void document.fonts?.ready?.then(() => {
+      if (cancelled) return;
+      requiredHeight = measureRequiredHeight();
+      updateCompact();
+    });
 
     return () => {
+      cancelled = true;
       window.removeEventListener("scroll", schedule);
-      window.removeEventListener("resize", schedule);
+      window.removeEventListener("resize", onResize);
       if (frame) window.cancelAnimationFrame(frame);
-      observer.disconnect();
       document.documentElement.style.removeProperty("--rail-bottom-offset");
       railRef.current?.classList.remove("is-compact");
     };
   }, [pathname]);
+
 
   return (
     <aside
@@ -199,14 +235,10 @@ export function NavRail({ user }: { user: ShellUser | null }) {
       <div className="rail-hover-pill" ref={hoverPillRef} aria-hidden="true" />
       <div className="rail-top">
         <Link className="rail-brand" href="/" aria-label="AXIONA — на главную">
+          {/* Развёрнутый рейл — новый лого-лок: знак + вордмарк одним фреймом (Brand.svg).
+              Свёрнутый — только знак: отдельный ассет того же знака 34×32. */}
+          <img className="brand-lockup" src="/brand/Brand.svg" alt="" width={148} height={31} />
           <img className="brand-mark" src="/brand/logo-mark.svg" alt="" width={34} height={32} />
-          <img
-            className="brand-wordmark"
-            src="/brand/logo-wordmark.svg"
-            alt="AXIONA"
-            width={107}
-            height={18}
-          />
         </Link>
 
         <nav className="rail-menu">
@@ -253,9 +285,9 @@ export function NavRail({ user }: { user: ShellUser | null }) {
           <span className="rail-label">Зачем это?</span>
         </button>
 
-        <Link className="rail-item" href="/feedback" title="Ваш фидбек">
+        <Link className="rail-item" href="/feedback" title="Обратная связь">
           <IconPlaster />
-          <span className="rail-label">Ваш фидбек</span>
+          <span className="rail-label">Обратная связь</span>
         </Link>
 
         {user ? (

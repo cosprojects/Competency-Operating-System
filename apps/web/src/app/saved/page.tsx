@@ -3,6 +3,7 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { IconSearch } from "@/components/icons";
 import { redirect } from "next/navigation";
 import { LearningCard } from "@/components/saved/LearningCard";
+import { CompetencyCard } from "@/components/saved/CompetencyCard";
 import type { LearningCardData, LearningItemData } from "@/components/saved/LearningCard";
 import { ProfessionTile } from "@/components/ProfessionTile";
 import type { SearchProfession } from "@/components/ProfessionTile";
@@ -201,6 +202,28 @@ export default async function SavedPage({
   };
 
   const emptyCompetencies = activeVisible.length === 0 && learnedVisible.length === 0;
+
+  const latestCompetencies: Array<{
+    id: string; title: string; definition: string; tierLabel: string;
+    tierClass: "foundation" | "core" | "optional"; professionSlug: string; meta: string;
+  }> = [];
+  for (const profession of [...getProfessions()].sort((a, b) => (b.updatedAt ?? "").localeCompare(a.updatedAt ?? ""))) {
+    for (const competency of profession.sections.flatMap((section) => section.competencies)) {
+      if (latestCompetencies.length >= 9) break;
+      const items = [...competency.knowledge, ...competency.skills];
+      latestCompetencies.push({
+        id: competency.id,
+        title: competency.title,
+        definition: competency.definition,
+        tierLabel: tierLabel(competency.tier),
+        tierClass: competency.tier,
+        professionSlug: profession.slug,
+        meta: `${competency.knowledge.length} знания · ${competency.skills.length} навыков · ${competency.sources.length} материалов`,
+      });
+      void items;
+    }
+    if (latestCompetencies.length >= 9) break;
+  }
   const emptyProfessions = professionGroups.length === 0;
 
   return (
@@ -260,16 +283,29 @@ export default async function SavedPage({
 
       {activeTab === "competencies" ? (
         emptyCompetencies ? (
-          <div className="empty">
-            <h2>{query ? "Ничего не найдено" : "Пока пусто"}</h2>
-            <p>
-              {query
-                ? "Проверьте запрос или сохраните новые компетенции."
-                : "Откройте профессию, сохраните компетенцию и отметьте знания и навыки — они появятся здесь."}
-            </p>
-            <Link className="button" href="/professions">
-              Выбрать направление
-            </Link>
+          <div className="studying-empty-wrap">
+            <div className="studying-empty">
+              <h2>{query ? "Ничего не найдено" : "Пока пусто"}</h2>
+              <p>
+                {query
+                  ? "Проверьте запрос или сохраните новые компетенции."
+                  : "Откройте профессию, сохраните компетенцию и отметьте знания и навыки — они появятся здесь."}
+              </p>
+              <Link className="button studying-empty-cta" href="/professions">
+                Выбрать направление <span aria-hidden="true">→</span>
+              </Link>
+            </div>
+
+            {!query ? (
+              <section className="studying-new">
+                <h2>Новые компетенции в системе</h2>
+                <div className="studying-new-grid">
+                  {latestCompetencies.map((item) => (
+                    <CompetencyCard item={item} key={item.id} />
+                  ))}
+                </div>
+              </section>
+            ) : null}
           </div>
         ) : (
           <>

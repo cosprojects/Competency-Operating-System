@@ -50,7 +50,7 @@ export function AppShell({
           {isPlain ? (
             <div className="page-plain">{children}</div>
           ) : isSaved || isPlan ? (
-            <div className="studying-page">{children}</div>
+            <div className={`studying-page${isSaved ? " studying-page--saved" : ""}${isPlanHome ? " studying-page--plan-home" : ""}`}>{children}</div>
           ) : isWorkspace ? (
             <div className="workspace-page">
               <div className="workspace-glass">{children}</div>

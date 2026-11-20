@@ -24,9 +24,9 @@ const BUTTON_SELECTOR = [
   ".studying-tab",
   ".learning-profession-card .icon-button",
   ".profession-tile",
+  ".competency-card",
   ".home2-plan-banner",
   ".plan-matrix-card",
-  ".plan-matrix-card-result",
 ].join(",");
 
 /** Тон подсветки по фактическому фону кнопки: на светлой — мягкий индиго. */

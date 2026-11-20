@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { StepCard } from "@/components/ui/StepCard";
 import { ProfessionTile } from "@/components/ProfessionTile";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { MatrixCard } from "@/components/plan/MatrixCard";
@@ -95,10 +96,7 @@ export default async function PlanPage() {
 
         <section className="plan-steps" aria-label="Как это работает">
           {STEPS.map(([title, text]) => (
-            <article className="plan-step" key={title}>
-              <h2>{title}</h2>
-              <p>{text}</p>
-            </article>
+            <StepCard key={title} title={title ?? ""} text={text ?? ""} />
           ))}
         </section>
 

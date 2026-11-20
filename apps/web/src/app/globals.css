@@ -434,7 +434,7 @@ svg {
   padding: 34px 22px;
   border: 1px dashed #cbd5e1;
   border-radius: var(--r-16);
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--glass-bg);
   color: var(--muted);
   text-align: center;
 }
@@ -605,9 +605,9 @@ svg {
   padding: 20px 2px;
   border: 1px solid #fff;
   border-radius: var(--r-12);
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
   overflow-y: auto;
   overscroll-behavior: contain;
 }
@@ -852,9 +852,9 @@ svg {
   gap: 16px;
   padding: 23px;
   border-radius: var(--r-12);
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
 }
 
 .hero-panel h2 {
@@ -1299,7 +1299,7 @@ svg {
   min-height: 215px;
   border: 1px solid var(--line);
   border-radius: var(--r-16);
-  background: rgba(255, 255, 255, 0.5);
+  background: var(--glass-bg);
 }
 
 /* ------------------------------------------------------------------ */
@@ -2416,7 +2416,7 @@ html[data-consent="pending"] .canvas-toolbar {
   padding: 3px 9px;
   border: 1px solid rgba(79, 70, 229, 0.28);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.88);
+  background: var(--glass-bg);
   color: var(--accent);
   font: inherit;
   font-size: 11px;
@@ -2546,8 +2546,8 @@ html[data-consent="pending"] .canvas-toolbar {
   justify-content: center;
   padding: 40px;
   background: rgba(248, 250, 252, 0.78);
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
   overflow-y: auto;
 }
 
@@ -2559,9 +2559,9 @@ html[data-consent="pending"] .canvas-toolbar {
   width: min(100%, 728px);
   padding: 32px;
   border-radius: var(--r-16);
-  background: rgba(255, 255, 255, 0.82);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
   box-shadow: 0 40px 120px rgba(15, 23, 42, 0.18);
 }
 
@@ -2660,9 +2660,9 @@ html[data-consent="pending"] .canvas-toolbar {
   margin-inline: auto;
   padding: 32px;
   border-radius: var(--r-24);
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
 }
 
 .page-surface > :last-child {
@@ -3136,7 +3136,7 @@ html[data-consent="pending"] .canvas-toolbar {
     height: 62vh;
     min-height: 420px;
     border-radius: var(--r-24);
-    background: rgba(255, 255, 255, 0.55);
+    background: var(--glass-bg);
   }
 
   .detail-rail {
@@ -3268,7 +3268,7 @@ html[data-consent="pending"] .canvas-toolbar {
     height: 70vh;
     min-height: 480px;
     border-radius: var(--r-24);
-    background: rgba(255, 255, 255, 0.55);
+    background: var(--glass-bg);
   }
 
   .canvas-search {
@@ -4441,11 +4441,11 @@ html[data-consent="pending"] .canvas-toolbar {
 .material-pill {
   padding: 6px 12px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.92);
+  background: var(--glass-bg);
   color: var(--ink);
   font-size: 13px;
   font-weight: 500;
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(var(--glass-blur));
 }
 
 .material-badge-slot {
@@ -4460,9 +4460,9 @@ html[data-consent="pending"] .canvas-toolbar {
   width: 36px;
   height: 36px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.92);
+  background: var(--glass-bg);
   color: #4b5563;
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(var(--glass-blur));
 }
 
 .material-badge-slot .icon-button svg {
@@ -4480,7 +4480,7 @@ html[data-consent="pending"] .canvas-toolbar {
   padding: 7px 14px;
   border: 0;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--glass-bg);
   color: var(--accent);
   font-size: 12px;
   font-weight: 700;
@@ -4496,7 +4496,7 @@ html[data-consent="pending"] .canvas-toolbar {
   width: 36px;
   height: 36px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.92);
+  background: var(--glass-bg);
   color: var(--ink);
 }
 
@@ -5063,7 +5063,7 @@ button.rail-item {
   padding: 0;
   border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.86);
+  background: var(--glass-bg);
   box-shadow: 0 12px 24px rgba(19, 34, 56, 0.08);
   color: #4f46e5;
   cursor: pointer;
@@ -5288,9 +5288,9 @@ button.rail-item {
   padding: 12px 14px;
   border: 1px solid #e2e8f0;
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.86);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
   color: #1f2937;
   font-size: 13px;
   font-weight: 600;
@@ -5364,10 +5364,10 @@ button.rail-item {
   padding: 0 20px;
   border: 1px solid rgba(255, 255, 255, 0.75);
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.55);
+  background: var(--glass-bg);
   box-shadow: 0 12px 28px rgba(19, 34, 56, 0.06);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
 }
 
 .account-row-label {
@@ -5402,7 +5402,7 @@ button.rail-item {
   height: 40px;
   border: 1px solid rgba(255, 255, 255, 0.75);
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.72);
+  background: var(--glass-bg);
   box-shadow: 0 12px 24px rgba(19, 34, 56, 0.08);
   font-size: 15px;
   font-weight: 600;
@@ -5501,7 +5501,7 @@ button.rail-item {
    композитора — это главный источник рывков при прокрутке. Плотный фон
    визуально почти не отличается от frosted-стекла на светлой бумаге. */
 .nav-rail {
-  background: rgba(255, 255, 255, 0.94);
+  background: var(--glass-bg);
   box-shadow: 0 24px 60px rgba(19, 34, 56, 0.06);
 }
 
@@ -5541,7 +5541,7 @@ button.rail-item {
   height: 40px;
   border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.86);
+  background: var(--glass-bg);
   box-shadow: 0 12px 24px rgba(19, 34, 56, 0.08);
 }
 
@@ -5695,8 +5695,8 @@ button.rail-item {
   border-radius: 24px;
   background: #ffffff;
   box-shadow: 0 24px 48px rgba(19, 34, 56, 0.18);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
 }
 
 .toast-title {
@@ -9213,7 +9213,7 @@ button.rail-item {
   padding: 0 20px;
   border: 1px solid #e2e8f0;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.4);
+  background: var(--glass-bg);
   box-shadow: none;
   color: #0f172a;
   font-size: 15px;
@@ -9866,8 +9866,8 @@ body:has(.studying-page) .paper-layer {
 }
 
 .material-card.is-compact .material-cta {
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  backdrop-filter: blur(var(--glass-blur));
 }
 
 /* Ховер карточек материалов и профессий + никакого подчёркивания в кнопках */
@@ -9885,7 +9885,7 @@ body:has(.studying-page) .paper-layer {
 
 /* CTA материалов: при наведении подложка светлее и заметнее блюр */
 .material-card.is-compact .material-cta:hover {
-  background: rgba(255, 255, 255, 0.82);
+  background: var(--glass-bg);
   border-color: #dbe3ef;
   box-shadow: 0 8px 20px rgba(19, 34, 56, 0.08);
 }
@@ -10444,7 +10444,7 @@ body:has(.studying-page) .paper-layer {
   padding: 30px;
   border: 1px solid var(--line-soft);
   border-radius: var(--r-24);
-  background: rgba(255, 255, 255, 0.72);
+  background: var(--glass-bg);
 }
 
 .plan-hero h1,
@@ -12052,18 +12052,18 @@ a.plan-stepper-link:hover {
 /* Главная 2026-11-19: лавандовый фон, видео справа-сверху, blur-плашки*/
 /* ------------------------------------------------------------------ */
 
-.home2 {
-  --home2-bg: #eae2f8;
-  --home2-panel: rgba(255, 255, 255, 0.72);
-  --home2-ink: #132238;
-  --home2-muted: #5f6f85;
-  --home2-accent: #4f46e5;
-  --home2-accent-dark: #3730a3;
+.home-page {
+  --home-page-bg: #eae2f8;
+  --home-page-panel: rgba(255, 255, 255, 0.72);
+  --home-page-ink: #132238;
+  --home-page-muted: #5f6f85;
+  --home-page-accent: #4f46e5;
+  --home-page-accent-dark: #3730a3;
   min-height: 100vh;
-  background: var(--home2-bg);
+  background: var(--home-page-bg);
 }
 
-.home2-hero {
+.home-page-hero {
   position: relative;
   width: 100%;
   height: 475px;
@@ -12071,7 +12071,7 @@ a.plan-stepper-link:hover {
   background: #ebe3f6;
 }
 
-.home2-hero-video {
+.home-page-hero-video {
   position: absolute;
   top: 0;
   right: -82px;
@@ -12082,7 +12082,7 @@ a.plan-stepper-link:hover {
   pointer-events: none;
 }
 
-.home2-hero-inner {
+.home-page-hero-inner {
   position: relative;
   z-index: 1;
   max-width: 1512px;
@@ -12090,43 +12090,43 @@ a.plan-stepper-link:hover {
   padding: 0 40px 0 300px;
 }
 
-.home2-hero-copy {
+.home-page-hero-copy {
   width: 570px;
   padding-top: 65px;
 }
 
-.home2-hero-copy .eyebrow {
+.home-page-hero-copy .eyebrow {
   margin: 0 0 8px;
-  color: var(--home2-accent);
+  color: var(--home-page-accent);
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
-.home2-hero-copy h1 {
+.home-page-hero-copy h1 {
   margin: 0 0 16px;
-  color: var(--home2-ink);
+  color: var(--home-page-ink);
   font-size: 40px;
   font-weight: 700;
   line-height: 44px;
   letter-spacing: -0.02em;
 }
 
-.home2-lead {
+.home-page-lead {
   margin: 0 0 24px;
-  color: var(--home2-muted);
+  color: var(--home-page-muted);
   font-size: 16px;
   line-height: 22px;
 }
 
-.home2-hero-actions {
+.home-page-hero-actions {
   display: flex;
   gap: 16px;
   align-items: center;
 }
 
-.home2-hero-actions .button {
+.home-page-hero-actions .button {
   min-height: 48px;
   padding: 12px 20px;
   border-radius: 12px;
@@ -12134,14 +12134,14 @@ a.plan-stepper-link:hover {
   font-weight: 700;
 }
 
-.home2-hero-secondary {
+.home-page-hero-secondary {
   border: 1px solid rgba(79, 70, 229, 0.2);
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(20px);
-  color: var(--home2-ink);
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  color: var(--home-page-ink);
 }
 
-.home2-shell {
+.home-page-shell {
   display: grid;
   grid-template-columns: minmax(0, 770px) 350px;
   gap: 41px;
@@ -12150,88 +12150,88 @@ a.plan-stepper-link:hover {
   padding: 0 40px 80px 300px;
 }
 
-.home2-main {
+.home-page-main {
   margin-top: -26px;
   display: flex;
   flex-direction: column;
   gap: 40px;
 }
 
-.home2-intro h2,
-.home2-latest h2,
-.home2-roadmap h2 {
+.home-page-intro h2,
+.home-page-latest h2,
+.home-page-roadmap h2 {
   margin: 0;
-  color: var(--home2-ink);
+  color: var(--home-page-ink);
   font-size: 34px;
   font-weight: 700;
   line-height: 38px;
   letter-spacing: -0.02em;
 }
 
-.home2-intro {
+.home-page-intro {
   display: flex;
   flex-direction: column;
   gap: 18px;
 }
 
-.home2-start {
+.home-page-start {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
 }
 
-.home2-start-card {
+.home-page-start-card {
   padding: 20px;
   min-height: 167px;
   border-radius: 12px;
-  background: var(--home2-panel);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  background: var(--home-page-panel);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
   box-shadow: 0 12px 30px rgba(19, 34, 56, 0.06);
 }
 
-.home2-start-card h3 {
+.home-page-start-card h3 {
   margin: 0 0 10px;
-  color: var(--home2-ink);
+  color: var(--home-page-ink);
   font-size: 18px;
   font-weight: 600;
   line-height: 22px;
 }
 
-.home2-start-card p {
+.home-page-start-card p {
   margin: 0;
-  color: var(--home2-muted);
+  color: var(--home-page-muted);
   font-size: 14px;
   line-height: 20px;
 }
 
-.home2-latest {
+.home-page-latest {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.home2-latest-grid {
+.home-page-latest-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
 }
 
-.home2-profession-card {
+.home-page-profession-card {
   display: flex;
   flex-direction: column;
   gap: 8px;
   padding: 20px;
   border-radius: 12px;
-  background: var(--home2-panel);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  background: var(--home-page-panel);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
   box-shadow: 0 12px 30px rgba(19, 34, 56, 0.06);
   color: inherit;
   text-decoration: none;
 }
 
-.home2-card-badge {
+.home-page-card-badge {
   align-self: flex-start;
   padding: 4px 8px;
   border-radius: 999px;
@@ -12241,37 +12241,37 @@ a.plan-stepper-link:hover {
   text-transform: uppercase;
 }
 
-.home2-card-count {
+.home-page-card-count {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: var(--home2-muted);
+  color: var(--home-page-muted);
   font-size: 12px;
 }
 
-.home2-card-count svg {
+.home-page-card-count svg {
   width: 20px;
   height: 20px;
   margin-left: auto;
-  color: var(--home2-ink);
+  color: var(--home-page-ink);
 }
 
-.home2-profession-card h3 {
+.home-page-profession-card h3 {
   margin: 0;
-  color: var(--home2-accent-dark);
+  color: var(--home-page-accent-dark);
   font-size: 24px;
   font-weight: 700;
   line-height: 28px;
 }
 
-.home2-profession-card p {
+.home-page-profession-card p {
   margin: 0;
-  color: var(--home2-muted);
+  color: var(--home-page-muted);
   font-size: 14px;
   line-height: 20px;
 }
 
-.home2-plan-banner {
+.home-page-plan-banner {
   position: relative;
   display: flex;
   align-items: center;
@@ -12286,7 +12286,7 @@ a.plan-stepper-link:hover {
   box-shadow: 0 12px 30px rgba(19, 34, 56, 0.06);
 }
 
-.home2-plan-wave {
+.home-page-plan-wave {
   position: absolute;
   left: 0;
   top: -24px;
@@ -12297,7 +12297,7 @@ a.plan-stepper-link:hover {
   pointer-events: none;
 }
 
-.home2-plan-image {
+.home-page-plan-image {
   position: relative;
   width: 202px;
   height: 100px;
@@ -12305,7 +12305,7 @@ a.plan-stepper-link:hover {
   margin-left: -8px;
 }
 
-.home2-plan-text {
+.home-page-plan-text {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -12313,31 +12313,31 @@ a.plan-stepper-link:hover {
   flex: 1;
 }
 
-.home2-plan-text strong {
-  color: var(--home2-ink);
+.home-page-plan-text strong {
+  color: var(--home-page-ink);
   font-size: 20px;
   font-weight: 700;
   line-height: 26px;
 }
 
-.home2-plan-text span {
-  color: var(--home2-accent-dark);
+.home-page-plan-text span {
+  color: var(--home-page-accent-dark);
   font-size: 15px;
   line-height: 24px;
 }
 
-.home2-plan-button {
+.home-page-plan-button {
   position: relative;
   flex: 0 0 auto;
   padding: 16px;
   border-radius: 12px;
   background: #f8fafc;
-  color: var(--home2-ink);
+  color: var(--home-page-ink);
   font-size: 14px;
   font-weight: 600;
 }
 
-.home2-notice {
+.home-page-notice {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -12347,14 +12347,14 @@ a.plan-stepper-link:hover {
   background: #eff6ff;
 }
 
-.home2-notice-title {
+.home-page-notice-title {
   margin: 0;
   color: #4338ca;
   font-size: 16px;
   font-weight: 600;
 }
 
-.home2-notice-text {
+.home-page-notice-text {
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -12363,50 +12363,50 @@ a.plan-stepper-link:hover {
   line-height: 24px;
 }
 
-.home2-notice-text p {
+.home-page-notice-text p {
   margin: 0;
 }
 
-.home2-notice-button {
+.home-page-notice-button {
   min-height: 44px;
   padding: 10px 18px;
   border-radius: 12px;
   background: #fff;
-  color: var(--home2-ink);
+  color: var(--home-page-ink);
 }
 
-.home2-roadmap {
+.home-page-roadmap {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.home2-subtitle {
+.home-page-subtitle {
   margin: 0;
-  color: var(--home2-muted);
+  color: var(--home-page-muted);
   font-size: 16px;
   line-height: 20px;
 }
 
-.home2-timeline {
+.home-page-timeline {
   margin-top: 12px;
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-.home2-stage {
+.home-page-stage {
   display: flex;
   gap: 16px;
   padding: 20px;
   border-radius: 12px;
-  background: var(--home2-panel);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  background: var(--home-page-panel);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
   box-shadow: 0 12px 30px rgba(19, 34, 56, 0.06);
 }
 
-.home2-stage-icon {
+.home-page-stage-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -12415,91 +12415,91 @@ a.plan-stepper-link:hover {
   height: 32px;
   border-radius: 50%;
   background: #fff;
-  color: var(--home2-accent);
+  color: var(--home-page-accent);
 }
 
-.home2-stage-icon svg {
+.home-page-stage-icon svg {
   width: 18px;
   height: 18px;
 }
 
-.home2-stage-body {
+.home-page-stage-body {
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
 
-.home2-stage-label {
+.home-page-stage-label {
   margin: 0;
-  color: var(--home2-accent);
+  color: var(--home-page-accent);
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
-.home2-stage-title {
+.home-page-stage-title {
   margin: 0;
-  color: var(--home2-ink);
+  color: var(--home-page-ink);
   font-size: 16px;
   font-weight: 700;
   line-height: 21px;
 }
 
-.home2-stage-desc {
+.home-page-stage-desc {
   margin: 0;
-  color: var(--home2-muted);
+  color: var(--home-page-muted);
   font-size: 14px;
   line-height: 20px;
 }
 
-.home2-aside {
+.home-page-aside {
   margin-top: 30px;
   display: flex;
   flex-direction: column;
   gap: 32px;
 }
 
-.home2-panel {
+.home-page-panel {
   padding: 24px;
   border-radius: 12px;
-  background: var(--home2-panel);
-  backdrop-filter: blur(40px);
-  -webkit-backdrop-filter: blur(40px);
+  background: var(--home-page-panel);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
   box-shadow: 0 12px 30px rgba(19, 34, 56, 0.06);
 }
 
-.home2-panel h2 {
+.home-page-panel h2 {
   display: flex;
   align-items: center;
   gap: 10px;
   margin: 0 0 10px;
-  color: var(--home2-ink);
+  color: var(--home-page-ink);
   font-size: 18px;
   font-weight: 700;
   line-height: 24px;
 }
 
-.home2-panel h2 svg {
+.home-page-panel h2 svg {
   width: 20px;
   height: 20px;
-  color: var(--home2-accent);
+  color: var(--home-page-accent);
 }
 
-.home2-about p {
+.home-page-about p {
   margin: 0;
-  color: var(--home2-muted);
+  color: var(--home-page-muted);
   font-size: 14px;
   line-height: 21px;
 }
 
-.home2-log {
+.home-page-log {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-.home2-log-list {
+.home-page-log-list {
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -12507,100 +12507,100 @@ a.plan-stepper-link:hover {
   overflow: auto;
 }
 
-.home2-log-item {
+.home-page-log-item {
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
 
-.home2-log-date {
-  color: var(--home2-muted);
+.home-page-log-date {
+  color: var(--home-page-muted);
   font-size: 12px;
 }
 
-.home2-log-title {
+.home-page-log-title {
   margin: 0;
-  color: var(--home2-ink);
+  color: var(--home-page-ink);
   font-size: 14px;
   font-weight: 700;
   line-height: 18px;
 }
 
-.home2-log-desc {
+.home-page-log-desc {
   margin: 0;
-  color: var(--home2-muted);
+  color: var(--home-page-muted);
   font-size: 12px;
   line-height: 17px;
 }
 
 @media (max-width: 1080px) {
-  .home2-hero-inner {
+  .home-page-hero-inner {
     padding: 0 24px 0 120px;
   }
 
-  .home2-shell {
+  .home-page-shell {
     grid-template-columns: minmax(0, 1fr);
     padding: 0 24px 64px 120px;
   }
 
-  .home2-aside {
+  .home-page-aside {
     margin-top: 0;
   }
 }
 
 @media (max-width: 760px) {
-  .home2-hero {
+  .home-page-hero {
     height: auto;
     min-height: 460px;
   }
 
-  .home2-hero-video {
+  .home-page-hero-video {
     right: -160px;
     width: 620px;
     opacity: 0.55;
   }
 
-  .home2-hero-inner,
-  .home2-shell {
+  .home-page-hero-inner,
+  .home-page-shell {
     padding-left: 16px;
     padding-right: 16px;
   }
 
-  .home2-hero-copy {
+  .home-page-hero-copy {
     width: 100%;
     padding-top: 40px;
   }
 
-  .home2-hero-copy h1 {
+  .home-page-hero-copy h1 {
     font-size: 32px;
     line-height: 36px;
   }
 
-  .home2-start,
-  .home2-latest-grid {
+  .home-page-start,
+  .home-page-latest-grid {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .home2-main {
+  .home-page-main {
     margin-top: 24px;
   }
 
-  .home2-plan-image {
+  .home-page-plan-image {
     display: none;
   }
 }
 
 
 /* Правки после сверки с макетом: видео под контентом, шапка секции не режется */
-.home2-hero-video {
+.home-page-hero-video {
   z-index: 0;
 }
 
-.home2-hero-inner {
+.home-page-hero-inner {
   z-index: 2;
 }
 
-.home2-main {
+.home-page-main {
   position: relative;
   z-index: 1;
 }
@@ -12649,9 +12649,9 @@ a.plan-stepper-link:hover {
   gap: 32px;
   width: 100%;
   padding: 24px 24px 24px 0;
-  background: rgba(255, 255, 255, 0.6);
-  -webkit-backdrop-filter: blur(100px);
-  backdrop-filter: blur(100px);
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  backdrop-filter: blur(var(--glass-blur));
 }
 
 .plan-page--home .plan-benefits {
@@ -12708,8 +12708,8 @@ a.plan-stepper-link:hover {
   border: 0;
   border-radius: 12px;
   background: #f8fafc;
-  -webkit-backdrop-filter: blur(40px);
-  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  backdrop-filter: blur(var(--glass-blur));
 }
 
 .plan-page--home .plan-step h2 {
@@ -13135,22 +13135,22 @@ a.plan-stepper-link:hover {
   --rail-w-expanded: 188px;
 }
 
-.home2 {
-  --home2-bg: #eae1f8;
-  --home2-panel: rgba(255, 255, 255, 0.5);
-  --home2-ink: #132238;
-  --home2-muted: #5f6f85;
-  --home2-accent: #4f46e5;
-  --home2-accent-dark: #3730a3;
-  background: var(--home2-bg);
+.home-page {
+  --home-page-bg: #eae1f8;
+  --home-page-panel: rgba(255, 255, 255, 0.5);
+  --home-page-ink: #132238;
+  --home-page-muted: #5f6f85;
+  --home-page-accent: #4f46e5;
+  --home-page-accent-dark: #3730a3;
+  background: var(--home-page-bg);
 }
 
-.home2-hero {
+.home-page-hero {
   height: 475px;
   background: #ebe3f6;
 }
 
-.home2-hero-video {
+.home-page-hero-video {
   top: 0;
   right: 0;
   width: 845px;
@@ -13158,42 +13158,42 @@ a.plan-stepper-link:hover {
   opacity: 1;
 }
 
-.home2-hero-inner,
-.home2-shell {
+.home-page-hero-inner,
+.home-page-shell {
   max-width: 1500px;
   padding-left: 300px;
   padding-right: 0;
 }
 
-.home2-hero-inner {
+.home-page-hero-inner {
   padding-top: 0;
 }
 
-.home2-hero-copy {
+.home-page-hero-copy {
   width: 730px;
   padding-top: 65px;
 }
 
-.home2-hero-copy .eyebrow {
+.home-page-hero-copy .eyebrow {
   margin: 0 0 16px;
-  color: var(--home2-accent);
+  color: var(--home-page-accent);
   font-size: 14px;
   font-weight: 800;
   letter-spacing: normal;
   line-height: 17px;
 }
 
-.home2-hero-copy h1 {
+.home-page-hero-copy h1 {
   width: 741px;
   margin: 0 0 16px;
-  color: var(--home2-ink);
+  color: var(--home-page-ink);
   font-size: 50px;
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: normal;
 }
 
-.home2-lead {
+.home-page-lead {
   margin: 0 0 16px;
   max-width: 741px;
   color: #595959;
@@ -13201,11 +13201,11 @@ a.plan-stepper-link:hover {
   line-height: 1.5;
 }
 
-.home2-hero-actions {
+.home-page-hero-actions {
   gap: 16px;
 }
 
-.home2-hero-actions .button {
+.home-page-hero-actions .button {
   min-height: 48px;
   height: 48px;
   padding: 10px 18px;
@@ -13215,74 +13215,74 @@ a.plan-stepper-link:hover {
   line-height: 21.7px;
 }
 
-.home2-hero-secondary {
+.home-page-hero-secondary {
   border: 0;
   background: #ffffff;
   backdrop-filter: none;
-  color: var(--home2-ink);
+  color: var(--home-page-ink);
 }
 
-.home2-shell {
+.home-page-shell {
   grid-template-columns: 770px 350px;
   gap: 41px;
   padding-bottom: 0;
 }
 
-.home2-main {
+.home-page-main {
   margin-top: -26px;
   gap: 40px;
   width: 770px;
 }
 
-.home2-intro {
+.home-page-intro {
   gap: 16px;
 }
 
-.home2-intro h2,
-.home2-latest h2,
-.home2-roadmap h2 {
+.home-page-intro h2,
+.home-page-latest h2,
+.home-page-roadmap h2 {
   font-size: 34px;
   line-height: 38.08px;
   letter-spacing: -1.19px;
 }
 
-.home2-start {
+.home-page-start {
   gap: 16px;
 }
 
-.home2-start-card {
+.home-page-start-card {
   min-height: 0;
   padding: 24px;
   gap: 10px;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
   box-shadow: none;
 }
 
-.home2-start-card h3 {
+.home-page-start-card h3 {
   margin: 0;
   font-size: 19px;
   line-height: 21.28px;
   letter-spacing: -0.665px;
 }
 
-.home2-start-card p {
+.home-page-start-card p {
   margin: 0;
   font-size: 14px;
   line-height: 21.7px;
 }
 
-.home2-latest {
+.home-page-latest {
   gap: 20px;
 }
 
-.home2-latest-grid {
+.home-page-latest-grid {
   gap: 20px;
 }
 
-.home2-profession-card {
+.home-page-profession-card {
   gap: 10px;
   padding: 16px;
   border: 1px solid #e2e8f0;
@@ -13292,43 +13292,43 @@ a.plan-stepper-link:hover {
   box-shadow: none;
 }
 
-.home2-card-badge {
+.home-page-card-badge {
   padding: 6px 8px 4px;
   border-radius: 16px;
   background: #eef2ff;
-  color: var(--home2-accent-dark);
+  color: var(--home-page-accent-dark);
   font-size: 11px;
   line-height: 17px;
   letter-spacing: 0.33px;
 }
 
-.home2-card-count {
+.home-page-card-count {
   gap: 4px;
-  color: var(--home2-muted);
+  color: var(--home-page-muted);
   font-size: 13px;
   line-height: 20px;
 }
 
-.home2-card-count svg {
+.home-page-card-count svg {
   width: 24px;
   height: 24px;
-  color: var(--home2-ink);
+  color: var(--home-page-ink);
 }
 
-.home2-profession-card h3 {
+.home-page-profession-card h3 {
   font-size: 20px;
   font-weight: 700;
   line-height: 1.3;
-  color: var(--home2-ink);
+  color: var(--home-page-ink);
 }
 
-.home2-profession-card p {
+.home-page-profession-card p {
   font-size: 16px;
   line-height: 24.8px;
-  color: var(--home2-muted);
+  color: var(--home-page-muted);
 }
 
-.home2-plan-banner {
+.home-page-plan-banner {
   position: relative;
   display: block;
   height: 100px;
@@ -13339,7 +13339,7 @@ a.plan-stepper-link:hover {
   overflow: hidden;
 }
 
-.home2-plan-wave {
+.home-page-plan-wave {
   position: absolute;
   top: -24.6px;
   right: 0;
@@ -13348,7 +13348,7 @@ a.plan-stepper-link:hover {
   object-fit: cover;
 }
 
-.home2-plan-image {
+.home-page-plan-image {
   position: absolute;
   top: 0;
   left: 0;
@@ -13359,32 +13359,32 @@ a.plan-stepper-link:hover {
   object-fit: cover;
 }
 
-.home2-plan-text {
+.home-page-plan-text {
   position: absolute;
   inset: 0;
   display: block;
 }
 
-.home2-plan-text strong {
+.home-page-plan-text strong {
   position: absolute;
   top: calc(50% - 26px);
   left: 124px;
   font-size: 20px;
   font-weight: 700;
   line-height: 1.3;
-  color: var(--home2-ink);
+  color: var(--home-page-ink);
 }
 
-.home2-plan-text span {
+.home-page-plan-text span {
   position: absolute;
   top: calc(50% + 4px);
   left: 128px;
   font-size: 15px;
   line-height: 24.8px;
-  color: var(--home2-accent-dark);
+  color: var(--home-page-accent-dark);
 }
 
-.home2-plan-button {
+.home-page-plan-button {
   position: absolute;
   top: 50%;
   right: 24px;
@@ -13398,105 +13398,105 @@ a.plan-stepper-link:hover {
   border-radius: 12px;
   background: #f8fafc;
   box-shadow: 0 8px 12px rgba(79, 70, 229, 0.2);
-  color: var(--home2-accent);
+  color: var(--home-page-accent);
   font-size: 15px;
   font-weight: 600;
   line-height: normal;
   white-space: nowrap;
 }
 
-.home2-plan-button svg {
+.home-page-plan-button svg {
   width: 16px;
   height: 16px;
 }
 
-.home2-notice {
+.home-page-notice {
   gap: 16px;
   padding: 24px;
   border-radius: 12px;
   background: #eff6ff;
 }
 
-.home2-notice-title {
+.home-page-notice-title {
   font-size: 16px;
   font-weight: 600;
   color: #4338ca;
 }
 
-.home2-notice-text {
+.home-page-notice-text {
   gap: 0;
   color: #0f172a;
   font-size: 16px;
   line-height: 1.5;
 }
 
-.home2-notice-text p {
+.home-page-notice-text p {
   margin: 0 0 8px;
 }
 
-.home2-notice-button {
+.home-page-notice-button {
   min-height: 44px;
   height: 44px;
   padding: 10px 18px;
   border: 1px solid #f2f4f7;
   border-radius: 12px;
   background: #ffffff;
-  color: var(--home2-accent-dark);
+  color: var(--home-page-accent-dark);
   font-size: 14px;
   font-weight: 700;
   line-height: 21.7px;
 }
 
-.home2-roadmap {
+.home-page-roadmap {
   gap: 24px;
 }
 
-.home2-subtitle {
+.home-page-subtitle {
   font-size: 16px;
   line-height: 1.5;
-  color: var(--home2-muted);
+  color: var(--home-page-muted);
 }
 
-.home2-timeline {
+.home-page-timeline {
   margin-top: 0;
   gap: 16px;
 }
 
-.home2-stage {
+.home-page-stage {
   gap: 16px;
   padding: 16px;
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.6);
+  background: var(--glass-bg);
   border: 1px solid #e2e8f0;
   box-shadow: 0 4px 12px rgba(15, 23, 42, 0.02);
   backdrop-filter: none;
 }
 
-.home2-stage:first-child {
+.home-page-stage:first-child {
   background: #eef2ff;
   border: 0;
   box-shadow: 0 4px 6px rgba(15, 23, 42, 0.02);
 }
 
-.home2-stage-icon {
+.home-page-stage-icon {
   width: 36px;
   height: 36px;
   flex: 0 0 36px;
   border-radius: 10px;
-  background: var(--home2-accent);
+  background: var(--home-page-accent);
   color: #fff;
 }
 
-.home2-stage-icon svg {
+.home-page-stage-icon svg {
   width: 18px;
   height: 18px;
 }
 
-.home2-stage-body {
+.home-page-stage-body {
   gap: 4px;
 }
 
-.home2-stage-label {
+.home-page-stage-label {
   font-size: 15px;
   font-weight: 600;
   line-height: normal;
@@ -13505,35 +13505,35 @@ a.plan-stepper-link:hover {
   color: #111827;
 }
 
-.home2-stage-title {
+.home-page-stage-title {
   font-size: 15px;
   font-weight: 600;
   line-height: normal;
   color: #111827;
 }
 
-.home2-stage-desc {
+.home-page-stage-desc {
   font-size: 14px;
   line-height: 1.5;
   color: #64748b;
 }
 
-.home2-aside {
+.home-page-aside {
   margin-top: 30px;
   gap: 32px;
   width: 350px;
 }
 
-.home2-panel {
+.home-page-panel {
   padding: 24px;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
   box-shadow: none;
 }
 
-.home2-panel h2 {
+.home-page-panel h2 {
   gap: 10px;
   margin: 0 0 10px;
   font-size: 19px;
@@ -13542,49 +13542,49 @@ a.plan-stepper-link:hover {
   letter-spacing: -0.665px;
 }
 
-.home2-panel h2 svg {
+.home-page-panel h2 svg {
   width: 24px;
   height: 24px;
-  color: var(--home2-ink);
+  color: var(--home-page-ink);
 }
 
-.home2-about p {
+.home-page-about p {
   font-size: 14px;
   line-height: 1.5;
-  color: var(--home2-ink);
+  color: var(--home-page-ink);
 }
 
-.home2-log {
+.home-page-log {
   gap: 16px;
 }
 
-.home2-log-list {
+.home-page-log-list {
   gap: 12px;
   max-height: none;
   overflow: visible;
 }
 
-.home2-log-item {
+.home-page-log-item {
   gap: 8px;
 }
 
-.home2-log-date {
+.home-page-log-date {
   font-size: 14px;
   line-height: normal;
-  color: var(--home2-muted);
+  color: var(--home-page-muted);
 }
 
-.home2-log-title {
+.home-page-log-title {
   font-size: 16px;
   font-weight: 600;
   line-height: 1.4;
-  color: var(--home2-ink);
+  color: var(--home-page-ink);
 }
 
-.home2-log-desc {
+.home-page-log-desc {
   font-size: 14px;
   line-height: 1.5;
-  color: var(--home2-muted);
+  color: var(--home-page-muted);
 }
 
 /* -------- Футер по макету -------- */
@@ -13694,58 +13694,58 @@ a.plan-stepper-link:hover {
 }
 
 @media (max-width: 1080px) {
-  .home2-hero-inner,
-  .home2-shell {
+  .home-page-hero-inner,
+  .home-page-shell {
     padding-left: 236px;
     padding-right: 24px;
   }
 
-  .home2-shell {
+  .home-page-shell {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .home2-hero-copy,
-  .home2-hero-copy h1,
-  .home2-main {
+  .home-page-hero-copy,
+  .home-page-hero-copy h1,
+  .home-page-main {
     width: 100%;
   }
 
-  .home2-hero-copy h1 {
+  .home-page-hero-copy h1 {
     font-size: 40px;
   }
 
-  .home2-aside {
+  .home-page-aside {
     width: 100%;
     margin-top: 0;
   }
 }
 
 @media (max-width: 760px) {
-  .home2-hero-inner,
-  .home2-shell {
+  .home-page-hero-inner,
+  .home-page-shell {
     padding-left: 16px;
     padding-right: 16px;
   }
 
-  .home2-hero-copy h1 {
+  .home-page-hero-copy h1 {
     font-size: 32px;
     line-height: 1.1;
   }
 
-  .home2-start,
-  .home2-latest-grid {
+  .home-page-start,
+  .home-page-latest-grid {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .home2-plan-image {
+  .home-page-plan-image {
     display: none;
   }
 
-  .home2-plan-text strong {
+  .home-page-plan-text strong {
     left: 24px;
   }
 
-  .home2-plan-text span {
+  .home-page-plan-text span {
     left: 24px;
   }
 
@@ -13789,7 +13789,7 @@ a.plan-stepper-link:hover {
 
 
 /* Фоновая картинка-подложка hero: видна до первого кадра видео и если видео не играет */
-.home2-hero {
+.home-page-hero {
   background-color: #ebe3f6;
   background-image: url("/assets/content/AXIONA-bg.png");
   background-repeat: no-repeat;
@@ -13798,25 +13798,25 @@ a.plan-stepper-link:hover {
 }
 
 
-.home2-icon {
+.home-page-icon {
   display: inline-block;
   width: 24px;
   height: 24px;
   object-fit: contain;
 }
 
-.home2-card-count .home2-icon {
+.home-page-card-count .home-page-icon {
   width: 24px;
   height: 24px;
   margin-left: auto;
 }
 
-.home2-plan-button .home2-icon {
+.home-page-plan-button .home-page-icon {
   width: 16px;
   height: 16px;
 }
 
-.home2-stage-icon .home2-icon {
+.home-page-stage-icon .home-page-icon {
   width: 18px;
   height: 18px;
   filter: invert(1);
@@ -14035,19 +14035,19 @@ a.plan-stepper-link:hover {
 /* 369-14582: точная абсолютная раскладка на канве 1500px             */
 /* ================================================================== */
 
-.home2 {
+.home-page {
   background: #eae1f8;
   padding: 0;
 }
 
-.home2-frame {
+.home-page-frame {
   position: relative;
   width: 1500px;
   height: 2408px;
   margin: 0 auto;
 }
 
-.home2-hero {
+.home-page-hero {
   position: absolute;
   top: 0;
   left: 0;
@@ -14058,7 +14058,7 @@ a.plan-stepper-link:hover {
   background-image: none;
 }
 
-.home2-hero-video {
+.home-page-hero-video {
   position: absolute;
   top: 0;
   right: 0;
@@ -14067,7 +14067,7 @@ a.plan-stepper-link:hover {
   object-fit: cover;
 }
 
-.home2-sec1 {
+.home-page-sec1 {
   position: absolute;
   top: 65px;
   left: 300px;
@@ -14077,7 +14077,7 @@ a.plan-stepper-link:hover {
   width: 730px;
 }
 
-.home2-hero-copy {
+.home-page-hero-copy {
   width: 570px;
   padding: 0;
   display: flex;
@@ -14085,7 +14085,7 @@ a.plan-stepper-link:hover {
   gap: 16px;
 }
 
-.home2-hero-copy .eyebrow {
+.home-page-hero-copy .eyebrow {
   height: 22px;
   margin: 0;
   color: var(--accent);
@@ -14095,7 +14095,7 @@ a.plan-stepper-link:hover {
   letter-spacing: normal;
 }
 
-.home2-hero-copy h1 {
+.home-page-hero-copy h1 {
   width: 741px;
   margin: 0;
   color: #132238;
@@ -14105,20 +14105,20 @@ a.plan-stepper-link:hover {
   letter-spacing: normal;
 }
 
-.home2-lead {
+.home-page-lead {
   margin: 0;
   color: #595959;
   font-size: 18px;
   line-height: 1.5;
 }
 
-.home2-hero-actions {
+.home-page-hero-actions {
   display: flex;
   gap: 16px;
   align-items: flex-start;
 }
 
-.home2-hero-actions .button {
+.home-page-hero-actions .button {
   height: 48px;
   min-height: 48px;
   padding: 10px 18px;
@@ -14128,13 +14128,13 @@ a.plan-stepper-link:hover {
   line-height: 21.7px;
 }
 
-.home2-hero-secondary {
+.home-page-hero-secondary {
   background: #ffffff;
   border: 0;
   color: #132238;
 }
 
-.home2-main {
+.home-page-main {
   position: absolute;
   top: 449px;
   left: 300px;
@@ -14145,7 +14145,7 @@ a.plan-stepper-link:hover {
   margin: 0;
 }
 
-.home2-aside {
+.home-page-aside {
   position: absolute;
   top: 505px;
   left: 1111px;
@@ -14158,13 +14158,13 @@ a.plan-stepper-link:hover {
   overflow: hidden;
 }
 
-.home2-intro {
+.home-page-intro {
   gap: 16px;
 }
 
-.home2-intro h2,
-.home2-latest h2,
-.home2-roadmap h2 {
+.home-page-intro h2,
+.home-page-latest h2,
+.home-page-roadmap h2 {
   margin: 0;
   color: #132238;
   font-size: 34px;
@@ -14173,27 +14173,27 @@ a.plan-stepper-link:hover {
   letter-spacing: -1.19px;
 }
 
-.home2-start {
+.home-page-start {
   display: flex;
   gap: 16px;
   align-items: stretch;
 }
 
-.home2-start-card {
+.home-page-start-card {
   flex: 1 1 0;
   min-width: 0;
   padding: 24px;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
   box-shadow: none;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.home2-start-card h3 {
+.home-page-start-card h3 {
   margin: 0;
   color: #132238;
   font-size: 19px;
@@ -14202,18 +14202,18 @@ a.plan-stepper-link:hover {
   letter-spacing: -0.665px;
 }
 
-.home2-start-card p {
+.home-page-start-card p {
   margin: 0;
   color: #5f6f85;
   font-size: 14px;
   line-height: 21.7px;
 }
 
-.home2-latest {
+.home-page-latest {
   gap: 20px;
 }
 
-.home2-profession-card {
+.home-page-profession-card {
   flex: 1 1 0;
   min-width: 0;
   padding: 16px;
@@ -14226,7 +14226,7 @@ a.plan-stepper-link:hover {
   gap: 10px;
 }
 
-.home2-card-badge {
+.home-page-card-badge {
   align-self: flex-start;
   padding: 6px 8px 4px;
   border-radius: 16px;
@@ -14239,7 +14239,7 @@ a.plan-stepper-link:hover {
   text-transform: uppercase;
 }
 
-.home2-card-count {
+.home-page-card-count {
   display: flex;
   align-items: center;
   gap: 4px;
@@ -14248,13 +14248,13 @@ a.plan-stepper-link:hover {
   line-height: 20.15px;
 }
 
-.home2-card-count .home2-icon {
+.home-page-card-count .home-page-icon {
   width: 24px;
   height: 24px;
   margin-left: auto;
 }
 
-.home2-profession-card h3 {
+.home-page-profession-card h3 {
   margin: 0;
   color: #132238;
   font-size: 20px;
@@ -14262,23 +14262,23 @@ a.plan-stepper-link:hover {
   line-height: 1.3;
 }
 
-.home2-profession-card p {
+.home-page-profession-card p {
   margin: 0;
   color: #5f6f85;
   font-size: 16px;
   line-height: 24.8px;
 }
 
-.home2-aside .home2-panel {
+.home-page-aside .home-page-panel {
   padding: 24px;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
   box-shadow: none;
 }
 
-.home2-panel h2 {
+.home-page-panel h2 {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -14290,44 +14290,44 @@ a.plan-stepper-link:hover {
   letter-spacing: -0.665px;
 }
 
-.home2-panel h2 .home2-icon {
+.home-page-panel h2 .home-page-icon {
   width: 24px;
   height: 24px;
 }
 
-.home2-about p {
+.home-page-about p {
   margin: 0;
   color: #132238;
   font-size: 14px;
   line-height: 1.5;
 }
 
-.home2-log {
+.home-page-log {
   gap: 16px;
 }
 
-.home2-log-title {
+.home-page-log-title {
   color: #132238;
   font-size: 16px;
   font-weight: 600;
   line-height: 1.4;
 }
 
-.home2-log-date,
-.home2-log-desc {
+.home-page-log-date,
+.home-page-log-desc {
   color: #5f6f85;
   font-size: 14px;
   line-height: 1.5;
 }
 
-.home2-log-list {
+.home-page-log-list {
   gap: 12px;
   max-height: none;
   overflow: visible;
 }
 
 /* план-баннер */
-.home2-plan-banner {
+.home-page-plan-banner {
   position: relative;
   display: block;
   width: 770px;
@@ -14338,7 +14338,7 @@ a.plan-stepper-link:hover {
   overflow: hidden;
 }
 
-.home2-plan-wave {
+.home-page-plan-wave {
   position: absolute;
   top: -24.6px;
   right: 0;
@@ -14346,7 +14346,7 @@ a.plan-stepper-link:hover {
   height: 148px;
 }
 
-.home2-plan-image {
+.home-page-plan-image {
   position: absolute;
   top: 0;
   left: 0;
@@ -14356,7 +14356,7 @@ a.plan-stepper-link:hover {
   object-fit: cover;
 }
 
-.home2-plan-text strong {
+.home-page-plan-text strong {
   position: absolute;
   top: calc(50% - 26px);
   left: 124px;
@@ -14366,7 +14366,7 @@ a.plan-stepper-link:hover {
   line-height: 1.3;
 }
 
-.home2-plan-text span {
+.home-page-plan-text span {
   position: absolute;
   top: calc(50% + 4px);
   left: 128px;
@@ -14375,7 +14375,7 @@ a.plan-stepper-link:hover {
   line-height: 24.8px;
 }
 
-.home2-plan-button {
+.home-page-plan-button {
   position: absolute;
   top: 50%;
   right: 24px;
@@ -14396,7 +14396,7 @@ a.plan-stepper-link:hover {
   white-space: nowrap;
 }
 
-.home2-notice {
+.home-page-notice {
   width: 770px;
   padding: 24px;
   border-radius: 12px;
@@ -14404,24 +14404,24 @@ a.plan-stepper-link:hover {
   gap: 16px;
 }
 
-.home2-notice-title {
+.home-page-notice-title {
   color: #4338ca;
   font-size: 16px;
   font-weight: 600;
   line-height: normal;
 }
 
-.home2-notice-text {
+.home-page-notice-text {
   color: #0f172a;
   font-size: 16px;
   line-height: 1.5;
 }
 
-.home2-notice-text p {
+.home-page-notice-text p {
   margin: 0 0 8px;
 }
 
-.home2-notice-button {
+.home-page-notice-button {
   height: 44px;
   min-height: 44px;
   padding: 10px 18px;
@@ -14434,38 +14434,38 @@ a.plan-stepper-link:hover {
   line-height: 21.7px;
 }
 
-.home2-roadmap {
+.home-page-roadmap {
   gap: 24px;
 }
 
-.home2-subtitle {
+.home-page-subtitle {
   margin: 0;
   color: #5f6f85;
   font-size: 16px;
   line-height: 1.5;
 }
 
-.home2-timeline {
+.home-page-timeline {
   margin: 0;
   gap: 16px;
 }
 
-.home2-stage {
+.home-page-stage {
   padding: 16px;
   border-radius: 10px;
   border: 1px solid #e2e8f0;
-  background: rgba(255, 255, 255, 0.6);
+  background: var(--glass-bg);
   box-shadow: 0 4px 12px rgba(15, 23, 42, 0.02);
   gap: 16px;
 }
 
-.home2-stage:first-child {
+.home-page-stage:first-child {
   background: #eef2ff;
   border: 0;
   box-shadow: 0 4px 6px rgba(15, 23, 42, 0.02);
 }
 
-.home2-stage-icon {
+.home-page-stage-icon {
   width: 36px;
   height: 36px;
   flex: 0 0 36px;
@@ -14473,15 +14473,15 @@ a.plan-stepper-link:hover {
   background: #4f46e5;
 }
 
-.home2-stage-label,
-.home2-stage-title {
+.home-page-stage-label,
+.home-page-stage-title {
   color: #111827;
   font-size: 15px;
   font-weight: 600;
   line-height: normal;
 }
 
-.home2-stage-desc {
+.home-page-stage-desc {
   color: #64748b;
   font-size: 14px;
   line-height: 1.5;
@@ -14500,20 +14500,20 @@ a.plan-stepper-link:hover {
 }
 
 @media (max-width: 1499px) {
-  .home2-frame {
+  .home-page-frame {
     width: 100%;
     height: auto;
     padding: 0 16px;
   }
 
-  .home2-hero {
+  .home-page-hero {
     position: relative;
     width: 100%;
   }
 
-  .home2-sec1,
-  .home2-main,
-  .home2-aside {
+  .home-page-sec1,
+  .home-page-main,
+  .home-page-aside {
     position: relative;
     top: auto;
     left: auto;
@@ -14522,16 +14522,16 @@ a.plan-stepper-link:hover {
     margin: 0;
   }
 
-  .home2-sec1 {
+  .home-page-sec1 {
     padding: 40px 0;
   }
 
-  .home2-aside {
+  .home-page-aside {
     padding-bottom: 40px;
   }
 
-  .home2-hero-copy,
-  .home2-hero-copy h1 {
+  .home-page-hero-copy,
+  .home-page-hero-copy h1 {
     width: 100%;
   }
 }
@@ -14609,8 +14609,8 @@ a.plan-stepper-link:hover {
   padding: 16px;
   border-radius: 12px;
   background: rgba(248, 250, 252, 0.4);
-  -webkit-backdrop-filter: blur(40px);
-  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  backdrop-filter: blur(var(--glass-blur));
 }
 
 .plan-home-level-head {
@@ -14699,54 +14699,54 @@ a.plan-stepper-link:hover {
 
 
 /* Уточнение по макету: белый фон страницы, а не лаванда */
-.home2,
-.home2-frame {
+.home-page,
+.home-page-frame {
   background: #ffffff;
 }
 
-.home2-hero {
+.home-page-hero {
   background: #ffffff;
   background-image: none;
 }
 
-.home2-start-card {
-  background: rgba(255, 255, 255, 0.7);
+.home-page-start-card {
+  background: var(--glass-bg);
 }
 
-.home2-profession-card {
+.home-page-profession-card {
   background: #ffffff;
 }
 
-.home2-plan-image {
+.home-page-plan-image {
   transform: none;
   object-fit: cover;
 }
 
 
 /* В hero только видео, без лавандовой подложки-картинки */
-.home2-hero,
-.home2-hero-video {
+.home-page-hero,
+.home-page-hero-video {
   background: transparent;
 }
 
-.home2-hero {
+.home-page-hero {
   background: #ffffff;
 }
 
 
 /* Флоу-раскладка поверх абсолютного hero: футер не наезжает на контент */
-.home2-frame {
+.home-page-frame {
   height: auto;
   padding-top: 475px;
 }
 
-.home2-hero {
+.home-page-hero {
   position: absolute;
   top: 0;
   left: 0;
 }
 
-.home2-main {
+.home-page-main {
   position: relative;
   top: auto;
   left: auto;
@@ -14755,7 +14755,7 @@ a.plan-stepper-link:hover {
   width: 770px;
 }
 
-.home2-aside {
+.home-page-aside {
   position: absolute;
   top: 505px;
   left: 1111px;
@@ -14763,7 +14763,7 @@ a.plan-stepper-link:hover {
 }
 
 /* Карточки направлений как в макете: белые, рамка, 2 строки описания, прогресс */
-.home2-profession-card {
+.home-page-profession-card {
   padding: 16px;
   border: 1px solid #eef2f7;
   border-radius: 16px;
@@ -14771,7 +14771,7 @@ a.plan-stepper-link:hover {
   box-shadow: 0 8px 20px rgba(15, 23, 42, 0.04);
 }
 
-.home2-card-desc {
+.home-page-card-desc {
   display: -webkit-box;
   overflow: hidden;
   -webkit-box-orient: vertical;
@@ -14782,7 +14782,7 @@ a.plan-stepper-link:hover {
   line-height: 24.8px;
 }
 
-.home2-card-progress {
+.home-page-card-progress {
   display: block;
   width: 100%;
   height: 6px;
@@ -14792,20 +14792,20 @@ a.plan-stepper-link:hover {
   overflow: hidden;
 }
 
-.home2-card-progress span {
+.home-page-card-progress span {
   display: block;
   height: 100%;
   border-radius: 999px;
   background: linear-gradient(90deg, #4f46e5, #0ea5e9);
 }
 
-.home2-start-card {
+.home-page-start-card {
   border: 1px solid #eef2f7;
   background: #f8fafc;
   backdrop-filter: none;
 }
 
-.home2-panel {
+.home-page-panel {
   border: 1px solid #eef2f7;
   background: #f8fafc;
   backdrop-filter: none;
@@ -14813,7 +14813,7 @@ a.plan-stepper-link:hover {
 
 
 /* Aside обрезается по высоте макета и не залезает на футер */
-.home2-aside {
+.home-page-aside {
   height: 1903px;
   overflow: hidden;
 }
@@ -14827,78 +14827,78 @@ a.plan-stepper-link:hover {
 /* Точечные правки по замечаниям 19.11 */
 
 /* 1) плашки и aside: EDF2FF 50%, без обводки */
-.home2-start-card,
-.home2-panel {
+.home-page-start-card,
+.home-page-panel {
   background: rgba(237, 242, 255, 0.5);
   border: 0;
 }
 
 /* 2) баннер: wave прибит справа, ховер как у белых кнопок */
-.home2-plan-wave {
+.home-page-plan-wave {
   left: auto;
   right: 0;
   object-fit: cover;
   object-position: right center;
 }
 
-.home2-plan-banner {
+.home-page-plan-banner {
   transition: box-shadow 0.18s ease, transform 0.18s ease;
 }
 
-.home2-plan-banner:hover {
+.home-page-plan-banner:hover {
   box-shadow: 0 12px 28px rgba(19, 34, 56, 0.12);
   transform: translateY(-1px);
 }
 
 /* 3) дорожная карта и aside */
-.home2-stage {
+.home-page-stage {
   border-color: #eef2f7;
-  background: rgba(255, 255, 255, 0.6);
+  background: var(--glass-bg);
 }
 
-.home2-stage:first-child {
+.home-page-stage:first-child {
   border: 1px solid #eef2f7;
   background: #eef2ff;
 }
 
-.home2-stage-desc {
+.home-page-stage-desc {
   margin-top: 12px;
 }
 
-.home2-stage-body {
+.home-page-stage-body {
   gap: 0;
 }
 
-.home2-aside {
+.home-page-aside {
   border-radius: 12px;
 }
 
 /* 4) 40px от контента до футера */
-.home2-frame {
+.home-page-frame {
   padding-bottom: 40px;
 }
 
 /* 4) мобильная версия */
 @media (max-width: 900px) {
-  .home2-frame {
+  .home-page-frame {
     width: 100%;
     padding: 0 16px 40px;
   }
 
-  .home2-hero {
+  .home-page-hero {
     position: relative;
     width: 100%;
     height: 420px;
   }
 
-  .home2-hero-video {
+  .home-page-hero-video {
     width: 100%;
     height: 420px;
     object-fit: cover;
     object-position: right top;
   }
 
-  .home2-sec1 {
+  .home-page-sec1 {
     position: relative;
     top: auto;
     left: auto;
@@ -14906,17 +14906,17 @@ a.plan-stepper-link:hover {
     padding: 40px 0 24px;
   }
 
-  .home2-hero-copy,
-  .home2-hero-copy h1 {
+  .home-page-hero-copy,
+  .home-page-hero-copy h1 {
     width: 100%;
   }
 
-  .home2-hero-copy h1 {
+  .home-page-hero-copy h1 {
     font-size: 34px;
     line-height: 1.1;
   }
 
-  .home2-main {
+  .home-page-main {
     position: relative;
     top: auto;
     left: auto;
@@ -14924,7 +14924,7 @@ a.plan-stepper-link:hover {
     margin: 0;
   }
 
-  .home2-aside {
+  .home-page-aside {
     position: relative;
     top: auto;
     left: auto;
@@ -14934,28 +14934,28 @@ a.plan-stepper-link:hover {
     overflow: visible;
   }
 
-  .home2-start {
+  .home-page-start {
     flex-direction: column;
   }
 
-  .home2-latest-grid {
+  .home-page-latest-grid {
     flex-direction: column;
   }
 
-  .home2-plan-banner {
+  .home-page-plan-banner {
     width: 100%;
   }
 
-  .home2-plan-text strong,
-  .home2-plan-text span {
+  .home-page-plan-text strong,
+  .home-page-plan-text span {
     left: 24px;
   }
 
-  .home2-plan-button {
+  .home-page-plan-button {
     right: 16px;
   }
 
-  .home2-notice {
+  .home-page-notice {
     width: 100%;
   }
 }
@@ -14963,12 +14963,12 @@ a.plan-stepper-link:hover {
 
 /* Мобильная главная: аккуратная колонка без переполнений */
 @media (max-width: 900px) {
-  .home2-frame {
+  .home-page-frame {
     width: 100%;
     padding: 0 16px 40px;
   }
 
-  .home2-hero {
+  .home-page-hero {
     position: relative;
     width: 100%;
     height: auto;
@@ -14977,7 +14977,7 @@ a.plan-stepper-link:hover {
     border-radius: 16px;
   }
 
-  .home2-hero-video {
+  .home-page-hero-video {
     position: absolute;
     top: -20px;
     right: -140px;
@@ -14987,7 +14987,7 @@ a.plan-stepper-link:hover {
     object-fit: cover;
   }
 
-  .home2-sec1 {
+  .home-page-sec1 {
     position: relative;
     z-index: 2;
     top: auto;
@@ -14996,21 +14996,21 @@ a.plan-stepper-link:hover {
     padding: 28px 0 24px;
   }
 
-  .home2-hero-copy,
-  .home2-hero-copy h1 {
+  .home-page-hero-copy,
+  .home-page-hero-copy h1 {
     width: 100%;
   }
 
-  .home2-hero-copy h1 {
+  .home-page-hero-copy h1 {
     font-size: 32px;
     line-height: 1.1;
   }
 
-  .home2-lead {
+  .home-page-lead {
     font-size: 16px;
   }
 
-  .home2-main {
+  .home-page-main {
     position: relative;
     top: auto;
     left: auto;
@@ -15019,7 +15019,7 @@ a.plan-stepper-link:hover {
     gap: 32px;
   }
 
-  .home2-aside {
+  .home-page-aside {
     position: relative;
     top: auto;
     left: auto;
@@ -15030,26 +15030,26 @@ a.plan-stepper-link:hover {
     border-radius: 0;
   }
 
-  .home2-start {
+  .home-page-start {
     display: flex;
     flex-direction: column;
     gap: 12px;
   }
 
-  .home2-latest-grid {
+  .home-page-latest-grid {
     display: flex;
     flex-direction: column;
     gap: 12px;
   }
 
-  .home2-intro h2,
-  .home2-latest h2,
-  .home2-roadmap h2 {
+  .home-page-intro h2,
+  .home-page-latest h2,
+  .home-page-roadmap h2 {
     font-size: 26px;
     line-height: 30px;
   }
 
-  .home2-plan-banner {
+  .home-page-plan-banner {
     width: 100%;
     height: auto;
     min-height: 120px;
@@ -15057,31 +15057,31 @@ a.plan-stepper-link:hover {
     display: flex;
   }
 
-  .home2-plan-wave {
+  .home-page-plan-wave {
     width: 100%;
     right: 0;
     opacity: 0.5;
   }
 
-  .home2-plan-image {
+  .home-page-plan-image {
     display: none;
   }
 
-  .home2-plan-text strong {
+  .home-page-plan-text strong {
     position: static;
     display: block;
     padding-right: 0;
     font-size: 18px;
   }
 
-  .home2-plan-text span {
+  .home-page-plan-text span {
     position: static;
     display: block;
     margin-top: 6px;
     font-size: 14px;
   }
 
-  .home2-plan-button {
+  .home-page-plan-button {
     position: static;
     transform: none;
     margin-top: 14px;
@@ -15090,11 +15090,11 @@ a.plan-stepper-link:hover {
     padding: 10px 16px;
   }
 
-  .home2-notice {
+  .home-page-notice {
     width: 100%;
   }
 
-  .home2-stage {
+  .home-page-stage {
     padding: 16px;
   }
 
@@ -15138,45 +15138,45 @@ a.plan-stepper-link:hover {
 
 
 /* mobile overflow guard */
-.home2 {
+.home-page {
   overflow-x: hidden;
 }
 
 @media (max-width: 900px) {
-  .home2-frame,
-  .home2-main,
-  .home2-sec1,
-  .home2-aside,
-  .home2-hero-copy,
-  .home2-hero-copy h1,
-  .home2-start-card,
-  .home2-profession-card,
-  .home2-notice,
-  .home2-panel {
+  .home-page-frame,
+  .home-page-main,
+  .home-page-sec1,
+  .home-page-aside,
+  .home-page-hero-copy,
+  .home-page-hero-copy h1,
+  .home-page-start-card,
+  .home-page-profession-card,
+  .home-page-notice,
+  .home-page-panel {
     max-width: 100%;
     min-width: 0;
   }
 
-  .home2-hero-copy h1 {
+  .home-page-hero-copy h1 {
     width: 100% !important;
     font-size: 32px;
     word-break: break-word;
   }
 
-  .home2-lead {
+  .home-page-lead {
     max-width: 100%;
   }
 
-  .home2-plan-banner,
-  .home2-plan-text {
+  .home-page-plan-banner,
+  .home-page-plan-text {
     max-width: 100%;
   }
 }
 
 
 /* Единый светлый тон плашек из макета */
-.home2-start-card,
-.home2-panel {
+.home-page-start-card,
+.home-page-panel {
   background: rgba(237, 242, 255, 0.5);
 }
 
@@ -15185,11 +15185,11 @@ a.plan-stepper-link:hover {
 /* Источник: docs/design/figma/UfuaPpLJA31DeBSObX5xNJ/PAGE-369-14582.md */
 /* ================================================================== */
 
-.home2 {
+.home-page {
   background: #fafaf8;
 }
 
-.home2-frame {
+.home-page-frame {
   position: relative;
   width: 1500px;
   height: auto;
@@ -15199,7 +15199,7 @@ a.plan-stepper-link:hover {
 }
 
 /* --- hero: видео 700×394 в точке (800, 81) --- */
-.home2-hero {
+.home-page-hero {
   position: absolute;
   top: 0;
   left: 0;
@@ -15210,7 +15210,7 @@ a.plan-stepper-link:hover {
   overflow: hidden;
 }
 
-.home2-hero-video {
+.home-page-hero-video {
   position: absolute;
   top: 81px;
   left: 800px;
@@ -15221,7 +15221,7 @@ a.plan-stepper-link:hover {
   opacity: 1;
 }
 
-.home2-sec1 {
+.home-page-sec1 {
   position: absolute;
   top: 65px;
   left: 300px;
@@ -15229,13 +15229,13 @@ a.plan-stepper-link:hover {
   padding: 0;
 }
 
-.home2-hero-copy {
+.home-page-hero-copy {
   width: 570px;
   padding: 0;
   gap: 16px;
 }
 
-.home2-hero-copy .eyebrow {
+.home-page-hero-copy .eyebrow {
   height: 22px;
   margin: 0;
   font-size: 14px;
@@ -15244,14 +15244,14 @@ a.plan-stepper-link:hover {
   letter-spacing: normal;
 }
 
-.home2-hero-copy h1 {
+.home-page-hero-copy h1 {
   width: 741px;
   margin: 0;
   font-size: 50px;
   line-height: 55px;
 }
 
-.home2-lead {
+.home-page-lead {
   margin: 0;
   max-width: 570px;
   color: #595959;
@@ -15259,11 +15259,11 @@ a.plan-stepper-link:hover {
   line-height: 27px;
 }
 
-.home2-hero-actions {
+.home-page-hero-actions {
   gap: 16px;
 }
 
-.home2-hero-actions .button {
+.home-page-hero-actions .button {
   height: 48px;
   min-height: 48px;
   padding: 10px 18px;
@@ -15273,14 +15273,14 @@ a.plan-stepper-link:hover {
   line-height: 22px;
 }
 
-.home2-hero-secondary {
+.home-page-hero-secondary {
   border: 0;
   background: #ffffff;
   color: #132238;
 }
 
 /* --- сетка контента: 300 / 770 / 350 --- */
-.home2-main {
+.home-page-main {
   position: relative;
   top: auto;
   left: auto;
@@ -15290,7 +15290,7 @@ a.plan-stepper-link:hover {
   gap: 40px;
 }
 
-.home2-aside {
+.home-page-aside {
   position: absolute;
   top: 505px;
   left: 1111px;
@@ -15303,42 +15303,42 @@ a.plan-stepper-link:hover {
 }
 
 /* --- «Собираю все для развития» --- */
-.home2-intro {
+.home-page-intro {
   gap: 16px;
 }
 
-.home2-intro h2 {
+.home-page-intro h2 {
   min-height: 40px;
 }
 
-.home2-start-card {
+.home-page-start-card {
   padding: 24px;
   gap: 10px;
   border: 0;
   border-radius: 12px;
   background: rgba(237, 242, 255, 0.5);
-  -webkit-backdrop-filter: blur(40px);
-  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  backdrop-filter: blur(var(--glass-blur));
   box-shadow: none;
 }
 
-.home2-start-card h3 {
+.home-page-start-card h3 {
   font-size: 19px;
   line-height: 21px;
   letter-spacing: -0.665px;
 }
 
-.home2-start-card p {
+.home-page-start-card p {
   font-size: 14px;
   line-height: 22px;
 }
 
 /* --- «Последние добавленные» --- */
-.home2-latest {
+.home-page-latest {
   gap: 20px;
 }
 
-.home2-latest-grid {
+.home-page-latest-grid {
   gap: 20px;
 }
 
@@ -15346,24 +15346,24 @@ a.plan-stepper-link:hover {
    отличается только отсутствие прогресса покрытия. */
 
 /* --- баннер плана --- */
-.home2-plan-banner {
+.home-page-plan-banner {
   width: 770px;
   height: 100px;
   border-radius: 24px;
   background: #fefefe;
 }
 
-.home2-plan-text strong {
+.home-page-plan-text strong {
   font-size: 20px;
   line-height: 26px;
 }
 
-.home2-plan-text span {
+.home-page-plan-text span {
   font-size: 15px;
   line-height: 25px;
 }
 
-.home2-plan-button {
+.home-page-plan-button {
   height: 52px;
   padding: 16px;
   border-radius: 12px;
@@ -15375,7 +15375,7 @@ a.plan-stepper-link:hover {
 }
 
 /* --- notice --- */
-.home2-notice {
+.home-page-notice {
   width: 770px;
   gap: 16px;
   padding: 24px;
@@ -15383,7 +15383,7 @@ a.plan-stepper-link:hover {
   background: #eff6ff;
 }
 
-.home2-notice-title {
+.home-page-notice-title {
   margin: 0;
   color: #4338ca;
   font-size: 16px;
@@ -15391,7 +15391,7 @@ a.plan-stepper-link:hover {
   line-height: 21px;
 }
 
-.home2-notice-text {
+.home-page-notice-text {
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -15400,11 +15400,11 @@ a.plan-stepper-link:hover {
   line-height: 24px;
 }
 
-.home2-notice-text p {
+.home-page-notice-text p {
   margin: 0;
 }
 
-.button.home2-notice-button {
+.button.home-page-notice-button {
   height: 44px;
   min-height: 44px;
   padding: 10px 18px;
@@ -15418,29 +15418,29 @@ a.plan-stepper-link:hover {
 }
 
 /* --- дорожная карта --- */
-.home2-roadmap {
+.home-page-roadmap {
   gap: 24px;
 }
 
-.home2-roadmap-head {
+.home-page-roadmap-head {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.home2-subtitle {
+.home-page-subtitle {
   margin: 0;
   color: #5f6f85;
   font-size: 16px;
   line-height: 24px;
 }
 
-.home2-timeline {
+.home-page-timeline {
   margin: 0;
   gap: 16px;
 }
 
-.home2-stage {
+.home-page-stage {
   gap: 16px;
   padding: 16px;
   border: 0;
@@ -15451,13 +15451,13 @@ a.plan-stepper-link:hover {
   backdrop-filter: none;
 }
 
-.home2-stage:first-child {
+.home-page-stage:first-child {
   border: 0;
   background: #eef2ff;
   box-shadow: 0 4px 12px rgba(15, 23, 42, 0.02);
 }
 
-.home2-stage-icon {
+.home-page-stage-icon {
   width: 36px;
   height: 36px;
   flex: 0 0 36px;
@@ -15467,22 +15467,22 @@ a.plan-stepper-link:hover {
   color: #ffffff;
 }
 
-.home2-stage:not(:first-child) .home2-stage-icon {
+.home-page-stage:not(:first-child) .home-page-stage-icon {
   background: #ffffff;
   color: #f2f4f7;
 }
 
-.home2-stage-icon svg {
+.home-page-stage-icon svg {
   width: 18px;
   height: 18px;
 }
 
-.home2-stage-body {
+.home-page-stage-body {
   gap: 0;
 }
 
-.home2-stage-label,
-.home2-stage-title {
+.home-page-stage-label,
+.home-page-stage-title {
   margin: 0;
   color: #111827;
   font-size: 15px;
@@ -15491,11 +15491,11 @@ a.plan-stepper-link:hover {
   letter-spacing: normal;
 }
 
-.home2-stage-label {
+.home-page-stage-label {
   text-transform: uppercase;
 }
 
-.home2-stage-desc {
+.home-page-stage-desc {
   margin: 4px 0 0;
   color: #64748b;
   font-size: 14px;
@@ -15503,17 +15503,17 @@ a.plan-stepper-link:hover {
 }
 
 /* --- aside --- */
-.home2-aside .home2-panel {
+.home-page-aside .home-page-panel {
   padding: 24px;
   border: 0;
   border-radius: 12px;
   background: rgba(237, 242, 255, 0.5);
-  -webkit-backdrop-filter: blur(40px);
-  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  backdrop-filter: blur(var(--glass-blur));
   box-shadow: none;
 }
 
-.home2-panel h2 {
+.home-page-panel h2 {
   margin: 0;
   gap: 10px;
   color: #132238;
@@ -15523,20 +15523,20 @@ a.plan-stepper-link:hover {
   letter-spacing: -0.665px;
 }
 
-.home2-about {
+.home-page-about {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.home2-about p {
+.home-page-about p {
   margin: 0;
   color: #132238;
   font-size: 14px;
   line-height: 21px;
 }
 
-.home2-log {
+.home-page-log {
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
@@ -15544,36 +15544,36 @@ a.plan-stepper-link:hover {
   min-height: 0;
 }
 
-.home2-panel.home2-log h2 {
+.home-page-panel.home-page-log h2 {
   font-size: 20px;
   line-height: 26px;
   letter-spacing: normal;
 }
 
-.home2-log-list {
+.home-page-log-list {
   gap: 12px;
   max-height: none;
   min-height: 0;
   overflow-y: auto;
 }
 
-.home2-log-item {
+.home-page-log-item {
   gap: 12px;
 }
 
-.home2-log-head {
+.home-page-log-head {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-.home2-log-date {
+.home-page-log-date {
   color: #5f6f85;
   font-size: 14px;
   line-height: 18px;
 }
 
-.home2-log-title {
+.home-page-log-title {
   margin: 0;
   color: #132238;
   font-size: 16px;
@@ -15581,7 +15581,7 @@ a.plan-stepper-link:hover {
   line-height: 22px;
 }
 
-.home2-log-desc {
+.home-page-log-desc {
   margin: 0;
   color: #5f6f85;
   font-size: 14px;
@@ -15593,13 +15593,13 @@ a.plan-stepper-link:hover {
 
 /* --- адаптив: ниже канвы 1500 макет перестраивается в поток --- */
 @media (max-width: 1499px) {
-  .home2-frame {
+  .home-page-frame {
     width: 100%;
     height: auto;
     padding: 0 40px 40px;
   }
 
-  .home2-hero {
+  .home-page-hero {
     position: relative;
     top: auto;
     left: auto;
@@ -15607,7 +15607,7 @@ a.plan-stepper-link:hover {
     height: 475px;
   }
 
-  .home2-hero-video {
+  .home-page-hero-video {
     top: 81px;
     left: auto;
     right: 0;
@@ -15615,7 +15615,7 @@ a.plan-stepper-link:hover {
     height: 394px;
   }
 
-  .home2-sec1 {
+  .home-page-sec1 {
     position: relative;
     top: auto;
     left: auto;
@@ -15624,7 +15624,7 @@ a.plan-stepper-link:hover {
     padding: 40px 0;
   }
 
-  .home2-main {
+  .home-page-main {
     position: relative;
     top: auto;
     left: auto;
@@ -15632,7 +15632,7 @@ a.plan-stepper-link:hover {
     margin: 0 0 0 200px;
   }
 
-  .home2-aside {
+  .home-page-aside {
     position: relative;
     top: auto;
     left: auto;
@@ -15643,49 +15643,49 @@ a.plan-stepper-link:hover {
     margin: 32px 0 0 200px;
   }
 
-  .home2-hero-copy {
+  .home-page-hero-copy {
     width: 570px;
     max-width: 100%;
   }
 
-  .home2-hero-copy h1 {
+  .home-page-hero-copy h1 {
     width: 741px;
     max-width: 741px;
   }
 
-  .home2-lead {
+  .home-page-lead {
     max-width: 570px;
   }
 
-  .home2-plan-banner,
-  .home2-notice {
+  .home-page-plan-banner,
+  .home-page-notice {
     width: 100%;
   }
 
-  .home2-log-list {
+  .home-page-log-list {
     overflow: visible;
   }
 }
 
 @media (max-width: 1023px) {
-  .home2-frame {
+  .home-page-frame {
     padding: 0 24px 40px;
   }
 
-  .home2-sec1,
-  .home2-main,
-  .home2-aside {
+  .home-page-sec1,
+  .home-page-main,
+  .home-page-aside {
     margin-left: 216px;
   }
 
-  .home2-start,
-  .home2-latest-grid {
+  .home-page-start,
+  .home-page-latest-grid {
     display: flex;
     flex-direction: column;
     gap: 12px;
   }
 
-  .home2-hero-video {
+  .home-page-hero-video {
     top: 16px;
     right: -40px;
     width: 440px;
@@ -15693,28 +15693,28 @@ a.plan-stepper-link:hover {
     opacity: 0.32;
   }
 
-  .home2-hero-copy h1 {
+  .home-page-hero-copy h1 {
     width: auto;
     max-width: 100%;
     font-size: 44px;
     line-height: 49px;
   }
 
-  .home2-lead {
+  .home-page-lead {
     max-width: 100%;
   }
 }
 
 @media (max-width: 760px) {
-  .home2-frame {
+  .home-page-frame {
     padding: 0 16px 40px;
   }
 
-  .home2-hero {
+  .home-page-hero {
     height: 440px;
   }
 
-  .home2-hero-video {
+  .home-page-hero-video {
     top: 20px;
     right: -120px;
     width: 560px;
@@ -15722,64 +15722,64 @@ a.plan-stepper-link:hover {
     opacity: 0.5;
   }
 
-  .home2-sec1 {
+  .home-page-sec1 {
     margin: 0;
     padding: 32px 0 24px;
   }
 
-  .home2-main,
-  .home2-aside {
+  .home-page-main,
+  .home-page-aside {
     margin: 0;
   }
 
-  .home2-hero-copy h1 {
+  .home-page-hero-copy h1 {
     font-size: 32px;
     line-height: 36px;
   }
 
-  .home2-lead {
+  .home-page-lead {
     max-width: 100%;
     font-size: 16px;
     line-height: 24px;
   }
 
-  .home2-intro h2,
-  .home2-latest h2,
-  .home2-roadmap h2 {
+  .home-page-intro h2,
+  .home-page-latest h2,
+  .home-page-roadmap h2 {
     font-size: 26px;
     line-height: 30px;
   }
 
-  .home2-plan-banner {
+  .home-page-plan-banner {
     display: flex;
     height: auto;
     min-height: 120px;
     padding: 20px;
   }
 
-  .home2-plan-wave {
+  .home-page-plan-wave {
     width: 100%;
     opacity: 0.5;
   }
 
-  .home2-plan-image {
+  .home-page-plan-image {
     display: none;
   }
 
-  .home2-plan-text {
+  .home-page-plan-text {
     position: static;
     display: flex;
     flex-direction: column;
     gap: 6px;
   }
 
-  .home2-plan-text strong,
-  .home2-plan-text span {
+  .home-page-plan-text strong,
+  .home-page-plan-text span {
     position: static;
     left: auto;
   }
 
-  .home2-plan-button {
+  .home-page-plan-button {
     position: static;
     align-self: flex-start;
     transform: none;
@@ -15788,7 +15788,7 @@ a.plan-stepper-link:hover {
     padding: 10px 16px;
   }
 
-  .home2-stage-icon {
+  .home-page-stage-icon {
     flex: 0 0 36px;
   }
 }
@@ -16049,7 +16049,7 @@ a.plan-stepper-link:hover {
 }
 
 .plan-grade-panel .plan-grade-highlights {
-  background: rgba(255, 255, 255, 0.55);
+  background: var(--glass-bg);
 }
 
 .plan-grade-panel .learning-next-cta {
@@ -16106,4 +16106,786 @@ a.plan-stepper-link:hover {
   width: 16px;
   height: 16px;
   flex: 0 0 auto;
+}
+
+
+/* Изучаю: фон-картинка как в разделе План */
+.studying-page {
+  background-image: none;
+}
+
+/* Картинка-фон только на главной раздела «Изучаю» */
+.studying-page--saved {
+  background-image: url("/assets/content/bg-learn.png");
+  background-repeat: no-repeat;
+  background-position: right -40px top -20px;
+  background-size: 720px auto;
+}
+
+/* Пустое состояние: blur-плашка */
+.studying-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 48px 32px;
+  border-radius: 16px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  box-shadow: 0 18px 44px rgba(19, 34, 56, 0.08);
+  text-align: center;
+}
+
+.studying-empty h2 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.studying-empty p {
+  max-width: 560px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.studying-empty-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  margin-top: 8px;
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.studying-empty-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.studying-new {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.studying-new h2 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.studying-new-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.studying-new-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  border-radius: 12px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  color: inherit;
+  text-decoration: none;
+  transition: box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+.studying-new-card:hover {
+  box-shadow: 0 12px 28px rgba(19, 34, 56, 0.1);
+  transform: translateY(-1px);
+}
+
+.studying-new-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.studying-new-cap img {
+  width: 24px;
+  height: 24px;
+}
+
+.studying-new-card h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.studying-new-card p {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.studying-new-meta {
+  color: var(--placeholder);
+  font-size: 12px;
+}
+
+/* Неактивный поиск, когда искать нечего */
+.studying-search-input:disabled {
+  opacity: 0.6;
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  cursor: not-allowed;
+}
+
+/* Карточки компетенций: blur и явный ховер */
+.learning-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  transition: box-shadow 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+}
+
+.learning-card:hover {
+  border-color: #dfe6ef;
+  box-shadow: 0 16px 36px rgba(19, 34, 56, 0.1);
+}
+
+@media (max-width: 760px) {
+  .studying-page--saved {
+    background-size: 520px auto;
+    background-position: right -120px top -20px;
+  }
+
+  .studying-new-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+
+/* Learning card: внешняя плашка без ховера, кликабельна только карточка компетенции */
+.learning-card {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid #eef2f7;
+  box-shadow: none;
+}
+
+.learning-card:hover {
+  border-color: #eef2f7;
+  box-shadow: none;
+  transform: none;
+}
+
+.learning-summary-main {
+  position: relative;
+  padding: 16px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: #ffffff;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.learning-summary-main:hover,
+.learning-summary-main:focus-within {
+  border-color: #c7d2fe;
+  background: #ffffff;
+  box-shadow: 0 12px 30px rgba(79, 70, 229, 0.14);
+}
+
+.learning-summary-main .stretched-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+}
+
+.learning-summary-main .learning-study-cap {
+  position: relative;
+  z-index: 2;
+}
+
+.learning-summary-main h3 a,
+.learning-card a,
+.learning-plan-badge a {
+  text-decoration: none;
+}
+
+/* Матрица — в блоке прогресса, только при наличии связи */
+.learning-progress-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.learning-plan-badge {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px 10px;
+  border: 1px solid #eef2f7;
+  border-radius: 10px;
+  background: #f8fafc;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+.learning-plan-badge a {
+  color: #4f46e5;
+  font-weight: 600;
+}
+
+.learning-plan-stale {
+  color: var(--placeholder);
+  font-size: 12px;
+}
+
+/* Внутренние отступы 32px */
+.learning-card-head + .learning-summary {
+  margin-top: 0;
+}
+
+.learning-summary + .learning-body {
+  margin-top: 32px;
+}
+
+.learning-body {
+  gap: 32px;
+}
+
+/* Никаких подчёркиваний в карточках и кнопках */
+.learning-card :is(a, button, span, p, h3, h4) {
+  text-decoration: none;
+}
+
+
+/* Правки карточки маршрута компетенции */
+.learning-card {
+  border: 0;
+  padding-left: 0;
+  box-shadow: none;
+}
+
+.learning-card:hover {
+  border: 0;
+  box-shadow: none;
+}
+
+/* Все карточки компетенций — единый фон */
+.learning-summary-main,
+.studying-new-card {
+  background: #f9fafb;
+}
+
+.learning-summary-main:hover,
+.learning-summary-main:focus-within {
+  background: #f9fafb;
+}
+
+/* НИКАКОГО подчёркивания внутри карточек/кнопок/плашек */
+a,
+button,
+.link-button,
+.learning-card a,
+.learning-card span,
+.learning-card p,
+.learning-card h3,
+.learning-card h4 {
+  text-decoration: none !important;
+}
+
+/* Исключения: футерные ссылки и явные текстовые ссылки */
+.site-footer a,
+.footer2-legal a,
+.footer2-nav-sub a,
+.footer2-nav-sub button,
+.link-button,
+.text-link {
+  text-decoration: underline !important;
+  text-underline-position: from-font;
+}
+
+
+/* Единое позиционирование картинок разделов: правый верх, без обрезки */
+:root {
+  --section-bg-width: 720px;
+}
+
+.studying-page--saved {
+  background-position: right 0 top 0;
+  background-size: var(--section-bg-width) auto;
+}
+
+.plan-bg-app {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: var(--section-bg-width);
+  height: auto;
+  overflow: visible;
+  display: block;
+}
+
+.plan-bg-app img {
+  display: block;
+  width: var(--section-bg-width);
+  height: auto;
+}
+
+@media (max-width: 760px) {
+  :root {
+    --section-bg-width: 520px;
+  }
+
+  .studying-page--saved {
+    background-position: right 0 top 0;
+    background-size: var(--section-bg-width) auto;
+  }
+}
+
+
+/* План: то же позиционирование фоновой картинки, что и в «Изучаю» */
+.studying-page--plan-home {
+  background-image: url("/images/bg-plan.png");
+  background-repeat: no-repeat;
+  background-position: right 0 top 0;
+  background-size: var(--section-bg-width) auto;
+}
+
+.plan-bg-app {
+  display: none;
+}
+
+
+/* Единый стиль плашек в «Изучаю» и «План» */
+.learning-card,
+.plan-step,
+.plan-home-prof-card,
+.plan-matrix-card,
+.plan-matrix-card-result {
+  border: 1px solid #eef2f7;
+  border-radius: 24px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  box-shadow: none;
+}
+
+.plan-step:hover,
+.plan-home-prof-card:hover {
+  background: var(--glass-bg);
+  border-color: #c7d2fe;
+}
+
+/* Внутренняя карточка компетенции в «Изучаю» — тот же радиус */
+.learning-summary-main,
+.studying-new-card {
+  border-radius: 16px;
+}
+
+
+/* Убираем рамки у всех плашек разделов — никаких border */
+.learning-card,
+.plan-step,
+.plan-home-prof-card,
+.plan-matrix-card,
+.plan-matrix-card-result {
+  border: 0 !important;
+}
+
+.learning-card:hover,
+.plan-step:hover,
+.plan-home-prof-card:hover {
+  border: 0 !important;
+  box-shadow: none;
+}
+
+
+/* Информационные шаги «Плана» не кликабельны — ховера нет */
+.plan-step,
+.plan-step:hover,
+.plan-step:focus-within {
+  background: var(--glass-bg);
+  border: 0 !important;
+  box-shadow: none;
+  transform: none;
+  cursor: default;
+}
+
+
+/* Единый glass-стиль плашек: перебиваем стили страницы «План» */
+.plan-page--home .plan-step,
+.plan-page--home .plan-home-prof-card,
+.plan-step,
+.plan-home-prof-card,
+.plan-matrix-card,
+.plan-matrix-card-result,
+.learning-card {
+  background: var(--glass-bg) !important;
+  -webkit-backdrop-filter: blur(var(--glass-blur)) !important;
+  backdrop-filter: blur(var(--glass-blur)) !important;
+  border-radius: 24px !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+
+/* ------------------------------------------------------------------ */
+/* Дизайн-токены стеклянных плашек (единый стиль разделов)             */
+/* ------------------------------------------------------------------ */
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.5);
+  --glass-blur: 24px;
+  --glass-radius: 24px;
+}
+
+/* Утилита для переиспользования в компонентах */
+.glass-panel {
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  backdrop-filter: blur(var(--glass-blur));
+  border-radius: var(--glass-radius);
+  border: 0;
+  box-shadow: none;
+}
+
+/* Применяем токены ко всем плашкам, где нужен glass-стиль */
+.plan-page--home .plan-step,
+.plan-page--home .plan-home-prof-card,
+.plan-step,
+.plan-home-prof-card,
+.plan-matrix-card,
+.plan-matrix-card-result,
+.learning-card,
+.studying-empty,
+.studying-new-card {
+  background: var(--glass-bg) !important;
+  -webkit-backdrop-filter: blur(var(--glass-blur)) !important;
+  backdrop-filter: blur(var(--glass-blur)) !important;
+  border-radius: var(--glass-radius) !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Внутренние карточки компетенций — тот же токен, меньший радиус */
+.learning-summary-main,
+.studying-new-card {
+  border-radius: 16px !important;
+}
+
+
+/* Прозрачность и цвет стеклянных плашек — отдельные токены */
+:root {
+  --glass-rgb: 255 255 255;
+  --glass-opacity: 0.5;
+  --glass-bg: rgb(var(--glass-rgb) / var(--glass-opacity));
+}
+
+/* Обновляем утилиту и все плашки на производные токены */
+.glass-panel,
+.plan-page--home .plan-step,
+.plan-page--home .plan-home-prof-card,
+.plan-step,
+.plan-home-prof-card,
+.plan-matrix-card,
+.plan-matrix-card-result,
+.learning-card,
+.studying-empty,
+.studying-new-card {
+  background: var(--glass-bg) !important;
+}
+
+.plan-step:hover,
+.plan-home-prof-card:hover {
+  background: var(--glass-bg) !important;
+}
+
+
+/* Единая карточка компетенции */
+.competency-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  border-radius: 16px;
+  background: #f9fafb;
+  border: 1px solid transparent;
+  color: inherit;
+  text-decoration: none !important;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.competency-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.competency-card-cap {
+  width: 24px;
+  height: 24px;
+}
+
+.competency-card-title {
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.competency-card-desc {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.competency-card-meta {
+  color: var(--placeholder);
+  font-size: 12px;
+}
+
+/* Одинаковый ховер у карточек профессий и компетенций */
+.profession-card:hover,
+.profession-tile:hover,
+.competency-card:hover,
+.learning-summary-main:hover,
+.learning-summary-main:focus-within {
+  border-color: #c7d2fe !important;
+  background: #f9fafb;
+  box-shadow: 0 12px 28px rgba(19, 34, 56, 0.1) !important;
+  transform: none !important;
+}
+
+
+/* Свечение под курсором на карточке компетенции — как у карточек профессий */
+.competency-card.has-hover-light::before {
+  z-index: 0;
+}
+
+.competency-card.has-hover-light > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* Плашки «Плана»: явная заливка EDF2FF 50% + blur */
+.plan-page--home .plan-step,
+.plan-step,
+.plan-home-prof-card {
+  background: rgb(237 242 255 / 0.5) !important;
+  -webkit-backdrop-filter: blur(var(--glass-blur)) !important;
+  backdrop-filter: blur(var(--glass-blur)) !important;
+}
+
+
+/* Откат заливки EDF2FF: возвращаем прежний glass-фон */
+.plan-page--home .plan-step,
+.plan-step,
+.plan-home-prof-card {
+  background: var(--glass-bg) !important;
+}
+
+
+/* Единый компонент информационной карточки-шага */
+.step-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 167px;
+  padding: 24px;
+  border-radius: 12px;
+  background: rgb(237 242 255 / 0.5);
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  backdrop-filter: blur(var(--glass-blur));
+  border: 0;
+  box-shadow: none;
+}
+
+.step-card-title {
+  margin: 0;
+  color: #132238;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 21.28px;
+  letter-spacing: -0.665px;
+}
+
+.step-card-text {
+  margin: 0;
+  color: #5f6f85;
+  font-size: 14px;
+  line-height: 21.7px;
+}
+
+@media (max-width: 760px) {
+  .step-card {
+    min-height: 0;
+    padding: 16px;
+  }
+}
+
+
+/* Карточки шагов: отступы 24px, одинаковая высота по самому высокому */
+.step-card {
+  height: 100%;
+  width: 100%;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.home-page-start,
+.plan-steps {
+  align-items: stretch;
+}
+
+.plan-steps {
+  grid-auto-rows: 1fr;
+}
+
+@media (max-width: 760px) {
+  .step-card {
+    padding: 24px;
+  }
+}
+
+
+/* Убираем лишнюю нижнюю высоту у карточек шагов */
+.step-card {
+  min-height: 0 !important;
+  justify-content: flex-start;
+}
+
+
+/* Карточка «Твоя последняя матрица» — состояние ховера из макета 459-9433 */
+.plan-matrix-card-result {
+  background: #ffffff !important;
+  border: 1px solid transparent !important;
+  border-radius: 12px !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  box-shadow: 0 2px 8px rgba(19, 34, 56, 0.04);
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.plan-matrix-card-result:hover,
+.plan-matrix-card-result:focus-visible {
+  background: #ffffff !important;
+  border-color: #c7d2fe !important;
+  box-shadow: 0 12px 28px rgba(79, 70, 229, 0.16);
+  outline: none;
+}
+
+
+/* Единый верхний отступ до контента: 64px (кроме раздела «Направления») */
+:root {
+  --page-top: 64px;
+}
+
+.home-page-sec1 {
+  top: var(--page-top);
+}
+
+.studying-page,
+.app-viewport--plan .studying-page {
+  padding-top: var(--page-top);
+}
+
+.page-screen {
+  padding-top: var(--page-top);
+}
+
+
+/* Единый лейаут контентной области: левый край 300px (после рейла), ширина до правого края */
+.home-page-frame {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
+.studying-page {
+  width: auto;
+  max-width: none;
+  margin: 0;
+  padding-left: 300px;
+  padding-right: 12px;
+}
+
+@media (max-width: 900px) {
+  .studying-page {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+
+/* Единый центрированный лейаут: контейнер 1512px по центру во всех разделах */
+.home-page-frame {
+  position: relative;
+  width: 100%;
+  max-width: 1512px;
+  margin: 0 auto;
+}
+
+.home-page-hero {
+  width: 100%;
+}
+
+.studying-page {
+  width: 100%;
+  max-width: 1512px;
+  margin: 0 auto;
+  padding-left: 300px;
+  padding-right: 40px;
+}
+
+@media (max-width: 900px) {
+  .studying-page {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+
+/* Ховер карточки «Твоя последняя матрица» — точно по компоненту 459-9433 */
+.plan-matrix-card-result {
+  background: #fcfdff !important;
+  border: 1px solid transparent !important;
+  border-radius: 12px !important;
+  padding: 24px !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  box-shadow: none !important;
+}
+
+.plan-matrix-card-result:hover,
+.plan-matrix-card-result:focus-visible {
+  background: #fcfdff !important;
+  border-color: #f2f4f7 !important;
+  box-shadow: 0 8px 24px #a39fe1 !important;
+  outline: none;
 }

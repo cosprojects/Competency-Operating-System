@@ -4,6 +4,7 @@ import Link from "next/link";
 import { WelcomeToast } from "@/components/account/WelcomeToast";
 import { IconCheckCircle } from "@/components/icons";
 import { HomeWhyButton } from "@/components/home/HomeWhyButton";
+import { StepCard } from "@/components/ui/StepCard";
 import { ProfessionTile } from "@/components/ProfessionTile";
 import type { SearchProfession } from "@/components/ProfessionTile";
 import { allChangelog, formatChangelogDate } from "@/content/changelog";
@@ -84,11 +85,11 @@ export default async function HomePage({
 
   return (
     <>
-      <div className="home2">
-        <div className="home2-frame">
-        <div className="home2-hero">
+      <div className="home-page">
+        <div className="home-page-frame">
+        <div className="home-page-hero">
           <video
-            className="home2-hero-video"
+            className="home-page-hero-video"
             src="/assets/content/AXIONA-bg.mp4"
             poster="/assets/content/AXIONA-bg-poster.png"
             autoPlay
@@ -97,16 +98,16 @@ export default async function HomePage({
             playsInline
             aria-hidden="true"
           />
-          <section className="home2-sec1">
-            <div className="home2-hero-copy">
+          <section className="home-page-sec1">
+            <div className="home-page-hero-copy">
               <Eyebrow>Beta 1</Eyebrow>
               <h1>Разберись в профессии.<br />Строй свой путь развития</h1>
-              <p className="home2-lead">
+              <p className="home-page-lead">
                 AXIONA собирает профессиональные знания и навыки в понятную структуру, чтобы каждый
                 мог увидеть, из чего складывается его профессия, оценить интересующие направления и
                 найти материалы для обучения.
               </p>
-              <div className="home2-hero-actions">
+              <div className="home-page-hero-actions">
                 <PrimaryCta className="button" href="/professions">Изучить направления</PrimaryCta>
                 <HomeWhyButton />
               </div>
@@ -114,22 +115,19 @@ export default async function HomePage({
           </section>
         </div>
 
-        <div className="home2-main">
-            <section className="home2-intro">
+        <div className="home-page-main">
+            <section className="home-page-intro">
               <h2>Собираю все для твоего развития</h2>
-              <div className="home2-start">
+              <div className="home-page-start">
                 {START_STEPS.map((step) => (
-                  <article className="home2-start-card" key={step.title}>
-                    <h3>{step.title}</h3>
-                    <p>{step.text}</p>
-                  </article>
+                  <StepCard key={step.title} title={step.title} text={step.text} />
                 ))}
               </div>
             </section>
 
-            <section className="home2-latest">
+            <section className="home-page-latest">
               <h2>Последние добавленные</h2>
-              <div className="home2-latest-grid">
+              <div className="home-page-latest-grid">
                 {latest.map((profession, index) => (
                   <ProfessionTile
                     key={profession.slug}
@@ -143,19 +141,19 @@ export default async function HomePage({
               </div>
             </section>
 
-            <Link className="home2-plan-banner" href="/plan">
-              <img className="home2-plan-wave" src="/assets/content/bg-wave.svg" alt="" aria-hidden="true" />
-              <img className="home2-plan-image" src="/assets/content/bg-plan-banner.png" alt="" aria-hidden="true" />
-              <span className="home2-plan-text">
+            <Link className="home-page-plan-banner" href="/plan">
+              <img className="home-page-plan-wave" src="/assets/content/bg-wave.svg" alt="" aria-hidden="true" />
+              <img className="home-page-plan-image" src="/assets/content/bg-plan-banner.png" alt="" aria-hidden="true" />
+              <span className="home-page-plan-text">
                 <strong>Собери матрицу компетенций</strong>
                 <span>Определи грейд и узнай, что нужно подтянуть для роста.</span>
               </span>
-              <span className="home2-plan-button">Перейти к плану <img className="home2-icon" src="/icons/home/arrow-right.svg" alt="" aria-hidden="true" /></span>
+              <span className="home-page-plan-button">Перейти к плану <img className="home-page-icon" src="/icons/home/arrow-right.svg" alt="" aria-hidden="true" /></span>
             </Link>
 
-            <section className="home2-notice">
-              <p className="home2-notice-title">Помогите сделать систему полезнее</p>
-              <div className="home2-notice-text">
+            <section className="home-page-notice">
+              <p className="home-page-notice-title">Помогите сделать систему полезнее</p>
+              <div className="home-page-notice-text">
                 <p>
                   Мы хотим, чтобы эти карты действительно помогали людям ориентироваться в профессии,
                   находить новые направления для развития и понимать, какие знания могут быть полезны в
@@ -171,26 +169,26 @@ export default async function HomePage({
                   ближе к реальным потребностям людей.
                 </p>
               </div>
-              <PrimaryCta className="button secondary home2-notice-button" href="/feedback">
+              <PrimaryCta className="button secondary home-page-notice-button" href="/feedback">
                 Поделитесь своим мнением
               </PrimaryCta>
             </section>
 
-            <section className="home2-roadmap">
-              <div className="home2-roadmap-head">
+            <section className="home-page-roadmap">
+              <div className="home-page-roadmap-head">
                 <h2>Дорожная карта развития системы</h2>
-                <p className="home2-subtitle">Последовательность этапов развития платформы компетенций.</p>
+                <p className="home-page-subtitle">Последовательность этапов развития платформы компетенций.</p>
               </div>
-              <div className="home2-timeline">
+              <div className="home-page-timeline">
                 {ROADMAP.map((item) => (
-                  <article className="home2-stage" key={item.title}>
-                    <span className="home2-stage-icon" aria-hidden="true">
+                  <article className="home-page-stage" key={item.title}>
+                    <span className="home-page-stage-icon" aria-hidden="true">
                       <IconCheckCircle />
                     </span>
-                    <div className="home2-stage-body">
-                      <p className="home2-stage-label">{item.stage}</p>
-                      <p className="home2-stage-title">{item.title}</p>
-                      <p className="home2-stage-desc">{item.text}</p>
+                    <div className="home-page-stage-body">
+                      <p className="home-page-stage-label">{item.stage}</p>
+                      <p className="home-page-stage-title">{item.title}</p>
+                      <p className="home-page-stage-desc">{item.text}</p>
                     </div>
                   </article>
                 ))}
@@ -198,10 +196,10 @@ export default async function HomePage({
             </section>
         </div>
 
-        <aside className="home2-aside">
-            <section className="home2-panel home2-about">
+        <aside className="home-page-aside">
+            <section className="home-page-panel home-page-about">
               <h2>
-                <img className="home2-icon" src="/icons/home/lightbulb.svg" alt="" aria-hidden="true" /> Что такое AXIONA
+                <img className="home-page-icon" src="/icons/home/lightbulb.svg" alt="" aria-hidden="true" /> Что такое AXIONA
               </h2>
               <p>
                 Каждая профессия имеет свою структуру: знания, навыки и компетенции, необходимые для
@@ -213,16 +211,16 @@ export default async function HomePage({
               </p>
             </section>
 
-            <section className="home2-panel home2-log" aria-labelledby="home2-log-title">
-              <h2 id="home2-log-title"><img className="home2-icon" src="/icons/home/starfall.svg" alt="" aria-hidden="true" /> Последние обновления</h2>
-              <div className="home2-log-list">
+            <section className="home-page-panel home-page-log" aria-labelledby="home-page-log-title">
+              <h2 id="home-page-log-title"><img className="home-page-icon" src="/icons/home/starfall.svg" alt="" aria-hidden="true" /> Последние обновления</h2>
+              <div className="home-page-log-list">
                 {allChangelog().slice(0, 6).map((entry) => (
-                  <article className="home2-log-item" key={`${entry.date}-${entry.title}`}>
-                    <div className="home2-log-head">
-                      <span className="home2-log-date">{formatChangelogDate(entry.date)}</span>
-                      <p className="home2-log-title">{entry.title}</p>
+                  <article className="home-page-log-item" key={`${entry.date}-${entry.title}`}>
+                    <div className="home-page-log-head">
+                      <span className="home-page-log-date">{formatChangelogDate(entry.date)}</span>
+                      <p className="home-page-log-title">{entry.title}</p>
                     </div>
-                    <p className="home2-log-desc">{entry.description}</p>
+                    <p className="home-page-log-desc">{entry.description}</p>
                   </article>
                 ))}
               </div>

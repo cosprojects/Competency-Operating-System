@@ -197,23 +197,11 @@ export function LearningCard({
             ) : null}
           </div>
           <h3>
-            <Link href={`/professions/${card.professionSlug}?competency=${card.competencyId}`}>
+            <Link className="stretched-link" href={`/professions/${card.professionSlug}?competency=${card.competencyId}`}>
               {card.title}
             </Link>
           </h3>
           <p>{card.definition}</p>
-          {card.plan ? (
-            <div className="learning-plan-badge">
-              <span>
-                План {card.plan.professionTitle} · {card.plan.currentLevel} → {card.plan.targetLevel}
-              </span>
-              <Link href="/plan/result">Матрица</Link>
-              <Link href={`/plan/assess?profession=${card.plan.professionSlug}&grade=${card.plan.gradeCode}`}>
-                Переоценить
-              </Link>
-              {card.plan.stale ? <span className="learning-plan-stale">по прежней версии</span> : null}
-            </div>
-          ) : null}
           <span className="learning-meta">
             {knowledge.length} {plural(knowledge.length, ["знание", "знания", "знаний"])} ·{" "}
             {skills.length} {plural(skills.length, ["навык", "навыка", "навыков"])} · {materialsCount}{" "}
@@ -222,9 +210,19 @@ export function LearningCard({
         </div>
 
         <div className="learning-progress">
+          <div className="learning-progress-top">
           <div className="learning-percent">
             <strong>{percent}</strong>
             <span>%</span>
+          </div>
+          {card.plan ? (
+            <div className="learning-plan-badge">
+              <span>План · {card.plan.professionTitle}</span>
+              <span>{card.plan.currentLevel} → {card.plan.targetLevel}</span>
+              <Link href="/plan/result">К матрице</Link>
+              <Link href={`/plan/assess?profession=${card.plan.professionSlug}&grade=${card.plan.gradeCode}`}>Переоценить</Link>
+            </div>
+          ) : null}
           </div>
           <p className="learning-progress-count">
             <strong>{learnedCount}</strong> из {total} знаний и навыков изучено

@@ -6,6 +6,7 @@ import { FeedbackProvider } from "@/components/feedback/FeedbackProvider";
 import { MotionProvider } from "@/components/motion/MotionProvider";
 import { getCurrentUser, isAdminEmail } from "@/lib/auth";
 import "./globals.css";
+import "./home-footer-gap.css";
 
 export const metadata: Metadata = {
   title: "AXIONA — карта компетенций дизайнера",

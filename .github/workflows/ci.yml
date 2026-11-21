@@ -16,6 +16,9 @@ jobs:
           node-version: 24
       - run: npm install --no-audit --no-fund
       - run: npm run db:generate
+      # Тесты читают apps/web/src/content/generated (guides.json и т.п.);
+      # каталог gitignored, поэтому собираем контент до npm test.
+      - run: npm run release:build:draft
       - run: npm run typecheck
       - run: npm run agents:check
       - run: npm test

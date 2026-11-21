@@ -41,7 +41,8 @@ export default async function PlanPage() {
   const latest = user ? await getLatestMatrix(user.id) : null;
   const professions = listMatrixProfessions();
   const featured = professions.slice(0, 3);
-  const nextHref = user ? "/plan/start" : `/login?returnTo=${encodeURIComponent("/plan/start")}`;
+  // Собрать матрицу может и человек без аккаунта: аккаунт нужен только для сохранения в «Изучаю».
+  const nextHref = "/plan/start";
 
   const met = latest ? latest.rows.filter((row) => (latest.levels[row.id] ?? 0) >= row.targetLevel).length : 0;
 
@@ -98,11 +99,7 @@ export default async function PlanPage() {
               <ProfessionCard
                 key={profession.slug}
                 profession={profession}
-                href={
-                  user
-                    ? `/plan/grade?profession=${profession.slug}`
-                    : `/login?returnTo=${encodeURIComponent(`/plan/grade?profession=${profession.slug}`)}`
-                }
+                href={`/plan/grade?profession=${profession.slug}`}
               />
             ))}
           </div>

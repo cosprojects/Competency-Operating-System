@@ -4,7 +4,6 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { ProfessionCard } from "@/components/plan/ProfessionCard";
 import { PlanStepper } from "@/components/plan/PlanStepper";
-import { getCurrentUser } from "@/lib/auth";
 import { listMatrixFamilies, listMatrixProfessions } from "@/lib/matrix";
 
 export const dynamic = "force-dynamic";
@@ -22,8 +21,6 @@ export default async function PlanStartPage({
 }) {
   const { family, profession: legacyProfession } = await searchParams;
   if (legacyProfession) redirect(`/plan/grade?profession=${encodeURIComponent(legacyProfession)}`);
-  const user = await getCurrentUser();
-  if (!user) redirect(`/login?returnTo=${encodeURIComponent("/plan/start")}`);
 
   const families = listMatrixFamilies();
   const professions = listMatrixProfessions();

@@ -21,17 +21,13 @@ export default async function PlanGradePage({
   searchParams: Promise<{ profession?: string; grade?: string }>;
 }) {
   const { profession: requestedProfession, grade: requestedGrade } = await searchParams;
-  const user = await getCurrentUser();
   const profession = getMatrixProfession(requestedProfession ?? "uxui");
   if (!profession) redirect("/plan/start");
-  if (!user) {
-    redirect(
-      `/login?returnTo=${encodeURIComponent(`/plan/grade?profession=${profession.slug}`)}`,
-    );
-  }
 
   const grades = getMatrixGrades(profession.slug);
-  const latest = await getLatestMatrix(user.id);
+  // Грейд из последней матрицы подставляем только своему аккаунту; без входа — просто выбор.
+  const user = await getCurrentUser();
+  const latest = user ? await getLatestMatrix(user.id) : null;
   const fallbackGrade =
     latest && latest.profession.slug === profession.slug ? latest.grade.code : undefined;
   const selectedCode = requestedGrade && grades.some((grade) => grade.code === requestedGrade)

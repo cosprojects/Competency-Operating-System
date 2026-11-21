@@ -3,10 +3,20 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { SkillLevel } from "@/components/ui/SkillLevel";
 import { NextStepCard } from "@/components/ui/NextStepCard";
 import { PlanStudyButton } from "@/components/plan/PlanStudyButton";
-import type { LatestMatrix, StudyProgress } from "@/lib/matrix-server";
-import type { MatrixSummary } from "@/lib/matrix";
+import type { StudyProgress } from "@/lib/matrix-server";
+import type { MatrixLevel, MatrixRequirement, MatrixRow, MatrixSummary } from "@/lib/matrix";
 
-function studyLabel(progress: StudyProgress | undefined): string {
+/** Минимум, который нужен результату: подходит и снимку из БД, и предпросмотру без аккаунта. */
+export interface MatrixResultData {
+  profession: { slug: string; title: string };
+  grade: { code: string; title: string; requirements: MatrixRequirement[] };
+  rows: MatrixRow[];
+  levels: Record<string, MatrixLevel>;
+  stale: boolean;
+}
+
+function studyLabel(progress: StudyProgress | undefined, anonymous = false): string {
+  if (anonymous) return "появится с аккаунтом";
   if (!progress) return "нет данных об изучении";
   if (progress.totalItems === 0) return "нет знаний и навыков для отметок";
   return `изучение: ${progress.learnedItems} из ${progress.totalItems}`;
@@ -18,14 +28,26 @@ function learnedCount(progress: StudyProgress | undefined): string {
   return `${progress.learnedItems} из ${progress.totalItems}`;
 }
 
+/** До входа «Добавить к изучению» ведёт к регистрации: сначала аккаунт, потом сохранение. */
+function StudyGateLink({ className }: { className: string }) {
+  return (
+    <Link className={className} href={`/register?returnTo=${encodeURIComponent("/plan/result")}`}>
+      Войти и добавить
+    </Link>
+  );
+}
+
 export function MatrixResult({
   latest,
   summary,
   study,
+  anonymous = false,
 }: {
-  latest: LatestMatrix;
+  latest: MatrixResultData;
   summary: MatrixSummary;
   study: Record<string, StudyProgress>;
+  /** Матрица собрана без аккаунта: живёт в браузере, добавление в «Изучаю» — после входа. */
+  anonymous?: boolean;
 }) {
   const ratio = summary.total === 0 ? 0 : Math.round((summary.met / summary.total) * 100);
   const reassessHref = `/plan/assess?profession=${latest.profession.slug}&grade=${latest.grade.code}`;
@@ -55,6 +77,21 @@ export function MatrixResult({
           </p>
         ) : null}
       </header>
+
+      {anonymous ? (
+        <section className="plan-draft-note" aria-label="Матрица без аккаунта">
+          <div>
+            <strong>Матрица пока живёт в этом браузере.</strong>
+            <p>
+              Создай аккаунт — сохраним её и откроем «Изучаю»: отметки знаний и навыков, прогресс и
+              доступ с другого устройства.
+            </p>
+          </div>
+          <Link className="button small" href={`/register?returnTo=${encodeURIComponent("/plan/result")}`}>
+            Создать аккаунт
+          </Link>
+        </section>
+      ) : null}
 
       <section className="plan-summary" aria-label="Итог матрицы">
         <div className="plan-summary-top">
@@ -133,15 +170,19 @@ export function MatrixResult({
                     </div>
                     <div className="plan-gap-foot">
                       <div className="plan-gap-learned">
-                        <span>Изучено</span>
-                        <strong>{learnedCount(progress)}</strong>
+                        <span>{anonymous ? "Изучение" : "Изучено"}</span>
+                        <strong>{anonymous ? "с аккаунтом" : learnedCount(progress)}</strong>
                       </div>
-                      <PlanStudyButton
-                        competencyId={gap.competencyId}
-                        professionSlug={latest.profession.slug}
-                        saved={added}
-                        appearance="card"
-                      />
+                      {anonymous ? (
+                        <StudyGateLink className="plan-study-button" />
+                      ) : (
+                        <PlanStudyButton
+                          competencyId={gap.competencyId}
+                          professionSlug={latest.profession.slug}
+                          saved={added}
+                          appearance="card"
+                        />
+                      )}
                     </div>
                   </article>
                 );
@@ -185,14 +226,29 @@ export function MatrixResult({
             {nextGap ? (
               <>
                 <p>
-                  Сейчас {nextGap.currentLevel} → цель {nextGap.targetLevel}. Начни с этого разрыва: добавь
-                  компетенцию в «Изучаю».
+                  {anonymous ? (
+                    <>
+                      Сейчас {nextGap.currentLevel} → цель {nextGap.targetLevel}. Создай аккаунт — сохраним
+                      матрицу и откроем «Изучаю», чтобы начать с этого разрыва.
+                    </>
+                  ) : (
+                    <>
+                      Сейчас {nextGap.currentLevel} → цель {nextGap.targetLevel}. Начни с этого разрыва: добавь
+                      компетенцию в «Изучаю».
+                    </>
+                  )}
                 </p>
-                <PlanStudyButton
-                  competencyId={nextGap.competencyId}
-                  professionSlug={latest.profession.slug}
-                  saved={Boolean(nextStudy?.saved)}
-                />
+                {anonymous ? (
+                  <Link className="button secondary small" href={`/register?returnTo=${encodeURIComponent("/plan/result")}`}>
+                    Создать аккаунт
+                  </Link>
+                ) : (
+                  <PlanStudyButton
+                    competencyId={nextGap.competencyId}
+                    professionSlug={latest.profession.slug}
+                    saved={Boolean(nextStudy?.saved)}
+                  />
+                )}
               </>
             ) : (
               <p>Все требования закрыты. Посмотри следующий грейд или переоцени уровни.</p>
@@ -229,7 +285,7 @@ export function MatrixResult({
                       <SkillLevel level={current} />
                     </td>
                     <td>{row.targetLevel}</td>
-                    <td>{studyLabel(progress)}</td>
+                    <td>{studyLabel(progress, anonymous)}</td>
                   </tr>
                 );
               })}

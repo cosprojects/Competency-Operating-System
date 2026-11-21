@@ -1,9 +1,10 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { SkillLevel } from "@/components/ui/SkillLevel";
+import { readMatrixDraft, writeMatrixDraft } from "@/lib/matrix-draft";
 import type { MatrixRow } from "@/lib/matrix";
 
 const LEVELS = [0, 1, 2, 3, 4] as const;
@@ -29,6 +30,7 @@ export function MatrixForm({
   gradeScope,
   rows,
   initialLevels,
+  isAuthed,
 }: {
   professionSlug: string;
   professionTitle: string;
@@ -37,6 +39,8 @@ export function MatrixForm({
   gradeScope: string;
   rows: MatrixRow[];
   initialLevels: Record<string, number>;
+  /** false — оценка без аккаунта: уровни остаются в браузере, в БД не пишутся. */
+  isAuthed: boolean;
 }) {
   const router = useRouter();
   const [levels, setLevels] = useState<Record<string, number | undefined>>(() => {
@@ -47,6 +51,21 @@ export function MatrixForm({
   const [tab, setTab] = useState<Tab>("all");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  // Без аккаунта возвращаемся к своей незаконченной оценке: черновик лежит в браузере.
+  useEffect(() => {
+    if (isAuthed) return;
+    const draft = readMatrixDraft();
+    if (!draft || draft.professionSlug !== professionSlug || draft.gradeCode !== gradeCode) return;
+    setLevels((current) => {
+      const next = { ...current };
+      for (const row of rows) {
+        const value = draft.levels[row.id];
+        if (value !== undefined) next[row.id] = value;
+      }
+      return next;
+    });
+  }, [isAuthed, professionSlug, gradeCode, rows]);
 
   const answered = useMemo(() => rows.filter((row) => levels[row.id] !== undefined).length, [levels, rows]);
   const complete = answered === rows.length;
@@ -79,6 +98,16 @@ export function MatrixForm({
     setError(null);
     try {
       const payload = Object.fromEntries(rows.map((row) => [row.id, levels[row.id] ?? 0]));
+      if (!isAuthed) {
+        writeMatrixDraft({
+          professionSlug,
+          gradeCode,
+          levels: payload,
+          savedAt: new Date().toISOString(),
+        });
+        router.push("/plan/result");
+        return;
+      }
       const response = await fetch("/api/matrix", {
         method: "POST",
         headers: { "content-type": "application/json" },
@@ -210,10 +239,14 @@ export function MatrixForm({
 
       <div className="plan-actions plan-actions--save">
         <button className="button" type="submit" disabled={busy || !complete}>
-          {busy ? "Сохраняю…" : "Сохранить и посмотреть результат"}
+          {busy ? "Сохраняю…" : isAuthed ? "Сохранить и посмотреть результат" : "Посмотреть результат"}
           {!busy ? <span aria-hidden="true">→</span> : null}
         </button>
-        <p className="small muted">Потом можно переоценить уровень и собрать матрицу заново.</p>
+        <p className="small muted">
+          {isAuthed
+            ? "Потом можно переоценить уровень и собрать матрицу заново."
+            : "Без аккаунта матрица останется в этом браузере. С аккаунтом она сохранится и откроет «Изучаю»."}
+        </p>
       </div>
     </form>
   );

@@ -42,6 +42,15 @@ export interface MatrixRow extends MatrixCompetencyView {
   fit: FitStatus;
 }
 
+/** Матрица для предпросмотра без аккаунта: считает сервер, хранит браузер. */
+export interface MatrixPreview {
+  contentVersion: string;
+  profession: MatrixProfession;
+  grade: MatrixGrade;
+  rows: MatrixRow[];
+  levels: Record<string, MatrixLevel>;
+}
+
 const levels = levelsRaw as unknown as {
   levelsVersion: string;
   levels: Array<{ code: MatrixLevel; label: string; short: string }>;

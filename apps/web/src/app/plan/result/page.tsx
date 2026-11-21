@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { redirect } from "next/navigation";
+import { AnonymousMatrixResult } from "@/components/plan/AnonymousMatrixResult";
 import { MatrixResult } from "@/components/plan/MatrixResult";
+import { PendingMatrixGate } from "@/components/plan/PendingMatrixGate";
 import { PlanStepper } from "@/components/plan/PlanStepper";
 import { ViewEvent } from "@/components/ViewEvent";
 import { getCurrentUser } from "@/lib/auth";
@@ -13,12 +14,27 @@ export const metadata: Metadata = {
   title: "План — матрица компетенций",
 };
 
+/**
+ * Результат матрицы.
+ *
+ * Без аккаунта матрица живёт в localStorage: сводку считает `/api/matrix/preview`,
+ * «Добавить к изучению» ведёт к регистрации. После входа `PendingMatrixGate`
+ * сохраняет черновик из браузера и страница перерисовывается уже из БД.
+ */
 export default async function PlanResultPage() {
   const user = await getCurrentUser();
-  if (!user) redirect(`/login?returnTo=${encodeURIComponent("/plan/result")}`);
+  if (!user) {
+    return <AnonymousMatrixResult />;
+  }
 
   const latest = await getLatestMatrix(user.id);
-  if (!latest) redirect("/plan");
+  if (!latest) {
+    return (
+      <div className="plan-page">
+        <PendingMatrixGate />
+      </div>
+    );
+  }
 
   const titles = Object.fromEntries(latest.rows.map((row) => [row.id, row.title]));
   const summary = summarizeMatrix(latest.grade.requirements, latest.levels, titles);

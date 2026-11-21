@@ -10811,6 +10811,38 @@ body:has(.studying-page) .paper-layer {
   font-size: 13px;
 }
 
+/* Матрица собрана без аккаунта: хранится в браузере, «Изучаю» откроется после входа. */
+.plan-draft-note {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 20px;
+  margin: 0 0 18px;
+  padding: 14px 18px;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--r-16, 16px);
+  background: var(--surface);
+}
+
+.plan-draft-note strong {
+  display: block;
+  color: var(--ink);
+  font-size: 14px;
+}
+
+.plan-draft-note p {
+  max-width: 62ch;
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.plan-draft-note .button {
+  flex: none;
+}
+
 .plan-actions {
   justify-content: space-between;
   padding-top: 6px;

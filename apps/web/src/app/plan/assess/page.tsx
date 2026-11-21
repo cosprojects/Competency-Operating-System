@@ -23,18 +23,13 @@ export default async function PlanAssessPage({
   const professionSlug = requestedProfession ?? "uxui";
   const gradeCode = requestedGrade ?? "designer";
   const user = await getCurrentUser();
-  if (!user) {
-    redirect(
-      `/login?returnTo=${encodeURIComponent(`/plan/assess?profession=${professionSlug}&grade=${gradeCode}`)}`,
-    );
-  }
   const profession = getMatrixProfession(professionSlug);
   if (!profession) redirect("/plan");
   const grade = getMatrixGrade(professionSlug, gradeCode);
   if (!grade) redirect(`/plan/grade?profession=${professionSlug}`);
   const rows = getMatrixRows(professionSlug, gradeCode);
 
-  const latest = await getLatestMatrix(user.id);
+  const latest = user ? await getLatestMatrix(user.id) : null;
   const initialLevels =
     latest && latest.profession.slug === professionSlug && latest.grade.code === gradeCode ? latest.levels : {};
 
@@ -57,6 +52,7 @@ export default async function PlanAssessPage({
         gradeScope={grade.scope}
         rows={rows}
         initialLevels={initialLevels}
+        isAuthed={Boolean(user)}
       />
       <p className="small muted plan-form-foot">
         Хочешь другой грейд? <Link href={`/plan/grade?profession=${professionSlug}`}>Вернуться к выбору</Link>.

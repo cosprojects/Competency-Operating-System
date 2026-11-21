@@ -50,8 +50,8 @@ export async function POST(request: Request) {
     return uniformOk();
   }
 
-  // Аварийный стоп публичной регистрации: письма уходят только существующим
-  // аккаунтам. Исключение — явный запрос приглашения из формы регистрации.
+  // Аварийный стоп публичной регистрации (`AUTH_REGISTRATION_DISABLED=1`):
+  // письма уходят только существующим аккаунтам. Исключение — запрос приглашения.
   const registrationDisabled = process.env.AUTH_REGISTRATION_DISABLED === "1";
   const wantsInvite =
     Boolean(payload && typeof payload === "object" && (payload as { intent?: unknown }).intent === "invite");
@@ -59,7 +59,11 @@ export async function POST(request: Request) {
     const user = await getDb()
       .user.findUnique({ where: { email }, select: { id: true } })
       .catch(() => null);
-    if (!shouldSendLink({ registrationDisabled, userExists: Boolean(user) })) return uniformOk();
+    if (!shouldSendLink({ registrationDisabled, userExists: Boolean(user) })) {
+      // Иначе «письмо не пришло» выглядит как сбой почты, хотя это стоп регистрации.
+      console.warn("[auth] регистрация закрыта: письмо новому адресу не отправлено");
+      return uniformOk();
+    }
   }
 
   const recent = await countRecentLoginTokens(email);

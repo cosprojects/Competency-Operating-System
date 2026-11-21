@@ -98,3 +98,15 @@ export function shouldSendLink(input: {
   if (!input.registrationDisabled) return true;
   return input.userExists;
 }
+
+/**
+ * Куда вернуть после подтверждения ссылки.
+ * Новый аккаунт по умолчанию попадает на главную с приветствием, но если человек
+ * пришёл из гейта (план, матрица, материал), его returnTo важнее приветствия:
+ * иначе он теряет выбранный маршрут сразу после регистрации.
+ */
+export function postLoginTarget(input: { isNewUser: boolean; returnTo: string }): string {
+  if (!input.isNewUser) return input.returnTo;
+  if (input.returnTo !== "/saved") return input.returnTo;
+  return "/?welcome=1";
+}

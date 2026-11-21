@@ -5,6 +5,7 @@ import {
   hashToken,
   newToken,
   normalizeEmail,
+  postLoginTarget,
   rateLimit,
   requestIpHashValues,
   safeReturnTo,
@@ -51,6 +52,25 @@ describe("auth-core: safeReturnTo", () => {
     assert.equal(safeReturnTo("/api/auth/request"), "/saved");
     assert.equal(safeReturnTo("/auth/verify"), "/saved");
     assert.equal(safeReturnTo("/saved\n"), "/saved");
+  });
+});
+
+describe("auth-core: postLoginTarget", () => {
+  it("возвращает существующего человека туда, куда он шёл", () => {
+    assert.equal(postLoginTarget({ isNewUser: false, returnTo: "/plan/start" }), "/plan/start");
+    assert.equal(postLoginTarget({ isNewUser: false, returnTo: "/saved" }), "/saved");
+  });
+
+  it("новому аккаунту сохраняет маршрут из гейта — например, сборку матрицы", () => {
+    assert.equal(postLoginTarget({ isNewUser: true, returnTo: "/plan/start" }), "/plan/start");
+    assert.equal(
+      postLoginTarget({ isNewUser: true, returnTo: "/professions/uxui?competency=1" }),
+      "/professions/uxui?competency=1",
+    );
+  });
+
+  it("без явного маршрута новый аккаунт видит приветствие на главной", () => {
+    assert.equal(postLoginTarget({ isNewUser: true, returnTo: "/saved" }), "/?welcome=1");
   });
 });
 

@@ -15,7 +15,7 @@ export default async function RegisterPage({
 }) {
   const { returnTo } = await searchParams;
   const safeReturn = safeReturnTo(returnTo);
-  // Публичная регистрация закрыта (AUTH_REGISTRATION_DISABLED=1): не показываем форму,
+  // Аварийный стоп публичной регистрации (`AUTH_REGISTRATION_DISABLED=1`): не показываем форму,
   // которая молча принимает email и не отправляет письмо. Вход — по приглашению или magic link.
   const registrationDisabled = process.env.AUTH_REGISTRATION_DISABLED === "1";
   return (

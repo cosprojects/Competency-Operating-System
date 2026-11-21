@@ -30,6 +30,7 @@ export {
   rateLimit,
   safeReturnTo,
   shouldSendLink,
+  postLoginTarget,
 } from "./auth-core";
 
 const SESSION_COOKIE = process.env.NODE_ENV === "production" ? "__Host-axiona_session" : "axiona_session";

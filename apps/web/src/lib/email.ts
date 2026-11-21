@@ -79,8 +79,18 @@ function getSmtpTransporter(): ReturnType<typeof nodemailer.createTransport> {
  */
 async function sendTransactionalEmail({ to, subject, text, html }: TransactionalEmail): Promise<void> {
   const from = process.env.EMAIL_FROM ?? "no-reply@axiona.world";
+  // Ответ на письмо должен попадать в живой ящик, а не в no-reply: так человек может написать.
+  const replyTo = process.env.SUPPORT_EMAIL;
   if (process.env.EMAIL_SMTP_HOST) {
-    await getSmtpTransporter().sendMail({ from, to, subject, text, html });
+    await getSmtpTransporter().sendMail({
+      from,
+      to,
+      subject,
+      text,
+      html,
+      ...(replyTo ? { replyTo } : {}),
+    });
+    console.info("[axiona:email] sent via smtp");
     return;
   }
 
@@ -99,9 +109,21 @@ async function sendTransactionalEmail({ to, subject, text, html }: Transactional
       "content-type": "application/json",
       ...(token ? { authorization: `Bearer ${token}` } : {}),
     },
-    body: JSON.stringify({ to, subject, text, html, from }),
+    body: JSON.stringify({
+      from,
+      to,
+      subject,
+      text,
+      html,
+      ...(replyTo ? { reply_to: replyTo } : {}),
+    }),
   });
-  if (!response.ok) throw new Error(`Email provider error: ${response.status}`);
+  if (!response.ok) {
+    // Тело ответа провайдера — единственный способ понять причину отказа (домен, адрес, лимит).
+    const detail = await response.text().catch(() => "");
+    throw new Error(`Email provider error: ${response.status}${detail ? ` — ${detail.slice(0, 300)}` : ""}`);
+  }
+  console.info("[axiona:email] sent via http api");
 }
 
 /** Подтверждение смены email: уходит на НОВЫЙ адрес (COS-EAR-013). */

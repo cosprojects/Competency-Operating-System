@@ -1,6 +1,6 @@
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
-import { consumeLoginToken, publicOrigin, recordAnalyticsConsent, sameOrigin, setSessionCookie } from "@/lib/auth";
+import { consumeLoginToken, postLoginTarget, publicOrigin, recordAnalyticsConsent, sameOrigin, setSessionCookie } from "@/lib/auth";
 import { trackServerEvent } from "@/lib/analytics";
 import { sendWelcomeEmail } from "@/lib/email";
 import { CONSENT_COOKIE } from "@/lib/validation";
@@ -47,6 +47,6 @@ export async function POST(request: Request) {
     await trackServerEvent({ name: "signup_complete", userId: result.userId });
   }
 
-  const target = result.isNewUser ? "/?welcome=1" : result.returnTo;
+  const target = postLoginTarget({ isNewUser: result.isNewUser, returnTo: result.returnTo });
   return redirectTo(request, target);
 }

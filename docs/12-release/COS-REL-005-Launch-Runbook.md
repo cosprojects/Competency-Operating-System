@@ -67,7 +67,7 @@ npm run web:dev
 ```text
 # APP_URL продукта: https://app.axiona.world
 APP_URL=https://app.axiona.world
-LEGAL_VERSION=1.0.0
+LEGAL_VERSION=1.2.0
 # Срок ссылки для входа: 43200 минут = 30 дней (по умолчанию в коде)
 LOGIN_LINK_TTL_MINUTES=43200
 DATABASE_URL=postgresql://...
@@ -95,10 +95,10 @@ AUTH_REGISTRATION_DISABLED=0
 
 1. Купить VDS с московским IP и статическим адресом (Yandex Cloud / Selectel / Timeweb), Ubuntu LTS; открыть 22/80/443, SSH по ключу. Текущий план — 1 CPU / 2 ГБ RAM / 300 ГБ SSD; для 2 ГБ включить swap 2 ГБ и лимиты PostgreSQL.
 2. Установить Docker и Compose; скопировать репозиторий в `/srv/axiona`; `sudo scripts/deploy/setup-swap.sh`.
-3. Заполнить `.env.production`: `APP_URL=https://app.axiona.world`, `DATABASE_URL`, `EMAIL_*`, `OWNER_EMAILS`, `LEGAL_VERSION`, на старте `AUTH_REGISTRATION_DISABLED=1`.
+3. Заполнить `.env.production`: `APP_URL=https://app.axiona.world`, `DATABASE_URL`, `EMAIL_*`, `OWNER_EMAILS`, `LEGAL_VERSION`, `AUTH_REGISTRATION_DISABLED=0` (`1` — только аварийный стоп; с 2026-11-21 регистрация открыта публично).
 4. Caddy: `app.axiona.world` → приложение; TLS автоматически. PostgreSQL 16 — в compose, порт БД не публиковать.
 5. `docker compose --env-file .env.production up -d --build` (APP_URL из `.env.production` передаётся и в build-arg: robots/sitemap генерируются на сборке); `scripts/deploy/migrate.sh`; `GET /api/health`.
-6. Впускать тестеров по инвайтам; публичную регистрацию открыть после legal/QA.
+6. Регистрация открыта с 2026-11-21 (реестровая запись РКН получена); инвайты остаются outreach-каналом.
 7. Nightly `pg_dump` + проверка restore в отдельную БД; мониторинг health/5xx.
 8. `axiona.world` не направлять на VDS: это корпоративный сайт на Vercel.
 
@@ -113,7 +113,9 @@ AUTH_REGISTRATION_DISABLED=0
 | `app.axiona.world` | Продукт | VDS в Москве | A → IP VDS; TLS Caddy |
 | `axiona.world` | Vercel | Корпоративный сайт | по инструкции Vercel; не менять до решения |
 | `axiona.biz` | Позже | Корпоративный сайт/алиас | решается отдельно; регистратор требует US phone |
-| `mail.app.axiona.world` | Email | Отправка писем продукта | MX, SPF, DKIM, DMARC |
+| `send.app.axiona.world` | Email | Отправка писем продукта (Resend) | CNAME send.forge.rmta.net; SPF на этом имени |
+| `resend._domainkey.app.axiona.world` | Email | DKIM Resend | TXT с публичным ключом |
+| `_dmarc.app.axiona.world` | Email | DMARC | TXT `v=DMARC1; p=none` — **не настроен, добавить** |
 
 - Понизить TTL за 24 часа до переключения; после — `dig`, `curl -I`, HSTS.
 - Порт PostgreSQL наружу не открывать.
@@ -122,13 +124,13 @@ AUTH_REGISTRATION_DISABLED=0
 
 1. Для продукта на `app.axiona.world` выбран Resend: `EMAIL_API_URL=https://api.resend.com/emails`, `EMAIL_API_TOKEN` (Sending access), `EMAIL_FROM=AXIONA <no-reply@app.axiona.world>`. Домен `app.axiona.world` Verified в Resend; magic link доставлен 2026-11-10. Регион Resend — Ирландия/ЕС; передача email и текста письма раскрыта в политике.
 2. Официальный контакт — `hi.axiona@protonmail.com`; `support@`/`privacy@` на домене пока не используются. Если появятся — обновить политику, футер и уведомление РКН.
-3. SPF/DKIM/DMARC настроены Resend и Verified; DMARC (`p=none`) добавить/проверить до публичного запуска.
-4. Отправить тестовые magic link на Gmail, Яндекс, Mail.ru; проверить папку спама.
+3. SPF и DKIM настроены Resend и Verified (`send.app.axiona.world`, `resend._domainkey.app.axiona.world`). DMARC (`_dmarc.app.axiona.world` → `v=DMARC1; p=none`) на 2026-11-21 не настроен — добавить до публичного запуска.
+4. Отправить тестовые magic link на Gmail, Яндекс, Mail.ru; проверить папку спама. 2026-11-21 письмо на Gmail доставлено во «Входящие» (Resend `delivered`).
 5. Проверить, что ссылка ведёт на `/auth/verify` домена этого контура (`APP_URL`), а не на localhost и не на чужой контур.
 6. Проверить доставку welcome-письма после первого входа (`COS-EAR-015`); в production без `EMAIL_API_URL` регистрация отвечает 503.
-7. Пройти регистрацию с нового адреса: `/register` → письмо → подтверждение → `/saved?welcome=1`; повторить вход существующим адресом — письмо и вход без сюрпризов, согласие фиксируется по факту подтверждения. Публичная регистрация остаётся закрытой (`AUTH_REGISTRATION_DISABLED=1`) до уведомления РКН и юридической проверки.
+7. Пройти регистрацию с нового адреса: `/register` → письмо → подтверждение → `returnTo` (например, `/plan/start` из «Собрать матрицу») или `/?welcome=1` для пустого входа; повторить вход существующим адресом — письмо и вход без сюрпризов, согласие фиксируется по факту подтверждения. Регистрация открыта (`AUTH_REGISTRATION_DISABLED=0`); `1` — аварийный стоп, при котором новому адресу письмо не уходит, а в лог пишется `[auth] регистрация закрыта`.
 
-**Gate.** Production email остаётся на Resend; до реальных инвайтов подать уведомление РКН об обработке ПДн и отдельное уведомление о трансграничной передаче (Resend IE/US, Proton CH) по `COS-LEG-005/006`. Yandex SMTP (`COS-REL-016`) — только аварийный Plan B, не включаем до отказа РКН/Resend. Текущий контур — закрытая Beta; публичный запуск — отдельно из РБ (ADR-030).
+**Gate.** Основное уведомление РКН № 100495783: реестровая запись получена 2026-11-21, регистрация открыта. Отдельный пункт — уведомление о трансграничной передаче (Resend IE/US, Proton CH) по `COS-LEG-006` и снятие `draft` после юриста. Yandex SMTP (`COS-REL-016`) — только аварийный Plan B, не включаем до отказа РКН/Resend. Текущий контур — Beta; публичный запуск — отдельно из РБ (ADR-030).
 
 ## 6. Деплой
 

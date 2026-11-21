@@ -28,7 +28,6 @@ export function AppShell({
   const isPlain =
     pathname === "/login" ||
     pathname === "/register" ||
-    pathname === "/feedback" ||
     pathname.startsWith("/auth/");
   const isSaved = pathname === "/saved";
   const isPlan = pathname === "/plan" || pathname.startsWith("/plan/");

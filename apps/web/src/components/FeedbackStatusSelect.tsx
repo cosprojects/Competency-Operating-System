@@ -29,7 +29,7 @@ export function FeedbackStatusSelect({
       if (!response.ok) throw new Error("fail");
     } catch {
       setStatus(previous);
-      setError("Не удалось");
+      setError("Статус не сохранился: попробуй ещё раз.");
     } finally {
       setBusy(false);
     }

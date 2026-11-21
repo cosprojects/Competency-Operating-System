@@ -1,9 +1,12 @@
-import { FeedbackPageForm } from "@/components/feedback/FeedbackPageForm";
+import { redirect } from "next/navigation";
 
-export const metadata = {
-  title: "Обратная связь — AXIONA",
-};
+/** Небольшая редирект-страница вместо отдельной формы обратной связи. */
+export const dynamic = "force-dynamic";
 
+/**
+ * Отдельной страницы обратной связи нет: форма живёт в модальном окне.
+ * Старые ссылки и закладки ведут на главную, где диалог открывается сразу.
+ */
 export default function FeedbackPage() {
-  return <FeedbackPageForm />;
+  redirect("/?feedback=1");
 }

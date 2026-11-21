@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { FeedbackTrigger } from "@/components/feedback/FeedbackTrigger";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import {
@@ -14,7 +15,7 @@ import {
   IconPlaster,
   IconQuestion,
   IconGraduation,
-  IconPlan,
+  IconGraphUp,
   IconStructure,
   IconUsers,
 } from "@/components/icons";
@@ -39,7 +40,7 @@ const ITEMS = [
   {
     href: "/plan",
     label: "План",
-    icon: IconPlan,
+    icon: IconGraphUp,
     match: (p: string) => p === "/plan" || p.startsWith("/plan/"),
   },
 ];
@@ -149,10 +150,10 @@ export function MobileNav({ user }: { user: ShellUser | null }) {
                 </button>
               </li>
               <li>
-                <Link className="mobile-nav-item" href="/feedback" onClick={() => setOpen(false)}>
+                <FeedbackTrigger className="mobile-nav-item" onClick={() => setOpen(false)}>
                   <IconPlaster />
                   Ваш фидбек
-                </Link>
+                </FeedbackTrigger>
               </li>
               {user ? (
                 <li>

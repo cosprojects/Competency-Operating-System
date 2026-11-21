@@ -25,7 +25,7 @@ export async function sendMagicLink({ to, url, expiresText = "15 минут" }: 
 export async function sendWelcomeEmail({ to }: { to: string }): Promise<void> {
   const appUrl = process.env.APP_URL ?? "https://app.axiona.world";
   const text = [
-    "Привет!",
+    "Привет,",
     "",
     "Аккаунт в AXIONA создан. Теперь можно сохранять компетенции и материалы и возвращаться к ним с любого устройства.",
     "",
@@ -34,8 +34,8 @@ export async function sendWelcomeEmail({ to }: { to: string }): Promise<void> {
     "",
     "Если что-то не работает или есть идея — напиши в поддержку: hi.axiona@protonmail.com.",
   ].join("\n");
-  const html = `<p>Привет!</p><p>Аккаунт в AXIONA создан. Теперь можно сохранять компетенции и материалы и возвращаться к ним с любого устройства.</p><p><a href="${escapeHtml(appUrl)}/professions">Профессии</a><br/><a href="${escapeHtml(appUrl)}/saved">Сохранённое</a></p><p>Если что-то не работает или есть идея — напиши в поддержку: hi.axiona@protonmail.com.</p>`;
-  await sendTransactionalEmail({ to, subject: "Добро пожаловать в AXIONA", text, html });
+  const html = `<p>Привет,</p><p>Аккаунт в AXIONA создан. Теперь можно сохранять компетенции и материалы и возвращаться к ним с любого устройства.</p><p><a href="${escapeHtml(appUrl)}/professions">Профессии</a><br/><a href="${escapeHtml(appUrl)}/saved">Сохранённое</a></p><p>Если что-то не работает или есть идея — напиши в поддержку: hi.axiona@protonmail.com.</p>`;
+  await sendTransactionalEmail({ to, subject: "Аккаунт в AXIONA создан", text, html });
 }
 
 function escapeHtml(value: string): string {
@@ -107,14 +107,14 @@ async function sendTransactionalEmail({ to, subject, text, html }: Transactional
 /** Подтверждение смены email: уходит на НОВЫЙ адрес (COS-EAR-013). */
 export async function sendEmailChangeLink({ to, url }: MagicLinkEmail): Promise<void> {
   const text = [
-    "Привет!",
+    "Привет,",
     "",
     "Чтобы сменить почту в AXIONA на этот адрес, открой ссылку:",
     url,
     "",
-    "Ссылка действует 15 минут и работает один раз. Если ты не запрашивал смену, просто проигнорируй письмо.",
+    "Ссылка действует 15 минут и работает один раз. Если ты не запрашивал смену, проигнорируй письмо.",
   ].join("\n");
-  const html = `<p>Привет!</p><p>Чтобы сменить почту в AXIONA на этот адрес, открой ссылку:</p><p><a href="${escapeHtml(url)}">Подтвердить новый адрес</a></p><p>Ссылка действует 15 минут и работает один раз.</p>`;
+  const html = `<p>Привет,</p><p>Чтобы сменить почту в AXIONA на этот адрес, открой ссылку:</p><p><a href="${escapeHtml(url)}">Подтвердить новый адрес</a></p><p>Ссылка действует 15 минут и работает один раз.</p>`;
   await sendTransactionalEmail({ to, subject: "Подтверждение нового адреса в AXIONA", text, html });
 }
 

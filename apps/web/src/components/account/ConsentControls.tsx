@@ -18,10 +18,10 @@ export function ConsentControls() {
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ decision }),
       });
-      if (!response.ok) throw new Error("Не удалось сохранить решение");
+      if (!response.ok) throw new Error("Решение не сохранилось");
       router.refresh();
     } catch (caught) {
-      setError(caught instanceof Error ? caught.message : "Не удалось сохранить решение");
+      setError(caught instanceof Error ? caught.message : "Решение не сохранилось: попробуй ещё раз.");
     } finally {
       setBusy(null);
     }

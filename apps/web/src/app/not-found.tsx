@@ -12,9 +12,9 @@ export default function NotFound() {
       <main className="not-found-screen">
       <p className="not-found-code">404</p>
       <p className="not-found-text">
-        Упс! Страница не найдена.
+        Страница не нашлась.
         <br />
-        Работаю над этим.
+        Возможно, ссылка устарела или в адресе опечатка.
       </p>
       <Link className="button not-found-cta" href="/">
         Назад на главную

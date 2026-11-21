@@ -149,7 +149,7 @@ export function KnowledgeSheet({
           {error === "auth" ? <p className="knowledge-status">Разборы открываются после входа.</p> : null}
           {error === "empty" ? <p className="knowledge-status">Разбор пока готовится.</p> : null}
           {error && error !== "auth" && error !== "empty" ? (
-            <p className="knowledge-status">Не удалось загрузить разбор. Попробуйте ещё раз.</p>
+            <p className="knowledge-status">Разбор не загрузился. Попробуй ещё раз.</p>
           ) : null}
 
           {guide && guide.status === "ok"
@@ -163,11 +163,10 @@ export function KnowledgeSheet({
 
           {guide?.status === "no_data" || error === "empty" ? (
             <div className="knowledge-notice">
-              <p className="knowledge-notice-title">Данных пока не хватает</p>
+              <p className="knowledge-notice-title">Разбора пока нет</p>
               <p>
-                Сейчас мы собираем данные по всему интернету, чтобы наполнить систему пользой. Я уведомлю тебя по почте,
-                когда добавлю актуальные данные. Ты также можешь прислать источник с обучающими материалами — это поможет
-                добавить и улучшить систему.
+                Подходящий источник не нашли. Если знаешь материал по теме — поделись: проверим
+                и добавим разбор.
               </p>
               <FeedbackTrigger
                 className="button secondary small"

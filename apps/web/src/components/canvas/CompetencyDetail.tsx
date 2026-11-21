@@ -3,11 +3,14 @@
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
-  IconArrowSquareLeft,
   IconArrowSquareRight,
   IconCheckCircle,
   IconCloseCircle,
 } from "@/components/icons";
+import {
+  IconLinearSquareCloseSidebar,
+  IconLinearSquareOpenSidebar,
+} from "@/components/icons-library";
 import { KnowledgeSheet, type KnowledgeItem } from "@/components/canvas/KnowledgeSheet";
 import { MaterialCard } from "@/components/canvas/MaterialCard";
 import { StudyButton } from "@/components/canvas/StudyButton";
@@ -228,7 +231,7 @@ export function CompetencyDetail({
             aria-label={expanded ? "Свернуть панель" : "Развернуть панель на всю ширину"}
             title={expanded ? "Свернуть панель" : "Развернуть панель на всю ширину"}
           >
-            {expanded ? <IconArrowSquareRight /> : <IconArrowSquareLeft />}
+            {expanded ? <IconLinearSquareCloseSidebar /> : <IconLinearSquareOpenSidebar />}
           </button>
 
           <span className={`badge ${competency.tier}`}>{TIER_LABEL[competency.tier]}</span>

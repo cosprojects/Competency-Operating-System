@@ -1,27 +1,21 @@
 import Link from "next/link";
 import { Eyebrow } from "@/components/ui/Eyebrow";
+import { SkillLevel } from "@/components/ui/SkillLevel";
 import { NextStepCard } from "@/components/ui/NextStepCard";
 import { PlanStudyButton } from "@/components/plan/PlanStudyButton";
 import type { LatestMatrix, StudyProgress } from "@/lib/matrix-server";
 import type { MatrixSummary } from "@/lib/matrix";
 
-function Dots({ current, target }: { current: number; target: number }) {
-  return (
-    <span className="plan-dots" aria-label={`Текущий уровень ${current}, цель ${target}`}>
-      {[1, 2, 3, 4].map((level) => (
-        <span
-          key={level}
-          className={`plan-dot${level <= current ? " is-filled" : ""}${level === target ? " is-target" : ""}`}
-        />
-      ))}
-    </span>
-  );
-}
-
 function studyLabel(progress: StudyProgress | undefined): string {
   if (!progress) return "нет данных об изучении";
   if (progress.totalItems === 0) return "нет знаний и навыков для отметок";
   return `изучение: ${progress.learnedItems} из ${progress.totalItems}`;
+}
+
+/** Сколько знаний и навыков компетенции отмечено «Изучено» — вторая строка карточки. */
+function learnedCount(progress: StudyProgress | undefined): string {
+  if (!progress) return "—";
+  return `${progress.learnedItems} из ${progress.totalItems}`;
 }
 
 export function MatrixResult({
@@ -63,30 +57,46 @@ export function MatrixResult({
       </header>
 
       <section className="plan-summary" aria-label="Итог матрицы">
-        <div className="plan-summary-main">
-          <div className="plan-summary-number">
-            {summary.met}
-            <span> / {summary.total}</span>
+        <div className="plan-summary-top">
+          <div className="plan-summary-main">
+            <p className="plan-summary-number">
+              <strong>{summary.met}</strong>
+              <span className="plan-summary-number-sep" aria-hidden="true">
+                /
+              </span>
+              <span className="plan-summary-number-total">{summary.total}</span>
+            </p>
+            <p className="plan-summary-caption">Требований грейда закрыто</p>
           </div>
-          <p>требований грейда закрыто</p>
-          <div className="plan-progress-bar" aria-hidden="true">
-            <span style={{ width: `${ratio}%` }} />
+          <div className="plan-summary-data">
+            <div className="plan-summary-stat">
+              <span>Зоны роста</span>
+              <strong>{summary.gaps.length}</strong>
+            </div>
+            <div className="plan-summary-stat">
+              <span>Сильные стороны</span>
+              <strong>{summary.strengths.length}</strong>
+            </div>
+            <div className="plan-summary-stat is-accent">
+              <span>Закрыто требований</span>
+              <strong>{ratio}%</strong>
+            </div>
           </div>
         </div>
-        <div className="plan-summary-percent" aria-label={`Заполнено ${ratio}%`}>
-          <strong>{ratio}%</strong>
-          <span>требований</span>
-        </div>
-        <div className="plan-summary-side">
-          <div>
-            <strong>{summary.strengths.length}</strong>
-            <span>сильных сторон</span>
+        {summary.total > 0 ? (
+          <div
+            className="plan-summary-track"
+            role="img"
+            aria-label={`Закрыто ${summary.met} из ${summary.total} требований грейда`}
+          >
+            {Array.from({ length: summary.total }, (_, index) => (
+              <span
+                className={`plan-summary-segment${index < summary.met ? " is-filled" : ""}`}
+                key={index}
+              />
+            ))}
           </div>
-          <div>
-            <strong>{summary.gaps.length}</strong>
-            <span>зон роста</span>
-          </div>
-        </div>
+        ) : null}
       </section>
 
       <div className="plan-result-grid">
@@ -106,23 +116,31 @@ export function MatrixResult({
             <div className="plan-gap-list">
               {summary.gaps.map((gap) => {
                 const progress = study[gap.competencyId];
+                const added = Boolean(progress?.saved);
                 return (
-                  <article className="plan-gap" key={gap.competencyId}>
-                    <div className="plan-gap-top">
-                      <div>
-                        <h3>{gap.title}</h3>
-                        <p className="small muted">
-                          Сейчас {gap.currentLevel} · цель {gap.targetLevel} · разрыв {gap.gap}
-                        </p>
+                  <article
+                    className={`plan-gap${added ? " is-added" : ""}`}
+                    key={gap.competencyId}
+                  >
+                    <div className="plan-gap-head">
+                      <h3>{gap.title}</h3>
+                      <div className="plan-gap-levels">
+                        <span className="plan-gap-levels-text">
+                          Сейчас {gap.currentLevel} • Цель {gap.targetLevel}
+                        </span>
+                        <SkillLevel level={gap.currentLevel} target={gap.targetLevel} />
                       </div>
-                      <Dots current={gap.currentLevel} target={gap.targetLevel} />
                     </div>
-                    <div className="plan-gap-actions">
-                      <span className="small muted">{studyLabel(progress)}</span>
+                    <div className="plan-gap-foot">
+                      <div className="plan-gap-learned">
+                        <span>Изучено</span>
+                        <strong>{learnedCount(progress)}</strong>
+                      </div>
                       <PlanStudyButton
                         competencyId={gap.competencyId}
                         professionSlug={latest.profession.slug}
-                        saved={Boolean(progress?.saved)}
+                        saved={added}
+                        appearance="card"
                       />
                     </div>
                   </article>
@@ -208,7 +226,7 @@ export function MatrixResult({
                   <tr key={row.id}>
                     <th scope="row">{row.title}</th>
                     <td>
-                      <Dots current={current} target={row.targetLevel} />
+                      <SkillLevel level={current} />
                     </td>
                     <td>{row.targetLevel}</td>
                     <td>{studyLabel(progress)}</td>

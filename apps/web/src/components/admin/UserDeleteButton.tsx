@@ -22,10 +22,10 @@ export function UserDeleteButton({ userId, email }: { userId: string; email: str
         body: JSON.stringify({ action: "delete", userId }),
       });
       const data = (await response.json()) as { error?: string };
-      if (!response.ok) throw new Error(data.error ?? "Не получилось");
+      if (!response.ok) throw new Error(data.error ?? "Пользователь не удалился");
       router.refresh();
     } catch (caught) {
-      setError(caught instanceof Error ? caught.message : "Не получилось");
+      setError(caught instanceof Error ? caught.message : "Пользователь не удалился");
     } finally {
       setBusy(false);
     }

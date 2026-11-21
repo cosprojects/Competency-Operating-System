@@ -4,12 +4,14 @@ import Link from "next/link";
 import { WelcomeToast } from "@/components/account/WelcomeToast";
 import { IconCheckCircle } from "@/components/icons";
 import { HomeWhyButton } from "@/components/home/HomeWhyButton";
+import { AxionaHero3D } from "@/components/home/AxionaHero3D";
 import { StepCard } from "@/components/ui/StepCard";
 import { ProfessionTile } from "@/components/ProfessionTile";
 import type { SearchProfession } from "@/components/ProfessionTile";
 import { allChangelog, formatChangelogDate } from "@/content/changelog";
 import { SiteFooter } from "@/components/SiteFooter";
 import { PrimaryCta } from "@/components/ui/PrimaryCta";
+import { FeedbackCta } from "@/components/feedback/FeedbackCta";
 import { getCurrentUser } from "@/lib/auth";
 import { getDb } from "@/lib/db";
 import { getProfessions, pluralWord, professionSphere } from "@/lib/content";
@@ -37,12 +39,11 @@ const START_STEPS = [
 ];
 
 const ROADMAP = [
-  { stage: "01 · Сейчас", title: "Beta • Карта профессий • План развития • Прогресс изучения", text: "Уже открыта: Направления дизайна, компетенции, знания, навыки и материалы к ним, где видно, что на чём стоит. Структура улучшается и обновляется." },
-  { stage: "02 · Дальше", title: "Больше направлений и проверенная база", text: "Добавим новые профессии и будем следить за качеством: формулировки компетенций, связи между ними и учебные источники." },
-  { stage: "03 · Дальше", title: "Личное пространство", text: "Появится сохранение компетенций и материалов, статусы изучения и цель — чтобы возвращаться к своему плану, а не искать заново." },
-  { stage: "04 · Дальше", title: "Профиль компетенций", text: "Соберём картину твоих навыков и поможем оценить текущий уровень знаний в направлении." },
-  { stage: "05 · Дальше", title: "Персональный маршрут развития", text: "Построим индивидуальный маршрут к выбранной цели и покажем с чего начать, а результат шагов будет виден в профиле." },
-  { stage: "06 · Позже", title: "Команды и организации", text: "Общий язык компетенций для команд со своей методологией развития: цели развития, пробелы, прогресс и управление." },
+  { stage: "01 · Сейчас", title: "Beta: карта профессий, план и прогресс", text: "Уже открыты направления дизайна, компетенции, знания и навыки, материалы к ним. ИПР и личное пространство изучения. Структура обновляется — покрытие видно прямо в карте." },
+  { stage: "02 · Дальше", title: "Больше направлений и проверенная база", text: "Добавляем новые профессии и проверяем формулировки компетенций, связи между ними и учебные источники." },
+  { stage: "03 · Дальше", title: "Методология оценки", text: "Внедрим научные и эффективные методы оценки навыков, чтобы строить картину твоих навыков и поможем оценить текущий уровень знаний в направлении." },
+  { stage: "04 · Дальше", title: "Персональный маршрут развития", text: "Построим индивидуальный маршрут к выбранной цели и покажем, с чего начать, а результат шагов будет виден в профиле." },
+  { stage: "05 · Позже", title: "Команды и организации", text: "Общий язык компетенций для команд со своей методологией развития: цели развития, пробелы, прогресс и управление." },
 ];
 
 export default async function HomePage({
@@ -88,16 +89,7 @@ export default async function HomePage({
       <div className="home-page">
         <div className="home-page-frame">
         <div className="home-page-hero">
-          <video
-            className="home-page-hero-video"
-            src="/assets/content/AXIONA-bg.mp4"
-            poster="/assets/content/AXIONA-bg-poster.png"
-            autoPlay
-            muted
-            loop
-            playsInline
-            aria-hidden="true"
-          />
+          <AxionaHero3D theme="light" />
           <section className="home-page-sec1">
             <div className="home-page-hero-copy">
               <Eyebrow>Beta 1</Eyebrow>
@@ -117,7 +109,7 @@ export default async function HomePage({
 
         <div className="home-page-main">
             <section className="home-page-intro">
-              <h2>Собираю все для твоего развития</h2>
+              <h2>С чего начать</h2>
               <div className="home-page-start">
                 {START_STEPS.map((step) => (
                   <StepCard key={step.title} title={step.title} text={step.text} />
@@ -169,15 +161,15 @@ export default async function HomePage({
                   ближе к реальным потребностям людей.
                 </p>
               </div>
-              <PrimaryCta className="button secondary home-page-notice-button" href="/feedback">
+              <FeedbackCta className="button secondary home-page-notice-button">
                 Поделитесь своим мнением
-              </PrimaryCta>
+              </FeedbackCta>
             </section>
 
             <section className="home-page-roadmap">
               <div className="home-page-roadmap-head">
-                <h2>Дорожная карта развития системы</h2>
-                <p className="home-page-subtitle">Последовательность этапов развития платформы компетенций.</p>
+                <h2>Что будет дальше</h2>
+                <p className="home-page-subtitle">Этапы работы: что уже готово и что в планах.</p>
               </div>
               <div className="home-page-timeline">
                 {ROADMAP.map((item) => (

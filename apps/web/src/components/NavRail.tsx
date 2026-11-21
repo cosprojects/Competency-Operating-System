@@ -17,8 +17,11 @@ import {
   IconUsers,
 } from "@/components/icons";
 import { AccountDialog } from "@/components/account/AccountDialog";
+import { FeedbackTrigger } from "@/components/feedback/FeedbackTrigger";
 import { WhyDialog } from "@/components/WhyDialog";
 import type { ShellUser } from "@/components/AppShell";
+// Подложка и анимация схлопывания рейла живут рядом с компонентом.
+import styles from "./NavRail.module.css";
 
 const ITEMS = [
   { href: "/", label: "Главная", icon: IconHome, match: (pathname: string) => pathname === "/" },
@@ -67,6 +70,8 @@ export function NavRail({ user }: { user: ShellUser | null }) {
   const pathname = usePathname();
   const isCanvas = /^\/professions\/[^/]+$/.test(pathname);
   // Контентные страницы (схема профессии и выбор направления) — mini-рейл.
+  // Автосхлопывание по ширине ≤1440 живёт в CSS (globals.css): так рейл
+  // свёрнут уже на первом кадре, без прыжка после гидрации.
   const expanded = !isCanvas && pathname !== "/professions";
   const railRef = useRef<HTMLElement | null>(null);
   const hoverPillRef = useRef<HTMLDivElement | null>(null);
@@ -224,7 +229,7 @@ export function NavRail({ user }: { user: ShellUser | null }) {
 
   return (
     <aside
-      className={`nav-rail${expanded ? "" : " is-mini"}`}
+      className={`nav-rail ${styles.rail}${expanded ? "" : " is-mini"}`}
       ref={railRef}
       aria-label="Основная навигация"
       onPointerOver={onRailPointerOver}
@@ -285,10 +290,10 @@ export function NavRail({ user }: { user: ShellUser | null }) {
           <span className="rail-label">Зачем это?</span>
         </button>
 
-        <Link className="rail-item" href="/feedback" title="Обратная связь">
+        <FeedbackTrigger className="rail-item" title="Ваш фидбек">
           <IconPlaster />
-          <span className="rail-label">Обратная связь</span>
-        </Link>
+          <span className="rail-label">Ваш фидбек</span>
+        </FeedbackTrigger>
 
         {user ? (
           <button

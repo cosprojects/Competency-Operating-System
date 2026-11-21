@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import Link from "next/link";
 import { OfferCta } from "@/components/OfferCta";
-import { SiteFooter } from "@/components/SiteFooter";
 import { isLandingVariant, LANDING_VARIANTS } from "@/lib/landing-variants";
 
 export const metadata: Metadata = {
@@ -99,7 +98,6 @@ export default async function OfferPage({
           </div>
         </section>
       </main>
-      <SiteFooter />
     </>
   );
 }

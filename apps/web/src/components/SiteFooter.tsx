@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { CookieModalLink } from "@/components/CookieModal";
+import { FeedbackTrigger } from "@/components/feedback/FeedbackTrigger";
 
 /** Подвал сайта по новому макету 369-14582. */
 export function SiteFooter() {
@@ -32,7 +33,7 @@ export function SiteFooter() {
           <p>Операционная система человеческого развития</p>
           <p>© 2026 Все права защищены.</p>
           <p className="footer2-operator">
-            Оператор: Невзоров Кирилл Игоревич, самозанятый (НПД), ИНН 480708141554
+            Невзоров Кирилл Игоревич, ИНН 480708141554
           </p>
         </div>
 
@@ -50,8 +51,8 @@ export function SiteFooter() {
         <div className="footer2-right">
           <div className="footer2-nav">
             <Link href="/">Главная</Link>
-            <Link href="/professions">Профессии</Link>
-            <Link href="/feedback">Ваш фидбек</Link>
+            <Link href="/professions">Направления</Link>
+            <FeedbackTrigger>Ваш фидбек</FeedbackTrigger>
             {authed ? <Link href="/account">Аккаунт</Link> : <Link href="/login">Войти</Link>}
           </div>
           <div className="footer2-nav footer2-nav-sub">

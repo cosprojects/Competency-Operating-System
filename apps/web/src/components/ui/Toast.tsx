@@ -113,7 +113,7 @@ export function ToastHost() {
           </button>
         ) : (
           <button className="button block toast-action" type="button" onClick={dismiss}>
-            Хорошо
+            Закрыть
           </button>
         )}
       </div>

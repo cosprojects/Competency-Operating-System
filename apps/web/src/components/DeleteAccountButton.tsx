@@ -14,12 +14,12 @@ export function DeleteAccountButton() {
     setError(null);
     try {
       const response = await fetch("/api/account/delete", { method: "POST" });
-      if (!response.ok) throw new Error("Не удалось удалить аккаунт");
+      if (!response.ok) throw new Error("Аккаунт не удалился");
       setOpen(false);
       router.push("/");
       router.refresh();
     } catch {
-      setError("Не удалось удалить аккаунт. Напишите в hi.axiona@protonmail.com.");
+      setError("Аккаунт не удалился. Попробуй ещё раз — или напиши на hi.axiona@protonmail.com.");
       setBusy(false);
     }
   }

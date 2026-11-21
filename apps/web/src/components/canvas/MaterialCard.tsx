@@ -95,7 +95,7 @@ export function MaterialCard({
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ sourceId: source.id, competencyId }),
       });
-      if (!response.ok) throw new Error("Не получилось");
+      if (!response.ok) throw new Error("Голос не отменился");
       setReviewAction(null);
       router.refresh();
     } catch {

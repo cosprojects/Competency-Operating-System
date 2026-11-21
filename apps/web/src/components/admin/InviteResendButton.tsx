@@ -19,13 +19,13 @@ export function InviteResendButton({ email }: { email: string }) {
       });
       if (!response.ok) {
         const data = (await response.json()) as { error?: string };
-        throw new Error(data.error ?? "Не получилось");
+        throw new Error(data.error ?? "Приглашение не ушло");
       }
       showToast({ title: "Приглашение отправлено", text: "Старая ссылка отозвана.", duration: 4000 });
       router.refresh();
     } catch (caught) {
       showToast({
-        title: "Не получилось",
+        title: "Приглашение не ушло",
         text: caught instanceof Error ? caught.message : "Попробуй ещё раз",
         duration: 4000,
       });

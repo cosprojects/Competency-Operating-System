@@ -52,7 +52,7 @@ export function AccountDialog({
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ email }),
       });
-      if (!response.ok) throw new Error("Не получилось отправить");
+      if (!response.ok) throw new Error("Письмо не ушло");
       showToast({
         title: "Ссылка для входа отправлена",
         text: "Ссылка для входа ушла на этот адрес. Проверь почту и перейди по ссылке из письма.",
@@ -81,7 +81,7 @@ export function AccountDialog({
         body: JSON.stringify({ newEmail }),
       });
       const data = (await response.json()) as { error?: string };
-      if (!response.ok) throw new Error(data.error ?? "Не получилось отправить письмо");
+      if (!response.ok) throw new Error(data.error ?? "Письмо не ушло");
       showToast({
         title: "Ссылка для входа отправлена",
         text: "Ссылка ушла на новый адрес. Проверь почту и подтверди его — после этого старый адрес отвяжется от аккаунта.",
@@ -91,7 +91,7 @@ export function AccountDialog({
       setView("main");
     } catch (caught) {
       showToast({
-        title: "Не получилось",
+        title: "Почта не сменилась",
         text: caught instanceof Error ? caught.message : "Попробуй ещё раз",
         actionLabel: "Закрыть",
         duration: 5000,
@@ -105,12 +105,12 @@ export function AccountDialog({
     setBusy(true);
     try {
       const response = await fetch("/api/account/delete", { method: "POST" });
-      if (!response.ok) throw new Error("Не удалось удалить аккаунт");
+      if (!response.ok) throw new Error("Аккаунт не удалился");
       router.push("/");
       router.refresh();
     } catch (caught) {
       showToast({
-        title: "Не удалось удалить аккаунт",
+        title: "Аккаунт не удалился",
         text: caught instanceof Error ? caught.message : "Попробуй ещё раз",
         actionLabel: "Закрыть",
         duration: 5000,
@@ -129,7 +129,7 @@ export function AccountDialog({
     >
       <section className="account-dialog" role="dialog" aria-modal="true" aria-labelledby="account-dialog-title">
         <div className="account-dialog-top">
-          <Eyebrow>Ваш аккаунт</Eyebrow>
+          <Eyebrow>Аккаунт</Eyebrow>
           <button className="account-close" type="button" onClick={onClose} ref={closeRef} aria-label="Закрыть">
             <IconCloseCircle />
           </button>
@@ -139,9 +139,8 @@ export function AccountDialog({
           <>
             <h2 id="account-dialog-title">{email}</h2>
             <p className="account-lead">
-              Авторизация и вход осуществляются через ссылку в письме. Если вы потеряли письмо или
-              доступ к почте, воспользуйтесь инструментами для смены почты или запросите повторную
-              отправку ссылки. Мы не сохраняем ваши данные после удаления.
+              Вход — по ссылке из письма, пароля нет. Потерял письмо или доступ к почте? Смени адрес
+              или запроси ссылку ещё раз. После удаления аккаунта данные не сохраняются.
             </p>
 
             <div className="account-row">

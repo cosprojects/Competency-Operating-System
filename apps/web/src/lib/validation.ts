@@ -3,7 +3,7 @@ import { z } from "zod";
 export const CONSENT_COOKIE = "axiona_consent";
 export const ANON_COOKIE = "axiona_aid";
 
-export const emailSchema = z.string().trim().toLowerCase().email("Некорректный email").max(254);
+export const emailSchema = z.string().trim().toLowerCase().email("Проверь адрес: похоже, в нём ошибка").max(254);
 
 /**
  * Запрос ссылки для входа. Согласие здесь не проверяется: на форме стоит
@@ -103,7 +103,7 @@ export const feedbackSchema = z
     comment: z
       .string()
       .trim()
-      .max(4000, "Комментарий слишком длинный")
+      .max(4000, "Комментарий длинноват: до 4000 символов")
       .optional()
       .transform((value) => (value ? value : undefined)),
     contactEmail: optionalEmail,
@@ -111,7 +111,7 @@ export const feedbackSchema = z
     website: z.string().max(0, "Спам").optional(),
   })
   .refine((value) => Boolean(value.rating) || Boolean(value.comment), {
-    message: "Добавьте оценку или комментарий",
+    message: "Добавь оценку или комментарий",
     path: ["comment"],
   });
 
@@ -124,7 +124,7 @@ export const sourceReviewSchema = z
     comment: z
       .string()
       .trim()
-      .max(500, "Комментарий слишком длинный")
+      .max(500, "Комментарий длинноват: до 500 символов")
       .optional()
       .transform((value) => (value ? value : undefined)),
     pagePath: z.string().trim().max(500).default("/"),

@@ -26,11 +26,11 @@ export function AdminReviewActions({
       });
       if (!response.ok) {
         const data = (await response.json()) as { error?: string };
-        throw new Error(data.error ?? "Не получилось");
+        throw new Error(data.error ?? "Не применилось");
       }
       router.refresh();
     } catch (caught) {
-      setError(caught instanceof Error ? caught.message : "Не получилось");
+      setError(caught instanceof Error ? caught.message : "Не применилось");
     } finally {
       setPending(false);
     }

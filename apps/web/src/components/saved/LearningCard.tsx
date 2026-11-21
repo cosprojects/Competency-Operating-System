@@ -147,8 +147,8 @@ export function LearningCard({
       router.refresh();
     } catch {
       showToast({
-        title: "Не получилось",
-        text: "Не удалось убрать компетенцию из «Изучаю». Попробуйте ещё раз.",
+        title: "Не убрали",
+        text: "Компетенция осталась в «Изучаю»: попробуй ещё раз.",
         actionLabel: "Закрыть",
         duration: 5000,
       });
@@ -244,7 +244,7 @@ export function LearningCard({
             {skills.length}
           </p>
           <p className="learning-progress-note">
-            {allLearned ? "Компетенция изучена" : "Каждая отметка «Изучено» продвигает вас по маршруту."}
+            {allLearned ? "Компетенция изучена" : "Каждая отметка «Изучено» продвигает по маршруту."}
           </p>
         </div>
       </div>
@@ -255,7 +255,7 @@ export function LearningCard({
             <div className="learning-list-head">
               <h4>Знания и навыки</h4>
               <p>
-                {total} {plural(total, ["элемент", "элемента", "элементов"])} в компетенции · Откройте
+                {total} {plural(total, ["элемент", "элемента", "элементов"])} в компетенции · Открой
                 элемент, чтобы изучить подробности и отметить результат.
               </p>
             </div>
@@ -306,7 +306,7 @@ export function LearningCard({
                   <>
                     <span className="learning-next-label">Следующий шаг</span>
                     <h4>{selectedItem.title}</h4>
-                    <p>Откройте любой неизученный элемент. Каждая отметка делает ваш прогресс заметным.</p>
+                    <p>Отметь его «Изучено», когда разберёшься, — прогресс соберётся по отметкам.</p>
                     <button
                       className="learning-next-cta"
                       type="button"
@@ -315,7 +315,7 @@ export function LearningCard({
                       {selectedLearned ? "Открыть" : "Изучить"} {kindWord(selectedItem.kind)}
                       <IconArrowRight />
                     </button>
-                    <span className="learning-next-note">Углубляйтесь в профессию в своем темпе</span>
+                    <span className="learning-next-note">Углубляйся в профессию в своём темпе</span>
                   </>
                 ) : (
                   <>

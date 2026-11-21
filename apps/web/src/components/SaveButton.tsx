@@ -36,8 +36,8 @@ export function SaveButton({
   // Профессии не «сохраняют в избранное», а добавляют в «Изучаю»: шляпа
   // (заливка — изучаю, контур — нет) и соответствующие подписи.
   const isProfession = targetType === "PROFESSION";
-  const savedLabel = isProfession ? "Прекратить изучение" : "Убрать из избранного";
-  const unsavedLabel = isProfession ? "Изучать профессию" : "Сохранить в избранное";
+  const savedLabel = isProfession ? "Прекратить изучение" : "Убрать из сохранённых";
+  const unsavedLabel = isProfession ? "Изучать профессию" : "Сохранить";
 
   useEffect(() => {
     return () => {
@@ -54,7 +54,7 @@ export function SaveButton({
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ targetType, targetId, ...(contextProfession ? { professionSlug: contextProfession } : {}) }),
       });
-      if (!response.ok) throw new Error("Не удалось сохранить");
+      if (!response.ok) throw new Error("Не сохранилось");
       const data = (await response.json()) as { saved: boolean };
       setSaved(data.saved);
       if (data.saved) {
@@ -80,7 +80,7 @@ export function SaveButton({
         });
       }
     } catch {
-      setError("Не удалось сохранить. Попробуйте ещё раз.");
+      setError("Не сохранилось. Попробуй ещё раз.");
     } finally {
       setBusy(false);
     }
@@ -141,8 +141,8 @@ export function SaveButton({
             ? "В изучении"
             : "Изучать профессию"
           : saved
-            ? "★ В сохранённом"
-            : "☆ Сохранить"}
+            ? "В сохранённом"
+            : "Сохранить"}
       </button>
       {error ? (
         <div className="small" style={{ color: "var(--danger)", marginTop: 6 }}>

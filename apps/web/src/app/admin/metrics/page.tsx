@@ -141,7 +141,8 @@ export default async function AdminMetricsPage({
 
       <section className="section">
         <h2>Воронка</h2>
-        <table className="admin-table">
+        <div className="admin-table-wrap">
+          <table className="admin-table">
           <thead>
             <tr>
               <th>Шаг</th>
@@ -156,7 +157,8 @@ export default async function AdminMetricsPage({
               </tr>
             ))}
           </tbody>
-        </table>
+          </table>
+        </div>
         <p className="small muted" style={{ marginTop: 10 }}>
           Воронка строится по событиям и пишется только при согласии на аналитику. Всего аккаунтов
           и новые за период — в карточке «Пользователи» выше.
@@ -179,7 +181,8 @@ export default async function AdminMetricsPage({
         {feedbackGroups.length === 0 ? (
           <div className="empty"><p>Отзывов пока нет.</p></div>
         ) : (
-          <table className="admin-table">
+          <div className="admin-table-wrap">
+            <table className="admin-table">
             <thead>
               <tr>
                 <th>Тип</th>
@@ -194,7 +197,8 @@ export default async function AdminMetricsPage({
                 </tr>
               ))}
             </tbody>
-          </table>
+            </table>
+          </div>
         )}
       </section>
 
@@ -203,7 +207,8 @@ export default async function AdminMetricsPage({
         {eventGroups.length === 0 ? (
           <div className="empty"><p>Событий пока нет. Проверь consent и отправку событий.</p></div>
         ) : (
-          <table className="admin-table">
+          <div className="admin-table-wrap">
+            <table className="admin-table">
             <thead>
               <tr>
                 <th>Событие</th>
@@ -220,7 +225,8 @@ export default async function AdminMetricsPage({
                   </tr>
                 ))}
             </tbody>
-          </table>
+            </table>
+          </div>
         )}
       </section>
 
@@ -229,7 +235,8 @@ export default async function AdminMetricsPage({
         {audit.length === 0 ? (
           <div className="empty"><p>Действий пока нет.</p></div>
         ) : (
-          <table className="admin-table">
+          <div className="admin-table-wrap">
+            <table className="admin-table">
             <thead>
               <tr>
                 <th>Дата</th>
@@ -248,7 +255,8 @@ export default async function AdminMetricsPage({
                 </tr>
               ))}
             </tbody>
-          </table>
+            </table>
+          </div>
         )}
       </section>
     </>

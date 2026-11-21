@@ -9,6 +9,6 @@ export async function GET(request: Request) {
   const itemId = new URL(request.url).searchParams.get("item")?.trim();
   if (!itemId) return NextResponse.json({ error: "Не указан пункт" }, { status: 400 });
   const guide = getGuide(itemId);
-  if (!guide) return NextResponse.json({ error: "Разбор пока не готов" }, { status: 404 });
+  if (!guide) return NextResponse.json({ error: "Разбор пока готовится" }, { status: 404 });
   return NextResponse.json({ guide });
 }

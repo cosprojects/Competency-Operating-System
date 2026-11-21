@@ -39,13 +39,13 @@ export function MaterialDecisionActions({
       });
       if (!response.ok) {
         const data = (await response.json()) as { error?: string };
-        throw new Error(data.error ?? "Не получилось");
+        throw new Error(data.error ?? "Решение не записалось");
       }
       showToast({ title: "Решение записано", text: "Материал обновлён в продукте.", duration: 4000 });
       router.refresh();
     } catch (caught) {
       showToast({
-        title: "Не получилось",
+        title: "Решение не записалось",
         text: caught instanceof Error ? caught.message : "Попробуй ещё раз",
         duration: 4000,
       });

@@ -12,7 +12,10 @@ export async function POST(request: Request) {
 
   const ipHash = requestIpHash(request);
   if (!rateLimit(`feedback:${ipHash}`, 5, 60 * 60_000)) {
-    return NextResponse.json({ error: "Слишком много отзывов. Попробуйте позже." }, { status: 429 });
+    return NextResponse.json(
+      { error: "Отзывов пришло много за раз. Дай нам их разобрать и попробуй отправить следующий чуть позже." },
+      { status: 429 },
+    );
   }
 
   let payload: unknown;
@@ -24,7 +27,7 @@ export async function POST(request: Request) {
   const parsed = feedbackSchema.safeParse(payload);
   if (!parsed.success) {
     return NextResponse.json(
-      { error: parsed.error.issues[0]?.message ?? "Проверьте поля отзыва" },
+      { error: parsed.error.issues[0]?.message ?? "Проверь поля отзыва" },
       { status: 400 },
     );
   }

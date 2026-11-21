@@ -52,7 +52,7 @@ export default async function AccountPage() {
           <header>
             <div>
               <h2>Что хранится</h2>
-              <p>Только то, что нужно для работы карты и ваших сохранений.</p>
+              <p>Только то, что нужно для работы карты и твоих сохранений.</p>
             </div>
           </header>
           <dl className="kv">

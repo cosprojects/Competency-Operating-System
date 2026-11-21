@@ -34,10 +34,10 @@ export function StatusSelect({
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ competencyId, status: next }),
       });
-      if (!response.ok) throw new Error("Не удалось сохранить статус");
+      if (!response.ok) throw new Error("Статус не сохранился");
     } catch {
       setStatus(previous);
-      setError("Не удалось сохранить статус. Попробуйте ещё раз.");
+      setError("Статус не сохранился. Попробуй ещё раз.");
     } finally {
       setBusy(false);
     }
@@ -60,7 +60,7 @@ export function StatusSelect({
         ))}
       </div>
       <div className="small muted" style={{ marginTop: 6 }}>
-        Это ваша самоотметка, а не подтверждение уровня.
+        Это твоя самоотметка, а не подтверждение уровня.
       </div>
       {error ? (
         <div className="small" style={{ color: "var(--danger)", marginTop: 6 }}>

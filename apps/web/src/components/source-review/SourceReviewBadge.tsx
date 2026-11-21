@@ -164,7 +164,7 @@ export function SourceReviewBadge({
           router.push(`/login?returnTo=${encodeURIComponent(returnTo)}`);
           return;
         }
-        throw new Error(data.error ?? "Не получилось отправить");
+        throw new Error(data.error ?? "Голос не ушёл");
       }
       trackClient("source_review_submit", {
         source_id: sourceId,
@@ -201,7 +201,7 @@ export function SourceReviewBadge({
       }
     } catch (caught) {
       setStatus2("error");
-      setError(caught instanceof Error ? caught.message : "Не получилось отправить");
+      setError(caught instanceof Error ? caught.message : "Голос не ушёл: попробуй ещё раз.");
     }
   }
 

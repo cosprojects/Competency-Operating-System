@@ -20,7 +20,7 @@ export async function POST(request: Request) {
   }
   const parsed = emailChangeSchema.safeParse(payload);
   if (!parsed.success) {
-    return NextResponse.json({ error: "Проверь новый email" }, { status: 400 });
+    return NextResponse.json({ error: "Проверь новый адрес: похоже, в нём ошибка" }, { status: 400 });
   }
 
   const newEmail = normalizeEmail(parsed.data.newEmail);

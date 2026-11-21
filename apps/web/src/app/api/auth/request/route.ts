@@ -41,7 +41,7 @@ export async function POST(request: Request) {
 
   const parsed = loginRequestSchema.safeParse(payload);
   if (!parsed.success) {
-    return NextResponse.json({ error: "Проверьте email" }, { status: 400 });
+    return NextResponse.json({ error: "Проверь адрес: похоже, в нём ошибка" }, { status: 400 });
   }
 
   const email = normalizeEmail(parsed.data.email);
@@ -72,7 +72,7 @@ export async function POST(request: Request) {
     raw = await createLoginToken(email, safeReturnTo(parsed.data.returnTo), legalVersion());
   } catch (error) {
     console.error("auth: не удалось создать токен", error instanceof Error ? error.message : error);
-    return NextResponse.json({ error: "Не удалось отправить письмо. Попробуйте позже." }, { status: 503 });
+    return NextResponse.json({ error: "Письмо не ушло. Попробуй ещё раз через минуту." }, { status: 503 });
   }
 
   const appUrl = publicOrigin(request);
@@ -81,7 +81,7 @@ export async function POST(request: Request) {
     await sendMagicLink({ to: email, url: link, expiresText: loginLinkTtlText() });
   } catch (error) {
     console.error("auth: не удалось отправить magic link", error instanceof Error ? error.message : error);
-    return NextResponse.json({ error: "Не удалось отправить письмо. Попробуйте позже." }, { status: 503 });
+    return NextResponse.json({ error: "Письмо не ушло. Попробуй ещё раз через минуту." }, { status: 503 });
   }
 
   return uniformOk();

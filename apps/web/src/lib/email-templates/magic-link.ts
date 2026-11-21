@@ -42,13 +42,13 @@ export function renderMagicLinkEmail(input: MagicLinkTemplateInput): RenderedEma
     "",
     "Войти в AXIONA",
     "",
-    "Привет, я Кирилл. Ты запрашивал вход. Нажми на кнопку и окажешься в системе. Приглашаю узнавать новое.",
+    "Привет, я Кирилл. Ты запрашивал вход в AXIONA. Нажми на кнопку — ссылка откроет карту компетенций.",
     "",
     input.url,
     "",
     `Ссылка действует ${input.expiresText} и работает один раз.`,
     "",
-    `Если ты не запрашивал вход — просто проигнорируй письмо.`,
+    `Если ты не запрашивал вход — проигнорируй письмо.`,
     "",
     `Нужна помощь? Напиши мне на ${input.supportEmail}`,
     `Политика конфиденциальности: ${input.privacyUrl}`,
@@ -93,7 +93,7 @@ export function renderMagicLinkEmail(input: MagicLinkTemplateInput): RenderedEma
                 <h1 class="email-title" style="margin:24px 0 0 0;font-size:32px;line-height:38px;font-weight:700;letter-spacing:-1.19px;color:#132238;">Войти в AXIONA</h1>
 
                 <p style="margin:10px 0 0 0;max-width:442px;font-size:16px;line-height:22px;color:#5f6f85;">
-                  Привет, я Кирилл. Ты запрашивал вход. Нажми на кнопку и окажешься в системе. Приглашаю узнавать новое.
+                  Привет, я Кирилл. Ты запрашивал вход в AXIONA. Нажми на кнопку — ссылка откроет карту компетенций.
                 </p>
 
                 <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:20px 0 0 0;">

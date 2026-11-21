@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Eyebrow } from "@/components/ui/Eyebrow";
+import { SkillLevel } from "@/components/ui/SkillLevel";
 import type { MatrixRow } from "@/lib/matrix";
 
 const LEVELS = [0, 1, 2, 3, 4] as const;
@@ -85,11 +86,11 @@ export function MatrixForm({
       });
       if (!response.ok) {
         const data = (await response.json().catch(() => null)) as { error?: string } | null;
-        throw new Error(data?.error ?? "Не удалось сохранить матрицу");
+        throw new Error(data?.error ?? "Матрица не сохранилась");
       }
       router.push("/plan/result");
     } catch (cause) {
-      setError(cause instanceof Error ? cause.message : "Не удалось сохранить матрицу. Попробуй ещё раз.");
+      setError(cause instanceof Error ? cause.message : "Матрица не сохранилась. Попробуй ещё раз — отметки остались на экране.");
     } finally {
       setBusy(false);
     }
@@ -158,16 +159,21 @@ export function MatrixForm({
             return (
               <article className="plan-row" key={row.id}>
                 <div className="plan-row-head">
-                  <div>
-                    <h3>{row.title}</h3>
-                    <p className="small muted">{row.definition}</p>
+                  <h3>{row.title}</h3>
+                  <div className="plan-row-target">
+                    <span className="plan-row-target-label">Цель {row.targetLevel}</span>
+                    <SkillLevel level={row.targetLevel} label={`Цель ${row.targetLevel} из 4`} />
                   </div>
-                  <span className="plan-target">цель {row.targetLevel}</span>
                 </div>
+                <p className="plan-row-definition">{row.definition}</p>
                 <fieldset className="plan-levels" aria-label={`Уровень: ${row.title}`}>
                   <legend className="sr-only">Текущий уровень</legend>
                   {LEVELS.map((level) => (
-                    <label className={`plan-level${value === level ? " is-selected" : ""}`} key={level}>
+                    <label
+                      className={`plan-level${value === level ? " is-selected" : ""}`}
+                      data-level={level}
+                      key={level}
+                    >
                       <input
                         type="radio"
                         name={`level-${row.id}`}
@@ -180,10 +186,15 @@ export function MatrixForm({
                     </label>
                   ))}
                 </fieldset>
-                {value !== undefined && value > 0 ? (
-                  <p className="plan-descriptor">{row.descriptors[String(value) as "1" | "2" | "3" | "4"]}</p>
-                ) : value === 0 ? (
-                  <p className="plan-descriptor muted">Пока не владею — это честный старт.</p>
+                {value !== undefined ? (
+                  <p className="plan-descriptor">
+                    <span className="plan-descriptor-dot" data-level={value} aria-hidden="true" />
+                    <span>
+                      {value > 0
+                        ? row.descriptors[String(value) as "1" | "2" | "3" | "4"]
+                        : "Пока не владею — это честный старт"}
+                    </span>
+                  </p>
                 ) : null}
               </article>
             );

@@ -23,12 +23,12 @@ export function UserInviteForm() {
         body: JSON.stringify({ action: "invite", email }),
       });
       const data = (await response.json()) as { error?: string };
-      if (!response.ok) throw new Error(data.error ?? "Не получилось");
+      if (!response.ok) throw new Error(data.error ?? "Приглашение не ушло");
       setMessage("Ссылка отправлена. Адрес появится в списке после подтверждения.");
       setEmail("");
       router.refresh();
     } catch (caught) {
-      setError(caught instanceof Error ? caught.message : "Не получилось");
+      setError(caught instanceof Error ? caught.message : "Приглашение не ушло");
     } finally {
       setBusy(false);
     }

@@ -65,7 +65,7 @@ export function ProfessionSearch({
           type="search"
           value={query}
           onChange={(event) => setQuery(event.target.value)}
-          placeholder="Введите название профессии или навыка"
+          placeholder="Введи название профессии или навыка"
           aria-label="Поиск профессии или навыка"
           enterKeyHint="go"
         />
@@ -82,15 +82,15 @@ export function ProfessionSearch({
       </form>
 
       <div className="search-head" data-enter>
-        <h1>Выберите направление</h1>
-        <p>И погрузитесь в профессию, изучив компетенции, знания, навыки и учебные материалы.</p>
+        <h1>Выбери направление</h1>
+        <p>Открой профессию и посмотри, из каких компетенций она складывается — и какие материалы к ним есть.</p>
       </div>
 
       {visibleGroups.length === 0 ? (
         <div className="empty" data-enter>
           <h2>Ничего не нашли</h2>
           <p>
-            По запросу «{query.trim()}» нет профессии или навыка. Попробуйте другое название — например,
+            По запросу «{query.trim()}» нет профессии или навыка. Попробуй другое название — например,
             «исследования» или «дизайн».
           </p>
         </div>

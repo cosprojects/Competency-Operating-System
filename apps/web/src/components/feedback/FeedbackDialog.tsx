@@ -27,7 +27,9 @@ export function FeedbackDialog({
 }) {
   const open = options !== null;
   const pathname = usePathname();
-  const closeRef = useRef<HTMLButtonElement>(null);
+  // Фокус ставим на сам диалог, а не на крестик: иначе программный фокус
+  // рисует на кнопке акцентную плашку и она выглядит как лишняя обводка.
+  const dialogRef = useRef<HTMLElement>(null);
   const openedRef = useRef(false);
 
   const context = options?.context ?? "general";
@@ -59,7 +61,7 @@ export function FeedbackDialog({
     setWebsite("");
     setStatus("idle");
     setError(null);
-    closeRef.current?.focus();
+    dialogRef.current?.focus();
     if (!openedRef.current) {
       openedRef.current = true;
       trackClient("feedback_open", {
@@ -105,7 +107,7 @@ export function FeedbackDialog({
         }),
       });
       const data = (await response.json()) as { error?: string };
-      if (!response.ok) throw new Error(data.error ?? "Не удалось отправить отзыв");
+      if (!response.ok) throw new Error(data.error ?? "Отзыв не ушёл");
       trackClient("feedback_submit", {
         feedback_type: type,
         ...(options?.targetType ? { target_type: options.targetType } : {}),
@@ -115,7 +117,7 @@ export function FeedbackDialog({
       setStatus("sent");
     } catch (caught) {
       setStatus("error");
-      setError(caught instanceof Error ? caught.message : "Не удалось отправить отзыв");
+      setError(caught instanceof Error ? caught.message : "Отзыв не ушёл: попробуй ещё раз.");
     }
   }
 
@@ -132,10 +134,12 @@ export function FeedbackDialog({
         role="dialog"
         aria-modal="true"
         aria-labelledby="feedback-title"
+        ref={dialogRef}
+        tabIndex={-1}
       >
         <div className="feedback-dialog-top">
           <Eyebrow>Обратная связь</Eyebrow>
-          <button className="detail-close" type="button" onClick={onClose} ref={closeRef} aria-label="Закрыть">
+          <button className="account-close" type="button" onClick={onClose} aria-label="Закрыть">
             <IconCloseCircle />
           </button>
         </div>
@@ -148,7 +152,7 @@ export function FeedbackDialog({
             <h3 id="feedback-title">Спасибо, отзыв ушёл</h3>
             <p>
               Мы отправили его на <span className="mail">hi.axiona@protonmail.com</span> и читаем
-              каждое сообщение. Если хотите ответ — ответим на email, который вы оставили в форме.
+              каждое сообщение. Если оставил email — ответим на него.
             </p>
             <button className="button" type="button" onClick={onClose}>
               Закрыть
@@ -158,11 +162,11 @@ export function FeedbackDialog({
           <>
             <h2 id="feedback-title">Что стоит исправить или добавить</h2>
             <p className="feedback-lead">
-              Мы читаем отзывы и используем их для исправления контента и развития карты. Можно
-              отправить анонимно; email нужен только если вы хотите получить ответ.
+              Отзывы идут в работу: по ним правим материалы и карту. Можно отправить анонимно;
+              email нужен только если хочешь ответ.
             </p>
 
-            <form className="feedback-form-card" onSubmit={submit}>
+            <form className="feedback-form" onSubmit={submit}>
               <div className="field">
                 <label htmlFor="feedback-type">Тип обратной связи</label>
                 <select
@@ -224,7 +228,7 @@ export function FeedbackDialog({
                   placeholder="you@example.com"
                   autoComplete="email"
                 />
-                <small>Оставьте, только если хотите получить ответ. Мы не передаём email третьим лицам.</small>
+                <small>Оставь, только если хочешь получить ответ. Мы не передаём email третьим лицам.</small>
               </div>
 
               <div style={{ display: "none" }} aria-hidden="true">
@@ -245,7 +249,7 @@ export function FeedbackDialog({
                   className="button"
                   type="submit"
                   disabled={!canSubmit || status === "sending"}
-                  title={canSubmit ? undefined : "Добавьте комментарий, чтобы отправить отзыв"}
+                  title={canSubmit ? undefined : "Добавь комментарий, чтобы отправить отзыв"}
                 >
                   {status === "sending" ? "Отправляем…" : "Отправить отзыв"}
                 </button>

@@ -71,8 +71,8 @@ export function ConsentBanner() {
       ref={bannerRef}
     >
       <div>
-        Мы используем необходимые cookie для входа и, с вашего согласия, обезличенную аналитику.
-        Подробнее — <Link href="/legal/cookies">в описании cookie</Link>.
+        Необходимые cookie держат вход в аккаунт. Обезличенную аналитику включаем, только если
+        ты согласен. Подробнее — <Link href="/legal/cookies">в описании cookie</Link>.
       </div>
       <div className="actions">
         <button className="button secondary small" type="button" onClick={() => decide("necessary")}>

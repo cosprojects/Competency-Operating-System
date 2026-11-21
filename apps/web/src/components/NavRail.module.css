@@ -1,0 +1,149 @@
+/* Рейл навигации: подложка и анимация схлопывания/разворота.
+ *
+ * Живёт рядом с компонентом, а не в globals.css — по той же причине, что и
+ * AxionaHero3D.module.css: правки глобального файла (мерж, новая версия
+ * макета, перезапись при восстановлении) не должны снова ломать меню.
+ * Подключается вместе с NavRail, поэтому применяется на всех страницах,
+ * где рейл отрисован.
+ *
+ * Специфичность: каждый селектор несёт локальный `.rail` плюс глобальные части,
+ * поэтому правило весит больше базовых правил globals.css (0,1,0…0,3,0) и
+ * результат не зависит от порядка подключения файлов.
+ *
+ * Договор с компонентом: NavRail вешает на <aside> класс `.rail` из этого
+ * модуля и `is-mini`, когда путь — список направлений или канвас профессии.
+ * Все селекторы начинаются с `.rail`, иначе CSS-модуль в pure-режиме их
+ * отвергает (Next требует локальный класс в каждом селекторе).
+ */
+
+/* Развёрнутый рейл — без подложки: просто пункты на бумаге. Стекло остаётся
+   только свёрнутому, где оно собирает узкую колонку иконок в карточку.
+   Фон и blur едут вместе с шириной, чтобы переход был плавным. */
+.rail:global(.nav-rail) {
+  border: 0;
+  background: transparent;
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  box-shadow: none;
+  transition: width 280ms var(--ease-out-soft), padding 280ms var(--ease-out-soft),
+    background-color 280ms var(--ease-out-soft), backdrop-filter 280ms var(--ease-out-soft),
+    -webkit-backdrop-filter 280ms var(--ease-out-soft);
+}
+
+.rail:global(.nav-rail.is-mini) {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+}
+
+/* Подписи — сжимаемые блоки, а не display:none. */
+.rail:global(.nav-rail) :global(.rail-label) {
+  display: inline-block;
+  /* Подпись не должна сжиматься флексом: иначе «Ваш фидбек» укорачивается
+     и обрезается ещё в развёрнутом рейле. Сжимает её только max-width. */
+  flex: 0 0 auto;
+  max-width: 170px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: clip;
+  opacity: 1;
+  transform: translateX(0);
+  /* Разворот: подпись догоняет ширину рейла с небольшой задержкой. */
+  transition: max-width 280ms var(--ease-out-soft) 60ms,
+    opacity 180ms var(--ease-out-soft) 90ms, transform 280ms var(--ease-out-soft) 60ms;
+}
+
+.rail:global(.nav-rail.is-mini) :global(.rail-item) :global(.rail-label),
+.rail:global(.nav-rail.is-mini) :global(.rail-cta) :global(.rail-label) {
+  display: inline-block;
+  max-width: 0;
+  opacity: 0;
+  transform: translateX(-8px);
+  /* Схлопывание: подпись уходит сразу, не задерживая сжатие. */
+  transition: max-width 220ms var(--ease-out-soft), opacity 120ms var(--ease-out-soft),
+    transform 220ms var(--ease-out-soft);
+}
+
+/* Пункты: ширина и левый отступ едут вместе — иконка остаётся на своей оси.
+   Левый отступ 30 в развёрнутом рейле и 16 в свёрнутом дают одну и ту же ось
+   иконки (2 + 30 = 16 + 16 = 32 от края рейла), поэтому при схлопывании
+   иконки не смещаются вовсе, а в свёрнутом виде центрируются в рейле. */
+.rail:global(.nav-rail) :global(.rail-item) {
+  padding-left: 30px;
+  justify-content: flex-start;
+  transition: color 0.18s ease, background 0.18s ease, transform 0.12s ease,
+    width 280ms var(--ease-out-soft), padding 280ms var(--ease-out-soft);
+}
+
+/* В свёрнутом рейле пункт занимает всю ширину контента (52 px: 84 − 2×16),
+   а левый отступ 16 ставит иконку ровно на центральную ось рейла. */
+.rail:global(.nav-rail.is-mini) :global(.rail-item) {
+  width: 100%;
+  padding: 10px 0 10px 16px;
+  justify-content: flex-start;
+}
+
+/* Выравнивание не переключаем: центрирование пункта во время сужения
+   сдвигало иконку вправо на 17 px. Оставляем stretch, бренд центрируем
+   отступом, а не align-items. */
+.rail:global(.nav-rail) :global(.rail-menu) {
+  align-items: stretch;
+  transition: gap 280ms var(--ease-out-soft);
+}
+
+.rail:global(.nav-rail.is-mini) :global(.rail-top) {
+  align-items: stretch;
+}
+
+.rail:global(.nav-rail.is-mini) :global(.rail-menu) {
+  align-items: stretch;
+  gap: 8px;
+}
+
+/* Кнопка входа/аккаунта: ширина 160 → 52 анимируется, содержимое центрируется
+   само. В свёрнутом виде зазор между иконкой и скрытой подписью убираем —
+   иначе иконка съезжает с оси на 5 px (контент шире бокса и центрируется). */
+.rail:global(.nav-rail) :global(.rail-cta) {
+  transition: background 0.18s ease, box-shadow 0.18s ease, transform 0.12s ease,
+    width 280ms var(--ease-out-soft), padding 280ms var(--ease-out-soft),
+    gap 280ms var(--ease-out-soft);
+}
+
+.rail:global(.nav-rail.is-mini) :global(.rail-cta) {
+  gap: 0;
+}
+
+/* Бренд: контейнер обрезает лок по краю рейла. */
+.rail:global(.nav-rail) :global(.rail-brand) {
+  overflow: hidden;
+  transition: padding 280ms var(--ease-out-soft), width 280ms var(--ease-out-soft),
+    gap 280ms var(--ease-out-soft);
+}
+
+.rail:global(.nav-rail.is-mini) :global(.rail-brand) {
+  margin-inline: auto;
+  gap: 0;
+}
+
+/* Лого-лок и знак — один ассет Brand.svg: слева знак, дальше вордмарк.
+   В свёрнутом рейле обрезаем лок до первых 34 px — это и есть знак, поэтому
+   второй картинки не нужно и кросс-фейда нет: лок уезжает под край, как подписи. */
+.rail:global(.nav-rail) :global(.rail-brand) :global(.brand-lockup) {
+  display: block;
+  flex: 0 0 auto;
+  width: 148px;
+  max-width: none;
+  height: 31px;
+  object-fit: none;
+  object-position: left center;
+  transition: width 280ms var(--ease-out-soft) 40ms;
+}
+
+.rail:global(.nav-rail) :global(.rail-brand) :global(.brand-mark) {
+  display: none;
+}
+
+.rail:global(.nav-rail.is-mini) :global(.rail-brand) :global(.brand-lockup) {
+  width: 34px;
+  transition: width 240ms var(--ease-out-soft);
+}

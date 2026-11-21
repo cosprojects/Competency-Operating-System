@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { CanvasToolbar } from "@/components/canvas/CanvasToolbar";
+import { useDragToScroll } from "@/components/canvas/useDragToScroll";
 import { CompetencyDetail } from "@/components/canvas/CompetencyDetail";
 import { CompetencyTile } from "@/components/canvas/CompetencyTile";
 import { CompetencyGraph, type GraphHandle } from "@/components/canvas/CompetencyGraph";
@@ -106,6 +107,9 @@ export function ProfessionCanvas({
   const railScrollRef = useRef<HTMLDivElement | null>(null);
   const pinnedRef = useRef<HTMLDivElement | null>(null);
 
+  // Карусель карточек в рейле: горизонтальный скролл перетягиванием мышью.
+  useDragToScroll(railScrollRef, ".competency-track");
+
   // Шапка рейла сжимается непрерывно по мере прокрутки: без переключения
   // состояний, просто плавно уменьшается под скроллом контента.
   //
@@ -130,7 +134,10 @@ export function ProfessionCanvas({
     const update = () => {
       frame = 0;
       // На мобиле скроллится страница, на десктопе — список рейла.
-      const scrolled = Math.max(element.scrollTop, window.scrollY);
+      // window.scrollY учитываем только на телефоне: на десктопе страница
+      // прокручивается лишь до футера, и шапка не должна сжиматься от этого.
+      const pageScroll = window.matchMedia("(max-width: 900px)").matches ? window.scrollY : 0;
+      const scrolled = Math.max(element.scrollTop, pageScroll);
       const progress = Math.min(1, Math.max(0, scrolled / 120));
       const rounded = Math.round(progress * 50) / 50;
       if (rounded === lastProgress) return;
@@ -148,6 +155,9 @@ export function ProfessionCanvas({
 
     remeasure();
     element.addEventListener("scroll", onScroll, { passive: true });
+    // На мобиле плашка залипает по странице, а не по списку рейла: без этого
+    // слушателя --rail-collapse оставался нулём и шапка не сжималась.
+    window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", remeasure);
     let cancelled = false;
     document.fonts?.ready.then(() => {
@@ -156,6 +166,7 @@ export function ProfessionCanvas({
     return () => {
       cancelled = true;
       element.removeEventListener("scroll", onScroll);
+      window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", remeasure);
       if (frame) window.cancelAnimationFrame(frame);
     };
@@ -294,7 +305,7 @@ export function ProfessionCanvas({
     if (autoOpenDoneRef.current) return;
     if (initialCompetencyId) return;
     // На мобильных первая компетенция не открывает шторку сама — только по тапу.
-    if (window.matchMedia("(max-width: 760px)").matches) return;
+    if (window.matchMedia("(max-width: 900px)").matches) return;
     const firstId = profession.sections
       .flatMap((section) => section.competencyIds)
       .find((id) => byId.has(id));
@@ -466,12 +477,12 @@ export function ProfessionCanvas({
         </div>
 
           <div className="sidebar-notice">
-            В Beta опубликованы не проверенные компетенции и материалы. Помогите проверить добавленные и вместе
-            мы сделаем сервис полезнее! Если вы не нашли нужную компетенцию, навык или знание —{" "}
+            В Beta часть компетенций и материалов ещё не проверена. Помоги проверить: подтверди
+            материал или отметь пробел. Если нужной компетенции, навыка или знания нет —{" "}
             <FeedbackTrigger
               options={{ context: "competency", type: "MISSING_COMPETENCY", targetType: "COMPETENCY", targetId: selectedId ?? undefined }}
             >
-              сообщите о пробеле!
+              сообщи о пробеле
             </FeedbackTrigger>
           </div>
         </div>
@@ -490,7 +501,7 @@ export function ProfessionCanvas({
             type="search"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder="Введите название навыка"
+            placeholder="Введи название навыка"
             aria-label="Поиск навыка внутри профессии"
             enterKeyHint="search"
           />

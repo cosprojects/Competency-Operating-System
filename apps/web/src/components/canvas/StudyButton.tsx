@@ -70,7 +70,7 @@ export function StudyButton({
       onClick={() => void toggle()}
       disabled={busy}
       aria-pressed={saved}
-      title={error ? "Не удалось сохранить. Попробуйте ещё раз" : saved ? "Изучаю" : "Изучать"}
+      title={error ? "Не сохранилось. Попробуй ещё раз" : saved ? "Изучаю" : "Изучать"}
     >
       <IconGraduation />
       <span>{saved ? "Изучаю" : "Изучать"}</span>

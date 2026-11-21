@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { StepCard } from "@/components/ui/StepCard";
-import { ProfessionTile } from "@/components/ProfessionTile";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { MatrixCard } from "@/components/plan/MatrixCard";
+import { ProfessionCard } from "@/components/plan/ProfessionCard";
 import { getCurrentUser } from "@/lib/auth";
-import { getProfessions } from "@/lib/content";
-import { getDb } from "@/lib/db";
 import { getLatestMatrix } from "@/lib/matrix-server";
 import { listMatrixProfessions } from "@/lib/matrix";
 
@@ -42,23 +40,8 @@ export default async function PlanPage() {
   const user = await getCurrentUser();
   const latest = user ? await getLatestMatrix(user.id) : null;
   const professions = listMatrixProfessions();
-  const contentProfessions = new Map(getProfessions().map((profession) => [profession.slug, profession]));
   const featured = professions.slice(0, 3);
   const nextHref = user ? "/plan/start" : `/login?returnTo=${encodeURIComponent("/plan/start")}`;
-
-  const savedProfessionIds = new Set<string>();
-  if (user) {
-    const db = getDb();
-    const favorites = await db.favorite.findMany({
-      where: {
-        userId: user.id,
-        targetType: "PROFESSION",
-        targetId: { in: featured.map((profession) => profession.slug) },
-      },
-      select: { targetId: true },
-    });
-    for (const favorite of favorites) savedProfessionIds.add(favorite.targetId);
-  }
 
   const met = latest ? latest.rows.filter((row) => (latest.levels[row.id] ?? 0) >= row.targetLevel).length : 0;
 
@@ -68,9 +51,8 @@ export default async function PlanPage() {
         <Eyebrow>Личное развитие</Eyebrow>
         <h1>Матрица компетенций</h1>
         <p className="plan-lead">
-          Собери карту своих навыков, сравни её с грейдом и пойми, что подтянуть.
-          <br />
-          Это самооценка, уровень ты определяешь сам, а грейд — пока только ориентир.
+          Собери карту своих навыков, сравни её с грейдом и пойми, что подтянуть. Это самооценка,
+          уровень ты определяешь сам, а грейд — пока только ориентир.
         </p>
         <div className="plan-hero-actions">
           <Link className="button plan-home-cta" href={nextHref}>
@@ -109,37 +91,20 @@ export default async function PlanPage() {
             </Link>
           </div>
 
-          <div className="plan-home-prof-grid">
-            {featured.map((profession, index) => {
-              const content = contentProfessions.get(profession.slug);
-              const coverage = content?.coverage;
-              return (
-                <ProfessionTile
-                  key={profession.slug}
-                  badge="Дизайн"
-                  href={
-                    user
-                      ? `/plan/grade?profession=${profession.slug}`
-                      : `/login?returnTo=${encodeURIComponent(`/plan/grade?profession=${profession.slug}`)}`
-                  }
-                  profession={{
-                    slug: profession.slug,
-                    title: profession.title,
-                    description: profession.description ?? "Структура компетенций, знания, навыки и учебные материалы.",
-                    countText: coverage
-                      ? `${coverage.published} из ${coverage.total} компетенций`
-                      : "пакет компетенций",
-                    percent: coverage?.percent ?? 0,
-                    searchText: profession.title,
-                    sphereTitle: "Дизайн",
-                    sphereStyle: { color: "", backgroundColor: "" },
-                  }}
-                  index={index}
-                  saved={savedProfessionIds.has(profession.slug)}
-                  viewer={Boolean(user)}
-                />
-              );
-            })}
+          {/* Тот же формат карточки, что и на шаге выбора профессии: он сделан
+              специально для матрицы компетенций (макет 459-8074). */}
+          <div className="plan-matrix-grid">
+            {featured.map((profession) => (
+              <ProfessionCard
+                key={profession.slug}
+                profession={profession}
+                href={
+                  user
+                    ? `/plan/grade?profession=${profession.slug}`
+                    : `/login?returnTo=${encodeURIComponent(`/plan/grade?profession=${profession.slug}`)}`
+                }
+              />
+            ))}
           </div>
         </section>
         ) : null}

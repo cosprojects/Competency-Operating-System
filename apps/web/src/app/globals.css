@@ -609,7 +609,11 @@ svg {
   backdrop-filter: blur(var(--glass-blur));
   -webkit-backdrop-filter: blur(var(--glass-blur));
   overflow-y: auto;
-  overscroll-behavior: contain;
+  /* auto, а не contain: своего скролла у рейла обычно нет, и contain
+     «съедал» первое движение колеса — страница не начинала скроллиться,
+     пока курсор над меню. Когда рейл всё-таки переполнен (низкий экран),
+     колесо листает его, а после края продолжает страницу. */
+  overscroll-behavior: auto;
 }
 
 .nav-rail.is-mini {
@@ -625,7 +629,7 @@ svg {
 
 /* Свёрнутый рейл: логотип по центру колонки, как иконки меню.
    Раньше бренд растягивался на ширину пункта (48px) и прижимался влево — сдвиг 7px. */
-@media (min-width: 761px) {
+@media (min-width: 901px) {
   .nav-rail.is-mini .rail-top {
     align-items: center;
   }
@@ -1971,7 +1975,7 @@ html[data-consent="pending"] .canvas-toolbar {
   transition: opacity 0.15s ease, transform 0.15s ease;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   .view-switch-tooltip {
     max-width: 200px;
     white-space: normal;
@@ -2565,6 +2569,12 @@ html[data-consent="pending"] .canvas-toolbar {
   box-shadow: 0 40px 120px rgba(15, 23, 42, 0.18);
 }
 
+/* При открытии фокус ставится на сам диалог — рамка фокуса ему не нужна. */
+.feedback-dialog:focus,
+.feedback-dialog:focus-visible {
+  outline: none;
+}
+
 .feedback-dialog-top {
   display: flex;
   align-items: center;
@@ -2583,6 +2593,14 @@ html[data-consent="pending"] .canvas-toolbar {
   color: var(--muted);
   font-size: 16px;
   line-height: 1.55;
+}
+
+/* Форма обратной связи идёт прямо в модалке: без внутренней карточки,
+   рамки и лишнего отступа — поля занимают всю ширину диалога. */
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .feedback-form-card {
@@ -3162,7 +3180,7 @@ html[data-consent="pending"] .canvas-toolbar {
   }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   :root {
     --shell-left: 16px;
     --shell-right: 16px;
@@ -5183,7 +5201,7 @@ button.rail-item {
   }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   .workspace-page {
     padding: 12px 16px 32px;
   }
@@ -5408,7 +5426,7 @@ button.rail-item {
   font-weight: 600;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   .account-dialog {
     padding: 20px;
   }
@@ -5629,7 +5647,7 @@ button.rail-item {
   min-height: auto;
 }
 
-@media (min-width: 761px) {
+@media (min-width: 901px) {
   .nav-rail {
     bottom: 40px;
   }
@@ -5726,7 +5744,7 @@ button.rail-item {
   background: #4338ca;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   .toast-host {
     bottom: calc(12px + 64px + 12px);
   }
@@ -5928,7 +5946,7 @@ button.rail-item {
   }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   .saved-professions {
     flex-direction: column;
   }
@@ -5943,7 +5961,7 @@ button.rail-item {
 }
 
 /* Открытый рейл занимает больше места: контент сдвигается вправо. */
-@media (min-width: 761px) {
+@media (min-width: 901px) {
   body:has(.nav-rail:not(.is-mini)) {
     --shell-left: 268px;
   }
@@ -5973,7 +5991,7 @@ button.rail-item {
 }
 
 /* Мобильный рейл: не тащим админ-пункты и «Зачем это?» в нижнюю панель. */
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   .rail-item--admin,
   .rail-item--why {
     display: none;
@@ -5995,7 +6013,7 @@ button.rail-item {
 }
 
 /* Рейл не заходит на футер: нижний отступ управляется скриптом. */
-@media (min-width: 761px) {
+@media (min-width: 901px) {
   .nav-rail {
     bottom: var(--rail-bottom-offset, 40px);
   }
@@ -7138,7 +7156,7 @@ button.rail-item {
   display: none;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   /* Старый рейл на мобильных скрыт — его заменяет нижняя панель */
   .nav-rail,
   .nav-rail.is-mini {
@@ -7321,7 +7339,7 @@ button.rail-item {
 /* Мобильный канвас: без схемы и зума, компетенция — шторка снизу      */
 /* ------------------------------------------------------------------ */
 
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   .canvas-screen,
   .canvas-screen.has-detail {
     display: block;
@@ -7405,7 +7423,7 @@ button.rail-item {
   margin-inline: auto;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   .sheet-backdrop {
     display: block;
   }
@@ -7870,7 +7888,7 @@ button.rail-item {
   background: var(--accent);
   color: #fff;
 }
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   .study-items {
     grid-template-columns: 1fr;
   }
@@ -8384,7 +8402,14 @@ button.rail-item {
   padding: 24px var(--shell-right) 56px var(--shell-left);
 }
 
+/* Шапка раздела. Единый вертикальный ритм с «Планом»: eyebrow → заголовок
+   → описание идут с зазором 12, ряд кнопок/табов встаёт через 24 после
+   описания. Описание держит высоту двух строк, чтобы этот ряд не прыгал. */
 .studying-head {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
   padding: 0;
   border: 0;
   border-radius: 0;
@@ -8393,7 +8418,7 @@ button.rail-item {
 }
 
 .studying-head .eyebrow {
-  margin: 0 0 4px;
+  margin: 0;
   color: #475569;
   font-size: 13px;
   font-weight: 400;
@@ -8403,7 +8428,7 @@ button.rail-item {
 }
 
 .studying-head h1 {
-  margin: 0 0 10px;
+  margin: 0;
   color: #132238;
   font-size: 36px;
   font-weight: 600;
@@ -8417,6 +8442,10 @@ button.rail-item {
   color: #475569;
   font-size: 16px;
   line-height: 20px;
+}
+
+.studying-head h1 + p {
+  min-height: 40px;
 }
 
 /* Панель над маршрутом: переключатель табов + поиск */
@@ -8891,8 +8920,12 @@ button.rail-item {
   height: 16px;
 }
 
-/* Карточка следующего шага (макет 409-3642) */
+/* Карточка следующего шага (макет 409-3642). Липкая колонка рядом со списком
+   знаний и навыков: при скролле держится сверху и упирается в низ списка —
+   тот же приём, что у правой колонки в «Моей матрице». */
 .learning-next {
+  position: sticky;
+  top: 88px;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -9436,6 +9469,8 @@ button.rail-item {
   }
 
   .learning-next {
+    /* В одну колонку «Следующий шаг» стоит над списком — липнуть нечему. */
+    position: static;
     order: -1;
     align-self: stretch;
   }
@@ -9445,7 +9480,7 @@ button.rail-item {
   }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   .studying-page {
     gap: 18px;
     padding: 16px var(--shell-right) calc(88px + env(safe-area-inset-bottom, 0px)) var(--shell-left);
@@ -9650,7 +9685,7 @@ body.not-found-active .page-plain {
   font-weight: 700;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   .not-found-screen {
     gap: 24px;
   }
@@ -9734,7 +9769,7 @@ body:has(.studying-page) .paper-layer {
   margin-top: 4px;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   .stop-dialog h2 {
     font-size: 20px;
   }
@@ -10103,7 +10138,7 @@ body:has(.studying-page) .paper-layer {
 }
 
 /* Мобильная версия */
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   /* Cookie-баннер выше мобильной навигации */
   .consent-banner {
     bottom: 84px;
@@ -10192,7 +10227,7 @@ body:has(.studying-page) .paper-layer {
 
 /* Правки «Изучаю» 2026-11-18: отступы и единый вид карточек материалов */
 .studying-head {
-  margin-bottom: 40px;
+  margin-bottom: 0;
 }
 
 .learning-body {
@@ -10238,7 +10273,7 @@ body:has(.studying-page) .paper-layer {
 
 /* Правки 2026-11-18 (утро): шапка «Изучаю» и модалка проверки материала */
 .studying-head {
-  margin-bottom: 16px;
+  margin-bottom: 0;
 }
 
 .studying-head .eyebrow {
@@ -10248,14 +10283,10 @@ body:has(.studying-page) .paper-layer {
   letter-spacing: 0.02em;
 }
 
-.feedback-dialog .feedback-dialog-top .account-close {
-  width: 32px;
-  height: 32px;
-}
-
-.feedback-dialog .feedback-dialog-top .account-close svg {
-  width: 24px;
-  height: 24px;
+.feedback-form fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
 .feedback-form-card fieldset {
@@ -10376,7 +10407,7 @@ body:has(.studying-page) .paper-layer {
 
 
 /* Мобильные экраны: единые боковые отступы 16px и центрированный поиск */
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   :root {
     --shell-left: 16px;
     --shell-right: 16px;
@@ -10466,7 +10497,6 @@ body:has(.studying-page) .paper-layer {
 
 .plan-hero-actions,
 .plan-actions,
-.plan-gap-actions,
 .plan-grade-foot {
   display: flex;
   flex-wrap: wrap;
@@ -10475,7 +10505,7 @@ body:has(.studying-page) .paper-layer {
 }
 
 .plan-hero-actions {
-  margin-top: 4px;
+  margin-top: 12px;
 }
 
 .plan-back {
@@ -10708,7 +10738,7 @@ body:has(.studying-page) .paper-layer {
 .plan-form {
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: 24px;
 }
 
 .plan-progress {
@@ -10717,6 +10747,7 @@ body:has(.studying-page) .paper-layer {
   gap: 8px;
 }
 
+/* Полоса заполнения формы самооценки (не часть карточки из макета). */
 .plan-progress-bar {
   width: 100%;
   height: 7px;
@@ -10752,33 +10783,6 @@ body:has(.studying-page) .paper-layer {
   color: var(--ink);
 }
 
-.plan-row {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  padding: 18px;
-  border: 1px solid var(--line-soft);
-  border-radius: var(--r-16);
-  background: var(--surface);
-}
-
-.plan-row-head {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 16px;
-}
-
-.plan-row-head h3 {
-  margin: 0 0 4px;
-  font-size: 17px;
-  color: var(--ink);
-}
-
-.plan-row-head p {
-  margin: 0;
-}
-
 .plan-target {
   flex: 0 0 auto;
   padding: 5px 9px;
@@ -10787,79 +10791,6 @@ body:has(.studying-page) .paper-layer {
   color: var(--accent);
   font-size: 12px;
   font-weight: 700;
-}
-
-.plan-levels {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
-
-.plan-level {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 7px 10px;
-  border: 1px solid var(--line-soft);
-  border-radius: 999px;
-  background: var(--surface);
-  color: var(--muted);
-  font-size: 12px;
-  cursor: pointer;
-  transition: border-color var(--dur-160, 160ms) ease, background var(--dur-160, 160ms) ease;
-}
-
-.plan-level input {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.plan-level:hover {
-  border-color: var(--accent);
-}
-
-.plan-level.is-selected {
-  border-color: var(--accent);
-  background: rgba(79, 70, 229, 0.08);
-  color: var(--ink);
-}
-
-.plan-level-code {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: var(--line-soft);
-  color: var(--ink);
-  font-weight: 800;
-}
-
-.plan-level.is-selected .plan-level-code {
-  background: var(--accent);
-  color: #fff;
-}
-
-.plan-descriptor {
-  margin: 0;
-  padding: 10px 12px;
-  border-left: 3px solid var(--accent);
-  border-radius: 0 8px 8px 0;
-  background: rgba(79, 70, 229, 0.05);
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.5;
-}
-
-.plan-descriptor.muted {
-  border-left-color: var(--line-soft);
-  background: transparent;
 }
 
 .plan-error {
@@ -10894,121 +10825,6 @@ body:has(.studying-page) .paper-layer {
   display: flex;
   flex-direction: column;
   gap: 24px;
-}
-
-.plan-summary {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  padding: 24px;
-  border: 1px solid var(--line-soft);
-  border-radius: var(--r-24);
-  background: var(--surface);
-}
-
-.plan-summary-main {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  min-width: 0;
-  flex: 1;
-}
-
-.plan-summary-number {
-  color: var(--ink);
-  font-size: 44px;
-  font-weight: 700;
-  line-height: 1;
-}
-
-.plan-summary-number span {
-  color: var(--muted);
-  font-size: 20px;
-  font-weight: 500;
-}
-
-.plan-summary-main p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 14px;
-}
-
-.plan-summary-side {
-  display: flex;
-  gap: 24px;
-}
-
-.plan-summary-side div {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.plan-summary-side strong {
-  color: var(--ink);
-  font-size: 24px;
-}
-
-.plan-summary-side span {
-  color: var(--muted);
-  font-size: 13px;
-}
-
-.plan-gap-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.plan-gap {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  padding: 16px;
-  border: 1px solid var(--line-soft);
-  border-radius: var(--r-16);
-  background: var(--surface);
-}
-
-.plan-gap-top {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 16px;
-}
-
-.plan-gap h3 {
-  margin: 0 0 4px;
-  font-size: 16px;
-  color: var(--ink);
-}
-
-.plan-gap p {
-  margin: 0;
-}
-
-.plan-dots {
-  display: inline-flex;
-  gap: 4px;
-  flex: 0 0 auto;
-}
-
-.plan-dot {
-  width: 10px;
-  height: 10px;
-  border: 1px solid var(--line-soft);
-  border-radius: 50%;
-  background: var(--surface);
-}
-
-.plan-dot.is-filled {
-  border-color: var(--accent);
-  background: var(--accent);
-}
-
-.plan-dot.is-target {
-  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.18);
 }
 
 .plan-empty {
@@ -11107,42 +10923,13 @@ body:has(.studying-page) .paper-layer {
   .plan-level-list {
     grid-template-columns: 1fr;
   }
-
-  .plan-summary {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .plan-summary-side {
-    width: 100%;
-    justify-content: space-between;
-  }
 }
 
 @media (max-width: 640px) {
   .plan-hero,
   .plan-page-head,
-  .plan-grade-card,
-  .plan-summary {
+  .plan-grade-card {
     padding: 20px;
-  }
-
-  .plan-row-head,
-  .plan-gap-top {
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .plan-levels {
-    gap: 4px;
-  }
-
-  .plan-level {
-    padding: 6px 8px;
-  }
-
-  .plan-level-label {
-    display: none;
   }
 
   .plan-actions {
@@ -11156,37 +10943,13 @@ body:has(.studying-page) .paper-layer {
   }
 }
 
-.plan-level:focus-within {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-}
-
-.learning-plan-link {
-  display: inline-block;
-  margin-top: 8px;
-  color: var(--accent);
-  font-size: 14px;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.learning-plan-link:hover {
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
 /* Кнопки плана: иконки не растягиваются на всю кнопку. */
-.plan-gap-actions .button svg,
 .plan-actions .button svg,
 .plan-hero-actions .button svg,
 .plan-grade-foot .button svg {
   width: 16px;
   height: 16px;
   flex: 0 0 auto;
-}
-
-.plan-gap-actions .button {
-  white-space: nowrap;
 }
 
 .learning-plan-badge {
@@ -11640,29 +11403,10 @@ a.plan-stepper-link:hover {
 }
 
 .plan-result-head-row > div {
-  min-width: 0;
-}
-
-.plan-summary-percent {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-width: 88px;
-  padding: 12px;
-  border-radius: var(--r-16);
-  background: var(--accent-soft);
-  color: var(--accent-dark);
-}
-
-.plan-summary-percent strong {
-  font-size: 26px;
-  line-height: 1;
-}
-
-.plan-summary-percent span {
-  margin-top: 4px;
-  font-size: 11px;
+  gap: 12px;
+  min-width: 0;
 }
 
 .plan-result-grid {
@@ -11797,13 +11541,6 @@ a.plan-stepper-link:hover {
     flex-direction: column;
   }
 
-  .plan-summary-percent {
-    width: 100%;
-    flex-direction: row;
-    gap: 8px;
-    min-width: 0;
-  }
-
   .plan-tabs {
     width: 100%;
   }
@@ -11851,9 +11588,11 @@ a.plan-stepper-link:hover {
   gap: 24px;
 }
 
+/* Шапка «Плана» повторяет ритм «Изучаю»: зазор 12 между eyebrow, h1 и
+   описанием, ряд кнопок — 24 после описания (12 gap + 12 margin). */
 .plan-hero,
 .plan-page-head {
-  gap: 10px;
+  gap: 12px;
   padding: 0;
   border: 0;
   border-radius: 0;
@@ -11863,7 +11602,7 @@ a.plan-stepper-link:hover {
 
 .plan-hero h1,
 .plan-page-head h1 {
-  margin: 0 0 10px;
+  margin: 0;
   color: #132238;
   font-size: 36px;
   font-weight: 600;
@@ -11873,6 +11612,7 @@ a.plan-stepper-link:hover {
 
 .plan-lead {
   max-width: 720px;
+  min-height: 40px;
   color: #475569;
   font-size: 16px;
   line-height: 20px;
@@ -11880,7 +11620,7 @@ a.plan-stepper-link:hover {
 
 .plan-hero .eyebrow,
 .plan-page-head .eyebrow {
-  margin: 0 0 4px;
+  margin: 0;
   color: #475569;
   font-size: 13px;
   font-weight: 400;
@@ -12548,7 +12288,7 @@ a.plan-stepper-link:hover {
   }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   .home-page-hero {
     height: auto;
     min-height: 460px;
@@ -13647,28 +13387,33 @@ a.plan-stepper-link:hover {
   gap: 32px;
 }
 
-.footer2-nav-sub a,
-.footer2-nav-sub button {
-  text-decoration: underline;
-  text-underline-position: from-font;
-}
-
 .footer2-legal a,
 .footer2-nav a,
 .footer2-nav button,
+.footer2-nav-sub a,
+.footer2-nav-sub button,
 .footer2-mail {
   color: #94a3b8;
   font: inherit;
   text-decoration: none;
+  transition: color 0.15s ease;
 }
 
-.footer2-nav-sub a {
-  text-decoration: underline;
+/* Кнопки в футере выглядят как ссылки: убираем нативную заливку, рамку и отступы.
+   Без этого «Ваш фидбек» и «Cookies» рисуются браузером как белые кнопки. */
+.footer2-nav button,
+.footer2-nav-sub button {
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
 }
 
 .footer2-legal a:hover,
 .footer2-nav a:hover,
 .footer2-nav button:hover,
+.footer2-nav-sub a:hover,
+.footer2-nav-sub button:hover,
 .footer2-mail:hover {
   color: #e2e8f0;
 }
@@ -13720,7 +13465,7 @@ a.plan-stepper-link:hover {
   }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   .home-page-hero-inner,
   .home-page-shell {
     padding-left: 16px;
@@ -13788,13 +13533,9 @@ a.plan-stepper-link:hover {
 }
 
 
-/* Фоновая картинка-подложка hero: видна до первого кадра видео и если видео не играет */
+/* Подложка hero: постер 3D-фигуры рисует сам <AxionaHero3D>, здесь только цвет. */
 .home-page-hero {
   background-color: #ebe3f6;
-  background-image: url("/assets/content/AXIONA-bg.png");
-  background-repeat: no-repeat;
-  background-position: right top;
-  background-size: 845px 475px;
 }
 
 
@@ -14015,7 +13756,7 @@ a.plan-stepper-link:hover {
 }
 
 .plan-page--home .plan-hero {
-  gap: 13px;
+  gap: 12px;
 }
 
 .plan-page--home .plan-hero .eyebrow {
@@ -14027,7 +13768,7 @@ a.plan-stepper-link:hover {
 }
 
 .plan-page--home .plan-hero-actions {
-  margin-top: 0;
+  margin-top: 12px;
 }
 
 
@@ -15705,7 +15446,7 @@ a.plan-stepper-link:hover {
   }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   .home-page-frame {
     padding: 0 16px 40px;
   }
@@ -16264,7 +16005,7 @@ a.plan-stepper-link:hover {
   box-shadow: 0 16px 36px rgba(19, 34, 56, 0.1);
 }
 
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   .studying-page--saved {
     background-size: 520px auto;
     background-position: right -120px top -20px;
@@ -16280,7 +16021,7 @@ a.plan-stepper-link:hover {
 .learning-card {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 16px;
   background: var(--glass-bg);
   backdrop-filter: blur(var(--glass-blur));
   -webkit-backdrop-filter: blur(var(--glass-blur));
@@ -16360,13 +16101,14 @@ a.plan-stepper-link:hover {
   font-size: 12px;
 }
 
-/* Внутренние отступы 32px */
+/* Ритм карточки: 16 от шапки до сводки, 32 до развёрнутого блока
+   «Знания и навыки» (16 gap карточки + 16 margin). */
 .learning-card-head + .learning-summary {
   margin-top: 0;
 }
 
 .learning-summary + .learning-body {
-  margin-top: 32px;
+  margin-top: 16px;
 }
 
 .learning-body {
@@ -16414,13 +16156,27 @@ button,
   text-decoration: none !important;
 }
 
-/* Исключения: футерные ссылки и явные текстовые ссылки */
-.site-footer a,
-.footer2-legal a,
-.footer2-nav-sub a,
-.footer2-nav-sub button,
+/* Исключения: явные текстовые ссылки */
 .link-button,
 .text-link {
+  text-decoration: underline !important;
+  text-underline-position: from-font;
+}
+
+/* Футер: постоянных подчёркиваний нет — только при наведении и фокусе.
+   Глобальное правило выше гасит их через !important, поэтому здесь тоже !important. */
+.site-footer a:hover,
+.site-footer a:focus-visible,
+.footer2-legal a:hover,
+.footer2-legal a:focus-visible,
+.footer2-nav a:hover,
+.footer2-nav a:focus-visible,
+.footer2-nav button:hover,
+.footer2-nav button:focus-visible,
+.footer2-nav-sub a:hover,
+.footer2-nav-sub a:focus-visible,
+.footer2-nav-sub button:hover,
+.footer2-nav-sub button:focus-visible {
   text-decoration: underline !important;
   text-underline-position: from-font;
 }
@@ -16452,7 +16208,7 @@ button,
   height: auto;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   :root {
     --section-bg-width: 520px;
   }
@@ -16477,11 +16233,11 @@ button,
 }
 
 
-/* Единый стиль плашек в «Изучаю» и «План» */
+/* Единый стиль плашек в «Изучаю» и «План». Карточка профессии шага 1
+   (.plan-matrix-card) сюда не входит — у неё вид из токенов --card-*. */
 .learning-card,
 .plan-step,
 .plan-home-prof-card,
-.plan-matrix-card,
 .plan-matrix-card-result {
   border: 1px solid #eef2f7;
   border-radius: 24px;
@@ -16508,7 +16264,6 @@ button,
 .learning-card,
 .plan-step,
 .plan-home-prof-card,
-.plan-matrix-card,
 .plan-matrix-card-result {
   border: 0 !important;
 }
@@ -16538,7 +16293,6 @@ button,
 .plan-page--home .plan-home-prof-card,
 .plan-step,
 .plan-home-prof-card,
-.plan-matrix-card,
 .plan-matrix-card-result,
 .learning-card {
   background: var(--glass-bg) !important;
@@ -16574,7 +16328,6 @@ button,
 .plan-page--home .plan-home-prof-card,
 .plan-step,
 .plan-home-prof-card,
-.plan-matrix-card,
 .plan-matrix-card-result,
 .learning-card,
 .studying-empty,
@@ -16607,7 +16360,6 @@ button,
 .plan-page--home .plan-home-prof-card,
 .plan-step,
 .plan-home-prof-card,
-.plan-matrix-card,
 .plan-matrix-card-result,
 .learning-card,
 .studying-empty,
@@ -16742,7 +16494,7 @@ button,
   line-height: 21.7px;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   .step-card {
     min-height: 0;
     padding: 16px;
@@ -16767,7 +16519,7 @@ button,
   grid-auto-rows: 1fr;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   .step-card {
     padding: 24px;
   }
@@ -16997,4 +16749,971 @@ button,
 .nav-rail.is-mini .rail-brand .brand-lockup {
   width: 34px;
   transition: width 240ms var(--ease-out-soft);
+}
+
+/* ================================================================== */
+/* ВОССТАНОВЛЕНИЕ СТИЛЕЙ ПОСЛЕ ПАРАЛЛЕЛЬНОЙ ПРАВКИ globals.css        */
+/* (файл был откатан к более старой версии; блоки собраны заново)     */
+/* ================================================================== */
+
+/* --- Карточки-плитки: токены ------------------------------------- */
+:root {
+  --card-surface: var(--surface);
+  --card-surface-hover: #f9fafb;
+  --card-line: var(--line-card);
+  --card-radius: var(--r-16);
+  --card-line-hover: #c7d2fe;
+  --card-shadow-hover: 0 12px 28px rgba(19, 34, 56, 0.1);
+  --card-lift: 0px;
+}
+
+/* --- Карточка профессии шага «Выбери профессию» ------------------- */
+.plan-matrix-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+  border: 1px solid var(--card-line);
+  border-radius: var(--card-radius);
+  background: var(--card-surface);
+  color: inherit;
+  text-decoration: none;
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.plan-matrix-card:hover {
+  border-color: var(--card-line-hover);
+  background: var(--card-surface-hover);
+  box-shadow: var(--card-shadow-hover);
+  transform: translateY(var(--card-lift));
+  text-decoration: none;
+}
+
+/* --- «Направления» на тех же токенах ------------------------------ */
+.profession-tile {
+  border: 1px solid var(--card-line);
+  border-radius: var(--card-radius);
+  background: var(--card-surface);
+}
+
+.profession-tile:hover {
+  border-color: var(--card-line-hover);
+  background: var(--card-surface-hover);
+  box-shadow: var(--card-shadow-hover);
+  transform: translateY(var(--card-lift));
+}
+
+/* --- Прокрутка: убираем backdrop-blur с крупных поверхностей ------ */
+:root {
+  --glass-blur: 8px;
+  --glass-opacity: 0.62;
+  --glass-bg: rgb(var(--glass-rgb) / var(--glass-opacity));
+}
+
+.nav-rail {
+  background: rgb(255 255 255 / 0.94);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+.home-page-panel,
+.home-page-aside .home-page-panel,
+.home-page-start-card,
+.home-page-profession-card,
+.home-page-stage,
+.step-card,
+.material-card.is-compact .material-cta {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+/* Плашки изучения компетенций остаются стеклянными: у карточки «Изучаю»
+   возвращаем полноценный blur 24px, как в исходном дизайне. Общий токен
+   для остальных поверхностей снижен до 8px ради прокрутки главной. */
+.learning-card {
+  -webkit-backdrop-filter: blur(24px) !important;
+  backdrop-filter: blur(24px) !important;
+}
+
+/* --- Карточки шагов на главной: одинаковая высота ----------------- */
+.home-page-start > .step-card {
+  height: auto;
+  align-self: stretch;
+}
+
+/* --- Узлы схемы компетенций: справа на 4px больше ----------------- */
+@media (min-width: 901px) {
+  .graph-node {
+    padding: 12px 16px 12px 14px;
+  }
+
+  .graph-node.is-network {
+    padding: 10px 14px 10px 12px;
+  }
+}
+
+/* --- Карусель компетенций в рейле: перетаскивание ----------------- */
+.competency-track.has-many {
+  cursor: grab;
+}
+
+.competency-track.is-dragging,
+.competency-track.is-dragging .competency-tile {
+  cursor: grabbing;
+}
+
+.competency-track.is-dragging {
+  scroll-snap-type: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* --- Модалка обратной связи: одна строка оценок и скролл ---------- */
+.feedback-dialog {
+  margin: auto;
+}
+
+.modal-backdrop {
+  align-items: flex-start;
+}
+
+.feedback-dialog .rating {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+/* ==================================================================== */
+/* Карточки плана по макетам AXIONA:                                    */
+/*   карточка компетенции в матрице — 474:9865 / 474:11321;              */
+/*   карточка самооценки — 474:11485, 474:11616…474:11813;               */
+/*   итог требований грейда — 474:11990;                                 */
+/*   шкала уровня («measure») — 474:11255.                               */
+/* Значения (отступы, шрифты, цвета, тени) перенесены из узлов Figma.    */
+/* ==================================================================== */
+
+/* --- Токены уровней (474:11255) ------------------------------------- */
+:root {
+  --level-1: #cd46e5;
+  --level-2: #df9b42;
+  --level-3: #2a9ae5;
+  --level-4: #29e6a0;
+  --level-empty: #d7e0f4;
+  --level-caption: #1e3a8a; /* «Сейчас 1 • Цель 3», «Цель 3» */
+  --level-label: #64748b; /* подпись невыбранного уровня */
+  --level-note: #595959; /* текст плашки-пояснения, «/ 17» */
+  --level-1-soft: rgb(205 70 229 / 0.5);
+  --level-2-soft: rgb(223 155 66 / 0.5);
+  --level-3-soft: rgb(42 154 229 / 0.5);
+  --level-4-soft: rgb(41 230 160 / 0.5);
+  --accent-tint: #edf2ff;
+}
+
+/* --- Шкала уровня: четыре сегмента 10×24, радиус 2, зазор 2 --------- */
+.skill-level {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  flex: 0 0 auto;
+}
+
+.skill-level-bar {
+  width: 10px;
+  height: 24px;
+  border-radius: 2px;
+  background: var(--level-empty);
+}
+
+.skill-level-bar.is-level-1 {
+  background: var(--level-1);
+  opacity: 0.5;
+}
+
+.skill-level-bar.is-level-2 {
+  background: var(--level-2);
+  opacity: 0.5;
+}
+
+.skill-level-bar.is-level-3 {
+  background: var(--level-3);
+  opacity: 0.5;
+}
+
+.skill-level-bar.is-level-4 {
+  background: var(--level-4);
+  opacity: 0.5;
+}
+
+/* Цель — обводка 1px внутри сегмента, он остаётся полностью непрозрачным. */
+.skill-level-bar.is-target {
+  box-shadow: inset 0 0 0 1px var(--accent);
+  opacity: 1;
+}
+
+/* --- Карточка компетенции в матрице (474:9865 / 474:11321) ---------- */
+.plan-gap-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.plan-gap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 15px;
+  border-radius: 16px;
+  background: var(--card);
+}
+
+/* Добавлена в «Изучаю» — подложка карточки акцентная. */
+.plan-gap.is-added {
+  background: var(--accent-tint);
+}
+
+.plan-gap-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.plan-gap-head h3 {
+  margin: 0;
+  color: var(--accent-dark);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 17.92px;
+  letter-spacing: -0.56px;
+}
+
+.plan-gap-levels {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+}
+
+.plan-gap-levels-text {
+  color: var(--level-caption);
+  font-size: 14px;
+  line-height: 21px;
+  white-space: nowrap;
+}
+
+.plan-gap-foot {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.plan-gap-learned {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.plan-gap-learned span {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.plan-gap-learned strong {
+  color: var(--accent);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: -0.56px;
+}
+
+/* Кнопка «Добавить к изучению» / «Добавлено к изучению» — 474:11305/474:11332 */
+.plan-study-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  height: 40px;
+  padding: 0 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--accent);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 19.5px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.plan-study-button:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+
+.plan-study-button svg {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
+}
+
+.plan-study-button.is-added {
+  border-color: transparent;
+  background: var(--accent-tint);
+  color: var(--accent);
+  font-weight: 600;
+  box-shadow: 0 8px 24px rgb(79 70 229 / 0.2);
+}
+
+.plan-study-button.is-added:hover {
+  border-color: transparent;
+}
+
+/* --- Итог требований грейда (474:11990) ----------------------------- */
+.plan-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  border-radius: 24px;
+  background: var(--bg-sunken);
+}
+
+.plan-summary-top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.plan-summary-main {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.plan-summary-number {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  margin: 0;
+  color: var(--ink);
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 39px;
+  letter-spacing: -1.19px;
+}
+
+.plan-summary-number strong {
+  font-weight: 700;
+}
+
+.plan-summary-number-sep,
+.plan-summary-number-total {
+  color: var(--level-note);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 39px;
+  letter-spacing: -1.19px;
+}
+
+.plan-summary-caption {
+  margin: 0;
+  color: #475569;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.plan-summary-data {
+  display: flex;
+  align-items: stretch;
+  gap: 16px;
+  flex: 0 0 auto;
+}
+
+.plan-summary-stat {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 4px;
+  padding: 16px;
+  border-radius: 12px;
+  background: var(--bg-sunken);
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+}
+
+.plan-summary-stat strong {
+  color: var(--ink);
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 39px;
+  letter-spacing: -1.19px;
+}
+
+.plan-summary-stat.is-accent {
+  background: var(--accent-tint);
+  color: var(--accent-dark);
+}
+
+.plan-summary-stat.is-accent strong {
+  color: var(--accent-dark);
+}
+
+/* Шкала прогресса: сегмент на каждое требование грейда. */
+.plan-summary-track {
+  display: flex;
+  gap: 6px;
+}
+
+.plan-summary-segment {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--line-soft);
+}
+
+.plan-summary-segment.is-filled {
+  background: var(--accent);
+}
+
+/* --- Карточка самооценки (474:11485, 474:11616…474:11813) ----------- */
+.plan-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 15px;
+  border-radius: 16px;
+  background: var(--card);
+}
+
+.plan-row-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.plan-row-head h3 {
+  margin: 0;
+  color: var(--accent-dark);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 17.92px;
+  letter-spacing: -0.56px;
+}
+
+.plan-row-target {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+}
+
+.plan-row-target-label {
+  color: var(--level-caption);
+  font-size: 14px;
+  line-height: 21px;
+  white-space: nowrap;
+}
+
+.plan-row-definition {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 20.15px;
+}
+
+/* --- Кнопка уровня («badge level», 474:11520) ----------------------- */
+.plan-levels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* Обводка нарисована снаружи (как stroke OUTSIDE в макете), поэтому высота
+   кнопки ровно 34: 6 + 22 + 6. */
+.plan-level {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 34px;
+  padding: 0 10px 0 6px;
+  border: 0;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 0 0 1px var(--line-card);
+  color: var(--level-label);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 17.05px;
+  letter-spacing: 0.33px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: box-shadow 160ms ease, background 160ms ease, color 160ms ease;
+}
+
+.plan-level input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.plan-level:hover {
+  box-shadow: 0 0 0 1px var(--line-card), 0 4px 12px #cad4eb;
+}
+
+.plan-level:has(input:focus-visible) {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.plan-level-code {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 16px;
+  background: var(--grey-100);
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 17.05px;
+  letter-spacing: 0.33px;
+}
+
+.plan-level-label {
+  font-size: 14px;
+  line-height: 17.05px;
+}
+
+/* «Не владею» выбрано: заливка пустого уровня, подпись остаётся служебной. */
+.plan-level[data-level="0"].is-selected {
+  box-shadow: none;
+  background: var(--level-empty);
+  color: var(--muted);
+}
+
+.plan-level[data-level="0"].is-selected .plan-level-code {
+  background: var(--grey-100);
+  color: var(--muted);
+}
+
+/* Уровни 1–4: заливка цветом уровня, кружок белый, цифра цветом уровня. */
+.plan-level[data-level="1"].is-selected {
+  box-shadow: none;
+  background: var(--level-1-soft);
+  color: #fff;
+}
+
+.plan-level[data-level="2"].is-selected {
+  box-shadow: none;
+  background: var(--level-2-soft);
+  color: #fff;
+}
+
+.plan-level[data-level="3"].is-selected {
+  box-shadow: none;
+  background: var(--level-3-soft);
+  color: #fff;
+}
+
+.plan-level[data-level="4"].is-selected {
+  box-shadow: none;
+  background: var(--level-4-soft);
+  color: #fff;
+}
+
+.plan-level.is-selected .plan-level-code {
+  background: #fff;
+}
+
+.plan-level[data-level="1"].is-selected .plan-level-code {
+  color: var(--level-1);
+}
+
+.plan-level[data-level="2"].is-selected .plan-level-code {
+  color: var(--level-2);
+}
+
+.plan-level[data-level="3"].is-selected .plan-level-code {
+  color: var(--level-3);
+}
+
+.plan-level[data-level="4"].is-selected .plan-level-code {
+  color: var(--level-4);
+}
+
+/* --- Плашка-пояснение к выбранному уровню (infobar) ----------------- */
+.plan-descriptor {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 40px;
+  margin: 0;
+  padding: 4px 4px 4px 8px;
+  border-radius: 16px;
+  background: var(--line-soft);
+  color: var(--level-note);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 19.5px;
+}
+
+.plan-descriptor-dot {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+  border-radius: 16px;
+  background: var(--level-empty);
+}
+
+.plan-descriptor-dot[data-level="1"] {
+  background: var(--level-1-soft);
+}
+
+.plan-descriptor-dot[data-level="2"] {
+  background: var(--level-2-soft);
+}
+
+.plan-descriptor-dot[data-level="3"] {
+  background: var(--level-3-soft);
+}
+
+.plan-descriptor-dot[data-level="4"] {
+  background: var(--level-4-soft);
+}
+
+/* --- Узкие экраны: карточки остаются читаемыми ---------------------- */
+@media (max-width: 900px) {
+  .plan-summary-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .plan-summary-data {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  .plan-summary-stat.is-accent {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .plan-summary {
+    padding: 20px;
+  }
+
+  .plan-row-head,
+  .plan-gap-head {
+    flex-wrap: wrap;
+    row-gap: 6px;
+  }
+
+  /* Уровни уходят в вертикальную стопку на всю ширину. */
+  .plan-levels {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .plan-level {
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .plan-gap-foot {
+    flex-wrap: wrap;
+  }
+}
+
+/* ==================================================================== */
+/* Мобильная вычитка 2026-11-21                                         */
+/* Только диапазон ≤900px: убираем перекрытия, обрезанный контент и     */
+/* потерянные отступы. Десктопная раскладка не меняется.                */
+/* ==================================================================== */
+
+@media (max-width: 900px) {
+  /* 1) Главная: высота hero — по контенту. Фиксированные 440px обрезали
+        блок действий (кнопки «Изучить направления» и «Зачем все это?»). */
+  .home-page-hero {
+    height: auto;
+    min-height: 0;
+    padding-top: 64px;
+    overflow: hidden;
+  }
+
+  /* Секция героя сдвигалась вниз через position: relative + top: 64px и
+     выезжала за пределы блока — на телефоне возвращаем её в поток. */
+  .home-page-sec1 {
+    top: auto;
+  }
+
+  /* 2) Баннер плана: заголовок, описание и кнопка идут колонкой.
+        Волна остаётся фоновой картинкой и не перекрывает текст. */
+  .home-page-plan-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    height: auto;
+    min-height: 0;
+    padding: 20px;
+  }
+
+  .home-page-plan-wave {
+    top: -24.6px;
+    right: 0;
+    width: 100%;
+    height: 148px;
+    opacity: 0.5;
+    z-index: 0;
+  }
+
+  .home-page-plan-text {
+    position: relative;
+    z-index: 1;
+  }
+
+  .home-page-plan-button {
+    position: relative;
+    right: auto;
+    left: auto;
+    z-index: 1;
+    margin-top: 4px;
+  }
+
+  /* 3) Подвал: крупный логотип не должен прятаться под фиксированной
+        нижней панелью навигации. */
+  .site-footer {
+    padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px));
+  }
+
+  /* 4) Аккаунт: две колонки на телефоне складываются в одну, иначе
+        правая колонка наезжает на левую. */
+  .two-col {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .two-col > * {
+    min-width: 0;
+  }
+
+  /* 5) Правовые страницы: длинное слово в заголовке («конфиденциальности»)
+        распирало карточку и сдвигало её вправо — разрешаем перенос. */
+  .page-surface > article.card h1,
+  .page-surface > article.card h2 {
+    hyphens: auto;
+    overflow-wrap: break-word;
+  }
+}
+
+/* 6) Админка: заголовок и кнопки выгрузки не должны раздувать страницу
+      (планшет и телефон). На десктопе строка остаётся в один ряд. */
+@media (max-width: 900px) {
+  .page-head-row {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .export-actions {
+    flex: 1 1 100%;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .page-head-row + p {
+    margin-top: 12px;
+  }
+}
+
+/* 7) Рейл: с 1440px он автосхлопывается в mini (см. NavRail.tsx).
+      Отступ контента держим равным свёрнутому рейлу ещё до гидрации,
+      иначе страница после первой отрисовки дёргается влево. */
+@media (min-width: 901px) and (max-width: 1080px) {
+  body:has(.nav-rail:not(.is-mini)) {
+    --shell-left: 136px;
+  }
+}
+
+@media (min-width: 1081px) and (max-width: 1440px) {
+  body:has(.nav-rail:not(.is-mini)) {
+    --shell-left: 140px;
+  }
+}
+
+/* 8) 901–1023px: заголовок героя переносится на третью строку, и фиксированная
+      высота 475px обрезала блок действий. Даём hero расти по контенту. */
+@media (min-width: 901px) and (max-width: 1023px) {
+  .home-page-hero {
+    height: auto;
+    padding-top: 64px;
+  }
+
+  .home-page-sec1 {
+    top: auto;
+  }
+}
+
+/* 9) Аккаунт: email в заголовке — одно длинное слово. На узких телефонах
+      (320–360px) оно распирало страницу на несколько пикселей. */
+@media (max-width: 900px) {
+  .page-head h1 {
+    overflow-wrap: anywhere;
+  }
+}
+
+/* 10) Рейл меню автосхлопывается уже с 1440px (и остаётся свёрнутым до
+      900px, где включается мобильная версия). Правила продублированы здесь
+       с !important, чтобы рейл был свёрнут на первом кадре — до гидрации —
+       и не наезжал на контент. Дальше класс is-mini на /professions и
+       канвасе работает как раньше. */
+@media (min-width: 901px) and (max-width: 1440px) {
+  .nav-rail {
+    align-items: center !important;
+    width: var(--rail-w) !important;
+    padding: 20px 16px !important;
+    border: 0 !important;
+    border-radius: var(--r-24) !important;
+    background: var(--glass-bg) !important;
+    -webkit-backdrop-filter: blur(var(--glass-blur)) !important;
+    backdrop-filter: blur(var(--glass-blur)) !important;
+    box-shadow: 0 24px 60px rgba(19, 34, 56, 0.06) !important;
+  }
+
+  .nav-rail .rail-top {
+    align-items: center !important;
+  }
+
+  .nav-rail .rail-label {
+    max-width: 0 !important;
+    opacity: 0 !important;
+    transform: translateX(-8px) !important;
+  }
+
+  .nav-rail .rail-menu {
+    align-items: stretch !important;
+    width: auto !important;
+    gap: 8px !important;
+  }
+
+  .nav-rail .rail-item {
+    width: 48px !important;
+    padding: 10px 0 10px 16px !important;
+    justify-content: flex-start !important;
+  }
+
+  .nav-rail .rail-cta {
+    width: 52px !important;
+    padding: 10px 14px !important;
+    justify-content: center !important;
+    gap: 0 !important;
+  }
+
+  .nav-rail .rail-bottom {
+    align-items: center !important;
+  }
+
+  .nav-rail .rail-brand {
+    width: 48px !important;
+    padding-inline: 0 !important;
+    margin-inline: auto !important;
+    justify-content: center !important;
+    gap: 0 !important;
+  }
+
+  .nav-rail .rail-brand .brand-lockup {
+    width: 34px !important;
+  }
+}
+
+/* 11) Ниже 1440px рейл свёрнут, поэтому контент страниц занимает всю
+      доступную ширину: слева — край рейла + 16px, справа — 40px.
+      Вертикальные отступы контента — 40px сверху и снизу. */
+@media (min-width: 901px) and (max-width: 1440px) {
+  .home-page-frame {
+    max-width: none;
+    padding: 0 var(--shell-right) 40px
+      calc(var(--rail-left) + var(--rail-w) + 16px);
+  }
+
+  .home-page-sec1,
+  .home-page-main,
+  .home-page-aside {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .page-screen,
+  .page-plain,
+  .studying-page,
+  .workspace-page {
+    padding: 40px var(--shell-right) 40px
+      calc(var(--rail-left) + var(--rail-w) + 16px);
+  }
+
+  .page-surface,
+  .auth-page,
+  .studying-page,
+  .workspace-glass {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+/* 12) «План» и «Изучаю» ниже 1440px: вертикальный отступ контента 40px
+      (в плане он переопределялся на 64px через .app-viewport--plan).
+      На 901–1000px преимущества и шаги остаются в две колонки, иначе
+      4 колонки не помещаются в полноширинный контент. */
+@media (min-width: 901px) and (max-width: 1440px) {
+  .app-viewport--plan .studying-page {
+    padding-top: 40px;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1000px) {
+  .plan-benefits,
+  .plan-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* 13) На 901–1000px преимущества главной «Плана» переключаем из flex-строки
+      (фиксированная ширина 812px) в две колонки — иначе край уезжает. */
+@media (min-width: 901px) and (max-width: 1000px) {
+  .plan-page--home .plan-benefits {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    width: 100%;
+  }
+
+  .plan-page--home .plan-benefits div {
+    padding-left: 12px;
+  }
+
+  .plan-page--home .plan-benefits div:nth-child(odd) {
+    padding-left: 0;
+    border-left: 0;
+  }
 }

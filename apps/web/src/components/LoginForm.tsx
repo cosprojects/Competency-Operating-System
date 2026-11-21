@@ -79,12 +79,12 @@ export function LoginForm({
       });
       if (!response.ok) {
         const data = (await response.json()) as { error?: string };
-        throw new Error(data.error ?? "Проверь email");
+        throw new Error(data.error ?? "Проверь адрес: похоже, в нём ошибка.");
       }
       setStatus("sent");
     } catch (caught) {
       setStatus("error");
-      setError(caught instanceof Error ? caught.message : "Не удалось отправить письмо");
+      setError(caught instanceof Error ? caught.message : "Письмо не ушло. Попробуй ещё раз — или напиши на hi.axiona@protonmail.com.");
     }
   }
 

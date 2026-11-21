@@ -1,5 +1,6 @@
 import nodemailer from "nodemailer";
 import { renderMagicLinkEmail } from "./email-templates/magic-link";
+import { renderWelcomeEmail } from "./email-templates/welcome";
 
 export interface MagicLinkEmail {
   to: string;
@@ -24,18 +25,14 @@ export async function sendMagicLink({ to, url, expiresText = "15 минут" }: 
 /** Приветствие после создания аккаунта. Best-effort: сбой письма не ломает вход. */
 export async function sendWelcomeEmail({ to }: { to: string }): Promise<void> {
   const appUrl = process.env.APP_URL ?? "https://app.axiona.world";
-  const text = [
-    "Привет,",
-    "",
-    "Аккаунт в AXIONA создан. Теперь можно сохранять компетенции и материалы и возвращаться к ним с любого устройства.",
-    "",
-    `Профессии: ${appUrl}/professions`,
-    `Сохранённое: ${appUrl}/saved`,
-    "",
-    "Если что-то не работает или есть идея — напиши в поддержку: hi.axiona@protonmail.com.",
-  ].join("\n");
-  const html = `<p>Привет,</p><p>Аккаунт в AXIONA создан. Теперь можно сохранять компетенции и материалы и возвращаться к ним с любого устройства.</p><p><a href="${escapeHtml(appUrl)}/professions">Профессии</a><br/><a href="${escapeHtml(appUrl)}/saved">Сохранённое</a></p><p>Если что-то не работает или есть идея — напиши в поддержку: hi.axiona@protonmail.com.</p>`;
-  await sendTransactionalEmail({ to, subject: "Аккаунт в AXIONA создан", text, html });
+  const supportEmail = process.env.SUPPORT_EMAIL ?? "hi.axiona@protonmail.com";
+  const { subject, text, html } = renderWelcomeEmail({
+    appUrl,
+    supportEmail,
+    privacyUrl: `${appUrl}/legal/privacy`,
+    logoUrl: `${appUrl}/brand/email-logo.png`,
+  });
+  await sendTransactionalEmail({ to, subject, text, html });
 }
 
 function escapeHtml(value: string): string {

@@ -71,6 +71,12 @@ Usage:
   --height <px>          высота вьюпорта (по умолчанию 1000)
   --scale <n>            deviceScaleFactor (по умолчанию 2)
   --threshold <0..255>   порог различия по каналу (по умолчанию 24)
+  --cookie "name=value"  cookie для закрытых экранов (/plan/*, /saved, /admin/*):
+                         значение печатает scripts/web/figma-parity/dev-session.mjs
+  --click <css>          кликнуть по элементу перед съёмкой (сверка выбранного состояния);
+                         клик настоящий, через CDP, поэтому :hover и :focus-visible как у мыши
+  --hide <css,css>       убрать из снимка служебные слои (например .consent-banner):
+                         это не часть экрана, в макете их нет
   --help                 показать эту справку и выйти
 
 Артефакты: web.png, design.png, diff.png, side-by-side.png, report.json.
@@ -86,7 +92,21 @@ function printHelp() {
 if (process.argv.includes('--help') || process.argv.includes('-h')) printHelp();
 
 // Неизвестные флаги — почти всегда опечатка, лучше упасть сразу.
-const KNOWN = new Set(['url', 'selector', 'design', 'out', 'cdp', 'width', 'height', 'scale', 'threshold', 'help']);
+const KNOWN = new Set([
+  'url',
+  'selector',
+  'design',
+  'out',
+  'cdp',
+  'width',
+  'height',
+  'scale',
+  'threshold',
+  'cookie',
+  'click',
+  'hide',
+  'help',
+]);
 for (const token of process.argv.slice(2)) {
   if (token.startsWith('--') && !KNOWN.has(token.slice(2))) {
     throw new ArgError(`неизвестный флаг ${token} (--help покажет справку)`);
@@ -113,6 +133,9 @@ try {
     height: intArg('height', 1000, { min: 1, max: 20000 }),
     scale: numArg('scale', 2, { min: 0.1, max: 8 }),
     threshold: intArg('threshold', 24, { min: 0, max: 255 }),
+    cookie: arg('cookie', ''),
+    click: arg('click', ''),
+    hide: arg('hide', ''),
   };
 } catch (error) {
   if (error instanceof ArgError) {
@@ -122,7 +145,16 @@ try {
   throw error;
 }
 
-const { url: URL_, selector: SELECTOR, design: DESIGN, out: OUT, cdp: CDP_PORT } = config;
+const {
+  url: URL_,
+  selector: SELECTOR,
+  design: DESIGN,
+  out: OUT,
+  cdp: CDP_PORT,
+  cookie: COOKIE,
+  click: CLICK,
+  hide: HIDE,
+} = config;
 const { width: VIEW_W, height: VIEW_H, scale: SCALE, threshold: THRESHOLD } = config;
 
 mkdirSync(OUT, { recursive: true });
@@ -523,6 +555,23 @@ async function main() {
       sessionId,
     );
 
+    // Закрытые экраны: cookie ставим до навигации, иначе будет редирект на /login.
+    if (COOKIE) {
+      const [name, ...valueParts] = COOKIE.split('=');
+      await cdp.send('Network.enable', {}, sessionId);
+      await cdp.send(
+        'Network.setCookie',
+        {
+          name,
+          value: valueParts.join('='),
+          url: new URL(URL_).origin + '/',
+          path: '/',
+          httpOnly: true,
+        },
+        sessionId,
+      );
+    }
+
     const loaded = cdp.once('Page.loadEventFired', 30000, sessionId);
     const nav = await cdp.send('Page.navigate', { url: URL_ }, sessionId);
     if (nav.errorText) throw new Error(`навигация не удалась: ${nav.errorText}`);
@@ -533,6 +582,57 @@ async function main() {
       .send('Runtime.evaluate', { expression: 'document.fonts.ready', awaitPromise: true }, sessionId)
       .catch(() => {});
     await new Promise((r) => setTimeout(r, 400));
+
+    // Служебные слои (баннер согласия и пр.) — не часть экрана, в макете их нет.
+    // Убираем после гидрации: иначе React успевает смонтировать баннер заново.
+    if (HIDE) {
+      const selectors = HIDE.split(',').map((item) => item.trim()).filter(Boolean);
+      await cdp
+        .send(
+          'Runtime.evaluate',
+          {
+            expression: `document.querySelectorAll(${JSON.stringify(selectors.join(','))}).forEach((el) => el.remove());`,
+          },
+          sessionId,
+        )
+        .catch(() => {});
+      await new Promise((r) => setTimeout(r, 150));
+    }
+
+    // Состояние элемента (выбранный уровень): клик настоящий, чтобы ховер и фокус
+    // вели себя как у мыши, а не как программный .click().
+    if (CLICK) {
+      const box = await cdp.send(
+        'Runtime.evaluate',
+        {
+          expression: `(() => {
+            const el = document.querySelector(${JSON.stringify(CLICK)});
+            if (!el) return null;
+            const r = el.getBoundingClientRect();
+            return JSON.stringify({ x: r.left + r.width / 2, y: r.top + r.height / 2 });
+          })()`,
+          returnByValue: true,
+        },
+        sessionId,
+      );
+      const point = box.result.value ? JSON.parse(box.result.value) : null;
+      if (!point) throw new Error(`--click: элемент ${CLICK} не найден`);
+      for (const type of ['mouseMoved', 'mousePressed', 'mouseReleased']) {
+        await cdp.send(
+          'Input.dispatchMouseEvent',
+          {
+            type,
+            x: point.x,
+            y: point.y,
+            ...(type === 'mouseMoved' ? {} : { button: 'left', clickCount: 1 }),
+          },
+          sessionId,
+        );
+      }
+      // Уводим курсор с кнопки, иначе её :hover попадёт в снимок.
+      await cdp.send('Input.dispatchMouseEvent', { type: 'mouseMoved', x: 1, y: 1 }, sessionId);
+      await new Promise((r) => setTimeout(r, 500));
+    }
 
     const rectExpr = `(() => {
       const el = document.querySelector(${JSON.stringify(SELECTOR)});

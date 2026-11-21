@@ -17,9 +17,9 @@ export interface EmailLayoutInput {
   button: { href: string; label: string };
   /** Блоки под кнопкой: уже экранированный HTML с инлайн-стилями. */
   bodyHtml: string;
-  supportEmail: string;
-  /** Фраза перед адресом поддержки, например «Нужна помощь? Напиши мне на». */
-  supportLine: string;
+  /** Пара «фраза + адрес» для строки поддержки; без неё строка не выводится. */
+  supportEmail?: string;
+  supportLine?: string;
   privacyUrl: string;
   logoUrl: string;
 }
@@ -46,8 +46,17 @@ export function renderEmailLayout(input: EmailLayoutInput): string {
   const lead = escapeHtml(input.lead);
   const buttonHref = escapeHtml(input.button.href);
   const buttonLabel = escapeHtml(input.button.label);
-  const support = escapeHtml(input.supportEmail);
-  const supportLine = escapeHtml(input.supportLine);
+  const support = input.supportEmail ? escapeHtml(input.supportEmail) : "";
+  const supportLine = input.supportLine ? escapeHtml(input.supportLine) : "";
+  const supportHtml =
+    support && supportLine
+      ? `                <p style="margin:37px 0 0 0;font-size:16px;line-height:20px;color:#595959;">
+                  ${supportLine}
+                  <a href="mailto:${support}" style="color:#4f46e5;text-decoration:underline;">${support}</a>
+                </p>
+
+`
+      : "";
   const privacy = escapeHtml(input.privacyUrl);
   const logo = escapeHtml(input.logoUrl);
 
@@ -101,12 +110,7 @@ export function renderEmailLayout(input: EmailLayoutInput): string {
 
 ${input.bodyHtml}
 
-                <p style="margin:37px 0 0 0;font-size:16px;line-height:20px;color:#595959;">
-                  ${supportLine}
-                  <a href="mailto:${support}" style="color:#4f46e5;text-decoration:underline;">${support}</a>
-                </p>
-
-                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:24px;">
+${supportHtml}                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:24px;">
                   <tr>
                     <td align="left" style="font-size:16px;line-height:20px;">
                       <a href="${privacy}" target="_blank" rel="noopener noreferrer" style="color:#595959;text-decoration:underline;">Политика конфиденциальности</a>

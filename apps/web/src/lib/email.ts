@@ -1,4 +1,6 @@
 import nodemailer from "nodemailer";
+import { renderEmailChangeEmail, renderEmailChangedNoticeEmail } from "./email-templates/email-change";
+import { renderFeedbackNotificationEmail } from "./email-templates/feedback";
 import { renderMagicLinkEmail } from "./email-templates/magic-link";
 import { renderWelcomeEmail } from "./email-templates/welcome";
 
@@ -33,15 +35,6 @@ export async function sendWelcomeEmail({ to }: { to: string }): Promise<void> {
     logoUrl: `${appUrl}/brand/email-logo.png`,
   });
   await sendTransactionalEmail({ to, subject, text, html });
-}
-
-function escapeHtml(value: string): string {
-  return value
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#39;");
 }
 
 interface TransactionalEmail {
@@ -125,29 +118,29 @@ async function sendTransactionalEmail({ to, subject, text, html }: Transactional
 
 /** Подтверждение смены email: уходит на НОВЫЙ адрес (COS-EAR-013). */
 export async function sendEmailChangeLink({ to, url }: MagicLinkEmail): Promise<void> {
-  const text = [
-    "Привет,",
-    "",
-    "Чтобы сменить почту в AXIONA на этот адрес, открой ссылку:",
+  const appUrl = process.env.APP_URL ?? "https://app.axiona.world";
+  const supportEmail = process.env.SUPPORT_EMAIL ?? "hi.axiona@protonmail.com";
+  const { subject, text, html } = renderEmailChangeEmail({
     url,
-    "",
-    "Ссылка действует 15 минут и работает один раз. Если ты не запрашивал смену, проигнорируй письмо.",
-  ].join("\n");
-  const html = `<p>Привет,</p><p>Чтобы сменить почту в AXIONA на этот адрес, открой ссылку:</p><p><a href="${escapeHtml(url)}">Подтвердить новый адрес</a></p><p>Ссылка действует 15 минут и работает один раз.</p>`;
-  await sendTransactionalEmail({ to, subject: "Подтверждение нового адреса в AXIONA", text, html });
+    supportEmail,
+    privacyUrl: `${appUrl}/legal/privacy`,
+    logoUrl: `${appUrl}/brand/email-logo.png`,
+  });
+  await sendTransactionalEmail({ to, subject, text, html });
 }
 
 /** Уведомление на старый email после смены адреса (COS-EAR-013). Не хранит старый адрес. */
 export async function sendEmailChangedNotice({ to, newEmail }: { to: string; newEmail: string }): Promise<void> {
-  const text = [
-    "Адрес изменён.",
-    "",
-    `Этот email больше не привязан к аккаунту AXIONA. Новый адрес: ${newEmail}.`,
-    "",
-    "Если это сделал не ты — напиши в поддержку: hi.axiona@protonmail.com.",
-  ].join("\n");
-  const html = `<p>Адрес изменён.</p><p>Этот email больше не привязан к аккаунту AXIONA. Новый адрес: ${escapeHtml(newEmail)}.</p><p>Если это сделал не ты — напиши в поддержку: hi.axiona@protonmail.com.</p>`;
-  await sendTransactionalEmail({ to, subject: "Адрес в AXIONA изменён", text, html });
+  const appUrl = process.env.APP_URL ?? "https://app.axiona.world";
+  const supportEmail = process.env.SUPPORT_EMAIL ?? "hi.axiona@protonmail.com";
+  const { subject, text, html } = renderEmailChangedNoticeEmail({
+    appUrl,
+    newEmail,
+    supportEmail,
+    privacyUrl: `${appUrl}/legal/privacy`,
+    logoUrl: `${appUrl}/brand/email-logo.png`,
+  });
+  await sendTransactionalEmail({ to, subject, text, html });
 }
 
 export interface FeedbackNotification {
@@ -165,16 +158,13 @@ export interface FeedbackNotification {
  * Best-effort: отзыв уже сохранён в БД, доставка письма не должна ломать ответ.
  */
 export async function sendFeedbackNotification(feedback: FeedbackNotification): Promise<void> {
+  const appUrl = process.env.APP_URL ?? "https://app.axiona.world";
   const to = process.env.FEEDBACK_EMAIL ?? "hi.axiona@protonmail.com";
-  const lines = [
-    `Тип: ${feedback.type}`,
-    feedback.rating ? `Оценка полезности: ${feedback.rating}/5` : "",
-    feedback.comment ? `Комментарий: ${feedback.comment}` : "",
-    feedback.contactEmail ? `Email для ответа: ${feedback.contactEmail}` : "",
-    feedback.targetType && feedback.targetId ? `Объект: ${feedback.targetType} ${feedback.targetId}` : "",
-    `Страница: ${feedback.pagePath}`,
-  ].filter(Boolean);
-  const text = lines.join("\n");
-  const html = lines.map((line) => `<p>${escapeHtml(line)}</p>`).join("");
-  await sendTransactionalEmail({ to, subject: "AXIONA: новый отзыв", text, html });
+  const { subject, text, html } = renderFeedbackNotificationEmail({
+    appUrl,
+    privacyUrl: `${appUrl}/legal/privacy`,
+    logoUrl: `${appUrl}/brand/email-logo.png`,
+    ...feedback,
+  });
+  await sendTransactionalEmail({ to, subject, text, html });
 }

@@ -42,8 +42,13 @@ export default async function PlanStartPage({
         </p>
       </header>
 
-      <div className="plan-filter-row" role="group" aria-label="Фильтр профессий">
-        <Link className={`plan-filter${!family ? " is-active" : ""}`} href="/plan/start">
+      {/* Фильтр в одном контейнере и в том же стиле, что табы самооценки. */}
+      <div className="plan-tabs" role="group" aria-label="Фильтр профессий">
+        <Link
+          className={`plan-tab${!family ? " is-active" : ""}`}
+          href="/plan/start"
+          aria-current={!family ? "page" : undefined}
+        >
           Все <span>{professions.length}</span>
         </Link>
         {families
@@ -51,14 +56,19 @@ export default async function PlanStartPage({
           .slice(0, 3)
           .map((item) => (
             <Link
-              className={`plan-filter${family === item.key ? " is-active" : ""}`}
+              className={`plan-tab${family === item.key ? " is-active" : ""}`}
               href={`/plan/start?family=${item.key}`}
+              aria-current={family === item.key ? "page" : undefined}
               key={item.key}
             >
               {item.label} <span>{item.count}</span>
             </Link>
           ))}
-        <Link className={`plan-filter${family === "other" ? " is-active" : ""}`} href="/plan/start?family=other">
+        <Link
+          className={`plan-tab${family === "other" ? " is-active" : ""}`}
+          href="/plan/start?family=other"
+          aria-current={family === "other" ? "page" : undefined}
+        >
           Ещё <span>{professions.length - families.slice(0, 3).reduce((sum, item) => sum + item.count, 0)}</span>
         </Link>
       </div>

@@ -10767,7 +10767,6 @@ body:has(.studying-page) .paper-layer {
 .plan-group {
   display: flex;
   flex-direction: column;
-  gap: 10px;
 }
 
 .plan-group-head {
@@ -10775,6 +10774,7 @@ body:has(.studying-page) .paper-layer {
   align-items: baseline;
   justify-content: space-between;
   gap: 12px;
+  margin-bottom: 10px;
 }
 
 .plan-group-head h2 {
@@ -11135,48 +11135,6 @@ a.plan-stepper-link:hover {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.plan-filter-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.plan-filter {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 12px;
-  border: 1px solid var(--line-soft);
-  border-radius: 999px;
-  background: var(--surface);
-  color: var(--muted);
-  font-size: 13px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: border-color var(--dur-160, 160ms) ease, background var(--dur-160, 160ms) ease, color var(--dur-160, 160ms) ease;
-}
-
-.plan-filter span {
-  color: var(--placeholder);
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.plan-filter:hover {
-  border-color: var(--accent);
-  color: var(--accent-dark);
-}
-
-.plan-filter.is-active {
-  border-color: var(--accent);
-  background: var(--accent-soft);
-  color: var(--accent-dark);
-}
-
-.plan-filter.is-active span {
-  color: var(--accent);
-}
-
 .plan-grade-layout {
   display: grid;
   grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.9fr);
@@ -11381,6 +11339,7 @@ a.plan-stepper-link:hover {
   font: inherit;
   font-size: 13px;
   font-weight: 600;
+  text-decoration: none;
   cursor: pointer;
   transition: background var(--dur-160, 160ms) ease, color var(--dur-160, 160ms) ease;
 }
@@ -11393,6 +11352,7 @@ a.plan-stepper-link:hover {
 .plan-tab:hover {
   background: var(--bg-sunken);
   color: var(--ink);
+  text-decoration: none;
 }
 
 .plan-tab.is-active {
@@ -11496,7 +11456,6 @@ a.plan-stepper-link:hover {
 }
 
 .plan-grade-option:focus-visible,
-.plan-filter:focus-visible,
 .plan-tab:focus-visible,
 .plan-profession-card:focus-visible,
 .plan-stepper-link:focus-visible {
@@ -17228,6 +17187,11 @@ button,
   padding: 15px;
   border-radius: 16px;
   background: var(--card);
+}
+
+/* Отступ между компетенциями в самооценке — 20px (запрос владельца 2026-11-21). */
+.plan-row + .plan-row {
+  margin-top: 20px;
 }
 
 .plan-row-head {

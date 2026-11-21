@@ -2,6 +2,11 @@ import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 import { renderMagicLinkEmail } from "../apps/web/src/lib/email-templates/magic-link.ts";
 import { renderWelcomeEmail } from "../apps/web/src/lib/email-templates/welcome.ts";
+import {
+  renderEmailChangeEmail,
+  renderEmailChangedNoticeEmail,
+} from "../apps/web/src/lib/email-templates/email-change.ts";
+import { renderFeedbackNotificationEmail } from "../apps/web/src/lib/email-templates/feedback.ts";
 
 const base = {
   url: "https://app.axiona.world/auth/verify?token=abc123&next=%2Fsaved",
@@ -90,5 +95,88 @@ describe("welcome email template", () => {
     });
     assert.doesNotMatch(rendered.html, /<script>alert/);
     assert.doesNotMatch(rendered.html, /onerror="alert/);
+  });
+});
+
+describe("email change templates", () => {
+  const baseInput = {
+    supportEmail: "hi.axiona@protonmail.com",
+    privacyUrl: "https://app.axiona.world/legal/privacy",
+    logoUrl: "https://app.axiona.world/brand/email-logo.png",
+  };
+
+  it("подтверждение нового адреса: каркас с кнопкой и ссылкой", () => {
+    const rendered = renderEmailChangeEmail({
+      ...baseInput,
+      url: "https://app.axiona.world/auth/email-change?token=abc",
+    });
+    assert.equal(rendered.subject, "Подтверждение нового адреса в AXIONA");
+    assert.match(rendered.html, /email-button/);
+    assert.match(rendered.html, /href="https:\/\/app\.axiona\.world\/auth\/email-change\?token=abc"/);
+    assert.match(rendered.html, /Подтвердить адрес/);
+    assert.ok(rendered.text.includes("https://app.axiona.world/auth/email-change?token=abc"));
+    assert.ok(rendered.text.includes("15 минут"));
+  });
+
+  it("уведомление старому адресу: новый email и завершение сессий", () => {
+    const rendered = renderEmailChangedNoticeEmail({
+      ...baseInput,
+      appUrl: "https://app.axiona.world",
+      newEmail: "new-address@example.com",
+    });
+    assert.equal(rendered.subject, "Адрес в AXIONA изменён");
+    assert.match(rendered.html, /Адрес изменён/);
+    assert.match(rendered.html, /new-address@example\.com/);
+    assert.match(rendered.html, /Все сессии завершены/);
+    assert.match(rendered.html, /href="https:\/\/app\.axiona\.world"/);
+    assert.ok(rendered.text.includes("new-address@example.com"));
+  });
+
+  it("экранирует новый email в уведомлении", () => {
+    const rendered = renderEmailChangedNoticeEmail({
+      ...baseInput,
+      appUrl: "https://app.axiona.world",
+      newEmail: 'bad@example.com<script>alert(1)</script>',
+    });
+    assert.doesNotMatch(rendered.html, /<script>alert/);
+    assert.match(rendered.html, /bad@example\.com&lt;script&gt;/);
+  });
+});
+
+describe("feedback notification template", () => {
+  it("переводит отзыв в каркас с кнопкой в админку", () => {
+    const rendered = renderFeedbackNotificationEmail({
+      appUrl: "https://app.axiona.world",
+      privacyUrl: "https://app.axiona.world/legal/privacy",
+      logoUrl: "https://app.axiona.world/brand/email-logo.png",
+      type: "material",
+      rating: 4,
+      comment: "Полезно, но мало примеров.",
+      contactEmail: "reader@example.com",
+      pagePath: "/professions/uxui",
+      targetType: "COMPETENCY",
+      targetId: "ux-design-thinking",
+    });
+    assert.equal(rendered.subject, "AXIONA: новый отзыв");
+    assert.match(rendered.html, /email-button/);
+    assert.match(rendered.html, /href="https:\/\/app\.axiona\.world\/admin\/feedback"/);
+    assert.match(rendered.html, /Полезно, но мало примеров/);
+    assert.match(rendered.html, /reader@example\.com/);
+    assert.ok(rendered.text.includes("Тип: material"));
+    assert.ok(rendered.text.includes("Страница: /professions/uxui"));
+  });
+
+  it("экранирует текст комментария и сохраняет переносы строк", () => {
+    const rendered = renderFeedbackNotificationEmail({
+      appUrl: "https://app.axiona.world",
+      privacyUrl: "https://app.axiona.world/legal/privacy",
+      logoUrl: "https://app.axiona.world/brand/email-logo.png",
+      type: "idea",
+      comment: "Первая строка\n<script>alert(1)</script>",
+      pagePath: "/saved",
+    });
+    assert.doesNotMatch(rendered.html, /<script>alert/);
+    assert.match(rendered.html, /&lt;script&gt;alert/);
+    assert.match(rendered.html, /Первая строка<br\/>/);
   });
 });

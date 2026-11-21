@@ -3,8 +3,9 @@
  * Production smoke QA для контура app.axiona.world (T-009).
  *
  * Проверяет только чтение и негативные (невалидные) запросы: реальные сохранения,
- * отзывы и входы не создаются. Регистрация закрыта — запрос ссылки для несуществующего
- * email проверяется как «тихий 200», токен при этом не создаётся.
+ * отзывы и входы не создаются. Пробный запрос ссылки для несуществующего email делается
+ * только при закрытой регистрации: при открытой он отправил бы письмо на несуществующий
+ * ящик и дал бы bounce.
  *
  * Запуск:
  *   node scripts/qa/production-smoke.mjs
@@ -159,7 +160,14 @@ await check("Доступность", "QA-07", "GET /register", "200: форма
     ms: result.ms,
   };
 });
-await check("Доступность", "QA-08", "GET /feedback", "200, форма отзыва", page("/feedback", { marker: "Обратная связь" }));
+await check("Доступность", "QA-08", "GET /feedback", "307 на /?feedback=1 (форма живёт в модалке)", async () => {
+  const result = await request("/feedback");
+  if (result.error) throw new Error(`сетевая ошибка: ${result.error.message}`);
+  const status = result.response.status;
+  const location = result.response.headers.get("location") ?? "";
+  const ok = status === 307 && location.includes("feedback=1");
+  return { status: ok ? "PASS" : "FAIL", detail: `HTTP ${status} → ${location || "—"}`, ms: result.ms };
+});
 await check("Доступность", "QA-09", "GET /legal/privacy", "200, политика", page("/legal/privacy", { marker: "Политика конфиденциальности" }));
 await check("Доступность", "QA-10", "GET /legal/terms", "200, условия", page("/legal/terms", { marker: "Условия использования" }));
 await check("Доступность", "QA-11", "GET /legal/cookies", "200, cookie", page("/legal/cookies", { marker: "Cookie" }));
@@ -286,7 +294,18 @@ await check("Защита API", "QA-49", "POST /api/auth/request с чужим O
   if (result.error) throw new Error(result.error.message);
   return { status: result.response.status === 403 ? "PASS" : "FAIL", detail: `HTTP ${result.response.status}: ${truncate(result.text, 100)}`, ms: result.ms };
 });
-await check("Защита API", "QA-50", "POST /api/auth/request для нового email при закрытой регистрации", "200 {ok:true}, без раскрытия существования аккаунта", async () => {
+await check("Защита API", "QA-50", "POST /api/auth/request для нового email", "200 {ok:true}, без раскрытия существования аккаунта", async () => {
+  // При открытой регистрации (AUTH_REGISTRATION_DISABLED=0) пробный адрес @example.com получил бы
+  // настоящее письмо и дал бы bounce — это бьёт по репутации отправителя. Поэтому проверяем только
+  // в закрытом режиме, а в открытом честно пропускаем.
+  const register = await request("/register");
+  const openRegistration = register.response.status === 200 && register.text.includes("Создай аккаунт");
+  if (openRegistration) {
+    return {
+      status: "SKIP",
+      detail: "регистрация открыта: пробный адрес не запрашиваем, чтобы не отправлять письмо на несуществующий ящик",
+    };
+  }
   const email = `qa-probe-${Date.now()}@example.com`;
   const result = await postApi("/api/auth/request", { body: JSON.stringify({ email }) });
   if (result.error) throw new Error(result.error.message);
@@ -464,11 +483,14 @@ await check("Legal", "QA-73", "Cookie-описание: axiona_aid и сроки
   const ok = result.text.includes("axiona_aid");
   return { status: ok ? "PASS" : "FAIL", detail: ok ? "найден axiona_aid" : "нет упоминания axiona_aid" };
 });
-await check("Legal", "QA-74", "Футер: ссылки на 3 legal-документа", "privacy, terms, cookies", async () => {
+await check("Legal", "QA-74", "Футер: доступ к 3 legal-документам", "privacy и terms ссылками, cookies — ссылкой или кнопкой-модалкой", async () => {
   const result = await request("/");
-  const links = ["/legal/privacy", "/legal/terms", "/legal/cookies"];
-  const missing = links.filter((link) => !result.text.includes(link));
-  return { status: missing.length ? "FAIL" : "PASS", detail: missing.length ? `нет: ${missing.join(", ")}` : "все 3 ссылки в HTML" };
+  const hasPrivacy = result.text.includes("/legal/privacy");
+  const hasTerms = result.text.includes("/legal/terms");
+  // Cookie notice в футере открывается кнопкой-модалкой, а не отдельной ссылкой (макет 369-14582).
+  const hasCookies = result.text.includes("/legal/cookies") || /site-footer-link[^>]*>Cookies/.test(result.text) || result.text.includes(">Cookies<");
+  const missing = [hasPrivacy ? null : "privacy", hasTerms ? null : "terms", hasCookies ? null : "cookies"].filter(Boolean);
+  return { status: missing.length ? "FAIL" : "PASS", detail: missing.length ? `нет: ${missing.join(", ")}` : "все 3 документа доступны из футера" };
 });
 await check("Legal", "QA-75", "Форма входа: ссылки на документы в consent-строке", "terms + privacy", async () => {
   const result = await request("/login");

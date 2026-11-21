@@ -1,0 +1,206 @@
+{
+  "document": {
+    "id": "2:5125",
+    "name": "Linear / School / Square Academic Cap",
+    "type": "COMPONENT",
+    "scrollBehavior": "SCROLLS",
+    "children": [
+      {
+        "id": "2:5126",
+        "name": "Vector",
+        "type": "VECTOR",
+        "scrollBehavior": "SCROLLS",
+        "blendMode": "PASS_THROUGH",
+        "fills": [],
+        "fillOverrideTable": {
+          "3": null
+        },
+        "strokes": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.10980392247438431,
+              "g": 0.15294118225574493,
+              "b": 0.3019607961177826,
+              "a": 1
+            }
+          }
+        ],
+        "strokeWeight": 1.5,
+        "strokeAlign": "CENTER",
+        "absoluteBoundingBox": {
+          "x": 572,
+          "y": 3736,
+          "width": 20,
+          "height": 11
+        },
+        "absoluteRenderBounds": {
+          "x": 571.25,
+          "y": 3735.25,
+          "width": 21.5,
+          "height": 12.5
+        },
+        "constraints": {
+          "vertical": "SCALE",
+          "horizontal": "SCALE"
+        },
+        "effects": [],
+        "interactions": [],
+        "complexStrokeProperties": {
+          "strokeType": "BASIC"
+        }
+      },
+      {
+        "id": "2:5127",
+        "name": "Vector",
+        "type": "VECTOR",
+        "scrollBehavior": "SCROLLS",
+        "blendMode": "PASS_THROUGH",
+        "fills": [],
+        "strokes": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.10980392247438431,
+              "g": 0.15294118225574493,
+              "b": 0.3019607961177826,
+              "a": 1
+            }
+          }
+        ],
+        "strokeWeight": 1.5,
+        "strokeAlign": "CENTER",
+        "strokeCap": "ROUND",
+        "absoluteBoundingBox": {
+          "x": 572,
+          "y": 3741.5,
+          "width": 0,
+          "height": 5.5
+        },
+        "absoluteRenderBounds": {
+          "x": 571.25,
+          "y": 3740.75,
+          "width": 1.5,
+          "height": 7
+        },
+        "constraints": {
+          "vertical": "SCALE",
+          "horizontal": "SCALE"
+        },
+        "effects": [],
+        "interactions": [],
+        "complexStrokeProperties": {
+          "strokeType": "BASIC"
+        }
+      },
+      {
+        "id": "2:5128",
+        "name": "Vector",
+        "type": "VECTOR",
+        "scrollBehavior": "SCROLLS",
+        "blendMode": "PASS_THROUGH",
+        "fills": [],
+        "fillOverrideTable": {
+          "1": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "strokes": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.10980392247438431,
+              "g": 0.15294118225574493,
+              "b": 0.3019607961177826,
+              "a": 1
+            }
+          }
+        ],
+        "strokeWeight": 1.5,
+        "strokeAlign": "CENTER",
+        "strokeCap": "ROUND",
+        "absoluteBoundingBox": {
+          "x": 575,
+          "y": 3744.5,
+          "width": 14,
+          "height": 9.5
+        },
+        "absoluteRenderBounds": {
+          "x": 574.25,
+          "y": 3743.75,
+          "width": 15.5,
+          "height": 11
+        },
+        "constraints": {
+          "vertical": "SCALE",
+          "horizontal": "SCALE"
+        },
+        "effects": [],
+        "interactions": [],
+        "complexStrokeProperties": {
+          "strokeType": "BASIC"
+        }
+      }
+    ],
+    "blendMode": "PASS_THROUGH",
+    "clipsContent": true,
+    "background": [],
+    "fills": [],
+    "strokes": [],
+    "strokeWeight": 1,
+    "strokeAlign": "INSIDE",
+    "backgroundColor": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 0
+    },
+    "absoluteBoundingBox": {
+      "x": 570,
+      "y": 3733,
+      "width": 24,
+      "height": 24
+    },
+    "absoluteRenderBounds": {
+      "x": 570,
+      "y": 3733,
+      "width": 24,
+      "height": 24
+    },
+    "constraints": {
+      "vertical": "TOP",
+      "horizontal": "LEFT"
+    },
+    "exportSettings": [
+      {
+        "suffix": "",
+        "format": "SVG",
+        "constraint": {
+          "type": "SCALE",
+          "value": 1
+        }
+      }
+    ],
+    "effects": [],
+    "interactions": [],
+    "complexStrokeProperties": {
+      "strokeType": "BASIC"
+    }
+  },
+  "components": {
+    "2:5125": {
+      "key": "d80e00c031ded83e083a22de8e99a8eb55980036",
+      "name": "Linear / School / Square Academic Cap",
+      "description": "",
+      "remote": false,
+      "documentationLinks": []
+    }
+  },
+  "componentSets": {},
+  "schemaVersion": 0,
+  "styles": {}
+}

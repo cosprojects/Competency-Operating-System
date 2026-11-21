@@ -1,0 +1,159 @@
+{
+  "document": {
+    "id": "2:3333",
+    "name": "Linear / Essentional, UI / Home ",
+    "type": "COMPONENT",
+    "scrollBehavior": "SCROLLS",
+    "children": [
+      {
+        "id": "2:3334",
+        "name": "Vector",
+        "type": "VECTOR",
+        "scrollBehavior": "SCROLLS",
+        "blendMode": "PASS_THROUGH",
+        "fills": [],
+        "fillOverrideTable": {
+          "1": null,
+          "3": null
+        },
+        "strokes": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.10980392247438431,
+              "g": 0.15294118225574493,
+              "b": 0.2980392277240753,
+              "a": 1
+            }
+          }
+        ],
+        "strokeWeight": 1.5,
+        "strokeAlign": "CENTER",
+        "absoluteBoundingBox": {
+          "x": 637,
+          "y": 11119,
+          "width": 20,
+          "height": 20
+        },
+        "absoluteRenderBounds": {
+          "x": 636.25,
+          "y": 11118.25,
+          "width": 21.5,
+          "height": 21.5
+        },
+        "constraints": {
+          "vertical": "SCALE",
+          "horizontal": "SCALE"
+        },
+        "effects": [],
+        "interactions": [],
+        "complexStrokeProperties": {
+          "strokeType": "BASIC"
+        }
+      },
+      {
+        "id": "2:3335",
+        "name": "Vector",
+        "type": "VECTOR",
+        "scrollBehavior": "SCROLLS",
+        "blendMode": "PASS_THROUGH",
+        "fills": [],
+        "fillOverrideTable": {
+          "1": null
+        },
+        "strokes": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.10980392247438431,
+              "g": 0.15294118225574493,
+              "b": 0.2980392277240753,
+              "a": 1
+            }
+          }
+        ],
+        "strokeWeight": 1.5,
+        "strokeAlign": "CENTER",
+        "absoluteBoundingBox": {
+          "x": 644,
+          "y": 11135,
+          "width": 6,
+          "height": 0
+        },
+        "absoluteRenderBounds": {
+          "x": 643.25,
+          "y": 11134.25,
+          "width": 7.5,
+          "height": 1.5
+        },
+        "constraints": {
+          "vertical": "SCALE",
+          "horizontal": "SCALE"
+        },
+        "effects": [],
+        "interactions": [],
+        "complexStrokeProperties": {
+          "strokeType": "BASIC"
+        }
+      }
+    ],
+    "blendMode": "PASS_THROUGH",
+    "clipsContent": true,
+    "background": [],
+    "fills": [],
+    "strokes": [],
+    "strokeWeight": 1,
+    "strokeAlign": "INSIDE",
+    "backgroundColor": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 0
+    },
+    "absoluteBoundingBox": {
+      "x": 635,
+      "y": 11117,
+      "width": 24,
+      "height": 24
+    },
+    "absoluteRenderBounds": {
+      "x": 635,
+      "y": 11117,
+      "width": 24,
+      "height": 24
+    },
+    "constraints": {
+      "vertical": "TOP",
+      "horizontal": "LEFT"
+    },
+    "exportSettings": [
+      {
+        "suffix": "",
+        "format": "SVG",
+        "constraint": {
+          "type": "SCALE",
+          "value": 1
+        }
+      }
+    ],
+    "effects": [],
+    "interactions": [],
+    "complexStrokeProperties": {
+      "strokeType": "BASIC"
+    }
+  },
+  "components": {
+    "2:3333": {
+      "key": "0eed92a44178fc86d5095211b523b25d0b9f0763",
+      "name": "Linear / Essentional, UI / Home ",
+      "description": "",
+      "remote": false,
+      "documentationLinks": []
+    }
+  },
+  "componentSets": {},
+  "schemaVersion": 0,
+  "styles": {}
+}

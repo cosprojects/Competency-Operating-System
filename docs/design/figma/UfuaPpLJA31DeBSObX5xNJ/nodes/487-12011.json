@@ -1,0 +1,209 @@
+{
+  "document": {
+    "id": "487:12011",
+    "name": "Linear / Arrows / Square close sidebar",
+    "type": "COMPONENT",
+    "scrollBehavior": "SCROLLS",
+    "children": [
+      {
+        "id": "487:11999",
+        "name": "Vector",
+        "type": "VECTOR",
+        "scrollBehavior": "SCROLLS",
+        "blendMode": "PASS_THROUGH",
+        "fills": [],
+        "fillOverrideTable": {
+          "1": null,
+          "2": null
+        },
+        "strokes": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.10980392247438431,
+              "g": 0.15294118225574493,
+              "b": 0.2980392277240753,
+              "a": 1
+            }
+          }
+        ],
+        "strokeWeight": 1.5,
+        "strokeAlign": "CENTER",
+        "absoluteBoundingBox": {
+          "x": 832,
+          "y": 20992,
+          "width": 10,
+          "height": 6
+        },
+        "absoluteRenderBounds": {
+          "x": 831.25,
+          "y": 20991.25,
+          "width": 11.5,
+          "height": 7.5
+        },
+        "constraints": {
+          "vertical": "SCALE",
+          "horizontal": "SCALE"
+        },
+        "effects": [],
+        "interactions": [],
+        "complexStrokeProperties": {
+          "strokeType": "BASIC"
+        }
+      },
+      {
+        "id": "487:12000",
+        "name": "Vector",
+        "type": "VECTOR",
+        "scrollBehavior": "SCROLLS",
+        "blendMode": "PASS_THROUGH",
+        "fills": [],
+        "fillOverrideTable": {
+          "1": null
+        },
+        "strokes": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.10980392247438431,
+              "g": 0.15294118225574493,
+              "b": 0.2980392277240753,
+              "a": 1
+            }
+          }
+        ],
+        "strokeWeight": 1.5,
+        "strokeAlign": "CENTER",
+        "cornerRadius": 5,
+        "cornerSmoothing": 1,
+        "absoluteBoundingBox": {
+          "x": 832,
+          "y": 20985,
+          "width": 20,
+          "height": 20
+        },
+        "absoluteRenderBounds": {
+          "x": 831.25,
+          "y": 20984.25,
+          "width": 21.5,
+          "height": 21.5
+        },
+        "constraints": {
+          "vertical": "SCALE",
+          "horizontal": "SCALE"
+        },
+        "effects": [],
+        "interactions": [],
+        "complexStrokeProperties": {
+          "strokeType": "BASIC"
+        }
+      },
+      {
+        "id": "487:12004",
+        "name": "Vector",
+        "type": "VECTOR",
+        "scrollBehavior": "SCROLLS",
+        "blendMode": "PASS_THROUGH",
+        "fills": [],
+        "fillOverrideTable": {
+          "1": null,
+          "2": null,
+          "3": null
+        },
+        "strokes": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.10980392247438431,
+              "g": 0.15294118225574493,
+              "b": 0.2980392277240753,
+              "a": 1
+            }
+          }
+        ],
+        "strokeWeight": 1.5,
+        "strokeAlign": "CENTER",
+        "absoluteBoundingBox": {
+          "x": 844,
+          "y": 20985,
+          "width": 0,
+          "height": 19.5
+        },
+        "absoluteRenderBounds": {
+          "x": 843.25,
+          "y": 20985,
+          "width": 1.5,
+          "height": 20.25
+        },
+        "constraints": {
+          "vertical": "SCALE",
+          "horizontal": "SCALE"
+        },
+        "effects": [],
+        "interactions": [],
+        "complexStrokeProperties": {
+          "strokeType": "BASIC"
+        }
+      }
+    ],
+    "blendMode": "PASS_THROUGH",
+    "clipsContent": true,
+    "background": [],
+    "fills": [],
+    "strokes": [],
+    "strokeWeight": 1,
+    "strokeAlign": "INSIDE",
+    "backgroundColor": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 0
+    },
+    "absoluteBoundingBox": {
+      "x": 830,
+      "y": 20983,
+      "width": 24,
+      "height": 24
+    },
+    "absoluteRenderBounds": {
+      "x": 830,
+      "y": 20983,
+      "width": 24,
+      "height": 24
+    },
+    "constraints": {
+      "vertical": "TOP",
+      "horizontal": "LEFT"
+    },
+    "exportSettings": [
+      {
+        "suffix": "",
+        "format": "SVG",
+        "constraint": {
+          "type": "SCALE",
+          "value": 1
+        }
+      }
+    ],
+    "effects": [],
+    "interactions": [],
+    "complexStrokeProperties": {
+      "strokeType": "BASIC"
+    }
+  },
+  "components": {
+    "487:12011": {
+      "key": "cc77b383c60310d9fb96e5167c95f0c505a7c8f8",
+      "name": "Linear / Arrows / Square close sidebar",
+      "description": "",
+      "remote": false,
+      "documentationLinks": []
+    }
+  },
+  "componentSets": {},
+  "schemaVersion": 0,
+  "styles": {}
+}

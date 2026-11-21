@@ -29,6 +29,7 @@
 | `npm run changelog:apply` | `node --experimental-strip-types scripts/changelog/apply.ts` |
 | `npm run changelog:check` | `node --experimental-strip-types scripts/changelog/apply.ts -- --check` |
 | `npm run agents:check` | `sh scripts/check-agent-assets.sh` |
+| `npm run copy:check` | `node scripts/web/copy-check.mjs` |
 | `npm run figma:compare` | `node scripts/web/figma-compare.mjs` |
 | `npm run deck:build` | `node scripts/deck/build.mjs` |
 | `npm run deck:verify` | `node scripts/deck/verify.mjs` |

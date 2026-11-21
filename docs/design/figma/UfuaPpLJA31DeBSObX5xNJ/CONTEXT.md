@@ -1,7 +1,7 @@
 # Figma snapshot: AXIONA - mvp
 
 - fileKey: `UfuaPpLJA31DeBSObX5xNJ`
-- lastModified: 2026-11-19T21:18:10Z
+- lastModified: 2026-11-20T20:19:34Z
 - API-вызовов: 6
 
 ## Страницы
@@ -22,54 +22,60 @@
 > Переменные недоступны на этом плане (variables/local вернул ошибку).
 ## Узлы
 
-### Property 1=Default (`459:9400`)
+### Variant=matrix competition / default (`474:9865`)
 
 ```json
 {
-  "id": "459:9400",
-  "name": "Property 1=Default",
+  "id": "474:9865",
+  "name": "Variant=matrix competition / default",
   "type": "COMPONENT",
-  "width": 1156,
-  "height": 158,
+  "width": 861,
+  "height": 103,
   "children": [
     {
-      "id": "436:10998",
-      "name": "head",
+      "id": "474:11214",
+      "name": "header",
       "type": "FRAME",
-      "width": 1108,
-      "height": 18,
+      "width": 831,
+      "height": 24,
       "children": [
         {
-          "id": "436:10999",
-          "name": "Контекст профессии",
-          "type": "TEXT",
-          "width": 1049,
-          "height": 18,
-          "text": "Твоя последняя матрица"
+          "id": "474:11224",
+          "name": "text",
+          "type": "FRAME",
+          "width": 649,
+          "height": 18
         },
         {
-          "id": "436:11001",
-          "name": "Контекст профессии",
-          "type": "TEXT",
-          "width": 59,
-          "height": 18,
-          "text": "Открыть"
+          "id": "474:11297",
+          "name": "Frame 17306",
+          "type": "FRAME",
+          "width": 172,
+          "height": 24
         }
       ]
     },
     {
-      "id": "436:11003",
-      "name": "compenency progress",
+      "id": "474:11219",
+      "name": "Frame 17304",
       "type": "FRAME",
-      "width": 1108,
-      "height": 82,
+      "width": 831,
+      "height": 41,
       "children": [
         {
-          "id": "436:11005",
-          "name": "progress",
+          "id": "474:11314",
+          "name": "Frame 17307",
           "type": "FRAME",
-          "width": 1108,
-          "height": 82
+          "width": 57,
+          "height": 41
+        },
+        {
+          "id": "474:11305",
+          "name": "Button",
+          "type": "INSTANCE",
+          "width": 225,
+          "height": 40,
+          "componentId": "2:9910"
         }
       ]
     }
@@ -78,14 +84,11 @@
 ```
 
 Тексты:
-- `436:10999` Твоя последняя матрица
-- `436:11001` Открыть
-- `436:11007` UX/UI дизайнер • Стажер
-- `436:11122` Знания: 1 из 2   ·   Навыки: 1 из 2
-- `436:11010` 2
-- `436:11011` из 12 требований
-- `459:9390` Знания:
-- `459:9392` 18%
+- `474:9872` Пользовательские исследования
+- `474:11298` Сейчас 1 • Цель 3
+- `474:11312` Изучено
+- `474:11317` 0 из 8
+- `I474:11305;2:9911` Добавить к изучению 
 
 ## Компоненты
 
@@ -101,8 +104,8 @@
 
 ```
 meta.json
-nodes/459-9400.json
+nodes/474-9865.json
 components.json
 styles.json
-images/459-9400.png
+images/474-9865.png
 ```

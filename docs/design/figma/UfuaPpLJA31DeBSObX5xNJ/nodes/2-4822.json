@@ -1,0 +1,170 @@
+{
+  "document": {
+    "id": "2:4822",
+    "name": "Linear / Business, Statistic / Graph Up",
+    "type": "COMPONENT",
+    "scrollBehavior": "SCROLLS",
+    "children": [
+      {
+        "id": "2:4823",
+        "name": "Vector",
+        "type": "VECTOR",
+        "scrollBehavior": "SCROLLS",
+        "blendMode": "PASS_THROUGH",
+        "fills": [],
+        "fillOverrideTable": {
+          "1": null,
+          "2": null
+        },
+        "strokes": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.10980392247438431,
+              "g": 0.15294118225574493,
+              "b": 0.2980392277240753,
+              "a": 1
+            }
+          }
+        ],
+        "strokeWeight": 1.5,
+        "strokeAlign": "CENTER",
+        "cornerRadius": 5,
+        "cornerSmoothing": 1,
+        "absoluteBoundingBox": {
+          "x": 507,
+          "y": 5887,
+          "width": 20,
+          "height": 20
+        },
+        "absoluteRenderBounds": {
+          "x": 506.25,
+          "y": 5886.25,
+          "width": 21.5,
+          "height": 21.5
+        },
+        "constraints": {
+          "vertical": "SCALE",
+          "horizontal": "SCALE"
+        },
+        "effects": [],
+        "interactions": [],
+        "complexStrokeProperties": {
+          "strokeType": "BASIC"
+        }
+      },
+      {
+        "id": "2:4824",
+        "name": "Vector",
+        "type": "VECTOR",
+        "scrollBehavior": "SCROLLS",
+        "blendMode": "PASS_THROUGH",
+        "fills": [],
+        "fillOverrideTable": {
+          "1": null,
+          "2": null
+        },
+        "strokes": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.10980392247438431,
+              "g": 0.15294118225574493,
+              "b": 0.2980392277240753,
+              "a": 1
+            }
+          }
+        ],
+        "strokeWeight": 1.5,
+        "strokeAlign": "CENTER",
+        "strokeCap": "ROUND",
+        "rectangleCornerRadii": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "cornerSmoothing": 0,
+        "absoluteBoundingBox": {
+          "x": 512,
+          "y": 5895,
+          "width": 10,
+          "height": 4
+        },
+        "absoluteRenderBounds": {
+          "x": 511.25,
+          "y": 5894.25,
+          "width": 11.5,
+          "height": 5.5
+        },
+        "constraints": {
+          "vertical": "SCALE",
+          "horizontal": "SCALE"
+        },
+        "effects": [],
+        "interactions": [],
+        "complexStrokeProperties": {
+          "strokeType": "BASIC"
+        }
+      }
+    ],
+    "blendMode": "PASS_THROUGH",
+    "clipsContent": true,
+    "background": [],
+    "fills": [],
+    "strokes": [],
+    "strokeWeight": 1,
+    "strokeAlign": "INSIDE",
+    "backgroundColor": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 0
+    },
+    "absoluteBoundingBox": {
+      "x": 505,
+      "y": 5885,
+      "width": 24,
+      "height": 24
+    },
+    "absoluteRenderBounds": {
+      "x": 505,
+      "y": 5885,
+      "width": 24,
+      "height": 24
+    },
+    "constraints": {
+      "vertical": "TOP",
+      "horizontal": "LEFT"
+    },
+    "exportSettings": [
+      {
+        "suffix": "",
+        "format": "SVG",
+        "constraint": {
+          "type": "SCALE",
+          "value": 1
+        }
+      }
+    ],
+    "effects": [],
+    "interactions": [],
+    "complexStrokeProperties": {
+      "strokeType": "BASIC"
+    }
+  },
+  "components": {
+    "2:4822": {
+      "key": "62cca392a923e0c35a9e046359193d5e7ef79758",
+      "name": "Linear / Business, Statistic / Graph Up",
+      "description": "",
+      "remote": false,
+      "documentationLinks": []
+    }
+  },
+  "componentSets": {},
+  "schemaVersion": 0,
+  "styles": {}
+}

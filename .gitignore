@@ -95,3 +95,6 @@ data/guides/
 apps/web/src/assets/content/
 # Артефакты визуальной сверки figma:compare (генерируются)
 scripts/web/figma-parity/compare/
+
+# Скриншоты сверки — генерируемые артефакты (figma:compare), в git не храним
+docs/design/screens/

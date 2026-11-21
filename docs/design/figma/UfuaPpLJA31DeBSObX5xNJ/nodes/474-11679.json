@@ -1,0 +1,3977 @@
+{
+  "document": {
+    "id": "474:11679",
+    "name": "Variant=llevel choosed 1",
+    "type": "COMPONENT",
+    "scrollBehavior": "SCROLLS",
+    "boundVariables": {
+      "rectangleCornerRadii": {
+        "RECTANGLE_TOP_LEFT_CORNER_RADIUS": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:112:3754"
+        },
+        "RECTANGLE_TOP_RIGHT_CORNER_RADIUS": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:112:3754"
+        },
+        "RECTANGLE_BOTTOM_LEFT_CORNER_RADIUS": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:112:3754"
+        },
+        "RECTANGLE_BOTTOM_RIGHT_CORNER_RADIUS": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:112:3754"
+        }
+      },
+      "fills": [
+        {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:112:3796"
+        }
+      ]
+    },
+    "children": [
+      {
+        "id": "474:11680",
+        "name": "header",
+        "type": "FRAME",
+        "scrollBehavior": "SCROLLS",
+        "children": [
+          {
+            "id": "474:11681",
+            "name": "text",
+            "type": "FRAME",
+            "scrollBehavior": "SCROLLS",
+            "children": [
+              {
+                "id": "474:11682",
+                "name": "#text «Пользовательские исследовани»",
+                "type": "TEXT",
+                "scrollBehavior": "SCROLLS",
+                "boundVariables": {
+                  "fills": [
+                    {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:112:3758"
+                    }
+                  ]
+                },
+                "blendMode": "PASS_THROUGH",
+                "fills": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.21568627655506134,
+                      "g": 0.1882352977991104,
+                      "b": 0.6392157077789307,
+                      "a": 1
+                    },
+                    "boundVariables": {
+                      "color": {
+                        "type": "VARIABLE_ALIAS",
+                        "id": "VariableID:112:3758"
+                      }
+                    }
+                  }
+                ],
+                "strokes": [],
+                "strokeWeight": 1,
+                "strokeAlign": "OUTSIDE",
+                "absoluteBoundingBox": {
+                  "x": 13396,
+                  "y": 6971.0908203125,
+                  "width": 717.8060302734375,
+                  "height": 18
+                },
+                "absoluteRenderBounds": {
+                  "x": 13396.5439453125,
+                  "y": 6974.2666015625,
+                  "width": 145.0478515625,
+                  "height": 14.22412109375
+                },
+                "constraints": {
+                  "vertical": "TOP",
+                  "horizontal": "LEFT"
+                },
+                "layoutAlign": "STRETCH",
+                "layoutGrow": 0,
+                "layoutSizingHorizontal": "FILL",
+                "layoutSizingVertical": "HUG",
+                "characters": "Дизайн-мышление",
+                "characterStyleOverrides": [],
+                "styleOverrideTable": {},
+                "lineTypes": [
+                  "NONE"
+                ],
+                "lineIndentations": [
+                  0
+                ],
+                "style": {
+                  "fontFamily": "Geist",
+                  "fontPostScriptName": "Geist-Bold",
+                  "fontStyle": "Bold",
+                  "fontWeight": 700,
+                  "textAutoResize": "HEIGHT",
+                  "fontSize": 16,
+                  "textAlignHorizontal": "LEFT",
+                  "textAlignVertical": "TOP",
+                  "letterSpacing": -0.5600000023841858,
+                  "lineHeightPx": 17.920000076293945,
+                  "lineHeightPercent": 86.15384674072266,
+                  "lineHeightPercentFontSize": 112,
+                  "lineHeightUnit": "PIXELS"
+                },
+                "layoutVersion": 5,
+                "effects": [],
+                "interactions": [],
+                "complexStrokeProperties": {
+                  "strokeType": "BASIC"
+                }
+              }
+            ],
+            "blendMode": "PASS_THROUGH",
+            "clipsContent": false,
+            "background": [],
+            "fills": [],
+            "strokes": [],
+            "strokeWeight": 1,
+            "strokeAlign": "INSIDE",
+            "backgroundColor": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0
+            },
+            "layoutMode": "VERTICAL",
+            "counterAxisSizingMode": "FIXED",
+            "strokesIncludedInLayout": true,
+            "itemSpacing": 4,
+            "layoutWrap": "NO_WRAP",
+            "absoluteBoundingBox": {
+              "x": 13396,
+              "y": 6971.0908203125,
+              "width": 717.8060302734375,
+              "height": 18
+            },
+            "absoluteRenderBounds": {
+              "x": 13396,
+              "y": 6971.0908203125,
+              "width": 717.8060302734375,
+              "height": 18
+            },
+            "constraints": {
+              "vertical": "TOP",
+              "horizontal": "LEFT"
+            },
+            "layoutAlign": "INHERIT",
+            "layoutGrow": 1,
+            "layoutSizingHorizontal": "FILL",
+            "layoutSizingVertical": "HUG",
+            "effects": [],
+            "interactions": [],
+            "complexStrokeProperties": {
+              "strokeType": "BASIC"
+            }
+          },
+          {
+            "id": "474:11683",
+            "name": "Frame 17306",
+            "type": "FRAME",
+            "scrollBehavior": "SCROLLS",
+            "children": [
+              {
+                "id": "474:11684",
+                "name": "#text «2 знаний · 2 навыков · 6 мат»",
+                "type": "TEXT",
+                "scrollBehavior": "SCROLLS",
+                "boundVariables": {
+                  "fills": [
+                    {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:112:3794"
+                    }
+                  ]
+                },
+                "blendMode": "PASS_THROUGH",
+                "fills": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.11764705926179886,
+                      "g": 0.22745098173618317,
+                      "b": 0.5411764979362488,
+                      "a": 1
+                    },
+                    "boundVariables": {
+                      "color": {
+                        "type": "VARIABLE_ALIAS",
+                        "id": "VariableID:112:3794"
+                      }
+                    }
+                  }
+                ],
+                "strokes": [],
+                "strokeWeight": 1,
+                "strokeAlign": "OUTSIDE",
+                "absoluteBoundingBox": {
+                  "x": 14123.8056640625,
+                  "y": 6969.5908203125,
+                  "width": 47,
+                  "height": 21
+                },
+                "absoluteRenderBounds": {
+                  "x": 14125.09375,
+                  "y": 6974.4267578125,
+                  "width": 44.30078125,
+                  "height": 12.26416015625
+                },
+                "constraints": {
+                  "vertical": "TOP",
+                  "horizontal": "LEFT"
+                },
+                "layoutAlign": "INHERIT",
+                "layoutGrow": 0,
+                "layoutSizingHorizontal": "HUG",
+                "layoutSizingVertical": "HUG",
+                "characters": "Цель 3",
+                "characterStyleOverrides": [],
+                "styleOverrideTable": {},
+                "lineTypes": [
+                  "NONE"
+                ],
+                "lineIndentations": [
+                  0
+                ],
+                "style": {
+                  "fontFamily": "Geist",
+                  "fontPostScriptName": "Geist-Regular",
+                  "fontStyle": "Regular",
+                  "fontWeight": 400,
+                  "textAutoResize": "WIDTH_AND_HEIGHT",
+                  "fontSize": 14,
+                  "textAlignHorizontal": "LEFT",
+                  "textAlignVertical": "TOP",
+                  "letterSpacing": 0,
+                  "lineHeightPx": 20.149999618530273,
+                  "lineHeightPercent": 110.71429443359375,
+                  "lineHeightPercentFontSize": 143.92857360839844,
+                  "lineHeightUnit": "PIXELS"
+                },
+                "layoutVersion": 5,
+                "effects": [],
+                "interactions": [],
+                "complexStrokeProperties": {
+                  "strokeType": "BASIC"
+                }
+              },
+              {
+                "id": "474:11685",
+                "name": "measure",
+                "type": "INSTANCE",
+                "scrollBehavior": "SCROLLS",
+                "componentId": "474:11256",
+                "componentProperties": {
+                  "Property 1": {
+                    "value": "3",
+                    "type": "VARIANT",
+                    "boundVariables": {}
+                  }
+                },
+                "overrides": [],
+                "children": [
+                  {
+                    "id": "I474:11685;474:11257",
+                    "name": "1",
+                    "type": "FRAME",
+                    "scrollBehavior": "SCROLLS",
+                    "rotation": 1.5728176159391685,
+                    "boundVariables": {
+                      "rectangleCornerRadii": {
+                        "RECTANGLE_TOP_LEFT_CORNER_RADIUS": {
+                          "type": "VARIABLE_ALIAS",
+                          "id": "VariableID:407:12884"
+                        },
+                        "RECTANGLE_TOP_RIGHT_CORNER_RADIUS": {
+                          "type": "VARIABLE_ALIAS",
+                          "id": "VariableID:407:12884"
+                        },
+                        "RECTANGLE_BOTTOM_LEFT_CORNER_RADIUS": {
+                          "type": "VARIABLE_ALIAS",
+                          "id": "VariableID:407:12884"
+                        },
+                        "RECTANGLE_BOTTOM_RIGHT_CORNER_RADIUS": {
+                          "type": "VARIABLE_ALIAS",
+                          "id": "VariableID:407:12884"
+                        }
+                      },
+                      "fills": [
+                        {
+                          "type": "VARIABLE_ALIAS",
+                          "id": "VariableID:439:14441"
+                        }
+                      ]
+                    },
+                    "children": [],
+                    "blendMode": "PASS_THROUGH",
+                    "clipsContent": true,
+                    "background": [
+                      {
+                        "opacity": 0.5,
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.8045098185539246,
+                          "g": 0.27450981736183167,
+                          "b": 0.8980392217636108,
+                          "a": 1
+                        },
+                        "boundVariables": {
+                          "color": {
+                            "type": "VARIABLE_ALIAS",
+                            "id": "VariableID:439:14441"
+                          }
+                        }
+                      }
+                    ],
+                    "fills": [
+                      {
+                        "opacity": 0.5,
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.8045098185539246,
+                          "g": 0.27450981736183167,
+                          "b": 0.8980392217636108,
+                          "a": 1
+                        },
+                        "boundVariables": {
+                          "color": {
+                            "type": "VARIABLE_ALIAS",
+                            "id": "VariableID:439:14441"
+                          }
+                        }
+                      }
+                    ],
+                    "strokes": [],
+                    "cornerRadius": 2,
+                    "cornerSmoothing": 0,
+                    "strokeWeight": 1,
+                    "strokeAlign": "INSIDE",
+                    "backgroundColor": {
+                      "r": 0.8045098185539246,
+                      "g": 0.27450981736183167,
+                      "b": 0.8980392217636108,
+                      "a": 0.5
+                    },
+                    "absoluteBoundingBox": {
+                      "x": 14180.806001545861,
+                      "y": 6968.080373059493,
+                      "width": 10.048490641638637,
+                      "height": 24.020164240617305
+                    },
+                    "absoluteRenderBounds": {
+                      "x": 14180.8056640625,
+                      "y": 6968.080373059493,
+                      "width": 10.048828125,
+                      "height": 24.02021287800744
+                    },
+                    "constraints": {
+                      "vertical": "TOP",
+                      "horizontal": "LEFT"
+                    },
+                    "layoutAlign": "INHERIT",
+                    "layoutGrow": 0,
+                    "layoutSizingHorizontal": "FIXED",
+                    "layoutSizingVertical": "FIXED",
+                    "effects": [],
+                    "interactions": [],
+                    "complexStrokeProperties": {
+                      "strokeType": "BASIC"
+                    }
+                  },
+                  {
+                    "id": "I474:11685;474:11258",
+                    "name": "2",
+                    "type": "FRAME",
+                    "scrollBehavior": "SCROLLS",
+                    "rotation": 1.5728176159391685,
+                    "boundVariables": {
+                      "rectangleCornerRadii": {
+                        "RECTANGLE_TOP_LEFT_CORNER_RADIUS": {
+                          "type": "VARIABLE_ALIAS",
+                          "id": "VariableID:407:12884"
+                        },
+                        "RECTANGLE_TOP_RIGHT_CORNER_RADIUS": {
+                          "type": "VARIABLE_ALIAS",
+                          "id": "VariableID:407:12884"
+                        },
+                        "RECTANGLE_BOTTOM_LEFT_CORNER_RADIUS": {
+                          "type": "VARIABLE_ALIAS",
+                          "id": "VariableID:407:12884"
+                        },
+                        "RECTANGLE_BOTTOM_RIGHT_CORNER_RADIUS": {
+                          "type": "VARIABLE_ALIAS",
+                          "id": "VariableID:407:12884"
+                        }
+                      },
+                      "fills": [
+                        {
+                          "type": "VARIABLE_ALIAS",
+                          "id": "VariableID:439:14440"
+                        }
+                      ]
+                    },
+                    "children": [],
+                    "blendMode": "PASS_THROUGH",
+                    "clipsContent": true,
+                    "background": [
+                      {
+                        "opacity": 0.5,
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.8745492696762085,
+                          "g": 0.6077150106430054,
+                          "b": 0.25877776741981506,
+                          "a": 1
+                        },
+                        "boundVariables": {
+                          "color": {
+                            "type": "VARIABLE_ALIAS",
+                            "id": "VariableID:439:14440"
+                          }
+                        }
+                      }
+                    ],
+                    "fills": [
+                      {
+                        "opacity": 0.5,
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.8745492696762085,
+                          "g": 0.6077150106430054,
+                          "b": 0.25877776741981506,
+                          "a": 1
+                        },
+                        "boundVariables": {
+                          "color": {
+                            "type": "VARIABLE_ALIAS",
+                            "id": "VariableID:439:14440"
+                          }
+                        }
+                      }
+                    ],
+                    "strokes": [],
+                    "cornerRadius": 2,
+                    "cornerSmoothing": 0,
+                    "strokeWeight": 1,
+                    "strokeAlign": "INSIDE",
+                    "backgroundColor": {
+                      "r": 0.8745492696762085,
+                      "g": 0.6077150106430054,
+                      "b": 0.25877776741981506,
+                      "a": 0.5
+                    },
+                    "absoluteBoundingBox": {
+                      "x": 14192.853853108361,
+                      "y": 6968.080373059493,
+                      "width": 10.048490641638637,
+                      "height": 24.020164240617305
+                    },
+                    "absoluteRenderBounds": {
+                      "x": 14192.853515625,
+                      "y": 6968.080373059493,
+                      "width": 10.048828125,
+                      "height": 24.02021287800744
+                    },
+                    "constraints": {
+                      "vertical": "TOP",
+                      "horizontal": "LEFT"
+                    },
+                    "layoutAlign": "INHERIT",
+                    "layoutGrow": 0,
+                    "layoutSizingHorizontal": "FIXED",
+                    "layoutSizingVertical": "FIXED",
+                    "effects": [],
+                    "interactions": [],
+                    "complexStrokeProperties": {
+                      "strokeType": "BASIC"
+                    }
+                  },
+                  {
+                    "id": "I474:11685;474:11259",
+                    "name": "3",
+                    "type": "FRAME",
+                    "scrollBehavior": "SCROLLS",
+                    "rotation": 1.5728176159391685,
+                    "boundVariables": {
+                      "rectangleCornerRadii": {
+                        "RECTANGLE_TOP_LEFT_CORNER_RADIUS": {
+                          "type": "VARIABLE_ALIAS",
+                          "id": "VariableID:407:12884"
+                        },
+                        "RECTANGLE_TOP_RIGHT_CORNER_RADIUS": {
+                          "type": "VARIABLE_ALIAS",
+                          "id": "VariableID:407:12884"
+                        },
+                        "RECTANGLE_BOTTOM_LEFT_CORNER_RADIUS": {
+                          "type": "VARIABLE_ALIAS",
+                          "id": "VariableID:407:12884"
+                        },
+                        "RECTANGLE_BOTTOM_RIGHT_CORNER_RADIUS": {
+                          "type": "VARIABLE_ALIAS",
+                          "id": "VariableID:407:12884"
+                        }
+                      },
+                      "fills": [
+                        {
+                          "type": "VARIABLE_ALIAS",
+                          "id": "VariableID:439:14442"
+                        }
+                      ]
+                    },
+                    "children": [],
+                    "blendMode": "PASS_THROUGH",
+                    "clipsContent": true,
+                    "background": [
+                      {
+                        "opacity": 0.5,
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.16486968100070953,
+                          "g": 0.6049765348434448,
+                          "b": 0.8983811736106873,
+                          "a": 1
+                        },
+                        "boundVariables": {
+                          "color": {
+                            "type": "VARIABLE_ALIAS",
+                            "id": "VariableID:439:14442"
+                          }
+                        }
+                      }
+                    ],
+                    "fills": [
+                      {
+                        "opacity": 0.5,
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.16486968100070953,
+                          "g": 0.6049765348434448,
+                          "b": 0.8983811736106873,
+                          "a": 1
+                        },
+                        "boundVariables": {
+                          "color": {
+                            "type": "VARIABLE_ALIAS",
+                            "id": "VariableID:439:14442"
+                          }
+                        }
+                      }
+                    ],
+                    "strokes": [],
+                    "cornerRadius": 2,
+                    "cornerSmoothing": 0,
+                    "strokeWeight": 1,
+                    "strokeAlign": "INSIDE",
+                    "backgroundColor": {
+                      "r": 0.16486968100070953,
+                      "g": 0.6049765348434448,
+                      "b": 0.8983811736106873,
+                      "a": 0.5
+                    },
+                    "absoluteBoundingBox": {
+                      "x": 14204.902681233361,
+                      "y": 6968.080373059493,
+                      "width": 10.048490641638637,
+                      "height": 24.020164240617305
+                    },
+                    "absoluteRenderBounds": {
+                      "x": 14204.90234375,
+                      "y": 6968.080373059493,
+                      "width": 10.048828125,
+                      "height": 24.02021287800744
+                    },
+                    "constraints": {
+                      "vertical": "TOP",
+                      "horizontal": "LEFT"
+                    },
+                    "layoutAlign": "INHERIT",
+                    "layoutGrow": 0,
+                    "layoutSizingHorizontal": "FIXED",
+                    "layoutSizingVertical": "FIXED",
+                    "effects": [],
+                    "interactions": [],
+                    "complexStrokeProperties": {
+                      "strokeType": "BASIC"
+                    }
+                  },
+                  {
+                    "id": "I474:11685;474:11260",
+                    "name": "4",
+                    "type": "FRAME",
+                    "scrollBehavior": "SCROLLS",
+                    "rotation": 1.5728176159391685,
+                    "boundVariables": {
+                      "rectangleCornerRadii": {
+                        "RECTANGLE_TOP_LEFT_CORNER_RADIUS": {
+                          "type": "VARIABLE_ALIAS",
+                          "id": "VariableID:407:12884"
+                        },
+                        "RECTANGLE_TOP_RIGHT_CORNER_RADIUS": {
+                          "type": "VARIABLE_ALIAS",
+                          "id": "VariableID:407:12884"
+                        },
+                        "RECTANGLE_BOTTOM_LEFT_CORNER_RADIUS": {
+                          "type": "VARIABLE_ALIAS",
+                          "id": "VariableID:407:12884"
+                        },
+                        "RECTANGLE_BOTTOM_RIGHT_CORNER_RADIUS": {
+                          "type": "VARIABLE_ALIAS",
+                          "id": "VariableID:407:12884"
+                        }
+                      },
+                      "fills": [
+                        {
+                          "type": "VARIABLE_ALIAS",
+                          "id": "VariableID:474:11347"
+                        }
+                      ]
+                    },
+                    "children": [],
+                    "blendMode": "PASS_THROUGH",
+                    "clipsContent": true,
+                    "background": [
+                      {
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.8422663807868958,
+                          "g": 0.8773966431617737,
+                          "b": 0.957350492477417,
+                          "a": 1
+                        },
+                        "boundVariables": {
+                          "color": {
+                            "type": "VARIABLE_ALIAS",
+                            "id": "VariableID:474:11347"
+                          }
+                        }
+                      }
+                    ],
+                    "fills": [
+                      {
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.8422663807868958,
+                          "g": 0.8773966431617737,
+                          "b": 0.957350492477417,
+                          "a": 1
+                        },
+                        "boundVariables": {
+                          "color": {
+                            "type": "VARIABLE_ALIAS",
+                            "id": "VariableID:474:11347"
+                          }
+                        }
+                      }
+                    ],
+                    "strokes": [],
+                    "cornerRadius": 2,
+                    "cornerSmoothing": 0,
+                    "strokeWeight": 1,
+                    "strokeAlign": "INSIDE",
+                    "backgroundColor": {
+                      "r": 0.8422663807868958,
+                      "g": 0.8773966431617737,
+                      "b": 0.957350492477417,
+                      "a": 1
+                    },
+                    "absoluteBoundingBox": {
+                      "x": 14216.951509358361,
+                      "y": 6968.080373059493,
+                      "width": 10.048490641638637,
+                      "height": 24.020164240617305
+                    },
+                    "absoluteRenderBounds": {
+                      "x": 14216.951171875,
+                      "y": 6968.080373059493,
+                      "width": 10.048828125,
+                      "height": 24.02021287800744
+                    },
+                    "constraints": {
+                      "vertical": "TOP",
+                      "horizontal": "LEFT"
+                    },
+                    "layoutAlign": "INHERIT",
+                    "layoutGrow": 0,
+                    "layoutSizingHorizontal": "FIXED",
+                    "layoutSizingVertical": "FIXED",
+                    "effects": [],
+                    "interactions": [],
+                    "complexStrokeProperties": {
+                      "strokeType": "BASIC"
+                    }
+                  }
+                ],
+                "blendMode": "PASS_THROUGH",
+                "clipsContent": false,
+                "background": [],
+                "fills": [],
+                "strokes": [],
+                "strokeWeight": 1,
+                "strokeAlign": "INSIDE",
+                "backgroundColor": {
+                  "r": 0,
+                  "g": 0,
+                  "b": 0,
+                  "a": 0
+                },
+                "layoutMode": "HORIZONTAL",
+                "counterAxisAlignItems": "CENTER",
+                "strokesIncludedInLayout": true,
+                "itemSpacing": 2,
+                "layoutWrap": "NO_WRAP",
+                "absoluteBoundingBox": {
+                  "x": 14180.8056640625,
+                  "y": 6968.08056640625,
+                  "width": 46.19396209716797,
+                  "height": 24.020164489746094
+                },
+                "absoluteRenderBounds": {
+                  "x": 14180.8056640625,
+                  "y": 6968.08056640625,
+                  "width": 46.1943359375,
+                  "height": 24.020164489746094
+                },
+                "constraints": {
+                  "vertical": "TOP",
+                  "horizontal": "LEFT"
+                },
+                "layoutAlign": "INHERIT",
+                "layoutGrow": 0,
+                "layoutSizingHorizontal": "HUG",
+                "layoutSizingVertical": "HUG",
+                "effects": [],
+                "interactions": [],
+                "complexStrokeProperties": {
+                  "strokeType": "BASIC"
+                }
+              }
+            ],
+            "blendMode": "PASS_THROUGH",
+            "clipsContent": false,
+            "background": [],
+            "fills": [],
+            "strokes": [],
+            "strokeWeight": 1,
+            "strokeAlign": "INSIDE",
+            "backgroundColor": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0
+            },
+            "layoutMode": "HORIZONTAL",
+            "counterAxisAlignItems": "CENTER",
+            "primaryAxisAlignItems": "MAX",
+            "strokesIncludedInLayout": true,
+            "itemSpacing": 10,
+            "layoutWrap": "NO_WRAP",
+            "absoluteBoundingBox": {
+              "x": 14123.8056640625,
+              "y": 6968.08056640625,
+              "width": 103.19396209716797,
+              "height": 24.020164489746094
+            },
+            "absoluteRenderBounds": {
+              "x": 14123.8056640625,
+              "y": 6968.08056640625,
+              "width": 103.1943359375,
+              "height": 24.020164489746094
+            },
+            "constraints": {
+              "vertical": "TOP",
+              "horizontal": "LEFT"
+            },
+            "layoutAlign": "INHERIT",
+            "layoutGrow": 0,
+            "layoutSizingHorizontal": "HUG",
+            "layoutSizingVertical": "HUG",
+            "effects": [],
+            "interactions": [],
+            "complexStrokeProperties": {
+              "strokeType": "BASIC"
+            }
+          }
+        ],
+        "blendMode": "PASS_THROUGH",
+        "clipsContent": false,
+        "background": [],
+        "fills": [],
+        "strokes": [],
+        "strokeWeight": 1,
+        "strokeAlign": "INSIDE",
+        "backgroundColor": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0
+        },
+        "layoutMode": "HORIZONTAL",
+        "primaryAxisSizingMode": "FIXED",
+        "counterAxisAlignItems": "CENTER",
+        "strokesIncludedInLayout": true,
+        "itemSpacing": 10,
+        "layoutWrap": "NO_WRAP",
+        "absoluteBoundingBox": {
+          "x": 13396,
+          "y": 6968.08056640625,
+          "width": 831,
+          "height": 24.020164489746094
+        },
+        "absoluteRenderBounds": {
+          "x": 13396,
+          "y": 6968.08056640625,
+          "width": 831,
+          "height": 24.020164489746094
+        },
+        "constraints": {
+          "vertical": "TOP",
+          "horizontal": "LEFT"
+        },
+        "layoutAlign": "STRETCH",
+        "layoutGrow": 0,
+        "layoutSizingHorizontal": "FILL",
+        "layoutSizingVertical": "HUG",
+        "effects": [],
+        "interactions": [],
+        "complexStrokeProperties": {
+          "strokeType": "BASIC"
+        }
+      },
+      {
+        "id": "474:11686",
+        "name": "#text «Планирование и проведение ис»",
+        "type": "TEXT",
+        "scrollBehavior": "SCROLLS",
+        "boundVariables": {
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:112:3761"
+            }
+          ]
+        },
+        "blendMode": "PASS_THROUGH",
+        "fills": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.37254902720451355,
+              "g": 0.43529412150382996,
+              "b": 0.5215686559677124,
+              "a": 1
+            },
+            "boundVariables": {
+              "color": {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:112:3761"
+              }
+            }
+          }
+        ],
+        "strokes": [],
+        "strokeWeight": 1,
+        "strokeAlign": "OUTSIDE",
+        "absoluteBoundingBox": {
+          "x": 13396,
+          "y": 7000.1005859375,
+          "width": 831,
+          "height": 61
+        },
+        "absoluteRenderBounds": {
+          "x": 13396.6298828125,
+          "y": 7004.9365234375,
+          "width": 791.5732421875,
+          "height": 52.26416015625
+        },
+        "constraints": {
+          "vertical": "TOP",
+          "horizontal": "LEFT"
+        },
+        "layoutAlign": "STRETCH",
+        "layoutGrow": 0,
+        "layoutSizingHorizontal": "FILL",
+        "layoutSizingVertical": "HUG",
+        "characters": "Специалист системно разбирается в пользователе и задаче: формулирует проблему, проверяет гипотезы через прототипы и тестирование, организует итерации и совместную работу, чтобы принимать решения на основе данных и потребностей аудитории.",
+        "characterStyleOverrides": [],
+        "styleOverrideTable": {},
+        "lineTypes": [
+          "NONE"
+        ],
+        "lineIndentations": [
+          0
+        ],
+        "style": {
+          "fontFamily": "Geist",
+          "fontPostScriptName": "Geist-Regular",
+          "fontStyle": "Regular",
+          "fontWeight": 400,
+          "textAutoResize": "HEIGHT",
+          "fontSize": 14,
+          "textAlignHorizontal": "LEFT",
+          "textAlignVertical": "TOP",
+          "letterSpacing": 0,
+          "lineHeightPx": 20.149999618530273,
+          "lineHeightPercent": 110.71429443359375,
+          "lineHeightPercentFontSize": 143.92857360839844,
+          "lineHeightUnit": "PIXELS"
+        },
+        "layoutVersion": 5,
+        "effects": [],
+        "interactions": [],
+        "complexStrokeProperties": {
+          "strokeType": "BASIC"
+        }
+      },
+      {
+        "id": "474:11687",
+        "name": "Frame 17304",
+        "type": "FRAME",
+        "scrollBehavior": "SCROLLS",
+        "children": [
+          {
+            "id": "474:11688",
+            "name": "badge level",
+            "type": "INSTANCE",
+            "scrollBehavior": "SCROLLS",
+            "boundVariables": {
+              "rectangleCornerRadii": {
+                "RECTANGLE_TOP_LEFT_CORNER_RADIUS": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:112:3754"
+                },
+                "RECTANGLE_TOP_RIGHT_CORNER_RADIUS": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:112:3754"
+                },
+                "RECTANGLE_BOTTOM_LEFT_CORNER_RADIUS": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:112:3754"
+                },
+                "RECTANGLE_BOTTOM_RIGHT_CORNER_RADIUS": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:112:3754"
+                }
+              },
+              "fills": [
+                {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:407:12925"
+                }
+              ],
+              "strokes": [
+                {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:112:3748"
+                }
+              ]
+            },
+            "componentId": "474:11589",
+            "componentProperties": {
+              "Property 1": {
+                "value": "default",
+                "type": "VARIANT",
+                "boundVariables": {}
+              }
+            },
+            "overrides": [
+              {
+                "id": "474:11688",
+                "overriddenFields": [
+                  "height",
+                  "width"
+                ]
+              }
+            ],
+            "children": [
+              {
+                "id": "I474:11688;474:11590",
+                "name": "badge",
+                "type": "INSTANCE",
+                "scrollBehavior": "SCROLLS",
+                "boundVariables": {
+                  "rectangleCornerRadii": {
+                    "RECTANGLE_TOP_LEFT_CORNER_RADIUS": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:112:3754"
+                    },
+                    "RECTANGLE_TOP_RIGHT_CORNER_RADIUS": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:112:3754"
+                    },
+                    "RECTANGLE_BOTTOM_LEFT_CORNER_RADIUS": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:112:3754"
+                    },
+                    "RECTANGLE_BOTTOM_RIGHT_CORNER_RADIUS": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:112:3754"
+                    }
+                  },
+                  "fills": [
+                    {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:112:3783"
+                    }
+                  ]
+                },
+                "componentId": "112:3789",
+                "componentProperties": {
+                  "Variant": {
+                    "value": "2",
+                    "type": "VARIANT",
+                    "boundVariables": {}
+                  }
+                },
+                "overrides": [],
+                "children": [
+                  {
+                    "id": "I474:11688;474:11590;112:3790",
+                    "name": "#text «1»",
+                    "type": "TEXT",
+                    "scrollBehavior": "SCROLLS",
+                    "boundVariables": {
+                      "fills": [
+                        {
+                          "type": "VARIABLE_ALIAS",
+                          "id": "VariableID:112:3761"
+                        }
+                      ]
+                    },
+                    "blendMode": "PASS_THROUGH",
+                    "fills": [
+                      {
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.37254902720451355,
+                          "g": 0.43529412150382996,
+                          "b": 0.5215686559677124,
+                          "a": 1
+                        },
+                        "boundVariables": {
+                          "color": {
+                            "type": "VARIABLE_ALIAS",
+                            "id": "VariableID:112:3761"
+                          }
+                        }
+                      }
+                    ],
+                    "strokes": [],
+                    "strokeWeight": 1,
+                    "strokeAlign": "OUTSIDE",
+                    "absoluteBoundingBox": {
+                      "x": 13410,
+                      "y": 7078.1005859375,
+                      "width": 6,
+                      "height": 18
+                    },
+                    "absoluteRenderBounds": {
+                      "x": 13409.5947265625,
+                      "y": 7082.11474609375,
+                      "width": 6.8095703125,
+                      "height": 8.16162109375
+                    },
+                    "constraints": {
+                      "vertical": "TOP",
+                      "horizontal": "LEFT"
+                    },
+                    "layoutAlign": "STRETCH",
+                    "layoutGrow": 0,
+                    "layoutSizingHorizontal": "FILL",
+                    "layoutSizingVertical": "HUG",
+                    "characters": "0",
+                    "characterStyleOverrides": [],
+                    "styleOverrideTable": {},
+                    "lineTypes": [
+                      "NONE"
+                    ],
+                    "lineIndentations": [
+                      0
+                    ],
+                    "style": {
+                      "fontFamily": "Geist",
+                      "fontPostScriptName": "Geist-ExtraBold",
+                      "fontStyle": "ExtraBold",
+                      "fontWeight": 800,
+                      "textCase": "UPPER",
+                      "textAutoResize": "HEIGHT",
+                      "fontSize": 11,
+                      "textAlignHorizontal": "CENTER",
+                      "textAlignVertical": "CENTER",
+                      "letterSpacing": 0.33000001311302185,
+                      "lineHeightPx": 17.049999237060547,
+                      "lineHeightPercent": 119.23077392578125,
+                      "lineHeightPercentFontSize": 154.99998474121094,
+                      "lineHeightUnit": "PIXELS"
+                    },
+                    "layoutVersion": 5,
+                    "effects": [],
+                    "interactions": [],
+                    "complexStrokeProperties": {
+                      "strokeType": "BASIC"
+                    }
+                  }
+                ],
+                "blendMode": "PASS_THROUGH",
+                "clipsContent": false,
+                "background": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.9450980424880981,
+                      "g": 0.9607843160629272,
+                      "b": 0.9764705896377563,
+                      "a": 1
+                    },
+                    "boundVariables": {
+                      "color": {
+                        "type": "VARIABLE_ALIAS",
+                        "id": "VariableID:112:3783"
+                      }
+                    }
+                  }
+                ],
+                "fills": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.9450980424880981,
+                      "g": 0.9607843160629272,
+                      "b": 0.9764705896377563,
+                      "a": 1
+                    },
+                    "boundVariables": {
+                      "color": {
+                        "type": "VARIABLE_ALIAS",
+                        "id": "VariableID:112:3783"
+                      }
+                    }
+                  }
+                ],
+                "strokes": [],
+                "cornerRadius": 16,
+                "cornerSmoothing": 0,
+                "strokeWeight": 1,
+                "strokeAlign": "INSIDE",
+                "backgroundColor": {
+                  "r": 0.9450980424880981,
+                  "g": 0.9607843160629272,
+                  "b": 0.9764705896377563,
+                  "a": 1
+                },
+                "layoutMode": "VERTICAL",
+                "counterAxisSizingMode": "FIXED",
+                "counterAxisAlignItems": "CENTER",
+                "paddingLeft": 8,
+                "paddingRight": 8,
+                "paddingTop": 3,
+                "paddingBottom": 1,
+                "strokesIncludedInLayout": true,
+                "itemSpacing": 8,
+                "layoutWrap": "NO_WRAP",
+                "absoluteBoundingBox": {
+                  "x": 13402,
+                  "y": 7075.1005859375,
+                  "width": 22,
+                  "height": 22
+                },
+                "absoluteRenderBounds": {
+                  "x": 13402,
+                  "y": 7075.1005859375,
+                  "width": 22,
+                  "height": 22
+                },
+                "constraints": {
+                  "vertical": "TOP",
+                  "horizontal": "LEFT"
+                },
+                "layoutAlign": "INHERIT",
+                "layoutGrow": 0,
+                "layoutSizingHorizontal": "FIXED",
+                "layoutSizingVertical": "HUG",
+                "effects": [],
+                "interactions": [],
+                "complexStrokeProperties": {
+                  "strokeType": "BASIC"
+                }
+              },
+              {
+                "id": "I474:11688;474:11591",
+                "name": "#text «Необязательная»",
+                "type": "TEXT",
+                "scrollBehavior": "SCROLLS",
+                "boundVariables": {
+                  "fills": [
+                    {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:112:3830"
+                    }
+                  ]
+                },
+                "blendMode": "PASS_THROUGH",
+                "fills": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.3921568691730499,
+                      "g": 0.45490196347236633,
+                      "b": 0.545098066329956,
+                      "a": 1
+                    },
+                    "boundVariables": {
+                      "color": {
+                        "type": "VARIABLE_ALIAS",
+                        "id": "VariableID:112:3830"
+                      }
+                    }
+                  }
+                ],
+                "strokes": [],
+                "strokeWeight": 1,
+                "strokeAlign": "OUTSIDE",
+                "absoluteBoundingBox": {
+                  "x": 13432,
+                  "y": 7077.1005859375,
+                  "width": 88,
+                  "height": 18
+                },
+                "absoluteRenderBounds": {
+                  "x": 13433.1201171875,
+                  "y": 7079.9365234375,
+                  "width": 85.884765625,
+                  "height": 12.26416015625
+                },
+                "constraints": {
+                  "vertical": "TOP",
+                  "horizontal": "LEFT"
+                },
+                "layoutAlign": "INHERIT",
+                "layoutGrow": 0,
+                "layoutSizingHorizontal": "HUG",
+                "layoutSizingVertical": "HUG",
+                "characters": "Не владею",
+                "characterStyleOverrides": [],
+                "styleOverrideTable": {},
+                "lineTypes": [
+                  "NONE"
+                ],
+                "lineIndentations": [
+                  0
+                ],
+                "style": {
+                  "fontFamily": "Geist",
+                  "fontPostScriptName": null,
+                  "fontStyle": "SemiBold",
+                  "fontWeight": 600,
+                  "textCase": "UPPER",
+                  "textAutoResize": "WIDTH_AND_HEIGHT",
+                  "fontSize": 14,
+                  "textAlignHorizontal": "LEFT",
+                  "textAlignVertical": "CENTER",
+                  "letterSpacing": 0.33000001311302185,
+                  "lineHeightPx": 17.049999237060547,
+                  "lineHeightPercent": 93.68132019042969,
+                  "lineHeightPercentFontSize": 121.78570556640625,
+                  "lineHeightUnit": "PIXELS"
+                },
+                "layoutVersion": 5,
+                "effects": [],
+                "interactions": [],
+                "complexStrokeProperties": {
+                  "strokeType": "BASIC"
+                }
+              }
+            ],
+            "blendMode": "PASS_THROUGH",
+            "clipsContent": false,
+            "background": [
+              {
+                "blendMode": "NORMAL",
+                "type": "SOLID",
+                "color": {
+                  "r": 1,
+                  "g": 1,
+                  "b": 1,
+                  "a": 1
+                },
+                "boundVariables": {
+                  "color": {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:407:12925"
+                  }
+                }
+              }
+            ],
+            "fills": [
+              {
+                "blendMode": "NORMAL",
+                "type": "SOLID",
+                "color": {
+                  "r": 1,
+                  "g": 1,
+                  "b": 1,
+                  "a": 1
+                },
+                "boundVariables": {
+                  "color": {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:407:12925"
+                  }
+                }
+              }
+            ],
+            "strokes": [
+              {
+                "blendMode": "NORMAL",
+                "type": "SOLID",
+                "color": {
+                  "r": 0.9504219889640808,
+                  "g": 0.9586792588233948,
+                  "b": 0.9696890115737915,
+                  "a": 1
+                },
+                "boundVariables": {
+                  "color": {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:112:3748"
+                  }
+                }
+              }
+            ],
+            "cornerRadius": 16,
+            "cornerSmoothing": 0,
+            "strokeWeight": 1,
+            "strokeAlign": "OUTSIDE",
+            "backgroundColor": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            },
+            "layoutMode": "HORIZONTAL",
+            "counterAxisAlignItems": "CENTER",
+            "paddingLeft": 6,
+            "paddingRight": 10,
+            "paddingTop": 6,
+            "paddingBottom": 6,
+            "strokesIncludedInLayout": true,
+            "itemSpacing": 8,
+            "layoutWrap": "NO_WRAP",
+            "absoluteBoundingBox": {
+              "x": 13396,
+              "y": 7069.1005859375,
+              "width": 134,
+              "height": 34
+            },
+            "absoluteRenderBounds": {
+              "x": 13395,
+              "y": 7068.1005859375,
+              "width": 136,
+              "height": 36
+            },
+            "constraints": {
+              "vertical": "TOP",
+              "horizontal": "LEFT"
+            },
+            "layoutAlign": "INHERIT",
+            "layoutGrow": 0,
+            "layoutSizingHorizontal": "HUG",
+            "layoutSizingVertical": "HUG",
+            "effects": [],
+            "interactions": [],
+            "complexStrokeProperties": {
+              "strokeType": "BASIC"
+            }
+          },
+          {
+            "id": "474:11689",
+            "name": "badge level",
+            "type": "INSTANCE",
+            "scrollBehavior": "SCROLLS",
+            "boundVariables": {
+              "rectangleCornerRadii": {
+                "RECTANGLE_TOP_LEFT_CORNER_RADIUS": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:112:3754"
+                },
+                "RECTANGLE_TOP_RIGHT_CORNER_RADIUS": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:112:3754"
+                },
+                "RECTANGLE_BOTTOM_LEFT_CORNER_RADIUS": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:112:3754"
+                },
+                "RECTANGLE_BOTTOM_RIGHT_CORNER_RADIUS": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:112:3754"
+                }
+              },
+              "fills": [
+                {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:439:14441"
+                }
+              ]
+            },
+            "componentId": "474:11521",
+            "componentProperties": {
+              "Property 1": {
+                "value": "1",
+                "type": "VARIANT",
+                "boundVariables": {}
+              }
+            },
+            "overrides": [
+              {
+                "id": "I474:11689;474:11522;112:3790",
+                "overriddenFields": [
+                  "characterStyleOverrides",
+                  "characters",
+                  "lineIndentations",
+                  "lineTypes",
+                  "styleOverrideTable"
+                ]
+              },
+              {
+                "id": "I474:11689;474:11523",
+                "overriddenFields": [
+                  "characterStyleOverrides",
+                  "characters",
+                  "lineIndentations",
+                  "lineTypes",
+                  "styleOverrideTable"
+                ]
+              }
+            ],
+            "children": [
+              {
+                "id": "I474:11689;474:11522",
+                "name": "badge",
+                "type": "INSTANCE",
+                "scrollBehavior": "SCROLLS",
+                "boundVariables": {
+                  "rectangleCornerRadii": {
+                    "RECTANGLE_TOP_LEFT_CORNER_RADIUS": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:112:3754"
+                    },
+                    "RECTANGLE_TOP_RIGHT_CORNER_RADIUS": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:112:3754"
+                    },
+                    "RECTANGLE_BOTTOM_LEFT_CORNER_RADIUS": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:112:3754"
+                    },
+                    "RECTANGLE_BOTTOM_RIGHT_CORNER_RADIUS": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:112:3754"
+                    }
+                  },
+                  "fills": [
+                    {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:407:12926"
+                    }
+                  ]
+                },
+                "componentId": "112:3789",
+                "componentProperties": {
+                  "Variant": {
+                    "value": "2",
+                    "type": "VARIANT",
+                    "boundVariables": {}
+                  }
+                },
+                "overrides": [
+                  {
+                    "id": "I474:11689;474:11522;112:3790",
+                    "overriddenFields": [
+                      "characterStyleOverrides",
+                      "characters",
+                      "lineIndentations",
+                      "lineTypes",
+                      "styleOverrideTable"
+                    ]
+                  }
+                ],
+                "children": [
+                  {
+                    "id": "I474:11689;474:11522;112:3790",
+                    "name": "#text «1»",
+                    "type": "TEXT",
+                    "scrollBehavior": "SCROLLS",
+                    "boundVariables": {
+                      "fills": [
+                        {
+                          "type": "VARIABLE_ALIAS",
+                          "id": "VariableID:439:14441"
+                        }
+                      ]
+                    },
+                    "blendMode": "PASS_THROUGH",
+                    "fills": [
+                      {
+                        "opacity": 0.5,
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.8045098185539246,
+                          "g": 0.27450981736183167,
+                          "b": 0.8980392217636108,
+                          "a": 1
+                        },
+                        "boundVariables": {
+                          "color": {
+                            "type": "VARIABLE_ALIAS",
+                            "id": "VariableID:439:14441"
+                          }
+                        }
+                      }
+                    ],
+                    "strokes": [],
+                    "strokeWeight": 1,
+                    "strokeAlign": "OUTSIDE",
+                    "absoluteBoundingBox": {
+                      "x": 13554,
+                      "y": 7078.1005859375,
+                      "width": 6,
+                      "height": 18
+                    },
+                    "absoluteRenderBounds": {
+                      "x": 13554.8232421875,
+                      "y": 7082.29052734375,
+                      "width": 3.6298828125,
+                      "height": 7.81005859375
+                    },
+                    "constraints": {
+                      "vertical": "TOP",
+                      "horizontal": "LEFT"
+                    },
+                    "layoutAlign": "STRETCH",
+                    "layoutGrow": 0,
+                    "layoutSizingHorizontal": "FILL",
+                    "layoutSizingVertical": "HUG",
+                    "characters": "1",
+                    "characterStyleOverrides": [],
+                    "styleOverrideTable": {},
+                    "lineTypes": [
+                      "NONE"
+                    ],
+                    "lineIndentations": [
+                      0
+                    ],
+                    "style": {
+                      "fontFamily": "Geist",
+                      "fontPostScriptName": "Geist-ExtraBold",
+                      "fontStyle": "ExtraBold",
+                      "fontWeight": 800,
+                      "textCase": "UPPER",
+                      "textAutoResize": "HEIGHT",
+                      "fontSize": 11,
+                      "textAlignHorizontal": "CENTER",
+                      "textAlignVertical": "CENTER",
+                      "letterSpacing": 0.33000001311302185,
+                      "lineHeightPx": 17.049999237060547,
+                      "lineHeightPercent": 119.23077392578125,
+                      "lineHeightPercentFontSize": 154.99998474121094,
+                      "lineHeightUnit": "PIXELS"
+                    },
+                    "layoutVersion": 5,
+                    "effects": [],
+                    "interactions": [],
+                    "complexStrokeProperties": {
+                      "strokeType": "BASIC"
+                    }
+                  }
+                ],
+                "blendMode": "PASS_THROUGH",
+                "clipsContent": false,
+                "background": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 1,
+                      "g": 1,
+                      "b": 1,
+                      "a": 1
+                    },
+                    "boundVariables": {
+                      "color": {
+                        "type": "VARIABLE_ALIAS",
+                        "id": "VariableID:407:12926"
+                      }
+                    }
+                  }
+                ],
+                "fills": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 1,
+                      "g": 1,
+                      "b": 1,
+                      "a": 1
+                    },
+                    "boundVariables": {
+                      "color": {
+                        "type": "VARIABLE_ALIAS",
+                        "id": "VariableID:407:12926"
+                      }
+                    }
+                  }
+                ],
+                "strokes": [],
+                "cornerRadius": 16,
+                "cornerSmoothing": 0,
+                "strokeWeight": 1,
+                "strokeAlign": "INSIDE",
+                "backgroundColor": {
+                  "r": 1,
+                  "g": 1,
+                  "b": 1,
+                  "a": 1
+                },
+                "layoutMode": "VERTICAL",
+                "counterAxisSizingMode": "FIXED",
+                "counterAxisAlignItems": "CENTER",
+                "paddingLeft": 8,
+                "paddingRight": 8,
+                "paddingTop": 3,
+                "paddingBottom": 1,
+                "strokesIncludedInLayout": true,
+                "itemSpacing": 8,
+                "layoutWrap": "NO_WRAP",
+                "absoluteBoundingBox": {
+                  "x": 13546,
+                  "y": 7075.1005859375,
+                  "width": 22,
+                  "height": 22
+                },
+                "absoluteRenderBounds": {
+                  "x": 13546,
+                  "y": 7075.1005859375,
+                  "width": 22,
+                  "height": 22
+                },
+                "constraints": {
+                  "vertical": "TOP",
+                  "horizontal": "LEFT"
+                },
+                "layoutAlign": "INHERIT",
+                "layoutGrow": 0,
+                "layoutSizingHorizontal": "FIXED",
+                "layoutSizingVertical": "HUG",
+                "effects": [],
+                "interactions": [],
+                "complexStrokeProperties": {
+                  "strokeType": "BASIC"
+                }
+              },
+              {
+                "id": "I474:11689;474:11523",
+                "name": "#text «Необязательная»",
+                "type": "TEXT",
+                "scrollBehavior": "SCROLLS",
+                "boundVariables": {
+                  "fills": [
+                    {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:112:3683"
+                    }
+                  ]
+                },
+                "blendMode": "PASS_THROUGH",
+                "fills": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 1,
+                      "g": 1,
+                      "b": 1,
+                      "a": 1
+                    },
+                    "boundVariables": {
+                      "color": {
+                        "type": "VARIABLE_ALIAS",
+                        "id": "VariableID:112:3683"
+                      }
+                    }
+                  }
+                ],
+                "strokes": [],
+                "strokeWeight": 1,
+                "strokeAlign": "OUTSIDE",
+                "absoluteBoundingBox": {
+                  "x": 13576,
+                  "y": 7077.1005859375,
+                  "width": 155,
+                  "height": 18
+                },
+                "absoluteRenderBounds": {
+                  "x": 13576.6015625,
+                  "y": 7079.9365234375,
+                  "width": 152.9169921875,
+                  "height": 12.26416015625
+                },
+                "constraints": {
+                  "vertical": "TOP",
+                  "horizontal": "LEFT"
+                },
+                "layoutAlign": "INHERIT",
+                "layoutGrow": 0,
+                "layoutSizingHorizontal": "FIXED",
+                "layoutSizingVertical": "HUG",
+                "characters": "Осведомленность",
+                "characterStyleOverrides": [],
+                "styleOverrideTable": {},
+                "lineTypes": [
+                  "NONE"
+                ],
+                "lineIndentations": [
+                  0
+                ],
+                "style": {
+                  "fontFamily": "Geist",
+                  "fontPostScriptName": null,
+                  "fontStyle": "SemiBold",
+                  "fontWeight": 600,
+                  "textCase": "UPPER",
+                  "textAutoResize": "HEIGHT",
+                  "fontSize": 14,
+                  "textAlignHorizontal": "LEFT",
+                  "textAlignVertical": "CENTER",
+                  "letterSpacing": 0.33000001311302185,
+                  "lineHeightPx": 17.049999237060547,
+                  "lineHeightPercent": 93.68132019042969,
+                  "lineHeightPercentFontSize": 121.78570556640625,
+                  "lineHeightUnit": "PIXELS"
+                },
+                "layoutVersion": 5,
+                "effects": [],
+                "interactions": [],
+                "complexStrokeProperties": {
+                  "strokeType": "BASIC"
+                }
+              }
+            ],
+            "blendMode": "PASS_THROUGH",
+            "clipsContent": false,
+            "background": [
+              {
+                "opacity": 0.5,
+                "blendMode": "NORMAL",
+                "type": "SOLID",
+                "color": {
+                  "r": 0.8045098185539246,
+                  "g": 0.27450981736183167,
+                  "b": 0.8980392217636108,
+                  "a": 1
+                },
+                "boundVariables": {
+                  "color": {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:439:14441"
+                  }
+                }
+              }
+            ],
+            "fills": [
+              {
+                "opacity": 0.5,
+                "blendMode": "NORMAL",
+                "type": "SOLID",
+                "color": {
+                  "r": 0.8045098185539246,
+                  "g": 0.27450981736183167,
+                  "b": 0.8980392217636108,
+                  "a": 1
+                },
+                "boundVariables": {
+                  "color": {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:439:14441"
+                  }
+                }
+              }
+            ],
+            "strokes": [],
+            "cornerRadius": 16,
+            "cornerSmoothing": 0,
+            "strokeWeight": 1,
+            "strokeAlign": "INSIDE",
+            "backgroundColor": {
+              "r": 0.8045098185539246,
+              "g": 0.27450981736183167,
+              "b": 0.8980392217636108,
+              "a": 0.5
+            },
+            "layoutMode": "HORIZONTAL",
+            "counterAxisAlignItems": "CENTER",
+            "paddingLeft": 6,
+            "paddingRight": 10,
+            "paddingTop": 6,
+            "paddingBottom": 6,
+            "strokesIncludedInLayout": true,
+            "itemSpacing": 8,
+            "layoutWrap": "NO_WRAP",
+            "absoluteBoundingBox": {
+              "x": 13540,
+              "y": 7069.1005859375,
+              "width": 201,
+              "height": 34
+            },
+            "absoluteRenderBounds": {
+              "x": 13540,
+              "y": 7069.1005859375,
+              "width": 201,
+              "height": 34
+            },
+            "constraints": {
+              "vertical": "TOP",
+              "horizontal": "LEFT"
+            },
+            "layoutAlign": "INHERIT",
+            "layoutGrow": 0,
+            "layoutSizingHorizontal": "HUG",
+            "layoutSizingVertical": "HUG",
+            "effects": [],
+            "interactions": [],
+            "complexStrokeProperties": {
+              "strokeType": "BASIC"
+            }
+          },
+          {
+            "id": "474:11690",
+            "name": "badge level",
+            "type": "INSTANCE",
+            "scrollBehavior": "SCROLLS",
+            "boundVariables": {
+              "rectangleCornerRadii": {
+                "RECTANGLE_TOP_LEFT_CORNER_RADIUS": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:112:3754"
+                },
+                "RECTANGLE_TOP_RIGHT_CORNER_RADIUS": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:112:3754"
+                },
+                "RECTANGLE_BOTTOM_LEFT_CORNER_RADIUS": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:112:3754"
+                },
+                "RECTANGLE_BOTTOM_RIGHT_CORNER_RADIUS": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:112:3754"
+                }
+              },
+              "fills": [
+                {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:407:12925"
+                }
+              ],
+              "strokes": [
+                {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:112:3748"
+                }
+              ]
+            },
+            "componentId": "474:11589",
+            "componentProperties": {
+              "Property 1": {
+                "value": "default",
+                "type": "VARIANT",
+                "boundVariables": {}
+              }
+            },
+            "overrides": [
+              {
+                "id": "474:11690",
+                "overriddenFields": [
+                  "height",
+                  "width"
+                ]
+              },
+              {
+                "id": "I474:11690;474:11590;112:3790",
+                "overriddenFields": [
+                  "characterStyleOverrides",
+                  "characters",
+                  "lineIndentations",
+                  "lineTypes",
+                  "styleOverrideTable"
+                ]
+              },
+              {
+                "id": "I474:11690;474:11591",
+                "overriddenFields": [
+                  "characterStyleOverrides",
+                  "characters",
+                  "lineIndentations",
+                  "lineTypes",
+                  "styleOverrideTable"
+                ]
+              }
+            ],
+            "children": [
+              {
+                "id": "I474:11690;474:11590",
+                "name": "badge",
+                "type": "INSTANCE",
+                "scrollBehavior": "SCROLLS",
+                "boundVariables": {
+                  "rectangleCornerRadii": {
+                    "RECTANGLE_TOP_LEFT_CORNER_RADIUS": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:112:3754"
+                    },
+                    "RECTANGLE_TOP_RIGHT_CORNER_RADIUS": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:112:3754"
+                    },
+                    "RECTANGLE_BOTTOM_LEFT_CORNER_RADIUS": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:112:3754"
+                    },
+                    "RECTANGLE_BOTTOM_RIGHT_CORNER_RADIUS": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:112:3754"
+                    }
+                  },
+                  "fills": [
+                    {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:112:3783"
+                    }
+                  ]
+                },
+                "componentId": "112:3789",
+                "componentProperties": {
+                  "Variant": {
+                    "value": "2",
+                    "type": "VARIANT",
+                    "boundVariables": {}
+                  }
+                },
+                "overrides": [
+                  {
+                    "id": "I474:11690;474:11590;112:3790",
+                    "overriddenFields": [
+                      "characterStyleOverrides",
+                      "characters",
+                      "lineIndentations",
+                      "lineTypes",
+                      "styleOverrideTable"
+                    ]
+                  }
+                ],
+                "children": [
+                  {
+                    "id": "I474:11690;474:11590;112:3790",
+                    "name": "#text «1»",
+                    "type": "TEXT",
+                    "scrollBehavior": "SCROLLS",
+                    "boundVariables": {
+                      "fills": [
+                        {
+                          "type": "VARIABLE_ALIAS",
+                          "id": "VariableID:112:3761"
+                        }
+                      ]
+                    },
+                    "blendMode": "PASS_THROUGH",
+                    "fills": [
+                      {
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.37254902720451355,
+                          "g": 0.43529412150382996,
+                          "b": 0.5215686559677124,
+                          "a": 1
+                        },
+                        "boundVariables": {
+                          "color": {
+                            "type": "VARIABLE_ALIAS",
+                            "id": "VariableID:112:3761"
+                          }
+                        }
+                      }
+                    ],
+                    "strokes": [],
+                    "strokeWeight": 1,
+                    "strokeAlign": "OUTSIDE",
+                    "absoluteBoundingBox": {
+                      "x": 13765,
+                      "y": 7078.1005859375,
+                      "width": 6,
+                      "height": 18
+                    },
+                    "absoluteRenderBounds": {
+                      "x": 13764.98046875,
+                      "y": 7082.11474609375,
+                      "width": 6.060546875,
+                      "height": 7.98583984375
+                    },
+                    "constraints": {
+                      "vertical": "TOP",
+                      "horizontal": "LEFT"
+                    },
+                    "layoutAlign": "STRETCH",
+                    "layoutGrow": 0,
+                    "layoutSizingHorizontal": "FILL",
+                    "layoutSizingVertical": "HUG",
+                    "characters": "2",
+                    "characterStyleOverrides": [],
+                    "styleOverrideTable": {},
+                    "lineTypes": [
+                      "NONE"
+                    ],
+                    "lineIndentations": [
+                      0
+                    ],
+                    "style": {
+                      "fontFamily": "Geist",
+                      "fontPostScriptName": "Geist-ExtraBold",
+                      "fontStyle": "ExtraBold",
+                      "fontWeight": 800,
+                      "textCase": "UPPER",
+                      "textAutoResize": "HEIGHT",
+                      "fontSize": 11,
+                      "textAlignHorizontal": "CENTER",
+                      "textAlignVertical": "CENTER",
+                      "letterSpacing": 0.33000001311302185,
+                      "lineHeightPx": 17.049999237060547,
+                      "lineHeightPercent": 119.23077392578125,
+                      "lineHeightPercentFontSize": 154.99998474121094,
+                      "lineHeightUnit": "PIXELS"
+                    },
+                    "layoutVersion": 5,
+                    "effects": [],
+                    "interactions": [],
+                    "complexStrokeProperties": {
+                      "strokeType": "BASIC"
+                    }
+                  }
+                ],
+                "blendMode": "PASS_THROUGH",
+                "clipsContent": false,
+                "background": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.9450980424880981,
+                      "g": 0.9607843160629272,
+                      "b": 0.9764705896377563,
+                      "a": 1
+                    },
+                    "boundVariables": {
+                      "color": {
+                        "type": "VARIABLE_ALIAS",
+                        "id": "VariableID:112:3783"
+                      }
+                    }
+                  }
+                ],
+                "fills": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.9450980424880981,
+                      "g": 0.9607843160629272,
+                      "b": 0.9764705896377563,
+                      "a": 1
+                    },
+                    "boundVariables": {
+                      "color": {
+                        "type": "VARIABLE_ALIAS",
+                        "id": "VariableID:112:3783"
+                      }
+                    }
+                  }
+                ],
+                "strokes": [],
+                "cornerRadius": 16,
+                "cornerSmoothing": 0,
+                "strokeWeight": 1,
+                "strokeAlign": "INSIDE",
+                "backgroundColor": {
+                  "r": 0.9450980424880981,
+                  "g": 0.9607843160629272,
+                  "b": 0.9764705896377563,
+                  "a": 1
+                },
+                "layoutMode": "VERTICAL",
+                "counterAxisSizingMode": "FIXED",
+                "counterAxisAlignItems": "CENTER",
+                "paddingLeft": 8,
+                "paddingRight": 8,
+                "paddingTop": 3,
+                "paddingBottom": 1,
+                "strokesIncludedInLayout": true,
+                "itemSpacing": 8,
+                "layoutWrap": "NO_WRAP",
+                "absoluteBoundingBox": {
+                  "x": 13757,
+                  "y": 7075.1005859375,
+                  "width": 22,
+                  "height": 22
+                },
+                "absoluteRenderBounds": {
+                  "x": 13757,
+                  "y": 7075.1005859375,
+                  "width": 22,
+                  "height": 22
+                },
+                "constraints": {
+                  "vertical": "TOP",
+                  "horizontal": "LEFT"
+                },
+                "layoutAlign": "INHERIT",
+                "layoutGrow": 0,
+                "layoutSizingHorizontal": "FIXED",
+                "layoutSizingVertical": "HUG",
+                "effects": [],
+                "interactions": [],
+                "complexStrokeProperties": {
+                  "strokeType": "BASIC"
+                }
+              },
+              {
+                "id": "I474:11690;474:11591",
+                "name": "#text «Необязательная»",
+                "type": "TEXT",
+                "scrollBehavior": "SCROLLS",
+                "boundVariables": {
+                  "fills": [
+                    {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:112:3830"
+                    }
+                  ]
+                },
+                "blendMode": "PASS_THROUGH",
+                "fills": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.3921568691730499,
+                      "g": 0.45490196347236633,
+                      "b": 0.545098066329956,
+                      "a": 1
+                    },
+                    "boundVariables": {
+                      "color": {
+                        "type": "VARIABLE_ALIAS",
+                        "id": "VariableID:112:3830"
+                      }
+                    }
+                  }
+                ],
+                "strokes": [],
+                "strokeWeight": 1,
+                "strokeAlign": "OUTSIDE",
+                "absoluteBoundingBox": {
+                  "x": 13787,
+                  "y": 7077.1005859375,
+                  "width": 61,
+                  "height": 18
+                },
+                "absoluteRenderBounds": {
+                  "x": 13787.265625,
+                  "y": 7080.16064453125,
+                  "width": 59.3203125,
+                  "height": 9.93994140625
+                },
+                "constraints": {
+                  "vertical": "TOP",
+                  "horizontal": "LEFT"
+                },
+                "layoutAlign": "INHERIT",
+                "layoutGrow": 0,
+                "layoutSizingHorizontal": "HUG",
+                "layoutSizingVertical": "HUG",
+                "characters": "Умение",
+                "characterStyleOverrides": [],
+                "styleOverrideTable": {},
+                "lineTypes": [
+                  "NONE"
+                ],
+                "lineIndentations": [
+                  0
+                ],
+                "style": {
+                  "fontFamily": "Geist",
+                  "fontPostScriptName": null,
+                  "fontStyle": "SemiBold",
+                  "fontWeight": 600,
+                  "textCase": "UPPER",
+                  "textAutoResize": "WIDTH_AND_HEIGHT",
+                  "fontSize": 14,
+                  "textAlignHorizontal": "LEFT",
+                  "textAlignVertical": "CENTER",
+                  "letterSpacing": 0.33000001311302185,
+                  "lineHeightPx": 17.049999237060547,
+                  "lineHeightPercent": 93.68132019042969,
+                  "lineHeightPercentFontSize": 121.78570556640625,
+                  "lineHeightUnit": "PIXELS"
+                },
+                "layoutVersion": 5,
+                "effects": [],
+                "interactions": [],
+                "complexStrokeProperties": {
+                  "strokeType": "BASIC"
+                }
+              }
+            ],
+            "blendMode": "PASS_THROUGH",
+            "clipsContent": false,
+            "background": [
+              {
+                "blendMode": "NORMAL",
+                "type": "SOLID",
+                "color": {
+                  "r": 1,
+                  "g": 1,
+                  "b": 1,
+                  "a": 1
+                },
+                "boundVariables": {
+                  "color": {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:407:12925"
+                  }
+                }
+              }
+            ],
+            "fills": [
+              {
+                "blendMode": "NORMAL",
+                "type": "SOLID",
+                "color": {
+                  "r": 1,
+                  "g": 1,
+                  "b": 1,
+                  "a": 1
+                },
+                "boundVariables": {
+                  "color": {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:407:12925"
+                  }
+                }
+              }
+            ],
+            "strokes": [
+              {
+                "blendMode": "NORMAL",
+                "type": "SOLID",
+                "color": {
+                  "r": 0.9504219889640808,
+                  "g": 0.9586792588233948,
+                  "b": 0.9696890115737915,
+                  "a": 1
+                },
+                "boundVariables": {
+                  "color": {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:112:3748"
+                  }
+                }
+              }
+            ],
+            "cornerRadius": 16,
+            "cornerSmoothing": 0,
+            "strokeWeight": 1,
+            "strokeAlign": "OUTSIDE",
+            "backgroundColor": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            },
+            "layoutMode": "HORIZONTAL",
+            "counterAxisAlignItems": "CENTER",
+            "paddingLeft": 6,
+            "paddingRight": 10,
+            "paddingTop": 6,
+            "paddingBottom": 6,
+            "strokesIncludedInLayout": true,
+            "itemSpacing": 8,
+            "layoutWrap": "NO_WRAP",
+            "absoluteBoundingBox": {
+              "x": 13751,
+              "y": 7069.1005859375,
+              "width": 107,
+              "height": 34
+            },
+            "absoluteRenderBounds": {
+              "x": 13750,
+              "y": 7068.1005859375,
+              "width": 109,
+              "height": 36
+            },
+            "constraints": {
+              "vertical": "TOP",
+              "horizontal": "LEFT"
+            },
+            "layoutAlign": "INHERIT",
+            "layoutGrow": 0,
+            "layoutSizingHorizontal": "HUG",
+            "layoutSizingVertical": "HUG",
+            "effects": [],
+            "interactions": [],
+            "complexStrokeProperties": {
+              "strokeType": "BASIC"
+            }
+          },
+          {
+            "id": "474:11691",
+            "name": "badge level",
+            "type": "INSTANCE",
+            "scrollBehavior": "SCROLLS",
+            "boundVariables": {
+              "rectangleCornerRadii": {
+                "RECTANGLE_TOP_LEFT_CORNER_RADIUS": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:112:3754"
+                },
+                "RECTANGLE_TOP_RIGHT_CORNER_RADIUS": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:112:3754"
+                },
+                "RECTANGLE_BOTTOM_LEFT_CORNER_RADIUS": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:112:3754"
+                },
+                "RECTANGLE_BOTTOM_RIGHT_CORNER_RADIUS": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:112:3754"
+                }
+              },
+              "fills": [
+                {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:407:12925"
+                }
+              ],
+              "strokes": [
+                {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:112:3748"
+                }
+              ]
+            },
+            "componentId": "474:11589",
+            "componentProperties": {
+              "Property 1": {
+                "value": "default",
+                "type": "VARIANT",
+                "boundVariables": {}
+              }
+            },
+            "overrides": [
+              {
+                "id": "474:11691",
+                "overriddenFields": [
+                  "height",
+                  "width"
+                ]
+              },
+              {
+                "id": "I474:11691;474:11590;112:3790",
+                "overriddenFields": [
+                  "characterStyleOverrides",
+                  "characters",
+                  "lineIndentations",
+                  "lineTypes",
+                  "styleOverrideTable"
+                ]
+              },
+              {
+                "id": "I474:11691;474:11591",
+                "overriddenFields": [
+                  "characterStyleOverrides",
+                  "characters",
+                  "lineIndentations",
+                  "lineTypes",
+                  "styleOverrideTable"
+                ]
+              }
+            ],
+            "children": [
+              {
+                "id": "I474:11691;474:11590",
+                "name": "badge",
+                "type": "INSTANCE",
+                "scrollBehavior": "SCROLLS",
+                "boundVariables": {
+                  "rectangleCornerRadii": {
+                    "RECTANGLE_TOP_LEFT_CORNER_RADIUS": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:112:3754"
+                    },
+                    "RECTANGLE_TOP_RIGHT_CORNER_RADIUS": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:112:3754"
+                    },
+                    "RECTANGLE_BOTTOM_LEFT_CORNER_RADIUS": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:112:3754"
+                    },
+                    "RECTANGLE_BOTTOM_RIGHT_CORNER_RADIUS": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:112:3754"
+                    }
+                  },
+                  "fills": [
+                    {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:112:3783"
+                    }
+                  ]
+                },
+                "componentId": "112:3789",
+                "componentProperties": {
+                  "Variant": {
+                    "value": "2",
+                    "type": "VARIANT",
+                    "boundVariables": {}
+                  }
+                },
+                "overrides": [
+                  {
+                    "id": "I474:11691;474:11590;112:3790",
+                    "overriddenFields": [
+                      "characterStyleOverrides",
+                      "characters",
+                      "lineIndentations",
+                      "lineTypes",
+                      "styleOverrideTable"
+                    ]
+                  }
+                ],
+                "children": [
+                  {
+                    "id": "I474:11691;474:11590;112:3790",
+                    "name": "#text «1»",
+                    "type": "TEXT",
+                    "scrollBehavior": "SCROLLS",
+                    "boundVariables": {
+                      "fills": [
+                        {
+                          "type": "VARIABLE_ALIAS",
+                          "id": "VariableID:112:3761"
+                        }
+                      ]
+                    },
+                    "blendMode": "PASS_THROUGH",
+                    "fills": [
+                      {
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.37254902720451355,
+                          "g": 0.43529412150382996,
+                          "b": 0.5215686559677124,
+                          "a": 1
+                        },
+                        "boundVariables": {
+                          "color": {
+                            "type": "VARIABLE_ALIAS",
+                            "id": "VariableID:112:3761"
+                          }
+                        }
+                      }
+                    ],
+                    "strokes": [],
+                    "strokeWeight": 1,
+                    "strokeAlign": "OUTSIDE",
+                    "absoluteBoundingBox": {
+                      "x": 13882,
+                      "y": 7078.1005859375,
+                      "width": 6,
+                      "height": 18
+                    },
+                    "absoluteRenderBounds": {
+                      "x": 13881.8203125,
+                      "y": 7082.11474609375,
+                      "width": 6.3583984375,
+                      "height": 8.16162109375
+                    },
+                    "constraints": {
+                      "vertical": "TOP",
+                      "horizontal": "LEFT"
+                    },
+                    "layoutAlign": "STRETCH",
+                    "layoutGrow": 0,
+                    "layoutSizingHorizontal": "FILL",
+                    "layoutSizingVertical": "HUG",
+                    "characters": "3",
+                    "characterStyleOverrides": [],
+                    "styleOverrideTable": {},
+                    "lineTypes": [
+                      "NONE"
+                    ],
+                    "lineIndentations": [
+                      0
+                    ],
+                    "style": {
+                      "fontFamily": "Geist",
+                      "fontPostScriptName": "Geist-ExtraBold",
+                      "fontStyle": "ExtraBold",
+                      "fontWeight": 800,
+                      "textCase": "UPPER",
+                      "textAutoResize": "HEIGHT",
+                      "fontSize": 11,
+                      "textAlignHorizontal": "CENTER",
+                      "textAlignVertical": "CENTER",
+                      "letterSpacing": 0.33000001311302185,
+                      "lineHeightPx": 17.049999237060547,
+                      "lineHeightPercent": 119.23077392578125,
+                      "lineHeightPercentFontSize": 154.99998474121094,
+                      "lineHeightUnit": "PIXELS"
+                    },
+                    "layoutVersion": 5,
+                    "effects": [],
+                    "interactions": [],
+                    "complexStrokeProperties": {
+                      "strokeType": "BASIC"
+                    }
+                  }
+                ],
+                "blendMode": "PASS_THROUGH",
+                "clipsContent": false,
+                "background": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.9450980424880981,
+                      "g": 0.9607843160629272,
+                      "b": 0.9764705896377563,
+                      "a": 1
+                    },
+                    "boundVariables": {
+                      "color": {
+                        "type": "VARIABLE_ALIAS",
+                        "id": "VariableID:112:3783"
+                      }
+                    }
+                  }
+                ],
+                "fills": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.9450980424880981,
+                      "g": 0.9607843160629272,
+                      "b": 0.9764705896377563,
+                      "a": 1
+                    },
+                    "boundVariables": {
+                      "color": {
+                        "type": "VARIABLE_ALIAS",
+                        "id": "VariableID:112:3783"
+                      }
+                    }
+                  }
+                ],
+                "strokes": [],
+                "cornerRadius": 16,
+                "cornerSmoothing": 0,
+                "strokeWeight": 1,
+                "strokeAlign": "INSIDE",
+                "backgroundColor": {
+                  "r": 0.9450980424880981,
+                  "g": 0.9607843160629272,
+                  "b": 0.9764705896377563,
+                  "a": 1
+                },
+                "layoutMode": "VERTICAL",
+                "counterAxisSizingMode": "FIXED",
+                "counterAxisAlignItems": "CENTER",
+                "paddingLeft": 8,
+                "paddingRight": 8,
+                "paddingTop": 3,
+                "paddingBottom": 1,
+                "strokesIncludedInLayout": true,
+                "itemSpacing": 8,
+                "layoutWrap": "NO_WRAP",
+                "absoluteBoundingBox": {
+                  "x": 13874,
+                  "y": 7075.1005859375,
+                  "width": 22,
+                  "height": 22
+                },
+                "absoluteRenderBounds": {
+                  "x": 13874,
+                  "y": 7075.1005859375,
+                  "width": 22,
+                  "height": 22
+                },
+                "constraints": {
+                  "vertical": "TOP",
+                  "horizontal": "LEFT"
+                },
+                "layoutAlign": "INHERIT",
+                "layoutGrow": 0,
+                "layoutSizingHorizontal": "FIXED",
+                "layoutSizingVertical": "HUG",
+                "effects": [],
+                "interactions": [],
+                "complexStrokeProperties": {
+                  "strokeType": "BASIC"
+                }
+              },
+              {
+                "id": "I474:11691;474:11591",
+                "name": "#text «Необязательная»",
+                "type": "TEXT",
+                "scrollBehavior": "SCROLLS",
+                "boundVariables": {
+                  "fills": [
+                    {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:112:3830"
+                    }
+                  ]
+                },
+                "blendMode": "PASS_THROUGH",
+                "fills": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.3921568691730499,
+                      "g": 0.45490196347236633,
+                      "b": 0.545098066329956,
+                      "a": 1
+                    },
+                    "boundVariables": {
+                      "color": {
+                        "type": "VARIABLE_ALIAS",
+                        "id": "VariableID:112:3830"
+                      }
+                    }
+                  }
+                ],
+                "strokes": [],
+                "strokeWeight": 1,
+                "strokeAlign": "OUTSIDE",
+                "absoluteBoundingBox": {
+                  "x": 13904,
+                  "y": 7077.1005859375,
+                  "width": 98,
+                  "height": 18
+                },
+                "absoluteRenderBounds": {
+                  "x": 13904.517578125,
+                  "y": 7079.9365234375,
+                  "width": 96.2900390625,
+                  "height": 10.38818359375
+                },
+                "constraints": {
+                  "vertical": "TOP",
+                  "horizontal": "LEFT"
+                },
+                "layoutAlign": "INHERIT",
+                "layoutGrow": 0,
+                "layoutSizingHorizontal": "HUG",
+                "layoutSizingVertical": "HUG",
+                "characters": "экспертиза",
+                "characterStyleOverrides": [],
+                "styleOverrideTable": {},
+                "lineTypes": [
+                  "NONE"
+                ],
+                "lineIndentations": [
+                  0
+                ],
+                "style": {
+                  "fontFamily": "Geist",
+                  "fontPostScriptName": null,
+                  "fontStyle": "SemiBold",
+                  "fontWeight": 600,
+                  "textCase": "UPPER",
+                  "textAutoResize": "WIDTH_AND_HEIGHT",
+                  "fontSize": 14,
+                  "textAlignHorizontal": "LEFT",
+                  "textAlignVertical": "CENTER",
+                  "letterSpacing": 0.33000001311302185,
+                  "lineHeightPx": 17.049999237060547,
+                  "lineHeightPercent": 93.68132019042969,
+                  "lineHeightPercentFontSize": 121.78570556640625,
+                  "lineHeightUnit": "PIXELS"
+                },
+                "layoutVersion": 5,
+                "effects": [],
+                "interactions": [],
+                "complexStrokeProperties": {
+                  "strokeType": "BASIC"
+                }
+              }
+            ],
+            "blendMode": "PASS_THROUGH",
+            "clipsContent": false,
+            "background": [
+              {
+                "blendMode": "NORMAL",
+                "type": "SOLID",
+                "color": {
+                  "r": 1,
+                  "g": 1,
+                  "b": 1,
+                  "a": 1
+                },
+                "boundVariables": {
+                  "color": {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:407:12925"
+                  }
+                }
+              }
+            ],
+            "fills": [
+              {
+                "blendMode": "NORMAL",
+                "type": "SOLID",
+                "color": {
+                  "r": 1,
+                  "g": 1,
+                  "b": 1,
+                  "a": 1
+                },
+                "boundVariables": {
+                  "color": {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:407:12925"
+                  }
+                }
+              }
+            ],
+            "strokes": [
+              {
+                "blendMode": "NORMAL",
+                "type": "SOLID",
+                "color": {
+                  "r": 0.9504219889640808,
+                  "g": 0.9586792588233948,
+                  "b": 0.9696890115737915,
+                  "a": 1
+                },
+                "boundVariables": {
+                  "color": {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:112:3748"
+                  }
+                }
+              }
+            ],
+            "cornerRadius": 16,
+            "cornerSmoothing": 0,
+            "strokeWeight": 1,
+            "strokeAlign": "OUTSIDE",
+            "backgroundColor": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            },
+            "layoutMode": "HORIZONTAL",
+            "counterAxisAlignItems": "CENTER",
+            "paddingLeft": 6,
+            "paddingRight": 10,
+            "paddingTop": 6,
+            "paddingBottom": 6,
+            "strokesIncludedInLayout": true,
+            "itemSpacing": 8,
+            "layoutWrap": "NO_WRAP",
+            "absoluteBoundingBox": {
+              "x": 13868,
+              "y": 7069.1005859375,
+              "width": 144,
+              "height": 34
+            },
+            "absoluteRenderBounds": {
+              "x": 13867,
+              "y": 7068.1005859375,
+              "width": 146,
+              "height": 36
+            },
+            "constraints": {
+              "vertical": "TOP",
+              "horizontal": "LEFT"
+            },
+            "layoutAlign": "INHERIT",
+            "layoutGrow": 0,
+            "layoutSizingHorizontal": "HUG",
+            "layoutSizingVertical": "HUG",
+            "effects": [],
+            "interactions": [],
+            "complexStrokeProperties": {
+              "strokeType": "BASIC"
+            }
+          },
+          {
+            "id": "474:11692",
+            "name": "badge level",
+            "type": "INSTANCE",
+            "scrollBehavior": "SCROLLS",
+            "boundVariables": {
+              "rectangleCornerRadii": {
+                "RECTANGLE_TOP_LEFT_CORNER_RADIUS": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:112:3754"
+                },
+                "RECTANGLE_TOP_RIGHT_CORNER_RADIUS": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:112:3754"
+                },
+                "RECTANGLE_BOTTOM_LEFT_CORNER_RADIUS": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:112:3754"
+                },
+                "RECTANGLE_BOTTOM_RIGHT_CORNER_RADIUS": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:112:3754"
+                }
+              },
+              "fills": [
+                {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:407:12925"
+                }
+              ],
+              "strokes": [
+                {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:112:3748"
+                }
+              ]
+            },
+            "componentId": "474:11589",
+            "componentProperties": {
+              "Property 1": {
+                "value": "default",
+                "type": "VARIANT",
+                "boundVariables": {}
+              }
+            },
+            "overrides": [
+              {
+                "id": "474:11692",
+                "overriddenFields": [
+                  "height",
+                  "width"
+                ]
+              },
+              {
+                "id": "I474:11692;474:11590;112:3790",
+                "overriddenFields": [
+                  "characterStyleOverrides",
+                  "characters",
+                  "lineIndentations",
+                  "lineTypes",
+                  "styleOverrideTable"
+                ]
+              },
+              {
+                "id": "I474:11692;474:11591",
+                "overriddenFields": [
+                  "characterStyleOverrides",
+                  "characters",
+                  "lineIndentations",
+                  "lineTypes",
+                  "styleOverrideTable"
+                ]
+              }
+            ],
+            "children": [
+              {
+                "id": "I474:11692;474:11590",
+                "name": "badge",
+                "type": "INSTANCE",
+                "scrollBehavior": "SCROLLS",
+                "boundVariables": {
+                  "rectangleCornerRadii": {
+                    "RECTANGLE_TOP_LEFT_CORNER_RADIUS": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:112:3754"
+                    },
+                    "RECTANGLE_TOP_RIGHT_CORNER_RADIUS": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:112:3754"
+                    },
+                    "RECTANGLE_BOTTOM_LEFT_CORNER_RADIUS": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:112:3754"
+                    },
+                    "RECTANGLE_BOTTOM_RIGHT_CORNER_RADIUS": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:112:3754"
+                    }
+                  },
+                  "fills": [
+                    {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:112:3783"
+                    }
+                  ]
+                },
+                "componentId": "112:3789",
+                "componentProperties": {
+                  "Variant": {
+                    "value": "2",
+                    "type": "VARIANT",
+                    "boundVariables": {}
+                  }
+                },
+                "overrides": [
+                  {
+                    "id": "I474:11692;474:11590;112:3790",
+                    "overriddenFields": [
+                      "characterStyleOverrides",
+                      "characters",
+                      "lineIndentations",
+                      "lineTypes",
+                      "styleOverrideTable"
+                    ]
+                  }
+                ],
+                "children": [
+                  {
+                    "id": "I474:11692;474:11590;112:3790",
+                    "name": "#text «1»",
+                    "type": "TEXT",
+                    "scrollBehavior": "SCROLLS",
+                    "boundVariables": {
+                      "fills": [
+                        {
+                          "type": "VARIABLE_ALIAS",
+                          "id": "VariableID:112:3761"
+                        }
+                      ]
+                    },
+                    "blendMode": "PASS_THROUGH",
+                    "fills": [
+                      {
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.37254902720451355,
+                          "g": 0.43529412150382996,
+                          "b": 0.5215686559677124,
+                          "a": 1
+                        },
+                        "boundVariables": {
+                          "color": {
+                            "type": "VARIABLE_ALIAS",
+                            "id": "VariableID:112:3761"
+                          }
+                        }
+                      }
+                    ],
+                    "strokes": [],
+                    "strokeWeight": 1,
+                    "strokeAlign": "OUTSIDE",
+                    "absoluteBoundingBox": {
+                      "x": 14036,
+                      "y": 7078.1005859375,
+                      "width": 6,
+                      "height": 18
+                    },
+                    "absoluteRenderBounds": {
+                      "x": 14035.5576171875,
+                      "y": 7082.29052734375,
+                      "width": 6.666015625,
+                      "height": 7.81005859375
+                    },
+                    "constraints": {
+                      "vertical": "TOP",
+                      "horizontal": "LEFT"
+                    },
+                    "layoutAlign": "STRETCH",
+                    "layoutGrow": 0,
+                    "layoutSizingHorizontal": "FILL",
+                    "layoutSizingVertical": "HUG",
+                    "characters": "4",
+                    "characterStyleOverrides": [],
+                    "styleOverrideTable": {},
+                    "lineTypes": [
+                      "NONE"
+                    ],
+                    "lineIndentations": [
+                      0
+                    ],
+                    "style": {
+                      "fontFamily": "Geist",
+                      "fontPostScriptName": "Geist-ExtraBold",
+                      "fontStyle": "ExtraBold",
+                      "fontWeight": 800,
+                      "textCase": "UPPER",
+                      "textAutoResize": "HEIGHT",
+                      "fontSize": 11,
+                      "textAlignHorizontal": "CENTER",
+                      "textAlignVertical": "CENTER",
+                      "letterSpacing": 0.33000001311302185,
+                      "lineHeightPx": 17.049999237060547,
+                      "lineHeightPercent": 119.23077392578125,
+                      "lineHeightPercentFontSize": 154.99998474121094,
+                      "lineHeightUnit": "PIXELS"
+                    },
+                    "layoutVersion": 5,
+                    "effects": [],
+                    "interactions": [],
+                    "complexStrokeProperties": {
+                      "strokeType": "BASIC"
+                    }
+                  }
+                ],
+                "blendMode": "PASS_THROUGH",
+                "clipsContent": false,
+                "background": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.9450980424880981,
+                      "g": 0.9607843160629272,
+                      "b": 0.9764705896377563,
+                      "a": 1
+                    },
+                    "boundVariables": {
+                      "color": {
+                        "type": "VARIABLE_ALIAS",
+                        "id": "VariableID:112:3783"
+                      }
+                    }
+                  }
+                ],
+                "fills": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.9450980424880981,
+                      "g": 0.9607843160629272,
+                      "b": 0.9764705896377563,
+                      "a": 1
+                    },
+                    "boundVariables": {
+                      "color": {
+                        "type": "VARIABLE_ALIAS",
+                        "id": "VariableID:112:3783"
+                      }
+                    }
+                  }
+                ],
+                "strokes": [],
+                "cornerRadius": 16,
+                "cornerSmoothing": 0,
+                "strokeWeight": 1,
+                "strokeAlign": "INSIDE",
+                "backgroundColor": {
+                  "r": 0.9450980424880981,
+                  "g": 0.9607843160629272,
+                  "b": 0.9764705896377563,
+                  "a": 1
+                },
+                "layoutMode": "VERTICAL",
+                "counterAxisSizingMode": "FIXED",
+                "counterAxisAlignItems": "CENTER",
+                "paddingLeft": 8,
+                "paddingRight": 8,
+                "paddingTop": 3,
+                "paddingBottom": 1,
+                "strokesIncludedInLayout": true,
+                "itemSpacing": 8,
+                "layoutWrap": "NO_WRAP",
+                "absoluteBoundingBox": {
+                  "x": 14028,
+                  "y": 7075.1005859375,
+                  "width": 22,
+                  "height": 22
+                },
+                "absoluteRenderBounds": {
+                  "x": 14028,
+                  "y": 7075.1005859375,
+                  "width": 22,
+                  "height": 22
+                },
+                "constraints": {
+                  "vertical": "TOP",
+                  "horizontal": "LEFT"
+                },
+                "layoutAlign": "INHERIT",
+                "layoutGrow": 0,
+                "layoutSizingHorizontal": "FIXED",
+                "layoutSizingVertical": "HUG",
+                "effects": [],
+                "interactions": [],
+                "complexStrokeProperties": {
+                  "strokeType": "BASIC"
+                }
+              },
+              {
+                "id": "I474:11692;474:11591",
+                "name": "#text «Необязательная»",
+                "type": "TEXT",
+                "scrollBehavior": "SCROLLS",
+                "boundVariables": {
+                  "fills": [
+                    {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:112:3830"
+                    }
+                  ]
+                },
+                "blendMode": "PASS_THROUGH",
+                "fills": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.3921568691730499,
+                      "g": 0.45490196347236633,
+                      "b": 0.545098066329956,
+                      "a": 1
+                    },
+                    "boundVariables": {
+                      "color": {
+                        "type": "VARIABLE_ALIAS",
+                        "id": "VariableID:112:3830"
+                      }
+                    }
+                  }
+                ],
+                "strokes": [],
+                "strokeWeight": 1,
+                "strokeAlign": "OUTSIDE",
+                "absoluteBoundingBox": {
+                  "x": 14058,
+                  "y": 7077.1005859375,
+                  "width": 91,
+                  "height": 18
+                },
+                "absoluteRenderBounds": {
+                  "x": 14058.76953125,
+                  "y": 7079.9365234375,
+                  "width": 88.6630859375,
+                  "height": 12.26416015625
+                },
+                "constraints": {
+                  "vertical": "TOP",
+                  "horizontal": "LEFT"
+                },
+                "layoutAlign": "INHERIT",
+                "layoutGrow": 0,
+                "layoutSizingHorizontal": "HUG",
+                "layoutSizingVertical": "HUG",
+                "characters": "лидерство",
+                "characterStyleOverrides": [],
+                "styleOverrideTable": {},
+                "lineTypes": [
+                  "NONE"
+                ],
+                "lineIndentations": [
+                  0
+                ],
+                "style": {
+                  "fontFamily": "Geist",
+                  "fontPostScriptName": null,
+                  "fontStyle": "SemiBold",
+                  "fontWeight": 600,
+                  "textCase": "UPPER",
+                  "textAutoResize": "WIDTH_AND_HEIGHT",
+                  "fontSize": 14,
+                  "textAlignHorizontal": "LEFT",
+                  "textAlignVertical": "CENTER",
+                  "letterSpacing": 0.33000001311302185,
+                  "lineHeightPx": 17.049999237060547,
+                  "lineHeightPercent": 93.68132019042969,
+                  "lineHeightPercentFontSize": 121.78570556640625,
+                  "lineHeightUnit": "PIXELS"
+                },
+                "layoutVersion": 5,
+                "effects": [],
+                "interactions": [],
+                "complexStrokeProperties": {
+                  "strokeType": "BASIC"
+                }
+              }
+            ],
+            "blendMode": "PASS_THROUGH",
+            "clipsContent": false,
+            "background": [
+              {
+                "blendMode": "NORMAL",
+                "type": "SOLID",
+                "color": {
+                  "r": 1,
+                  "g": 1,
+                  "b": 1,
+                  "a": 1
+                },
+                "boundVariables": {
+                  "color": {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:407:12925"
+                  }
+                }
+              }
+            ],
+            "fills": [
+              {
+                "blendMode": "NORMAL",
+                "type": "SOLID",
+                "color": {
+                  "r": 1,
+                  "g": 1,
+                  "b": 1,
+                  "a": 1
+                },
+                "boundVariables": {
+                  "color": {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:407:12925"
+                  }
+                }
+              }
+            ],
+            "strokes": [
+              {
+                "blendMode": "NORMAL",
+                "type": "SOLID",
+                "color": {
+                  "r": 0.9504219889640808,
+                  "g": 0.9586792588233948,
+                  "b": 0.9696890115737915,
+                  "a": 1
+                },
+                "boundVariables": {
+                  "color": {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:112:3748"
+                  }
+                }
+              }
+            ],
+            "cornerRadius": 16,
+            "cornerSmoothing": 0,
+            "strokeWeight": 1,
+            "strokeAlign": "OUTSIDE",
+            "backgroundColor": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            },
+            "layoutMode": "HORIZONTAL",
+            "counterAxisAlignItems": "CENTER",
+            "paddingLeft": 6,
+            "paddingRight": 10,
+            "paddingTop": 6,
+            "paddingBottom": 6,
+            "strokesIncludedInLayout": true,
+            "itemSpacing": 8,
+            "layoutWrap": "NO_WRAP",
+            "absoluteBoundingBox": {
+              "x": 14022,
+              "y": 7069.1005859375,
+              "width": 137,
+              "height": 34
+            },
+            "absoluteRenderBounds": {
+              "x": 14021,
+              "y": 7068.1005859375,
+              "width": 139,
+              "height": 36
+            },
+            "constraints": {
+              "vertical": "TOP",
+              "horizontal": "LEFT"
+            },
+            "layoutAlign": "INHERIT",
+            "layoutGrow": 0,
+            "layoutSizingHorizontal": "HUG",
+            "layoutSizingVertical": "HUG",
+            "effects": [],
+            "interactions": [],
+            "complexStrokeProperties": {
+              "strokeType": "BASIC"
+            }
+          }
+        ],
+        "blendMode": "PASS_THROUGH",
+        "clipsContent": false,
+        "background": [],
+        "fills": [],
+        "strokes": [],
+        "strokeWeight": 1,
+        "strokeAlign": "INSIDE",
+        "backgroundColor": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0
+        },
+        "layoutMode": "HORIZONTAL",
+        "primaryAxisSizingMode": "FIXED",
+        "strokesIncludedInLayout": true,
+        "itemSpacing": 10,
+        "layoutWrap": "NO_WRAP",
+        "absoluteBoundingBox": {
+          "x": 13396,
+          "y": 7069.1005859375,
+          "width": 831,
+          "height": 34
+        },
+        "absoluteRenderBounds": {
+          "x": 13395,
+          "y": 7068.1005859375,
+          "width": 832,
+          "height": 36
+        },
+        "constraints": {
+          "vertical": "TOP",
+          "horizontal": "LEFT"
+        },
+        "layoutAlign": "STRETCH",
+        "layoutGrow": 0,
+        "layoutSizingHorizontal": "FILL",
+        "layoutSizingVertical": "HUG",
+        "effects": [],
+        "interactions": [],
+        "complexStrokeProperties": {
+          "strokeType": "BASIC"
+        }
+      },
+      {
+        "id": "474:11693",
+        "name": "infobar",
+        "type": "FRAME",
+        "scrollBehavior": "SCROLLS",
+        "boundVariables": {
+          "rectangleCornerRadii": {
+            "RECTANGLE_TOP_LEFT_CORNER_RADIUS": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:112:3754"
+            },
+            "RECTANGLE_TOP_RIGHT_CORNER_RADIUS": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:112:3754"
+            },
+            "RECTANGLE_BOTTOM_LEFT_CORNER_RADIUS": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:112:3754"
+            },
+            "RECTANGLE_BOTTOM_RIGHT_CORNER_RADIUS": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:112:3754"
+            }
+          },
+          "fills": [
+            {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:112:3768"
+            }
+          ]
+        },
+        "children": [
+          {
+            "id": "474:11694",
+            "name": "badge",
+            "type": "INSTANCE",
+            "scrollBehavior": "SCROLLS",
+            "boundVariables": {
+              "rectangleCornerRadii": {
+                "RECTANGLE_TOP_LEFT_CORNER_RADIUS": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:112:3754"
+                },
+                "RECTANGLE_TOP_RIGHT_CORNER_RADIUS": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:112:3754"
+                },
+                "RECTANGLE_BOTTOM_LEFT_CORNER_RADIUS": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:112:3754"
+                },
+                "RECTANGLE_BOTTOM_RIGHT_CORNER_RADIUS": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:112:3754"
+                }
+              },
+              "fills": [
+                {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:439:14441"
+                }
+              ]
+            },
+            "componentId": "112:3789",
+            "componentProperties": {
+              "Variant": {
+                "value": "2",
+                "type": "VARIANT",
+                "boundVariables": {}
+              }
+            },
+            "overrides": [
+              {
+                "id": "474:11694",
+                "overriddenFields": [
+                  "counterAxisSizingMode",
+                  "fills",
+                  "height",
+                  "width"
+                ]
+              },
+              {
+                "id": "I474:11694;112:3790",
+                "overriddenFields": [
+                  "characterStyleOverrides",
+                  "characters",
+                  "lineIndentations",
+                  "lineTypes",
+                  "styleOverrideTable",
+                  "textAlignHorizontal",
+                  "textAlignVertical",
+                  "visible"
+                ]
+              }
+            ],
+            "children": [
+              {
+                "id": "I474:11694;112:3790",
+                "name": "#text «1»",
+                "visible": false,
+                "type": "TEXT",
+                "scrollBehavior": "SCROLLS",
+                "boundVariables": {
+                  "fills": [
+                    {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:112:3761"
+                    }
+                  ]
+                },
+                "blendMode": "PASS_THROUGH",
+                "fills": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.37254902720451355,
+                      "g": 0.43529412150382996,
+                      "b": 0.5215686559677124,
+                      "a": 1
+                    },
+                    "boundVariables": {
+                      "color": {
+                        "type": "VARIABLE_ALIAS",
+                        "id": "VariableID:112:3761"
+                      }
+                    }
+                  }
+                ],
+                "strokes": [],
+                "strokeWeight": 1,
+                "strokeAlign": "OUTSIDE",
+                "absoluteBoundingBox": {
+                  "x": 13412,
+                  "y": 7123.1005859375,
+                  "width": 6,
+                  "height": 18
+                },
+                "absoluteRenderBounds": null,
+                "constraints": {
+                  "vertical": "TOP",
+                  "horizontal": "LEFT"
+                },
+                "layoutAlign": "STRETCH",
+                "layoutGrow": 0,
+                "layoutSizingHorizontal": "FIXED",
+                "layoutSizingVertical": "FIXED",
+                "characters": "0",
+                "characterStyleOverrides": [],
+                "styleOverrideTable": {},
+                "lineTypes": [
+                  "NONE"
+                ],
+                "lineIndentations": [
+                  0
+                ],
+                "style": {
+                  "fontFamily": "Geist",
+                  "fontPostScriptName": "Geist-ExtraBold",
+                  "fontStyle": "ExtraBold",
+                  "fontWeight": 800,
+                  "textCase": "UPPER",
+                  "textAutoResize": "HEIGHT",
+                  "fontSize": 11,
+                  "textAlignHorizontal": "CENTER",
+                  "textAlignVertical": "CENTER",
+                  "letterSpacing": 0.33000001311302185,
+                  "lineHeightPx": 17.049999237060547,
+                  "lineHeightPercent": 119.23077392578125,
+                  "lineHeightPercentFontSize": 154.99998474121094,
+                  "lineHeightUnit": "PIXELS"
+                },
+                "layoutVersion": 5,
+                "effects": [],
+                "interactions": [],
+                "complexStrokeProperties": {
+                  "strokeType": "BASIC"
+                }
+              }
+            ],
+            "blendMode": "PASS_THROUGH",
+            "clipsContent": false,
+            "background": [
+              {
+                "opacity": 0.5,
+                "blendMode": "NORMAL",
+                "type": "SOLID",
+                "color": {
+                  "r": 0.8045098185539246,
+                  "g": 0.27450981736183167,
+                  "b": 0.8980392217636108,
+                  "a": 1
+                },
+                "boundVariables": {
+                  "color": {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:439:14441"
+                  }
+                }
+              }
+            ],
+            "fills": [
+              {
+                "opacity": 0.5,
+                "blendMode": "NORMAL",
+                "type": "SOLID",
+                "color": {
+                  "r": 0.8045098185539246,
+                  "g": 0.27450981736183167,
+                  "b": 0.8980392217636108,
+                  "a": 1
+                },
+                "boundVariables": {
+                  "color": {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:439:14441"
+                  }
+                }
+              }
+            ],
+            "strokes": [],
+            "cornerRadius": 16,
+            "cornerSmoothing": 0,
+            "strokeWeight": 1,
+            "strokeAlign": "INSIDE",
+            "backgroundColor": {
+              "r": 0.8045098185539246,
+              "g": 0.27450981736183167,
+              "b": 0.8980392217636108,
+              "a": 0.5
+            },
+            "layoutMode": "VERTICAL",
+            "counterAxisSizingMode": "FIXED",
+            "counterAxisAlignItems": "CENTER",
+            "paddingLeft": 8,
+            "paddingRight": 8,
+            "paddingTop": 3,
+            "paddingBottom": 1,
+            "strokesIncludedInLayout": true,
+            "itemSpacing": 8,
+            "layoutWrap": "NO_WRAP",
+            "absoluteBoundingBox": {
+              "x": 13404,
+              "y": 7120.1005859375,
+              "width": 22,
+              "height": 22
+            },
+            "absoluteRenderBounds": {
+              "x": 13404,
+              "y": 7120.1005859375,
+              "width": 22,
+              "height": 22
+            },
+            "constraints": {
+              "vertical": "TOP",
+              "horizontal": "LEFT"
+            },
+            "layoutAlign": "INHERIT",
+            "layoutGrow": 0,
+            "layoutSizingHorizontal": "FIXED",
+            "layoutSizingVertical": "HUG",
+            "effects": [],
+            "interactions": [],
+            "complexStrokeProperties": {
+              "strokeType": "BASIC"
+            }
+          },
+          {
+            "id": "474:11695",
+            "name": "Контекст профессии",
+            "type": "TEXT",
+            "scrollBehavior": "SCROLLS",
+            "boundVariables": {
+              "fills": [
+                {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:112:3720"
+                }
+              ]
+            },
+            "blendMode": "PASS_THROUGH",
+            "fills": [
+              {
+                "blendMode": "NORMAL",
+                "type": "SOLID",
+                "color": {
+                  "r": 0.3490196168422699,
+                  "g": 0.3490196168422699,
+                  "b": 0.3490196168422699,
+                  "a": 1
+                },
+                "boundVariables": {
+                  "color": {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:112:3720"
+                  }
+                }
+              }
+            ],
+            "strokes": [],
+            "strokeWeight": 1,
+            "strokeAlign": "INSIDE",
+            "absoluteBoundingBox": {
+              "x": 13442,
+              "y": 7121.1005859375,
+              "width": 520,
+              "height": 20
+            },
+            "absoluteRenderBounds": {
+              "x": 13442.5703125,
+              "y": 7125.0908203125,
+              "width": 518.5087890625,
+              "height": 13.36474609375
+            },
+            "constraints": {
+              "vertical": "TOP",
+              "horizontal": "LEFT"
+            },
+            "layoutAlign": "INHERIT",
+            "layoutGrow": 0,
+            "layoutSizingHorizontal": "HUG",
+            "layoutSizingVertical": "HUG",
+            "characters": "Знает, что такое дизайн-мышление и из каких этапов состоит процесс",
+            "characterStyleOverrides": [],
+            "styleOverrideTable": {},
+            "lineTypes": [
+              "NONE"
+            ],
+            "lineIndentations": [
+              0
+            ],
+            "style": {
+              "fontFamily": "Geist",
+              "fontPostScriptName": "Geist-Medium",
+              "fontStyle": "Medium",
+              "fontWeight": 500,
+              "textAutoResize": "WIDTH_AND_HEIGHT",
+              "fontSize": 15,
+              "textAlignHorizontal": "LEFT",
+              "textAlignVertical": "TOP",
+              "letterSpacing": 0,
+              "lineHeightPx": 19.5,
+              "lineHeightPercent": 100,
+              "lineHeightUnit": "INTRINSIC_%"
+            },
+            "layoutVersion": 5,
+            "effects": [],
+            "interactions": [],
+            "complexStrokeProperties": {
+              "strokeType": "BASIC"
+            }
+          }
+        ],
+        "blendMode": "PASS_THROUGH",
+        "clipsContent": true,
+        "background": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.9333333373069763,
+              "g": 0.9490196108818054,
+              "b": 0.9686274528503418,
+              "a": 1
+            },
+            "boundVariables": {
+              "color": {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:112:3768"
+              }
+            }
+          }
+        ],
+        "fills": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.9333333373069763,
+              "g": 0.9490196108818054,
+              "b": 0.9686274528503418,
+              "a": 1
+            },
+            "boundVariables": {
+              "color": {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:112:3768"
+              }
+            }
+          }
+        ],
+        "strokes": [],
+        "cornerRadius": 16,
+        "cornerSmoothing": 0,
+        "strokeWeight": 1,
+        "strokeAlign": "INSIDE",
+        "backgroundColor": {
+          "r": 0.9333333373069763,
+          "g": 0.9490196108818054,
+          "b": 0.9686274528503418,
+          "a": 1
+        },
+        "layoutMode": "HORIZONTAL",
+        "counterAxisSizingMode": "FIXED",
+        "primaryAxisSizingMode": "FIXED",
+        "counterAxisAlignItems": "CENTER",
+        "paddingLeft": 8,
+        "paddingRight": 4,
+        "paddingTop": 4,
+        "paddingBottom": 4,
+        "strokesIncludedInLayout": true,
+        "itemSpacing": 16,
+        "layoutWrap": "NO_WRAP",
+        "absoluteBoundingBox": {
+          "x": 13396,
+          "y": 7111.1005859375,
+          "width": 831,
+          "height": 40
+        },
+        "absoluteRenderBounds": {
+          "x": 13396,
+          "y": 7111.1005859375,
+          "width": 831,
+          "height": 40
+        },
+        "constraints": {
+          "vertical": "TOP",
+          "horizontal": "LEFT"
+        },
+        "layoutAlign": "STRETCH",
+        "layoutGrow": 0,
+        "layoutSizingHorizontal": "FILL",
+        "layoutSizingVertical": "FIXED",
+        "effects": [],
+        "interactions": [],
+        "complexStrokeProperties": {
+          "strokeType": "BASIC"
+        }
+      }
+    ],
+    "blendMode": "PASS_THROUGH",
+    "clipsContent": false,
+    "background": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.9843137264251709,
+          "g": 0.9882352948188782,
+          "b": 1,
+          "a": 1
+        },
+        "boundVariables": {
+          "color": {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:112:3796"
+          }
+        }
+      }
+    ],
+    "fills": [
+      {
+        "blendMode": "NORMAL",
+        "type": "SOLID",
+        "color": {
+          "r": 0.9843137264251709,
+          "g": 0.9882352948188782,
+          "b": 1,
+          "a": 1
+        },
+        "boundVariables": {
+          "color": {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:112:3796"
+          }
+        }
+      }
+    ],
+    "strokes": [],
+    "cornerRadius": 16,
+    "cornerSmoothing": 0,
+    "strokeWeight": 1,
+    "strokeAlign": "INSIDE",
+    "backgroundColor": {
+      "r": 0.9843137264251709,
+      "g": 0.9882352948188782,
+      "b": 1,
+      "a": 1
+    },
+    "layoutMode": "VERTICAL",
+    "counterAxisSizingMode": "FIXED",
+    "paddingLeft": 15,
+    "paddingRight": 15,
+    "paddingTop": 15,
+    "paddingBottom": 15,
+    "strokesIncludedInLayout": true,
+    "itemSpacing": 8,
+    "layoutWrap": "NO_WRAP",
+    "absoluteBoundingBox": {
+      "x": 13381,
+      "y": 6953.08056640625,
+      "width": 861,
+      "height": 213.02017211914062
+    },
+    "absoluteRenderBounds": {
+      "x": 13381,
+      "y": 6953.08056640625,
+      "width": 861,
+      "height": 213.02017211914062
+    },
+    "constraints": {
+      "vertical": "TOP",
+      "horizontal": "LEFT"
+    },
+    "layoutAlign": "STRETCH",
+    "layoutGrow": 0,
+    "layoutSizingHorizontal": "FILL",
+    "layoutSizingVertical": "HUG",
+    "effects": [],
+    "interactions": [],
+    "complexStrokeProperties": {
+      "strokeType": "BASIC"
+    }
+  },
+  "components": {
+    "474:11679": {
+      "key": "01d694207d838c7ff3411a6b8bb586f02878ea11",
+      "name": "Variant=llevel choosed 1",
+      "description": "",
+      "remote": false,
+      "componentSetId": "112:7388",
+      "documentationLinks": []
+    },
+    "474:11256": {
+      "key": "a44a224daa5c3c126930e2df2231ae4b5f8a25f1",
+      "name": "Property 1=3",
+      "description": "",
+      "remote": false,
+      "componentSetId": "474:11255",
+      "documentationLinks": []
+    },
+    "474:11589": {
+      "key": "c10116a046812dcf93d7ab6b4d6e4bf7d2a9b212",
+      "name": "Property 1=default",
+      "description": "",
+      "remote": false,
+      "componentSetId": "474:11520",
+      "documentationLinks": []
+    },
+    "112:3789": {
+      "key": "a83d1a13f9ab06f1197fac4868235c5604beb77c",
+      "name": "Variant=2",
+      "description": "",
+      "remote": false,
+      "componentSetId": "112:7385",
+      "documentationLinks": []
+    },
+    "474:11521": {
+      "key": "83728b365b82e4d1b162a20a9f3ae6fe8691bfdb",
+      "name": "Property 1=1",
+      "description": "",
+      "remote": false,
+      "componentSetId": "474:11520",
+      "documentationLinks": []
+    }
+  },
+  "componentSets": {
+    "112:7388": {
+      "key": "db2a8c40ec674e1a74e423c663e520e0dc1ef18a",
+      "name": "competency-card",
+      "description": "",
+      "remote": false
+    },
+    "474:11255": {
+      "key": "06f1d29ee5ce846a294a06a2598c666e0f4440ec",
+      "name": "measure",
+      "description": "",
+      "remote": false
+    },
+    "474:11520": {
+      "key": "7ab2663310b3ade6cdf0c6b2d463f7124e9c259c",
+      "name": "badge level",
+      "description": "",
+      "remote": false
+    },
+    "112:7385": {
+      "key": "c55b81255f07afd131efdc38c3e8373fc4621546",
+      "name": "badge",
+      "description": "",
+      "remote": false
+    }
+  },
+  "schemaVersion": 0,
+  "styles": {}
+}

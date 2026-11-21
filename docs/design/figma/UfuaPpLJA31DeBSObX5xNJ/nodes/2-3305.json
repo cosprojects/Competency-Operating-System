@@ -1,0 +1,216 @@
+{
+  "document": {
+    "id": "2:3305",
+    "name": "Linear / Essentional, UI / Question Square",
+    "type": "COMPONENT",
+    "scrollBehavior": "SCROLLS",
+    "children": [
+      {
+        "id": "2:3306",
+        "name": "Vector",
+        "type": "VECTOR",
+        "scrollBehavior": "SCROLLS",
+        "blendMode": "PASS_THROUGH",
+        "fills": [],
+        "fillOverrideTable": {
+          "1": null,
+          "3": null
+        },
+        "strokes": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.10980392247438431,
+              "g": 0.15294118225574493,
+              "b": 0.2980392277240753,
+              "a": 1
+            }
+          }
+        ],
+        "strokeWeight": 1.5,
+        "strokeAlign": "CENTER",
+        "absoluteBoundingBox": {
+          "x": 117,
+          "y": 11119,
+          "width": 20,
+          "height": 20
+        },
+        "absoluteRenderBounds": {
+          "x": 116.25,
+          "y": 11118.25,
+          "width": 21.5,
+          "height": 21.5
+        },
+        "constraints": {
+          "vertical": "SCALE",
+          "horizontal": "SCALE"
+        },
+        "effects": [],
+        "interactions": [],
+        "complexStrokeProperties": {
+          "strokeType": "BASIC"
+        }
+      },
+      {
+        "id": "2:3307",
+        "name": "Vector",
+        "type": "VECTOR",
+        "scrollBehavior": "SCROLLS",
+        "blendMode": "PASS_THROUGH",
+        "fills": [],
+        "fillOverrideTable": {
+          "1": null,
+          "2": null
+        },
+        "strokes": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.10980392247438431,
+              "g": 0.15294118225574493,
+              "b": 0.2980392277240753,
+              "a": 1
+            }
+          }
+        ],
+        "strokeWeight": 1.5,
+        "strokeAlign": "CENTER",
+        "strokeCap": "ROUND",
+        "rectangleCornerRadii": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "cornerSmoothing": 0,
+        "absoluteBoundingBox": {
+          "x": 125.125,
+          "y": 11124,
+          "width": 3.75,
+          "height": 6
+        },
+        "absoluteRenderBounds": {
+          "x": 124.375,
+          "y": 11123.25,
+          "width": 5.25,
+          "height": 7.5
+        },
+        "constraints": {
+          "vertical": "SCALE",
+          "horizontal": "SCALE"
+        },
+        "effects": [],
+        "interactions": [],
+        "complexStrokeProperties": {
+          "strokeType": "BASIC"
+        }
+      },
+      {
+        "id": "2:3308",
+        "name": "Vector",
+        "type": "ELLIPSE",
+        "scrollBehavior": "SCROLLS",
+        "blendMode": "PASS_THROUGH",
+        "fills": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.10980392247438431,
+              "g": 0.15294118225574493,
+              "b": 0.2980392277240753,
+              "a": 1
+            }
+          }
+        ],
+        "strokes": [],
+        "strokeWeight": 1,
+        "strokeAlign": "INSIDE",
+        "absoluteBoundingBox": {
+          "x": 126,
+          "y": 11132,
+          "width": 2,
+          "height": 2
+        },
+        "absoluteRenderBounds": {
+          "x": 126,
+          "y": 11132,
+          "width": 2,
+          "height": 2
+        },
+        "constraints": {
+          "vertical": "SCALE",
+          "horizontal": "SCALE"
+        },
+        "effects": [],
+        "arcData": {
+          "startingAngle": 0,
+          "endingAngle": 6.2831854820251465,
+          "innerRadius": 0
+        },
+        "interactions": [],
+        "complexStrokeProperties": {
+          "strokeType": "BASIC"
+        }
+      }
+    ],
+    "blendMode": "PASS_THROUGH",
+    "clipsContent": true,
+    "background": [],
+    "fills": [],
+    "strokes": [],
+    "strokeWeight": 1,
+    "strokeAlign": "INSIDE",
+    "backgroundColor": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 0
+    },
+    "absoluteBoundingBox": {
+      "x": 115,
+      "y": 11117,
+      "width": 24,
+      "height": 24
+    },
+    "absoluteRenderBounds": {
+      "x": 115,
+      "y": 11117,
+      "width": 24,
+      "height": 24
+    },
+    "constraints": {
+      "vertical": "TOP",
+      "horizontal": "LEFT"
+    },
+    "exportSettings": [
+      {
+        "suffix": "",
+        "format": "SVG",
+        "constraint": {
+          "type": "SCALE",
+          "value": 1
+        }
+      }
+    ],
+    "effects": [],
+    "interactions": [],
+    "complexStrokeProperties": {
+      "strokeType": "BASIC"
+    }
+  },
+  "components": {
+    "2:3305": {
+      "key": "0c00b5751e7309dbbaa0a78b873ea619c55e79c1",
+      "name": "Linear / Essentional, UI / Question Square",
+      "description": "",
+      "remote": false,
+      "documentationLinks": []
+    }
+  },
+  "componentSets": {},
+  "schemaVersion": 0,
+  "styles": {}
+}

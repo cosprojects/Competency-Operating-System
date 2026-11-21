@@ -1,10 +1,10 @@
 ---
 id: COS-REL-007
 title: Реестр документации перед Beta 1
-version: 1.6.0
+version: 1.8.0
 status: Draft
 owner: Product Team
-last_updated: 2026-11-18
+last_updated: 2026-11-20
 references:
   - COS-REL-000
   - COS-REL-008
@@ -100,6 +100,7 @@ references:
 | `docs/12-release/reports/vds-2026-11-10.md` | VDS-контур app.axiona.world | Approved | REL-005/014 | Engineering | Обновлять при изменении сервера/деплоя | До Beta |
 | `docs/12-release/reports/qa-2026-11-10.md` | QA локального контура: профиль, admin, audit | Approved | REL-014, ARCH-173, EAR-013/014 | Engineering | Поддерживать при QA-прогонах | До Beta |
 | `docs/12-release/reports/demo-2026-11-09.md` | Demo-сборка и ограничения | Approved | REL-014, REL-005 | Engineering | Поддерживать при каждом demo-релизе | До Beta |
+| `docs/12-release/reports/ui-copy-audit-2026-11-20.md` | Аудит интерфейсных текстов: голос, анти-слоп, правки «до → после», открытые вопросы | Актуален | `COS-COM-010`, `AGENTS.md`, ADR-032 | Product, Web, UX | Перепроверять при изменении голоса; `npm run copy:check` — на каждую правку текста | До Beta |
 | `docs/12-release/COS-REL-014-Project-Audit-2026-11-09.md` | Аудит состояния проекта и документации | Draft | REL-000/001/002/005/012/013 | Все | Пересматривать перед публичным запуском; обновлять после закрытия P0 | До Beta |
 | `docs/12-release/COS-REL-013-Beta-Backlog-Review.md` | Детализация Beta-backlog на апрув | Approved | REL-012, BP-005 | tasks/ | Поддерживать решения и зависимости; обновлять при изменении scope | До Beta |
 | `README.md` | Вход в репозиторий | Актуален для Beta 1 | Beta scope | Все | Поддерживать статус и команды | До Beta |
@@ -138,5 +139,6 @@ references:
 | 1.3.0 | 2026-11-05 | Добавлена спека `COS-EAR-015` (публичная регистрация по email) и ссылка на ADR-022 |
 | 1.6.0 | 2026-11-18 | Добавлены `COS-RES-033` (fit-матрица) и `COS-EAR-018` (MVP «План»); обновлены ADR-031, глоссарий, legal |
 | 1.7.0 | 2026-11-19 | Редизайн «Плана»: шаги, профессии с фильтрами, выбор грейда, табы самооценки, новый результат |
+| 1.8.0 | 2026-11-20 | Голос и анти-слоп: `COS-COM-010` 2.1.0, `COS-COM-008/009` 1.1.0, `AGENTS.md`, ADR-032, отчёт `ui-copy-audit-2026-11-20`, `npm run copy:check` |
 | 1.5.0 | 2026-11-11 | Legal 1.1.0: реквизиты НПД, Resend/Proton, `COS-LEG-005` (РКН), VDS/Resend отчёты |
 | 1.5.1 | 2026-11-12 | Добавлен `COS-COM-011` — промпт-кит ролика (визуальный язык, сценарий, раскадровка, видео-промпты) |

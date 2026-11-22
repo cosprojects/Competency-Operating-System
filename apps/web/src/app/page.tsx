@@ -205,8 +205,9 @@ export default async function HomePage({
 
             <section className="home-page-panel home-page-log" aria-labelledby="home-page-log-title">
               <h2 id="home-page-log-title"><img className="home-page-icon" src="/icons/home/starfall.svg" alt="" aria-hidden="true" /> Последние обновления</h2>
-              <div className="home-page-log-list">
-                {allChangelog().slice(0, 6).map((entry) => (
+              {/* Весь лог: список скроллится внутри блока (как в макете), а не обрезается. */}
+              <div className="home-page-log-list" tabIndex={0} aria-label="Записи лога обновлений">
+                {allChangelog().map((entry) => (
                   <article className="home-page-log-item" key={`${entry.date}-${entry.title}`}>
                     <div className="home-page-log-head">
                       <span className="home-page-log-date">{formatChangelogDate(entry.date)}</span>

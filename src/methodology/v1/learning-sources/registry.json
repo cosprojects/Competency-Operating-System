@@ -1,6 +1,6 @@
 {
   "registryVersion": "1.0.0",
-  "updatedAt": "2026-11-18",
+  "updatedAt": "2026-11-22",
   "sources": [
     {
       "id": "motiondesign-school-courses",
@@ -41,10 +41,11 @@
         "ai motion"
       ],
       "discoveredBy": "user",
-      "lastChecked": "2026-10-22",
+      "lastChecked": "2026-11-22",
       "httpStatus": 200,
       "notes": "Каталог курсов и инструментов; первоисточник программы.",
-      "summary": "Каталог курсов Motion Design School: моушн, After Effects, 3D и производственные пайплайны."
+      "summary": "Каталог курсов Motion Design School: моушн, After Effects, 3D и производственные пайплайны.",
+      "finalUrl": "https://motiondesign.school/courses/"
     },
     {
       "id": "motiondesign-school-youtube",
@@ -72,9 +73,10 @@
         "showreel"
       ],
       "discoveredBy": "user",
-      "lastChecked": "2026-10-22",
+      "lastChecked": "2026-11-22",
       "httpStatus": 200,
-      "summary": "YouTube-канал Motion Design School: туториалы по After Effects, анимации и 3D."
+      "summary": "YouTube-канал Motion Design School: туториалы по After Effects, анимации и 3D.",
+      "finalUrl": "https://www.youtube.com/@motiondesignschool"
     },
     {
       "id": "petrick-mds-case",
@@ -106,10 +108,11 @@
         "brand case"
       ],
       "discoveredBy": "user",
-      "lastChecked": "2026-10-22",
+      "lastChecked": "2026-11-22",
       "httpStatus": 200,
       "notes": "Кейс/обзор школы, не учебная программа.",
-      "summary": "Кейс Petrick о Motion Design School: пример позиционирования и подачи образовательного проекта."
+      "summary": "Кейс Petrick о Motion Design School: пример позиционирования и подачи образовательного проекта.",
+      "finalUrl": "https://www.petrick.co/projects/mds-what-is-motion-design-school"
     },
     {
       "id": "school-of-motion",
@@ -145,9 +148,10 @@
         "design career"
       ],
       "discoveredBy": "user",
-      "lastChecked": "2026-10-22",
+      "lastChecked": "2026-11-22",
       "httpStatus": 200,
-      "summary": "Школа motion-дизайна: курсы и learning paths по анимации, After Effects и карьере."
+      "summary": "Школа motion-дизайна: курсы и learning paths по анимации, After Effects и карьере.",
+      "finalUrl": "https://schoolofmotion.com/"
     },
     {
       "id": "motiondesign-school-vimeo",
@@ -170,9 +174,10 @@
         "student work"
       ],
       "discoveredBy": "user",
-      "lastChecked": "2026-10-22",
+      "lastChecked": "2026-11-22",
       "httpStatus": 200,
-      "summary": "Vimeo-канал Motion Design School: студенческие работы, шоурилы и разборы motion-проектов."
+      "summary": "Vimeo-канал Motion Design School: студенческие работы, шоурилы и разборы motion-проектов.",
+      "finalUrl": "https://vimeo.com/motiondesignschool"
     },
     {
       "id": "coursetrain-motiondesign-school",
@@ -261,10 +266,11 @@
         "art direction"
       ],
       "discoveredBy": "user",
-      "lastChecked": "2026-10-22",
+      "lastChecked": "2026-11-22",
       "httpStatus": 200,
       "notes": "Официальный каталог программ; страницы профессий проверяются отдельно.",
-      "summary": "Каталог программ Практикума по дизайну: UX/UI, продуктовый, графический, motion и другие направления."
+      "summary": "Каталог программ Практикума по дизайну: UX/UI, продуктовый, графический, motion и другие направления.",
+      "finalUrl": "https://practicum.yandex.ru/catalog/design/"
     },
     {
       "id": "school-of-motion-free",
@@ -295,9 +301,10 @@
         "workflow"
       ],
       "discoveredBy": "user",
-      "lastChecked": "2026-10-22",
+      "lastChecked": "2026-11-22",
       "httpStatus": 200,
-      "summary": "Бесплатные материалы School of Motion: туториалы, брифы и разборы работ."
+      "summary": "Бесплатные материалы School of Motion: туториалы, брифы и разборы работ.",
+      "finalUrl": "https://schoolofmotion.com/free"
     },
     {
       "id": "classcentral-uxui-ipl",
@@ -356,9 +363,10 @@
         "prototyping"
       ],
       "discoveredBy": "user",
-      "lastChecked": "2026-10-22",
+      "lastChecked": "2026-11-22",
       "httpStatus": 200,
-      "summary": "Бесплатный курс Great Learning по UI/UX: исследования, прототипы, визуальный дизайн."
+      "summary": "Бесплатный курс Great Learning по UI/UX: исследования, прототипы, визуальный дизайн.",
+      "finalUrl": "https://www.mygreatlearning.com/academy/learn-for-free/courses/ui-ux"
     },
     {
       "id": "coursera-uxui-fundamentals",
@@ -393,9 +401,10 @@
         "prototyping"
       ],
       "discoveredBy": "user",
-      "lastChecked": "2026-10-22",
+      "lastChecked": "2026-11-22",
       "httpStatus": 200,
-      "summary": "Курс Coursera по UX/UI: юзабилити, визуальные принципы, прототипирование."
+      "summary": "Курс Coursera по UX/UI: юзабилити, визуальные принципы, прототипирование.",
+      "finalUrl": "https://www.coursera.org/learn/uxui-design-fundamentals-usability-and-visual-principles"
     },
     {
       "id": "figma-design-basics",
@@ -428,9 +437,10 @@
         "design principles"
       ],
       "discoveredBy": "user",
-      "lastChecked": "2026-10-22",
+      "lastChecked": "2026-11-22",
       "httpStatus": 200,
-      "summary": "Официальная библиотека Figma Design Basics: основы интерфейса, компоненты, стили и прототипы."
+      "summary": "Официальная библиотека Figma Design Basics: основы интерфейса, компоненты, стили и прототипы.",
+      "finalUrl": "https://www.figma.com/resource-library/design-basics/"
     },
     {
       "id": "medium-free-uiux-courses",
@@ -488,9 +498,10 @@
         "prototyping"
       ],
       "discoveredBy": "user",
-      "lastChecked": "2026-10-22",
+      "lastChecked": "2026-11-22",
       "httpStatus": 200,
-      "summary": "Вводный курс Codecademy по UI/UX: исследования, прототипы и визуальные основы."
+      "summary": "Вводный курс Codecademy по UI/UX: исследования, прототипы и визуальные основы.",
+      "finalUrl": "https://www.codecademy.com/learn/intro-to-ui-ux"
     },
     {
       "id": "uxwoman-free-uiux",
@@ -578,9 +589,10 @@
         "prototyping"
       ],
       "discoveredBy": "user",
-      "lastChecked": "2026-10-22",
+      "lastChecked": "2026-11-22",
       "httpStatus": 200,
-      "summary": "Программа Coursera/Microsoft по продуктовому дизайну и UX/UI: исследования, прототипы, продуктовое мышление."
+      "summary": "Программа Coursera/Microsoft по продуктовому дизайну и UX/UI: исследования, прототипы, продуктовое мышление.",
+      "finalUrl": "https://www.coursera.org/learn/microsoft-product-design-and-ux-ui-fundamentals"
     },
     {
       "id": "classcentral-udacity-product-design",
@@ -683,9 +695,10 @@
         "prototyping"
       ],
       "discoveredBy": "user",
-      "lastChecked": "2026-10-22",
+      "lastChecked": "2026-11-22",
       "httpStatus": 200,
-      "summary": "Курс Udacity по продуктовому дизайну: исследования, прототипы и проверка гипотез."
+      "summary": "Курс Udacity по продуктовому дизайну: исследования, прототипы и проверка гипотез.",
+      "finalUrl": "https://www.udacity.com/course/product-design--ud509"
     },
     {
       "id": "alison-product-design",
@@ -743,9 +756,10 @@
         "composition"
       ],
       "discoveredBy": "user",
-      "lastChecked": "2026-10-22",
+      "lastChecked": "2026-11-22",
       "httpStatus": 200,
-      "summary": "Курс Coursera по основам графического дизайна: композиция, цвет, типографика, изображение."
+      "summary": "Курс Coursera по основам графического дизайна: композиция, цвет, типографика, изображение.",
+      "finalUrl": "https://www.coursera.org/learn/fundamentals-of-graphic-design"
     },
     {
       "id": "alison-graphic-design",
@@ -778,9 +792,10 @@
         "tools"
       ],
       "discoveredBy": "user",
-      "lastChecked": "2026-10-22",
+      "lastChecked": "2026-11-22",
       "httpStatus": 200,
-      "summary": "Бесплатный курс Alison по основам графического дизайна: композиция, цвет, типографика и практические упражнения."
+      "summary": "Бесплатный курс Alison по основам графического дизайна: композиция, цвет, типографика и практические упражнения.",
+      "finalUrl": "https://alison.com/course/graphic-design"
     },
     {
       "id": "coursera-graphic-free",
@@ -828,9 +843,10 @@
         "visual design"
       ],
       "discoveredBy": "user",
-      "lastChecked": "2026-10-22",
+      "lastChecked": "2026-11-22",
       "httpStatus": 200,
-      "summary": "Бесплатный курс Great Learning по графическому дизайну в Photoshop: визуальные элементы и обработка изображений."
+      "summary": "Бесплатный курс Great Learning по графическому дизайну в Photoshop: визуальные элементы и обработка изображений.",
+      "finalUrl": "https://www.mygreatlearning.com/academy/learn-for-free/courses/intro-to-graphic-design-with-photoshop"
     },
     {
       "id": "classcentral-graphic-design",

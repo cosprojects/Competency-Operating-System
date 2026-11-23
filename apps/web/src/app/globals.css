@@ -1526,6 +1526,8 @@ svg {
   background: var(--card);
   box-shadow: 0 1px 2px rgba(19, 34, 56, 0.05);
   color: inherit;
+  /* Карточка — ссылка на страницу компетенции, подчёркивание ей не нужно. */
+  text-decoration: none;
   text-align: left;
   cursor: pointer;
 }

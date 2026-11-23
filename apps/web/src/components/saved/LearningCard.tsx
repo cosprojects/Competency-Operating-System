@@ -197,7 +197,7 @@ export function LearningCard({
             ) : null}
           </div>
           <h3>
-            <Link className="stretched-link" href={`/professions/${card.professionSlug}?competency=${card.competencyId}`}>
+            <Link className="stretched-link" href={`/professions/${card.professionSlug}/${card.competencyId}`}>
               {card.title}
             </Link>
           </h3>
@@ -379,7 +379,7 @@ export function LearningCard({
                   <Link
                     className="occurrence-row"
                     key={`${occurrence.professionSlug}-${occurrence.sectionTitle}`}
-                    href={`/professions/${occurrence.professionSlug}?competency=${card.competencyId}`}
+                    href={`/professions/${occurrence.professionSlug}/${card.competencyId}`}
                   >
                     <span className="occurrence-text">
                       <strong>{occurrence.professionTitle}</strong>

@@ -1,10 +1,10 @@
 ---
 id: COS-REL-007
 title: Реестр документации перед Beta 1
-version: 1.8.0
+version: 1.8.1
 status: Draft
 owner: Product Team
-last_updated: 2026-11-20
+last_updated: 2026-11-23
 references:
   - COS-REL-000
   - COS-REL-008
@@ -72,6 +72,7 @@ references:
 | `docs/07-website/COS-WEB-000-Website-Book.md` | Архитектура сайта | Уточнить | COM-001 | Landing, Investors | Добавить продукт `axiona.world` и корпоративный `axiona.biz`; обновить roles | До Beta |
 | `docs/07-website/COS-WEB-001-Landing-page.md` | Контент лендинга | Синхронизировать | COM-001 | Website Book | Убрать pre-development и неподтверждённые показатели; добавить CTA в Beta | До Beta |
 | `docs/07-website/COS-WEB-002-For-Investors.md` | Инвесторский контент | Синхронизировать | BP-003, Beta data | Pitch Deck | Не обещать диагностику как текущую функцию; обновить после Beta | После Beta |
+| `docs/07-website/COS-WEB-005-SEO-and-Indexing.md` | SEO и индексация: контур `app.axiona.world`, canonical, sitemap, панели вебмастеров | Актуален | COS-REL-005, COS-WEB-000 | REL-005, landing | Обновлять при смене домена, маршрутов и правил sitemap/noindex; P1 — чистые адреса компетенций | До Beta |
 | `docs/08-business-plan/COS-BP-003-Business-Plan.md` | Бизнес-план | Синхронизировать | RES-005/008 | BP-004, Investors | Beta-addendum; диагностическая воронка — следующий слой, не текущий прогноз | После Beta |
 | `docs/08-business-plan/COS-BP-004-Product-Roadmap-MVP.md` | Предыдущая roadmap MVP | Historical | BP-003 | Experience, ADE | Сохранять как историю; актуальная последовательность — `COS-BP-005` | Стратегический |
 | `docs/08-business-plan/COS-BP-005-Product-Roadmap-AXIONA-COS.md` | Стратегическая дорожная карта AXIONA/COS | Актуален (рабочая версия) | Foundation, ADE, Business | BP-003, REL-000 | Поддерживать этапы и критерии перехода; не превращать в календарный план | Стратегический |

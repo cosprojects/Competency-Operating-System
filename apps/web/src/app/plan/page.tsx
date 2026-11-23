@@ -7,12 +7,18 @@ import { ProfessionCard } from "@/components/plan/ProfessionCard";
 import { getCurrentUser } from "@/lib/auth";
 import { getLatestMatrix } from "@/lib/matrix-server";
 import { listMatrixProfessions } from "@/lib/matrix";
+import { canonical, socialMetadata } from "@/lib/site";
 
 export const dynamic = "force-dynamic";
 
+const TITLE = "План — матрица компетенций";
+const DESCRIPTION = "Собери матрицу своих компетенций, сравни с грейдом и пойми, что подтянуть.";
+
 export const metadata: Metadata = {
-  title: "План — матрица компетенций",
-  description: "Собери матрицу своих компетенций, сравни с грейдом и пойми, что подтянуть.",
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: canonical("/plan"),
+  ...socialMetadata({ title: TITLE, description: DESCRIPTION, path: "/plan" }),
 };
 
 const STEPS = [

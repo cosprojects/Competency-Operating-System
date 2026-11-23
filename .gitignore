@@ -76,6 +76,9 @@ release/publications/
 # Журнал запусков Agent Console: рабочее состояние, не контент
 .agent-console/
 
+# Сборка OG-картинки: HTML и профиль Chrome — рабочее состояние, ассет лежит в public
+.og-build/
+
 # Неиспользуемые Figma-экспорты в public/icons: иконки интерфейса живут в icons.tsx.
 /apps/web/public/icons/09 */
 /apps/web/public/icons/Competency card/

@@ -12,21 +12,29 @@ export const TIER_LABEL: Record<CanvasCompetency["tier"], string> = {
 
 interface CompetencyTileProps {
   competency: CanvasCompetency;
+  /** Чистый адрес страницы компетенции: карточка — настоящая ссылка. */
+  href: string;
   order: number;
   active: boolean;
   hovered: boolean;
   onSelect: (id: string) => void;
   onHover: (id: string | null) => void;
-  register: (id: string, element: HTMLButtonElement | null) => void;
+  register: (id: string, element: HTMLAnchorElement | null) => void;
 }
 
 /**
  * Карточка компетенции в левом рейле вынесена в memo: при наведении и выборе
  * меняются только две карточки из десятков, остальные не перерисовываются.
  * Рефы пишутся через стабильную функцию — иначе memo не сработал бы.
+ *
+ * Это ссылка, а не кнопка: у каждой компетенции есть свой адрес, и краулер
+ * должен проходить по карте профессии, а не упираться в `onClick`. Обычный
+ * клик перехватываем (панель открывается без перезагрузки), Cmd/Ctrl/Shift —
+ * отдаём браузеру: новая вкладка и копирование адреса работают как обычно.
  */
 export const CompetencyTile = memo(function CompetencyTile({
   competency,
+  href,
   order,
   active,
   hovered,
@@ -35,11 +43,16 @@ export const CompetencyTile = memo(function CompetencyTile({
   register,
 }: CompetencyTileProps) {
   return (
-    <button
-      type="button"
+    <a
       ref={(element) => register(competency.id, element)}
       className={`competency-tile${active ? " is-active" : ""}${hovered && !active ? " is-hover" : ""}`}
-      onClick={() => onSelect(competency.id)}
+      href={href}
+      draggable={false}
+      onClick={(event) => {
+        if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        event.preventDefault();
+        onSelect(competency.id);
+      }}
       onMouseEnter={() => onHover(competency.id)}
       onMouseLeave={() => onHover(null)}
       onFocus={() => onHover(competency.id)}
@@ -52,6 +65,6 @@ export const CompetencyTile = memo(function CompetencyTile({
       <h4>{competency.title}</h4>
       <p>{competency.definition}</p>
       <span className="tile-meta">{competencyMeta(competency)}</span>
-    </button>
+    </a>
   );
 });

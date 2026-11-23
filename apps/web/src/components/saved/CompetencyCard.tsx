@@ -15,7 +15,7 @@ export function CompetencyCard({ item }: { item: CompetencyCardData }) {
   return (
     <Link
       className="competency-card"
-      href={`/professions/${item.professionSlug}?competency=${item.id}`}
+      href={`/professions/${item.professionSlug}/${item.id}`}
     >
       <span className="competency-card-top">
         <span className={`badge ${item.tierClass}`}>{item.tierLabel}</span>

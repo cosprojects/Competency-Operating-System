@@ -22,10 +22,12 @@ import type { ContentSource } from "@/lib/content-types";
 import { getDb } from "@/lib/db";
 import { loadPlanContext } from "@/lib/matrix-server";
 import { sphereBadgeStyle } from "@/lib/spheres";
+import { NOINDEX_NOFOLLOW } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
 
 export const metadata = {
+  ...NOINDEX_NOFOLLOW,
   title: "Изучаю — AXIONA",
 };
 

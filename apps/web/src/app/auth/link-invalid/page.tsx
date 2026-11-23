@@ -1,6 +1,8 @@
 import Link from "next/link";
+import { NOINDEX_NOFOLLOW } from "@/lib/seo";
 
 export const metadata = {
+  ...NOINDEX_NOFOLLOW,
   title: "Ссылка больше не действует — AXIONA",
 };
 

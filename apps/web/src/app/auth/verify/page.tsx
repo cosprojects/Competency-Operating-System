@@ -2,10 +2,12 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { AutoVerify } from "@/components/auth/AutoVerify";
 import { loginLinkTtlText, peekLoginToken } from "@/lib/auth";
+import { NOINDEX_NOFOLLOW } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
 
 export const metadata = {
+  ...NOINDEX_NOFOLLOW,
   title: "Подтверждение входа — AXIONA",
 };
 

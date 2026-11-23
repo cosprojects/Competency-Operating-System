@@ -129,7 +129,7 @@ export function CompetencyDetail({
   onToggleExpanded: () => void;
   onClose: () => void;
 }) {
-  const returnTo = `/professions/${profession.slug}?competency=${competency.id}`;
+  const returnTo = `/professions/${profession.slug}/${competency.id}`;
   const loginHref = `/login?returnTo=${encodeURIComponent(returnTo)}`;
   const gateHref = `/register?returnTo=${encodeURIComponent(returnTo)}`;
   const tags = [profession.title, ...competency.knowledge.slice(0, 2).map((item) => item.title)];
@@ -386,7 +386,7 @@ export function CompetencyDetail({
             <Link
               className="occurrence-row"
               key={`${occurrence.professionSlug}-${occurrence.sectionTitle}`}
-              href={`/professions/${occurrence.professionSlug}?competency=${competency.id}`}
+              href={`/professions/${occurrence.professionSlug}/${competency.id}`}
             >
               <span className="occurrence-text">
                 <strong>{occurrence.professionTitle}</strong>

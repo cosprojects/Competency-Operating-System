@@ -1,0 +1,181 @@
+import { notFound } from "next/navigation";
+import { ProfessionCanvas } from "@/components/canvas/ProfessionCanvas";
+import type { CanvasCompetency, CanvasProfession, CompetencyStates, ItemStates } from "@/components/canvas/types";
+import { JsonLd } from "@/components/JsonLd";
+import { ViewEvent } from "@/components/ViewEvent";
+import { getCurrentUser } from "@/lib/auth";
+import { findCompetencies, getProfession, getProfessionGroups, professionSphere } from "@/lib/content";
+import { getDb } from "@/lib/db";
+import { loadProfessionSourceReviews } from "@/lib/source-review-server";
+import { competencyJsonLd, professionJsonLd } from "@/lib/structured-data";
+
+/**
+ * Отрисовка профессии для двух маршрутов:
+ *
+ * - `/professions/[slug]` — карта профессии целиком;
+ * - `/professions/[slug]/[competency]` — та же карта с открытой компетенцией.
+ *
+ * Тело общее, чтобы страницы не расходились по данным и вёрстке: разница только
+ * в том, какая компетенция открыта изначально. Раньше открытая компетенция жила
+ * в `?competency=…`, то есть не была отдельным адресом и не индексировалась.
+ */
+export async function ProfessionView({
+  slug,
+  competencyId,
+  view,
+}: {
+  slug: string;
+  competencyId?: string;
+  view?: string;
+}) {
+  const profession = getProfession(slug);
+  if (!profession) notFound();
+
+  const user = await getCurrentUser();
+  const db = getDb();
+  const competencyIds = profession.sections.flatMap((section) =>
+    section.competencies.map((competency) => competency.id),
+  );
+  // Подтверждения и блокировки материалов (COS-REL-009): статусы считаются на сервере,
+  // заблокированные карточки не доходят до клиента.
+  const reviewIndex = await loadProfessionSourceReviews(db, profession, user?.id ?? null);
+
+  const states: CompetencyStates = {};
+  const itemStates: ItemStates = {};
+  let professionSaved = false;
+  const viewedSourceIds = new Set<string>();
+  const savedSourceIds = new Set<string>();
+  if (user) {
+    const [favorites, studyStatuses, views, marks] = await Promise.all([
+      db.favorite.findMany({ where: { userId: user.id } }),
+      db.studyStatus.findMany({ where: { userId: user.id } }),
+      db.sourceView.findMany({ where: { userId: user.id }, select: { sourceId: true } }),
+      db.studyMark.findMany({ where: { userId: user.id } }),
+    ]);
+    for (const mark of marks) {
+      if (mark.targetType === "KNOWLEDGE" || mark.targetType === "SKILL") {
+        itemStates[mark.targetId] = mark.status;
+      }
+    }
+    for (const item of views) viewedSourceIds.add(item.sourceId);
+    const savedIds = new Set(
+      favorites.filter((favorite) => favorite.targetType === "COMPETENCY").map((favorite) => favorite.targetId),
+    );
+    for (const favorite of favorites) {
+      if (favorite.targetType === "SOURCE") savedSourceIds.add(favorite.targetId);
+    }
+    professionSaved = favorites.some(
+      (favorite) => favorite.targetType === "PROFESSION" && favorite.targetId === profession.slug,
+    );
+    const statusById = new Map(studyStatuses.map((record) => [record.competencyId, record.status]));
+    for (const id of competencyIds) {
+      states[id] = {
+        saved: savedIds.has(id),
+        status: (statusById.get(id) ?? "NOT_STARTED") as "NOT_STARTED" | "LEARNING" | "LEARNED",
+      };
+    }
+  }
+
+  const competencies: CanvasCompetency[] = profession.sections.flatMap((section) =>
+    section.competencies.map((competency) => ({
+      id: competency.id,
+      title: competency.title,
+      ...(competency.titleEn ? { titleEn: competency.titleEn } : {}),
+      definition: competency.definition,
+      tier: competency.tier,
+      order: competency.order,
+      sectionId: section.id,
+      sectionTitle: section.title,
+      prerequisites: competency.prerequisites,
+      knowledge: competency.knowledge,
+      skills: competency.skills,
+      sources: competency.sources
+        .filter((source) => !reviewIndex.hidden.has(`${competency.id}|${source.id}`))
+        .map((source) => {
+          const review = reviewIndex.byPair.get(`${competency.id}|${source.id}`);
+          return {
+            ...source,
+            ...(review ? { reviewStatus: review.status, myReviewAction: review.myAction } : {}),
+            ...(viewedSourceIds.has(source.id) ? { viewed: true } : {}),
+            ...(savedSourceIds.has(source.id) ? { saved: true } : {}),
+          };
+        }),
+      occurrences: findCompetencies(competency.id).map((occurrence) => ({
+        professionSlug: occurrence.profession.slug,
+        professionTitle: occurrence.profession.title,
+        sectionTitle: occurrence.section.title,
+      })),
+    })),
+  );
+
+  const sphere = professionSphere(profession);
+  const canvasProfession: CanvasProfession = {
+    id: profession.id,
+    slug: profession.slug,
+    title: profession.title,
+    sphere: { title: sphere.title, color: sphere.color },
+    ...(profession.titleEn ? { titleEn: profession.titleEn } : {}),
+    description: profession.description,
+    published: profession.coverage.published,
+    total: profession.coverage.total,
+    percent: profession.coverage.percent,
+    sections: profession.sections.map((section) => ({
+      id: section.id,
+      title: section.title,
+      competencyIds: section.competencies.map((competency) => competency.id),
+    })),
+  };
+
+  // Переключение между профессиями внутри выбранной сферы.
+  const sphereGroup = getProfessionGroups().find((group) =>
+    group.professions.some((item) => item.slug === profession.slug),
+  );
+  const sphereIndex = sphereGroup
+    ? sphereGroup.professions.findIndex((item) => item.slug === profession.slug)
+    : -1;
+  const prevItem = sphereGroup && sphereIndex > 0 ? sphereGroup.professions[sphereIndex - 1] : null;
+  const nextItem =
+    sphereGroup && sphereIndex >= 0 && sphereIndex < sphereGroup.professions.length - 1
+      ? sphereGroup.professions[sphereIndex + 1]
+      : null;
+  const prevProfession = prevItem ? { slug: prevItem.slug, title: prevItem.title } : null;
+  const nextProfession = nextItem ? { slug: nextItem.slug, title: nextItem.title } : null;
+
+  const initialCompetencyId =
+    competencyId && competencyIds.includes(competencyId) ? competencyId : undefined;
+  const initialView = view === "network" ? "network" : "board";
+  const selectedCompetency = initialCompetencyId
+    ? profession.sections
+        .flatMap((section) => section.competencies)
+        .find((competency) => competency.id === initialCompetencyId)
+    : undefined;
+
+  return (
+    <>
+      {selectedCompetency ? (
+        <JsonLd data={competencyJsonLd(selectedCompetency, profession)} />
+      ) : (
+        <JsonLd data={professionJsonLd(profession, sphere.title)} />
+      )}
+      <ViewEvent name="profession_view" props={{ profession_id: profession.id }} />
+      {initialCompetencyId ? (
+        <ViewEvent
+          name="competency_view"
+          props={{ profession_id: profession.id, competency_id: initialCompetencyId }}
+        />
+      ) : null}
+      <ProfessionCanvas
+        profession={canvasProfession}
+        competencies={competencies}
+        states={states}
+        itemStates={itemStates}
+        viewer={user ? { email: user.email } : null}
+        professionSaved={professionSaved}
+        initialCompetencyId={initialCompetencyId}
+        initialView={initialView}
+        prevProfession={prevProfession}
+        nextProfession={nextProfession}
+      />
+    </>
+  );
+}

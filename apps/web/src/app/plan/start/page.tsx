@@ -5,10 +5,12 @@ import { redirect } from "next/navigation";
 import { ProfessionCard } from "@/components/plan/ProfessionCard";
 import { PlanStepper } from "@/components/plan/PlanStepper";
 import { listMatrixFamilies, listMatrixProfessions } from "@/lib/matrix";
+import { NOINDEX_NOFOLLOW } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
+  ...NOINDEX_NOFOLLOW,
   title: "План — выбор профессии",
 };
 

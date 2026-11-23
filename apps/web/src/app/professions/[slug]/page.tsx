@@ -1,12 +1,8 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
-import { ProfessionCanvas } from "@/components/canvas/ProfessionCanvas";
-import type { CanvasCompetency, CanvasProfession, CompetencyStates, ItemStates } from "@/components/canvas/types";
-import { ViewEvent } from "@/components/ViewEvent";
-import { getCurrentUser } from "@/lib/auth";
-import { findCompetencies, getProfession, getProfessionGroups, professionSphere } from "@/lib/content";
-import { getDb } from "@/lib/db";
-import { loadProfessionSourceReviews } from "@/lib/source-review-server";
+import { notFound, permanentRedirect } from "next/navigation";
+import { getProfession } from "@/lib/content";
+import { canonical, socialMetadata } from "@/lib/site";
+import { ProfessionView } from "./profession-view";
 
 export const dynamic = "force-dynamic";
 
@@ -17,14 +13,24 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const profession = getProfession(slug);
-  if (!profession) return { title: "Профессия — AXIONA" };
+  if (!profession) return { title: "Профессия — AXIONA", robots: { index: false, follow: false } };
+  const title = `${profession.title} — карта компетенций AXIONA`;
+  const path = `/professions/${profession.slug}`;
   return {
-    title: `${profession.title} — карта компетенций AXIONA`,
+    title,
     description: profession.description,
+    alternates: canonical(path),
+    ...socialMetadata({ title, description: profession.description, path }),
   };
 }
 
-export default async function ProfessionCanvasPage({
+/**
+ * Страница профессии. Открытая компетенция живёт по своему адресу
+ * (`/professions/[slug]/[competency]`), поэтому старый адрес с параметром
+ * отдаём постоянным редиректом — так внешние ссылки и закладки не ломаются,
+ * а поисковик видит один канонический адрес вместо фильтра.
+ */
+export default async function ProfessionPage({
   params,
   searchParams,
 }: {
@@ -35,141 +41,16 @@ export default async function ProfessionCanvasPage({
   const profession = getProfession(slug);
   if (!profession) notFound();
 
-  const user = await getCurrentUser();
-  const db = getDb();
-  const competencyIds = profession.sections.flatMap((section) =>
-    section.competencies.map((competency) => competency.id),
-  );
-  // Подтверждения и блокировки материалов (COS-REL-009): статусы считаются на сервере,
-  // заблокированные карточки не доходят до клиента.
-  const reviewIndex = await loadProfessionSourceReviews(db, profession, user?.id ?? null);
-
-  const states: CompetencyStates = {};
-  const itemStates: ItemStates = {};
-  let professionSaved = false;
-  const viewedSourceIds = new Set<string>();
-  const savedSourceIds = new Set<string>();
-  if (user) {
-    const [favorites, studyStatuses, views, marks] = await Promise.all([
-      db.favorite.findMany({ where: { userId: user.id } }),
-      db.studyStatus.findMany({ where: { userId: user.id } }),
-      db.sourceView.findMany({ where: { userId: user.id }, select: { sourceId: true } }),
-      db.studyMark.findMany({ where: { userId: user.id } }),
-    ]);
-    for (const mark of marks) {
-      if (mark.targetType === "KNOWLEDGE" || mark.targetType === "SKILL") {
-        itemStates[mark.targetId] = mark.status;
-      }
-    }
-    for (const view of views) viewedSourceIds.add(view.sourceId);
-    const savedIds = new Set(
-      favorites.filter((favorite) => favorite.targetType === "COMPETENCY").map((favorite) => favorite.targetId),
+  if (query.competency) {
+    const ids = profession.sections.flatMap((section) =>
+      section.competencies.map((competency) => competency.id),
     );
-    for (const favorite of favorites) {
-      if (favorite.targetType === "SOURCE") savedSourceIds.add(favorite.targetId);
-    }
-    professionSaved = favorites.some(
-      (favorite) => favorite.targetType === "PROFESSION" && favorite.targetId === profession.slug,
+    permanentRedirect(
+      ids.includes(query.competency)
+        ? `/professions/${profession.slug}/${query.competency}`
+        : `/professions/${profession.slug}`,
     );
-    const statusById = new Map(studyStatuses.map((record) => [record.competencyId, record.status]));
-    for (const id of competencyIds) {
-      states[id] = {
-        saved: savedIds.has(id),
-        status: (statusById.get(id) ?? "NOT_STARTED") as "NOT_STARTED" | "LEARNING" | "LEARNED",
-      };
-    }
   }
 
-  const competencies: CanvasCompetency[] = profession.sections.flatMap((section) =>
-    section.competencies.map((competency) => ({
-      id: competency.id,
-      title: competency.title,
-      ...(competency.titleEn ? { titleEn: competency.titleEn } : {}),
-      definition: competency.definition,
-      tier: competency.tier,
-      order: competency.order,
-      sectionId: section.id,
-      sectionTitle: section.title,
-      prerequisites: competency.prerequisites,
-      knowledge: competency.knowledge,
-      skills: competency.skills,
-      sources: competency.sources
-        .filter((source) => !reviewIndex.hidden.has(`${competency.id}|${source.id}`))
-        .map((source) => {
-          const review = reviewIndex.byPair.get(`${competency.id}|${source.id}`);
-          return {
-            ...source,
-            ...(review ? { reviewStatus: review.status, myReviewAction: review.myAction } : {}),
-            ...(viewedSourceIds.has(source.id) ? { viewed: true } : {}),
-            ...(savedSourceIds.has(source.id) ? { saved: true } : {}),
-          };
-        }),
-      occurrences: findCompetencies(competency.id).map((occurrence) => ({
-        professionSlug: occurrence.profession.slug,
-        professionTitle: occurrence.profession.title,
-        sectionTitle: occurrence.section.title,
-      })),
-    })),
-  );
-
-  const sphere = professionSphere(profession);
-  const canvasProfession: CanvasProfession = {
-    id: profession.id,
-    slug: profession.slug,
-    title: profession.title,
-    sphere: { title: sphere.title, color: sphere.color },
-    ...(profession.titleEn ? { titleEn: profession.titleEn } : {}),
-    description: profession.description,
-    published: profession.coverage.published,
-    total: profession.coverage.total,
-    percent: profession.coverage.percent,
-    sections: profession.sections.map((section) => ({
-      id: section.id,
-      title: section.title,
-      competencyIds: section.competencies.map((competency) => competency.id),
-    })),
-  };
-
-  // Переключение между профессиями внутри выбранной сферы.
-  const sphereGroup = getProfessionGroups().find((group) =>
-    group.professions.some((item) => item.slug === profession.slug),
-  );
-  const sphereIndex = sphereGroup
-    ? sphereGroup.professions.findIndex((item) => item.slug === profession.slug)
-    : -1;
-  const prevItem = sphereGroup && sphereIndex > 0 ? sphereGroup.professions[sphereIndex - 1] : null;
-  const nextItem =
-    sphereGroup && sphereIndex >= 0 && sphereIndex < sphereGroup.professions.length - 1
-      ? sphereGroup.professions[sphereIndex + 1]
-      : null;
-  const prevProfession = prevItem ? { slug: prevItem.slug, title: prevItem.title } : null;
-  const nextProfession = nextItem ? { slug: nextItem.slug, title: nextItem.title } : null;
-
-  const initialCompetencyId =
-    query.competency && competencyIds.includes(query.competency) ? query.competency : undefined;
-  const initialView = query.view === "network" ? "network" : "board";
-
-  return (
-    <>
-      <ViewEvent name="profession_view" props={{ profession_id: profession.id }} />
-      {initialCompetencyId ? (
-        <ViewEvent
-          name="competency_view"
-          props={{ profession_id: profession.id, competency_id: initialCompetencyId }}
-        />
-      ) : null}
-      <ProfessionCanvas
-        profession={canvasProfession}
-        competencies={competencies}
-        states={states}
-        itemStates={itemStates}
-        viewer={user ? { email: user.email } : null}
-        professionSaved={professionSaved}
-        initialCompetencyId={initialCompetencyId}
-        initialView={initialView}
-        prevProfession={prevProfession}
-        nextProfession={nextProfession}
-      />
-    </>
-  );
+  return <ProfessionView slug={profession.slug} view={query.view} />;
 }

@@ -103,7 +103,7 @@ export function ProfessionCanvas({
   const [expanded, setExpanded] = useState(false);
 
   const graphRef = useRef<GraphHandle>(null);
-  const tileRefs = useRef(new Map<string, HTMLButtonElement>());
+  const tileRefs = useRef(new Map<string, HTMLAnchorElement>());
   const railScrollRef = useRef<HTMLDivElement | null>(null);
   const pinnedRef = useRef<HTMLDivElement | null>(null);
 
@@ -174,7 +174,7 @@ export function ProfessionCanvas({
 
   // Стабильные колбэки обязательны: memo-карточки и memo-схема перерисовываются
   // только когда меняются их собственные пропсы, а не каждый рендер канваса.
-  const registerTile = useCallback((id: string, element: HTMLButtonElement | null) => {
+  const registerTile = useCallback((id: string, element: HTMLAnchorElement | null) => {
     if (element) tileRefs.current.set(id, element);
     else tileRefs.current.delete(id);
   }, []);
@@ -248,12 +248,13 @@ export function ProfessionCanvas({
           document.querySelector(".detail-rail")?.scrollIntoView({ behavior: "smooth", block: "start" });
         });
       }
-      // Ссылку на открытую компетенцию можно скопировать и переслать.
+      // Ссылку на открытую компетенцию можно скопировать и переслать, а
+      // поисковик видит отдельный адрес вместо параметра фильтра.
       const url = new URL(window.location.href);
-      url.searchParams.set("competency", id);
+      url.pathname = `/professions/${profession.slug}/${encodeURIComponent(id)}`;
       window.history.replaceState(null, "", url);
     },
-    [profession.id, scrollTileIntoView, cancelAutoOpen],
+    [profession.id, profession.slug, scrollTileIntoView, cancelAutoOpen],
   );
 
   const selectFromGraph = useCallback((id: string) => select(id, { scroll: true }), [select]);
@@ -265,9 +266,9 @@ export function ProfessionCanvas({
     setSelectedId(null);
     setExpanded(false);
     const url = new URL(window.location.href);
-    url.searchParams.delete("competency");
+    url.pathname = `/professions/${profession.slug}`;
     window.history.replaceState(null, "", url);
-  }, [cancelAutoOpen]);
+  }, [cancelAutoOpen, profession.slug]);
 
   const changeView = useCallback((next: GraphMode) => {
     setView(next);
@@ -462,6 +463,7 @@ export function ProfessionCanvas({
                     <CompetencyTile
                       key={id}
                       competency={competency}
+                      href={`/professions/${profession.slug}/${id}`}
                       order={displayOrder.get(id) ?? competency.order}
                       active={selectedId === id}
                       hovered={hoverId === id}

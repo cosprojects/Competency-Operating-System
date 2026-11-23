@@ -5,10 +5,12 @@ import { DeleteAccountButton } from "@/components/DeleteAccountButton";
 import { ConsentControls } from "@/components/account/ConsentControls";
 import { getCurrentUser } from "@/lib/auth";
 import { getDb } from "@/lib/db";
+import { NOINDEX_NOFOLLOW } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
 
 export const metadata = {
+  ...NOINDEX_NOFOLLOW,
   title: "Аккаунт — AXIONA",
 };
 

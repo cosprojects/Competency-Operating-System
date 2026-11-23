@@ -23,7 +23,7 @@ export function StudyButton({
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState(false);
 
-  const returnTo = `/professions/${professionSlug}?competency=${competencyId}`;
+  const returnTo = `/professions/${professionSlug}/${competencyId}`;
   const className = `study-button${saved ? " is-saved" : ""}`;
 
   if (!isAuthed) {

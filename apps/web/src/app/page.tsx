@@ -15,12 +15,20 @@ import { FeedbackCta } from "@/components/feedback/FeedbackCta";
 import { getCurrentUser } from "@/lib/auth";
 import { getDb } from "@/lib/db";
 import { getProfessions, pluralWord, professionSphere } from "@/lib/content";
+import { canonical, socialMetadata } from "@/lib/site";
+import { organizationJsonLd, websiteJsonLd } from "@/lib/structured-data";
+import { JsonLd } from "@/components/JsonLd";
 import { sphereBadgeStyle } from "@/lib/spheres";
 
+const HOME_TITLE = "AXIONA — разберись в профессии и строй свой путь развития";
+const HOME_DESCRIPTION =
+  "AXIONA собирает профессиональные знания и навыки в понятную структуру: компетенции, знания, навыки и материалы для развития.";
+
 export const metadata: Metadata = {
-  title: "AXIONA — разберись в профессии и строй свой путь развития",
-  description:
-    "AXIONA собирает профессиональные знания и навыки в понятную структуру: компетенции, знания, навыки и материалы для развития.",
+  title: HOME_TITLE,
+  description: HOME_DESCRIPTION,
+  alternates: canonical("/"),
+  ...socialMetadata({ title: HOME_TITLE, description: HOME_DESCRIPTION, path: "/" }),
 };
 
 const START_STEPS = [
@@ -86,6 +94,7 @@ export default async function HomePage({
 
   return (
     <>
+      <JsonLd data={[organizationJsonLd(), websiteJsonLd()]} />
       <div className="home-page">
         <div className="home-page-frame">
         <div className="home-page-hero">

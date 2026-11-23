@@ -14,6 +14,8 @@
     "changelog:check": "node --experimental-strip-types scripts/changelog/apply.ts -- --check",
     "agents:check": "sh scripts/check-agent-assets.sh",
     "copy:check": "node scripts/web/copy-check.mjs",
+    "og:build": "node scripts/web/build-og-image.mjs",
+    "seo:verify": "node scripts/seo/verify.mjs",
     "figma:compare": "node scripts/web/figma-compare.mjs",
     "deck:build": "node scripts/deck/build.mjs",
     "deck:verify": "node scripts/deck/verify.mjs",

@@ -81,9 +81,16 @@ ADMIN_EMAILS=...
 ANALYTICS_HASH_SALT=...
 # 1 — аварийный стоп публичной регистрации: ссылки получают только существующие адреса
 AUTH_REGISTRATION_DISABLED=0
+# SEO: подтверждение владения в панелях вебмастеров (значение content из метатега).
+# Пусто — метатег не выводится; можно подтвердить через DNS TXT, тогда не нужны.
+GOOGLE_SITE_VERIFICATION=
+YANDEX_SITE_VERIFICATION=
+BING_SITE_VERIFICATION=
 ```
 
 Набор переменных один для продукта: `APP_URL`, `DATABASE_URL`, `EMAIL_*`; `EMAIL_FROM`/`SUPPORT_EMAIL` — на домене `app.axiona.world`. `axiona.world` остаётся корпоративным сайтом.
+
+`APP_URL` — единственный источник канонического домена: от него считаются `canonical`, `sitemap.xml`, `robots.txt` и `og:image`. Он должен быть задан и на сборке, и в рантайме; после смены `APP_URL` пересобрать образ. Подробности и порядок подключения панелей — `COS-WEB-005`.
 
 `DEEPSEEK_API_KEY` нужен только контентному pipeline, не приложению. В production env приложения его быть не должно.
 
@@ -144,12 +151,14 @@ npm run web:build
 RELEASE_BUILD=release:build docker compose --env-file .env.production up -d --build
 scripts/deploy/migrate.sh   # использует DATABASE_URL из .env.production; runtime-образ Prisma CLI не содержит
 curl -fsS https://app.axiona.world/api/health
+npm run seo:verify -- --base https://app.axiona.world
 ```
 
 - Деплой только из тега/коммита, прошедшего CI.
 - Не запускать `release:build` на проде без `release:validate`.
 - Сохранить предыдущий образ для rollback.
 - `<домен контура>` — `app.axiona.world`; `axiona.world` — корпоративный сайт.
+- `seo:verify` — одна команда вместо ручного обхода: robots, sitemap, canonical, редиректы, noindex, OG и микроразметка. Код выхода 1 — не выкатывать дальше, читать вывод.
 
 ## 7. Pre-launch проверки
 
@@ -192,9 +201,26 @@ curl -fsS https://app.axiona.world/api/health
 - Ссылки в футере, логине, форме отзыва.
 - Cookie-баннер не блокирует продукт; отказ работает.
 
+### Индексация
+- `GET /robots.txt` отдаёт `Disallow: /api/`, `Disallow: /admin/`, `Clean-param: competency /professions/` и `Sitemap`.
+- `GET /sitemap.xml` — только канонические адреса, без `?competency=`: 176 адресов (13 профессий, 157 компетенций, статика и legal); `lastmod` равен датам из модели, а не дате сборки.
+- `canonical` есть на главной, `/professions`, странице профессии, странице компетенции, `/plan`, `/legal/*`.
+- `/professions/<slug>?competency=<id>` отвечает 308 на `/professions/<slug>/<id>`; `/competencies/<id>` — 308 на страницу компетенции; неизвестный id — 404.
+- Компетенция входит в несколько профессий: canonical всех вхождений указывает на основную страницу, в sitemap только она.
+- Карточки компетенций в карте профессии — ссылки `<a href>` (краулер обходит карту), без `?competency=` во внутренних ссылках.
+- Страница компетенции рендерится в каркасе карты: mini-рейл, схема на месте (проверять и визуально, и по ширине `.graph`).
+- `noindex` на `/login`, `/register`, `/plan/start|assess|grade|result`, `/saved`, `/account`, `/auth/*`.
+- `og:image` отдаёт 200 и открывается в превью Telegram.
+- В панелях вебмастеров: сайт подтверждён, `sitemap.xml` отправлен, запрошен переобход главной и 3–5 профессий.
+- Проверка и порядок подключения — `COS-WEB-005`.
+
 ## 8. Корпоративный сайт
 
 Сейчас `axiona.world` — корпоративный сайт на Vercel. Продукт живёт на `app.axiona.world` (VDS). Сайт компании не переносим и не меняем корневой домен до отдельного решения после Beta.
+
+На 2026-11-23 у корпоративного сайта расходится канонизация: `canonical` указывает на `https://axiona.world/ru`, а apex отвечает 308 на `https://www.axiona.world/ru` (200). `sitemap.xml` перечисляет редиректы, `Host` в `robots.txt` — `axiona.world`. Для Google это «canonical указывает на редирект» и «URL в sitemap — редирект». Чинится в репозитории корпоративного сайта либо настройкой доменов в Vercel: один хост отдаёт 200, второй — 301 на него.
+
+SEO-контур продукта — `app.axiona.world` (`COS-WEB-005`). Корпоративный сайт остаётся витриной и ссылается в продукт; соревноваться с ним за одни запросы не нужно.
 
 `axiona.biz` куплен, но регистратор требует американский номер; это не блокирует Beta. Когда домен будет доступен, решаем: оставить сайт на `axiona.world`, перенести на `axiona.biz` или сделать `axiona.biz` алиасом. Все переходы — с 301 и проверкой canonical/sitemap/OG.
 
@@ -220,3 +246,5 @@ curl -fsS https://app.axiona.world/api/health
 | 1.0.0 | 2026-10-28 | Первая редакция: предусловия, хостинг, DNS, email, деплой, pre-launch проверки, rollback |
 | 1.1.0 | 2026-11-05 | Два контура (`ADR-023`): РФ-тест на отдельном домене и СНГ-релиз; разделы хостинга, DNS и email параметризованы по контуру; регистрация по email (`COS-EAR-015`) в pre-launch проверках |
 | 1.3.0 | 2026-11-09 | ADR-025: продукт на VDS в Москве (`app.axiona.world`), корпоративный сайт на Vercel; обновлены хостинг, DNS, email и раздел сайта |
+| 1.3.1 | 2026-11-23 | SEO и индексация: переменные верификации в env, проверки индексации в pre-launch, расхождение канонизации корпоративного сайта; см. `COS-WEB-005` |
+| 1.3.2 | 2026-11-23 | Чистые адреса компетенций `/professions/[slug]/[competency]`, 308 со старых `?competency=`, canonical для повторных вхождений; sitemap 176 адресов |

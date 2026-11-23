@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { isCanvasPath } from "@/lib/routes";
 import {
   IconBox,
   IconCat,
@@ -68,7 +69,8 @@ const ADMIN_ITEMS = [
 
 export function NavRail({ user }: { user: ShellUser | null }) {
   const pathname = usePathname();
-  const isCanvas = /^\/professions\/[^/]+$/.test(pathname);
+  // Страница карты: профессия и компетенция внутри неё — mini-рейл.
+  const isCanvas = isCanvasPath(pathname);
   // Контентные страницы (схема профессии и выбор направления) — mini-рейл.
   // Автосхлопывание по ширине ≤1440 живёт в CSS (globals.css): так рейл
   // свёрнут уже на первом кадре, без прыжка после гидрации.

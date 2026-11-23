@@ -2,21 +2,23 @@ import type { Metadata } from "next";
 import type { SearchGroup } from "@/components/ProfessionSearch";
 import { ProfessionSearch } from "@/components/ProfessionSearch";
 import { getCurrentUser } from "@/lib/auth";
-import {
-  competencySearchText,
-  countLabel,
-  getProfessionGroups,
-  pluralWord,
-  professionSphere,
-} from "@/lib/content";
+import { competencySearchText, getProfessionGroups, getProfessions, pluralWord, professionSphere } from "@/lib/content";
 import { compactSearchText } from "@/lib/search-index";
 import { sphereBadgeStyle } from "@/lib/spheres";
 import { getDb } from "@/lib/db";
+import { canonical, socialMetadata } from "@/lib/site";
+import { professionsListJsonLd } from "@/lib/structured-data";
+import { JsonLd } from "@/components/JsonLd";
+
+const TITLE = "Направления — AXIONA";
+const DESCRIPTION =
+  "Выбор профессии дизайнера: поиск по названию профессии и навыкам, которые её составляют.";
 
 export const metadata: Metadata = {
-  title: "Направления — AXIONA",
-  description:
-    "Выбор профессии дизайнера: поиск по названию профессии и навыкам, которые её составляют.",
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: canonical("/professions"),
+  ...socialMetadata({ title: TITLE, description: DESCRIPTION, path: "/professions" }),
 };
 
 export default async function ProfessionsPage() {
@@ -60,10 +62,13 @@ export default async function ProfessionsPage() {
   }));
 
   return (
-    <ProfessionSearch
-      groups={groups}
-      viewer={user ? { email: user.email } : null}
-      savedSlugs={savedSlugs}
-    />
+    <>
+      <JsonLd data={professionsListJsonLd(getProfessions())} />
+      <ProfessionSearch
+        groups={groups}
+        viewer={user ? { email: user.email } : null}
+        savedSlugs={savedSlugs}
+      />
+    </>
   );
 }

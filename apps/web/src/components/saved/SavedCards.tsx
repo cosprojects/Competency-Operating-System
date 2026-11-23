@@ -80,7 +80,7 @@ export function SavedSkillCard({ skill }: { skill: SavedSkillView }) {
       <h3>
         <Link
           className="stretched-link"
-          href={`/professions/${skill.professionSlug}?competency=${skill.id}`}
+          href={`/professions/${skill.professionSlug}/${skill.id}`}
         >
           {skill.title}
         </Link>

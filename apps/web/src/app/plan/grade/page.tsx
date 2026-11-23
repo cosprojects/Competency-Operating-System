@@ -8,10 +8,12 @@ import { PlanStepper } from "@/components/plan/PlanStepper";
 import { getCurrentUser } from "@/lib/auth";
 import { getLatestMatrix } from "@/lib/matrix-server";
 import { getGradeHighlightRows, getMatrixGrades, getMatrixProfession } from "@/lib/matrix";
+import { NOINDEX_NOFOLLOW } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
+  ...NOINDEX_NOFOLLOW,
   title: "План — выбор грейда",
 };
 

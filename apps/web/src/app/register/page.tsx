@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { LoginForm } from "@/components/LoginForm";
 import { loginLinkTtlText, safeReturnTo } from "@/lib/auth";
+import { NOINDEX_FOLLOW } from "@/lib/seo";
 
 export const metadata = {
+  ...NOINDEX_FOLLOW,
   title: "Создать аккаунт — AXIONA",
   description:
     "Аккаунт AXIONA создаётся по ссылке из письма: без пароля. Сохраняй компетенции и возвращайся к материалам.",

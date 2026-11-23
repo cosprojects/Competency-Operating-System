@@ -5,6 +5,7 @@ import type { ReactNode } from "react";
 import { MobileNav } from "@/components/mobile/MobileNav";
 import { NavRail } from "@/components/NavRail";
 import { SiteFooter } from "@/components/SiteFooter";
+import { isCanvasPath } from "@/lib/routes";
 import { ButtonHoverLights } from "@/components/ui/ButtonHoverLights";
 import { ToastHost } from "@/components/ui/Toast";
 
@@ -24,7 +25,7 @@ export function AppShell({
   const pathname = usePathname();
   const isHome = pathname === "/";
   const isSearch = pathname === "/professions";
-  const isCanvas = /^\/professions\/[^/]+$/.test(pathname);
+  const isCanvas = isCanvasPath(pathname);
   const isPlain =
     pathname === "/login" ||
     pathname === "/register" ||

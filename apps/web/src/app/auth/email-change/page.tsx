@@ -1,8 +1,10 @@
 import Link from "next/link";
+import { NOINDEX_NOFOLLOW } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
 
 export const metadata = {
+  ...NOINDEX_NOFOLLOW,
   title: "Подтверждение нового email — AXIONA",
 };
 
